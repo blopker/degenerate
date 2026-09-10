@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_request_amount_details.dart';import 'post_payment_intents_request_automatic_payment_methods.dart';import 'post_payment_intents_request_hooks.dart';import 'post_payment_intents_request_mandate_data.dart';import 'post_payment_intents_request_off_session.dart';import 'post_payment_intents_request_payment_details.dart';import 'post_payment_intents_request_payment_method_data.dart';import 'post_payment_intents_request_payment_method_options.dart';import 'post_payment_intents_request_radar_options.dart';import 'post_payment_intents_request_shipping.dart';import 'post_payment_intents_request_transfer_data.dart';@immutable final class PostPaymentIntentsRequestExcludedPaymentMethodTypes {const PostPaymentIntentsRequestExcludedPaymentMethodTypes._(this.value);
 
-factory PostPaymentIntentsRequestExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestExcludedPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -53,7 +53,7 @@ factory PostPaymentIntentsRequestExcludedPaymentMethodTypes.fromJson(String json
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostPaymentIntentsRequestExcludedPaymentMethodTypes._(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestExcludedPaymentMethodTypes acssDebit = PostPaymentIntentsRequestExcludedPaymentMethodTypes._('acss_debit');
 
@@ -157,23 +157,23 @@ static const List<PostPaymentIntentsRequestExcludedPaymentMethodTypes> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsRequestExcludedPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestExcludedPaymentMethodTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsRequestExcludedPaymentMethodTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestExcludedPaymentMethodTypes($value)';}
+}
 /// Controls when the funds will be captured from the customer's account.
 @immutable final class PostPaymentIntentsRequestCaptureMethod {const PostPaymentIntentsRequestCaptureMethod._(this.value);
 
-factory PostPaymentIntentsRequestCaptureMethod.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestCaptureMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'automatic_async' => automaticAsync,
   'manual' => manual,
   _ => PostPaymentIntentsRequestCaptureMethod._(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestCaptureMethod automatic = PostPaymentIntentsRequestCaptureMethod._('automatic');
 
@@ -185,22 +185,22 @@ static const List<PostPaymentIntentsRequestCaptureMethod> values = [automatic, a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsRequestCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsRequestCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestCaptureMethod($value)';}
+}
 /// Describes whether we can confirm this PaymentIntent automatically, or if it requires customer action to confirm the payment.
 @immutable final class PostPaymentIntentsRequestConfirmationMethod {const PostPaymentIntentsRequestConfirmationMethod._(this.value);
 
-factory PostPaymentIntentsRequestConfirmationMethod.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestConfirmationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'manual' => manual,
   _ => PostPaymentIntentsRequestConfirmationMethod._(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestConfirmationMethod automatic = PostPaymentIntentsRequestConfirmationMethod._('automatic');
 
@@ -210,14 +210,14 @@ static const List<PostPaymentIntentsRequestConfirmationMethod> values = [automat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsRequestConfirmationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestConfirmationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsRequestConfirmationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestConfirmationMethod($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -227,11 +227,11 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PostPaymentIntentsRequestSetupFutureUsage {const PostPaymentIntentsRequestSetupFutureUsage._(this.value);
 
-factory PostPaymentIntentsRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestSetupFutureUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostPaymentIntentsRequestSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestSetupFutureUsage offSession = PostPaymentIntentsRequestSetupFutureUsage._('off_session');
 
@@ -241,17 +241,17 @@ static const List<PostPaymentIntentsRequestSetupFutureUsage> values = [offSessio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsRequestSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsRequestSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestSetupFutureUsage($value)';}
+}
 @immutable final class PostPaymentIntentsRequest {const PostPaymentIntentsRequest({required this.amount, required this.currency, this.errorOnRequiresAction, this.automaticPaymentMethods, this.captureMethod, this.confirm, this.confirmationMethod, this.confirmationToken, this.amountDetails, this.customer, this.customerAccount, this.description, this.applicationFeeAmount, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.mandate, this.mandateData, this.metadata, this.offSession, this.onBehalfOf, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.useStripeSdk, this.paymentMethodOptions, this.paymentMethodTypes, this.radarOptions, this.receiptEmail, this.returnUrl, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, this.paymentMethodData, });
 
-factory PostPaymentIntentsRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequest(
+factory PostPaymentIntentsRequest.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsRequest(
   amount: (json['amount'] as num).toInt(),
   amountDetails: json['amount_details'] != null ? PostPaymentIntentsRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
@@ -289,7 +289,7 @@ factory PostPaymentIntentsRequest.fromJson(Map<String, dynamic> json) { return P
   transferData: json['transfer_data'] != null ? PostPaymentIntentsRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
-); }
+);}
 
 /// Amount intended to be collected by this PaymentIntent. A positive integer representing how much to charge in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (e.g., 100 cents to charge $1.00 or 100 to charge ¥100, a zero-decimal currency). The minimum amount is $0.50 US or [equivalent in charge currency](https://docs.stripe.com/currencies#minimum-and-maximum-charge-amounts). The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
 final int amount;
@@ -426,7 +426,7 @@ final String? transferGroup;
 /// Set to `true` when confirming server-side and using Stripe.js, iOS, or Android client-side SDKs to handle the next actions.
 final bool? useStripeSdk;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
   'application_fee_amount': ?applicationFeeAmount,
@@ -464,10 +464,10 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
   'use_stripe_sdk': ?useStripeSdk,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-PostPaymentIntentsRequest copyWith({int? amount, PostPaymentIntentsRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, PostPaymentIntentsRequestAutomaticPaymentMethods? Function()? automaticPaymentMethods, PostPaymentIntentsRequestCaptureMethod? Function()? captureMethod, bool? Function()? confirm, PostPaymentIntentsRequestConfirmationMethod? Function()? confirmationMethod, String? Function()? confirmationToken, String? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, bool? Function()? errorOnRequiresAction, List<PostPaymentIntentsRequestExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, PostPaymentIntentsRequestHooks? Function()? hooks, String? Function()? mandate, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, PostPaymentIntentsRequestOffSession? Function()? offSession, String? Function()? onBehalfOf, PostPaymentIntentsRequestPaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, PostPaymentIntentsRequestRadarOptions? Function()? radarOptions, String? Function()? receiptEmail, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostPaymentIntentsRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostPaymentIntentsRequestTransferData? Function()? transferData, String? Function()? transferGroup, bool? Function()? useStripeSdk, }) { return PostPaymentIntentsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+PostPaymentIntentsRequest copyWith({int? amount, PostPaymentIntentsRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, PostPaymentIntentsRequestAutomaticPaymentMethods? Function()? automaticPaymentMethods, PostPaymentIntentsRequestCaptureMethod? Function()? captureMethod, bool? Function()? confirm, PostPaymentIntentsRequestConfirmationMethod? Function()? confirmationMethod, String? Function()? confirmationToken, String? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, bool? Function()? errorOnRequiresAction, List<PostPaymentIntentsRequestExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, PostPaymentIntentsRequestHooks? Function()? hooks, String? Function()? mandate, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, PostPaymentIntentsRequestOffSession? Function()? offSession, String? Function()? onBehalfOf, PostPaymentIntentsRequestPaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, PostPaymentIntentsRequestRadarOptions? Function()? radarOptions, String? Function()? receiptEmail, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostPaymentIntentsRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostPaymentIntentsRequestTransferData? Function()? transferData, String? Function()? transferGroup, bool? Function()? useStripeSdk, }) {return PostPaymentIntentsRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -505,8 +505,8 @@ PostPaymentIntentsRequest copyWith({int? amount, PostPaymentIntentsRequestAmount
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -544,7 +544,7 @@ PostPaymentIntentsRequest copyWith({int? amount, PostPaymentIntentsRequestAmount
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
           transferGroup == other.transferGroup &&
-          useStripeSdk == other.useStripeSdk; } 
-@override int get hashCode { return Object.hashAll([amount, amountDetails, applicationFeeAmount, automaticPaymentMethods, captureMethod, confirm, confirmationMethod, confirmationToken, currency, customer, customerAccount, description, errorOnRequiresAction, Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(expand ?? const []), hooks, mandate, mandateData, metadata, offSession, onBehalfOf, paymentDetails, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), radarOptions, receiptEmail, returnUrl, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup, useStripeSdk]); } 
-@override String toString() { return 'PostPaymentIntentsRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, automaticPaymentMethods: $automaticPaymentMethods, captureMethod: $captureMethod, confirm: $confirm, confirmationMethod: $confirmationMethod, confirmationToken: $confirmationToken, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, errorOnRequiresAction: $errorOnRequiresAction, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, mandate: $mandate, mandateData: $mandateData, metadata: $metadata, offSession: $offSession, onBehalfOf: $onBehalfOf, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, radarOptions: $radarOptions, receiptEmail: $receiptEmail, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup, useStripeSdk: $useStripeSdk)'; } 
- }
+          useStripeSdk == other.useStripeSdk;}
+@override int get hashCode {return Object.hashAll([amount, amountDetails, applicationFeeAmount, automaticPaymentMethods, captureMethod, confirm, confirmationMethod, confirmationToken, currency, customer, customerAccount, description, errorOnRequiresAction, Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(expand ?? const []), hooks, mandate, mandateData, metadata, offSession, onBehalfOf, paymentDetails, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), radarOptions, receiptEmail, returnUrl, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup, useStripeSdk]);}
+@override String toString() {return 'PostPaymentIntentsRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, automaticPaymentMethods: $automaticPaymentMethods, captureMethod: $captureMethod, confirm: $confirm, confirmationMethod: $confirmationMethod, confirmationToken: $confirmationToken, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, errorOnRequiresAction: $errorOnRequiresAction, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, mandate: $mandate, mandateData: $mandateData, metadata: $metadata, offSession: $offSession, onBehalfOf: $onBehalfOf, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, radarOptions: $radarOptions, receiptEmail: $receiptEmail, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup, useStripeSdk: $useStripeSdk)';}
+}

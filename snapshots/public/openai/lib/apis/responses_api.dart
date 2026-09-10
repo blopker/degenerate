@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_response.dart';import '../models/error_model.dart';import '../models/include_enum.dart';import '../models/list_input_items_order.dart';import '../models/response.dart';import '../models/response_item_list.dart';import '../models/response_stream_event.dart';/// ResponsesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_response.dart';import '../models/create_response_success.dart';import '../models/error_model.dart';import '../models/include_enum.dart';import '../models/list_input_items_order.dart';import '../models/response.dart';import '../models/response_item_list.dart';import '../models/response_stream_event.dart';/// ResponsesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -18,7 +18,7 @@ final class ResponsesApi with ApiExecutor {const ResponsesApi(this.apiConfig);
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<OneOf2<Response, ResponseStreamEvent>, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateResponseSuccess, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,29 +29,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<Response, ResponseStreamEvent>.a(Response.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into ResponseStreamEvent');
-}
-final json = jsonDecode(response.body);
-return OneOf2<Response, ResponseStreamEvent>.a(Response.fromJson(json as Map<String, dynamic>));
 
-  },
-);
- } 
+return   await execute(request, onSuccess: CreateResponseSuccess.parse, );}
 /// Retrieves a model response with the given ID.
 /// 
 ///
 /// `GET /responses/{response_id}`
-Future<ApiResult<Response, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Response, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -79,19 +63,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Response.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Response.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a model response with the given ID.
 /// 
 ///
 /// `DELETE /responses/{response_id}`
-Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -100,28 +79,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Cancels a model response with the given ID. Only responses created with
 /// the `background` parameter set to `true` can be cancelled.
 /// [Learn more](/docs/guides/background).
 /// 
 ///
 /// `POST /responses/{response_id}/cancel`
-Future<ApiResult<Response, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -130,28 +100,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Response.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Response.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Returns a list of input items for a given response.
 ///
 /// `GET /responses/{response_id}/input_items`
-Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -179,14 +138,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseItemList.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseItemList.fromJson(json as Map<String, dynamic>);}, );}
 /// Creates a model response. Provide [text](/docs/guides/text) or
 /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)
 /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call
@@ -197,7 +151,7 @@ return ResponseItemList.fromJson(json as Map<String, dynamic>);
 ///  (streaming)
 ///
 /// `POST /responses`
-Stream<ResponseStreamEvent> createResponseStream({required CreateResponse body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ResponseStreamEvent> createResponseStream({required CreateResponse body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -214,5 +168,5 @@ return executeStreaming(
     return ResponseStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

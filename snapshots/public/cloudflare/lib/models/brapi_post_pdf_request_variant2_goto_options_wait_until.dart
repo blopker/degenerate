@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1._(this.value);
 
-factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1.fromJson(String json) {return switch (json) {
   'load' => load,
   _ => BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1 load = BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1._('load');
 
@@ -13,20 +13,20 @@ static const List<BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant1($value)';}
+}
 @immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2._(this.value);
 
-factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2.fromJson(String json) {return switch (json) {
   'domcontentloaded' => domcontentloaded,
   _ => BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2 domcontentloaded = BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2._('domcontentloaded');
 
@@ -34,20 +34,20 @@ static const List<BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant2($value)';}
+}
 @immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3._(this.value);
 
-factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3.fromJson(String json) {return switch (json) {
   'networkidle0' => networkidle0,
   _ => BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3 networkidle0 = BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3._('networkidle0');
 
@@ -55,20 +55,20 @@ static const List<BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant3($value)';}
+}
 @immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4._(this.value);
 
-factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4.fromJson(String json) {return switch (json) {
   'networkidle2' => networkidle2,
   _ => BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4 networkidle2 = BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4._('networkidle2');
 
@@ -76,23 +76,23 @@ static const List<BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant4($value)';}
+}
 @immutable final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5 {const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5._(this.value);
 
-factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5.fromJson(String json) { return switch (json) {
+factory BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5.fromJson(String json) {return switch (json) {
   'load' => load,
   'domcontentloaded' => domcontentloaded,
   'networkidle0' => networkidle0,
   'networkidle2' => networkidle2,
   _ => BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5._(json),
-}; }
+};}
 
 static const BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5 load = BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5._('load');
 
@@ -106,14 +106,14 @@ static const List<BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostPdfRequestVariant2GotoOptionsWaitUntilVariant5($value)';}
+}
 
 @immutable
 final class BrapiPostPdfRequestVariant2GotoOptionsWaitUntil {

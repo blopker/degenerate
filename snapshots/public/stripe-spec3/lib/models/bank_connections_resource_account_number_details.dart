@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account number associated with the account.
 @immutable final class BankConnectionsResourceAccountNumberDetailsIdentifierType {const BankConnectionsResourceAccountNumberDetailsIdentifierType._(this.value);
 
-factory BankConnectionsResourceAccountNumberDetailsIdentifierType.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceAccountNumberDetailsIdentifierType.fromJson(String json) {return switch (json) {
   'account_number' => accountNumber,
   'tokenized_account_number' => tokenizedAccountNumber,
   _ => BankConnectionsResourceAccountNumberDetailsIdentifierType._(json),
-}; }
+};}
 
 static const BankConnectionsResourceAccountNumberDetailsIdentifierType accountNumber = BankConnectionsResourceAccountNumberDetailsIdentifierType._('account_number');
 
@@ -17,22 +17,22 @@ static const List<BankConnectionsResourceAccountNumberDetailsIdentifierType> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsIdentifierType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetailsIdentifierType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankConnectionsResourceAccountNumberDetailsIdentifierType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankConnectionsResourceAccountNumberDetailsIdentifierType($value)';}
+}
 /// Whether the account number is currently active and usable for transactions.
 @immutable final class BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus._(this.value);
 
-factory BankConnectionsResourceAccountNumberDetailsStatus.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceAccountNumberDetailsStatus.fromJson(String json) {return switch (json) {
   'deactivated' => deactivated,
   'transactable' => transactable,
   _ => BankConnectionsResourceAccountNumberDetailsStatus._(json),
-}; }
+};}
 
 static const BankConnectionsResourceAccountNumberDetailsStatus deactivated = BankConnectionsResourceAccountNumberDetailsStatus._('deactivated');
 
@@ -42,20 +42,20 @@ static const List<BankConnectionsResourceAccountNumberDetailsStatus> values = [d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetailsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankConnectionsResourceAccountNumberDetailsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankConnectionsResourceAccountNumberDetailsStatus($value)';}
+}
 @immutable final class BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks._(this.value);
 
-factory BankConnectionsResourceAccountNumberDetailsSupportedNetworks.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceAccountNumberDetailsSupportedNetworks.fromJson(String json) {return switch (json) {
   'ach' => ach,
   _ => BankConnectionsResourceAccountNumberDetailsSupportedNetworks._(json),
-}; }
+};}
 
 static const BankConnectionsResourceAccountNumberDetailsSupportedNetworks ach = BankConnectionsResourceAccountNumberDetailsSupportedNetworks._('ach');
 
@@ -63,23 +63,23 @@ static const List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsSupportedNetworks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankConnectionsResourceAccountNumberDetailsSupportedNetworks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)';}
+}
 /// 
 @immutable final class BankConnectionsResourceAccountNumberDetails {const BankConnectionsResourceAccountNumberDetails({required this.identifierType, required this.status, required this.supportedNetworks, this.expectedExpiryDate = const Omittable.absent(), });
 
-factory BankConnectionsResourceAccountNumberDetails.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceAccountNumberDetails(
+factory BankConnectionsResourceAccountNumberDetails.fromJson(Map<String, dynamic> json) {return BankConnectionsResourceAccountNumberDetails(
   expectedExpiryDate: json.containsKey('expected_expiry_date') ? Omittable(json['expected_expiry_date'] != null ? (json['expected_expiry_date'] as num).toInt() : null) : const Omittable.absent(),
   identifierType: BankConnectionsResourceAccountNumberDetailsIdentifierType.fromJson(json['identifier_type'] as String),
   status: BankConnectionsResourceAccountNumberDetailsStatus.fromJson(json['status'] as String),
   supportedNetworks: (json['supported_networks'] as List<dynamic>).map((e) => BankConnectionsResourceAccountNumberDetailsSupportedNetworks.fromJson(e as String)).toList(),
-); }
+);}
 
 /// When the account number is expected to expire, if applicable.
 final Omittable<int?> expectedExpiryDate;
@@ -93,27 +93,27 @@ final BankConnectionsResourceAccountNumberDetailsStatus status;
 /// The payment networks that the account number can be used for.
 final List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks> supportedNetworks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (expectedExpiryDate.isPresent) 'expected_expiry_date': expectedExpiryDate.value,
   'identifier_type': identifierType.toJson(),
   'status': status.toJson(),
   'supported_networks': supportedNetworks.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('identifier_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('identifier_type') &&
       json.containsKey('status') &&
-      json.containsKey('supported_networks'); } 
-BankConnectionsResourceAccountNumberDetails copyWith({Omittable<int?>? expectedExpiryDate, BankConnectionsResourceAccountNumberDetailsIdentifierType? identifierType, BankConnectionsResourceAccountNumberDetailsStatus? status, List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks>? supportedNetworks, }) { return BankConnectionsResourceAccountNumberDetails(
+      json.containsKey('supported_networks');}
+BankConnectionsResourceAccountNumberDetails copyWith({Omittable<int?>? expectedExpiryDate, BankConnectionsResourceAccountNumberDetailsIdentifierType? identifierType, BankConnectionsResourceAccountNumberDetailsStatus? status, List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks>? supportedNetworks, }) {return BankConnectionsResourceAccountNumberDetails(
   expectedExpiryDate: expectedExpiryDate ?? this.expectedExpiryDate,
   identifierType: identifierType ?? this.identifierType,
   status: status ?? this.status,
   supportedNetworks: supportedNetworks ?? this.supportedNetworks,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BankConnectionsResourceAccountNumberDetails &&
           expectedExpiryDate == other.expectedExpiryDate &&
           identifierType == other.identifierType &&
           status == other.status &&
-          listEquals(supportedNetworks, other.supportedNetworks); } 
-@override int get hashCode { return Object.hash(expectedExpiryDate, identifierType, status, Object.hashAll(supportedNetworks)); } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetails(expectedExpiryDate: $expectedExpiryDate, identifierType: $identifierType, status: $status, supportedNetworks: $supportedNetworks)'; } 
- }
+          listEquals(supportedNetworks, other.supportedNetworks);}
+@override int get hashCode {return Object.hash(expectedExpiryDate, identifierType, status, Object.hashAll(supportedNetworks));}
+@override String toString() {return 'BankConnectionsResourceAccountNumberDetails(expectedExpiryDate: $expectedExpiryDate, identifierType: $identifierType, status: $status, supportedNetworks: $supportedNetworks)';}
+}

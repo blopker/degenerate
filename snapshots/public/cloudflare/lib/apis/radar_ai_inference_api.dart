@@ -13,7 +13,7 @@ final class RadarAiInferenceApi with ApiExecutor {const RadarAiInferenceApi(this
 /// Retrieves an aggregated summary of unique accounts using Workers AI inference grouped by the specified dimension.
 ///
 /// `GET /radar/ai/inference/summary/{dimension}`
-Future<ApiResult<RadarGetAiInferenceSummaryResponseResult, RadarGetAiInferenceSummaryResponse400>> radarGetAiInferenceSummary({required RadarGetAiInferenceSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, RadarGetAiInferenceSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiInferenceSummaryResponseResult, RadarGetAiInferenceSummaryResponse400>> radarGetAiInferenceSummary({required RadarGetAiInferenceSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, RadarGetAiInferenceSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -68,30 +68,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAiInferenceSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAiInferenceSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetAiInferenceSummaryResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RadarGetAiInferenceSummaryResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get time series distribution of Workers AI inference by dimension.
 ///
 /// Retrieves the distribution of unique accounts using Workers AI inference, grouped by the specified dimension over time.
 ///
 /// `GET /radar/ai/inference/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiInferenceTimeseriesGroupResponseResult, RadarGetAiInferenceTimeseriesGroupResponse400>> radarGetAiInferenceTimeseriesGroup({required RadarGetAiInferenceTimeseriesGroupDimension dimension, RadarGetAiInferenceTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, RadarGetAiInferenceTimeseriesGroupNormalization? normalization, RadarGetAiInferenceTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiInferenceTimeseriesGroupResponseResult, RadarGetAiInferenceTimeseriesGroupResponse400>> radarGetAiInferenceTimeseriesGroup({required RadarGetAiInferenceTimeseriesGroupDimension dimension, RadarGetAiInferenceTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? limitPerGroup, RadarGetAiInferenceTimeseriesGroupNormalization? normalization, RadarGetAiInferenceTimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -152,22 +141,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAiInferenceTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAiInferenceTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetAiInferenceTimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  RadarGetAiInferenceTimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

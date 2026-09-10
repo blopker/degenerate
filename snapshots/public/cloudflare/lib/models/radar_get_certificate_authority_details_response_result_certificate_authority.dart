@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_certificate_authority_details_response_result_certificate_authority_related.dart';/// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -12,7 +12,7 @@ factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityApp
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus included = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus._('INCLUDED');
 
@@ -32,22 +32,22 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus($value)';}
+}
 /// Specifies the type of certificate in the trust chain.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType.fromJson(String json) {return switch (json) {
   'ROOT_CERTIFICATE' => rootCertificate,
   'INTERMEDIATE_CERTIFICATE' => intermediateCertificate,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType rootCertificate = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType._('ROOT_CERTIFICATE');
 
@@ -57,18 +57,18 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType($value)';}
+}
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -77,7 +77,7 @@ factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChr
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus included = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus._('INCLUDED');
 
@@ -97,18 +97,18 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus($value)';}
+}
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -117,7 +117,7 @@ factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMic
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus included = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus._('INCLUDED');
 
@@ -137,18 +137,18 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus($value)';}
+}
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -157,7 +157,7 @@ factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMoz
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus included = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus._('INCLUDED');
 
@@ -177,23 +177,23 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus($value)';}
+}
 /// The current revocation status of a Certificate Authority (CA) certificate.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus.fromJson(String json) {return switch (json) {
   'NOT_REVOKED' => notRevoked,
   'REVOKED' => revoked,
   'PARENT_CERT_REVOKED' => parentCertRevoked,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus notRevoked = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus._('NOT_REVOKED');
 
@@ -205,17 +205,17 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus($value)';}
+}
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority({required this.appleStatus, required this.authorityKeyIdentifier, required this.certificateRecordType, required this.chromeStatus, required this.country, required this.countryName, required this.microsoftStatus, required this.mozillaStatus, required this.name, required this.owner, required this.parentName, required this.parentSha256Fingerprint, required this.related, required this.revocationStatus, required this.sha256Fingerprint, required this.subjectKeyIdentifier, required this.validFrom, required this.validTo, });
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority.fromJson(Map<String, dynamic> json) { return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority(
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority.fromJson(Map<String, dynamic> json) {return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority(
   appleStatus: RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus.fromJson(json['appleStatus'] as String),
   authorityKeyIdentifier: json['authorityKeyIdentifier'] as String,
   certificateRecordType: RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType.fromJson(json['certificateRecordType'] as String),
@@ -234,7 +234,7 @@ factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority.fr
   subjectKeyIdentifier: json['subjectKeyIdentifier'] as String,
   validFrom: json['validFrom'] as String,
   validTo: json['validTo'] as String,
-); }
+);}
 
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 final RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus appleStatus;
@@ -290,7 +290,7 @@ final String validFrom;
 /// The end date of the certificate’s validity period (ISO format).
 final String validTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'appleStatus': appleStatus.toJson(),
   'authorityKeyIdentifier': authorityKeyIdentifier,
   'certificateRecordType': certificateRecordType.toJson(),
@@ -309,8 +309,8 @@ Map<String, dynamic> toJson() { return {
   'subjectKeyIdentifier': subjectKeyIdentifier,
   'validFrom': validFrom,
   'validTo': validTo,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('appleStatus') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('appleStatus') &&
       json.containsKey('authorityKeyIdentifier') && json['authorityKeyIdentifier'] is String &&
       json.containsKey('certificateRecordType') &&
       json.containsKey('chromeStatus') &&
@@ -327,8 +327,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apple
       json.containsKey('sha256Fingerprint') && json['sha256Fingerprint'] is String &&
       json.containsKey('subjectKeyIdentifier') && json['subjectKeyIdentifier'] is String &&
       json.containsKey('validFrom') && json['validFrom'] is String &&
-      json.containsKey('validTo') && json['validTo'] is String; } 
-RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority copyWith({RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus? appleStatus, String? authorityKeyIdentifier, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType? certificateRecordType, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus? chromeStatus, String? country, String? countryName, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus? microsoftStatus, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus? mozillaStatus, String? name, String? owner, String? parentName, String? parentSha256Fingerprint, List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated>? related, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus? revocationStatus, String? sha256Fingerprint, String? subjectKeyIdentifier, String? validFrom, String? validTo, }) { return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority(
+      json.containsKey('validTo') && json['validTo'] is String;}
+RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority copyWith({RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityAppleStatus? appleStatus, String? authorityKeyIdentifier, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityCertificateRecordType? certificateRecordType, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityChromeStatus? chromeStatus, String? country, String? countryName, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMicrosoftStatus? microsoftStatus, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityMozillaStatus? mozillaStatus, String? name, String? owner, String? parentName, String? parentSha256Fingerprint, List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated>? related, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRevocationStatus? revocationStatus, String? sha256Fingerprint, String? subjectKeyIdentifier, String? validFrom, String? validTo, }) {return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority(
   appleStatus: appleStatus ?? this.appleStatus,
   authorityKeyIdentifier: authorityKeyIdentifier ?? this.authorityKeyIdentifier,
   certificateRecordType: certificateRecordType ?? this.certificateRecordType,
@@ -347,8 +347,8 @@ RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority copyWith({
   subjectKeyIdentifier: subjectKeyIdentifier ?? this.subjectKeyIdentifier,
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority &&
           appleStatus == other.appleStatus &&
           authorityKeyIdentifier == other.authorityKeyIdentifier &&
@@ -367,7 +367,7 @@ RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority copyWith({
           sha256Fingerprint == other.sha256Fingerprint &&
           subjectKeyIdentifier == other.subjectKeyIdentifier &&
           validFrom == other.validFrom &&
-          validTo == other.validTo; } 
-@override int get hashCode { return Object.hash(appleStatus, authorityKeyIdentifier, certificateRecordType, chromeStatus, country, countryName, microsoftStatus, mozillaStatus, name, owner, parentName, parentSha256Fingerprint, Object.hashAll(related), revocationStatus, sha256Fingerprint, subjectKeyIdentifier, validFrom, validTo); } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority(appleStatus: $appleStatus, authorityKeyIdentifier: $authorityKeyIdentifier, certificateRecordType: $certificateRecordType, chromeStatus: $chromeStatus, country: $country, countryName: $countryName, microsoftStatus: $microsoftStatus, mozillaStatus: $mozillaStatus, name: $name, owner: $owner, parentName: $parentName, parentSha256Fingerprint: $parentSha256Fingerprint, related: $related, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint, subjectKeyIdentifier: $subjectKeyIdentifier, validFrom: $validFrom, validTo: $validTo)'; } 
- }
+          validTo == other.validTo;}
+@override int get hashCode {return Object.hash(appleStatus, authorityKeyIdentifier, certificateRecordType, chromeStatus, country, countryName, microsoftStatus, mozillaStatus, name, owner, parentName, parentSha256Fingerprint, Object.hashAll(related), revocationStatus, sha256Fingerprint, subjectKeyIdentifier, validFrom, validTo);}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthority(appleStatus: $appleStatus, authorityKeyIdentifier: $authorityKeyIdentifier, certificateRecordType: $certificateRecordType, chromeStatus: $chromeStatus, country: $country, countryName: $countryName, microsoftStatus: $microsoftStatus, mozillaStatus: $mozillaStatus, name: $name, owner: $owner, parentName: $parentName, parentSha256Fingerprint: $parentSha256Fingerprint, related: $related, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint, subjectKeyIdentifier: $subjectKeyIdentifier, validFrom: $validFrom, validTo: $validTo)';}
+}

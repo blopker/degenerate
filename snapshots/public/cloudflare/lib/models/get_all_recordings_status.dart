@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAllRecordingsStatus {const GetAllRecordingsStatus._(this.value);
 
-factory GetAllRecordingsStatus.fromJson(String json) { return switch (json) {
+factory GetAllRecordingsStatus.fromJson(String json) {return switch (json) {
   'INVOKED' => invoked,
   'RECORDING' => recording,
   'UPLOADING' => uploading,
   'UPLOADED' => uploaded,
   _ => GetAllRecordingsStatus._(json),
-}; }
+};}
 
 static const GetAllRecordingsStatus invoked = GetAllRecordingsStatus._('INVOKED');
 
@@ -22,11 +22,11 @@ static const List<GetAllRecordingsStatus> values = [invoked, recording, uploadin
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAllRecordingsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAllRecordingsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetAllRecordingsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetAllRecordingsStatus($value)';}
+}

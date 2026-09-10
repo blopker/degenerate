@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
 @immutable final class PaymentAttemptRecordCustomerPresence {const PaymentAttemptRecordCustomerPresence._(this.value);
 
-factory PaymentAttemptRecordCustomerPresence.fromJson(String json) { return switch (json) {
+factory PaymentAttemptRecordCustomerPresence.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentAttemptRecordCustomerPresence._(json),
-}; }
+};}
 
 static const PaymentAttemptRecordCustomerPresence offSession = PaymentAttemptRecordCustomerPresence._('off_session');
 
@@ -17,21 +17,21 @@ static const List<PaymentAttemptRecordCustomerPresence> values = [offSession, on
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentAttemptRecordCustomerPresence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentAttemptRecordCustomerPresence($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentAttemptRecordCustomerPresence && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentAttemptRecordCustomerPresence($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentAttemptRecordObject {const PaymentAttemptRecordObject._(this.value);
 
-factory PaymentAttemptRecordObject.fromJson(String json) { return switch (json) {
+factory PaymentAttemptRecordObject.fromJson(String json) {return switch (json) {
   'payment_attempt_record' => paymentAttemptRecord,
   _ => PaymentAttemptRecordObject._(json),
-}; }
+};}
 
 static const PaymentAttemptRecordObject paymentAttemptRecord = PaymentAttemptRecordObject._('payment_attempt_record');
 
@@ -39,22 +39,22 @@ static const List<PaymentAttemptRecordObject> values = [paymentAttemptRecord];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentAttemptRecordObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentAttemptRecordObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentAttemptRecordObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentAttemptRecordObject($value)';}
+}
 /// Indicates who reported the payment.
 @immutable final class PaymentAttemptRecordReportedBy {const PaymentAttemptRecordReportedBy._(this.value);
 
-factory PaymentAttemptRecordReportedBy.fromJson(String json) { return switch (json) {
+factory PaymentAttemptRecordReportedBy.fromJson(String json) {return switch (json) {
   'self' => self,
   'stripe' => stripe,
   _ => PaymentAttemptRecordReportedBy._(json),
-}; }
+};}
 
 static const PaymentAttemptRecordReportedBy self = PaymentAttemptRecordReportedBy._('self');
 
@@ -64,21 +64,21 @@ static const List<PaymentAttemptRecordReportedBy> values = [self, stripe];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentAttemptRecordReportedBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentAttemptRecordReportedBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentAttemptRecordReportedBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentAttemptRecordReportedBy($value)';}
+}
 /// A Payment Attempt Record represents an individual attempt at making a payment, on or off Stripe.
 /// Each payment attempt tries to collect a fixed amount of money from a fixed customer and payment
 /// method. Payment Attempt Records are attached to Payment Records. Only one attempt per Payment Record
 /// can have guaranteed funds.
 @immutable final class PaymentAttemptRecord {const PaymentAttemptRecord({required this.amount, required this.amountAuthorized, required this.amountCanceled, required this.amountFailed, required this.amountGuaranteed, required this.amountRefunded, required this.amountRequested, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.processorDetails, required this.reportedBy, this.application = const Omittable.absent(), this.customerDetails = const Omittable.absent(), this.customerPresence = const Omittable.absent(), this.description = const Omittable.absent(), this.paymentMethodDetails = const Omittable.absent(), this.paymentRecord = const Omittable.absent(), this.shippingDetails = const Omittable.absent(), });
 
-factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return PaymentAttemptRecord(
+factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) {return PaymentAttemptRecord(
   amount: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
   amountAuthorized: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount_authorized'] as Map<String, dynamic>),
   amountCanceled: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount_canceled'] as Map<String, dynamic>),
@@ -100,7 +100,7 @@ factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return Paymen
   processorDetails: PaymentsPrimitivesPaymentRecordsResourceProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   reportedBy: PaymentAttemptRecordReportedBy.fromJson(json['reported_by'] as String),
   shippingDetails: json.containsKey('shipping_details') ? Omittable(json['shipping_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final PaymentsPrimitivesPaymentRecordsResourceAmount amount;
 
@@ -157,7 +157,7 @@ final PaymentAttemptRecordReportedBy reportedBy;
 /// Shipping information for this payment.
 final Omittable<PaymentsPrimitivesPaymentRecordsResourceShippingDetails?> shippingDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount.toJson(),
   'amount_authorized': amountAuthorized.toJson(),
   'amount_canceled': amountCanceled.toJson(),
@@ -179,8 +179,8 @@ Map<String, dynamic> toJson() { return {
   'processor_details': processorDetails.toJson(),
   'reported_by': reportedBy.toJson(),
   if (shippingDetails.isPresent) 'shipping_details': shippingDetails.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') &&
       json.containsKey('amount_authorized') &&
       json.containsKey('amount_canceled') &&
       json.containsKey('amount_failed') &&
@@ -193,8 +193,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('processor_details') &&
-      json.containsKey('reported_by'); } 
-PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, Omittable<String?>? application, int? created, Omittable<PaymentsPrimitivesPaymentRecordsResourceCustomerDetails?>? customerDetails, Omittable<PaymentAttemptRecordCustomerPresence?>? customerPresence, Omittable<String?>? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails?>? paymentMethodDetails, Omittable<String?>? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, PaymentAttemptRecordReportedBy? reportedBy, Omittable<PaymentsPrimitivesPaymentRecordsResourceShippingDetails?>? shippingDetails, }) { return PaymentAttemptRecord(
+      json.containsKey('reported_by');}
+PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, Omittable<String?>? application, int? created, Omittable<PaymentsPrimitivesPaymentRecordsResourceCustomerDetails?>? customerDetails, Omittable<PaymentAttemptRecordCustomerPresence?>? customerPresence, Omittable<String?>? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails?>? paymentMethodDetails, Omittable<String?>? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, PaymentAttemptRecordReportedBy? reportedBy, Omittable<PaymentsPrimitivesPaymentRecordsResourceShippingDetails?>? shippingDetails, }) {return PaymentAttemptRecord(
   amount: amount ?? this.amount,
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   amountCanceled: amountCanceled ?? this.amountCanceled,
@@ -216,8 +216,8 @@ PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? a
   processorDetails: processorDetails ?? this.processorDetails,
   reportedBy: reportedBy ?? this.reportedBy,
   shippingDetails: shippingDetails ?? this.shippingDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentAttemptRecord &&
           amount == other.amount &&
           amountAuthorized == other.amountAuthorized &&
@@ -239,7 +239,7 @@ PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? a
           paymentRecord == other.paymentRecord &&
           processorDetails == other.processorDetails &&
           reportedBy == other.reportedBy &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return Object.hashAll([amount, amountAuthorized, amountCanceled, amountFailed, amountGuaranteed, amountRefunded, amountRequested, application, created, customerDetails, customerPresence, description, id, livemode, metadata, object, paymentMethodDetails, paymentRecord, processorDetails, reportedBy, shippingDetails]); } 
-@override String toString() { return 'PaymentAttemptRecord(amount: $amount, amountAuthorized: $amountAuthorized, amountCanceled: $amountCanceled, amountFailed: $amountFailed, amountGuaranteed: $amountGuaranteed, amountRefunded: $amountRefunded, amountRequested: $amountRequested, application: $application, created: $created, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, id: $id, livemode: $livemode, metadata: $metadata, object: $object, paymentMethodDetails: $paymentMethodDetails, paymentRecord: $paymentRecord, processorDetails: $processorDetails, reportedBy: $reportedBy, shippingDetails: $shippingDetails)'; } 
- }
+          shippingDetails == other.shippingDetails;}
+@override int get hashCode {return Object.hashAll([amount, amountAuthorized, amountCanceled, amountFailed, amountGuaranteed, amountRefunded, amountRequested, application, created, customerDetails, customerPresence, description, id, livemode, metadata, object, paymentMethodDetails, paymentRecord, processorDetails, reportedBy, shippingDetails]);}
+@override String toString() {return 'PaymentAttemptRecord(amount: $amount, amountAuthorized: $amountAuthorized, amountCanceled: $amountCanceled, amountFailed: $amountFailed, amountGuaranteed: $amountGuaranteed, amountRefunded: $amountRefunded, amountRequested: $amountRequested, application: $application, created: $created, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, id: $id, livemode: $livemode, metadata: $metadata, object: $object, paymentMethodDetails: $paymentMethodDetails, paymentRecord: $paymentRecord, processorDetails: $processorDetails, reportedBy: $reportedBy, shippingDetails: $shippingDetails)';}
+}

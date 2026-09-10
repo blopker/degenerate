@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'import_project_choices.dart';@immutable final class ImportStatus {const ImportStatus._(this.value);
 
-factory ImportStatus.fromJson(String json) { return switch (json) {
+factory ImportStatus.fromJson(String json) {return switch (json) {
   'auth' => auth,
   'error' => error,
   'none' => none,
@@ -20,7 +20,7 @@ factory ImportStatus.fromJson(String json) { return switch (json) {
   'detection_found_nothing' => detectionFoundNothing,
   'detection_needs_auth' => detectionNeedsAuth,
   _ => ImportStatus._(json),
-}; }
+};}
 
 static const ImportStatus auth = ImportStatus._('auth');
 
@@ -58,18 +58,18 @@ static const List<ImportStatus> values = [auth, error, none, detecting, choose, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImportStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImportStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImportStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImportStatus($value)';}
+}
 /// A repository import from an external source.
 @immutable final class Import {const Import({required this.vcs, required this.vcsUrl, required this.status, required this.url, required this.htmlUrl, required this.authorsUrl, required this.repositoryUrl, this.useLfs, this.svcRoot, this.tfvcProject, this.statusText = const Omittable.absent(), this.failedStep = const Omittable.absent(), this.errorMessage = const Omittable.absent(), this.importPercent = const Omittable.absent(), this.commitCount = const Omittable.absent(), this.pushPercent = const Omittable.absent(), this.hasLargeFiles, this.largeFilesSize, this.largeFilesCount, this.projectChoices, this.message, this.authorsCount = const Omittable.absent(), this.svnRoot, });
 
-factory Import.fromJson(Map<String, dynamic> json) { return Import(
+factory Import.fromJson(Map<String, dynamic> json) {return Import(
   vcs: json['vcs'] as String?,
   useLfs: json['use_lfs'] as bool?,
   vcsUrl: json['vcs_url'] as String,
@@ -93,7 +93,7 @@ factory Import.fromJson(Map<String, dynamic> json) { return Import(
   authorsUrl: Uri.parse(json['authors_url'] as String),
   repositoryUrl: Uri.parse(json['repository_url'] as String),
   svnRoot: json['svn_root'] as String?,
-); }
+);}
 
 final String? vcs;
 
@@ -142,7 +142,7 @@ final Uri repositoryUrl;
 
 final String? svnRoot;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'vcs': vcs,
   'use_lfs': ?useLfs,
   'vcs_url': vcsUrl,
@@ -166,15 +166,15 @@ Map<String, dynamic> toJson() { return {
   'authors_url': authorsUrl.toString(),
   'repository_url': repositoryUrl.toString(),
   'svn_root': ?svnRoot,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vcs') && (json['vcs'] == null || json['vcs'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('vcs') && (json['vcs'] == null || json['vcs'] is String) &&
       json.containsKey('vcs_url') && json['vcs_url'] is String &&
       json.containsKey('status') &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('authors_url') && json['authors_url'] is String &&
-      json.containsKey('repository_url') && json['repository_url'] is String; } 
-Import copyWith({String? Function()? vcs, bool? Function()? useLfs, String? vcsUrl, String? Function()? svcRoot, String? Function()? tfvcProject, ImportStatus? status, Omittable<String?>? statusText, Omittable<String?>? failedStep, Omittable<String?>? errorMessage, Omittable<int?>? importPercent, Omittable<int?>? commitCount, Omittable<int?>? pushPercent, bool? Function()? hasLargeFiles, int? Function()? largeFilesSize, int? Function()? largeFilesCount, List<ImportProjectChoices>? Function()? projectChoices, String? Function()? message, Omittable<int?>? authorsCount, Uri? url, Uri? htmlUrl, Uri? authorsUrl, Uri? repositoryUrl, String? Function()? svnRoot, }) { return Import(
+      json.containsKey('repository_url') && json['repository_url'] is String;}
+Import copyWith({String? Function()? vcs, bool? Function()? useLfs, String? vcsUrl, String? Function()? svcRoot, String? Function()? tfvcProject, ImportStatus? status, Omittable<String?>? statusText, Omittable<String?>? failedStep, Omittable<String?>? errorMessage, Omittable<int?>? importPercent, Omittable<int?>? commitCount, Omittable<int?>? pushPercent, bool? Function()? hasLargeFiles, int? Function()? largeFilesSize, int? Function()? largeFilesCount, List<ImportProjectChoices>? Function()? projectChoices, String? Function()? message, Omittable<int?>? authorsCount, Uri? url, Uri? htmlUrl, Uri? authorsUrl, Uri? repositoryUrl, String? Function()? svnRoot, }) {return Import(
   vcs: vcs != null ? vcs() : this.vcs,
   useLfs: useLfs != null ? useLfs() : this.useLfs,
   vcsUrl: vcsUrl ?? this.vcsUrl,
@@ -198,8 +198,8 @@ Import copyWith({String? Function()? vcs, bool? Function()? useLfs, String? vcsU
   authorsUrl: authorsUrl ?? this.authorsUrl,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   svnRoot: svnRoot != null ? svnRoot() : this.svnRoot,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Import &&
           vcs == other.vcs &&
           useLfs == other.useLfs &&
@@ -223,7 +223,7 @@ Import copyWith({String? Function()? vcs, bool? Function()? useLfs, String? vcsU
           htmlUrl == other.htmlUrl &&
           authorsUrl == other.authorsUrl &&
           repositoryUrl == other.repositoryUrl &&
-          svnRoot == other.svnRoot; } 
-@override int get hashCode { return Object.hashAll([vcs, useLfs, vcsUrl, svcRoot, tfvcProject, status, statusText, failedStep, errorMessage, importPercent, commitCount, pushPercent, hasLargeFiles, largeFilesSize, largeFilesCount, Object.hashAll(projectChoices ?? const []), message, authorsCount, url, htmlUrl, authorsUrl, repositoryUrl, svnRoot]); } 
-@override String toString() { return 'Import(vcs: $vcs, useLfs: $useLfs, vcsUrl: $vcsUrl, svcRoot: $svcRoot, tfvcProject: $tfvcProject, status: $status, statusText: $statusText, failedStep: $failedStep, errorMessage: $errorMessage, importPercent: $importPercent, commitCount: $commitCount, pushPercent: $pushPercent, hasLargeFiles: $hasLargeFiles, largeFilesSize: $largeFilesSize, largeFilesCount: $largeFilesCount, projectChoices: $projectChoices, message: $message, authorsCount: $authorsCount, url: $url, htmlUrl: $htmlUrl, authorsUrl: $authorsUrl, repositoryUrl: $repositoryUrl, svnRoot: $svnRoot)'; } 
- }
+          svnRoot == other.svnRoot;}
+@override int get hashCode {return Object.hashAll([vcs, useLfs, vcsUrl, svcRoot, tfvcProject, status, statusText, failedStep, errorMessage, importPercent, commitCount, pushPercent, hasLargeFiles, largeFilesSize, largeFilesCount, Object.hashAll(projectChoices ?? const []), message, authorsCount, url, htmlUrl, authorsUrl, repositoryUrl, svnRoot]);}
+@override String toString() {return 'Import(vcs: $vcs, useLfs: $useLfs, vcsUrl: $vcsUrl, svcRoot: $svcRoot, tfvcProject: $tfvcProject, status: $status, statusText: $statusText, failedStep: $failedStep, errorMessage: $errorMessage, importPercent: $importPercent, commitCount: $commitCount, pushPercent: $pushPercent, hasLargeFiles: $hasLargeFiles, largeFilesSize: $largeFilesSize, largeFilesCount: $largeFilesCount, projectChoices: $projectChoices, message: $message, authorsCount: $authorsCount, url: $url, htmlUrl: $htmlUrl, authorsUrl: $authorsUrl, repositoryUrl: $repositoryUrl, svnRoot: $svnRoot)';}
+}

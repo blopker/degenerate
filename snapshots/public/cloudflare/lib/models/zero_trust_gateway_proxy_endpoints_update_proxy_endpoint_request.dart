@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';@immutable final class ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest({this.ips, this.name, });
 
-factory ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(
+factory ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(
   ips: (json['ips'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] != null ? ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// Specify the list of CIDRs to restrict ingress connections.
 final List<String>? ips;
@@ -13,19 +13,19 @@ final List<String>? ips;
 /// Specify the name of the proxy endpoint.
 final ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ips': ?ips,
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ips', 'name'}.contains(key)); } 
-ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest copyWith({List<String>? Function()? ips, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? Function()? name, }) { return ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ips', 'name'}.contains(key));}
+ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest copyWith({List<String>? Function()? ips, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? Function()? name, }) {return ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(
   ips: ips != null ? ips() : this.ips,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest &&
           listEquals(ips, other.ips) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ips ?? const []), name); } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(ips: $ips, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(Object.hashAll(ips ?? const []), name);}
+@override String toString() {return 'ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(ips: $ips, name: $name)';}
+}

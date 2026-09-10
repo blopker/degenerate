@@ -16,7 +16,7 @@ num toJson() => value;
 /// The details of the D1 database.
 @immutable final class D1DatabaseDetailsResponse {const D1DatabaseDetailsResponse({this.createdAt, this.fileSize, this.jurisdiction = const Omittable.absent(), this.name, this.numTables, this.readReplication, this.uuid, this.version, });
 
-factory D1DatabaseDetailsResponse.fromJson(Map<String, dynamic> json) { return D1DatabaseDetailsResponse(
+factory D1DatabaseDetailsResponse.fromJson(Map<String, dynamic> json) {return D1DatabaseDetailsResponse(
   createdAt: json['created_at'] != null ? D1CreatedAt.fromJson(json['created_at'] as String) : null,
   fileSize: json['file_size'] != null ? D1FileSize.fromJson(json['file_size'] as num) : null,
   jurisdiction: json.containsKey('jurisdiction') ? Omittable(json['jurisdiction'] != null ? D1JurisdictionNullable.fromJson(json['jurisdiction'] as String) : null) : const Omittable.absent(),
@@ -25,7 +25,7 @@ factory D1DatabaseDetailsResponse.fromJson(Map<String, dynamic> json) { return D
   readReplication: json['read_replication'] != null ? D1ReadReplicationDetails.fromJson(json['read_replication'] as Map<String, dynamic>) : null,
   uuid: json['uuid'] != null ? D1DatabaseIdentifier.fromJson(json['uuid'] as String) : null,
   version: json['version'] != null ? D1DatabaseVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 /// Specifies the timestamp the resource was created as an ISO8601 string.
 final D1CreatedAt? createdAt;
@@ -44,7 +44,7 @@ final D1DatabaseIdentifier? uuid;
 
 final D1DatabaseVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (fileSize != null) 'file_size': fileSize?.toJson(),
   if (jurisdiction.isPresent) 'jurisdiction': jurisdiction.value?.toJson(),
@@ -53,9 +53,9 @@ Map<String, dynamic> toJson() { return {
   if (readReplication != null) 'read_replication': readReplication?.toJson(),
   if (uuid != null) 'uuid': uuid?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'file_size', 'jurisdiction', 'name', 'num_tables', 'read_replication', 'uuid', 'version'}.contains(key)); } 
-D1DatabaseDetailsResponse copyWith({D1CreatedAt? Function()? createdAt, D1FileSize? Function()? fileSize, Omittable<D1JurisdictionNullable?>? jurisdiction, D1DatabaseName? Function()? name, D1TableCount? Function()? numTables, D1ReadReplicationDetails? Function()? readReplication, D1DatabaseIdentifier? Function()? uuid, D1DatabaseVersion? Function()? version, }) { return D1DatabaseDetailsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'file_size', 'jurisdiction', 'name', 'num_tables', 'read_replication', 'uuid', 'version'}.contains(key));}
+D1DatabaseDetailsResponse copyWith({D1CreatedAt? Function()? createdAt, D1FileSize? Function()? fileSize, Omittable<D1JurisdictionNullable?>? jurisdiction, D1DatabaseName? Function()? name, D1TableCount? Function()? numTables, D1ReadReplicationDetails? Function()? readReplication, D1DatabaseIdentifier? Function()? uuid, D1DatabaseVersion? Function()? version, }) {return D1DatabaseDetailsResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   fileSize: fileSize != null ? fileSize() : this.fileSize,
   jurisdiction: jurisdiction ?? this.jurisdiction,
@@ -64,8 +64,8 @@ D1DatabaseDetailsResponse copyWith({D1CreatedAt? Function()? createdAt, D1FileSi
   readReplication: readReplication != null ? readReplication() : this.readReplication,
   uuid: uuid != null ? uuid() : this.uuid,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is D1DatabaseDetailsResponse &&
           createdAt == other.createdAt &&
           fileSize == other.fileSize &&
@@ -74,7 +74,7 @@ D1DatabaseDetailsResponse copyWith({D1CreatedAt? Function()? createdAt, D1FileSi
           numTables == other.numTables &&
           readReplication == other.readReplication &&
           uuid == other.uuid &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, fileSize, jurisdiction, name, numTables, readReplication, uuid, version); } 
-@override String toString() { return 'D1DatabaseDetailsResponse(createdAt: $createdAt, fileSize: $fileSize, jurisdiction: $jurisdiction, name: $name, numTables: $numTables, readReplication: $readReplication, uuid: $uuid, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(createdAt, fileSize, jurisdiction, name, numTables, readReplication, uuid, version);}
+@override String toString() {return 'D1DatabaseDetailsResponse(createdAt: $createdAt, fileSize: $fileSize, jurisdiction: $jurisdiction, name: $name, numTables: $numTables, readReplication: $readReplication, uuid: $uuid, version: $version)';}
+}

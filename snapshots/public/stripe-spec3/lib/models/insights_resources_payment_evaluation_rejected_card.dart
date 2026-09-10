@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the address line 1 check.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check {const InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check._(this.value);
 
-factory InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check fail = InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check._('fail');
 
@@ -23,24 +23,24 @@ static const List<InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Chec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check($value)';}
+}
 /// Indicates whether the cardholder provided a postal code and if it matched the cardholder’s billing address.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck {const InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck._(this.value);
 
-factory InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck fail = InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck._('fail');
 
@@ -54,24 +54,24 @@ static const List<InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCod
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck($value)';}
+}
 /// Result of the CVC check.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardCvcCheck {const InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._(this.value);
 
-factory InsightsResourcesPaymentEvaluationRejectedCardCvcCheck.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationRejectedCardCvcCheck.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationRejectedCardCvcCheck fail = InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._('fail');
 
@@ -85,18 +85,18 @@ static const List<InsightsResourcesPaymentEvaluationRejectedCardCvcCheck> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRejectedCardCvcCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCardCvcCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationRejectedCardCvcCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationRejectedCardCvcCheck($value)';}
+}
 /// Card issuer's reason for the network decline.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason._(this.value);
 
-factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String json) {return switch (json) {
   'authentication_failed' => authenticationFailed,
   'do_not_honor' => doNotHonor,
   'expired' => expired,
@@ -111,7 +111,7 @@ factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String jso
   'reported_stolen' => reportedStolen,
   'try_again_later' => tryAgainLater,
   _ => InsightsResourcesPaymentEvaluationRejectedCardReason._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationRejectedCardReason authenticationFailed = InsightsResourcesPaymentEvaluationRejectedCardReason._('authentication_failed');
 
@@ -143,23 +143,23 @@ static const List<InsightsResourcesPaymentEvaluationRejectedCardReason> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRejectedCardReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationRejectedCardReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)';}
+}
 /// Details of an rejected card outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCard {const InsightsResourcesPaymentEvaluationRejectedCard({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, required this.reason, });
 
-factory InsightsResourcesPaymentEvaluationRejectedCard.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationRejectedCard(
+factory InsightsResourcesPaymentEvaluationRejectedCard.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationRejectedCard(
   addressLine1Check: InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check.fromJson(json['address_line1_check'] as String),
   addressPostalCodeCheck: InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String),
   cvcCheck: InsightsResourcesPaymentEvaluationRejectedCardCvcCheck.fromJson(json['cvc_check'] as String),
   reason: InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// Result of the address line 1 check.
 final InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check addressLine1Check;
@@ -173,28 +173,28 @@ final InsightsResourcesPaymentEvaluationRejectedCardCvcCheck cvcCheck;
 /// Card issuer's reason for the network decline.
 final InsightsResourcesPaymentEvaluationRejectedCardReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address_line1_check': addressLine1Check.toJson(),
   'address_postal_code_check': addressPostalCodeCheck.toJson(),
   'cvc_check': cvcCheck.toJson(),
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address_line1_check') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address_line1_check') &&
       json.containsKey('address_postal_code_check') &&
       json.containsKey('cvc_check') &&
-      json.containsKey('reason'); } 
-InsightsResourcesPaymentEvaluationRejectedCard copyWith({InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check? addressLine1Check, InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck? addressPostalCodeCheck, InsightsResourcesPaymentEvaluationRejectedCardCvcCheck? cvcCheck, InsightsResourcesPaymentEvaluationRejectedCardReason? reason, }) { return InsightsResourcesPaymentEvaluationRejectedCard(
+      json.containsKey('reason');}
+InsightsResourcesPaymentEvaluationRejectedCard copyWith({InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check? addressLine1Check, InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck? addressPostalCodeCheck, InsightsResourcesPaymentEvaluationRejectedCardCvcCheck? cvcCheck, InsightsResourcesPaymentEvaluationRejectedCardReason? reason, }) {return InsightsResourcesPaymentEvaluationRejectedCard(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
   cvcCheck: cvcCheck ?? this.cvcCheck,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationRejectedCard &&
           addressLine1Check == other.addressLine1Check &&
           addressPostalCodeCheck == other.addressPostalCodeCheck &&
           cvcCheck == other.cvcCheck &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck, reason); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCard(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck, reason);}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationRejectedCard(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck, reason: $reason)';}
+}

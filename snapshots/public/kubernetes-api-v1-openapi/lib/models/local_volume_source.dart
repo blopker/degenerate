@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Local represents directly-attached storage with node affinity
 @immutable final class LocalVolumeSource {const LocalVolumeSource({required this.path, this.fsType, });
 
-factory LocalVolumeSource.fromJson(Map<String, dynamic> json) { return LocalVolumeSource(
+factory LocalVolumeSource.fromJson(Map<String, dynamic> json) {return LocalVolumeSource(
   fsType: json['fsType'] as String?,
   path: json['path'] as String,
-); }
+);}
 
 /// fsType is the filesystem type to mount. It applies only when the Path is a block device. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default value is to auto-select a filesystem if unspecified.
 final String? fsType;
@@ -14,19 +14,19 @@ final String? fsType;
 /// path of the full path to the volume on the node. It can be either a directory or block device (disk, partition, ...).
 final String path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'path': path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-LocalVolumeSource copyWith({String? Function()? fsType, String? path, }) { return LocalVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String;}
+LocalVolumeSource copyWith({String? Function()? fsType, String? path, }) {return LocalVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   path: path ?? this.path,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LocalVolumeSource &&
           fsType == other.fsType &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(fsType, path); } 
-@override String toString() { return 'LocalVolumeSource(fsType: $fsType, path: $path)'; } 
- }
+          path == other.path;}
+@override int get hashCode {return Object.hash(fsType, path);}
+@override String toString() {return 'LocalVolumeSource(fsType: $fsType, path: $path)';}
+}

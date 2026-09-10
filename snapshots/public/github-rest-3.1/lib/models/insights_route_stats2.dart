@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsRouteStats2 {const InsightsRouteStats2({this.httpMethod, this.apiRoute, this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp = const Omittable.absent(), this.lastRequestTimestamp, });
 
-factory InsightsRouteStats2.fromJson(Map<String, dynamic> json) { return InsightsRouteStats2(
+factory InsightsRouteStats2.fromJson(Map<String, dynamic> json) {return InsightsRouteStats2(
   httpMethod: json['http_method'] as String?,
   apiRoute: json['api_route'] as String?,
   totalRequestCount: json['total_request_count'] != null ? (json['total_request_count'] as num).toInt() : null,
   rateLimitedRequestCount: json['rate_limited_request_count'] != null ? (json['rate_limited_request_count'] as num).toInt() : null,
   lastRateLimitedTimestamp: json.containsKey('last_rate_limited_timestamp') ? Omittable(json['last_rate_limited_timestamp'] as String?) : const Omittable.absent(),
   lastRequestTimestamp: json['last_request_timestamp'] as String?,
-); }
+);}
 
 /// The HTTP method
 final String? httpMethod;
@@ -27,31 +27,31 @@ final Omittable<String?> lastRateLimitedTimestamp;
 
 final String? lastRequestTimestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'http_method': ?httpMethod,
   'api_route': ?apiRoute,
   'total_request_count': ?totalRequestCount,
   'rate_limited_request_count': ?rateLimitedRequestCount,
   if (lastRateLimitedTimestamp.isPresent) 'last_rate_limited_timestamp': lastRateLimitedTimestamp.value,
   'last_request_timestamp': ?lastRequestTimestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'http_method', 'api_route', 'total_request_count', 'rate_limited_request_count', 'last_rate_limited_timestamp', 'last_request_timestamp'}.contains(key)); } 
-InsightsRouteStats2 copyWith({String? Function()? httpMethod, String? Function()? apiRoute, int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, Omittable<String?>? lastRateLimitedTimestamp, String? Function()? lastRequestTimestamp, }) { return InsightsRouteStats2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'http_method', 'api_route', 'total_request_count', 'rate_limited_request_count', 'last_rate_limited_timestamp', 'last_request_timestamp'}.contains(key));}
+InsightsRouteStats2 copyWith({String? Function()? httpMethod, String? Function()? apiRoute, int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, Omittable<String?>? lastRateLimitedTimestamp, String? Function()? lastRequestTimestamp, }) {return InsightsRouteStats2(
   httpMethod: httpMethod != null ? httpMethod() : this.httpMethod,
   apiRoute: apiRoute != null ? apiRoute() : this.apiRoute,
   totalRequestCount: totalRequestCount != null ? totalRequestCount() : this.totalRequestCount,
   rateLimitedRequestCount: rateLimitedRequestCount != null ? rateLimitedRequestCount() : this.rateLimitedRequestCount,
   lastRateLimitedTimestamp: lastRateLimitedTimestamp ?? this.lastRateLimitedTimestamp,
   lastRequestTimestamp: lastRequestTimestamp != null ? lastRequestTimestamp() : this.lastRequestTimestamp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsRouteStats2 &&
           httpMethod == other.httpMethod &&
           apiRoute == other.apiRoute &&
           totalRequestCount == other.totalRequestCount &&
           rateLimitedRequestCount == other.rateLimitedRequestCount &&
           lastRateLimitedTimestamp == other.lastRateLimitedTimestamp &&
-          lastRequestTimestamp == other.lastRequestTimestamp; } 
-@override int get hashCode { return Object.hash(httpMethod, apiRoute, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp); } 
-@override String toString() { return 'InsightsRouteStats2(httpMethod: $httpMethod, apiRoute: $apiRoute, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)'; } 
- }
+          lastRequestTimestamp == other.lastRequestTimestamp;}
+@override int get hashCode {return Object.hash(httpMethod, apiRoute, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp);}
+@override String toString() {return 'InsightsRouteStats2(httpMethod: $httpMethod, apiRoute: $apiRoute, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)';}
+}

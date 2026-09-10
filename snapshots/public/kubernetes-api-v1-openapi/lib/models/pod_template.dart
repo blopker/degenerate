@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'pod_template_spec.dart';/// PodTemplate describes a template for creating copies of a predefined pod.
 @immutable final class PodTemplate {const PodTemplate({this.apiVersion, this.kind, this.metadata, this.template, });
 
-factory PodTemplate.fromJson(Map<String, dynamic> json) { return PodTemplate(
+factory PodTemplate.fromJson(Map<String, dynamic> json) {return PodTemplate(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   template: json['template'] != null ? PodTemplateSpec.fromJson(json['template'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -22,25 +22,25 @@ final ObjectMeta? metadata;
 /// Template defines the pods that will be created from this pod template. https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 final PodTemplateSpec? template;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (template != null) 'template': template?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'template'}.contains(key)); } 
-PodTemplate copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, PodTemplateSpec? Function()? template, }) { return PodTemplate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'template'}.contains(key));}
+PodTemplate copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, PodTemplateSpec? Function()? template, }) {return PodTemplate(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
   template: template != null ? template() : this.template,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PodTemplate &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, template); } 
-@override String toString() { return 'PodTemplate(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, template: $template)'; } 
- }
+          template == other.template;}
+@override int get hashCode {return Object.hash(apiVersion, kind, metadata, template);}
+@override String toString() {return 'PodTemplate(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, template: $template)';}
+}

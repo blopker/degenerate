@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth.dart';@immutable final class NscInterconnectCreateGcpPartnerBody {const NscInterconnectCreateGcpPartnerBody({required this.account, required this.type, required this.bandwidth, required this.pairingKey, });
 
-factory NscInterconnectCreateGcpPartnerBody.fromJson(Map<String, dynamic> json) { return NscInterconnectCreateGcpPartnerBody(
+factory NscInterconnectCreateGcpPartnerBody.fromJson(Map<String, dynamic> json) {return NscInterconnectCreateGcpPartnerBody(
   account: json['account'] as String,
   type: json['type'] as String,
   bandwidth: Bandwidth.fromJson(json['bandwidth'] as String),
   pairingKey: json['pairing_key'] as String,
-); }
+);}
 
 final String account;
 
@@ -19,28 +19,28 @@ final Bandwidth bandwidth;
 /// Pairing key provided by GCP
 final String pairingKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'type': type,
   'bandwidth': bandwidth.toJson(),
   'pairing_key': pairingKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('bandwidth') &&
-      json.containsKey('pairing_key') && json['pairing_key'] is String; } 
-NscInterconnectCreateGcpPartnerBody copyWith({String? account, String? type, Bandwidth? bandwidth, String? pairingKey, }) { return NscInterconnectCreateGcpPartnerBody(
+      json.containsKey('pairing_key') && json['pairing_key'] is String;}
+NscInterconnectCreateGcpPartnerBody copyWith({String? account, String? type, Bandwidth? bandwidth, String? pairingKey, }) {return NscInterconnectCreateGcpPartnerBody(
   account: account ?? this.account,
   type: type ?? this.type,
   bandwidth: bandwidth ?? this.bandwidth,
   pairingKey: pairingKey ?? this.pairingKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscInterconnectCreateGcpPartnerBody &&
           account == other.account &&
           type == other.type &&
           bandwidth == other.bandwidth &&
-          pairingKey == other.pairingKey; } 
-@override int get hashCode { return Object.hash(account, type, bandwidth, pairingKey); } 
-@override String toString() { return 'NscInterconnectCreateGcpPartnerBody(account: $account, type: $type, bandwidth: $bandwidth, pairingKey: $pairingKey)'; } 
- }
+          pairingKey == other.pairingKey;}
+@override int get hashCode {return Object.hash(account, type, bandwidth, pairingKey);}
+@override String toString() {return 'NscInterconnectCreateGcpPartnerBody(account: $account, type: $type, bandwidth: $bandwidth, pairingKey: $pairingKey)';}
+}

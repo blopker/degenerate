@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_asns_rel_response_result.dart';@immutable final class RadarGetAsnsRelResponse {const RadarGetAsnsRelResponse({required this.result, required this.success, });
 
-factory RadarGetAsnsRelResponse.fromJson(Map<String, dynamic> json) { return RadarGetAsnsRelResponse(
+factory RadarGetAsnsRelResponse.fromJson(Map<String, dynamic> json) {return RadarGetAsnsRelResponse(
   result: RadarGetAsnsRelResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAsnsRelResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAsnsRelResponse copyWith({RadarGetAsnsRelResponseResult? result, bool? success, }) { return RadarGetAsnsRelResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAsnsRelResponse copyWith({RadarGetAsnsRelResponseResult? result, bool? success, }) {return RadarGetAsnsRelResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAsnsRelResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetAsnsRelResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetAsnsRelResponse(result: $result, success: $success)';}
+}

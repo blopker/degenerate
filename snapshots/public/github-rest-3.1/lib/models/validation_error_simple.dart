@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Validation Error Simple
 @immutable final class ValidationErrorSimple {const ValidationErrorSimple({required this.message, required this.documentationUrl, this.errors, });
 
-factory ValidationErrorSimple.fromJson(Map<String, dynamic> json) { return ValidationErrorSimple(
+factory ValidationErrorSimple.fromJson(Map<String, dynamic> json) {return ValidationErrorSimple(
   message: json['message'] as String,
   documentationUrl: json['documentation_url'] as String,
   errors: (json['errors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final String message;
 
@@ -15,23 +15,23 @@ final String documentationUrl;
 
 final List<String>? errors;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
   'documentation_url': documentationUrl,
   'errors': ?errors,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
-      json.containsKey('documentation_url') && json['documentation_url'] is String; } 
-ValidationErrorSimple copyWith({String? message, String? documentationUrl, List<String>? Function()? errors, }) { return ValidationErrorSimple(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String &&
+      json.containsKey('documentation_url') && json['documentation_url'] is String;}
+ValidationErrorSimple copyWith({String? message, String? documentationUrl, List<String>? Function()? errors, }) {return ValidationErrorSimple(
   message: message ?? this.message,
   documentationUrl: documentationUrl ?? this.documentationUrl,
   errors: errors != null ? errors() : this.errors,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ValidationErrorSimple &&
           message == other.message &&
           documentationUrl == other.documentationUrl &&
-          listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hash(message, documentationUrl, Object.hashAll(errors ?? const [])); } 
-@override String toString() { return 'ValidationErrorSimple(message: $message, documentationUrl: $documentationUrl, errors: $errors)'; } 
- }
+          listEquals(errors, other.errors);}
+@override int get hashCode {return Object.hash(message, documentationUrl, Object.hashAll(errors ?? const []));}
+@override String toString() {return 'ValidationErrorSimple(message: $message, documentationUrl: $documentationUrl, errors: $errors)';}
+}

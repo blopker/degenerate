@@ -6,12 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration fo
 /// 
 @immutable final class RealtimeSessionCreateRequestTurnDetection {const RealtimeSessionCreateRequestTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
 
-factory RealtimeSessionCreateRequestTurnDetection.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestTurnDetection(
+factory RealtimeSessionCreateRequestTurnDetection.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestTurnDetection(
   type: json['type'] as String?,
   threshold: json['threshold'] != null ? (json['threshold'] as num).toDouble() : null,
   prefixPaddingMs: json['prefix_padding_ms'] != null ? (json['prefix_padding_ms'] as num).toInt() : null,
   silenceDurationMs: json['silence_duration_ms'] != null ? (json['silence_duration_ms'] as num).toInt() : null,
-); }
+);}
 
 /// Type of turn detection, only `server_vad` is currently supported.
 /// 
@@ -34,25 +34,25 @@ final int? prefixPaddingMs;
 /// 
 final int? silenceDurationMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   'threshold': ?threshold,
   'prefix_padding_ms': ?prefixPaddingMs,
   'silence_duration_ms': ?silenceDurationMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'threshold', 'prefix_padding_ms', 'silence_duration_ms'}.contains(key)); } 
-RealtimeSessionCreateRequestTurnDetection copyWith({String? Function()? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, }) { return RealtimeSessionCreateRequestTurnDetection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'threshold', 'prefix_padding_ms', 'silence_duration_ms'}.contains(key));}
+RealtimeSessionCreateRequestTurnDetection copyWith({String? Function()? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, }) {return RealtimeSessionCreateRequestTurnDetection(
   type: type != null ? type() : this.type,
   threshold: threshold != null ? threshold() : this.threshold,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,
   silenceDurationMs: silenceDurationMs != null ? silenceDurationMs() : this.silenceDurationMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionCreateRequestTurnDetection &&
           type == other.type &&
           threshold == other.threshold &&
           prefixPaddingMs == other.prefixPaddingMs &&
-          silenceDurationMs == other.silenceDurationMs; } 
-@override int get hashCode { return Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs); } 
-@override String toString() { return 'RealtimeSessionCreateRequestTurnDetection(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs)'; } 
- }
+          silenceDurationMs == other.silenceDurationMs;}
+@override int get hashCode {return Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs);}
+@override String toString() {return 'RealtimeSessionCreateRequestTurnDetection(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs)';}
+}

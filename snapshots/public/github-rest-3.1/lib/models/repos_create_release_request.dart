@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
 @immutable final class ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest._(this.value);
 
-factory ReposCreateReleaseRequestMakeLatest.fromJson(String json) { return switch (json) {
+factory ReposCreateReleaseRequestMakeLatest.fromJson(String json) {return switch (json) {
   'true' => $true,
   'false' => $false,
   'legacy' => legacy,
   _ => ReposCreateReleaseRequestMakeLatest._(json),
-}; }
+};}
 
 static const ReposCreateReleaseRequestMakeLatest $true = ReposCreateReleaseRequestMakeLatest._('true');
 
@@ -20,17 +20,17 @@ static const List<ReposCreateReleaseRequestMakeLatest> values = [$true, $false, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateReleaseRequestMakeLatest && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateReleaseRequestMakeLatest($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateReleaseRequestMakeLatest && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateReleaseRequestMakeLatest($value)';}
+}
 @immutable final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft, this.prerelease, this.discussionCategoryName, this.generateReleaseNotes, this.makeLatest, });
 
-factory ReposCreateReleaseRequest.fromJson(Map<String, dynamic> json) { return ReposCreateReleaseRequest(
+factory ReposCreateReleaseRequest.fromJson(Map<String, dynamic> json) {return ReposCreateReleaseRequest(
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String?,
   name: json['name'] as String?,
@@ -40,7 +40,7 @@ factory ReposCreateReleaseRequest.fromJson(Map<String, dynamic> json) { return R
   discussionCategoryName: json['discussion_category_name'] as String?,
   generateReleaseNotes: json['generate_release_notes'] as bool?,
   makeLatest: json['make_latest'] != null ? ReposCreateReleaseRequestMakeLatest.fromJson(json['make_latest'] as String) : null,
-); }
+);}
 
 /// The name of the tag.
 final String tagName;
@@ -70,14 +70,14 @@ final bool? generateReleaseNotes;
 final ReposCreateReleaseRequestMakeLatest? makeLatest;
 
 /// The value with the schema default applied when absent.
-bool get draftOrDefault { return draft ?? false; } 
+bool get draftOrDefault {return draft ?? false;}
 /// The value with the schema default applied when absent.
-bool get prereleaseOrDefault { return prerelease ?? false; } 
+bool get prereleaseOrDefault {return prerelease ?? false;}
 /// The value with the schema default applied when absent.
-bool get generateReleaseNotesOrDefault { return generateReleaseNotes ?? false; } 
+bool get generateReleaseNotesOrDefault {return generateReleaseNotes ?? false;}
 /// The value with the schema default applied when absent.
-ReposCreateReleaseRequestMakeLatest get makeLatestOrDefault { return makeLatest ?? ReposCreateReleaseRequestMakeLatest.fromJson('true'); } 
-Map<String, dynamic> toJson() { return {
+ReposCreateReleaseRequestMakeLatest get makeLatestOrDefault {return makeLatest ?? ReposCreateReleaseRequestMakeLatest.fromJson('true');}
+Map<String, dynamic> toJson() {return {
   'tag_name': tagName,
   'target_commitish': ?targetCommitish,
   'name': ?name,
@@ -87,9 +87,9 @@ Map<String, dynamic> toJson() { return {
   'discussion_category_name': ?discussionCategoryName,
   'generate_release_notes': ?generateReleaseNotes,
   if (makeLatest != null) 'make_latest': makeLatest?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag_name') && json['tag_name'] is String; } 
-ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? name, String? Function()? body, bool? Function()? draft, bool? Function()? prerelease, String? Function()? discussionCategoryName, bool? Function()? generateReleaseNotes, ReposCreateReleaseRequestMakeLatest? Function()? makeLatest, }) { return ReposCreateReleaseRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tag_name') && json['tag_name'] is String;}
+ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? name, String? Function()? body, bool? Function()? draft, bool? Function()? prerelease, String? Function()? discussionCategoryName, bool? Function()? generateReleaseNotes, ReposCreateReleaseRequestMakeLatest? Function()? makeLatest, }) {return ReposCreateReleaseRequest(
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   name: name != null ? name() : this.name,
@@ -99,8 +99,8 @@ ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetC
   discussionCategoryName: discussionCategoryName != null ? discussionCategoryName() : this.discussionCategoryName,
   generateReleaseNotes: generateReleaseNotes != null ? generateReleaseNotes() : this.generateReleaseNotes,
   makeLatest: makeLatest != null ? makeLatest() : this.makeLatest,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateReleaseRequest &&
           tagName == other.tagName &&
           targetCommitish == other.targetCommitish &&
@@ -110,7 +110,7 @@ ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetC
           prerelease == other.prerelease &&
           discussionCategoryName == other.discussionCategoryName &&
           generateReleaseNotes == other.generateReleaseNotes &&
-          makeLatest == other.makeLatest; } 
-@override int get hashCode { return Object.hash(tagName, targetCommitish, name, body, draft, prerelease, discussionCategoryName, generateReleaseNotes, makeLatest); } 
-@override String toString() { return 'ReposCreateReleaseRequest(tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, discussionCategoryName: $discussionCategoryName, generateReleaseNotes: $generateReleaseNotes, makeLatest: $makeLatest)'; } 
- }
+          makeLatest == other.makeLatest;}
+@override int get hashCode {return Object.hash(tagName, targetCommitish, name, body, draft, prerelease, discussionCategoryName, generateReleaseNotes, makeLatest);}
+@override String toString() {return 'ReposCreateReleaseRequest(tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, discussionCategoryName: $discussionCategoryName, generateReleaseNotes: $generateReleaseNotes, makeLatest: $makeLatest)';}
+}

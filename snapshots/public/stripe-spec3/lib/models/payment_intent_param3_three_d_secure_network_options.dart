@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param3_three_d_secure_network_options_cartes_bancaires.dart';@immutable final class PaymentIntentParam3ThreeDSecureNetworkOptions {const PaymentIntentParam3ThreeDSecureNetworkOptions({this.cartesBancaires});
 
-factory PaymentIntentParam3ThreeDSecureNetworkOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentParam3ThreeDSecureNetworkOptions(
+factory PaymentIntentParam3ThreeDSecureNetworkOptions.fromJson(Map<String, dynamic> json) {return PaymentIntentParam3ThreeDSecureNetworkOptions(
   cartesBancaires: json['cartes_bancaires'] != null ? PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires? cartesBancaires;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cartesBancaires != null) 'cartes_bancaires': cartesBancaires?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cartes_bancaires'}.contains(key)); } 
-PaymentIntentParam3ThreeDSecureNetworkOptions copyWith({PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires? Function()? cartesBancaires}) { return PaymentIntentParam3ThreeDSecureNetworkOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cartes_bancaires'}.contains(key));}
+PaymentIntentParam3ThreeDSecureNetworkOptions copyWith({PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires? Function()? cartesBancaires}) {return PaymentIntentParam3ThreeDSecureNetworkOptions(
   cartesBancaires: cartesBancaires != null ? cartesBancaires() : this.cartesBancaires,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentParam3ThreeDSecureNetworkOptions &&
-          cartesBancaires == other.cartesBancaires; } 
-@override int get hashCode { return cartesBancaires.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3ThreeDSecureNetworkOptions(cartesBancaires: $cartesBancaires)'; } 
- }
+          cartesBancaires == other.cartesBancaires;}
+@override int get hashCode {return cartesBancaires.hashCode;}
+@override String toString() {return 'PaymentIntentParam3ThreeDSecureNetworkOptions(cartesBancaires: $cartesBancaires)';}
+}

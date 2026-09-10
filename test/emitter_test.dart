@@ -1956,7 +1956,7 @@ void main() {
       final source = emitRaw(library);
 
       expect(source, contains('ApiResult<String,'));
-      expect(source, contains('return response.body;'));
+      expect(_formatOrFail(source), contains('return response.body;'));
     });
   });
 
@@ -2113,9 +2113,9 @@ void main() {
       expect(source, contains('// TODO: Unsupported non-JSON response schema'));
       expect(
         source,
-        contains(
-          "throw UnsupportedError('Cannot decode text/plain response into PlainObject')",
-        ),
+        contains(RegExp(
+          r"throw\s+UnsupportedError\('Cannot decode text/plain response into PlainObject'\)",
+        )),
       );
     });
 
@@ -2157,7 +2157,7 @@ void main() {
       final source = emitRaw(library);
 
       expect(source, contains('// TODO: Unsupported non-JSON response schema'));
-      expect(source, contains('return null;'));
+      expect(_formatOrFail(source), contains('return null;'));
     });
 
     test('emits multipart/form-data body from object schema', () {

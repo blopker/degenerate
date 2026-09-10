@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device used for tokenization.
 @immutable final class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType._(this.value);
 
-factory IssuingNetworkTokenDeviceType.fromJson(String json) { return switch (json) {
+factory IssuingNetworkTokenDeviceType.fromJson(String json) {return switch (json) {
   'other' => $other,
   'phone' => phone,
   'watch' => watch,
   _ => IssuingNetworkTokenDeviceType._(json),
-}; }
+};}
 
 static const IssuingNetworkTokenDeviceType $other = IssuingNetworkTokenDeviceType._('other');
 
@@ -20,25 +20,25 @@ static const List<IssuingNetworkTokenDeviceType> values = [$other, phone, watch]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingNetworkTokenDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingNetworkTokenDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingNetworkTokenDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingNetworkTokenDeviceType($value)';}
+}
 /// 
 @immutable final class IssuingNetworkTokenDevice {const IssuingNetworkTokenDevice({this.deviceFingerprint, this.ipAddress, this.location, this.name, this.phoneNumber, this.type, });
 
-factory IssuingNetworkTokenDevice.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenDevice(
+factory IssuingNetworkTokenDevice.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenDevice(
   deviceFingerprint: json['device_fingerprint'] as String?,
   ipAddress: json['ip_address'] as String?,
   location: json['location'] as String?,
   name: json['name'] as String?,
   phoneNumber: json['phone_number'] as String?,
   type: json['type'] != null ? IssuingNetworkTokenDeviceType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// An obfuscated ID derived from the device ID.
 final String? deviceFingerprint;
@@ -58,31 +58,31 @@ final String? phoneNumber;
 /// The type of device used for tokenization.
 final IssuingNetworkTokenDeviceType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'device_fingerprint': ?deviceFingerprint,
   'ip_address': ?ipAddress,
   'location': ?location,
   'name': ?name,
   'phone_number': ?phoneNumber,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_fingerprint', 'ip_address', 'location', 'name', 'phone_number', 'type'}.contains(key)); } 
-IssuingNetworkTokenDevice copyWith({String? Function()? deviceFingerprint, String? Function()? ipAddress, String? Function()? location, String? Function()? name, String? Function()? phoneNumber, IssuingNetworkTokenDeviceType? Function()? type, }) { return IssuingNetworkTokenDevice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'device_fingerprint', 'ip_address', 'location', 'name', 'phone_number', 'type'}.contains(key));}
+IssuingNetworkTokenDevice copyWith({String? Function()? deviceFingerprint, String? Function()? ipAddress, String? Function()? location, String? Function()? name, String? Function()? phoneNumber, IssuingNetworkTokenDeviceType? Function()? type, }) {return IssuingNetworkTokenDevice(
   deviceFingerprint: deviceFingerprint != null ? deviceFingerprint() : this.deviceFingerprint,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   location: location != null ? location() : this.location,
   name: name != null ? name() : this.name,
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingNetworkTokenDevice &&
           deviceFingerprint == other.deviceFingerprint &&
           ipAddress == other.ipAddress &&
           location == other.location &&
           name == other.name &&
           phoneNumber == other.phoneNumber &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(deviceFingerprint, ipAddress, location, name, phoneNumber, type); } 
-@override String toString() { return 'IssuingNetworkTokenDevice(deviceFingerprint: $deviceFingerprint, ipAddress: $ipAddress, location: $location, name: $name, phoneNumber: $phoneNumber, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(deviceFingerprint, ipAddress, location, name, phoneNumber, type);}
+@override String toString() {return 'IssuingNetworkTokenDevice(deviceFingerprint: $deviceFingerprint, ipAddress: $ipAddress, location: $location, name: $name, phoneNumber: $phoneNumber, type: $type)';}
+}

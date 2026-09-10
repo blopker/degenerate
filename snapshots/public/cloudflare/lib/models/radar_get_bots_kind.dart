@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot kind.
 @immutable final class RadarGetBotsKind {const RadarGetBotsKind._(this.value);
 
-factory RadarGetBotsKind.fromJson(String json) { return switch (json) {
+factory RadarGetBotsKind.fromJson(String json) {return switch (json) {
   'AGENT' => agent,
   'BOT' => bot,
   _ => RadarGetBotsKind._(json),
-}; }
+};}
 
 static const RadarGetBotsKind agent = RadarGetBotsKind._('AGENT');
 
@@ -17,11 +17,11 @@ static const List<RadarGetBotsKind> values = [agent, bot];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBotsKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBotsKind($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetBotsKind && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetBotsKind($value)';}
+}

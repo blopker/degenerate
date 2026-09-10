@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_service_account.dart';import 'project_user.dart';/// `user` or `service_account`
 @immutable final class Key3OwnerType {const Key3OwnerType._(this.value);
 
-factory Key3OwnerType.fromJson(String json) { return switch (json) {
+factory Key3OwnerType.fromJson(String json) {return switch (json) {
   'user' => user,
   'service_account' => serviceAccount,
   _ => Key3OwnerType._(json),
-}; }
+};}
 
 static const Key3OwnerType user = Key3OwnerType._('user');
 
@@ -17,21 +17,21 @@ static const List<Key3OwnerType> values = [user, serviceAccount];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Key3OwnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Key3OwnerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Key3OwnerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Key3OwnerType($value)';}
+}
 @immutable final class Key3Owner {const Key3Owner({this.type, this.user, this.serviceAccount, });
 
-factory Key3Owner.fromJson(Map<String, dynamic> json) { return Key3Owner(
+factory Key3Owner.fromJson(Map<String, dynamic> json) {return Key3Owner(
   type: json['type'] != null ? Key3OwnerType.fromJson(json['type'] as String) : null,
   user: json['user'] != null ? ProjectUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   serviceAccount: json['service_account'] != null ? ProjectServiceAccount.fromJson(json['service_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// `user` or `service_account`
 final Key3OwnerType? type;
@@ -40,22 +40,22 @@ final ProjectUser? user;
 
 final ProjectServiceAccount? serviceAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (user != null) 'user': user?.toJson(),
   if (serviceAccount != null) 'service_account': serviceAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'user', 'service_account'}.contains(key)); } 
-Key3Owner copyWith({Key3OwnerType? Function()? type, ProjectUser? Function()? user, ProjectServiceAccount? Function()? serviceAccount, }) { return Key3Owner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'user', 'service_account'}.contains(key));}
+Key3Owner copyWith({Key3OwnerType? Function()? type, ProjectUser? Function()? user, ProjectServiceAccount? Function()? serviceAccount, }) {return Key3Owner(
   type: type != null ? type() : this.type,
   user: user != null ? user() : this.user,
   serviceAccount: serviceAccount != null ? serviceAccount() : this.serviceAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Key3Owner &&
           type == other.type &&
           user == other.user &&
-          serviceAccount == other.serviceAccount; } 
-@override int get hashCode { return Object.hash(type, user, serviceAccount); } 
-@override String toString() { return 'Key3Owner(type: $type, user: $user, serviceAccount: $serviceAccount)'; } 
- }
+          serviceAccount == other.serviceAccount;}
+@override int get hashCode {return Object.hash(type, user, serviceAccount);}
+@override String toString() {return 'Key3Owner(type: $type, user: $user, serviceAccount: $serviceAccount)';}
+}

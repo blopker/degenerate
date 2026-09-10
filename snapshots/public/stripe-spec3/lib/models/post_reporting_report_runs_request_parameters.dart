@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostReportingReportRunsRequestParametersReportingCategory {const PostReportingReportRunsRequestParametersReportingCategory._(this.value);
 
-factory PostReportingReportRunsRequestParametersReportingCategory.fromJson(String json) { return switch (json) {
+factory PostReportingReportRunsRequestParametersReportingCategory.fromJson(String json) {return switch (json) {
   'advance' => advance,
   'advance_funding' => advanceFunding,
   'anticipation_repayment' => anticipationRepayment,
@@ -41,7 +41,7 @@ factory PostReportingReportRunsRequestParametersReportingCategory.fromJson(Strin
   'transfer_reversal' => transferReversal,
   'unreconciled_customer_funds' => unreconciledCustomerFunds,
   _ => PostReportingReportRunsRequestParametersReportingCategory._(json),
-}; }
+};}
 
 static const PostReportingReportRunsRequestParametersReportingCategory advance = PostReportingReportRunsRequestParametersReportingCategory._('advance');
 
@@ -121,17 +121,17 @@ static const List<PostReportingReportRunsRequestParametersReportingCategory> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostReportingReportRunsRequestParametersReportingCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostReportingReportRunsRequestParametersReportingCategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostReportingReportRunsRequestParametersReportingCategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostReportingReportRunsRequestParametersReportingCategory($value)';}
+}
 @immutable final class PostReportingReportRunsRequestParametersTimezone {const PostReportingReportRunsRequestParametersTimezone._(this.value);
 
-factory PostReportingReportRunsRequestParametersTimezone.fromJson(String json) { return switch (json) {
+factory PostReportingReportRunsRequestParametersTimezone.fromJson(String json) {return switch (json) {
   'Africa/Abidjan' => africaAbidjan,
   'Africa/Accra' => africaAccra,
   'Africa/Addis_Ababa' => africaAddisAbaba,
@@ -732,7 +732,7 @@ factory PostReportingReportRunsRequestParametersTimezone.fromJson(String json) {
   'WET' => wet,
   'Zulu' => zulu,
   _ => PostReportingReportRunsRequestParametersTimezone._(json),
-}; }
+};}
 
 static const PostReportingReportRunsRequestParametersTimezone africaAbidjan = PostReportingReportRunsRequestParametersTimezone._('Africa/Abidjan');
 
@@ -1936,18 +1936,18 @@ static const List<PostReportingReportRunsRequestParametersTimezone> values = [af
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostReportingReportRunsRequestParametersTimezone && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostReportingReportRunsRequestParametersTimezone($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostReportingReportRunsRequestParametersTimezone && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostReportingReportRunsRequestParametersTimezone($value)';}
+}
 /// Parameters specifying how the report should be run. Different Report Types have different required and optional parameters, listed in the [API Access to Reports](https://docs.stripe.com/reporting/statements/api) documentation.
 @immutable final class PostReportingReportRunsRequestParameters {const PostReportingReportRunsRequestParameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });
 
-factory PostReportingReportRunsRequestParameters.fromJson(Map<String, dynamic> json) { return PostReportingReportRunsRequestParameters(
+factory PostReportingReportRunsRequestParameters.fromJson(Map<String, dynamic> json) {return PostReportingReportRunsRequestParameters(
   columns: (json['columns'] as List<dynamic>?)?.map((e) => e as String).toList(),
   connectedAccount: json['connected_account'] as String?,
   currency: json['currency'] as String?,
@@ -1956,7 +1956,7 @@ factory PostReportingReportRunsRequestParameters.fromJson(Map<String, dynamic> j
   payout: json['payout'] as String?,
   reportingCategory: json['reporting_category'] != null ? PostReportingReportRunsRequestParametersReportingCategory.fromJson(json['reporting_category'] as String) : null,
   timezone: json['timezone'] != null ? PostReportingReportRunsRequestParametersTimezone.fromJson(json['timezone'] as String) : null,
-); }
+);}
 
 final List<String>? columns;
 
@@ -1974,7 +1974,7 @@ final PostReportingReportRunsRequestParametersReportingCategory? reportingCatego
 
 final PostReportingReportRunsRequestParametersTimezone? timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'columns': ?columns,
   'connected_account': ?connectedAccount,
   'currency': ?currency,
@@ -1983,9 +1983,9 @@ Map<String, dynamic> toJson() { return {
   'payout': ?payout,
   if (reportingCategory != null) 'reporting_category': reportingCategory?.toJson(),
   if (timezone != null) 'timezone': timezone?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'columns', 'connected_account', 'currency', 'interval_end', 'interval_start', 'payout', 'reporting_category', 'timezone'}.contains(key)); } 
-PostReportingReportRunsRequestParameters copyWith({List<String>? Function()? columns, String? Function()? connectedAccount, String? Function()? currency, int? Function()? intervalEnd, int? Function()? intervalStart, String? Function()? payout, PostReportingReportRunsRequestParametersReportingCategory? Function()? reportingCategory, PostReportingReportRunsRequestParametersTimezone? Function()? timezone, }) { return PostReportingReportRunsRequestParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'columns', 'connected_account', 'currency', 'interval_end', 'interval_start', 'payout', 'reporting_category', 'timezone'}.contains(key));}
+PostReportingReportRunsRequestParameters copyWith({List<String>? Function()? columns, String? Function()? connectedAccount, String? Function()? currency, int? Function()? intervalEnd, int? Function()? intervalStart, String? Function()? payout, PostReportingReportRunsRequestParametersReportingCategory? Function()? reportingCategory, PostReportingReportRunsRequestParametersTimezone? Function()? timezone, }) {return PostReportingReportRunsRequestParameters(
   columns: columns != null ? columns() : this.columns,
   connectedAccount: connectedAccount != null ? connectedAccount() : this.connectedAccount,
   currency: currency != null ? currency() : this.currency,
@@ -1994,8 +1994,8 @@ PostReportingReportRunsRequestParameters copyWith({List<String>? Function()? col
   payout: payout != null ? payout() : this.payout,
   reportingCategory: reportingCategory != null ? reportingCategory() : this.reportingCategory,
   timezone: timezone != null ? timezone() : this.timezone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostReportingReportRunsRequestParameters &&
           listEquals(columns, other.columns) &&
           connectedAccount == other.connectedAccount &&
@@ -2004,7 +2004,7 @@ PostReportingReportRunsRequestParameters copyWith({List<String>? Function()? col
           intervalStart == other.intervalStart &&
           payout == other.payout &&
           reportingCategory == other.reportingCategory &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(Object.hashAll(columns ?? const []), connectedAccount, currency, intervalEnd, intervalStart, payout, reportingCategory, timezone); } 
-@override String toString() { return 'PostReportingReportRunsRequestParameters(columns: $columns, connectedAccount: $connectedAccount, currency: $currency, intervalEnd: $intervalEnd, intervalStart: $intervalStart, payout: $payout, reportingCategory: $reportingCategory, timezone: $timezone)'; } 
- }
+          timezone == other.timezone;}
+@override int get hashCode {return Object.hash(Object.hashAll(columns ?? const []), connectedAccount, currency, intervalEnd, intervalStart, payout, reportingCategory, timezone);}
+@override String toString() {return 'PostReportingReportRunsRequestParameters(columns: $columns, connectedAccount: $connectedAccount, currency: $currency, intervalEnd: $intervalEnd, intervalStart: $intervalStart, payout: $payout, reportingCategory: $reportingCategory, timezone: $timezone)';}
+}

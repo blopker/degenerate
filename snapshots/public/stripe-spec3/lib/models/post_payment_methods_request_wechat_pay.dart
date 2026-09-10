@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `wechat_pay` PaymentMethod, this hash contains details about the wechat_pay payment method.
 @immutable final class PostPaymentMethodsRequestWechatPay {const PostPaymentMethodsRequestWechatPay();
 
-factory PostPaymentMethodsRequestWechatPay.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestWechatPay(); }
+factory PostPaymentMethodsRequestWechatPay.fromJson(Map<String, dynamic> _) {return const PostPaymentMethodsRequestWechatPay();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestWechatPay copyWith() { return const PostPaymentMethodsRequestWechatPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentMethodsRequestWechatPay copyWith() {return const PostPaymentMethodsRequestWechatPay(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestWechatPay; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestWechatPay()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostPaymentMethodsRequestWechatPay;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostPaymentMethodsRequestWechatPay()';}
+}

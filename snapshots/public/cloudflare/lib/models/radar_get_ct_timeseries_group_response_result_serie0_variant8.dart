@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant8 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant8({required this.domain, required this.extended, required this.organization, required this.unknown, });
 
-factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant8.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant8(
+factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant8.fromJson(Map<String, dynamic> json) {return RadarGetCtTimeseriesGroupResponseResultSerie0Variant8(
   domain: (json['domain'] as List<dynamic>).map((e) => e as String).toList(),
   extended: (json['extended'] as List<dynamic>).map((e) => e as String).toList(),
   organization: (json['organization'] as List<dynamic>).map((e) => e as String).toList(),
   unknown: (json['unknown'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> domain;
 
@@ -17,28 +17,28 @@ final List<String> organization;
 
 final List<String> unknown;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain': domain,
   'extended': extended,
   'organization': organization,
   'unknown': unknown,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') &&
       json.containsKey('extended') &&
       json.containsKey('organization') &&
-      json.containsKey('unknown'); } 
-RadarGetCtTimeseriesGroupResponseResultSerie0Variant8 copyWith({List<String>? domain, List<String>? extended, List<String>? organization, List<String>? unknown, }) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant8(
+      json.containsKey('unknown');}
+RadarGetCtTimeseriesGroupResponseResultSerie0Variant8 copyWith({List<String>? domain, List<String>? extended, List<String>? organization, List<String>? unknown, }) {return RadarGetCtTimeseriesGroupResponseResultSerie0Variant8(
   domain: domain ?? this.domain,
   extended: extended ?? this.extended,
   organization: organization ?? this.organization,
   unknown: unknown ?? this.unknown,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCtTimeseriesGroupResponseResultSerie0Variant8 &&
           listEquals(domain, other.domain) &&
           listEquals(extended, other.extended) &&
           listEquals(organization, other.organization) &&
-          listEquals(unknown, other.unknown); } 
-@override int get hashCode { return Object.hash(Object.hashAll(domain), Object.hashAll(extended), Object.hashAll(organization), Object.hashAll(unknown)); } 
-@override String toString() { return 'RadarGetCtTimeseriesGroupResponseResultSerie0Variant8(domain: $domain, extended: $extended, organization: $organization, unknown: $unknown)'; } 
- }
+          listEquals(unknown, other.unknown);}
+@override int get hashCode {return Object.hash(Object.hashAll(domain), Object.hashAll(extended), Object.hashAll(organization), Object.hashAll(unknown));}
+@override String toString() {return 'RadarGetCtTimeseriesGroupResponseResultSerie0Variant8(domain: $domain, extended: $extended, organization: $organization, unknown: $unknown)';}
+}

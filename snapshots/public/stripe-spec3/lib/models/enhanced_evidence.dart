@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence_visa_compelling_evidence3.dart';import 'enhanced_evidence_visa_compliance.dart';@immutable final class EnhancedEvidence {const EnhancedEvidence({this.visaCompellingEvidence3, this.visaCompliance, });
 
-factory EnhancedEvidence.fromJson(Map<String, dynamic> json) { return EnhancedEvidence(
+factory EnhancedEvidence.fromJson(Map<String, dynamic> json) {return EnhancedEvidence(
   visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null ? EnhancedEvidenceVisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>) : null,
   visaCompliance: json['visa_compliance'] != null ? EnhancedEvidenceVisaCompliance.fromJson(json['visa_compliance'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final EnhancedEvidenceVisaCompellingEvidence3? visaCompellingEvidence3;
 
 final EnhancedEvidenceVisaCompliance? visaCompliance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (visaCompellingEvidence3 != null) 'visa_compelling_evidence_3': visaCompellingEvidence3?.toJson(),
   if (visaCompliance != null) 'visa_compliance': visaCompliance?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'visa_compelling_evidence_3', 'visa_compliance'}.contains(key)); } 
-EnhancedEvidence copyWith({EnhancedEvidenceVisaCompellingEvidence3? Function()? visaCompellingEvidence3, EnhancedEvidenceVisaCompliance? Function()? visaCompliance, }) { return EnhancedEvidence(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'visa_compelling_evidence_3', 'visa_compliance'}.contains(key));}
+EnhancedEvidence copyWith({EnhancedEvidenceVisaCompellingEvidence3? Function()? visaCompellingEvidence3, EnhancedEvidenceVisaCompliance? Function()? visaCompliance, }) {return EnhancedEvidence(
   visaCompellingEvidence3: visaCompellingEvidence3 != null ? visaCompellingEvidence3() : this.visaCompellingEvidence3,
   visaCompliance: visaCompliance != null ? visaCompliance() : this.visaCompliance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnhancedEvidence &&
           visaCompellingEvidence3 == other.visaCompellingEvidence3 &&
-          visaCompliance == other.visaCompliance; } 
-@override int get hashCode { return Object.hash(visaCompellingEvidence3, visaCompliance); } 
-@override String toString() { return 'EnhancedEvidence(visaCompellingEvidence3: $visaCompellingEvidence3, visaCompliance: $visaCompliance)'; } 
- }
+          visaCompliance == other.visaCompliance;}
+@override int get hashCode {return Object.hash(visaCompellingEvidence3, visaCompliance);}
+@override String toString() {return 'EnhancedEvidence(visaCompellingEvidence3: $visaCompellingEvidence3, visaCompliance: $visaCompliance)';}
+}

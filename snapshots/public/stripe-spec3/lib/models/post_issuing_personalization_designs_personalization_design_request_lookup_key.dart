@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2._(this.value);
 
-factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2.fromJson(String json) { return switch (json) {
+factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2._(json),
-}; }
+};}
 
 static const PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2 $empty = PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostIssuingPersonalizationDesignsPersonalizationDesignRequestL
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2($value)';}
+}
 /// A lookup key used to retrieve personalization designs dynamically from a static string. This may be up to 200 characters.
 @immutable
 final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKey {

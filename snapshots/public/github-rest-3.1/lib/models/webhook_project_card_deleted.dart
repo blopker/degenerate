@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_card_deleted_project_card.dart';@immutable final class WebhookProjectCardDeletedAction {const WebhookProjectCardDeletedAction._(this.value);
 
-factory WebhookProjectCardDeletedAction.fromJson(String json) { return switch (json) {
+factory WebhookProjectCardDeletedAction.fromJson(String json) {return switch (json) {
   'deleted' => deleted,
   _ => WebhookProjectCardDeletedAction._(json),
-}; }
+};}
 
 static const WebhookProjectCardDeletedAction deleted = WebhookProjectCardDeletedAction._('deleted');
 
@@ -13,17 +13,17 @@ static const List<WebhookProjectCardDeletedAction> values = [deleted];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectCardDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectCardDeletedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookProjectCardDeletedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookProjectCardDeletedAction($value)';}
+}
 @immutable final class WebhookProjectCardDeleted {const WebhookProjectCardDeleted({required this.action, required this.projectCard, required this.sender, this.enterprise, this.installation, this.organization, this.repository = const Omittable.absent(), });
 
-factory WebhookProjectCardDeleted.fromJson(Map<String, dynamic> json) { return WebhookProjectCardDeleted(
+factory WebhookProjectCardDeleted.fromJson(Map<String, dynamic> json) {return WebhookProjectCardDeleted(
   action: WebhookProjectCardDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookProjectCardDeleted.fromJson(Map<String, dynamic> json) { return W
   projectCard: WebhookProjectCardDeletedProjectCard.fromJson(json['project_card'] as Map<String, dynamic>),
   repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookProjectCardDeletedAction action;
 
@@ -47,7 +47,7 @@ final Omittable<RepositoryWebhooks?> repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,11 +55,11 @@ Map<String, dynamic> toJson() { return {
   'project_card': projectCard.toJson(),
   if (repository.isPresent) 'repository': repository.value?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('project_card') &&
-      json.containsKey('sender'); } 
-WebhookProjectCardDeleted copyWith({WebhookProjectCardDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookProjectCardDeletedProjectCard? projectCard, Omittable<RepositoryWebhooks?>? repository, SimpleUser? sender, }) { return WebhookProjectCardDeleted(
+      json.containsKey('sender');}
+WebhookProjectCardDeleted copyWith({WebhookProjectCardDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookProjectCardDeletedProjectCard? projectCard, Omittable<RepositoryWebhooks?>? repository, SimpleUser? sender, }) {return WebhookProjectCardDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -67,8 +67,8 @@ WebhookProjectCardDeleted copyWith({WebhookProjectCardDeletedAction? action, Ent
   projectCard: projectCard ?? this.projectCard,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookProjectCardDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -76,7 +76,7 @@ WebhookProjectCardDeleted copyWith({WebhookProjectCardDeletedAction? action, Ent
           organization == other.organization &&
           projectCard == other.projectCard &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, projectCard, repository, sender); } 
-@override String toString() { return 'WebhookProjectCardDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectCard: $projectCard, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, projectCard, repository, sender);}
+@override String toString() {return 'WebhookProjectCardDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectCard: $projectCard, repository: $repository, sender: $sender)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_contents.dart';import 'zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'zero_trust_gateway_pacfiles_components_schemas_name.dart';@immutable final class ZeroTrustGatewayPacfilesUpdateRequest {const ZeroTrustGatewayPacfilesUpdateRequest({required this.contents, required this.description, required this.name, });
 
-factory ZeroTrustGatewayPacfilesUpdateRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayPacfilesUpdateRequest(
+factory ZeroTrustGatewayPacfilesUpdateRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayPacfilesUpdateRequest(
   contents: ZeroTrustGatewayContents.fromJson(json['contents'] as String),
   description: ZeroTrustGatewayPacfilesComponentsSchemasDescription.fromJson(json['description'] as String),
   name: ZeroTrustGatewayPacfilesComponentsSchemasName.fromJson(json['name'] as String),
-); }
+);}
 
 /// Actual contents of the PAC file
 final ZeroTrustGatewayContents contents;
@@ -17,24 +17,24 @@ final ZeroTrustGatewayPacfilesComponentsSchemasDescription description;
 /// Name of the PAC file.
 final ZeroTrustGatewayPacfilesComponentsSchemasName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'contents': contents.toJson(),
   'description': description.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('contents') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('contents') &&
       json.containsKey('description') &&
-      json.containsKey('name'); } 
-ZeroTrustGatewayPacfilesUpdateRequest copyWith({ZeroTrustGatewayContents? contents, ZeroTrustGatewayPacfilesComponentsSchemasDescription? description, ZeroTrustGatewayPacfilesComponentsSchemasName? name, }) { return ZeroTrustGatewayPacfilesUpdateRequest(
+      json.containsKey('name');}
+ZeroTrustGatewayPacfilesUpdateRequest copyWith({ZeroTrustGatewayContents? contents, ZeroTrustGatewayPacfilesComponentsSchemasDescription? description, ZeroTrustGatewayPacfilesComponentsSchemasName? name, }) {return ZeroTrustGatewayPacfilesUpdateRequest(
   contents: contents ?? this.contents,
   description: description ?? this.description,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayPacfilesUpdateRequest &&
           contents == other.contents &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(contents, description, name); } 
-@override String toString() { return 'ZeroTrustGatewayPacfilesUpdateRequest(contents: $contents, description: $description, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(contents, description, name);}
+@override String toString() {return 'ZeroTrustGatewayPacfilesUpdateRequest(contents: $contents, description: $description, name: $name)';}
+}

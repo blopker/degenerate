@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus._(this.value);
 
-factory ActionsListWorkflowRunsStatus.fromJson(String json) { return switch (json) {
+factory ActionsListWorkflowRunsStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'action_required' => actionRequired,
   'cancelled' => cancelled,
@@ -18,7 +18,7 @@ factory ActionsListWorkflowRunsStatus.fromJson(String json) { return switch (jso
   'waiting' => waiting,
   'pending' => pending,
   _ => ActionsListWorkflowRunsStatus._(json),
-}; }
+};}
 
 static const ActionsListWorkflowRunsStatus completed = ActionsListWorkflowRunsStatus._('completed');
 
@@ -52,11 +52,11 @@ static const List<ActionsListWorkflowRunsStatus> values = [completed, actionRequ
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActionsListWorkflowRunsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActionsListWorkflowRunsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ActionsListWorkflowRunsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ActionsListWorkflowRunsStatus($value)';}
+}

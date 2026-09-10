@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/email_security_account_id.dart';import '../models/email_security_get_message_detections_response4_xx.dart';import '../models/email_security_get_message_detections_response_result.dart';import '../models/email_security_get_message_preview_response4_xx.dart';import '../models/email_security_get_message_preview_response_result.dart';import '../models/email_security_get_message_raw_response4_xx.dart';import '../models/email_security_get_message_raw_response_result.dart';import '../models/email_security_get_message_response4_xx.dart';import '../models/email_security_get_message_response_result.dart';import '../models/email_security_get_message_trace_response4_xx.dart';import '../models/email_security_get_message_trace_response_result.dart';import '../models/email_security_get_phishguard_reports_response4_xx.dart';import '../models/email_security_investigate_final_disposition.dart';import '../models/email_security_investigate_message_action.dart';import '../models/email_security_investigate_response4_xx.dart';import '../models/email_security_mailsearch_message.dart';import '../models/email_security_move_response_item.dart';import '../models/email_security_phish_guard_report.dart';import '../models/email_security_post_bulk_message_move_request.dart';import '../models/email_security_post_bulk_message_move_response4_xx.dart';import '../models/email_security_post_message_move_request.dart';import '../models/email_security_post_message_move_response4_xx.dart';import '../models/email_security_post_preview_request.dart';import '../models/email_security_post_preview_response4_xx.dart';import '../models/email_security_post_preview_response_result.dart';import '../models/email_security_post_reclassify_request.dart';import '../models/email_security_post_reclassify_response4_xx.dart';import '../models/email_security_post_release_response4_xx.dart';import '../models/email_security_postfix_id.dart';import '../models/email_security_release_response.dart';import '../models/email_security_submission.dart';import '../models/email_security_submissions_customer_status.dart';import '../models/email_security_submissions_original_disposition.dart';import '../models/email_security_submissions_outcome_disposition.dart';import '../models/email_security_submissions_requested_disposition.dart';import '../models/email_security_submissions_response4_xx.dart';import '../models/email_security_submissions_type.dart';/// EmailSecurityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/email_security_account_id.dart';import '../models/email_security_get_message_detections_response4xx.dart';import '../models/email_security_get_message_detections_response_result.dart';import '../models/email_security_get_message_preview_response4xx.dart';import '../models/email_security_get_message_preview_response_result.dart';import '../models/email_security_get_message_raw_response4xx.dart';import '../models/email_security_get_message_raw_response_result.dart';import '../models/email_security_get_message_response4xx.dart';import '../models/email_security_get_message_response_result.dart';import '../models/email_security_get_message_trace_response4xx.dart';import '../models/email_security_get_message_trace_response_result.dart';import '../models/email_security_get_phishguard_reports_response4xx.dart';import '../models/email_security_investigate_final_disposition.dart';import '../models/email_security_investigate_message_action.dart';import '../models/email_security_investigate_response4xx.dart';import '../models/email_security_mailsearch_message.dart';import '../models/email_security_move_response_item.dart';import '../models/email_security_phish_guard_report.dart';import '../models/email_security_post_bulk_message_move_request.dart';import '../models/email_security_post_bulk_message_move_response4xx.dart';import '../models/email_security_post_message_move_request.dart';import '../models/email_security_post_message_move_response4xx.dart';import '../models/email_security_post_preview_request.dart';import '../models/email_security_post_preview_response4xx.dart';import '../models/email_security_post_preview_response_result.dart';import '../models/email_security_post_reclassify_request.dart';import '../models/email_security_post_reclassify_response4xx.dart';import '../models/email_security_post_release_response4xx.dart';import '../models/email_security_postfix_id.dart';import '../models/email_security_release_response.dart';import '../models/email_security_submission.dart';import '../models/email_security_submissions_customer_status.dart';import '../models/email_security_submissions_original_disposition.dart';import '../models/email_security_submissions_outcome_disposition.dart';import '../models/email_security_submissions_requested_disposition.dart';import '../models/email_security_submissions_response4xx.dart';import '../models/email_security_submissions_type.dart';/// EmailSecurityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class EmailSecurityApi with ApiExecutor {const EmailSecurityApi(this.apiCo
 /// pointing to a polling endpoint where results can be retrieved once ready.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate`
-Future<ApiResult<List<EmailSecurityMailsearchMessage>, EmailSecurityInvestigateResponse4Xx>> emailSecurityInvestigate({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, String? query, bool? detectionsOnly, bool? actionLog, EmailSecurityInvestigateFinalDisposition? finalDisposition, String? metric, EmailSecurityInvestigateMessageAction? messageAction, String? recipient, String? sender, String? alertId, String? domain, String? messageId, String? subject, String? exactSubject, String? cursor, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<EmailSecurityMailsearchMessage>, EmailSecurityInvestigateResponse4xx>> emailSecurityInvestigate({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, String? query, bool? detectionsOnly, bool? actionLog, EmailSecurityInvestigateFinalDisposition? finalDisposition, String? metric, EmailSecurityInvestigateMessageAction? messageAction, String? recipient, String? sender, String? alertId, String? domain, String? messageId, String? subject, String? exactSubject, String? cursor, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (start != null) {
   queryParameters['start'] = start.toIso8601String();
@@ -83,38 +83,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => EmailSecurityMailsearchMessage.fromJson(e as Map<String, dynamic>)).toList();
-default:
+return  (json['result'] as List<dynamic>).map((e) => EmailSecurityMailsearchMessage.fromJson(e as Map<String, dynamic>)).toList();default:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => EmailSecurityMailsearchMessage.fromJson(e as Map<String, dynamic>)).toList();
-}
-
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return  (json['result'] as List<dynamic>).map((e) => EmailSecurityMailsearchMessage.fromJson(e as Map<String, dynamic>)).toList(); }}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityInvestigateResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityInvestigateResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get message details
 ///
 /// Retrieves detailed information about a specific email message, including headers,
 /// metadata, and security scan results.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}`
-Future<ApiResult<EmailSecurityGetMessageResponseResult, EmailSecurityGetMessageResponse4Xx>> emailSecurityGetMessage({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityGetMessageResponseResult, EmailSecurityGetMessageResponse4xx>> emailSecurityGetMessage({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,30 +109,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return EmailSecurityGetMessageResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  EmailSecurityGetMessageResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityGetMessageResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityGetMessageResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get message detection details
 ///
 /// Returns detection details such as threat categories and sender information for non-benign messages.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/detections`
-Future<ApiResult<EmailSecurityGetMessageDetectionsResponseResult, EmailSecurityGetMessageDetectionsResponse4Xx>> emailSecurityGetMessageDetections({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityGetMessageDetectionsResponseResult, EmailSecurityGetMessageDetectionsResponse4xx>> emailSecurityGetMessageDetections({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -155,30 +130,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return EmailSecurityGetMessageDetectionsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  EmailSecurityGetMessageDetectionsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityGetMessageDetectionsResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityGetMessageDetectionsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Move a message
 ///
 /// Moves a single email message to a different folder or changes its quarantine status.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/{postfix_id}/move`
-Future<ApiResult<List<EmailSecurityMoveResponseItem>, EmailSecurityPostMessageMoveResponse4Xx>> emailSecurityPostMessageMove({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, required EmailSecurityPostMessageMoveRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<EmailSecurityMoveResponseItem>, EmailSecurityPostMessageMoveResponse4xx>> emailSecurityPostMessageMove({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, required EmailSecurityPostMessageMoveRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -189,30 +153,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => EmailSecurityMoveResponseItem.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => EmailSecurityMoveResponseItem.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityPostMessageMoveResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityPostMessageMoveResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get email preview
 ///
 /// Returns a preview of the message body as a base64 encoded PNG image for non-benign messages.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/preview`
-Future<ApiResult<EmailSecurityGetMessagePreviewResponseResult, EmailSecurityGetMessagePreviewResponse4Xx>> emailSecurityGetMessagePreview({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityGetMessagePreviewResponseResult, EmailSecurityGetMessagePreviewResponse4xx>> emailSecurityGetMessagePreview({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -221,30 +174,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return EmailSecurityGetMessagePreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  EmailSecurityGetMessagePreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityGetMessagePreviewResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityGetMessagePreviewResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get raw email content
 ///
 /// Returns the raw eml of any non-benign message.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/raw`
-Future<ApiResult<EmailSecurityGetMessageRawResponseResult, EmailSecurityGetMessageRawResponse4Xx>> emailSecurityGetMessageRaw({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityGetMessageRawResponseResult, EmailSecurityGetMessageRawResponse4xx>> emailSecurityGetMessageRaw({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -253,31 +195,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return EmailSecurityGetMessageRawResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  EmailSecurityGetMessageRawResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityGetMessageRawResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityGetMessageRawResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Change email classification
 ///
 /// Submits an email message for reclassification, updating its threat assessment
 /// based on new analysis.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/{postfix_id}/reclassify`
-Future<ApiResult<Map<String, dynamic>, EmailSecurityPostReclassifyResponse4Xx>> emailSecurityPostReclassify({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, required EmailSecurityPostReclassifyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, EmailSecurityPostReclassifyResponse4xx>> emailSecurityPostReclassify({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, required EmailSecurityPostReclassifyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -288,31 +219,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityPostReclassifyResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityPostReclassifyResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get email trace
 ///
 /// Gets the delivery trace for an email message, showing its path through email
 /// security processing.
 ///
 /// `GET /accounts/{account_id}/email-security/investigate/{postfix_id}/trace`
-Future<ApiResult<EmailSecurityGetMessageTraceResponseResult, EmailSecurityGetMessageTraceResponse4Xx>> emailSecurityGetMessageTrace({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityGetMessageTraceResponseResult, EmailSecurityGetMessageTraceResponse4xx>> emailSecurityGetMessageTrace({required EmailSecurityAccountId accountId, required EmailSecurityPostfixId postfixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -321,30 +241,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return EmailSecurityGetMessageTraceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  EmailSecurityGetMessageTraceResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityGetMessageTraceResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityGetMessageTraceResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Move multiple messages
 ///
 /// Maximum batch size: 1000 messages per request
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/move`
-Future<ApiResult<List<EmailSecurityMoveResponseItem>, EmailSecurityPostBulkMessageMoveResponse4Xx>> emailSecurityPostBulkMessageMove({required EmailSecurityAccountId accountId, required EmailSecurityPostBulkMessageMoveRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<EmailSecurityMoveResponseItem>, EmailSecurityPostBulkMessageMoveResponse4xx>> emailSecurityPostBulkMessageMove({required EmailSecurityAccountId accountId, required EmailSecurityPostBulkMessageMoveRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -355,31 +264,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => EmailSecurityMoveResponseItem.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => EmailSecurityMoveResponseItem.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityPostBulkMessageMoveResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityPostBulkMessageMoveResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Preview for non-detection messages
 ///
 /// Generates a preview of an email message for safe viewing without executing any
 /// embedded content.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/preview`
-Future<ApiResult<EmailSecurityPostPreviewResponseResult, EmailSecurityPostPreviewResponse4Xx>> emailSecurityPostPreview({required EmailSecurityAccountId accountId, required EmailSecurityPostPreviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityPostPreviewResponseResult, EmailSecurityPostPreviewResponse4xx>> emailSecurityPostPreview({required EmailSecurityAccountId accountId, required EmailSecurityPostPreviewRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -390,30 +288,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return EmailSecurityPostPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  EmailSecurityPostPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityPostPreviewResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityPostPreviewResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Release messages from quarantine
 ///
 /// Releases a quarantined email message, allowing it to be delivered to the recipient.
 ///
 /// `POST /accounts/{account_id}/email-security/investigate/release`
-Future<ApiResult<List<EmailSecurityReleaseResponse>, EmailSecurityPostReleaseResponse4Xx>> emailSecurityPostRelease({required EmailSecurityAccountId accountId, required List<EmailSecurityPostfixId> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<EmailSecurityReleaseResponse>, EmailSecurityPostReleaseResponse4xx>> emailSecurityPostRelease({required EmailSecurityAccountId accountId, required List<EmailSecurityPostfixId> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -424,31 +311,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => EmailSecurityReleaseResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => EmailSecurityReleaseResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityPostReleaseResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityPostReleaseResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get `PhishGuard` reports
 ///
 /// Retrieves `PhishGuard` reports showing phishing attempts and suspicious email patterns
 /// detected.
 ///
 /// `GET /accounts/{account_id}/email-security/phishguard/reports`
-Future<ApiResult<List<EmailSecurityPhishGuardReport>, EmailSecurityGetPhishguardReportsResponse4Xx>> emailSecurityGetPhishguardReports({required EmailSecurityAccountId accountId, String? fromDate, String? toDate, DateTime? start, DateTime? end, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<EmailSecurityPhishGuardReport>, EmailSecurityGetPhishguardReportsResponse4xx>> emailSecurityGetPhishguardReports({required EmailSecurityAccountId accountId, String? fromDate, String? toDate, DateTime? start, DateTime? end, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fromDate != null) {
   queryParameters['from_date'] = fromDate;
@@ -474,30 +350,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => EmailSecurityPhishGuardReport.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => EmailSecurityPhishGuardReport.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecurityGetPhishguardReportsResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  EmailSecurityGetPhishguardReportsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get reclassify submissions
 ///
 /// This endpoint returns information for submissions to made to reclassify emails.
 ///
 /// `GET /accounts/{account_id}/email-security/submissions`
-Future<ApiResult<List<EmailSecuritySubmission>, EmailSecuritySubmissionsResponse4Xx>> emailSecuritySubmissions({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, EmailSecuritySubmissionsType? type, String? submissionId, EmailSecuritySubmissionsOriginalDisposition? originalDisposition, EmailSecuritySubmissionsRequestedDisposition? requestedDisposition, EmailSecuritySubmissionsOutcomeDisposition? outcomeDisposition, String? status, String? query, EmailSecuritySubmissionsCustomerStatus? customerStatus, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<EmailSecuritySubmission>, EmailSecuritySubmissionsResponse4xx>> emailSecuritySubmissions({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, EmailSecuritySubmissionsType? type, String? submissionId, EmailSecuritySubmissionsOriginalDisposition? originalDisposition, EmailSecuritySubmissionsRequestedDisposition? requestedDisposition, EmailSecuritySubmissionsOutcomeDisposition? outcomeDisposition, String? status, String? query, EmailSecuritySubmissionsCustomerStatus? customerStatus, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (start != null) {
   queryParameters['start'] = start.toIso8601String();
@@ -547,22 +412,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => EmailSecuritySubmission.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => EmailSecuritySubmission.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return EmailSecuritySubmissionsResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  EmailSecuritySubmissionsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

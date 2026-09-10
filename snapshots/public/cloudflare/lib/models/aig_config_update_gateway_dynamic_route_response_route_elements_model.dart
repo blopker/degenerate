@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response_route_elements_model_outputs.dart';import 'aig_config_update_gateway_dynamic_route_response_route_elements_model_properties.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType._(this.value);
 
-factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType.fromJson(String json) { return switch (json) {
+factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType.fromJson(String json) {return switch (json) {
   'model' => model,
   _ => AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType._(json),
-}; }
+};}
 
 static const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType model = AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType._('model');
 
@@ -13,22 +13,22 @@ static const List<AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelTy
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType($value)';}
+}
 @immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel({required this.id, required this.outputs, required this.properties, required this.type, });
 
-factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel(
+factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel(
   id: json['id'] as String,
   outputs: AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
   properties: AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType.fromJson(json['type'] as String),
-); }
+);}
 
 final String id;
 
@@ -38,28 +38,28 @@ final AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelProperties pro
 
 final AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'outputs': outputs.toJson(),
   'properties': properties.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type'); } 
-AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel copyWith({String? id, AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputs? outputs, AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelProperties? properties, AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType? type, }) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel(
+      json.containsKey('type');}
+AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel copyWith({String? id, AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputs? outputs, AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelProperties? properties, AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelType? type, }) {return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel &&
           id == other.id &&
           outputs == other.outputs &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, outputs, properties, type); } 
-@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel(id: $id, outputs: $outputs, properties: $properties, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(id, outputs, properties, type);}
+@override String toString() {return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModel(id: $id, outputs: $outputs, properties: $properties, type: $type)';}
+}

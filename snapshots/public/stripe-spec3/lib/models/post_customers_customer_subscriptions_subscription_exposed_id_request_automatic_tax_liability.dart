@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType.fromJson(String json) {return switch (json) {
   'account' => account,
   'self' => self,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType account = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType._('account');
 
@@ -16,38 +16,38 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType($value)';}
+}
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability({required this.type, this.account, });
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(
   account: json['account'] as String?,
   type: PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
 final PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability copyWith({String? Function()? account, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType? type, }) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability copyWith({String? Function()? account, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType? type, }) {return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(account: $account, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, type);}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(account: $account, type: $type)';}
+}

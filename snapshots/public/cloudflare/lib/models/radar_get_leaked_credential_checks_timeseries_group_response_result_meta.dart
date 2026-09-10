@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_timeseries_group_response_result_meta_confidence_info.dart';import 'radar_get_leaked_credential_checks_timeseries_group_response_result_meta_date_range.dart';import 'radar_get_leaked_credential_checks_timeseries_group_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval._(this.value);
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval.fromJson(String json) {return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
   'ONE_HOUR' => oneHour,
   'ONE_DAY' => oneDay,
   'ONE_WEEK' => oneWeek,
   'ONE_MONTH' => oneMonth,
   _ => RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval._(json),
-}; }
+};}
 
 static const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval fifteenMinutes = RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
 
@@ -26,18 +26,18 @@ static const List<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval($value)';}
+}
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization._(this.value);
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -47,7 +47,7 @@ factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormaliza
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization percentage = RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -69,25 +69,25 @@ static const List<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta(
+factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta(
   aggInterval: RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
   confidenceInfo: RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 final RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval aggInterval;
@@ -105,36 +105,36 @@ final RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalizati
 /// Measurement units for the results.
 final List<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aggInterval': aggInterval.toJson(),
   'confidenceInfo': confidenceInfo.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('aggInterval') &&
       json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta copyWith({RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval? aggInterval, RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization? normalization, List<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaUnits>? units, }) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta(
+      json.containsKey('units');}
+RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta copyWith({RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaAggInterval? aggInterval, RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaNormalization? normalization, List<RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaUnits>? units, }) {return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta(
   aggInterval: aggInterval ?? this.aggInterval,
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta &&
           aggInterval == other.aggInterval &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

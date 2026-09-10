@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ranking type.
 @immutable final class RadarGetRankingDomainTimeseriesRankingType {const RadarGetRankingDomainTimeseriesRankingType._(this.value);
 
-factory RadarGetRankingDomainTimeseriesRankingType.fromJson(String json) { return switch (json) {
+factory RadarGetRankingDomainTimeseriesRankingType.fromJson(String json) {return switch (json) {
   'POPULAR' => popular,
   'TRENDING_RISE' => trendingRise,
   'TRENDING_STEADY' => trendingSteady,
   _ => RadarGetRankingDomainTimeseriesRankingType._(json),
-}; }
+};}
 
 static const RadarGetRankingDomainTimeseriesRankingType popular = RadarGetRankingDomainTimeseriesRankingType._('POPULAR');
 
@@ -20,11 +20,11 @@ static const List<RadarGetRankingDomainTimeseriesRankingType> values = [popular,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetRankingDomainTimeseriesRankingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetRankingDomainTimeseriesRankingType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetRankingDomainTimeseriesRankingType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetRankingDomainTimeseriesRankingType($value)';}
+}

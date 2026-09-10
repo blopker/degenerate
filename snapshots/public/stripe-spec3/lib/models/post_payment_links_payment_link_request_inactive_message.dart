@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2 {const PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2 $empty = PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2($value)';}
+}
 /// The custom message to be displayed to a customer when a payment link is no longer active.
 @immutable
 final class PostPaymentLinksPaymentLinkRequestInactiveMessage {

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The state of the milestone.
 @immutable final class MilestoneState {const MilestoneState._(this.value);
 
-factory MilestoneState.fromJson(String json) { return switch (json) {
+factory MilestoneState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => MilestoneState._(json),
-}; }
+};}
 
 static const MilestoneState open = MilestoneState._('open');
 
@@ -17,18 +17,18 @@ static const List<MilestoneState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MilestoneState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MilestoneState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MilestoneState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MilestoneState($value)';}
+}
 /// A collection of related issues and pull requests.
 @immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.state, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, });
 
-factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
+factory Milestone.fromJson(Map<String, dynamic> json) {return Milestone(
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   labelsUrl: Uri.parse(json['labels_url'] as String),
@@ -45,7 +45,7 @@ factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   dueOn: json['due_on'] != null ? DateTime.parse(json['due_on'] as String) : null,
-); }
+);}
 
 final Uri url;
 
@@ -82,7 +82,7 @@ final DateTime? closedAt;
 
 final DateTime? dueOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'labels_url': labelsUrl.toString(),
@@ -99,8 +99,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'closed_at': closedAt?.toIso8601String(),
   'due_on': dueOn?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('labels_url') && json['labels_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -115,8 +115,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
-      json.containsKey('due_on') && (json['due_on'] == null || json['due_on'] is String); } 
-Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, MilestoneState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) { return Milestone(
+      json.containsKey('due_on') && (json['due_on'] == null || json['due_on'] is String);}
+Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, MilestoneState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) {return Milestone(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   labelsUrl: labelsUrl ?? this.labelsUrl,
@@ -133,8 +133,8 @@ Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nod
   updatedAt: updatedAt ?? this.updatedAt,
   closedAt: closedAt != null ? closedAt() : this.closedAt,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Milestone &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
@@ -151,7 +151,7 @@ Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nod
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           closedAt == other.closedAt &&
-          dueOn == other.dueOn; } 
-@override int get hashCode { return Object.hash(url, htmlUrl, labelsUrl, id, nodeId, number, state, title, description, creator, openIssues, closedIssues, createdAt, updatedAt, closedAt, dueOn); } 
-@override String toString() { return 'Milestone(url: $url, htmlUrl: $htmlUrl, labelsUrl: $labelsUrl, id: $id, nodeId: $nodeId, number: $number, state: $state, title: $title, description: $description, creator: $creator, openIssues: $openIssues, closedIssues: $closedIssues, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, dueOn: $dueOn)'; } 
- }
+          dueOn == other.dueOn;}
+@override int get hashCode {return Object.hash(url, htmlUrl, labelsUrl, id, nodeId, number, state, title, description, creator, openIssues, closedIssues, createdAt, updatedAt, closedAt, dueOn);}
+@override String toString() {return 'Milestone(url: $url, htmlUrl: $htmlUrl, labelsUrl: $labelsUrl, id: $id, nodeId: $nodeId, number: $number, state: $state, title: $title, description: $description, creator: $creator, openIssues: $openIssues, closedIssues: $closedIssues, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, dueOn: $dueOn)';}
+}

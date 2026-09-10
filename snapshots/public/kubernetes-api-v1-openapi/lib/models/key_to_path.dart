@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Maps a string key to a path within a volume.
 @immutable final class KeyToPath {const KeyToPath({required this.key, required this.path, this.mode, });
 
-factory KeyToPath.fromJson(Map<String, dynamic> json) { return KeyToPath(
+factory KeyToPath.fromJson(Map<String, dynamic> json) {return KeyToPath(
   key: json['key'] as String,
   mode: json['mode'] != null ? (json['mode'] as num).toInt() : null,
   path: json['path'] as String,
-); }
+);}
 
 /// key is the key to project.
 final String key;
@@ -18,23 +18,23 @@ final int? mode;
 /// path is the relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.
 final String path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'mode': ?mode,
   'path': path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
-      json.containsKey('path') && json['path'] is String; } 
-KeyToPath copyWith({String? key, int? Function()? mode, String? path, }) { return KeyToPath(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
+      json.containsKey('path') && json['path'] is String;}
+KeyToPath copyWith({String? key, int? Function()? mode, String? path, }) {return KeyToPath(
   key: key ?? this.key,
   mode: mode != null ? mode() : this.mode,
   path: path ?? this.path,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is KeyToPath &&
           key == other.key &&
           mode == other.mode &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(key, mode, path); } 
-@override String toString() { return 'KeyToPath(key: $key, mode: $mode, path: $path)'; } 
- }
+          path == other.path;}
+@override int get hashCode {return Object.hash(key, mode, path);}
+@override String toString() {return 'KeyToPath(key: $key, mode: $mode, path: $path)';}
+}

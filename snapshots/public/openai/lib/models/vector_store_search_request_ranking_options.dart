@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable re-ranking; set to `none` to disable, which can help reduce latency.
 @immutable final class VectorStoreSearchRequestRankingOptionsRanker {const VectorStoreSearchRequestRankingOptionsRanker._(this.value);
 
-factory VectorStoreSearchRequestRankingOptionsRanker.fromJson(String json) { return switch (json) {
+factory VectorStoreSearchRequestRankingOptionsRanker.fromJson(String json) {return switch (json) {
   'none' => none,
   'auto' => auto,
   'default-2024-11-15' => default20241115,
   _ => VectorStoreSearchRequestRankingOptionsRanker._(json),
-}; }
+};}
 
 static const VectorStoreSearchRequestRankingOptionsRanker none = VectorStoreSearchRequestRankingOptionsRanker._('none');
 
@@ -20,21 +20,21 @@ static const List<VectorStoreSearchRequestRankingOptionsRanker> values = [none, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreSearchRequestRankingOptionsRanker && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreSearchRequestRankingOptionsRanker($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VectorStoreSearchRequestRankingOptionsRanker && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VectorStoreSearchRequestRankingOptionsRanker($value)';}
+}
 /// Ranking options for search.
 @immutable final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker, this.scoreThreshold, });
 
-factory VectorStoreSearchRequestRankingOptions.fromJson(Map<String, dynamic> json) { return VectorStoreSearchRequestRankingOptions(
+factory VectorStoreSearchRequestRankingOptions.fromJson(Map<String, dynamic> json) {return VectorStoreSearchRequestRankingOptions(
   ranker: json['ranker'] != null ? VectorStoreSearchRequestRankingOptionsRanker.fromJson(json['ranker'] as String) : null,
   scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toDouble() : null,
-); }
+);}
 
 /// Enable re-ranking; set to `none` to disable, which can help reduce latency.
 final VectorStoreSearchRequestRankingOptionsRanker? ranker;
@@ -42,22 +42,22 @@ final VectorStoreSearchRequestRankingOptionsRanker? ranker;
 final double? scoreThreshold;
 
 /// The value with the schema default applied when absent.
-VectorStoreSearchRequestRankingOptionsRanker get rankerOrDefault { return ranker ?? VectorStoreSearchRequestRankingOptionsRanker.fromJson('auto'); } 
+VectorStoreSearchRequestRankingOptionsRanker get rankerOrDefault {return ranker ?? VectorStoreSearchRequestRankingOptionsRanker.fromJson('auto');}
 /// The value with the schema default applied when absent.
-double get scoreThresholdOrDefault { return scoreThreshold ?? 0.0; } 
-Map<String, dynamic> toJson() { return {
+double get scoreThresholdOrDefault {return scoreThreshold ?? 0.0;}
+Map<String, dynamic> toJson() {return {
   if (ranker != null) 'ranker': ranker?.toJson(),
   'score_threshold': ?scoreThreshold,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key)); } 
-VectorStoreSearchRequestRankingOptions copyWith({VectorStoreSearchRequestRankingOptionsRanker? Function()? ranker, double? Function()? scoreThreshold, }) { return VectorStoreSearchRequestRankingOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key));}
+VectorStoreSearchRequestRankingOptions copyWith({VectorStoreSearchRequestRankingOptionsRanker? Function()? ranker, double? Function()? scoreThreshold, }) {return VectorStoreSearchRequestRankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorStoreSearchRequestRankingOptions &&
           ranker == other.ranker &&
-          scoreThreshold == other.scoreThreshold; } 
-@override int get hashCode { return Object.hash(ranker, scoreThreshold); } 
-@override String toString() { return 'VectorStoreSearchRequestRankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)'; } 
- }
+          scoreThreshold == other.scoreThreshold;}
+@override int get hashCode {return Object.hash(ranker, scoreThreshold);}
+@override String toString() {return 'VectorStoreSearchRequestRankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)';}
+}

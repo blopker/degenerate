@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of th
 /// 
 @immutable final class ImageGenToolCallStatus {const ImageGenToolCallStatus._(this.value);
 
-factory ImageGenToolCallStatus.fromJson(String json) { return switch (json) {
+factory ImageGenToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'generating' => generating,
   'failed' => failed,
   _ => ImageGenToolCallStatus._(json),
-}; }
+};}
 
 static const ImageGenToolCallStatus inProgress = ImageGenToolCallStatus._('in_progress');
 
@@ -24,24 +24,24 @@ static const List<ImageGenToolCallStatus> values = [inProgress, completed, gener
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolCallStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenToolCallStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenToolCallStatus($value)';}
+}
 /// An image generation request made by the model.
 /// 
 @immutable final class ImageGenToolCall {const ImageGenToolCall({required this.type, required this.id, required this.status, required this.result, });
 
-factory ImageGenToolCall.fromJson(Map<String, dynamic> json) { return ImageGenToolCall(
+factory ImageGenToolCall.fromJson(Map<String, dynamic> json) {return ImageGenToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   status: ImageGenToolCallStatus.fromJson(json['status'] as String),
   result: json['result'] as String?,
-); }
+);}
 
 /// The type of the image generation call. Always `image_generation_call`.
 /// 
@@ -59,28 +59,28 @@ final ImageGenToolCallStatus status;
 /// 
 final String? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'status': status.toJson(),
   'result': result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('result') && (json['result'] == null || json['result'] is String); } 
-ImageGenToolCall copyWith({String? type, String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ImageGenToolCall(
+      json.containsKey('result') && (json['result'] == null || json['result'] is String);}
+ImageGenToolCall copyWith({String? type, String? id, ImageGenToolCallStatus? status, String? Function()? result, }) {return ImageGenToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   status: status ?? this.status,
   result: result != null ? result() : this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageGenToolCall &&
           type == other.type &&
           id == other.id &&
           status == other.status &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(type, id, status, result); } 
-@override String toString() { return 'ImageGenToolCall(type: $type, id: $id, status: $status, result: $result)'; } 
- }
+          result == other.result;}
+@override int get hashCode {return Object.hash(type, id, status, result);}
+@override String toString() {return 'ImageGenToolCall(type: $type, id: $id, status: $status, result: $result)';}
+}

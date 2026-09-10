@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operator to use for matching.
 @immutable final class RepositoryRuleDetailedVariant11ParametersOperator {const RepositoryRuleDetailedVariant11ParametersOperator._(this.value);
 
-factory RepositoryRuleDetailedVariant11ParametersOperator.fromJson(String json) { return switch (json) {
+factory RepositoryRuleDetailedVariant11ParametersOperator.fromJson(String json) {return switch (json) {
   'starts_with' => startsWith,
   'ends_with' => endsWith,
   'contains' => contains,
   'regex' => regex,
   _ => RepositoryRuleDetailedVariant11ParametersOperator._(json),
-}; }
+};}
 
 static const RepositoryRuleDetailedVariant11ParametersOperator startsWith = RepositoryRuleDetailedVariant11ParametersOperator._('starts_with');
 
@@ -23,22 +23,22 @@ static const List<RepositoryRuleDetailedVariant11ParametersOperator> values = [s
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleDetailedVariant11ParametersOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleDetailedVariant11ParametersOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRuleDetailedVariant11ParametersOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRuleDetailedVariant11ParametersOperator($value)';}
+}
 @immutable final class RepositoryRuleDetailedVariant11Parameters {const RepositoryRuleDetailedVariant11Parameters({required this.$operator, required this.pattern, this.name, this.negate, });
 
-factory RepositoryRuleDetailedVariant11Parameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleDetailedVariant11Parameters(
+factory RepositoryRuleDetailedVariant11Parameters.fromJson(Map<String, dynamic> json) {return RepositoryRuleDetailedVariant11Parameters(
   name: json['name'] as String?,
   negate: json['negate'] as bool?,
   $operator: RepositoryRuleDetailedVariant11ParametersOperator.fromJson(json['operator'] as String),
   pattern: json['pattern'] as String,
-); }
+);}
 
 /// How this rule appears when configuring it.
 final String? name;
@@ -52,26 +52,26 @@ final RepositoryRuleDetailedVariant11ParametersOperator $operator;
 /// The pattern to match with.
 final String pattern;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'negate': ?negate,
   'operator': $operator.toJson(),
   'pattern': pattern,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') &&
-      json.containsKey('pattern') && json['pattern'] is String; } 
-RepositoryRuleDetailedVariant11Parameters copyWith({String? Function()? name, bool? Function()? negate, RepositoryRuleDetailedVariant11ParametersOperator? $operator, String? pattern, }) { return RepositoryRuleDetailedVariant11Parameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operator') &&
+      json.containsKey('pattern') && json['pattern'] is String;}
+RepositoryRuleDetailedVariant11Parameters copyWith({String? Function()? name, bool? Function()? negate, RepositoryRuleDetailedVariant11ParametersOperator? $operator, String? pattern, }) {return RepositoryRuleDetailedVariant11Parameters(
   name: name != null ? name() : this.name,
   negate: negate != null ? negate() : this.negate,
   $operator: $operator ?? this.$operator,
   pattern: pattern ?? this.pattern,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRuleDetailedVariant11Parameters &&
           name == other.name &&
           negate == other.negate &&
           $operator == other.$operator &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(name, negate, $operator, pattern); } 
-@override String toString() { return 'RepositoryRuleDetailedVariant11Parameters(name: $name, negate: $negate, \$operator: ${$operator}, pattern: $pattern)'; } 
- }
+          pattern == other.pattern;}
+@override int get hashCode {return Object.hash(name, negate, $operator, pattern);}
+@override String toString() {return 'RepositoryRuleDetailedVariant11Parameters(name: $name, negate: $negate, \$operator: ${$operator}, pattern: $pattern)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_created.dart';import 'email_modified.dart';import 'email_sending_subdomain_identifier.dart';@immutable final class EmailSendingSubdomainProperties {const EmailSendingSubdomainProperties({required this.emailSendingEnabled, required this.name, required this.tag, this.created, this.emailSendingDkimSelector, this.emailSendingReturnPathDomain, this.enabled, this.modified, });
 
-factory EmailSendingSubdomainProperties.fromJson(Map<String, dynamic> json) { return EmailSendingSubdomainProperties(
+factory EmailSendingSubdomainProperties.fromJson(Map<String, dynamic> json) {return EmailSendingSubdomainProperties(
   created: json['created'] != null ? EmailCreated.fromJson(json['created'] as String) : null,
   emailSendingDkimSelector: json['email_sending_dkim_selector'] as String?,
   emailSendingEnabled: json['email_sending_enabled'] as bool,
@@ -11,7 +11,7 @@ factory EmailSendingSubdomainProperties.fromJson(Map<String, dynamic> json) { re
   modified: json['modified'] != null ? EmailModified.fromJson(json['modified'] as String) : null,
   name: json['name'] as String,
   tag: EmailSendingSubdomainIdentifier.fromJson(json['tag'] as String),
-); }
+);}
 
 /// The date and time the destination address has been created.
 final EmailCreated? created;
@@ -37,7 +37,7 @@ final String name;
 /// Sending subdomain identifier.
 final EmailSendingSubdomainIdentifier tag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   'email_sending_dkim_selector': ?emailSendingDkimSelector,
   'email_sending_enabled': emailSendingEnabled,
@@ -46,11 +46,11 @@ Map<String, dynamic> toJson() { return {
   if (modified != null) 'modified': modified?.toJson(),
   'name': name,
   'tag': tag.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email_sending_enabled') && json['email_sending_enabled'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email_sending_enabled') && json['email_sending_enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('tag'); } 
-EmailSendingSubdomainProperties copyWith({EmailCreated? Function()? created, String? Function()? emailSendingDkimSelector, bool? emailSendingEnabled, String? Function()? emailSendingReturnPathDomain, bool? Function()? enabled, EmailModified? Function()? modified, String? name, EmailSendingSubdomainIdentifier? tag, }) { return EmailSendingSubdomainProperties(
+      json.containsKey('tag');}
+EmailSendingSubdomainProperties copyWith({EmailCreated? Function()? created, String? Function()? emailSendingDkimSelector, bool? emailSendingEnabled, String? Function()? emailSendingReturnPathDomain, bool? Function()? enabled, EmailModified? Function()? modified, String? name, EmailSendingSubdomainIdentifier? tag, }) {return EmailSendingSubdomainProperties(
   created: created != null ? created() : this.created,
   emailSendingDkimSelector: emailSendingDkimSelector != null ? emailSendingDkimSelector() : this.emailSendingDkimSelector,
   emailSendingEnabled: emailSendingEnabled ?? this.emailSendingEnabled,
@@ -59,8 +59,8 @@ EmailSendingSubdomainProperties copyWith({EmailCreated? Function()? created, Str
   modified: modified != null ? modified() : this.modified,
   name: name ?? this.name,
   tag: tag ?? this.tag,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSendingSubdomainProperties &&
           created == other.created &&
           emailSendingDkimSelector == other.emailSendingDkimSelector &&
@@ -69,7 +69,7 @@ EmailSendingSubdomainProperties copyWith({EmailCreated? Function()? created, Str
           enabled == other.enabled &&
           modified == other.modified &&
           name == other.name &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(created, emailSendingDkimSelector, emailSendingEnabled, emailSendingReturnPathDomain, enabled, modified, name, tag); } 
-@override String toString() { return 'EmailSendingSubdomainProperties(created: $created, emailSendingDkimSelector: $emailSendingDkimSelector, emailSendingEnabled: $emailSendingEnabled, emailSendingReturnPathDomain: $emailSendingReturnPathDomain, enabled: $enabled, modified: $modified, name: $name, tag: $tag)'; } 
- }
+          tag == other.tag;}
+@override int get hashCode {return Object.hash(created, emailSendingDkimSelector, emailSendingEnabled, emailSendingReturnPathDomain, enabled, modified, name, tag);}
+@override String toString() {return 'EmailSendingSubdomainProperties(created: $created, emailSendingDkimSelector: $emailSendingDkimSelector, emailSendingEnabled: $emailSendingEnabled, emailSendingReturnPathDomain: $emailSendingReturnPathDomain, enabled: $enabled, modified: $modified, name: $name, tag: $tag)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether this rule targets a branch or tag
 @immutable final class DeploymentBranchPolicyNamePatternWithTypeType {const DeploymentBranchPolicyNamePatternWithTypeType._(this.value);
 
-factory DeploymentBranchPolicyNamePatternWithTypeType.fromJson(String json) { return switch (json) {
+factory DeploymentBranchPolicyNamePatternWithTypeType.fromJson(String json) {return switch (json) {
   'branch' => branch,
   'tag' => tag,
   _ => DeploymentBranchPolicyNamePatternWithTypeType._(json),
-}; }
+};}
 
 static const DeploymentBranchPolicyNamePatternWithTypeType branch = DeploymentBranchPolicyNamePatternWithTypeType._('branch');
 
@@ -17,20 +17,20 @@ static const List<DeploymentBranchPolicyNamePatternWithTypeType> values = [branc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeploymentBranchPolicyNamePatternWithTypeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeploymentBranchPolicyNamePatternWithTypeType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeploymentBranchPolicyNamePatternWithTypeType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeploymentBranchPolicyNamePatternWithTypeType($value)';}
+}
 @immutable final class DeploymentBranchPolicyNamePatternWithType {const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type, });
 
-factory DeploymentBranchPolicyNamePatternWithType.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicyNamePatternWithType(
+factory DeploymentBranchPolicyNamePatternWithType.fromJson(Map<String, dynamic> json) {return DeploymentBranchPolicyNamePatternWithType(
   name: json['name'] as String,
   type: json['type'] != null ? DeploymentBranchPolicyNamePatternWithTypeType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The name pattern that branches or tags must match in order to deploy to the environment.
 /// 
@@ -41,19 +41,19 @@ final String name;
 /// Whether this rule targets a branch or tag
 final DeploymentBranchPolicyNamePatternWithTypeType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-DeploymentBranchPolicyNamePatternWithType copyWith({String? name, DeploymentBranchPolicyNamePatternWithTypeType? Function()? type, }) { return DeploymentBranchPolicyNamePatternWithType(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+DeploymentBranchPolicyNamePatternWithType copyWith({String? name, DeploymentBranchPolicyNamePatternWithTypeType? Function()? type, }) {return DeploymentBranchPolicyNamePatternWithType(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeploymentBranchPolicyNamePatternWithType &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, type); } 
-@override String toString() { return 'DeploymentBranchPolicyNamePatternWithType(name: $name, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(name, type);}
+@override String toString() {return 'DeploymentBranchPolicyNamePatternWithType(name: $name, type: $type)';}
+}

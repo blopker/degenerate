@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The bucket jurisdiction.
 @immutable final class R2GetEventNotificationConfigCfR2Jurisdiction {const R2GetEventNotificationConfigCfR2Jurisdiction._(this.value);
 
-factory R2GetEventNotificationConfigCfR2Jurisdiction.fromJson(String json) { return switch (json) {
+factory R2GetEventNotificationConfigCfR2Jurisdiction.fromJson(String json) {return switch (json) {
   'default' => $default,
   'eu' => eu,
   'fedramp' => fedramp,
   _ => R2GetEventNotificationConfigCfR2Jurisdiction._(json),
-}; }
+};}
 
 static const R2GetEventNotificationConfigCfR2Jurisdiction $default = R2GetEventNotificationConfigCfR2Jurisdiction._('default');
 
@@ -20,11 +20,11 @@ static const List<R2GetEventNotificationConfigCfR2Jurisdiction> values = [$defau
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2GetEventNotificationConfigCfR2Jurisdiction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2GetEventNotificationConfigCfR2Jurisdiction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2GetEventNotificationConfigCfR2Jurisdiction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2GetEventNotificationConfigCfR2Jurisdiction($value)';}
+}

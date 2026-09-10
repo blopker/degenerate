@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_csr.dart';import 'tls_certificates_and_hostnames_request_type.dart';import 'tls_certificates_and_hostnames_requested_validity.dart';@immutable final class OriginCaCreateCertificateRequest {const OriginCaCreateCertificateRequest({required this.csr, required this.hostnames, required this.requestType, this.requestedValidity, });
 
-factory OriginCaCreateCertificateRequest.fromJson(Map<String, dynamic> json) { return OriginCaCreateCertificateRequest(
+factory OriginCaCreateCertificateRequest.fromJson(Map<String, dynamic> json) {return OriginCaCreateCertificateRequest(
   csr: TlsCertificatesAndHostnamesCsr.fromJson(json['csr'] as String),
   hostnames: (json['hostnames'] as List<dynamic>).map((e) => e as String).toList(),
   requestType: TlsCertificatesAndHostnamesRequestType.fromJson(json['request_type'] as String),
   requestedValidity: json['requested_validity'] != null ? TlsCertificatesAndHostnamesRequestedValidity.fromJson((json['requested_validity'] as num).toDouble()) : null,
-); }
+);}
 
 /// The Certificate Signing Request (CSR). Must be newline-encoded.
 final TlsCertificatesAndHostnamesCsr csr;
@@ -22,27 +22,27 @@ final TlsCertificatesAndHostnamesRequestType requestType;
 /// The number of days for which the certificate should be valid.
 final TlsCertificatesAndHostnamesRequestedValidity? requestedValidity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'csr': csr.toJson(),
   'hostnames': hostnames,
   'request_type': requestType.toJson(),
   if (requestedValidity != null) 'requested_validity': requestedValidity?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('csr') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('csr') &&
       json.containsKey('hostnames') &&
-      json.containsKey('request_type'); } 
-OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, List<String>? hostnames, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? Function()? requestedValidity, }) { return OriginCaCreateCertificateRequest(
+      json.containsKey('request_type');}
+OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, List<String>? hostnames, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? Function()? requestedValidity, }) {return OriginCaCreateCertificateRequest(
   csr: csr ?? this.csr,
   hostnames: hostnames ?? this.hostnames,
   requestType: requestType ?? this.requestType,
   requestedValidity: requestedValidity != null ? requestedValidity() : this.requestedValidity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OriginCaCreateCertificateRequest &&
           csr == other.csr &&
           listEquals(hostnames, other.hostnames) &&
           requestType == other.requestType &&
-          requestedValidity == other.requestedValidity; } 
-@override int get hashCode { return Object.hash(csr, Object.hashAll(hostnames), requestType, requestedValidity); } 
-@override String toString() { return 'OriginCaCreateCertificateRequest(csr: $csr, hostnames: $hostnames, requestType: $requestType, requestedValidity: $requestedValidity)'; } 
- }
+          requestedValidity == other.requestedValidity;}
+@override int get hashCode {return Object.hash(csr, Object.hashAll(hostnames), requestType, requestedValidity);}
+@override String toString() {return 'OriginCaCreateCertificateRequest(csr: $csr, hostnames: $hostnames, requestType: $requestType, requestedValidity: $requestedValidity)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft_balance_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft_linked_transaction.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft {const CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft({required this.balanceTransaction, required this.linkedTransaction, });
 
-factory CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
+factory CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(Map<String, dynamic> json) {return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
   balanceTransaction: CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction.fromJson(json['balance_transaction']),
   linkedTransaction: CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftLinkedTransaction.fromJson(json['linked_transaction']),
-); }
+);}
 
 /// The [Balance Transaction](https://docs.stripe.com/api/balance_transactions/object) that corresponds to funds taken out of your Stripe balance.
 final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction balanceTransaction;
@@ -14,20 +14,20 @@ final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftB
 /// The [Cash Balance Transaction](https://docs.stripe.com/api/cash_balance_transactions/object) that brought the customer balance negative, triggering the clawback of funds.
 final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftLinkedTransaction linkedTransaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'balance_transaction': balanceTransaction.toJson(),
   'linked_transaction': linkedTransaction.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('balance_transaction') &&
-      json.containsKey('linked_transaction'); } 
-CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction? balanceTransaction, CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftLinkedTransaction? linkedTransaction, }) { return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('balance_transaction') &&
+      json.containsKey('linked_transaction');}
+CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction? balanceTransaction, CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftLinkedTransaction? linkedTransaction, }) {return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   linkedTransaction: linkedTransaction ?? this.linkedTransaction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft &&
           balanceTransaction == other.balanceTransaction &&
-          linkedTransaction == other.linkedTransaction; } 
-@override int get hashCode { return Object.hash(balanceTransaction, linkedTransaction); } 
-@override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(balanceTransaction: $balanceTransaction, linkedTransaction: $linkedTransaction)'; } 
- }
+          linkedTransaction == other.linkedTransaction;}
+@override int get hashCode {return Object.hash(balanceTransaction, linkedTransaction);}
+@override String toString() {return 'CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(balanceTransaction: $balanceTransaction, linkedTransaction: $linkedTransaction)';}
+}

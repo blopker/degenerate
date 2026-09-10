@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_us_bank_account_display_preference.dart';/// Stripe users in the United States can accept ACH direct debit payments from customers with a US bank account using the Automated Clearing House (ACH) payments system operated by Nacha. Check this [page](https://docs.stripe.com/payments/ach-direct-debit) for more details.
 @immutable final class PostPaymentMethodConfigurationsRequestUsBankAccount {const PostPaymentMethodConfigurationsRequestUsBankAccount({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestUsBankAccount(
+factory PostPaymentMethodConfigurationsRequestUsBankAccount.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestUsBankAccount(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestUsBankAccountDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestUsBankAccountDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestUsBankAccount copyWith({PostPaymentMethodConfigurationsRequestUsBankAccountDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestUsBankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestUsBankAccount copyWith({PostPaymentMethodConfigurationsRequestUsBankAccountDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestUsBankAccount(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestUsBankAccount &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestUsBankAccount(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestUsBankAccount(displayPreference: $displayPreference)';}
+}

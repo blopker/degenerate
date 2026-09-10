@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam28NetworksRequested {const PaymentIntentPaymentMethodOptionsParam28NetworksRequested._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam28NetworksRequested.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam28NetworksRequested.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
   _ => PaymentIntentPaymentMethodOptionsParam28NetworksRequested._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam28NetworksRequested ach = PaymentIntentPaymentMethodOptionsParam28NetworksRequested._('ach');
 
@@ -16,32 +16,32 @@ static const List<PaymentIntentPaymentMethodOptionsParam28NetworksRequested> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam28NetworksRequested && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam28NetworksRequested($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam28NetworksRequested && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam28NetworksRequested($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam28Networks {const PaymentIntentPaymentMethodOptionsParam28Networks({this.requested});
 
-factory PaymentIntentPaymentMethodOptionsParam28Networks.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam28Networks(
+factory PaymentIntentPaymentMethodOptionsParam28Networks.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam28Networks(
   requested: (json['requested'] as List<dynamic>?)?.map((e) => PaymentIntentPaymentMethodOptionsParam28NetworksRequested.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<PaymentIntentPaymentMethodOptionsParam28NetworksRequested>? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (requested != null) 'requested': requested?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam28Networks copyWith({List<PaymentIntentPaymentMethodOptionsParam28NetworksRequested>? Function()? requested}) { return PaymentIntentPaymentMethodOptionsParam28Networks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam28Networks copyWith({List<PaymentIntentPaymentMethodOptionsParam28NetworksRequested>? Function()? requested}) {return PaymentIntentPaymentMethodOptionsParam28Networks(
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam28Networks &&
-          listEquals(requested, other.requested); } 
-@override int get hashCode { return Object.hashAll(requested ?? const []).hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam28Networks(requested: $requested)'; } 
- }
+          listEquals(requested, other.requested);}
+@override int get hashCode {return Object.hashAll(requested ?? const []).hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam28Networks(requested: $requested)';}
+}

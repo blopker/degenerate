@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel.fromJson(String json) {return switch (json) {
   'elevated' => elevated,
   'highest' => highest,
   'low' => low,
@@ -10,7 +10,7 @@ factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk
   'not_assessed' => notAssessed,
   'unknown' => unknown,
   _ => PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel elevated = PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel._('elevated');
 
@@ -28,21 +28,21 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardT
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk({required this.riskLevel, this.invalidAccountNumberDeclineRatePastHour, this.invalidCredentialsDeclineRatePastHour, });
 
-factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(
+factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(
   invalidAccountNumberDeclineRatePastHour: json['invalid_account_number_decline_rate_past_hour'] != null ? (json['invalid_account_number_decline_rate_past_hour'] as num).toInt() : null,
   invalidCredentialsDeclineRatePastHour: json['invalid_credentials_decline_rate_past_hour'] != null ? (json['invalid_credentials_decline_rate_past_hour'] as num).toInt() : null,
   riskLevel: PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel.fromJson(json['risk_level'] as String),
-); }
+);}
 
 final int? invalidAccountNumberDeclineRatePastHour;
 
@@ -50,22 +50,22 @@ final int? invalidCredentialsDeclineRatePastHour;
 
 final PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel riskLevel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'invalid_account_number_decline_rate_past_hour': ?invalidAccountNumberDeclineRatePastHour,
   'invalid_credentials_decline_rate_past_hour': ?invalidCredentialsDeclineRatePastHour,
   'risk_level': riskLevel.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('risk_level'); } 
-PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk copyWith({int? Function()? invalidAccountNumberDeclineRatePastHour, int? Function()? invalidCredentialsDeclineRatePastHour, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel? riskLevel, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('risk_level');}
+PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk copyWith({int? Function()? invalidAccountNumberDeclineRatePastHour, int? Function()? invalidCredentialsDeclineRatePastHour, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRiskRiskLevel? riskLevel, }) {return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(
   invalidAccountNumberDeclineRatePastHour: invalidAccountNumberDeclineRatePastHour != null ? invalidAccountNumberDeclineRatePastHour() : this.invalidAccountNumberDeclineRatePastHour,
   invalidCredentialsDeclineRatePastHour: invalidCredentialsDeclineRatePastHour != null ? invalidCredentialsDeclineRatePastHour() : this.invalidCredentialsDeclineRatePastHour,
   riskLevel: riskLevel ?? this.riskLevel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk &&
           invalidAccountNumberDeclineRatePastHour == other.invalidAccountNumberDeclineRatePastHour &&
           invalidCredentialsDeclineRatePastHour == other.invalidCredentialsDeclineRatePastHour &&
-          riskLevel == other.riskLevel; } 
-@override int get hashCode { return Object.hash(invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour, riskLevel); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(invalidAccountNumberDeclineRatePastHour: $invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour: $invalidCredentialsDeclineRatePastHour, riskLevel: $riskLevel)'; } 
- }
+          riskLevel == other.riskLevel;}
+@override int get hashCode {return Object.hash(invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour, riskLevel);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk(invalidAccountNumberDeclineRatePastHour: $invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour: $invalidCredentialsDeclineRatePastHour, riskLevel: $riskLevel)';}
+}

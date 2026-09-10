@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutPermissionUpdateRequestRole {const PutPermissionUpdateRequestRole._(this.value);
 
-factory PutPermissionUpdateRequestRole.fromJson(String json) { return switch (json) {
+factory PutPermissionUpdateRequestRole.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => PutPermissionUpdateRequestRole._(json),
-}; }
+};}
 
 static const PutPermissionUpdateRequestRole read = PutPermissionUpdateRequestRole._('read');
 
@@ -16,32 +16,32 @@ static const List<PutPermissionUpdateRequestRole> values = [read, write];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PutPermissionUpdateRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PutPermissionUpdateRequestRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PutPermissionUpdateRequestRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PutPermissionUpdateRequestRole($value)';}
+}
 @immutable final class PutPermissionUpdateRequest {const PutPermissionUpdateRequest({required this.role});
 
-factory PutPermissionUpdateRequest.fromJson(Map<String, dynamic> json) { return PutPermissionUpdateRequest(
+factory PutPermissionUpdateRequest.fromJson(Map<String, dynamic> json) {return PutPermissionUpdateRequest(
   role: PutPermissionUpdateRequestRole.fromJson(json['role'] as String),
-); }
+);}
 
 final PutPermissionUpdateRequestRole role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role': role.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role'); } 
-PutPermissionUpdateRequest copyWith({PutPermissionUpdateRequestRole? role}) { return PutPermissionUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role');}
+PutPermissionUpdateRequest copyWith({PutPermissionUpdateRequestRole? role}) {return PutPermissionUpdateRequest(
   role: role ?? this.role,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PutPermissionUpdateRequest &&
-          role == other.role; } 
-@override int get hashCode { return role.hashCode; } 
-@override String toString() { return 'PutPermissionUpdateRequest(role: $role)'; } 
- }
+          role == other.role;}
+@override int get hashCode {return role.hashCode;}
+@override String toString() {return 'PutPermissionUpdateRequest(role: $role)';}
+}

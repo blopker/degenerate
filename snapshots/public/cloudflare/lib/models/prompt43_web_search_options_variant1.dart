@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_web_search_options_variant1_user_location.dart';@immutable final class Prompt43WebSearchOptionsVariant1SearchContextSize {const Prompt43WebSearchOptionsVariant1SearchContextSize._(this.value);
 
-factory Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson(String json) { return switch (json) {
+factory Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => Prompt43WebSearchOptionsVariant1SearchContextSize._(json),
-}; }
+};}
 
 static const Prompt43WebSearchOptionsVariant1SearchContextSize low = Prompt43WebSearchOptionsVariant1SearchContextSize._('low');
 
@@ -19,41 +19,41 @@ static const List<Prompt43WebSearchOptionsVariant1SearchContextSize> values = [l
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt43WebSearchOptionsVariant1SearchContextSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt43WebSearchOptionsVariant1SearchContextSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt43WebSearchOptionsVariant1SearchContextSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt43WebSearchOptionsVariant1SearchContextSize($value)';}
+}
 /// Options for the web search tool (when using built-in web search).
 @immutable final class Prompt43WebSearchOptionsVariant1 {const Prompt43WebSearchOptionsVariant1({this.searchContextSize, this.userLocation, });
 
-factory Prompt43WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) { return Prompt43WebSearchOptionsVariant1(
+factory Prompt43WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) {return Prompt43WebSearchOptionsVariant1(
   searchContextSize: json['search_context_size'] != null ? Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   userLocation: json['user_location'] != null ? Prompt43WebSearchOptionsVariant1UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Prompt43WebSearchOptionsVariant1SearchContextSize? searchContextSize;
 
 final Prompt43WebSearchOptionsVariant1UserLocation? userLocation;
 
 /// The value with the schema default applied when absent.
-Prompt43WebSearchOptionsVariant1SearchContextSize get searchContextSizeOrDefault { return searchContextSize ?? Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson('medium'); } 
-Map<String, dynamic> toJson() { return {
+Prompt43WebSearchOptionsVariant1SearchContextSize get searchContextSizeOrDefault {return searchContextSize ?? Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson('medium');}
+Map<String, dynamic> toJson() {return {
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
   if (userLocation != null) 'user_location': userLocation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key)); } 
-Prompt43WebSearchOptionsVariant1 copyWith({Prompt43WebSearchOptionsVariant1SearchContextSize? Function()? searchContextSize, Prompt43WebSearchOptionsVariant1UserLocation? Function()? userLocation, }) { return Prompt43WebSearchOptionsVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key));}
+Prompt43WebSearchOptionsVariant1 copyWith({Prompt43WebSearchOptionsVariant1SearchContextSize? Function()? searchContextSize, Prompt43WebSearchOptionsVariant1UserLocation? Function()? userLocation, }) {return Prompt43WebSearchOptionsVariant1(
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Prompt43WebSearchOptionsVariant1 &&
           searchContextSize == other.searchContextSize &&
-          userLocation == other.userLocation; } 
-@override int get hashCode { return Object.hash(searchContextSize, userLocation); } 
-@override String toString() { return 'Prompt43WebSearchOptionsVariant1(searchContextSize: $searchContextSize, userLocation: $userLocation)'; } 
- }
+          userLocation == other.userLocation;}
+@override int get hashCode {return Object.hash(searchContextSize, userLocation);}
+@override String toString() {return 'Prompt43WebSearchOptionsVariant1(searchContextSize: $searchContextSize, userLocation: $userLocation)';}
+}

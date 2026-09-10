@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_after_completion_hosted_confirmation.dart';import 'post_payment_links_request_after_completion_redirect.dart';@immutable final class PostPaymentLinksRequestAfterCompletionType {const PostPaymentLinksRequestAfterCompletionType._(this.value);
 
-factory PostPaymentLinksRequestAfterCompletionType.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksRequestAfterCompletionType.fromJson(String json) {return switch (json) {
   'hosted_confirmation' => hostedConfirmation,
   'redirect' => redirect,
   _ => PostPaymentLinksRequestAfterCompletionType._(json),
-}; }
+};}
 
 static const PostPaymentLinksRequestAfterCompletionType hostedConfirmation = PostPaymentLinksRequestAfterCompletionType._('hosted_confirmation');
 
@@ -16,22 +16,22 @@ static const List<PostPaymentLinksRequestAfterCompletionType> values = [hostedCo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksRequestAfterCompletionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksRequestAfterCompletionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksRequestAfterCompletionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksRequestAfterCompletionType($value)';}
+}
 /// Behavior after the purchase is complete.
 @immutable final class PostPaymentLinksRequestAfterCompletion {const PostPaymentLinksRequestAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });
 
-factory PostPaymentLinksRequestAfterCompletion.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestAfterCompletion(
+factory PostPaymentLinksRequestAfterCompletion.fromJson(Map<String, dynamic> json) {return PostPaymentLinksRequestAfterCompletion(
   hostedConfirmation: json['hosted_confirmation'] != null ? PostPaymentLinksRequestAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,
   redirect: json['redirect'] != null ? PostPaymentLinksRequestAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
   type: PostPaymentLinksRequestAfterCompletionType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostPaymentLinksRequestAfterCompletionHostedConfirmation? hostedConfirmation;
 
@@ -39,22 +39,22 @@ final PostPaymentLinksRequestAfterCompletionRedirect? redirect;
 
 final PostPaymentLinksRequestAfterCompletionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (hostedConfirmation != null) 'hosted_confirmation': hostedConfirmation?.toJson(),
   if (redirect != null) 'redirect': redirect?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostPaymentLinksRequestAfterCompletion copyWith({PostPaymentLinksRequestAfterCompletionHostedConfirmation? Function()? hostedConfirmation, PostPaymentLinksRequestAfterCompletionRedirect? Function()? redirect, PostPaymentLinksRequestAfterCompletionType? type, }) { return PostPaymentLinksRequestAfterCompletion(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostPaymentLinksRequestAfterCompletion copyWith({PostPaymentLinksRequestAfterCompletionHostedConfirmation? Function()? hostedConfirmation, PostPaymentLinksRequestAfterCompletionRedirect? Function()? redirect, PostPaymentLinksRequestAfterCompletionType? type, }) {return PostPaymentLinksRequestAfterCompletion(
   hostedConfirmation: hostedConfirmation != null ? hostedConfirmation() : this.hostedConfirmation,
   redirect: redirect != null ? redirect() : this.redirect,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksRequestAfterCompletion &&
           hostedConfirmation == other.hostedConfirmation &&
           redirect == other.redirect &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(hostedConfirmation, redirect, type); } 
-@override String toString() { return 'PostPaymentLinksRequestAfterCompletion(hostedConfirmation: $hostedConfirmation, redirect: $redirect, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(hostedConfirmation, redirect, type);}
+@override String toString() {return 'PostPaymentLinksRequestAfterCompletion(hostedConfirmation: $hostedConfirmation, redirect: $redirect, type: $type)';}
+}

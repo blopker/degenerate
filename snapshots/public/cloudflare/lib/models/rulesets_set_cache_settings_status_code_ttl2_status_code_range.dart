@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A range of status codes to apply the TTL to.
 @immutable final class RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange {const RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange({this.from, this.to, });
 
-factory RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange(
+factory RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange.fromJson(Map<String, dynamic> json) {return RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange(
   from: json['from'] != null ? (json['from'] as num).toInt() : null,
   to: json['to'] != null ? (json['to'] as num).toInt() : null,
-); }
+);}
 
 /// The lower bound of the range.
 final int? from;
@@ -14,19 +14,19 @@ final int? from;
 /// The upper bound of the range.
 final int? to;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': ?from,
   'to': ?to,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) { return RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'from', 'to'}.contains(key));}
+RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) {return RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange(
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange(from: $from, to: $to)'; } 
- }
+          to == other.to;}
+@override int get hashCode {return Object.hash(from, to);}
+@override String toString() {return 'RulesetsSetCacheSettingsStatusCodeTtl2StatusCodeRange(from: $from, to: $to)';}
+}

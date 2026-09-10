@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
 @immutable final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType {const OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType._(this.value);
 
-factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType.fromJson(String json) { return switch (json) {
+factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType.fromJson(String json) {return switch (json) {
   'maven_repository' => mavenRepository,
   'nuget_feed' => nugetFeed,
   'goproxy_server' => goproxyServer,
@@ -20,7 +20,7 @@ factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType.from
   'python_index' => pythonIndex,
   'terraform_registry' => terraformRegistry,
   _ => OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType._(json),
-}; }
+};}
 
 static const OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType mavenRepository = OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType._('maven_repository');
 
@@ -56,23 +56,23 @@ static const List<OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType($value)';}
+}
 /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
 @immutable final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility {const OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility._(this.value);
 
-factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility.fromJson(String json) { return switch (json) {
+factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility.fromJson(String json) {return switch (json) {
   'all' => all,
   'private' => private,
   'selected' => selected,
   _ => OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility._(json),
-}; }
+};}
 
 static const OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility all = OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility._('all');
 
@@ -84,18 +84,18 @@ static const List<OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibil
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility($value)';}
+}
 /// Private registry configuration for an organization
 @immutable final class OrgPrivateRegistryConfigurationWithSelectedRepositories {const OrgPrivateRegistryConfigurationWithSelectedRepositories({required this.name, required this.registryType, required this.visibility, required this.createdAt, required this.updatedAt, this.url, this.username, this.replacesBase, this.selectedRepositoryIds, });
 
-factory OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(Map<String, dynamic> json) { return OrgPrivateRegistryConfigurationWithSelectedRepositories(
+factory OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(Map<String, dynamic> json) {return OrgPrivateRegistryConfigurationWithSelectedRepositories(
   name: json['name'] as String,
   registryType: OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType.fromJson(json['registry_type'] as String),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
@@ -105,7 +105,7 @@ factory OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(Map<Str
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The name of the private registry configuration.
 final String name;
@@ -133,8 +133,8 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// The value with the schema default applied when absent.
-bool get replacesBaseOrDefault { return replacesBase ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get replacesBaseOrDefault {return replacesBase ?? false;}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'registry_type': registryType.toJson(),
   if (url != null) 'url': url?.toString(),
@@ -144,13 +144,13 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('registry_type') &&
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrgPrivateRegistryConfigurationWithSelectedRepositories copyWith({String? name, OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType? registryType, Uri? Function()? url, String? Function()? username, bool? Function()? replacesBase, OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility? visibility, List<int>? Function()? selectedRepositoryIds, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfigurationWithSelectedRepositories(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+OrgPrivateRegistryConfigurationWithSelectedRepositories copyWith({String? name, OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType? registryType, Uri? Function()? url, String? Function()? username, bool? Function()? replacesBase, OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility? visibility, List<int>? Function()? selectedRepositoryIds, DateTime? createdAt, DateTime? updatedAt, }) {return OrgPrivateRegistryConfigurationWithSelectedRepositories(
   name: name ?? this.name,
   registryType: registryType ?? this.registryType,
   url: url != null ? url() : this.url,
@@ -160,8 +160,8 @@ OrgPrivateRegistryConfigurationWithSelectedRepositories copyWith({String? name, 
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgPrivateRegistryConfigurationWithSelectedRepositories &&
           name == other.name &&
           registryType == other.registryType &&
@@ -171,7 +171,7 @@ OrgPrivateRegistryConfigurationWithSelectedRepositories copyWith({String? name, 
           visibility == other.visibility &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds) &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(name, registryType, url, username, replacesBase, visibility, Object.hashAll(selectedRepositoryIds ?? const []), createdAt, updatedAt); } 
-@override String toString() { return 'OrgPrivateRegistryConfigurationWithSelectedRepositories(name: $name, registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(name, registryType, url, username, replacesBase, visibility, Object.hashAll(selectedRepositoryIds ?? const []), createdAt, updatedAt);}
+@override String toString() {return 'OrgPrivateRegistryConfigurationWithSelectedRepositories(name: $name, registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

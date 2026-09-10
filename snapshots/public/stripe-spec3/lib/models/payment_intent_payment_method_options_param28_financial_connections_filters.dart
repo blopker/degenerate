@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories {const PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'savings' => savings,
   _ => PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories checking = PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories._('checking');
 
@@ -16,32 +16,32 @@ static const List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters {const PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters({this.accountSubcategories});
 
-factory PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters(
+factory PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories>? accountSubcategories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters copyWith({List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories>? Function()? accountSubcategories}) { return PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_subcategories'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters copyWith({List<PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFiltersAccountSubcategories>? Function()? accountSubcategories}) {return PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters &&
-          listEquals(accountSubcategories, other.accountSubcategories); } 
-@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []).hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters(accountSubcategories: $accountSubcategories)'; } 
- }
+          listEquals(accountSubcategories, other.accountSubcategories);}
+@override int get hashCode {return Object.hashAll(accountSubcategories ?? const []).hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam28FinancialConnectionsFilters(accountSubcategories: $accountSubcategories)';}
+}

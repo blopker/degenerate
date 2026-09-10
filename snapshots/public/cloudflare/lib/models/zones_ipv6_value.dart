@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesIpv6Value {const ZonesIpv6Value._(this.value);
 
-factory ZonesIpv6Value.fromJson(String json) { return switch (json) {
+factory ZonesIpv6Value.fromJson(String json) {return switch (json) {
   'off' => off,
   'on' => $on,
   _ => ZonesIpv6Value._(json),
-}; }
+};}
 
 static const ZonesIpv6Value off = ZonesIpv6Value._('off');
 
@@ -17,11 +17,11 @@ static const List<ZonesIpv6Value> values = [off, $on];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesIpv6Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesIpv6Value($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesIpv6Value && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesIpv6Value($value)';}
+}

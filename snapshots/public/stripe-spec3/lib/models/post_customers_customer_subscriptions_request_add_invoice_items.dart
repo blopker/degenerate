@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_request_add_invoice_items_discounts.dart';import 'post_customers_customer_subscriptions_request_add_invoice_items_period.dart';import 'post_customers_customer_subscriptions_request_add_invoice_items_price_data.dart';import 'post_customers_customer_subscriptions_request_add_invoice_items_tax_rates.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItems {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItems({this.discounts, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxRates, });
 
-factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItems.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItems(
+factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItems.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerSubscriptionsRequestAddInvoiceItems(
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   period: json['period'] != null ? PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
@@ -10,7 +10,7 @@ factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItems.fromJson(Map<St
   priceData: json['price_data'] != null ? PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: json['tax_rates'] != null ? PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsTaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 final List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsDiscounts>? discounts;
 
@@ -26,7 +26,7 @@ final int? quantity;
 
 final PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsTaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (discounts != null) 'discounts': discounts?.map((e) => e.toJson()).toList(),
   'metadata': ?metadata,
   if (period != null) 'period': period?.toJson(),
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discounts', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
-PostCustomersCustomerSubscriptionsRequestAddInvoiceItems copyWith({List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsDiscounts>? Function()? discounts, Map<String, String>? Function()? metadata, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod? Function()? period, String? Function()? price, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPriceData? Function()? priceData, int? Function()? quantity, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsTaxRates? Function()? taxRates, }) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'discounts', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key));}
+PostCustomersCustomerSubscriptionsRequestAddInvoiceItems copyWith({List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsDiscounts>? Function()? discounts, Map<String, String>? Function()? metadata, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod? Function()? period, String? Function()? price, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPriceData? Function()? priceData, int? Function()? quantity, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsTaxRates? Function()? taxRates, }) {return PostCustomersCustomerSubscriptionsRequestAddInvoiceItems(
   discounts: discounts != null ? discounts() : this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,
   period: period != null ? period() : this.period,
@@ -44,8 +44,8 @@ PostCustomersCustomerSubscriptionsRequestAddInvoiceItems copyWith({List<PostCust
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestAddInvoiceItems &&
           listEquals(discounts, other.discounts) &&
           metadata == other.metadata &&
@@ -53,7 +53,7 @@ PostCustomersCustomerSubscriptionsRequestAddInvoiceItems copyWith({List<PostCust
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts ?? const []), metadata, period, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItems(discounts: $discounts, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
- }
+          taxRates == other.taxRates;}
+@override int get hashCode {return Object.hash(Object.hashAll(discounts ?? const []), metadata, period, price, priceData, quantity, taxRates);}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItems(discounts: $discounts, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';}
+}

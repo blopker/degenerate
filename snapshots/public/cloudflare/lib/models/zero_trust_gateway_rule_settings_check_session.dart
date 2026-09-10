@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.
 @immutable final class ZeroTrustGatewayRuleSettingsCheckSession {const ZeroTrustGatewayRuleSettingsCheckSession({this.duration, this.enforce, });
 
-factory ZeroTrustGatewayRuleSettingsCheckSession.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsCheckSession(
+factory ZeroTrustGatewayRuleSettingsCheckSession.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettingsCheckSession(
   duration: json['duration'] as String?,
   enforce: json['enforce'] as bool?,
-); }
+);}
 
 /// Sets the required session freshness threshold. The API returns a normalized version of this value.
 final String? duration;
@@ -14,19 +14,19 @@ final String? duration;
 /// Enable session enforcement.
 final bool? enforce;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'duration': ?duration,
   'enforce': ?enforce,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'duration', 'enforce'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsCheckSession copyWith({String? Function()? duration, bool? Function()? enforce, }) { return ZeroTrustGatewayRuleSettingsCheckSession(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'duration', 'enforce'}.contains(key));}
+ZeroTrustGatewayRuleSettingsCheckSession copyWith({String? Function()? duration, bool? Function()? enforce, }) {return ZeroTrustGatewayRuleSettingsCheckSession(
   duration: duration != null ? duration() : this.duration,
   enforce: enforce != null ? enforce() : this.enforce,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRuleSettingsCheckSession &&
           duration == other.duration &&
-          enforce == other.enforce; } 
-@override int get hashCode { return Object.hash(duration, enforce); } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsCheckSession(duration: $duration, enforce: $enforce)'; } 
- }
+          enforce == other.enforce;}
+@override int get hashCode {return Object.hash(duration, enforce);}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsCheckSession(duration: $duration, enforce: $enforce)';}
+}

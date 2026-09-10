@@ -2,25 +2,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint {const AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint({this.disabled});
 
-factory AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint(
+factory AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint.fromJson(Map<String, dynamic> json) {return AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint(
   disabled: json['disabled'] as bool?,
-); }
+);}
 
 /// Disable chat completions endpoint for this public endpoint
 final bool? disabled;
 
 /// The value with the schema default applied when absent.
-bool get disabledOrDefault { return disabled ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get disabledOrDefault {return disabled ?? false;}
+Map<String, dynamic> toJson() {return {
   'disabled': ?disabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled'}.contains(key)); } 
-AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint copyWith({bool? Function()? disabled}) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'disabled'}.contains(key));}
+AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint copyWith({bool? Function()? disabled}) {return AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint(
   disabled: disabled != null ? disabled() : this.disabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint &&
-          disabled == other.disabled; } 
-@override int get hashCode { return disabled.hashCode; } 
-@override String toString() { return 'AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint(disabled: $disabled)'; } 
- }
+          disabled == other.disabled;}
+@override int get hashCode {return disabled.hashCode;}
+@override String toString() {return 'AiSearchFetchInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint(disabled: $disabled)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
 @immutable final class LogpushDataset {const LogpushDataset._(this.value);
 
-factory LogpushDataset.fromJson(String json) { return switch (json) {
+factory LogpushDataset.fromJson(String json) {return switch (json) {
   'access_requests' => accessRequests,
   'audit_logs' => auditLogs,
   'audit_logs_v2' => auditLogsV2,
@@ -35,7 +35,7 @@ factory LogpushDataset.fromJson(String json) { return switch (json) {
   'zaraz_events' => zarazEvents,
   'zero_trust_network_sessions' => zeroTrustNetworkSessions,
   _ => LogpushDataset._(json),
-}; }
+};}
 
 static const LogpushDataset accessRequests = LogpushDataset._('access_requests');
 
@@ -101,11 +101,11 @@ static const List<LogpushDataset> values = [accessRequests, auditLogs, auditLogs
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LogpushDataset && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LogpushDataset($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LogpushDataset && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LogpushDataset($value)';}
+}

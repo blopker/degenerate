@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'payment_method_details_card_present_offline.dart';import 'payment_method_details_card_present_receipt.dart';/// How card details were read in this transaction.
 @immutable final class PaymentMethodDetailsCardPresentReadMethod {const PaymentMethodDetailsCardPresentReadMethod._(this.value);
 
-factory PaymentMethodDetailsCardPresentReadMethod.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsCardPresentReadMethod.fromJson(String json) {return switch (json) {
   'contact_emv' => contactEmv,
   'contactless_emv' => contactlessEmv,
   'contactless_magstripe_mode' => contactlessMagstripeMode,
   'magnetic_stripe_fallback' => magneticStripeFallback,
   'magnetic_stripe_track2' => magneticStripeTrack2,
   _ => PaymentMethodDetailsCardPresentReadMethod._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsCardPresentReadMethod contactEmv = PaymentMethodDetailsCardPresentReadMethod._('contact_emv');
 
@@ -26,18 +26,18 @@ static const List<PaymentMethodDetailsCardPresentReadMethod> values = [contactEm
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardPresentReadMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardPresentReadMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsCardPresentReadMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsCardPresentReadMethod($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsCardPresent {const PaymentMethodDetailsCardPresent({required this.expMonth, required this.expYear, required this.incrementalAuthorizationSupported, required this.overcaptureSupported, this.amountAuthorized = const Omittable.absent(), this.brand = const Omittable.absent(), this.brandProduct = const Omittable.absent(), this.captureBefore, this.cardholderName = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.emvAuthData = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.generatedCard = const Omittable.absent(), this.issuer = const Omittable.absent(), this.last4 = const Omittable.absent(), this.location, this.network = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.offline = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.readMethod = const Omittable.absent(), this.reader, this.receipt = const Omittable.absent(), this.wallet, });
 
-factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresent(
+factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCardPresent(
   amountAuthorized: json.containsKey('amount_authorized') ? Omittable(json['amount_authorized'] != null ? (json['amount_authorized'] as num).toInt() : null) : const Omittable.absent(),
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
   brandProduct: json.containsKey('brand_product') ? Omittable(json['brand_product'] as String?) : const Omittable.absent(),
@@ -64,7 +64,7 @@ factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { re
   reader: json['reader'] as String?,
   receipt: json.containsKey('receipt') ? Omittable(json['receipt'] != null ? PaymentMethodDetailsCardPresentReceipt.fromJson(json['receipt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json['wallet'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The authorized amount
 final Omittable<int?> amountAuthorized;
@@ -145,7 +145,7 @@ final Omittable<PaymentMethodDetailsCardPresentReceipt?> receipt;
 
 final PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountAuthorized.isPresent) 'amount_authorized': amountAuthorized.value,
   if (brand.isPresent) 'brand': brand.value,
   if (brandProduct.isPresent) 'brand_product': brandProduct.value,
@@ -172,12 +172,12 @@ Map<String, dynamic> toJson() { return {
   'reader': ?reader,
   if (receipt.isPresent) 'receipt': receipt.value?.toJson(),
   if (wallet != null) 'wallet': wallet?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('incremental_authorization_supported') && json['incremental_authorization_supported'] is bool &&
-      json.containsKey('overcapture_supported') && json['overcapture_supported'] is bool; } 
-PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? brand, Omittable<String?>? brandProduct, int? Function()? captureBefore, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, Omittable<String?>? emvAuthData, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? generatedCard, bool? incrementalAuthorizationSupported, Omittable<String?>? issuer, Omittable<String?>? last4, String? Function()? location, Omittable<String?>? network, Omittable<String?>? networkTransactionId, Omittable<PaymentMethodDetailsCardPresentOffline?>? offline, bool? overcaptureSupported, Omittable<List<String>?>? preferredLocales, Omittable<PaymentMethodDetailsCardPresentReadMethod?>? readMethod, String? Function()? reader, Omittable<PaymentMethodDetailsCardPresentReceipt?>? receipt, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? Function()? wallet, }) { return PaymentMethodDetailsCardPresent(
+      json.containsKey('overcapture_supported') && json['overcapture_supported'] is bool;}
+PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? brand, Omittable<String?>? brandProduct, int? Function()? captureBefore, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, Omittable<String?>? emvAuthData, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? generatedCard, bool? incrementalAuthorizationSupported, Omittable<String?>? issuer, Omittable<String?>? last4, String? Function()? location, Omittable<String?>? network, Omittable<String?>? networkTransactionId, Omittable<PaymentMethodDetailsCardPresentOffline?>? offline, bool? overcaptureSupported, Omittable<List<String>?>? preferredLocales, Omittable<PaymentMethodDetailsCardPresentReadMethod?>? readMethod, String? Function()? reader, Omittable<PaymentMethodDetailsCardPresentReceipt?>? receipt, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? Function()? wallet, }) {return PaymentMethodDetailsCardPresent(
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   brand: brand ?? this.brand,
   brandProduct: brandProduct ?? this.brandProduct,
@@ -204,8 +204,8 @@ PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omi
   reader: reader != null ? reader() : this.reader,
   receipt: receipt ?? this.receipt,
   wallet: wallet != null ? wallet() : this.wallet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsCardPresent &&
           amountAuthorized == other.amountAuthorized &&
           brand == other.brand &&
@@ -233,7 +233,7 @@ PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omi
           readMethod == other.readMethod &&
           reader == other.reader &&
           receipt == other.receipt &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([amountAuthorized, brand, brandProduct, captureBefore, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, incrementalAuthorizationSupported, issuer, last4, location, network, networkTransactionId, offline, overcaptureSupported, Object.hashAll(preferredLocales.value ?? const []), readMethod, reader, receipt, wallet]); } 
-@override String toString() { return 'PaymentMethodDetailsCardPresent(amountAuthorized: $amountAuthorized, brand: $brand, brandProduct: $brandProduct, captureBefore: $captureBefore, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, incrementalAuthorizationSupported: $incrementalAuthorizationSupported, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, offline: $offline, overcaptureSupported: $overcaptureSupported, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt, wallet: $wallet)'; } 
- }
+          wallet == other.wallet;}
+@override int get hashCode {return Object.hashAll([amountAuthorized, brand, brandProduct, captureBefore, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, incrementalAuthorizationSupported, issuer, last4, location, network, networkTransactionId, offline, overcaptureSupported, Object.hashAll(preferredLocales.value ?? const []), readMethod, reader, receipt, wallet]);}
+@override String toString() {return 'PaymentMethodDetailsCardPresent(amountAuthorized: $amountAuthorized, brand: $brand, brandProduct: $brandProduct, captureBefore: $captureBefore, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, incrementalAuthorizationSupported: $incrementalAuthorizationSupported, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, offline: $offline, overcaptureSupported: $overcaptureSupported, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt, wallet: $wallet)';}
+}

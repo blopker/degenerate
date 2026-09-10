@@ -13,7 +13,7 @@ final class WorkersAiDumbPipeApi with ApiExecutor {const WorkersAiDumbPipeApi(th
 /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v2 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/pipecat-ai/smart-turn-v2`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV2({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV2({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,27 +22,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/pipecat-ai/smart-turn-v3 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v3 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/pipecat-ai/smart-turn-v3`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV3({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV3({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -51,27 +42,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/test/hello-world-cog model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/test/hello-world-cog model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/test/hello-world-cog`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400>> workersAiPostWebsocketRunCfTestHelloWorldCog({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400>> workersAiPostWebsocketRunCfTestHelloWorldCog({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -80,19 +62,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

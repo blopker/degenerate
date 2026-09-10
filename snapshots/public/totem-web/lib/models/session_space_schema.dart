@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug = const Omittable.absent(), this.shortDescription = const Omittable.absent(), this.image = const Omittable.absent(), this.content, });
 
-factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionSpaceSchema(
+factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) {return SessionSpaceSchema(
   author: PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>),
   title: json['title'] as String,
   slug: json.containsKey('slug') ? Omittable(json['slug'] as String?) : const Omittable.absent(),
@@ -14,7 +14,7 @@ factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionS
   recurring: json['recurring'] as String,
   image: json.containsKey('image') ? Omittable(json['image'] as String?) : const Omittable.absent(),
   content: json['content'] as String?,
-); }
+);}
 
 final PublicUserSchema author;
 
@@ -42,8 +42,8 @@ final Omittable<String?> image;
 final String? content;
 
 /// The value with the schema default applied when absent.
-String get contentOrDefault { return content ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get contentOrDefault {return content ?? '';}
+Map<String, dynamic> toJson() {return {
   'author': author.toJson(),
   'title': title,
   if (slug.isPresent) 'slug': slug.value,
@@ -55,15 +55,15 @@ Map<String, dynamic> toJson() { return {
   'recurring': recurring,
   if (image.isPresent) 'image': image.value,
   'content': ?content,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('date_created') && json['date_created'] is String &&
       json.containsKey('date_modified') && json['date_modified'] is String &&
       json.containsKey('subtitle') && json['subtitle'] is String &&
       json.containsKey('categories') &&
-      json.containsKey('recurring') && json['recurring'] is String; } 
-SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String? Function()? content, }) { return SessionSpaceSchema(
+      json.containsKey('recurring') && json['recurring'] is String;}
+SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String? Function()? content, }) {return SessionSpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,
   slug: slug ?? this.slug,
@@ -75,8 +75,8 @@ SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<
   recurring: recurring ?? this.recurring,
   image: image ?? this.image,
   content: content != null ? content() : this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SessionSpaceSchema &&
           author == other.author &&
           title == other.title &&
@@ -88,7 +88,7 @@ SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<
           shortDescription == other.shortDescription &&
           recurring == other.recurring &&
           image == other.image &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(author, title, slug, dateCreated, dateModified, subtitle, Object.hashAll(categories), shortDescription, recurring, image, content); } 
-@override String toString() { return 'SessionSpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle, categories: $categories, shortDescription: $shortDescription, recurring: $recurring, image: $image, content: $content)'; } 
- }
+          content == other.content;}
+@override int get hashCode {return Object.hash(author, title, slug, dateCreated, dateModified, subtitle, Object.hashAll(categories), shortDescription, recurring, image, content);}
+@override String toString() {return 'SessionSpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle, categories: $categories, shortDescription: $shortDescription, recurring: $recurring, image: $image, content: $content)';}
+}

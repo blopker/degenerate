@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRequestOnBehalfOfVariant2 {const PostInvoicesInvoiceRequestOnBehalfOfVariant2._(this.value);
 
-factory PostInvoicesInvoiceRequestOnBehalfOfVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestOnBehalfOfVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesInvoiceRequestOnBehalfOfVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestOnBehalfOfVariant2 $empty = PostInvoicesInvoiceRequestOnBehalfOfVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesInvoiceRequestOnBehalfOfVariant2> values = [$empty
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestOnBehalfOfVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestOnBehalfOfVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestOnBehalfOfVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestOnBehalfOfVariant2($value)';}
+}
 /// The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the [Invoices with Connect](https://docs.stripe.com/billing/invoices/connect) documentation for details.
 @immutable
 final class PostInvoicesInvoiceRequestOnBehalfOf {

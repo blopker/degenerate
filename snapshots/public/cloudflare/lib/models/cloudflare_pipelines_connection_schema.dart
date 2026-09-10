@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred = const Omittable.absent(), });
 
-factory CloudflarePipelinesConnectionSchema.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesConnectionSchema(
+factory CloudflarePipelinesConnectionSchema.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesConnectionSchema(
   fields: (json['fields'] as List<dynamic>?)?.map((e) => CloudflarePipelinesSourceField.fromJson(e as Map<String, dynamic>)).toList(),
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   inferred: json.containsKey('inferred') ? Omittable(json['inferred'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 final List<CloudflarePipelinesSourceField>? fields;
 
@@ -14,22 +14,22 @@ final CloudflarePipelinesFormat? format;
 
 final Omittable<bool?> inferred;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fields != null) 'fields': fields?.map((e) => e.toJson()).toList(),
   if (format != null) 'format': format?.toJson(),
   if (inferred.isPresent) 'inferred': inferred.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fields', 'format', 'inferred'}.contains(key)); } 
-CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesSourceField>? Function()? fields, CloudflarePipelinesFormat? Function()? format, Omittable<bool?>? inferred, }) { return CloudflarePipelinesConnectionSchema(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fields', 'format', 'inferred'}.contains(key));}
+CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesSourceField>? Function()? fields, CloudflarePipelinesFormat? Function()? format, Omittable<bool?>? inferred, }) {return CloudflarePipelinesConnectionSchema(
   fields: fields != null ? fields() : this.fields,
   format: format != null ? format() : this.format,
   inferred: inferred ?? this.inferred,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CloudflarePipelinesConnectionSchema &&
           listEquals(fields, other.fields) &&
           format == other.format &&
-          inferred == other.inferred; } 
-@override int get hashCode { return Object.hash(Object.hashAll(fields ?? const []), format, inferred); } 
-@override String toString() { return 'CloudflarePipelinesConnectionSchema(fields: $fields, format: $format, inferred: $inferred)'; } 
- }
+          inferred == other.inferred;}
+@override int get hashCode {return Object.hash(Object.hashAll(fields ?? const []), format, inferred);}
+@override String toString() {return 'CloudflarePipelinesConnectionSchema(fields: $fields, format: $format, inferred: $inferred)';}
+}

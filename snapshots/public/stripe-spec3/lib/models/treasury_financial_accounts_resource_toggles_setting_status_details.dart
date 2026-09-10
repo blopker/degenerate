@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents the reason why the status is `pending` or `restricted`.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._(this.value);
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(String json) {return switch (json) {
   'activating' => activating,
   'capability_not_requested' => capabilityNotRequested,
   'financial_account_closed' => financialAccountClosed,
@@ -14,7 +14,7 @@ factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJso
   'restricted_by_platform' => restrictedByPlatform,
   'restricted_other' => restrictedOther,
   _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode activating = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('activating');
 
@@ -38,23 +38,23 @@ static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)';}
+}
 /// Represents what the user should do, if anything, to activate the Feature.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._(this.value);
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution.fromJson(String json) {return switch (json) {
   'contact_stripe' => contactStripe,
   'provide_information' => provideInformation,
   'remove_restriction' => removeRestriction,
   _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution contactStripe = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._('contact_stripe');
 
@@ -66,22 +66,22 @@ static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution($value)';}
+}
 /// The `platform_restrictions` that are restricting this Feature.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._(this.value);
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction.fromJson(String json) {return switch (json) {
   'inbound_flows' => inboundFlows,
   'outbound_flows' => outboundFlows,
   _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction inboundFlows = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._('inbound_flows');
 
@@ -91,22 +91,22 @@ static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction($value)';}
+}
 /// Additional details on the FinancialAccount Features information.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution = const Omittable.absent(), this.restriction, });
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
+factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Map<String, dynamic> json) {return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(json['code'] as String),
   resolution: json.containsKey('resolution') ? Omittable(json['resolution'] != null ? TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution.fromJson(json['resolution'] as String) : null) : const Omittable.absent(),
   restriction: json['restriction'] != null ? TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction.fromJson(json['restriction'] as String) : null,
-); }
+);}
 
 /// Represents the reason why the status is `pending` or `restricted`.
 final TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode code;
@@ -117,22 +117,22 @@ final Omittable<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsReso
 /// The `platform_restrictions` that are restricting this Feature.
 final TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction? restriction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   if (resolution.isPresent) 'resolution': resolution.value?.toJson(),
   if (restriction != null) 'restriction': restriction?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'); } 
-TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Omittable<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution?>? resolution, TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction? Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code');}
+TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Omittable<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution?>? resolution, TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction? Function()? restriction, }) {return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: code ?? this.code,
   resolution: resolution ?? this.resolution,
   restriction: restriction != null ? restriction() : this.restriction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetails &&
           code == other.code &&
           resolution == other.resolution &&
-          restriction == other.restriction; } 
-@override int get hashCode { return Object.hash(code, resolution, restriction); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(code: $code, resolution: $resolution, restriction: $restriction)'; } 
- }
+          restriction == other.restriction;}
+@override int get hashCode {return Object.hash(code, resolution, restriction);}
+@override String toString() {return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(code: $code, resolution: $resolution, restriction: $restriction)';}
+}

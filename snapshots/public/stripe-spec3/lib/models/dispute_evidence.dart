@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_enhanced_evidence.dart';import 'dispute_evidence_cancellation_policy.dart';import 'dispute_evidence_customer_communication.dart';import 'dispute_evidence_customer_signature.dart';import 'dispute_evidence_duplicate_charge_documentation.dart';import 'dispute_evidence_receipt.dart';import 'dispute_evidence_refund_policy.dart';import 'dispute_evidence_service_documentation.dart';import 'dispute_evidence_shipping_documentation.dart';import 'dispute_evidence_uncategorized_file.dart';/// 
 @immutable final class DisputeEvidence {const DisputeEvidence({required this.enhancedEvidence, this.accessActivityLog = const Omittable.absent(), this.billingAddress = const Omittable.absent(), this.cancellationPolicy = const Omittable.absent(), this.cancellationPolicyDisclosure = const Omittable.absent(), this.cancellationRebuttal = const Omittable.absent(), this.customerCommunication = const Omittable.absent(), this.customerEmailAddress = const Omittable.absent(), this.customerName = const Omittable.absent(), this.customerPurchaseIp = const Omittable.absent(), this.customerSignature = const Omittable.absent(), this.duplicateChargeDocumentation = const Omittable.absent(), this.duplicateChargeExplanation = const Omittable.absent(), this.duplicateChargeId = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.receipt = const Omittable.absent(), this.refundPolicy = const Omittable.absent(), this.refundPolicyDisclosure = const Omittable.absent(), this.refundRefusalExplanation = const Omittable.absent(), this.serviceDate = const Omittable.absent(), this.serviceDocumentation = const Omittable.absent(), this.shippingAddress = const Omittable.absent(), this.shippingCarrier = const Omittable.absent(), this.shippingDate = const Omittable.absent(), this.shippingDocumentation = const Omittable.absent(), this.shippingTrackingNumber = const Omittable.absent(), this.uncategorizedFile = const Omittable.absent(), this.uncategorizedText = const Omittable.absent(), });
 
-factory DisputeEvidence.fromJson(Map<String, dynamic> json) { return DisputeEvidence(
+factory DisputeEvidence.fromJson(Map<String, dynamic> json) {return DisputeEvidence(
   accessActivityLog: json.containsKey('access_activity_log') ? Omittable(json['access_activity_log'] as String?) : const Omittable.absent(),
   billingAddress: json.containsKey('billing_address') ? Omittable(json['billing_address'] as String?) : const Omittable.absent(),
   cancellationPolicy: json.containsKey('cancellation_policy') ? Omittable(json['cancellation_policy'] != null ? DisputeEvidenceCancellationPolicy.fromJson(json['cancellation_policy']) : null) : const Omittable.absent(),
@@ -32,7 +32,7 @@ factory DisputeEvidence.fromJson(Map<String, dynamic> json) { return DisputeEvid
   shippingTrackingNumber: json.containsKey('shipping_tracking_number') ? Omittable(json['shipping_tracking_number'] as String?) : const Omittable.absent(),
   uncategorizedFile: json.containsKey('uncategorized_file') ? Omittable(json['uncategorized_file'] != null ? DisputeEvidenceUncategorizedFile.fromJson(json['uncategorized_file']) : null) : const Omittable.absent(),
   uncategorizedText: json.containsKey('uncategorized_text') ? Omittable(json['uncategorized_text'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Any server or activity logs showing proof that the customer accessed or downloaded the purchased digital product. This information should include IP addresses, corresponding timestamps, and any detailed recorded activity.
 final Omittable<String?> accessActivityLog;
@@ -117,7 +117,7 @@ final Omittable<DisputeEvidenceUncategorizedFile?> uncategorizedFile;
 /// Any additional evidence or statements.
 final Omittable<String?> uncategorizedText;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accessActivityLog.isPresent) 'access_activity_log': accessActivityLog.value,
   if (billingAddress.isPresent) 'billing_address': billingAddress.value,
   if (cancellationPolicy.isPresent) 'cancellation_policy': cancellationPolicy.value?.toJson(),
@@ -146,9 +146,9 @@ Map<String, dynamic> toJson() { return {
   if (shippingTrackingNumber.isPresent) 'shipping_tracking_number': shippingTrackingNumber.value,
   if (uncategorizedFile.isPresent) 'uncategorized_file': uncategorizedFile.value?.toJson(),
   if (uncategorizedText.isPresent) 'uncategorized_text': uncategorizedText.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enhanced_evidence'); } 
-DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<String?>? billingAddress, Omittable<DisputeEvidenceCancellationPolicy?>? cancellationPolicy, Omittable<String?>? cancellationPolicyDisclosure, Omittable<String?>? cancellationRebuttal, Omittable<DisputeEvidenceCustomerCommunication?>? customerCommunication, Omittable<String?>? customerEmailAddress, Omittable<String?>? customerName, Omittable<String?>? customerPurchaseIp, Omittable<DisputeEvidenceCustomerSignature?>? customerSignature, Omittable<DisputeEvidenceDuplicateChargeDocumentation?>? duplicateChargeDocumentation, Omittable<String?>? duplicateChargeExplanation, Omittable<String?>? duplicateChargeId, DisputeEnhancedEvidence? enhancedEvidence, Omittable<String?>? productDescription, Omittable<DisputeEvidenceReceipt?>? receipt, Omittable<DisputeEvidenceRefundPolicy?>? refundPolicy, Omittable<String?>? refundPolicyDisclosure, Omittable<String?>? refundRefusalExplanation, Omittable<String?>? serviceDate, Omittable<DisputeEvidenceServiceDocumentation?>? serviceDocumentation, Omittable<String?>? shippingAddress, Omittable<String?>? shippingCarrier, Omittable<String?>? shippingDate, Omittable<DisputeEvidenceShippingDocumentation?>? shippingDocumentation, Omittable<String?>? shippingTrackingNumber, Omittable<DisputeEvidenceUncategorizedFile?>? uncategorizedFile, Omittable<String?>? uncategorizedText, }) { return DisputeEvidence(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enhanced_evidence');}
+DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<String?>? billingAddress, Omittable<DisputeEvidenceCancellationPolicy?>? cancellationPolicy, Omittable<String?>? cancellationPolicyDisclosure, Omittable<String?>? cancellationRebuttal, Omittable<DisputeEvidenceCustomerCommunication?>? customerCommunication, Omittable<String?>? customerEmailAddress, Omittable<String?>? customerName, Omittable<String?>? customerPurchaseIp, Omittable<DisputeEvidenceCustomerSignature?>? customerSignature, Omittable<DisputeEvidenceDuplicateChargeDocumentation?>? duplicateChargeDocumentation, Omittable<String?>? duplicateChargeExplanation, Omittable<String?>? duplicateChargeId, DisputeEnhancedEvidence? enhancedEvidence, Omittable<String?>? productDescription, Omittable<DisputeEvidenceReceipt?>? receipt, Omittable<DisputeEvidenceRefundPolicy?>? refundPolicy, Omittable<String?>? refundPolicyDisclosure, Omittable<String?>? refundRefusalExplanation, Omittable<String?>? serviceDate, Omittable<DisputeEvidenceServiceDocumentation?>? serviceDocumentation, Omittable<String?>? shippingAddress, Omittable<String?>? shippingCarrier, Omittable<String?>? shippingDate, Omittable<DisputeEvidenceShippingDocumentation?>? shippingDocumentation, Omittable<String?>? shippingTrackingNumber, Omittable<DisputeEvidenceUncategorizedFile?>? uncategorizedFile, Omittable<String?>? uncategorizedText, }) {return DisputeEvidence(
   accessActivityLog: accessActivityLog ?? this.accessActivityLog,
   billingAddress: billingAddress ?? this.billingAddress,
   cancellationPolicy: cancellationPolicy ?? this.cancellationPolicy,
@@ -177,8 +177,8 @@ DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<Strin
   shippingTrackingNumber: shippingTrackingNumber ?? this.shippingTrackingNumber,
   uncategorizedFile: uncategorizedFile ?? this.uncategorizedFile,
   uncategorizedText: uncategorizedText ?? this.uncategorizedText,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DisputeEvidence &&
           accessActivityLog == other.accessActivityLog &&
           billingAddress == other.billingAddress &&
@@ -207,7 +207,7 @@ DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<Strin
           shippingDocumentation == other.shippingDocumentation &&
           shippingTrackingNumber == other.shippingTrackingNumber &&
           uncategorizedFile == other.uncategorizedFile &&
-          uncategorizedText == other.uncategorizedText; } 
-@override int get hashCode { return Object.hashAll([accessActivityLog, billingAddress, cancellationPolicy, cancellationPolicyDisclosure, cancellationRebuttal, customerCommunication, customerEmailAddress, customerName, customerPurchaseIp, customerSignature, duplicateChargeDocumentation, duplicateChargeExplanation, duplicateChargeId, enhancedEvidence, productDescription, receipt, refundPolicy, refundPolicyDisclosure, refundRefusalExplanation, serviceDate, serviceDocumentation, shippingAddress, shippingCarrier, shippingDate, shippingDocumentation, shippingTrackingNumber, uncategorizedFile, uncategorizedText]); } 
-@override String toString() { return 'DisputeEvidence(accessActivityLog: $accessActivityLog, billingAddress: $billingAddress, cancellationPolicy: $cancellationPolicy, cancellationPolicyDisclosure: $cancellationPolicyDisclosure, cancellationRebuttal: $cancellationRebuttal, customerCommunication: $customerCommunication, customerEmailAddress: $customerEmailAddress, customerName: $customerName, customerPurchaseIp: $customerPurchaseIp, customerSignature: $customerSignature, duplicateChargeDocumentation: $duplicateChargeDocumentation, duplicateChargeExplanation: $duplicateChargeExplanation, duplicateChargeId: $duplicateChargeId, enhancedEvidence: $enhancedEvidence, productDescription: $productDescription, receipt: $receipt, refundPolicy: $refundPolicy, refundPolicyDisclosure: $refundPolicyDisclosure, refundRefusalExplanation: $refundRefusalExplanation, serviceDate: $serviceDate, serviceDocumentation: $serviceDocumentation, shippingAddress: $shippingAddress, shippingCarrier: $shippingCarrier, shippingDate: $shippingDate, shippingDocumentation: $shippingDocumentation, shippingTrackingNumber: $shippingTrackingNumber, uncategorizedFile: $uncategorizedFile, uncategorizedText: $uncategorizedText)'; } 
- }
+          uncategorizedText == other.uncategorizedText;}
+@override int get hashCode {return Object.hashAll([accessActivityLog, billingAddress, cancellationPolicy, cancellationPolicyDisclosure, cancellationRebuttal, customerCommunication, customerEmailAddress, customerName, customerPurchaseIp, customerSignature, duplicateChargeDocumentation, duplicateChargeExplanation, duplicateChargeId, enhancedEvidence, productDescription, receipt, refundPolicy, refundPolicyDisclosure, refundRefusalExplanation, serviceDate, serviceDocumentation, shippingAddress, shippingCarrier, shippingDate, shippingDocumentation, shippingTrackingNumber, uncategorizedFile, uncategorizedText]);}
+@override String toString() {return 'DisputeEvidence(accessActivityLog: $accessActivityLog, billingAddress: $billingAddress, cancellationPolicy: $cancellationPolicy, cancellationPolicyDisclosure: $cancellationPolicyDisclosure, cancellationRebuttal: $cancellationRebuttal, customerCommunication: $customerCommunication, customerEmailAddress: $customerEmailAddress, customerName: $customerName, customerPurchaseIp: $customerPurchaseIp, customerSignature: $customerSignature, duplicateChargeDocumentation: $duplicateChargeDocumentation, duplicateChargeExplanation: $duplicateChargeExplanation, duplicateChargeId: $duplicateChargeId, enhancedEvidence: $enhancedEvidence, productDescription: $productDescription, receipt: $receipt, refundPolicy: $refundPolicy, refundPolicyDisclosure: $refundPolicyDisclosure, refundRefusalExplanation: $refundRefusalExplanation, serviceDate: $serviceDate, serviceDocumentation: $serviceDocumentation, shippingAddress: $shippingAddress, shippingCarrier: $shippingCarrier, shippingDate: $shippingDate, shippingDocumentation: $shippingDocumentation, shippingTrackingNumber: $shippingTrackingNumber, uncategorizedFile: $uncategorizedFile, uncategorizedText: $uncategorizedText)';}
+}

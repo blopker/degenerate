@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_region_key.dart';@immutable final class DlsAccountRegionalHostnamesAccountPatchHostnameRequest {const DlsAccountRegionalHostnamesAccountPatchHostnameRequest({required this.regionKey});
 
-factory DlsAccountRegionalHostnamesAccountPatchHostnameRequest.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountPatchHostnameRequest(
+factory DlsAccountRegionalHostnamesAccountPatchHostnameRequest.fromJson(Map<String, dynamic> json) {return DlsAccountRegionalHostnamesAccountPatchHostnameRequest(
   regionKey: DlsRegionKey.fromJson(json['region_key'] as String),
-); }
+);}
 
 /// Identifying key for the region
 final DlsRegionKey regionKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'region_key': regionKey.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('region_key'); } 
-DlsAccountRegionalHostnamesAccountPatchHostnameRequest copyWith({DlsRegionKey? regionKey}) { return DlsAccountRegionalHostnamesAccountPatchHostnameRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('region_key');}
+DlsAccountRegionalHostnamesAccountPatchHostnameRequest copyWith({DlsRegionKey? regionKey}) {return DlsAccountRegionalHostnamesAccountPatchHostnameRequest(
   regionKey: regionKey ?? this.regionKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlsAccountRegionalHostnamesAccountPatchHostnameRequest &&
-          regionKey == other.regionKey; } 
-@override int get hashCode { return regionKey.hashCode; } 
-@override String toString() { return 'DlsAccountRegionalHostnamesAccountPatchHostnameRequest(regionKey: $regionKey)'; } 
- }
+          regionKey == other.regionKey;}
+@override int get hashCode {return regionKey.hashCode;}
+@override String toString() {return 'DlsAccountRegionalHostnamesAccountPatchHostnameRequest(regionKey: $regionKey)';}
+}

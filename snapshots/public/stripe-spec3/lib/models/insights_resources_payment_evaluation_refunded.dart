@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the reason for the refund.
 @immutable final class InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason._(this.value);
 
-factory InsightsResourcesPaymentEvaluationRefundedReason.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationRefundedReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'other' => $other,
   'requested_by_customer' => requestedByCustomer,
   _ => InsightsResourcesPaymentEvaluationRefundedReason._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationRefundedReason duplicate = InsightsResourcesPaymentEvaluationRefundedReason._('duplicate');
 
@@ -23,22 +23,22 @@ static const List<InsightsResourcesPaymentEvaluationRefundedReason> values = [du
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRefundedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRefundedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationRefundedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationRefundedReason($value)';}
+}
 /// Refunded Event details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationRefunded {const InsightsResourcesPaymentEvaluationRefunded({required this.amount, required this.currency, required this.reason, });
 
-factory InsightsResourcesPaymentEvaluationRefunded.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationRefunded(
+factory InsightsResourcesPaymentEvaluationRefunded.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationRefunded(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   reason: InsightsResourcesPaymentEvaluationRefundedReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// Amount refunded for this payment. A positive integer representing how much to charge in [the smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (for example, 100 cents to charge 1.00 USD or 100 to charge 100 Yen, a zero-decimal currency).
 final int amount;
@@ -49,24 +49,24 @@ final String currency;
 /// Indicates the reason for the refund.
 final InsightsResourcesPaymentEvaluationRefundedReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('reason'); } 
-InsightsResourcesPaymentEvaluationRefunded copyWith({int? amount, String? currency, InsightsResourcesPaymentEvaluationRefundedReason? reason, }) { return InsightsResourcesPaymentEvaluationRefunded(
+      json.containsKey('reason');}
+InsightsResourcesPaymentEvaluationRefunded copyWith({int? amount, String? currency, InsightsResourcesPaymentEvaluationRefundedReason? reason, }) {return InsightsResourcesPaymentEvaluationRefunded(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationRefunded &&
           amount == other.amount &&
           currency == other.currency &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(amount, currency, reason); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRefunded(amount: $amount, currency: $currency, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(amount, currency, reason);}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationRefunded(amount: $amount, currency: $currency, reason: $reason)';}
+}

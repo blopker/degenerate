@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'auto_merge.dart';import 'milestone.dart';import 'pull_request_simple_base.dart';import 'pull_request_simple_head.dart';import 'pull_request_simple_labels.dart';import 'pull_request_simple_links.dart';import 'simple_user.dart';import 'team.dart';/// Pull Request Simple
 @immutable final class PullRequestSimple {const PullRequestSimple({required this.statusesUrl, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.url, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.labels, required this.milestone, required this.autoMerge, required this.createdAt, required this.updatedAt, required this.authorAssociation, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.links, required this.base, required this.head, required this.closedAt, this.requestedReviewers, this.assignees, this.draft, this.activeLockReason = const Omittable.absent(), this.requestedTeams, });
 
-factory PullRequestSimple.fromJson(Map<String, dynamic> json) { return PullRequestSimple(
+factory PullRequestSimple.fromJson(Map<String, dynamic> json) {return PullRequestSimple(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -40,7 +40,7 @@ factory PullRequestSimple.fromJson(Map<String, dynamic> json) { return PullReque
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   autoMerge: json['auto_merge'] != null ? AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   draft: json['draft'] as bool?,
-); }
+);}
 
 final Uri url;
 
@@ -116,7 +116,7 @@ final AutoMerge? autoMerge;
 /// Indicates whether or not the pull request is a draft.
 final bool? draft;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'node_id': nodeId,
@@ -153,8 +153,8 @@ Map<String, dynamic> toJson() { return {
   'author_association': authorAssociation.toJson(),
   'auto_merge': autoMerge?.toJson(),
   'draft': ?draft,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -184,8 +184,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('base') &&
       json.containsKey('_links') &&
       json.containsKey('author_association') &&
-      json.containsKey('auto_merge'); } 
-PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<Team>? Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestSimpleLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, }) { return PullRequestSimple(
+      json.containsKey('auto_merge');}
+PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<Team>? Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestSimpleLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, }) {return PullRequestSimple(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -222,8 +222,8 @@ PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri
   authorAssociation: authorAssociation ?? this.authorAssociation,
   autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,
   draft: draft != null ? draft() : this.draft,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestSimple &&
           url == other.url &&
           id == other.id &&
@@ -260,7 +260,7 @@ PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri
           links == other.links &&
           authorAssociation == other.authorAssociation &&
           autoMerge == other.autoMerge &&
-          draft == other.draft; } 
-@override int get hashCode { return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft]); } 
-@override String toString() { return 'PullRequestSimple(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft)'; } 
- }
+          draft == other.draft;}
+@override int get hashCode {return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft]);}
+@override String toString() {return 'PullRequestSimple(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft)';}
+}

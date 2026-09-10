@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageTextToText2 {const ImageTextToText2({this.description});
 
-factory ImageTextToText2.fromJson(Map<String, dynamic> json) { return ImageTextToText2(
+factory ImageTextToText2.fromJson(Map<String, dynamic> json) {return ImageTextToText2(
   description: json['description'] as String?,
-); }
+);}
 
 final String? description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description'}.contains(key)); } 
-ImageTextToText2 copyWith({String? Function()? description}) { return ImageTextToText2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description'}.contains(key));}
+ImageTextToText2 copyWith({String? Function()? description}) {return ImageTextToText2(
   description: description != null ? description() : this.description,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageTextToText2 &&
-          description == other.description; } 
-@override int get hashCode { return description.hashCode; } 
-@override String toString() { return 'ImageTextToText2(description: $description)'; } 
- }
+          description == other.description;}
+@override int get hashCode {return description.hashCode;}
+@override String toString() {return 'ImageTextToText2(description: $description)';}
+}

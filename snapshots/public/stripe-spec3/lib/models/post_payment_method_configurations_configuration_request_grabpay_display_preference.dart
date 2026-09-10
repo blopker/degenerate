@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference._(this.value);
 
-factory PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference.fromJson(String json) {return switch (json) {
   'none' => none,
   'off' => off,
   'on' => $on,
   _ => PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference._(json),
-}; }
+};}
 
 static const PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference none = PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference._('none');
 
@@ -19,32 +19,32 @@ static const List<PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference($value)';}
+}
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference({this.preference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference(
+factory PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference? preference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preference != null) 'preference': preference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference? Function()? preference}) { return PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreferencePreference? Function()? preference}) {return PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference(
   preference: preference != null ? preference() : this.preference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference &&
-          preference == other.preference; } 
-@override int get hashCode { return preference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference(preference: $preference)'; } 
- }
+          preference == other.preference;}
+@override int get hashCode {return preference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference(preference: $preference)';}
+}

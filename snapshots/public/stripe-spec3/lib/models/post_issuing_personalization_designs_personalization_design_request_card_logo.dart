@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2._(this.value);
 
-factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2.fromJson(String json) { return switch (json) {
+factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2._(json),
-}; }
+};}
 
 static const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2 $empty = PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostIssuingPersonalizationDesignsPersonalizationDesignRequestC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogoVariant2($value)';}
+}
 /// The file for the card logo, for use with physical bundles that support card logos. Must have a `purpose` value of `issuing_logo`.
 @immutable
 final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogo {

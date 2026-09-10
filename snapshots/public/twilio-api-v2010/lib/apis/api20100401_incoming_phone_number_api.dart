@@ -11,7 +11,7 @@ final class Api20100401IncomingPhoneNumberApi with ApiExecutor {const Api2010040
 /// Fetch an incoming-phone-number belonging to the account used to make the request.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> fetchIncomingPhoneNumber({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> fetchIncomingPhoneNumber({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,18 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);}, );}
 /// Update an incoming-phone-number instance.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> updateIncomingPhoneNumber({required String accountSid, required String sid, UpdateIncomingPhoneNumberRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> updateIncomingPhoneNumber({required String accountSid, required String sid, UpdateIncomingPhoneNumberRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -89,18 +84,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a phone-numbers belonging to the account used to make the request.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
-Future<ApiResult<void, Never>> deleteIncomingPhoneNumber({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteIncomingPhoneNumber({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -109,15 +99,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of incoming-phone-numbers belonging to the account used to make the request.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
-Future<ApiResult<ListIncomingPhoneNumberResponse, Never>> listIncomingPhoneNumber({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListIncomingPhoneNumberResponse, Never>> listIncomingPhoneNumber({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (beta != null) {
   queryParameters['Beta'] = beta.toString();
@@ -152,18 +139,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListIncomingPhoneNumberResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListIncomingPhoneNumberResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Purchase a phone-number for the account.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
-Future<ApiResult<AccountIncomingPhoneNumber, Never>> createIncomingPhoneNumber({required String accountSid, CreateIncomingPhoneNumberRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumber, Never>> createIncomingPhoneNumber({required String accountSid, CreateIncomingPhoneNumberRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -223,12 +205,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);}, );}
+}

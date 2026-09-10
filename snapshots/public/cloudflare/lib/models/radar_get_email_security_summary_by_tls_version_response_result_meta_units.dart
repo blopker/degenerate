@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits {const RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits(
+factory RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetEmailSecuritySummaryByTlsVersionResponseResultMetaUnits(name: $name, value: $value)';}
+}

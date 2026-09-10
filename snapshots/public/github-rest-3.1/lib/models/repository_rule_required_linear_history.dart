@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredLinearHistoryType {const RepositoryRuleRequiredLinearHistoryType._(this.value);
 
-factory RepositoryRuleRequiredLinearHistoryType.fromJson(String json) { return switch (json) {
+factory RepositoryRuleRequiredLinearHistoryType.fromJson(String json) {return switch (json) {
   'required_linear_history' => requiredLinearHistory,
   _ => RepositoryRuleRequiredLinearHistoryType._(json),
-}; }
+};}
 
 static const RepositoryRuleRequiredLinearHistoryType requiredLinearHistory = RepositoryRuleRequiredLinearHistoryType._('required_linear_history');
 
@@ -13,33 +13,33 @@ static const List<RepositoryRuleRequiredLinearHistoryType> values = [requiredLin
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRequiredLinearHistoryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleRequiredLinearHistoryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRuleRequiredLinearHistoryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRuleRequiredLinearHistoryType($value)';}
+}
 /// Prevent merge commits from being pushed to matching refs.
 @immutable final class RepositoryRuleRequiredLinearHistory {const RepositoryRuleRequiredLinearHistory({required this.type});
 
-factory RepositoryRuleRequiredLinearHistory.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredLinearHistory(
+factory RepositoryRuleRequiredLinearHistory.fromJson(Map<String, dynamic> json) {return RepositoryRuleRequiredLinearHistory(
   type: RepositoryRuleRequiredLinearHistoryType.fromJson(json['type'] as String),
-); }
+);}
 
 final RepositoryRuleRequiredLinearHistoryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleRequiredLinearHistory copyWith({RepositoryRuleRequiredLinearHistoryType? type}) { return RepositoryRuleRequiredLinearHistory(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RepositoryRuleRequiredLinearHistory copyWith({RepositoryRuleRequiredLinearHistoryType? type}) {return RepositoryRuleRequiredLinearHistory(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRuleRequiredLinearHistory &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'RepositoryRuleRequiredLinearHistory(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'RepositoryRuleRequiredLinearHistory(type: $type)';}
+}

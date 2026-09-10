@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_fpx_display_preference.dart';/// Financial Process Exchange (FPX) is a Malaysia-based payment method that allows customers to complete transactions online using their bank credentials. Bank Negara Malaysia (BNM), the Central Bank of Malaysia, and eleven other major Malaysian financial institutions are members of the PayNet Group, which owns and operates FPX. It is one of the most popular online payment methods in Malaysia, with nearly 90 million transactions in 2018 according to BNM. Check this [page](https://docs.stripe.com/payments/fpx) for more details.
 @immutable final class PostPaymentMethodConfigurationsRequestFpx {const PostPaymentMethodConfigurationsRequestFpx({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestFpx.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestFpx(
+factory PostPaymentMethodConfigurationsRequestFpx.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestFpx(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestFpxDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestFpxDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestFpx copyWith({PostPaymentMethodConfigurationsRequestFpxDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestFpx(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestFpx copyWith({PostPaymentMethodConfigurationsRequestFpxDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestFpx(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestFpx &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestFpx(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestFpx(displayPreference: $displayPreference)';}
+}

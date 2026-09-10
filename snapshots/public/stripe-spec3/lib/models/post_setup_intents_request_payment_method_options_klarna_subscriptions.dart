@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_klarna_subscriptions_variant1.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 {const PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 $empty = PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptions
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2($value)';}
+}
 
 @immutable
 final class PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptions {

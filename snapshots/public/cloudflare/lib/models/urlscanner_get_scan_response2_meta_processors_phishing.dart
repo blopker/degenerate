@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsPhishing {const UrlscannerGetScanResponse2MetaProcessorsPhishing({required this.data});
 
-factory UrlscannerGetScanResponse2MetaProcessorsPhishing.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsPhishing(
+factory UrlscannerGetScanResponse2MetaProcessorsPhishing.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2MetaProcessorsPhishing(
   data: (json['data'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'); } 
-UrlscannerGetScanResponse2MetaProcessorsPhishing copyWith({List<String>? data}) { return UrlscannerGetScanResponse2MetaProcessorsPhishing(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data');}
+UrlscannerGetScanResponse2MetaProcessorsPhishing copyWith({List<String>? data}) {return UrlscannerGetScanResponse2MetaProcessorsPhishing(
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2MetaProcessorsPhishing &&
-          listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsPhishing(data: $data)'; } 
- }
+          listEquals(data, other.data);}
+@override int get hashCode {return Object.hashAll(data).hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponse2MetaProcessorsPhishing(data: $data)';}
+}

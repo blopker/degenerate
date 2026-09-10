@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_type_create_response500_content_application_json.dart';@immutable final class PostIndicatorTypeCreateResponse500Content {const PostIndicatorTypeCreateResponse500Content({required this.applicationJson});
 
-factory PostIndicatorTypeCreateResponse500Content.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse500Content(
+factory PostIndicatorTypeCreateResponse500Content.fromJson(Map<String, dynamic> json) {return PostIndicatorTypeCreateResponse500Content(
   applicationJson: PostIndicatorTypeCreateResponse500ContentApplicationJson.fromJson(json['application/json'] as Map<String, dynamic>),
-); }
+);}
 
 final PostIndicatorTypeCreateResponse500ContentApplicationJson applicationJson;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'application/json': applicationJson.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('application/json'); } 
-PostIndicatorTypeCreateResponse500Content copyWith({PostIndicatorTypeCreateResponse500ContentApplicationJson? applicationJson}) { return PostIndicatorTypeCreateResponse500Content(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('application/json');}
+PostIndicatorTypeCreateResponse500Content copyWith({PostIndicatorTypeCreateResponse500ContentApplicationJson? applicationJson}) {return PostIndicatorTypeCreateResponse500Content(
   applicationJson: applicationJson ?? this.applicationJson,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIndicatorTypeCreateResponse500Content &&
-          applicationJson == other.applicationJson; } 
-@override int get hashCode { return applicationJson.hashCode; } 
-@override String toString() { return 'PostIndicatorTypeCreateResponse500Content(applicationJson: $applicationJson)'; } 
- }
+          applicationJson == other.applicationJson;}
+@override int get hashCode {return applicationJson.hashCode;}
+@override String toString() {return 'PostIndicatorTypeCreateResponse500Content(applicationJson: $applicationJson)';}
+}

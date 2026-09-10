@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'managed_fields_entry.dart';import 'owner_reference.dart';import 'time.dart';/// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
 @immutable final class ObjectMeta {const ObjectMeta({this.annotations, this.creationTimestamp, this.deletionGracePeriodSeconds, this.deletionTimestamp, this.finalizers, this.generateName, this.generation, this.labels, this.managedFields, this.name, this.namespace, this.ownerReferences, this.resourceVersion, this.selfLink, this.uid, });
 
-factory ObjectMeta.fromJson(Map<String, dynamic> json) { return ObjectMeta(
+factory ObjectMeta.fromJson(Map<String, dynamic> json) {return ObjectMeta(
   annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   creationTimestamp: json['creationTimestamp'] != null ? Time.fromJson(json['creationTimestamp'] as String) : null,
   deletionGracePeriodSeconds: json['deletionGracePeriodSeconds'] != null ? (json['deletionGracePeriodSeconds'] as num).toInt() : null,
@@ -19,7 +19,7 @@ factory ObjectMeta.fromJson(Map<String, dynamic> json) { return ObjectMeta(
   resourceVersion: json['resourceVersion'] as String?,
   selfLink: json['selfLink'] as String?,
   uid: json['uid'] as String?,
-); }
+);}
 
 /// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
 final Map<String,String>? annotations;
@@ -80,7 +80,7 @@ final String? selfLink;
 /// Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
 final String? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'annotations': ?annotations,
   if (creationTimestamp != null) 'creationTimestamp': creationTimestamp?.toJson(),
   'deletionGracePeriodSeconds': ?deletionGracePeriodSeconds,
@@ -96,9 +96,9 @@ Map<String, dynamic> toJson() { return {
   'resourceVersion': ?resourceVersion,
   'selfLink': ?selfLink,
   'uid': ?uid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations', 'creationTimestamp', 'deletionGracePeriodSeconds', 'deletionTimestamp', 'finalizers', 'generateName', 'generation', 'labels', 'managedFields', 'name', 'namespace', 'ownerReferences', 'resourceVersion', 'selfLink', 'uid'}.contains(key)); } 
-ObjectMeta copyWith({Map<String, String>? Function()? annotations, Time? Function()? creationTimestamp, int? Function()? deletionGracePeriodSeconds, Time? Function()? deletionTimestamp, List<String>? Function()? finalizers, String? Function()? generateName, int? Function()? generation, Map<String, String>? Function()? labels, List<ManagedFieldsEntry>? Function()? managedFields, String? Function()? name, String? Function()? namespace, List<OwnerReference>? Function()? ownerReferences, String? Function()? resourceVersion, String? Function()? selfLink, String? Function()? uid, }) { return ObjectMeta(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'annotations', 'creationTimestamp', 'deletionGracePeriodSeconds', 'deletionTimestamp', 'finalizers', 'generateName', 'generation', 'labels', 'managedFields', 'name', 'namespace', 'ownerReferences', 'resourceVersion', 'selfLink', 'uid'}.contains(key));}
+ObjectMeta copyWith({Map<String, String>? Function()? annotations, Time? Function()? creationTimestamp, int? Function()? deletionGracePeriodSeconds, Time? Function()? deletionTimestamp, List<String>? Function()? finalizers, String? Function()? generateName, int? Function()? generation, Map<String, String>? Function()? labels, List<ManagedFieldsEntry>? Function()? managedFields, String? Function()? name, String? Function()? namespace, List<OwnerReference>? Function()? ownerReferences, String? Function()? resourceVersion, String? Function()? selfLink, String? Function()? uid, }) {return ObjectMeta(
   annotations: annotations != null ? annotations() : this.annotations,
   creationTimestamp: creationTimestamp != null ? creationTimestamp() : this.creationTimestamp,
   deletionGracePeriodSeconds: deletionGracePeriodSeconds != null ? deletionGracePeriodSeconds() : this.deletionGracePeriodSeconds,
@@ -114,8 +114,8 @@ ObjectMeta copyWith({Map<String, String>? Function()? annotations, Time? Functio
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   selfLink: selfLink != null ? selfLink() : this.selfLink,
   uid: uid != null ? uid() : this.uid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ObjectMeta &&
           annotations == other.annotations &&
           creationTimestamp == other.creationTimestamp &&
@@ -131,7 +131,7 @@ ObjectMeta copyWith({Map<String, String>? Function()? annotations, Time? Functio
           listEquals(ownerReferences, other.ownerReferences) &&
           resourceVersion == other.resourceVersion &&
           selfLink == other.selfLink &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(annotations, creationTimestamp, deletionGracePeriodSeconds, deletionTimestamp, Object.hashAll(finalizers ?? const []), generateName, generation, labels, Object.hashAll(managedFields ?? const []), name, namespace, Object.hashAll(ownerReferences ?? const []), resourceVersion, selfLink, uid); } 
-@override String toString() { return 'ObjectMeta(annotations: $annotations, creationTimestamp: $creationTimestamp, deletionGracePeriodSeconds: $deletionGracePeriodSeconds, deletionTimestamp: $deletionTimestamp, finalizers: $finalizers, generateName: $generateName, generation: $generation, labels: $labels, managedFields: $managedFields, name: $name, namespace: $namespace, ownerReferences: $ownerReferences, resourceVersion: $resourceVersion, selfLink: $selfLink, uid: $uid)'; } 
- }
+          uid == other.uid;}
+@override int get hashCode {return Object.hash(annotations, creationTimestamp, deletionGracePeriodSeconds, deletionTimestamp, Object.hashAll(finalizers ?? const []), generateName, generation, labels, Object.hashAll(managedFields ?? const []), name, namespace, Object.hashAll(ownerReferences ?? const []), resourceVersion, selfLink, uid);}
+@override String toString() {return 'ObjectMeta(annotations: $annotations, creationTimestamp: $creationTimestamp, deletionGracePeriodSeconds: $deletionGracePeriodSeconds, deletionTimestamp: $deletionTimestamp, finalizers: $finalizers, generateName: $generateName, generation: $generation, labels: $labels, managedFields: $managedFields, name: $name, namespace: $namespace, ownerReferences: $ownerReferences, resourceVersion: $resourceVersion, selfLink: $selfLink, uid: $uid)';}
+}

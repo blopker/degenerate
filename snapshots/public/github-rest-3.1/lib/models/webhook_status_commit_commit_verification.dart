@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookStatusCommitCommitVerificationReason {const WebhookStatusCommitCommitVerificationReason._(this.value);
 
-factory WebhookStatusCommitCommitVerificationReason.fromJson(String json) { return switch (json) {
+factory WebhookStatusCommitCommitVerificationReason.fromJson(String json) {return switch (json) {
   'expired_key' => expiredKey,
   'not_signing_key' => notSigningKey,
   'gpgverify_error' => gpgverifyError,
@@ -19,7 +19,7 @@ factory WebhookStatusCommitCommitVerificationReason.fromJson(String json) { retu
   'bad_cert' => badCert,
   'ocsp_pending' => ocspPending,
   _ => WebhookStatusCommitCommitVerificationReason._(json),
-}; }
+};}
 
 static const WebhookStatusCommitCommitVerificationReason expiredKey = WebhookStatusCommitCommitVerificationReason._('expired_key');
 
@@ -55,23 +55,23 @@ static const List<WebhookStatusCommitCommitVerificationReason> values = [expired
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookStatusCommitCommitVerificationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookStatusCommitCommitVerificationReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookStatusCommitCommitVerificationReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookStatusCommitCommitVerificationReason($value)';}
+}
 @immutable final class WebhookStatusCommitCommitVerification {const WebhookStatusCommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt, });
 
-factory WebhookStatusCommitCommitVerification.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitCommitVerification(
+factory WebhookStatusCommitCommitVerification.fromJson(Map<String, dynamic> json) {return WebhookStatusCommitCommitVerification(
   payload: json['payload'] as String?,
   reason: WebhookStatusCommitCommitVerificationReason.fromJson(json['reason'] as String),
   signature: json['signature'] as String?,
   verified: json['verified'] as bool,
   verifiedAt: json['verified_at'] as String?,
-); }
+);}
 
 final String? payload;
 
@@ -83,32 +83,32 @@ final bool verified;
 
 final String? verifiedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payload': payload,
   'reason': reason.toJson(),
   'signature': signature,
   'verified': verified,
   'verified_at': verifiedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
       json.containsKey('reason') &&
       json.containsKey('signature') && (json['signature'] == null || json['signature'] is String) &&
       json.containsKey('verified') && json['verified'] is bool &&
-      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String); } 
-WebhookStatusCommitCommitVerification copyWith({String? Function()? payload, WebhookStatusCommitCommitVerificationReason? reason, String? Function()? signature, bool? verified, String? Function()? verifiedAt, }) { return WebhookStatusCommitCommitVerification(
+      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String);}
+WebhookStatusCommitCommitVerification copyWith({String? Function()? payload, WebhookStatusCommitCommitVerificationReason? reason, String? Function()? signature, bool? verified, String? Function()? verifiedAt, }) {return WebhookStatusCommitCommitVerification(
   payload: payload != null ? payload() : this.payload,
   reason: reason ?? this.reason,
   signature: signature != null ? signature() : this.signature,
   verified: verified ?? this.verified,
   verifiedAt: verifiedAt != null ? verifiedAt() : this.verifiedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookStatusCommitCommitVerification &&
           payload == other.payload &&
           reason == other.reason &&
           signature == other.signature &&
           verified == other.verified &&
-          verifiedAt == other.verifiedAt; } 
-@override int get hashCode { return Object.hash(payload, reason, signature, verified, verifiedAt); } 
-@override String toString() { return 'WebhookStatusCommitCommitVerification(payload: $payload, reason: $reason, signature: $signature, verified: $verified, verifiedAt: $verifiedAt)'; } 
- }
+          verifiedAt == other.verifiedAt;}
+@override int get hashCode {return Object.hash(payload, reason, signature, verified, verifiedAt);}
+@override String toString() {return 'WebhookStatusCommitCommitVerification(payload: $payload, reason: $reason, signature: $signature, verified: $verified, verifiedAt: $verifiedAt)';}
+}

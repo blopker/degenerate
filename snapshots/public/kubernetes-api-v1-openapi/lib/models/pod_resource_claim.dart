@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodResourceClaim
 /// It adds a name to it that uniquely identifies the ResourceClaim inside the Pod. Containers that need access to the ResourceClaim reference it with this name.
 @immutable final class PodResourceClaim {const PodResourceClaim({required this.name, this.resourceClaimName, this.resourceClaimTemplateName, });
 
-factory PodResourceClaim.fromJson(Map<String, dynamic> json) { return PodResourceClaim(
+factory PodResourceClaim.fromJson(Map<String, dynamic> json) {return PodResourceClaim(
   name: json['name'] as String,
   resourceClaimName: json['resourceClaimName'] as String?,
   resourceClaimTemplateName: json['resourceClaimTemplateName'] as String?,
-); }
+);}
 
 /// Name uniquely identifies this resource claim inside the pod. This must be a DNS_LABEL.
 final String name;
@@ -28,22 +28,22 @@ final String? resourceClaimName;
 /// Exactly one of ResourceClaimName and ResourceClaimTemplateName must be set.
 final String? resourceClaimTemplateName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'resourceClaimName': ?resourceClaimName,
   'resourceClaimTemplateName': ?resourceClaimTemplateName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PodResourceClaim copyWith({String? name, String? Function()? resourceClaimName, String? Function()? resourceClaimTemplateName, }) { return PodResourceClaim(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+PodResourceClaim copyWith({String? name, String? Function()? resourceClaimName, String? Function()? resourceClaimTemplateName, }) {return PodResourceClaim(
   name: name ?? this.name,
   resourceClaimName: resourceClaimName != null ? resourceClaimName() : this.resourceClaimName,
   resourceClaimTemplateName: resourceClaimTemplateName != null ? resourceClaimTemplateName() : this.resourceClaimTemplateName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PodResourceClaim &&
           name == other.name &&
           resourceClaimName == other.resourceClaimName &&
-          resourceClaimTemplateName == other.resourceClaimTemplateName; } 
-@override int get hashCode { return Object.hash(name, resourceClaimName, resourceClaimTemplateName); } 
-@override String toString() { return 'PodResourceClaim(name: $name, resourceClaimName: $resourceClaimName, resourceClaimTemplateName: $resourceClaimTemplateName)'; } 
- }
+          resourceClaimTemplateName == other.resourceClaimTemplateName;}
+@override int get hashCode {return Object.hash(name, resourceClaimName, resourceClaimTemplateName);}
+@override String toString() {return 'PodResourceClaim(name: $name, resourceClaimName: $resourceClaimName, resourceClaimTemplateName: $resourceClaimTemplateName)';}
+}

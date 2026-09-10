@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedFinancialAccountFeatures {const ConnectEmbeddedFinancialAccountFeatures({required this.disableStripeUserAuthentication, required this.externalAccountCollection, required this.sendMoney, required this.transferBalance, });
 
-factory ConnectEmbeddedFinancialAccountFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedFinancialAccountFeatures(
+factory ConnectEmbeddedFinancialAccountFeatures.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedFinancialAccountFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool,
   externalAccountCollection: json['external_account_collection'] as bool,
   sendMoney: json['send_money'] as bool,
   transferBalance: json['transfer_balance'] as bool,
-); }
+);}
 
 /// Whether Stripe user authentication is disabled. This value can only be `true` for accounts where `controller.requirement_collection` is `application` for the account. The default value is the opposite of the `external_account_collection` value. For example, if you don't set `external_account_collection`, it defaults to `true` and `disable_stripe_user_authentication` defaults to `false`.
 final bool disableStripeUserAuthentication;
@@ -22,28 +22,28 @@ final bool sendMoney;
 /// Whether to allow transferring balance.
 final bool transferBalance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'disable_stripe_user_authentication': disableStripeUserAuthentication,
   'external_account_collection': externalAccountCollection,
   'send_money': sendMoney,
   'transfer_balance': transferBalance,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('disable_stripe_user_authentication') && json['disable_stripe_user_authentication'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('disable_stripe_user_authentication') && json['disable_stripe_user_authentication'] is bool &&
       json.containsKey('external_account_collection') && json['external_account_collection'] is bool &&
       json.containsKey('send_money') && json['send_money'] is bool &&
-      json.containsKey('transfer_balance') && json['transfer_balance'] is bool; } 
-ConnectEmbeddedFinancialAccountFeatures copyWith({bool? disableStripeUserAuthentication, bool? externalAccountCollection, bool? sendMoney, bool? transferBalance, }) { return ConnectEmbeddedFinancialAccountFeatures(
+      json.containsKey('transfer_balance') && json['transfer_balance'] is bool;}
+ConnectEmbeddedFinancialAccountFeatures copyWith({bool? disableStripeUserAuthentication, bool? externalAccountCollection, bool? sendMoney, bool? transferBalance, }) {return ConnectEmbeddedFinancialAccountFeatures(
   disableStripeUserAuthentication: disableStripeUserAuthentication ?? this.disableStripeUserAuthentication,
   externalAccountCollection: externalAccountCollection ?? this.externalAccountCollection,
   sendMoney: sendMoney ?? this.sendMoney,
   transferBalance: transferBalance ?? this.transferBalance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConnectEmbeddedFinancialAccountFeatures &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
           externalAccountCollection == other.externalAccountCollection &&
           sendMoney == other.sendMoney &&
-          transferBalance == other.transferBalance; } 
-@override int get hashCode { return Object.hash(disableStripeUserAuthentication, externalAccountCollection, sendMoney, transferBalance); } 
-@override String toString() { return 'ConnectEmbeddedFinancialAccountFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, sendMoney: $sendMoney, transferBalance: $transferBalance)'; } 
- }
+          transferBalance == other.transferBalance;}
+@override int get hashCode {return Object.hash(disableStripeUserAuthentication, externalAccountCollection, sendMoney, transferBalance);}
+@override String toString() {return 'ConnectEmbeddedFinancialAccountFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, sendMoney: $sendMoney, transferBalance: $transferBalance)';}
+}

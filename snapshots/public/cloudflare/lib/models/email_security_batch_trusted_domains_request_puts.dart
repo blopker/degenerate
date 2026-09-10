@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_trusted_domain_id.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequestPuts {const EmailSecurityBatchTrustedDomainsRequestPuts({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.id, this.comments = const Omittable.absent(), });
 
-factory EmailSecurityBatchTrustedDomainsRequestPuts.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchTrustedDomainsRequestPuts(
+factory EmailSecurityBatchTrustedDomainsRequestPuts.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchTrustedDomainsRequestPuts(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRecent: json['is_recent'] as bool,
   isRegex: json['is_regex'] as bool,
   isSimilarity: json['is_similarity'] as bool,
   pattern: json['pattern'] as String,
   id: EmailSecurityTrustedDomainId.fromJson(json['id'] as num),
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -29,35 +29,35 @@ final String pattern;
 /// The unique identifier for the trusted domain.
 final EmailSecurityTrustedDomainId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_recent': isRecent,
   'is_regex': isRegex,
   'is_similarity': isSimilarity,
   'pattern': pattern,
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_recent') && json['is_recent'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_recent') && json['is_recent'] is bool &&
       json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('is_similarity') && json['is_similarity'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
-      json.containsKey('id'); } 
-EmailSecurityBatchTrustedDomainsRequestPuts copyWith({Omittable<String?>? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, EmailSecurityTrustedDomainId? id, }) { return EmailSecurityBatchTrustedDomainsRequestPuts(
+      json.containsKey('id');}
+EmailSecurityBatchTrustedDomainsRequestPuts copyWith({Omittable<String?>? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, EmailSecurityTrustedDomainId? id, }) {return EmailSecurityBatchTrustedDomainsRequestPuts(
   comments: comments ?? this.comments,
   isRecent: isRecent ?? this.isRecent,
   isRegex: isRegex ?? this.isRegex,
   isSimilarity: isSimilarity ?? this.isSimilarity,
   pattern: pattern ?? this.pattern,
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityBatchTrustedDomainsRequestPuts &&
           comments == other.comments &&
           isRecent == other.isRecent &&
           isRegex == other.isRegex &&
           isSimilarity == other.isSimilarity &&
           pattern == other.pattern &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(comments, isRecent, isRegex, isSimilarity, pattern, id); } 
-@override String toString() { return 'EmailSecurityBatchTrustedDomainsRequestPuts(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hash(comments, isRecent, isRegex, isSimilarity, pattern, id);}
+@override String toString() {return 'EmailSecurityBatchTrustedDomainsRequestPuts(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern, id: $id)';}
+}

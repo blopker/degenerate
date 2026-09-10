@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestLineItemsAdjustableQuantity {const PostCheckoutSessionsRequestLineItemsAdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
 
-factory PostCheckoutSessionsRequestLineItemsAdjustableQuantity.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestLineItemsAdjustableQuantity(
+factory PostCheckoutSessionsRequestLineItemsAdjustableQuantity.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestLineItemsAdjustableQuantity(
   enabled: json['enabled'] as bool,
   maximum: json['maximum'] != null ? (json['maximum'] as num).toInt() : null,
   minimum: json['minimum'] != null ? (json['minimum'] as num).toInt() : null,
-); }
+);}
 
 final bool enabled;
 
@@ -14,22 +14,22 @@ final int? maximum;
 
 final int? minimum;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'maximum': ?maximum,
   'minimum': ?minimum,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCheckoutSessionsRequestLineItemsAdjustableQuantity copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, }) { return PostCheckoutSessionsRequestLineItemsAdjustableQuantity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostCheckoutSessionsRequestLineItemsAdjustableQuantity copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, }) {return PostCheckoutSessionsRequestLineItemsAdjustableQuantity(
   enabled: enabled ?? this.enabled,
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestLineItemsAdjustableQuantity &&
           enabled == other.enabled &&
           maximum == other.maximum &&
-          minimum == other.minimum; } 
-@override int get hashCode { return Object.hash(enabled, maximum, minimum); } 
-@override String toString() { return 'PostCheckoutSessionsRequestLineItemsAdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)'; } 
- }
+          minimum == other.minimum;}
+@override int get hashCode {return Object.hash(enabled, maximum, minimum);}
+@override String toString() {return 'PostCheckoutSessionsRequestLineItemsAdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)';}
+}

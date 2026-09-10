@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataP24Bank {const PostSetupIntentsIntentRequestPaymentMethodDataP24Bank._(this.value);
 
-factory PostSetupIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(String json) {return switch (json) {
   'alior_bank' => aliorBank,
   'bank_millennium' => bankMillennium,
   'bank_nowy_bfg_sa' => bankNowyBfgSa,
@@ -30,7 +30,7 @@ factory PostSetupIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(String js
   'velobank' => velobank,
   'volkswagen_bank' => volkswagenBank,
   _ => PostSetupIntentsIntentRequestPaymentMethodDataP24Bank._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestPaymentMethodDataP24Bank aliorBank = PostSetupIntentsIntentRequestPaymentMethodDataP24Bank._('alior_bank');
 
@@ -88,32 +88,32 @@ static const List<PostSetupIntentsIntentRequestPaymentMethodDataP24Bank> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestPaymentMethodDataP24Bank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataP24Bank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodDataP24Bank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodDataP24Bank($value)';}
+}
 @immutable final class PostSetupIntentsIntentRequestPaymentMethodDataP24 {const PostSetupIntentsIntentRequestPaymentMethodDataP24({this.bank});
 
-factory PostSetupIntentsIntentRequestPaymentMethodDataP24.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataP24(
+factory PostSetupIntentsIntentRequestPaymentMethodDataP24.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodDataP24(
   bank: json['bank'] != null ? PostSetupIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final PostSetupIntentsIntentRequestPaymentMethodDataP24Bank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodDataP24 copyWith({PostSetupIntentsIntentRequestPaymentMethodDataP24Bank? Function()? bank}) { return PostSetupIntentsIntentRequestPaymentMethodDataP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodDataP24 copyWith({PostSetupIntentsIntentRequestPaymentMethodDataP24Bank? Function()? bank}) {return PostSetupIntentsIntentRequestPaymentMethodDataP24(
   bank: bank != null ? bank() : this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodDataP24 &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataP24(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodDataP24(bank: $bank)';}
+}

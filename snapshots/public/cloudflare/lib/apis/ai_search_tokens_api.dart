@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_tokens_request.dart';import '../models/ai_search_create_tokens_response400.dart';import '../models/ai_search_create_tokens_response_result.dart';import '../models/ai_search_delete_tokens_response404.dart';import '../models/ai_search_delete_tokens_response_result.dart';import '../models/ai_search_fetch_tokens_response400.dart';import '../models/ai_search_fetch_tokens_response404.dart';import '../models/ai_search_fetch_tokens_response_result.dart';import '../models/ai_search_list_tokens_order_by.dart';import '../models/ai_search_list_tokens_order_by_direction.dart';import '../models/ai_search_list_tokens_response400.dart';import '../models/ai_search_list_tokens_response_result.dart';import '../models/ai_search_update_tokens_request.dart';import '../models/ai_search_update_tokens_response400.dart';import '../models/ai_search_update_tokens_response404.dart';import '../models/ai_search_update_tokens_response_result.dart';/// AiSearchTokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_tokens_request.dart';import '../models/ai_search_create_tokens_response400.dart';import '../models/ai_search_create_tokens_response_result.dart';import '../models/ai_search_delete_tokens_response404.dart';import '../models/ai_search_delete_tokens_response_result.dart';import '../models/ai_search_fetch_tokens_error.dart';import '../models/ai_search_fetch_tokens_response_result.dart';import '../models/ai_search_list_tokens_order_by.dart';import '../models/ai_search_list_tokens_order_by_direction.dart';import '../models/ai_search_list_tokens_response400.dart';import '../models/ai_search_list_tokens_response_result.dart';import '../models/ai_search_update_tokens_error.dart';import '../models/ai_search_update_tokens_request.dart';import '../models/ai_search_update_tokens_response_result.dart';/// AiSearchTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class AiSearchTokensApi with ApiExecutor {const AiSearchTokensApi(this.api
 /// List tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<List<AiSearchListTokensResponseResult>, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchListTokensResponseResult>, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -37,30 +37,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AiSearchListTokensResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AiSearchListTokensResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchListTokensResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  AiSearchListTokensResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create new tokens.
 ///
 /// Create a new tokens.
 ///
 /// `POST /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchCreateTokensResponse400>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchCreateTokensResponse400>> aiSearchCreateTokens({required String accountId, AiSearchCreateTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,28 +60,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchCreateTokensResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  AiSearchCreateTokensResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchFetchTokensResponseResult, OneOf2<AiSearchFetchTokensResponse400, AiSearchFetchTokensResponse404>>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchFetchTokensResponseResult, AiSearchFetchTokensError>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -101,31 +79,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchFetchTokensResponse400, AiSearchFetchTokensResponse404>.a(AiSearchFetchTokensResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchFetchTokensResponse400, AiSearchFetchTokensResponse404>.b(AiSearchFetchTokensResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchFetchTokensError.parse, );}
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchUpdateTokensResponseResult, OneOf2<AiSearchUpdateTokensResponse400, AiSearchUpdateTokensResponse404>>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchUpdateTokensResponseResult, AiSearchUpdateTokensError>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,31 +96,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchUpdateTokensResponse400, AiSearchUpdateTokensResponse404>.a(AiSearchUpdateTokensResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchUpdateTokensResponse400, AiSearchUpdateTokensResponse404>.b(AiSearchUpdateTokensResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchUpdateTokensError.parse, );}
 /// Delete tokens.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchDeleteTokensResponseResult, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchDeleteTokensResponseResult, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -169,22 +111,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchDeleteTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchDeleteTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AiSearchDeleteTokensResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  AiSearchDeleteTokensResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

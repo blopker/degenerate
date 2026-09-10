@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpLimits {const DlpLimits({required this.maxDatasetCells});
 
-factory DlpLimits.fromJson(Map<String, dynamic> json) { return DlpLimits(
+factory DlpLimits.fromJson(Map<String, dynamic> json) {return DlpLimits(
   maxDatasetCells: (json['max_dataset_cells'] as num).toInt(),
-); }
+);}
 
 final int maxDatasetCells;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'max_dataset_cells': maxDatasetCells,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_dataset_cells') && json['max_dataset_cells'] is num; } 
-DlpLimits copyWith({int? maxDatasetCells}) { return DlpLimits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('max_dataset_cells') && json['max_dataset_cells'] is num;}
+DlpLimits copyWith({int? maxDatasetCells}) {return DlpLimits(
   maxDatasetCells: maxDatasetCells ?? this.maxDatasetCells,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpLimits &&
-          maxDatasetCells == other.maxDatasetCells; } 
-@override int get hashCode { return maxDatasetCells.hashCode; } 
-@override String toString() { return 'DlpLimits(maxDatasetCells: $maxDatasetCells)'; } 
- }
+          maxDatasetCells == other.maxDatasetCells;}
+@override int get hashCode {return maxDatasetCells.hashCode;}
+@override String toString() {return 'DlpLimits(maxDatasetCells: $maxDatasetCells)';}
+}

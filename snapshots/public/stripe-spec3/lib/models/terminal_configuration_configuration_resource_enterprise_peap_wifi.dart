@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceEnterprisePeapWifi {const TerminalConfigurationConfigurationResourceEnterprisePeapWifi({required this.password, required this.ssid, required this.username, this.caCertificateFile, });
 
-factory TerminalConfigurationConfigurationResourceEnterprisePeapWifi.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
+factory TerminalConfigurationConfigurationResourceEnterprisePeapWifi.fromJson(Map<String, dynamic> json) {return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
   caCertificateFile: json['ca_certificate_file'] as String?,
   password: json['password'] as String,
   ssid: json['ssid'] as String,
   username: json['username'] as String,
-); }
+);}
 
 /// A File ID representing a PEM file containing the server certificate
 final String? caCertificateFile;
@@ -22,27 +22,27 @@ final String ssid;
 /// Username for connecting to the WiFi network
 final String username;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ca_certificate_file': ?caCertificateFile,
   'password': password,
   'ssid': ssid,
   'username': username,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('password') && json['password'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('password') && json['password'] is String &&
       json.containsKey('ssid') && json['ssid'] is String &&
-      json.containsKey('username') && json['username'] is String; } 
-TerminalConfigurationConfigurationResourceEnterprisePeapWifi copyWith({String? Function()? caCertificateFile, String? password, String? ssid, String? username, }) { return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
+      json.containsKey('username') && json['username'] is String;}
+TerminalConfigurationConfigurationResourceEnterprisePeapWifi copyWith({String? Function()? caCertificateFile, String? password, String? ssid, String? username, }) {return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,
   password: password ?? this.password,
   ssid: ssid ?? this.ssid,
   username: username ?? this.username,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceEnterprisePeapWifi &&
           caCertificateFile == other.caCertificateFile &&
           password == other.password &&
           ssid == other.ssid &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(caCertificateFile, password, ssid, username); } 
-@override String toString() { return 'TerminalConfigurationConfigurationResourceEnterprisePeapWifi(caCertificateFile: $caCertificateFile, password: $password, ssid: $ssid, username: $username)'; } 
- }
+          username == other.username;}
+@override int get hashCode {return Object.hash(caCertificateFile, password, ssid, username);}
+@override String toString() {return 'TerminalConfigurationConfigurationResourceEnterprisePeapWifi(caCertificateFile: $caCertificateFile, password: $password, ssid: $ssid, username: $username)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_account_number_details.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_balance.dart';import 'bank_connections_resource_balance_refresh.dart';import 'bank_connections_resource_ownership_refresh.dart';import 'bank_connections_resource_transaction_refresh.dart';import 'financial_connections_account_ownership2.dart';/// The type of the account. Account category is further divided in `subcategory`.
 @immutable final class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory._(this.value);
 
-factory FinancialConnectionsAccountCategory.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountCategory.fromJson(String json) {return switch (json) {
   'cash' => cash,
   'credit' => credit,
   'investment' => investment,
   'other' => $other,
   _ => FinancialConnectionsAccountCategory._(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountCategory cash = FinancialConnectionsAccountCategory._('cash');
 
@@ -23,21 +23,21 @@ static const List<FinancialConnectionsAccountCategory> values = [cash, credit, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountCategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsAccountCategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsAccountCategory($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject._(this.value);
 
-factory FinancialConnectionsAccountObject.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountObject.fromJson(String json) {return switch (json) {
   'financial_connections.account' => financialConnectionsAccount,
   _ => FinancialConnectionsAccountObject._(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountObject financialConnectionsAccount = FinancialConnectionsAccountObject._('financial_connections.account');
 
@@ -45,23 +45,23 @@ static const List<FinancialConnectionsAccountObject> values = [financialConnecti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsAccountObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsAccountObject($value)';}
+}
 @immutable final class FinancialConnectionsAccountPermissions {const FinancialConnectionsAccountPermissions._(this.value);
 
-factory FinancialConnectionsAccountPermissions.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountPermissions.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'payment_method' => paymentMethod,
   'transactions' => transactions,
   _ => FinancialConnectionsAccountPermissions._(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountPermissions balances = FinancialConnectionsAccountPermissions._('balances');
 
@@ -75,23 +75,23 @@ static const List<FinancialConnectionsAccountPermissions> values = [balances, ow
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountPermissions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsAccountPermissions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsAccountPermissions($value)';}
+}
 /// The status of the link to the account.
 @immutable final class FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus._(this.value);
 
-factory FinancialConnectionsAccountStatus.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'disconnected' => disconnected,
   'inactive' => inactive,
   _ => FinancialConnectionsAccountStatus._(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountStatus active = FinancialConnectionsAccountStatus._('active');
 
@@ -103,14 +103,14 @@ static const List<FinancialConnectionsAccountStatus> values = [active, disconnec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsAccountStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsAccountStatus($value)';}
+}
 /// If `category` is `cash`, one of:
 /// 
 ///  - `checking`
@@ -127,7 +127,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If `category` is `investment` or `other`, this will be `other`.
 @immutable final class FinancialConnectionsAccountSubcategory {const FinancialConnectionsAccountSubcategory._(this.value);
 
-factory FinancialConnectionsAccountSubcategory.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountSubcategory.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'credit_card' => creditCard,
   'line_of_credit' => lineOfCredit,
@@ -135,7 +135,7 @@ factory FinancialConnectionsAccountSubcategory.fromJson(String json) { return sw
   'other' => $other,
   'savings' => savings,
   _ => FinancialConnectionsAccountSubcategory._(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountSubcategory checking = FinancialConnectionsAccountSubcategory._('checking');
 
@@ -153,20 +153,20 @@ static const List<FinancialConnectionsAccountSubcategory> values = [checking, cr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountSubcategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountSubcategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsAccountSubcategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsAccountSubcategory($value)';}
+}
 @immutable final class FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions._(this.value);
 
-factory FinancialConnectionsAccountSubscriptions.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountSubscriptions.fromJson(String json) {return switch (json) {
   'transactions' => transactions,
   _ => FinancialConnectionsAccountSubscriptions._(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountSubscriptions transactions = FinancialConnectionsAccountSubscriptions._('transactions');
 
@@ -174,21 +174,21 @@ static const List<FinancialConnectionsAccountSubscriptions> values = [transactio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountSubscriptions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountSubscriptions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsAccountSubscriptions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsAccountSubscriptions($value)';}
+}
 @immutable final class FinancialConnectionsAccountSupportedPaymentMethodTypes {const FinancialConnectionsAccountSupportedPaymentMethodTypes._(this.value);
 
-factory FinancialConnectionsAccountSupportedPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountSupportedPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'link' => link,
   'us_bank_account' => usBankAccount,
   _ => FinancialConnectionsAccountSupportedPaymentMethodTypes._(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountSupportedPaymentMethodTypes link = FinancialConnectionsAccountSupportedPaymentMethodTypes._('link');
 
@@ -198,18 +198,18 @@ static const List<FinancialConnectionsAccountSupportedPaymentMethodTypes> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountSupportedPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountSupportedPaymentMethodTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsAccountSupportedPaymentMethodTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsAccountSupportedPaymentMethodTypes($value)';}
+}
 /// A Financial Connections Account represents an account that exists outside of Stripe, to which you have been granted some degree of access.
 @immutable final class FinancialConnectionsAccount {const FinancialConnectionsAccount({required this.category, required this.created, required this.id, required this.institutionName, required this.livemode, required this.object, required this.status, required this.subcategory, required this.supportedPaymentMethodTypes, this.accountHolder = const Omittable.absent(), this.accountNumbers = const Omittable.absent(), this.balance = const Omittable.absent(), this.balanceRefresh = const Omittable.absent(), this.displayName = const Omittable.absent(), this.last4 = const Omittable.absent(), this.ownership = const Omittable.absent(), this.ownershipRefresh = const Omittable.absent(), this.permissions = const Omittable.absent(), this.subscriptions = const Omittable.absent(), this.transactionRefresh = const Omittable.absent(), });
 
-factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccount(
+factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) {return FinancialConnectionsAccount(
   accountHolder: json.containsKey('account_holder') ? Omittable(json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   accountNumbers: json.containsKey('account_numbers') ? Omittable((json['account_numbers'] as List<dynamic>?)?.map((e) => BankConnectionsResourceAccountNumberDetails.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   balance: json.containsKey('balance') ? Omittable(json['balance'] != null ? BankConnectionsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -230,7 +230,7 @@ factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return
   subscriptions: json.containsKey('subscriptions') ? Omittable((json['subscriptions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountSubscriptions.fromJson(e as String)).toList()) : const Omittable.absent(),
   supportedPaymentMethodTypes: (json['supported_payment_method_types'] as List<dynamic>).map((e) => FinancialConnectionsAccountSupportedPaymentMethodTypes.fromJson(e as String)).toList(),
   transactionRefresh: json.containsKey('transaction_refresh') ? Omittable(json['transaction_refresh'] != null ? BankConnectionsResourceTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The account holder that this account belongs to.
 final Omittable<BankConnectionsResourceAccountholder?> accountHolder;
@@ -305,7 +305,7 @@ final List<FinancialConnectionsAccountSupportedPaymentMethodTypes> supportedPaym
 /// The state of the most recent attempt to refresh the account transactions.
 final Omittable<BankConnectionsResourceTransactionRefresh?> transactionRefresh;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolder.isPresent) 'account_holder': accountHolder.value?.toJson(),
   if (accountNumbers.isPresent) 'account_numbers': accountNumbers.value?.map((e) => e.toJson()).toList(),
   if (balance.isPresent) 'balance': balance.value?.toJson(),
@@ -326,8 +326,8 @@ Map<String, dynamic> toJson() { return {
   if (subscriptions.isPresent) 'subscriptions': subscriptions.value?.map((e) => e.toJson()).toList(),
   'supported_payment_method_types': supportedPaymentMethodTypes.map((e) => e.toJson()).toList(),
   if (transactionRefresh.isPresent) 'transaction_refresh': transactionRefresh.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('category') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('institution_name') && json['institution_name'] is String &&
@@ -335,8 +335,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('subcategory') &&
-      json.containsKey('supported_payment_method_types'); } 
-FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountholder?>? accountHolder, Omittable<List<BankConnectionsResourceAccountNumberDetails>?>? accountNumbers, Omittable<BankConnectionsResourceBalance?>? balance, Omittable<BankConnectionsResourceBalanceRefresh?>? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, Omittable<String?>? displayName, String? id, String? institutionName, Omittable<String?>? last4, bool? livemode, FinancialConnectionsAccountObject? object, Omittable<FinancialConnectionsAccountOwnership2?>? ownership, Omittable<BankConnectionsResourceOwnershipRefresh?>? ownershipRefresh, Omittable<List<FinancialConnectionsAccountPermissions>?>? permissions, FinancialConnectionsAccountStatus? status, FinancialConnectionsAccountSubcategory? subcategory, Omittable<List<FinancialConnectionsAccountSubscriptions>?>? subscriptions, List<FinancialConnectionsAccountSupportedPaymentMethodTypes>? supportedPaymentMethodTypes, Omittable<BankConnectionsResourceTransactionRefresh?>? transactionRefresh, }) { return FinancialConnectionsAccount(
+      json.containsKey('supported_payment_method_types');}
+FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountholder?>? accountHolder, Omittable<List<BankConnectionsResourceAccountNumberDetails>?>? accountNumbers, Omittable<BankConnectionsResourceBalance?>? balance, Omittable<BankConnectionsResourceBalanceRefresh?>? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, Omittable<String?>? displayName, String? id, String? institutionName, Omittable<String?>? last4, bool? livemode, FinancialConnectionsAccountObject? object, Omittable<FinancialConnectionsAccountOwnership2?>? ownership, Omittable<BankConnectionsResourceOwnershipRefresh?>? ownershipRefresh, Omittable<List<FinancialConnectionsAccountPermissions>?>? permissions, FinancialConnectionsAccountStatus? status, FinancialConnectionsAccountSubcategory? subcategory, Omittable<List<FinancialConnectionsAccountSubscriptions>?>? subscriptions, List<FinancialConnectionsAccountSupportedPaymentMethodTypes>? supportedPaymentMethodTypes, Omittable<BankConnectionsResourceTransactionRefresh?>? transactionRefresh, }) {return FinancialConnectionsAccount(
   accountHolder: accountHolder ?? this.accountHolder,
   accountNumbers: accountNumbers ?? this.accountNumbers,
   balance: balance ?? this.balance,
@@ -357,8 +357,8 @@ FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountho
   subscriptions: subscriptions ?? this.subscriptions,
   supportedPaymentMethodTypes: supportedPaymentMethodTypes ?? this.supportedPaymentMethodTypes,
   transactionRefresh: transactionRefresh ?? this.transactionRefresh,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FinancialConnectionsAccount &&
           accountHolder == other.accountHolder &&
           accountNumbers.isPresent == other.accountNumbers.isPresent &&
@@ -382,7 +382,7 @@ FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountho
           subscriptions.isPresent == other.subscriptions.isPresent &&
           listEquals(subscriptions.value, other.subscriptions.value) &&
           listEquals(supportedPaymentMethodTypes, other.supportedPaymentMethodTypes) &&
-          transactionRefresh == other.transactionRefresh; } 
-@override int get hashCode { return Object.hash(accountHolder, Object.hashAll(accountNumbers.value ?? const []), balance, balanceRefresh, category, created, displayName, id, institutionName, last4, livemode, object, ownership, ownershipRefresh, Object.hashAll(permissions.value ?? const []), status, subcategory, Object.hashAll(subscriptions.value ?? const []), Object.hashAll(supportedPaymentMethodTypes), transactionRefresh); } 
-@override String toString() { return 'FinancialConnectionsAccount(accountHolder: $accountHolder, accountNumbers: $accountNumbers, balance: $balance, balanceRefresh: $balanceRefresh, category: $category, created: $created, displayName: $displayName, id: $id, institutionName: $institutionName, last4: $last4, livemode: $livemode, object: $object, ownership: $ownership, ownershipRefresh: $ownershipRefresh, permissions: $permissions, status: $status, subcategory: $subcategory, subscriptions: $subscriptions, supportedPaymentMethodTypes: $supportedPaymentMethodTypes, transactionRefresh: $transactionRefresh)'; } 
- }
+          transactionRefresh == other.transactionRefresh;}
+@override int get hashCode {return Object.hash(accountHolder, Object.hashAll(accountNumbers.value ?? const []), balance, balanceRefresh, category, created, displayName, id, institutionName, last4, livemode, object, ownership, ownershipRefresh, Object.hashAll(permissions.value ?? const []), status, subcategory, Object.hashAll(subscriptions.value ?? const []), Object.hashAll(supportedPaymentMethodTypes), transactionRefresh);}
+@override String toString() {return 'FinancialConnectionsAccount(accountHolder: $accountHolder, accountNumbers: $accountNumbers, balance: $balance, balanceRefresh: $balanceRefresh, category: $category, created: $created, displayName: $displayName, id: $id, institutionName: $institutionName, last4: $last4, livemode: $livemode, object: $object, ownership: $ownership, ownershipRefresh: $ownershipRefresh, permissions: $permissions, status: $status, subcategory: $subcategory, subscriptions: $subscriptions, supportedPaymentMethodTypes: $supportedPaymentMethodTypes, transactionRefresh: $transactionRefresh)';}
+}

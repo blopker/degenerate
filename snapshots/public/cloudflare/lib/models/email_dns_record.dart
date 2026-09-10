@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record_ttl.dart';/// DNS record type.
 @immutable final class EmailDnsRecordType {const EmailDnsRecordType._(this.value);
 
-factory EmailDnsRecordType.fromJson(String json) { return switch (json) {
+factory EmailDnsRecordType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'CNAME' => cname,
@@ -23,7 +23,7 @@ factory EmailDnsRecordType.fromJson(String json) { return switch (json) {
   'TLSA' => tlsa,
   'URI' => uri,
   _ => EmailDnsRecordType._(json),
-}; }
+};}
 
 static const EmailDnsRecordType a = EmailDnsRecordType._('A');
 
@@ -65,24 +65,24 @@ static const List<EmailDnsRecordType> values = [a, aaaa, cname, https, txt, srv,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailDnsRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailDnsRecordType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailDnsRecordType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailDnsRecordType($value)';}
+}
 /// List of records needed to enable an Email Routing zone.
 @immutable final class EmailDnsRecord {const EmailDnsRecord({this.content, this.name, this.priority, this.ttl, this.type, });
 
-factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsRecord(
+factory EmailDnsRecord.fromJson(Map<String, dynamic> json) {return EmailDnsRecord(
   content: json['content'] as String?,
   name: json['name'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
   ttl: json['ttl'] != null ? EmailDnsRecordTtl.fromJson(json['ttl']) : null,
   type: json['type'] != null ? EmailDnsRecordType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// DNS record content.
 final String? content;
@@ -99,28 +99,28 @@ final EmailDnsRecordTtl? ttl;
 /// DNS record type.
 final EmailDnsRecordType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': ?content,
   'name': ?name,
   'priority': ?priority,
   if (ttl != null) 'ttl': ttl?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'name', 'priority', 'ttl', 'type'}.contains(key)); } 
-EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, double? Function()? priority, EmailDnsRecordTtl? Function()? ttl, EmailDnsRecordType? Function()? type, }) { return EmailDnsRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content', 'name', 'priority', 'ttl', 'type'}.contains(key));}
+EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, double? Function()? priority, EmailDnsRecordTtl? Function()? ttl, EmailDnsRecordType? Function()? type, }) {return EmailDnsRecord(
   content: content != null ? content() : this.content,
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,
   ttl: ttl != null ? ttl() : this.ttl,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailDnsRecord &&
           content == other.content &&
           name == other.name &&
           priority == other.priority &&
           ttl == other.ttl &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(content, name, priority, ttl, type); } 
-@override String toString() { return 'EmailDnsRecord(content: $content, name: $name, priority: $priority, ttl: $ttl, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(content, name, priority, ttl, type);}
+@override String toString() {return 'EmailDnsRecord(content: $content, name: $name, priority: $priority, ttl: $ttl, type: $type)';}
+}

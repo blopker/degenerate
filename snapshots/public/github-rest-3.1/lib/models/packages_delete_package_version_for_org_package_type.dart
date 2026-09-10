@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesDeletePackageVersionForOrgPackageType {const PackagesDeletePackageVersionForOrgPackageType._(this.value);
 
-factory PackagesDeletePackageVersionForOrgPackageType.fromJson(String json) { return switch (json) {
+factory PackagesDeletePackageVersionForOrgPackageType.fromJson(String json) {return switch (json) {
   'npm' => npm,
   'maven' => maven,
   'rubygems' => rubygems,
@@ -10,7 +10,7 @@ factory PackagesDeletePackageVersionForOrgPackageType.fromJson(String json) { re
   'nuget' => nuget,
   'container' => container,
   _ => PackagesDeletePackageVersionForOrgPackageType._(json),
-}; }
+};}
 
 static const PackagesDeletePackageVersionForOrgPackageType npm = PackagesDeletePackageVersionForOrgPackageType._('npm');
 
@@ -28,11 +28,11 @@ static const List<PackagesDeletePackageVersionForOrgPackageType> values = [npm, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PackagesDeletePackageVersionForOrgPackageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PackagesDeletePackageVersionForOrgPackageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PackagesDeletePackageVersionForOrgPackageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PackagesDeletePackageVersionForOrgPackageType($value)';}
+}

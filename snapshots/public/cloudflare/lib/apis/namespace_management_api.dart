@@ -16,7 +16,7 @@ final class NamespaceManagementApi with ApiExecutor {const NamespaceManagementAp
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces`
-Future<ApiResult<R2DataCatalogNamespaceListResponse?, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<R2DataCatalogNamespaceListResponse?, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageToken != null) {
   queryParameters['page_token'] = pageToken;
@@ -45,22 +45,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogNamespaceListResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogNamespaceListResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

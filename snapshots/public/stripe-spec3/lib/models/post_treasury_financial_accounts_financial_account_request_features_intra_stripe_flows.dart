@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows {const PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows({required this.requested});
 
-factory PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows(
+factory PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows(
   requested: json['requested'] as bool,
-); }
+);}
 
 final bool requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool; } 
-PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows copyWith({bool? requested}) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requested') && json['requested'] is bool;}
+PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows copyWith({bool? requested}) {return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows(
   requested: requested ?? this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesIntraStripeFlows(requested: $requested)';}
+}

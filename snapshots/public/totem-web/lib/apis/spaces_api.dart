@@ -11,7 +11,7 @@ final class SpacesApi with ApiExecutor {const SpacesApi(this.apiConfig);
 /// List Spaces
 ///
 /// `GET /api/v1/spaces/list`
-Future<ApiResult<List<SpaceDetailSchema>, Never>> totemSpacesApiListSpaces({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SpaceDetailSchema>, Never>> totemSpacesApiListSpaces({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,12 +20,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SpaceDetailSchema.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SpaceDetailSchema.fromJson(e as Map<String, dynamic>)).toList();}, );}
+}

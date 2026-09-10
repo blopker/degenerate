@@ -38,7 +38,7 @@ num toJson() => value;
 }
 @immutable final class WaitingroomEventDetailsResult {const WaitingroomEventDetailsResult({this.createdOn, this.customPageHtml, this.description, this.disableSessionRenewal, this.eventEndTime, this.eventStartTime, this.id, this.modifiedOn, this.name, this.newUsersPerMinute, this.prequeueStartTime = const Omittable.absent(), this.queueingMethod, this.sessionDuration, this.shuffleAtEventStart, this.suspended, this.totalActiveUsers, });
 
-factory WaitingroomEventDetailsResult.fromJson(Map<String, dynamic> json) { return WaitingroomEventDetailsResult(
+factory WaitingroomEventDetailsResult.fromJson(Map<String, dynamic> json) {return WaitingroomEventDetailsResult(
   createdOn: json['created_on'] != null ? WaitingroomTimestamp.fromJson(json['created_on'] as String) : null,
   customPageHtml: json['custom_page_html'] != null ? WaitingroomEventDetailsCustomPageHtml.fromJson(json['custom_page_html'] as String) : null,
   description: json['description'] != null ? WaitingroomEventDescription.fromJson(json['description'] as String) : null,
@@ -55,7 +55,7 @@ factory WaitingroomEventDetailsResult.fromJson(Map<String, dynamic> json) { retu
   shuffleAtEventStart: json['shuffle_at_event_start'] != null ? WaitingroomEventShuffleAtEventStart.fromJson(json['shuffle_at_event_start'] as bool) : null,
   suspended: json['suspended'] != null ? WaitingroomEventSuspended.fromJson(json['suspended'] as bool) : null,
   totalActiveUsers: json['total_active_users'] != null ? WaitingroomEventDetailsTotalActiveUsers.fromJson(json['total_active_users'] as num) : null,
-); }
+);}
 
 final WaitingroomTimestamp? createdOn;
 
@@ -90,7 +90,7 @@ final WaitingroomEventSuspended? suspended;
 
 final WaitingroomEventDetailsTotalActiveUsers? totalActiveUsers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (customPageHtml != null) 'custom_page_html': customPageHtml?.toJson(),
   if (description != null) 'description': description?.toJson(),
@@ -107,9 +107,9 @@ Map<String, dynamic> toJson() { return {
   if (shuffleAtEventStart != null) 'shuffle_at_event_start': shuffleAtEventStart?.toJson(),
   if (suspended != null) 'suspended': suspended?.toJson(),
   if (totalActiveUsers != null) 'total_active_users': totalActiveUsers?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'custom_page_html', 'description', 'disable_session_renewal', 'event_end_time', 'event_start_time', 'id', 'modified_on', 'name', 'new_users_per_minute', 'prequeue_start_time', 'queueing_method', 'session_duration', 'shuffle_at_event_start', 'suspended', 'total_active_users'}.contains(key)); } 
-WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? createdOn, WaitingroomEventDetailsCustomPageHtml? Function()? customPageHtml, WaitingroomEventDescription? Function()? description, WaitingroomEventDetailsDisableSessionRenewal? Function()? disableSessionRenewal, WaitingroomEventEndTime? Function()? eventEndTime, WaitingroomEventStartTime? Function()? eventStartTime, WaitingroomEventId? Function()? id, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomEventName? Function()? name, WaitingroomEventDetailsNewUsersPerMinute? Function()? newUsersPerMinute, Omittable<WaitingroomEventPrequeueStartTime?>? prequeueStartTime, WaitingroomEventDetailsQueueingMethod? Function()? queueingMethod, WaitingroomEventDetailsSessionDuration? Function()? sessionDuration, WaitingroomEventShuffleAtEventStart? Function()? shuffleAtEventStart, WaitingroomEventSuspended? Function()? suspended, WaitingroomEventDetailsTotalActiveUsers? Function()? totalActiveUsers, }) { return WaitingroomEventDetailsResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'custom_page_html', 'description', 'disable_session_renewal', 'event_end_time', 'event_start_time', 'id', 'modified_on', 'name', 'new_users_per_minute', 'prequeue_start_time', 'queueing_method', 'session_duration', 'shuffle_at_event_start', 'suspended', 'total_active_users'}.contains(key));}
+WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? createdOn, WaitingroomEventDetailsCustomPageHtml? Function()? customPageHtml, WaitingroomEventDescription? Function()? description, WaitingroomEventDetailsDisableSessionRenewal? Function()? disableSessionRenewal, WaitingroomEventEndTime? Function()? eventEndTime, WaitingroomEventStartTime? Function()? eventStartTime, WaitingroomEventId? Function()? id, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomEventName? Function()? name, WaitingroomEventDetailsNewUsersPerMinute? Function()? newUsersPerMinute, Omittable<WaitingroomEventPrequeueStartTime?>? prequeueStartTime, WaitingroomEventDetailsQueueingMethod? Function()? queueingMethod, WaitingroomEventDetailsSessionDuration? Function()? sessionDuration, WaitingroomEventShuffleAtEventStart? Function()? shuffleAtEventStart, WaitingroomEventSuspended? Function()? suspended, WaitingroomEventDetailsTotalActiveUsers? Function()? totalActiveUsers, }) {return WaitingroomEventDetailsResult(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   customPageHtml: customPageHtml != null ? customPageHtml() : this.customPageHtml,
   description: description != null ? description() : this.description,
@@ -126,8 +126,8 @@ WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? create
   shuffleAtEventStart: shuffleAtEventStart != null ? shuffleAtEventStart() : this.shuffleAtEventStart,
   suspended: suspended != null ? suspended() : this.suspended,
   totalActiveUsers: totalActiveUsers != null ? totalActiveUsers() : this.totalActiveUsers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WaitingroomEventDetailsResult &&
           createdOn == other.createdOn &&
           customPageHtml == other.customPageHtml &&
@@ -144,7 +144,7 @@ WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? create
           sessionDuration == other.sessionDuration &&
           shuffleAtEventStart == other.shuffleAtEventStart &&
           suspended == other.suspended &&
-          totalActiveUsers == other.totalActiveUsers; } 
-@override int get hashCode { return Object.hash(createdOn, customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, id, modifiedOn, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers); } 
-@override String toString() { return 'WaitingroomEventDetailsResult(createdOn: $createdOn, customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, id: $id, modifiedOn: $modifiedOn, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers)'; } 
- }
+          totalActiveUsers == other.totalActiveUsers;}
+@override int get hashCode {return Object.hash(createdOn, customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, id, modifiedOn, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers);}
+@override String toString() {return 'WaitingroomEventDetailsResult(createdOn: $createdOn, customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, id: $id, modifiedOn: $modifiedOn, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers)';}
+}

@@ -16,13 +16,13 @@ String toJson() => value;
 }
 @immutable final class LogpushInstantLogsJob {const LogpushInstantLogsJob({this.destinationConf, this.fields, this.filter, this.sample, this.sessionId, });
 
-factory LogpushInstantLogsJob.fromJson(Map<String, dynamic> json) { return LogpushInstantLogsJob(
+factory LogpushInstantLogsJob.fromJson(Map<String, dynamic> json) {return LogpushInstantLogsJob(
   destinationConf: json['destination_conf'] != null ? LogpushSchemasDestinationConf.fromJson(json['destination_conf'] as String) : null,
   fields: json['fields'] != null ? LogpushFields.fromJson(json['fields'] as String) : null,
   filter: json['filter'] != null ? LogpushSchemasFilter.fromJson(json['filter'] as String) : null,
   sample: json['sample'] != null ? LogpushSample.fromJson(json['sample'] as num) : null,
   sessionId: json['session_id'] != null ? LogpushSessionId.fromJson(json['session_id'] as String) : null,
-); }
+);}
 
 final LogpushSchemasDestinationConf? destinationConf;
 
@@ -35,28 +35,28 @@ final LogpushSample? sample;
 
 final LogpushSessionId? sessionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (destinationConf != null) 'destination_conf': destinationConf?.toJson(),
   if (fields != null) 'fields': fields?.toJson(),
   if (filter != null) 'filter': filter?.toJson(),
   if (sample != null) 'sample': sample?.toJson(),
   if (sessionId != null) 'session_id': sessionId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination_conf', 'fields', 'filter', 'sample', 'session_id'}.contains(key)); } 
-LogpushInstantLogsJob copyWith({LogpushSchemasDestinationConf? Function()? destinationConf, LogpushFields? Function()? fields, LogpushSchemasFilter? Function()? filter, LogpushSample? Function()? sample, LogpushSessionId? Function()? sessionId, }) { return LogpushInstantLogsJob(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'destination_conf', 'fields', 'filter', 'sample', 'session_id'}.contains(key));}
+LogpushInstantLogsJob copyWith({LogpushSchemasDestinationConf? Function()? destinationConf, LogpushFields? Function()? fields, LogpushSchemasFilter? Function()? filter, LogpushSample? Function()? sample, LogpushSessionId? Function()? sessionId, }) {return LogpushInstantLogsJob(
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,
   fields: fields != null ? fields() : this.fields,
   filter: filter != null ? filter() : this.filter,
   sample: sample != null ? sample() : this.sample,
   sessionId: sessionId != null ? sessionId() : this.sessionId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LogpushInstantLogsJob &&
           destinationConf == other.destinationConf &&
           fields == other.fields &&
           filter == other.filter &&
           sample == other.sample &&
-          sessionId == other.sessionId; } 
-@override int get hashCode { return Object.hash(destinationConf, fields, filter, sample, sessionId); } 
-@override String toString() { return 'LogpushInstantLogsJob(destinationConf: $destinationConf, fields: $fields, filter: $filter, sample: $sample, sessionId: $sessionId)'; } 
- }
+          sessionId == other.sessionId;}
+@override int get hashCode {return Object.hash(destinationConf, fields, filter, sample, sessionId);}
+@override String toString() {return 'LogpushInstantLogsJob(destinationConf: $destinationConf, fields: $fields, filter: $filter, sample: $sample, sessionId: $sessionId)';}
+}

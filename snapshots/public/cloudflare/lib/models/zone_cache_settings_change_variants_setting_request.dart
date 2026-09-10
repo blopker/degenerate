@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_variants_value.dart';@immutable final class ZoneCacheSettingsChangeVariantsSettingRequest {const ZoneCacheSettingsChangeVariantsSettingRequest({required this.value});
 
-factory ZoneCacheSettingsChangeVariantsSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeVariantsSettingRequest(
+factory ZoneCacheSettingsChangeVariantsSettingRequest.fromJson(Map<String, dynamic> json) {return ZoneCacheSettingsChangeVariantsSettingRequest(
   value: CacheRulesVariantsValue.fromJson(json['value'] as Map<String, dynamic>),
-); }
+);}
 
 final CacheRulesVariantsValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-ZoneCacheSettingsChangeVariantsSettingRequest copyWith({CacheRulesVariantsValue? value}) { return ZoneCacheSettingsChangeVariantsSettingRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+ZoneCacheSettingsChangeVariantsSettingRequest copyWith({CacheRulesVariantsValue? value}) {return ZoneCacheSettingsChangeVariantsSettingRequest(
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZoneCacheSettingsChangeVariantsSettingRequest &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZoneCacheSettingsChangeVariantsSettingRequest(value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZoneCacheSettingsChangeVariantsSettingRequest(value: $value)';}
+}

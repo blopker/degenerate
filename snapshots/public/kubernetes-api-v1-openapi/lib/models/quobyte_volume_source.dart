@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
 @immutable final class QuobyteVolumeSource {const QuobyteVolumeSource({required this.registry, required this.volume, this.group, this.readOnly, this.tenant, this.user, });
 
-factory QuobyteVolumeSource.fromJson(Map<String, dynamic> json) { return QuobyteVolumeSource(
+factory QuobyteVolumeSource.fromJson(Map<String, dynamic> json) {return QuobyteVolumeSource(
   group: json['group'] as String?,
   readOnly: json['readOnly'] as bool?,
   registry: json['registry'] as String,
   tenant: json['tenant'] as String?,
   user: json['user'] as String?,
   volume: json['volume'] as String,
-); }
+);}
 
 /// group to map volume access to Default is no group
 final String? group;
@@ -30,32 +30,32 @@ final String? user;
 /// volume is a string that references an already created Quobyte volume by name.
 final String volume;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'group': ?group,
   'readOnly': ?readOnly,
   'registry': registry,
   'tenant': ?tenant,
   'user': ?user,
   'volume': volume,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('registry') && json['registry'] is String &&
-      json.containsKey('volume') && json['volume'] is String; } 
-QuobyteVolumeSource copyWith({String? Function()? group, bool? Function()? readOnly, String? registry, String? Function()? tenant, String? Function()? user, String? volume, }) { return QuobyteVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('registry') && json['registry'] is String &&
+      json.containsKey('volume') && json['volume'] is String;}
+QuobyteVolumeSource copyWith({String? Function()? group, bool? Function()? readOnly, String? registry, String? Function()? tenant, String? Function()? user, String? volume, }) {return QuobyteVolumeSource(
   group: group != null ? group() : this.group,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   registry: registry ?? this.registry,
   tenant: tenant != null ? tenant() : this.tenant,
   user: user != null ? user() : this.user,
   volume: volume ?? this.volume,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is QuobyteVolumeSource &&
           group == other.group &&
           readOnly == other.readOnly &&
           registry == other.registry &&
           tenant == other.tenant &&
           user == other.user &&
-          volume == other.volume; } 
-@override int get hashCode { return Object.hash(group, readOnly, registry, tenant, user, volume); } 
-@override String toString() { return 'QuobyteVolumeSource(group: $group, readOnly: $readOnly, registry: $registry, tenant: $tenant, user: $user, volume: $volume)'; } 
- }
+          volume == other.volume;}
+@override int get hashCode {return Object.hash(group, readOnly, registry, tenant, user, volume);}
+@override String toString() {return 'QuobyteVolumeSource(group: $group, readOnly: $readOnly, registry: $registry, tenant: $tenant, user: $user, volume: $volume)';}
+}

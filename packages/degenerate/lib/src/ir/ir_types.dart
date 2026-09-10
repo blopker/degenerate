@@ -697,10 +697,14 @@ final class IrMediaType {
 final class IrResponse {
   /// Creates a response.
   const IrResponse({
+    this.statusKey,
     this.description,
     this.content = const {},
     this.headers = const [],
   });
+
+  /// Declared status code, range (such as `4XX`), or `default`.
+  final String? statusKey;
 
   /// Human-readable description.
   final SpecString? description;

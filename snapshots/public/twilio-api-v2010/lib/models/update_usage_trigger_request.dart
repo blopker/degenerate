@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
 @immutable final class UpdateUsageTriggerRequestCallbackMethod {const UpdateUsageTriggerRequestCallbackMethod._(this.value);
 
-factory UpdateUsageTriggerRequestCallbackMethod.fromJson(String json) { return switch (json) {
+factory UpdateUsageTriggerRequestCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateUsageTriggerRequestCallbackMethod._(json),
-}; }
+};}
 
 static const UpdateUsageTriggerRequestCallbackMethod $get = UpdateUsageTriggerRequestCallbackMethod._('GET');
 
@@ -17,21 +17,21 @@ static const List<UpdateUsageTriggerRequestCallbackMethod> values = [$get, post]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateUsageTriggerRequestCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateUsageTriggerRequestCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateUsageTriggerRequestCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateUsageTriggerRequestCallbackMethod($value)';}
+}
 @immutable final class UpdateUsageTriggerRequest {const UpdateUsageTriggerRequest({this.callbackMethod, this.callbackUrl, this.friendlyName, });
 
-factory UpdateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return UpdateUsageTriggerRequest(
+factory UpdateUsageTriggerRequest.fromJson(Map<String, dynamic> json) {return UpdateUsageTriggerRequest(
   callbackMethod: json['CallbackMethod'] != null ? UpdateUsageTriggerRequestCallbackMethod.fromJson(json['CallbackMethod'] as String) : null,
   callbackUrl: json['CallbackUrl'] != null ? Uri.parse(json['CallbackUrl'] as String) : null,
   friendlyName: json['FriendlyName'] as String?,
-); }
+);}
 
 /// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
 final UpdateUsageTriggerRequestCallbackMethod? callbackMethod;
@@ -42,22 +42,22 @@ final Uri? callbackUrl;
 /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
 final String? friendlyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (callbackMethod != null) 'CallbackMethod': callbackMethod?.toJson(),
   if (callbackUrl != null) 'CallbackUrl': callbackUrl?.toString(),
   'FriendlyName': ?friendlyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CallbackMethod', 'CallbackUrl', 'FriendlyName'}.contains(key)); } 
-UpdateUsageTriggerRequest copyWith({UpdateUsageTriggerRequestCallbackMethod? Function()? callbackMethod, Uri? Function()? callbackUrl, String? Function()? friendlyName, }) { return UpdateUsageTriggerRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'CallbackMethod', 'CallbackUrl', 'FriendlyName'}.contains(key));}
+UpdateUsageTriggerRequest copyWith({UpdateUsageTriggerRequestCallbackMethod? Function()? callbackMethod, Uri? Function()? callbackUrl, String? Function()? friendlyName, }) {return UpdateUsageTriggerRequest(
   callbackMethod: callbackMethod != null ? callbackMethod() : this.callbackMethod,
   callbackUrl: callbackUrl != null ? callbackUrl() : this.callbackUrl,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateUsageTriggerRequest &&
           callbackMethod == other.callbackMethod &&
           callbackUrl == other.callbackUrl &&
-          friendlyName == other.friendlyName; } 
-@override int get hashCode { return Object.hash(callbackMethod, callbackUrl, friendlyName); } 
-@override String toString() { return 'UpdateUsageTriggerRequest(callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, friendlyName: $friendlyName)'; } 
- }
+          friendlyName == other.friendlyName;}
+@override int get hashCode {return Object.hash(callbackMethod, callbackUrl, friendlyName);}
+@override String toString() {return 'UpdateUsageTriggerRequest(callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, friendlyName: $friendlyName)';}
+}

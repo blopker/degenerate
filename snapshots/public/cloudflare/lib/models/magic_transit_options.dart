@@ -10,14 +10,14 @@ num toJson() => value;
 /// Type of packet sent.
 @immutable final class MagicTransitPacketType {const MagicTransitPacketType._(this.value);
 
-factory MagicTransitPacketType.fromJson(String json) { return switch (json) {
+factory MagicTransitPacketType.fromJson(String json) {return switch (json) {
   'icmp' => icmp,
   'tcp' => tcp,
   'udp' => udp,
   'gre' => gre,
   'gre+icmp' => greicmp,
   _ => MagicTransitPacketType._(json),
-}; }
+};}
 
 static const MagicTransitPacketType icmp = MagicTransitPacketType._('icmp');
 
@@ -33,14 +33,14 @@ static const List<MagicTransitPacketType> values = [icmp, tcp, udp, gre, greicmp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicTransitPacketType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicTransitPacketType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicTransitPacketType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicTransitPacketType($value)';}
+}
 /// Number of packets sent at each TTL.
 extension type const MagicTransitPacketsPerTtl(int value) {
 factory MagicTransitPacketsPerTtl.fromJson(num json) => MagicTransitPacketsPerTtl(json.toInt());
@@ -64,13 +64,13 @@ num toJson() => value;
 }
 @immutable final class MagicTransitOptions {const MagicTransitOptions({this.maxTtl, this.packetType, this.packetsPerTtl, this.port, this.waitTime, });
 
-factory MagicTransitOptions.fromJson(Map<String, dynamic> json) { return MagicTransitOptions(
+factory MagicTransitOptions.fromJson(Map<String, dynamic> json) {return MagicTransitOptions(
   maxTtl: json['max_ttl'] != null ? MagicTransitMaxTtl.fromJson(json['max_ttl'] as num) : null,
   packetType: json['packet_type'] != null ? MagicTransitPacketType.fromJson(json['packet_type'] as String) : null,
   packetsPerTtl: json['packets_per_ttl'] != null ? MagicTransitPacketsPerTtl.fromJson(json['packets_per_ttl'] as num) : null,
   port: json['port'] != null ? MagicTransitPort.fromJson(json['port'] as num) : null,
   waitTime: json['wait_time'] != null ? MagicTransitWaitTime.fromJson(json['wait_time'] as num) : null,
-); }
+);}
 
 /// Max TTL.
 final MagicTransitMaxTtl? maxTtl;
@@ -83,28 +83,28 @@ final MagicTransitPort? port;
 
 final MagicTransitWaitTime? waitTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (maxTtl != null) 'max_ttl': maxTtl?.toJson(),
   if (packetType != null) 'packet_type': packetType?.toJson(),
   if (packetsPerTtl != null) 'packets_per_ttl': packetsPerTtl?.toJson(),
   if (port != null) 'port': port?.toJson(),
   if (waitTime != null) 'wait_time': waitTime?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_ttl', 'packet_type', 'packets_per_ttl', 'port', 'wait_time'}.contains(key)); } 
-MagicTransitOptions copyWith({MagicTransitMaxTtl? Function()? maxTtl, MagicTransitPacketType? Function()? packetType, MagicTransitPacketsPerTtl? Function()? packetsPerTtl, MagicTransitPort? Function()? port, MagicTransitWaitTime? Function()? waitTime, }) { return MagicTransitOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'max_ttl', 'packet_type', 'packets_per_ttl', 'port', 'wait_time'}.contains(key));}
+MagicTransitOptions copyWith({MagicTransitMaxTtl? Function()? maxTtl, MagicTransitPacketType? Function()? packetType, MagicTransitPacketsPerTtl? Function()? packetsPerTtl, MagicTransitPort? Function()? port, MagicTransitWaitTime? Function()? waitTime, }) {return MagicTransitOptions(
   maxTtl: maxTtl != null ? maxTtl() : this.maxTtl,
   packetType: packetType != null ? packetType() : this.packetType,
   packetsPerTtl: packetsPerTtl != null ? packetsPerTtl() : this.packetsPerTtl,
   port: port != null ? port() : this.port,
   waitTime: waitTime != null ? waitTime() : this.waitTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicTransitOptions &&
           maxTtl == other.maxTtl &&
           packetType == other.packetType &&
           packetsPerTtl == other.packetsPerTtl &&
           port == other.port &&
-          waitTime == other.waitTime; } 
-@override int get hashCode { return Object.hash(maxTtl, packetType, packetsPerTtl, port, waitTime); } 
-@override String toString() { return 'MagicTransitOptions(maxTtl: $maxTtl, packetType: $packetType, packetsPerTtl: $packetsPerTtl, port: $port, waitTime: $waitTime)'; } 
- }
+          waitTime == other.waitTime;}
+@override int get hashCode {return Object.hash(maxTtl, packetType, packetsPerTtl, port, waitTime);}
+@override String toString() {return 'MagicTransitOptions(maxTtl: $maxTtl, packetType: $packetType, packetsPerTtl: $packetsPerTtl, port: $port, waitTime: $waitTime)';}
+}

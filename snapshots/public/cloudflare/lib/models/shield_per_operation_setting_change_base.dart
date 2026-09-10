@@ -9,13 +9,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set, this a
 /// 
 @immutable final class ShieldPerOperationSettingChangeBaseMitigationAction {const ShieldPerOperationSettingChangeBaseMitigationAction._(this.value);
 
-factory ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(String json) { return switch (json) {
+factory ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(String json) {return switch (json) {
   'log' => log,
   'block' => block,
   'none' => none,
   'null' => $null,
   _ => ShieldPerOperationSettingChangeBaseMitigationAction._(json),
-}; }
+};}
 
 static const ShieldPerOperationSettingChangeBaseMitigationAction log = ShieldPerOperationSettingChangeBaseMitigationAction._('log');
 
@@ -29,19 +29,19 @@ static const List<ShieldPerOperationSettingChangeBaseMitigationAction> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldPerOperationSettingChangeBaseMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldPerOperationSettingChangeBaseMitigationAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldPerOperationSettingChangeBaseMitigationAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldPerOperationSettingChangeBaseMitigationAction($value)';}
+}
 @immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction = const Omittable.absent()});
 
-factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) { return ShieldPerOperationSettingChangeBase(
+factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) {return ShieldPerOperationSettingChangeBase(
   mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// When set, this applies a mitigation action to this operation
 /// 
@@ -52,16 +52,16 @@ factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) 
 /// 
 final Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?> mitigationAction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-ShieldPerOperationSettingChangeBase copyWith({Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?>? mitigationAction}) { return ShieldPerOperationSettingChangeBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mitigation_action'}.contains(key));}
+ShieldPerOperationSettingChangeBase copyWith({Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?>? mitigationAction}) {return ShieldPerOperationSettingChangeBase(
   mitigationAction: mitigationAction ?? this.mitigationAction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldPerOperationSettingChangeBase &&
-          mitigationAction == other.mitigationAction; } 
-@override int get hashCode { return mitigationAction.hashCode; } 
-@override String toString() { return 'ShieldPerOperationSettingChangeBase(mitigationAction: $mitigationAction)'; } 
- }
+          mitigationAction == other.mitigationAction;}
+@override int get hashCode {return mitigationAction.hashCode;}
+@override String toString() {return 'ShieldPerOperationSettingChangeBase(mitigationAction: $mitigationAction)';}
+}

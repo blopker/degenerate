@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
 
-factory PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(String json) { return switch (json) {
+factory PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(String json) {return switch (json) {
   '0' => $0,
   '1' => $1,
   '2' => $2,
@@ -10,7 +10,7 @@ factory PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.from
   '4' => $4,
   'A' => a,
   _ => PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(json),
-}; }
+};}
 
 static const PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $0 = PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('0');
 
@@ -28,21 +28,21 @@ static const List<PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo($value)';}
+}
 @immutable final class PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires {const PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
 
-factory PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires.fromJson(Map<String, dynamic> json) { return PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires(
+factory PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires.fromJson(Map<String, dynamic> json) {return PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires(
   cbAvalgo: PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(json['cb_avalgo'] as String),
   cbExemption: json['cb_exemption'] as String?,
   cbScore: json['cb_score'] != null ? (json['cb_score'] as num).toInt() : null,
-); }
+);}
 
 final PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo cbAvalgo;
 
@@ -50,22 +50,22 @@ final String? cbExemption;
 
 final int? cbScore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cb_avalgo': cbAvalgo.toJson(),
   'cb_exemption': ?cbExemption,
   'cb_score': ?cbScore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cb_avalgo'); } 
-PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires copyWith({PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo? cbAvalgo, String? Function()? cbExemption, int? Function()? cbScore, }) { return PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cb_avalgo');}
+PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires copyWith({PaymentIntentParamThreeDSecureNetworkOptionsCartesBancairesCbAvalgo? cbAvalgo, String? Function()? cbExemption, int? Function()? cbScore, }) {return PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires(
   cbAvalgo: cbAvalgo ?? this.cbAvalgo,
   cbExemption: cbExemption != null ? cbExemption() : this.cbExemption,
   cbScore: cbScore != null ? cbScore() : this.cbScore,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires &&
           cbAvalgo == other.cbAvalgo &&
           cbExemption == other.cbExemption &&
-          cbScore == other.cbScore; } 
-@override int get hashCode { return Object.hash(cbAvalgo, cbExemption, cbScore); } 
-@override String toString() { return 'PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires(cbAvalgo: $cbAvalgo, cbExemption: $cbExemption, cbScore: $cbScore)'; } 
- }
+          cbScore == other.cbScore;}
+@override int get hashCode {return Object.hash(cbAvalgo, cbExemption, cbScore);}
+@override String toString() {return 'PaymentIntentParamThreeDSecureNetworkOptionsCartesBancaires(cbAvalgo: $cbAvalgo, cbExemption: $cbExemption, cbScore: $cbScore)';}
+}

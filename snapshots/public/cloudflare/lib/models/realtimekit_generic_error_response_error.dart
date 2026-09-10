@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitGenericErrorResponseError {const RealtimekitGenericErrorResponseError({required this.code, required this.message, });
 
-factory RealtimekitGenericErrorResponseError.fromJson(Map<String, dynamic> json) { return RealtimekitGenericErrorResponseError(
+factory RealtimekitGenericErrorResponseError.fromJson(Map<String, dynamic> json) {return RealtimekitGenericErrorResponseError(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 /// HTTP status code of the error.
 final double code;
@@ -13,20 +13,20 @@ final double code;
 /// Error message describing what went wrong.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-RealtimekitGenericErrorResponseError copyWith({double? code, String? message, }) { return RealtimekitGenericErrorResponseError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+RealtimekitGenericErrorResponseError copyWith({double? code, String? message, }) {return RealtimekitGenericErrorResponseError(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitGenericErrorResponseError &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'RealtimekitGenericErrorResponseError(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'RealtimekitGenericErrorResponseError(code: $code, message: $message)';}
+}

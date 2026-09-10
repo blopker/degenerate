@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2 $empty = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2._('');
 
@@ -13,21 +13,21 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant2($value)';}
+}
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3.fromJson(String json) {return switch (json) {
   'max_period_end' => maxPeriodEnd,
   'min_period_end' => minPeriodEnd,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3 maxPeriodEnd = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3._('max_period_end');
 
@@ -37,14 +37,14 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAtVariant3($value)';}
+}
 /// A timestamp at which the subscription should cancel. If set to a date before the current period ends, this will cause a proration if prorations have been enabled using `proration_behavior`. If set during a future period, this will always cause a proration for that period.
 @immutable
 final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt {

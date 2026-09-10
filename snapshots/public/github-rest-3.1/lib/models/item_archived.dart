@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_changes.dart';@immutable final class ItemArchivedAction {const ItemArchivedAction._(this.value);
 
-factory ItemArchivedAction.fromJson(String json) { return switch (json) {
+factory ItemArchivedAction.fromJson(String json) {return switch (json) {
   'archived' => archived,
   _ => ItemArchivedAction._(json),
-}; }
+};}
 
 static const ItemArchivedAction archived = ItemArchivedAction._('archived');
 
@@ -13,24 +13,24 @@ static const List<ItemArchivedAction> values = [archived];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemArchivedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemArchivedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ItemArchivedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ItemArchivedAction($value)';}
+}
 @immutable final class ItemArchived {const ItemArchived({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
-factory ItemArchived.fromJson(Map<String, dynamic> json) { return ItemArchived(
+factory ItemArchived.fromJson(Map<String, dynamic> json) {return ItemArchived(
   action: ItemArchivedAction.fromJson(json['action'] as String),
   changes: WebhooksProjectChanges.fromJson(json['changes'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemArchivedAction action;
 
@@ -44,35 +44,35 @@ final Item projectsV2Item;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'organization': organization.toJson(),
   'projects_v2_item': projectsV2Item.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('organization') &&
       json.containsKey('projects_v2_item') &&
-      json.containsKey('sender'); } 
-ItemArchived copyWith({ItemArchivedAction? action, WebhooksProjectChanges? changes, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) { return ItemArchived(
+      json.containsKey('sender');}
+ItemArchived copyWith({ItemArchivedAction? action, WebhooksProjectChanges? changes, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) {return ItemArchived(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,
   projectsV2Item: projectsV2Item ?? this.projectsV2Item,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ItemArchived &&
           action == other.action &&
           changes == other.changes &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2Item == other.projectsV2Item &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, installation, organization, projectsV2Item, sender); } 
-@override String toString() { return 'ItemArchived(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, changes, installation, organization, projectsV2Item, sender);}
+@override String toString() {return 'ItemArchived(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)';}
+}

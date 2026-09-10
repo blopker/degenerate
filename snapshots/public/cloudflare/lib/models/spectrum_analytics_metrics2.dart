@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpectrumAnalyticsMetrics2 {const SpectrumAnalyticsMetrics2._(this.value);
 
-factory SpectrumAnalyticsMetrics2.fromJson(String json) { return switch (json) {
+factory SpectrumAnalyticsMetrics2.fromJson(String json) {return switch (json) {
   'count' => count,
   'bytesIngress' => bytesIngress,
   'bytesEgress' => bytesEgress,
@@ -11,7 +11,7 @@ factory SpectrumAnalyticsMetrics2.fromJson(String json) { return switch (json) {
   'duration90th' => duration90th,
   'duration99th' => duration99th,
   _ => SpectrumAnalyticsMetrics2._(json),
-}; }
+};}
 
 static const SpectrumAnalyticsMetrics2 count = SpectrumAnalyticsMetrics2._('count');
 
@@ -31,11 +31,11 @@ static const List<SpectrumAnalyticsMetrics2> values = [count, bytesIngress, byte
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumAnalyticsMetrics2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumAnalyticsMetrics2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpectrumAnalyticsMetrics2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpectrumAnalyticsMetrics2($value)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_device_type.dart';import 'observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
 @immutable final class ObservatoryLighthouseState {const ObservatoryLighthouseState._(this.value);
 
-factory ObservatoryLighthouseState.fromJson(String json) { return switch (json) {
+factory ObservatoryLighthouseState.fromJson(String json) {return switch (json) {
   'RUNNING' => running,
   'COMPLETE' => complete,
   'FAILED' => failed,
   _ => ObservatoryLighthouseState._(json),
-}; }
+};}
 
 static const ObservatoryLighthouseState running = ObservatoryLighthouseState._('RUNNING');
 
@@ -20,18 +20,18 @@ static const List<ObservatoryLighthouseState> values = [running, complete, faile
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ObservatoryLighthouseState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ObservatoryLighthouseState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ObservatoryLighthouseState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ObservatoryLighthouseState($value)';}
+}
 /// The Lighthouse report.
 @immutable final class ObservatoryLighthouseReport {const ObservatoryLighthouseReport({this.cls, this.deviceType, this.error, this.fcp, this.jsonReportUrl, this.lcp, this.performanceScore, this.si, this.state, this.tbt, this.ttfb, this.tti, });
 
-factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return ObservatoryLighthouseReport(
+factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) {return ObservatoryLighthouseReport(
   cls: json['cls'] != null ? (json['cls'] as num).toDouble() : null,
   deviceType: json['deviceType'] != null ? ObservatoryDeviceType.fromJson(json['deviceType'] as String) : null,
   error: json['error'] != null ? ObservatoryLighthouseReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
@@ -44,7 +44,7 @@ factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return
   tbt: json['tbt'] != null ? (json['tbt'] as num).toDouble() : null,
   ttfb: json['ttfb'] != null ? (json['ttfb'] as num).toDouble() : null,
   tti: json['tti'] != null ? (json['tti'] as num).toDouble() : null,
-); }
+);}
 
 /// Cumulative Layout Shift.
 final double? cls;
@@ -80,7 +80,7 @@ final double? ttfb;
 /// Time To Interactive.
 final double? tti;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cls': ?cls,
   if (deviceType != null) 'deviceType': deviceType?.toJson(),
   if (error != null) 'error': error?.toJson(),
@@ -93,9 +93,9 @@ Map<String, dynamic> toJson() { return {
   'tbt': ?tbt,
   'ttfb': ?ttfb,
   'tti': ?tti,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cls', 'deviceType', 'error', 'fcp', 'jsonReportUrl', 'lcp', 'performanceScore', 'si', 'state', 'tbt', 'ttfb', 'tti'}.contains(key)); } 
-ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDeviceType? Function()? deviceType, ObservatoryLighthouseReportError? Function()? error, double? Function()? fcp, String? Function()? jsonReportUrl, double? Function()? lcp, double? Function()? performanceScore, double? Function()? si, ObservatoryLighthouseState? Function()? state, double? Function()? tbt, double? Function()? ttfb, double? Function()? tti, }) { return ObservatoryLighthouseReport(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cls', 'deviceType', 'error', 'fcp', 'jsonReportUrl', 'lcp', 'performanceScore', 'si', 'state', 'tbt', 'ttfb', 'tti'}.contains(key));}
+ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDeviceType? Function()? deviceType, ObservatoryLighthouseReportError? Function()? error, double? Function()? fcp, String? Function()? jsonReportUrl, double? Function()? lcp, double? Function()? performanceScore, double? Function()? si, ObservatoryLighthouseState? Function()? state, double? Function()? tbt, double? Function()? ttfb, double? Function()? tti, }) {return ObservatoryLighthouseReport(
   cls: cls != null ? cls() : this.cls,
   deviceType: deviceType != null ? deviceType() : this.deviceType,
   error: error != null ? error() : this.error,
@@ -108,8 +108,8 @@ ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDevice
   tbt: tbt != null ? tbt() : this.tbt,
   ttfb: ttfb != null ? ttfb() : this.ttfb,
   tti: tti != null ? tti() : this.tti,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ObservatoryLighthouseReport &&
           cls == other.cls &&
           deviceType == other.deviceType &&
@@ -122,7 +122,7 @@ ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDevice
           state == other.state &&
           tbt == other.tbt &&
           ttfb == other.ttfb &&
-          tti == other.tti; } 
-@override int get hashCode { return Object.hash(cls, deviceType, error, fcp, jsonReportUrl, lcp, performanceScore, si, state, tbt, ttfb, tti); } 
-@override String toString() { return 'ObservatoryLighthouseReport(cls: $cls, deviceType: $deviceType, error: $error, fcp: $fcp, jsonReportUrl: $jsonReportUrl, lcp: $lcp, performanceScore: $performanceScore, si: $si, state: $state, tbt: $tbt, ttfb: $ttfb, tti: $tti)'; } 
- }
+          tti == other.tti;}
+@override int get hashCode {return Object.hash(cls, deviceType, error, fcp, jsonReportUrl, lcp, performanceScore, si, state, tbt, ttfb, tti);}
+@override String toString() {return 'ObservatoryLighthouseReport(cls: $cls, deviceType: $deviceType, error: $error, fcp: $fcp, jsonReportUrl: $jsonReportUrl, lcp: $lcp, performanceScore: $performanceScore, si: $si, state: $state, tbt: $tbt, ttfb: $ttfb, tti: $tti)';}
+}

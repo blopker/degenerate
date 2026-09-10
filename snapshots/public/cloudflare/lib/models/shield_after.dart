@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Move rule to before rule with ID.
 @immutable final class ShieldAfter {const ShieldAfter({this.after});
 
-factory ShieldAfter.fromJson(Map<String, dynamic> json) { return ShieldAfter(
+factory ShieldAfter.fromJson(Map<String, dynamic> json) {return ShieldAfter(
   after: json['after'] as String?,
-); }
+);}
 
 /// Move rule to after rule with this ID.
 final String? after;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after': ?after,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after'}.contains(key)); } 
-ShieldAfter copyWith({String? Function()? after}) { return ShieldAfter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'after'}.contains(key));}
+ShieldAfter copyWith({String? Function()? after}) {return ShieldAfter(
   after: after != null ? after() : this.after,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldAfter &&
-          after == other.after; } 
-@override int get hashCode { return after.hashCode; } 
-@override String toString() { return 'ShieldAfter(after: $after)'; } 
- }
+          after == other.after;}
+@override int get hashCode {return after.hashCode;}
+@override String toString() {return 'ShieldAfter(after: $after)';}
+}

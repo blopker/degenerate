@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryReferences {const WebhooksSecurityAdvisoryReferences({required this.url});
 
-factory WebhooksSecurityAdvisoryReferences.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisoryReferences(
+factory WebhooksSecurityAdvisoryReferences.fromJson(Map<String, dynamic> json) {return WebhooksSecurityAdvisoryReferences(
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-WebhooksSecurityAdvisoryReferences copyWith({Uri? url}) { return WebhooksSecurityAdvisoryReferences(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+WebhooksSecurityAdvisoryReferences copyWith({Uri? url}) {return WebhooksSecurityAdvisoryReferences(
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksSecurityAdvisoryReferences &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'WebhooksSecurityAdvisoryReferences(url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return url.hashCode;}
+@override String toString() {return 'WebhooksSecurityAdvisoryReferences(url: $url)';}
+}

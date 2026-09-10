@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage metrics for a given language for the given editor for Copilot code completions.
 @immutable final class CopilotIdeCodeCompletionsLanguages {const CopilotIdeCodeCompletionsLanguages({this.name, this.totalEngagedUsers, });
 
-factory CopilotIdeCodeCompletionsLanguages.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletionsLanguages(
+factory CopilotIdeCodeCompletionsLanguages.fromJson(Map<String, dynamic> json) {return CopilotIdeCodeCompletionsLanguages(
   name: json['name'] as String?,
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
-); }
+);}
 
 /// Name of the language used for Copilot code completion suggestions.
 final String? name;
@@ -14,19 +14,19 @@ final String? name;
 /// Number of users who accepted at least one Copilot code completion suggestion for the given language. Includes both full and partial acceptances.
 final int? totalEngagedUsers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'total_engaged_users': ?totalEngagedUsers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'total_engaged_users'}.contains(key)); } 
-CopilotIdeCodeCompletionsLanguages copyWith({String? Function()? name, int? Function()? totalEngagedUsers, }) { return CopilotIdeCodeCompletionsLanguages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'total_engaged_users'}.contains(key));}
+CopilotIdeCodeCompletionsLanguages copyWith({String? Function()? name, int? Function()? totalEngagedUsers, }) {return CopilotIdeCodeCompletionsLanguages(
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotIdeCodeCompletionsLanguages &&
           name == other.name &&
-          totalEngagedUsers == other.totalEngagedUsers; } 
-@override int get hashCode { return Object.hash(name, totalEngagedUsers); } 
-@override String toString() { return 'CopilotIdeCodeCompletionsLanguages(name: $name, totalEngagedUsers: $totalEngagedUsers)'; } 
- }
+          totalEngagedUsers == other.totalEngagedUsers;}
+@override int get hashCode {return Object.hash(name, totalEngagedUsers);}
+@override String toString() {return 'CopilotIdeCodeCompletionsLanguages(name: $name, totalEngagedUsers: $totalEngagedUsers)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType {const PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType._(this.value);
 
-factory PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
+factory PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType.fromJson(String json) {return switch (json) {
   'npm' => npm,
   'maven' => maven,
   'rubygems' => rubygems,
@@ -10,7 +10,7 @@ factory PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageTy
   'nuget' => nuget,
   'container' => container,
   _ => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType._(json),
-}; }
+};}
 
 static const PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType npm = PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType._('npm');
 
@@ -28,11 +28,11 @@ static const List<PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUse
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType($value)';}
+}

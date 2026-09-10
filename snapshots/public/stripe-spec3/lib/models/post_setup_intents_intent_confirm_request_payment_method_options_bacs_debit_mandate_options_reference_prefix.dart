@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 $empty = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2($value)';}
+}
 
 @immutable
 final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix {

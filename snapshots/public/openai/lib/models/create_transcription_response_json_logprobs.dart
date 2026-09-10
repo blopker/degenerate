@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTranscriptionResponseJsonLogprobs {const CreateTranscriptionResponseJsonLogprobs({this.token, this.logprob, this.bytes, });
 
-factory CreateTranscriptionResponseJsonLogprobs.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseJsonLogprobs(
+factory CreateTranscriptionResponseJsonLogprobs.fromJson(Map<String, dynamic> json) {return CreateTranscriptionResponseJsonLogprobs(
   token: json['token'] as String?,
   logprob: json['logprob'] != null ? (json['logprob'] as num).toDouble() : null,
   bytes: (json['bytes'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 /// The token in the transcription.
 final String? token;
@@ -17,22 +17,22 @@ final double? logprob;
 /// The bytes of the token.
 final List<double>? bytes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': ?token,
   'logprob': ?logprob,
   'bytes': ?bytes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token', 'logprob', 'bytes'}.contains(key)); } 
-CreateTranscriptionResponseJsonLogprobs copyWith({String? Function()? token, double? Function()? logprob, List<double>? Function()? bytes, }) { return CreateTranscriptionResponseJsonLogprobs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'token', 'logprob', 'bytes'}.contains(key));}
+CreateTranscriptionResponseJsonLogprobs copyWith({String? Function()? token, double? Function()? logprob, List<double>? Function()? bytes, }) {return CreateTranscriptionResponseJsonLogprobs(
   token: token != null ? token() : this.token,
   logprob: logprob != null ? logprob() : this.logprob,
   bytes: bytes != null ? bytes() : this.bytes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateTranscriptionResponseJsonLogprobs &&
           token == other.token &&
           logprob == other.logprob &&
-          listEquals(bytes, other.bytes); } 
-@override int get hashCode { return Object.hash(token, logprob, Object.hashAll(bytes ?? const [])); } 
-@override String toString() { return 'CreateTranscriptionResponseJsonLogprobs(token: $token, logprob: $logprob, bytes: $bytes)'; } 
- }
+          listEquals(bytes, other.bytes);}
+@override int get hashCode {return Object.hash(token, logprob, Object.hashAll(bytes ?? const []));}
+@override String toString() {return 'CreateTranscriptionResponseJsonLogprobs(token: $token, logprob: $logprob, bytes: $bytes)';}
+}

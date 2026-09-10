@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs._(this.value);
 
-factory RadarGetHttpTopLocationsByTlsVersionOs.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByTlsVersionOs.fromJson(String json) {return switch (json) {
   'WINDOWS' => windows,
   'MACOSX' => macosx,
   'IOS' => ios,
@@ -11,7 +11,7 @@ factory RadarGetHttpTopLocationsByTlsVersionOs.fromJson(String json) { return sw
   'LINUX' => linux,
   'SMART_TV' => smartTv,
   _ => RadarGetHttpTopLocationsByTlsVersionOs._(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByTlsVersionOs windows = RadarGetHttpTopLocationsByTlsVersionOs._('WINDOWS');
 
@@ -31,11 +31,11 @@ static const List<RadarGetHttpTopLocationsByTlsVersionOs> values = [windows, mac
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopLocationsByTlsVersionOs && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopLocationsByTlsVersionOs($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopLocationsByTlsVersionOs && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopLocationsByTlsVersionOs($value)';}
+}

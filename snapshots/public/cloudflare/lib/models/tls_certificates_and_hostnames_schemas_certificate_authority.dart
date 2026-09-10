@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate Authority selected for the order.  For information on any certificate authority specific details or restrictions [see this page for more details.](https://developers.cloudflare.com/ssl/reference/certificate-authorities)
 @immutable final class TlsCertificatesAndHostnamesSchemasCertificateAuthority {const TlsCertificatesAndHostnamesSchemasCertificateAuthority._(this.value);
 
-factory TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(String json) {return switch (json) {
   'google' => google,
   'lets_encrypt' => letsEncrypt,
   'ssl_com' => sslCom,
   _ => TlsCertificatesAndHostnamesSchemasCertificateAuthority._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSchemasCertificateAuthority google = TlsCertificatesAndHostnamesSchemasCertificateAuthority._('google');
 
@@ -20,11 +20,11 @@ static const List<TlsCertificatesAndHostnamesSchemasCertificateAuthority> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasCertificateAuthority && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSchemasCertificateAuthority($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasCertificateAuthority && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSchemasCertificateAuthority($value)';}
+}

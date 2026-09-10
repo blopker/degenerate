@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this refund, such as customer cancellation settings.
 @immutable final class PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig {const PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig({this.enableCustomerCancellation});
 
-factory PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(
+factory PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
-); }
+);}
 
 final bool? enableCustomerCancellation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enable_customer_cancellation': ?enableCustomerCancellation,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key)); } 
-PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) { return PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key));}
+PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) {return PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig &&
-          enableCustomerCancellation == other.enableCustomerCancellation; } 
-@override int get hashCode { return enableCustomerCancellation.hashCode; } 
-@override String toString() { return 'PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(enableCustomerCancellation: $enableCustomerCancellation)'; } 
- }
+          enableCustomerCancellation == other.enableCustomerCancellation;}
+@override int get hashCode {return enableCustomerCancellation.hashCode;}
+@override String toString() {return 'PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(enableCustomerCancellation: $enableCustomerCancellation)';}
+}

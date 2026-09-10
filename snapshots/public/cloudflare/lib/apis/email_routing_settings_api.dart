@@ -13,7 +13,7 @@ final class EmailRoutingSettingsApi with ApiExecutor {const EmailRoutingSettings
 /// Get information about the settings for your Email Routing zone.
 ///
 /// `GET /zones/{zone_id}/email/routing`
-Future<ApiResult<EmailEmailSettingsProperties?, Never>> emailRoutingSettingsGetEmailRoutingSettings({required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailEmailSettingsProperties?, Never>> emailRoutingSettingsGetEmailRoutingSettings({required EmailIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,20 +22,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Email Routing - DNS settings
 ///
 /// Show the DNS records needed to configure your Email Routing zone.
 ///
 /// `GET /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailRoutingSettingsEmailRoutingDnsSettingsResponse, Never>> emailRoutingSettingsEmailRoutingDnsSettings({required EmailIdentifier zoneId, EmailEmailSettingName? subdomain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EmailRoutingSettingsEmailRoutingDnsSettingsResponse, Never>> emailRoutingSettingsEmailRoutingDnsSettings({required EmailIdentifier zoneId, EmailEmailSettingName? subdomain, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subdomain != null) {
   queryParameters['subdomain'] = subdomain.toString();
@@ -52,20 +47,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => EmailEmailRoutingDnsQueryResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => EmailEmailRoutingDnsQueryResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);}, );}
 /// Enable Email Routing
 ///
 /// Enable you Email Routing zone. Add and lock the necessary MX and SPF records.
 ///
 /// `POST /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailEmailSettingsProperties?, Never>> emailRoutingSettingsEnableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailEmailSettingsProperties?, Never>> emailRoutingSettingsEnableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,20 +66,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Unlock Email Routing
 ///
 /// Unlock MX Records previously locked by Email Routing.
 ///
 /// `PATCH /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailEmailSettingsProperties?, Never>> emailRoutingSettingsUnlockEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailEmailSettingsProperties?, Never>> emailRoutingSettingsUnlockEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,20 +85,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Disable Email Routing
 ///
 /// Disable your Email Routing zone. Also removes additional MX records previously required for Email Routing to work.
 ///
 /// `DELETE /zones/{zone_id}/email/routing/dns`
-Future<ApiResult<EmailRoutingSettingsDisableEmailRoutingDnsResponse, Never>> emailRoutingSettingsDisableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailRoutingSettingsDisableEmailRoutingDnsResponse, Never>> emailRoutingSettingsDisableEmailRoutingDns({required EmailIdentifier zoneId, EmailEmailSettingDnsRequestBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,12 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);}, );}
+}

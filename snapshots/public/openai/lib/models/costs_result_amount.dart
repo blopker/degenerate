@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The monetary value in its associated currency.
 @immutable final class CostsResultAmount {const CostsResultAmount({this.value, this.currency, });
 
-factory CostsResultAmount.fromJson(Map<String, dynamic> json) { return CostsResultAmount(
+factory CostsResultAmount.fromJson(Map<String, dynamic> json) {return CostsResultAmount(
   value: json['value'] != null ? (json['value'] as num).toDouble() : null,
   currency: json['currency'] as String?,
-); }
+);}
 
 /// The numeric value of the cost.
 final double? value;
@@ -14,19 +14,19 @@ final double? value;
 /// Lowercase ISO-4217 currency e.g. "usd"
 final String? currency;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': ?value,
   'currency': ?currency,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value', 'currency'}.contains(key)); } 
-CostsResultAmount copyWith({double? Function()? value, String? Function()? currency, }) { return CostsResultAmount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'value', 'currency'}.contains(key));}
+CostsResultAmount copyWith({double? Function()? value, String? Function()? currency, }) {return CostsResultAmount(
   value: value != null ? value() : this.value,
   currency: currency != null ? currency() : this.currency,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CostsResultAmount &&
           value == other.value &&
-          currency == other.currency; } 
-@override int get hashCode { return Object.hash(value, currency); } 
-@override String toString() { return 'CostsResultAmount(value: $value, currency: $currency)'; } 
- }
+          currency == other.currency;}
+@override int get hashCode {return Object.hash(value, currency);}
+@override String toString() {return 'CostsResultAmount(value: $value, currency: $currency)';}
+}

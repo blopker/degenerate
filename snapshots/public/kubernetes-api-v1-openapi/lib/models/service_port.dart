@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'io_k8s_apimachinery_pkg_util_intstr_int_or_string.dart';/// ServicePort contains information on service's port.
 @immutable final class ServicePort {const ServicePort({required this.port, this.appProtocol, this.name, this.nodePort, this.protocol, this.targetPort, });
 
-factory ServicePort.fromJson(Map<String, dynamic> json) { return ServicePort(
+factory ServicePort.fromJson(Map<String, dynamic> json) {return ServicePort(
   appProtocol: json['appProtocol'] as String?,
   name: json['name'] as String?,
   nodePort: json['nodePort'] != null ? (json['nodePort'] as num).toInt() : null,
   port: (json['port'] as num).toInt(),
   protocol: json['protocol'] as String?,
   targetPort: json['targetPort'] != null ? OneOf2.parse(json['targetPort'], fromA: (v) => (v as num).toInt(), fromB: (v) => v as String,) : null,
-); }
+);}
 
 /// The application protocol for this port. This is used as a hint for implementations to offer richer behavior for protocols that they understand. This field follows standard Kubernetes label syntax. Valid values are either:
 /// 
@@ -40,32 +40,32 @@ final String? protocol;
 final IoK8sApimachineryPkgUtilIntstrIntOrString? targetPort;
 
 /// The value with the schema default applied when absent.
-String get protocolOrDefault { return protocol ?? 'TCP'; } 
-Map<String, dynamic> toJson() { return {
+String get protocolOrDefault {return protocol ?? 'TCP';}
+Map<String, dynamic> toJson() {return {
   'appProtocol': ?appProtocol,
   'name': ?name,
   'nodePort': ?nodePort,
   'port': port,
   'protocol': ?protocol,
   if (targetPort != null) 'targetPort': targetPort?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
-ServicePort copyWith({String? Function()? appProtocol, String? Function()? name, int? Function()? nodePort, int? port, String? Function()? protocol, IoK8sApimachineryPkgUtilIntstrIntOrString? Function()? targetPort, }) { return ServicePort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('port') && json['port'] is num;}
+ServicePort copyWith({String? Function()? appProtocol, String? Function()? name, int? Function()? nodePort, int? port, String? Function()? protocol, IoK8sApimachineryPkgUtilIntstrIntOrString? Function()? targetPort, }) {return ServicePort(
   appProtocol: appProtocol != null ? appProtocol() : this.appProtocol,
   name: name != null ? name() : this.name,
   nodePort: nodePort != null ? nodePort() : this.nodePort,
   port: port ?? this.port,
   protocol: protocol != null ? protocol() : this.protocol,
   targetPort: targetPort != null ? targetPort() : this.targetPort,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ServicePort &&
           appProtocol == other.appProtocol &&
           name == other.name &&
           nodePort == other.nodePort &&
           port == other.port &&
           protocol == other.protocol &&
-          targetPort == other.targetPort; } 
-@override int get hashCode { return Object.hash(appProtocol, name, nodePort, port, protocol, targetPort); } 
-@override String toString() { return 'ServicePort(appProtocol: $appProtocol, name: $name, nodePort: $nodePort, port: $port, protocol: $protocol, targetPort: $targetPort)'; } 
- }
+          targetPort == other.targetPort;}
+@override int get hashCode {return Object.hash(appProtocol, name, nodePort, port, protocol, targetPort);}
+@override String toString() {return 'ServicePort(appProtocol: $appProtocol, name: $name, nodePort: $nodePort, port: $port, protocol: $protocol, targetPort: $targetPort)';}
+}

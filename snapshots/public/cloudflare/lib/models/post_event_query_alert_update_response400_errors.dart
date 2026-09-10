@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventQueryAlertUpdateResponse400Errors {const PostEventQueryAlertUpdateResponse400Errors({required this.message});
 
-factory PostEventQueryAlertUpdateResponse400Errors.fromJson(Map<String, dynamic> json) { return PostEventQueryAlertUpdateResponse400Errors(
+factory PostEventQueryAlertUpdateResponse400Errors.fromJson(Map<String, dynamic> json) {return PostEventQueryAlertUpdateResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-PostEventQueryAlertUpdateResponse400Errors copyWith({String? message}) { return PostEventQueryAlertUpdateResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+PostEventQueryAlertUpdateResponse400Errors copyWith({String? message}) {return PostEventQueryAlertUpdateResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostEventQueryAlertUpdateResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'PostEventQueryAlertUpdateResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'PostEventQueryAlertUpdateResponse400Errors(message: $message)';}
+}

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_settings_payouts_schedule_delay_days.dart';@immutable final class PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays {const PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays._(this.value);
 
-factory PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays.fromJson(String json) {return switch (json) {
   'friday' => friday,
   'monday' => monday,
   'thursday' => thursday,
   'tuesday' => tuesday,
   'wednesday' => wednesday,
   _ => PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays._(json),
-}; }
+};}
 
 static const PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays friday = PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays._('friday');
 
@@ -25,23 +25,23 @@ static const List<PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays($value)';}
+}
 @immutable final class PostAccountsRequestSettingsPayoutsScheduleInterval {const PostAccountsRequestSettingsPayoutsScheduleInterval._(this.value);
 
-factory PostAccountsRequestSettingsPayoutsScheduleInterval.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestSettingsPayoutsScheduleInterval.fromJson(String json) {return switch (json) {
   'daily' => daily,
   'manual' => manual,
   'monthly' => monthly,
   'weekly' => weekly,
   _ => PostAccountsRequestSettingsPayoutsScheduleInterval._(json),
-}; }
+};}
 
 static const PostAccountsRequestSettingsPayoutsScheduleInterval daily = PostAccountsRequestSettingsPayoutsScheduleInterval._('daily');
 
@@ -55,17 +55,17 @@ static const List<PostAccountsRequestSettingsPayoutsScheduleInterval> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestSettingsPayoutsScheduleInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestSettingsPayoutsScheduleInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsRequestSettingsPayoutsScheduleInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsRequestSettingsPayoutsScheduleInterval($value)';}
+}
 @immutable final class PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor {const PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor._(this.value);
 
-factory PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor.fromJson(String json) {return switch (json) {
   'friday' => friday,
   'monday' => monday,
   'saturday' => saturday,
@@ -74,7 +74,7 @@ factory PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor.fromJson(String j
   'tuesday' => tuesday,
   'wednesday' => wednesday,
   _ => PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor._(json),
-}; }
+};}
 
 static const PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor friday = PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor._('friday');
 
@@ -94,24 +94,24 @@ static const List<PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor($value)';}
+}
 @immutable final class PostAccountsRequestSettingsPayoutsSchedule {const PostAccountsRequestSettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
-factory PostAccountsRequestSettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsPayoutsSchedule(
+factory PostAccountsRequestSettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) {return PostAccountsRequestSettingsPayoutsSchedule(
   delayDays: json['delay_days'] != null ? PostAccountsRequestSettingsPayoutsScheduleDelayDays.fromJson(json['delay_days']) : null,
   interval: json['interval'] != null ? PostAccountsRequestSettingsPayoutsScheduleInterval.fromJson(json['interval'] as String) : null,
   monthlyAnchor: json['monthly_anchor'] != null ? (json['monthly_anchor'] as num).toInt() : null,
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   weeklyAnchor: json['weekly_anchor'] != null ? PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor.fromJson(json['weekly_anchor'] as String) : null,
   weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays.fromJson(e as String)).toList(),
-); }
+);}
 
 final PostAccountsRequestSettingsPayoutsScheduleDelayDays? delayDays;
 
@@ -125,31 +125,31 @@ final PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor? weeklyAnchor;
 
 final List<PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays>? weeklyPayoutDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (delayDays != null) 'delay_days': delayDays?.toJson(),
   if (interval != null) 'interval': interval?.toJson(),
   'monthly_anchor': ?monthlyAnchor,
   'monthly_payout_days': ?monthlyPayoutDays,
   if (weeklyAnchor != null) 'weekly_anchor': weeklyAnchor?.toJson(),
   if (weeklyPayoutDays != null) 'weekly_payout_days': weeklyPayoutDays?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delay_days', 'interval', 'monthly_anchor', 'monthly_payout_days', 'weekly_anchor', 'weekly_payout_days'}.contains(key)); } 
-PostAccountsRequestSettingsPayoutsSchedule copyWith({PostAccountsRequestSettingsPayoutsScheduleDelayDays? Function()? delayDays, PostAccountsRequestSettingsPayoutsScheduleInterval? Function()? interval, int? Function()? monthlyAnchor, List<int>? Function()? monthlyPayoutDays, PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor? Function()? weeklyAnchor, List<PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays>? Function()? weeklyPayoutDays, }) { return PostAccountsRequestSettingsPayoutsSchedule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'delay_days', 'interval', 'monthly_anchor', 'monthly_payout_days', 'weekly_anchor', 'weekly_payout_days'}.contains(key));}
+PostAccountsRequestSettingsPayoutsSchedule copyWith({PostAccountsRequestSettingsPayoutsScheduleDelayDays? Function()? delayDays, PostAccountsRequestSettingsPayoutsScheduleInterval? Function()? interval, int? Function()? monthlyAnchor, List<int>? Function()? monthlyPayoutDays, PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor? Function()? weeklyAnchor, List<PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays>? Function()? weeklyPayoutDays, }) {return PostAccountsRequestSettingsPayoutsSchedule(
   delayDays: delayDays != null ? delayDays() : this.delayDays,
   interval: interval != null ? interval() : this.interval,
   monthlyAnchor: monthlyAnchor != null ? monthlyAnchor() : this.monthlyAnchor,
   monthlyPayoutDays: monthlyPayoutDays != null ? monthlyPayoutDays() : this.monthlyPayoutDays,
   weeklyAnchor: weeklyAnchor != null ? weeklyAnchor() : this.weeklyAnchor,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestSettingsPayoutsSchedule &&
           delayDays == other.delayDays &&
           interval == other.interval &&
           monthlyAnchor == other.monthlyAnchor &&
           listEquals(monthlyPayoutDays, other.monthlyPayoutDays) &&
           weeklyAnchor == other.weeklyAnchor &&
-          listEquals(weeklyPayoutDays, other.weeklyPayoutDays); } 
-@override int get hashCode { return Object.hash(delayDays, interval, monthlyAnchor, Object.hashAll(monthlyPayoutDays ?? const []), weeklyAnchor, Object.hashAll(weeklyPayoutDays ?? const [])); } 
-@override String toString() { return 'PostAccountsRequestSettingsPayoutsSchedule(delayDays: $delayDays, interval: $interval, monthlyAnchor: $monthlyAnchor, monthlyPayoutDays: $monthlyPayoutDays, weeklyAnchor: $weeklyAnchor, weeklyPayoutDays: $weeklyPayoutDays)'; } 
- }
+          listEquals(weeklyPayoutDays, other.weeklyPayoutDays);}
+@override int get hashCode {return Object.hash(delayDays, interval, monthlyAnchor, Object.hashAll(monthlyPayoutDays ?? const []), weeklyAnchor, Object.hashAll(weeklyPayoutDays ?? const []));}
+@override String toString() {return 'PostAccountsRequestSettingsPayoutsSchedule(delayDays: $delayDays, interval: $interval, monthlyAnchor: $monthlyAnchor, monthlyPayoutDays: $monthlyPayoutDays, weeklyAnchor: $weeklyAnchor, weeklyPayoutDays: $weeklyPayoutDays)';}
+}

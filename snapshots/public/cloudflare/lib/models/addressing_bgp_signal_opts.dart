@@ -16,28 +16,28 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class AddressingBgpSignalOpts {const AddressingBgpSignalOpts({this.enabled, this.modifiedAt = const Omittable.absent(), });
 
-factory AddressingBgpSignalOpts.fromJson(Map<String, dynamic> json) { return AddressingBgpSignalOpts(
+factory AddressingBgpSignalOpts.fromJson(Map<String, dynamic> json) {return AddressingBgpSignalOpts(
   enabled: json['enabled'] != null ? AddressingBgpSignalingEnabled.fromJson(json['enabled'] as bool) : null,
   modifiedAt: json.containsKey('modified_at') ? Omittable(json['modified_at'] != null ? AddressingBgpSignalingModifiedAt.fromJson(json['modified_at'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final AddressingBgpSignalingEnabled? enabled;
 
 final Omittable<AddressingBgpSignalingModifiedAt?> modifiedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (modifiedAt.isPresent) 'modified_at': modifiedAt.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'modified_at'}.contains(key)); } 
-AddressingBgpSignalOpts copyWith({AddressingBgpSignalingEnabled? Function()? enabled, Omittable<AddressingBgpSignalingModifiedAt?>? modifiedAt, }) { return AddressingBgpSignalOpts(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'modified_at'}.contains(key));}
+AddressingBgpSignalOpts copyWith({AddressingBgpSignalingEnabled? Function()? enabled, Omittable<AddressingBgpSignalingModifiedAt?>? modifiedAt, }) {return AddressingBgpSignalOpts(
   enabled: enabled != null ? enabled() : this.enabled,
   modifiedAt: modifiedAt ?? this.modifiedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AddressingBgpSignalOpts &&
           enabled == other.enabled &&
-          modifiedAt == other.modifiedAt; } 
-@override int get hashCode { return Object.hash(enabled, modifiedAt); } 
-@override String toString() { return 'AddressingBgpSignalOpts(enabled: $enabled, modifiedAt: $modifiedAt)'; } 
- }
+          modifiedAt == other.modifiedAt;}
+@override int get hashCode {return Object.hash(enabled, modifiedAt);}
+@override String toString() {return 'AddressingBgpSignalOpts(enabled: $enabled, modifiedAt: $modifiedAt)';}
+}

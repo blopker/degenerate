@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data.dart';/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 @immutable final class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale._(this.value);
 
-factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return switch (json) {
+factory PostBillingPortalSessionsRequestLocale.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'bg' => bg,
   'cs' => cs,
@@ -52,7 +52,7 @@ factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return sw
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
   _ => PostBillingPortalSessionsRequestLocale._(json),
-}; }
+};}
 
 static const PostBillingPortalSessionsRequestLocale auto = PostBillingPortalSessionsRequestLocale._('auto');
 
@@ -152,17 +152,17 @@ static const List<PostBillingPortalSessionsRequestLocale> values = [auto, bg, cs
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalSessionsRequestLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalSessionsRequestLocale($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalSessionsRequestLocale && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalSessionsRequestLocale($value)';}
+}
 @immutable final class PostBillingPortalSessionsRequest {const PostBillingPortalSessionsRequest({this.configuration, this.customer, this.customerAccount, this.expand, this.flowData, this.locale, this.onBehalfOf, this.returnUrl, });
 
-factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequest(
+factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) {return PostBillingPortalSessionsRequest(
   configuration: json['configuration'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
@@ -171,7 +171,7 @@ factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { r
   locale: json['locale'] != null ? PostBillingPortalSessionsRequestLocale.fromJson(json['locale'] as String) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   returnUrl: json['return_url'] as String?,
-); }
+);}
 
 /// The ID of an existing [configuration](https://docs.stripe.com/api/customer_portal/configurations) to use for this session, describing its functionality and features. If not specified, the session uses the default configuration.
 final String? configuration;
@@ -197,7 +197,7 @@ final String? onBehalfOf;
 /// The default URL to redirect customers to when they click on the portal's link to return to your website.
 final String? returnUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configuration': ?configuration,
   'customer': ?customer,
   'customer_account': ?customerAccount,
@@ -206,9 +206,9 @@ Map<String, dynamic> toJson() { return {
   if (locale != null) 'locale': locale?.toJson(),
   'on_behalf_of': ?onBehalfOf,
   'return_url': ?returnUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'customer', 'customer_account', 'expand', 'flow_data', 'locale', 'on_behalf_of', 'return_url'}.contains(key)); } 
-PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, PostBillingPortalSessionsRequestFlowData? Function()? flowData, PostBillingPortalSessionsRequestLocale? Function()? locale, String? Function()? onBehalfOf, String? Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'configuration', 'customer', 'customer_account', 'expand', 'flow_data', 'locale', 'on_behalf_of', 'return_url'}.contains(key));}
+PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, PostBillingPortalSessionsRequestFlowData? Function()? flowData, PostBillingPortalSessionsRequestLocale? Function()? locale, String? Function()? onBehalfOf, String? Function()? returnUrl, }) {return PostBillingPortalSessionsRequest(
   configuration: configuration != null ? configuration() : this.configuration,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
@@ -217,8 +217,8 @@ PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, St
   locale: locale != null ? locale() : this.locale,
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalSessionsRequest &&
           configuration == other.configuration &&
           customer == other.customer &&
@@ -227,7 +227,7 @@ PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, St
           flowData == other.flowData &&
           locale == other.locale &&
           onBehalfOf == other.onBehalfOf &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(configuration, customer, customerAccount, Object.hashAll(expand ?? const []), flowData, locale, onBehalfOf, returnUrl); } 
-@override String toString() { return 'PostBillingPortalSessionsRequest(configuration: $configuration, customer: $customer, customerAccount: $customerAccount, expand: $expand, flowData: $flowData, locale: $locale, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl)'; } 
- }
+          returnUrl == other.returnUrl;}
+@override int get hashCode {return Object.hash(configuration, customer, customerAccount, Object.hashAll(expand ?? const []), flowData, locale, onBehalfOf, returnUrl);}
+@override String toString() {return 'PostBillingPortalSessionsRequest(configuration: $configuration, customer: $customer, customerAccount: $customerAccount, expand: $expand, flowData: $flowData, locale: $locale, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl)';}
+}

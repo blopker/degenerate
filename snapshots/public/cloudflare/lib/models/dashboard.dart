@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeseries2.dart';import 'totals.dart';/// Totals and timeseries data.
 @immutable final class Dashboard {const Dashboard({this.timeseries, this.totals, });
 
-factory Dashboard.fromJson(Map<String, dynamic> json) { return Dashboard(
+factory Dashboard.fromJson(Map<String, dynamic> json) {return Dashboard(
   timeseries: (json['timeseries'] as List<dynamic>?)?.map((e) => Timeseries2.fromJson(e as Map<String, dynamic>)).toList(),
   totals: json['totals'] != null ? Totals.fromJson(json['totals'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<Timeseries2>? timeseries;
 
 final Totals? totals;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (timeseries != null) 'timeseries': timeseries?.map((e) => e.toJson()).toList(),
   if (totals != null) 'totals': totals?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timeseries', 'totals'}.contains(key)); } 
-Dashboard copyWith({List<Timeseries2>? Function()? timeseries, Totals? Function()? totals, }) { return Dashboard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'timeseries', 'totals'}.contains(key));}
+Dashboard copyWith({List<Timeseries2>? Function()? timeseries, Totals? Function()? totals, }) {return Dashboard(
   timeseries: timeseries != null ? timeseries() : this.timeseries,
   totals: totals != null ? totals() : this.totals,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Dashboard &&
           listEquals(timeseries, other.timeseries) &&
-          totals == other.totals; } 
-@override int get hashCode { return Object.hash(Object.hashAll(timeseries ?? const []), totals); } 
-@override String toString() { return 'Dashboard(timeseries: $timeseries, totals: $totals)'; } 
- }
+          totals == other.totals;}
+@override int get hashCode {return Object.hash(Object.hashAll(timeseries ?? const []), totals);}
+@override String toString() {return 'Dashboard(timeseries: $timeseries, totals: $totals)';}
+}

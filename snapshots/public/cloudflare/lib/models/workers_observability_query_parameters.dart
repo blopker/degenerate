@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_parameters_calculations.dart';import 'workers_observability_query_parameters_filters.dart';import 'workers_observability_query_parameters_group_bys.dart';import 'workers_observability_query_parameters_havings.dart';import 'workers_observability_query_parameters_needle.dart';import 'workers_observability_query_parameters_order_by.dart';/// Set a Flag to describe how to combine the filters on the query.
 @immutable final class WorkersObservabilityQueryParametersFilterCombination {const WorkersObservabilityQueryParametersFilterCombination._(this.value);
 
-factory WorkersObservabilityQueryParametersFilterCombination.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryParametersFilterCombination.fromJson(String json) {return switch (json) {
   'and' => and,
   'or' => or,
   'AND' => and2,
   'OR' => or2,
   _ => WorkersObservabilityQueryParametersFilterCombination._(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryParametersFilterCombination and = WorkersObservabilityQueryParametersFilterCombination._('and');
 
@@ -23,17 +23,17 @@ static const List<WorkersObservabilityQueryParametersFilterCombination> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryParametersFilterCombination && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryParametersFilterCombination($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityQueryParametersFilterCombination && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityQueryParametersFilterCombination($value)';}
+}
 @immutable final class WorkersObservabilityQueryParameters {const WorkersObservabilityQueryParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
 
-factory WorkersObservabilityQueryParameters.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParameters(
+factory WorkersObservabilityQueryParameters.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryParameters(
   calculations: (json['calculations'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryParametersCalculations.fromJson(e as Map<String, dynamic>)).toList(),
   datasets: (json['datasets'] as List<dynamic>?)?.map((e) => e as String).toList(),
   filterCombination: json['filterCombination'] != null ? WorkersObservabilityQueryParametersFilterCombination.fromJson(json['filterCombination'] as String) : null,
@@ -43,7 +43,7 @@ factory WorkersObservabilityQueryParameters.fromJson(Map<String, dynamic> json) 
   limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
   needle: json['needle'] != null ? WorkersObservabilityQueryParametersNeedle.fromJson(json['needle'] as Map<String, dynamic>) : null,
   orderBy: json['orderBy'] != null ? WorkersObservabilityQueryParametersOrderBy.fromJson(json['orderBy'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Create Calculations to compute as part of the query.
 final List<WorkersObservabilityQueryParametersCalculations>? calculations;
@@ -72,7 +72,7 @@ final WorkersObservabilityQueryParametersNeedle? needle;
 /// Configure the order of the results returned by the query.
 final WorkersObservabilityQueryParametersOrderBy? orderBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (calculations != null) 'calculations': calculations?.map((e) => e.toJson()).toList(),
   'datasets': ?datasets,
   if (filterCombination != null) 'filterCombination': filterCombination?.toJson(),
@@ -82,9 +82,9 @@ Map<String, dynamic> toJson() { return {
   'limit': ?limit,
   if (needle != null) 'needle': needle?.toJson(),
   if (orderBy != null) 'orderBy': orderBy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key)); } 
-WorkersObservabilityQueryParameters copyWith({List<WorkersObservabilityQueryParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, WorkersObservabilityQueryParametersFilterCombination? Function()? filterCombination, List<WorkersObservabilityQueryParametersFilters>? Function()? filters, List<WorkersObservabilityQueryParametersGroupBys>? Function()? groupBys, List<WorkersObservabilityQueryParametersHavings>? Function()? havings, int? Function()? limit, WorkersObservabilityQueryParametersNeedle? Function()? needle, WorkersObservabilityQueryParametersOrderBy? Function()? orderBy, }) { return WorkersObservabilityQueryParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key));}
+WorkersObservabilityQueryParameters copyWith({List<WorkersObservabilityQueryParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, WorkersObservabilityQueryParametersFilterCombination? Function()? filterCombination, List<WorkersObservabilityQueryParametersFilters>? Function()? filters, List<WorkersObservabilityQueryParametersGroupBys>? Function()? groupBys, List<WorkersObservabilityQueryParametersHavings>? Function()? havings, int? Function()? limit, WorkersObservabilityQueryParametersNeedle? Function()? needle, WorkersObservabilityQueryParametersOrderBy? Function()? orderBy, }) {return WorkersObservabilityQueryParameters(
   calculations: calculations != null ? calculations() : this.calculations,
   datasets: datasets != null ? datasets() : this.datasets,
   filterCombination: filterCombination != null ? filterCombination() : this.filterCombination,
@@ -94,8 +94,8 @@ WorkersObservabilityQueryParameters copyWith({List<WorkersObservabilityQueryPara
   limit: limit != null ? limit() : this.limit,
   needle: needle != null ? needle() : this.needle,
   orderBy: orderBy != null ? orderBy() : this.orderBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryParameters &&
           listEquals(calculations, other.calculations) &&
           listEquals(datasets, other.datasets) &&
@@ -105,7 +105,7 @@ WorkersObservabilityQueryParameters copyWith({List<WorkersObservabilityQueryPara
           listEquals(havings, other.havings) &&
           limit == other.limit &&
           needle == other.needle &&
-          orderBy == other.orderBy; } 
-@override int get hashCode { return Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(datasets ?? const []), filterCombination, Object.hashAll(filters ?? const []), Object.hashAll(groupBys ?? const []), Object.hashAll(havings ?? const []), limit, needle, orderBy); } 
-@override String toString() { return 'WorkersObservabilityQueryParameters(calculations: $calculations, datasets: $datasets, filterCombination: $filterCombination, filters: $filters, groupBys: $groupBys, havings: $havings, limit: $limit, needle: $needle, orderBy: $orderBy)'; } 
- }
+          orderBy == other.orderBy;}
+@override int get hashCode {return Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(datasets ?? const []), filterCombination, Object.hashAll(filters ?? const []), Object.hashAll(groupBys ?? const []), Object.hashAll(havings ?? const []), limit, needle, orderBy);}
+@override String toString() {return 'WorkersObservabilityQueryParameters(calculations: $calculations, datasets: $datasets, filterCombination: $filterCombination, filters: $filters, groupBys: $groupBys, havings: $havings, limit: $limit, needle: $needle, orderBy: $orderBy)';}
+}

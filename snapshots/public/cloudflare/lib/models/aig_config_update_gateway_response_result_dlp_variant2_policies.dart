@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck {const AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck._(this.value);
 
-factory AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck.fromJson(String json) { return switch (json) {
+factory AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck.fromJson(String json) {return switch (json) {
   'REQUEST' => request,
   'RESPONSE' => response,
   _ => AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck._(json),
-}; }
+};}
 
 static const AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck request = AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck._('REQUEST');
 
@@ -16,21 +16,21 @@ static const List<AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck($value)';}
+}
 @immutable final class AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction {const AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction._(this.value);
 
-factory AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction.fromJson(String json) { return switch (json) {
+factory AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction.fromJson(String json) {return switch (json) {
   'FLAG' => flag,
   'BLOCK' => block,
   _ => AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction._(json),
-}; }
+};}
 
 static const AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction flag = AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction._('FLAG');
 
@@ -40,23 +40,23 @@ static const List<AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction($value)';}
+}
 @immutable final class AigConfigUpdateGatewayResponseResultDlpVariant2Policies {const AigConfigUpdateGatewayResponseResultDlpVariant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });
 
-factory AigConfigUpdateGatewayResponseResultDlpVariant2Policies.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayResponseResultDlpVariant2Policies(
+factory AigConfigUpdateGatewayResponseResultDlpVariant2Policies.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayResponseResultDlpVariant2Policies(
   action: AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction.fromJson(json['action'] as String),
   check: (json['check'] as List<dynamic>).map((e) => AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck.fromJson(e as String)).toList(),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   profiles: (json['profiles'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction action;
 
@@ -68,32 +68,32 @@ final String id;
 
 final List<String> profiles;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'check': check.map((e) => e.toJson()).toList(),
   'enabled': enabled,
   'id': id,
   'profiles': profiles,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('check') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('profiles'); } 
-AigConfigUpdateGatewayResponseResultDlpVariant2Policies copyWith({AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction? action, List<AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck>? check, bool? enabled, String? id, List<String>? profiles, }) { return AigConfigUpdateGatewayResponseResultDlpVariant2Policies(
+      json.containsKey('profiles');}
+AigConfigUpdateGatewayResponseResultDlpVariant2Policies copyWith({AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesAction? action, List<AigConfigUpdateGatewayResponseResultDlpVariant2PoliciesCheck>? check, bool? enabled, String? id, List<String>? profiles, }) {return AigConfigUpdateGatewayResponseResultDlpVariant2Policies(
   action: action ?? this.action,
   check: check ?? this.check,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   profiles: profiles ?? this.profiles,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayResponseResultDlpVariant2Policies &&
           action == other.action &&
           listEquals(check, other.check) &&
           enabled == other.enabled &&
           id == other.id &&
-          listEquals(profiles, other.profiles); } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(check), enabled, id, Object.hashAll(profiles)); } 
-@override String toString() { return 'AigConfigUpdateGatewayResponseResultDlpVariant2Policies(action: $action, check: $check, enabled: $enabled, id: $id, profiles: $profiles)'; } 
- }
+          listEquals(profiles, other.profiles);}
+@override int get hashCode {return Object.hash(action, Object.hashAll(check), enabled, id, Object.hashAll(profiles));}
+@override String toString() {return 'AigConfigUpdateGatewayResponseResultDlpVariant2Policies(action: $action, check: $check, enabled: $enabled, id: $id, profiles: $profiles)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference._(this.value);
 
-factory PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference.fromJson(String json) {return switch (json) {
   'none' => none,
   'off' => off,
   'on' => $on,
   _ => PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference._(json),
-}; }
+};}
 
 static const PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference none = PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference._('none');
 
@@ -19,32 +19,32 @@ static const List<PostPaymentMethodConfigurationsConfigurationRequestAlipayDispl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference($value)';}
+}
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference({this.preference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference(
+factory PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference? preference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preference != null) 'preference': preference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference? Function()? preference}) { return PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreferencePreference? Function()? preference}) {return PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference(
   preference: preference != null ? preference() : this.preference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference &&
-          preference == other.preference; } 
-@override int get hashCode { return preference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference(preference: $preference)'; } 
- }
+          preference == other.preference;}
+@override int get hashCode {return preference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsConfigurationRequestAlipayDisplayPreference(preference: $preference)';}
+}

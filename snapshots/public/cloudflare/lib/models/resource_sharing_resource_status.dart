@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource Status.
 @immutable final class ResourceSharingResourceStatus {const ResourceSharingResourceStatus._(this.value);
 
-factory ResourceSharingResourceStatus.fromJson(String json) { return switch (json) {
+factory ResourceSharingResourceStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'deleting' => deleting,
   'deleted' => deleted,
   _ => ResourceSharingResourceStatus._(json),
-}; }
+};}
 
 static const ResourceSharingResourceStatus active = ResourceSharingResourceStatus._('active');
 
@@ -20,11 +20,11 @@ static const List<ResourceSharingResourceStatus> values = [active, deleting, del
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceSharingResourceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceSharingResourceStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceSharingResourceStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResourceSharingResourceStatus($value)';}
+}

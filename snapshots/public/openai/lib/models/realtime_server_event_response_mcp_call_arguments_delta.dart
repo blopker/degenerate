@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when MCP tool call arguments are updated during response generation.
 @immutable final class RealtimeServerEventResponseMcpCallArgumentsDelta {const RealtimeServerEventResponseMcpCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.delta, this.obfuscation = const Omittable.absent(), });
 
-factory RealtimeServerEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallArgumentsDelta(
+factory RealtimeServerEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseMcpCallArgumentsDelta(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
@@ -11,7 +11,7 @@ factory RealtimeServerEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dy
   outputIndex: (json['output_index'] as num).toInt(),
   delta: json['delta'] as String,
   obfuscation: json.containsKey('obfuscation') ? Omittable(json['obfuscation'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -34,7 +34,7 @@ final String delta;
 /// If present, indicates the delta text was obfuscated.
 final Omittable<String?> obfuscation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
@@ -42,14 +42,14 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'delta': delta,
   if (obfuscation.isPresent) 'obfuscation': obfuscation.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
-      json.containsKey('delta') && json['delta'] is String; } 
-RealtimeServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? delta, Omittable<String?>? obfuscation, }) { return RealtimeServerEventResponseMcpCallArgumentsDelta(
+      json.containsKey('delta') && json['delta'] is String;}
+RealtimeServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? delta, Omittable<String?>? obfuscation, }) {return RealtimeServerEventResponseMcpCallArgumentsDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -57,8 +57,8 @@ RealtimeServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, Stri
   outputIndex: outputIndex ?? this.outputIndex,
   delta: delta ?? this.delta,
   obfuscation: obfuscation ?? this.obfuscation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventResponseMcpCallArgumentsDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -66,7 +66,7 @@ RealtimeServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, Stri
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           delta == other.delta &&
-          obfuscation == other.obfuscation; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, delta, obfuscation); } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, delta: $delta, obfuscation: $obfuscation)'; } 
- }
+          obfuscation == other.obfuscation;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, delta, obfuscation);}
+@override String toString() {return 'RealtimeServerEventResponseMcpCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, delta: $delta, obfuscation: $obfuscation)';}
+}

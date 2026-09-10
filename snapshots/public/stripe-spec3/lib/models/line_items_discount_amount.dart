@@ -3,30 +3,30 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discount.dart';/// 
 @immutable final class LineItemsDiscountAmount {const LineItemsDiscountAmount({required this.amount, required this.discount, });
 
-factory LineItemsDiscountAmount.fromJson(Map<String, dynamic> json) { return LineItemsDiscountAmount(
+factory LineItemsDiscountAmount.fromJson(Map<String, dynamic> json) {return LineItemsDiscountAmount(
   amount: (json['amount'] as num).toInt(),
   discount: Discount.fromJson(json['discount'] as Map<String, dynamic>),
-); }
+);}
 
 /// The amount discounted.
 final int amount;
 
 final Discount discount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'discount': discount.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('discount'); } 
-LineItemsDiscountAmount copyWith({int? amount, Discount? discount, }) { return LineItemsDiscountAmount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('discount');}
+LineItemsDiscountAmount copyWith({int? amount, Discount? discount, }) {return LineItemsDiscountAmount(
   amount: amount ?? this.amount,
   discount: discount ?? this.discount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LineItemsDiscountAmount &&
           amount == other.amount &&
-          discount == other.discount; } 
-@override int get hashCode { return Object.hash(amount, discount); } 
-@override String toString() { return 'LineItemsDiscountAmount(amount: $amount, discount: $discount)'; } 
- }
+          discount == other.discount;}
+@override int get hashCode {return Object.hash(amount, discount);}
+@override String toString() {return 'LineItemsDiscountAmount(amount: $amount, discount: $discount)';}
+}

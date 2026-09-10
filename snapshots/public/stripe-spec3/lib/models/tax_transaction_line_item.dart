@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_transaction_line_item_resource_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxTransactionLineItemObject {const TaxTransactionLineItemObject._(this.value);
 
-factory TaxTransactionLineItemObject.fromJson(String json) { return switch (json) {
+factory TaxTransactionLineItemObject.fromJson(String json) {return switch (json) {
   'tax.transaction_line_item' => taxTransactionLineItem,
   _ => TaxTransactionLineItemObject._(json),
-}; }
+};}
 
 static const TaxTransactionLineItemObject taxTransactionLineItem = TaxTransactionLineItemObject._('tax.transaction_line_item');
 
@@ -14,22 +14,22 @@ static const List<TaxTransactionLineItemObject> values = [taxTransactionLineItem
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionLineItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionLineItemObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxTransactionLineItemObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxTransactionLineItemObject($value)';}
+}
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
 @immutable final class TaxTransactionLineItemTaxBehavior {const TaxTransactionLineItemTaxBehavior._(this.value);
 
-factory TaxTransactionLineItemTaxBehavior.fromJson(String json) { return switch (json) {
+factory TaxTransactionLineItemTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   _ => TaxTransactionLineItemTaxBehavior._(json),
-}; }
+};}
 
 static const TaxTransactionLineItemTaxBehavior exclusive = TaxTransactionLineItemTaxBehavior._('exclusive');
 
@@ -39,22 +39,22 @@ static const List<TaxTransactionLineItemTaxBehavior> values = [exclusive, inclus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionLineItemTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionLineItemTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxTransactionLineItemTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxTransactionLineItemTaxBehavior($value)';}
+}
 /// If `reversal`, this line item reverses an earlier transaction.
 @immutable final class TaxTransactionLineItemType {const TaxTransactionLineItemType._(this.value);
 
-factory TaxTransactionLineItemType.fromJson(String json) { return switch (json) {
+factory TaxTransactionLineItemType.fromJson(String json) {return switch (json) {
   'reversal' => reversal,
   'transaction' => transaction,
   _ => TaxTransactionLineItemType._(json),
-}; }
+};}
 
 static const TaxTransactionLineItemType reversal = TaxTransactionLineItemType._('reversal');
 
@@ -64,18 +64,18 @@ static const List<TaxTransactionLineItemType> values = [reversal, transaction];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionLineItemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionLineItemType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxTransactionLineItemType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxTransactionLineItemType($value)';}
+}
 /// 
 @immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata = const Omittable.absent(), this.product = const Omittable.absent(), this.reversal = const Omittable.absent(), });
 
-factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxTransactionLineItem(
+factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) {return TaxTransactionLineItem(
   amount: (json['amount'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   id: json['id'] as String,
@@ -89,7 +89,7 @@ factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxT
   taxBehavior: TaxTransactionLineItemTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxCode: json['tax_code'] as String,
   type: TaxTransactionLineItemType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The line item amount in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). If `tax_behavior=inclusive`, then this amount includes taxes. Otherwise, taxes were calculated on top of this amount.
 final int amount;
@@ -130,7 +130,7 @@ final String taxCode;
 /// If `reversal`, this line item reverses an earlier transaction.
 final TaxTransactionLineItemType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_tax': amountTax,
   'id': id,
@@ -144,8 +144,8 @@ Map<String, dynamic> toJson() { return {
   'tax_behavior': taxBehavior.toJson(),
   'tax_code': taxCode,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
@@ -154,8 +154,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String &&
-      json.containsKey('type'); } 
-TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxTransactionLineItemObject? object, Omittable<String?>? product, int? quantity, String? reference, Omittable<TaxProductResourceTaxTransactionLineItemResourceReversal?>? reversal, TaxTransactionLineItemTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
+      json.containsKey('type');}
+TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxTransactionLineItemObject? object, Omittable<String?>? product, int? quantity, String? reference, Omittable<TaxProductResourceTaxTransactionLineItemResourceReversal?>? reversal, TaxTransactionLineItemTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) {return TaxTransactionLineItem(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   id: id ?? this.id,
@@ -169,8 +169,8 @@ TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? 
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxTransactionLineItem &&
           amount == other.amount &&
           amountTax == other.amountTax &&
@@ -184,7 +184,7 @@ TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? 
           reversal == other.reversal &&
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, amountTax, id, livemode, metadata, object, product, quantity, reference, reversal, taxBehavior, taxCode, type); } 
-@override String toString() { return 'TaxTransactionLineItem(amount: $amount, amountTax: $amountTax, id: $id, livemode: $livemode, metadata: $metadata, object: $object, product: $product, quantity: $quantity, reference: $reference, reversal: $reversal, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(amount, amountTax, id, livemode, metadata, object, product, quantity, reference, reversal, taxBehavior, taxCode, type);}
+@override String toString() {return 'TaxTransactionLineItem(amount: $amount, amountTax: $amountTax, id: $id, livemode: $livemode, metadata: $metadata, object: $object, product: $product, quantity: $quantity, reference: $reference, reversal: $reversal, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';}
+}

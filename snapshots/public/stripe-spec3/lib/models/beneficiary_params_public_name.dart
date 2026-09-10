@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BeneficiaryParamsPublicNameVariant2 {const BeneficiaryParamsPublicNameVariant2._(this.value);
 
-factory BeneficiaryParamsPublicNameVariant2.fromJson(String json) { return switch (json) {
+factory BeneficiaryParamsPublicNameVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => BeneficiaryParamsPublicNameVariant2._(json),
-}; }
+};}
 
 static const BeneficiaryParamsPublicNameVariant2 $empty = BeneficiaryParamsPublicNameVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<BeneficiaryParamsPublicNameVariant2> values = [$empty];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BeneficiaryParamsPublicNameVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BeneficiaryParamsPublicNameVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BeneficiaryParamsPublicNameVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BeneficiaryParamsPublicNameVariant2($value)';}
+}
 
 @immutable
 final class BeneficiaryParamsPublicName {

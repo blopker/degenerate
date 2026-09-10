@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopPrefixesResponseResultTop0 {const RadarGetBgpTopPrefixesResponseResultTop0({required this.prefix, required this.value, });
 
-factory RadarGetBgpTopPrefixesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopPrefixesResponseResultTop0(
+factory RadarGetBgpTopPrefixesResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetBgpTopPrefixesResponseResultTop0(
   prefix: json['prefix'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String prefix;
 
 /// A numeric string.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'prefix': prefix,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prefix') && json['prefix'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetBgpTopPrefixesResponseResultTop0 copyWith({String? prefix, String? value, }) { return RadarGetBgpTopPrefixesResponseResultTop0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prefix') && json['prefix'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetBgpTopPrefixesResponseResultTop0 copyWith({String? prefix, String? value, }) {return RadarGetBgpTopPrefixesResponseResultTop0(
   prefix: prefix ?? this.prefix,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpTopPrefixesResponseResultTop0 &&
           prefix == other.prefix &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(prefix, value); } 
-@override String toString() { return 'RadarGetBgpTopPrefixesResponseResultTop0(prefix: $prefix, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(prefix, value);}
+@override String toString() {return 'RadarGetBgpTopPrefixesResponseResultTop0(prefix: $prefix, value: $value)';}
+}

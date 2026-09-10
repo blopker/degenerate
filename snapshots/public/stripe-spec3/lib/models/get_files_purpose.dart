@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetFilesPurpose {const GetFilesPurpose._(this.value);
 
-factory GetFilesPurpose.fromJson(String json) { return switch (json) {
+factory GetFilesPurpose.fromJson(String json) {return switch (json) {
   'account_requirement' => accountRequirement,
   'additional_verification' => additionalVerification,
   'business_icon' => businessIcon,
@@ -25,7 +25,7 @@ factory GetFilesPurpose.fromJson(String json) { return switch (json) {
   'terminal_wifi_certificate' => terminalWifiCertificate,
   'terminal_wifi_private_key' => terminalWifiPrivateKey,
   _ => GetFilesPurpose._(json),
-}; }
+};}
 
 static const GetFilesPurpose accountRequirement = GetFilesPurpose._('account_requirement');
 
@@ -73,11 +73,11 @@ static const List<GetFilesPurpose> values = [accountRequirement, additionalVerif
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetFilesPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetFilesPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetFilesPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetFilesPurpose($value)';}
+}

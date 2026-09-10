@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method by which the fraud challenge was delivered to the cardholder.
 @immutable final class IssuingAuthorizationFraudChallengeChannel {const IssuingAuthorizationFraudChallengeChannel._(this.value);
 
-factory IssuingAuthorizationFraudChallengeChannel.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationFraudChallengeChannel.fromJson(String json) {return switch (json) {
   'sms' => sms,
   _ => IssuingAuthorizationFraudChallengeChannel._(json),
-}; }
+};}
 
 static const IssuingAuthorizationFraudChallengeChannel sms = IssuingAuthorizationFraudChallengeChannel._('sms');
 
@@ -14,25 +14,25 @@ static const List<IssuingAuthorizationFraudChallengeChannel> values = [sms];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFraudChallengeChannel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFraudChallengeChannel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingAuthorizationFraudChallengeChannel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingAuthorizationFraudChallengeChannel($value)';}
+}
 /// The status of the fraud challenge.
 @immutable final class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus._(this.value);
 
-factory IssuingAuthorizationFraudChallengeStatus.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationFraudChallengeStatus.fromJson(String json) {return switch (json) {
   'expired' => expired,
   'pending' => pending,
   'rejected' => rejected,
   'undeliverable' => undeliverable,
   'verified' => verified,
   _ => IssuingAuthorizationFraudChallengeStatus._(json),
-}; }
+};}
 
 static const IssuingAuthorizationFraudChallengeStatus expired = IssuingAuthorizationFraudChallengeStatus._('expired');
 
@@ -48,22 +48,22 @@ static const List<IssuingAuthorizationFraudChallengeStatus> values = [expired, p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFraudChallengeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFraudChallengeStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingAuthorizationFraudChallengeStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingAuthorizationFraudChallengeStatus($value)';}
+}
 /// If the challenge is not deliverable, the reason why.
 @immutable final class IssuingAuthorizationFraudChallengeUndeliverableReason {const IssuingAuthorizationFraudChallengeUndeliverableReason._(this.value);
 
-factory IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(String json) {return switch (json) {
   'no_phone_number' => noPhoneNumber,
   'unsupported_phone_number' => unsupportedPhoneNumber,
   _ => IssuingAuthorizationFraudChallengeUndeliverableReason._(json),
-}; }
+};}
 
 static const IssuingAuthorizationFraudChallengeUndeliverableReason noPhoneNumber = IssuingAuthorizationFraudChallengeUndeliverableReason._('no_phone_number');
 
@@ -73,22 +73,22 @@ static const List<IssuingAuthorizationFraudChallengeUndeliverableReason> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFraudChallengeUndeliverableReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFraudChallengeUndeliverableReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingAuthorizationFraudChallengeUndeliverableReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingAuthorizationFraudChallengeUndeliverableReason($value)';}
+}
 /// 
 @immutable final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason = const Omittable.absent(), });
 
-factory IssuingAuthorizationFraudChallenge.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFraudChallenge(
+factory IssuingAuthorizationFraudChallenge.fromJson(Map<String, dynamic> json) {return IssuingAuthorizationFraudChallenge(
   channel: IssuingAuthorizationFraudChallengeChannel.fromJson(json['channel'] as String),
   status: IssuingAuthorizationFraudChallengeStatus.fromJson(json['status'] as String),
   undeliverableReason: json.containsKey('undeliverable_reason') ? Omittable(json['undeliverable_reason'] != null ? IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(json['undeliverable_reason'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The method by which the fraud challenge was delivered to the cardholder.
 final IssuingAuthorizationFraudChallengeChannel channel;
@@ -99,23 +99,23 @@ final IssuingAuthorizationFraudChallengeStatus status;
 /// If the challenge is not deliverable, the reason why.
 final Omittable<IssuingAuthorizationFraudChallengeUndeliverableReason?> undeliverableReason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'channel': channel.toJson(),
   'status': status.toJson(),
   if (undeliverableReason.isPresent) 'undeliverable_reason': undeliverableReason.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('channel') &&
-      json.containsKey('status'); } 
-IssuingAuthorizationFraudChallenge copyWith({IssuingAuthorizationFraudChallengeChannel? channel, IssuingAuthorizationFraudChallengeStatus? status, Omittable<IssuingAuthorizationFraudChallengeUndeliverableReason?>? undeliverableReason, }) { return IssuingAuthorizationFraudChallenge(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('channel') &&
+      json.containsKey('status');}
+IssuingAuthorizationFraudChallenge copyWith({IssuingAuthorizationFraudChallengeChannel? channel, IssuingAuthorizationFraudChallengeStatus? status, Omittable<IssuingAuthorizationFraudChallengeUndeliverableReason?>? undeliverableReason, }) {return IssuingAuthorizationFraudChallenge(
   channel: channel ?? this.channel,
   status: status ?? this.status,
   undeliverableReason: undeliverableReason ?? this.undeliverableReason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingAuthorizationFraudChallenge &&
           channel == other.channel &&
           status == other.status &&
-          undeliverableReason == other.undeliverableReason; } 
-@override int get hashCode { return Object.hash(channel, status, undeliverableReason); } 
-@override String toString() { return 'IssuingAuthorizationFraudChallenge(channel: $channel, status: $status, undeliverableReason: $undeliverableReason)'; } 
- }
+          undeliverableReason == other.undeliverableReason;}
+@override int get hashCode {return Object.hash(channel, status, undeliverableReason);}
+@override String toString() {return 'IssuingAuthorizationFraudChallenge(channel: $channel, status: $status, undeliverableReason: $undeliverableReason)';}
+}

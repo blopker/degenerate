@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookWorkflowDispatch {const WebhookWorkflowDispatch({required this.inputs, required this.ref, required this.repository, required this.sender, required this.workflow, this.enterprise, this.installation, this.organization, });
 
-factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) { return WebhookWorkflowDispatch(
+factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) {return WebhookWorkflowDispatch(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   inputs: json['inputs'] as Map<String, dynamic>?,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) { return Web
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   workflow: json['workflow'] as String,
-); }
+);}
 
 final EnterpriseWebhooks? enterprise;
 
@@ -29,7 +29,7 @@ final SimpleUser sender;
 
 final String workflow;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'inputs': inputs,
   if (installation != null) 'installation': installation?.toJson(),
@@ -38,13 +38,13 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'workflow': workflow,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('inputs') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('inputs') &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
-      json.containsKey('workflow') && json['workflow'] is String; } 
-WebhookWorkflowDispatch copyWith({EnterpriseWebhooks? Function()? enterprise, Map<String, dynamic>? Function()? inputs, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? ref, RepositoryWebhooks? repository, SimpleUser? sender, String? workflow, }) { return WebhookWorkflowDispatch(
+      json.containsKey('workflow') && json['workflow'] is String;}
+WebhookWorkflowDispatch copyWith({EnterpriseWebhooks? Function()? enterprise, Map<String, dynamic>? Function()? inputs, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? ref, RepositoryWebhooks? repository, SimpleUser? sender, String? workflow, }) {return WebhookWorkflowDispatch(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   inputs: inputs != null ? inputs() : this.inputs,
   installation: installation != null ? installation() : this.installation,
@@ -53,8 +53,8 @@ WebhookWorkflowDispatch copyWith({EnterpriseWebhooks? Function()? enterprise, Ma
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
   workflow: workflow ?? this.workflow,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookWorkflowDispatch &&
           enterprise == other.enterprise &&
           inputs == other.inputs &&
@@ -63,7 +63,7 @@ WebhookWorkflowDispatch copyWith({EnterpriseWebhooks? Function()? enterprise, Ma
           ref == other.ref &&
           repository == other.repository &&
           sender == other.sender &&
-          workflow == other.workflow; } 
-@override int get hashCode { return Object.hash(enterprise, inputs, installation, organization, ref, repository, sender, workflow); } 
-@override String toString() { return 'WebhookWorkflowDispatch(enterprise: $enterprise, inputs: $inputs, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender, workflow: $workflow)'; } 
- }
+          workflow == other.workflow;}
+@override int get hashCode {return Object.hash(enterprise, inputs, installation, organization, ref, repository, sender, workflow);}
+@override String toString() {return 'WebhookWorkflowDispatch(enterprise: $enterprise, inputs: $inputs, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender, workflow: $workflow)';}
+}

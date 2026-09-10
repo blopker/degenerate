@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchIssuesAndPullRequestsSort {const SearchIssuesAndPullRequestsSort._(this.value);
 
-factory SearchIssuesAndPullRequestsSort.fromJson(String json) { return switch (json) {
+factory SearchIssuesAndPullRequestsSort.fromJson(String json) {return switch (json) {
   'comments' => comments,
   'reactions' => reactions,
   'reactions-+1' => reactions1,
@@ -15,7 +15,7 @@ factory SearchIssuesAndPullRequestsSort.fromJson(String json) { return switch (j
   'created' => created,
   'updated' => updated,
   _ => SearchIssuesAndPullRequestsSort._(json),
-}; }
+};}
 
 static const SearchIssuesAndPullRequestsSort comments = SearchIssuesAndPullRequestsSort._('comments');
 
@@ -43,11 +43,11 @@ static const List<SearchIssuesAndPullRequestsSort> values = [comments, reactions
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SearchIssuesAndPullRequestsSort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SearchIssuesAndPullRequestsSort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SearchIssuesAndPullRequestsSort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SearchIssuesAndPullRequestsSort($value)';}
+}

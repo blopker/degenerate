@@ -8,11 +8,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which action to 
 /// 
 @immutable final class WaitingroomTurnstileAction {const WaitingroomTurnstileAction._(this.value);
 
-factory WaitingroomTurnstileAction.fromJson(String json) { return switch (json) {
+factory WaitingroomTurnstileAction.fromJson(String json) {return switch (json) {
   'log' => log,
   'infinite_queue' => infiniteQueue,
   _ => WaitingroomTurnstileAction._(json),
-}; }
+};}
 
 static const WaitingroomTurnstileAction log = WaitingroomTurnstileAction._('log');
 
@@ -22,11 +22,11 @@ static const List<WaitingroomTurnstileAction> values = [log, infiniteQueue];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitingroomTurnstileAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitingroomTurnstileAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WaitingroomTurnstileAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WaitingroomTurnstileAction($value)';}
+}

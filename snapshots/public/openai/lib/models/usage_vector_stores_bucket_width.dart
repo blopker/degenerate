@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageVectorStoresBucketWidth {const UsageVectorStoresBucketWidth._(this.value);
 
-factory UsageVectorStoresBucketWidth.fromJson(String json) { return switch (json) {
+factory UsageVectorStoresBucketWidth.fromJson(String json) {return switch (json) {
   '1m' => $1m,
   '1h' => $1h,
   '1d' => $1d,
   _ => UsageVectorStoresBucketWidth._(json),
-}; }
+};}
 
 static const UsageVectorStoresBucketWidth $1m = UsageVectorStoresBucketWidth._('1m');
 
@@ -19,11 +19,11 @@ static const List<UsageVectorStoresBucketWidth> values = [$1m, $1h, $1d];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageVectorStoresBucketWidth && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageVectorStoresBucketWidth($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageVectorStoresBucketWidth && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageVectorStoresBucketWidth($value)';}
+}

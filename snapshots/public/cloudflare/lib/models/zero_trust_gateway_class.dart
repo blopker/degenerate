@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify which account types can create policies for this category. `blocked` Blocks unconditionally for all accounts. `removalPending` Allows removal from policies but disables addition. `noBlock` Prevents blocking.
 @immutable final class ZeroTrustGatewayClass {const ZeroTrustGatewayClass._(this.value);
 
-factory ZeroTrustGatewayClass.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayClass.fromJson(String json) {return switch (json) {
   'free' => free,
   'premium' => premium,
   'blocked' => blocked,
   'removalPending' => removalPending,
   'noBlock' => noBlock,
   _ => ZeroTrustGatewayClass._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayClass free = ZeroTrustGatewayClass._('free');
 
@@ -26,11 +26,11 @@ static const List<ZeroTrustGatewayClass> values = [free, premium, blocked, remov
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayClass && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayClass($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayClass && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayClass($value)';}
+}

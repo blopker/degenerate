@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue {const AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue({required this.elementId});
 
-factory AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue(
+factory AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue.fromJson(Map<String, dynamic> json) {return AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue copyWith({String? elementId}) { return AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue copyWith({String? elementId}) {return AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue(
   elementId: elementId ?? this.elementId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue &&
-          elementId == other.elementId; } 
-@override int get hashCode { return elementId.hashCode; } 
-@override String toString() { return 'AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue(elementId: $elementId)'; } 
- }
+          elementId == other.elementId;}
+@override int get hashCode {return elementId.hashCode;}
+@override String toString() {return 'AigConfigGetGatewayDynamicRouteResponseResultElementsEndOutputsValue(elementId: $elementId)';}
+}

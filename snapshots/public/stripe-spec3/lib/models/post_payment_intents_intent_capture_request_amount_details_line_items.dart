@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1.dart';@immutable final class PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2 {const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2._(this.value);
 
-factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2 $empty = PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems {

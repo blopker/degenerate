@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_edited_changes_body.dart';@immutable final class WebhookPullRequestReviewEditedChanges {const WebhookPullRequestReviewEditedChanges({this.body});
 
-factory WebhookPullRequestReviewEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedChanges(
+factory WebhookPullRequestReviewEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewEditedChanges(
   body: json['body'] != null ? WebhookPullRequestReviewEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookPullRequestReviewEditedChangesBody? body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (body != null) 'body': body?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body'}.contains(key)); } 
-WebhookPullRequestReviewEditedChanges copyWith({WebhookPullRequestReviewEditedChangesBody? Function()? body}) { return WebhookPullRequestReviewEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'body'}.contains(key));}
+WebhookPullRequestReviewEditedChanges copyWith({WebhookPullRequestReviewEditedChangesBody? Function()? body}) {return WebhookPullRequestReviewEditedChanges(
   body: body != null ? body() : this.body,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewEditedChanges &&
-          body == other.body; } 
-@override int get hashCode { return body.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewEditedChanges(body: $body)'; } 
- }
+          body == other.body;}
+@override int get hashCode {return body.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewEditedChanges(body: $body)';}
+}

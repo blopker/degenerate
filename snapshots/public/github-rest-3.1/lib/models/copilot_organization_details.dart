@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_organization_seat_breakdown.dart';/// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
 @immutable final class CopilotOrganizationDetailsPublicCodeSuggestions {const CopilotOrganizationDetailsPublicCodeSuggestions._(this.value);
 
-factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(String json) { return switch (json) {
+factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(String json) {return switch (json) {
   'allow' => allow,
   'block' => block,
   'unconfigured' => unconfigured,
   _ => CopilotOrganizationDetailsPublicCodeSuggestions._(json),
-}; }
+};}
 
 static const CopilotOrganizationDetailsPublicCodeSuggestions allow = CopilotOrganizationDetailsPublicCodeSuggestions._('allow');
 
@@ -20,23 +20,23 @@ static const List<CopilotOrganizationDetailsPublicCodeSuggestions> values = [all
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsPublicCodeSuggestions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsPublicCodeSuggestions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CopilotOrganizationDetailsPublicCodeSuggestions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CopilotOrganizationDetailsPublicCodeSuggestions($value)';}
+}
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
 @immutable final class CopilotOrganizationDetailsIdeChat {const CopilotOrganizationDetailsIdeChat._(this.value);
 
-factory CopilotOrganizationDetailsIdeChat.fromJson(String json) { return switch (json) {
+factory CopilotOrganizationDetailsIdeChat.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
   _ => CopilotOrganizationDetailsIdeChat._(json),
-}; }
+};}
 
 static const CopilotOrganizationDetailsIdeChat enabled = CopilotOrganizationDetailsIdeChat._('enabled');
 
@@ -48,23 +48,23 @@ static const List<CopilotOrganizationDetailsIdeChat> values = [enabled, disabled
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsIdeChat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsIdeChat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CopilotOrganizationDetailsIdeChat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CopilotOrganizationDetailsIdeChat($value)';}
+}
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
 @immutable final class CopilotOrganizationDetailsPlatformChat {const CopilotOrganizationDetailsPlatformChat._(this.value);
 
-factory CopilotOrganizationDetailsPlatformChat.fromJson(String json) { return switch (json) {
+factory CopilotOrganizationDetailsPlatformChat.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
   _ => CopilotOrganizationDetailsPlatformChat._(json),
-}; }
+};}
 
 static const CopilotOrganizationDetailsPlatformChat enabled = CopilotOrganizationDetailsPlatformChat._('enabled');
 
@@ -76,23 +76,23 @@ static const List<CopilotOrganizationDetailsPlatformChat> values = [enabled, dis
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsPlatformChat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsPlatformChat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CopilotOrganizationDetailsPlatformChat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CopilotOrganizationDetailsPlatformChat($value)';}
+}
 /// The organization policy for allowing or disallowing Copilot CLI.
 @immutable final class CopilotOrganizationDetailsCli {const CopilotOrganizationDetailsCli._(this.value);
 
-factory CopilotOrganizationDetailsCli.fromJson(String json) { return switch (json) {
+factory CopilotOrganizationDetailsCli.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
   _ => CopilotOrganizationDetailsCli._(json),
-}; }
+};}
 
 static const CopilotOrganizationDetailsCli enabled = CopilotOrganizationDetailsCli._('enabled');
 
@@ -104,24 +104,24 @@ static const List<CopilotOrganizationDetailsCli> values = [enabled, disabled, un
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsCli && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsCli($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CopilotOrganizationDetailsCli && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CopilotOrganizationDetailsCli($value)';}
+}
 /// The mode of assigning new seats.
 @immutable final class CopilotOrganizationDetailsSeatManagementSetting {const CopilotOrganizationDetailsSeatManagementSetting._(this.value);
 
-factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(String json) { return switch (json) {
+factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(String json) {return switch (json) {
   'assign_all' => assignAll,
   'assign_selected' => assignSelected,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
   _ => CopilotOrganizationDetailsSeatManagementSetting._(json),
-}; }
+};}
 
 static const CopilotOrganizationDetailsSeatManagementSetting assignAll = CopilotOrganizationDetailsSeatManagementSetting._('assign_all');
 
@@ -135,22 +135,22 @@ static const List<CopilotOrganizationDetailsSeatManagementSetting> values = [ass
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsSeatManagementSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsSeatManagementSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CopilotOrganizationDetailsSeatManagementSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CopilotOrganizationDetailsSeatManagementSetting($value)';}
+}
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 @immutable final class CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType._(this.value);
 
-factory CopilotOrganizationDetailsPlanType.fromJson(String json) { return switch (json) {
+factory CopilotOrganizationDetailsPlanType.fromJson(String json) {return switch (json) {
   'business' => business,
   'enterprise' => enterprise,
   _ => CopilotOrganizationDetailsPlanType._(json),
-}; }
+};}
 
 static const CopilotOrganizationDetailsPlanType business = CopilotOrganizationDetailsPlanType._('business');
 
@@ -160,18 +160,18 @@ static const List<CopilotOrganizationDetailsPlanType> values = [business, enterp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsPlanType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CopilotOrganizationDetailsPlanType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CopilotOrganizationDetailsPlanType($value)';}
+}
 /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.
 @immutable final class CopilotOrganizationDetails {const CopilotOrganizationDetails({required this.seatBreakdown, required this.publicCodeSuggestions, required this.seatManagementSetting, this.ideChat, this.platformChat, this.cli, this.planType, this.additionalProperties = const {}, });
 
-factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) { return CopilotOrganizationDetails(
+factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) {return CopilotOrganizationDetails(
   seatBreakdown: CopilotOrganizationSeatBreakdown.fromJson(json['seat_breakdown'] as Map<String, dynamic>),
   publicCodeSuggestions: CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(json['public_code_suggestions'] as String),
   ideChat: json['ide_chat'] != null ? CopilotOrganizationDetailsIdeChat.fromJson(json['ide_chat'] as String) : null,
@@ -180,7 +180,7 @@ factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) { return 
   seatManagementSetting: CopilotOrganizationDetailsSeatManagementSetting.fromJson(json['seat_management_setting'] as String),
   planType: json['plan_type'] != null ? CopilotOrganizationDetailsPlanType.fromJson(json['plan_type'] as String) : null,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'seat_breakdown', 'public_code_suggestions', 'ide_chat', 'platform_chat', 'cli', 'seat_management_setting', 'plan_type'}.contains(e.key))),
-); }
+);}
 
 final CopilotOrganizationSeatBreakdown seatBreakdown;
 
@@ -204,7 +204,7 @@ final CopilotOrganizationDetailsPlanType? planType;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'seat_breakdown': seatBreakdown.toJson(),
   'public_code_suggestions': publicCodeSuggestions.toJson(),
   if (ideChat != null) 'ide_chat': ideChat?.toJson(),
@@ -213,11 +213,11 @@ Map<String, dynamic> toJson() { return {
   'seat_management_setting': seatManagementSetting.toJson(),
   if (planType != null) 'plan_type': planType?.toJson(),
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('seat_breakdown') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('seat_breakdown') &&
       json.containsKey('public_code_suggestions') &&
-      json.containsKey('seat_management_setting'); } 
-CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, CopilotOrganizationDetailsPublicCodeSuggestions? publicCodeSuggestions, CopilotOrganizationDetailsIdeChat? Function()? ideChat, CopilotOrganizationDetailsPlatformChat? Function()? platformChat, CopilotOrganizationDetailsCli? Function()? cli, CopilotOrganizationDetailsSeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType? Function()? planType, Map<String, dynamic>? additionalProperties, }) { return CopilotOrganizationDetails(
+      json.containsKey('seat_management_setting');}
+CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, CopilotOrganizationDetailsPublicCodeSuggestions? publicCodeSuggestions, CopilotOrganizationDetailsIdeChat? Function()? ideChat, CopilotOrganizationDetailsPlatformChat? Function()? platformChat, CopilotOrganizationDetailsCli? Function()? cli, CopilotOrganizationDetailsSeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType? Function()? planType, Map<String, dynamic>? additionalProperties, }) {return CopilotOrganizationDetails(
   seatBreakdown: seatBreakdown ?? this.seatBreakdown,
   publicCodeSuggestions: publicCodeSuggestions ?? this.publicCodeSuggestions,
   ideChat: ideChat != null ? ideChat() : this.ideChat,
@@ -226,8 +226,8 @@ CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreak
   seatManagementSetting: seatManagementSetting ?? this.seatManagementSetting,
   planType: planType != null ? planType() : this.planType,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotOrganizationDetails &&
           seatBreakdown == other.seatBreakdown &&
           publicCodeSuggestions == other.publicCodeSuggestions &&
@@ -236,7 +236,7 @@ CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreak
           cli == other.cli &&
           seatManagementSetting == other.seatManagementSetting &&
           planType == other.planType &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType, mapHash(additionalProperties)); } 
-@override String toString() { return 'CopilotOrganizationDetails(seatBreakdown: $seatBreakdown, publicCodeSuggestions: $publicCodeSuggestions, ideChat: $ideChat, platformChat: $platformChat, cli: $cli, seatManagementSetting: $seatManagementSetting, planType: $planType, additionalProperties: $additionalProperties)'; } 
- }
+          mapEquals(additionalProperties, other.additionalProperties);}
+@override int get hashCode {return Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType, mapHash(additionalProperties));}
+@override String toString() {return 'CopilotOrganizationDetails(seatBreakdown: $seatBreakdown, publicCodeSuggestions: $publicCodeSuggestions, ideChat: $ideChat, platformChat: $platformChat, cli: $cli, seatManagementSetting: $seatManagementSetting, planType: $planType, additionalProperties: $additionalProperties)';}
+}

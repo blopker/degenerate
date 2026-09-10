@@ -23,12 +23,12 @@ num toJson() => value;
 }
 @immutable final class MagicTransitHopResult {const MagicTransitHopResult({this.nodes, this.packetsLost, this.packetsSent, this.packetsTtl, });
 
-factory MagicTransitHopResult.fromJson(Map<String, dynamic> json) { return MagicTransitHopResult(
+factory MagicTransitHopResult.fromJson(Map<String, dynamic> json) {return MagicTransitHopResult(
   nodes: (json['nodes'] as List<dynamic>?)?.map((e) => MagicTransitNodeResult.fromJson(e as Map<String, dynamic>)).toList(),
   packetsLost: json['packets_lost'] != null ? MagicTransitPacketsLost.fromJson(json['packets_lost'] as num) : null,
   packetsSent: json['packets_sent'] != null ? MagicTransitPacketsSent.fromJson(json['packets_sent'] as num) : null,
   packetsTtl: json['packets_ttl'] != null ? MagicTransitPacketsTtl.fromJson(json['packets_ttl'] as num) : null,
-); }
+);}
 
 /// An array of node objects.
 final List<MagicTransitNodeResult>? nodes;
@@ -39,25 +39,25 @@ final MagicTransitPacketsSent? packetsSent;
 
 final MagicTransitPacketsTtl? packetsTtl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (nodes != null) 'nodes': nodes?.map((e) => e.toJson()).toList(),
   if (packetsLost != null) 'packets_lost': packetsLost?.toJson(),
   if (packetsSent != null) 'packets_sent': packetsSent?.toJson(),
   if (packetsTtl != null) 'packets_ttl': packetsTtl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'nodes', 'packets_lost', 'packets_sent', 'packets_ttl'}.contains(key)); } 
-MagicTransitHopResult copyWith({List<MagicTransitNodeResult>? Function()? nodes, MagicTransitPacketsLost? Function()? packetsLost, MagicTransitPacketsSent? Function()? packetsSent, MagicTransitPacketsTtl? Function()? packetsTtl, }) { return MagicTransitHopResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'nodes', 'packets_lost', 'packets_sent', 'packets_ttl'}.contains(key));}
+MagicTransitHopResult copyWith({List<MagicTransitNodeResult>? Function()? nodes, MagicTransitPacketsLost? Function()? packetsLost, MagicTransitPacketsSent? Function()? packetsSent, MagicTransitPacketsTtl? Function()? packetsTtl, }) {return MagicTransitHopResult(
   nodes: nodes != null ? nodes() : this.nodes,
   packetsLost: packetsLost != null ? packetsLost() : this.packetsLost,
   packetsSent: packetsSent != null ? packetsSent() : this.packetsSent,
   packetsTtl: packetsTtl != null ? packetsTtl() : this.packetsTtl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicTransitHopResult &&
           listEquals(nodes, other.nodes) &&
           packetsLost == other.packetsLost &&
           packetsSent == other.packetsSent &&
-          packetsTtl == other.packetsTtl; } 
-@override int get hashCode { return Object.hash(Object.hashAll(nodes ?? const []), packetsLost, packetsSent, packetsTtl); } 
-@override String toString() { return 'MagicTransitHopResult(nodes: $nodes, packetsLost: $packetsLost, packetsSent: $packetsSent, packetsTtl: $packetsTtl)'; } 
- }
+          packetsTtl == other.packetsTtl;}
+@override int get hashCode {return Object.hash(Object.hashAll(nodes ?? const []), packetsLost, packetsSent, packetsTtl);}
+@override String toString() {return 'MagicTransitHopResult(nodes: $nodes, packetsLost: $packetsLost, packetsSent: $packetsSent, packetsTtl: $packetsTtl)';}
+}

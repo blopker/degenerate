@@ -2,25 +2,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsReRunWorkflowFailedJobsRequest {const ActionsReRunWorkflowFailedJobsRequest({this.enableDebugLogging});
 
-factory ActionsReRunWorkflowFailedJobsRequest.fromJson(Map<String, dynamic> json) { return ActionsReRunWorkflowFailedJobsRequest(
+factory ActionsReRunWorkflowFailedJobsRequest.fromJson(Map<String, dynamic> json) {return ActionsReRunWorkflowFailedJobsRequest(
   enableDebugLogging: json['enable_debug_logging'] as bool?,
-); }
+);}
 
 /// Whether to enable debug logging for the re-run.
 final bool? enableDebugLogging;
 
 /// The value with the schema default applied when absent.
-bool get enableDebugLoggingOrDefault { return enableDebugLogging ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get enableDebugLoggingOrDefault {return enableDebugLogging ?? false;}
+Map<String, dynamic> toJson() {return {
   'enable_debug_logging': ?enableDebugLogging,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_debug_logging'}.contains(key)); } 
-ActionsReRunWorkflowFailedJobsRequest copyWith({bool? Function()? enableDebugLogging}) { return ActionsReRunWorkflowFailedJobsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enable_debug_logging'}.contains(key));}
+ActionsReRunWorkflowFailedJobsRequest copyWith({bool? Function()? enableDebugLogging}) {return ActionsReRunWorkflowFailedJobsRequest(
   enableDebugLogging: enableDebugLogging != null ? enableDebugLogging() : this.enableDebugLogging,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsReRunWorkflowFailedJobsRequest &&
-          enableDebugLogging == other.enableDebugLogging; } 
-@override int get hashCode { return enableDebugLogging.hashCode; } 
-@override String toString() { return 'ActionsReRunWorkflowFailedJobsRequest(enableDebugLogging: $enableDebugLogging)'; } 
- }
+          enableDebugLogging == other.enableDebugLogging;}
+@override int get hashCode {return enableDebugLogging.hashCode;}
+@override String toString() {return 'ActionsReRunWorkflowFailedJobsRequest(enableDebugLogging: $enableDebugLogging)';}
+}

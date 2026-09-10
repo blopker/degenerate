@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/rate_limit_overview.dart';/// RateLimitApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/rate_limit_get_error.dart';import '../models/rate_limit_overview.dart';/// RateLimitApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -29,7 +29,7 @@ final class RateLimitApi with ApiExecutor {const RateLimitApi(this.apiConfig);
 /// > The `rate` object is closing down. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.
 ///
 /// `GET /rate_limit`
-Future<ApiResult<RateLimitOverview, BasicError>> rateLimitGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RateLimitOverview, RateLimitGetError>> rateLimitGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -38,24 +38,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RateLimitOverview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
- }
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RateLimitOverview.fromJson(json as Map<String, dynamic>);}, onError: RateLimitGetError.parse, );}
+}

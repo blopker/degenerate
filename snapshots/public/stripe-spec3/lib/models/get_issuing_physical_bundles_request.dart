@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPhysicalBundlesRequest {const GetIssuingPhysicalBundlesRequest();
 
-factory GetIssuingPhysicalBundlesRequest.fromJson(Map<String, dynamic> _) { return const GetIssuingPhysicalBundlesRequest(); }
+factory GetIssuingPhysicalBundlesRequest.fromJson(Map<String, dynamic> _) {return const GetIssuingPhysicalBundlesRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetIssuingPhysicalBundlesRequest copyWith() { return const GetIssuingPhysicalBundlesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetIssuingPhysicalBundlesRequest copyWith() {return const GetIssuingPhysicalBundlesRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetIssuingPhysicalBundlesRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetIssuingPhysicalBundlesRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetIssuingPhysicalBundlesRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetIssuingPhysicalBundlesRequest()';}
+}

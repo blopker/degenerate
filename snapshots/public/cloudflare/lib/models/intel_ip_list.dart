@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelIpList {const IntelIpList({this.description, this.id, this.name, });
 
-factory IntelIpList.fromJson(Map<String, dynamic> json) { return IntelIpList(
+factory IntelIpList.fromJson(Map<String, dynamic> json) {return IntelIpList(
   description: json['description'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   name: json['name'] as String?,
-); }
+);}
 
 final String? description;
 
@@ -14,22 +14,22 @@ final int? id;
 
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'id': ?id,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'name'}.contains(key)); } 
-IntelIpList copyWith({String? Function()? description, int? Function()? id, String? Function()? name, }) { return IntelIpList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'id', 'name'}.contains(key));}
+IntelIpList copyWith({String? Function()? description, int? Function()? id, String? Function()? name, }) {return IntelIpList(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelIpList &&
           description == other.description &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, id, name); } 
-@override String toString() { return 'IntelIpList(description: $description, id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(description, id, name);}
+@override String toString() {return 'IntelIpList(description: $description, id: $id, name: $name)';}
+}

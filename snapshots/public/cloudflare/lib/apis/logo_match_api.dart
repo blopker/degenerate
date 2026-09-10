@@ -13,7 +13,7 @@ final class LogoMatchApi with ApiExecutor {const LogoMatchApi(this.apiConfig);
 /// Return matches for logo queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/logo-matches`
-Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatches({required String accountId, List<String>? logoId, String? offset, String? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatches({required String accountId, List<String>? logoId, String? offset, String? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (logoId != null) {
 for (final item in logoId) {
@@ -38,31 +38,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LogoMatch.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LogoMatch.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Download matches for logo queries by ID
 ///
 /// Return matches as CSV for logo queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/logo-matches/download`
-Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatchesDownload({required String accountId, List<String>? logoId, String? offset, String? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatchesDownload({required String accountId, List<String>? logoId, String? offset, String? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (logoId != null) {
 for (final item in logoId) {
@@ -87,31 +76,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LogoMatch.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LogoMatch.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read all saved logo queries
 ///
 /// Return all saved logo queries
 ///
 /// `GET /accounts/{account_id}/brand-protection/logos`
-Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionLogos({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionLogos({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -120,28 +98,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new saved logo queries from image files
 ///
 /// Return new saved logo queries created from image files
 ///
 /// `POST /accounts/{account_id}/brand-protection/logos`
-Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required String accountId, required ImageFile body, String? tag, String? matchType, double? threshold, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required String accountId, required ImageFile body, String? tag, String? matchType, double? threshold, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (tag != null) {
   queryParameters['tag'] = tag;
@@ -169,31 +137,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Logo.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Logo.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read saved logo queries by ID
 ///
 /// Return saved logo queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/logos/{logo_id}`
-Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionLogos2({required String accountId, required String logoId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionLogos2({required String accountId, required String logoId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -202,28 +159,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete saved logo queries by ID
 ///
 /// Return a success message after deleting saved logo queries by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/logos/{logo_id}`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionLogos({required String accountId, required String logoId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionLogos({required String accountId, required String logoId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -232,25 +179,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new logo queries from image files
 ///
 /// Return new logo queries created from image files
 ///
 /// `POST /accounts/{account_id}/brand-protection/scan-logo`
-Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionScanLogo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionScanLogo({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -259,28 +198,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new logo queries from URLs
 ///
 /// Return new logo queries created from URLs
 ///
 /// `POST /accounts/{account_id}/brand-protection/scan-page`
-Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionScanPage({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionScanPage({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -289,26 +218,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Internal route for testing signed URLs
 ///
 /// `GET /signed-url`
-Future<ApiResult<ErrorModel, ErrorModel>> getSignedUrl({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getSignedUrl({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -317,20 +236,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 }
-
-  },
-);
- } 
- }

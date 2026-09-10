@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `project.rate_limit`
 @immutable final class ProjectRateLimitObject {const ProjectRateLimitObject._(this.value);
 
-factory ProjectRateLimitObject.fromJson(String json) { return switch (json) {
+factory ProjectRateLimitObject.fromJson(String json) {return switch (json) {
   'project.rate_limit' => projectRateLimit,
   _ => ProjectRateLimitObject._(json),
-}; }
+};}
 
 static const ProjectRateLimitObject projectRateLimit = ProjectRateLimitObject._('project.rate_limit');
 
@@ -14,18 +14,18 @@ static const List<ProjectRateLimitObject> values = [projectRateLimit];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectRateLimitObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectRateLimitObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectRateLimitObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectRateLimitObject($value)';}
+}
 /// Represents a project rate limit config.
 @immutable final class ProjectRateLimit {const ProjectRateLimit({required this.object, required this.id, required this.model, required this.maxRequestsPer1Minute, required this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });
 
-factory ProjectRateLimit.fromJson(Map<String, dynamic> json) { return ProjectRateLimit(
+factory ProjectRateLimit.fromJson(Map<String, dynamic> json) {return ProjectRateLimit(
   object: ProjectRateLimitObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   model: json['model'] as String,
@@ -35,7 +35,7 @@ factory ProjectRateLimit.fromJson(Map<String, dynamic> json) { return ProjectRat
   maxAudioMegabytesPer1Minute: json['max_audio_megabytes_per_1_minute'] != null ? (json['max_audio_megabytes_per_1_minute'] as num).toInt() : null,
   maxRequestsPer1Day: json['max_requests_per_1_day'] != null ? (json['max_requests_per_1_day'] as num).toInt() : null,
   batch1DayMaxInputTokens: json['batch_1_day_max_input_tokens'] != null ? (json['batch_1_day_max_input_tokens'] as num).toInt() : null,
-); }
+);}
 
 /// The object type, which is always `project.rate_limit`
 final ProjectRateLimitObject object;
@@ -64,7 +64,7 @@ final int? maxRequestsPer1Day;
 /// The maximum batch input tokens per day. Only present for relevant models.
 final int? batch1DayMaxInputTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'model': model,
@@ -74,13 +74,13 @@ Map<String, dynamic> toJson() { return {
   'max_audio_megabytes_per_1_minute': ?maxAudioMegabytesPer1Minute,
   'max_requests_per_1_day': ?maxRequestsPer1Day,
   'batch_1_day_max_input_tokens': ?batch1DayMaxInputTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('max_requests_per_1_minute') && json['max_requests_per_1_minute'] is num &&
-      json.containsKey('max_tokens_per_1_minute') && json['max_tokens_per_1_minute'] is num; } 
-ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? model, int? maxRequestsPer1Minute, int? maxTokensPer1Minute, int? Function()? maxImagesPer1Minute, int? Function()? maxAudioMegabytesPer1Minute, int? Function()? maxRequestsPer1Day, int? Function()? batch1DayMaxInputTokens, }) { return ProjectRateLimit(
+      json.containsKey('max_tokens_per_1_minute') && json['max_tokens_per_1_minute'] is num;}
+ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? model, int? maxRequestsPer1Minute, int? maxTokensPer1Minute, int? Function()? maxImagesPer1Minute, int? Function()? maxAudioMegabytesPer1Minute, int? Function()? maxRequestsPer1Day, int? Function()? batch1DayMaxInputTokens, }) {return ProjectRateLimit(
   object: object ?? this.object,
   id: id ?? this.id,
   model: model ?? this.model,
@@ -90,8 +90,8 @@ ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? m
   maxAudioMegabytesPer1Minute: maxAudioMegabytesPer1Minute != null ? maxAudioMegabytesPer1Minute() : this.maxAudioMegabytesPer1Minute,
   maxRequestsPer1Day: maxRequestsPer1Day != null ? maxRequestsPer1Day() : this.maxRequestsPer1Day,
   batch1DayMaxInputTokens: batch1DayMaxInputTokens != null ? batch1DayMaxInputTokens() : this.batch1DayMaxInputTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectRateLimit &&
           object == other.object &&
           id == other.id &&
@@ -101,7 +101,7 @@ ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? m
           maxImagesPer1Minute == other.maxImagesPer1Minute &&
           maxAudioMegabytesPer1Minute == other.maxAudioMegabytesPer1Minute &&
           maxRequestsPer1Day == other.maxRequestsPer1Day &&
-          batch1DayMaxInputTokens == other.batch1DayMaxInputTokens; } 
-@override int get hashCode { return Object.hash(object, id, model, maxRequestsPer1Minute, maxTokensPer1Minute, maxImagesPer1Minute, maxAudioMegabytesPer1Minute, maxRequestsPer1Day, batch1DayMaxInputTokens); } 
-@override String toString() { return 'ProjectRateLimit(object: $object, id: $id, model: $model, maxRequestsPer1Minute: $maxRequestsPer1Minute, maxTokensPer1Minute: $maxTokensPer1Minute, maxImagesPer1Minute: $maxImagesPer1Minute, maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute, maxRequestsPer1Day: $maxRequestsPer1Day, batch1DayMaxInputTokens: $batch1DayMaxInputTokens)'; } 
- }
+          batch1DayMaxInputTokens == other.batch1DayMaxInputTokens;}
+@override int get hashCode {return Object.hash(object, id, model, maxRequestsPer1Minute, maxTokensPer1Minute, maxImagesPer1Minute, maxAudioMegabytesPer1Minute, maxRequestsPer1Day, batch1DayMaxInputTokens);}
+@override String toString() {return 'ProjectRateLimit(object: $object, id: $id, model: $model, maxRequestsPer1Minute: $maxRequestsPer1Minute, maxTokensPer1Minute: $maxTokensPer1Minute, maxImagesPer1Minute: $maxImagesPer1Minute, maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute, maxRequestsPer1Day: $maxRequestsPer1Day, batch1DayMaxInputTokens: $batch1DayMaxInputTokens)';}
+}

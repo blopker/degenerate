@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'canceled2_additional_documentation.dart';import 'canceled2_canceled_at.dart';import 'canceled2_cancellation_policy_provided.dart';import 'canceled2_cancellation_reason.dart';import 'canceled2_expected_at.dart';import 'canceled2_explanation.dart';import 'canceled2_product_description.dart';import 'canceled2_returned_at.dart';@immutable final class Canceled2ProductType {const Canceled2ProductType._(this.value);
 
-factory Canceled2ProductType.fromJson(String json) { return switch (json) {
+factory Canceled2ProductType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'merchandise' => merchandise,
   'service' => service,
   _ => Canceled2ProductType._(json),
-}; }
+};}
 
 static const Canceled2ProductType $empty = Canceled2ProductType._('');
 
@@ -19,22 +19,22 @@ static const List<Canceled2ProductType> values = [$empty, merchandise, service];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Canceled2ProductType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Canceled2ProductType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Canceled2ProductType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Canceled2ProductType($value)';}
+}
 @immutable final class Canceled2ReturnStatus {const Canceled2ReturnStatus._(this.value);
 
-factory Canceled2ReturnStatus.fromJson(String json) { return switch (json) {
+factory Canceled2ReturnStatus.fromJson(String json) {return switch (json) {
   '' => $empty,
   'merchant_rejected' => merchantRejected,
   'successful' => successful,
   _ => Canceled2ReturnStatus._(json),
-}; }
+};}
 
 static const Canceled2ReturnStatus $empty = Canceled2ReturnStatus._('');
 
@@ -46,17 +46,17 @@ static const List<Canceled2ReturnStatus> values = [$empty, merchantRejected, suc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Canceled2ReturnStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Canceled2ReturnStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Canceled2ReturnStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Canceled2ReturnStatus($value)';}
+}
 @immutable final class Canceled2 {const Canceled2({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
-factory Canceled2.fromJson(Map<String, dynamic> json) { return Canceled2(
+factory Canceled2.fromJson(Map<String, dynamic> json) {return Canceled2(
   additionalDocumentation: json['additional_documentation'] != null ? Canceled2AdditionalDocumentation.fromJson(json['additional_documentation']) : null,
   canceledAt: json['canceled_at'] != null ? Canceled2CanceledAt.fromJson(json['canceled_at']) : null,
   cancellationPolicyProvided: json['cancellation_policy_provided'] != null ? Canceled2CancellationPolicyProvided.fromJson(json['cancellation_policy_provided']) : null,
@@ -67,7 +67,7 @@ factory Canceled2.fromJson(Map<String, dynamic> json) { return Canceled2(
   productType: json['product_type'] != null ? Canceled2ProductType.fromJson(json['product_type'] as String) : null,
   returnStatus: json['return_status'] != null ? Canceled2ReturnStatus.fromJson(json['return_status'] as String) : null,
   returnedAt: json['returned_at'] != null ? Canceled2ReturnedAt.fromJson(json['returned_at']) : null,
-); }
+);}
 
 final Canceled2AdditionalDocumentation? additionalDocumentation;
 
@@ -89,7 +89,7 @@ final Canceled2ReturnStatus? returnStatus;
 
 final Canceled2ReturnedAt? returnedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
   if (canceledAt != null) 'canceled_at': canceledAt?.toJson(),
   if (cancellationPolicyProvided != null) 'cancellation_policy_provided': cancellationPolicyProvided?.toJson(),
@@ -100,9 +100,9 @@ Map<String, dynamic> toJson() { return {
   if (productType != null) 'product_type': productType?.toJson(),
   if (returnStatus != null) 'return_status': returnStatus?.toJson(),
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_policy_provided', 'cancellation_reason', 'expected_at', 'explanation', 'product_description', 'product_type', 'return_status', 'returned_at'}.contains(key)); } 
-Canceled2 copyWith({Canceled2AdditionalDocumentation? Function()? additionalDocumentation, Canceled2CanceledAt? Function()? canceledAt, Canceled2CancellationPolicyProvided? Function()? cancellationPolicyProvided, Canceled2CancellationReason? Function()? cancellationReason, Canceled2ExpectedAt? Function()? expectedAt, Canceled2Explanation? Function()? explanation, Canceled2ProductDescription? Function()? productDescription, Canceled2ProductType? Function()? productType, Canceled2ReturnStatus? Function()? returnStatus, Canceled2ReturnedAt? Function()? returnedAt, }) { return Canceled2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_policy_provided', 'cancellation_reason', 'expected_at', 'explanation', 'product_description', 'product_type', 'return_status', 'returned_at'}.contains(key));}
+Canceled2 copyWith({Canceled2AdditionalDocumentation? Function()? additionalDocumentation, Canceled2CanceledAt? Function()? canceledAt, Canceled2CancellationPolicyProvided? Function()? cancellationPolicyProvided, Canceled2CancellationReason? Function()? cancellationReason, Canceled2ExpectedAt? Function()? expectedAt, Canceled2Explanation? Function()? explanation, Canceled2ProductDescription? Function()? productDescription, Canceled2ProductType? Function()? productType, Canceled2ReturnStatus? Function()? returnStatus, Canceled2ReturnedAt? Function()? returnedAt, }) {return Canceled2(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   cancellationPolicyProvided: cancellationPolicyProvided != null ? cancellationPolicyProvided() : this.cancellationPolicyProvided,
@@ -113,8 +113,8 @@ Canceled2 copyWith({Canceled2AdditionalDocumentation? Function()? additionalDocu
   productType: productType != null ? productType() : this.productType,
   returnStatus: returnStatus != null ? returnStatus() : this.returnStatus,
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Canceled2 &&
           additionalDocumentation == other.additionalDocumentation &&
           canceledAt == other.canceledAt &&
@@ -125,7 +125,7 @@ Canceled2 copyWith({Canceled2AdditionalDocumentation? Function()? additionalDocu
           productDescription == other.productDescription &&
           productType == other.productType &&
           returnStatus == other.returnStatus &&
-          returnedAt == other.returnedAt; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, canceledAt, cancellationPolicyProvided, cancellationReason, expectedAt, explanation, productDescription, productType, returnStatus, returnedAt); } 
-@override String toString() { return 'Canceled2(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationPolicyProvided: $cancellationPolicyProvided, cancellationReason: $cancellationReason, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType, returnStatus: $returnStatus, returnedAt: $returnedAt)'; } 
- }
+          returnedAt == other.returnedAt;}
+@override int get hashCode {return Object.hash(additionalDocumentation, canceledAt, cancellationPolicyProvided, cancellationReason, expectedAt, explanation, productDescription, productType, returnStatus, returnedAt);}
+@override String toString() {return 'Canceled2(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationPolicyProvided: $cancellationPolicyProvided, cancellationReason: $cancellationReason, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType, returnStatus: $returnStatus, returnedAt: $returnedAt)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_request_related_events.dart';import 'post_indicator_create_request_tags.dart';@immutable final class PostIndicatorCreateRequest {const PostIndicatorCreateRequest({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
 
-factory PostIndicatorCreateRequest.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateRequest(
+factory PostIndicatorCreateRequest.fromJson(Map<String, dynamic> json) {return PostIndicatorCreateRequest(
   autoCreateType: json['autoCreateType'] as bool?,
   indicatorType: json['indicatorType'] as String,
   relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PostIndicatorCreateRequestRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
   tags: (json['tags'] as List<dynamic>?)?.map(PostIndicatorCreateRequestTags.fromJson).toList(),
   value: json['value'] as String,
-); }
+);}
 
 /// If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.
 final bool? autoCreateType;
@@ -21,29 +21,29 @@ final List<PostIndicatorCreateRequestTags>? tags;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'autoCreateType': ?autoCreateType,
   'indicatorType': indicatorType,
   if (relatedEvents != null) 'relatedEvents': relatedEvents?.map((e) => e.toJson()).toList(),
   if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PostIndicatorCreateRequest copyWith({bool? Function()? autoCreateType, String? indicatorType, List<PostIndicatorCreateRequestRelatedEvents>? Function()? relatedEvents, List<PostIndicatorCreateRequestTags>? Function()? tags, String? value, }) { return PostIndicatorCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('indicatorType') && json['indicatorType'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PostIndicatorCreateRequest copyWith({bool? Function()? autoCreateType, String? indicatorType, List<PostIndicatorCreateRequestRelatedEvents>? Function()? relatedEvents, List<PostIndicatorCreateRequestTags>? Function()? tags, String? value, }) {return PostIndicatorCreateRequest(
   autoCreateType: autoCreateType != null ? autoCreateType() : this.autoCreateType,
   indicatorType: indicatorType ?? this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
   tags: tags != null ? tags() : this.tags,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIndicatorCreateRequest &&
           autoCreateType == other.autoCreateType &&
           indicatorType == other.indicatorType &&
           listEquals(relatedEvents, other.relatedEvents) &&
           listEquals(tags, other.tags) &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(autoCreateType, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value); } 
-@override String toString() { return 'PostIndicatorCreateRequest(autoCreateType: $autoCreateType, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(autoCreateType, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value);}
+@override String toString() {return 'PostIndicatorCreateRequest(autoCreateType: $autoCreateType, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)';}
+}

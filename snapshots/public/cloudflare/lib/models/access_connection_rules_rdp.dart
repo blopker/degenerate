@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Clipboard format for RDP connections.
 @immutable final class AccessRdpClipboardFormat {const AccessRdpClipboardFormat._(this.value);
 
-factory AccessRdpClipboardFormat.fromJson(String json) { return switch (json) {
+factory AccessRdpClipboardFormat.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => AccessRdpClipboardFormat._(json),
-}; }
+};}
 
 static const AccessRdpClipboardFormat text = AccessRdpClipboardFormat._('text');
 
@@ -14,21 +14,21 @@ static const List<AccessRdpClipboardFormat> values = [text];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessRdpClipboardFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessRdpClipboardFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessRdpClipboardFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessRdpClipboardFormat($value)';}
+}
 /// The RDP-specific rules that define clipboard behavior for RDP connections.
 @immutable final class AccessConnectionRulesRdp {const AccessConnectionRulesRdp({this.allowedClipboardLocalToRemoteFormats, this.allowedClipboardRemoteToLocalFormats, });
 
-factory AccessConnectionRulesRdp.fromJson(Map<String, dynamic> json) { return AccessConnectionRulesRdp(
+factory AccessConnectionRulesRdp.fromJson(Map<String, dynamic> json) {return AccessConnectionRulesRdp(
   allowedClipboardLocalToRemoteFormats: (json['allowed_clipboard_local_to_remote_formats'] as List<dynamic>?)?.map((e) => AccessRdpClipboardFormat.fromJson(e as String)).toList(),
   allowedClipboardRemoteToLocalFormats: (json['allowed_clipboard_remote_to_local_formats'] as List<dynamic>?)?.map((e) => AccessRdpClipboardFormat.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Clipboard formats allowed when copying from local machine to remote RDP session.
 final List<AccessRdpClipboardFormat>? allowedClipboardLocalToRemoteFormats;
@@ -36,19 +36,19 @@ final List<AccessRdpClipboardFormat>? allowedClipboardLocalToRemoteFormats;
 /// Clipboard formats allowed when copying from remote RDP session to local machine.
 final List<AccessRdpClipboardFormat>? allowedClipboardRemoteToLocalFormats;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowedClipboardLocalToRemoteFormats != null) 'allowed_clipboard_local_to_remote_formats': allowedClipboardLocalToRemoteFormats?.map((e) => e.toJson()).toList(),
   if (allowedClipboardRemoteToLocalFormats != null) 'allowed_clipboard_remote_to_local_formats': allowedClipboardRemoteToLocalFormats?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_clipboard_local_to_remote_formats', 'allowed_clipboard_remote_to_local_formats'}.contains(key)); } 
-AccessConnectionRulesRdp copyWith({List<AccessRdpClipboardFormat>? Function()? allowedClipboardLocalToRemoteFormats, List<AccessRdpClipboardFormat>? Function()? allowedClipboardRemoteToLocalFormats, }) { return AccessConnectionRulesRdp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowed_clipboard_local_to_remote_formats', 'allowed_clipboard_remote_to_local_formats'}.contains(key));}
+AccessConnectionRulesRdp copyWith({List<AccessRdpClipboardFormat>? Function()? allowedClipboardLocalToRemoteFormats, List<AccessRdpClipboardFormat>? Function()? allowedClipboardRemoteToLocalFormats, }) {return AccessConnectionRulesRdp(
   allowedClipboardLocalToRemoteFormats: allowedClipboardLocalToRemoteFormats != null ? allowedClipboardLocalToRemoteFormats() : this.allowedClipboardLocalToRemoteFormats,
   allowedClipboardRemoteToLocalFormats: allowedClipboardRemoteToLocalFormats != null ? allowedClipboardRemoteToLocalFormats() : this.allowedClipboardRemoteToLocalFormats,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessConnectionRulesRdp &&
           listEquals(allowedClipboardLocalToRemoteFormats, other.allowedClipboardLocalToRemoteFormats) &&
-          listEquals(allowedClipboardRemoteToLocalFormats, other.allowedClipboardRemoteToLocalFormats); } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedClipboardLocalToRemoteFormats ?? const []), Object.hashAll(allowedClipboardRemoteToLocalFormats ?? const [])); } 
-@override String toString() { return 'AccessConnectionRulesRdp(allowedClipboardLocalToRemoteFormats: $allowedClipboardLocalToRemoteFormats, allowedClipboardRemoteToLocalFormats: $allowedClipboardRemoteToLocalFormats)'; } 
- }
+          listEquals(allowedClipboardRemoteToLocalFormats, other.allowedClipboardRemoteToLocalFormats);}
+@override int get hashCode {return Object.hash(Object.hashAll(allowedClipboardLocalToRemoteFormats ?? const []), Object.hashAll(allowedClipboardRemoteToLocalFormats ?? const []));}
+@override String toString() {return 'AccessConnectionRulesRdp(allowedClipboardLocalToRemoteFormats: $allowedClipboardLocalToRemoteFormats, allowedClipboardRemoteToLocalFormats: $allowedClipboardRemoteToLocalFormats)';}
+}

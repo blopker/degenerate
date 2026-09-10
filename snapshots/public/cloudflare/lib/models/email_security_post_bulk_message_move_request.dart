@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_postfix_id.dart';@immutable final class EmailSecurityPostBulkMessageMoveRequestDestination {const EmailSecurityPostBulkMessageMoveRequestDestination._(this.value);
 
-factory EmailSecurityPostBulkMessageMoveRequestDestination.fromJson(String json) { return switch (json) {
+factory EmailSecurityPostBulkMessageMoveRequestDestination.fromJson(String json) {return switch (json) {
   'Inbox' => inbox,
   'JunkEmail' => junkEmail,
   'DeletedItems' => deletedItems,
   'RecoverableItemsDeletions' => recoverableItemsDeletions,
   'RecoverableItemsPurges' => recoverableItemsPurges,
   _ => EmailSecurityPostBulkMessageMoveRequestDestination._(json),
-}; }
+};}
 
 static const EmailSecurityPostBulkMessageMoveRequestDestination inbox = EmailSecurityPostBulkMessageMoveRequestDestination._('Inbox');
 
@@ -25,21 +25,21 @@ static const List<EmailSecurityPostBulkMessageMoveRequestDestination> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityPostBulkMessageMoveRequestDestination && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityPostBulkMessageMoveRequestDestination($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityPostBulkMessageMoveRequestDestination && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityPostBulkMessageMoveRequestDestination($value)';}
+}
 @immutable final class EmailSecurityPostBulkMessageMoveRequest {const EmailSecurityPostBulkMessageMoveRequest({required this.destination, this.ids, this.postfixIds, });
 
-factory EmailSecurityPostBulkMessageMoveRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostBulkMessageMoveRequest(
+factory EmailSecurityPostBulkMessageMoveRequest.fromJson(Map<String, dynamic> json) {return EmailSecurityPostBulkMessageMoveRequest(
   destination: EmailSecurityPostBulkMessageMoveRequestDestination.fromJson(json['destination'] as String),
   ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   postfixIds: (json['postfix_ids'] as List<dynamic>?)?.map((e) => EmailSecurityPostfixId.fromJson(e as String)).toList(),
-); }
+);}
 
 final EmailSecurityPostBulkMessageMoveRequestDestination destination;
 
@@ -49,22 +49,22 @@ final List<String>? ids;
 /// Deprecated: Use `ids` instead. List of message IDs to move.
 final List<EmailSecurityPostfixId>? postfixIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination': destination.toJson(),
   'ids': ?ids,
   if (postfixIds != null) 'postfix_ids': postfixIds?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-EmailSecurityPostBulkMessageMoveRequest copyWith({EmailSecurityPostBulkMessageMoveRequestDestination? destination, List<String>? Function()? ids, List<EmailSecurityPostfixId>? Function()? postfixIds, }) { return EmailSecurityPostBulkMessageMoveRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination');}
+EmailSecurityPostBulkMessageMoveRequest copyWith({EmailSecurityPostBulkMessageMoveRequestDestination? destination, List<String>? Function()? ids, List<EmailSecurityPostfixId>? Function()? postfixIds, }) {return EmailSecurityPostBulkMessageMoveRequest(
   destination: destination ?? this.destination,
   ids: ids != null ? ids() : this.ids,
   postfixIds: postfixIds != null ? postfixIds() : this.postfixIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityPostBulkMessageMoveRequest &&
           destination == other.destination &&
           listEquals(ids, other.ids) &&
-          listEquals(postfixIds, other.postfixIds); } 
-@override int get hashCode { return Object.hash(destination, Object.hashAll(ids ?? const []), Object.hashAll(postfixIds ?? const [])); } 
-@override String toString() { return 'EmailSecurityPostBulkMessageMoveRequest(destination: $destination, ids: $ids, postfixIds: $postfixIds)'; } 
- }
+          listEquals(postfixIds, other.postfixIds);}
+@override int get hashCode {return Object.hash(destination, Object.hashAll(ids ?? const []), Object.hashAll(postfixIds ?? const []));}
+@override String toString() {return 'EmailSecurityPostBulkMessageMoveRequest(destination: $destination, ids: $ids, postfixIds: $postfixIds)';}
+}

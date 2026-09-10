@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS Record type.
 @immutable final class TlsCertificatesAndHostnamesOwnershipVerificationTxtType {const TlsCertificatesAndHostnamesOwnershipVerificationTxtType._(this.value);
 
-factory TlsCertificatesAndHostnamesOwnershipVerificationTxtType.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesOwnershipVerificationTxtType.fromJson(String json) {return switch (json) {
   'txt' => txt,
   _ => TlsCertificatesAndHostnamesOwnershipVerificationTxtType._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesOwnershipVerificationTxtType txt = TlsCertificatesAndHostnamesOwnershipVerificationTxtType._('txt');
 
@@ -14,21 +14,21 @@ static const List<TlsCertificatesAndHostnamesOwnershipVerificationTxtType> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesOwnershipVerificationTxtType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerificationTxtType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesOwnershipVerificationTxtType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesOwnershipVerificationTxtType($value)';}
+}
 @immutable final class TlsCertificatesAndHostnamesOwnershipVerificationTxt {const TlsCertificatesAndHostnamesOwnershipVerificationTxt({this.name, this.type, this.value, });
 
-factory TlsCertificatesAndHostnamesOwnershipVerificationTxt.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesOwnershipVerificationTxt(
+factory TlsCertificatesAndHostnamesOwnershipVerificationTxt.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesOwnershipVerificationTxt(
   name: json['name'] as String?,
   type: json['type'] != null ? TlsCertificatesAndHostnamesOwnershipVerificationTxtType.fromJson(json['type'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// DNS Name for record.
 final String? name;
@@ -39,22 +39,22 @@ final TlsCertificatesAndHostnamesOwnershipVerificationTxtType? type;
 /// Content for the record.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   if (type != null) 'type': type?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type', 'value'}.contains(key)); } 
-TlsCertificatesAndHostnamesOwnershipVerificationTxt copyWith({String? Function()? name, TlsCertificatesAndHostnamesOwnershipVerificationTxtType? Function()? type, String? Function()? value, }) { return TlsCertificatesAndHostnamesOwnershipVerificationTxt(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'type', 'value'}.contains(key));}
+TlsCertificatesAndHostnamesOwnershipVerificationTxt copyWith({String? Function()? name, TlsCertificatesAndHostnamesOwnershipVerificationTxtType? Function()? type, String? Function()? value, }) {return TlsCertificatesAndHostnamesOwnershipVerificationTxt(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesOwnershipVerificationTxt &&
           name == other.name &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, type, value); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerificationTxt(name: $name, type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, type, value);}
+@override String toString() {return 'TlsCertificatesAndHostnamesOwnershipVerificationTxt(name: $name, type: $type, value: $value)';}
+}

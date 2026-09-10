@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FineTuneReinforcementHyperparametersEvalIntervalVariant1 {const FineTuneReinforcementHyperparametersEvalIntervalVariant1._(this.value);
 
-factory FineTuneReinforcementHyperparametersEvalIntervalVariant1.fromJson(String json) { return switch (json) {
+factory FineTuneReinforcementHyperparametersEvalIntervalVariant1.fromJson(String json) {return switch (json) {
   'auto' => auto,
   _ => FineTuneReinforcementHyperparametersEvalIntervalVariant1._(json),
-}; }
+};}
 
 static const FineTuneReinforcementHyperparametersEvalIntervalVariant1 auto = FineTuneReinforcementHyperparametersEvalIntervalVariant1._('auto');
 
@@ -13,12 +13,12 @@ static const List<FineTuneReinforcementHyperparametersEvalIntervalVariant1> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuneReinforcementHyperparametersEvalIntervalVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuneReinforcementHyperparametersEvalIntervalVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FineTuneReinforcementHyperparametersEvalIntervalVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FineTuneReinforcementHyperparametersEvalIntervalVariant1($value)';}
+}
 typedef FineTuneReinforcementHyperparametersEvalInterval = OneOf2<FineTuneReinforcementHyperparametersEvalIntervalVariant1,int>;

@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether
 /// Redirect-based payment methods may require your customer to be redirected to a payment method's app or site for authentication or additional steps. To [confirm](https://docs.stripe.com/api/setup_intents/confirm) this SetupIntent, you may be required to provide a `return_url` to redirect customers back to your site after they authenticate or complete the setup.
 @immutable final class PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects {const PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects._(this.value);
 
-factory PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects.fromJson(String json) { return switch (json) {
+factory PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects.fromJson(String json) {return switch (json) {
   'always' => always,
   'never' => never,
   _ => PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects._(json),
-}; }
+};}
 
 static const PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects always = PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects._('always');
 
@@ -19,21 +19,21 @@ static const List<PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects($value)';}
+}
 /// 
 @immutable final class PaymentFlowsAutomaticPaymentMethodsSetupIntent {const PaymentFlowsAutomaticPaymentMethodsSetupIntent({this.allowRedirects, this.enabled = const Omittable.absent(), });
 
-factory PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(Map<String, dynamic> json) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
+factory PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(Map<String, dynamic> json) {return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
   allowRedirects: json['allow_redirects'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects.fromJson(json['allow_redirects'] as String) : null,
   enabled: json.containsKey('enabled') ? Omittable(json['enabled'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// Controls whether this SetupIntent will accept redirect-based payment methods.
 /// 
@@ -43,19 +43,19 @@ final PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects? allowRedirec
 /// Automatically calculates compatible payment methods
 final Omittable<bool?> enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowRedirects != null) 'allow_redirects': allowRedirects?.toJson(),
   if (enabled.isPresent) 'enabled': enabled.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redirects', 'enabled'}.contains(key)); } 
-PaymentFlowsAutomaticPaymentMethodsSetupIntent copyWith({PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects? Function()? allowRedirects, Omittable<bool?>? enabled, }) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_redirects', 'enabled'}.contains(key));}
+PaymentFlowsAutomaticPaymentMethodsSetupIntent copyWith({PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects? Function()? allowRedirects, Omittable<bool?>? enabled, }) {return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
   allowRedirects: allowRedirects != null ? allowRedirects() : this.allowRedirects,
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentFlowsAutomaticPaymentMethodsSetupIntent &&
           allowRedirects == other.allowRedirects &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowRedirects, enabled); } 
-@override String toString() { return 'PaymentFlowsAutomaticPaymentMethodsSetupIntent(allowRedirects: $allowRedirects, enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return Object.hash(allowRedirects, enabled);}
+@override String toString() {return 'PaymentFlowsAutomaticPaymentMethodsSetupIntent(allowRedirects: $allowRedirects, enabled: $enabled)';}
+}

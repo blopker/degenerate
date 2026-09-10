@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'personal_access_token_request_permissions_added.dart';import 'personal_access_token_request_permissions_result.dart';import 'personal_access_token_request_permissions_upgraded.dart';import 'personal_access_token_request_repositories.dart';import 'simple_user.dart';/// Type of repository selection requested.
 @immutable final class PersonalAccessTokenRequestRepositorySelection {const PersonalAccessTokenRequestRepositorySelection._(this.value);
 
-factory PersonalAccessTokenRequestRepositorySelection.fromJson(String json) { return switch (json) {
+factory PersonalAccessTokenRequestRepositorySelection.fromJson(String json) {return switch (json) {
   'none' => none,
   'all' => all,
   'subset' => subset,
   _ => PersonalAccessTokenRequestRepositorySelection._(json),
-}; }
+};}
 
 static const PersonalAccessTokenRequestRepositorySelection none = PersonalAccessTokenRequestRepositorySelection._('none');
 
@@ -20,18 +20,18 @@ static const List<PersonalAccessTokenRequestRepositorySelection> values = [none,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PersonalAccessTokenRequestRepositorySelection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PersonalAccessTokenRequestRepositorySelection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PersonalAccessTokenRequestRepositorySelection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PersonalAccessTokenRequestRepositorySelection($value)';}
+}
 /// Details of a Personal Access Token Request.
 @immutable final class PersonalAccessTokenRequest {const PersonalAccessTokenRequest({required this.id, required this.owner, required this.permissionsAdded, required this.permissionsUpgraded, required this.permissionsResult, required this.repositorySelection, required this.repositoryCount, required this.repositories, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
-factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequest(
+factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) {return PersonalAccessTokenRequest(
   id: (json['id'] as num).toInt(),
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   permissionsAdded: PersonalAccessTokenRequestPermissionsAdded.fromJson(json['permissions_added'] as Map<String, dynamic>),
@@ -46,7 +46,7 @@ factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) { return 
   tokenExpired: json['token_expired'] as bool,
   tokenExpiresAt: json['token_expires_at'] as String?,
   tokenLastUsedAt: json['token_last_used_at'] as String?,
-); }
+);}
 
 /// Unique identifier of the request for access via fine-grained personal access token. Used as the `pat_request_id` parameter in the list and review API calls.
 final int id;
@@ -89,7 +89,7 @@ final String? tokenExpiresAt;
 /// Date and time when the associated fine-grained personal access token was last used for authentication.
 final String? tokenLastUsedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'owner': owner.toJson(),
   'permissions_added': permissionsAdded.toJson(),
@@ -104,8 +104,8 @@ Map<String, dynamic> toJson() { return {
   'token_expired': tokenExpired,
   'token_expires_at': tokenExpiresAt,
   'token_last_used_at': tokenLastUsedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('owner') &&
       json.containsKey('permissions_added') &&
       json.containsKey('permissions_upgraded') &&
@@ -118,8 +118,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('token_name') && json['token_name'] is String &&
       json.containsKey('token_expired') && json['token_expired'] is bool &&
       json.containsKey('token_expires_at') && (json['token_expires_at'] == null || json['token_expires_at'] is String) &&
-      json.containsKey('token_last_used_at') && (json['token_last_used_at'] == null || json['token_last_used_at'] is String); } 
-PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PersonalAccessTokenRequestPermissionsAdded? permissionsAdded, PersonalAccessTokenRequestPermissionsUpgraded? permissionsUpgraded, PersonalAccessTokenRequestPermissionsResult? permissionsResult, PersonalAccessTokenRequestRepositorySelection? repositorySelection, int? Function()? repositoryCount, List<PersonalAccessTokenRequestRepositories>? Function()? repositories, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return PersonalAccessTokenRequest(
+      json.containsKey('token_last_used_at') && (json['token_last_used_at'] == null || json['token_last_used_at'] is String);}
+PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PersonalAccessTokenRequestPermissionsAdded? permissionsAdded, PersonalAccessTokenRequestPermissionsUpgraded? permissionsUpgraded, PersonalAccessTokenRequestPermissionsResult? permissionsResult, PersonalAccessTokenRequestRepositorySelection? repositorySelection, int? Function()? repositoryCount, List<PersonalAccessTokenRequestRepositories>? Function()? repositories, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) {return PersonalAccessTokenRequest(
   id: id ?? this.id,
   owner: owner ?? this.owner,
   permissionsAdded: permissionsAdded ?? this.permissionsAdded,
@@ -134,8 +134,8 @@ PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PersonalAccessT
   tokenExpired: tokenExpired ?? this.tokenExpired,
   tokenExpiresAt: tokenExpiresAt != null ? tokenExpiresAt() : this.tokenExpiresAt,
   tokenLastUsedAt: tokenLastUsedAt != null ? tokenLastUsedAt() : this.tokenLastUsedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersonalAccessTokenRequest &&
           id == other.id &&
           owner == other.owner &&
@@ -150,7 +150,7 @@ PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PersonalAccessT
           tokenName == other.tokenName &&
           tokenExpired == other.tokenExpired &&
           tokenExpiresAt == other.tokenExpiresAt &&
-          tokenLastUsedAt == other.tokenLastUsedAt; } 
-@override int get hashCode { return Object.hash(id, owner, permissionsAdded, permissionsUpgraded, permissionsResult, repositorySelection, repositoryCount, Object.hashAll(repositories ?? const []), createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt); } 
-@override String toString() { return 'PersonalAccessTokenRequest(id: $id, owner: $owner, permissionsAdded: $permissionsAdded, permissionsUpgraded: $permissionsUpgraded, permissionsResult: $permissionsResult, repositorySelection: $repositorySelection, repositoryCount: $repositoryCount, repositories: $repositories, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)'; } 
- }
+          tokenLastUsedAt == other.tokenLastUsedAt;}
+@override int get hashCode {return Object.hash(id, owner, permissionsAdded, permissionsUpgraded, permissionsResult, repositorySelection, repositoryCount, Object.hashAll(repositories ?? const []), createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);}
+@override String toString() {return 'PersonalAccessTokenRequest(id: $id, owner: $owner, permissionsAdded: $permissionsAdded, permissionsUpgraded: $permissionsUpgraded, permissionsResult: $permissionsResult, repositorySelection: $repositorySelection, repositoryCount: $repositoryCount, repositories: $repositories, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';}
+}

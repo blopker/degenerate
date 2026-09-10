@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessRequestsStatus2 {const AccessRequestsStatus2._(this.value);
 
-factory AccessRequestsStatus2.fromJson(String json) { return switch (json) {
+factory AccessRequestsStatus2.fromJson(String json) {return switch (json) {
   'FAILURE' => failure,
   'SUCCESS' => success,
   _ => AccessRequestsStatus2._(json),
-}; }
+};}
 
 static const AccessRequestsStatus2 failure = AccessRequestsStatus2._('FAILURE');
 
@@ -16,11 +16,11 @@ static const List<AccessRequestsStatus2> values = [failure, success];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessRequestsStatus2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessRequestsStatus2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessRequestsStatus2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessRequestsStatus2($value)';}
+}

@@ -4,28 +4,28 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'modify_threa
 /// 
 @immutable final class ModifyThreadRequestToolResources {const ModifyThreadRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
-factory ModifyThreadRequestToolResources.fromJson(Map<String, dynamic> json) { return ModifyThreadRequestToolResources(
+factory ModifyThreadRequestToolResources.fromJson(Map<String, dynamic> json) {return ModifyThreadRequestToolResources(
   codeInterpreter: json['code_interpreter'] != null ? ModifyThreadRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
   fileSearch: json['file_search'] != null ? ModifyThreadRequestToolResourcesFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ModifyThreadRequestToolResourcesCodeInterpreter? codeInterpreter;
 
 final ModifyThreadRequestToolResourcesFileSearch? fileSearch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (codeInterpreter != null) 'code_interpreter': codeInterpreter?.toJson(),
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key)); } 
-ModifyThreadRequestToolResources copyWith({ModifyThreadRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, ModifyThreadRequestToolResourcesFileSearch? Function()? fileSearch, }) { return ModifyThreadRequestToolResources(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key));}
+ModifyThreadRequestToolResources copyWith({ModifyThreadRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, ModifyThreadRequestToolResourcesFileSearch? Function()? fileSearch, }) {return ModifyThreadRequestToolResources(
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ModifyThreadRequestToolResources &&
           codeInterpreter == other.codeInterpreter &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(codeInterpreter, fileSearch); } 
-@override String toString() { return 'ModifyThreadRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)'; } 
- }
+          fileSearch == other.fileSearch;}
+@override int get hashCode {return Object.hash(codeInterpreter, fileSearch);}
+@override String toString() {return 'ModifyThreadRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)';}
+}

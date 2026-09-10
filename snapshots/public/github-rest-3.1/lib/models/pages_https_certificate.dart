@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesHttpsCertificateState {const PagesHttpsCertificateState._(this.value);
 
-factory PagesHttpsCertificateState.fromJson(String json) { return switch (json) {
+factory PagesHttpsCertificateState.fromJson(String json) {return switch (json) {
   'new' => $new,
   'authorization_created' => authorizationCreated,
   'authorization_pending' => authorizationPending,
@@ -16,7 +16,7 @@ factory PagesHttpsCertificateState.fromJson(String json) { return switch (json) 
   'destroy_pending' => destroyPending,
   'dns_changed' => dnsChanged,
   _ => PagesHttpsCertificateState._(json),
-}; }
+};}
 
 static const PagesHttpsCertificateState $new = PagesHttpsCertificateState._('new');
 
@@ -46,22 +46,22 @@ static const List<PagesHttpsCertificateState> values = [$new, authorizationCreat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesHttpsCertificateState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesHttpsCertificateState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesHttpsCertificateState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesHttpsCertificateState($value)';}
+}
 @immutable final class PagesHttpsCertificate {const PagesHttpsCertificate({required this.state, required this.description, required this.domains, this.expiresAt, });
 
-factory PagesHttpsCertificate.fromJson(Map<String, dynamic> json) { return PagesHttpsCertificate(
+factory PagesHttpsCertificate.fromJson(Map<String, dynamic> json) {return PagesHttpsCertificate(
   state: PagesHttpsCertificateState.fromJson(json['state'] as String),
   description: json['description'] as String,
   domains: (json['domains'] as List<dynamic>).map((e) => e as String).toList(),
   expiresAt: json['expires_at'] as String?,
-); }
+);}
 
 final PagesHttpsCertificateState state;
 
@@ -72,27 +72,27 @@ final List<String> domains;
 
 final String? expiresAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'state': state.toJson(),
   'description': description,
   'domains': domains,
   'expires_at': ?expiresAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state') &&
       json.containsKey('description') && json['description'] is String &&
-      json.containsKey('domains'); } 
-PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? description, List<String>? domains, String? Function()? expiresAt, }) { return PagesHttpsCertificate(
+      json.containsKey('domains');}
+PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? description, List<String>? domains, String? Function()? expiresAt, }) {return PagesHttpsCertificate(
   state: state ?? this.state,
   description: description ?? this.description,
   domains: domains ?? this.domains,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesHttpsCertificate &&
           state == other.state &&
           description == other.description &&
           listEquals(domains, other.domains) &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(state, description, Object.hashAll(domains), expiresAt); } 
-@override String toString() { return 'PagesHttpsCertificate(state: $state, description: $description, domains: $domains, expiresAt: $expiresAt)'; } 
- }
+          expiresAt == other.expiresAt;}
+@override int get hashCode {return Object.hash(state, description, Object.hashAll(domains), expiresAt);}
+@override String toString() {return 'PagesHttpsCertificate(state: $state, description: $description, domains: $domains, expiresAt: $expiresAt)';}
+}

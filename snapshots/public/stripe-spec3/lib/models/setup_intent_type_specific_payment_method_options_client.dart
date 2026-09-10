@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_payto.dart';/// Bank account verification method.
 @immutable final class SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod {const SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(this.value);
 
-factory SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(String json) { return switch (json) {
+factory SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   'microdeposits' => microdeposits,
   _ => SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(json),
-}; }
+};}
 
 static const SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod automatic = SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._('automatic');
 
@@ -20,40 +20,40 @@ static const List<SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod($value)';}
+}
 /// 
 @immutable final class SetupIntentTypeSpecificPaymentMethodOptionsClient {const SetupIntentTypeSpecificPaymentMethodOptionsClient({this.mandateOptions, this.verificationMethod, });
 
-factory SetupIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return SetupIntentTypeSpecificPaymentMethodOptionsClient(
+factory SetupIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) {return SetupIntentTypeSpecificPaymentMethodOptionsClient(
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final SetupIntentPaymentMethodOptionsMandateOptionsPayto? mandateOptions;
 
 /// Bank account verification method.
 final SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'verification_method'}.contains(key)); } 
-SetupIntentTypeSpecificPaymentMethodOptionsClient copyWith({SetupIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod? Function()? verificationMethod, }) { return SetupIntentTypeSpecificPaymentMethodOptionsClient(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'verification_method'}.contains(key));}
+SetupIntentTypeSpecificPaymentMethodOptionsClient copyWith({SetupIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod? Function()? verificationMethod, }) {return SetupIntentTypeSpecificPaymentMethodOptionsClient(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntentTypeSpecificPaymentMethodOptionsClient &&
           mandateOptions == other.mandateOptions &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(mandateOptions, verificationMethod); } 
-@override String toString() { return 'SetupIntentTypeSpecificPaymentMethodOptionsClient(mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(mandateOptions, verificationMethod);}
+@override String toString() {return 'SetupIntentTypeSpecificPaymentMethodOptionsClient(mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)';}
+}

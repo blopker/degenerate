@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats {const GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats({this.concealmentEvents, this.jitter, this.packetsLost, this.quality, this.timestamp, });
 
-factory GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats.fromJson(Map<String, dynamic> json) { return GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats(
+factory GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats.fromJson(Map<String, dynamic> json) {return GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats(
   concealmentEvents: json['concealment_events'] != null ? (json['concealment_events'] as num).toDouble() : null,
   jitter: json['jitter'] != null ? (json['jitter'] as num).toDouble() : null,
   packetsLost: json['packets_lost'] != null ? (json['packets_lost'] as num).toDouble() : null,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
   timestamp: json['timestamp'] as String?,
-); }
+);}
 
 final double? concealmentEvents;
 
@@ -20,28 +20,28 @@ final double? quality;
 
 final String? timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'concealment_events': ?concealmentEvents,
   'jitter': ?jitter,
   'packets_lost': ?packetsLost,
   'quality': ?quality,
   'timestamp': ?timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'concealment_events', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key)); } 
-GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats copyWith({double? Function()? concealmentEvents, double? Function()? jitter, double? Function()? packetsLost, double? Function()? quality, String? Function()? timestamp, }) { return GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'concealment_events', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key));}
+GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats copyWith({double? Function()? concealmentEvents, double? Function()? jitter, double? Function()? packetsLost, double? Function()? quality, String? Function()? timestamp, }) {return GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats(
   concealmentEvents: concealmentEvents != null ? concealmentEvents() : this.concealmentEvents,
   jitter: jitter != null ? jitter() : this.jitter,
   packetsLost: packetsLost != null ? packetsLost() : this.packetsLost,
   quality: quality != null ? quality() : this.quality,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats &&
           concealmentEvents == other.concealmentEvents &&
           jitter == other.jitter &&
           packetsLost == other.packetsLost &&
           quality == other.quality &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(concealmentEvents, jitter, packetsLost, quality, timestamp); } 
-@override String toString() { return 'GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats(concealmentEvents: $concealmentEvents, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)'; } 
- }
+          timestamp == other.timestamp;}
+@override int get hashCode {return Object.hash(concealmentEvents, jitter, packetsLost, quality, timestamp);}
+@override String toString() {return 'GetParticipantDetailsResponseDataParticipantQualityStatsAudioStats(concealmentEvents: $concealmentEvents, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)';}
+}

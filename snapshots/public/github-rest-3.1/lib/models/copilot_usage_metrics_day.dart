@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_dotcom_chat.dart';import 'copilot_dotcom_pull_requests.dart';import 'copilot_ide_chat.dart';import 'copilot_ide_code_completions.dart';/// Copilot usage metrics for a given day.
 @immutable final class CopilotUsageMetricsDay {const CopilotUsageMetricsDay({required this.date, this.totalActiveUsers, this.totalEngagedUsers, this.copilotIdeCodeCompletions = const Omittable.absent(), this.copilotIdeChat = const Omittable.absent(), this.copilotDotcomChat = const Omittable.absent(), this.copilotDotcomPullRequests = const Omittable.absent(), this.additionalProperties = const {}, });
 
-factory CopilotUsageMetricsDay.fromJson(Map<String, dynamic> json) { return CopilotUsageMetricsDay(
+factory CopilotUsageMetricsDay.fromJson(Map<String, dynamic> json) {return CopilotUsageMetricsDay(
   date: json['date'] as String,
   totalActiveUsers: json['total_active_users'] != null ? (json['total_active_users'] as num).toInt() : null,
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
@@ -12,7 +12,7 @@ factory CopilotUsageMetricsDay.fromJson(Map<String, dynamic> json) { return Copi
   copilotDotcomChat: json.containsKey('copilot_dotcom_chat') ? Omittable(json['copilot_dotcom_chat'] != null ? CopilotDotcomChat.fromJson(json['copilot_dotcom_chat'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   copilotDotcomPullRequests: json.containsKey('copilot_dotcom_pull_requests') ? Omittable(json['copilot_dotcom_pull_requests'] != null ? CopilotDotcomPullRequests.fromJson(json['copilot_dotcom_pull_requests'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'date', 'total_active_users', 'total_engaged_users', 'copilot_ide_code_completions', 'copilot_ide_chat', 'copilot_dotcom_chat', 'copilot_dotcom_pull_requests'}.contains(e.key))),
-); }
+);}
 
 /// The date for which the usage metrics are aggregated, in `YYYY-MM-DD` format.
 final String date;
@@ -33,7 +33,7 @@ final Omittable<CopilotDotcomPullRequests?> copilotDotcomPullRequests;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'date': date,
   'total_active_users': ?totalActiveUsers,
   'total_engaged_users': ?totalEngagedUsers,
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (copilotDotcomChat.isPresent) 'copilot_dotcom_chat': copilotDotcomChat.value?.toJson(),
   if (copilotDotcomPullRequests.isPresent) 'copilot_dotcom_pull_requests': copilotDotcomPullRequests.value?.toJson(),
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String; } 
-CopilotUsageMetricsDay copyWith({String? date, int? Function()? totalActiveUsers, int? Function()? totalEngagedUsers, Omittable<CopilotIdeCodeCompletions?>? copilotIdeCodeCompletions, Omittable<CopilotIdeChat?>? copilotIdeChat, Omittable<CopilotDotcomChat?>? copilotDotcomChat, Omittable<CopilotDotcomPullRequests?>? copilotDotcomPullRequests, Map<String, dynamic>? additionalProperties, }) { return CopilotUsageMetricsDay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('date') && json['date'] is String;}
+CopilotUsageMetricsDay copyWith({String? date, int? Function()? totalActiveUsers, int? Function()? totalEngagedUsers, Omittable<CopilotIdeCodeCompletions?>? copilotIdeCodeCompletions, Omittable<CopilotIdeChat?>? copilotIdeChat, Omittable<CopilotDotcomChat?>? copilotDotcomChat, Omittable<CopilotDotcomPullRequests?>? copilotDotcomPullRequests, Map<String, dynamic>? additionalProperties, }) {return CopilotUsageMetricsDay(
   date: date ?? this.date,
   totalActiveUsers: totalActiveUsers != null ? totalActiveUsers() : this.totalActiveUsers,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
@@ -53,8 +53,8 @@ CopilotUsageMetricsDay copyWith({String? date, int? Function()? totalActiveUsers
   copilotDotcomChat: copilotDotcomChat ?? this.copilotDotcomChat,
   copilotDotcomPullRequests: copilotDotcomPullRequests ?? this.copilotDotcomPullRequests,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotUsageMetricsDay &&
           date == other.date &&
           totalActiveUsers == other.totalActiveUsers &&
@@ -63,7 +63,7 @@ CopilotUsageMetricsDay copyWith({String? date, int? Function()? totalActiveUsers
           copilotIdeChat == other.copilotIdeChat &&
           copilotDotcomChat == other.copilotDotcomChat &&
           copilotDotcomPullRequests == other.copilotDotcomPullRequests &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(date, totalActiveUsers, totalEngagedUsers, copilotIdeCodeCompletions, copilotIdeChat, copilotDotcomChat, copilotDotcomPullRequests, mapHash(additionalProperties)); } 
-@override String toString() { return 'CopilotUsageMetricsDay(date: $date, totalActiveUsers: $totalActiveUsers, totalEngagedUsers: $totalEngagedUsers, copilotIdeCodeCompletions: $copilotIdeCodeCompletions, copilotIdeChat: $copilotIdeChat, copilotDotcomChat: $copilotDotcomChat, copilotDotcomPullRequests: $copilotDotcomPullRequests, additionalProperties: $additionalProperties)'; } 
- }
+          mapEquals(additionalProperties, other.additionalProperties);}
+@override int get hashCode {return Object.hash(date, totalActiveUsers, totalEngagedUsers, copilotIdeCodeCompletions, copilotIdeChat, copilotDotcomChat, copilotDotcomPullRequests, mapHash(additionalProperties));}
+@override String toString() {return 'CopilotUsageMetricsDay(date: $date, totalActiveUsers: $totalActiveUsers, totalEngagedUsers: $totalEngagedUsers, copilotIdeCodeCompletions: $copilotIdeCodeCompletions, copilotIdeChat: $copilotIdeChat, copilotDotcomChat: $copilotDotcomChat, copilotDotcomPullRequests: $copilotDotcomPullRequests, additionalProperties: $additionalProperties)';}
+}

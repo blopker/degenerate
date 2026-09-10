@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enterprise on GitHub.
 @immutable final class Enterprise {const Enterprise({required this.htmlUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, this.description = const Omittable.absent(), this.websiteUrl = const Omittable.absent(), });
 
-factory Enterprise.fromJson(Map<String, dynamic> json) { return Enterprise(
+factory Enterprise.fromJson(Map<String, dynamic> json) {return Enterprise(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: Uri.parse(json['html_url'] as String),
   websiteUrl: json.containsKey('website_url') ? Omittable(json['website_url'] != null ? Uri.parse(json['website_url'] as String) : null) : const Omittable.absent(),
@@ -14,7 +14,7 @@ factory Enterprise.fromJson(Map<String, dynamic> json) { return Enterprise(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   avatarUrl: Uri.parse(json['avatar_url'] as String),
-); }
+);}
 
 /// A short description of the enterprise.
 final Omittable<String?> description;
@@ -41,7 +41,7 @@ final DateTime? updatedAt;
 
 final Uri avatarUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value,
   'html_url': htmlUrl.toString(),
   if (websiteUrl.isPresent) 'website_url': websiteUrl.value?.toString(),
@@ -52,16 +52,16 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt?.toIso8601String(),
   'updated_at': updatedAt?.toIso8601String(),
   'avatar_url': avatarUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_url') && json['html_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
-      json.containsKey('avatar_url') && json['avatar_url'] is String; } 
-Enterprise copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Uri?>? websiteUrl, int? id, String? nodeId, String? name, String? slug, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? avatarUrl, }) { return Enterprise(
+      json.containsKey('avatar_url') && json['avatar_url'] is String;}
+Enterprise copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Uri?>? websiteUrl, int? id, String? nodeId, String? name, String? slug, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? avatarUrl, }) {return Enterprise(
   description: description ?? this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   websiteUrl: websiteUrl ?? this.websiteUrl,
@@ -72,8 +72,8 @@ Enterprise copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Ur
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   avatarUrl: avatarUrl ?? this.avatarUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Enterprise &&
           description == other.description &&
           htmlUrl == other.htmlUrl &&
@@ -84,7 +84,7 @@ Enterprise copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Ur
           slug == other.slug &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          avatarUrl == other.avatarUrl; } 
-@override int get hashCode { return Object.hash(description, htmlUrl, websiteUrl, id, nodeId, name, slug, createdAt, updatedAt, avatarUrl); } 
-@override String toString() { return 'Enterprise(description: $description, htmlUrl: $htmlUrl, websiteUrl: $websiteUrl, id: $id, nodeId: $nodeId, name: $name, slug: $slug, createdAt: $createdAt, updatedAt: $updatedAt, avatarUrl: $avatarUrl)'; } 
- }
+          avatarUrl == other.avatarUrl;}
+@override int get hashCode {return Object.hash(description, htmlUrl, websiteUrl, id, nodeId, name, slug, createdAt, updatedAt, avatarUrl);}
+@override String toString() {return 'Enterprise(description: $description, htmlUrl: $htmlUrl, websiteUrl: $websiteUrl, id: $id, nodeId: $nodeId, name: $name, slug: $slug, createdAt: $createdAt, updatedAt: $updatedAt, avatarUrl: $avatarUrl)';}
+}

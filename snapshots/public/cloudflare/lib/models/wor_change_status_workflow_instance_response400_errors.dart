@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorChangeStatusWorkflowInstanceResponse400Errors {const WorChangeStatusWorkflowInstanceResponse400Errors({required this.code, required this.message, });
 
-factory WorChangeStatusWorkflowInstanceResponse400Errors.fromJson(Map<String, dynamic> json) { return WorChangeStatusWorkflowInstanceResponse400Errors(
+factory WorChangeStatusWorkflowInstanceResponse400Errors.fromJson(Map<String, dynamic> json) {return WorChangeStatusWorkflowInstanceResponse400Errors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 final double code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-WorChangeStatusWorkflowInstanceResponse400Errors copyWith({double? code, String? message, }) { return WorChangeStatusWorkflowInstanceResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+WorChangeStatusWorkflowInstanceResponse400Errors copyWith({double? code, String? message, }) {return WorChangeStatusWorkflowInstanceResponse400Errors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorChangeStatusWorkflowInstanceResponse400Errors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'WorChangeStatusWorkflowInstanceResponse400Errors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'WorChangeStatusWorkflowInstanceResponse400Errors(code: $code, message: $message)';}
+}

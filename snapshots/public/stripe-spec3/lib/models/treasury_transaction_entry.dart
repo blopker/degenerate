@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_transaction_entry_transaction.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow associated with the TransactionEntry.
 @immutable final class TreasuryTransactionEntryFlowType {const TreasuryTransactionEntryFlowType._(this.value);
 
-factory TreasuryTransactionEntryFlowType.fromJson(String json) { return switch (json) {
+factory TreasuryTransactionEntryFlowType.fromJson(String json) {return switch (json) {
   'credit_reversal' => creditReversal,
   'debit_reversal' => debitReversal,
   'inbound_transfer' => inboundTransfer,
@@ -14,7 +14,7 @@ factory TreasuryTransactionEntryFlowType.fromJson(String json) { return switch (
   'received_credit' => receivedCredit,
   'received_debit' => receivedDebit,
   _ => TreasuryTransactionEntryFlowType._(json),
-}; }
+};}
 
 static const TreasuryTransactionEntryFlowType creditReversal = TreasuryTransactionEntryFlowType._('credit_reversal');
 
@@ -38,21 +38,21 @@ static const List<TreasuryTransactionEntryFlowType> values = [creditReversal, de
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionEntryFlowType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionEntryFlowType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryTransactionEntryFlowType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryTransactionEntryFlowType($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryTransactionEntryObject {const TreasuryTransactionEntryObject._(this.value);
 
-factory TreasuryTransactionEntryObject.fromJson(String json) { return switch (json) {
+factory TreasuryTransactionEntryObject.fromJson(String json) {return switch (json) {
   'treasury.transaction_entry' => treasuryTransactionEntry,
   _ => TreasuryTransactionEntryObject._(json),
-}; }
+};}
 
 static const TreasuryTransactionEntryObject treasuryTransactionEntry = TreasuryTransactionEntryObject._('treasury.transaction_entry');
 
@@ -60,18 +60,18 @@ static const List<TreasuryTransactionEntryObject> values = [treasuryTransactionE
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionEntryObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionEntryObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryTransactionEntryObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryTransactionEntryObject($value)';}
+}
 /// The specific money movement that generated the TransactionEntry.
 @immutable final class TreasuryTransactionEntryType {const TreasuryTransactionEntryType._(this.value);
 
-factory TreasuryTransactionEntryType.fromJson(String json) { return switch (json) {
+factory TreasuryTransactionEntryType.fromJson(String json) {return switch (json) {
   'credit_reversal' => creditReversal,
   'credit_reversal_posting' => creditReversalPosting,
   'debit_reversal' => debitReversal,
@@ -93,7 +93,7 @@ factory TreasuryTransactionEntryType.fromJson(String json) { return switch (json
   'received_credit' => receivedCredit,
   'received_debit' => receivedDebit,
   _ => TreasuryTransactionEntryType._(json),
-}; }
+};}
 
 static const TreasuryTransactionEntryType creditReversal = TreasuryTransactionEntryType._('credit_reversal');
 
@@ -139,18 +139,18 @@ static const List<TreasuryTransactionEntryType> values = [creditReversal, credit
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionEntryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryTransactionEntryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryTransactionEntryType($value)';}
+}
 /// TransactionEntries represent individual units of money movements within a single [Transaction](https://api.stripe.com#transactions).
 @immutable final class TreasuryTransactionEntry {const TreasuryTransactionEntry({required this.balanceImpact, required this.created, required this.currency, required this.effectiveAt, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.transaction, required this.type, this.flow = const Omittable.absent(), this.flowDetails = const Omittable.absent(), });
 
-factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return TreasuryTransactionEntry(
+factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) {return TreasuryTransactionEntry(
   balanceImpact: TreasuryTransactionsResourceBalanceImpact.fromJson(json['balance_impact'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -164,7 +164,7 @@ factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return Tr
   object: TreasuryTransactionEntryObject.fromJson(json['object'] as String),
   transaction: TreasuryTransactionEntryTransaction.fromJson(json['transaction']),
   type: TreasuryTransactionEntryType.fromJson(json['type'] as String),
-); }
+);}
 
 final TreasuryTransactionsResourceBalanceImpact balanceImpact;
 
@@ -204,7 +204,7 @@ final TreasuryTransactionEntryTransaction transaction;
 /// The specific money movement that generated the TransactionEntry.
 final TreasuryTransactionEntryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'balance_impact': balanceImpact.toJson(),
   'created': created,
   'currency': currency,
@@ -218,8 +218,8 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'transaction': transaction.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('balance_impact') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('balance_impact') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('effective_at') && json['effective_at'] is num &&
@@ -229,8 +229,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('transaction') &&
-      json.containsKey('type'); } 
-TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, Omittable<String?>? flow, Omittable<TreasuryTransactionsResourceFlowDetails?>? flowDetails, TreasuryTransactionEntryFlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryTransactionEntryTransaction? transaction, TreasuryTransactionEntryType? type, }) { return TreasuryTransactionEntry(
+      json.containsKey('type');}
+TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, Omittable<String?>? flow, Omittable<TreasuryTransactionsResourceFlowDetails?>? flowDetails, TreasuryTransactionEntryFlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryTransactionEntryTransaction? transaction, TreasuryTransactionEntryType? type, }) {return TreasuryTransactionEntry(
   balanceImpact: balanceImpact ?? this.balanceImpact,
   created: created ?? this.created,
   currency: currency ?? this.currency,
@@ -244,8 +244,8 @@ TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? ba
   object: object ?? this.object,
   transaction: transaction ?? this.transaction,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryTransactionEntry &&
           balanceImpact == other.balanceImpact &&
           created == other.created &&
@@ -259,7 +259,7 @@ TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? ba
           livemode == other.livemode &&
           object == other.object &&
           transaction == other.transaction &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(balanceImpact, created, currency, effectiveAt, financialAccount, flow, flowDetails, flowType, id, livemode, object, transaction, type); } 
-@override String toString() { return 'TreasuryTransactionEntry(balanceImpact: $balanceImpact, created: $created, currency: $currency, effectiveAt: $effectiveAt, financialAccount: $financialAccount, flow: $flow, flowDetails: $flowDetails, flowType: $flowType, id: $id, livemode: $livemode, object: $object, transaction: $transaction, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(balanceImpact, created, currency, effectiveAt, financialAccount, flow, flowDetails, flowType, id, livemode, object, transaction, type);}
+@override String toString() {return 'TreasuryTransactionEntry(balanceImpact: $balanceImpact, created: $created, currency: $currency, effectiveAt: $effectiveAt, financialAccount: $financialAccount, flow: $flow, flowDetails: $flowDetails, flowType: $flowType, id: $id, livemode: $livemode, object: $object, transaction: $transaction, type: $type)';}
+}

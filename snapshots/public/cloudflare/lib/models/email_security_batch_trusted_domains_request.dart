@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_trusted_domains_request_deletes.dart';import 'email_security_batch_trusted_domains_request_patches.dart';import 'email_security_batch_trusted_domains_request_puts.dart';import 'email_security_create_trusted_domain.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequest {const EmailSecurityBatchTrustedDomainsRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
 
-factory EmailSecurityBatchTrustedDomainsRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchTrustedDomainsRequest(
+factory EmailSecurityBatchTrustedDomainsRequest.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchTrustedDomainsRequest(
   deletes: (json['deletes'] as List<dynamic>).map((e) => EmailSecurityBatchTrustedDomainsRequestDeletes.fromJson(e as Map<String, dynamic>)).toList(),
   patches: (json['patches'] as List<dynamic>).map((e) => EmailSecurityBatchTrustedDomainsRequestPatches.fromJson(e as Map<String, dynamic>)).toList(),
   posts: (json['posts'] as List<dynamic>).map((e) => EmailSecurityCreateTrustedDomain.fromJson(e as Map<String, dynamic>)).toList(),
   puts: (json['puts'] as List<dynamic>).map((e) => EmailSecurityBatchTrustedDomainsRequestPuts.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<EmailSecurityBatchTrustedDomainsRequestDeletes> deletes;
 
@@ -17,28 +17,28 @@ final List<EmailSecurityCreateTrustedDomain> posts;
 
 final List<EmailSecurityBatchTrustedDomainsRequestPuts> puts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deletes': deletes.map((e) => e.toJson()).toList(),
   'patches': patches.map((e) => e.toJson()).toList(),
   'posts': posts.map((e) => e.toJson()).toList(),
   'puts': puts.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deletes') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deletes') &&
       json.containsKey('patches') &&
       json.containsKey('posts') &&
-      json.containsKey('puts'); } 
-EmailSecurityBatchTrustedDomainsRequest copyWith({List<EmailSecurityBatchTrustedDomainsRequestDeletes>? deletes, List<EmailSecurityBatchTrustedDomainsRequestPatches>? patches, List<EmailSecurityCreateTrustedDomain>? posts, List<EmailSecurityBatchTrustedDomainsRequestPuts>? puts, }) { return EmailSecurityBatchTrustedDomainsRequest(
+      json.containsKey('puts');}
+EmailSecurityBatchTrustedDomainsRequest copyWith({List<EmailSecurityBatchTrustedDomainsRequestDeletes>? deletes, List<EmailSecurityBatchTrustedDomainsRequestPatches>? patches, List<EmailSecurityCreateTrustedDomain>? posts, List<EmailSecurityBatchTrustedDomainsRequestPuts>? puts, }) {return EmailSecurityBatchTrustedDomainsRequest(
   deletes: deletes ?? this.deletes,
   patches: patches ?? this.patches,
   posts: posts ?? this.posts,
   puts: puts ?? this.puts,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityBatchTrustedDomainsRequest &&
           listEquals(deletes, other.deletes) &&
           listEquals(patches, other.patches) &&
           listEquals(posts, other.posts) &&
-          listEquals(puts, other.puts); } 
-@override int get hashCode { return Object.hash(Object.hashAll(deletes), Object.hashAll(patches), Object.hashAll(posts), Object.hashAll(puts)); } 
-@override String toString() { return 'EmailSecurityBatchTrustedDomainsRequest(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)'; } 
- }
+          listEquals(puts, other.puts);}
+@override int get hashCode {return Object.hash(Object.hashAll(deletes), Object.hashAll(patches), Object.hashAll(posts), Object.hashAll(puts));}
+@override String toString() {return 'EmailSecurityBatchTrustedDomainsRequest(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.
 @immutable final class LogpushOutputOptionsOutputType {const LogpushOutputOptionsOutputType._(this.value);
 
-factory LogpushOutputOptionsOutputType.fromJson(String json) { return switch (json) {
+factory LogpushOutputOptionsOutputType.fromJson(String json) {return switch (json) {
   'ndjson' => ndjson,
   'csv' => csv,
   _ => LogpushOutputOptionsOutputType._(json),
-}; }
+};}
 
 static const LogpushOutputOptionsOutputType ndjson = LogpushOutputOptionsOutputType._('ndjson');
 
@@ -17,24 +17,24 @@ static const List<LogpushOutputOptionsOutputType> values = [ndjson, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LogpushOutputOptionsOutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LogpushOutputOptionsOutputType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LogpushOutputOptionsOutputType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LogpushOutputOptionsOutputType($value)';}
+}
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
 @immutable final class LogpushOutputOptionsTimestampFormat {const LogpushOutputOptionsTimestampFormat._(this.value);
 
-factory LogpushOutputOptionsTimestampFormat.fromJson(String json) { return switch (json) {
+factory LogpushOutputOptionsTimestampFormat.fromJson(String json) {return switch (json) {
   'unixnano' => unixnano,
   'unix' => unix,
   'rfc3339' => rfc3339,
   'rfc3339nano' => rfc3339nano,
   _ => LogpushOutputOptionsTimestampFormat._(json),
-}; }
+};}
 
 static const LogpushOutputOptionsTimestampFormat unixnano = LogpushOutputOptionsTimestampFormat._('unixnano');
 
@@ -48,18 +48,18 @@ static const List<LogpushOutputOptionsTimestampFormat> values = [unixnano, unix,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LogpushOutputOptionsTimestampFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LogpushOutputOptionsTimestampFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LogpushOutputOptionsTimestampFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LogpushOutputOptionsTimestampFormat($value)';}
+}
 /// The structured replacement for `logpull_options`. When including this field, the `logpull_option` field will be ignored.
 @immutable final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228 = const Omittable.absent(), this.batchPrefix = const Omittable.absent(), this.batchSuffix = const Omittable.absent(), this.fieldDelimiter = const Omittable.absent(), this.fieldNames, this.outputType, this.recordDelimiter = const Omittable.absent(), this.recordPrefix = const Omittable.absent(), this.recordSuffix = const Omittable.absent(), this.recordTemplate = const Omittable.absent(), this.sampleRate = const Omittable.absent(), this.timestampFormat, });
 
-factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) { return LogpushOutputOptions(
+factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) {return LogpushOutputOptions(
   cve202144228: json.containsKey('CVE-2021-44228') ? Omittable(json['CVE-2021-44228'] as bool?) : const Omittable.absent(),
   batchPrefix: json.containsKey('batch_prefix') ? Omittable(json['batch_prefix'] as String?) : const Omittable.absent(),
   batchSuffix: json.containsKey('batch_suffix') ? Omittable(json['batch_suffix'] as String?) : const Omittable.absent(),
@@ -72,7 +72,7 @@ factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) { return Logpus
   recordTemplate: json.containsKey('record_template') ? Omittable(json['record_template'] as String?) : const Omittable.absent(),
   sampleRate: json.containsKey('sample_rate') ? Omittable(json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null) : const Omittable.absent(),
   timestampFormat: json['timestamp_format'] != null ? LogpushOutputOptionsTimestampFormat.fromJson(json['timestamp_format'] as String) : null,
-); }
+);}
 
 /// If set to true, will cause all occurrences of `${` in the generated files to be replaced with `x{`.
 final Omittable<bool?> cve202144228;
@@ -110,7 +110,7 @@ final Omittable<double?> sampleRate;
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
 final LogpushOutputOptionsTimestampFormat? timestampFormat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cve202144228.isPresent) 'CVE-2021-44228': cve202144228.value,
   if (batchPrefix.isPresent) 'batch_prefix': batchPrefix.value,
   if (batchSuffix.isPresent) 'batch_suffix': batchSuffix.value,
@@ -123,9 +123,9 @@ Map<String, dynamic> toJson() { return {
   if (recordTemplate.isPresent) 'record_template': recordTemplate.value,
   if (sampleRate.isPresent) 'sample_rate': sampleRate.value,
   if (timestampFormat != null) 'timestamp_format': timestampFormat?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key)); } 
-LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?>? batchPrefix, Omittable<String?>? batchSuffix, Omittable<String?>? fieldDelimiter, List<String>? Function()? fieldNames, LogpushOutputOptionsOutputType? Function()? outputType, Omittable<String?>? recordDelimiter, Omittable<String?>? recordPrefix, Omittable<String?>? recordSuffix, Omittable<String?>? recordTemplate, Omittable<double?>? sampleRate, LogpushOutputOptionsTimestampFormat? Function()? timestampFormat, }) { return LogpushOutputOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key));}
+LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?>? batchPrefix, Omittable<String?>? batchSuffix, Omittable<String?>? fieldDelimiter, List<String>? Function()? fieldNames, LogpushOutputOptionsOutputType? Function()? outputType, Omittable<String?>? recordDelimiter, Omittable<String?>? recordPrefix, Omittable<String?>? recordSuffix, Omittable<String?>? recordTemplate, Omittable<double?>? sampleRate, LogpushOutputOptionsTimestampFormat? Function()? timestampFormat, }) {return LogpushOutputOptions(
   cve202144228: cve202144228 ?? this.cve202144228,
   batchPrefix: batchPrefix ?? this.batchPrefix,
   batchSuffix: batchSuffix ?? this.batchSuffix,
@@ -138,8 +138,8 @@ LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?
   recordTemplate: recordTemplate ?? this.recordTemplate,
   sampleRate: sampleRate ?? this.sampleRate,
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LogpushOutputOptions &&
           cve202144228 == other.cve202144228 &&
           batchPrefix == other.batchPrefix &&
@@ -152,7 +152,7 @@ LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?
           recordSuffix == other.recordSuffix &&
           recordTemplate == other.recordTemplate &&
           sampleRate == other.sampleRate &&
-          timestampFormat == other.timestampFormat; } 
-@override int get hashCode { return Object.hash(cve202144228, batchPrefix, batchSuffix, fieldDelimiter, Object.hashAll(fieldNames ?? const []), outputType, recordDelimiter, recordPrefix, recordSuffix, recordTemplate, sampleRate, timestampFormat); } 
-@override String toString() { return 'LogpushOutputOptions(cve202144228: $cve202144228, batchPrefix: $batchPrefix, batchSuffix: $batchSuffix, fieldDelimiter: $fieldDelimiter, fieldNames: $fieldNames, outputType: $outputType, recordDelimiter: $recordDelimiter, recordPrefix: $recordPrefix, recordSuffix: $recordSuffix, recordTemplate: $recordTemplate, sampleRate: $sampleRate, timestampFormat: $timestampFormat)'; } 
- }
+          timestampFormat == other.timestampFormat;}
+@override int get hashCode {return Object.hash(cve202144228, batchPrefix, batchSuffix, fieldDelimiter, Object.hashAll(fieldNames ?? const []), outputType, recordDelimiter, recordPrefix, recordSuffix, recordTemplate, sampleRate, timestampFormat);}
+@override String toString() {return 'LogpushOutputOptions(cve202144228: $cve202144228, batchPrefix: $batchPrefix, batchSuffix: $batchSuffix, fieldDelimiter: $fieldDelimiter, fieldNames: $fieldNames, outputType: $outputType, recordDelimiter: $recordDelimiter, recordPrefix: $recordPrefix, recordSuffix: $recordSuffix, recordTemplate: $recordTemplate, sampleRate: $sampleRate, timestampFormat: $timestampFormat)';}
+}

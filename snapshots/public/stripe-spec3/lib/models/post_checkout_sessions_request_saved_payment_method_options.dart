@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters._(this.value);
 
-factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters always = PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters._('always');
 
@@ -19,21 +19,21 @@ static const List<PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedis
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove._(this.value);
 
-factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove disabled = PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove._('disabled');
 
@@ -43,21 +43,21 @@ static const List<PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave._(this.value);
 
-factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave disabled = PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave._('disabled');
 
@@ -67,22 +67,22 @@ static const List<PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave($value)';}
+}
 /// Controls saved payment method settings for the session. Only available in `payment` and `subscription` mode.
 @immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptions {const PostCheckoutSessionsRequestSavedPaymentMethodOptions({this.allowRedisplayFilters, this.paymentMethodRemove, this.paymentMethodSave, });
 
-factory PostCheckoutSessionsRequestSavedPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSavedPaymentMethodOptions(
+factory PostCheckoutSessionsRequestSavedPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestSavedPaymentMethodOptions(
   allowRedisplayFilters: (json['allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(e as String)).toList(),
   paymentMethodRemove: json['payment_method_remove'] != null ? PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove.fromJson(json['payment_method_remove'] as String) : null,
   paymentMethodSave: json['payment_method_save'] != null ? PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave.fromJson(json['payment_method_save'] as String) : null,
-); }
+);}
 
 final List<PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters>? allowRedisplayFilters;
 
@@ -90,22 +90,22 @@ final PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove? p
 
 final PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave? paymentMethodSave;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowRedisplayFilters != null) 'allow_redisplay_filters': allowRedisplayFilters?.map((e) => e.toJson()).toList(),
   if (paymentMethodRemove != null) 'payment_method_remove': paymentMethodRemove?.toJson(),
   if (paymentMethodSave != null) 'payment_method_save': paymentMethodSave?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay_filters', 'payment_method_remove', 'payment_method_save'}.contains(key)); } 
-PostCheckoutSessionsRequestSavedPaymentMethodOptions copyWith({List<PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters>? Function()? allowRedisplayFilters, PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove? Function()? paymentMethodRemove, PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave? Function()? paymentMethodSave, }) { return PostCheckoutSessionsRequestSavedPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_redisplay_filters', 'payment_method_remove', 'payment_method_save'}.contains(key));}
+PostCheckoutSessionsRequestSavedPaymentMethodOptions copyWith({List<PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters>? Function()? allowRedisplayFilters, PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove? Function()? paymentMethodRemove, PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave? Function()? paymentMethodSave, }) {return PostCheckoutSessionsRequestSavedPaymentMethodOptions(
   allowRedisplayFilters: allowRedisplayFilters != null ? allowRedisplayFilters() : this.allowRedisplayFilters,
   paymentMethodRemove: paymentMethodRemove != null ? paymentMethodRemove() : this.paymentMethodRemove,
   paymentMethodSave: paymentMethodSave != null ? paymentMethodSave() : this.paymentMethodSave,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestSavedPaymentMethodOptions &&
           listEquals(allowRedisplayFilters, other.allowRedisplayFilters) &&
           paymentMethodRemove == other.paymentMethodRemove &&
-          paymentMethodSave == other.paymentMethodSave; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowRedisplayFilters ?? const []), paymentMethodRemove, paymentMethodSave); } 
-@override String toString() { return 'PostCheckoutSessionsRequestSavedPaymentMethodOptions(allowRedisplayFilters: $allowRedisplayFilters, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave)'; } 
- }
+          paymentMethodSave == other.paymentMethodSave;}
+@override int get hashCode {return Object.hash(Object.hashAll(allowRedisplayFilters ?? const []), paymentMethodRemove, paymentMethodSave);}
+@override String toString() {return 'PostCheckoutSessionsRequestSavedPaymentMethodOptions(allowRedisplayFilters: $allowRedisplayFilters, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave)';}
+}

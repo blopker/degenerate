@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_response_audio.dart';import 'realtime_response_max_output_tokens.dart';import 'realtime_response_status_details.dart';import 'realtime_response_usage.dart';/// The object type, must be `realtime.response`.
 @immutable final class RealtimeResponseObject {const RealtimeResponseObject._(this.value);
 
-factory RealtimeResponseObject.fromJson(String json) { return switch (json) {
+factory RealtimeResponseObject.fromJson(String json) {return switch (json) {
   'realtime.response' => realtimeResponse,
   _ => RealtimeResponseObject._(json),
-}; }
+};}
 
 static const RealtimeResponseObject realtimeResponse = RealtimeResponseObject._('realtime.response');
 
@@ -14,27 +14,27 @@ static const List<RealtimeResponseObject> values = [realtimeResponse];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeResponseObject($value)';}
+}
 /// The final status of the response (`completed`, `cancelled`, `failed`, or
 /// `incomplete`, `in_progress`).
 /// 
 @immutable final class RealtimeResponseStatus {const RealtimeResponseStatus._(this.value);
 
-factory RealtimeResponseStatus.fromJson(String json) { return switch (json) {
+factory RealtimeResponseStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'cancelled' => cancelled,
   'failed' => failed,
   'incomplete' => incomplete,
   'in_progress' => inProgress,
   _ => RealtimeResponseStatus._(json),
-}; }
+};}
 
 static const RealtimeResponseStatus completed = RealtimeResponseStatus._('completed');
 
@@ -50,21 +50,21 @@ static const List<RealtimeResponseStatus> values = [completed, cancelled, failed
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeResponseStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeResponseStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeResponseStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeResponseStatus($value)';}
+}
 @immutable final class RealtimeResponseOutputModalities {const RealtimeResponseOutputModalities._(this.value);
 
-factory RealtimeResponseOutputModalities.fromJson(String json) { return switch (json) {
+factory RealtimeResponseOutputModalities.fromJson(String json) {return switch (json) {
   'text' => text,
   'audio' => audio,
   _ => RealtimeResponseOutputModalities._(json),
-}; }
+};}
 
 static const RealtimeResponseOutputModalities text = RealtimeResponseOutputModalities._('text');
 
@@ -74,18 +74,18 @@ static const List<RealtimeResponseOutputModalities> values = [text, audio];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeResponseOutputModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeResponseOutputModalities($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeResponseOutputModalities && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeResponseOutputModalities($value)';}
+}
 /// The response resource.
 @immutable final class RealtimeResponse {const RealtimeResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata = const Omittable.absent(), this.audio, this.usage, this.conversationId, this.outputModalities, this.maxOutputTokens, });
 
-factory RealtimeResponse.fromJson(Map<String, dynamic> json) { return RealtimeResponse(
+factory RealtimeResponse.fromJson(Map<String, dynamic> json) {return RealtimeResponse(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeResponseObject.fromJson(json['object'] as String) : null,
   status: json['status'] != null ? RealtimeResponseStatus.fromJson(json['status'] as String) : null,
@@ -97,7 +97,7 @@ factory RealtimeResponse.fromJson(Map<String, dynamic> json) { return RealtimeRe
   conversationId: json['conversation_id'] as String?,
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeResponseOutputModalities.fromJson(e as String)).toList(),
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeResponseMaxOutputTokensVariant2.fromJson(v as String),) : null,
-); }
+);}
 
 /// The unique ID of the response, will look like `resp_1234`.
 final String? id;
@@ -155,7 +155,7 @@ final List<RealtimeResponseOutputModalities>? outputModalities;
 /// 
 final RealtimeResponseMaxOutputTokens? maxOutputTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
   if (status != null) 'status': status?.toJson(),
@@ -167,9 +167,9 @@ Map<String, dynamic> toJson() { return {
   'conversation_id': ?conversationId,
   if (outputModalities != null) 'output_modalities': outputModalities?.map((e) => e.toJson()).toList(),
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'audio', 'usage', 'conversation_id', 'output_modalities', 'max_output_tokens'}.contains(key)); } 
-RealtimeResponse copyWith({String? Function()? id, RealtimeResponseObject? Function()? object, RealtimeResponseStatus? Function()? status, RealtimeResponseStatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Omittable<Map<String,String>?>? metadata, RealtimeResponseAudio? Function()? audio, RealtimeResponseUsage? Function()? usage, String? Function()? conversationId, List<RealtimeResponseOutputModalities>? Function()? outputModalities, RealtimeResponseMaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'audio', 'usage', 'conversation_id', 'output_modalities', 'max_output_tokens'}.contains(key));}
+RealtimeResponse copyWith({String? Function()? id, RealtimeResponseObject? Function()? object, RealtimeResponseStatus? Function()? status, RealtimeResponseStatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Omittable<Map<String,String>?>? metadata, RealtimeResponseAudio? Function()? audio, RealtimeResponseUsage? Function()? usage, String? Function()? conversationId, List<RealtimeResponseOutputModalities>? Function()? outputModalities, RealtimeResponseMaxOutputTokens? Function()? maxOutputTokens, }) {return RealtimeResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,
@@ -181,8 +181,8 @@ RealtimeResponse copyWith({String? Function()? id, RealtimeResponseObject? Funct
   conversationId: conversationId != null ? conversationId() : this.conversationId,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeResponse &&
           id == other.id &&
           object == other.object &&
@@ -194,7 +194,7 @@ RealtimeResponse copyWith({String? Function()? id, RealtimeResponseObject? Funct
           usage == other.usage &&
           conversationId == other.conversationId &&
           listEquals(outputModalities, other.outputModalities) &&
-          maxOutputTokens == other.maxOutputTokens; } 
-@override int get hashCode { return Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, audio, usage, conversationId, Object.hashAll(outputModalities ?? const []), maxOutputTokens); } 
-@override String toString() { return 'RealtimeResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, audio: $audio, usage: $usage, conversationId: $conversationId, outputModalities: $outputModalities, maxOutputTokens: $maxOutputTokens)'; } 
- }
+          maxOutputTokens == other.maxOutputTokens;}
+@override int get hashCode {return Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, audio, usage, conversationId, Object.hashAll(outputModalities ?? const []), maxOutputTokens);}
+@override String toString() {return 'RealtimeResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, audio: $audio, usage: $usage, conversationId: $conversationId, outputModalities: $outputModalities, maxOutputTokens: $maxOutputTokens)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_add_lines_request_lines_discounts.dart';import 'post_invoices_invoice_add_lines_request_lines_metadata.dart';import 'post_invoices_invoice_add_lines_request_lines_period.dart';import 'post_invoices_invoice_add_lines_request_lines_price_data.dart';import 'post_invoices_invoice_add_lines_request_lines_pricing.dart';import 'post_invoices_invoice_add_lines_request_lines_tax_amounts.dart';import 'post_invoices_invoice_add_lines_request_lines_tax_rates.dart';@immutable final class PostInvoicesInvoiceAddLinesRequestLines {const PostInvoicesInvoiceAddLinesRequestLines({this.amount, this.description, this.discountable, this.discounts, this.invoiceItem, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxAmounts, this.taxRates, });
 
-factory PostInvoicesInvoiceAddLinesRequestLines.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAddLinesRequestLines(
+factory PostInvoicesInvoiceAddLinesRequestLines.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceAddLinesRequestLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
@@ -15,7 +15,7 @@ factory PostInvoicesInvoiceAddLinesRequestLines.fromJson(Map<String, dynamic> js
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxAmounts: json['tax_amounts'] != null ? PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts.fromJson(json['tax_amounts']) : null,
   taxRates: json['tax_rates'] != null ? PostInvoicesInvoiceAddLinesRequestLinesTaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 final int? amount;
 
@@ -41,7 +41,7 @@ final PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts? taxAmounts;
 
 final PostInvoicesInvoiceAddLinesRequestLinesTaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'description': ?description,
   'discountable': ?discountable,
@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (taxAmounts != null) 'tax_amounts': taxAmounts?.toJson(),
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'invoice_item', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_amounts', 'tax_rates'}.contains(key)); } 
-PostInvoicesInvoiceAddLinesRequestLines copyWith({int? Function()? amount, String? Function()? description, bool? Function()? discountable, PostInvoicesInvoiceAddLinesRequestLinesDiscounts? Function()? discounts, String? Function()? invoiceItem, PostInvoicesInvoiceAddLinesRequestLinesMetadata? Function()? metadata, PostInvoicesInvoiceAddLinesRequestLinesPeriod? Function()? period, PostInvoicesInvoiceAddLinesRequestLinesPriceData? Function()? priceData, PostInvoicesInvoiceAddLinesRequestLinesPricing? Function()? pricing, int? Function()? quantity, PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts? Function()? taxAmounts, PostInvoicesInvoiceAddLinesRequestLinesTaxRates? Function()? taxRates, }) { return PostInvoicesInvoiceAddLinesRequestLines(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'invoice_item', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_amounts', 'tax_rates'}.contains(key));}
+PostInvoicesInvoiceAddLinesRequestLines copyWith({int? Function()? amount, String? Function()? description, bool? Function()? discountable, PostInvoicesInvoiceAddLinesRequestLinesDiscounts? Function()? discounts, String? Function()? invoiceItem, PostInvoicesInvoiceAddLinesRequestLinesMetadata? Function()? metadata, PostInvoicesInvoiceAddLinesRequestLinesPeriod? Function()? period, PostInvoicesInvoiceAddLinesRequestLinesPriceData? Function()? priceData, PostInvoicesInvoiceAddLinesRequestLinesPricing? Function()? pricing, int? Function()? quantity, PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts? Function()? taxAmounts, PostInvoicesInvoiceAddLinesRequestLinesTaxRates? Function()? taxRates, }) {return PostInvoicesInvoiceAddLinesRequestLines(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   discountable: discountable != null ? discountable() : this.discountable,
@@ -69,8 +69,8 @@ PostInvoicesInvoiceAddLinesRequestLines copyWith({int? Function()? amount, Strin
   quantity: quantity != null ? quantity() : this.quantity,
   taxAmounts: taxAmounts != null ? taxAmounts() : this.taxAmounts,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesInvoiceAddLinesRequestLines &&
           amount == other.amount &&
           description == other.description &&
@@ -83,7 +83,7 @@ PostInvoicesInvoiceAddLinesRequestLines copyWith({int? Function()? amount, Strin
           pricing == other.pricing &&
           quantity == other.quantity &&
           taxAmounts == other.taxAmounts &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(amount, description, discountable, discounts, invoiceItem, metadata, period, priceData, pricing, quantity, taxAmounts, taxRates); } 
-@override String toString() { return 'PostInvoicesInvoiceAddLinesRequestLines(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, invoiceItem: $invoiceItem, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates)'; } 
- }
+          taxRates == other.taxRates;}
+@override int get hashCode {return Object.hash(amount, description, discountable, discounts, invoiceItem, metadata, period, priceData, pricing, quantity, taxAmounts, taxRates);}
+@override String toString() {return 'PostInvoicesInvoiceAddLinesRequestLines(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, invoiceItem: $invoiceItem, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates)';}
+}

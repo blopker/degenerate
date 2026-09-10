@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_refunds_payment_record_refund.dart';@immutable final class GetCreditNotesPreviewLinesRefundsType {const GetCreditNotesPreviewLinesRefundsType._(this.value);
 
-factory GetCreditNotesPreviewLinesRefundsType.fromJson(String json) { return switch (json) {
+factory GetCreditNotesPreviewLinesRefundsType.fromJson(String json) {return switch (json) {
   'payment_record_refund' => paymentRecordRefund,
   'refund' => refund,
   _ => GetCreditNotesPreviewLinesRefundsType._(json),
-}; }
+};}
 
 static const GetCreditNotesPreviewLinesRefundsType paymentRecordRefund = GetCreditNotesPreviewLinesRefundsType._('payment_record_refund');
 
@@ -16,22 +16,22 @@ static const List<GetCreditNotesPreviewLinesRefundsType> values = [paymentRecord
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewLinesRefundsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewLinesRefundsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetCreditNotesPreviewLinesRefundsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetCreditNotesPreviewLinesRefundsType($value)';}
+}
 @immutable final class GetCreditNotesPreviewLinesRefunds {const GetCreditNotesPreviewLinesRefunds({this.amountRefunded, this.paymentRecordRefund, this.refund, this.type, });
 
-factory GetCreditNotesPreviewLinesRefunds.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesRefunds(
+factory GetCreditNotesPreviewLinesRefunds.fromJson(Map<String, dynamic> json) {return GetCreditNotesPreviewLinesRefunds(
   amountRefunded: json['amount_refunded'] != null ? (json['amount_refunded'] as num).toInt() : null,
   paymentRecordRefund: json['payment_record_refund'] != null ? GetCreditNotesPreviewLinesRefundsPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
   refund: json['refund'] as String?,
   type: json['type'] != null ? GetCreditNotesPreviewLinesRefundsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final int? amountRefunded;
 
@@ -41,25 +41,25 @@ final String? refund;
 
 final GetCreditNotesPreviewLinesRefundsType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_refunded': ?amountRefunded,
   if (paymentRecordRefund != null) 'payment_record_refund': paymentRecordRefund?.toJson(),
   'refund': ?refund,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_refunded', 'payment_record_refund', 'refund', 'type'}.contains(key)); } 
-GetCreditNotesPreviewLinesRefunds copyWith({int? Function()? amountRefunded, GetCreditNotesPreviewLinesRefundsPaymentRecordRefund? Function()? paymentRecordRefund, String? Function()? refund, GetCreditNotesPreviewLinesRefundsType? Function()? type, }) { return GetCreditNotesPreviewLinesRefunds(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_refunded', 'payment_record_refund', 'refund', 'type'}.contains(key));}
+GetCreditNotesPreviewLinesRefunds copyWith({int? Function()? amountRefunded, GetCreditNotesPreviewLinesRefundsPaymentRecordRefund? Function()? paymentRecordRefund, String? Function()? refund, GetCreditNotesPreviewLinesRefundsType? Function()? type, }) {return GetCreditNotesPreviewLinesRefunds(
   amountRefunded: amountRefunded != null ? amountRefunded() : this.amountRefunded,
   paymentRecordRefund: paymentRecordRefund != null ? paymentRecordRefund() : this.paymentRecordRefund,
   refund: refund != null ? refund() : this.refund,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetCreditNotesPreviewLinesRefunds &&
           amountRefunded == other.amountRefunded &&
           paymentRecordRefund == other.paymentRecordRefund &&
           refund == other.refund &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amountRefunded, paymentRecordRefund, refund, type); } 
-@override String toString() { return 'GetCreditNotesPreviewLinesRefunds(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(amountRefunded, paymentRecordRefund, refund, type);}
+@override String toString() {return 'GetCreditNotesPreviewLinesRefunds(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)';}
+}

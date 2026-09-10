@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesRequestApplicationFeeAmountVariant2 {const PostQuotesRequestApplicationFeeAmountVariant2._(this.value);
 
-factory PostQuotesRequestApplicationFeeAmountVariant2.fromJson(String json) { return switch (json) {
+factory PostQuotesRequestApplicationFeeAmountVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostQuotesRequestApplicationFeeAmountVariant2._(json),
-}; }
+};}
 
 static const PostQuotesRequestApplicationFeeAmountVariant2 $empty = PostQuotesRequestApplicationFeeAmountVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostQuotesRequestApplicationFeeAmountVariant2> values = [$empt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesRequestApplicationFeeAmountVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesRequestApplicationFeeAmountVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesRequestApplicationFeeAmountVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesRequestApplicationFeeAmountVariant2($value)';}
+}
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. There cannot be any line items with recurring prices when using this field.
 @immutable
 final class PostQuotesRequestApplicationFeeAmount {

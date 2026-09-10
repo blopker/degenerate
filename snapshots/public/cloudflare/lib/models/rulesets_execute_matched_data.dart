@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration to use for matched data logging.
 @immutable final class RulesetsExecuteMatchedData {const RulesetsExecuteMatchedData({required this.publicKey});
 
-factory RulesetsExecuteMatchedData.fromJson(Map<String, dynamic> json) { return RulesetsExecuteMatchedData(
+factory RulesetsExecuteMatchedData.fromJson(Map<String, dynamic> json) {return RulesetsExecuteMatchedData(
   publicKey: json['public_key'] as String,
-); }
+);}
 
 /// The public key to encrypt matched data logs with.
 final String publicKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'public_key': publicKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('public_key') && json['public_key'] is String; } 
-RulesetsExecuteMatchedData copyWith({String? publicKey}) { return RulesetsExecuteMatchedData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('public_key') && json['public_key'] is String;}
+RulesetsExecuteMatchedData copyWith({String? publicKey}) {return RulesetsExecuteMatchedData(
   publicKey: publicKey ?? this.publicKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsExecuteMatchedData &&
-          publicKey == other.publicKey; } 
-@override int get hashCode { return publicKey.hashCode; } 
-@override String toString() { return 'RulesetsExecuteMatchedData(publicKey: $publicKey)'; } 
- }
+          publicKey == other.publicKey;}
+@override int get hashCode {return publicKey.hashCode;}
+@override String toString() {return 'RulesetsExecuteMatchedData(publicKey: $publicKey)';}
+}

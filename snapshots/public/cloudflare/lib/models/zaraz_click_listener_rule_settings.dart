@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazClickListenerRuleSettingsType {const ZarazClickListenerRuleSettingsType._(this.value);
 
-factory ZarazClickListenerRuleSettingsType.fromJson(String json) { return switch (json) {
+factory ZarazClickListenerRuleSettingsType.fromJson(String json) {return switch (json) {
   'xpath' => xpath,
   'css' => css,
   _ => ZarazClickListenerRuleSettingsType._(json),
-}; }
+};}
 
 static const ZarazClickListenerRuleSettingsType xpath = ZarazClickListenerRuleSettingsType._('xpath');
 
@@ -16,21 +16,21 @@ static const List<ZarazClickListenerRuleSettingsType> values = [xpath, css];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZarazClickListenerRuleSettingsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZarazClickListenerRuleSettingsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZarazClickListenerRuleSettingsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZarazClickListenerRuleSettingsType($value)';}
+}
 @immutable final class ZarazClickListenerRuleSettings {const ZarazClickListenerRuleSettings({required this.selector, required this.type, required this.waitForTags, });
 
-factory ZarazClickListenerRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazClickListenerRuleSettings(
+factory ZarazClickListenerRuleSettings.fromJson(Map<String, dynamic> json) {return ZarazClickListenerRuleSettings(
   selector: json['selector'] as String,
   type: ZarazClickListenerRuleSettingsType.fromJson(json['type'] as String),
   waitForTags: (json['waitForTags'] as num).toInt(),
-); }
+);}
 
 final String selector;
 
@@ -38,24 +38,24 @@ final ZarazClickListenerRuleSettingsType type;
 
 final int waitForTags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'selector': selector,
   'type': type.toJson(),
   'waitForTags': waitForTags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('selector') && json['selector'] is String &&
       json.containsKey('type') &&
-      json.containsKey('waitForTags') && json['waitForTags'] is num; } 
-ZarazClickListenerRuleSettings copyWith({String? selector, ZarazClickListenerRuleSettingsType? type, int? waitForTags, }) { return ZarazClickListenerRuleSettings(
+      json.containsKey('waitForTags') && json['waitForTags'] is num;}
+ZarazClickListenerRuleSettings copyWith({String? selector, ZarazClickListenerRuleSettingsType? type, int? waitForTags, }) {return ZarazClickListenerRuleSettings(
   selector: selector ?? this.selector,
   type: type ?? this.type,
   waitForTags: waitForTags ?? this.waitForTags,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZarazClickListenerRuleSettings &&
           selector == other.selector &&
           type == other.type &&
-          waitForTags == other.waitForTags; } 
-@override int get hashCode { return Object.hash(selector, type, waitForTags); } 
-@override String toString() { return 'ZarazClickListenerRuleSettings(selector: $selector, type: $type, waitForTags: $waitForTags)'; } 
- }
+          waitForTags == other.waitForTags;}
+@override int get hashCode {return Object.hash(selector, type, waitForTags);}
+@override String toString() {return 'ZarazClickListenerRuleSettings(selector: $selector, type: $type, waitForTags: $waitForTags)';}
+}

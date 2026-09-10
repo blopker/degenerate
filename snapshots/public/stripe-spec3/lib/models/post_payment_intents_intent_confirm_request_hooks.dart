@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_confirm_request_hooks_inputs.dart';/// Automations to be run during the PaymentIntent lifecycle
 @immutable final class PostPaymentIntentsIntentConfirmRequestHooks {const PostPaymentIntentsIntentConfirmRequestHooks({this.inputs});
 
-factory PostPaymentIntentsIntentConfirmRequestHooks.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestHooks(
+factory PostPaymentIntentsIntentConfirmRequestHooks.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentConfirmRequestHooks(
   inputs: json['inputs'] != null ? PostPaymentIntentsIntentConfirmRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentIntentsIntentConfirmRequestHooksInputs? inputs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (inputs != null) 'inputs': inputs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inputs'}.contains(key)); } 
-PostPaymentIntentsIntentConfirmRequestHooks copyWith({PostPaymentIntentsIntentConfirmRequestHooksInputs? Function()? inputs}) { return PostPaymentIntentsIntentConfirmRequestHooks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'inputs'}.contains(key));}
+PostPaymentIntentsIntentConfirmRequestHooks copyWith({PostPaymentIntentsIntentConfirmRequestHooksInputs? Function()? inputs}) {return PostPaymentIntentsIntentConfirmRequestHooks(
   inputs: inputs != null ? inputs() : this.inputs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentConfirmRequestHooks &&
-          inputs == other.inputs; } 
-@override int get hashCode { return inputs.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestHooks(inputs: $inputs)'; } 
- }
+          inputs == other.inputs;}
+@override int get hashCode {return inputs.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestHooks(inputs: $inputs)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestAddInvoiceItemsPeriodEndType {const PostSubscriptionsRequestAddInvoiceItemsPeriodEndType._(this.value);
 
-factory PostSubscriptionsRequestAddInvoiceItemsPeriodEndType.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestAddInvoiceItemsPeriodEndType.fromJson(String json) {return switch (json) {
   'min_item_period_end' => minItemPeriodEnd,
   'timestamp' => timestamp,
   _ => PostSubscriptionsRequestAddInvoiceItemsPeriodEndType._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestAddInvoiceItemsPeriodEndType minItemPeriodEnd = PostSubscriptionsRequestAddInvoiceItemsPeriodEndType._('min_item_period_end');
 
@@ -16,38 +16,38 @@ static const List<PostSubscriptionsRequestAddInvoiceItemsPeriodEndType> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestAddInvoiceItemsPeriodEndType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestAddInvoiceItemsPeriodEndType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestAddInvoiceItemsPeriodEndType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestAddInvoiceItemsPeriodEndType($value)';}
+}
 @immutable final class PostSubscriptionsRequestAddInvoiceItemsPeriodEnd {const PostSubscriptionsRequestAddInvoiceItemsPeriodEnd({required this.type, this.timestamp, });
 
-factory PostSubscriptionsRequestAddInvoiceItemsPeriodEnd.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAddInvoiceItemsPeriodEnd(
+factory PostSubscriptionsRequestAddInvoiceItemsPeriodEnd.fromJson(Map<String, dynamic> json) {return PostSubscriptionsRequestAddInvoiceItemsPeriodEnd(
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,
   type: PostSubscriptionsRequestAddInvoiceItemsPeriodEndType.fromJson(json['type'] as String),
-); }
+);}
 
 final int? timestamp;
 
 final PostSubscriptionsRequestAddInvoiceItemsPeriodEndType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timestamp': ?timestamp,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostSubscriptionsRequestAddInvoiceItemsPeriodEnd copyWith({int? Function()? timestamp, PostSubscriptionsRequestAddInvoiceItemsPeriodEndType? type, }) { return PostSubscriptionsRequestAddInvoiceItemsPeriodEnd(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostSubscriptionsRequestAddInvoiceItemsPeriodEnd copyWith({int? Function()? timestamp, PostSubscriptionsRequestAddInvoiceItemsPeriodEndType? type, }) {return PostSubscriptionsRequestAddInvoiceItemsPeriodEnd(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionsRequestAddInvoiceItemsPeriodEnd &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'PostSubscriptionsRequestAddInvoiceItemsPeriodEnd(timestamp: $timestamp, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(timestamp, type);}
+@override String toString() {return 'PostSubscriptionsRequestAddInvoiceItemsPeriodEnd(timestamp: $timestamp, type: $type)';}
+}

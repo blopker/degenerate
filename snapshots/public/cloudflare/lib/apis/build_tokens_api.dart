@@ -13,7 +13,7 @@ final class BuildTokensApi with ApiExecutor {const BuildTokensApi(this.apiConfig
 /// Get all build tokens with pagination
 ///
 /// `GET /accounts/{account_id}/builds/tokens`
-Future<ApiResult<List<BuildsListTokensResponse>, Never>> listBuildTokens({required BuildsAccountId accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BuildsListTokensResponse>, Never>> listBuildTokens({required BuildsAccountId accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -33,20 +33,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => BuildsListTokensResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => BuildsListTokensResponse.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create build token
 ///
 /// Create a new build authentication token
 ///
 /// `POST /accounts/{account_id}/builds/tokens`
-Future<ApiResult<BuildsCreateBuildTokenResponse, Never>> createBuildToken({required BuildsAccountId accountId, required BuildsCreateBuildTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsCreateBuildTokenResponse, Never>> createBuildToken({required BuildsAccountId accountId, required BuildsCreateBuildTokenRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,20 +52,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsCreateBuildTokenResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsCreateBuildTokenResponse.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Delete build token
 ///
 /// Remove a build authentication token
 ///
 /// `DELETE /accounts/{account_id}/builds/tokens/{build_token_uuid}`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteBuildToken({required BuildsAccountId accountId, required BuildsBuildTokenUuid buildTokenUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteBuildToken({required BuildsAccountId accountId, required BuildsBuildTokenUuid buildTokenUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -79,22 +69,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>?;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>?;}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

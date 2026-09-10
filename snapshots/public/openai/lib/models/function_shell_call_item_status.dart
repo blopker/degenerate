@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status values reported for shell tool calls.
 @immutable final class FunctionShellCallItemStatus {const FunctionShellCallItemStatus._(this.value);
 
-factory FunctionShellCallItemStatus.fromJson(String json) { return switch (json) {
+factory FunctionShellCallItemStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => FunctionShellCallItemStatus._(json),
-}; }
+};}
 
 static const FunctionShellCallItemStatus inProgress = FunctionShellCallItemStatus._('in_progress');
 
@@ -20,11 +20,11 @@ static const List<FunctionShellCallItemStatus> values = [inProgress, completed, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallItemStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FunctionShellCallItemStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FunctionShellCallItemStatus($value)';}
+}

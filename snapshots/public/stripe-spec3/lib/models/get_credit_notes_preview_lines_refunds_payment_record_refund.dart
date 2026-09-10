@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewLinesRefundsPaymentRecordRefund {const GetCreditNotesPreviewLinesRefundsPaymentRecordRefund({required this.paymentRecord, required this.refundGroup, });
 
-factory GetCreditNotesPreviewLinesRefundsPaymentRecordRefund.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesRefundsPaymentRecordRefund(
+factory GetCreditNotesPreviewLinesRefundsPaymentRecordRefund.fromJson(Map<String, dynamic> json) {return GetCreditNotesPreviewLinesRefundsPaymentRecordRefund(
   paymentRecord: json['payment_record'] as String,
   refundGroup: json['refund_group'] as String,
-); }
+);}
 
 final String paymentRecord;
 
 final String refundGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payment_record': paymentRecord,
   'refund_group': refundGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_record') && json['payment_record'] is String &&
-      json.containsKey('refund_group') && json['refund_group'] is String; } 
-GetCreditNotesPreviewLinesRefundsPaymentRecordRefund copyWith({String? paymentRecord, String? refundGroup, }) { return GetCreditNotesPreviewLinesRefundsPaymentRecordRefund(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_record') && json['payment_record'] is String &&
+      json.containsKey('refund_group') && json['refund_group'] is String;}
+GetCreditNotesPreviewLinesRefundsPaymentRecordRefund copyWith({String? paymentRecord, String? refundGroup, }) {return GetCreditNotesPreviewLinesRefundsPaymentRecordRefund(
   paymentRecord: paymentRecord ?? this.paymentRecord,
   refundGroup: refundGroup ?? this.refundGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetCreditNotesPreviewLinesRefundsPaymentRecordRefund &&
           paymentRecord == other.paymentRecord &&
-          refundGroup == other.refundGroup; } 
-@override int get hashCode { return Object.hash(paymentRecord, refundGroup); } 
-@override String toString() { return 'GetCreditNotesPreviewLinesRefundsPaymentRecordRefund(paymentRecord: $paymentRecord, refundGroup: $refundGroup)'; } 
- }
+          refundGroup == other.refundGroup;}
+@override int get hashCode {return Object.hash(paymentRecord, refundGroup);}
+@override String toString() {return 'GetCreditNotesPreviewLinesRefundsPaymentRecordRefund(paymentRecord: $paymentRecord, refundGroup: $refundGroup)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_external_accounts_data.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class AccountExternalAccountsObject {const AccountExternalAccountsObject._(this.value);
 
-factory AccountExternalAccountsObject.fromJson(String json) { return switch (json) {
+factory AccountExternalAccountsObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => AccountExternalAccountsObject._(json),
-}; }
+};}
 
 static const AccountExternalAccountsObject list = AccountExternalAccountsObject._('list');
 
@@ -14,23 +14,23 @@ static const List<AccountExternalAccountsObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountExternalAccountsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountExternalAccountsObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountExternalAccountsObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountExternalAccountsObject($value)';}
+}
 /// External accounts (bank accounts and debit cards) currently attached to this account. External accounts are only returned for requests where `controller[is_controller]` is true.
 @immutable final class AccountExternalAccounts {const AccountExternalAccounts({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory AccountExternalAccounts.fromJson(Map<String, dynamic> json) { return AccountExternalAccounts(
+factory AccountExternalAccounts.fromJson(Map<String, dynamic> json) {return AccountExternalAccounts(
   data: (json['data'] as List<dynamic>).map(AccountExternalAccountsData.fromJson).toList(),
   hasMore: json['has_more'] as bool,
   object: AccountExternalAccountsObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// The list contains all external accounts that have been attached to the Stripe account. These may be bank accounts or cards.
 final List<AccountExternalAccountsData> data;
@@ -44,28 +44,28 @@ final AccountExternalAccountsObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-AccountExternalAccounts copyWith({List<AccountExternalAccountsData>? data, bool? hasMore, AccountExternalAccountsObject? object, String? url, }) { return AccountExternalAccounts(
+      json.containsKey('url') && json['url'] is String;}
+AccountExternalAccounts copyWith({List<AccountExternalAccountsData>? data, bool? hasMore, AccountExternalAccountsObject? object, String? url, }) {return AccountExternalAccounts(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountExternalAccounts &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'AccountExternalAccounts(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'AccountExternalAccounts(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_invoice_settings_account_tax_ids.dart';import 'post_subscriptions_request_invoice_settings_issuer.dart';/// All invoices will be billed using the specified settings.
 @immutable final class PostSubscriptionsRequestInvoiceSettings {const PostSubscriptionsRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
-factory PostSubscriptionsRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestInvoiceSettings(
+factory PostSubscriptionsRequestInvoiceSettings.fromJson(Map<String, dynamic> json) {return PostSubscriptionsRequestInvoiceSettings(
   accountTaxIds: json['account_tax_ids'] != null ? PostSubscriptionsRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   issuer: json['issuer'] != null ? PostSubscriptionsRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostSubscriptionsRequestInvoiceSettingsAccountTaxIds? accountTaxIds;
 
 final PostSubscriptionsRequestInvoiceSettingsIssuer? issuer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   if (issuer != null) 'issuer': issuer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'issuer'}.contains(key)); } 
-PostSubscriptionsRequestInvoiceSettings copyWith({PostSubscriptionsRequestInvoiceSettingsAccountTaxIds? Function()? accountTaxIds, PostSubscriptionsRequestInvoiceSettingsIssuer? Function()? issuer, }) { return PostSubscriptionsRequestInvoiceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'issuer'}.contains(key));}
+PostSubscriptionsRequestInvoiceSettings copyWith({PostSubscriptionsRequestInvoiceSettingsAccountTaxIds? Function()? accountTaxIds, PostSubscriptionsRequestInvoiceSettingsIssuer? Function()? issuer, }) {return PostSubscriptionsRequestInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   issuer: issuer != null ? issuer() : this.issuer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionsRequestInvoiceSettings &&
           accountTaxIds == other.accountTaxIds &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(accountTaxIds, issuer); } 
-@override String toString() { return 'PostSubscriptionsRequestInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)'; } 
- }
+          issuer == other.issuer;}
+@override int get hashCode {return Object.hash(accountTaxIds, issuer);}
+@override String toString() {return 'PostSubscriptionsRequestInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)';}
+}

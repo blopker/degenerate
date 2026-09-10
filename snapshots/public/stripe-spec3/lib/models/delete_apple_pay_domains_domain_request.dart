@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteApplePayDomainsDomainRequest {const DeleteApplePayDomainsDomainRequest();
 
-factory DeleteApplePayDomainsDomainRequest.fromJson(Map<String, dynamic> _) { return const DeleteApplePayDomainsDomainRequest(); }
+factory DeleteApplePayDomainsDomainRequest.fromJson(Map<String, dynamic> _) {return const DeleteApplePayDomainsDomainRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-DeleteApplePayDomainsDomainRequest copyWith() { return const DeleteApplePayDomainsDomainRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+DeleteApplePayDomainsDomainRequest copyWith() {return const DeleteApplePayDomainsDomainRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is DeleteApplePayDomainsDomainRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'DeleteApplePayDomainsDomainRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is DeleteApplePayDomainsDomainRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'DeleteApplePayDomainsDomainRequest()';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results by the specified field.
 @immutable final class RadarGetBgpRoutesAsnsSortBy {const RadarGetBgpRoutesAsnsSortBy._(this.value);
 
-factory RadarGetBgpRoutesAsnsSortBy.fromJson(String json) { return switch (json) {
+factory RadarGetBgpRoutesAsnsSortBy.fromJson(String json) {return switch (json) {
   'cone' => cone,
   'pfxs' => pfxs,
   'ipv4' => ipv4,
@@ -12,7 +12,7 @@ factory RadarGetBgpRoutesAsnsSortBy.fromJson(String json) { return switch (json)
   'rpki_invalid' => rpkiInvalid,
   'rpki_unknown' => rpkiUnknown,
   _ => RadarGetBgpRoutesAsnsSortBy._(json),
-}; }
+};}
 
 static const RadarGetBgpRoutesAsnsSortBy cone = RadarGetBgpRoutesAsnsSortBy._('cone');
 
@@ -32,11 +32,11 @@ static const List<RadarGetBgpRoutesAsnsSortBy> values = [cone, pfxs, ipv4, ipv6,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBgpRoutesAsnsSortBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBgpRoutesAsnsSortBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetBgpRoutesAsnsSortBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetBgpRoutesAsnsSortBy($value)';}
+}

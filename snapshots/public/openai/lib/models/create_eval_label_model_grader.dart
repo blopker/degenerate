@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_item.dart';import 'eval_item.dart';import 'simple_input_message.dart';/// The object type, which is always `label_model`.
 @immutable final class CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType._(this.value);
 
-factory CreateEvalLabelModelGraderType.fromJson(String json) { return switch (json) {
+factory CreateEvalLabelModelGraderType.fromJson(String json) {return switch (json) {
   'label_model' => labelModel,
   _ => CreateEvalLabelModelGraderType._(json),
-}; }
+};}
 
 static const CreateEvalLabelModelGraderType labelModel = CreateEvalLabelModelGraderType._('label_model');
 
@@ -14,27 +14,27 @@ static const List<CreateEvalLabelModelGraderType> values = [labelModel];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEvalLabelModelGraderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEvalLabelModelGraderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateEvalLabelModelGraderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateEvalLabelModelGraderType($value)';}
+}
 /// A LabelModelGrader object which uses a model to assign labels to each item
 /// in the evaluation.
 /// 
 @immutable final class CreateEvalLabelModelGrader {const CreateEvalLabelModelGrader({required this.type, required this.name, required this.model, required this.input, required this.labels, required this.passingLabels, });
 
-factory CreateEvalLabelModelGrader.fromJson(Map<String, dynamic> json) { return CreateEvalLabelModelGrader(
+factory CreateEvalLabelModelGrader.fromJson(Map<String, dynamic> json) {return CreateEvalLabelModelGrader(
   type: CreateEvalLabelModelGraderType.fromJson(json['type'] as String),
   name: json['name'] as String,
   model: json['model'] as String,
   input: (json['input'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => SimpleInputMessage.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalItem.fromJson(v as Map<String, dynamic>),)).toList(),
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
   passingLabels: (json['passing_labels'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The object type, which is always `label_model`.
 final CreateEvalLabelModelGraderType type;
@@ -54,36 +54,36 @@ final List<String> labels;
 /// The labels that indicate a passing result. Must be a subset of labels.
 final List<String> passingLabels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'model': model,
   'input': input.map((e) => e.toJson()).toList(),
   'labels': labels,
   'passing_labels': passingLabels,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('input') &&
       json.containsKey('labels') &&
-      json.containsKey('passing_labels'); } 
-CreateEvalLabelModelGrader copyWith({CreateEvalLabelModelGraderType? type, String? name, String? model, List<CreateEvalItem>? input, List<String>? labels, List<String>? passingLabels, }) { return CreateEvalLabelModelGrader(
+      json.containsKey('passing_labels');}
+CreateEvalLabelModelGrader copyWith({CreateEvalLabelModelGraderType? type, String? name, String? model, List<CreateEvalItem>? input, List<String>? labels, List<String>? passingLabels, }) {return CreateEvalLabelModelGrader(
   type: type ?? this.type,
   name: name ?? this.name,
   model: model ?? this.model,
   input: input ?? this.input,
   labels: labels ?? this.labels,
   passingLabels: passingLabels ?? this.passingLabels,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateEvalLabelModelGrader &&
           type == other.type &&
           name == other.name &&
           model == other.model &&
           listEquals(input, other.input) &&
           listEquals(labels, other.labels) &&
-          listEquals(passingLabels, other.passingLabels); } 
-@override int get hashCode { return Object.hash(type, name, model, Object.hashAll(input), Object.hashAll(labels), Object.hashAll(passingLabels)); } 
-@override String toString() { return 'CreateEvalLabelModelGrader(type: $type, name: $name, model: $model, input: $input, labels: $labels, passingLabels: $passingLabels)'; } 
- }
+          listEquals(passingLabels, other.passingLabels);}
+@override int get hashCode {return Object.hash(type, name, model, Object.hashAll(input), Object.hashAll(labels), Object.hashAll(passingLabels));}
+@override String toString() {return 'CreateEvalLabelModelGrader(type: $type, name: $name, model: $model, input: $input, labels: $labels, passingLabels: $passingLabels)';}
+}

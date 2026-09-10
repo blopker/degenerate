@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Triangle {const Triangle({required this.type, required this.base, required this.height, this.angles, });
 
-factory Triangle.fromJson(Map<String, dynamic> json) { return Triangle(
+factory Triangle.fromJson(Map<String, dynamic> json) {return Triangle(
   type: json['type'] as String,
   base: (json['base'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
   angles: (json['angles'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 final String type;
 
@@ -17,27 +17,27 @@ final double height;
 
 final List<double>? angles;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'base': base,
   'height': height,
   'angles': ?angles,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('base') && json['base'] is num &&
-      json.containsKey('height') && json['height'] is num; } 
-Triangle copyWith({String? type, double? base, double? height, List<double>? Function()? angles, }) { return Triangle(
+      json.containsKey('height') && json['height'] is num;}
+Triangle copyWith({String? type, double? base, double? height, List<double>? Function()? angles, }) {return Triangle(
   type: type ?? this.type,
   base: base ?? this.base,
   height: height ?? this.height,
   angles: angles != null ? angles() : this.angles,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Triangle &&
           type == other.type &&
           base == other.base &&
           height == other.height &&
-          listEquals(angles, other.angles); } 
-@override int get hashCode { return Object.hash(type, base, height, Object.hashAll(angles ?? const [])); } 
-@override String toString() { return 'Triangle(type: $type, base: $base, height: $height, angles: $angles)'; } 
- }
+          listEquals(angles, other.angles);}
+@override int get hashCode {return Object.hash(type, base, height, Object.hashAll(angles ?? const []));}
+@override String toString() {return 'Triangle(type: $type, base: $base, height: $height, angles: $angles)';}
+}

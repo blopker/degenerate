@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current setting of the automatic SSL/TLS.
 @immutable final class CacheResultValue {const CacheResultValue._(this.value);
 
-factory CacheResultValue.fromJson(String json) { return switch (json) {
+factory CacheResultValue.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'custom' => custom,
   _ => CacheResultValue._(json),
-}; }
+};}
 
 static const CacheResultValue auto = CacheResultValue._('auto');
 
@@ -17,23 +17,23 @@ static const List<CacheResultValue> values = [auto, custom];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheResultValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheResultValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CacheResultValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CacheResultValue($value)';}
+}
 @immutable final class CacheResult {const CacheResult({required this.editable, required this.id, required this.modifiedOn, required this.value, this.nextScheduledScan = const Omittable.absent(), });
 
-factory CacheResult.fromJson(Map<String, dynamic> json) { return CacheResult(
+factory CacheResult.fromJson(Map<String, dynamic> json) {return CacheResult(
   editable: json['editable'] as bool,
   id: json['id'] as String,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   nextScheduledScan: json.containsKey('next_scheduled_scan') ? Omittable(json['next_scheduled_scan'] != null ? DateTime.parse(json['next_scheduled_scan'] as String) : null) : const Omittable.absent(),
   value: CacheResultValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether this setting can be updated or not.
 final bool editable;
@@ -49,31 +49,31 @@ final Omittable<DateTime?> nextScheduledScan;
 /// Current setting of the automatic SSL/TLS.
 final CacheResultValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': editable,
   'id': id,
   'modified_on': modifiedOn.toIso8601String(),
   if (nextScheduledScan.isPresent) 'next_scheduled_scan': nextScheduledScan.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('editable') && json['editable'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('editable') && json['editable'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
-      json.containsKey('value'); } 
-CacheResult copyWith({bool? editable, String? id, DateTime? modifiedOn, Omittable<DateTime?>? nextScheduledScan, CacheResultValue? value, }) { return CacheResult(
+      json.containsKey('value');}
+CacheResult copyWith({bool? editable, String? id, DateTime? modifiedOn, Omittable<DateTime?>? nextScheduledScan, CacheResultValue? value, }) {return CacheResult(
   editable: editable ?? this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   nextScheduledScan: nextScheduledScan ?? this.nextScheduledScan,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CacheResult &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
           nextScheduledScan == other.nextScheduledScan &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, nextScheduledScan, value); } 
-@override String toString() { return 'CacheResult(editable: $editable, id: $id, modifiedOn: $modifiedOn, nextScheduledScan: $nextScheduledScan, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, modifiedOn, nextScheduledScan, value);}
+@override String toString() {return 'CacheResult(editable: $editable, id: $id, modifiedOn: $modifiedOn, nextScheduledScan: $nextScheduledScan, value: $value)';}
+}

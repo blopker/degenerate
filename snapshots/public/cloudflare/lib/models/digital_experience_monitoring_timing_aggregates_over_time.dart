@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_aggregate_time_period.dart';import 'digital_experience_monitoring_aggregate_time_slot.dart';@immutable final class DigitalExperienceMonitoringTimingAggregatesOverTime {const DigitalExperienceMonitoringTimingAggregatesOverTime({required this.timePeriod, required this.values, });
 
-factory DigitalExperienceMonitoringTimingAggregatesOverTime.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTimingAggregatesOverTime(
+factory DigitalExperienceMonitoringTimingAggregatesOverTime.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringTimingAggregatesOverTime(
   timePeriod: DigitalExperienceMonitoringAggregateTimePeriod.fromJson(json['timePeriod'] as Map<String, dynamic>),
   values: (json['values'] as List<dynamic>).map((e) => DigitalExperienceMonitoringAggregateTimeSlot.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final DigitalExperienceMonitoringAggregateTimePeriod timePeriod;
 
 final List<DigitalExperienceMonitoringAggregateTimeSlot> values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timePeriod': timePeriod.toJson(),
   'values': values.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('timePeriod') &&
-      json.containsKey('values'); } 
-DigitalExperienceMonitoringTimingAggregatesOverTime copyWith({DigitalExperienceMonitoringAggregateTimePeriod? timePeriod, List<DigitalExperienceMonitoringAggregateTimeSlot>? values, }) { return DigitalExperienceMonitoringTimingAggregatesOverTime(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('timePeriod') &&
+      json.containsKey('values');}
+DigitalExperienceMonitoringTimingAggregatesOverTime copyWith({DigitalExperienceMonitoringAggregateTimePeriod? timePeriod, List<DigitalExperienceMonitoringAggregateTimeSlot>? values, }) {return DigitalExperienceMonitoringTimingAggregatesOverTime(
   timePeriod: timePeriod ?? this.timePeriod,
   values: values ?? this.values,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringTimingAggregatesOverTime &&
           timePeriod == other.timePeriod &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(timePeriod, Object.hashAll(values)); } 
-@override String toString() { return 'DigitalExperienceMonitoringTimingAggregatesOverTime(timePeriod: $timePeriod, values: $values)'; } 
- }
+          listEquals(values, other.values);}
+@override int get hashCode {return Object.hash(timePeriod, Object.hashAll(values));}
+@override String toString() {return 'DigitalExperienceMonitoringTimingAggregatesOverTime(timePeriod: $timePeriod, values: $values)';}
+}

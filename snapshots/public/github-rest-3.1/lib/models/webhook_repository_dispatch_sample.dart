@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryDispatchSample {const WebhookRepositoryDispatchSample({required this.action, required this.branch, required this.clientPayload, required this.installation, required this.repository, required this.sender, this.enterprise, this.organization, });
 
-factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) { return WebhookRepositoryDispatchSample(
+factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) {return WebhookRepositoryDispatchSample(
   action: json['action'] as String,
   branch: json['branch'] as String,
   clientPayload: json['client_payload'] as Map<String, dynamic>?,
@@ -11,7 +11,7 @@ factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) { re
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 /// The `event_type` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
 final String action;
@@ -31,7 +31,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'branch': branch,
   'client_payload': clientPayload,
@@ -40,14 +40,14 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
       json.containsKey('branch') && json['branch'] is String &&
       json.containsKey('client_payload') &&
       json.containsKey('installation') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<String, dynamic>? Function()? clientPayload, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryDispatchSample(
+      json.containsKey('sender');}
+WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<String, dynamic>? Function()? clientPayload, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookRepositoryDispatchSample(
   action: action ?? this.action,
   branch: branch ?? this.branch,
   clientPayload: clientPayload != null ? clientPayload() : this.clientPayload,
@@ -56,8 +56,8 @@ WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<St
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryDispatchSample &&
           action == other.action &&
           branch == other.branch &&
@@ -66,7 +66,7 @@ WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<St
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, branch, clientPayload, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookRepositoryDispatchSample(action: $action, branch: $branch, clientPayload: $clientPayload, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, branch, clientPayload, enterprise, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookRepositoryDispatchSample(action: $action, branch: $branch, clientPayload: $clientPayload, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

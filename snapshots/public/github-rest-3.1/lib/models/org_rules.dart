@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_branch_name_pattern.dart';import 'repository_rule_code_scanning.dart';import 'repository_rule_commit_author_email_pattern.dart';import 'repository_rule_commit_message_pattern.dart';import 'repository_rule_committer_email_pattern.dart';import 'repository_rule_copilot_code_review.dart';import 'repository_rule_creation.dart';import 'repository_rule_deletion.dart';import 'repository_rule_file_extension_restriction.dart';import 'repository_rule_file_path_restriction.dart';import 'repository_rule_max_file_path_length.dart';import 'repository_rule_max_file_size.dart';import 'repository_rule_non_fast_forward.dart';import 'repository_rule_pull_request.dart';import 'repository_rule_required_deployments.dart';import 'repository_rule_required_linear_history.dart';import 'repository_rule_required_signatures.dart';import 'repository_rule_required_status_checks.dart';import 'repository_rule_tag_name_pattern.dart';import 'repository_rule_update.dart';import 'repository_rule_workflows.dart';/// A value that is one of: `RepositoryRuleCreation`, `RepositoryRuleUpdate`, `RepositoryRuleDeletion`, `RepositoryRuleRequiredLinearHistory`, `RepositoryRuleRequiredDeployments`, `RepositoryRuleRequiredSignatures`, `RepositoryRulePullRequest`, `RepositoryRuleRequiredStatusChecks`, `RepositoryRuleNonFastForward`, `RepositoryRuleCommitMessagePattern`, `RepositoryRuleCommitAuthorEmailPattern`, `RepositoryRuleCommitterEmailPattern`, `RepositoryRuleBranchNamePattern`, `RepositoryRuleTagNamePattern`, `RepositoryRuleFilePathRestriction`, `RepositoryRuleMaxFilePathLength`, `RepositoryRuleFileExtensionRestriction`, `RepositoryRuleMaxFileSize`, `RepositoryRuleWorkflows`, `RepositoryRuleCodeScanning`, `RepositoryRuleCopilotCodeReview`.
 sealed class OrgRules {const OrgRules();
 
-factory OrgRules.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreation.canParse(json)) {
+factory OrgRules.fromJson(Map<String, dynamic> json) {  if (RepositoryRuleCreation.canParse(json)) {
     return OrgRulesRepositoryRuleCreation(RepositoryRuleCreation.fromJson(json));
   }
   if (RepositoryRuleUpdate.canParse(json)) {
@@ -66,230 +66,230 @@ factory OrgRules.fromJson(Map<String, dynamic> json) {   if (RepositoryRuleCreat
   if (RepositoryRuleCopilotCodeReview.canParse(json)) {
     return OrgRulesRepositoryRuleCopilotCodeReview(RepositoryRuleCopilotCodeReview.fromJson(json));
   }
-  return OrgRules$Unknown(json); }
+  return OrgRules$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class OrgRulesRepositoryRuleCreation extends OrgRules {const OrgRulesRepositoryRuleCreation(this._value);
 
 final RepositoryRuleCreation _value;
 
-@override RepositoryRuleCreation get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleCreation && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleCreation($_value)'; } 
- }
+@override RepositoryRuleCreation get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleCreation && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleCreation($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleUpdate extends OrgRules {const OrgRulesRepositoryRuleUpdate(this._value);
 
 final RepositoryRuleUpdate _value;
 
-@override RepositoryRuleUpdate get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleUpdate && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleUpdate($_value)'; } 
- }
+@override RepositoryRuleUpdate get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleUpdate && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleUpdate($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleDeletion extends OrgRules {const OrgRulesRepositoryRuleDeletion(this._value);
 
 final RepositoryRuleDeletion _value;
 
-@override RepositoryRuleDeletion get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleDeletion && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleDeletion($_value)'; } 
- }
+@override RepositoryRuleDeletion get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleDeletion && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleDeletion($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleRequiredLinearHistory extends OrgRules {const OrgRulesRepositoryRuleRequiredLinearHistory(this._value);
 
 final RepositoryRuleRequiredLinearHistory _value;
 
-@override RepositoryRuleRequiredLinearHistory get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleRequiredLinearHistory && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleRequiredLinearHistory($_value)'; } 
- }
+@override RepositoryRuleRequiredLinearHistory get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleRequiredLinearHistory && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleRequiredLinearHistory($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleRequiredDeployments extends OrgRules {const OrgRulesRepositoryRuleRequiredDeployments(this._value);
 
 final RepositoryRuleRequiredDeployments _value;
 
-@override RepositoryRuleRequiredDeployments get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleRequiredDeployments && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleRequiredDeployments($_value)'; } 
- }
+@override RepositoryRuleRequiredDeployments get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleRequiredDeployments && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleRequiredDeployments($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleRequiredSignatures extends OrgRules {const OrgRulesRepositoryRuleRequiredSignatures(this._value);
 
 final RepositoryRuleRequiredSignatures _value;
 
-@override RepositoryRuleRequiredSignatures get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleRequiredSignatures && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleRequiredSignatures($_value)'; } 
- }
+@override RepositoryRuleRequiredSignatures get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleRequiredSignatures && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleRequiredSignatures($_value)';}
+}
 @immutable final class OrgRulesRepositoryRulePullRequest extends OrgRules {const OrgRulesRepositoryRulePullRequest(this._value);
 
 final RepositoryRulePullRequest _value;
 
-@override RepositoryRulePullRequest get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRulePullRequest && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRulePullRequest($_value)'; } 
- }
+@override RepositoryRulePullRequest get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRulePullRequest && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRulePullRequest($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleRequiredStatusChecks extends OrgRules {const OrgRulesRepositoryRuleRequiredStatusChecks(this._value);
 
 final RepositoryRuleRequiredStatusChecks _value;
 
-@override RepositoryRuleRequiredStatusChecks get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleRequiredStatusChecks && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleRequiredStatusChecks($_value)'; } 
- }
+@override RepositoryRuleRequiredStatusChecks get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleRequiredStatusChecks && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleRequiredStatusChecks($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleNonFastForward extends OrgRules {const OrgRulesRepositoryRuleNonFastForward(this._value);
 
 final RepositoryRuleNonFastForward _value;
 
-@override RepositoryRuleNonFastForward get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleNonFastForward && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleNonFastForward($_value)'; } 
- }
+@override RepositoryRuleNonFastForward get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleNonFastForward && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleNonFastForward($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleCommitMessagePattern extends OrgRules {const OrgRulesRepositoryRuleCommitMessagePattern(this._value);
 
 final RepositoryRuleCommitMessagePattern _value;
 
-@override RepositoryRuleCommitMessagePattern get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleCommitMessagePattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleCommitMessagePattern($_value)'; } 
- }
+@override RepositoryRuleCommitMessagePattern get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleCommitMessagePattern && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleCommitMessagePattern($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleCommitAuthorEmailPattern extends OrgRules {const OrgRulesRepositoryRuleCommitAuthorEmailPattern(this._value);
 
 final RepositoryRuleCommitAuthorEmailPattern _value;
 
-@override RepositoryRuleCommitAuthorEmailPattern get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleCommitAuthorEmailPattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleCommitAuthorEmailPattern($_value)'; } 
- }
+@override RepositoryRuleCommitAuthorEmailPattern get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleCommitAuthorEmailPattern && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleCommitAuthorEmailPattern($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleCommitterEmailPattern extends OrgRules {const OrgRulesRepositoryRuleCommitterEmailPattern(this._value);
 
 final RepositoryRuleCommitterEmailPattern _value;
 
-@override RepositoryRuleCommitterEmailPattern get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleCommitterEmailPattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleCommitterEmailPattern($_value)'; } 
- }
+@override RepositoryRuleCommitterEmailPattern get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleCommitterEmailPattern && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleCommitterEmailPattern($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleBranchNamePattern extends OrgRules {const OrgRulesRepositoryRuleBranchNamePattern(this._value);
 
 final RepositoryRuleBranchNamePattern _value;
 
-@override RepositoryRuleBranchNamePattern get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleBranchNamePattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleBranchNamePattern($_value)'; } 
- }
+@override RepositoryRuleBranchNamePattern get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleBranchNamePattern && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleBranchNamePattern($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleTagNamePattern extends OrgRules {const OrgRulesRepositoryRuleTagNamePattern(this._value);
 
 final RepositoryRuleTagNamePattern _value;
 
-@override RepositoryRuleTagNamePattern get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleTagNamePattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleTagNamePattern($_value)'; } 
- }
+@override RepositoryRuleTagNamePattern get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleTagNamePattern && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleTagNamePattern($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleFilePathRestriction extends OrgRules {const OrgRulesRepositoryRuleFilePathRestriction(this._value);
 
 final RepositoryRuleFilePathRestriction _value;
 
-@override RepositoryRuleFilePathRestriction get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleFilePathRestriction && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleFilePathRestriction($_value)'; } 
- }
+@override RepositoryRuleFilePathRestriction get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleFilePathRestriction && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleFilePathRestriction($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleMaxFilePathLength extends OrgRules {const OrgRulesRepositoryRuleMaxFilePathLength(this._value);
 
 final RepositoryRuleMaxFilePathLength _value;
 
-@override RepositoryRuleMaxFilePathLength get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleMaxFilePathLength && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleMaxFilePathLength($_value)'; } 
- }
+@override RepositoryRuleMaxFilePathLength get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleMaxFilePathLength && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleMaxFilePathLength($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleFileExtensionRestriction extends OrgRules {const OrgRulesRepositoryRuleFileExtensionRestriction(this._value);
 
 final RepositoryRuleFileExtensionRestriction _value;
 
-@override RepositoryRuleFileExtensionRestriction get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleFileExtensionRestriction && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleFileExtensionRestriction($_value)'; } 
- }
+@override RepositoryRuleFileExtensionRestriction get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleFileExtensionRestriction && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleFileExtensionRestriction($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleMaxFileSize extends OrgRules {const OrgRulesRepositoryRuleMaxFileSize(this._value);
 
 final RepositoryRuleMaxFileSize _value;
 
-@override RepositoryRuleMaxFileSize get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleMaxFileSize && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleMaxFileSize($_value)'; } 
- }
+@override RepositoryRuleMaxFileSize get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleMaxFileSize && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleMaxFileSize($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleWorkflows extends OrgRules {const OrgRulesRepositoryRuleWorkflows(this._value);
 
 final RepositoryRuleWorkflows _value;
 
-@override RepositoryRuleWorkflows get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleWorkflows && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleWorkflows($_value)'; } 
- }
+@override RepositoryRuleWorkflows get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleWorkflows && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleWorkflows($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleCodeScanning extends OrgRules {const OrgRulesRepositoryRuleCodeScanning(this._value);
 
 final RepositoryRuleCodeScanning _value;
 
-@override RepositoryRuleCodeScanning get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleCodeScanning && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleCodeScanning($_value)'; } 
- }
+@override RepositoryRuleCodeScanning get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleCodeScanning && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleCodeScanning($_value)';}
+}
 @immutable final class OrgRulesRepositoryRuleCopilotCodeReview extends OrgRules {const OrgRulesRepositoryRuleCopilotCodeReview(this._value);
 
 final RepositoryRuleCopilotCodeReview _value;
 
-@override RepositoryRuleCopilotCodeReview get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRulesRepositoryRuleCopilotCodeReview && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.repositoryRuleCopilotCodeReview($_value)'; } 
- }
+@override RepositoryRuleCopilotCodeReview get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRulesRepositoryRuleCopilotCodeReview && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.repositoryRuleCopilotCodeReview($_value)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class OrgRules$Unknown extends OrgRules {const OrgRules$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgRules$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'OrgRules.unknown($_value)'; } 
- }
+@override dynamic get value {return _value ?? '';}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgRules$Unknown && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'OrgRules.unknown($_value)';}
+}

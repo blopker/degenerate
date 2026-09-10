@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zon
 /// Notes: Defaults to on for Business+ plans
 @immutable final class ZonesAdvancedDdosValue {const ZonesAdvancedDdosValue._(this.value);
 
-factory ZonesAdvancedDdosValue.fromJson(String json) { return switch (json) {
+factory ZonesAdvancedDdosValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => ZonesAdvancedDdosValue._(json),
-}; }
+};}
 
 static const ZonesAdvancedDdosValue $on = ZonesAdvancedDdosValue._('on');
 
@@ -18,11 +18,11 @@ static const List<ZonesAdvancedDdosValue> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesAdvancedDdosValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesAdvancedDdosValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesAdvancedDdosValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesAdvancedDdosValue($value)';}
+}

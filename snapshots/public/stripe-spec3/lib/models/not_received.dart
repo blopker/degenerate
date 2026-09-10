@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'not_received_additional_documentation.dart';import 'not_received_expected_at.dart';import 'not_received_explanation.dart';import 'not_received_product_description.dart';@immutable final class NotReceivedProductType {const NotReceivedProductType._(this.value);
 
-factory NotReceivedProductType.fromJson(String json) { return switch (json) {
+factory NotReceivedProductType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'merchandise' => merchandise,
   'service' => service,
   _ => NotReceivedProductType._(json),
-}; }
+};}
 
 static const NotReceivedProductType $empty = NotReceivedProductType._('');
 
@@ -19,23 +19,23 @@ static const List<NotReceivedProductType> values = [$empty, merchandise, service
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NotReceivedProductType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NotReceivedProductType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is NotReceivedProductType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'NotReceivedProductType($value)';}
+}
 @immutable final class NotReceived {const NotReceived({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
 
-factory NotReceived.fromJson(Map<String, dynamic> json) { return NotReceived(
+factory NotReceived.fromJson(Map<String, dynamic> json) {return NotReceived(
   additionalDocumentation: json['additional_documentation'] != null ? NotReceivedAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
   expectedAt: json['expected_at'] != null ? NotReceivedExpectedAt.fromJson(json['expected_at']) : null,
   explanation: json['explanation'] != null ? NotReceivedExplanation.fromJson(json['explanation']) : null,
   productDescription: json['product_description'] != null ? NotReceivedProductDescription.fromJson(json['product_description']) : null,
   productType: json['product_type'] != null ? NotReceivedProductType.fromJson(json['product_type'] as String) : null,
-); }
+);}
 
 final NotReceivedAdditionalDocumentation? additionalDocumentation;
 
@@ -47,28 +47,28 @@ final NotReceivedProductDescription? productDescription;
 
 final NotReceivedProductType? productType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
   if (expectedAt != null) 'expected_at': expectedAt?.toJson(),
   if (explanation != null) 'explanation': explanation?.toJson(),
   if (productDescription != null) 'product_description': productDescription?.toJson(),
   if (productType != null) 'product_type': productType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'expected_at', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
-NotReceived copyWith({NotReceivedAdditionalDocumentation? Function()? additionalDocumentation, NotReceivedExpectedAt? Function()? expectedAt, NotReceivedExplanation? Function()? explanation, NotReceivedProductDescription? Function()? productDescription, NotReceivedProductType? Function()? productType, }) { return NotReceived(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'expected_at', 'explanation', 'product_description', 'product_type'}.contains(key));}
+NotReceived copyWith({NotReceivedAdditionalDocumentation? Function()? additionalDocumentation, NotReceivedExpectedAt? Function()? expectedAt, NotReceivedExplanation? Function()? explanation, NotReceivedProductDescription? Function()? productDescription, NotReceivedProductType? Function()? productType, }) {return NotReceived(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   expectedAt: expectedAt != null ? expectedAt() : this.expectedAt,
   explanation: explanation != null ? explanation() : this.explanation,
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   productType: productType != null ? productType() : this.productType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NotReceived &&
           additionalDocumentation == other.additionalDocumentation &&
           expectedAt == other.expectedAt &&
           explanation == other.explanation &&
           productDescription == other.productDescription &&
-          productType == other.productType; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, expectedAt, explanation, productDescription, productType); } 
-@override String toString() { return 'NotReceived(additionalDocumentation: $additionalDocumentation, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
- }
+          productType == other.productType;}
+@override int get hashCode {return Object.hash(additionalDocumentation, expectedAt, explanation, productDescription, productType);}
+@override String toString() {return 'NotReceived(additionalDocumentation: $additionalDocumentation, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
 @immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
-factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) {return switch (json) {
   'ALL' => all,
   'AI_BOTS' => aiBots,
   'AI_GATEWAY' => aiGateway,
@@ -30,7 +30,7 @@ factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfi
   'SPEED' => speed,
   'WORKERS_AI' => workersAi,
   _ => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
-}; }
+};}
 
 static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
 
@@ -86,18 +86,18 @@ static const List<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResul
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource($value)';}
+}
 /// Event type for annotations.
 @immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
-factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) {return switch (json) {
   'EVENT' => event,
   'GENERAL' => general,
   'OUTAGE' => outage,
@@ -105,7 +105,7 @@ factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfi
   'PIPELINE' => pipeline,
   'TRAFFIC_ANOMALY' => trafficAnomaly,
   _ => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
-}; }
+};}
 
 static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
 
@@ -123,18 +123,18 @@ static const List<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResul
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType($value)';}
+}
 /// Annotation associated with the result (e.g. outage or other type of event).
 @immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
-factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(
+factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) {return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
   description: json['description'] as String,
   endDate: DateTime.parse(json['endDate'] as String),
@@ -142,7 +142,7 @@ factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfi
   isInstantaneous: json['isInstantaneous'] as bool,
   linkedUrl: Uri.parse(json['linkedUrl'] as String),
   startDate: DateTime.parse(json['startDate'] as String),
-); }
+);}
 
 /// Data source for annotations.
 final RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
@@ -161,7 +161,7 @@ final Uri linkedUrl;
 
 final DateTime startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataSource': dataSource.toJson(),
   'description': description,
   'endDate': endDate.toIso8601String(),
@@ -169,15 +169,15 @@ Map<String, dynamic> toJson() { return {
   'isInstantaneous': isInstantaneous,
   'linkedUrl': linkedUrl.toString(),
   'startDate': startDate.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataSource') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('endDate') && json['endDate'] is String &&
       json.containsKey('eventType') &&
       json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
       json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
-      json.containsKey('startDate') && json['startDate'] is String; } 
-RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(
+      json.containsKey('startDate') && json['startDate'] is String;}
+RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) {return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(
   dataSource: dataSource ?? this.dataSource,
   description: description ?? this.description,
   endDate: endDate ?? this.endDate,
@@ -185,8 +185,8 @@ RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInf
   isInstantaneous: isInstantaneous ?? this.isInstantaneous,
   linkedUrl: linkedUrl ?? this.linkedUrl,
   startDate: startDate ?? this.startDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations &&
           dataSource == other.dataSource &&
           description == other.description &&
@@ -194,7 +194,7 @@ RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInf
           eventType == other.eventType &&
           isInstantaneous == other.isInstantaneous &&
           linkedUrl == other.linkedUrl &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
-@override String toString() { return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
- }
+          startDate == other.startDate;}
+@override int get hashCode {return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate);}
+@override String toString() {return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)';}
+}

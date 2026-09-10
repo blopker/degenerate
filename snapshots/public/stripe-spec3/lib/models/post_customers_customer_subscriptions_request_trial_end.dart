@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestTrialEndVariant1 {const PostCustomersCustomerSubscriptionsRequestTrialEndVariant1._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestTrialEndVariant1.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestTrialEndVariant1.fromJson(String json) {return switch (json) {
   'now' => now,
   _ => PostCustomersCustomerSubscriptionsRequestTrialEndVariant1._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestTrialEndVariant1 now = PostCustomersCustomerSubscriptionsRequestTrialEndVariant1._('now');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersCustomerSubscriptionsRequestTrialEndVariant1> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestTrialEndVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestTrialEndVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestTrialEndVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestTrialEndVariant1($value)';}
+}
 /// Unix timestamp representing the end of the trial period the customer will get before being charged for the first time. If set, trial_end will override the default trial period of the plan the customer is being subscribed to. The special value `now` can be provided to end the customer's trial immediately. Can be at most two years from `billing_cycle_anchor`. See [Using trial periods on subscriptions](https://docs.stripe.com/billing/subscriptions/trials) to learn more.
 @immutable
 final class PostCustomersCustomerSubscriptionsRequestTrialEnd {

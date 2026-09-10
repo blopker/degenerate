@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_repository_edited_changes_default_branch.dart';import 'webhook_repository_edited_changes_description.dart';import 'webhook_repository_edited_changes_homepage.dart';import 'webhook_repository_edited_changes_topics.dart';@immutable final class WebhookRepositoryEditedChanges {const WebhookRepositoryEditedChanges({this.defaultBranch, this.description, this.homepage, this.topics, });
 
-factory WebhookRepositoryEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryEditedChanges(
+factory WebhookRepositoryEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookRepositoryEditedChanges(
   defaultBranch: json['default_branch'] != null ? WebhookRepositoryEditedChangesDefaultBranch.fromJson(json['default_branch'] as Map<String, dynamic>) : null,
   description: json['description'] != null ? WebhookRepositoryEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,
   homepage: json['homepage'] != null ? WebhookRepositoryEditedChangesHomepage.fromJson(json['homepage'] as Map<String, dynamic>) : null,
   topics: json['topics'] != null ? WebhookRepositoryEditedChangesTopics.fromJson(json['topics'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookRepositoryEditedChangesDefaultBranch? defaultBranch;
 
@@ -17,25 +17,25 @@ final WebhookRepositoryEditedChangesHomepage? homepage;
 
 final WebhookRepositoryEditedChangesTopics? topics;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (defaultBranch != null) 'default_branch': defaultBranch?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (homepage != null) 'homepage': homepage?.toJson(),
   if (topics != null) 'topics': topics?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_branch', 'description', 'homepage', 'topics'}.contains(key)); } 
-WebhookRepositoryEditedChanges copyWith({WebhookRepositoryEditedChangesDefaultBranch? Function()? defaultBranch, WebhookRepositoryEditedChangesDescription? Function()? description, WebhookRepositoryEditedChangesHomepage? Function()? homepage, WebhookRepositoryEditedChangesTopics? Function()? topics, }) { return WebhookRepositoryEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_branch', 'description', 'homepage', 'topics'}.contains(key));}
+WebhookRepositoryEditedChanges copyWith({WebhookRepositoryEditedChangesDefaultBranch? Function()? defaultBranch, WebhookRepositoryEditedChangesDescription? Function()? description, WebhookRepositoryEditedChangesHomepage? Function()? homepage, WebhookRepositoryEditedChangesTopics? Function()? topics, }) {return WebhookRepositoryEditedChanges(
   defaultBranch: defaultBranch != null ? defaultBranch() : this.defaultBranch,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,
   topics: topics != null ? topics() : this.topics,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryEditedChanges &&
           defaultBranch == other.defaultBranch &&
           description == other.description &&
           homepage == other.homepage &&
-          topics == other.topics; } 
-@override int get hashCode { return Object.hash(defaultBranch, description, homepage, topics); } 
-@override String toString() { return 'WebhookRepositoryEditedChanges(defaultBranch: $defaultBranch, description: $description, homepage: $homepage, topics: $topics)'; } 
- }
+          topics == other.topics;}
+@override int get hashCode {return Object.hash(defaultBranch, description, homepage, topics);}
+@override String toString() {return 'WebhookRepositoryEditedChanges(defaultBranch: $defaultBranch, description: $description, homepage: $homepage, topics: $topics)';}
+}

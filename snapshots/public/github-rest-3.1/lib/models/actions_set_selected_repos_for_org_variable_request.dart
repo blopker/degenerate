@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsSetSelectedReposForOrgVariableRequest {const ActionsSetSelectedReposForOrgVariableRequest({required this.selectedRepositoryIds});
 
-factory ActionsSetSelectedReposForOrgVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsSetSelectedReposForOrgVariableRequest(
+factory ActionsSetSelectedReposForOrgVariableRequest.fromJson(Map<String, dynamic> json) {return ActionsSetSelectedReposForOrgVariableRequest(
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The IDs of the repositories that can access the organization variable.
 final List<int> selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'selected_repository_ids': selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_repository_ids'); } 
-ActionsSetSelectedReposForOrgVariableRequest copyWith({List<int>? selectedRepositoryIds}) { return ActionsSetSelectedReposForOrgVariableRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('selected_repository_ids');}
+ActionsSetSelectedReposForOrgVariableRequest copyWith({List<int>? selectedRepositoryIds}) {return ActionsSetSelectedReposForOrgVariableRequest(
   selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsSetSelectedReposForOrgVariableRequest &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
-@override String toString() { return 'ActionsSetSelectedReposForOrgVariableRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
- }
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);}
+@override int get hashCode {return Object.hashAll(selectedRepositoryIds).hashCode;}
+@override String toString() {return 'ActionsSetSelectedReposForOrgVariableRequest(selectedRepositoryIds: $selectedRepositoryIds)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors {const RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors({required this.message});
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors(
+factory RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors.fromJson(Map<String, dynamic> json) {return RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors copyWith({String? message}) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors copyWith({String? message}) {return RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponse400Errors(message: $message)';}
+}

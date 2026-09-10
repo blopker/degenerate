@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_destination.dart';/// 
 @immutable final class TransferData {const TransferData({required this.destination, this.amount, });
 
-factory TransferData.fromJson(Map<String, dynamic> json) { return TransferData(
+factory TransferData.fromJson(Map<String, dynamic> json) {return TransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   destination: TransferDataDestination.fromJson(json['destination']),
-); }
+);}
 
 /// The amount transferred to the destination account. This transfer will occur automatically after the payment succeeds. If no amount is specified, by default the entire payment amount is transferred to the destination account.
 ///  The amount must be less than or equal to the [amount](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-amount), and must be a positive integer
@@ -16,19 +16,19 @@ final int? amount;
 /// The account (if any) that the payment is attributed to for tax reporting, and where funds from the payment are transferred to after payment success.
 final TransferDataDestination destination;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'destination': destination.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-TransferData copyWith({int? Function()? amount, TransferDataDestination? destination, }) { return TransferData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination');}
+TransferData copyWith({int? Function()? amount, TransferDataDestination? destination, }) {return TransferData(
   amount: amount != null ? amount() : this.amount,
   destination: destination ?? this.destination,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TransferData &&
           amount == other.amount &&
-          destination == other.destination; } 
-@override int get hashCode { return Object.hash(amount, destination); } 
-@override String toString() { return 'TransferData(amount: $amount, destination: $destination)'; } 
- }
+          destination == other.destination;}
+@override int get hashCode {return Object.hash(amount, destination);}
+@override String toString() {return 'TransferData(amount: $amount, destination: $destination)';}
+}

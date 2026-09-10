@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_version_response_result_elements_start_outputs_next.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs({required this.next});
 
-factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs(
+factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs(
   next: AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputsNext.fromJson(json['next'] as Map<String, dynamic>),
-); }
+);}
 
 final AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputsNext next;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'next': next.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('next'); } 
-AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs copyWith({AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputsNext? next}) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('next');}
+AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs copyWith({AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputsNext? next}) {return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs(
   next: next ?? this.next,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs &&
-          next == other.next; } 
-@override int get hashCode { return next.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs(next: $next)'; } 
- }
+          next == other.next;}
+@override int get hashCode {return next.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsStartOutputs(next: $next)';}
+}

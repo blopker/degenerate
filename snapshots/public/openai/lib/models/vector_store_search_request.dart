@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';import 'compound_filter.dart';import 'vector_store_search_request_filters.dart';import 'vector_store_search_request_query.dart';import 'vector_store_search_request_ranking_options.dart';@immutable final class VectorStoreSearchRequest {const VectorStoreSearchRequest({required this.query, this.rewriteQuery, this.maxNumResults, this.filters, this.rankingOptions, });
 
-factory VectorStoreSearchRequest.fromJson(Map<String, dynamic> json) { return VectorStoreSearchRequest(
+factory VectorStoreSearchRequest.fromJson(Map<String, dynamic> json) {return VectorStoreSearchRequest(
   query: OneOf2.parse(json['query'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
   rewriteQuery: json['rewrite_query'] as bool?,
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   filters: json['filters'] != null ? OneOf2.parse(json['filters'], fromA: (v) => ComparisonFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => CompoundFilter.fromJson(v as Map<String, dynamic>),) : null,
   rankingOptions: json['ranking_options'] != null ? VectorStoreSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// A query string for a search
 final VectorStoreSearchRequestQuery query;
@@ -26,31 +26,31 @@ final VectorStoreSearchRequestFilters? filters;
 final VectorStoreSearchRequestRankingOptions? rankingOptions;
 
 /// The value with the schema default applied when absent.
-bool get rewriteQueryOrDefault { return rewriteQuery ?? false; } 
+bool get rewriteQueryOrDefault {return rewriteQuery ?? false;}
 /// The value with the schema default applied when absent.
-int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
-Map<String, dynamic> toJson() { return {
+int get maxNumResultsOrDefault {return maxNumResults ?? 10;}
+Map<String, dynamic> toJson() {return {
   'query': query.toJson(),
   'rewrite_query': ?rewriteQuery,
   'max_num_results': ?maxNumResults,
   if (filters != null) 'filters': filters?.toJson(),
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('query'); } 
-VectorStoreSearchRequest copyWith({VectorStoreSearchRequestQuery? query, bool? Function()? rewriteQuery, int? Function()? maxNumResults, VectorStoreSearchRequestFilters? Function()? filters, VectorStoreSearchRequestRankingOptions? Function()? rankingOptions, }) { return VectorStoreSearchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('query');}
+VectorStoreSearchRequest copyWith({VectorStoreSearchRequestQuery? query, bool? Function()? rewriteQuery, int? Function()? maxNumResults, VectorStoreSearchRequestFilters? Function()? filters, VectorStoreSearchRequestRankingOptions? Function()? rankingOptions, }) {return VectorStoreSearchRequest(
   query: query ?? this.query,
   rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   filters: filters != null ? filters() : this.filters,
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorStoreSearchRequest &&
           query == other.query &&
           rewriteQuery == other.rewriteQuery &&
           maxNumResults == other.maxNumResults &&
           filters == other.filters &&
-          rankingOptions == other.rankingOptions; } 
-@override int get hashCode { return Object.hash(query, rewriteQuery, maxNumResults, filters, rankingOptions); } 
-@override String toString() { return 'VectorStoreSearchRequest(query: $query, rewriteQuery: $rewriteQuery, maxNumResults: $maxNumResults, filters: $filters, rankingOptions: $rankingOptions)'; } 
- }
+          rankingOptions == other.rankingOptions;}
+@override int get hashCode {return Object.hash(query, rewriteQuery, maxNumResults, filters, rankingOptions);}
+@override String toString() {return 'VectorStoreSearchRequest(query: $query, rewriteQuery: $rewriteQuery, maxNumResults: $maxNumResults, filters: $filters, rankingOptions: $rankingOptions)';}
+}

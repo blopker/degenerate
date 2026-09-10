@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespaces_create_for_authenticated_user_request_variant2_pull_request.dart';/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 @immutable final class CodespacesCreateForAuthenticatedUserRequestVariant2Geo {const CodespacesCreateForAuthenticatedUserRequestVariant2Geo._(this.value);
 
-factory CodespacesCreateForAuthenticatedUserRequestVariant2Geo.fromJson(String json) { return switch (json) {
+factory CodespacesCreateForAuthenticatedUserRequestVariant2Geo.fromJson(String json) {return switch (json) {
   'EuropeWest' => europeWest,
   'SoutheastAsia' => southeastAsia,
   'UsEast' => usEast,
   'UsWest' => usWest,
   _ => CodespacesCreateForAuthenticatedUserRequestVariant2Geo._(json),
-}; }
+};}
 
 static const CodespacesCreateForAuthenticatedUserRequestVariant2Geo europeWest = CodespacesCreateForAuthenticatedUserRequestVariant2Geo._('EuropeWest');
 
@@ -23,17 +23,17 @@ static const List<CodespacesCreateForAuthenticatedUserRequestVariant2Geo> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespacesCreateForAuthenticatedUserRequestVariant2Geo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant2Geo($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodespacesCreateForAuthenticatedUserRequestVariant2Geo && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodespacesCreateForAuthenticatedUserRequestVariant2Geo($value)';}
+}
 @immutable final class CodespacesCreateForAuthenticatedUserRequestVariant2 {const CodespacesCreateForAuthenticatedUserRequestVariant2({required this.pullRequest, this.location, this.geo, this.machine, this.devcontainerPath, this.workingDirectory, this.idleTimeoutMinutes, });
 
-factory CodespacesCreateForAuthenticatedUserRequestVariant2.fromJson(Map<String, dynamic> json) { return CodespacesCreateForAuthenticatedUserRequestVariant2(
+factory CodespacesCreateForAuthenticatedUserRequestVariant2.fromJson(Map<String, dynamic> json) {return CodespacesCreateForAuthenticatedUserRequestVariant2(
   pullRequest: CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   location: json['location'] as String?,
   geo: json['geo'] != null ? CodespacesCreateForAuthenticatedUserRequestVariant2Geo.fromJson(json['geo'] as String) : null,
@@ -41,7 +41,7 @@ factory CodespacesCreateForAuthenticatedUserRequestVariant2.fromJson(Map<String,
   devcontainerPath: json['devcontainer_path'] as String?,
   workingDirectory: json['working_directory'] as String?,
   idleTimeoutMinutes: json['idle_timeout_minutes'] != null ? (json['idle_timeout_minutes'] as num).toInt() : null,
-); }
+);}
 
 /// Pull request number for this codespace
 final CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest pullRequest;
@@ -64,7 +64,7 @@ final String? workingDirectory;
 /// Time in minutes before codespace stops from inactivity
 final int? idleTimeoutMinutes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pull_request': pullRequest.toJson(),
   'location': ?location,
   if (geo != null) 'geo': geo?.toJson(),
@@ -72,9 +72,9 @@ Map<String, dynamic> toJson() { return {
   'devcontainer_path': ?devcontainerPath,
   'working_directory': ?workingDirectory,
   'idle_timeout_minutes': ?idleTimeoutMinutes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull_request'); } 
-CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest? pullRequest, String? Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant2Geo? Function()? geo, String? Function()? machine, String? Function()? devcontainerPath, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, }) { return CodespacesCreateForAuthenticatedUserRequestVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pull_request');}
+CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest? pullRequest, String? Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant2Geo? Function()? geo, String? Function()? machine, String? Function()? devcontainerPath, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, }) {return CodespacesCreateForAuthenticatedUserRequestVariant2(
   pullRequest: pullRequest ?? this.pullRequest,
   location: location != null ? location() : this.location,
   geo: geo != null ? geo() : this.geo,
@@ -82,8 +82,8 @@ CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({CodespacesCreateFo
   devcontainerPath: devcontainerPath != null ? devcontainerPath() : this.devcontainerPath,
   workingDirectory: workingDirectory != null ? workingDirectory() : this.workingDirectory,
   idleTimeoutMinutes: idleTimeoutMinutes != null ? idleTimeoutMinutes() : this.idleTimeoutMinutes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodespacesCreateForAuthenticatedUserRequestVariant2 &&
           pullRequest == other.pullRequest &&
           location == other.location &&
@@ -91,7 +91,7 @@ CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({CodespacesCreateFo
           machine == other.machine &&
           devcontainerPath == other.devcontainerPath &&
           workingDirectory == other.workingDirectory &&
-          idleTimeoutMinutes == other.idleTimeoutMinutes; } 
-@override int get hashCode { return Object.hash(pullRequest, location, geo, machine, devcontainerPath, workingDirectory, idleTimeoutMinutes); } 
-@override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant2(pullRequest: $pullRequest, location: $location, geo: $geo, machine: $machine, devcontainerPath: $devcontainerPath, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes)'; } 
- }
+          idleTimeoutMinutes == other.idleTimeoutMinutes;}
+@override int get hashCode {return Object.hash(pullRequest, location, geo, machine, devcontainerPath, workingDirectory, idleTimeoutMinutes);}
+@override String toString() {return 'CodespacesCreateForAuthenticatedUserRequestVariant2(pullRequest: $pullRequest, location: $location, geo: $geo, machine: $machine, devcontainerPath: $devcontainerPath, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result_dlp.dart';import 'aig_config_fetch_gateway_response_result_otel.dart';import 'aig_config_fetch_gateway_response_result_stripe.dart';@immutable final class AigConfigFetchGatewayResponseResultLogManagementStrategy {const AigConfigFetchGatewayResponseResultLogManagementStrategy._(this.value);
 
-factory AigConfigFetchGatewayResponseResultLogManagementStrategy.fromJson(String json) { return switch (json) {
+factory AigConfigFetchGatewayResponseResultLogManagementStrategy.fromJson(String json) {return switch (json) {
   'STOP_INSERTING' => stopInserting,
   'DELETE_OLDEST' => deleteOldest,
   _ => AigConfigFetchGatewayResponseResultLogManagementStrategy._(json),
-}; }
+};}
 
 static const AigConfigFetchGatewayResponseResultLogManagementStrategy stopInserting = AigConfigFetchGatewayResponseResultLogManagementStrategy._('STOP_INSERTING');
 
@@ -16,21 +16,21 @@ static const List<AigConfigFetchGatewayResponseResultLogManagementStrategy> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigFetchGatewayResponseResultLogManagementStrategy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultLogManagementStrategy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigFetchGatewayResponseResultLogManagementStrategy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultLogManagementStrategy($value)';}
+}
 @immutable final class AigConfigFetchGatewayResponseResultRateLimitingTechnique {const AigConfigFetchGatewayResponseResultRateLimitingTechnique._(this.value);
 
-factory AigConfigFetchGatewayResponseResultRateLimitingTechnique.fromJson(String json) { return switch (json) {
+factory AigConfigFetchGatewayResponseResultRateLimitingTechnique.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'sliding' => sliding,
   _ => AigConfigFetchGatewayResponseResultRateLimitingTechnique._(json),
-}; }
+};}
 
 static const AigConfigFetchGatewayResponseResultRateLimitingTechnique fixed = AigConfigFetchGatewayResponseResultRateLimitingTechnique._('fixed');
 
@@ -40,22 +40,22 @@ static const List<AigConfigFetchGatewayResponseResultRateLimitingTechnique> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigFetchGatewayResponseResultRateLimitingTechnique && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultRateLimitingTechnique($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigFetchGatewayResponseResultRateLimitingTechnique && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultRateLimitingTechnique($value)';}
+}
 /// Controls how Workers AI inference calls routed through this gateway are billed
 @immutable final class AigConfigFetchGatewayResponseResultWorkersAiBillingMode {const AigConfigFetchGatewayResponseResultWorkersAiBillingMode._(this.value);
 
-factory AigConfigFetchGatewayResponseResultWorkersAiBillingMode.fromJson(String json) { return switch (json) {
+factory AigConfigFetchGatewayResponseResultWorkersAiBillingMode.fromJson(String json) {return switch (json) {
   'postpaid' => postpaid,
   'unified' => unified,
   _ => AigConfigFetchGatewayResponseResultWorkersAiBillingMode._(json),
-}; }
+};}
 
 static const AigConfigFetchGatewayResponseResultWorkersAiBillingMode postpaid = AigConfigFetchGatewayResponseResultWorkersAiBillingMode._('postpaid');
 
@@ -65,17 +65,17 @@ static const List<AigConfigFetchGatewayResponseResultWorkersAiBillingMode> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigFetchGatewayResponseResultWorkersAiBillingMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultWorkersAiBillingMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigFetchGatewayResponseResultWorkersAiBillingMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultWorkersAiBillingMode($value)';}
+}
 @immutable final class AigConfigFetchGatewayResponseResult {const AigConfigFetchGatewayResponseResult({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.createdAt, required this.id, required this.modifiedAt, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.dlp, this.isDefault, this.logManagement = const Omittable.absent(), this.logManagementStrategy = const Omittable.absent(), this.logpush, this.logpushPublicKey = const Omittable.absent(), this.otel = const Omittable.absent(), this.storeId = const Omittable.absent(), this.stripe = const Omittable.absent(), this.workersAiBillingMode, this.zdr, });
 
-factory AigConfigFetchGatewayResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResult(
+factory AigConfigFetchGatewayResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigFetchGatewayResponseResult(
   authentication: json['authentication'] as bool?,
   cacheInvalidateOnUpdate: json['cache_invalidate_on_update'] as bool,
   cacheTtl: json['cache_ttl'] != null ? (json['cache_ttl'] as num).toInt() : null,
@@ -97,7 +97,7 @@ factory AigConfigFetchGatewayResponseResult.fromJson(Map<String, dynamic> json) 
   stripe: json.containsKey('stripe') ? Omittable(json['stripe'] != null ? AigConfigFetchGatewayResponseResultStripe.fromJson(json['stripe'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   workersAiBillingMode: json['workers_ai_billing_mode'] != null ? AigConfigFetchGatewayResponseResultWorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : null,
   zdr: json['zdr'] as bool?,
-); }
+);}
 
 final bool? authentication;
 
@@ -144,8 +144,8 @@ final AigConfigFetchGatewayResponseResultWorkersAiBillingMode? workersAiBillingM
 final bool? zdr;
 
 /// The value with the schema default applied when absent.
-AigConfigFetchGatewayResponseResultWorkersAiBillingMode get workersAiBillingModeOrDefault { return workersAiBillingMode ?? AigConfigFetchGatewayResponseResultWorkersAiBillingMode.fromJson('postpaid'); } 
-Map<String, dynamic> toJson() { return {
+AigConfigFetchGatewayResponseResultWorkersAiBillingMode get workersAiBillingModeOrDefault {return workersAiBillingMode ?? AigConfigFetchGatewayResponseResultWorkersAiBillingMode.fromJson('postpaid');}
+Map<String, dynamic> toJson() {return {
   'authentication': ?authentication,
   'cache_invalidate_on_update': cacheInvalidateOnUpdate,
   'cache_ttl': cacheTtl,
@@ -167,8 +167,8 @@ Map<String, dynamic> toJson() { return {
   if (stripe.isPresent) 'stripe': stripe.value?.toJson(),
   if (workersAiBillingMode != null) 'workers_ai_billing_mode': workersAiBillingMode?.toJson(),
   'zdr': ?zdr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
       json.containsKey('cache_ttl') && (json['cache_ttl'] == null || json['cache_ttl'] is num) &&
       json.containsKey('collect_logs') && json['collect_logs'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -176,8 +176,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('rate_limiting_interval') && (json['rate_limiting_interval'] == null || json['rate_limiting_interval'] is num) &&
       json.containsKey('rate_limiting_limit') && (json['rate_limiting_limit'] == null || json['rate_limiting_limit'] is num) &&
-      json.containsKey('rate_limiting_technique'); } 
-AigConfigFetchGatewayResponseResult copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, DateTime? createdAt, AigConfigFetchGatewayResponseResultDlp? Function()? dlp, String? id, bool? Function()? isDefault, Omittable<int?>? logManagement, Omittable<AigConfigFetchGatewayResponseResultLogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, DateTime? modifiedAt, Omittable<List<AigConfigFetchGatewayResponseResultOtel>?>? otel, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, AigConfigFetchGatewayResponseResultRateLimitingTechnique? rateLimitingTechnique, Omittable<String?>? storeId, Omittable<AigConfigFetchGatewayResponseResultStripe?>? stripe, AigConfigFetchGatewayResponseResultWorkersAiBillingMode? Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigFetchGatewayResponseResult(
+      json.containsKey('rate_limiting_technique');}
+AigConfigFetchGatewayResponseResult copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, DateTime? createdAt, AigConfigFetchGatewayResponseResultDlp? Function()? dlp, String? id, bool? Function()? isDefault, Omittable<int?>? logManagement, Omittable<AigConfigFetchGatewayResponseResultLogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, DateTime? modifiedAt, Omittable<List<AigConfigFetchGatewayResponseResultOtel>?>? otel, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, AigConfigFetchGatewayResponseResultRateLimitingTechnique? rateLimitingTechnique, Omittable<String?>? storeId, Omittable<AigConfigFetchGatewayResponseResultStripe?>? stripe, AigConfigFetchGatewayResponseResultWorkersAiBillingMode? Function()? workersAiBillingMode, bool? Function()? zdr, }) {return AigConfigFetchGatewayResponseResult(
   authentication: authentication != null ? authentication() : this.authentication,
   cacheInvalidateOnUpdate: cacheInvalidateOnUpdate ?? this.cacheInvalidateOnUpdate,
   cacheTtl: cacheTtl != null ? cacheTtl() : this.cacheTtl,
@@ -199,8 +199,8 @@ AigConfigFetchGatewayResponseResult copyWith({bool? Function()? authentication, 
   stripe: stripe ?? this.stripe,
   workersAiBillingMode: workersAiBillingMode != null ? workersAiBillingMode() : this.workersAiBillingMode,
   zdr: zdr != null ? zdr() : this.zdr,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigFetchGatewayResponseResult &&
           authentication == other.authentication &&
           cacheInvalidateOnUpdate == other.cacheInvalidateOnUpdate &&
@@ -223,7 +223,7 @@ AigConfigFetchGatewayResponseResult copyWith({bool? Function()? authentication, 
           storeId == other.storeId &&
           stripe == other.stripe &&
           workersAiBillingMode == other.workersAiBillingMode &&
-          zdr == other.zdr; } 
-@override int get hashCode { return Object.hashAll([authentication, cacheInvalidateOnUpdate, cacheTtl, collectLogs, createdAt, dlp, id, isDefault, logManagement, logManagementStrategy, logpush, logpushPublicKey, modifiedAt, Object.hashAll(otel.value ?? const []), rateLimitingInterval, rateLimitingLimit, rateLimitingTechnique, storeId, stripe, workersAiBillingMode, zdr]); } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResult(authentication: $authentication, cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate, cacheTtl: $cacheTtl, collectLogs: $collectLogs, createdAt: $createdAt, dlp: $dlp, id: $id, isDefault: $isDefault, logManagement: $logManagement, logManagementStrategy: $logManagementStrategy, logpush: $logpush, logpushPublicKey: $logpushPublicKey, modifiedAt: $modifiedAt, otel: $otel, rateLimitingInterval: $rateLimitingInterval, rateLimitingLimit: $rateLimitingLimit, rateLimitingTechnique: $rateLimitingTechnique, storeId: $storeId, stripe: $stripe, workersAiBillingMode: $workersAiBillingMode, zdr: $zdr)'; } 
- }
+          zdr == other.zdr;}
+@override int get hashCode {return Object.hashAll([authentication, cacheInvalidateOnUpdate, cacheTtl, collectLogs, createdAt, dlp, id, isDefault, logManagement, logManagementStrategy, logpush, logpushPublicKey, modifiedAt, Object.hashAll(otel.value ?? const []), rateLimitingInterval, rateLimitingLimit, rateLimitingTechnique, storeId, stripe, workersAiBillingMode, zdr]);}
+@override String toString() {return 'AigConfigFetchGatewayResponseResult(authentication: $authentication, cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate, cacheTtl: $cacheTtl, collectLogs: $collectLogs, createdAt: $createdAt, dlp: $dlp, id: $id, isDefault: $isDefault, logManagement: $logManagement, logManagementStrategy: $logManagementStrategy, logpush: $logpush, logpushPublicKey: $logpushPublicKey, modifiedAt: $modifiedAt, otel: $otel, rateLimitingInterval: $rateLimitingInterval, rateLimitingLimit: $rateLimitingLimit, rateLimitingTechnique: $rateLimitingTechnique, storeId: $storeId, stripe: $stripe, workersAiBillingMode: $workersAiBillingMode, zdr: $zdr)';}
+}

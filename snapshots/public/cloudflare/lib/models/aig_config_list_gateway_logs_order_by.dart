@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsOrderBy {const AigConfigListGatewayLogsOrderBy._(this.value);
 
-factory AigConfigListGatewayLogsOrderBy.fromJson(String json) { return switch (json) {
+factory AigConfigListGatewayLogsOrderBy.fromJson(String json) {return switch (json) {
   'created_at' => createdAt,
   'provider' => provider,
   'model' => model,
@@ -10,7 +10,7 @@ factory AigConfigListGatewayLogsOrderBy.fromJson(String json) { return switch (j
   'success' => success,
   'cached' => cached,
   _ => AigConfigListGatewayLogsOrderBy._(json),
-}; }
+};}
 
 static const AigConfigListGatewayLogsOrderBy createdAt = AigConfigListGatewayLogsOrderBy._('created_at');
 
@@ -28,11 +28,11 @@ static const List<AigConfigListGatewayLogsOrderBy> values = [createdAt, provider
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigListGatewayLogsOrderBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigListGatewayLogsOrderBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigListGatewayLogsOrderBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigListGatewayLogsOrderBy($value)';}
+}

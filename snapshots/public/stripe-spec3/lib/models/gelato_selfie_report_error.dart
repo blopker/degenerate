@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
 @immutable final class GelatoSelfieReportErrorCode {const GelatoSelfieReportErrorCode._(this.value);
 
-factory GelatoSelfieReportErrorCode.fromJson(String json) { return switch (json) {
+factory GelatoSelfieReportErrorCode.fromJson(String json) {return switch (json) {
   'selfie_document_missing_photo' => selfieDocumentMissingPhoto,
   'selfie_face_mismatch' => selfieFaceMismatch,
   'selfie_manipulated' => selfieManipulated,
   'selfie_unverified_other' => selfieUnverifiedOther,
   _ => GelatoSelfieReportErrorCode._(json),
-}; }
+};}
 
 static const GelatoSelfieReportErrorCode selfieDocumentMissingPhoto = GelatoSelfieReportErrorCode._('selfie_document_missing_photo');
 
@@ -23,21 +23,21 @@ static const List<GelatoSelfieReportErrorCode> values = [selfieDocumentMissingPh
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoSelfieReportErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoSelfieReportErrorCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GelatoSelfieReportErrorCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GelatoSelfieReportErrorCode($value)';}
+}
 /// 
 @immutable final class GelatoSelfieReportError {const GelatoSelfieReportError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory GelatoSelfieReportError.fromJson(Map<String, dynamic> json) { return GelatoSelfieReportError(
+factory GelatoSelfieReportError.fromJson(Map<String, dynamic> json) {return GelatoSelfieReportError(
   code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoSelfieReportErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A short machine-readable string giving the reason for the verification failure.
 final Omittable<GelatoSelfieReportErrorCode?> code;
@@ -45,19 +45,19 @@ final Omittable<GelatoSelfieReportErrorCode?> code;
 /// A human-readable message giving the reason for the failure. These messages can be shown to your users.
 final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (code.isPresent) 'code': code.value?.toJson(),
   if (reason.isPresent) 'reason': reason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
-GelatoSelfieReportError copyWith({Omittable<GelatoSelfieReportErrorCode?>? code, Omittable<String?>? reason, }) { return GelatoSelfieReportError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'reason'}.contains(key));}
+GelatoSelfieReportError copyWith({Omittable<GelatoSelfieReportErrorCode?>? code, Omittable<String?>? reason, }) {return GelatoSelfieReportError(
   code: code ?? this.code,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GelatoSelfieReportError &&
           code == other.code &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(code, reason); } 
-@override String toString() { return 'GelatoSelfieReportError(code: $code, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(code, reason);}
+@override String toString() {return 'GelatoSelfieReportError(code: $code, reason: $reason)';}
+}

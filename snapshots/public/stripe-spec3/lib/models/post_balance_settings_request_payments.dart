@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_balance_settings_request_payments_payouts.dart';import 'post_balance_settings_request_payments_settlement_timing.dart';/// Settings that apply to the [Payments Balance](https://docs.stripe.com/api/balance).
 @immutable final class PostBalanceSettingsRequestPayments {const PostBalanceSettingsRequestPayments({this.debitNegativeBalances, this.payouts, this.settlementTiming, });
 
-factory PostBalanceSettingsRequestPayments.fromJson(Map<String, dynamic> json) { return PostBalanceSettingsRequestPayments(
+factory PostBalanceSettingsRequestPayments.fromJson(Map<String, dynamic> json) {return PostBalanceSettingsRequestPayments(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,
   payouts: json['payouts'] != null ? PostBalanceSettingsRequestPaymentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
   settlementTiming: json['settlement_timing'] != null ? PostBalanceSettingsRequestPaymentsSettlementTiming.fromJson(json['settlement_timing'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool? debitNegativeBalances;
 
@@ -15,22 +15,22 @@ final PostBalanceSettingsRequestPaymentsPayouts? payouts;
 
 final PostBalanceSettingsRequestPaymentsSettlementTiming? settlementTiming;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'debit_negative_balances': ?debitNegativeBalances,
   if (payouts != null) 'payouts': payouts?.toJson(),
   if (settlementTiming != null) 'settlement_timing': settlementTiming?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'debit_negative_balances', 'payouts', 'settlement_timing'}.contains(key)); } 
-PostBalanceSettingsRequestPayments copyWith({bool? Function()? debitNegativeBalances, PostBalanceSettingsRequestPaymentsPayouts? Function()? payouts, PostBalanceSettingsRequestPaymentsSettlementTiming? Function()? settlementTiming, }) { return PostBalanceSettingsRequestPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'debit_negative_balances', 'payouts', 'settlement_timing'}.contains(key));}
+PostBalanceSettingsRequestPayments copyWith({bool? Function()? debitNegativeBalances, PostBalanceSettingsRequestPaymentsPayouts? Function()? payouts, PostBalanceSettingsRequestPaymentsSettlementTiming? Function()? settlementTiming, }) {return PostBalanceSettingsRequestPayments(
   debitNegativeBalances: debitNegativeBalances != null ? debitNegativeBalances() : this.debitNegativeBalances,
   payouts: payouts != null ? payouts() : this.payouts,
   settlementTiming: settlementTiming != null ? settlementTiming() : this.settlementTiming,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBalanceSettingsRequestPayments &&
           debitNegativeBalances == other.debitNegativeBalances &&
           payouts == other.payouts &&
-          settlementTiming == other.settlementTiming; } 
-@override int get hashCode { return Object.hash(debitNegativeBalances, payouts, settlementTiming); } 
-@override String toString() { return 'PostBalanceSettingsRequestPayments(debitNegativeBalances: $debitNegativeBalances, payouts: $payouts, settlementTiming: $settlementTiming)'; } 
- }
+          settlementTiming == other.settlementTiming;}
+@override int get hashCode {return Object.hash(debitNegativeBalances, payouts, settlementTiming);}
+@override String toString() {return 'PostBalanceSettingsRequestPayments(debitNegativeBalances: $debitNegativeBalances, payouts: $payouts, settlementTiming: $settlementTiming)';}
+}

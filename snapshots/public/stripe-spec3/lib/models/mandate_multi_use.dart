@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class MandateMultiUse {const MandateMultiUse();
 
-factory MandateMultiUse.fromJson(Map<String, dynamic> _) { return const MandateMultiUse(); }
+factory MandateMultiUse.fromJson(Map<String, dynamic> _) {return const MandateMultiUse();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-MandateMultiUse copyWith() { return const MandateMultiUse(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+MandateMultiUse copyWith() {return const MandateMultiUse(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is MandateMultiUse; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'MandateMultiUse()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is MandateMultiUse;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'MandateMultiUse()';}
+}

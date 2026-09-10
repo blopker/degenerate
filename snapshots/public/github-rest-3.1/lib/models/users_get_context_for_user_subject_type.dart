@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersGetContextForUserSubjectType {const UsersGetContextForUserSubjectType._(this.value);
 
-factory UsersGetContextForUserSubjectType.fromJson(String json) { return switch (json) {
+factory UsersGetContextForUserSubjectType.fromJson(String json) {return switch (json) {
   'organization' => organization,
   'repository' => repository,
   'issue' => issue,
   'pull_request' => pullRequest,
   _ => UsersGetContextForUserSubjectType._(json),
-}; }
+};}
 
 static const UsersGetContextForUserSubjectType organization = UsersGetContextForUserSubjectType._('organization');
 
@@ -22,11 +22,11 @@ static const List<UsersGetContextForUserSubjectType> values = [organization, rep
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsersGetContextForUserSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsersGetContextForUserSubjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsersGetContextForUserSubjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsersGetContextForUserSubjectType($value)';}
+}

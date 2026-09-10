@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry {const PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry._(this.value);
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry.fromJson(String json) {return switch (json) {
   'AT' => at,
   'BE' => be,
   'DE' => de,
@@ -10,7 +10,7 @@ factory PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry.fromJson(S
   'IT' => it,
   'NL' => nl,
   _ => PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry at = PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry._('AT');
 
@@ -28,32 +28,32 @@ static const List<PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry($value)';}
+}
 @immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataSofort {const PostPaymentIntentsIntentRequestPaymentMethodDataSofort({required this.country});
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataSofort(
+factory PostPaymentIntentsIntentRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentRequestPaymentMethodDataSofort(
   country: PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry.fromJson(json['country'] as String),
-); }
+);}
 
 final PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry country;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country'); } 
-PostPaymentIntentsIntentRequestPaymentMethodDataSofort copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry? country}) { return PostPaymentIntentsIntentRequestPaymentMethodDataSofort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country');}
+PostPaymentIntentsIntentRequestPaymentMethodDataSofort copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry? country}) {return PostPaymentIntentsIntentRequestPaymentMethodDataSofort(
   country: country ?? this.country,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentRequestPaymentMethodDataSofort &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataSofort(country: $country)'; } 
- }
+          country == other.country;}
+@override int get hashCode {return country.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataSofort(country: $country)';}
+}

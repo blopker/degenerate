@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_release.dart';@immutable final class WebhookReleaseCreatedAction {const WebhookReleaseCreatedAction._(this.value);
 
-factory WebhookReleaseCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookReleaseCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookReleaseCreatedAction._(json),
-}; }
+};}
 
 static const WebhookReleaseCreatedAction created = WebhookReleaseCreatedAction._('created');
 
@@ -13,17 +13,17 @@ static const List<WebhookReleaseCreatedAction> values = [created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookReleaseCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookReleaseCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookReleaseCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookReleaseCreatedAction($value)';}
+}
 @immutable final class WebhookReleaseCreated {const WebhookReleaseCreated({required this.action, required this.release, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookReleaseCreated.fromJson(Map<String, dynamic> json) { return WebhookReleaseCreated(
+factory WebhookReleaseCreated.fromJson(Map<String, dynamic> json) {return WebhookReleaseCreated(
   action: WebhookReleaseCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookReleaseCreated.fromJson(Map<String, dynamic> json) { return Webho
   release: WebhooksRelease.fromJson(json['release'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookReleaseCreatedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   'release': release.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('release') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookReleaseCreated copyWith({WebhookReleaseCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookReleaseCreated(
+      json.containsKey('sender');}
+WebhookReleaseCreated copyWith({WebhookReleaseCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookReleaseCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -68,8 +68,8 @@ WebhookReleaseCreated copyWith({WebhookReleaseCreatedAction? action, EnterpriseW
   release: release ?? this.release,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookReleaseCreated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -77,7 +77,7 @@ WebhookReleaseCreated copyWith({WebhookReleaseCreatedAction? action, EnterpriseW
           organization == other.organization &&
           release == other.release &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, release, repository, sender); } 
-@override String toString() { return 'WebhookReleaseCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, release, repository, sender);}
+@override String toString() {return 'WebhookReleaseCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)';}
+}

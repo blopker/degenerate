@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_curated_image.dart';@immutable final class ActionsGetHostedRunnersPartnerImagesForOrgResponse {const ActionsGetHostedRunnersPartnerImagesForOrgResponse({required this.totalCount, required this.images, });
 
-factory ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGetHostedRunnersPartnerImagesForOrgResponse(
+factory ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsGetHostedRunnersPartnerImagesForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),
   images: (json['images'] as List<dynamic>).map((e) => ActionsHostedRunnerCuratedImage.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<ActionsHostedRunnerCuratedImage> images;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'images': images.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('images'); } 
-ActionsGetHostedRunnersPartnerImagesForOrgResponse copyWith({int? totalCount, List<ActionsHostedRunnerCuratedImage>? images, }) { return ActionsGetHostedRunnersPartnerImagesForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('images');}
+ActionsGetHostedRunnersPartnerImagesForOrgResponse copyWith({int? totalCount, List<ActionsHostedRunnerCuratedImage>? images, }) {return ActionsGetHostedRunnersPartnerImagesForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   images: images ?? this.images,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsGetHostedRunnersPartnerImagesForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(images, other.images); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(images)); } 
-@override String toString() { return 'ActionsGetHostedRunnersPartnerImagesForOrgResponse(totalCount: $totalCount, images: $images)'; } 
- }
+          listEquals(images, other.images);}
+@override int get hashCode {return Object.hash(totalCount, Object.hashAll(images));}
+@override String toString() {return 'ActionsGetHostedRunnersPartnerImagesForOrgResponse(totalCount: $totalCount, images: $images)';}
+}

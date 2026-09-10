@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The read replication mode for the database. Use 'auto' to create replicas and allow D1 automatically place them around the world, or 'disabled' to not use any database replicas (it can take a few hours for all replicas to be deleted).
 @immutable final class D1ReadReplicationMode {const D1ReadReplicationMode._(this.value);
 
-factory D1ReadReplicationMode.fromJson(String json) { return switch (json) {
+factory D1ReadReplicationMode.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'disabled' => disabled,
   _ => D1ReadReplicationMode._(json),
-}; }
+};}
 
 static const D1ReadReplicationMode auto = D1ReadReplicationMode._('auto');
 
@@ -17,11 +17,11 @@ static const List<D1ReadReplicationMode> values = [auto, disabled];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1ReadReplicationMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1ReadReplicationMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is D1ReadReplicationMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'D1ReadReplicationMode($value)';}
+}

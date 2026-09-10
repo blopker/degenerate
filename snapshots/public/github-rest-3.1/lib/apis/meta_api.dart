@@ -13,7 +13,7 @@ final class MetaApi with ApiExecutor {const MetaApi(this.apiConfig);
 /// Get Hypermedia links to resources accessible in GitHub's REST API
 ///
 /// `GET /`
-Future<ApiResult<Root, Never>> metaRoot({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Root, Never>> metaRoot({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Root.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Root.fromJson(json as Map<String, dynamic>);}, );}
 /// Get GitHub meta information
 ///
 /// Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/)."
@@ -42,7 +37,7 @@ return Root.fromJson(json as Map<String, dynamic>);
 /// > This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
 ///
 /// `GET /meta`
-Future<ApiResult<Overview, Never>> metaGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Overview, Never>> metaGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -51,20 +46,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Overview.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Overview.fromJson(json as Map<String, dynamic>);}, );}
 /// Get Octocat
 ///
 /// Get the octocat as ASCII art
 ///
 /// `GET /octocat`
-Future<ApiResult<String, Never>> metaGetOctocat({String? s, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> metaGetOctocat({String? s, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (s != null) {
   queryParameters['s'] = s;
@@ -81,19 +71,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, );}
 /// Get all API versions
 ///
 /// Get all supported GitHub API versions.
 ///
 /// `GET /versions`
-Future<ApiResult<List<String>, BasicError>> metaGetAllVersions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, BasicError>> metaGetAllVersions({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -102,30 +87,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e as String).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e as String).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get the Zen of GitHub
 ///
 /// Get a random sentence from the Zen of GitHub
 ///
 /// `GET /zen`
-Future<ApiResult<String, Never>> metaGetZen({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> metaGetZen({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -134,11 +108,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, );}
+}

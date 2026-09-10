@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryParametersCalculationsKeyType {const WorkersObservabilityQueryParametersCalculationsKeyType._(this.value);
 
-factory WorkersObservabilityQueryParametersCalculationsKeyType.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryParametersCalculationsKeyType.fromJson(String json) {return switch (json) {
   'string' => string,
   'number' => number,
   'boolean' => boolean,
   _ => WorkersObservabilityQueryParametersCalculationsKeyType._(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryParametersCalculationsKeyType string = WorkersObservabilityQueryParametersCalculationsKeyType._('string');
 
@@ -19,17 +19,17 @@ static const List<WorkersObservabilityQueryParametersCalculationsKeyType> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryParametersCalculationsKeyType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryParametersCalculationsKeyType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityQueryParametersCalculationsKeyType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityQueryParametersCalculationsKeyType($value)';}
+}
 @immutable final class WorkersObservabilityQueryParametersCalculationsOperator {const WorkersObservabilityQueryParametersCalculationsOperator._(this.value);
 
-factory WorkersObservabilityQueryParametersCalculationsOperator.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryParametersCalculationsOperator.fromJson(String json) {return switch (json) {
   'uniq' => uniq,
   'count' => count,
   'max' => max,
@@ -69,7 +69,7 @@ factory WorkersObservabilityQueryParametersCalculationsOperator.fromJson(String 
   'STDDEV' => stddev2,
   'VARIANCE' => variance2,
   _ => WorkersObservabilityQueryParametersCalculationsOperator._(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryParametersCalculationsOperator uniq = WorkersObservabilityQueryParametersCalculationsOperator._('uniq');
 
@@ -151,22 +151,22 @@ static const List<WorkersObservabilityQueryParametersCalculationsOperator> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryParametersCalculationsOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryParametersCalculationsOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityQueryParametersCalculationsOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityQueryParametersCalculationsOperator($value)';}
+}
 @immutable final class WorkersObservabilityQueryParametersCalculations {const WorkersObservabilityQueryParametersCalculations({required this.$operator, this.alias, this.key, this.keyType, });
 
-factory WorkersObservabilityQueryParametersCalculations.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersCalculations(
+factory WorkersObservabilityQueryParametersCalculations.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryParametersCalculations(
   alias: json['alias'] as String?,
   key: json['key'] as String?,
   keyType: json['keyType'] != null ? WorkersObservabilityQueryParametersCalculationsKeyType.fromJson(json['keyType'] as String) : null,
   $operator: WorkersObservabilityQueryParametersCalculationsOperator.fromJson(json['operator'] as String),
-); }
+);}
 
 final String? alias;
 
@@ -176,25 +176,25 @@ final WorkersObservabilityQueryParametersCalculationsKeyType? keyType;
 
 final WorkersObservabilityQueryParametersCalculationsOperator $operator;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alias': ?alias,
   'key': ?key,
   if (keyType != null) 'keyType': keyType?.toJson(),
   'operator': $operator.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator'); } 
-WorkersObservabilityQueryParametersCalculations copyWith({String? Function()? alias, String? Function()? key, WorkersObservabilityQueryParametersCalculationsKeyType? Function()? keyType, WorkersObservabilityQueryParametersCalculationsOperator? $operator, }) { return WorkersObservabilityQueryParametersCalculations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operator');}
+WorkersObservabilityQueryParametersCalculations copyWith({String? Function()? alias, String? Function()? key, WorkersObservabilityQueryParametersCalculationsKeyType? Function()? keyType, WorkersObservabilityQueryParametersCalculationsOperator? $operator, }) {return WorkersObservabilityQueryParametersCalculations(
   alias: alias != null ? alias() : this.alias,
   key: key != null ? key() : this.key,
   keyType: keyType != null ? keyType() : this.keyType,
   $operator: $operator ?? this.$operator,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryParametersCalculations &&
           alias == other.alias &&
           key == other.key &&
           keyType == other.keyType &&
-          $operator == other.$operator; } 
-@override int get hashCode { return Object.hash(alias, key, keyType, $operator); } 
-@override String toString() { return 'WorkersObservabilityQueryParametersCalculations(alias: $alias, key: $key, keyType: $keyType, \$operator: ${$operator})'; } 
- }
+          $operator == other.$operator;}
+@override int get hashCode {return Object.hash(alias, key, keyType, $operator);}
+@override String toString() {return 'WorkersObservabilityQueryParametersCalculations(alias: $alias, key: $key, keyType: $keyType, \$operator: ${$operator})';}
+}

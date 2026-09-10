@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class UpdateSipDomainRequestVoiceFallbackMethod {const UpdateSipDomainRequestVoiceFallbackMethod._(this.value);
 
-factory UpdateSipDomainRequestVoiceFallbackMethod.fromJson(String json) { return switch (json) {
+factory UpdateSipDomainRequestVoiceFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateSipDomainRequestVoiceFallbackMethod._(json),
-}; }
+};}
 
 static const UpdateSipDomainRequestVoiceFallbackMethod $get = UpdateSipDomainRequestVoiceFallbackMethod._('GET');
 
@@ -17,22 +17,22 @@ static const List<UpdateSipDomainRequestVoiceFallbackMethod> values = [$get, pos
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateSipDomainRequestVoiceFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateSipDomainRequestVoiceFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateSipDomainRequestVoiceFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateSipDomainRequestVoiceFallbackMethod($value)';}
+}
 /// The HTTP method we should use to call `voice_url`
 @immutable final class UpdateSipDomainRequestVoiceMethod {const UpdateSipDomainRequestVoiceMethod._(this.value);
 
-factory UpdateSipDomainRequestVoiceMethod.fromJson(String json) { return switch (json) {
+factory UpdateSipDomainRequestVoiceMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateSipDomainRequestVoiceMethod._(json),
-}; }
+};}
 
 static const UpdateSipDomainRequestVoiceMethod $get = UpdateSipDomainRequestVoiceMethod._('GET');
 
@@ -42,22 +42,22 @@ static const List<UpdateSipDomainRequestVoiceMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateSipDomainRequestVoiceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateSipDomainRequestVoiceMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateSipDomainRequestVoiceMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateSipDomainRequestVoiceMethod($value)';}
+}
 /// The HTTP method we should use to call `voice_status_callback_url`. Can be: `GET` or `POST`.
 @immutable final class UpdateSipDomainRequestVoiceStatusCallbackMethod {const UpdateSipDomainRequestVoiceStatusCallbackMethod._(this.value);
 
-factory UpdateSipDomainRequestVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory UpdateSipDomainRequestVoiceStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateSipDomainRequestVoiceStatusCallbackMethod._(json),
-}; }
+};}
 
 static const UpdateSipDomainRequestVoiceStatusCallbackMethod $get = UpdateSipDomainRequestVoiceStatusCallbackMethod._('GET');
 
@@ -67,17 +67,17 @@ static const List<UpdateSipDomainRequestVoiceStatusCallbackMethod> values = [$ge
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateSipDomainRequestVoiceStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateSipDomainRequestVoiceStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateSipDomainRequestVoiceStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateSipDomainRequestVoiceStatusCallbackMethod($value)';}
+}
 @immutable final class UpdateSipDomainRequest {const UpdateSipDomainRequest({this.friendlyName, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.sipRegistration, this.domainName, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
 
-factory UpdateSipDomainRequest.fromJson(Map<String, dynamic> json) { return UpdateSipDomainRequest(
+factory UpdateSipDomainRequest.fromJson(Map<String, dynamic> json) {return UpdateSipDomainRequest(
   friendlyName: json['FriendlyName'] as String?,
   voiceFallbackMethod: json['VoiceFallbackMethod'] != null ? UpdateSipDomainRequestVoiceFallbackMethod.fromJson(json['VoiceFallbackMethod'] as String) : null,
   voiceFallbackUrl: json['VoiceFallbackUrl'] != null ? Uri.parse(json['VoiceFallbackUrl'] as String) : null,
@@ -91,7 +91,7 @@ factory UpdateSipDomainRequest.fromJson(Map<String, dynamic> json) { return Upda
   secure: json['Secure'] as bool?,
   byocTrunkSid: json['ByocTrunkSid'] as String?,
   emergencyCallerSid: json['EmergencyCallerSid'] as String?,
-); }
+);}
 
 /// A descriptive string that you created to describe the resource. It can be up to 64 characters long.
 final String? friendlyName;
@@ -132,7 +132,7 @@ final String? byocTrunkSid;
 /// Whether an emergency caller sid is configured for the domain. If present, this phone number will be used as the callback for the emergency call.
 final String? emergencyCallerSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': ?friendlyName,
   if (voiceFallbackMethod != null) 'VoiceFallbackMethod': voiceFallbackMethod?.toJson(),
   if (voiceFallbackUrl != null) 'VoiceFallbackUrl': voiceFallbackUrl?.toString(),
@@ -146,9 +146,9 @@ Map<String, dynamic> toJson() { return {
   'Secure': ?secure,
   'ByocTrunkSid': ?byocTrunkSid,
   'EmergencyCallerSid': ?emergencyCallerSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'VoiceFallbackMethod', 'VoiceFallbackUrl', 'VoiceMethod', 'VoiceStatusCallbackMethod', 'VoiceStatusCallbackUrl', 'VoiceUrl', 'SipRegistration', 'DomainName', 'EmergencyCallingEnabled', 'Secure', 'ByocTrunkSid', 'EmergencyCallerSid'}.contains(key)); } 
-UpdateSipDomainRequest copyWith({String? Function()? friendlyName, UpdateSipDomainRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, UpdateSipDomainRequestVoiceMethod? Function()? voiceMethod, UpdateSipDomainRequestVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, bool? Function()? sipRegistration, String? Function()? domainName, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return UpdateSipDomainRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'FriendlyName', 'VoiceFallbackMethod', 'VoiceFallbackUrl', 'VoiceMethod', 'VoiceStatusCallbackMethod', 'VoiceStatusCallbackUrl', 'VoiceUrl', 'SipRegistration', 'DomainName', 'EmergencyCallingEnabled', 'Secure', 'ByocTrunkSid', 'EmergencyCallerSid'}.contains(key));}
+UpdateSipDomainRequest copyWith({String? Function()? friendlyName, UpdateSipDomainRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, UpdateSipDomainRequestVoiceMethod? Function()? voiceMethod, UpdateSipDomainRequestVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, bool? Function()? sipRegistration, String? Function()? domainName, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) {return UpdateSipDomainRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   voiceFallbackMethod: voiceFallbackMethod != null ? voiceFallbackMethod() : this.voiceFallbackMethod,
   voiceFallbackUrl: voiceFallbackUrl != null ? voiceFallbackUrl() : this.voiceFallbackUrl,
@@ -162,8 +162,8 @@ UpdateSipDomainRequest copyWith({String? Function()? friendlyName, UpdateSipDoma
   secure: secure != null ? secure() : this.secure,
   byocTrunkSid: byocTrunkSid != null ? byocTrunkSid() : this.byocTrunkSid,
   emergencyCallerSid: emergencyCallerSid != null ? emergencyCallerSid() : this.emergencyCallerSid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateSipDomainRequest &&
           friendlyName == other.friendlyName &&
           voiceFallbackMethod == other.voiceFallbackMethod &&
@@ -177,7 +177,7 @@ UpdateSipDomainRequest copyWith({String? Function()? friendlyName, UpdateSipDoma
           emergencyCallingEnabled == other.emergencyCallingEnabled &&
           secure == other.secure &&
           byocTrunkSid == other.byocTrunkSid &&
-          emergencyCallerSid == other.emergencyCallerSid; } 
-@override int get hashCode { return Object.hash(friendlyName, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceStatusCallbackMethod, voiceStatusCallbackUrl, voiceUrl, sipRegistration, domainName, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid); } 
-@override String toString() { return 'UpdateSipDomainRequest(friendlyName: $friendlyName, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceUrl: $voiceUrl, sipRegistration: $sipRegistration, domainName: $domainName, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)'; } 
- }
+          emergencyCallerSid == other.emergencyCallerSid;}
+@override int get hashCode {return Object.hash(friendlyName, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceStatusCallbackMethod, voiceStatusCallbackUrl, voiceUrl, sipRegistration, domainName, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid);}
+@override String toString() {return 'UpdateSipDomainRequest(friendlyName: $friendlyName, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceUrl: $voiceUrl, sipRegistration: $sipRegistration, domainName: $domainName, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)';}
+}

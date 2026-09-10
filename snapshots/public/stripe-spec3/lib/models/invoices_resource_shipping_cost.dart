@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_resource_shipping_cost_shipping_rate.dart';import 'line_items_tax_amount.dart';/// 
 @immutable final class InvoicesResourceShippingCost {const InvoicesResourceShippingCost({required this.amountSubtotal, required this.amountTax, required this.amountTotal, this.shippingRate = const Omittable.absent(), this.taxes, });
 
-factory InvoicesResourceShippingCost.fromJson(Map<String, dynamic> json) { return InvoicesResourceShippingCost(
+factory InvoicesResourceShippingCost.fromJson(Map<String, dynamic> json) {return InvoicesResourceShippingCost(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
   shippingRate: json.containsKey('shipping_rate') ? Omittable(json['shipping_rate'] != null ? InvoicesResourceShippingCostShippingRate.fromJson(json['shipping_rate']) : null) : const Omittable.absent(),
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Total shipping cost before any taxes are applied.
 final int amountSubtotal;
@@ -26,30 +26,30 @@ final Omittable<InvoicesResourceShippingCostShippingRate?> shippingRate;
 /// The taxes applied to the shipping rate.
 final List<LineItemsTaxAmount>? taxes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_subtotal': amountSubtotal,
   'amount_tax': amountTax,
   'amount_total': amountTotal,
   if (shippingRate.isPresent) 'shipping_rate': shippingRate.value?.toJson(),
   if (taxes != null) 'taxes': taxes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
-      json.containsKey('amount_total') && json['amount_total'] is num; } 
-InvoicesResourceShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, Omittable<InvoicesResourceShippingCostShippingRate?>? shippingRate, List<LineItemsTaxAmount>? Function()? taxes, }) { return InvoicesResourceShippingCost(
+      json.containsKey('amount_total') && json['amount_total'] is num;}
+InvoicesResourceShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, Omittable<InvoicesResourceShippingCostShippingRate?>? shippingRate, List<LineItemsTaxAmount>? Function()? taxes, }) {return InvoicesResourceShippingCost(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTax: amountTax ?? this.amountTax,
   amountTotal: amountTotal ?? this.amountTotal,
   shippingRate: shippingRate ?? this.shippingRate,
   taxes: taxes != null ? taxes() : this.taxes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicesResourceShippingCost &&
           amountSubtotal == other.amountSubtotal &&
           amountTax == other.amountTax &&
           amountTotal == other.amountTotal &&
           shippingRate == other.shippingRate &&
-          listEquals(taxes, other.taxes); } 
-@override int get hashCode { return Object.hash(amountSubtotal, amountTax, amountTotal, shippingRate, Object.hashAll(taxes ?? const [])); } 
-@override String toString() { return 'InvoicesResourceShippingCost(amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, shippingRate: $shippingRate, taxes: $taxes)'; } 
- }
+          listEquals(taxes, other.taxes);}
+@override int get hashCode {return Object.hash(amountSubtotal, amountTax, amountTotal, shippingRate, Object.hashAll(taxes ?? const []));}
+@override String toString() {return 'InvoicesResourceShippingCost(amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, shippingRate: $shippingRate, taxes: $taxes)';}
+}

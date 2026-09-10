@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetEmailSecuritySummaryDimension {const RadarGetEmailSecuritySummaryDimension._(this.value);
 
-factory RadarGetEmailSecuritySummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecuritySummaryDimension.fromJson(String json) {return switch (json) {
   'SPAM' => spam,
   'MALICIOUS' => malicious,
   'SPOOF' => spoof,
@@ -14,7 +14,7 @@ factory RadarGetEmailSecuritySummaryDimension.fromJson(String json) { return swi
   'SPF' => spf,
   'TLS_VERSION' => tlsVersion,
   _ => RadarGetEmailSecuritySummaryDimension._(json),
-}; }
+};}
 
 static const RadarGetEmailSecuritySummaryDimension spam = RadarGetEmailSecuritySummaryDimension._('SPAM');
 
@@ -38,11 +38,11 @@ static const List<RadarGetEmailSecuritySummaryDimension> values = [spam, malicio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailSecuritySummaryDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailSecuritySummaryDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailSecuritySummaryDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailSecuritySummaryDimension($value)';}
+}

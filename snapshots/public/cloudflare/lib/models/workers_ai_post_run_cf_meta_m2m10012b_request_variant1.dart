@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant1 {const WorkersAiPostRunCfMetaM2m10012bRequestVariant1({required this.targetLang, required this.text, this.sourceLang, });
 
-factory WorkersAiPostRunCfMetaM2m10012bRequestVariant1.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant1(
+factory WorkersAiPostRunCfMetaM2m10012bRequestVariant1.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfMetaM2m10012bRequestVariant1(
   sourceLang: json['source_lang'] as String?,
   targetLang: json['target_lang'] as String,
   text: json['text'] as String,
-); }
+);}
 
 /// The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
 final String? sourceLang;
@@ -18,24 +18,24 @@ final String targetLang;
 final String text;
 
 /// The value with the schema default applied when absent.
-String get sourceLangOrDefault { return sourceLang ?? 'en'; } 
-Map<String, dynamic> toJson() { return {
+String get sourceLangOrDefault {return sourceLang ?? 'en';}
+Map<String, dynamic> toJson() {return {
   'source_lang': ?sourceLang,
   'target_lang': targetLang,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_lang') && json['target_lang'] is String &&
-      json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfMetaM2m10012bRequestVariant1 copyWith({String? Function()? sourceLang, String? targetLang, String? text, }) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_lang') && json['target_lang'] is String &&
+      json.containsKey('text') && json['text'] is String;}
+WorkersAiPostRunCfMetaM2m10012bRequestVariant1 copyWith({String? Function()? sourceLang, String? targetLang, String? text, }) {return WorkersAiPostRunCfMetaM2m10012bRequestVariant1(
   sourceLang: sourceLang != null ? sourceLang() : this.sourceLang,
   targetLang: targetLang ?? this.targetLang,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfMetaM2m10012bRequestVariant1 &&
           sourceLang == other.sourceLang &&
           targetLang == other.targetLang &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(sourceLang, targetLang, text); } 
-@override String toString() { return 'WorkersAiPostRunCfMetaM2m10012bRequestVariant1(sourceLang: $sourceLang, targetLang: $targetLang, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(sourceLang, targetLang, text);}
+@override String toString() {return 'WorkersAiPostRunCfMetaM2m10012bRequestVariant1(sourceLang: $sourceLang, targetLang: $targetLang, text: $text)';}
+}

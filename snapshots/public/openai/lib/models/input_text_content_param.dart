@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the input item. Always `input_text`.
 @immutable final class InputTextContentParamType {const InputTextContentParamType._(this.value);
 
-factory InputTextContentParamType.fromJson(String json) { return switch (json) {
+factory InputTextContentParamType.fromJson(String json) {return switch (json) {
   'input_text' => inputText,
   _ => InputTextContentParamType._(json),
-}; }
+};}
 
 static const InputTextContentParamType inputText = InputTextContentParamType._('input_text');
 
@@ -14,21 +14,21 @@ static const List<InputTextContentParamType> values = [inputText];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputTextContentParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputTextContentParamType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InputTextContentParamType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InputTextContentParamType($value)';}
+}
 /// A text input to the model.
 @immutable final class InputTextContentParam {const InputTextContentParam({required this.type, required this.text, });
 
-factory InputTextContentParam.fromJson(Map<String, dynamic> json) { return InputTextContentParam(
+factory InputTextContentParam.fromJson(Map<String, dynamic> json) {return InputTextContentParam(
   type: InputTextContentParamType.fromJson(json['type'] as String),
   text: json['text'] as String,
-); }
+);}
 
 /// The type of the input item. Always `input_text`.
 final InputTextContentParamType type;
@@ -36,20 +36,20 @@ final InputTextContentParamType type;
 /// The text input to the model.
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('text') && json['text'] is String; } 
-InputTextContentParam copyWith({InputTextContentParamType? type, String? text, }) { return InputTextContentParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('text') && json['text'] is String;}
+InputTextContentParam copyWith({InputTextContentParamType? type, String? text, }) {return InputTextContentParam(
   type: type ?? this.type,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InputTextContentParam &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'InputTextContentParam(type: $type, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(type, text);}
+@override String toString() {return 'InputTextContentParam(type: $type, text: $text)';}
+}

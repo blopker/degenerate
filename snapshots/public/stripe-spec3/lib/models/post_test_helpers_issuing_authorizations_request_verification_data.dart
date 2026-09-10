@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data_authentication_exemption.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data_three_d_secure.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check.fromJson(String json) {return switch (json) {
   'match' => match,
   'mismatch' => mismatch,
   'not_provided' => notProvided,
   _ => PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check match = PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check._('match');
 
@@ -19,22 +19,22 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestVerificationDataAdd
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck.fromJson(String json) {return switch (json) {
   'match' => match,
   'mismatch' => mismatch,
   'not_provided' => notProvided,
   _ => PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck match = PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck._('match');
 
@@ -46,22 +46,22 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestVerificationDataAdd
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck.fromJson(String json) {return switch (json) {
   'match' => match,
   'mismatch' => mismatch,
   'not_provided' => notProvided,
   _ => PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck match = PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck._('match');
 
@@ -73,22 +73,22 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck.fromJson(String json) {return switch (json) {
   'match' => match,
   'mismatch' => mismatch,
   'not_provided' => notProvided,
   _ => PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck match = PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck._('match');
 
@@ -100,25 +100,25 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestVerificationDataExp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck($value)';}
+}
 /// Verifications that Stripe performed on information that the cardholder provided to the merchant.
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationData {const PostTestHelpersIssuingAuthorizationsRequestVerificationData({this.addressLine1Check, this.addressPostalCodeCheck, this.authenticationExemption, this.cvcCheck, this.expiryCheck, this.threeDSecure, });
 
-factory PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestVerificationData(
+factory PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsRequestVerificationData(
   addressLine1Check: json['address_line1_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check.fromJson(json['address_line1_check'] as String) : null,
   addressPostalCodeCheck: json['address_postal_code_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String) : null,
   authenticationExemption: json['authentication_exemption'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null,
   cvcCheck: json['cvc_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck.fromJson(json['cvc_check'] as String) : null,
   expiryCheck: json['expiry_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck.fromJson(json['expiry_check'] as String) : null,
   threeDSecure: json['three_d_secure'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check? addressLine1Check;
 
@@ -132,31 +132,31 @@ final PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck? ex
 
 final PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure? threeDSecure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addressLine1Check != null) 'address_line1_check': addressLine1Check?.toJson(),
   if (addressPostalCodeCheck != null) 'address_postal_code_check': addressPostalCodeCheck?.toJson(),
   if (authenticationExemption != null) 'authentication_exemption': authenticationExemption?.toJson(),
   if (cvcCheck != null) 'cvc_check': cvcCheck?.toJson(),
   if (expiryCheck != null) 'expiry_check': expiryCheck?.toJson(),
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'authentication_exemption', 'cvc_check', 'expiry_check', 'three_d_secure'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsRequestVerificationData copyWith({PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check? Function()? addressLine1Check, PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck? Function()? addressPostalCodeCheck, PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption? Function()? authenticationExemption, PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck? Function()? cvcCheck, PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck? Function()? expiryCheck, PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure? Function()? threeDSecure, }) { return PostTestHelpersIssuingAuthorizationsRequestVerificationData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'authentication_exemption', 'cvc_check', 'expiry_check', 'three_d_secure'}.contains(key));}
+PostTestHelpersIssuingAuthorizationsRequestVerificationData copyWith({PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check? Function()? addressLine1Check, PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck? Function()? addressPostalCodeCheck, PostTestHelpersIssuingAuthorizationsRequestVerificationDataAuthenticationExemption? Function()? authenticationExemption, PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck? Function()? cvcCheck, PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck? Function()? expiryCheck, PostTestHelpersIssuingAuthorizationsRequestVerificationDataThreeDSecure? Function()? threeDSecure, }) {return PostTestHelpersIssuingAuthorizationsRequestVerificationData(
   addressLine1Check: addressLine1Check != null ? addressLine1Check() : this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck != null ? addressPostalCodeCheck() : this.addressPostalCodeCheck,
   authenticationExemption: authenticationExemption != null ? authenticationExemption() : this.authenticationExemption,
   cvcCheck: cvcCheck != null ? cvcCheck() : this.cvcCheck,
   expiryCheck: expiryCheck != null ? expiryCheck() : this.expiryCheck,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequestVerificationData &&
           addressLine1Check == other.addressLine1Check &&
           addressPostalCodeCheck == other.addressPostalCodeCheck &&
           authenticationExemption == other.authenticationExemption &&
           cvcCheck == other.cvcCheck &&
           expiryCheck == other.expiryCheck &&
-          threeDSecure == other.threeDSecure; } 
-@override int get hashCode { return Object.hash(addressLine1Check, addressPostalCodeCheck, authenticationExemption, cvcCheck, expiryCheck, threeDSecure); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationData(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, authenticationExemption: $authenticationExemption, cvcCheck: $cvcCheck, expiryCheck: $expiryCheck, threeDSecure: $threeDSecure)'; } 
- }
+          threeDSecure == other.threeDSecure;}
+@override int get hashCode {return Object.hash(addressLine1Check, addressPostalCodeCheck, authenticationExemption, cvcCheck, expiryCheck, threeDSecure);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsRequestVerificationData(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, authenticationExemption: $authenticationExemption, cvcCheck: $cvcCheck, expiryCheck: $expiryCheck, threeDSecure: $threeDSecure)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request Status.
 @immutable final class CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus._(this.value);
 
-factory CloudforceOneRequestsRequestStatus.fromJson(String json) { return switch (json) {
+factory CloudforceOneRequestsRequestStatus.fromJson(String json) {return switch (json) {
   'open' => open,
   'accepted' => accepted,
   'reported' => reported,
@@ -11,7 +11,7 @@ factory CloudforceOneRequestsRequestStatus.fromJson(String json) { return switch
   'completed' => completed,
   'declined' => declined,
   _ => CloudforceOneRequestsRequestStatus._(json),
-}; }
+};}
 
 static const CloudforceOneRequestsRequestStatus open = CloudforceOneRequestsRequestStatus._('open');
 
@@ -29,11 +29,11 @@ static const List<CloudforceOneRequestsRequestStatus> values = [open, accepted, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudforceOneRequestsRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudforceOneRequestsRequestStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CloudforceOneRequestsRequestStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CloudforceOneRequestsRequestStatus($value)';}
+}

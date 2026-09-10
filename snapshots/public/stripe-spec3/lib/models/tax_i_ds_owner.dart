@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_i_ds_owner_account.dart';import 'tax_i_ds_owner_application.dart';import 'tax_i_ds_owner_customer.dart';/// Type of owner referenced.
 @immutable final class TaxIDsOwnerType {const TaxIDsOwnerType._(this.value);
 
-factory TaxIDsOwnerType.fromJson(String json) { return switch (json) {
+factory TaxIDsOwnerType.fromJson(String json) {return switch (json) {
   'account' => account,
   'application' => application,
   'customer' => customer,
   'self' => self,
   _ => TaxIDsOwnerType._(json),
-}; }
+};}
 
 static const TaxIDsOwnerType account = TaxIDsOwnerType._('account');
 
@@ -23,24 +23,24 @@ static const List<TaxIDsOwnerType> values = [account, application, customer, sel
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxIDsOwnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxIDsOwnerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxIDsOwnerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxIDsOwnerType($value)';}
+}
 /// 
 @immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount = const Omittable.absent(), });
 
-factory TaxIDsOwner.fromJson(Map<String, dynamic> json) { return TaxIDsOwner(
+factory TaxIDsOwner.fromJson(Map<String, dynamic> json) {return TaxIDsOwner(
   account: json['account'] != null ? TaxIDsOwnerAccount.fromJson(json['account']) : null,
   application: json['application'] != null ? TaxIDsOwnerApplication.fromJson(json['application']) : null,
   customer: json['customer'] != null ? TaxIDsOwnerCustomer.fromJson(json['customer']) : null,
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   type: TaxIDsOwnerType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The account being referenced when `type` is `account`.
 final TaxIDsOwnerAccount? account;
@@ -57,28 +57,28 @@ final Omittable<String?> customerAccount;
 /// Type of owner referenced.
 final TaxIDsOwnerType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account != null) 'account': account?.toJson(),
   if (application != null) 'application': application?.toJson(),
   if (customer != null) 'customer': customer?.toJson(),
   if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TaxIDsOwner copyWith({TaxIDsOwnerAccount? Function()? account, TaxIDsOwnerApplication? Function()? application, TaxIDsOwnerCustomer? Function()? customer, Omittable<String?>? customerAccount, TaxIDsOwnerType? type, }) { return TaxIDsOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+TaxIDsOwner copyWith({TaxIDsOwnerAccount? Function()? account, TaxIDsOwnerApplication? Function()? application, TaxIDsOwnerCustomer? Function()? customer, Omittable<String?>? customerAccount, TaxIDsOwnerType? type, }) {return TaxIDsOwner(
   account: account != null ? account() : this.account,
   application: application != null ? application() : this.application,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount ?? this.customerAccount,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxIDsOwner &&
           account == other.account &&
           application == other.application &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, application, customer, customerAccount, type); } 
-@override String toString() { return 'TaxIDsOwner(account: $account, application: $application, customer: $customer, customerAccount: $customerAccount, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, application, customer, customerAccount, type);}
+@override String toString() {return 'TaxIDsOwner(account: $account, application: $application, customer: $customer, customerAccount: $customerAccount, type: $type)';}
+}

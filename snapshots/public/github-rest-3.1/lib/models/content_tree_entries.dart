@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_tree_entries_links.dart';@immutable final class ContentTreeEntries {const ContentTreeEntries({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
 
-factory ContentTreeEntries.fromJson(Map<String, dynamic> json) { return ContentTreeEntries(
+factory ContentTreeEntries.fromJson(Map<String, dynamic> json) {return ContentTreeEntries(
   type: json['type'] as String,
   size: (json['size'] as num).toInt(),
   name: json['name'] as String,
@@ -13,7 +13,7 @@ factory ContentTreeEntries.fromJson(Map<String, dynamic> json) { return ContentT
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   links: ContentTreeEntriesLinks.fromJson(json['_links'] as Map<String, dynamic>),
-); }
+);}
 
 final String type;
 
@@ -35,7 +35,7 @@ final Uri? downloadUrl;
 
 final ContentTreeEntriesLinks links;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'size': size,
   'name': name,
@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl?.toString(),
   'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
       json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
-      json.containsKey('_links'); } 
-ContentTreeEntries copyWith({String? type, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentTreeEntriesLinks? links, }) { return ContentTreeEntries(
+      json.containsKey('_links');}
+ContentTreeEntries copyWith({String? type, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentTreeEntriesLinks? links, }) {return ContentTreeEntries(
   type: type ?? this.type,
   size: size ?? this.size,
   name: name ?? this.name,
@@ -68,8 +68,8 @@ ContentTreeEntries copyWith({String? type, int? size, String? name, String? path
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContentTreeEntries &&
           type == other.type &&
           size == other.size &&
@@ -80,7 +80,7 @@ ContentTreeEntries copyWith({String? type, int? size, String? name, String? path
           gitUrl == other.gitUrl &&
           htmlUrl == other.htmlUrl &&
           downloadUrl == other.downloadUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links); } 
-@override String toString() { return 'ContentTreeEntries(type: $type, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)'; } 
- }
+          links == other.links;}
+@override int get hashCode {return Object.hash(type, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links);}
+@override String toString() {return 'ContentTreeEntries(type: $type, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';}
+}

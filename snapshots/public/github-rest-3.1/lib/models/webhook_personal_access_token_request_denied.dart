@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookPersonalAccessTokenRequestDeniedAction {const WebhookPersonalAccessTokenRequestDeniedAction._(this.value);
 
-factory WebhookPersonalAccessTokenRequestDeniedAction.fromJson(String json) { return switch (json) {
+factory WebhookPersonalAccessTokenRequestDeniedAction.fromJson(String json) {return switch (json) {
   'denied' => denied,
   _ => WebhookPersonalAccessTokenRequestDeniedAction._(json),
-}; }
+};}
 
 static const WebhookPersonalAccessTokenRequestDeniedAction denied = WebhookPersonalAccessTokenRequestDeniedAction._('denied');
 
@@ -13,24 +13,24 @@ static const List<WebhookPersonalAccessTokenRequestDeniedAction> values = [denie
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPersonalAccessTokenRequestDeniedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestDeniedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPersonalAccessTokenRequestDeniedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPersonalAccessTokenRequestDeniedAction($value)';}
+}
 @immutable final class WebhookPersonalAccessTokenRequestDenied {const WebhookPersonalAccessTokenRequestDenied({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
 
-factory WebhookPersonalAccessTokenRequestDenied.fromJson(Map<String, dynamic> json) { return WebhookPersonalAccessTokenRequestDenied(
+factory WebhookPersonalAccessTokenRequestDenied.fromJson(Map<String, dynamic> json) {return WebhookPersonalAccessTokenRequestDenied(
   action: WebhookPersonalAccessTokenRequestDeniedAction.fromJson(json['action'] as String),
   personalAccessTokenRequest: PersonalAccessTokenRequest.fromJson(json['personal_access_token_request'] as Map<String, dynamic>),
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPersonalAccessTokenRequestDeniedAction action;
 
@@ -44,35 +44,35 @@ final SimpleUser sender;
 
 final SimpleInstallation installation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'personal_access_token_request': personalAccessTokenRequest.toJson(),
   'organization': organization.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'sender': sender.toJson(),
   'installation': installation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('personal_access_token_request') &&
       json.containsKey('organization') &&
       json.containsKey('sender') &&
-      json.containsKey('installation'); } 
-WebhookPersonalAccessTokenRequestDenied copyWith({WebhookPersonalAccessTokenRequestDeniedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, OrganizationSimpleWebhooks? organization, EnterpriseWebhooks? Function()? enterprise, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestDenied(
+      json.containsKey('installation');}
+WebhookPersonalAccessTokenRequestDenied copyWith({WebhookPersonalAccessTokenRequestDeniedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, OrganizationSimpleWebhooks? organization, EnterpriseWebhooks? Function()? enterprise, SimpleUser? sender, SimpleInstallation? installation, }) {return WebhookPersonalAccessTokenRequestDenied(
   action: action ?? this.action,
   personalAccessTokenRequest: personalAccessTokenRequest ?? this.personalAccessTokenRequest,
   organization: organization ?? this.organization,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   sender: sender ?? this.sender,
   installation: installation ?? this.installation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPersonalAccessTokenRequestDenied &&
           action == other.action &&
           personalAccessTokenRequest == other.personalAccessTokenRequest &&
           organization == other.organization &&
           enterprise == other.enterprise &&
           sender == other.sender &&
-          installation == other.installation; } 
-@override int get hashCode { return Object.hash(action, personalAccessTokenRequest, organization, enterprise, sender, installation); } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestDenied(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, organization: $organization, enterprise: $enterprise, sender: $sender, installation: $installation)'; } 
- }
+          installation == other.installation;}
+@override int get hashCode {return Object.hash(action, personalAccessTokenRequest, organization, enterprise, sender, installation);}
+@override String toString() {return 'WebhookPersonalAccessTokenRequestDenied(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, organization: $organization, enterprise: $enterprise, sender: $sender, installation: $installation)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';import 'magic_cloudflare_ipsec_endpoint.dart';import 'magic_components_schemas_description.dart';import 'magic_custom_remote_identities.dart';import 'magic_customer_ipsec_endpoint.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_ipsec_tunnel_name.dart';import 'magic_psk.dart';import 'magic_replay_protection.dart';import 'magic_tunnel_health_check.dart';@immutable final class MagicIpsecTunnelAddSingleRequest {const MagicIpsecTunnelAddSingleRequest({required this.cloudflareEndpoint, required this.interfaceAddress, required this.name, this.automaticReturnRouting, this.bgp, this.customRemoteIdentities, this.customerEndpoint, this.description, this.healthCheck, this.interfaceAddress6, this.psk, this.replayProtection, });
 
-factory MagicIpsecTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicIpsecTunnelAddSingleRequest(
+factory MagicIpsecTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) {return MagicIpsecTunnelAddSingleRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
   bgp: json['bgp'] != null ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>) : null,
   cloudflareEndpoint: MagicCloudflareIpsecEndpoint.fromJson(json['cloudflare_endpoint'] as String),
@@ -15,7 +15,7 @@ factory MagicIpsecTunnelAddSingleRequest.fromJson(Map<String, dynamic> json) { r
   name: MagicIpsecTunnelName.fromJson(json['name'] as String),
   psk: json['psk'] != null ? MagicPsk.fromJson(json['psk'] as String) : null,
   replayProtection: json['replay_protection'] != null ? MagicReplayProtection.fromJson(json['replay_protection'] as bool) : null,
-); }
+);}
 
 /// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
@@ -47,7 +47,7 @@ final MagicPsk? psk;
 
 final MagicReplayProtection? replayProtection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (automaticReturnRouting != null) 'automatic_return_routing': automaticReturnRouting?.toJson(),
   if (bgp != null) 'bgp': bgp?.toJson(),
   'cloudflare_endpoint': cloudflareEndpoint.toJson(),
@@ -60,11 +60,11 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (psk != null) 'psk': psk?.toJson(),
   if (replayProtection != null) 'replay_protection': replayProtection?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloudflare_endpoint') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloudflare_endpoint') &&
       json.containsKey('interface_address') &&
-      json.containsKey('name'); } 
-MagicIpsecTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicBgpConfig? Function()? bgp, MagicCloudflareIpsecEndpoint? cloudflareEndpoint, MagicCustomRemoteIdentities? Function()? customRemoteIdentities, MagicCustomerIpsecEndpoint? Function()? customerEndpoint, MagicComponentsSchemasDescription? Function()? description, MagicTunnelHealthCheck? Function()? healthCheck, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicIpsecTunnelName? name, MagicPsk? Function()? psk, MagicReplayProtection? Function()? replayProtection, }) { return MagicIpsecTunnelAddSingleRequest(
+      json.containsKey('name');}
+MagicIpsecTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicBgpConfig? Function()? bgp, MagicCloudflareIpsecEndpoint? cloudflareEndpoint, MagicCustomRemoteIdentities? Function()? customRemoteIdentities, MagicCustomerIpsecEndpoint? Function()? customerEndpoint, MagicComponentsSchemasDescription? Function()? description, MagicTunnelHealthCheck? Function()? healthCheck, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicIpsecTunnelName? name, MagicPsk? Function()? psk, MagicReplayProtection? Function()? replayProtection, }) {return MagicIpsecTunnelAddSingleRequest(
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   bgp: bgp != null ? bgp() : this.bgp,
   cloudflareEndpoint: cloudflareEndpoint ?? this.cloudflareEndpoint,
@@ -77,8 +77,8 @@ MagicIpsecTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function
   name: name ?? this.name,
   psk: psk != null ? psk() : this.psk,
   replayProtection: replayProtection != null ? replayProtection() : this.replayProtection,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicIpsecTunnelAddSingleRequest &&
           automaticReturnRouting == other.automaticReturnRouting &&
           bgp == other.bgp &&
@@ -91,7 +91,7 @@ MagicIpsecTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function
           interfaceAddress6 == other.interfaceAddress6 &&
           name == other.name &&
           psk == other.psk &&
-          replayProtection == other.replayProtection; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, bgp, cloudflareEndpoint, customRemoteIdentities, customerEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, name, psk, replayProtection); } 
-@override String toString() { return 'MagicIpsecTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, cloudflareEndpoint: $cloudflareEndpoint, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, name: $name, psk: $psk, replayProtection: $replayProtection)'; } 
- }
+          replayProtection == other.replayProtection;}
+@override int get hashCode {return Object.hash(automaticReturnRouting, bgp, cloudflareEndpoint, customRemoteIdentities, customerEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, name, psk, replayProtection);}
+@override String toString() {return 'MagicIpsecTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, cloudflareEndpoint: $cloudflareEndpoint, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, name: $name, psk: $psk, replayProtection: $replayProtection)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_transaction_shipping_address.dart';/// 
 @immutable final class DisputeVisaCompellingEvidence3PriorUndisputedTransaction {const DisputeVisaCompellingEvidence3PriorUndisputedTransaction({required this.charge, this.customerAccountId = const Omittable.absent(), this.customerDeviceFingerprint = const Omittable.absent(), this.customerDeviceId = const Omittable.absent(), this.customerEmailAddress = const Omittable.absent(), this.customerPurchaseIp = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.shippingAddress = const Omittable.absent(), });
 
-factory DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(Map<String, dynamic> json) { return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
+factory DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(Map<String, dynamic> json) {return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
   charge: json['charge'] as String,
   customerAccountId: json.containsKey('customer_account_id') ? Omittable(json['customer_account_id'] as String?) : const Omittable.absent(),
   customerDeviceFingerprint: json.containsKey('customer_device_fingerprint') ? Omittable(json['customer_device_fingerprint'] as String?) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(Map<St
   customerPurchaseIp: json.containsKey('customer_purchase_ip') ? Omittable(json['customer_purchase_ip'] as String?) : const Omittable.absent(),
   productDescription: json.containsKey('product_description') ? Omittable(json['product_description'] as String?) : const Omittable.absent(),
   shippingAddress: json.containsKey('shipping_address') ? Omittable(json['shipping_address'] != null ? DisputeTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Stripe charge ID for the Visa Compelling Evidence 3.0 eligible prior charge.
 final String charge;
@@ -38,7 +38,7 @@ final Omittable<String?> productDescription;
 /// The address to which a physical product was shipped. All fields are required for Visa Compelling Evidence 3.0 evidence submission.
 final Omittable<DisputeTransactionShippingAddress?> shippingAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'charge': charge,
   if (customerAccountId.isPresent) 'customer_account_id': customerAccountId.value,
   if (customerDeviceFingerprint.isPresent) 'customer_device_fingerprint': customerDeviceFingerprint.value,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (customerPurchaseIp.isPresent) 'customer_purchase_ip': customerPurchaseIp.value,
   if (productDescription.isPresent) 'product_description': productDescription.value,
   if (shippingAddress.isPresent) 'shipping_address': shippingAddress.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('charge') && json['charge'] is String; } 
-DisputeVisaCompellingEvidence3PriorUndisputedTransaction copyWith({String? charge, Omittable<String?>? customerAccountId, Omittable<String?>? customerDeviceFingerprint, Omittable<String?>? customerDeviceId, Omittable<String?>? customerEmailAddress, Omittable<String?>? customerPurchaseIp, Omittable<String?>? productDescription, Omittable<DisputeTransactionShippingAddress?>? shippingAddress, }) { return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('charge') && json['charge'] is String;}
+DisputeVisaCompellingEvidence3PriorUndisputedTransaction copyWith({String? charge, Omittable<String?>? customerAccountId, Omittable<String?>? customerDeviceFingerprint, Omittable<String?>? customerDeviceId, Omittable<String?>? customerEmailAddress, Omittable<String?>? customerPurchaseIp, Omittable<String?>? productDescription, Omittable<DisputeTransactionShippingAddress?>? shippingAddress, }) {return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
   charge: charge ?? this.charge,
   customerAccountId: customerAccountId ?? this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint ?? this.customerDeviceFingerprint,
@@ -58,8 +58,8 @@ DisputeVisaCompellingEvidence3PriorUndisputedTransaction copyWith({String? charg
   customerPurchaseIp: customerPurchaseIp ?? this.customerPurchaseIp,
   productDescription: productDescription ?? this.productDescription,
   shippingAddress: shippingAddress ?? this.shippingAddress,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DisputeVisaCompellingEvidence3PriorUndisputedTransaction &&
           charge == other.charge &&
           customerAccountId == other.customerAccountId &&
@@ -68,7 +68,7 @@ DisputeVisaCompellingEvidence3PriorUndisputedTransaction copyWith({String? charg
           customerEmailAddress == other.customerEmailAddress &&
           customerPurchaseIp == other.customerPurchaseIp &&
           productDescription == other.productDescription &&
-          shippingAddress == other.shippingAddress; } 
-@override int get hashCode { return Object.hash(charge, customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, productDescription, shippingAddress); } 
-@override String toString() { return 'DisputeVisaCompellingEvidence3PriorUndisputedTransaction(charge: $charge, customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, productDescription: $productDescription, shippingAddress: $shippingAddress)'; } 
- }
+          shippingAddress == other.shippingAddress;}
+@override int get hashCode {return Object.hash(charge, customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, productDescription, shippingAddress);}
+@override String toString() {return 'DisputeVisaCompellingEvidence3PriorUndisputedTransaction(charge: $charge, customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, productDescription: $productDescription, shippingAddress: $shippingAddress)';}
+}

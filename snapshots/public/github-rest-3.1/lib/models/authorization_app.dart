@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthorizationApp {const AuthorizationApp({required this.clientId, required this.name, required this.url, });
 
-factory AuthorizationApp.fromJson(Map<String, dynamic> json) { return AuthorizationApp(
+factory AuthorizationApp.fromJson(Map<String, dynamic> json) {return AuthorizationApp(
   clientId: json['client_id'] as String,
   name: json['name'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String clientId;
 
@@ -14,24 +14,24 @@ final String name;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': clientId,
   'name': name,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_id') && json['client_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_id') && json['client_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-AuthorizationApp copyWith({String? clientId, String? name, Uri? url, }) { return AuthorizationApp(
+      json.containsKey('url') && json['url'] is String;}
+AuthorizationApp copyWith({String? clientId, String? name, Uri? url, }) {return AuthorizationApp(
   clientId: clientId ?? this.clientId,
   name: name ?? this.name,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuthorizationApp &&
           clientId == other.clientId &&
           name == other.name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(clientId, name, url); } 
-@override String toString() { return 'AuthorizationApp(clientId: $clientId, name: $name, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(clientId, name, url);}
+@override String toString() {return 'AuthorizationApp(clientId: $clientId, name: $name, url: $url)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address8.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2 {const PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2._(this.value);
 
-factory PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2 $empty = PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAd
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2($value)';}
+}
 
 @immutable
 final class PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress {

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2 {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2._(this.value);
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2 $empty = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxR
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2($value)';}
+}
 
 @immutable
 final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates {

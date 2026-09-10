@@ -12,7 +12,7 @@ final class EvalsApi with ApiExecutor {const EvalsApi(this.apiConfig);
 /// 
 ///
 /// `GET /evals`
-Future<ApiResult<EvalList, Never>> listEvals({String? after, int? limit, ListEvalsOrder? order, ListEvalsOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EvalList, Never>> listEvals({String? after, int? limit, ListEvalsOrder? order, ListEvalsOrderBy? orderBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) {
   queryParameters['after'] = after;
@@ -38,21 +38,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EvalList.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EvalList.fromJson(json as Map<String, dynamic>);}, );}
 /// Create the structure of an evaluation that can be used to test a model's performance.
 /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.
 /// For more information, see the [Evals guide](/docs/guides/evals).
 /// 
 ///
 /// `POST /evals`
-Future<ApiResult<Eval, Never>> createEval({required CreateEvalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Eval, Never>> createEval({required CreateEvalRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,19 +58,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Eval.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Eval.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an evaluation by ID.
 /// 
 ///
 /// `GET /evals/{eval_id}`
-Future<ApiResult<Eval, Never>> getEval({required String evalId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Eval, Never>> getEval({required String evalId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -84,19 +74,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Eval.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Eval.fromJson(json as Map<String, dynamic>);}, );}
 /// Update certain properties of an evaluation.
 /// 
 ///
 /// `POST /evals/{eval_id}`
-Future<ApiResult<Eval, Never>> updateEval({required String evalId, required UpdateEvalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Eval, Never>> updateEval({required String evalId, required UpdateEvalRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,19 +92,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Eval.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Eval.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an evaluation.
 /// 
 ///
 /// `DELETE /evals/{eval_id}`
-Future<ApiResult<DeleteEvalResponse, ErrorModel>> deleteEval({required String evalId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteEvalResponse, ErrorModel>> deleteEval({required String evalId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -128,29 +108,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteEvalResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteEvalResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a list of runs for an evaluation.
 /// 
 ///
 /// `GET /evals/{eval_id}/runs`
-Future<ApiResult<EvalRunList, Never>> getEvalRuns({required String evalId, String? after, int? limit, GetEvalRunsOrder? order, GetEvalRunsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EvalRunList, Never>> getEvalRuns({required String evalId, String? after, int? limit, GetEvalRunsOrder? order, GetEvalRunsStatus? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) {
   queryParameters['after'] = after;
@@ -176,19 +145,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EvalRunList.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EvalRunList.fromJson(json as Map<String, dynamic>);}, );}
 /// Kicks off a new run for a given evaluation, specifying the data source, and what model configuration to use to test. The datasource will be validated against the schema specified in the config of the evaluation.
 /// 
 ///
 /// `POST /evals/{eval_id}/runs`
-Future<ApiResult<EvalRun, ErrorModel>> createEvalRun({required String evalId, required CreateEvalRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EvalRun, ErrorModel>> createEvalRun({required String evalId, required CreateEvalRunRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -199,29 +163,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EvalRun.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EvalRun.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get an evaluation run by ID.
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<EvalRun, Never>> getEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EvalRun, Never>> getEvalRun({required String evalId, required String runId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -230,19 +183,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EvalRun.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EvalRun.fromJson(json as Map<String, dynamic>);}, );}
 /// Cancel an ongoing evaluation run.
 /// 
 ///
 /// `POST /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<EvalRun, Never>> cancelEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EvalRun, Never>> cancelEvalRun({required String evalId, required String runId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -251,19 +199,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EvalRun.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EvalRun.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an eval run.
 /// 
 ///
 /// `DELETE /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<DeleteEvalRunResponse, ErrorModel>> deleteEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteEvalRunResponse, ErrorModel>> deleteEvalRun({required String evalId, required String runId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -272,29 +215,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteEvalRunResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteEvalRunResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a list of output items for an evaluation run.
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}/output_items`
-Future<ApiResult<EvalRunOutputItemList, Never>> getEvalRunOutputItems({required String evalId, required String runId, String? after, int? limit, GetEvalRunOutputItemsStatus? status, GetEvalRunOutputItemsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EvalRunOutputItemList, Never>> getEvalRunOutputItems({required String evalId, required String runId, String? after, int? limit, GetEvalRunOutputItemsStatus? status, GetEvalRunOutputItemsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) {
   queryParameters['after'] = after;
@@ -320,19 +252,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EvalRunOutputItemList.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EvalRunOutputItemList.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an evaluation run output item by ID.
 /// 
 ///
 /// `GET /evals/{eval_id}/runs/{run_id}/output_items/{output_item_id}`
-Future<ApiResult<EvalRunOutputItem, Never>> getEvalRunOutputItem({required String evalId, required String runId, required String outputItemId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EvalRunOutputItem, Never>> getEvalRunOutputItem({required String evalId, required String runId, required String outputItemId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -341,12 +268,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EvalRunOutputItem.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EvalRunOutputItem.fromJson(json as Map<String, dynamic>);}, );}
+}

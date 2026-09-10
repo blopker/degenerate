@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage {const WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage({this.text});
 
-factory WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(
+factory WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(
   text: json['text'] as String?,
-); }
+);}
 
 final String? text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': ?text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text'}.contains(key)); } 
-WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage copyWith({String? Function()? text}) { return WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'text'}.contains(key));}
+WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage copyWith({String? Function()? text}) {return WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(
   text: text != null ? text() : this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return text.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceMessage(text: $text)';}
+}

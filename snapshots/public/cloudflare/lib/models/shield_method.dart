@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method used to access the endpoint.
 @immutable final class ShieldMethod {const ShieldMethod._(this.value);
 
-factory ShieldMethod.fromJson(String json) { return switch (json) {
+factory ShieldMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   'HEAD' => head,
@@ -14,7 +14,7 @@ factory ShieldMethod.fromJson(String json) { return switch (json) {
   'PATCH' => patch,
   'TRACE' => trace,
   _ => ShieldMethod._(json),
-}; }
+};}
 
 static const ShieldMethod $get = ShieldMethod._('GET');
 
@@ -38,11 +38,11 @@ static const List<ShieldMethod> values = [$get, post, head, options, put, delete
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldMethod($value)';}
+}

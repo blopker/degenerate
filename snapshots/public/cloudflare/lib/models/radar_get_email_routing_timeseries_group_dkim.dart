@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupDkim {const RadarGetEmailRoutingTimeseriesGroupDkim._(this.value);
 
-factory RadarGetEmailRoutingTimeseriesGroupDkim.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingTimeseriesGroupDkim.fromJson(String json) {return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
   _ => RadarGetEmailRoutingTimeseriesGroupDkim._(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingTimeseriesGroupDkim pass = RadarGetEmailRoutingTimeseriesGroupDkim._('PASS');
 
@@ -19,11 +19,11 @@ static const List<RadarGetEmailRoutingTimeseriesGroupDkim> values = [pass, none,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupDkim && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupDkim($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupDkim && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailRoutingTimeseriesGroupDkim($value)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnSupportSite {const MconnSupportSite({required this.id});
 
-factory MconnSupportSite.fromJson(Map<String, dynamic> json) { return MconnSupportSite(
+factory MconnSupportSite.fromJson(Map<String, dynamic> json) {return MconnSupportSite(
   id: MconnUuid.fromJson(json['id'] as String),
-); }
+);}
 
 final MconnUuid id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-MconnSupportSite copyWith({MconnUuid? id}) { return MconnSupportSite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+MconnSupportSite copyWith({MconnUuid? id}) {return MconnSupportSite(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnSupportSite &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'MconnSupportSite(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'MconnSupportSite(id: $id)';}
+}

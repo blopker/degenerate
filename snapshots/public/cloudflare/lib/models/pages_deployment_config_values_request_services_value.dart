@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Service binding.
 @immutable final class PagesDeploymentConfigValuesRequestServicesValue {const PagesDeploymentConfigValuesRequestServicesValue({required this.service, this.entrypoint = const Omittable.absent(), this.environment, });
 
-factory PagesDeploymentConfigValuesRequestServicesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestServicesValue(
+factory PagesDeploymentConfigValuesRequestServicesValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesRequestServicesValue(
   entrypoint: json.containsKey('entrypoint') ? Omittable(json['entrypoint'] as String?) : const Omittable.absent(),
   environment: json['environment'] as String?,
   service: json['service'] as String,
-); }
+);}
 
 /// The entrypoint to bind to.
 final Omittable<String?> entrypoint;
@@ -18,22 +18,22 @@ final String? environment;
 /// The Service name.
 final String service;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (entrypoint.isPresent) 'entrypoint': entrypoint.value,
   'environment': ?environment,
   'service': service,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('service') && json['service'] is String; } 
-PagesDeploymentConfigValuesRequestServicesValue copyWith({Omittable<String?>? entrypoint, String? Function()? environment, String? service, }) { return PagesDeploymentConfigValuesRequestServicesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('service') && json['service'] is String;}
+PagesDeploymentConfigValuesRequestServicesValue copyWith({Omittable<String?>? entrypoint, String? Function()? environment, String? service, }) {return PagesDeploymentConfigValuesRequestServicesValue(
   entrypoint: entrypoint ?? this.entrypoint,
   environment: environment != null ? environment() : this.environment,
   service: service ?? this.service,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestServicesValue &&
           entrypoint == other.entrypoint &&
           environment == other.environment &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(entrypoint, environment, service); } 
-@override String toString() { return 'PagesDeploymentConfigValuesRequestServicesValue(entrypoint: $entrypoint, environment: $environment, service: $service)'; } 
- }
+          service == other.service;}
+@override int get hashCode {return Object.hash(entrypoint, environment, service);}
+@override String toString() {return 'PagesDeploymentConfigValuesRequestServicesValue(entrypoint: $entrypoint, environment: $environment, service: $service)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use when calling the `url` parameter's value. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
 @immutable final class CreateCallRequestMethod {const CreateCallRequestMethod._(this.value);
 
-factory CreateCallRequestMethod.fromJson(String json) { return switch (json) {
+factory CreateCallRequestMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateCallRequestMethod._(json),
-}; }
+};}
 
 static const CreateCallRequestMethod $get = CreateCallRequestMethod._('GET');
 
@@ -17,22 +17,22 @@ static const List<CreateCallRequestMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCallRequestMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCallRequestMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateCallRequestMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateCallRequestMethod($value)';}
+}
 /// The HTTP method that we should use to request the `fallback_url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
 @immutable final class CreateCallRequestFallbackMethod {const CreateCallRequestFallbackMethod._(this.value);
 
-factory CreateCallRequestFallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateCallRequestFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateCallRequestFallbackMethod._(json),
-}; }
+};}
 
 static const CreateCallRequestFallbackMethod $get = CreateCallRequestFallbackMethod._('GET');
 
@@ -42,22 +42,22 @@ static const List<CreateCallRequestFallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCallRequestFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCallRequestFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateCallRequestFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateCallRequestFallbackMethod($value)';}
+}
 /// The HTTP method we should use when calling the `status_callback` URL. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
 @immutable final class CreateCallRequestStatusCallbackMethod {const CreateCallRequestStatusCallbackMethod._(this.value);
 
-factory CreateCallRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateCallRequestStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateCallRequestStatusCallbackMethod._(json),
-}; }
+};}
 
 static const CreateCallRequestStatusCallbackMethod $get = CreateCallRequestStatusCallbackMethod._('GET');
 
@@ -67,22 +67,22 @@ static const List<CreateCallRequestStatusCallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCallRequestStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCallRequestStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateCallRequestStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateCallRequestStatusCallbackMethod($value)';}
+}
 /// The HTTP method we should use when calling the `recording_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 @immutable final class CreateCallRequestRecordingStatusCallbackMethod {const CreateCallRequestRecordingStatusCallbackMethod._(this.value);
 
-factory CreateCallRequestRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateCallRequestRecordingStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateCallRequestRecordingStatusCallbackMethod._(json),
-}; }
+};}
 
 static const CreateCallRequestRecordingStatusCallbackMethod $get = CreateCallRequestRecordingStatusCallbackMethod._('GET');
 
@@ -92,22 +92,22 @@ static const List<CreateCallRequestRecordingStatusCallbackMethod> values = [$get
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCallRequestRecordingStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCallRequestRecordingStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateCallRequestRecordingStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateCallRequestRecordingStatusCallbackMethod($value)';}
+}
 /// The HTTP method we should use when calling the `async_amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 @immutable final class CreateCallRequestAsyncAmdStatusCallbackMethod {const CreateCallRequestAsyncAmdStatusCallbackMethod._(this.value);
 
-factory CreateCallRequestAsyncAmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateCallRequestAsyncAmdStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateCallRequestAsyncAmdStatusCallbackMethod._(json),
-}; }
+};}
 
 static const CreateCallRequestAsyncAmdStatusCallbackMethod $get = CreateCallRequestAsyncAmdStatusCallbackMethod._('GET');
 
@@ -117,17 +117,17 @@ static const List<CreateCallRequestAsyncAmdStatusCallbackMethod> values = [$get,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCallRequestAsyncAmdStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCallRequestAsyncAmdStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateCallRequestAsyncAmdStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateCallRequestAsyncAmdStatusCallbackMethod($value)';}
+}
 @immutable final class CreateCallRequest {const CreateCallRequest({required this.to, required this.from, this.recordingChannels, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackEvent, this.statusCallbackMethod, this.sendDigits, this.timeout, this.record, this.method, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.machineDetection, this.machineDetectionTimeout, this.recordingStatusCallbackEvent, this.trim, this.callerId, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.applicationSid, this.asyncAmd, this.asyncAmdStatusCallback, this.asyncAmdStatusCallbackMethod, this.byoc, this.callReason, this.callToken, this.recordingTrack, this.timeLimit, this.clientNotificationUrl, this.url, this.twiml, this.machineDetectionSilenceTimeout, });
 
-factory CreateCallRequest.fromJson(Map<String, dynamic> json) { return CreateCallRequest(
+factory CreateCallRequest.fromJson(Map<String, dynamic> json) {return CreateCallRequest(
   to: json['To'] as String,
   from: json['From'] as String,
   method: json['Method'] != null ? CreateCallRequestMethod.fromJson(json['Method'] as String) : null,
@@ -164,7 +164,7 @@ factory CreateCallRequest.fromJson(Map<String, dynamic> json) { return CreateCal
   url: json['Url'] != null ? Uri.parse(json['Url'] as String) : null,
   twiml: json['Twiml'] as String?,
   applicationSid: json['ApplicationSid'] as String?,
-); }
+);}
 
 /// The phone number, SIP address, or client identifier to call.
 final String to;
@@ -274,7 +274,7 @@ final String? twiml;
 /// The SID of the Application resource that will handle the call, if the call will be handled by an application.
 final String? applicationSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'To': to,
   'From': from,
   if (method != null) 'Method': method?.toJson(),
@@ -311,10 +311,10 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'Url': url?.toString(),
   'Twiml': ?twiml,
   'ApplicationSid': ?applicationSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('To') && json['To'] is String &&
-      json.containsKey('From') && json['From'] is String; } 
-CreateCallRequest copyWith({String? to, String? from, CreateCallRequestMethod? Function()? method, Uri? Function()? fallbackUrl, CreateCallRequestFallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, List<String>? Function()? statusCallbackEvent, CreateCallRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? sendDigits, int? Function()? timeout, bool? Function()? record, String? Function()? recordingChannels, String? Function()? recordingStatusCallback, CreateCallRequestRecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, List<String>? Function()? recordingStatusCallbackEvent, String? Function()? trim, String? Function()? callerId, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, String? Function()? asyncAmd, Uri? Function()? asyncAmdStatusCallback, CreateCallRequestAsyncAmdStatusCallbackMethod? Function()? asyncAmdStatusCallbackMethod, String? Function()? byoc, String? Function()? callReason, String? Function()? callToken, String? Function()? recordingTrack, int? Function()? timeLimit, Uri? Function()? clientNotificationUrl, Uri? Function()? url, String? Function()? twiml, String? Function()? applicationSid, }) { return CreateCallRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('To') && json['To'] is String &&
+      json.containsKey('From') && json['From'] is String;}
+CreateCallRequest copyWith({String? to, String? from, CreateCallRequestMethod? Function()? method, Uri? Function()? fallbackUrl, CreateCallRequestFallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, List<String>? Function()? statusCallbackEvent, CreateCallRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? sendDigits, int? Function()? timeout, bool? Function()? record, String? Function()? recordingChannels, String? Function()? recordingStatusCallback, CreateCallRequestRecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, List<String>? Function()? recordingStatusCallbackEvent, String? Function()? trim, String? Function()? callerId, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, String? Function()? asyncAmd, Uri? Function()? asyncAmdStatusCallback, CreateCallRequestAsyncAmdStatusCallbackMethod? Function()? asyncAmdStatusCallbackMethod, String? Function()? byoc, String? Function()? callReason, String? Function()? callToken, String? Function()? recordingTrack, int? Function()? timeLimit, Uri? Function()? clientNotificationUrl, Uri? Function()? url, String? Function()? twiml, String? Function()? applicationSid, }) {return CreateCallRequest(
   to: to ?? this.to,
   from: from ?? this.from,
   method: method != null ? method() : this.method,
@@ -351,8 +351,8 @@ CreateCallRequest copyWith({String? to, String? from, CreateCallRequestMethod? F
   url: url != null ? url() : this.url,
   twiml: twiml != null ? twiml() : this.twiml,
   applicationSid: applicationSid != null ? applicationSid() : this.applicationSid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateCallRequest &&
           to == other.to &&
           from == other.from &&
@@ -389,7 +389,7 @@ CreateCallRequest copyWith({String? to, String? from, CreateCallRequestMethod? F
           clientNotificationUrl == other.clientNotificationUrl &&
           url == other.url &&
           twiml == other.twiml &&
-          applicationSid == other.applicationSid; } 
-@override int get hashCode { return Object.hashAll([to, from, method, fallbackUrl, fallbackMethod, statusCallback, Object.hashAll(statusCallbackEvent ?? const []), statusCallbackMethod, sendDigits, timeout, record, recordingChannels, recordingStatusCallback, recordingStatusCallbackMethod, sipAuthUsername, sipAuthPassword, machineDetection, machineDetectionTimeout, Object.hashAll(recordingStatusCallbackEvent ?? const []), trim, callerId, machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout, asyncAmd, asyncAmdStatusCallback, asyncAmdStatusCallbackMethod, byoc, callReason, callToken, recordingTrack, timeLimit, clientNotificationUrl, url, twiml, applicationSid]); } 
-@override String toString() { return 'CreateCallRequest(to: $to, from: $from, method: $method, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackEvent: $statusCallbackEvent, statusCallbackMethod: $statusCallbackMethod, sendDigits: $sendDigits, timeout: $timeout, record: $record, recordingChannels: $recordingChannels, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, sipAuthUsername: $sipAuthUsername, sipAuthPassword: $sipAuthPassword, machineDetection: $machineDetection, machineDetectionTimeout: $machineDetectionTimeout, recordingStatusCallbackEvent: $recordingStatusCallbackEvent, trim: $trim, callerId: $callerId, machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout, asyncAmd: $asyncAmd, asyncAmdStatusCallback: $asyncAmdStatusCallback, asyncAmdStatusCallbackMethod: $asyncAmdStatusCallbackMethod, byoc: $byoc, callReason: $callReason, callToken: $callToken, recordingTrack: $recordingTrack, timeLimit: $timeLimit, clientNotificationUrl: $clientNotificationUrl, url: $url, twiml: $twiml, applicationSid: $applicationSid)'; } 
- }
+          applicationSid == other.applicationSid;}
+@override int get hashCode {return Object.hashAll([to, from, method, fallbackUrl, fallbackMethod, statusCallback, Object.hashAll(statusCallbackEvent ?? const []), statusCallbackMethod, sendDigits, timeout, record, recordingChannels, recordingStatusCallback, recordingStatusCallbackMethod, sipAuthUsername, sipAuthPassword, machineDetection, machineDetectionTimeout, Object.hashAll(recordingStatusCallbackEvent ?? const []), trim, callerId, machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout, asyncAmd, asyncAmdStatusCallback, asyncAmdStatusCallbackMethod, byoc, callReason, callToken, recordingTrack, timeLimit, clientNotificationUrl, url, twiml, applicationSid]);}
+@override String toString() {return 'CreateCallRequest(to: $to, from: $from, method: $method, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackEvent: $statusCallbackEvent, statusCallbackMethod: $statusCallbackMethod, sendDigits: $sendDigits, timeout: $timeout, record: $record, recordingChannels: $recordingChannels, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, sipAuthUsername: $sipAuthUsername, sipAuthPassword: $sipAuthPassword, machineDetection: $machineDetection, machineDetectionTimeout: $machineDetectionTimeout, recordingStatusCallbackEvent: $recordingStatusCallbackEvent, trim: $trim, callerId: $callerId, machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout, asyncAmd: $asyncAmd, asyncAmdStatusCallback: $asyncAmdStatusCallback, asyncAmdStatusCallbackMethod: $asyncAmdStatusCallbackMethod, byoc: $byoc, callReason: $callReason, callToken: $callToken, recordingTrack: $recordingTrack, timeLimit: $timeLimit, clientNotificationUrl: $clientNotificationUrl, url: $url, twiml: $twiml, applicationSid: $applicationSid)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
 @immutable final class UpdateParticipantRequestHoldMethod {const UpdateParticipantRequestHoldMethod._(this.value);
 
-factory UpdateParticipantRequestHoldMethod.fromJson(String json) { return switch (json) {
+factory UpdateParticipantRequestHoldMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateParticipantRequestHoldMethod._(json),
-}; }
+};}
 
 static const UpdateParticipantRequestHoldMethod $get = UpdateParticipantRequestHoldMethod._('GET');
 
@@ -17,22 +17,22 @@ static const List<UpdateParticipantRequestHoldMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateParticipantRequestHoldMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateParticipantRequestHoldMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateParticipantRequestHoldMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateParticipantRequestHoldMethod($value)';}
+}
 /// The HTTP method we should use to call `announce_url`. Can be: `GET` or `POST` and defaults to `POST`.
 @immutable final class UpdateParticipantRequestAnnounceMethod {const UpdateParticipantRequestAnnounceMethod._(this.value);
 
-factory UpdateParticipantRequestAnnounceMethod.fromJson(String json) { return switch (json) {
+factory UpdateParticipantRequestAnnounceMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateParticipantRequestAnnounceMethod._(json),
-}; }
+};}
 
 static const UpdateParticipantRequestAnnounceMethod $get = UpdateParticipantRequestAnnounceMethod._('GET');
 
@@ -42,22 +42,22 @@ static const List<UpdateParticipantRequestAnnounceMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateParticipantRequestAnnounceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateParticipantRequestAnnounceMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateParticipantRequestAnnounceMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateParticipantRequestAnnounceMethod($value)';}
+}
 /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
 @immutable final class UpdateParticipantRequestWaitMethod {const UpdateParticipantRequestWaitMethod._(this.value);
 
-factory UpdateParticipantRequestWaitMethod.fromJson(String json) { return switch (json) {
+factory UpdateParticipantRequestWaitMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateParticipantRequestWaitMethod._(json),
-}; }
+};}
 
 static const UpdateParticipantRequestWaitMethod $get = UpdateParticipantRequestWaitMethod._('GET');
 
@@ -67,17 +67,17 @@ static const List<UpdateParticipantRequestWaitMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateParticipantRequestWaitMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateParticipantRequestWaitMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateParticipantRequestWaitMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateParticipantRequestWaitMethod($value)';}
+}
 @immutable final class UpdateParticipantRequest {const UpdateParticipantRequest({this.muted, this.hold, this.holdUrl, this.holdMethod, this.announceUrl, this.announceMethod, this.waitUrl, this.waitMethod, this.beepOnExit, this.endConferenceOnExit, this.coaching, this.callSidToCoach, });
 
-factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) { return UpdateParticipantRequest(
+factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) {return UpdateParticipantRequest(
   muted: json['Muted'] as bool?,
   hold: json['Hold'] as bool?,
   holdUrl: json['HoldUrl'] != null ? Uri.parse(json['HoldUrl'] as String) : null,
@@ -90,7 +90,7 @@ factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) { return Up
   endConferenceOnExit: json['EndConferenceOnExit'] as bool?,
   coaching: json['Coaching'] as bool?,
   callSidToCoach: json['CallSidToCoach'] as String?,
-); }
+);}
 
 /// Whether the participant should be muted. Can be `true` or `false`. `true` will mute the participant, and `false` will un-mute them. Anything value other than `true` or `false` is interpreted as `false`.
 final bool? muted;
@@ -128,7 +128,7 @@ final bool? coaching;
 /// The SID of the participant who is being `coached`. The participant being coached is the only participant who can hear the participant who is `coaching`.
 final String? callSidToCoach;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Muted': ?muted,
   'Hold': ?hold,
   if (holdUrl != null) 'HoldUrl': holdUrl?.toString(),
@@ -141,9 +141,9 @@ Map<String, dynamic> toJson() { return {
   'EndConferenceOnExit': ?endConferenceOnExit,
   'Coaching': ?coaching,
   'CallSidToCoach': ?callSidToCoach,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Muted', 'Hold', 'HoldUrl', 'HoldMethod', 'AnnounceUrl', 'AnnounceMethod', 'WaitUrl', 'WaitMethod', 'BeepOnExit', 'EndConferenceOnExit', 'Coaching', 'CallSidToCoach'}.contains(key)); } 
-UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? hold, Uri? Function()? holdUrl, UpdateParticipantRequestHoldMethod? Function()? holdMethod, Uri? Function()? announceUrl, UpdateParticipantRequestAnnounceMethod? Function()? announceMethod, Uri? Function()? waitUrl, UpdateParticipantRequestWaitMethod? Function()? waitMethod, bool? Function()? beepOnExit, bool? Function()? endConferenceOnExit, bool? Function()? coaching, String? Function()? callSidToCoach, }) { return UpdateParticipantRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'Muted', 'Hold', 'HoldUrl', 'HoldMethod', 'AnnounceUrl', 'AnnounceMethod', 'WaitUrl', 'WaitMethod', 'BeepOnExit', 'EndConferenceOnExit', 'Coaching', 'CallSidToCoach'}.contains(key));}
+UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? hold, Uri? Function()? holdUrl, UpdateParticipantRequestHoldMethod? Function()? holdMethod, Uri? Function()? announceUrl, UpdateParticipantRequestAnnounceMethod? Function()? announceMethod, Uri? Function()? waitUrl, UpdateParticipantRequestWaitMethod? Function()? waitMethod, bool? Function()? beepOnExit, bool? Function()? endConferenceOnExit, bool? Function()? coaching, String? Function()? callSidToCoach, }) {return UpdateParticipantRequest(
   muted: muted != null ? muted() : this.muted,
   hold: hold != null ? hold() : this.hold,
   holdUrl: holdUrl != null ? holdUrl() : this.holdUrl,
@@ -156,8 +156,8 @@ UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? ho
   endConferenceOnExit: endConferenceOnExit != null ? endConferenceOnExit() : this.endConferenceOnExit,
   coaching: coaching != null ? coaching() : this.coaching,
   callSidToCoach: callSidToCoach != null ? callSidToCoach() : this.callSidToCoach,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateParticipantRequest &&
           muted == other.muted &&
           hold == other.hold &&
@@ -170,7 +170,7 @@ UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? ho
           beepOnExit == other.beepOnExit &&
           endConferenceOnExit == other.endConferenceOnExit &&
           coaching == other.coaching &&
-          callSidToCoach == other.callSidToCoach; } 
-@override int get hashCode { return Object.hash(muted, hold, holdUrl, holdMethod, announceUrl, announceMethod, waitUrl, waitMethod, beepOnExit, endConferenceOnExit, coaching, callSidToCoach); } 
-@override String toString() { return 'UpdateParticipantRequest(muted: $muted, hold: $hold, holdUrl: $holdUrl, holdMethod: $holdMethod, announceUrl: $announceUrl, announceMethod: $announceMethod, waitUrl: $waitUrl, waitMethod: $waitMethod, beepOnExit: $beepOnExit, endConferenceOnExit: $endConferenceOnExit, coaching: $coaching, callSidToCoach: $callSidToCoach)'; } 
- }
+          callSidToCoach == other.callSidToCoach;}
+@override int get hashCode {return Object.hash(muted, hold, holdUrl, holdMethod, announceUrl, announceMethod, waitUrl, waitMethod, beepOnExit, endConferenceOnExit, coaching, callSidToCoach);}
+@override String toString() {return 'UpdateParticipantRequest(muted: $muted, hold: $hold, holdUrl: $holdUrl, holdMethod: $holdMethod, announceUrl: $announceUrl, announceMethod: $announceMethod, waitUrl: $waitUrl, waitMethod: $waitMethod, beepOnExit: $beepOnExit, endConferenceOnExit: $endConferenceOnExit, coaching: $coaching, callSidToCoach: $callSidToCoach)';}
+}

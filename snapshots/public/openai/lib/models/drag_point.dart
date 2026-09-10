@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An x/y coordinate pair, e.g. `{ x: 100, y: 200 }`.
 @immutable final class DragPoint {const DragPoint({required this.x, required this.y, });
 
-factory DragPoint.fromJson(Map<String, dynamic> json) { return DragPoint(
+factory DragPoint.fromJson(Map<String, dynamic> json) {return DragPoint(
   x: (json['x'] as num).toInt(),
   y: (json['y'] as num).toInt(),
-); }
+);}
 
 /// The x-coordinate.
 final int x;
@@ -14,20 +14,20 @@ final int x;
 /// The y-coordinate.
 final int y;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'x': x,
   'y': y,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('x') && json['x'] is num &&
-      json.containsKey('y') && json['y'] is num; } 
-DragPoint copyWith({int? x, int? y, }) { return DragPoint(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('x') && json['x'] is num &&
+      json.containsKey('y') && json['y'] is num;}
+DragPoint copyWith({int? x, int? y, }) {return DragPoint(
   x: x ?? this.x,
   y: y ?? this.y,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DragPoint &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(x, y); } 
-@override String toString() { return 'DragPoint(x: $x, y: $y)'; } 
- }
+          y == other.y;}
+@override int get hashCode {return Object.hash(x, y);}
+@override String toString() {return 'DragPoint(x: $x, y: $y)';}
+}

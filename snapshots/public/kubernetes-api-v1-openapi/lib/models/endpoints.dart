@@ -19,12 +19,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'endpoint_sub
 /// Deprecated: This API is deprecated in v1.33+. Use discoveryv1.EndpointSlice.
 @immutable final class Endpoints {const Endpoints({this.apiVersion, this.kind, this.metadata, this.subsets, });
 
-factory Endpoints.fromJson(Map<String, dynamic> json) { return Endpoints(
+factory Endpoints.fromJson(Map<String, dynamic> json) {return Endpoints(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   subsets: (json['subsets'] as List<dynamic>?)?.map((e) => EndpointSubset.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -38,25 +38,25 @@ final ObjectMeta? metadata;
 /// The set of all endpoints is the union of all subsets. Addresses are placed into subsets according to the IPs they share. A single address with multiple ports, some of which are ready and some of which are not (because they come from different containers) will result in the address being displayed in different subsets for the different ports. No address will appear in both Addresses and NotReadyAddresses in the same subset. Sets of addresses and ports that comprise a service.
 final List<EndpointSubset>? subsets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (subsets != null) 'subsets': subsets?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'subsets'}.contains(key)); } 
-Endpoints copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, List<EndpointSubset>? Function()? subsets, }) { return Endpoints(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'subsets'}.contains(key));}
+Endpoints copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, List<EndpointSubset>? Function()? subsets, }) {return Endpoints(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
   subsets: subsets != null ? subsets() : this.subsets,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Endpoints &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
-          listEquals(subsets, other.subsets); } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, Object.hashAll(subsets ?? const [])); } 
-@override String toString() { return 'Endpoints(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, subsets: $subsets)'; } 
- }
+          listEquals(subsets, other.subsets);}
+@override int get hashCode {return Object.hash(apiVersion, kind, metadata, Object.hashAll(subsets ?? const []));}
+@override String toString() {return 'Endpoints(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, subsets: $subsets)';}
+}

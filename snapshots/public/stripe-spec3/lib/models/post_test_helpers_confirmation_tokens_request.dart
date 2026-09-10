@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_he
 /// The presence of this property will [attach the payment method](https://docs.stripe.com/payments/save-during-payment) to the PaymentIntent's Customer, if present, after the PaymentIntent is confirmed and any required actions from the user are complete.
 @immutable final class PostTestHelpersConfirmationTokensRequestSetupFutureUsage {const PostTestHelpersConfirmationTokensRequestSetupFutureUsage._(this.value);
 
-factory PostTestHelpersConfirmationTokensRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostTestHelpersConfirmationTokensRequestSetupFutureUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostTestHelpersConfirmationTokensRequestSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostTestHelpersConfirmationTokensRequestSetupFutureUsage offSession = PostTestHelpersConfirmationTokensRequestSetupFutureUsage._('off_session');
 
@@ -19,17 +19,17 @@ static const List<PostTestHelpersConfirmationTokensRequestSetupFutureUsage> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersConfirmationTokensRequestSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestSetupFutureUsage($value)';}
+}
 @immutable final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfirmationTokensRequest({this.expand, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.setupFutureUsage, this.shipping, });
 
-factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequest(
+factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersConfirmationTokensRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentMethod: json['payment_method'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
@@ -37,7 +37,7 @@ factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> j
   returnUrl: json['return_url'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PostTestHelpersConfirmationTokensRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   shipping: json['shipping'] != null ? PostTestHelpersConfirmationTokensRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -62,7 +62,7 @@ final PostTestHelpersConfirmationTokensRequestSetupFutureUsage? setupFutureUsage
 /// Shipping information for this ConfirmationToken.
 final PostTestHelpersConfirmationTokensRequestShipping? shipping;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'payment_method': ?paymentMethod,
   if (paymentMethodData != null) 'payment_method_data': paymentMethodData?.toJson(),
@@ -70,9 +70,9 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   if (shipping != null) 'shipping': shipping?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'setup_future_usage', 'shipping'}.contains(key)); } 
-PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? expand, String? Function()? paymentMethod, PostTestHelpersConfirmationTokensRequestPaymentMethodData? Function()? paymentMethodData, PostTestHelpersConfirmationTokensRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, PostTestHelpersConfirmationTokensRequestSetupFutureUsage? Function()? setupFutureUsage, PostTestHelpersConfirmationTokensRequestShipping? Function()? shipping, }) { return PostTestHelpersConfirmationTokensRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'setup_future_usage', 'shipping'}.contains(key));}
+PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? expand, String? Function()? paymentMethod, PostTestHelpersConfirmationTokensRequestPaymentMethodData? Function()? paymentMethodData, PostTestHelpersConfirmationTokensRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, PostTestHelpersConfirmationTokensRequestSetupFutureUsage? Function()? setupFutureUsage, PostTestHelpersConfirmationTokensRequestShipping? Function()? shipping, }) {return PostTestHelpersConfirmationTokensRequest(
   expand: expand != null ? expand() : this.expand,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   paymentMethodData: paymentMethodData != null ? paymentMethodData() : this.paymentMethodData,
@@ -80,8 +80,8 @@ PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? exp
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   shipping: shipping != null ? shipping() : this.shipping,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequest &&
           listEquals(expand, other.expand) &&
           paymentMethod == other.paymentMethod &&
@@ -89,7 +89,7 @@ PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? exp
           paymentMethodOptions == other.paymentMethodOptions &&
           returnUrl == other.returnUrl &&
           setupFutureUsage == other.setupFutureUsage &&
-          shipping == other.shipping; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, setupFutureUsage, shipping); } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequest(expand: $expand, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping)'; } 
- }
+          shipping == other.shipping;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, setupFutureUsage, shipping);}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequest(expand: $expand, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping)';}
+}

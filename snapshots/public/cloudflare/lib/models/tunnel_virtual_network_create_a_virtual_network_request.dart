@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_is_default_network_optional.dart';import 'tunnel_virtual_network_comment.dart';import 'tunnel_virtual_network_name.dart';@immutable final class TunnelVirtualNetworkCreateAVirtualNetworkRequest {const TunnelVirtualNetworkCreateAVirtualNetworkRequest({required this.name, this.comment, this.isDefault, this.isDefaultNetwork, });
 
-factory TunnelVirtualNetworkCreateAVirtualNetworkRequest.fromJson(Map<String, dynamic> json) { return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
+factory TunnelVirtualNetworkCreateAVirtualNetworkRequest.fromJson(Map<String, dynamic> json) {return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
   comment: json['comment'] != null ? TunnelVirtualNetworkComment.fromJson(json['comment'] as String) : null,
   isDefault: json['is_default'] as bool?,
   isDefaultNetwork: json['is_default_network'] != null ? TunnelIsDefaultNetworkOptional.fromJson(json['is_default_network'] as bool) : null,
   name: TunnelVirtualNetworkName.fromJson(json['name'] as String),
-); }
+);}
 
 /// Optional remark describing the virtual network.
 final TunnelVirtualNetworkComment? comment;
@@ -21,25 +21,25 @@ final TunnelIsDefaultNetworkOptional? isDefaultNetwork;
 /// A user-friendly name for the virtual network.
 final TunnelVirtualNetworkName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   'is_default': ?isDefault,
   if (isDefaultNetwork != null) 'is_default_network': isDefaultNetwork?.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-TunnelVirtualNetworkCreateAVirtualNetworkRequest copyWith({TunnelVirtualNetworkComment? Function()? comment, bool? Function()? isDefault, TunnelIsDefaultNetworkOptional? Function()? isDefaultNetwork, TunnelVirtualNetworkName? name, }) { return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+TunnelVirtualNetworkCreateAVirtualNetworkRequest copyWith({TunnelVirtualNetworkComment? Function()? comment, bool? Function()? isDefault, TunnelIsDefaultNetworkOptional? Function()? isDefaultNetwork, TunnelVirtualNetworkName? name, }) {return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
   comment: comment != null ? comment() : this.comment,
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TunnelVirtualNetworkCreateAVirtualNetworkRequest &&
           comment == other.comment &&
           isDefault == other.isDefault &&
           isDefaultNetwork == other.isDefaultNetwork &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(comment, isDefault, isDefaultNetwork, name); } 
-@override String toString() { return 'TunnelVirtualNetworkCreateAVirtualNetworkRequest(comment: $comment, isDefault: $isDefault, isDefaultNetwork: $isDefaultNetwork, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(comment, isDefault, isDefaultNetwork, name);}
+@override String toString() {return 'TunnelVirtualNetworkCreateAVirtualNetworkRequest(comment: $comment, isDefault: $isDefault, isDefaultNetwork: $isDefaultNetwork, name: $name)';}
+}

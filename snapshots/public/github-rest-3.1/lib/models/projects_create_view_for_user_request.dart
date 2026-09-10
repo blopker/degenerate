@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The layout of the view.
 @immutable final class ProjectsCreateViewForUserRequestLayout {const ProjectsCreateViewForUserRequestLayout._(this.value);
 
-factory ProjectsCreateViewForUserRequestLayout.fromJson(String json) { return switch (json) {
+factory ProjectsCreateViewForUserRequestLayout.fromJson(String json) {return switch (json) {
   'table' => table,
   'board' => board,
   'roadmap' => roadmap,
   _ => ProjectsCreateViewForUserRequestLayout._(json),
-}; }
+};}
 
 static const ProjectsCreateViewForUserRequestLayout table = ProjectsCreateViewForUserRequestLayout._('table');
 
@@ -20,22 +20,22 @@ static const List<ProjectsCreateViewForUserRequestLayout> values = [table, board
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectsCreateViewForUserRequestLayout && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectsCreateViewForUserRequestLayout($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectsCreateViewForUserRequestLayout && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectsCreateViewForUserRequestLayout($value)';}
+}
 @immutable final class ProjectsCreateViewForUserRequest {const ProjectsCreateViewForUserRequest({required this.name, required this.layout, this.filter, this.visibleFields, });
 
-factory ProjectsCreateViewForUserRequest.fromJson(Map<String, dynamic> json) { return ProjectsCreateViewForUserRequest(
+factory ProjectsCreateViewForUserRequest.fromJson(Map<String, dynamic> json) {return ProjectsCreateViewForUserRequest(
   name: json['name'] as String,
   layout: ProjectsCreateViewForUserRequestLayout.fromJson(json['layout'] as String),
   filter: json['filter'] as String?,
   visibleFields: (json['visible_fields'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The name of the view.
 final String name;
@@ -50,26 +50,26 @@ final String? filter;
 /// For `table` and `board` layouts, this represents the field IDs that should be visible in the view. If not provided, the default visible fields will be used.
 final List<int>? visibleFields;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'layout': layout.toJson(),
   'filter': ?filter,
   'visible_fields': ?visibleFields,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('layout'); } 
-ProjectsCreateViewForUserRequest copyWith({String? name, ProjectsCreateViewForUserRequestLayout? layout, String? Function()? filter, List<int>? Function()? visibleFields, }) { return ProjectsCreateViewForUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('layout');}
+ProjectsCreateViewForUserRequest copyWith({String? name, ProjectsCreateViewForUserRequestLayout? layout, String? Function()? filter, List<int>? Function()? visibleFields, }) {return ProjectsCreateViewForUserRequest(
   name: name ?? this.name,
   layout: layout ?? this.layout,
   filter: filter != null ? filter() : this.filter,
   visibleFields: visibleFields != null ? visibleFields() : this.visibleFields,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectsCreateViewForUserRequest &&
           name == other.name &&
           layout == other.layout &&
           filter == other.filter &&
-          listEquals(visibleFields, other.visibleFields); } 
-@override int get hashCode { return Object.hash(name, layout, filter, Object.hashAll(visibleFields ?? const [])); } 
-@override String toString() { return 'ProjectsCreateViewForUserRequest(name: $name, layout: $layout, filter: $filter, visibleFields: $visibleFields)'; } 
- }
+          listEquals(visibleFields, other.visibleFields);}
+@override int get hashCode {return Object.hash(name, layout, filter, Object.hashAll(visibleFields ?? const []));}
+@override String toString() {return 'ProjectsCreateViewForUserRequest(name: $name, layout: $layout, filter: $filter, visibleFields: $visibleFields)';}
+}

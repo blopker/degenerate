@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_dnssec_awareness_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse {const RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse({required this.result, required this.success, });
 
-factory RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(
+factory RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(
   result: RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse copyWith({RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse copyWith({RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResult? result, bool? success, }) {return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(result: $result, success: $success)';}
+}

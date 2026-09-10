@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_usage_tokens_input_token_details.dart';/// The type of the usage object. Always `tokens` for this variant.
 @immutable final class TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType._(this.value);
 
-factory TranscriptTextUsageTokensType.fromJson(String json) { return switch (json) {
+factory TranscriptTextUsageTokensType.fromJson(String json) {return switch (json) {
   'tokens' => tokens,
   _ => TranscriptTextUsageTokensType._(json),
-}; }
+};}
 
 static const TranscriptTextUsageTokensType tokens = TranscriptTextUsageTokensType._('tokens');
 
@@ -14,24 +14,24 @@ static const List<TranscriptTextUsageTokensType> values = [tokens];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptTextUsageTokensType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TranscriptTextUsageTokensType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TranscriptTextUsageTokensType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TranscriptTextUsageTokensType($value)';}
+}
 /// Usage statistics for models billed by token usage.
 @immutable final class TranscriptTextUsageTokens {const TranscriptTextUsageTokens({required this.type, required this.inputTokens, required this.outputTokens, required this.totalTokens, this.inputTokenDetails, });
 
-factory TranscriptTextUsageTokens.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageTokens(
+factory TranscriptTextUsageTokens.fromJson(Map<String, dynamic> json) {return TranscriptTextUsageTokens(
   type: TranscriptTextUsageTokensType.fromJson(json['type'] as String),
   inputTokens: (json['input_tokens'] as num).toInt(),
   inputTokenDetails: json['input_token_details'] != null ? TranscriptTextUsageTokensInputTokenDetails.fromJson(json['input_token_details'] as Map<String, dynamic>) : null,
   outputTokens: (json['output_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
-); }
+);}
 
 /// The type of the usage object. Always `tokens` for this variant.
 final TranscriptTextUsageTokensType type;
@@ -48,31 +48,31 @@ final int outputTokens;
 /// Total number of tokens used (input + output).
 final int totalTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'input_tokens': inputTokens,
   if (inputTokenDetails != null) 'input_token_details': inputTokenDetails?.toJson(),
   'output_tokens': outputTokens,
   'total_tokens': totalTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
-      json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-TranscriptTextUsageTokens copyWith({TranscriptTextUsageTokensType? type, int? inputTokens, TranscriptTextUsageTokensInputTokenDetails? Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return TranscriptTextUsageTokens(
+      json.containsKey('total_tokens') && json['total_tokens'] is num;}
+TranscriptTextUsageTokens copyWith({TranscriptTextUsageTokensType? type, int? inputTokens, TranscriptTextUsageTokensInputTokenDetails? Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) {return TranscriptTextUsageTokens(
   type: type ?? this.type,
   inputTokens: inputTokens ?? this.inputTokens,
   inputTokenDetails: inputTokenDetails != null ? inputTokenDetails() : this.inputTokenDetails,
   outputTokens: outputTokens ?? this.outputTokens,
   totalTokens: totalTokens ?? this.totalTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TranscriptTextUsageTokens &&
           type == other.type &&
           inputTokens == other.inputTokens &&
           inputTokenDetails == other.inputTokenDetails &&
           outputTokens == other.outputTokens &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(type, inputTokens, inputTokenDetails, outputTokens, totalTokens); } 
-@override String toString() { return 'TranscriptTextUsageTokens(type: $type, inputTokens: $inputTokens, inputTokenDetails: $inputTokenDetails, outputTokens: $outputTokens, totalTokens: $totalTokens)'; } 
- }
+          totalTokens == other.totalTokens;}
+@override int get hashCode {return Object.hash(type, inputTokens, inputTokenDetails, outputTokens, totalTokens);}
+@override String toString() {return 'TranscriptTextUsageTokens(type: $type, inputTokens: $inputTokens, inputTokenDetails: $inputTokenDetails, outputTokens: $outputTokens, totalTokens: $totalTokens)';}
+}

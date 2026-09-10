@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction_refund.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction({required this.refund});
 
-factory CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
+factory CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction.fromJson(Map<String, dynamic> json) {return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
   refund: CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund.fromJson(json['refund']),
-); }
+);}
 
 /// The [Refund](https://docs.stripe.com/api/refunds/object) that moved these funds into the customer's cash balance.
 final CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund refund;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'refund': refund.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('refund'); } 
-CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund? refund}) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('refund');}
+CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund? refund}) {return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
   refund: refund ?? this.refund,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction &&
-          refund == other.refund; } 
-@override int get hashCode { return refund.hashCode; } 
-@override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(refund: $refund)'; } 
- }
+          refund == other.refund;}
+@override int get hashCode {return refund.hashCode;}
+@override String toString() {return 'CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(refund: $refund)';}
+}

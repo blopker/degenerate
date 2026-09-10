@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TrialSettingsConfigEndBehaviorMissingPaymentMethod {const TrialSettingsConfigEndBehaviorMissingPaymentMethod._(this.value);
 
-factory TrialSettingsConfigEndBehaviorMissingPaymentMethod.fromJson(String json) { return switch (json) {
+factory TrialSettingsConfigEndBehaviorMissingPaymentMethod.fromJson(String json) {return switch (json) {
   'cancel' => cancel,
   'create_invoice' => createInvoice,
   'pause' => pause,
   _ => TrialSettingsConfigEndBehaviorMissingPaymentMethod._(json),
-}; }
+};}
 
 static const TrialSettingsConfigEndBehaviorMissingPaymentMethod cancel = TrialSettingsConfigEndBehaviorMissingPaymentMethod._('cancel');
 
@@ -19,32 +19,32 @@ static const List<TrialSettingsConfigEndBehaviorMissingPaymentMethod> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TrialSettingsConfigEndBehaviorMissingPaymentMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TrialSettingsConfigEndBehaviorMissingPaymentMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TrialSettingsConfigEndBehaviorMissingPaymentMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TrialSettingsConfigEndBehaviorMissingPaymentMethod($value)';}
+}
 @immutable final class TrialSettingsConfigEndBehavior {const TrialSettingsConfigEndBehavior({required this.missingPaymentMethod});
 
-factory TrialSettingsConfigEndBehavior.fromJson(Map<String, dynamic> json) { return TrialSettingsConfigEndBehavior(
+factory TrialSettingsConfigEndBehavior.fromJson(Map<String, dynamic> json) {return TrialSettingsConfigEndBehavior(
   missingPaymentMethod: TrialSettingsConfigEndBehaviorMissingPaymentMethod.fromJson(json['missing_payment_method'] as String),
-); }
+);}
 
 final TrialSettingsConfigEndBehaviorMissingPaymentMethod missingPaymentMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'missing_payment_method': missingPaymentMethod.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('missing_payment_method'); } 
-TrialSettingsConfigEndBehavior copyWith({TrialSettingsConfigEndBehaviorMissingPaymentMethod? missingPaymentMethod}) { return TrialSettingsConfigEndBehavior(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('missing_payment_method');}
+TrialSettingsConfigEndBehavior copyWith({TrialSettingsConfigEndBehaviorMissingPaymentMethod? missingPaymentMethod}) {return TrialSettingsConfigEndBehavior(
   missingPaymentMethod: missingPaymentMethod ?? this.missingPaymentMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TrialSettingsConfigEndBehavior &&
-          missingPaymentMethod == other.missingPaymentMethod; } 
-@override int get hashCode { return missingPaymentMethod.hashCode; } 
-@override String toString() { return 'TrialSettingsConfigEndBehavior(missingPaymentMethod: $missingPaymentMethod)'; } 
- }
+          missingPaymentMethod == other.missingPaymentMethod;}
+@override int get hashCode {return missingPaymentMethod.hashCode;}
+@override String toString() {return 'TrialSettingsConfigEndBehavior(missingPaymentMethod: $missingPaymentMethod)';}
+}

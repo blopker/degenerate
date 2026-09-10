@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_bucket_lock_rule.dart';@immutable final class R2BucketLockRuleConfig {const R2BucketLockRuleConfig({this.rules});
 
-factory R2BucketLockRuleConfig.fromJson(Map<String, dynamic> json) { return R2BucketLockRuleConfig(
+factory R2BucketLockRuleConfig.fromJson(Map<String, dynamic> json) {return R2BucketLockRuleConfig(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => R2BucketLockRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<R2BucketLockRule>? rules;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rules'}.contains(key)); } 
-R2BucketLockRuleConfig copyWith({List<R2BucketLockRule>? Function()? rules}) { return R2BucketLockRuleConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'rules'}.contains(key));}
+R2BucketLockRuleConfig copyWith({List<R2BucketLockRule>? Function()? rules}) {return R2BucketLockRuleConfig(
   rules: rules != null ? rules() : this.rules,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2BucketLockRuleConfig &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules ?? const []).hashCode; } 
-@override String toString() { return 'R2BucketLockRuleConfig(rules: $rules)'; } 
- }
+          listEquals(rules, other.rules);}
+@override int get hashCode {return Object.hashAll(rules ?? const []).hashCode;}
+@override String toString() {return 'R2BucketLockRuleConfig(rules: $rules)';}
+}

@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_invoice_settings_account_tax_ids.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_invoice_settings_issuer.dart';/// All invoices will be billed using the specified settings.
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(
   accountTaxIds: json['account_tax_ids'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   issuer: json['issuer'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds? accountTaxIds;
 
 final PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer? issuer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   if (issuer != null) 'issuer': issuer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'issuer'}.contains(key)); } 
-PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings copyWith({PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds? Function()? accountTaxIds, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer? Function()? issuer, }) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'issuer'}.contains(key));}
+PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings copyWith({PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds? Function()? accountTaxIds, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer? Function()? issuer, }) {return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   issuer: issuer != null ? issuer() : this.issuer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings &&
           accountTaxIds == other.accountTaxIds &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(accountTaxIds, issuer); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)'; } 
- }
+          issuer == other.issuer;}
+@override int get hashCode {return Object.hash(accountTaxIds, issuer);}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)';}
+}

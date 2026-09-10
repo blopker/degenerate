@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Tiered Cache.
 @immutable final class SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue {const SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue._(this.value);
 
-factory SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue.fromJson(String json) { return switch (json) {
+factory SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue._(json),
-}; }
+};}
 
 static const SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue $on = SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue._('on');
 
@@ -17,22 +17,22 @@ static const List<SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheVal
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue($value)';}
+}
 @immutable final class SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache {const SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache({this.editable, this.id, this.modifiedOn, this.value, });
 
-factory SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache(
+factory SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache.fromJson(Map<String, dynamic> json) {return SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache(
   editable: json['editable'] as bool?,
   id: json['id'] as String?,
   modifiedOn: json['modified_on'] as String?,
   value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Whether the setting is editable.
 final bool? editable;
@@ -46,25 +46,25 @@ final String? modifiedOn;
 /// Specifies the enablement value of Tiered Cache.
 final SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': ?id,
   'modified_on': ?modifiedOn,
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache copyWith({bool? Function()? editable, String? Function()? id, String? Function()? modifiedOn, SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue? Function()? value, }) { return SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key));}
+SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache copyWith({bool? Function()? editable, String? Function()? id, String? Function()? modifiedOn, SmartshieldSmartShieldSettingsPatchResponseSmartTieredCacheValue? Function()? value, }) {return SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value); } 
-@override String toString() { return 'SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, modifiedOn, value);}
+@override String toString() {return 'SmartshieldSmartShieldSettingsPatchResponseSmartTieredCache(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';}
+}

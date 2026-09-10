@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_next_action_konbini_stores.dart';/// 
 @immutable final class PaymentIntentNextActionKonbini {const PaymentIntentNextActionKonbini({required this.expiresAt, required this.stores, this.hostedVoucherUrl = const Omittable.absent(), });
 
-factory PaymentIntentNextActionKonbini.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbini(
+factory PaymentIntentNextActionKonbini.fromJson(Map<String, dynamic> json) {return PaymentIntentNextActionKonbini(
   expiresAt: (json['expires_at'] as num).toInt(),
   hostedVoucherUrl: json.containsKey('hosted_voucher_url') ? Omittable(json['hosted_voucher_url'] as String?) : const Omittable.absent(),
   stores: PaymentIntentNextActionKonbiniStores.fromJson(json['stores'] as Map<String, dynamic>),
-); }
+);}
 
 /// The timestamp at which the pending Konbini payment expires.
 final int expiresAt;
@@ -17,23 +17,23 @@ final Omittable<String?> hostedVoucherUrl;
 
 final PaymentIntentNextActionKonbiniStores stores;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expires_at': expiresAt,
   if (hostedVoucherUrl.isPresent) 'hosted_voucher_url': hostedVoucherUrl.value,
   'stores': stores.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expires_at') && json['expires_at'] is num &&
-      json.containsKey('stores'); } 
-PaymentIntentNextActionKonbini copyWith({int? expiresAt, Omittable<String?>? hostedVoucherUrl, PaymentIntentNextActionKonbiniStores? stores, }) { return PaymentIntentNextActionKonbini(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expires_at') && json['expires_at'] is num &&
+      json.containsKey('stores');}
+PaymentIntentNextActionKonbini copyWith({int? expiresAt, Omittable<String?>? hostedVoucherUrl, PaymentIntentNextActionKonbiniStores? stores, }) {return PaymentIntentNextActionKonbini(
   expiresAt: expiresAt ?? this.expiresAt,
   hostedVoucherUrl: hostedVoucherUrl ?? this.hostedVoucherUrl,
   stores: stores ?? this.stores,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentNextActionKonbini &&
           expiresAt == other.expiresAt &&
           hostedVoucherUrl == other.hostedVoucherUrl &&
-          stores == other.stores; } 
-@override int get hashCode { return Object.hash(expiresAt, hostedVoucherUrl, stores); } 
-@override String toString() { return 'PaymentIntentNextActionKonbini(expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, stores: $stores)'; } 
- }
+          stores == other.stores;}
+@override int get hashCode {return Object.hash(expiresAt, hostedVoucherUrl, stores);}
+@override String toString() {return 'PaymentIntentNextActionKonbini(expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, stores: $stores)';}
+}

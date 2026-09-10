@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of a legacy security product to skip the execution of.
 @immutable final class RulesetsSkipProducts2 {const RulesetsSkipProducts2._(this.value);
 
-factory RulesetsSkipProducts2.fromJson(String json) { return switch (json) {
+factory RulesetsSkipProducts2.fromJson(String json) {return switch (json) {
   'bic' => bic,
   'hot' => hot,
   'rateLimit' => rateLimit,
@@ -12,7 +12,7 @@ factory RulesetsSkipProducts2.fromJson(String json) { return switch (json) {
   'waf' => waf,
   'zoneLockdown' => zoneLockdown,
   _ => RulesetsSkipProducts2._(json),
-}; }
+};}
 
 static const RulesetsSkipProducts2 bic = RulesetsSkipProducts2._('bic');
 
@@ -32,11 +32,11 @@ static const List<RulesetsSkipProducts2> values = [bic, hot, rateLimit, security
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSkipProducts2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSkipProducts2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSkipProducts2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSkipProducts2($value)';}
+}

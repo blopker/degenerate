@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The current status.
 @immutable final class StatusUpdateStatus {const StatusUpdateStatus._(this.value);
 
-factory StatusUpdateStatus.fromJson(String json) { return switch (json) {
+factory StatusUpdateStatus.fromJson(String json) {return switch (json) {
   'INACTIVE' => inactive,
   'ON_TRACK' => onTrack,
   'AT_RISK' => atRisk,
@@ -11,7 +11,7 @@ factory StatusUpdateStatus.fromJson(String json) { return switch (json) {
   'COMPLETE' => complete,
   'null' => $null,
   _ => StatusUpdateStatus._(json),
-}; }
+};}
 
 static const StatusUpdateStatus inactive = StatusUpdateStatus._('INACTIVE');
 
@@ -29,18 +29,18 @@ static const List<StatusUpdateStatus> values = [inactive, onTrack, atRisk, offTr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusUpdateStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is StatusUpdateStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'StatusUpdateStatus($value)';}
+}
 /// An status update belonging to a project
 @immutable final class StatusUpdate {const StatusUpdate({required this.id, required this.nodeId, required this.createdAt, required this.updatedAt, this.projectNodeId, this.creator, this.status = const Omittable.absent(), this.startDate, this.targetDate, this.body = const Omittable.absent(), });
 
-factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
+factory StatusUpdate.fromJson(Map<String, dynamic> json) {return StatusUpdate(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String,
   projectNodeId: json['project_node_id'] as String?,
@@ -51,7 +51,7 @@ factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
   startDate: json['start_date'] as String?,
   targetDate: json['target_date'] as String?,
   body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique identifier of the status update.
 final double id;
@@ -82,7 +82,7 @@ final String? targetDate;
 /// Body of the status update
 final Omittable<String?> body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'project_node_id': ?projectNodeId,
@@ -93,12 +93,12 @@ Map<String, dynamic> toJson() { return {
   'start_date': ?startDate,
   'target_date': ?targetDate,
   if (body.isPresent) 'body': body.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNodeId, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<StatusUpdateStatus?>? status, String? Function()? startDate, String? Function()? targetDate, Omittable<String?>? body, }) { return StatusUpdate(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNodeId, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<StatusUpdateStatus?>? status, String? Function()? startDate, String? Function()? targetDate, Omittable<String?>? body, }) {return StatusUpdate(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   projectNodeId: projectNodeId != null ? projectNodeId() : this.projectNodeId,
@@ -109,8 +109,8 @@ StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNo
   startDate: startDate != null ? startDate() : this.startDate,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   body: body ?? this.body,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StatusUpdate &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -121,7 +121,7 @@ StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNo
           status == other.status &&
           startDate == other.startDate &&
           targetDate == other.targetDate &&
-          body == other.body; } 
-@override int get hashCode { return Object.hash(id, nodeId, projectNodeId, creator, createdAt, updatedAt, status, startDate, targetDate, body); } 
-@override String toString() { return 'StatusUpdate(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, status: $status, startDate: $startDate, targetDate: $targetDate, body: $body)'; } 
- }
+          body == other.body;}
+@override int get hashCode {return Object.hash(id, nodeId, projectNodeId, creator, createdAt, updatedAt, status, startDate, targetDate, body);}
+@override String toString() {return 'StatusUpdate(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, status: $status, startDate: $startDate, targetDate: $targetDate, body: $body)';}
+}

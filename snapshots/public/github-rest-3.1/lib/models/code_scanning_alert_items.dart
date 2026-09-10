@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_created_at.dart';import 'alert_dismissed_at.dart';import 'alert_fixed_at.dart';import 'alert_html_url.dart';import 'alert_instances_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'code_scanning_alert_dismissed_comment.dart';import 'code_scanning_alert_dismissed_reason.dart';import 'code_scanning_alert_instance.dart';import 'code_scanning_alert_rule_summary.dart';import 'code_scanning_alert_state.dart';import 'code_scanning_analysis_tool.dart';import 'simple_user.dart';@immutable final class CodeScanningAlertItems {const CodeScanningAlertItems({required this.number, required this.createdAt, required this.url, required this.htmlUrl, required this.instancesUrl, required this.state, required this.dismissedBy, required this.dismissedAt, required this.dismissedReason, required this.rule, required this.tool, required this.mostRecentInstance, this.updatedAt, this.fixedAt = const Omittable.absent(), this.dismissedComment = const Omittable.absent(), this.dismissalApprovedBy = const Omittable.absent(), this.assignees, });
 
-factory CodeScanningAlertItems.fromJson(Map<String, dynamic> json) { return CodeScanningAlertItems(
+factory CodeScanningAlertItems.fromJson(Map<String, dynamic> json) {return CodeScanningAlertItems(
   number: AlertNumber.fromJson(json['number'] as num),
   createdAt: AlertCreatedAt.fromJson(json['created_at'] as String),
   updatedAt: json['updated_at'] != null ? AlertUpdatedAt.fromJson(json['updated_at'] as String) : null,
@@ -20,7 +20,7 @@ factory CodeScanningAlertItems.fromJson(Map<String, dynamic> json) { return Code
   mostRecentInstance: CodeScanningAlertInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>),
   dismissalApprovedBy: json.containsKey('dismissal_approved_by') ? Omittable(json['dismissal_approved_by'] != null ? SimpleUser.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The security alert number.
 final AlertNumber number;
@@ -67,7 +67,7 @@ final Omittable<SimpleUser?> dismissalApprovedBy;
 
 final List<SimpleUser>? assignees;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'number': number.toJson(),
   'created_at': createdAt.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
@@ -85,8 +85,8 @@ Map<String, dynamic> toJson() { return {
   'most_recent_instance': mostRecentInstance.toJson(),
   if (dismissalApprovedBy.isPresent) 'dismissal_approved_by': dismissalApprovedBy.value?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('number') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('number') &&
       json.containsKey('created_at') &&
       json.containsKey('url') &&
       json.containsKey('html_url') &&
@@ -97,8 +97,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('dismissed_reason') &&
       json.containsKey('rule') &&
       json.containsKey('tool') &&
-      json.containsKey('most_recent_instance'); } 
-CodeScanningAlertItems copyWith({AlertNumber? number, AlertCreatedAt? createdAt, AlertUpdatedAt? Function()? updatedAt, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertInstancesUrl? instancesUrl, CodeScanningAlertState? Function()? state, Omittable<AlertFixedAt?>? fixedAt, SimpleUser? Function()? dismissedBy, AlertDismissedAt? Function()? dismissedAt, CodeScanningAlertDismissedReason? Function()? dismissedReason, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, CodeScanningAlertRuleSummary? rule, CodeScanningAnalysisTool? tool, CodeScanningAlertInstance? mostRecentInstance, Omittable<SimpleUser?>? dismissalApprovedBy, List<SimpleUser>? Function()? assignees, }) { return CodeScanningAlertItems(
+      json.containsKey('most_recent_instance');}
+CodeScanningAlertItems copyWith({AlertNumber? number, AlertCreatedAt? createdAt, AlertUpdatedAt? Function()? updatedAt, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertInstancesUrl? instancesUrl, CodeScanningAlertState? Function()? state, Omittable<AlertFixedAt?>? fixedAt, SimpleUser? Function()? dismissedBy, AlertDismissedAt? Function()? dismissedAt, CodeScanningAlertDismissedReason? Function()? dismissedReason, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, CodeScanningAlertRuleSummary? rule, CodeScanningAnalysisTool? tool, CodeScanningAlertInstance? mostRecentInstance, Omittable<SimpleUser?>? dismissalApprovedBy, List<SimpleUser>? Function()? assignees, }) {return CodeScanningAlertItems(
   number: number ?? this.number,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
@@ -116,8 +116,8 @@ CodeScanningAlertItems copyWith({AlertNumber? number, AlertCreatedAt? createdAt,
   mostRecentInstance: mostRecentInstance ?? this.mostRecentInstance,
   dismissalApprovedBy: dismissalApprovedBy ?? this.dismissalApprovedBy,
   assignees: assignees != null ? assignees() : this.assignees,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningAlertItems &&
           number == other.number &&
           createdAt == other.createdAt &&
@@ -135,7 +135,7 @@ CodeScanningAlertItems copyWith({AlertNumber? number, AlertCreatedAt? createdAt,
           tool == other.tool &&
           mostRecentInstance == other.mostRecentInstance &&
           dismissalApprovedBy == other.dismissalApprovedBy &&
-          listEquals(assignees, other.assignees); } 
-@override int get hashCode { return Object.hash(number, createdAt, updatedAt, url, htmlUrl, instancesUrl, state, fixedAt, dismissedBy, dismissedAt, dismissedReason, dismissedComment, rule, tool, mostRecentInstance, dismissalApprovedBy, Object.hashAll(assignees ?? const [])); } 
-@override String toString() { return 'CodeScanningAlertItems(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, state: $state, fixedAt: $fixedAt, dismissedBy: $dismissedBy, dismissedAt: $dismissedAt, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, rule: $rule, tool: $tool, mostRecentInstance: $mostRecentInstance, dismissalApprovedBy: $dismissalApprovedBy, assignees: $assignees)'; } 
- }
+          listEquals(assignees, other.assignees);}
+@override int get hashCode {return Object.hash(number, createdAt, updatedAt, url, htmlUrl, instancesUrl, state, fixedAt, dismissedBy, dismissedAt, dismissedReason, dismissedComment, rule, tool, mostRecentInstance, dismissalApprovedBy, Object.hashAll(assignees ?? const []));}
+@override String toString() {return 'CodeScanningAlertItems(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, state: $state, fixedAt: $fixedAt, dismissedBy: $dismissedBy, dismissedAt: $dismissedAt, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, rule: $rule, tool: $tool, mostRecentInstance: $mostRecentInstance, dismissalApprovedBy: $dismissalApprovedBy, assignees: $assignees)';}
+}

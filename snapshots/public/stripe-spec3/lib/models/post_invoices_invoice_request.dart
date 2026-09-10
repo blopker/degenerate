@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_account_tax_ids.dart';import 'post_invoices_invoice_request_automatic_tax.dart';import 'post_invoices_invoice_request_custom_fields.dart';import 'post_invoices_invoice_request_default_source.dart';import 'post_invoices_invoice_request_default_tax_rates.dart';import 'post_invoices_invoice_request_discounts.dart';import 'post_invoices_invoice_request_effective_at.dart';import 'post_invoices_invoice_request_issuer.dart';import 'post_invoices_invoice_request_metadata.dart';import 'post_invoices_invoice_request_number.dart';import 'post_invoices_invoice_request_on_behalf_of.dart';import 'post_invoices_invoice_request_payment_settings.dart';import 'post_invoices_invoice_request_rendering.dart';import 'post_invoices_invoice_request_shipping_cost.dart';import 'post_invoices_invoice_request_shipping_details.dart';import 'post_invoices_invoice_request_transfer_data.dart';/// Either `charge_automatically` or `send_invoice`. This field can be updated only on `draft` invoices.
 @immutable final class PostInvoicesInvoiceRequestCollectionMethod {const PostInvoicesInvoiceRequestCollectionMethod._(this.value);
 
-factory PostInvoicesInvoiceRequestCollectionMethod.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => PostInvoicesInvoiceRequestCollectionMethod._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestCollectionMethod chargeAutomatically = PostInvoicesInvoiceRequestCollectionMethod._('charge_automatically');
 
@@ -17,17 +17,17 @@ static const List<PostInvoicesInvoiceRequestCollectionMethod> values = [chargeAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestCollectionMethod($value)';}
+}
 @immutable final class PostInvoicesInvoiceRequest {const PostInvoicesInvoiceRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.customFields, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.transferData, });
 
-factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequest(
+factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceRequest(
   accountTaxIds: json['account_tax_ids'] != null ? PostInvoicesInvoiceRequestAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   autoAdvance: json['auto_advance'] as bool?,
@@ -55,7 +55,7 @@ factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return 
   shippingDetails: json['shipping_details'] != null ? PostInvoicesInvoiceRequestShippingDetails.fromJson(json['shipping_details']) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   transferData: json['transfer_data'] != null ? PostInvoicesInvoiceRequestTransferData.fromJson(json['transfer_data']) : null,
-); }
+);}
 
 /// The account tax IDs associated with the invoice. Only editable when the invoice is a draft.
 final PostInvoicesInvoiceRequestAccountTaxIds? accountTaxIds;
@@ -138,7 +138,7 @@ final String? statementDescriptor;
 /// If specified, the funds from the invoice will be transferred to the destination and the ID of the resulting transfer will be found on the invoice's charge. This will be unset if you POST an empty value.
 final PostInvoicesInvoiceRequestTransferData? transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   'application_fee_amount': ?applicationFeeAmount,
   'auto_advance': ?autoAdvance,
@@ -166,9 +166,9 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
   'statement_descriptor': ?statementDescriptor,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'application_fee_amount', 'auto_advance', 'automatic_tax', 'automatically_finalizes_at', 'collection_method', 'custom_fields', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'description', 'discounts', 'due_date', 'effective_at', 'expand', 'footer', 'issuer', 'metadata', 'number', 'on_behalf_of', 'payment_settings', 'rendering', 'shipping_cost', 'shipping_details', 'statement_descriptor', 'transfer_data'}.contains(key)); } 
-PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, int? Function()? applicationFeeAmount, bool? Function()? autoAdvance, PostInvoicesInvoiceRequestAutomaticTax? Function()? automaticTax, int? Function()? automaticallyFinalizesAt, PostInvoicesInvoiceRequestCollectionMethod? Function()? collectionMethod, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, PostInvoicesInvoiceRequestDefaultSource? Function()? defaultSource, PostInvoicesInvoiceRequestDefaultTaxRates? Function()? defaultTaxRates, String? Function()? description, PostInvoicesInvoiceRequestDiscounts? Function()? discounts, int? Function()? dueDate, PostInvoicesInvoiceRequestEffectiveAt? Function()? effectiveAt, List<String>? Function()? expand, String? Function()? footer, PostInvoicesInvoiceRequestIssuer? Function()? issuer, PostInvoicesInvoiceRequestMetadata? Function()? metadata, PostInvoicesInvoiceRequestNumber? Function()? number, PostInvoicesInvoiceRequestOnBehalfOf? Function()? onBehalfOf, PostInvoicesInvoiceRequestPaymentSettings? Function()? paymentSettings, PostInvoicesInvoiceRequestRendering? Function()? rendering, PostInvoicesInvoiceRequestShippingCost? Function()? shippingCost, PostInvoicesInvoiceRequestShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, PostInvoicesInvoiceRequestTransferData? Function()? transferData, }) { return PostInvoicesInvoiceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'application_fee_amount', 'auto_advance', 'automatic_tax', 'automatically_finalizes_at', 'collection_method', 'custom_fields', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'description', 'discounts', 'due_date', 'effective_at', 'expand', 'footer', 'issuer', 'metadata', 'number', 'on_behalf_of', 'payment_settings', 'rendering', 'shipping_cost', 'shipping_details', 'statement_descriptor', 'transfer_data'}.contains(key));}
+PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, int? Function()? applicationFeeAmount, bool? Function()? autoAdvance, PostInvoicesInvoiceRequestAutomaticTax? Function()? automaticTax, int? Function()? automaticallyFinalizesAt, PostInvoicesInvoiceRequestCollectionMethod? Function()? collectionMethod, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, PostInvoicesInvoiceRequestDefaultSource? Function()? defaultSource, PostInvoicesInvoiceRequestDefaultTaxRates? Function()? defaultTaxRates, String? Function()? description, PostInvoicesInvoiceRequestDiscounts? Function()? discounts, int? Function()? dueDate, PostInvoicesInvoiceRequestEffectiveAt? Function()? effectiveAt, List<String>? Function()? expand, String? Function()? footer, PostInvoicesInvoiceRequestIssuer? Function()? issuer, PostInvoicesInvoiceRequestMetadata? Function()? metadata, PostInvoicesInvoiceRequestNumber? Function()? number, PostInvoicesInvoiceRequestOnBehalfOf? Function()? onBehalfOf, PostInvoicesInvoiceRequestPaymentSettings? Function()? paymentSettings, PostInvoicesInvoiceRequestRendering? Function()? rendering, PostInvoicesInvoiceRequestShippingCost? Function()? shippingCost, PostInvoicesInvoiceRequestShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, PostInvoicesInvoiceRequestTransferData? Function()? transferData, }) {return PostInvoicesInvoiceRequest(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
   autoAdvance: autoAdvance != null ? autoAdvance() : this.autoAdvance,
@@ -196,8 +196,8 @@ PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Fu
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   transferData: transferData != null ? transferData() : this.transferData,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesInvoiceRequest &&
           accountTaxIds == other.accountTaxIds &&
           applicationFeeAmount == other.applicationFeeAmount &&
@@ -225,7 +225,7 @@ PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Fu
           shippingCost == other.shippingCost &&
           shippingDetails == other.shippingDetails &&
           statementDescriptor == other.statementDescriptor &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hashAll([accountTaxIds, applicationFeeAmount, autoAdvance, automaticTax, automaticallyFinalizesAt, collectionMethod, customFields, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, description, discounts, dueDate, effectiveAt, Object.hashAll(expand ?? const []), footer, issuer, metadata, number, onBehalfOf, paymentSettings, rendering, shippingCost, shippingDetails, statementDescriptor, transferData]); } 
-@override String toString() { return 'PostInvoicesInvoiceRequest(accountTaxIds: $accountTaxIds, applicationFeeAmount: $applicationFeeAmount, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, collectionMethod: $collectionMethod, customFields: $customFields, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, expand: $expand, footer: $footer, issuer: $issuer, metadata: $metadata, number: $number, onBehalfOf: $onBehalfOf, paymentSettings: $paymentSettings, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)'; } 
- }
+          transferData == other.transferData;}
+@override int get hashCode {return Object.hashAll([accountTaxIds, applicationFeeAmount, autoAdvance, automaticTax, automaticallyFinalizesAt, collectionMethod, customFields, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, description, discounts, dueDate, effectiveAt, Object.hashAll(expand ?? const []), footer, issuer, metadata, number, onBehalfOf, paymentSettings, rendering, shippingCost, shippingDetails, statementDescriptor, transferData]);}
+@override String toString() {return 'PostInvoicesInvoiceRequest(accountTaxIds: $accountTaxIds, applicationFeeAmount: $applicationFeeAmount, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, collectionMethod: $collectionMethod, customFields: $customFields, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, expand: $expand, footer: $footer, issuer: $issuer, metadata: $metadata, number: $number, onBehalfOf: $onBehalfOf, paymentSettings: $paymentSettings, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)';}
+}

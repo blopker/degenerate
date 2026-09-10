@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delivery_mode.dart';import 'email_security_disposition_label.dart';import 'email_security_domain_authorization.dart';import 'email_security_domain_emails_processed.dart';import 'email_security_scannable_folder.dart';@immutable final class EmailSecurityDomainDmarcStatus {const EmailSecurityDomainDmarcStatus._(this.value);
 
-factory EmailSecurityDomainDmarcStatus.fromJson(String json) { return switch (json) {
+factory EmailSecurityDomainDmarcStatus.fromJson(String json) {return switch (json) {
   'none' => none,
   'good' => good,
   'invalid' => invalid,
   _ => EmailSecurityDomainDmarcStatus._(json),
-}; }
+};}
 
 static const EmailSecurityDomainDmarcStatus none = EmailSecurityDomainDmarcStatus._('none');
 
@@ -19,21 +19,21 @@ static const List<EmailSecurityDomainDmarcStatus> values = [none, good, invalid]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainDmarcStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainDmarcStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityDomainDmarcStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityDomainDmarcStatus($value)';}
+}
 @immutable final class EmailSecurityDomainInboxProvider {const EmailSecurityDomainInboxProvider._(this.value);
 
-factory EmailSecurityDomainInboxProvider.fromJson(String json) { return switch (json) {
+factory EmailSecurityDomainInboxProvider.fromJson(String json) {return switch (json) {
   'Microsoft' => microsoft,
   'Google' => google,
   _ => EmailSecurityDomainInboxProvider._(json),
-}; }
+};}
 
 static const EmailSecurityDomainInboxProvider microsoft = EmailSecurityDomainInboxProvider._('Microsoft');
 
@@ -43,24 +43,24 @@ static const List<EmailSecurityDomainInboxProvider> values = [microsoft, google]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainInboxProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainInboxProvider($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityDomainInboxProvider && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityDomainInboxProvider($value)';}
+}
 @immutable final class EmailSecurityDomainRegions {const EmailSecurityDomainRegions._(this.value);
 
-factory EmailSecurityDomainRegions.fromJson(String json) { return switch (json) {
+factory EmailSecurityDomainRegions.fromJson(String json) {return switch (json) {
   'GLOBAL' => global,
   'AU' => au,
   'DE' => de,
   'IN' => $in,
   'US' => us,
   _ => EmailSecurityDomainRegions._(json),
-}; }
+};}
 
 static const EmailSecurityDomainRegions global = EmailSecurityDomainRegions._('GLOBAL');
 
@@ -76,24 +76,24 @@ static const List<EmailSecurityDomainRegions> values = [global, au, de, $in, us]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainRegions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainRegions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityDomainRegions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityDomainRegions($value)';}
+}
 @immutable final class EmailSecurityDomainSpfStatus {const EmailSecurityDomainSpfStatus._(this.value);
 
-factory EmailSecurityDomainSpfStatus.fromJson(String json) { return switch (json) {
+factory EmailSecurityDomainSpfStatus.fromJson(String json) {return switch (json) {
   'none' => none,
   'good' => good,
   'neutral' => neutral,
   'open' => open,
   'invalid' => invalid,
   _ => EmailSecurityDomainSpfStatus._(json),
-}; }
+};}
 
 static const EmailSecurityDomainSpfStatus none = EmailSecurityDomainSpfStatus._('none');
 
@@ -109,17 +109,17 @@ static const List<EmailSecurityDomainSpfStatus> values = [none, good, neutral, o
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainSpfStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainSpfStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityDomainSpfStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityDomainSpfStatus($value)';}
+}
 @immutable final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization = const Omittable.absent(), this.dmarcStatus = const Omittable.absent(), this.emailsProcessed = const Omittable.absent(), this.folder = const Omittable.absent(), this.inboxProvider = const Omittable.absent(), this.integrationId = const Omittable.absent(), this.o365TenantId = const Omittable.absent(), this.requireTlsInbound = const Omittable.absent(), this.requireTlsOutbound = const Omittable.absent(), this.spfStatus = const Omittable.absent(), });
 
-factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityDomain(
+factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) {return EmailSecurityDomain(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>).map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),
   authorization: json.containsKey('authorization') ? Omittable(json['authorization'] != null ? EmailSecurityDomainAuthorization.fromJson(json['authorization'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -140,7 +140,7 @@ factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) { return EmailSe
   requireTlsOutbound: json.containsKey('require_tls_outbound') ? Omittable(json['require_tls_outbound'] as bool?) : const Omittable.absent(),
   spfStatus: json.containsKey('spf_status') ? Omittable(json['spf_status'] != null ? EmailSecurityDomainSpfStatus.fromJson(json['spf_status'] as String) : null) : const Omittable.absent(),
   transport: json['transport'] as String,
-); }
+);}
 
 final List<EmailSecurityDeliveryMode> allowedDeliveryModes;
 
@@ -183,7 +183,7 @@ final Omittable<EmailSecurityDomainSpfStatus?> spfStatus;
 
 final String transport;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_delivery_modes': allowedDeliveryModes.map((e) => e.toJson()).toList(),
   if (authorization.isPresent) 'authorization': authorization.value?.toJson(),
   'created_at': createdAt.toIso8601String(),
@@ -204,8 +204,8 @@ Map<String, dynamic> toJson() { return {
   if (requireTlsOutbound.isPresent) 'require_tls_outbound': requireTlsOutbound.value,
   if (spfStatus.isPresent) 'spf_status': spfStatus.value?.toJson(),
   'transport': transport,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_delivery_modes') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_delivery_modes') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('drop_dispositions') &&
@@ -214,8 +214,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('last_modified') && json['last_modified'] is String &&
       json.containsKey('lookback_hops') && json['lookback_hops'] is num &&
       json.containsKey('regions') &&
-      json.containsKey('transport') && json['transport'] is String; } 
-EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryModes, Omittable<EmailSecurityDomainAuthorization?>? authorization, DateTime? createdAt, Omittable<EmailSecurityDomainDmarcStatus?>? dmarcStatus, String? domain, List<EmailSecurityDispositionLabel>? dropDispositions, Omittable<EmailSecurityDomainEmailsProcessed?>? emailsProcessed, Omittable<EmailSecurityScannableFolder?>? folder, int? id, Omittable<EmailSecurityDomainInboxProvider?>? inboxProvider, Omittable<String?>? integrationId, List<String>? ipRestrictions, DateTime? lastModified, int? lookbackHops, Omittable<String?>? o365TenantId, List<EmailSecurityDomainRegions>? regions, Omittable<bool?>? requireTlsInbound, Omittable<bool?>? requireTlsOutbound, Omittable<EmailSecurityDomainSpfStatus?>? spfStatus, String? transport, }) { return EmailSecurityDomain(
+      json.containsKey('transport') && json['transport'] is String;}
+EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryModes, Omittable<EmailSecurityDomainAuthorization?>? authorization, DateTime? createdAt, Omittable<EmailSecurityDomainDmarcStatus?>? dmarcStatus, String? domain, List<EmailSecurityDispositionLabel>? dropDispositions, Omittable<EmailSecurityDomainEmailsProcessed?>? emailsProcessed, Omittable<EmailSecurityScannableFolder?>? folder, int? id, Omittable<EmailSecurityDomainInboxProvider?>? inboxProvider, Omittable<String?>? integrationId, List<String>? ipRestrictions, DateTime? lastModified, int? lookbackHops, Omittable<String?>? o365TenantId, List<EmailSecurityDomainRegions>? regions, Omittable<bool?>? requireTlsInbound, Omittable<bool?>? requireTlsOutbound, Omittable<EmailSecurityDomainSpfStatus?>? spfStatus, String? transport, }) {return EmailSecurityDomain(
   allowedDeliveryModes: allowedDeliveryModes ?? this.allowedDeliveryModes,
   authorization: authorization ?? this.authorization,
   createdAt: createdAt ?? this.createdAt,
@@ -236,8 +236,8 @@ EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryMo
   requireTlsOutbound: requireTlsOutbound ?? this.requireTlsOutbound,
   spfStatus: spfStatus ?? this.spfStatus,
   transport: transport ?? this.transport,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityDomain &&
           listEquals(allowedDeliveryModes, other.allowedDeliveryModes) &&
           authorization == other.authorization &&
@@ -258,7 +258,7 @@ EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryMo
           requireTlsInbound == other.requireTlsInbound &&
           requireTlsOutbound == other.requireTlsOutbound &&
           spfStatus == other.spfStatus &&
-          transport == other.transport; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedDeliveryModes), authorization, createdAt, dmarcStatus, domain, Object.hashAll(dropDispositions), emailsProcessed, folder, id, inboxProvider, integrationId, Object.hashAll(ipRestrictions), lastModified, lookbackHops, o365TenantId, Object.hashAll(regions), requireTlsInbound, requireTlsOutbound, spfStatus, transport); } 
-@override String toString() { return 'EmailSecurityDomain(allowedDeliveryModes: $allowedDeliveryModes, authorization: $authorization, createdAt: $createdAt, dmarcStatus: $dmarcStatus, domain: $domain, dropDispositions: $dropDispositions, emailsProcessed: $emailsProcessed, folder: $folder, id: $id, inboxProvider: $inboxProvider, integrationId: $integrationId, ipRestrictions: $ipRestrictions, lastModified: $lastModified, lookbackHops: $lookbackHops, o365TenantId: $o365TenantId, regions: $regions, requireTlsInbound: $requireTlsInbound, requireTlsOutbound: $requireTlsOutbound, spfStatus: $spfStatus, transport: $transport)'; } 
- }
+          transport == other.transport;}
+@override int get hashCode {return Object.hash(Object.hashAll(allowedDeliveryModes), authorization, createdAt, dmarcStatus, domain, Object.hashAll(dropDispositions), emailsProcessed, folder, id, inboxProvider, integrationId, Object.hashAll(ipRestrictions), lastModified, lookbackHops, o365TenantId, Object.hashAll(regions), requireTlsInbound, requireTlsOutbound, spfStatus, transport);}
+@override String toString() {return 'EmailSecurityDomain(allowedDeliveryModes: $allowedDeliveryModes, authorization: $authorization, createdAt: $createdAt, dmarcStatus: $dmarcStatus, domain: $domain, dropDispositions: $dropDispositions, emailsProcessed: $emailsProcessed, folder: $folder, id: $id, inboxProvider: $inboxProvider, integrationId: $integrationId, ipRestrictions: $ipRestrictions, lastModified: $lastModified, lookbackHops: $lookbackHops, o365TenantId: $o365TenantId, regions: $regions, requireTlsInbound: $requireTlsInbound, requireTlsOutbound: $requireTlsOutbound, spfStatus: $spfStatus, transport: $transport)';}
+}

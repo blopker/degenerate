@@ -13,7 +13,7 @@ final class ZeroTrustConnectivitySettingsApi with ApiExecutor {const ZeroTrustCo
 /// Gets the Zero Trust Connectivity Settings for the given account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,30 +22,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return TunnelZeroTrustConnectivitySettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  TunnelZeroTrustConnectivitySettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure72.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure72.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates the Zero Trust Connectivity Settings
 ///
 /// Updates the Zero Trust Connectivity Settings for the given account.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ResponseCommonFailure72>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,22 +45,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return TunnelZeroTrustConnectivitySettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  TunnelZeroTrustConnectivitySettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure72.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure72.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

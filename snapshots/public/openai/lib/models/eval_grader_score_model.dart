@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_grader_score_model_sampling_params.dart';import 'eval_item.dart';/// The object type, which is always `score_model`.
 @immutable final class EvalGraderScoreModelType {const EvalGraderScoreModelType._(this.value);
 
-factory EvalGraderScoreModelType.fromJson(String json) { return switch (json) {
+factory EvalGraderScoreModelType.fromJson(String json) {return switch (json) {
   'score_model' => scoreModel,
   _ => EvalGraderScoreModelType._(json),
-}; }
+};}
 
 static const EvalGraderScoreModelType scoreModel = EvalGraderScoreModelType._('score_model');
 
@@ -14,17 +14,17 @@ static const List<EvalGraderScoreModelType> values = [scoreModel];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalGraderScoreModelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalGraderScoreModelType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalGraderScoreModelType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalGraderScoreModelType($value)';}
+}
 @immutable final class EvalGraderScoreModel {const EvalGraderScoreModel({required this.type, required this.name, required this.model, required this.input, this.samplingParams, this.range, this.passThreshold, });
 
-factory EvalGraderScoreModel.fromJson(Map<String, dynamic> json) { return EvalGraderScoreModel(
+factory EvalGraderScoreModel.fromJson(Map<String, dynamic> json) {return EvalGraderScoreModel(
   type: EvalGraderScoreModelType.fromJson(json['type'] as String),
   name: json['name'] as String,
   model: json['model'] as String,
@@ -32,7 +32,7 @@ factory EvalGraderScoreModel.fromJson(Map<String, dynamic> json) { return EvalGr
   input: (json['input'] as List<dynamic>).map((e) => EvalItem.fromJson(e as Map<String, dynamic>)).toList(),
   range: (json['range'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
   passThreshold: json['pass_threshold'] != null ? (json['pass_threshold'] as num).toDouble() : null,
-); }
+);}
 
 /// The object type, which is always `score_model`.
 final EvalGraderScoreModelType type;
@@ -56,7 +56,7 @@ final List<double>? range;
 /// The threshold for the score.
 final double? passThreshold;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'model': model,
@@ -64,12 +64,12 @@ Map<String, dynamic> toJson() { return {
   'input': input.map((e) => e.toJson()).toList(),
   'range': ?range,
   'pass_threshold': ?passThreshold,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('input'); } 
-EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String? model, EvalGraderScoreModelSamplingParams? Function()? samplingParams, List<EvalItem>? input, List<double>? Function()? range, double? Function()? passThreshold, }) { return EvalGraderScoreModel(
+      json.containsKey('input');}
+EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String? model, EvalGraderScoreModelSamplingParams? Function()? samplingParams, List<EvalItem>? input, List<double>? Function()? range, double? Function()? passThreshold, }) {return EvalGraderScoreModel(
   type: type ?? this.type,
   name: name ?? this.name,
   model: model ?? this.model,
@@ -77,8 +77,8 @@ EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, Str
   input: input ?? this.input,
   range: range != null ? range() : this.range,
   passThreshold: passThreshold != null ? passThreshold() : this.passThreshold,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalGraderScoreModel &&
           type == other.type &&
           name == other.name &&
@@ -86,7 +86,7 @@ EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, Str
           samplingParams == other.samplingParams &&
           listEquals(input, other.input) &&
           listEquals(range, other.range) &&
-          passThreshold == other.passThreshold; } 
-@override int get hashCode { return Object.hash(type, name, model, samplingParams, Object.hashAll(input), Object.hashAll(range ?? const []), passThreshold); } 
-@override String toString() { return 'EvalGraderScoreModel(type: $type, name: $name, model: $model, samplingParams: $samplingParams, input: $input, range: $range, passThreshold: $passThreshold)'; } 
- }
+          passThreshold == other.passThreshold;}
+@override int get hashCode {return Object.hash(type, name, model, samplingParams, Object.hashAll(input), Object.hashAll(range ?? const []), passThreshold);}
+@override String toString() {return 'EvalGraderScoreModel(type: $type, name: $name, model: $model, samplingParams: $samplingParams, input: $input, range: $range, passThreshold: $passThreshold)';}
+}

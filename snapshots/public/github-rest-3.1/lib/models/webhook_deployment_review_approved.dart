@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_review_approved_workflow_job_runs.dart';import 'webhook_deployment_review_approved_workflow_run.dart';import 'webhooks_approver.dart';import 'webhooks_reviewers2.dart';import 'webhooks_workflow_job_run.dart';@immutable final class WebhookDeploymentReviewApprovedAction {const WebhookDeploymentReviewApprovedAction._(this.value);
 
-factory WebhookDeploymentReviewApprovedAction.fromJson(String json) { return switch (json) {
+factory WebhookDeploymentReviewApprovedAction.fromJson(String json) {return switch (json) {
   'approved' => approved,
   _ => WebhookDeploymentReviewApprovedAction._(json),
-}; }
+};}
 
 static const WebhookDeploymentReviewApprovedAction approved = WebhookDeploymentReviewApprovedAction._('approved');
 
@@ -13,17 +13,17 @@ static const List<WebhookDeploymentReviewApprovedAction> values = [approved];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentReviewApprovedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentReviewApprovedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDeploymentReviewApprovedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDeploymentReviewApprovedAction($value)';}
+}
 @immutable final class WebhookDeploymentReviewApproved {const WebhookDeploymentReviewApproved({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });
 
-factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApproved(
+factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewApproved(
   action: WebhookDeploymentReviewApprovedAction.fromJson(json['action'] as String),
   approver: json['approver'] != null ? WebhooksApprover.fromJson(json['approver'] as Map<String, dynamic>) : null,
   comment: json['comment'] as String?,
@@ -37,7 +37,7 @@ factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) { re
   workflowJobRun: json['workflow_job_run'] != null ? WebhooksWorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>) : null,
   workflowJobRuns: (json['workflow_job_runs'] as List<dynamic>?)?.map((e) => WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(e as Map<String, dynamic>)).toList(),
   workflowRun: json['workflow_run'] != null ? WebhookDeploymentReviewApprovedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookDeploymentReviewApprovedAction action;
 
@@ -65,7 +65,7 @@ final List<WebhookDeploymentReviewApprovedWorkflowJobRuns>? workflowJobRuns;
 
 final WebhookDeploymentReviewApprovedWorkflowRun? workflowRun;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (approver != null) 'approver': approver?.toJson(),
   'comment': ?comment,
@@ -79,14 +79,14 @@ Map<String, dynamic> toJson() { return {
   if (workflowJobRun != null) 'workflow_job_run': workflowJobRun?.toJson(),
   if (workflowJobRuns != null) 'workflow_job_runs': workflowJobRuns?.map((e) => e.toJson()).toList(),
   'workflow_run': workflowRun?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('since') && json['since'] is String &&
-      json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewApprovedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewApproved(
+      json.containsKey('workflow_run');}
+WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewApprovedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) {return WebhookDeploymentReviewApproved(
   action: action ?? this.action,
   approver: approver != null ? approver() : this.approver,
   comment: comment != null ? comment() : this.comment,
@@ -100,8 +100,8 @@ WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction?
   workflowJobRun: workflowJobRun != null ? workflowJobRun() : this.workflowJobRun,
   workflowJobRuns: workflowJobRuns != null ? workflowJobRuns() : this.workflowJobRuns,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentReviewApproved &&
           action == other.action &&
           approver == other.approver &&
@@ -115,7 +115,7 @@ WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction?
           since == other.since &&
           workflowJobRun == other.workflowJobRun &&
           listEquals(workflowJobRuns, other.workflowJobRuns) &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(action, approver, comment, enterprise, installation, organization, repository, Object.hashAll(reviewers ?? const []), sender, since, workflowJobRun, Object.hashAll(workflowJobRuns ?? const []), workflowRun); } 
-@override String toString() { return 'WebhookDeploymentReviewApproved(action: $action, approver: $approver, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowJobRuns: $workflowJobRuns, workflowRun: $workflowRun)'; } 
- }
+          workflowRun == other.workflowRun;}
+@override int get hashCode {return Object.hash(action, approver, comment, enterprise, installation, organization, repository, Object.hashAll(reviewers ?? const []), sender, since, workflowJobRun, Object.hashAll(workflowJobRuns ?? const []), workflowRun);}
+@override String toString() {return 'WebhookDeploymentReviewApproved(action: $action, approver: $approver, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowJobRuns: $workflowJobRuns, workflowRun: $workflowRun)';}
+}

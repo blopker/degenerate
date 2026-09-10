@@ -6,12 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_compl
 /// 
 @immutable final class CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason._(this.value);
 
-factory CreateCompletionResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
+factory CreateCompletionResponseChoicesFinishReason.fromJson(String json) {return switch (json) {
   'stop' => stop,
   'length' => length,
   'content_filter' => contentFilter,
   _ => CreateCompletionResponseChoicesFinishReason._(json),
-}; }
+};}
 
 static const CreateCompletionResponseChoicesFinishReason stop = CreateCompletionResponseChoicesFinishReason._('stop');
 
@@ -23,22 +23,22 @@ static const List<CreateCompletionResponseChoicesFinishReason> values = [stop, l
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCompletionResponseChoicesFinishReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCompletionResponseChoicesFinishReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateCompletionResponseChoicesFinishReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateCompletionResponseChoicesFinishReason($value)';}
+}
 @immutable final class CreateCompletionResponseChoices {const CreateCompletionResponseChoices({required this.finishReason, required this.index, required this.logprobs, required this.text, });
 
-factory CreateCompletionResponseChoices.fromJson(Map<String, dynamic> json) { return CreateCompletionResponseChoices(
+factory CreateCompletionResponseChoices.fromJson(Map<String, dynamic> json) {return CreateCompletionResponseChoices(
   finishReason: CreateCompletionResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),
   index: (json['index'] as num).toInt(),
   logprobs: json['logprobs'] != null ? CreateCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
   text: json['text'] as String,
-); }
+);}
 
 /// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
 /// `length` if the maximum number of tokens specified in the request was reached,
@@ -52,28 +52,28 @@ final CreateCompletionResponseChoicesLogprobs? logprobs;
 
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'finish_reason': finishReason.toJson(),
   'index': index,
   'logprobs': logprobs?.toJson(),
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('finish_reason') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('finish_reason') &&
       json.containsKey('index') && json['index'] is num &&
       json.containsKey('logprobs') &&
-      json.containsKey('text') && json['text'] is String; } 
-CreateCompletionResponseChoices copyWith({CreateCompletionResponseChoicesFinishReason? finishReason, int? index, CreateCompletionResponseChoicesLogprobs? Function()? logprobs, String? text, }) { return CreateCompletionResponseChoices(
+      json.containsKey('text') && json['text'] is String;}
+CreateCompletionResponseChoices copyWith({CreateCompletionResponseChoicesFinishReason? finishReason, int? index, CreateCompletionResponseChoicesLogprobs? Function()? logprobs, String? text, }) {return CreateCompletionResponseChoices(
   finishReason: finishReason ?? this.finishReason,
   index: index ?? this.index,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateCompletionResponseChoices &&
           finishReason == other.finishReason &&
           index == other.index &&
           logprobs == other.logprobs &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(finishReason, index, logprobs, text); } 
-@override String toString() { return 'CreateCompletionResponseChoices(finishReason: $finishReason, index: $index, logprobs: $logprobs, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(finishReason, index, logprobs, text);}
+@override String toString() {return 'CreateCompletionResponseChoices(finishReason: $finishReason, index: $index, logprobs: $logprobs, text: $text)';}
+}

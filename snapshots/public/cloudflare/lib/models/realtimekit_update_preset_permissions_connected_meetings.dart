@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetPermissionsConnectedMeetings {const RealtimekitUpdatePresetPermissionsConnectedMeetings({this.canAlterConnectedMeetings, this.canSwitchConnectedMeetings, this.canSwitchToParentMeeting, });
 
-factory RealtimekitUpdatePresetPermissionsConnectedMeetings.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsConnectedMeetings(
+factory RealtimekitUpdatePresetPermissionsConnectedMeetings.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetPermissionsConnectedMeetings(
   canAlterConnectedMeetings: json['can_alter_connected_meetings'] as bool?,
   canSwitchConnectedMeetings: json['can_switch_connected_meetings'] as bool?,
   canSwitchToParentMeeting: json['can_switch_to_parent_meeting'] as bool?,
-); }
+);}
 
 final bool? canAlterConnectedMeetings;
 
@@ -14,22 +14,22 @@ final bool? canSwitchConnectedMeetings;
 
 final bool? canSwitchToParentMeeting;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_alter_connected_meetings': ?canAlterConnectedMeetings,
   'can_switch_connected_meetings': ?canSwitchConnectedMeetings,
   'can_switch_to_parent_meeting': ?canSwitchToParentMeeting,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_alter_connected_meetings', 'can_switch_connected_meetings', 'can_switch_to_parent_meeting'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsConnectedMeetings copyWith({bool? Function()? canAlterConnectedMeetings, bool? Function()? canSwitchConnectedMeetings, bool? Function()? canSwitchToParentMeeting, }) { return RealtimekitUpdatePresetPermissionsConnectedMeetings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_alter_connected_meetings', 'can_switch_connected_meetings', 'can_switch_to_parent_meeting'}.contains(key));}
+RealtimekitUpdatePresetPermissionsConnectedMeetings copyWith({bool? Function()? canAlterConnectedMeetings, bool? Function()? canSwitchConnectedMeetings, bool? Function()? canSwitchToParentMeeting, }) {return RealtimekitUpdatePresetPermissionsConnectedMeetings(
   canAlterConnectedMeetings: canAlterConnectedMeetings != null ? canAlterConnectedMeetings() : this.canAlterConnectedMeetings,
   canSwitchConnectedMeetings: canSwitchConnectedMeetings != null ? canSwitchConnectedMeetings() : this.canSwitchConnectedMeetings,
   canSwitchToParentMeeting: canSwitchToParentMeeting != null ? canSwitchToParentMeeting() : this.canSwitchToParentMeeting,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsConnectedMeetings &&
           canAlterConnectedMeetings == other.canAlterConnectedMeetings &&
           canSwitchConnectedMeetings == other.canSwitchConnectedMeetings &&
-          canSwitchToParentMeeting == other.canSwitchToParentMeeting; } 
-@override int get hashCode { return Object.hash(canAlterConnectedMeetings, canSwitchConnectedMeetings, canSwitchToParentMeeting); } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsConnectedMeetings(canAlterConnectedMeetings: $canAlterConnectedMeetings, canSwitchConnectedMeetings: $canSwitchConnectedMeetings, canSwitchToParentMeeting: $canSwitchToParentMeeting)'; } 
- }
+          canSwitchToParentMeeting == other.canSwitchToParentMeeting;}
+@override int get hashCode {return Object.hash(canAlterConnectedMeetings, canSwitchConnectedMeetings, canSwitchToParentMeeting);}
+@override String toString() {return 'RealtimekitUpdatePresetPermissionsConnectedMeetings(canAlterConnectedMeetings: $canAlterConnectedMeetings, canSwitchConnectedMeetings: $canSwitchConnectedMeetings, canSwitchToParentMeeting: $canSwitchToParentMeeting)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_request_documents_company_authorization.dart';import 'post_accounts_account_persons_request_documents_passport.dart';import 'post_accounts_account_persons_request_documents_visa.dart';/// Documents that may be submitted to satisfy various informational requests.
 @immutable final class PostAccountsAccountPersonsRequestDocuments {const PostAccountsAccountPersonsRequestDocuments({this.companyAuthorization, this.passport, this.visa, });
 
-factory PostAccountsAccountPersonsRequestDocuments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestDocuments(
+factory PostAccountsAccountPersonsRequestDocuments.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPersonsRequestDocuments(
   companyAuthorization: json['company_authorization'] != null ? PostAccountsAccountPersonsRequestDocumentsCompanyAuthorization.fromJson(json['company_authorization'] as Map<String, dynamic>) : null,
   passport: json['passport'] != null ? PostAccountsAccountPersonsRequestDocumentsPassport.fromJson(json['passport'] as Map<String, dynamic>) : null,
   visa: json['visa'] != null ? PostAccountsAccountPersonsRequestDocumentsVisa.fromJson(json['visa'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountPersonsRequestDocumentsCompanyAuthorization? companyAuthorization;
 
@@ -15,22 +15,22 @@ final PostAccountsAccountPersonsRequestDocumentsPassport? passport;
 
 final PostAccountsAccountPersonsRequestDocumentsVisa? visa;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (companyAuthorization != null) 'company_authorization': companyAuthorization?.toJson(),
   if (passport != null) 'passport': passport?.toJson(),
   if (visa != null) 'visa': visa?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'company_authorization', 'passport', 'visa'}.contains(key)); } 
-PostAccountsAccountPersonsRequestDocuments copyWith({PostAccountsAccountPersonsRequestDocumentsCompanyAuthorization? Function()? companyAuthorization, PostAccountsAccountPersonsRequestDocumentsPassport? Function()? passport, PostAccountsAccountPersonsRequestDocumentsVisa? Function()? visa, }) { return PostAccountsAccountPersonsRequestDocuments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'company_authorization', 'passport', 'visa'}.contains(key));}
+PostAccountsAccountPersonsRequestDocuments copyWith({PostAccountsAccountPersonsRequestDocumentsCompanyAuthorization? Function()? companyAuthorization, PostAccountsAccountPersonsRequestDocumentsPassport? Function()? passport, PostAccountsAccountPersonsRequestDocumentsVisa? Function()? visa, }) {return PostAccountsAccountPersonsRequestDocuments(
   companyAuthorization: companyAuthorization != null ? companyAuthorization() : this.companyAuthorization,
   passport: passport != null ? passport() : this.passport,
   visa: visa != null ? visa() : this.visa,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountPersonsRequestDocuments &&
           companyAuthorization == other.companyAuthorization &&
           passport == other.passport &&
-          visa == other.visa; } 
-@override int get hashCode { return Object.hash(companyAuthorization, passport, visa); } 
-@override String toString() { return 'PostAccountsAccountPersonsRequestDocuments(companyAuthorization: $companyAuthorization, passport: $passport, visa: $visa)'; } 
- }
+          visa == other.visa;}
+@override int get hashCode {return Object.hash(companyAuthorization, passport, visa);}
+@override String toString() {return 'PostAccountsAccountPersonsRequestDocuments(companyAuthorization: $companyAuthorization, passport: $passport, visa: $visa)';}
+}

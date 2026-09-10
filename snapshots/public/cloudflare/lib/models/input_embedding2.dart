@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_embedding2_text.dart';@immutable final class InputEmbedding2 {const InputEmbedding2({required this.text, this.truncateInputs, });
 
-factory InputEmbedding2.fromJson(Map<String, dynamic> json) { return InputEmbedding2(
+factory InputEmbedding2.fromJson(Map<String, dynamic> json) {return InputEmbedding2(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
   truncateInputs: json['truncate_inputs'] as bool?,
-); }
+);}
 
 final InputEmbedding2Text text;
 
@@ -13,20 +13,20 @@ final InputEmbedding2Text text;
 final bool? truncateInputs;
 
 /// The value with the schema default applied when absent.
-bool get truncateInputsOrDefault { return truncateInputs ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get truncateInputsOrDefault {return truncateInputs ?? false;}
+Map<String, dynamic> toJson() {return {
   'text': text.toJson(),
   'truncate_inputs': ?truncateInputs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-InputEmbedding2 copyWith({InputEmbedding2Text? text, bool? Function()? truncateInputs, }) { return InputEmbedding2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text');}
+InputEmbedding2 copyWith({InputEmbedding2Text? text, bool? Function()? truncateInputs, }) {return InputEmbedding2(
   text: text ?? this.text,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InputEmbedding2 &&
           text == other.text &&
-          truncateInputs == other.truncateInputs; } 
-@override int get hashCode { return Object.hash(text, truncateInputs); } 
-@override String toString() { return 'InputEmbedding2(text: $text, truncateInputs: $truncateInputs)'; } 
- }
+          truncateInputs == other.truncateInputs;}
+@override int get hashCode {return Object.hash(text, truncateInputs);}
+@override String toString() {return 'InputEmbedding2(text: $text, truncateInputs: $truncateInputs)';}
+}

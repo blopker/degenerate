@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cards_card_request_metadata.dart';import 'post_issuing_cards_card_request_pin.dart';import 'post_issuing_cards_card_request_shipping.dart';import 'post_issuing_cards_card_request_spending_controls.dart';/// Reason why the `status` of this card is `canceled`.
 @immutable final class PostIssuingCardsCardRequestCancellationReason {const PostIssuingCardsCardRequestCancellationReason._(this.value);
 
-factory PostIssuingCardsCardRequestCancellationReason.fromJson(String json) { return switch (json) {
+factory PostIssuingCardsCardRequestCancellationReason.fromJson(String json) {return switch (json) {
   'lost' => lost,
   'stolen' => stolen,
   _ => PostIssuingCardsCardRequestCancellationReason._(json),
-}; }
+};}
 
 static const PostIssuingCardsCardRequestCancellationReason lost = PostIssuingCardsCardRequestCancellationReason._('lost');
 
@@ -17,23 +17,23 @@ static const List<PostIssuingCardsCardRequestCancellationReason> values = [lost,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsCardRequestCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsCardRequestCancellationReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardsCardRequestCancellationReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardsCardRequestCancellationReason($value)';}
+}
 /// Dictates whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`. If this card is being canceled because it was lost or stolen, this information should be provided as `cancellation_reason`.
 @immutable final class PostIssuingCardsCardRequestStatus {const PostIssuingCardsCardRequestStatus._(this.value);
 
-factory PostIssuingCardsCardRequestStatus.fromJson(String json) { return switch (json) {
+factory PostIssuingCardsCardRequestStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'canceled' => canceled,
   'inactive' => inactive,
   _ => PostIssuingCardsCardRequestStatus._(json),
-}; }
+};}
 
 static const PostIssuingCardsCardRequestStatus active = PostIssuingCardsCardRequestStatus._('active');
 
@@ -45,17 +45,17 @@ static const List<PostIssuingCardsCardRequestStatus> values = [active, canceled,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsCardRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsCardRequestStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardsCardRequestStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardsCardRequestStatus($value)';}
+}
 @immutable final class PostIssuingCardsCardRequest {const PostIssuingCardsCardRequest({this.cancellationReason, this.expand, this.metadata, this.personalizationDesign, this.pin, this.shipping, this.spendingControls, this.status, });
 
-factory PostIssuingCardsCardRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsCardRequest(
+factory PostIssuingCardsCardRequest.fromJson(Map<String, dynamic> json) {return PostIssuingCardsCardRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostIssuingCardsCardRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostIssuingCardsCardRequestMetadata.fromJson(json['metadata']) : null,
@@ -64,7 +64,7 @@ factory PostIssuingCardsCardRequest.fromJson(Map<String, dynamic> json) { return
   shipping: json['shipping'] != null ? PostIssuingCardsCardRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   spendingControls: json['spending_controls'] != null ? PostIssuingCardsCardRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardsCardRequestStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// Reason why the `status` of this card is `canceled`.
 final PostIssuingCardsCardRequestCancellationReason? cancellationReason;
@@ -89,7 +89,7 @@ final PostIssuingCardsCardRequestSpendingControls? spendingControls;
 /// Dictates whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`. If this card is being canceled because it was lost or stolen, this information should be provided as `cancellation_reason`.
 final PostIssuingCardsCardRequestStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
@@ -98,9 +98,9 @@ Map<String, dynamic> toJson() { return {
   if (shipping != null) 'shipping': shipping?.toJson(),
   if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_reason', 'expand', 'metadata', 'personalization_design', 'pin', 'shipping', 'spending_controls', 'status'}.contains(key)); } 
-PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationReason? Function()? cancellationReason, List<String>? Function()? expand, PostIssuingCardsCardRequestMetadata? Function()? metadata, String? Function()? personalizationDesign, PostIssuingCardsCardRequestPin? Function()? pin, PostIssuingCardsCardRequestShipping? Function()? shipping, PostIssuingCardsCardRequestSpendingControls? Function()? spendingControls, PostIssuingCardsCardRequestStatus? Function()? status, }) { return PostIssuingCardsCardRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cancellation_reason', 'expand', 'metadata', 'personalization_design', 'pin', 'shipping', 'spending_controls', 'status'}.contains(key));}
+PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationReason? Function()? cancellationReason, List<String>? Function()? expand, PostIssuingCardsCardRequestMetadata? Function()? metadata, String? Function()? personalizationDesign, PostIssuingCardsCardRequestPin? Function()? pin, PostIssuingCardsCardRequestShipping? Function()? shipping, PostIssuingCardsCardRequestSpendingControls? Function()? spendingControls, PostIssuingCardsCardRequestStatus? Function()? status, }) {return PostIssuingCardsCardRequest(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -109,8 +109,8 @@ PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationRea
   shipping: shipping != null ? shipping() : this.shipping,
   spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingCardsCardRequest &&
           cancellationReason == other.cancellationReason &&
           listEquals(expand, other.expand) &&
@@ -119,7 +119,7 @@ PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationRea
           pin == other.pin &&
           shipping == other.shipping &&
           spendingControls == other.spendingControls &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(cancellationReason, Object.hashAll(expand ?? const []), metadata, personalizationDesign, pin, shipping, spendingControls, status); } 
-@override String toString() { return 'PostIssuingCardsCardRequest(cancellationReason: $cancellationReason, expand: $expand, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, shipping: $shipping, spendingControls: $spendingControls, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(cancellationReason, Object.hashAll(expand ?? const []), metadata, personalizationDesign, pin, shipping, spendingControls, status);}
+@override String toString() {return 'PostIssuingCardsCardRequest(cancellationReason: $cancellationReason, expand: $expand, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, shipping: $shipping, spendingControls: $spendingControls, status: $status)';}
+}

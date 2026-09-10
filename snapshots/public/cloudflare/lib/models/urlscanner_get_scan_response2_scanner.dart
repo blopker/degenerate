@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2Scanner {const UrlscannerGetScanResponse2Scanner({required this.colo, required this.country, });
 
-factory UrlscannerGetScanResponse2Scanner.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Scanner(
+factory UrlscannerGetScanResponse2Scanner.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2Scanner(
   colo: json['colo'] as String,
   country: json['country'] as String,
-); }
+);}
 
 final String colo;
 
 final String country;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'colo': colo,
   'country': country,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('colo') && json['colo'] is String &&
-      json.containsKey('country') && json['country'] is String; } 
-UrlscannerGetScanResponse2Scanner copyWith({String? colo, String? country, }) { return UrlscannerGetScanResponse2Scanner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('colo') && json['colo'] is String &&
+      json.containsKey('country') && json['country'] is String;}
+UrlscannerGetScanResponse2Scanner copyWith({String? colo, String? country, }) {return UrlscannerGetScanResponse2Scanner(
   colo: colo ?? this.colo,
   country: country ?? this.country,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2Scanner &&
           colo == other.colo &&
-          country == other.country; } 
-@override int get hashCode { return Object.hash(colo, country); } 
-@override String toString() { return 'UrlscannerGetScanResponse2Scanner(colo: $colo, country: $country)'; } 
- }
+          country == other.country;}
+@override int get hashCode {return Object.hash(colo, country);}
+@override String toString() {return 'UrlscannerGetScanResponse2Scanner(colo: $colo, country: $country)';}
+}

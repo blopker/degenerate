@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_event_custom_page_html.dart';import 'waitingroom_event_description.dart';import 'waitingroom_event_disable_session_renewal.dart';import 'waitingroom_event_end_time.dart';import 'waitingroom_event_name.dart';import 'waitingroom_event_new_users_per_minute.dart';import 'waitingroom_event_prequeue_start_time.dart';import 'waitingroom_event_queueing_method.dart';import 'waitingroom_event_session_duration.dart';import 'waitingroom_event_shuffle_at_event_start.dart';import 'waitingroom_event_start_time.dart';import 'waitingroom_event_suspended.dart';import 'waitingroom_event_total_active_users.dart';import 'waitingroom_event_turnstile_action.dart';import 'waitingroom_event_turnstile_mode.dart';@immutable final class WaitingroomQueryEvent {const WaitingroomQueryEvent({required this.eventEndTime, required this.eventStartTime, required this.name, this.customPageHtml = const Omittable.absent(), this.description, this.disableSessionRenewal = const Omittable.absent(), this.newUsersPerMinute = const Omittable.absent(), this.prequeueStartTime = const Omittable.absent(), this.queueingMethod = const Omittable.absent(), this.sessionDuration = const Omittable.absent(), this.shuffleAtEventStart, this.suspended, this.totalActiveUsers = const Omittable.absent(), this.turnstileAction = const Omittable.absent(), this.turnstileMode = const Omittable.absent(), });
 
-factory WaitingroomQueryEvent.fromJson(Map<String, dynamic> json) { return WaitingroomQueryEvent(
+factory WaitingroomQueryEvent.fromJson(Map<String, dynamic> json) {return WaitingroomQueryEvent(
   customPageHtml: json.containsKey('custom_page_html') ? Omittable(json['custom_page_html'] != null ? WaitingroomEventCustomPageHtml.fromJson(json['custom_page_html'] as String) : null) : const Omittable.absent(),
   description: json['description'] != null ? WaitingroomEventDescription.fromJson(json['description'] as String) : null,
   disableSessionRenewal: json.containsKey('disable_session_renewal') ? Omittable(json['disable_session_renewal'] != null ? WaitingroomEventDisableSessionRenewal.fromJson(json['disable_session_renewal'] as bool) : null) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory WaitingroomQueryEvent.fromJson(Map<String, dynamic> json) { return Waiti
   totalActiveUsers: json.containsKey('total_active_users') ? Omittable(json['total_active_users'] != null ? WaitingroomEventTotalActiveUsers.fromJson(json['total_active_users'] as num) : null) : const Omittable.absent(),
   turnstileAction: json.containsKey('turnstile_action') ? Omittable(json['turnstile_action'] != null ? WaitingroomEventTurnstileAction.fromJson(json['turnstile_action'] as String) : null) : const Omittable.absent(),
   turnstileMode: json.containsKey('turnstile_mode') ? Omittable(json['turnstile_mode'] != null ? WaitingroomEventTurnstileMode.fromJson(json['turnstile_mode'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
 final Omittable<WaitingroomEventCustomPageHtml?> customPageHtml;
@@ -65,7 +65,7 @@ final Omittable<WaitingroomEventTurnstileAction?> turnstileAction;
 /// If set, the event will override the waiting room's `turnstile_mode` property while it is active. If null, the event will inherit it.
 final Omittable<WaitingroomEventTurnstileMode?> turnstileMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customPageHtml.isPresent) 'custom_page_html': customPageHtml.value?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (disableSessionRenewal.isPresent) 'disable_session_renewal': disableSessionRenewal.value?.toJson(),
@@ -81,11 +81,11 @@ Map<String, dynamic> toJson() { return {
   if (totalActiveUsers.isPresent) 'total_active_users': totalActiveUsers.value?.toJson(),
   if (turnstileAction.isPresent) 'turnstile_action': turnstileAction.value?.toJson(),
   if (turnstileMode.isPresent) 'turnstile_mode': turnstileMode.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_end_time') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_end_time') &&
       json.containsKey('event_start_time') &&
-      json.containsKey('name'); } 
-WaitingroomQueryEvent copyWith({Omittable<WaitingroomEventCustomPageHtml?>? customPageHtml, WaitingroomEventDescription? Function()? description, Omittable<WaitingroomEventDisableSessionRenewal?>? disableSessionRenewal, WaitingroomEventEndTime? eventEndTime, WaitingroomEventStartTime? eventStartTime, WaitingroomEventName? name, Omittable<WaitingroomEventNewUsersPerMinute?>? newUsersPerMinute, Omittable<WaitingroomEventPrequeueStartTime?>? prequeueStartTime, Omittable<WaitingroomEventQueueingMethod?>? queueingMethod, Omittable<WaitingroomEventSessionDuration?>? sessionDuration, WaitingroomEventShuffleAtEventStart? Function()? shuffleAtEventStart, WaitingroomEventSuspended? Function()? suspended, Omittable<WaitingroomEventTotalActiveUsers?>? totalActiveUsers, Omittable<WaitingroomEventTurnstileAction?>? turnstileAction, Omittable<WaitingroomEventTurnstileMode?>? turnstileMode, }) { return WaitingroomQueryEvent(
+      json.containsKey('name');}
+WaitingroomQueryEvent copyWith({Omittable<WaitingroomEventCustomPageHtml?>? customPageHtml, WaitingroomEventDescription? Function()? description, Omittable<WaitingroomEventDisableSessionRenewal?>? disableSessionRenewal, WaitingroomEventEndTime? eventEndTime, WaitingroomEventStartTime? eventStartTime, WaitingroomEventName? name, Omittable<WaitingroomEventNewUsersPerMinute?>? newUsersPerMinute, Omittable<WaitingroomEventPrequeueStartTime?>? prequeueStartTime, Omittable<WaitingroomEventQueueingMethod?>? queueingMethod, Omittable<WaitingroomEventSessionDuration?>? sessionDuration, WaitingroomEventShuffleAtEventStart? Function()? shuffleAtEventStart, WaitingroomEventSuspended? Function()? suspended, Omittable<WaitingroomEventTotalActiveUsers?>? totalActiveUsers, Omittable<WaitingroomEventTurnstileAction?>? turnstileAction, Omittable<WaitingroomEventTurnstileMode?>? turnstileMode, }) {return WaitingroomQueryEvent(
   customPageHtml: customPageHtml ?? this.customPageHtml,
   description: description != null ? description() : this.description,
   disableSessionRenewal: disableSessionRenewal ?? this.disableSessionRenewal,
@@ -101,8 +101,8 @@ WaitingroomQueryEvent copyWith({Omittable<WaitingroomEventCustomPageHtml?>? cust
   totalActiveUsers: totalActiveUsers ?? this.totalActiveUsers,
   turnstileAction: turnstileAction ?? this.turnstileAction,
   turnstileMode: turnstileMode ?? this.turnstileMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WaitingroomQueryEvent &&
           customPageHtml == other.customPageHtml &&
           description == other.description &&
@@ -118,7 +118,7 @@ WaitingroomQueryEvent copyWith({Omittable<WaitingroomEventCustomPageHtml?>? cust
           suspended == other.suspended &&
           totalActiveUsers == other.totalActiveUsers &&
           turnstileAction == other.turnstileAction &&
-          turnstileMode == other.turnstileMode; } 
-@override int get hashCode { return Object.hash(customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers, turnstileAction, turnstileMode); } 
-@override String toString() { return 'WaitingroomQueryEvent(customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)'; } 
- }
+          turnstileMode == other.turnstileMode;}
+@override int get hashCode {return Object.hash(customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers, turnstileAction, turnstileMode);}
+@override String toString() {return 'WaitingroomQueryEvent(customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)';}
+}

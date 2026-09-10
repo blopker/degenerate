@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'pull_request_review_comment' secret scanning location type. This location type shows that a secret was detected in a review comment on a pull request.
 @immutable final class SecretScanningLocationPullRequestReviewComment {const SecretScanningLocationPullRequestReviewComment({required this.pullRequestReviewCommentUrl});
 
-factory SecretScanningLocationPullRequestReviewComment.fromJson(Map<String, dynamic> json) { return SecretScanningLocationPullRequestReviewComment(
+factory SecretScanningLocationPullRequestReviewComment.fromJson(Map<String, dynamic> json) {return SecretScanningLocationPullRequestReviewComment(
   pullRequestReviewCommentUrl: Uri.parse(json['pull_request_review_comment_url'] as String),
-); }
+);}
 
 /// The API URL to get the pull request review comment where the secret was detected.
 final Uri pullRequestReviewCommentUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pull_request_review_comment_url': pullRequestReviewCommentUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull_request_review_comment_url') && json['pull_request_review_comment_url'] is String; } 
-SecretScanningLocationPullRequestReviewComment copyWith({Uri? pullRequestReviewCommentUrl}) { return SecretScanningLocationPullRequestReviewComment(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pull_request_review_comment_url') && json['pull_request_review_comment_url'] is String;}
+SecretScanningLocationPullRequestReviewComment copyWith({Uri? pullRequestReviewCommentUrl}) {return SecretScanningLocationPullRequestReviewComment(
   pullRequestReviewCommentUrl: pullRequestReviewCommentUrl ?? this.pullRequestReviewCommentUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretScanningLocationPullRequestReviewComment &&
-          pullRequestReviewCommentUrl == other.pullRequestReviewCommentUrl; } 
-@override int get hashCode { return pullRequestReviewCommentUrl.hashCode; } 
-@override String toString() { return 'SecretScanningLocationPullRequestReviewComment(pullRequestReviewCommentUrl: $pullRequestReviewCommentUrl)'; } 
- }
+          pullRequestReviewCommentUrl == other.pullRequestReviewCommentUrl;}
+@override int get hashCode {return pullRequestReviewCommentUrl.hashCode;}
+@override String toString() {return 'SecretScanningLocationPullRequestReviewComment(pullRequestReviewCommentUrl: $pullRequestReviewCommentUrl)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WordListEntryType {const WordListEntryType._(this.value);
 
-factory WordListEntryType.fromJson(String json) { return switch (json) {
+factory WordListEntryType.fromJson(String json) {return switch (json) {
   'word_list' => wordList,
   _ => WordListEntryType._(json),
-}; }
+};}
 
 static const WordListEntryType wordList = WordListEntryType._('word_list');
 
@@ -13,17 +13,17 @@ static const List<WordListEntryType> values = [wordList];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WordListEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WordListEntryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WordListEntryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WordListEntryType($value)';}
+}
 @immutable final class WordListEntry {const WordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, required this.type, this.profileId = const Omittable.absent(), });
 
-factory WordListEntry.fromJson(Map<String, dynamic> json) { return WordListEntry(
+factory WordListEntry.fromJson(Map<String, dynamic> json) {return WordListEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
@@ -32,7 +32,7 @@ factory WordListEntry.fromJson(Map<String, dynamic> json) { return WordListEntry
   updatedAt: DateTime.parse(json['updated_at'] as String),
   wordList: json['word_list'],
   type: WordListEntryType.fromJson(json['type'] as String),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -50,7 +50,7 @@ final dynamic wordList;
 
 final WordListEntryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
   'id': id,
@@ -59,15 +59,15 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'word_list': wordList,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('word_list') &&
-      json.containsKey('type'); } 
-WordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, WordListEntryType? type, }) { return WordListEntry(
+      json.containsKey('type');}
+WordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, WordListEntryType? type, }) {return WordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
@@ -76,8 +76,8 @@ WordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? 
   updatedAt: updatedAt ?? this.updatedAt,
   wordList: wordList != null ? wordList() : this.wordList,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WordListEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
@@ -86,7 +86,7 @@ WordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? 
           profileId == other.profileId &&
           updatedAt == other.updatedAt &&
           wordList == other.wordList &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, profileId, updatedAt, wordList, type); } 
-@override String toString() { return 'WordListEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, wordList: $wordList, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, enabled, id, name, profileId, updatedAt, wordList, type);}
+@override String toString() {return 'WordListEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, wordList: $wordList, type: $type)';}
+}

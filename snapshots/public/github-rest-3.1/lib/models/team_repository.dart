@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_simple.dart';import 'simple_user.dart';import 'team_repository_permissions.dart';/// A team's access to a repository.
 @immutable final class TeamRepository {const TeamRepository({required this.gitTagsUrl, required this.nodeId, required this.name, required this.fullName, required this.license, required this.forks, required this.watchers, required this.openIssues, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.id, required this.gitUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.updatedAt, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.createdAt, required this.pushedAt, required this.hasIssues, required this.hasProjects, required this.hasWiki, required this.hasPages, required this.hasDownloads, required this.archived, required this.stargazersCount, required this.disabled, this.topics, this.isTemplate, this.masterBranch, this.allowRebaseMerge, this.tempCloneToken, this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowMergeCommit, this.allowForking, this.webCommitSignoffRequired, this.subscribersCount, this.networkCount, this.roleName, this.permissions, this.visibility, });
 
-factory TeamRepository.fromJson(Map<String, dynamic> json) { return TeamRepository(
+factory TeamRepository.fromJson(Map<String, dynamic> json) {return TeamRepository(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -93,7 +93,7 @@ factory TeamRepository.fromJson(Map<String, dynamic> json) { return TeamReposito
   openIssues: (json['open_issues'] as num).toInt(),
   watchers: (json['watchers'] as num).toInt(),
   masterBranch: json['master_branch'] as String?,
-); }
+);}
 
 /// Unique identifier of the repository
 final int id;
@@ -293,24 +293,24 @@ final int watchers;
 final String? masterBranch;
 
 /// The value with the schema default applied when absent.
-bool get isTemplateOrDefault { return isTemplate ?? false; } 
+bool get isTemplateOrDefault {return isTemplate ?? false;}
 /// The value with the schema default applied when absent.
-String get visibilityOrDefault { return visibility ?? 'public'; } 
+String get visibilityOrDefault {return visibility ?? 'public';}
 /// The value with the schema default applied when absent.
-bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+bool get allowRebaseMergeOrDefault {return allowRebaseMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+bool get allowSquashMergeOrDefault {return allowSquashMerge ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+bool get allowAutoMergeOrDefault {return allowAutoMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+bool get deleteBranchOnMergeOrDefault {return deleteBranchOnMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+bool get allowMergeCommitOrDefault {return allowMergeCommit ?? true;}
 /// The value with the schema default applied when absent.
-bool get allowForkingOrDefault { return allowForking ?? false; } 
+bool get allowForkingOrDefault {return allowForking ?? false;}
 /// The value with the schema default applied when absent.
-bool get webCommitSignoffRequiredOrDefault { return webCommitSignoffRequired ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get webCommitSignoffRequiredOrDefault {return webCommitSignoffRequired ?? false;}
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -400,8 +400,8 @@ Map<String, dynamic> toJson() { return {
   'open_issues': openIssues,
   'watchers': watchers,
   'master_branch': ?masterBranch,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
@@ -473,8 +473,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
-      json.containsKey('watchers') && json['watchers'] is num; } 
-TeamRepository copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, int? forks, TeamRepositoryPermissions? Function()? permissions, String? Function()? roleName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool? archived, bool? disabled, String? Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? allowRebaseMerge, String? Function()? tempCloneToken, bool? Function()? allowSquashMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowMergeCommit, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, int? Function()? subscribersCount, int? Function()? networkCount, int? openIssues, int? watchers, String? Function()? masterBranch, }) { return TeamRepository(
+      json.containsKey('watchers') && json['watchers'] is num;}
+TeamRepository copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, int? forks, TeamRepositoryPermissions? Function()? permissions, String? Function()? roleName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool? archived, bool? disabled, String? Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? allowRebaseMerge, String? Function()? tempCloneToken, bool? Function()? allowSquashMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowMergeCommit, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, int? Function()? subscribersCount, int? Function()? networkCount, int? openIssues, int? watchers, String? Function()? masterBranch, }) {return TeamRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -564,8 +564,8 @@ TeamRepository copyWith({int? id, String? nodeId, String? name, String? fullName
   openIssues: openIssues ?? this.openIssues,
   watchers: watchers ?? this.watchers,
   masterBranch: masterBranch != null ? masterBranch() : this.masterBranch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamRepository &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -655,7 +655,7 @@ TeamRepository copyWith({int? id, String? nodeId, String? name, String? fullName
           networkCount == other.networkCount &&
           openIssues == other.openIssues &&
           watchers == other.watchers &&
-          masterBranch == other.masterBranch; } 
-@override int get hashCode { return Object.hashAll([id, nodeId, name, fullName, license, forks, permissions, roleName, owner, private, htmlUrl, description, fork, url, archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, downloadsUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, notificationsUrl, pullsUrl, releasesUrl, sshUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, cloneUrl, mirrorUrl, hooksUrl, svnUrl, homepage, language, forksCount, stargazersCount, watchersCount, size, defaultBranch, openIssuesCount, isTemplate, Object.hashAll(topics ?? const []), hasIssues, hasProjects, hasWiki, hasPages, hasDownloads, archived, disabled, visibility, pushedAt, createdAt, updatedAt, allowRebaseMerge, tempCloneToken, allowSquashMerge, allowAutoMerge, deleteBranchOnMerge, allowMergeCommit, allowForking, webCommitSignoffRequired, subscribersCount, networkCount, openIssues, watchers, masterBranch]); } 
-@override String toString() { return 'TeamRepository(id: $id, nodeId: $nodeId, name: $name, fullName: $fullName, license: $license, forks: $forks, permissions: $permissions, roleName: $roleName, owner: $owner, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, url: $url, archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, forksUrl: $forksUrl, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, notificationsUrl: $notificationsUrl, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, sshUrl: $sshUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, cloneUrl: $cloneUrl, mirrorUrl: $mirrorUrl, hooksUrl: $hooksUrl, svnUrl: $svnUrl, homepage: $homepage, language: $language, forksCount: $forksCount, stargazersCount: $stargazersCount, watchersCount: $watchersCount, size: $size, defaultBranch: $defaultBranch, openIssuesCount: $openIssuesCount, isTemplate: $isTemplate, topics: $topics, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasPages: $hasPages, hasDownloads: $hasDownloads, archived: $archived, disabled: $disabled, visibility: $visibility, pushedAt: $pushedAt, createdAt: $createdAt, updatedAt: $updatedAt, allowRebaseMerge: $allowRebaseMerge, tempCloneToken: $tempCloneToken, allowSquashMerge: $allowSquashMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowMergeCommit: $allowMergeCommit, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired, subscribersCount: $subscribersCount, networkCount: $networkCount, openIssues: $openIssues, watchers: $watchers, masterBranch: $masterBranch)'; } 
- }
+          masterBranch == other.masterBranch;}
+@override int get hashCode {return Object.hashAll([id, nodeId, name, fullName, license, forks, permissions, roleName, owner, private, htmlUrl, description, fork, url, archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, downloadsUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, notificationsUrl, pullsUrl, releasesUrl, sshUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, cloneUrl, mirrorUrl, hooksUrl, svnUrl, homepage, language, forksCount, stargazersCount, watchersCount, size, defaultBranch, openIssuesCount, isTemplate, Object.hashAll(topics ?? const []), hasIssues, hasProjects, hasWiki, hasPages, hasDownloads, archived, disabled, visibility, pushedAt, createdAt, updatedAt, allowRebaseMerge, tempCloneToken, allowSquashMerge, allowAutoMerge, deleteBranchOnMerge, allowMergeCommit, allowForking, webCommitSignoffRequired, subscribersCount, networkCount, openIssues, watchers, masterBranch]);}
+@override String toString() {return 'TeamRepository(id: $id, nodeId: $nodeId, name: $name, fullName: $fullName, license: $license, forks: $forks, permissions: $permissions, roleName: $roleName, owner: $owner, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, url: $url, archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, forksUrl: $forksUrl, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, notificationsUrl: $notificationsUrl, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, sshUrl: $sshUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, cloneUrl: $cloneUrl, mirrorUrl: $mirrorUrl, hooksUrl: $hooksUrl, svnUrl: $svnUrl, homepage: $homepage, language: $language, forksCount: $forksCount, stargazersCount: $stargazersCount, watchersCount: $watchersCount, size: $size, defaultBranch: $defaultBranch, openIssuesCount: $openIssuesCount, isTemplate: $isTemplate, topics: $topics, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasPages: $hasPages, hasDownloads: $hasDownloads, archived: $archived, disabled: $disabled, visibility: $visibility, pushedAt: $pushedAt, createdAt: $createdAt, updatedAt: $updatedAt, allowRebaseMerge: $allowRebaseMerge, tempCloneToken: $tempCloneToken, allowSquashMerge: $allowSquashMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowMergeCommit: $allowMergeCommit, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired, subscribersCount: $subscribersCount, networkCount: $networkCount, openIssues: $openIssues, watchers: $watchers, masterBranch: $masterBranch)';}
+}

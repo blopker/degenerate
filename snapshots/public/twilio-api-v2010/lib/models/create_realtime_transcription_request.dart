@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `inbound_track`, `outbound_track`, `both_tracks`.
 @immutable final class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack._(this.value);
 
-factory RealtimeTranscriptionEnumTrack.fromJson(String json) { return switch (json) {
+factory RealtimeTranscriptionEnumTrack.fromJson(String json) {return switch (json) {
   'inbound_track' => inboundTrack,
   'outbound_track' => outboundTrack,
   'both_tracks' => bothTracks,
   _ => RealtimeTranscriptionEnumTrack._(json),
-}; }
+};}
 
 static const RealtimeTranscriptionEnumTrack inboundTrack = RealtimeTranscriptionEnumTrack._('inbound_track');
 
@@ -20,22 +20,22 @@ static const List<RealtimeTranscriptionEnumTrack> values = [inboundTrack, outbou
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionEnumTrack && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionEnumTrack($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeTranscriptionEnumTrack && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeTranscriptionEnumTrack($value)';}
+}
 /// The http method for the status_callback (one of GET, POST).
 @immutable final class CreateRealtimeTranscriptionRequestStatusCallbackMethod {const CreateRealtimeTranscriptionRequestStatusCallbackMethod._(this.value);
 
-factory CreateRealtimeTranscriptionRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateRealtimeTranscriptionRequestStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateRealtimeTranscriptionRequestStatusCallbackMethod._(json),
-}; }
+};}
 
 static const CreateRealtimeTranscriptionRequestStatusCallbackMethod $get = CreateRealtimeTranscriptionRequestStatusCallbackMethod._('GET');
 
@@ -45,17 +45,17 @@ static const List<CreateRealtimeTranscriptionRequestStatusCallbackMethod> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateRealtimeTranscriptionRequestStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateRealtimeTranscriptionRequestStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateRealtimeTranscriptionRequestStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateRealtimeTranscriptionRequestStatusCallbackMethod($value)';}
+}
 @immutable final class CreateRealtimeTranscriptionRequest {const CreateRealtimeTranscriptionRequest({this.name, this.track, this.statusCallbackUrl, this.statusCallbackMethod, this.inboundTrackLabel, this.outboundTrackLabel, this.partialResults, this.languageCode, this.transcriptionEngine, this.profanityFilter, this.speechModel, this.hints, this.enableAutomaticPunctuation, this.intelligenceService, this.enableProviderData, });
 
-factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateRealtimeTranscriptionRequest(
+factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) {return CreateRealtimeTranscriptionRequest(
   name: json['Name'] as String?,
   track: json['Track'] != null ? RealtimeTranscriptionEnumTrack.fromJson(json['Track'] as String) : null,
   statusCallbackUrl: json['StatusCallbackUrl'] != null ? Uri.parse(json['StatusCallbackUrl'] as String) : null,
@@ -71,7 +71,7 @@ factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) {
   enableAutomaticPunctuation: json['EnableAutomaticPunctuation'] as bool?,
   intelligenceService: json['IntelligenceService'] as String?,
   enableProviderData: json['EnableProviderData'] as bool?,
-); }
+);}
 
 /// The user-specified name of this Transcription, if one was given when the Transcription was created. This may be used to stop the Transcription.
 final String? name;
@@ -118,7 +118,7 @@ final String? intelligenceService;
 /// Whether the callback includes raw provider data.
 final bool? enableProviderData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Name': ?name,
   if (track != null) 'Track': track?.toJson(),
   if (statusCallbackUrl != null) 'StatusCallbackUrl': statusCallbackUrl?.toString(),
@@ -134,9 +134,9 @@ Map<String, dynamic> toJson() { return {
   'EnableAutomaticPunctuation': ?enableAutomaticPunctuation,
   'IntelligenceService': ?intelligenceService,
   'EnableProviderData': ?enableProviderData,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Name', 'Track', 'StatusCallbackUrl', 'StatusCallbackMethod', 'InboundTrackLabel', 'OutboundTrackLabel', 'PartialResults', 'LanguageCode', 'TranscriptionEngine', 'ProfanityFilter', 'SpeechModel', 'Hints', 'EnableAutomaticPunctuation', 'IntelligenceService', 'EnableProviderData'}.contains(key)); } 
-CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeTranscriptionEnumTrack? Function()? track, Uri? Function()? statusCallbackUrl, CreateRealtimeTranscriptionRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? inboundTrackLabel, String? Function()? outboundTrackLabel, bool? Function()? partialResults, String? Function()? languageCode, String? Function()? transcriptionEngine, bool? Function()? profanityFilter, String? Function()? speechModel, String? Function()? hints, bool? Function()? enableAutomaticPunctuation, String? Function()? intelligenceService, bool? Function()? enableProviderData, }) { return CreateRealtimeTranscriptionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'Name', 'Track', 'StatusCallbackUrl', 'StatusCallbackMethod', 'InboundTrackLabel', 'OutboundTrackLabel', 'PartialResults', 'LanguageCode', 'TranscriptionEngine', 'ProfanityFilter', 'SpeechModel', 'Hints', 'EnableAutomaticPunctuation', 'IntelligenceService', 'EnableProviderData'}.contains(key));}
+CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeTranscriptionEnumTrack? Function()? track, Uri? Function()? statusCallbackUrl, CreateRealtimeTranscriptionRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? inboundTrackLabel, String? Function()? outboundTrackLabel, bool? Function()? partialResults, String? Function()? languageCode, String? Function()? transcriptionEngine, bool? Function()? profanityFilter, String? Function()? speechModel, String? Function()? hints, bool? Function()? enableAutomaticPunctuation, String? Function()? intelligenceService, bool? Function()? enableProviderData, }) {return CreateRealtimeTranscriptionRequest(
   name: name != null ? name() : this.name,
   track: track != null ? track() : this.track,
   statusCallbackUrl: statusCallbackUrl != null ? statusCallbackUrl() : this.statusCallbackUrl,
@@ -152,8 +152,8 @@ CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeT
   enableAutomaticPunctuation: enableAutomaticPunctuation != null ? enableAutomaticPunctuation() : this.enableAutomaticPunctuation,
   intelligenceService: intelligenceService != null ? intelligenceService() : this.intelligenceService,
   enableProviderData: enableProviderData != null ? enableProviderData() : this.enableProviderData,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateRealtimeTranscriptionRequest &&
           name == other.name &&
           track == other.track &&
@@ -169,7 +169,7 @@ CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeT
           hints == other.hints &&
           enableAutomaticPunctuation == other.enableAutomaticPunctuation &&
           intelligenceService == other.intelligenceService &&
-          enableProviderData == other.enableProviderData; } 
-@override int get hashCode { return Object.hash(name, track, statusCallbackUrl, statusCallbackMethod, inboundTrackLabel, outboundTrackLabel, partialResults, languageCode, transcriptionEngine, profanityFilter, speechModel, hints, enableAutomaticPunctuation, intelligenceService, enableProviderData); } 
-@override String toString() { return 'CreateRealtimeTranscriptionRequest(name: $name, track: $track, statusCallbackUrl: $statusCallbackUrl, statusCallbackMethod: $statusCallbackMethod, inboundTrackLabel: $inboundTrackLabel, outboundTrackLabel: $outboundTrackLabel, partialResults: $partialResults, languageCode: $languageCode, transcriptionEngine: $transcriptionEngine, profanityFilter: $profanityFilter, speechModel: $speechModel, hints: $hints, enableAutomaticPunctuation: $enableAutomaticPunctuation, intelligenceService: $intelligenceService, enableProviderData: $enableProviderData)'; } 
- }
+          enableProviderData == other.enableProviderData;}
+@override int get hashCode {return Object.hash(name, track, statusCallbackUrl, statusCallbackMethod, inboundTrackLabel, outboundTrackLabel, partialResults, languageCode, transcriptionEngine, profanityFilter, speechModel, hints, enableAutomaticPunctuation, intelligenceService, enableProviderData);}
+@override String toString() {return 'CreateRealtimeTranscriptionRequest(name: $name, track: $track, statusCallbackUrl: $statusCallbackUrl, statusCallbackMethod: $statusCallbackMethod, inboundTrackLabel: $inboundTrackLabel, outboundTrackLabel: $outboundTrackLabel, partialResults: $partialResults, languageCode: $languageCode, transcriptionEngine: $transcriptionEngine, profanityFilter: $profanityFilter, speechModel: $speechModel, hints: $hints, enableAutomaticPunctuation: $enableAutomaticPunctuation, intelligenceService: $intelligenceService, enableProviderData: $enableProviderData)';}
+}

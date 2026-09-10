@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`, and the default is `POST`.
 @immutable final class CreateValidationRequestRequestStatusCallbackMethod {const CreateValidationRequestRequestStatusCallbackMethod._(this.value);
 
-factory CreateValidationRequestRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateValidationRequestRequestStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateValidationRequestRequestStatusCallbackMethod._(json),
-}; }
+};}
 
 static const CreateValidationRequestRequestStatusCallbackMethod $get = CreateValidationRequestRequestStatusCallbackMethod._('GET');
 
@@ -17,24 +17,24 @@ static const List<CreateValidationRequestRequestStatusCallbackMethod> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateValidationRequestRequestStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateValidationRequestRequestStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateValidationRequestRequestStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateValidationRequestRequestStatusCallbackMethod($value)';}
+}
 @immutable final class CreateValidationRequestRequest {const CreateValidationRequestRequest({required this.phoneNumber, this.friendlyName, this.callDelay, this.$extension, this.statusCallback, this.statusCallbackMethod, });
 
-factory CreateValidationRequestRequest.fromJson(Map<String, dynamic> json) { return CreateValidationRequestRequest(
+factory CreateValidationRequestRequest.fromJson(Map<String, dynamic> json) {return CreateValidationRequestRequest(
   phoneNumber: json['PhoneNumber'] as String,
   friendlyName: json['FriendlyName'] as String?,
   callDelay: json['CallDelay'] != null ? (json['CallDelay'] as num).toInt() : null,
   $extension: json['Extension'] as String?,
   statusCallback: json['StatusCallback'] != null ? Uri.parse(json['StatusCallback'] as String) : null,
   statusCallbackMethod: json['StatusCallbackMethod'] != null ? CreateValidationRequestRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
-); }
+);}
 
 /// The phone number to verify in [E.164](https://www.twilio.com/docs/glossary/what-e164) format, which consists of a + followed by the country code and subscriber number.
 final String phoneNumber;
@@ -54,31 +54,31 @@ final Uri? statusCallback;
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`, and the default is `POST`.
 final CreateValidationRequestRequestStatusCallbackMethod? statusCallbackMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'PhoneNumber': phoneNumber,
   'FriendlyName': ?friendlyName,
   'CallDelay': ?callDelay,
   'Extension': ?$extension,
   if (statusCallback != null) 'StatusCallback': statusCallback?.toString(),
   if (statusCallbackMethod != null) 'StatusCallbackMethod': statusCallbackMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('PhoneNumber') && json['PhoneNumber'] is String; } 
-CreateValidationRequestRequest copyWith({String? phoneNumber, String? Function()? friendlyName, int? Function()? callDelay, String? Function()? $extension, Uri? Function()? statusCallback, CreateValidationRequestRequestStatusCallbackMethod? Function()? statusCallbackMethod, }) { return CreateValidationRequestRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('PhoneNumber') && json['PhoneNumber'] is String;}
+CreateValidationRequestRequest copyWith({String? phoneNumber, String? Function()? friendlyName, int? Function()? callDelay, String? Function()? $extension, Uri? Function()? statusCallback, CreateValidationRequestRequestStatusCallbackMethod? Function()? statusCallbackMethod, }) {return CreateValidationRequestRequest(
   phoneNumber: phoneNumber ?? this.phoneNumber,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   callDelay: callDelay != null ? callDelay() : this.callDelay,
   $extension: $extension != null ? $extension() : this.$extension,
   statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,
   statusCallbackMethod: statusCallbackMethod != null ? statusCallbackMethod() : this.statusCallbackMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateValidationRequestRequest &&
           phoneNumber == other.phoneNumber &&
           friendlyName == other.friendlyName &&
           callDelay == other.callDelay &&
           $extension == other.$extension &&
           statusCallback == other.statusCallback &&
-          statusCallbackMethod == other.statusCallbackMethod; } 
-@override int get hashCode { return Object.hash(phoneNumber, friendlyName, callDelay, $extension, statusCallback, statusCallbackMethod); } 
-@override String toString() { return 'CreateValidationRequestRequest(phoneNumber: $phoneNumber, friendlyName: $friendlyName, callDelay: $callDelay, \$extension: ${$extension}, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod)'; } 
- }
+          statusCallbackMethod == other.statusCallbackMethod;}
+@override int get hashCode {return Object.hash(phoneNumber, friendlyName, callDelay, $extension, statusCallback, statusCallbackMethod);}
+@override String toString() {return 'CreateValidationRequestRequest(phoneNumber: $phoneNumber, friendlyName: $friendlyName, callDelay: $callDelay, \$extension: ${$extension}, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod)';}
+}

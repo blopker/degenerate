@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Detailed information about a role assignment entry returned when listing assignments.
 @immutable final class AssignedRoleDetails {const AssignedRoleDetails({required this.id, required this.name, required this.permissions, required this.resourceType, required this.predefinedRole, required this.description, required this.createdAt, required this.updatedAt, required this.createdBy, required this.createdByUserObj, required this.metadata, });
 
-factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return AssignedRoleDetails(
+factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) {return AssignedRoleDetails(
   id: json['id'] as String,
   name: json['name'] as String,
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
@@ -15,7 +15,7 @@ factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return Assigne
   createdBy: json['created_by'] as String?,
   createdByUserObj: json['created_by_user_obj'] as Map<String, dynamic>?,
   metadata: json['metadata'] as Map<String, dynamic>?,
-); }
+);}
 
 /// Identifier for the role.
 final String id;
@@ -50,7 +50,7 @@ final Map<String,dynamic>? createdByUserObj;
 /// Arbitrary metadata stored on the role.
 final Map<String,dynamic>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'permissions': permissions,
@@ -62,8 +62,8 @@ Map<String, dynamic> toJson() { return {
   'created_by': createdBy,
   'created_by_user_obj': createdByUserObj,
   'metadata': metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('permissions') &&
       json.containsKey('resource_type') && json['resource_type'] is String &&
@@ -73,8 +73,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is num) &&
       json.containsKey('created_by') && (json['created_by'] == null || json['created_by'] is String) &&
       json.containsKey('created_by_user_obj') &&
-      json.containsKey('metadata'); } 
-AssignedRoleDetails copyWith({String? id, String? name, List<String>? permissions, String? resourceType, bool? predefinedRole, String? Function()? description, int? Function()? createdAt, int? Function()? updatedAt, String? Function()? createdBy, Map<String, dynamic>? Function()? createdByUserObj, Map<String, dynamic>? Function()? metadata, }) { return AssignedRoleDetails(
+      json.containsKey('metadata');}
+AssignedRoleDetails copyWith({String? id, String? name, List<String>? permissions, String? resourceType, bool? predefinedRole, String? Function()? description, int? Function()? createdAt, int? Function()? updatedAt, String? Function()? createdBy, Map<String, dynamic>? Function()? createdByUserObj, Map<String, dynamic>? Function()? metadata, }) {return AssignedRoleDetails(
   id: id ?? this.id,
   name: name ?? this.name,
   permissions: permissions ?? this.permissions,
@@ -86,8 +86,8 @@ AssignedRoleDetails copyWith({String? id, String? name, List<String>? permission
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   createdByUserObj: createdByUserObj != null ? createdByUserObj() : this.createdByUserObj,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AssignedRoleDetails &&
           id == other.id &&
           name == other.name &&
@@ -99,7 +99,7 @@ AssignedRoleDetails copyWith({String? id, String? name, List<String>? permission
           updatedAt == other.updatedAt &&
           createdBy == other.createdBy &&
           createdByUserObj == other.createdByUserObj &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, name, Object.hashAll(permissions), resourceType, predefinedRole, description, createdAt, updatedAt, createdBy, createdByUserObj, metadata); } 
-@override String toString() { return 'AssignedRoleDetails(id: $id, name: $name, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, createdByUserObj: $createdByUserObj, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(id, name, Object.hashAll(permissions), resourceType, predefinedRole, description, createdAt, updatedAt, createdBy, createdByUserObj, metadata);}
+@override String toString() {return 'AssignedRoleDetails(id: $id, name: $name, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, createdByUserObj: $createdByUserObj, metadata: $metadata)';}
+}

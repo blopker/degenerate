@@ -11,7 +11,7 @@ final class Api20100401CredentialApi with ApiExecutor {const Api20100401Credenti
 /// Retrieve a list of credentials.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials.json`
-Future<ApiResult<ListSipCredentialResponse, Never>> listSipCredential({required String accountSid, required String credentialListSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListSipCredentialResponse, Never>> listSipCredential({required String accountSid, required String credentialListSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -34,18 +34,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListSipCredentialResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListSipCredentialResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new credential resource.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials.json`
-Future<ApiResult<AccountSipSipCredentialListSipCredential, Never>> createSipCredential({required String accountSid, required String credentialListSid, CreateSipCredentialRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipCredentialListSipCredential, Never>> createSipCredential({required String accountSid, required String credentialListSid, CreateSipCredentialRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -59,18 +54,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipCredentialListSipCredential.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipCredentialListSipCredential.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch a single credential.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json`
-Future<ApiResult<AccountSipSipCredentialListSipCredential, Never>> fetchSipCredential({required String accountSid, required String credentialListSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipCredentialListSipCredential, Never>> fetchSipCredential({required String accountSid, required String credentialListSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,18 +69,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipCredentialListSipCredential.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipCredentialListSipCredential.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a credential resource.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json`
-Future<ApiResult<AccountSipSipCredentialListSipCredential, Never>> updateSipCredential({required String accountSid, required String credentialListSid, required String sid, UpdateSipCredentialRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipCredentialListSipCredential, Never>> updateSipCredential({required String accountSid, required String credentialListSid, required String sid, UpdateSipCredentialRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -104,18 +89,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipCredentialListSipCredential.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipCredentialListSipCredential.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a credential resource.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CredentialListSid}/Credentials/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipCredential({required String accountSid, required String credentialListSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSipCredential({required String accountSid, required String credentialListSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -124,9 +104,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
- }
+
+return   await execute(request, onSuccess: (_) {}, );}
+}

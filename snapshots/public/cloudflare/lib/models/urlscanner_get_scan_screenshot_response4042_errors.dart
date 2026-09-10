@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanScreenshotResponse4042Errors {const UrlscannerGetScanScreenshotResponse4042Errors({required this.detail, required this.status, required this.title, });
 
-factory UrlscannerGetScanScreenshotResponse4042Errors.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanScreenshotResponse4042Errors(
+factory UrlscannerGetScanScreenshotResponse4042Errors.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanScreenshotResponse4042Errors(
   detail: json['detail'] as String,
   status: (json['status'] as num).toInt(),
   title: json['title'] as String,
-); }
+);}
 
 final String detail;
 
@@ -15,24 +15,24 @@ final int status;
 
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'detail': detail,
   'status': status,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('detail') && json['detail'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('detail') && json['detail'] is String &&
       json.containsKey('status') && json['status'] is num &&
-      json.containsKey('title') && json['title'] is String; } 
-UrlscannerGetScanScreenshotResponse4042Errors copyWith({String? detail, int? status, String? title, }) { return UrlscannerGetScanScreenshotResponse4042Errors(
+      json.containsKey('title') && json['title'] is String;}
+UrlscannerGetScanScreenshotResponse4042Errors copyWith({String? detail, int? status, String? title, }) {return UrlscannerGetScanScreenshotResponse4042Errors(
   detail: detail ?? this.detail,
   status: status ?? this.status,
   title: title ?? this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanScreenshotResponse4042Errors &&
           detail == other.detail &&
           status == other.status &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(detail, status, title); } 
-@override String toString() { return 'UrlscannerGetScanScreenshotResponse4042Errors(detail: $detail, status: $status, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(detail, status, title);}
+@override String toString() {return 'UrlscannerGetScanScreenshotResponse4042Errors(detail: $detail, status: $status, title: $title)';}
+}

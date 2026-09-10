@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeownersErrorsErrors {const CodeownersErrorsErrors({required this.line, required this.column, required this.kind, required this.message, required this.path, this.source, this.suggestion = const Omittable.absent(), });
 
-factory CodeownersErrorsErrors.fromJson(Map<String, dynamic> json) { return CodeownersErrorsErrors(
+factory CodeownersErrorsErrors.fromJson(Map<String, dynamic> json) {return CodeownersErrorsErrors(
   line: (json['line'] as num).toInt(),
   column: (json['column'] as num).toInt(),
   source: json['source'] as String?,
@@ -10,7 +10,7 @@ factory CodeownersErrorsErrors.fromJson(Map<String, dynamic> json) { return Code
   suggestion: json.containsKey('suggestion') ? Omittable(json['suggestion'] as String?) : const Omittable.absent(),
   message: json['message'] as String,
   path: json['path'] as String,
-); }
+);}
 
 /// The line number where this errors occurs.
 final int line;
@@ -33,7 +33,7 @@ final String message;
 /// The path of the file where the error occured.
 final String path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'line': line,
   'column': column,
   'source': ?source,
@@ -41,13 +41,13 @@ Map<String, dynamic> toJson() { return {
   if (suggestion.isPresent) 'suggestion': suggestion.value,
   'message': message,
   'path': path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('line') && json['line'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('line') && json['line'] is num &&
       json.containsKey('column') && json['column'] is num &&
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('path') && json['path'] is String; } 
-CodeownersErrorsErrors copyWith({int? line, int? column, String? Function()? source, String? kind, Omittable<String?>? suggestion, String? message, String? path, }) { return CodeownersErrorsErrors(
+      json.containsKey('path') && json['path'] is String;}
+CodeownersErrorsErrors copyWith({int? line, int? column, String? Function()? source, String? kind, Omittable<String?>? suggestion, String? message, String? path, }) {return CodeownersErrorsErrors(
   line: line ?? this.line,
   column: column ?? this.column,
   source: source != null ? source() : this.source,
@@ -55,8 +55,8 @@ CodeownersErrorsErrors copyWith({int? line, int? column, String? Function()? sou
   suggestion: suggestion ?? this.suggestion,
   message: message ?? this.message,
   path: path ?? this.path,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeownersErrorsErrors &&
           line == other.line &&
           column == other.column &&
@@ -64,7 +64,7 @@ CodeownersErrorsErrors copyWith({int? line, int? column, String? Function()? sou
           kind == other.kind &&
           suggestion == other.suggestion &&
           message == other.message &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(line, column, source, kind, suggestion, message, path); } 
-@override String toString() { return 'CodeownersErrorsErrors(line: $line, column: $column, source: $source, kind: $kind, suggestion: $suggestion, message: $message, path: $path)'; } 
- }
+          path == other.path;}
+@override int get hashCode {return Object.hash(line, column, source, kind, suggestion, message, path);}
+@override String toString() {return 'CodeownersErrorsErrors(line: $line, column: $column, source: $source, kind: $kind, suggestion: $suggestion, message: $message, path: $path)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(
   enabled: json['enabled'] as bool,
   maximum: json['maximum'] != null ? (json['maximum'] as num).toInt() : null,
   minimum: json['minimum'] != null ? (json['minimum'] as num).toInt() : null,
-); }
+);}
 
 final bool enabled;
 
@@ -14,22 +14,22 @@ final int? maximum;
 
 final int? minimum;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'maximum': ?maximum,
   'minimum': ?minimum,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, }) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(
   enabled: enabled ?? this.enabled,
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity &&
           enabled == other.enabled &&
           maximum == other.maximum &&
-          minimum == other.minimum; } 
-@override int get hashCode { return Object.hash(enabled, maximum, minimum); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)'; } 
- }
+          minimum == other.minimum;}
+@override int get hashCode {return Object.hash(enabled, maximum, minimum);}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)';}
+}

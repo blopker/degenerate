@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_dataset_response_result_filters.dart';@immutable final class AigConfigListDatasetResponseResult {const AigConfigListDatasetResponseResult({required this.createdAt, required this.enable, required this.filters, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
 
-factory AigConfigListDatasetResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigListDatasetResponseResult(
+factory AigConfigListDatasetResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigListDatasetResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),
   enable: json['enable'] as bool,
   filters: (json['filters'] as List<dynamic>).map((e) => AigConfigListDatasetResponseResultFilters.fromJson(e as Map<String, dynamic>)).toList(),
@@ -10,7 +10,7 @@ factory AigConfigListDatasetResponseResult.fromJson(Map<String, dynamic> json) {
   id: json['id'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -27,7 +27,7 @@ final DateTime modifiedAt;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enable': enable,
   'filters': filters.map((e) => e.toJson()).toList(),
@@ -35,15 +35,15 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enable') && json['enable'] is bool &&
       json.containsKey('filters') &&
       json.containsKey('gateway_id') && json['gateway_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-AigConfigListDatasetResponseResult copyWith({DateTime? createdAt, bool? enable, List<AigConfigListDatasetResponseResultFilters>? filters, String? gatewayId, String? id, DateTime? modifiedAt, String? name, }) { return AigConfigListDatasetResponseResult(
+      json.containsKey('name') && json['name'] is String;}
+AigConfigListDatasetResponseResult copyWith({DateTime? createdAt, bool? enable, List<AigConfigListDatasetResponseResultFilters>? filters, String? gatewayId, String? id, DateTime? modifiedAt, String? name, }) {return AigConfigListDatasetResponseResult(
   createdAt: createdAt ?? this.createdAt,
   enable: enable ?? this.enable,
   filters: filters ?? this.filters,
@@ -51,8 +51,8 @@ AigConfigListDatasetResponseResult copyWith({DateTime? createdAt, bool? enable, 
   id: id ?? this.id,
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigListDatasetResponseResult &&
           createdAt == other.createdAt &&
           enable == other.enable &&
@@ -60,7 +60,7 @@ AigConfigListDatasetResponseResult copyWith({DateTime? createdAt, bool? enable, 
           gatewayId == other.gatewayId &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, enable, Object.hashAll(filters), gatewayId, id, modifiedAt, name); } 
-@override String toString() { return 'AigConfigListDatasetResponseResult(createdAt: $createdAt, enable: $enable, filters: $filters, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(createdAt, enable, Object.hashAll(filters), gatewayId, id, modifiedAt, name);}
+@override String toString() {return 'AigConfigListDatasetResponseResult(createdAt: $createdAt, enable: $enable, filters: $filters, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)';}
+}

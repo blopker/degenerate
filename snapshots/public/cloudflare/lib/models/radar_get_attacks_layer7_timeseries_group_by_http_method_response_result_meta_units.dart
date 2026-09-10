@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits(
+factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResultMetaUnits(name: $name, value: $value)';}
+}

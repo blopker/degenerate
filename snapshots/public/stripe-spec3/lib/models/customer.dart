@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'cash_balance.dart';import 'customer_default_source.dart';import 'customer_sources.dart';import 'customer_subscriptions.dart';import 'customer_tax.dart';import 'customer_tax_ids.dart';import 'customer_test_clock.dart';import 'discount.dart';import 'invoice_setting_customer_setting.dart';import 'shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerObject {const CustomerObject._(this.value);
 
-factory CustomerObject.fromJson(String json) { return switch (json) {
+factory CustomerObject.fromJson(String json) {return switch (json) {
   'customer' => customer,
   _ => CustomerObject._(json),
-}; }
+};}
 
 static const CustomerObject customer = CustomerObject._('customer');
 
@@ -14,23 +14,23 @@ static const List<CustomerObject> values = [customer];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerObject($value)';}
+}
 /// Describes the customer's tax exemption status, which is `none`, `exempt`, or `reverse`. When set to `reverse`, invoice and receipt PDFs include the following text: **"Reverse charge"**.
 @immutable final class CustomerTaxExempt {const CustomerTaxExempt._(this.value);
 
-factory CustomerTaxExempt.fromJson(String json) { return switch (json) {
+factory CustomerTaxExempt.fromJson(String json) {return switch (json) {
   'exempt' => exempt,
   'none' => none,
   'reverse' => reverse,
   _ => CustomerTaxExempt._(json),
-}; }
+};}
 
 static const CustomerTaxExempt exempt = CustomerTaxExempt._('exempt');
 
@@ -42,19 +42,19 @@ static const List<CustomerTaxExempt> values = [exempt, none, reverse];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerTaxExempt($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerTaxExempt && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerTaxExempt($value)';}
+}
 /// This object represents a customer of your business. Use it to [create recurring charges](https://docs.stripe.com/invoicing/customer), [save payment](https://docs.stripe.com/payments/save-during-payment) and contact information,
 /// and track payments that belong to the same customer.
 @immutable final class Customer {const Customer({required this.created, required this.id, required this.livemode, required this.object, this.address = const Omittable.absent(), this.balance, this.businessName, this.cashBalance = const Omittable.absent(), this.currency = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.defaultSource = const Omittable.absent(), this.delinquent = const Omittable.absent(), this.description = const Omittable.absent(), this.discount = const Omittable.absent(), this.email = const Omittable.absent(), this.individualName, this.invoiceCreditBalance, this.invoicePrefix = const Omittable.absent(), this.invoiceSettings, this.metadata, this.name = const Omittable.absent(), this.nextInvoiceSequence, this.phone = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.shipping = const Omittable.absent(), this.sources, this.subscriptions, this.tax, this.taxExempt = const Omittable.absent(), this.taxIds, this.testClock = const Omittable.absent(), });
 
-factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
+factory Customer.fromJson(Map<String, dynamic> json) {return Customer(
   address: json.containsKey('address') ? Omittable(json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
   businessName: json['business_name'] as String?,
@@ -86,7 +86,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   taxExempt: json.containsKey('tax_exempt') ? Omittable(json['tax_exempt'] != null ? CustomerTaxExempt.fromJson(json['tax_exempt'] as String) : null) : const Omittable.absent(),
   taxIds: json['tax_ids'] != null ? CustomerTaxIds.fromJson(json['tax_ids'] as Map<String, dynamic>) : null,
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? CustomerTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's address.
 final Omittable<Address?> address;
@@ -185,7 +185,7 @@ final CustomerTaxIds? taxIds;
 /// ID of the test clock that this customer belongs to.
 final Omittable<CustomerTestClock?> testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address.isPresent) 'address': address.value?.toJson(),
   'balance': ?balance,
   'business_name': ?businessName,
@@ -217,12 +217,12 @@ Map<String, dynamic> toJson() { return {
   if (taxExempt.isPresent) 'tax_exempt': taxExempt.value?.toJson(),
   if (taxIds != null) 'tax_ids': taxIds?.toJson(),
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-Customer copyWith({Omittable<Address?>? address, int? Function()? balance, String? Function()? businessName, Omittable<CashBalance?>? cashBalance, int? created, Omittable<String?>? currency, Omittable<String?>? customerAccount, Omittable<CustomerDefaultSource?>? defaultSource, Omittable<bool?>? delinquent, Omittable<String?>? description, Omittable<Discount?>? discount, Omittable<String?>? email, String? id, String? Function()? individualName, Map<String, int>? Function()? invoiceCreditBalance, Omittable<String?>? invoicePrefix, InvoiceSettingCustomerSetting? Function()? invoiceSettings, bool? livemode, Map<String, String>? Function()? metadata, Omittable<String?>? name, int? Function()? nextInvoiceSequence, CustomerObject? object, Omittable<String?>? phone, Omittable<List<String>?>? preferredLocales, Omittable<Shipping?>? shipping, CustomerSources? Function()? sources, CustomerSubscriptions? Function()? subscriptions, CustomerTax? Function()? tax, Omittable<CustomerTaxExempt?>? taxExempt, CustomerTaxIds? Function()? taxIds, Omittable<CustomerTestClock?>? testClock, }) { return Customer(
+      json.containsKey('object');}
+Customer copyWith({Omittable<Address?>? address, int? Function()? balance, String? Function()? businessName, Omittable<CashBalance?>? cashBalance, int? created, Omittable<String?>? currency, Omittable<String?>? customerAccount, Omittable<CustomerDefaultSource?>? defaultSource, Omittable<bool?>? delinquent, Omittable<String?>? description, Omittable<Discount?>? discount, Omittable<String?>? email, String? id, String? Function()? individualName, Map<String, int>? Function()? invoiceCreditBalance, Omittable<String?>? invoicePrefix, InvoiceSettingCustomerSetting? Function()? invoiceSettings, bool? livemode, Map<String, String>? Function()? metadata, Omittable<String?>? name, int? Function()? nextInvoiceSequence, CustomerObject? object, Omittable<String?>? phone, Omittable<List<String>?>? preferredLocales, Omittable<Shipping?>? shipping, CustomerSources? Function()? sources, CustomerSubscriptions? Function()? subscriptions, CustomerTax? Function()? tax, Omittable<CustomerTaxExempt?>? taxExempt, CustomerTaxIds? Function()? taxIds, Omittable<CustomerTestClock?>? testClock, }) {return Customer(
   address: address ?? this.address,
   balance: balance != null ? balance() : this.balance,
   businessName: businessName != null ? businessName() : this.businessName,
@@ -254,8 +254,8 @@ Customer copyWith({Omittable<Address?>? address, int? Function()? balance, Strin
   taxExempt: taxExempt ?? this.taxExempt,
   taxIds: taxIds != null ? taxIds() : this.taxIds,
   testClock: testClock ?? this.testClock,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Customer &&
           address == other.address &&
           balance == other.balance &&
@@ -288,7 +288,7 @@ Customer copyWith({Omittable<Address?>? address, int? Function()? balance, Strin
           tax == other.tax &&
           taxExempt == other.taxExempt &&
           taxIds == other.taxIds &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hashAll([address, balance, businessName, cashBalance, created, currency, customerAccount, defaultSource, delinquent, description, discount, email, id, individualName, invoiceCreditBalance, invoicePrefix, invoiceSettings, livemode, metadata, name, nextInvoiceSequence, object, phone, Object.hashAll(preferredLocales.value ?? const []), shipping, sources, subscriptions, tax, taxExempt, taxIds, testClock]); } 
-@override String toString() { return 'Customer(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, created: $created, currency: $currency, customerAccount: $customerAccount, defaultSource: $defaultSource, delinquent: $delinquent, description: $description, discount: $discount, email: $email, id: $id, individualName: $individualName, invoiceCreditBalance: $invoiceCreditBalance, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, livemode: $livemode, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, object: $object, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, sources: $sources, subscriptions: $subscriptions, tax: $tax, taxExempt: $taxExempt, taxIds: $taxIds, testClock: $testClock)'; } 
- }
+          testClock == other.testClock;}
+@override int get hashCode {return Object.hashAll([address, balance, businessName, cashBalance, created, currency, customerAccount, defaultSource, delinquent, description, discount, email, id, individualName, invoiceCreditBalance, invoicePrefix, invoiceSettings, livemode, metadata, name, nextInvoiceSequence, object, phone, Object.hashAll(preferredLocales.value ?? const []), shipping, sources, subscriptions, tax, taxExempt, taxIds, testClock]);}
+@override String toString() {return 'Customer(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, created: $created, currency: $currency, customerAccount: $customerAccount, defaultSource: $defaultSource, delinquent: $delinquent, description: $description, discount: $discount, email: $email, id: $id, individualName: $individualName, invoiceCreditBalance: $invoiceCreditBalance, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, livemode: $livemode, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, object: $object, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, sources: $sources, subscriptions: $subscriptions, tax: $tax, taxExempt: $taxExempt, taxIds: $taxIds, testClock: $testClock)';}
+}

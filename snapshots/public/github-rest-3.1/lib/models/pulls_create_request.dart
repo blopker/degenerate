@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsCreateRequest {const PullsCreateRequest({required this.head, required this.base, this.title, this.headRepo, this.body, this.maintainerCanModify, this.draft, this.issue, });
 
-factory PullsCreateRequest.fromJson(Map<String, dynamic> json) { return PullsCreateRequest(
+factory PullsCreateRequest.fromJson(Map<String, dynamic> json) {return PullsCreateRequest(
   title: json['title'] as String?,
   head: json['head'] as String,
   headRepo: json['head_repo'] as String?,
@@ -11,7 +11,7 @@ factory PullsCreateRequest.fromJson(Map<String, dynamic> json) { return PullsCre
   maintainerCanModify: json['maintainer_can_modify'] as bool?,
   draft: json['draft'] as bool?,
   issue: json['issue'] != null ? (json['issue'] as num).toInt() : null,
-); }
+);}
 
 /// The title of the new pull request. Required unless `issue` is specified.
 final String? title;
@@ -37,7 +37,7 @@ final bool? draft;
 /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.
 final int? issue;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'title': ?title,
   'head': head,
   'head_repo': ?headRepo,
@@ -46,10 +46,10 @@ Map<String, dynamic> toJson() { return {
   'maintainer_can_modify': ?maintainerCanModify,
   'draft': ?draft,
   'issue': ?issue,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('head') && json['head'] is String &&
-      json.containsKey('base') && json['base'] is String; } 
-PullsCreateRequest copyWith({String? Function()? title, String? head, String? Function()? headRepo, String? base, String? Function()? body, bool? Function()? maintainerCanModify, bool? Function()? draft, int? Function()? issue, }) { return PullsCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('head') && json['head'] is String &&
+      json.containsKey('base') && json['base'] is String;}
+PullsCreateRequest copyWith({String? Function()? title, String? head, String? Function()? headRepo, String? base, String? Function()? body, bool? Function()? maintainerCanModify, bool? Function()? draft, int? Function()? issue, }) {return PullsCreateRequest(
   title: title != null ? title() : this.title,
   head: head ?? this.head,
   headRepo: headRepo != null ? headRepo() : this.headRepo,
@@ -58,8 +58,8 @@ PullsCreateRequest copyWith({String? Function()? title, String? head, String? Fu
   maintainerCanModify: maintainerCanModify != null ? maintainerCanModify() : this.maintainerCanModify,
   draft: draft != null ? draft() : this.draft,
   issue: issue != null ? issue() : this.issue,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullsCreateRequest &&
           title == other.title &&
           head == other.head &&
@@ -68,7 +68,7 @@ PullsCreateRequest copyWith({String? Function()? title, String? head, String? Fu
           body == other.body &&
           maintainerCanModify == other.maintainerCanModify &&
           draft == other.draft &&
-          issue == other.issue; } 
-@override int get hashCode { return Object.hash(title, head, headRepo, base, body, maintainerCanModify, draft, issue); } 
-@override String toString() { return 'PullsCreateRequest(title: $title, head: $head, headRepo: $headRepo, base: $base, body: $body, maintainerCanModify: $maintainerCanModify, draft: $draft, issue: $issue)'; } 
- }
+          issue == other.issue;}
+@override int get hashCode {return Object.hash(title, head, headRepo, base, body, maintainerCanModify, draft, issue);}
+@override String toString() {return 'PullsCreateRequest(title: $title, head: $head, headRepo: $headRepo, base: $base, body: $body, maintainerCanModify: $maintainerCanModify, draft: $draft, issue: $issue)';}
+}

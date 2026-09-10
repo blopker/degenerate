@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesReprioritizeSubIssueRequest {const IssuesReprioritizeSubIssueRequest({required this.subIssueId, this.afterId, this.beforeId, });
 
-factory IssuesReprioritizeSubIssueRequest.fromJson(Map<String, dynamic> json) { return IssuesReprioritizeSubIssueRequest(
+factory IssuesReprioritizeSubIssueRequest.fromJson(Map<String, dynamic> json) {return IssuesReprioritizeSubIssueRequest(
   subIssueId: (json['sub_issue_id'] as num).toInt(),
   afterId: json['after_id'] != null ? (json['after_id'] as num).toInt() : null,
   beforeId: json['before_id'] != null ? (json['before_id'] as num).toInt() : null,
-); }
+);}
 
 /// The id of the sub-issue to reprioritize
 final int subIssueId;
@@ -17,22 +17,22 @@ final int? afterId;
 /// The id of the sub-issue to be prioritized before (either positional argument after OR before should be specified).
 final int? beforeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sub_issue_id': subIssueId,
   'after_id': ?afterId,
   'before_id': ?beforeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sub_issue_id') && json['sub_issue_id'] is num; } 
-IssuesReprioritizeSubIssueRequest copyWith({int? subIssueId, int? Function()? afterId, int? Function()? beforeId, }) { return IssuesReprioritizeSubIssueRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sub_issue_id') && json['sub_issue_id'] is num;}
+IssuesReprioritizeSubIssueRequest copyWith({int? subIssueId, int? Function()? afterId, int? Function()? beforeId, }) {return IssuesReprioritizeSubIssueRequest(
   subIssueId: subIssueId ?? this.subIssueId,
   afterId: afterId != null ? afterId() : this.afterId,
   beforeId: beforeId != null ? beforeId() : this.beforeId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuesReprioritizeSubIssueRequest &&
           subIssueId == other.subIssueId &&
           afterId == other.afterId &&
-          beforeId == other.beforeId; } 
-@override int get hashCode { return Object.hash(subIssueId, afterId, beforeId); } 
-@override String toString() { return 'IssuesReprioritizeSubIssueRequest(subIssueId: $subIssueId, afterId: $afterId, beforeId: $beforeId)'; } 
- }
+          beforeId == other.beforeId;}
+@override int get hashCode {return Object.hash(subIssueId, afterId, beforeId);}
+@override String toString() {return 'IssuesReprioritizeSubIssueRequest(subIssueId: $subIssueId, afterId: $afterId, beforeId: $beforeId)';}
+}

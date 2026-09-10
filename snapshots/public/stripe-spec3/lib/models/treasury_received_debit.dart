@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_debit_transaction.dart';import 'treasury_received_debits_resource_linked_flows.dart';import 'treasury_received_debits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';/// Reason for the failure. A ReceivedDebit might fail because the FinancialAccount doesn't have sufficient funds, is closed, or is frozen.
 @immutable final class TreasuryReceivedDebitFailureCode {const TreasuryReceivedDebitFailureCode._(this.value);
 
-factory TreasuryReceivedDebitFailureCode.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedDebitFailureCode.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'insufficient_funds' => insufficientFunds,
   'international_transaction' => internationalTransaction,
   'other' => $other,
   _ => TreasuryReceivedDebitFailureCode._(json),
-}; }
+};}
 
 static const TreasuryReceivedDebitFailureCode accountClosed = TreasuryReceivedDebitFailureCode._('account_closed');
 
@@ -26,23 +26,23 @@ static const List<TreasuryReceivedDebitFailureCode> values = [accountClosed, acc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedDebitFailureCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedDebitFailureCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedDebitFailureCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedDebitFailureCode($value)';}
+}
 /// The network used for the ReceivedDebit.
 @immutable final class TreasuryReceivedDebitNetwork {const TreasuryReceivedDebitNetwork._(this.value);
 
-factory TreasuryReceivedDebitNetwork.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedDebitNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'card' => card,
   'stripe' => stripe,
   _ => TreasuryReceivedDebitNetwork._(json),
-}; }
+};}
 
 static const TreasuryReceivedDebitNetwork ach = TreasuryReceivedDebitNetwork._('ach');
 
@@ -54,21 +54,21 @@ static const List<TreasuryReceivedDebitNetwork> values = [ach, card, stripe];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedDebitNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedDebitNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedDebitNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedDebitNetwork($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryReceivedDebitObject {const TreasuryReceivedDebitObject._(this.value);
 
-factory TreasuryReceivedDebitObject.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedDebitObject.fromJson(String json) {return switch (json) {
   'treasury.received_debit' => treasuryReceivedDebit,
   _ => TreasuryReceivedDebitObject._(json),
-}; }
+};}
 
 static const TreasuryReceivedDebitObject treasuryReceivedDebit = TreasuryReceivedDebitObject._('treasury.received_debit');
 
@@ -76,22 +76,22 @@ static const List<TreasuryReceivedDebitObject> values = [treasuryReceivedDebit];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedDebitObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedDebitObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedDebitObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedDebitObject($value)';}
+}
 /// Status of the ReceivedDebit. ReceivedDebits are created with a status of either `succeeded` (approved) or `failed` (declined). The failure reason can be found under the `failure_code`.
 @immutable final class TreasuryReceivedDebitStatus {const TreasuryReceivedDebitStatus._(this.value);
 
-factory TreasuryReceivedDebitStatus.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedDebitStatus.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'succeeded' => succeeded,
   _ => TreasuryReceivedDebitStatus._(json),
-}; }
+};}
 
 static const TreasuryReceivedDebitStatus failed = TreasuryReceivedDebitStatus._('failed');
 
@@ -101,18 +101,18 @@ static const List<TreasuryReceivedDebitStatus> values = [failed, succeeded];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedDebitStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedDebitStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedDebitStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedDebitStatus($value)';}
+}
 /// ReceivedDebits represent funds pulled from a [FinancialAccount](https://api.stripe.com#financial_accounts). These are not initiated from the FinancialAccount.
 @immutable final class TreasuryReceivedDebit {const TreasuryReceivedDebit({required this.amount, required this.created, required this.currency, required this.description, required this.id, required this.linkedFlows, required this.livemode, required this.network, required this.object, required this.status, this.failureCode = const Omittable.absent(), this.financialAccount = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.initiatingPaymentMethodDetails, this.reversalDetails = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
-factory TreasuryReceivedDebit.fromJson(Map<String, dynamic> json) { return TreasuryReceivedDebit(
+factory TreasuryReceivedDebit.fromJson(Map<String, dynamic> json) {return TreasuryReceivedDebit(
   amount: (json['amount'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -129,7 +129,7 @@ factory TreasuryReceivedDebit.fromJson(Map<String, dynamic> json) { return Treas
   reversalDetails: json.containsKey('reversal_details') ? Omittable(json['reversal_details'] != null ? TreasuryReceivedDebitsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: TreasuryReceivedDebitStatus.fromJson(json['status'] as String),
   transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryReceivedDebitTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -177,7 +177,7 @@ final TreasuryReceivedDebitStatus status;
 /// The Transaction associated with this object.
 final Omittable<TreasuryReceivedDebitTransaction?> transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'created': created,
   'currency': currency,
@@ -194,8 +194,8 @@ Map<String, dynamic> toJson() { return {
   if (reversalDetails.isPresent) 'reversal_details': reversalDetails.value?.toJson(),
   'status': status.toJson(),
   if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -204,8 +204,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('network') &&
       json.containsKey('object') &&
-      json.containsKey('status'); } 
-TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, String? description, Omittable<TreasuryReceivedDebitFailureCode?>? failureCode, Omittable<String?>? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? Function()? initiatingPaymentMethodDetails, TreasuryReceivedDebitsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedDebitNetwork? network, TreasuryReceivedDebitObject? object, Omittable<TreasuryReceivedDebitsResourceReversalDetails?>? reversalDetails, TreasuryReceivedDebitStatus? status, Omittable<TreasuryReceivedDebitTransaction?>? transaction, }) { return TreasuryReceivedDebit(
+      json.containsKey('status');}
+TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, String? description, Omittable<TreasuryReceivedDebitFailureCode?>? failureCode, Omittable<String?>? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? Function()? initiatingPaymentMethodDetails, TreasuryReceivedDebitsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedDebitNetwork? network, TreasuryReceivedDebitObject? object, Omittable<TreasuryReceivedDebitsResourceReversalDetails?>? reversalDetails, TreasuryReceivedDebitStatus? status, Omittable<TreasuryReceivedDebitTransaction?>? transaction, }) {return TreasuryReceivedDebit(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,
@@ -222,8 +222,8 @@ TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, Str
   reversalDetails: reversalDetails ?? this.reversalDetails,
   status: status ?? this.status,
   transaction: transaction ?? this.transaction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryReceivedDebit &&
           amount == other.amount &&
           created == other.created &&
@@ -240,7 +240,7 @@ TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, Str
           object == other.object &&
           reversalDetails == other.reversalDetails &&
           status == other.status &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(amount, created, currency, description, failureCode, financialAccount, hostedRegulatoryReceiptUrl, id, initiatingPaymentMethodDetails, linkedFlows, livemode, network, object, reversalDetails, status, transaction); } 
-@override String toString() { return 'TreasuryReceivedDebit(amount: $amount, created: $created, currency: $currency, description: $description, failureCode: $failureCode, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, linkedFlows: $linkedFlows, livemode: $livemode, network: $network, object: $object, reversalDetails: $reversalDetails, status: $status, transaction: $transaction)'; } 
- }
+          transaction == other.transaction;}
+@override int get hashCode {return Object.hash(amount, created, currency, description, failureCode, financialAccount, hostedRegulatoryReceiptUrl, id, initiatingPaymentMethodDetails, linkedFlows, livemode, network, object, reversalDetails, status, transaction);}
+@override String toString() {return 'TreasuryReceivedDebit(amount: $amount, created: $created, currency: $currency, description: $description, failureCode: $failureCode, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, linkedFlows: $linkedFlows, livemode: $livemode, network: $network, object: $object, reversalDetails: $reversalDetails, status: $status, transaction: $transaction)';}
+}

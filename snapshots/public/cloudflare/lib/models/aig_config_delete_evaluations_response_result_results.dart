@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteEvaluationsResponseResultResults {const AigConfigDeleteEvaluationsResponseResultResults({required this.createdAt, required this.evaluationId, required this.evaluationTypeId, required this.id, required this.modifiedAt, required this.result, required this.status, required this.statusDescription, required this.totalLogs, });
 
-factory AigConfigDeleteEvaluationsResponseResultResults.fromJson(Map<String, dynamic> json) { return AigConfigDeleteEvaluationsResponseResultResults(
+factory AigConfigDeleteEvaluationsResponseResultResults.fromJson(Map<String, dynamic> json) {return AigConfigDeleteEvaluationsResponseResultResults(
   createdAt: DateTime.parse(json['created_at'] as String),
   evaluationId: json['evaluation_id'] as String,
   evaluationTypeId: json['evaluation_type_id'] as String,
@@ -12,7 +12,7 @@ factory AigConfigDeleteEvaluationsResponseResultResults.fromJson(Map<String, dyn
   status: (json['status'] as num).toDouble(),
   statusDescription: json['status_description'] as String,
   totalLogs: (json['total_logs'] as num).toDouble(),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -32,7 +32,7 @@ final String statusDescription;
 
 final double totalLogs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'evaluation_id': evaluationId,
   'evaluation_type_id': evaluationTypeId,
@@ -42,8 +42,8 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'status_description': statusDescription,
   'total_logs': totalLogs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('evaluation_id') && json['evaluation_id'] is String &&
       json.containsKey('evaluation_type_id') && json['evaluation_type_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -51,8 +51,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('result') && json['result'] is String &&
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('status_description') && json['status_description'] is String &&
-      json.containsKey('total_logs') && json['total_logs'] is num; } 
-AigConfigDeleteEvaluationsResponseResultResults copyWith({DateTime? createdAt, String? evaluationId, String? evaluationTypeId, String? id, DateTime? modifiedAt, String? result, double? status, String? statusDescription, double? totalLogs, }) { return AigConfigDeleteEvaluationsResponseResultResults(
+      json.containsKey('total_logs') && json['total_logs'] is num;}
+AigConfigDeleteEvaluationsResponseResultResults copyWith({DateTime? createdAt, String? evaluationId, String? evaluationTypeId, String? id, DateTime? modifiedAt, String? result, double? status, String? statusDescription, double? totalLogs, }) {return AigConfigDeleteEvaluationsResponseResultResults(
   createdAt: createdAt ?? this.createdAt,
   evaluationId: evaluationId ?? this.evaluationId,
   evaluationTypeId: evaluationTypeId ?? this.evaluationTypeId,
@@ -62,8 +62,8 @@ AigConfigDeleteEvaluationsResponseResultResults copyWith({DateTime? createdAt, S
   status: status ?? this.status,
   statusDescription: statusDescription ?? this.statusDescription,
   totalLogs: totalLogs ?? this.totalLogs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigDeleteEvaluationsResponseResultResults &&
           createdAt == other.createdAt &&
           evaluationId == other.evaluationId &&
@@ -73,7 +73,7 @@ AigConfigDeleteEvaluationsResponseResultResults copyWith({DateTime? createdAt, S
           result == other.result &&
           status == other.status &&
           statusDescription == other.statusDescription &&
-          totalLogs == other.totalLogs; } 
-@override int get hashCode { return Object.hash(createdAt, evaluationId, evaluationTypeId, id, modifiedAt, result, status, statusDescription, totalLogs); } 
-@override String toString() { return 'AigConfigDeleteEvaluationsResponseResultResults(createdAt: $createdAt, evaluationId: $evaluationId, evaluationTypeId: $evaluationTypeId, id: $id, modifiedAt: $modifiedAt, result: $result, status: $status, statusDescription: $statusDescription, totalLogs: $totalLogs)'; } 
- }
+          totalLogs == other.totalLogs;}
+@override int get hashCode {return Object.hash(createdAt, evaluationId, evaluationTypeId, id, modifiedAt, result, status, statusDescription, totalLogs);}
+@override String toString() {return 'AigConfigDeleteEvaluationsResponseResultResults(createdAt: $createdAt, evaluationId: $evaluationId, evaluationTypeId: $evaluationTypeId, id: $id, modifiedAt: $modifiedAt, result: $result, status: $status, statusDescription: $statusDescription, totalLogs: $totalLogs)';}
+}

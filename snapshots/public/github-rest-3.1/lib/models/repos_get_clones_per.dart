@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGetClonesPer {const ReposGetClonesPer._(this.value);
 
-factory ReposGetClonesPer.fromJson(String json) { return switch (json) {
+factory ReposGetClonesPer.fromJson(String json) {return switch (json) {
   'day' => day,
   'week' => week,
   _ => ReposGetClonesPer._(json),
-}; }
+};}
 
 static const ReposGetClonesPer day = ReposGetClonesPer._('day');
 
@@ -16,11 +16,11 @@ static const List<ReposGetClonesPer> values = [day, week];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetClonesPer && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposGetClonesPer($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposGetClonesPer && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposGetClonesPer($value)';}
+}

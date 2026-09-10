@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'errors.dart';import 'payment_flows_automatic_payment_methods_setup_intent.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'setup_intent_application.dart';import 'setup_intent_customer.dart';import 'setup_intent_latest_attempt.dart';import 'setup_intent_mandate.dart';import 'setup_intent_next_action.dart';import 'setup_intent_on_behalf_of.dart';import 'setup_intent_payment_method.dart';import 'setup_intent_payment_method_options.dart';import 'setup_intent_single_use_mandate.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
 @immutable final class SetupIntentCancellationReason {const SetupIntentCancellationReason._(this.value);
 
-factory SetupIntentCancellationReason.fromJson(String json) { return switch (json) {
+factory SetupIntentCancellationReason.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'duplicate' => duplicate,
   'requested_by_customer' => requestedByCustomer,
   _ => SetupIntentCancellationReason._(json),
-}; }
+};}
 
 static const SetupIntentCancellationReason abandoned = SetupIntentCancellationReason._('abandoned');
 
@@ -20,17 +20,17 @@ static const List<SetupIntentCancellationReason> values = [abandoned, duplicate,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentCancellationReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentCancellationReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentCancellationReason($value)';}
+}
 @immutable final class SetupIntentExcludedPaymentMethodTypes {const SetupIntentExcludedPaymentMethodTypes._(this.value);
 
-factory SetupIntentExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory SetupIntentExcludedPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -81,7 +81,7 @@ factory SetupIntentExcludedPaymentMethodTypes.fromJson(String json) { return swi
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => SetupIntentExcludedPaymentMethodTypes._(json),
-}; }
+};}
 
 static const SetupIntentExcludedPaymentMethodTypes acssDebit = SetupIntentExcludedPaymentMethodTypes._('acss_debit');
 
@@ -185,21 +185,21 @@ static const List<SetupIntentExcludedPaymentMethodTypes> values = [acssDebit, af
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentExcludedPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentExcludedPaymentMethodTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentExcludedPaymentMethodTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentExcludedPaymentMethodTypes($value)';}
+}
 @immutable final class SetupIntentFlowDirections {const SetupIntentFlowDirections._(this.value);
 
-factory SetupIntentFlowDirections.fromJson(String json) { return switch (json) {
+factory SetupIntentFlowDirections.fromJson(String json) {return switch (json) {
   'inbound' => inbound,
   'outbound' => outbound,
   _ => SetupIntentFlowDirections._(json),
-}; }
+};}
 
 static const SetupIntentFlowDirections inbound = SetupIntentFlowDirections._('inbound');
 
@@ -209,21 +209,21 @@ static const List<SetupIntentFlowDirections> values = [inbound, outbound];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentFlowDirections && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentFlowDirections($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentFlowDirections && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentFlowDirections($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SetupIntentObject {const SetupIntentObject._(this.value);
 
-factory SetupIntentObject.fromJson(String json) { return switch (json) {
+factory SetupIntentObject.fromJson(String json) {return switch (json) {
   'setup_intent' => setupIntent,
   _ => SetupIntentObject._(json),
-}; }
+};}
 
 static const SetupIntentObject setupIntent = SetupIntentObject._('setup_intent');
 
@@ -231,18 +231,18 @@ static const List<SetupIntentObject> values = [setupIntent];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentObject($value)';}
+}
 /// [Status](https://docs.stripe.com/payments/intents#intent-statuses) of this SetupIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `canceled`, or `succeeded`.
 @immutable final class SetupIntentStatus {const SetupIntentStatus._(this.value);
 
-factory SetupIntentStatus.fromJson(String json) { return switch (json) {
+factory SetupIntentStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'processing' => processing,
   'requires_action' => requiresAction,
@@ -250,7 +250,7 @@ factory SetupIntentStatus.fromJson(String json) { return switch (json) {
   'requires_payment_method' => requiresPaymentMethod,
   'succeeded' => succeeded,
   _ => SetupIntentStatus._(json),
-}; }
+};}
 
 static const SetupIntentStatus canceled = SetupIntentStatus._('canceled');
 
@@ -268,14 +268,14 @@ static const List<SetupIntentStatus> values = [canceled, processing, requiresAct
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupIntentStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupIntentStatus($value)';}
+}
 /// A SetupIntent guides you through the process of setting up and saving a customer's payment credentials for future payments.
 /// For example, you can use a SetupIntent to set up and save your customer's card without immediately collecting a payment.
 /// Later, you can use [PaymentIntents](https://api.stripe.com#payment_intents) to drive the payment flow.
@@ -299,7 +299,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Setup Intents API](https://docs.stripe.com/payments/setup-intents)
 @immutable final class SetupIntent {const SetupIntent({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethodTypes, required this.status, required this.usage, this.application = const Omittable.absent(), this.attachToSelf, this.automaticPaymentMethods = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.clientSecret = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.excludedPaymentMethodTypes = const Omittable.absent(), this.flowDirections = const Omittable.absent(), this.lastSetupError = const Omittable.absent(), this.latestAttempt = const Omittable.absent(), this.mandate = const Omittable.absent(), this.metadata = const Omittable.absent(), this.nextAction = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.paymentMethod = const Omittable.absent(), this.paymentMethodConfigurationDetails = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.singleUseMandate = const Omittable.absent(), });
 
-factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
+factory SetupIntent.fromJson(Map<String, dynamic> json) {return SetupIntent(
   application: json.containsKey('application') ? Omittable(json['application'] != null ? SetupIntentApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   attachToSelf: json['attach_to_self'] as bool?,
   automaticPaymentMethods: json.containsKey('automatic_payment_methods') ? Omittable(json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -327,7 +327,7 @@ factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
   singleUseMandate: json.containsKey('single_use_mandate') ? Omittable(json['single_use_mandate'] != null ? SetupIntentSingleUseMandate.fromJson(json['single_use_mandate']) : null) : const Omittable.absent(),
   status: SetupIntentStatus.fromJson(json['status'] as String),
   usage: json['usage'] as String,
-); }
+);}
 
 /// ID of the Connect application that created the SetupIntent.
 final Omittable<SetupIntentApplication?> application;
@@ -422,7 +422,7 @@ final SetupIntentStatus status;
 /// Use `on_session` if you intend to only reuse the payment method when the customer is in your checkout flow. Use `off_session` if your customer may or may not be in your checkout flow. If not provided, this value defaults to `off_session`.
 final String usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (application.isPresent) 'application': application.value?.toJson(),
   'attach_to_self': ?attachToSelf,
   if (automaticPaymentMethods.isPresent) 'automatic_payment_methods': automaticPaymentMethods.value?.toJson(),
@@ -450,15 +450,15 @@ Map<String, dynamic> toJson() { return {
   if (singleUseMandate.isPresent) 'single_use_mandate': singleUseMandate.value?.toJson(),
   'status': status.toJson(),
   'usage': usage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('payment_method_types') &&
       json.containsKey('status') &&
-      json.containsKey('usage') && json['usage'] is String; } 
-SetupIntent copyWith({Omittable<SetupIntentApplication?>? application, bool? Function()? attachToSelf, Omittable<PaymentFlowsAutomaticPaymentMethodsSetupIntent?>? automaticPaymentMethods, Omittable<SetupIntentCancellationReason?>? cancellationReason, Omittable<String?>? clientSecret, int? created, Omittable<SetupIntentCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, Omittable<List<SetupIntentExcludedPaymentMethodTypes>?>? excludedPaymentMethodTypes, Omittable<List<SetupIntentFlowDirections>?>? flowDirections, String? id, Omittable<Errors?>? lastSetupError, Omittable<SetupIntentLatestAttempt?>? latestAttempt, bool? livemode, Omittable<SetupIntentMandate?>? mandate, Omittable<Map<String,String>?>? metadata, Omittable<SetupIntentNextAction?>? nextAction, SetupIntentObject? object, Omittable<SetupIntentOnBehalfOf?>? onBehalfOf, Omittable<SetupIntentPaymentMethod?>? paymentMethod, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<SetupIntentPaymentMethodOptions?>? paymentMethodOptions, List<String>? paymentMethodTypes, Omittable<SetupIntentSingleUseMandate?>? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
+      json.containsKey('usage') && json['usage'] is String;}
+SetupIntent copyWith({Omittable<SetupIntentApplication?>? application, bool? Function()? attachToSelf, Omittable<PaymentFlowsAutomaticPaymentMethodsSetupIntent?>? automaticPaymentMethods, Omittable<SetupIntentCancellationReason?>? cancellationReason, Omittable<String?>? clientSecret, int? created, Omittable<SetupIntentCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, Omittable<List<SetupIntentExcludedPaymentMethodTypes>?>? excludedPaymentMethodTypes, Omittable<List<SetupIntentFlowDirections>?>? flowDirections, String? id, Omittable<Errors?>? lastSetupError, Omittable<SetupIntentLatestAttempt?>? latestAttempt, bool? livemode, Omittable<SetupIntentMandate?>? mandate, Omittable<Map<String,String>?>? metadata, Omittable<SetupIntentNextAction?>? nextAction, SetupIntentObject? object, Omittable<SetupIntentOnBehalfOf?>? onBehalfOf, Omittable<SetupIntentPaymentMethod?>? paymentMethod, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<SetupIntentPaymentMethodOptions?>? paymentMethodOptions, List<String>? paymentMethodTypes, Omittable<SetupIntentSingleUseMandate?>? singleUseMandate, SetupIntentStatus? status, String? usage, }) {return SetupIntent(
   application: application ?? this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   automaticPaymentMethods: automaticPaymentMethods ?? this.automaticPaymentMethods,
@@ -486,8 +486,8 @@ SetupIntent copyWith({Omittable<SetupIntentApplication?>? application, bool? Fun
   singleUseMandate: singleUseMandate ?? this.singleUseMandate,
   status: status ?? this.status,
   usage: usage ?? this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupIntent &&
           application == other.application &&
           attachToSelf == other.attachToSelf &&
@@ -517,7 +517,7 @@ SetupIntent copyWith({Omittable<SetupIntentApplication?>? application, bool? Fun
           listEquals(paymentMethodTypes, other.paymentMethodTypes) &&
           singleUseMandate == other.singleUseMandate &&
           status == other.status &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hashAll([application, attachToSelf, automaticPaymentMethods, cancellationReason, clientSecret, created, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes.value ?? const []), Object.hashAll(flowDirections.value ?? const []), id, lastSetupError, latestAttempt, livemode, mandate, metadata, nextAction, object, onBehalfOf, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), singleUseMandate, status, usage]); } 
-@override String toString() { return 'SetupIntent(application: $application, attachToSelf: $attachToSelf, automaticPaymentMethods: $automaticPaymentMethods, cancellationReason: $cancellationReason, clientSecret: $clientSecret, created: $created, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, flowDirections: $flowDirections, id: $id, lastSetupError: $lastSetupError, latestAttempt: $latestAttempt, livemode: $livemode, mandate: $mandate, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, singleUseMandate: $singleUseMandate, status: $status, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hashAll([application, attachToSelf, automaticPaymentMethods, cancellationReason, clientSecret, created, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes.value ?? const []), Object.hashAll(flowDirections.value ?? const []), id, lastSetupError, latestAttempt, livemode, mandate, metadata, nextAction, object, onBehalfOf, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), singleUseMandate, status, usage]);}
+@override String toString() {return 'SetupIntent(application: $application, attachToSelf: $attachToSelf, automaticPaymentMethods: $automaticPaymentMethods, cancellationReason: $cancellationReason, clientSecret: $clientSecret, created: $created, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, flowDirections: $flowDirections, id: $id, lastSetupError: $lastSetupError, latestAttempt: $latestAttempt, livemode: $livemode, mandate: $mandate, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, singleUseMandate: $singleUseMandate, status: $status, usage: $usage)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers.dart';import 'treasury_inbound_transfer_transaction.dart';import 'treasury_inbound_transfers_resource_failure_details.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryInboundTransferObject {const TreasuryInboundTransferObject._(this.value);
 
-factory TreasuryInboundTransferObject.fromJson(String json) { return switch (json) {
+factory TreasuryInboundTransferObject.fromJson(String json) {return switch (json) {
   'treasury.inbound_transfer' => treasuryInboundTransfer,
   _ => TreasuryInboundTransferObject._(json),
-}; }
+};}
 
 static const TreasuryInboundTransferObject treasuryInboundTransfer = TreasuryInboundTransferObject._('treasury.inbound_transfer');
 
@@ -14,24 +14,24 @@ static const List<TreasuryInboundTransferObject> values = [treasuryInboundTransf
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryInboundTransferObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryInboundTransferObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryInboundTransferObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryInboundTransferObject($value)';}
+}
 /// Status of the InboundTransfer: `processing`, `succeeded`, `failed`, and `canceled`. An InboundTransfer is `processing` if it is created and pending. The status changes to `succeeded` once the funds have been "confirmed" and a `transaction` is created and posted. The status changes to `failed` if the transfer fails.
 @immutable final class TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus._(this.value);
 
-factory TreasuryInboundTransferStatus.fromJson(String json) { return switch (json) {
+factory TreasuryInboundTransferStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'processing' => processing,
   'succeeded' => succeeded,
   _ => TreasuryInboundTransferStatus._(json),
-}; }
+};}
 
 static const TreasuryInboundTransferStatus canceled = TreasuryInboundTransferStatus._('canceled');
 
@@ -45,20 +45,20 @@ static const List<TreasuryInboundTransferStatus> values = [canceled, failed, pro
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryInboundTransferStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryInboundTransferStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryInboundTransferStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryInboundTransferStatus($value)';}
+}
 /// Use [InboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers) to add funds to your [FinancialAccount](https://api.stripe.com#financial_accounts) via a PaymentMethod that is owned by you. The funds will be transferred via an ACH debit.
 /// 
 /// Related guide: [Moving money with Treasury using InboundTransfer objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers)
 @immutable final class TreasuryInboundTransfer {const TreasuryInboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.financialAccount, required this.id, required this.linkedFlows, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, this.description = const Omittable.absent(), this.failureDetails = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.originPaymentMethod = const Omittable.absent(), this.originPaymentMethodDetails = const Omittable.absent(), this.returned = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
-factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfer(
+factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) {return TreasuryInboundTransfer(
   amount: (json['amount'] as num).toInt(),
   cancelable: json['cancelable'] as bool,
   created: (json['created'] as num).toInt(),
@@ -79,7 +79,7 @@ factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return Tre
   status: TreasuryInboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryInboundTransferTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -139,7 +139,7 @@ final TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions s
 /// The Transaction associated with this object.
 final Omittable<TreasuryInboundTransferTransaction?> transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'cancelable': cancelable,
   'created': created,
@@ -160,8 +160,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
   if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('cancelable') && json['cancelable'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -173,8 +173,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('statement_descriptor') && json['statement_descriptor'] is String &&
       json.containsKey('status') &&
-      json.containsKey('status_transitions'); } 
-TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<TreasuryInboundTransfersResourceFailureDetails?>? failureDetails, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, Omittable<String?>? originPaymentMethod, Omittable<InboundTransfers?>? originPaymentMethodDetails, Omittable<bool?>? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, Omittable<TreasuryInboundTransferTransaction?>? transaction, }) { return TreasuryInboundTransfer(
+      json.containsKey('status_transitions');}
+TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<TreasuryInboundTransfersResourceFailureDetails?>? failureDetails, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, Omittable<String?>? originPaymentMethod, Omittable<InboundTransfers?>? originPaymentMethodDetails, Omittable<bool?>? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, Omittable<TreasuryInboundTransferTransaction?>? transaction, }) {return TreasuryInboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,
@@ -195,8 +195,8 @@ TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, S
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
   transaction: transaction ?? this.transaction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryInboundTransfer &&
           amount == other.amount &&
           cancelable == other.cancelable &&
@@ -217,7 +217,7 @@ TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, S
           statementDescriptor == other.statementDescriptor &&
           status == other.status &&
           statusTransitions == other.statusTransitions &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(amount, cancelable, created, currency, description, failureDetails, financialAccount, hostedRegulatoryReceiptUrl, id, linkedFlows, livemode, metadata, object, originPaymentMethod, originPaymentMethodDetails, returned, statementDescriptor, status, statusTransitions, transaction); } 
-@override String toString() { return 'TreasuryInboundTransfer(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, description: $description, failureDetails: $failureDetails, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, linkedFlows: $linkedFlows, livemode: $livemode, metadata: $metadata, object: $object, originPaymentMethod: $originPaymentMethod, originPaymentMethodDetails: $originPaymentMethodDetails, returned: $returned, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)'; } 
- }
+          transaction == other.transaction;}
+@override int get hashCode {return Object.hash(amount, cancelable, created, currency, description, failureDetails, financialAccount, hostedRegulatoryReceiptUrl, id, linkedFlows, livemode, metadata, object, originPaymentMethod, originPaymentMethodDetails, returned, statementDescriptor, status, statusTransitions, transaction);}
+@override String toString() {return 'TreasuryInboundTransfer(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, description: $description, failureDetails: $failureDetails, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, linkedFlows: $linkedFlows, livemode: $livemode, metadata: $metadata, object: $object, originPaymentMethod: $originPaymentMethod, originPaymentMethodDetails: $originPaymentMethodDetails, returned: $returned, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)';}
+}

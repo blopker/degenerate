@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_list_too
 /// 
 @immutable final class McpListTools {const McpListTools({required this.type, required this.id, required this.serverLabel, required this.tools, this.error = const Omittable.absent(), });
 
-factory McpListTools.fromJson(Map<String, dynamic> json) { return McpListTools(
+factory McpListTools.fromJson(Map<String, dynamic> json) {return McpListTools(
   type: json['type'] as String,
   id: json['id'] as String,
   serverLabel: json['server_label'] as String,
   tools: (json['tools'] as List<dynamic>).map((e) => McpListToolsTool.fromJson(e as Map<String, dynamic>)).toList(),
   error: json.containsKey('error') ? Omittable(json['error'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the item. Always `mcp_list_tools`.
 /// 
@@ -32,31 +32,31 @@ final List<McpListToolsTool> tools;
 /// 
 final Omittable<String?> error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'server_label': serverLabel,
   'tools': tools.map((e) => e.toJson()).toList(),
   if (error.isPresent) 'error': error.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
-      json.containsKey('tools'); } 
-McpListTools copyWith({String? type, String? id, String? serverLabel, List<McpListToolsTool>? tools, Omittable<String?>? error, }) { return McpListTools(
+      json.containsKey('tools');}
+McpListTools copyWith({String? type, String? id, String? serverLabel, List<McpListToolsTool>? tools, Omittable<String?>? error, }) {return McpListTools(
   type: type ?? this.type,
   id: id ?? this.id,
   serverLabel: serverLabel ?? this.serverLabel,
   tools: tools ?? this.tools,
   error: error ?? this.error,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McpListTools &&
           type == other.type &&
           id == other.id &&
           serverLabel == other.serverLabel &&
           listEquals(tools, other.tools) &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, Object.hashAll(tools), error); } 
-@override String toString() { return 'McpListTools(type: $type, id: $id, serverLabel: $serverLabel, tools: $tools, error: $error)'; } 
- }
+          error == other.error;}
+@override int get hashCode {return Object.hash(type, id, serverLabel, Object.hashAll(tools), error);}
+@override String toString() {return 'McpListTools(type: $type, id: $id, serverLabel: $serverLabel, tools: $tools, error: $error)';}
+}

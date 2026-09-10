@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank._(this.value);
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank.fromJson(String json) { return switch (json) {
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank.fromJson(String json) {return switch (json) {
   'alior_bank' => aliorBank,
   'bank_millennium' => bankMillennium,
   'bank_nowy_bfg_sa' => bankNowyBfgSa,
@@ -30,7 +30,7 @@ factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank.fromJso
   'velobank' => velobank,
   'volkswagen_bank' => volkswagenBank,
   _ => PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank._(json),
-}; }
+};}
 
 static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank aliorBank = PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank._('alior_bank');
 
@@ -88,32 +88,32 @@ static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Ba
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank($value)';}
+}
 @immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24 {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24({this.bank});
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24.fromJson(Map<String, dynamic> json) {return PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(
   bank: json['bank'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24 copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank? Function()? bank}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24 copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank? Function()? bank}) {return PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(
   bank: bank != null ? bank() : this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24 &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(bank: $bank)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._(this.value);
 
-factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.fromJson(String json) { return switch (json) {
+factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.fromJson(String json) {return switch (json) {
   'FREE' => free,
   'FLAT_RATE' => flatRate,
   'PER_UNIT' => perUnit,
   _ => WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._(json),
-}; }
+};}
 
 static const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel free = WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._('FREE');
 
@@ -19,17 +19,17 @@ static const List<WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel($value)';}
+}
 @immutable final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan {const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
 
-factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan(
+factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) {return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan(
   bullets: (json['bullets'] as List<dynamic>).map((e) => e as String).toList(),
   description: json['description'] as String,
   hasFreeTrial: json['has_free_trial'] as bool,
@@ -39,7 +39,7 @@ factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan.fromJso
   priceModel: WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.fromJson(json['price_model'] as String),
   unitName: json['unit_name'] as String?,
   yearlyPriceInCents: (json['yearly_price_in_cents'] as num).toInt(),
-); }
+);}
 
 final List<String> bullets;
 
@@ -59,7 +59,7 @@ final String? unitName;
 
 final int yearlyPriceInCents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bullets': bullets,
   'description': description,
   'has_free_trial': hasFreeTrial,
@@ -69,8 +69,8 @@ Map<String, dynamic> toJson() { return {
   'price_model': priceModel.toJson(),
   'unit_name': unitName,
   'yearly_price_in_cents': yearlyPriceInCents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bullets') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bullets') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('has_free_trial') && json['has_free_trial'] is bool &&
       json.containsKey('id') && json['id'] is num &&
@@ -78,8 +78,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bulle
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('price_model') &&
       json.containsKey('unit_name') && (json['unit_name'] == null || json['unit_name'] is String) &&
-      json.containsKey('yearly_price_in_cents') && json['yearly_price_in_cents'] is num; } 
-WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan copyWith({List<String>? bullets, String? description, bool? hasFreeTrial, int? id, int? monthlyPriceInCents, String? name, WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel? priceModel, String? Function()? unitName, int? yearlyPriceInCents, }) { return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan(
+      json.containsKey('yearly_price_in_cents') && json['yearly_price_in_cents'] is num;}
+WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan copyWith({List<String>? bullets, String? description, bool? hasFreeTrial, int? id, int? monthlyPriceInCents, String? name, WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel? priceModel, String? Function()? unitName, int? yearlyPriceInCents, }) {return WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan(
   bullets: bullets ?? this.bullets,
   description: description ?? this.description,
   hasFreeTrial: hasFreeTrial ?? this.hasFreeTrial,
@@ -89,8 +89,8 @@ WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan copyWith({List<
   priceModel: priceModel ?? this.priceModel,
   unitName: unitName != null ? unitName() : this.unitName,
   yearlyPriceInCents: yearlyPriceInCents ?? this.yearlyPriceInCents,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan &&
           listEquals(bullets, other.bullets) &&
           description == other.description &&
@@ -100,7 +100,7 @@ WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan copyWith({List<
           name == other.name &&
           priceModel == other.priceModel &&
           unitName == other.unitName &&
-          yearlyPriceInCents == other.yearlyPriceInCents; } 
-@override int get hashCode { return Object.hash(Object.hashAll(bullets), description, hasFreeTrial, id, monthlyPriceInCents, name, priceModel, unitName, yearlyPriceInCents); } 
-@override String toString() { return 'WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan(bullets: $bullets, description: $description, hasFreeTrial: $hasFreeTrial, id: $id, monthlyPriceInCents: $monthlyPriceInCents, name: $name, priceModel: $priceModel, unitName: $unitName, yearlyPriceInCents: $yearlyPriceInCents)'; } 
- }
+          yearlyPriceInCents == other.yearlyPriceInCents;}
+@override int get hashCode {return Object.hash(Object.hashAll(bullets), description, hasFreeTrial, id, monthlyPriceInCents, name, priceModel, unitName, yearlyPriceInCents);}
+@override String toString() {return 'WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan(bullets: $bullets, description: $description, hasFreeTrial: $hasFreeTrial, id: $id, monthlyPriceInCents: $monthlyPriceInCents, name: $name, priceModel: $priceModel, unitName: $unitName, yearlyPriceInCents: $yearlyPriceInCents)';}
+}

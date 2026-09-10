@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging({this.endOffset, this.startOffset, this.totalCount, });
 
-factory LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging.fromJson(Map<String, dynamic> json) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(
+factory LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging.fromJson(Map<String, dynamic> json) {return LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(
   endOffset: json['end_offset'] != null ? (json['end_offset'] as num).toDouble() : null,
   startOffset: json['start_offset'] != null ? (json['start_offset'] as num).toDouble() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toDouble() : null,
-); }
+);}
 
 final double? endOffset;
 
@@ -14,22 +14,22 @@ final double? startOffset;
 
 final double? totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_offset': ?endOffset,
   'start_offset': ?startOffset,
   'total_count': ?totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end_offset', 'start_offset', 'total_count'}.contains(key)); } 
-LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging copyWith({double? Function()? endOffset, double? Function()? startOffset, double? Function()? totalCount, }) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'end_offset', 'start_offset', 'total_count'}.contains(key));}
+LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging copyWith({double? Function()? endOffset, double? Function()? startOffset, double? Function()? totalCount, }) {return LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(
   endOffset: endOffset != null ? endOffset() : this.endOffset,
   startOffset: startOffset != null ? startOffset() : this.startOffset,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging &&
           endOffset == other.endOffset &&
           startOffset == other.startOffset &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(endOffset, startOffset, totalCount); } 
-@override String toString() { return 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(endOffset: $endOffset, startOffset: $startOffset, totalCount: $totalCount)'; } 
- }
+          totalCount == other.totalCount;}
+@override int get hashCode {return Object.hash(endOffset, startOffset, totalCount);}
+@override String toString() {return 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(endOffset: $endOffset, startOffset: $startOffset, totalCount: $totalCount)';}
+}

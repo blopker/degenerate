@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentLinksResourceCustomFieldsDropdownOption {const PaymentLinksResourceCustomFieldsDropdownOption({required this.label, required this.value, });
 
-factory PaymentLinksResourceCustomFieldsDropdownOption.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsDropdownOption(
+factory PaymentLinksResourceCustomFieldsDropdownOption.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceCustomFieldsDropdownOption(
   label: json['label'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// The label for the option, displayed to the customer. Up to 100 characters.
 final String label;
@@ -14,20 +14,20 @@ final String label;
 /// The value for this option, not displayed to the customer, used by your integration to reconcile the option selected by the customer. Must be unique to this option, alphanumeric, and up to 100 characters.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'label': label,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PaymentLinksResourceCustomFieldsDropdownOption copyWith({String? label, String? value, }) { return PaymentLinksResourceCustomFieldsDropdownOption(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && json['label'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PaymentLinksResourceCustomFieldsDropdownOption copyWith({String? label, String? value, }) {return PaymentLinksResourceCustomFieldsDropdownOption(
   label: label ?? this.label,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentLinksResourceCustomFieldsDropdownOption &&
           label == other.label &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(label, value); } 
-@override String toString() { return 'PaymentLinksResourceCustomFieldsDropdownOption(label: $label, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(label, value);}
+@override String toString() {return 'PaymentLinksResourceCustomFieldsDropdownOption(label: $label, value: $value)';}
+}

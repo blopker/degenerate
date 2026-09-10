@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
 @immutable final class IncomingPhoneNumberMobileEnumEmergencyStatus {const IncomingPhoneNumberMobileEnumEmergencyStatus._(this.value);
 
-factory IncomingPhoneNumberMobileEnumEmergencyStatus.fromJson(String json) { return switch (json) {
+factory IncomingPhoneNumberMobileEnumEmergencyStatus.fromJson(String json) {return switch (json) {
   'Active' => active,
   'Inactive' => inactive,
   _ => IncomingPhoneNumberMobileEnumEmergencyStatus._(json),
-}; }
+};}
 
 static const IncomingPhoneNumberMobileEnumEmergencyStatus active = IncomingPhoneNumberMobileEnumEmergencyStatus._('Active');
 
@@ -17,11 +17,11 @@ static const List<IncomingPhoneNumberMobileEnumEmergencyStatus> values = [active
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IncomingPhoneNumberMobileEnumEmergencyStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IncomingPhoneNumberMobileEnumEmergencyStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IncomingPhoneNumberMobileEnumEmergencyStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IncomingPhoneNumberMobileEnumEmergencyStatus($value)';}
+}

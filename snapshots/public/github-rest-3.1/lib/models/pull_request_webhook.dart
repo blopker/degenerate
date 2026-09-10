@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'auto_merge.dart';import 'milestone.dart';import 'pull_request_webhook_base.dart';import 'pull_request_webhook_head.dart';import 'pull_request_webhook_labels.dart';import 'pull_request_webhook_links.dart';import 'simple_user.dart';import 'team_simple.dart';/// State of this Pull Request. Either `open` or `closed`.
 @immutable final class PullRequestWebhookState {const PullRequestWebhookState._(this.value);
 
-factory PullRequestWebhookState.fromJson(String json) { return switch (json) {
+factory PullRequestWebhookState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => PullRequestWebhookState._(json),
-}; }
+};}
 
 static const PullRequestWebhookState open = PullRequestWebhookState._('open');
 
@@ -17,26 +17,26 @@ static const List<PullRequestWebhookState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestWebhookState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestWebhookState($value)';}
+}
 /// The default value for a merge commit message.
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
 @immutable final class PullRequestWebhookMergeCommitMessage {const PullRequestWebhookMergeCommitMessage._(this.value);
 
-factory PullRequestWebhookMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory PullRequestWebhookMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'PR_TITLE' => prTitle,
   'BLANK' => blank,
   _ => PullRequestWebhookMergeCommitMessage._(json),
-}; }
+};}
 
 static const PullRequestWebhookMergeCommitMessage prBody = PullRequestWebhookMergeCommitMessage._('PR_BODY');
 
@@ -48,24 +48,24 @@ static const List<PullRequestWebhookMergeCommitMessage> values = [prBody, prTitl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestWebhookMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestWebhookMergeCommitMessage($value)';}
+}
 /// The default value for a merge commit title.
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., "Merge pull request #123 from branch-name").
 @immutable final class PullRequestWebhookMergeCommitTitle {const PullRequestWebhookMergeCommitTitle._(this.value);
 
-factory PullRequestWebhookMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory PullRequestWebhookMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'MERGE_MESSAGE' => mergeMessage,
   _ => PullRequestWebhookMergeCommitTitle._(json),
-}; }
+};}
 
 static const PullRequestWebhookMergeCommitTitle prTitle = PullRequestWebhookMergeCommitTitle._('PR_TITLE');
 
@@ -75,26 +75,26 @@ static const List<PullRequestWebhookMergeCommitTitle> values = [prTitle, mergeMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestWebhookMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestWebhookMergeCommitTitle($value)';}
+}
 /// The default value for a squash merge commit message:
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
 @immutable final class PullRequestWebhookSquashMergeCommitMessage {const PullRequestWebhookSquashMergeCommitMessage._(this.value);
 
-factory PullRequestWebhookSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
+factory PullRequestWebhookSquashMergeCommitMessage.fromJson(String json) {return switch (json) {
   'PR_BODY' => prBody,
   'COMMIT_MESSAGES' => commitMessages,
   'BLANK' => blank,
   _ => PullRequestWebhookSquashMergeCommitMessage._(json),
-}; }
+};}
 
 static const PullRequestWebhookSquashMergeCommitMessage prBody = PullRequestWebhookSquashMergeCommitMessage._('PR_BODY');
 
@@ -106,24 +106,24 @@ static const List<PullRequestWebhookSquashMergeCommitMessage> values = [prBody, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookSquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookSquashMergeCommitMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestWebhookSquashMergeCommitMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestWebhookSquashMergeCommitMessage($value)';}
+}
 /// The default value for a squash merge commit title:
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 @immutable final class PullRequestWebhookSquashMergeCommitTitle {const PullRequestWebhookSquashMergeCommitTitle._(this.value);
 
-factory PullRequestWebhookSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
+factory PullRequestWebhookSquashMergeCommitTitle.fromJson(String json) {return switch (json) {
   'PR_TITLE' => prTitle,
   'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
   _ => PullRequestWebhookSquashMergeCommitTitle._(json),
-}; }
+};}
 
 static const PullRequestWebhookSquashMergeCommitTitle prTitle = PullRequestWebhookSquashMergeCommitTitle._('PR_TITLE');
 
@@ -133,17 +133,17 @@ static const List<PullRequestWebhookSquashMergeCommitTitle> values = [prTitle, c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookSquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookSquashMergeCommitTitle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestWebhookSquashMergeCommitTitle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestWebhookSquashMergeCommitTitle($value)';}
+}
 @immutable final class PullRequestWebhook {const PullRequestWebhook({required this.labels, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.url, required this.milestone, required this.changedFiles, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.merged, required this.additions, required this.commits, required this.head, required this.base, required this.links, required this.authorAssociation, required this.autoMerge, required this.maintainerCanModify, required this.reviewComments, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.deletions, this.useSquashPrTitleAsDefault, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason = const Omittable.absent(), this.allowAutoMerge, this.allowUpdateBranch, this.deleteBranchOnMerge, this.mergeCommitMessage, this.mergeCommitTitle, this.squashMergeCommitMessage, this.squashMergeCommitTitle, this.rebaseable = const Omittable.absent(), });
 
-factory PullRequestWebhook.fromJson(Map<String, dynamic> json) { return PullRequestWebhook(
+factory PullRequestWebhook.fromJson(Map<String, dynamic> json) {return PullRequestWebhook(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -200,7 +200,7 @@ factory PullRequestWebhook.fromJson(Map<String, dynamic> json) { return PullRequ
   squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? PullRequestWebhookSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
   squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? PullRequestWebhookSquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
   useSquashPrTitleAsDefault: json['use_squash_pr_title_as_default'] as bool?,
-); }
+);}
 
 final Uri url;
 
@@ -339,12 +339,12 @@ final PullRequestWebhookSquashMergeCommitTitle? squashMergeCommitTitle;
 final bool? useSquashPrTitleAsDefault;
 
 /// The value with the schema default applied when absent.
-bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+bool get allowAutoMergeOrDefault {return allowAutoMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+bool get deleteBranchOnMergeOrDefault {return deleteBranchOnMerge ?? false;}
 /// The value with the schema default applied when absent.
-bool get useSquashPrTitleAsDefaultOrDefault { return useSquashPrTitleAsDefault ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get useSquashPrTitleAsDefaultOrDefault {return useSquashPrTitleAsDefault ?? false;}
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'node_id': nodeId,
@@ -401,8 +401,8 @@ Map<String, dynamic> toJson() { return {
   if (squashMergeCommitMessage != null) 'squash_merge_commit_message': squashMergeCommitMessage?.toJson(),
   if (squashMergeCommitTitle != null) 'squash_merge_commit_title': squashMergeCommitTitle?.toJson(),
   'use_squash_pr_title_as_default': ?useSquashPrTitleAsDefault,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -443,8 +443,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('commits') && json['commits'] is num &&
       json.containsKey('additions') && json['additions'] is num &&
       json.containsKey('deletions') && json['deletions'] is num &&
-      json.containsKey('changed_files') && json['changed_files'] is num; } 
-PullRequestWebhook copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestWebhookState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestWebhookLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestWebhookHead? head, PullRequestWebhookBase? base, PullRequestWebhookLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, bool? Function()? allowAutoMerge, bool? Function()? allowUpdateBranch, bool? Function()? deleteBranchOnMerge, PullRequestWebhookMergeCommitMessage? Function()? mergeCommitMessage, PullRequestWebhookMergeCommitTitle? Function()? mergeCommitTitle, PullRequestWebhookSquashMergeCommitMessage? Function()? squashMergeCommitMessage, PullRequestWebhookSquashMergeCommitTitle? Function()? squashMergeCommitTitle, bool? Function()? useSquashPrTitleAsDefault, }) { return PullRequestWebhook(
+      json.containsKey('changed_files') && json['changed_files'] is num;}
+PullRequestWebhook copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestWebhookState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestWebhookLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestWebhookHead? head, PullRequestWebhookBase? base, PullRequestWebhookLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, bool? Function()? allowAutoMerge, bool? Function()? allowUpdateBranch, bool? Function()? deleteBranchOnMerge, PullRequestWebhookMergeCommitMessage? Function()? mergeCommitMessage, PullRequestWebhookMergeCommitTitle? Function()? mergeCommitTitle, PullRequestWebhookSquashMergeCommitMessage? Function()? squashMergeCommitMessage, PullRequestWebhookSquashMergeCommitTitle? Function()? squashMergeCommitTitle, bool? Function()? useSquashPrTitleAsDefault, }) {return PullRequestWebhook(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -501,8 +501,8 @@ PullRequestWebhook copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Ur
   squashMergeCommitMessage: squashMergeCommitMessage != null ? squashMergeCommitMessage() : this.squashMergeCommitMessage,
   squashMergeCommitTitle: squashMergeCommitTitle != null ? squashMergeCommitTitle() : this.squashMergeCommitTitle,
   useSquashPrTitleAsDefault: useSquashPrTitleAsDefault != null ? useSquashPrTitleAsDefault() : this.useSquashPrTitleAsDefault,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestWebhook &&
           url == other.url &&
           id == other.id &&
@@ -559,7 +559,7 @@ PullRequestWebhook copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Ur
           mergeCommitTitle == other.mergeCommitTitle &&
           squashMergeCommitMessage == other.squashMergeCommitMessage &&
           squashMergeCommitTitle == other.squashMergeCommitTitle &&
-          useSquashPrTitleAsDefault == other.useSquashPrTitleAsDefault; } 
-@override int get hashCode { return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft, merged, mergeable, rebaseable, mergeableState, mergedBy, comments, reviewComments, maintainerCanModify, commits, additions, deletions, changedFiles, allowAutoMerge, allowUpdateBranch, deleteBranchOnMerge, mergeCommitMessage, mergeCommitTitle, squashMergeCommitMessage, squashMergeCommitTitle, useSquashPrTitleAsDefault]); } 
-@override String toString() { return 'PullRequestWebhook(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft, merged: $merged, mergeable: $mergeable, rebaseable: $rebaseable, mergeableState: $mergeableState, mergedBy: $mergedBy, comments: $comments, reviewComments: $reviewComments, maintainerCanModify: $maintainerCanModify, commits: $commits, additions: $additions, deletions: $deletions, changedFiles: $changedFiles, allowAutoMerge: $allowAutoMerge, allowUpdateBranch: $allowUpdateBranch, deleteBranchOnMerge: $deleteBranchOnMerge, mergeCommitMessage: $mergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, squashMergeCommitTitle: $squashMergeCommitTitle, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault)'; } 
- }
+          useSquashPrTitleAsDefault == other.useSquashPrTitleAsDefault;}
+@override int get hashCode {return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft, merged, mergeable, rebaseable, mergeableState, mergedBy, comments, reviewComments, maintainerCanModify, commits, additions, deletions, changedFiles, allowAutoMerge, allowUpdateBranch, deleteBranchOnMerge, mergeCommitMessage, mergeCommitTitle, squashMergeCommitMessage, squashMergeCommitTitle, useSquashPrTitleAsDefault]);}
+@override String toString() {return 'PullRequestWebhook(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft, merged: $merged, mergeable: $mergeable, rebaseable: $rebaseable, mergeableState: $mergeableState, mergedBy: $mergedBy, comments: $comments, reviewComments: $reviewComments, maintainerCanModify: $maintainerCanModify, commits: $commits, additions: $additions, deletions: $deletions, changedFiles: $changedFiles, allowAutoMerge: $allowAutoMerge, allowUpdateBranch: $allowUpdateBranch, deleteBranchOnMerge: $deleteBranchOnMerge, mergeCommitMessage: $mergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, squashMergeCommitTitle: $squashMergeCommitTitle, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault)';}
+}

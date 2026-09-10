@@ -7,22 +7,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_for
 /// 
 @immutable final class CreateEvalResponsesRunDataSourceSamplingParamsText {const CreateEvalResponsesRunDataSourceSamplingParamsText({this.format});
 
-factory CreateEvalResponsesRunDataSourceSamplingParamsText.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSourceSamplingParamsText(
+factory CreateEvalResponsesRunDataSourceSamplingParamsText.fromJson(Map<String, dynamic> json) {return CreateEvalResponsesRunDataSourceSamplingParamsText(
   format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 final TextResponseFormatConfiguration? format;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format'}.contains(key)); } 
-CreateEvalResponsesRunDataSourceSamplingParamsText copyWith({TextResponseFormatConfiguration? Function()? format}) { return CreateEvalResponsesRunDataSourceSamplingParamsText(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format'}.contains(key));}
+CreateEvalResponsesRunDataSourceSamplingParamsText copyWith({TextResponseFormatConfiguration? Function()? format}) {return CreateEvalResponsesRunDataSourceSamplingParamsText(
   format: format != null ? format() : this.format,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateEvalResponsesRunDataSourceSamplingParamsText &&
-          format == other.format; } 
-@override int get hashCode { return format.hashCode; } 
-@override String toString() { return 'CreateEvalResponsesRunDataSourceSamplingParamsText(format: $format)'; } 
- }
+          format == other.format;}
+@override int get hashCode {return format.hashCode;}
+@override String toString() {return 'CreateEvalResponsesRunDataSourceSamplingParamsText(format: $format)';}
+}

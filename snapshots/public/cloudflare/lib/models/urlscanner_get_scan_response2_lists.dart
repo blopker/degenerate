@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_lists_certificates.dart';@immutable final class UrlscannerGetScanResponse2Lists {const UrlscannerGetScanResponse2Lists({required this.asns, required this.certificates, required this.continents, required this.countries, required this.domains, required this.hashes, required this.ips, required this.linkDomains, required this.servers, required this.urls, });
 
-factory UrlscannerGetScanResponse2Lists.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Lists(
+factory UrlscannerGetScanResponse2Lists.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2Lists(
   asns: (json['asns'] as List<dynamic>).map((e) => e as String).toList(),
   certificates: (json['certificates'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2ListsCertificates.fromJson(e as Map<String, dynamic>)).toList(),
   continents: (json['continents'] as List<dynamic>).map((e) => e as String).toList(),
@@ -13,7 +13,7 @@ factory UrlscannerGetScanResponse2Lists.fromJson(Map<String, dynamic> json) { re
   linkDomains: (json['linkDomains'] as List<dynamic>).map((e) => e as String).toList(),
   servers: (json['servers'] as List<dynamic>).map((e) => e as String).toList(),
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> asns;
 
@@ -35,7 +35,7 @@ final List<String> servers;
 
 final List<String> urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asns': asns,
   'certificates': certificates.map((e) => e.toJson()).toList(),
   'continents': continents,
@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'linkDomains': linkDomains,
   'servers': servers,
   'urls': urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asns') &&
       json.containsKey('certificates') &&
       json.containsKey('continents') &&
       json.containsKey('countries') &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns'
       json.containsKey('ips') &&
       json.containsKey('linkDomains') &&
       json.containsKey('servers') &&
-      json.containsKey('urls'); } 
-UrlscannerGetScanResponse2Lists copyWith({List<String>? asns, List<UrlscannerGetScanResponse2ListsCertificates>? certificates, List<String>? continents, List<String>? countries, List<String>? domains, List<String>? hashes, List<String>? ips, List<String>? linkDomains, List<String>? servers, List<String>? urls, }) { return UrlscannerGetScanResponse2Lists(
+      json.containsKey('urls');}
+UrlscannerGetScanResponse2Lists copyWith({List<String>? asns, List<UrlscannerGetScanResponse2ListsCertificates>? certificates, List<String>? continents, List<String>? countries, List<String>? domains, List<String>? hashes, List<String>? ips, List<String>? linkDomains, List<String>? servers, List<String>? urls, }) {return UrlscannerGetScanResponse2Lists(
   asns: asns ?? this.asns,
   certificates: certificates ?? this.certificates,
   continents: continents ?? this.continents,
@@ -68,8 +68,8 @@ UrlscannerGetScanResponse2Lists copyWith({List<String>? asns, List<UrlscannerGet
   linkDomains: linkDomains ?? this.linkDomains,
   servers: servers ?? this.servers,
   urls: urls ?? this.urls,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2Lists &&
           listEquals(asns, other.asns) &&
           listEquals(certificates, other.certificates) &&
@@ -80,7 +80,7 @@ UrlscannerGetScanResponse2Lists copyWith({List<String>? asns, List<UrlscannerGet
           listEquals(ips, other.ips) &&
           listEquals(linkDomains, other.linkDomains) &&
           listEquals(servers, other.servers) &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(Object.hashAll(asns), Object.hashAll(certificates), Object.hashAll(continents), Object.hashAll(countries), Object.hashAll(domains), Object.hashAll(hashes), Object.hashAll(ips), Object.hashAll(linkDomains), Object.hashAll(servers), Object.hashAll(urls)); } 
-@override String toString() { return 'UrlscannerGetScanResponse2Lists(asns: $asns, certificates: $certificates, continents: $continents, countries: $countries, domains: $domains, hashes: $hashes, ips: $ips, linkDomains: $linkDomains, servers: $servers, urls: $urls)'; } 
- }
+          listEquals(urls, other.urls);}
+@override int get hashCode {return Object.hash(Object.hashAll(asns), Object.hashAll(certificates), Object.hashAll(continents), Object.hashAll(countries), Object.hashAll(domains), Object.hashAll(hashes), Object.hashAll(ips), Object.hashAll(linkDomains), Object.hashAll(servers), Object.hashAll(urls));}
+@override String toString() {return 'UrlscannerGetScanResponse2Lists(asns: $asns, certificates: $certificates, continents: $continents, countries: $countries, domains: $domains, hashes: $hashes, ips: $ips, linkDomains: $linkDomains, servers: $servers, urls: $urls)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge_outcome_rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
 @immutable final class ChargeOutcomeAdviceCode {const ChargeOutcomeAdviceCode._(this.value);
 
-factory ChargeOutcomeAdviceCode.fromJson(String json) { return switch (json) {
+factory ChargeOutcomeAdviceCode.fromJson(String json) {return switch (json) {
   'confirm_card_data' => confirmCardData,
   'do_not_try_again' => doNotTryAgain,
   'try_again_later' => tryAgainLater,
   _ => ChargeOutcomeAdviceCode._(json),
-}; }
+};}
 
 static const ChargeOutcomeAdviceCode confirmCardData = ChargeOutcomeAdviceCode._('confirm_card_data');
 
@@ -20,18 +20,18 @@ static const List<ChargeOutcomeAdviceCode> values = [confirmCardData, doNotTryAg
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChargeOutcomeAdviceCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChargeOutcomeAdviceCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChargeOutcomeAdviceCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChargeOutcomeAdviceCode($value)';}
+}
 /// 
 @immutable final class ChargeOutcome {const ChargeOutcome({required this.type, this.adviceCode = const Omittable.absent(), this.networkAdviceCode = const Omittable.absent(), this.networkDeclineCode = const Omittable.absent(), this.networkStatus = const Omittable.absent(), this.reason = const Omittable.absent(), this.riskLevel, this.riskScore, this.rule, this.sellerMessage = const Omittable.absent(), });
 
-factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome(
+factory ChargeOutcome.fromJson(Map<String, dynamic> json) {return ChargeOutcome(
   adviceCode: json.containsKey('advice_code') ? Omittable(json['advice_code'] != null ? ChargeOutcomeAdviceCode.fromJson(json['advice_code'] as String) : null) : const Omittable.absent(),
   networkAdviceCode: json.containsKey('network_advice_code') ? Omittable(json['network_advice_code'] as String?) : const Omittable.absent(),
   networkDeclineCode: json.containsKey('network_decline_code') ? Omittable(json['network_decline_code'] as String?) : const Omittable.absent(),
@@ -42,7 +42,7 @@ factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome
   rule: json['rule'] != null ? ChargeOutcomeRule.fromJson(json['rule']) : null,
   sellerMessage: json.containsKey('seller_message') ? Omittable(json['seller_message'] as String?) : const Omittable.absent(),
   type: json['type'] as String,
-); }
+);}
 
 /// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
 final Omittable<ChargeOutcomeAdviceCode?> adviceCode;
@@ -74,7 +74,7 @@ final Omittable<String?> sellerMessage;
 /// Possible values are `authorized`, `manual_review`, `issuer_declined`, `blocked`, and `invalid`. See [understanding declines](https://docs.stripe.com/declines) and [Radar reviews](https://docs.stripe.com/radar/reviews) for details.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adviceCode.isPresent) 'advice_code': adviceCode.value?.toJson(),
   if (networkAdviceCode.isPresent) 'network_advice_code': networkAdviceCode.value,
   if (networkDeclineCode.isPresent) 'network_decline_code': networkDeclineCode.value,
@@ -85,9 +85,9 @@ Map<String, dynamic> toJson() { return {
   if (rule != null) 'rule': rule?.toJson(),
   if (sellerMessage.isPresent) 'seller_message': sellerMessage.value,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ChargeOutcome copyWith({Omittable<ChargeOutcomeAdviceCode?>? adviceCode, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<String?>? networkStatus, Omittable<String?>? reason, String? Function()? riskLevel, int? Function()? riskScore, ChargeOutcomeRule? Function()? rule, Omittable<String?>? sellerMessage, String? type, }) { return ChargeOutcome(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+ChargeOutcome copyWith({Omittable<ChargeOutcomeAdviceCode?>? adviceCode, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<String?>? networkStatus, Omittable<String?>? reason, String? Function()? riskLevel, int? Function()? riskScore, ChargeOutcomeRule? Function()? rule, Omittable<String?>? sellerMessage, String? type, }) {return ChargeOutcome(
   adviceCode: adviceCode ?? this.adviceCode,
   networkAdviceCode: networkAdviceCode ?? this.networkAdviceCode,
   networkDeclineCode: networkDeclineCode ?? this.networkDeclineCode,
@@ -98,8 +98,8 @@ ChargeOutcome copyWith({Omittable<ChargeOutcomeAdviceCode?>? adviceCode, Omittab
   rule: rule != null ? rule() : this.rule,
   sellerMessage: sellerMessage ?? this.sellerMessage,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChargeOutcome &&
           adviceCode == other.adviceCode &&
           networkAdviceCode == other.networkAdviceCode &&
@@ -110,7 +110,7 @@ ChargeOutcome copyWith({Omittable<ChargeOutcomeAdviceCode?>? adviceCode, Omittab
           riskScore == other.riskScore &&
           rule == other.rule &&
           sellerMessage == other.sellerMessage &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(adviceCode, networkAdviceCode, networkDeclineCode, networkStatus, reason, riskLevel, riskScore, rule, sellerMessage, type); } 
-@override String toString() { return 'ChargeOutcome(adviceCode: $adviceCode, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkStatus: $networkStatus, reason: $reason, riskLevel: $riskLevel, riskScore: $riskScore, rule: $rule, sellerMessage: $sellerMessage, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(adviceCode, networkAdviceCode, networkDeclineCode, networkStatus, reason, riskLevel, riskScore, rule, sellerMessage, type);}
+@override String toString() {return 'ChargeOutcome(adviceCode: $adviceCode, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkStatus: $networkStatus, reason: $reason, riskLevel: $riskLevel, riskScore: $riskScore, rule: $rule, sellerMessage: $sellerMessage, type: $type)';}
+}

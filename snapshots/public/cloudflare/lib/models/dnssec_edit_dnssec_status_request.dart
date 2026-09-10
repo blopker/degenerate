@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
 @immutable final class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus._(this.value);
 
-factory DnssecEditDnssecStatusRequestStatus.fromJson(String json) { return switch (json) {
+factory DnssecEditDnssecStatusRequestStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'disabled' => disabled,
   _ => DnssecEditDnssecStatusRequestStatus._(json),
-}; }
+};}
 
 static const DnssecEditDnssecStatusRequestStatus active = DnssecEditDnssecStatusRequestStatus._('active');
 
@@ -17,22 +17,22 @@ static const List<DnssecEditDnssecStatusRequestStatus> values = [active, disable
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnssecEditDnssecStatusRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnssecEditDnssecStatusRequestStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnssecEditDnssecStatusRequestStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnssecEditDnssecStatusRequestStatus($value)';}
+}
 @immutable final class DnssecEditDnssecStatusRequest {const DnssecEditDnssecStatusRequest({this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.status, });
 
-factory DnssecEditDnssecStatusRequest.fromJson(Map<String, dynamic> json) { return DnssecEditDnssecStatusRequest(
+factory DnssecEditDnssecStatusRequest.fromJson(Map<String, dynamic> json) {return DnssecEditDnssecStatusRequest(
   dnssecMultiSigner: json['dnssec_multi_signer'] != null ? DnssecDnssecMultiSigner.fromJson(json['dnssec_multi_signer'] as bool) : null,
   dnssecPresigned: json['dnssec_presigned'] != null ? DnssecDnssecPresigned.fromJson(json['dnssec_presigned'] as bool) : null,
   dnssecUseNsec3: json['dnssec_use_nsec3'] != null ? DnssecDnssecUseNsec3.fromJson(json['dnssec_use_nsec3'] as bool) : null,
   status: json['status'] != null ? DnssecEditDnssecStatusRequestStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// If true, multi-signer DNSSEC is enabled on the zone, allowing multiple
 /// providers to serve a DNSSEC-signed zone at the same time.
@@ -62,25 +62,25 @@ final DnssecDnssecUseNsec3? dnssecUseNsec3;
 /// Status of DNSSEC, based on user-desired state and presence of necessary records.
 final DnssecEditDnssecStatusRequestStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dnssecMultiSigner != null) 'dnssec_multi_signer': dnssecMultiSigner?.toJson(),
   if (dnssecPresigned != null) 'dnssec_presigned': dnssecPresigned?.toJson(),
   if (dnssecUseNsec3 != null) 'dnssec_use_nsec3': dnssecUseNsec3?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'status'}.contains(key)); } 
-DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner? Function()? dnssecMultiSigner, DnssecDnssecPresigned? Function()? dnssecPresigned, DnssecDnssecUseNsec3? Function()? dnssecUseNsec3, DnssecEditDnssecStatusRequestStatus? Function()? status, }) { return DnssecEditDnssecStatusRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'status'}.contains(key));}
+DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner? Function()? dnssecMultiSigner, DnssecDnssecPresigned? Function()? dnssecPresigned, DnssecDnssecUseNsec3? Function()? dnssecUseNsec3, DnssecEditDnssecStatusRequestStatus? Function()? status, }) {return DnssecEditDnssecStatusRequest(
   dnssecMultiSigner: dnssecMultiSigner != null ? dnssecMultiSigner() : this.dnssecMultiSigner,
   dnssecPresigned: dnssecPresigned != null ? dnssecPresigned() : this.dnssecPresigned,
   dnssecUseNsec3: dnssecUseNsec3 != null ? dnssecUseNsec3() : this.dnssecUseNsec3,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnssecEditDnssecStatusRequest &&
           dnssecMultiSigner == other.dnssecMultiSigner &&
           dnssecPresigned == other.dnssecPresigned &&
           dnssecUseNsec3 == other.dnssecUseNsec3 &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, status); } 
-@override String toString() { return 'DnssecEditDnssecStatusRequest(dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, status);}
+@override String toString() {return 'DnssecEditDnssecStatusRequest(dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, status: $status)';}
+}

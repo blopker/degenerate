@@ -9,23 +9,23 @@ String toJson() => value;
 }
 @immutable final class CloudforceOneRequestsRequestAssetEdit {const CloudforceOneRequestsRequestAssetEdit({this.source});
 
-factory CloudforceOneRequestsRequestAssetEdit.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestAssetEdit(
+factory CloudforceOneRequestsRequestAssetEdit.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestsRequestAssetEdit(
   source: json['source'] != null ? CloudforceOneRequestsAssetContent.fromJson(json['source'] as String) : null,
-); }
+);}
 
 /// Asset file to upload.
 final CloudforceOneRequestsAssetContent? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'source'}.contains(key)); } 
-CloudforceOneRequestsRequestAssetEdit copyWith({CloudforceOneRequestsAssetContent? Function()? source}) { return CloudforceOneRequestsRequestAssetEdit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'source'}.contains(key));}
+CloudforceOneRequestsRequestAssetEdit copyWith({CloudforceOneRequestsAssetContent? Function()? source}) {return CloudforceOneRequestsRequestAssetEdit(
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CloudforceOneRequestsRequestAssetEdit &&
-          source == other.source; } 
-@override int get hashCode { return source.hashCode; } 
-@override String toString() { return 'CloudforceOneRequestsRequestAssetEdit(source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return source.hashCode;}
+@override String toString() {return 'CloudforceOneRequestsRequestAssetEdit(source: $source)';}
+}

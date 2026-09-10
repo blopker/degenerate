@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tool.dart';import 'tool_search_execution_type.dart';@immutable final class FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum._(this.value);
 
-factory FunctionCallOutputStatusEnum.fromJson(String json) { return switch (json) {
+factory FunctionCallOutputStatusEnum.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => FunctionCallOutputStatusEnum._(json),
-}; }
+};}
 
 static const FunctionCallOutputStatusEnum inProgress = FunctionCallOutputStatusEnum._('in_progress');
 
@@ -19,17 +19,17 @@ static const List<FunctionCallOutputStatusEnum> values = [inProgress, completed,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionCallOutputStatusEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionCallOutputStatusEnum($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FunctionCallOutputStatusEnum && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FunctionCallOutputStatusEnum($value)';}
+}
 @immutable final class ToolSearchOutput {const ToolSearchOutput({required this.type, required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.createdBy, });
 
-factory ToolSearchOutput.fromJson(Map<String, dynamic> json) { return ToolSearchOutput(
+factory ToolSearchOutput.fromJson(Map<String, dynamic> json) {return ToolSearchOutput(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String?,
@@ -37,7 +37,7 @@ factory ToolSearchOutput.fromJson(Map<String, dynamic> json) { return ToolSearch
   tools: (json['tools'] as List<dynamic>).map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   status: FunctionCallOutputStatusEnum.fromJson(json['status'] as String),
   createdBy: json['created_by'] as String?,
-); }
+);}
 
 /// The type of the item. Always `tool_search_output`.
 final String type;
@@ -60,7 +60,7 @@ final FunctionCallOutputStatusEnum status;
 /// The identifier of the actor that created the item.
 final String? createdBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
@@ -68,14 +68,14 @@ Map<String, dynamic> toJson() { return {
   'tools': tools.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
   'created_by': ?createdBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && (json['call_id'] == null || json['call_id'] is String) &&
       json.containsKey('execution') &&
       json.containsKey('tools') &&
-      json.containsKey('status'); } 
-ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ToolSearchOutput(
+      json.containsKey('status');}
+ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) {return ToolSearchOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId != null ? callId() : this.callId,
@@ -83,8 +83,8 @@ ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId,
   tools: tools ?? this.tools,
   status: status ?? this.status,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ToolSearchOutput &&
           type == other.type &&
           id == other.id &&
@@ -92,7 +92,7 @@ ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId,
           execution == other.execution &&
           listEquals(tools, other.tools) &&
           status == other.status &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, execution, Object.hashAll(tools), status, createdBy); } 
-@override String toString() { return 'ToolSearchOutput(type: $type, id: $id, callId: $callId, execution: $execution, tools: $tools, status: $status, createdBy: $createdBy)'; } 
- }
+          createdBy == other.createdBy;}
+@override int get hashCode {return Object.hash(type, id, callId, execution, Object.hashAll(tools), status, createdBy);}
+@override String toString() {return 'ToolSearchOutput(type: $type, id: $id, callId: $callId, execution: $execution, tools: $tools, status: $status, createdBy: $createdBy)';}
+}

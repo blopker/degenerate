@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff {const WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff._(this.value);
 
-factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff.fromJson(String json) { return switch (json) {
+factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff.fromJson(String json) {return switch (json) {
   'constant' => constant,
   'linear' => linear,
   'exponential' => exponential,
   _ => WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff._(json),
-}; }
+};}
 
 static const WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff constant = WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff._('constant');
 
@@ -19,21 +19,21 @@ static const List<WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetrie
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff($value)';}
+}
 @immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries {const WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries({required this.delay, required this.limit, this.backoff, });
 
-factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
+factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
   backoff: json['backoff'] != null ? WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff.fromJson(json['backoff'] as String) : null,
   delay: json['delay'],
   limit: (json['limit'] as num).toDouble(),
-); }
+);}
 
 final WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff? backoff;
 
@@ -46,23 +46,23 @@ final dynamic delay;
 
 final double limit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (backoff != null) 'backoff': backoff?.toJson(),
   'delay': delay,
   'limit': limit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay') &&
-      json.containsKey('limit') && json['limit'] is num; } 
-WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff? Function()? backoff, dynamic delay, double? limit, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('delay') &&
+      json.containsKey('limit') && json['limit'] is num;}
+WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries copyWith({WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff? Function()? backoff, dynamic delay, double? limit, }) {return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
   backoff: backoff != null ? backoff() : this.backoff,
   delay: delay ?? this.delay,
   limit: limit ?? this.limit,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries &&
           backoff == other.backoff &&
           delay == other.delay &&
-          limit == other.limit; } 
-@override int get hashCode { return Object.hash(backoff, delay, limit); } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(backoff: $backoff, delay: $delay, limit: $limit)'; } 
- }
+          limit == other.limit;}
+@override int get hashCode {return Object.hash(backoff, delay, limit);}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(backoff: $backoff, delay: $delay, limit: $limit)';}
+}

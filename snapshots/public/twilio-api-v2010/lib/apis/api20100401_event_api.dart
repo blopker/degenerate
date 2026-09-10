@@ -11,7 +11,7 @@ final class Api20100401EventApi with ApiExecutor {const Api20100401EventApi(this
 /// Retrieve a list of all events for a call.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Events.json`
-Future<ApiResult<ListCallEventResponse, Never>> listCallEvent({required String accountSid, required String callSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListCallEventResponse, Never>> listCallEvent({required String accountSid, required String callSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -34,12 +34,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCallEventResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCallEventResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

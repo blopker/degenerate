@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestPersonUsCfpbDataRaceDetailsRace {const PostTokensRequestPersonUsCfpbDataRaceDetailsRace._(this.value);
 
-factory PostTokensRequestPersonUsCfpbDataRaceDetailsRace.fromJson(String json) { return switch (json) {
+factory PostTokensRequestPersonUsCfpbDataRaceDetailsRace.fromJson(String json) {return switch (json) {
   'african_american' => africanAmerican,
   'american_indian_or_alaska_native' => americanIndianOrAlaskaNative,
   'asian' => asian,
@@ -28,7 +28,7 @@ factory PostTokensRequestPersonUsCfpbDataRaceDetailsRace.fromJson(String json) {
   'vietnamese' => vietnamese,
   'white' => white,
   _ => PostTokensRequestPersonUsCfpbDataRaceDetailsRace._(json),
-}; }
+};}
 
 static const PostTokensRequestPersonUsCfpbDataRaceDetailsRace africanAmerican = PostTokensRequestPersonUsCfpbDataRaceDetailsRace._('african_american');
 
@@ -82,38 +82,38 @@ static const List<PostTokensRequestPersonUsCfpbDataRaceDetailsRace> values = [af
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTokensRequestPersonUsCfpbDataRaceDetailsRace && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTokensRequestPersonUsCfpbDataRaceDetailsRace($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTokensRequestPersonUsCfpbDataRaceDetailsRace && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTokensRequestPersonUsCfpbDataRaceDetailsRace($value)';}
+}
 @immutable final class PostTokensRequestPersonUsCfpbDataRaceDetails {const PostTokensRequestPersonUsCfpbDataRaceDetails({this.race, this.raceOther, });
 
-factory PostTokensRequestPersonUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonUsCfpbDataRaceDetails(
+factory PostTokensRequestPersonUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) {return PostTokensRequestPersonUsCfpbDataRaceDetails(
   race: (json['race'] as List<dynamic>?)?.map((e) => PostTokensRequestPersonUsCfpbDataRaceDetailsRace.fromJson(e as String)).toList(),
   raceOther: json['race_other'] as String?,
-); }
+);}
 
 final List<PostTokensRequestPersonUsCfpbDataRaceDetailsRace>? race;
 
 final String? raceOther;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (race != null) 'race': race?.map((e) => e.toJson()).toList(),
   'race_other': ?raceOther,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'race', 'race_other'}.contains(key)); } 
-PostTokensRequestPersonUsCfpbDataRaceDetails copyWith({List<PostTokensRequestPersonUsCfpbDataRaceDetailsRace>? Function()? race, String? Function()? raceOther, }) { return PostTokensRequestPersonUsCfpbDataRaceDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'race', 'race_other'}.contains(key));}
+PostTokensRequestPersonUsCfpbDataRaceDetails copyWith({List<PostTokensRequestPersonUsCfpbDataRaceDetailsRace>? Function()? race, String? Function()? raceOther, }) {return PostTokensRequestPersonUsCfpbDataRaceDetails(
   race: race != null ? race() : this.race,
   raceOther: raceOther != null ? raceOther() : this.raceOther,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTokensRequestPersonUsCfpbDataRaceDetails &&
           listEquals(race, other.race) &&
-          raceOther == other.raceOther; } 
-@override int get hashCode { return Object.hash(Object.hashAll(race ?? const []), raceOther); } 
-@override String toString() { return 'PostTokensRequestPersonUsCfpbDataRaceDetails(race: $race, raceOther: $raceOther)'; } 
- }
+          raceOther == other.raceOther;}
+@override int get hashCode {return Object.hash(Object.hashAll(race ?? const []), raceOther);}
+@override String toString() {return 'PostTokensRequestPersonUsCfpbDataRaceDetails(race: $race, raceOther: $raceOther)';}
+}

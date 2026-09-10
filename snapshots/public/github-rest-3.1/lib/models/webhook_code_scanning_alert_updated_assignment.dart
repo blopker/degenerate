@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_updated_assignment_alert.dart';@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction._(this.value);
 
-factory WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(String json) {return switch (json) {
   'updated_assignment' => updatedAssignment,
   _ => WebhookCodeScanningAlertUpdatedAssignmentAction._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAction updatedAssignment = WebhookCodeScanningAlertUpdatedAssignmentAction._('updated_assignment');
 
@@ -13,17 +13,17 @@ static const List<WebhookCodeScanningAlertUpdatedAssignmentAction> values = [upd
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertUpdatedAssignmentAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertUpdatedAssignmentAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertUpdatedAssignmentAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertUpdatedAssignmentAction($value)';}
+}
 @immutable final class WebhookCodeScanningAlertUpdatedAssignment {const WebhookCodeScanningAlertUpdatedAssignment({required this.action, required this.alert, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCodeScanningAlertUpdatedAssignment.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignment(
+factory WebhookCodeScanningAlertUpdatedAssignment.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertUpdatedAssignment(
   action: WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(json['action'] as String),
   alert: WebhookCodeScanningAlertUpdatedAssignmentAlert.fromJson(json['alert'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookCodeScanningAlertUpdatedAssignment.fromJson(Map<String, dynamic> 
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookCodeScanningAlertUpdatedAssignmentAction action;
 
@@ -48,7 +48,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -56,12 +56,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCodeScanningAlertUpdatedAssignment copyWith({WebhookCodeScanningAlertUpdatedAssignmentAction? action, WebhookCodeScanningAlertUpdatedAssignmentAlert? alert, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertUpdatedAssignment(
+      json.containsKey('sender');}
+WebhookCodeScanningAlertUpdatedAssignment copyWith({WebhookCodeScanningAlertUpdatedAssignmentAction? action, WebhookCodeScanningAlertUpdatedAssignmentAlert? alert, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCodeScanningAlertUpdatedAssignment(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -69,8 +69,8 @@ WebhookCodeScanningAlertUpdatedAssignment copyWith({WebhookCodeScanningAlertUpda
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertUpdatedAssignment &&
           action == other.action &&
           alert == other.alert &&
@@ -78,7 +78,7 @@ WebhookCodeScanningAlertUpdatedAssignment copyWith({WebhookCodeScanningAlertUpda
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookCodeScanningAlertUpdatedAssignment(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, alert, enterprise, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookCodeScanningAlertUpdatedAssignment(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

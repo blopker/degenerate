@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_beta_response_create_params_conversation.dart';import 'realtime_beta_response_create_params_max_output_tokens.dart';import 'realtime_beta_response_create_params_tool_choice.dart';import 'realtime_beta_response_create_params_tools.dart';import 'realtime_conversation_item.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'voice_ids_or_custom_voice.dart';@immutable final class RealtimeBetaResponseCreateParamsModalities {const RealtimeBetaResponseCreateParamsModalities._(this.value);
 
-factory RealtimeBetaResponseCreateParamsModalities.fromJson(String json) { return switch (json) {
+factory RealtimeBetaResponseCreateParamsModalities.fromJson(String json) {return switch (json) {
   'text' => text,
   'audio' => audio,
   _ => RealtimeBetaResponseCreateParamsModalities._(json),
-}; }
+};}
 
 static const RealtimeBetaResponseCreateParamsModalities text = RealtimeBetaResponseCreateParamsModalities._('text');
 
@@ -16,24 +16,24 @@ static const List<RealtimeBetaResponseCreateParamsModalities> values = [text, au
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseCreateParamsModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseCreateParamsModalities($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaResponseCreateParamsModalities && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaResponseCreateParamsModalities($value)';}
+}
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
 @immutable final class RealtimeBetaResponseCreateParamsOutputAudioFormat {const RealtimeBetaResponseCreateParamsOutputAudioFormat._(this.value);
 
-factory RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(String json) { return switch (json) {
+factory RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(String json) {return switch (json) {
   'pcm16' => pcm16,
   'g711_ulaw' => g711Ulaw,
   'g711_alaw' => g711Alaw,
   _ => RealtimeBetaResponseCreateParamsOutputAudioFormat._(json),
-}; }
+};}
 
 static const RealtimeBetaResponseCreateParamsOutputAudioFormat pcm16 = RealtimeBetaResponseCreateParamsOutputAudioFormat._('pcm16');
 
@@ -45,18 +45,18 @@ static const List<RealtimeBetaResponseCreateParamsOutputAudioFormat> values = [p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseCreateParamsOutputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseCreateParamsOutputAudioFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaResponseCreateParamsOutputAudioFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaResponseCreateParamsOutputAudioFormat($value)';}
+}
 /// Create a new Realtime response with these parameters
 @immutable final class RealtimeBetaResponseCreateParams {const RealtimeBetaResponseCreateParams({this.modalities, this.instructions, this.voice, this.outputAudioFormat, this.tools, this.toolChoice, this.temperature, this.maxOutputTokens, this.conversation, this.metadata = const Omittable.absent(), this.prompt = const Omittable.absent(), this.input, });
 
-factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseCreateParams(
+factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) {return RealtimeBetaResponseCreateParams(
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsModalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
   voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice']) : null,
@@ -69,7 +69,7 @@ factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { r
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   input: (json['input'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to `["text"]`.
@@ -148,7 +148,7 @@ final Omittable<Prompt?> prompt;
 /// 
 final List<RealtimeConversationItem>? input;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (modalities != null) 'modalities': modalities?.map((e) => e.toJson()).toList(),
   'instructions': ?instructions,
   if (voice != null) 'voice': voice?.toJson(),
@@ -161,9 +161,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata.isPresent) 'metadata': metadata.value,
   if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
   if (input != null) 'input': input?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modalities', 'instructions', 'voice', 'output_audio_format', 'tools', 'tool_choice', 'temperature', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key)); } 
-RealtimeBetaResponseCreateParams copyWith({List<RealtimeBetaResponseCreateParamsModalities>? Function()? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, RealtimeBetaResponseCreateParamsOutputAudioFormat? Function()? outputAudioFormat, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, double? Function()? temperature, RealtimeBetaResponseCreateParamsMaxOutputTokens? Function()? maxOutputTokens, RealtimeBetaResponseCreateParamsConversation? Function()? conversation, Omittable<Map<String,String>?>? metadata, Omittable<Prompt?>? prompt, List<RealtimeConversationItem>? Function()? input, }) { return RealtimeBetaResponseCreateParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'modalities', 'instructions', 'voice', 'output_audio_format', 'tools', 'tool_choice', 'temperature', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key));}
+RealtimeBetaResponseCreateParams copyWith({List<RealtimeBetaResponseCreateParamsModalities>? Function()? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, RealtimeBetaResponseCreateParamsOutputAudioFormat? Function()? outputAudioFormat, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, double? Function()? temperature, RealtimeBetaResponseCreateParamsMaxOutputTokens? Function()? maxOutputTokens, RealtimeBetaResponseCreateParamsConversation? Function()? conversation, Omittable<Map<String,String>?>? metadata, Omittable<Prompt?>? prompt, List<RealtimeConversationItem>? Function()? input, }) {return RealtimeBetaResponseCreateParams(
   modalities: modalities != null ? modalities() : this.modalities,
   instructions: instructions != null ? instructions() : this.instructions,
   voice: voice != null ? voice() : this.voice,
@@ -176,8 +176,8 @@ RealtimeBetaResponseCreateParams copyWith({List<RealtimeBetaResponseCreateParams
   metadata: metadata ?? this.metadata,
   prompt: prompt ?? this.prompt,
   input: input != null ? input() : this.input,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaResponseCreateParams &&
           listEquals(modalities, other.modalities) &&
           instructions == other.instructions &&
@@ -190,7 +190,7 @@ RealtimeBetaResponseCreateParams copyWith({List<RealtimeBetaResponseCreateParams
           conversation == other.conversation &&
           metadata == other.metadata &&
           prompt == other.prompt &&
-          listEquals(input, other.input); } 
-@override int get hashCode { return Object.hash(Object.hashAll(modalities ?? const []), instructions, voice, outputAudioFormat, Object.hashAll(tools ?? const []), toolChoice, temperature, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const [])); } 
-@override String toString() { return 'RealtimeBetaResponseCreateParams(modalities: $modalities, instructions: $instructions, voice: $voice, outputAudioFormat: $outputAudioFormat, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)'; } 
- }
+          listEquals(input, other.input);}
+@override int get hashCode {return Object.hash(Object.hashAll(modalities ?? const []), instructions, voice, outputAudioFormat, Object.hashAll(tools ?? const []), toolChoice, temperature, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const []));}
+@override String toString() {return 'RealtimeBetaResponseCreateParams(modalities: $modalities, instructions: $instructions, voice: $voice, outputAudioFormat: $outputAudioFormat, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)';}
+}

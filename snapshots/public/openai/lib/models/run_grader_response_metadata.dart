@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_grader_response_metadata_errors.dart';@immutable final class RunGraderResponseMetadata {const RunGraderResponseMetadata({required this.name, required this.type, required this.errors, required this.executionTime, required this.scores, required this.tokenUsage, required this.sampledModelName, });
 
-factory RunGraderResponseMetadata.fromJson(Map<String, dynamic> json) { return RunGraderResponseMetadata(
+factory RunGraderResponseMetadata.fromJson(Map<String, dynamic> json) {return RunGraderResponseMetadata(
   name: json['name'] as String,
   type: json['type'] as String,
   errors: RunGraderResponseMetadataErrors.fromJson(json['errors'] as Map<String, dynamic>),
@@ -10,7 +10,7 @@ factory RunGraderResponseMetadata.fromJson(Map<String, dynamic> json) { return R
   scores: json['scores'] as Map<String, dynamic>,
   tokenUsage: json['token_usage'] != null ? (json['token_usage'] as num).toInt() : null,
   sampledModelName: json['sampled_model_name'] as String?,
-); }
+);}
 
 final String name;
 
@@ -26,7 +26,7 @@ final int? tokenUsage;
 
 final String? sampledModelName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'type': type,
   'errors': errors.toJson(),
@@ -34,15 +34,15 @@ Map<String, dynamic> toJson() { return {
   'scores': scores,
   'token_usage': tokenUsage,
   'sampled_model_name': sampledModelName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('errors') &&
       json.containsKey('execution_time') && json['execution_time'] is num &&
       json.containsKey('scores') &&
       json.containsKey('token_usage') && (json['token_usage'] == null || json['token_usage'] is num) &&
-      json.containsKey('sampled_model_name') && (json['sampled_model_name'] == null || json['sampled_model_name'] is String); } 
-RunGraderResponseMetadata copyWith({String? name, String? type, RunGraderResponseMetadataErrors? errors, double? executionTime, Map<String,dynamic>? scores, int? Function()? tokenUsage, String? Function()? sampledModelName, }) { return RunGraderResponseMetadata(
+      json.containsKey('sampled_model_name') && (json['sampled_model_name'] == null || json['sampled_model_name'] is String);}
+RunGraderResponseMetadata copyWith({String? name, String? type, RunGraderResponseMetadataErrors? errors, double? executionTime, Map<String,dynamic>? scores, int? Function()? tokenUsage, String? Function()? sampledModelName, }) {return RunGraderResponseMetadata(
   name: name ?? this.name,
   type: type ?? this.type,
   errors: errors ?? this.errors,
@@ -50,8 +50,8 @@ RunGraderResponseMetadata copyWith({String? name, String? type, RunGraderRespons
   scores: scores ?? this.scores,
   tokenUsage: tokenUsage != null ? tokenUsage() : this.tokenUsage,
   sampledModelName: sampledModelName != null ? sampledModelName() : this.sampledModelName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunGraderResponseMetadata &&
           name == other.name &&
           type == other.type &&
@@ -59,7 +59,7 @@ RunGraderResponseMetadata copyWith({String? name, String? type, RunGraderRespons
           executionTime == other.executionTime &&
           scores == other.scores &&
           tokenUsage == other.tokenUsage &&
-          sampledModelName == other.sampledModelName; } 
-@override int get hashCode { return Object.hash(name, type, errors, executionTime, scores, tokenUsage, sampledModelName); } 
-@override String toString() { return 'RunGraderResponseMetadata(name: $name, type: $type, errors: $errors, executionTime: $executionTime, scores: $scores, tokenUsage: $tokenUsage, sampledModelName: $sampledModelName)'; } 
- }
+          sampledModelName == other.sampledModelName;}
+@override int get hashCode {return Object.hash(name, type, errors, executionTime, scores, tokenUsage, sampledModelName);}
+@override String toString() {return 'RunGraderResponseMetadata(name: $name, type: $type, errors: $errors, executionTime: $executionTime, scores: $scores, tokenUsage: $tokenUsage, sampledModelName: $sampledModelName)';}
+}

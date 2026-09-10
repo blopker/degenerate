@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
 @immutable final class ZeroTrustGatewayAction {const ZeroTrustGatewayAction._(this.value);
 
-factory ZeroTrustGatewayAction.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayAction.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   'allow' => allow,
@@ -21,7 +21,7 @@ factory ZeroTrustGatewayAction.fromJson(String json) { return switch (json) {
   'quarantine' => quarantine,
   'redirect' => redirect,
   _ => ZeroTrustGatewayAction._(json),
-}; }
+};}
 
 static const ZeroTrustGatewayAction $on = ZeroTrustGatewayAction._('on');
 
@@ -59,11 +59,11 @@ static const List<ZeroTrustGatewayAction> values = [$on, off, allow, block, scan
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewayAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayAction($value)';}
+}

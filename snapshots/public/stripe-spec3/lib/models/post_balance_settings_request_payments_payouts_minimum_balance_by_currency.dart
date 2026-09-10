@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_balance_settings_request_payments_payouts_minimum_balance_by_currency_variant1_value.dart';@immutable final class PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2 {const PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2._(this.value);
 
-factory PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2.fromJson(String json) { return switch (json) {
+factory PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2._(json),
-}; }
+};}
 
 static const PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2 $empty = PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurre
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2($value)';}
+}
 
 @immutable
 final class PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrency {

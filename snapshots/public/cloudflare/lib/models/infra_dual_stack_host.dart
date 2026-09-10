@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_network.dart';@immutable final class InfraDualStackHost {const InfraDualStackHost({required this.ipv4, required this.ipv6, required this.network, });
 
-factory InfraDualStackHost.fromJson(Map<String, dynamic> json) { return InfraDualStackHost(
+factory InfraDualStackHost.fromJson(Map<String, dynamic> json) {return InfraDualStackHost(
   ipv4: json['ipv4'] as String,
   ipv6: json['ipv6'] as String,
   network: InfraNetwork.fromJson(json['network'] as Map<String, dynamic>),
-); }
+);}
 
 final String ipv4;
 
@@ -14,24 +14,24 @@ final String ipv6;
 
 final InfraNetwork network;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ipv4': ipv4,
   'ipv6': ipv6,
   'network': network.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ipv4') && json['ipv4'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ipv4') && json['ipv4'] is String &&
       json.containsKey('ipv6') && json['ipv6'] is String &&
-      json.containsKey('network'); } 
-InfraDualStackHost copyWith({String? ipv4, String? ipv6, InfraNetwork? network, }) { return InfraDualStackHost(
+      json.containsKey('network');}
+InfraDualStackHost copyWith({String? ipv4, String? ipv6, InfraNetwork? network, }) {return InfraDualStackHost(
   ipv4: ipv4 ?? this.ipv4,
   ipv6: ipv6 ?? this.ipv6,
   network: network ?? this.network,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InfraDualStackHost &&
           ipv4 == other.ipv4 &&
           ipv6 == other.ipv6 &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(ipv4, ipv6, network); } 
-@override String toString() { return 'InfraDualStackHost(ipv4: $ipv4, ipv6: $ipv6, network: $network)'; } 
- }
+          network == other.network;}
+@override int get hashCode {return Object.hash(ipv4, ipv6, network);}
+@override String toString() {return 'InfraDualStackHost(ipv4: $ipv4, ipv6: $ipv6, network: $network)';}
+}

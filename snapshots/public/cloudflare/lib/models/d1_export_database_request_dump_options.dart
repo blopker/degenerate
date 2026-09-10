@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class D1ExportDatabaseRequestDumpOptions {const D1ExportDatabaseRequestDumpOptions({this.noData, this.noSchema, this.tables, });
 
-factory D1ExportDatabaseRequestDumpOptions.fromJson(Map<String, dynamic> json) { return D1ExportDatabaseRequestDumpOptions(
+factory D1ExportDatabaseRequestDumpOptions.fromJson(Map<String, dynamic> json) {return D1ExportDatabaseRequestDumpOptions(
   noData: json['no_data'] as bool?,
   noSchema: json['no_schema'] as bool?,
   tables: (json['tables'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Export only the table definitions, not their contents
 final bool? noData;
@@ -17,22 +17,22 @@ final bool? noSchema;
 /// Filter the export to just one or more tables. Passing an empty array is the same as not passing anything and means: export all tables.
 final List<String>? tables;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'no_data': ?noData,
   'no_schema': ?noSchema,
   'tables': ?tables,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'no_data', 'no_schema', 'tables'}.contains(key)); } 
-D1ExportDatabaseRequestDumpOptions copyWith({bool? Function()? noData, bool? Function()? noSchema, List<String>? Function()? tables, }) { return D1ExportDatabaseRequestDumpOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'no_data', 'no_schema', 'tables'}.contains(key));}
+D1ExportDatabaseRequestDumpOptions copyWith({bool? Function()? noData, bool? Function()? noSchema, List<String>? Function()? tables, }) {return D1ExportDatabaseRequestDumpOptions(
   noData: noData != null ? noData() : this.noData,
   noSchema: noSchema != null ? noSchema() : this.noSchema,
   tables: tables != null ? tables() : this.tables,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is D1ExportDatabaseRequestDumpOptions &&
           noData == other.noData &&
           noSchema == other.noSchema &&
-          listEquals(tables, other.tables); } 
-@override int get hashCode { return Object.hash(noData, noSchema, Object.hashAll(tables ?? const [])); } 
-@override String toString() { return 'D1ExportDatabaseRequestDumpOptions(noData: $noData, noSchema: $noSchema, tables: $tables)'; } 
- }
+          listEquals(tables, other.tables);}
+@override int get hashCode {return Object.hash(noData, noSchema, Object.hashAll(tables ?? const []));}
+@override String toString() {return 'D1ExportDatabaseRequestDumpOptions(noData: $noData, noSchema: $noSchema, tables: $tables)';}
+}

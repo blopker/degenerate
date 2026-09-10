@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_console_message.dart';@immutable final class UrlscannerGetScanResponse2DataConsole {const UrlscannerGetScanResponse2DataConsole({required this.message});
 
-factory UrlscannerGetScanResponse2DataConsole.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataConsole(
+factory UrlscannerGetScanResponse2DataConsole.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2DataConsole(
   message: UrlscannerGetScanResponse2DataConsoleMessage.fromJson(json['message'] as Map<String, dynamic>),
-); }
+);}
 
 final UrlscannerGetScanResponse2DataConsoleMessage message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-UrlscannerGetScanResponse2DataConsole copyWith({UrlscannerGetScanResponse2DataConsoleMessage? message}) { return UrlscannerGetScanResponse2DataConsole(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message');}
+UrlscannerGetScanResponse2DataConsole copyWith({UrlscannerGetScanResponse2DataConsoleMessage? message}) {return UrlscannerGetScanResponse2DataConsole(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2DataConsole &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponse2DataConsole(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponse2DataConsole(message: $message)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'modify_assistant_request_model.dart';import 'modify_assistant_request_tool_resources.dart';import 'modify_assistant_request_tools.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';@immutable final class ModifyAssistantRequest {const ModifyAssistantRequest({this.model, this.reasoningEffort = const Omittable.absent(), this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.instructions = const Omittable.absent(), this.tools, this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
-factory ModifyAssistantRequest.fromJson(Map<String, dynamic> json) { return ModifyAssistantRequest(
+factory ModifyAssistantRequest.fromJson(Map<String, dynamic> json) {return ModifyAssistantRequest(
   model: json['model'] != null ? ModifyAssistantRequestModel.fromJson(json['model']) : null,
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
@@ -14,7 +14,7 @@ factory ModifyAssistantRequest.fromJson(Map<String, dynamic> json) { return Modi
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
 /// 
@@ -64,8 +64,8 @@ final Omittable<double?> topP;
 final Omittable<ResponseFormatOption?> responseFormat;
 
 /// The value with the schema default applied when absent.
-List<ModifyAssistantRequestTools> get toolsOrDefault { return tools ?? const []; } 
-Map<String, dynamic> toJson() { return {
+List<ModifyAssistantRequestTools> get toolsOrDefault {return tools ?? const [];}
+Map<String, dynamic> toJson() {return {
   if (model != null) 'model': model?.toJson(),
   if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
   if (name.isPresent) 'name': name.value,
@@ -77,9 +77,9 @@ Map<String, dynamic> toJson() { return {
   if (temperature.isPresent) 'temperature': temperature.value,
   if (topP.isPresent) 'top_p': topP.value,
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'reasoning_effort', 'name', 'description', 'instructions', 'tools', 'tool_resources', 'metadata', 'temperature', 'top_p', 'response_format'}.contains(key)); } 
-ModifyAssistantRequest copyWith({ModifyAssistantRequestModel? Function()? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, List<ModifyAssistantRequestTools>? Function()? tools, Omittable<ModifyAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return ModifyAssistantRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'model', 'reasoning_effort', 'name', 'description', 'instructions', 'tools', 'tool_resources', 'metadata', 'temperature', 'top_p', 'response_format'}.contains(key));}
+ModifyAssistantRequest copyWith({ModifyAssistantRequestModel? Function()? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, List<ModifyAssistantRequestTools>? Function()? tools, Omittable<ModifyAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) {return ModifyAssistantRequest(
   model: model != null ? model() : this.model,
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
   name: name ?? this.name,
@@ -91,8 +91,8 @@ ModifyAssistantRequest copyWith({ModifyAssistantRequestModel? Function()? model,
   temperature: temperature ?? this.temperature,
   topP: topP ?? this.topP,
   responseFormat: responseFormat ?? this.responseFormat,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ModifyAssistantRequest &&
           model == other.model &&
           reasoningEffort == other.reasoningEffort &&
@@ -104,7 +104,7 @@ ModifyAssistantRequest copyWith({ModifyAssistantRequestModel? Function()? model,
           metadata == other.metadata &&
           temperature == other.temperature &&
           topP == other.topP &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, responseFormat); } 
-@override String toString() { return 'ModifyAssistantRequest(model: $model, reasoningEffort: $reasoningEffort, name: $name, description: $description, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)'; } 
- }
+          responseFormat == other.responseFormat;}
+@override int get hashCode {return Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, responseFormat);}
+@override String toString() {return 'ModifyAssistantRequest(model: $model, reasoningEffort: $reasoningEffort, name: $name, description: $description, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)';}
+}

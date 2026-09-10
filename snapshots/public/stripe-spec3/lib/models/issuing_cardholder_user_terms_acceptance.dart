@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingCardholderUserTermsAcceptance {const IssuingCardholderUserTermsAcceptance({this.date = const Omittable.absent(), this.ip = const Omittable.absent(), this.userAgent = const Omittable.absent(), });
 
-factory IssuingCardholderUserTermsAcceptance.fromJson(Map<String, dynamic> json) { return IssuingCardholderUserTermsAcceptance(
+factory IssuingCardholderUserTermsAcceptance.fromJson(Map<String, dynamic> json) {return IssuingCardholderUserTermsAcceptance(
   date: json.containsKey('date') ? Omittable(json['date'] != null ? (json['date'] as num).toInt() : null) : const Omittable.absent(),
   ip: json.containsKey('ip') ? Omittable(json['ip'] as String?) : const Omittable.absent(),
   userAgent: json.containsKey('user_agent') ? Omittable(json['user_agent'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The Unix timestamp marking when the cardholder accepted the Authorized User Terms.
 final Omittable<int?> date;
@@ -18,22 +18,22 @@ final Omittable<String?> ip;
 /// The user agent of the browser from which the cardholder accepted the Authorized User Terms.
 final Omittable<String?> userAgent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (date.isPresent) 'date': date.value,
   if (ip.isPresent) 'ip': ip.value,
   if (userAgent.isPresent) 'user_agent': userAgent.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key)); } 
-IssuingCardholderUserTermsAcceptance copyWith({Omittable<int?>? date, Omittable<String?>? ip, Omittable<String?>? userAgent, }) { return IssuingCardholderUserTermsAcceptance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key));}
+IssuingCardholderUserTermsAcceptance copyWith({Omittable<int?>? date, Omittable<String?>? ip, Omittable<String?>? userAgent, }) {return IssuingCardholderUserTermsAcceptance(
   date: date ?? this.date,
   ip: ip ?? this.ip,
   userAgent: userAgent ?? this.userAgent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingCardholderUserTermsAcceptance &&
           date == other.date &&
           ip == other.ip &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(date, ip, userAgent); } 
-@override String toString() { return 'IssuingCardholderUserTermsAcceptance(date: $date, ip: $ip, userAgent: $userAgent)'; } 
- }
+          userAgent == other.userAgent;}
+@override int get hashCode {return Object.hash(date, ip, userAgent);}
+@override String toString() {return 'IssuingCardholderUserTermsAcceptance(date: $date, ip: $ip, userAgent: $userAgent)';}
+}

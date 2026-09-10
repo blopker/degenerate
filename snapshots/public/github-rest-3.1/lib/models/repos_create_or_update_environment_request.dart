@@ -9,12 +9,12 @@ bool toJson() => value;
 }
 @immutable final class ReposCreateOrUpdateEnvironmentRequest {const ReposCreateOrUpdateEnvironmentRequest({this.waitTimer, this.preventSelfReview, this.reviewers = const Omittable.absent(), this.deploymentBranchPolicy = const Omittable.absent(), });
 
-factory ReposCreateOrUpdateEnvironmentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateEnvironmentRequest(
+factory ReposCreateOrUpdateEnvironmentRequest.fromJson(Map<String, dynamic> json) {return ReposCreateOrUpdateEnvironmentRequest(
   waitTimer: json['wait_timer'] != null ? WaitTimer.fromJson(json['wait_timer'] as num) : null,
   preventSelfReview: json['prevent_self_review'] != null ? PreventSelfReview.fromJson(json['prevent_self_review'] as bool) : null,
   reviewers: json.containsKey('reviewers') ? Omittable((json['reviewers'] as List<dynamic>?)?.map((e) => ReposCreateOrUpdateEnvironmentRequestReviewers.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   deploymentBranchPolicy: json.containsKey('deployment_branch_policy') ? Omittable(json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
 final WaitTimer? waitTimer;
@@ -27,26 +27,26 @@ final Omittable<List<ReposCreateOrUpdateEnvironmentRequestReviewers>?> reviewers
 
 final Omittable<DeploymentBranchPolicySettings?> deploymentBranchPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (waitTimer != null) 'wait_timer': waitTimer?.toJson(),
   if (preventSelfReview != null) 'prevent_self_review': preventSelfReview?.toJson(),
   if (reviewers.isPresent) 'reviewers': reviewers.value?.map((e) => e.toJson()).toList(),
   if (deploymentBranchPolicy.isPresent) 'deployment_branch_policy': deploymentBranchPolicy.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'wait_timer', 'prevent_self_review', 'reviewers', 'deployment_branch_policy'}.contains(key)); } 
-ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer? Function()? waitTimer, PreventSelfReview? Function()? preventSelfReview, Omittable<List<ReposCreateOrUpdateEnvironmentRequestReviewers>?>? reviewers, Omittable<DeploymentBranchPolicySettings?>? deploymentBranchPolicy, }) { return ReposCreateOrUpdateEnvironmentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'wait_timer', 'prevent_self_review', 'reviewers', 'deployment_branch_policy'}.contains(key));}
+ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer? Function()? waitTimer, PreventSelfReview? Function()? preventSelfReview, Omittable<List<ReposCreateOrUpdateEnvironmentRequestReviewers>?>? reviewers, Omittable<DeploymentBranchPolicySettings?>? deploymentBranchPolicy, }) {return ReposCreateOrUpdateEnvironmentRequest(
   waitTimer: waitTimer != null ? waitTimer() : this.waitTimer,
   preventSelfReview: preventSelfReview != null ? preventSelfReview() : this.preventSelfReview,
   reviewers: reviewers ?? this.reviewers,
   deploymentBranchPolicy: deploymentBranchPolicy ?? this.deploymentBranchPolicy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateOrUpdateEnvironmentRequest &&
           waitTimer == other.waitTimer &&
           preventSelfReview == other.preventSelfReview &&
           reviewers.isPresent == other.reviewers.isPresent &&
           listEquals(reviewers.value, other.reviewers.value) &&
-          deploymentBranchPolicy == other.deploymentBranchPolicy; } 
-@override int get hashCode { return Object.hash(waitTimer, preventSelfReview, Object.hashAll(reviewers.value ?? const []), deploymentBranchPolicy); } 
-@override String toString() { return 'ReposCreateOrUpdateEnvironmentRequest(waitTimer: $waitTimer, preventSelfReview: $preventSelfReview, reviewers: $reviewers, deploymentBranchPolicy: $deploymentBranchPolicy)'; } 
- }
+          deploymentBranchPolicy == other.deploymentBranchPolicy;}
+@override int get hashCode {return Object.hash(waitTimer, preventSelfReview, Object.hashAll(reviewers.value ?? const []), deploymentBranchPolicy);}
+@override String toString() {return 'ReposCreateOrUpdateEnvironmentRequest(waitTimer: $waitTimer, preventSelfReview: $preventSelfReview, reviewers: $reviewers, deploymentBranchPolicy: $deploymentBranchPolicy)';}
+}

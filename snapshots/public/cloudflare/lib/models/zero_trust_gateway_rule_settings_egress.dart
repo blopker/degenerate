@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules.
 @immutable final class ZeroTrustGatewayRuleSettingsEgress {const ZeroTrustGatewayRuleSettingsEgress({this.ipv4, this.ipv4Fallback, this.ipv6, });
 
-factory ZeroTrustGatewayRuleSettingsEgress.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsEgress(
+factory ZeroTrustGatewayRuleSettingsEgress.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettingsEgress(
   ipv4: json['ipv4'] as String?,
   ipv4Fallback: json['ipv4_fallback'] as String?,
   ipv6: json['ipv6'] as String?,
-); }
+);}
 
 /// Specify the IPv4 address to use for egress.
 final String? ipv4;
@@ -18,22 +18,22 @@ final String? ipv4Fallback;
 /// Specify the IPv6 range to use for egress.
 final String? ipv6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ipv4': ?ipv4,
   'ipv4_fallback': ?ipv4Fallback,
   'ipv6': ?ipv6,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipv4', 'ipv4_fallback', 'ipv6'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsEgress copyWith({String? Function()? ipv4, String? Function()? ipv4Fallback, String? Function()? ipv6, }) { return ZeroTrustGatewayRuleSettingsEgress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ipv4', 'ipv4_fallback', 'ipv6'}.contains(key));}
+ZeroTrustGatewayRuleSettingsEgress copyWith({String? Function()? ipv4, String? Function()? ipv4Fallback, String? Function()? ipv6, }) {return ZeroTrustGatewayRuleSettingsEgress(
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv4Fallback: ipv4Fallback != null ? ipv4Fallback() : this.ipv4Fallback,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRuleSettingsEgress &&
           ipv4 == other.ipv4 &&
           ipv4Fallback == other.ipv4Fallback &&
-          ipv6 == other.ipv6; } 
-@override int get hashCode { return Object.hash(ipv4, ipv4Fallback, ipv6); } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsEgress(ipv4: $ipv4, ipv4Fallback: $ipv4Fallback, ipv6: $ipv6)'; } 
- }
+          ipv6 == other.ipv6;}
+@override int get hashCode {return Object.hash(ipv4, ipv4Fallback, ipv6);}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsEgress(ipv4: $ipv4, ipv4Fallback: $ipv4Fallback, ipv6: $ipv6)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesRequestFromInvoiceAction {const PostInvoicesRequestFromInvoiceAction._(this.value);
 
-factory PostInvoicesRequestFromInvoiceAction.fromJson(String json) { return switch (json) {
+factory PostInvoicesRequestFromInvoiceAction.fromJson(String json) {return switch (json) {
   'revision' => revision,
   _ => PostInvoicesRequestFromInvoiceAction._(json),
-}; }
+};}
 
 static const PostInvoicesRequestFromInvoiceAction revision = PostInvoicesRequestFromInvoiceAction._('revision');
 
@@ -13,40 +13,40 @@ static const List<PostInvoicesRequestFromInvoiceAction> values = [revision];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesRequestFromInvoiceAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesRequestFromInvoiceAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesRequestFromInvoiceAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesRequestFromInvoiceAction($value)';}
+}
 /// Revise an existing invoice. The new invoice will be created in `status=draft`. See the [revision documentation](https://docs.stripe.com/invoicing/invoice-revisions) for more details.
 @immutable final class PostInvoicesRequestFromInvoice {const PostInvoicesRequestFromInvoice({required this.action, required this.invoice, });
 
-factory PostInvoicesRequestFromInvoice.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestFromInvoice(
+factory PostInvoicesRequestFromInvoice.fromJson(Map<String, dynamic> json) {return PostInvoicesRequestFromInvoice(
   action: PostInvoicesRequestFromInvoiceAction.fromJson(json['action'] as String),
   invoice: json['invoice'] as String,
-); }
+);}
 
 final PostInvoicesRequestFromInvoiceAction action;
 
 final String invoice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'invoice': invoice,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('invoice') && json['invoice'] is String; } 
-PostInvoicesRequestFromInvoice copyWith({PostInvoicesRequestFromInvoiceAction? action, String? invoice, }) { return PostInvoicesRequestFromInvoice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('invoice') && json['invoice'] is String;}
+PostInvoicesRequestFromInvoice copyWith({PostInvoicesRequestFromInvoiceAction? action, String? invoice, }) {return PostInvoicesRequestFromInvoice(
   action: action ?? this.action,
   invoice: invoice ?? this.invoice,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesRequestFromInvoice &&
           action == other.action &&
-          invoice == other.invoice; } 
-@override int get hashCode { return Object.hash(action, invoice); } 
-@override String toString() { return 'PostInvoicesRequestFromInvoice(action: $action, invoice: $invoice)'; } 
- }
+          invoice == other.invoice;}
+@override int get hashCode {return Object.hash(action, invoice);}
+@override String toString() {return 'PostInvoicesRequestFromInvoice(action: $action, invoice: $invoice)';}
+}

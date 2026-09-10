@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsEvents {const RealtimekitParticipantPeerStatsPeerStatsEvents({this.timestamp, this.type, });
 
-factory RealtimekitParticipantPeerStatsPeerStatsEvents.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStatsEvents(
+factory RealtimekitParticipantPeerStatsPeerStatsEvents.fromJson(Map<String, dynamic> json) {return RealtimekitParticipantPeerStatsPeerStatsEvents(
   timestamp: json['timestamp'] as String?,
   type: json['type'] as String?,
-); }
+);}
 
 final String? timestamp;
 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timestamp': ?timestamp,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timestamp', 'type'}.contains(key)); } 
-RealtimekitParticipantPeerStatsPeerStatsEvents copyWith({String? Function()? timestamp, String? Function()? type, }) { return RealtimekitParticipantPeerStatsPeerStatsEvents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'timestamp', 'type'}.contains(key));}
+RealtimekitParticipantPeerStatsPeerStatsEvents copyWith({String? Function()? timestamp, String? Function()? type, }) {return RealtimekitParticipantPeerStatsPeerStatsEvents(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStatsEvents &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStatsEvents(timestamp: $timestamp, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(timestamp, type);}
+@override String toString() {return 'RealtimekitParticipantPeerStatsPeerStatsEvents(timestamp: $timestamp, type: $type)';}
+}

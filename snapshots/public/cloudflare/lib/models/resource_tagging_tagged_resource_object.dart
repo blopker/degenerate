@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'resource_tagging_tagged_resource_object_account_level_base.dart';import 'resource_tagging_tagged_resource_object_worker_version_base.dart';import 'resource_tagging_tagged_resource_object_zone_level_base.dart';sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory ResourceTaggingTaggedResourceObject.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory ResourceTaggingTaggedResourceObject.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'access_application' => ResourceTaggingTaggedResourceObjectAccessApplication.fromJson(json),
   'access_application_policy' => ResourceTaggingTaggedResourceObjectAccessApplicationPolicy.fromJson(json),
   'access_group' => ResourceTaggingTaggedResourceObjectAccessGroup.fromJson(json),
@@ -32,375 +32,375 @@ factory ResourceTaggingTaggedResourceObject.fromJson(Map<String, dynamic> json) 
   'worker_version' => ResourceTaggingTaggedResourceObjectWorkerVersion.fromJson(json),
   'zone' => ResourceTaggingTaggedResourceObjectZone.fromJson(json),
   _ => ResourceTaggingTaggedResourceObject$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResourceTaggingTaggedResourceObject$Unknown; } 
- }
+bool get isUnknown {return this is ResourceTaggingTaggedResourceObject$Unknown;}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectAccessApplication extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplication(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectAccessApplication.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessApplication(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectAccessApplication.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAccessApplication(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'access_application'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectAccessApplication && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessApplication(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'access_application';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectAccessApplication && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAccessApplication(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectAccessApplicationPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(this.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase);
 
-factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicy.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase;
 
-@override String get type { return 'access_application_policy'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectAccessApplicationPolicy && resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase == other.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase: $resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase)'; } 
- }
+@override String get type {return 'access_application_policy';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectAccessApplicationPolicy && resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase == other.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase: $resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectAccessGroup extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessGroup(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectAccessGroup.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessGroup(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectAccessGroup.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAccessGroup(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'access_group'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectAccessGroup && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessGroup(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'access_group';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectAccessGroup && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAccessGroup(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectAccount extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccount(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectAccount.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccount(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectAccount.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAccount(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'account'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectAccount && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAccount(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'account';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectAccount && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAccount(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectAiGateway extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAiGateway(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectAiGateway.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAiGateway(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectAiGateway.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAiGateway(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'ai_gateway'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectAiGateway && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAiGateway(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'ai_gateway';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectAiGateway && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAiGateway(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectAlertingPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingPolicy(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectAlertingPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAlertingPolicy(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectAlertingPolicy.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAlertingPolicy(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'alerting_policy'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectAlertingPolicy && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAlertingPolicy(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'alerting_policy';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectAlertingPolicy && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAlertingPolicy(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectAlertingWebhook extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingWebhook(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectAlertingWebhook.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAlertingWebhook(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectAlertingWebhook.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectAlertingWebhook(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'alerting_webhook'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectAlertingWebhook && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAlertingWebhook(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'alerting_webhook';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectAlertingWebhook && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectAlertingWebhook(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectGatewayOperation extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayOperation(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectGatewayOperation.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectGatewayOperation(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectGatewayOperation.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectGatewayOperation(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type { return 'api_gateway_operation'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectGatewayOperation && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayOperation(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
- }
+@override String get type {return 'api_gateway_operation';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectGatewayOperation && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectGatewayOperation(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectCloudflaredTunnel extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCloudflaredTunnel(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectCloudflaredTunnel.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectCloudflaredTunnel(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectCloudflaredTunnel.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectCloudflaredTunnel(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'cloudflared_tunnel'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectCloudflaredTunnel && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectCloudflaredTunnel(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'cloudflared_tunnel';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectCloudflaredTunnel && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectCloudflaredTunnel(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectCustomCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectCustomCertificate.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectCustomCertificate(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectCustomCertificate.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectCustomCertificate(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type { return 'custom_certificate'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectCustomCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectCustomCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
- }
+@override String get type {return 'custom_certificate';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectCustomCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectCustomCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectCustomHostname extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomHostname(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectCustomHostname.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectCustomHostname(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectCustomHostname.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectCustomHostname(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type { return 'custom_hostname'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectCustomHostname && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectCustomHostname(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
- }
+@override String get type {return 'custom_hostname';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectCustomHostname && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectCustomHostname(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectD1Database extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectD1Database(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectD1Database.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectD1Database(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectD1Database.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectD1Database(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'd1_database'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectD1Database && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectD1Database(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'd1_database';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectD1Database && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectD1Database(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectDnsRecord extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDnsRecord(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectDnsRecord.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectDnsRecord(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectDnsRecord.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectDnsRecord(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type { return 'dns_record'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectDnsRecord && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectDnsRecord(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
- }
+@override String get type {return 'dns_record';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectDnsRecord && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectDnsRecord(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectDurableObjectNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDurableObjectNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectDurableObjectNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectDurableObjectNamespace(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectDurableObjectNamespace.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectDurableObjectNamespace(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'durable_object_namespace'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectDurableObjectNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectDurableObjectNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'durable_object_namespace';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectDurableObjectNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectDurableObjectNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectGatewayList extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayList(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectGatewayList.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectGatewayList(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectGatewayList.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectGatewayList(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'gateway_list'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectGatewayList && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayList(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'gateway_list';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectGatewayList && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectGatewayList(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectGatewayRule extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayRule(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectGatewayRule.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectGatewayRule(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectGatewayRule.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectGatewayRule(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'gateway_rule'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectGatewayRule && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayRule(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'gateway_rule';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectGatewayRule && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectGatewayRule(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectImage extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectImage(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectImage.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectImage(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectImage.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectImage(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'image'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectImage && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectImage(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'image';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectImage && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectImage(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectKvNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectKvNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectKvNamespace.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectKvNamespace(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectKvNamespace.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectKvNamespace(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'kv_namespace'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectKvNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectKvNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'kv_namespace';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectKvNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectKvNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectManagedClientCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectManagedClientCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectManagedClientCertificate.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectManagedClientCertificate(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectManagedClientCertificate.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectManagedClientCertificate(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type { return 'managed_client_certificate'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectManagedClientCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectManagedClientCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
- }
+@override String get type {return 'managed_client_certificate';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectManagedClientCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectManagedClientCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectQueue extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectQueue(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectQueue.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectQueue(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectQueue.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectQueue(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'queue'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectQueue && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectQueue(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'queue';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectQueue && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectQueue(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectR2Bucket extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectR2Bucket(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectR2Bucket.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectR2Bucket(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectR2Bucket.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectR2Bucket(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'r2_bucket'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectR2Bucket && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectR2Bucket(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'r2_bucket';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectR2Bucket && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectR2Bucket(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectResourceShare extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectResourceShare(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectResourceShare.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectResourceShare(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectResourceShare.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectResourceShare(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'resource_share'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectResourceShare && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectResourceShare(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'resource_share';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectResourceShare && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectResourceShare(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectStreamLiveInput extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamLiveInput(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectStreamLiveInput.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectStreamLiveInput(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectStreamLiveInput.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectStreamLiveInput(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'stream_live_input'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectStreamLiveInput && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectStreamLiveInput(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'stream_live_input';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectStreamLiveInput && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectStreamLiveInput(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectStreamVideo extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamVideo(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectStreamVideo.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectStreamVideo(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectStreamVideo.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectStreamVideo(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'stream_video'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectStreamVideo && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectStreamVideo(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'stream_video';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectStreamVideo && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectStreamVideo(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectWorker extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorker(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectWorker.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectWorker(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectWorker.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectWorker(ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type { return 'worker'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectWorker && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectWorker(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
- }
+@override String get type {return 'worker';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectWorker && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectWorker(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectWorkerVersion extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorkerVersion(this.resourceTaggingTaggedResourceObjectWorkerVersionBase);
 
-factory ResourceTaggingTaggedResourceObjectWorkerVersion.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectWorkerVersion(ResourceTaggingTaggedResourceObjectWorkerVersionBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectWorkerVersion.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectWorkerVersion(ResourceTaggingTaggedResourceObjectWorkerVersionBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectWorkerVersionBase resourceTaggingTaggedResourceObjectWorkerVersionBase;
 
-@override String get type { return 'worker_version'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectWorkerVersionBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectWorkerVersion && resourceTaggingTaggedResourceObjectWorkerVersionBase == other.resourceTaggingTaggedResourceObjectWorkerVersionBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectWorkerVersionBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectWorkerVersion(resourceTaggingTaggedResourceObjectWorkerVersionBase: $resourceTaggingTaggedResourceObjectWorkerVersionBase)'; } 
- }
+@override String get type {return 'worker_version';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectWorkerVersionBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectWorkerVersion && resourceTaggingTaggedResourceObjectWorkerVersionBase == other.resourceTaggingTaggedResourceObjectWorkerVersionBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectWorkerVersionBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectWorkerVersion(resourceTaggingTaggedResourceObjectWorkerVersionBase: $resourceTaggingTaggedResourceObjectWorkerVersionBase)';}
+}
 @immutable final class ResourceTaggingTaggedResourceObjectZone extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectZone(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
-factory ResourceTaggingTaggedResourceObjectZone.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectZone(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json)); }
+factory ResourceTaggingTaggedResourceObjectZone.fromJson(Map<String, dynamic> json) {return ResourceTaggingTaggedResourceObjectZone(ResourceTaggingTaggedResourceObjectZoneLevelBase.fromJson(json));}
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type { return 'zone'; } 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObjectZone && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectZone(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
- }
+@override String get type {return 'zone';}
+@override Map<String, dynamic> toJson() {return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObjectZone && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase;}
+@override int get hashCode {return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObjectZone(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class ResourceTaggingTaggedResourceObject$Unknown extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingTaggedResourceObject$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObject.unknown($json)'; } 
- }
+@override String get type {return json['type'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingTaggedResourceObject$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'ResourceTaggingTaggedResourceObject.unknown($json)';}
+}

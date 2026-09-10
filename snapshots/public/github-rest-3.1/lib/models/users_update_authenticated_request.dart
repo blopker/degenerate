@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersUpdateAuthenticatedRequest {const UsersUpdateAuthenticatedRequest({this.name, this.email, this.blog, this.twitterUsername = const Omittable.absent(), this.company, this.location, this.hireable, this.bio, });
 
-factory UsersUpdateAuthenticatedRequest.fromJson(Map<String, dynamic> json) { return UsersUpdateAuthenticatedRequest(
+factory UsersUpdateAuthenticatedRequest.fromJson(Map<String, dynamic> json) {return UsersUpdateAuthenticatedRequest(
   name: json['name'] as String?,
   email: json['email'] as String?,
   blog: json['blog'] as String?,
@@ -11,7 +11,7 @@ factory UsersUpdateAuthenticatedRequest.fromJson(Map<String, dynamic> json) { re
   location: json['location'] as String?,
   hireable: json['hireable'] as bool?,
   bio: json['bio'] as String?,
-); }
+);}
 
 /// The new name of the user.
 final String? name;
@@ -37,7 +37,7 @@ final bool? hireable;
 /// The new short biography of the user.
 final String? bio;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'email': ?email,
   'blog': ?blog,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'location': ?location,
   'hireable': ?hireable,
   'bio': ?bio,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'email', 'blog', 'twitter_username', 'company', 'location', 'hireable', 'bio'}.contains(key)); } 
-UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Function()? email, String? Function()? blog, Omittable<String?>? twitterUsername, String? Function()? company, String? Function()? location, bool? Function()? hireable, String? Function()? bio, }) { return UsersUpdateAuthenticatedRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'email', 'blog', 'twitter_username', 'company', 'location', 'hireable', 'bio'}.contains(key));}
+UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Function()? email, String? Function()? blog, Omittable<String?>? twitterUsername, String? Function()? company, String? Function()? location, bool? Function()? hireable, String? Function()? bio, }) {return UsersUpdateAuthenticatedRequest(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
   blog: blog != null ? blog() : this.blog,
@@ -57,8 +57,8 @@ UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Func
   location: location != null ? location() : this.location,
   hireable: hireable != null ? hireable() : this.hireable,
   bio: bio != null ? bio() : this.bio,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UsersUpdateAuthenticatedRequest &&
           name == other.name &&
           email == other.email &&
@@ -67,7 +67,7 @@ UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Func
           company == other.company &&
           location == other.location &&
           hireable == other.hireable &&
-          bio == other.bio; } 
-@override int get hashCode { return Object.hash(name, email, blog, twitterUsername, company, location, hireable, bio); } 
-@override String toString() { return 'UsersUpdateAuthenticatedRequest(name: $name, email: $email, blog: $blog, twitterUsername: $twitterUsername, company: $company, location: $location, hireable: $hireable, bio: $bio)'; } 
- }
+          bio == other.bio;}
+@override int get hashCode {return Object.hash(name, email, blog, twitterUsername, company, location, hireable, bio);}
+@override String toString() {return 'UsersUpdateAuthenticatedRequest(name: $name, email: $email, blog: $blog, twitterUsername: $twitterUsername, company: $company, location: $location, hireable: $hireable, bio: $bio)';}
+}

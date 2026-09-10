@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_ip_rule_ip.dart';/// Matches an IP address block.
 @immutable final class AccessIpRule {const AccessIpRule({required this.ip});
 
-factory AccessIpRule.fromJson(Map<String, dynamic> json) { return AccessIpRule(
+factory AccessIpRule.fromJson(Map<String, dynamic> json) {return AccessIpRule(
   ip: AccessIpRuleIp.fromJson(json['ip'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessIpRuleIp ip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip': ip.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip'); } 
-AccessIpRule copyWith({AccessIpRuleIp? ip}) { return AccessIpRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip');}
+AccessIpRule copyWith({AccessIpRuleIp? ip}) {return AccessIpRule(
   ip: ip ?? this.ip,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessIpRule &&
-          ip == other.ip; } 
-@override int get hashCode { return ip.hashCode; } 
-@override String toString() { return 'AccessIpRule(ip: $ip)'; } 
- }
+          ip == other.ip;}
+@override int get hashCode {return ip.hashCode;}
+@override String toString() {return 'AccessIpRule(ip: $ip)';}
+}

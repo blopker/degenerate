@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_schemas_messages2.dart';@immutable final class ResponseCommon35 {const ResponseCommon35({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommon35.fromJson(Map<String, dynamic> json) { return ResponseCommon35(
+factory ResponseCommon35.fromJson(Map<String, dynamic> json) {return ResponseCommon35(
   errors: (json['errors'] as List<dynamic>).map((e) => IamSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => IamSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<IamSchemasMessages2> errors;
 
@@ -15,24 +15,24 @@ final List<IamSchemasMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon35 copyWith({List<IamSchemasMessages2>? errors, List<IamSchemasMessages2>? messages, bool? success, }) { return ResponseCommon35(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon35 copyWith({List<IamSchemasMessages2>? errors, List<IamSchemasMessages2>? messages, bool? success, }) {return ResponseCommon35(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseCommon35 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success); } 
-@override String toString() { return 'ResponseCommon35(errors: $errors, messages: $messages, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success);}
+@override String toString() {return 'ResponseCommon35(errors: $errors, messages: $messages, success: $success)';}
+}

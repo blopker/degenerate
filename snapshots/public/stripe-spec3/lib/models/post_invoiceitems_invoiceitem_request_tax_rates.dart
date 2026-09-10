@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2 {const PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2._(this.value);
 
-factory PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2._(json),
-}; }
+};}
 
 static const PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2 $empty = PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoiceitemsInvoiceitemRequestTaxRatesVariant2($value)';}
+}
 /// The tax rates which apply to the invoice item. When set, the `default_tax_rates` on the invoice do not apply to this invoice item. Pass an empty string to remove previously-defined tax rates.
 @immutable
 final class PostInvoiceitemsInvoiceitemRequestTaxRates {

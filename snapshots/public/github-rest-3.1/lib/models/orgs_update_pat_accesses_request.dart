@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the fine-grained personal access token.
 @immutable final class OrgsUpdatePatAccessesRequestAction {const OrgsUpdatePatAccessesRequestAction._(this.value);
 
-factory OrgsUpdatePatAccessesRequestAction.fromJson(String json) { return switch (json) {
+factory OrgsUpdatePatAccessesRequestAction.fromJson(String json) {return switch (json) {
   'revoke' => revoke,
   _ => OrgsUpdatePatAccessesRequestAction._(json),
-}; }
+};}
 
 static const OrgsUpdatePatAccessesRequestAction revoke = OrgsUpdatePatAccessesRequestAction._('revoke');
 
@@ -14,20 +14,20 @@ static const List<OrgsUpdatePatAccessesRequestAction> values = [revoke];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsUpdatePatAccessesRequestAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsUpdatePatAccessesRequestAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsUpdatePatAccessesRequestAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsUpdatePatAccessesRequestAction($value)';}
+}
 @immutable final class OrgsUpdatePatAccessesRequest {const OrgsUpdatePatAccessesRequest({required this.action, required this.patIds, });
 
-factory OrgsUpdatePatAccessesRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdatePatAccessesRequest(
+factory OrgsUpdatePatAccessesRequest.fromJson(Map<String, dynamic> json) {return OrgsUpdatePatAccessesRequest(
   action: OrgsUpdatePatAccessesRequestAction.fromJson(json['action'] as String),
   patIds: (json['pat_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// Action to apply to the fine-grained personal access token.
 final OrgsUpdatePatAccessesRequestAction action;
@@ -35,20 +35,20 @@ final OrgsUpdatePatAccessesRequestAction action;
 /// The IDs of the fine-grained personal access tokens.
 final List<int> patIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'pat_ids': patIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('pat_ids'); } 
-OrgsUpdatePatAccessesRequest copyWith({OrgsUpdatePatAccessesRequestAction? action, List<int>? patIds, }) { return OrgsUpdatePatAccessesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('pat_ids');}
+OrgsUpdatePatAccessesRequest copyWith({OrgsUpdatePatAccessesRequestAction? action, List<int>? patIds, }) {return OrgsUpdatePatAccessesRequest(
   action: action ?? this.action,
   patIds: patIds ?? this.patIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsUpdatePatAccessesRequest &&
           action == other.action &&
-          listEquals(patIds, other.patIds); } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(patIds)); } 
-@override String toString() { return 'OrgsUpdatePatAccessesRequest(action: $action, patIds: $patIds)'; } 
- }
+          listEquals(patIds, other.patIds);}
+@override int get hashCode {return Object.hash(action, Object.hashAll(patIds));}
+@override String toString() {return 'OrgsUpdatePatAccessesRequest(action: $action, patIds: $patIds)';}
+}

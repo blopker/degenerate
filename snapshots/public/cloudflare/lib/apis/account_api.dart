@@ -13,7 +13,7 @@ final class AccountApi with ApiExecutor {const AccountApi(this.apiConfig);
 /// Retrieve account limits and usage information
 ///
 /// `GET /accounts/{account_id}/builds/account/limits`
-Future<ApiResult<BuildsGetAccountLimitResponse, Never>> getAccountLimits({required BuildsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsGetAccountLimitResponse, Never>> getAccountLimits({required BuildsAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,12 +22,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsGetAccountLimitResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsGetAccountLimitResponse.fromJson(json['result'] as Map<String, dynamic>);}, );}
+}

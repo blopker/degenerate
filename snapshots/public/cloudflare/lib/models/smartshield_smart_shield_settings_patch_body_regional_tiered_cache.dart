@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Regional Tiered Cache.
 @immutable final class SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue {const SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue._(this.value);
 
-factory SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue.fromJson(String json) { return switch (json) {
+factory SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue._(json),
-}; }
+};}
 
 static const SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue $on = SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue._('on');
 
@@ -17,33 +17,33 @@ static const List<SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue($value)';}
+}
 @immutable final class SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache {const SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache({this.value});
 
-factory SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache(
+factory SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache.fromJson(Map<String, dynamic> json) {return SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache(
   value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Specifies the enablement value of Regional Tiered Cache.
 final SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
-SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache copyWith({SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue? Function()? value}) { return SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'value'}.contains(key));}
+SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache copyWith({SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue? Function()? value}) {return SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache(
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache(value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache(value: $value)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageDirectUploadRequest {const ImagesImageDirectUploadRequest({this.creator, this.expiry, this.id, this.metadata, this.requireSignedUrLs, });
 
-factory ImagesImageDirectUploadRequest.fromJson(Map<String, dynamic> json) { return ImagesImageDirectUploadRequest(
+factory ImagesImageDirectUploadRequest.fromJson(Map<String, dynamic> json) {return ImagesImageDirectUploadRequest(
   creator: json['creator'] as String?,
   expiry: json['expiry'] != null ? DateTime.parse(json['expiry'] as String) : null,
   id: json['id'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
   requireSignedUrLs: json['requireSignedURLs'] as bool?,
-); }
+);}
 
 /// Can set the creator field with an internal user ID.
 final String? creator;
@@ -26,29 +26,29 @@ final Map<String,dynamic>? metadata;
 final bool? requireSignedUrLs;
 
 /// The value with the schema default applied when absent.
-bool get requireSignedUrLsOrDefault { return requireSignedUrLs ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get requireSignedUrLsOrDefault {return requireSignedUrLs ?? false;}
+Map<String, dynamic> toJson() {return {
   'creator': ?creator,
   if (expiry != null) 'expiry': expiry?.toIso8601String(),
   'id': ?id,
   'metadata': ?metadata,
   'requireSignedURLs': ?requireSignedUrLs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'expiry', 'id', 'metadata', 'requireSignedURLs'}.contains(key)); } 
-ImagesImageDirectUploadRequest copyWith({String? Function()? creator, DateTime? Function()? expiry, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'creator', 'expiry', 'id', 'metadata', 'requireSignedURLs'}.contains(key));}
+ImagesImageDirectUploadRequest copyWith({String? Function()? creator, DateTime? Function()? expiry, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, }) {return ImagesImageDirectUploadRequest(
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImagesImageDirectUploadRequest &&
           creator == other.creator &&
           expiry == other.expiry &&
           id == other.id &&
           metadata == other.metadata &&
-          requireSignedUrLs == other.requireSignedUrLs; } 
-@override int get hashCode { return Object.hash(creator, expiry, id, metadata, requireSignedUrLs); } 
-@override String toString() { return 'ImagesImageDirectUploadRequest(creator: $creator, expiry: $expiry, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs)'; } 
- }
+          requireSignedUrLs == other.requireSignedUrLs;}
+@override int get hashCode {return Object.hash(creator, expiry, id, metadata, requireSignedUrLs);}
+@override String toString() {return 'ImagesImageDirectUploadRequest(creator: $creator, expiry: $expiry, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs)';}
+}

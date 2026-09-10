@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param35.dart';@immutable final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2 {const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2._(this.value);
 
-factory PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2 $empty = PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPay
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsPayto {

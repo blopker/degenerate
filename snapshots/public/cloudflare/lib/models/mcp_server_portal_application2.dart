@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_policy_response.dart';import 'access_apps_components_schemas_name.dart';import 'access_custom_deny_message.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_destinations2.dart';import 'access_domain.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_oauth_configuration.dart';import 'access_options_preflight_bypass.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_allow_authenticate_via_warp.dart';import 'access_schemas_aud.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_scim_config.dart';import 'access_timestamp.dart';import 'access_type.dart';import 'access_uuid.dart';import 'private_destination.dart';import 'public_destination.dart';import 'via_mcp_server_portal_destination.dart';/// The policies that Access applies to the application.
 @immutable final class McpServerPortalApplication2 {const McpServerPortalApplication2({required this.type, this.aud, this.createdAt, this.id, this.updatedAt, this.allowAuthenticateViaWarp, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyMessage, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, this.domain, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.oauthConfiguration, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.scimConfig, this.sessionDuration, this.tags, this.policies, });
 
-factory McpServerPortalApplication2.fromJson(Map<String, dynamic> json) { return McpServerPortalApplication2(
+factory McpServerPortalApplication2.fromJson(Map<String, dynamic> json) {return McpServerPortalApplication2(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -28,7 +28,7 @@ factory McpServerPortalApplication2.fromJson(Map<String, dynamic> json) { return
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: AccessType.fromJson(json['type'] as String),
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessAppPolicyResponse.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -79,7 +79,7 @@ final AccessType type;
 
 final List<AccessAppPolicyResponse>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -104,9 +104,9 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   'type': type.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-McpServerPortalApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? Function()? domain, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, AccessSchemasSessionDuration? Function()? sessionDuration, List<String>? Function()? tags, AccessType? type, List<AccessAppPolicyResponse>? Function()? policies, }) { return McpServerPortalApplication2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+McpServerPortalApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? Function()? domain, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, AccessSchemasSessionDuration? Function()? sessionDuration, List<String>? Function()? tags, AccessType? type, List<AccessAppPolicyResponse>? Function()? policies, }) {return McpServerPortalApplication2(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -131,8 +131,8 @@ McpServerPortalApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessT
   tags: tags != null ? tags() : this.tags,
   type: type ?? this.type,
   policies: policies != null ? policies() : this.policies,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McpServerPortalApplication2 &&
           aud == other.aud &&
           createdAt == other.createdAt &&
@@ -157,7 +157,7 @@ McpServerPortalApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessT
           sessionDuration == other.sessionDuration &&
           listEquals(tags, other.tags) &&
           type == other.type &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hashAll([aud, createdAt, id, updatedAt, allowAuthenticateViaWarp, Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyMessage, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), Object.hashAll(destinations ?? const []), domain, httpOnlyCookieAttribute, logoUrl, name, oauthConfiguration, optionsPreflightBypass, sameSiteCookieAttribute, scimConfig, sessionDuration, Object.hashAll(tags ?? const []), type, Object.hashAll(policies ?? const [])]); } 
-@override String toString() { return 'McpServerPortalApplication2(aud: $aud, createdAt: $createdAt, id: $id, updatedAt: $updatedAt, allowAuthenticateViaWarp: $allowAuthenticateViaWarp, allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, destinations: $destinations, domain: $domain, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, oauthConfiguration: $oauthConfiguration, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, scimConfig: $scimConfig, sessionDuration: $sessionDuration, tags: $tags, type: $type, policies: $policies)'; } 
- }
+          listEquals(policies, other.policies);}
+@override int get hashCode {return Object.hashAll([aud, createdAt, id, updatedAt, allowAuthenticateViaWarp, Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyMessage, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), Object.hashAll(destinations ?? const []), domain, httpOnlyCookieAttribute, logoUrl, name, oauthConfiguration, optionsPreflightBypass, sameSiteCookieAttribute, scimConfig, sessionDuration, Object.hashAll(tags ?? const []), type, Object.hashAll(policies ?? const [])]);}
+@override String toString() {return 'McpServerPortalApplication2(aud: $aud, createdAt: $createdAt, id: $id, updatedAt: $updatedAt, allowAuthenticateViaWarp: $allowAuthenticateViaWarp, allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, destinations: $destinations, domain: $domain, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, oauthConfiguration: $oauthConfiguration, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, scimConfig: $scimConfig, sessionDuration: $sessionDuration, tags: $tags, type: $type, policies: $policies)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion_answer_chosen_by.dart';import 'discussion_category.dart';import 'discussion_reactions.dart';import 'discussion_user.dart';import 'label.dart';/// How the author is associated with the repository.
 @immutable final class DiscussionAuthorAssociation {const DiscussionAuthorAssociation._(this.value);
 
-factory DiscussionAuthorAssociation.fromJson(String json) { return switch (json) {
+factory DiscussionAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -13,7 +13,7 @@ factory DiscussionAuthorAssociation.fromJson(String json) { return switch (json)
   'NONE' => none,
   'OWNER' => owner,
   _ => DiscussionAuthorAssociation._(json),
-}; }
+};}
 
 static const DiscussionAuthorAssociation collaborator = DiscussionAuthorAssociation._('COLLABORATOR');
 
@@ -35,27 +35,27 @@ static const List<DiscussionAuthorAssociation> values = [collaborator, contribut
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscussionAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscussionAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DiscussionAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DiscussionAuthorAssociation($value)';}
+}
 /// The current state of the discussion.
 /// `converting` means that the discussion is being converted from an issue.
 /// `transferring` means that the discussion is being transferred from another repository.
 @immutable final class DiscussionState {const DiscussionState._(this.value);
 
-factory DiscussionState.fromJson(String json) { return switch (json) {
+factory DiscussionState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'locked' => locked,
   'converting' => converting,
   'transferring' => transferring,
   _ => DiscussionState._(json),
-}; }
+};}
 
 static const DiscussionState open = DiscussionState._('open');
 
@@ -71,25 +71,25 @@ static const List<DiscussionState> values = [open, closed, locked, converting, t
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscussionState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscussionState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DiscussionState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DiscussionState($value)';}
+}
 /// The reason for the current state
 @immutable final class DiscussionStateReason {const DiscussionStateReason._(this.value);
 
-factory DiscussionStateReason.fromJson(String json) { return switch (json) {
+factory DiscussionStateReason.fromJson(String json) {return switch (json) {
   'resolved' => resolved,
   'outdated' => outdated,
   'duplicate' => duplicate,
   'reopened' => reopened,
   'null' => $null,
   _ => DiscussionStateReason._(json),
-}; }
+};}
 
 static const DiscussionStateReason resolved = DiscussionStateReason._('resolved');
 
@@ -105,18 +105,18 @@ static const List<DiscussionStateReason> values = [resolved, outdated, duplicate
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscussionStateReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscussionStateReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DiscussionStateReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DiscussionStateReason($value)';}
+}
 /// A Discussion in a repository.
 @immutable final class Discussion {const Discussion({required this.activeLockReason, required this.answerChosenAt, required this.answerChosenBy, required this.answerHtmlUrl, required this.body, required this.category, required this.comments, required this.createdAt, required this.htmlUrl, required this.id, required this.locked, required this.nodeId, required this.number, required this.repositoryUrl, required this.state, required this.stateReason, required this.title, required this.updatedAt, required this.user, this.authorAssociation, this.reactions, this.timelineUrl, this.labels, });
 
-factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
+factory Discussion.fromJson(Map<String, dynamic> json) {return Discussion(
   activeLockReason: json['active_lock_reason'] as String?,
   answerChosenAt: json['answer_chosen_at'] as String?,
   answerChosenBy: json['answer_chosen_by'] != null ? DiscussionAnswerChosenBy.fromJson(json['answer_chosen_by'] as Map<String, dynamic>) : null,
@@ -140,7 +140,7 @@ factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String? activeLockReason;
 
@@ -193,7 +193,7 @@ final DiscussionUser? user;
 
 final List<Label>? labels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_lock_reason': activeLockReason,
   'answer_chosen_at': answerChosenAt,
   'answer_chosen_by': answerChosenBy?.toJson(),
@@ -217,8 +217,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'user': user?.toJson(),
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
       json.containsKey('answer_chosen_at') && (json['answer_chosen_at'] == null || json['answer_chosen_at'] is String) &&
       json.containsKey('answer_chosen_by') &&
       json.containsKey('answer_html_url') && (json['answer_html_url'] == null || json['answer_html_url'] is String) &&
@@ -236,8 +236,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('state_reason') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user'); } 
-Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, DiscussionAnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, DiscussionAuthorAssociation? Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions? Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String? Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label>? Function()? labels, }) { return Discussion(
+      json.containsKey('user');}
+Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, DiscussionAnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, DiscussionAuthorAssociation? Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions? Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String? Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label>? Function()? labels, }) {return Discussion(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   answerChosenAt: answerChosenAt != null ? answerChosenAt() : this.answerChosenAt,
   answerChosenBy: answerChosenBy != null ? answerChosenBy() : this.answerChosenBy,
@@ -261,8 +261,8 @@ Discussion copyWith({String? Function()? activeLockReason, String? Function()? a
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
   labels: labels != null ? labels() : this.labels,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Discussion &&
           activeLockReason == other.activeLockReason &&
           answerChosenAt == other.answerChosenAt &&
@@ -286,7 +286,7 @@ Discussion copyWith({String? Function()? activeLockReason, String? Function()? a
           title == other.title &&
           updatedAt == other.updatedAt &&
           user == other.user &&
-          listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hashAll([activeLockReason, answerChosenAt, answerChosenBy, answerHtmlUrl, authorAssociation, body, category, comments, createdAt, htmlUrl, id, locked, nodeId, number, reactions, repositoryUrl, state, stateReason, timelineUrl, title, updatedAt, user, Object.hashAll(labels ?? const [])]); } 
-@override String toString() { return 'Discussion(activeLockReason: $activeLockReason, answerChosenAt: $answerChosenAt, answerChosenBy: $answerChosenBy, answerHtmlUrl: $answerHtmlUrl, authorAssociation: $authorAssociation, body: $body, category: $category, comments: $comments, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, locked: $locked, nodeId: $nodeId, number: $number, reactions: $reactions, repositoryUrl: $repositoryUrl, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, updatedAt: $updatedAt, user: $user, labels: $labels)'; } 
- }
+          listEquals(labels, other.labels);}
+@override int get hashCode {return Object.hashAll([activeLockReason, answerChosenAt, answerChosenBy, answerHtmlUrl, authorAssociation, body, category, comments, createdAt, htmlUrl, id, locked, nodeId, number, reactions, repositoryUrl, state, stateReason, timelineUrl, title, updatedAt, user, Object.hashAll(labels ?? const [])]);}
+@override String toString() {return 'Discussion(activeLockReason: $activeLockReason, answerChosenAt: $answerChosenAt, answerChosenBy: $answerChosenBy, answerHtmlUrl: $answerHtmlUrl, authorAssociation: $authorAssociation, body: $body, category: $category, comments: $comments, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, locked: $locked, nodeId: $nodeId, number: $number, reactions: $reactions, repositoryUrl: $repositoryUrl, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, updatedAt: $updatedAt, user: $user, labels: $labels)';}
+}

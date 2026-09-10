@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_patterns_series_data.dart';@immutable final class WorkersObservabilityQueryResultsPatternsSeries {const WorkersObservabilityQueryResultsPatternsSeries({required this.data, required this.time, });
 
-factory WorkersObservabilityQueryResultsPatternsSeries.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsPatternsSeries(
+factory WorkersObservabilityQueryResultsPatternsSeries.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryResultsPatternsSeries(
   data: WorkersObservabilityQueryResultsPatternsSeriesData.fromJson(json['data'] as Map<String, dynamic>),
   time: json['time'] as String,
-); }
+);}
 
 final WorkersObservabilityQueryResultsPatternsSeriesData data;
 
 final String time;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.toJson(),
   'time': time,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
-      json.containsKey('time') && json['time'] is String; } 
-WorkersObservabilityQueryResultsPatternsSeries copyWith({WorkersObservabilityQueryResultsPatternsSeriesData? data, String? time, }) { return WorkersObservabilityQueryResultsPatternsSeries(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
+      json.containsKey('time') && json['time'] is String;}
+WorkersObservabilityQueryResultsPatternsSeries copyWith({WorkersObservabilityQueryResultsPatternsSeriesData? data, String? time, }) {return WorkersObservabilityQueryResultsPatternsSeries(
   data: data ?? this.data,
   time: time ?? this.time,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryResultsPatternsSeries &&
           data == other.data &&
-          time == other.time; } 
-@override int get hashCode { return Object.hash(data, time); } 
-@override String toString() { return 'WorkersObservabilityQueryResultsPatternsSeries(data: $data, time: $time)'; } 
- }
+          time == other.time;}
+@override int get hashCode {return Object.hash(data, time);}
+@override String toString() {return 'WorkersObservabilityQueryResultsPatternsSeries(data: $data, time: $time)';}
+}

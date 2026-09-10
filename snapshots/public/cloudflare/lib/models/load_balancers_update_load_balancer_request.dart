@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_adaptive_routing.dart';import 'load_balancing_components_schemas_description.dart';import 'load_balancing_components_schemas_enabled.dart';import 'load_balancing_components_schemas_name.dart';import 'load_balancing_fallback_pool.dart';import 'load_balancing_location_strategy.dart';import 'load_balancing_proxied.dart';import 'load_balancing_random_steering.dart';import 'load_balancing_rules2.dart';import 'load_balancing_session_affinity.dart';import 'load_balancing_session_affinity_attributes.dart';import 'load_balancing_session_affinity_ttl.dart';import 'load_balancing_steering_policy.dart';import 'load_balancing_ttl.dart';@immutable final class LoadBalancersUpdateLoadBalancerRequest {const LoadBalancersUpdateLoadBalancerRequest({required this.defaultPools, required this.fallbackPool, required this.name, this.adaptiveRouting, this.countryPools, this.description, this.enabled, this.locationStrategy, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, });
 
-factory LoadBalancersUpdateLoadBalancerRequest.fromJson(Map<String, dynamic> json) { return LoadBalancersUpdateLoadBalancerRequest(
+factory LoadBalancersUpdateLoadBalancerRequest.fromJson(Map<String, dynamic> json) {return LoadBalancersUpdateLoadBalancerRequest(
   adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,
   countryPools: (json['country_pools'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   defaultPools: (json['default_pools'] as List<dynamic>).map((e) => e as String).toList(),
@@ -22,7 +22,7 @@ factory LoadBalancersUpdateLoadBalancerRequest.fromJson(Map<String, dynamic> jso
   sessionAffinityTtl: json['session_affinity_ttl'] != null ? LoadBalancingSessionAffinityTtl.fromJson(json['session_affinity_ttl'] as num) : null,
   steeringPolicy: json['steering_policy'] != null ? LoadBalancingSteeringPolicy.fromJson(json['steering_policy'] as String) : null,
   ttl: json['ttl'] != null ? LoadBalancingTtl.fromJson(json['ttl'] as num) : null,
-); }
+);}
 
 final LoadBalancingAdaptiveRouting? adaptiveRouting;
 
@@ -85,7 +85,7 @@ final LoadBalancingSteeringPolicy? steeringPolicy;
 /// Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This only applies to gray-clouded (unproxied) load balancers.
 final LoadBalancingTtl? ttl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adaptiveRouting != null) 'adaptive_routing': adaptiveRouting?.toJson(),
   'country_pools': ?countryPools,
   'default_pools': defaultPools,
@@ -105,11 +105,11 @@ Map<String, dynamic> toJson() { return {
   if (sessionAffinityTtl != null) 'session_affinity_ttl': sessionAffinityTtl?.toJson(),
   if (steeringPolicy != null) 'steering_policy': steeringPolicy?.toJson(),
   if (ttl != null) 'ttl': ttl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_pools') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_pools') &&
       json.containsKey('fallback_pool') &&
-      json.containsKey('name'); } 
-LoadBalancersUpdateLoadBalancerRequest copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, Map<String, List<String>>? Function()? countryPools, List<String>? defaultPools, LoadBalancingComponentsSchemasDescription? Function()? description, LoadBalancingComponentsSchemasEnabled? Function()? enabled, LoadBalancingFallbackPool? fallbackPool, LoadBalancingLocationStrategy? Function()? locationStrategy, LoadBalancingComponentsSchemasName? name, List<String>? Function()? networks, Map<String, List<String>>? Function()? popPools, LoadBalancingProxied? Function()? proxied, LoadBalancingRandomSteering? Function()? randomSteering, Map<String, List<String>>? Function()? regionPools, List<LoadBalancingRules2>? Function()? rules, LoadBalancingSessionAffinity? Function()? sessionAffinity, LoadBalancingSessionAffinityAttributes? Function()? sessionAffinityAttributes, LoadBalancingSessionAffinityTtl? Function()? sessionAffinityTtl, LoadBalancingSteeringPolicy? Function()? steeringPolicy, LoadBalancingTtl? Function()? ttl, }) { return LoadBalancersUpdateLoadBalancerRequest(
+      json.containsKey('name');}
+LoadBalancersUpdateLoadBalancerRequest copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, Map<String, List<String>>? Function()? countryPools, List<String>? defaultPools, LoadBalancingComponentsSchemasDescription? Function()? description, LoadBalancingComponentsSchemasEnabled? Function()? enabled, LoadBalancingFallbackPool? fallbackPool, LoadBalancingLocationStrategy? Function()? locationStrategy, LoadBalancingComponentsSchemasName? name, List<String>? Function()? networks, Map<String, List<String>>? Function()? popPools, LoadBalancingProxied? Function()? proxied, LoadBalancingRandomSteering? Function()? randomSteering, Map<String, List<String>>? Function()? regionPools, List<LoadBalancingRules2>? Function()? rules, LoadBalancingSessionAffinity? Function()? sessionAffinity, LoadBalancingSessionAffinityAttributes? Function()? sessionAffinityAttributes, LoadBalancingSessionAffinityTtl? Function()? sessionAffinityTtl, LoadBalancingSteeringPolicy? Function()? steeringPolicy, LoadBalancingTtl? Function()? ttl, }) {return LoadBalancersUpdateLoadBalancerRequest(
   adaptiveRouting: adaptiveRouting != null ? adaptiveRouting() : this.adaptiveRouting,
   countryPools: countryPools != null ? countryPools() : this.countryPools,
   defaultPools: defaultPools ?? this.defaultPools,
@@ -129,8 +129,8 @@ LoadBalancersUpdateLoadBalancerRequest copyWith({LoadBalancingAdaptiveRouting? F
   sessionAffinityTtl: sessionAffinityTtl != null ? sessionAffinityTtl() : this.sessionAffinityTtl,
   steeringPolicy: steeringPolicy != null ? steeringPolicy() : this.steeringPolicy,
   ttl: ttl != null ? ttl() : this.ttl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancersUpdateLoadBalancerRequest &&
           adaptiveRouting == other.adaptiveRouting &&
           countryPools == other.countryPools &&
@@ -150,7 +150,7 @@ LoadBalancersUpdateLoadBalancerRequest copyWith({LoadBalancingAdaptiveRouting? F
           sessionAffinityAttributes == other.sessionAffinityAttributes &&
           sessionAffinityTtl == other.sessionAffinityTtl &&
           steeringPolicy == other.steeringPolicy &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(adaptiveRouting, countryPools, Object.hashAll(defaultPools), description, enabled, fallbackPool, locationStrategy, name, Object.hashAll(networks ?? const []), popPools, proxied, randomSteering, regionPools, Object.hashAll(rules ?? const []), sessionAffinity, sessionAffinityAttributes, sessionAffinityTtl, steeringPolicy, ttl); } 
-@override String toString() { return 'LoadBalancersUpdateLoadBalancerRequest(adaptiveRouting: $adaptiveRouting, countryPools: $countryPools, defaultPools: $defaultPools, description: $description, enabled: $enabled, fallbackPool: $fallbackPool, locationStrategy: $locationStrategy, name: $name, networks: $networks, popPools: $popPools, proxied: $proxied, randomSteering: $randomSteering, regionPools: $regionPools, rules: $rules, sessionAffinity: $sessionAffinity, sessionAffinityAttributes: $sessionAffinityAttributes, sessionAffinityTtl: $sessionAffinityTtl, steeringPolicy: $steeringPolicy, ttl: $ttl)'; } 
- }
+          ttl == other.ttl;}
+@override int get hashCode {return Object.hash(adaptiveRouting, countryPools, Object.hashAll(defaultPools), description, enabled, fallbackPool, locationStrategy, name, Object.hashAll(networks ?? const []), popPools, proxied, randomSteering, regionPools, Object.hashAll(rules ?? const []), sessionAffinity, sessionAffinityAttributes, sessionAffinityTtl, steeringPolicy, ttl);}
+@override String toString() {return 'LoadBalancersUpdateLoadBalancerRequest(adaptiveRouting: $adaptiveRouting, countryPools: $countryPools, defaultPools: $defaultPools, description: $description, enabled: $enabled, fallbackPool: $fallbackPool, locationStrategy: $locationStrategy, name: $name, networks: $networks, popPools: $popPools, proxied: $proxied, randomSteering: $randomSteering, regionPools: $regionPools, rules: $rules, sessionAffinity: $sessionAffinity, sessionAffinityAttributes: $sessionAffinityAttributes, sessionAffinityTtl: $sessionAffinityTtl, steeringPolicy: $steeringPolicy, ttl: $ttl)';}
+}

@@ -2,24 +2,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModifyThreadRequestToolResourcesFileSearch {const ModifyThreadRequestToolResourcesFileSearch({this.vectorStoreIds});
 
-factory ModifyThreadRequestToolResourcesFileSearch.fromJson(Map<String, dynamic> json) { return ModifyThreadRequestToolResourcesFileSearch(
+factory ModifyThreadRequestToolResourcesFileSearch.fromJson(Map<String, dynamic> json) {return ModifyThreadRequestToolResourcesFileSearch(
   vectorStoreIds: (json['vector_store_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
 /// 
 final List<String>? vectorStoreIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'vector_store_ids': ?vectorStoreIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'vector_store_ids'}.contains(key)); } 
-ModifyThreadRequestToolResourcesFileSearch copyWith({List<String>? Function()? vectorStoreIds}) { return ModifyThreadRequestToolResourcesFileSearch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'vector_store_ids'}.contains(key));}
+ModifyThreadRequestToolResourcesFileSearch copyWith({List<String>? Function()? vectorStoreIds}) {return ModifyThreadRequestToolResourcesFileSearch(
   vectorStoreIds: vectorStoreIds != null ? vectorStoreIds() : this.vectorStoreIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ModifyThreadRequestToolResourcesFileSearch &&
-          listEquals(vectorStoreIds, other.vectorStoreIds); } 
-@override int get hashCode { return Object.hashAll(vectorStoreIds ?? const []).hashCode; } 
-@override String toString() { return 'ModifyThreadRequestToolResourcesFileSearch(vectorStoreIds: $vectorStoreIds)'; } 
- }
+          listEquals(vectorStoreIds, other.vectorStoreIds);}
+@override int get hashCode {return Object.hashAll(vectorStoreIds ?? const []).hashCode;}
+@override String toString() {return 'ModifyThreadRequestToolResourcesFileSearch(vectorStoreIds: $vectorStoreIds)';}
+}

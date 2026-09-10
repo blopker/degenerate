@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_request_ai_search_options_retrieval_boost_by.dart';@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod._(this.value);
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod.fromJson(String json) {return switch (json) {
   'max' => max,
   'rrf' => rrf,
   _ => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod._(json),
-}; }
+};}
 
 static const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod max = AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod._('max');
 
@@ -16,22 +16,22 @@ static const List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalF
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod($value)';}
+}
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
 @immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode._(this.value);
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(String json) {return switch (json) {
   'exact_match' => exactMatch,
   'fuzzy_match' => fuzzyMatch,
   _ => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode._(json),
-}; }
+};}
 
 static const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode exactMatch = AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode._('exact_match');
 
@@ -41,22 +41,22 @@ static const List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalK
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode($value)';}
+}
 @immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType._(this.value);
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType.fromJson(String json) {return switch (json) {
   'vector' => vector,
   'keyword' => keyword,
   'hybrid' => hybrid,
   _ => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType._(json),
-}; }
+};}
 
 static const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType vector = AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType._('vector');
 
@@ -68,17 +68,17 @@ static const List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalR
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType($value)';}
+}
 @immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion, this.filters, this.fusionMethod, this.keywordMatchMode, this.matchThreshold, this.maxNumResults, this.retrievalType, this.returnOnFailure, });
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) {return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
   contextExpansion: json['context_expansion'] != null ? (json['context_expansion'] as num).toInt() : null,
   filters: json['filters'] as Map<String, dynamic>?,
@@ -88,7 +88,7 @@ factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval.fromJson(M
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   retrievalType: json['retrieval_type'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType.fromJson(json['retrieval_type'] as String) : null,
   returnOnFailure: json['return_on_failure'] as bool?,
-); }
+);}
 
 /// Metadata fields to boost search results by. Overrides the instance-level boost_by config. Direction defaults to 'asc' for numeric fields, 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
 final List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy>? boostBy;
@@ -111,16 +111,16 @@ final AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType
 final bool? returnOnFailure;
 
 /// The value with the schema default applied when absent.
-int get contextExpansionOrDefault { return contextExpansion ?? 0; } 
+int get contextExpansionOrDefault {return contextExpansion ?? 0;}
 /// The value with the schema default applied when absent.
-AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode get keywordMatchModeOrDefault { return keywordMatchMode ?? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson('exact_match'); } 
+AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode get keywordMatchModeOrDefault {return keywordMatchMode ?? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson('exact_match');}
 /// The value with the schema default applied when absent.
-double get matchThresholdOrDefault { return matchThreshold ?? 0.4; } 
+double get matchThresholdOrDefault {return matchThreshold ?? 0.4;}
 /// The value with the schema default applied when absent.
-int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
+int get maxNumResultsOrDefault {return maxNumResults ?? 10;}
 /// The value with the schema default applied when absent.
-bool get returnOnFailureOrDefault { return returnOnFailure ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get returnOnFailureOrDefault {return returnOnFailure ?? true;}
+Map<String, dynamic> toJson() {return {
   if (boostBy != null) 'boost_by': boostBy?.map((e) => e.toJson()).toList(),
   'context_expansion': ?contextExpansion,
   'filters': ?filters,
@@ -130,9 +130,9 @@ Map<String, dynamic> toJson() { return {
   'max_num_results': ?maxNumResults,
   if (retrievalType != null) 'retrieval_type': retrievalType?.toJson(),
   'return_on_failure': ?returnOnFailure,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'context_expansion', 'filters', 'fusion_method', 'keyword_match_mode', 'match_threshold', 'max_num_results', 'retrieval_type', 'return_on_failure'}.contains(key)); } 
-AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy>? Function()? boostBy, int? Function()? contextExpansion, Map<String, dynamic>? Function()? filters, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod? Function()? fusionMethod, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode? Function()? keywordMatchMode, double? Function()? matchThreshold, int? Function()? maxNumResults, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType? Function()? retrievalType, bool? Function()? returnOnFailure, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'boost_by', 'context_expansion', 'filters', 'fusion_method', 'keyword_match_mode', 'match_threshold', 'max_num_results', 'retrieval_type', 'return_on_failure'}.contains(key));}
+AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy>? Function()? boostBy, int? Function()? contextExpansion, Map<String, dynamic>? Function()? filters, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod? Function()? fusionMethod, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode? Function()? keywordMatchMode, double? Function()? matchThreshold, int? Function()? maxNumResults, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType? Function()? retrievalType, bool? Function()? returnOnFailure, }) {return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,
   filters: filters != null ? filters() : this.filters,
@@ -142,8 +142,8 @@ AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiS
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   retrievalType: retrievalType != null ? retrievalType() : this.retrievalType,
   returnOnFailure: returnOnFailure != null ? returnOnFailure() : this.returnOnFailure,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval &&
           listEquals(boostBy, other.boostBy) &&
           contextExpansion == other.contextExpansion &&
@@ -153,7 +153,7 @@ AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiS
           matchThreshold == other.matchThreshold &&
           maxNumResults == other.maxNumResults &&
           retrievalType == other.retrievalType &&
-          returnOnFailure == other.returnOnFailure; } 
-@override int get hashCode { return Object.hash(Object.hashAll(boostBy ?? const []), contextExpansion, filters, fusionMethod, keywordMatchMode, matchThreshold, maxNumResults, retrievalType, returnOnFailure); } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(boostBy: $boostBy, contextExpansion: $contextExpansion, filters: $filters, fusionMethod: $fusionMethod, keywordMatchMode: $keywordMatchMode, matchThreshold: $matchThreshold, maxNumResults: $maxNumResults, retrievalType: $retrievalType, returnOnFailure: $returnOnFailure)'; } 
- }
+          returnOnFailure == other.returnOnFailure;}
+@override int get hashCode {return Object.hash(Object.hashAll(boostBy ?? const []), contextExpansion, filters, fusionMethod, keywordMatchMode, matchThreshold, maxNumResults, retrievalType, returnOnFailure);}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(boostBy: $boostBy, contextExpansion: $contextExpansion, filters: $filters, fusionMethod: $fusionMethod, keywordMatchMode: $keywordMatchMode, matchThreshold: $matchThreshold, maxNumResults: $maxNumResults, retrievalType: $retrievalType, returnOnFailure: $returnOnFailure)';}
+}

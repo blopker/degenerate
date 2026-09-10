@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_account_id.dart';@immutable final class MconnConduitConnector {const MconnConduitConnector({required this.accountId});
 
-factory MconnConduitConnector.fromJson(Map<String, dynamic> json) { return MconnConduitConnector(
+factory MconnConduitConnector.fromJson(Map<String, dynamic> json) {return MconnConduitConnector(
   accountId: MconnAccountId.fromJson(json['account_id'] as String),
-); }
+);}
 
 /// Account identifier
 final MconnAccountId accountId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id'); } 
-MconnConduitConnector copyWith({MconnAccountId? accountId}) { return MconnConduitConnector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id');}
+MconnConduitConnector copyWith({MconnAccountId? accountId}) {return MconnConduitConnector(
   accountId: accountId ?? this.accountId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnConduitConnector &&
-          accountId == other.accountId; } 
-@override int get hashCode { return accountId.hashCode; } 
-@override String toString() { return 'MconnConduitConnector(accountId: $accountId)'; } 
- }
+          accountId == other.accountId;}
+@override int get hashCode {return accountId.hashCode;}
+@override String toString() {return 'MconnConduitConnector(accountId: $accountId)';}
+}

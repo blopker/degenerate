@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Can produce audio
 @immutable final class RealtimekitUpdatePresetPermissionsMediaAudioCanProduce {const RealtimekitUpdatePresetPermissionsMediaAudioCanProduce._(this.value);
 
-factory RealtimekitUpdatePresetPermissionsMediaAudioCanProduce.fromJson(String json) { return switch (json) {
+factory RealtimekitUpdatePresetPermissionsMediaAudioCanProduce.fromJson(String json) {return switch (json) {
   'ALLOWED' => allowed,
   'NOT_ALLOWED' => notAllowed,
   'CAN_REQUEST' => canRequest,
   _ => RealtimekitUpdatePresetPermissionsMediaAudioCanProduce._(json),
-}; }
+};}
 
 static const RealtimekitUpdatePresetPermissionsMediaAudioCanProduce allowed = RealtimekitUpdatePresetPermissionsMediaAudioCanProduce._('ALLOWED');
 
@@ -20,34 +20,34 @@ static const List<RealtimekitUpdatePresetPermissionsMediaAudioCanProduce> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitUpdatePresetPermissionsMediaAudioCanProduce && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsMediaAudioCanProduce($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitUpdatePresetPermissionsMediaAudioCanProduce && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitUpdatePresetPermissionsMediaAudioCanProduce($value)';}
+}
 /// Audio permissions
 @immutable final class RealtimekitUpdatePresetPermissionsMediaAudio {const RealtimekitUpdatePresetPermissionsMediaAudio({this.canProduce});
 
-factory RealtimekitUpdatePresetPermissionsMediaAudio.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsMediaAudio(
+factory RealtimekitUpdatePresetPermissionsMediaAudio.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetPermissionsMediaAudio(
   canProduce: json['can_produce'] != null ? RealtimekitUpdatePresetPermissionsMediaAudioCanProduce.fromJson(json['can_produce'] as String) : null,
-); }
+);}
 
 /// Can produce audio
 final RealtimekitUpdatePresetPermissionsMediaAudioCanProduce? canProduce;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (canProduce != null) 'can_produce': canProduce?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_produce'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsMediaAudio copyWith({RealtimekitUpdatePresetPermissionsMediaAudioCanProduce? Function()? canProduce}) { return RealtimekitUpdatePresetPermissionsMediaAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_produce'}.contains(key));}
+RealtimekitUpdatePresetPermissionsMediaAudio copyWith({RealtimekitUpdatePresetPermissionsMediaAudioCanProduce? Function()? canProduce}) {return RealtimekitUpdatePresetPermissionsMediaAudio(
   canProduce: canProduce != null ? canProduce() : this.canProduce,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsMediaAudio &&
-          canProduce == other.canProduce; } 
-@override int get hashCode { return canProduce.hashCode; } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsMediaAudio(canProduce: $canProduce)'; } 
- }
+          canProduce == other.canProduce;}
+@override int get hashCode {return canProduce.hashCode;}
+@override String toString() {return 'RealtimekitUpdatePresetPermissionsMediaAudio(canProduce: $canProduce)';}
+}

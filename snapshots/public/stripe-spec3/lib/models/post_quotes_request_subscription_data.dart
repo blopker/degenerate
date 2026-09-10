@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_request_subscription_data_billing_mode.dart';import 'post_quotes_request_subscription_data_effective_date.dart';import 'post_quotes_request_subscription_data_trial_period_days.dart';/// When creating a subscription or subscription schedule, the specified configuration data will be used. There must be at least one line item with a recurring price for a subscription or subscription schedule to be created. A subscription schedule is created if `subscription_data[effective_date]` is present and in the future, otherwise a subscription is created.
 @immutable final class PostQuotesRequestSubscriptionData {const PostQuotesRequestSubscriptionData({this.billingMode, this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
 
-factory PostQuotesRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostQuotesRequestSubscriptionData(
+factory PostQuotesRequestSubscriptionData.fromJson(Map<String, dynamic> json) {return PostQuotesRequestSubscriptionData(
   billingMode: json['billing_mode'] != null ? PostQuotesRequestSubscriptionDataBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   effectiveDate: json['effective_date'] != null ? PostQuotesRequestSubscriptionDataEffectiveDate.fromJson(json['effective_date']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   trialPeriodDays: json['trial_period_days'] != null ? PostQuotesRequestSubscriptionDataTrialPeriodDays.fromJson(json['trial_period_days']) : null,
-); }
+);}
 
 final PostQuotesRequestSubscriptionDataBillingMode? billingMode;
 
@@ -21,28 +21,28 @@ final Map<String,String>? metadata;
 
 final PostQuotesRequestSubscriptionDataTrialPeriodDays? trialPeriodDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingMode != null) 'billing_mode': billingMode?.toJson(),
   'description': ?description,
   if (effectiveDate != null) 'effective_date': effectiveDate?.toJson(),
   'metadata': ?metadata,
   if (trialPeriodDays != null) 'trial_period_days': trialPeriodDays?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'description', 'effective_date', 'metadata', 'trial_period_days'}.contains(key)); } 
-PostQuotesRequestSubscriptionData copyWith({PostQuotesRequestSubscriptionDataBillingMode? Function()? billingMode, String? Function()? description, PostQuotesRequestSubscriptionDataEffectiveDate? Function()? effectiveDate, Map<String, String>? Function()? metadata, PostQuotesRequestSubscriptionDataTrialPeriodDays? Function()? trialPeriodDays, }) { return PostQuotesRequestSubscriptionData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_mode', 'description', 'effective_date', 'metadata', 'trial_period_days'}.contains(key));}
+PostQuotesRequestSubscriptionData copyWith({PostQuotesRequestSubscriptionDataBillingMode? Function()? billingMode, String? Function()? description, PostQuotesRequestSubscriptionDataEffectiveDate? Function()? effectiveDate, Map<String, String>? Function()? metadata, PostQuotesRequestSubscriptionDataTrialPeriodDays? Function()? trialPeriodDays, }) {return PostQuotesRequestSubscriptionData(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   description: description != null ? description() : this.description,
   effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
   metadata: metadata != null ? metadata() : this.metadata,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostQuotesRequestSubscriptionData &&
           billingMode == other.billingMode &&
           description == other.description &&
           effectiveDate == other.effectiveDate &&
           metadata == other.metadata &&
-          trialPeriodDays == other.trialPeriodDays; } 
-@override int get hashCode { return Object.hash(billingMode, description, effectiveDate, metadata, trialPeriodDays); } 
-@override String toString() { return 'PostQuotesRequestSubscriptionData(billingMode: $billingMode, description: $description, effectiveDate: $effectiveDate, metadata: $metadata, trialPeriodDays: $trialPeriodDays)'; } 
- }
+          trialPeriodDays == other.trialPeriodDays;}
+@override int get hashCode {return Object.hash(billingMode, description, effectiveDate, metadata, trialPeriodDays);}
+@override String toString() {return 'PostQuotesRequestSubscriptionData(billingMode: $billingMode, description: $description, effectiveDate: $effectiveDate, metadata: $metadata, trialPeriodDays: $trialPeriodDays)';}
+}

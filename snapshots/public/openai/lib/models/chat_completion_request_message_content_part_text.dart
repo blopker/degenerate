@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Learn about [tex
 /// 
 @immutable final class ChatCompletionRequestMessageContentPartText {const ChatCompletionRequestMessageContentPartText({required this.type, required this.text, });
 
-factory ChatCompletionRequestMessageContentPartText.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartText(
+factory ChatCompletionRequestMessageContentPartText.fromJson(Map<String, dynamic> json) {return ChatCompletionRequestMessageContentPartText(
   type: json['type'] as String,
   text: json['text'] as String,
-); }
+);}
 
 /// The type of the content part.
 final String type;
@@ -15,20 +15,20 @@ final String type;
 /// The text content.
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('text') && json['text'] is String; } 
-ChatCompletionRequestMessageContentPartText copyWith({String? type, String? text, }) { return ChatCompletionRequestMessageContentPartText(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('text') && json['text'] is String;}
+ChatCompletionRequestMessageContentPartText copyWith({String? type, String? text, }) {return ChatCompletionRequestMessageContentPartText(
   type: type ?? this.type,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartText &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartText(type: $type, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(type, text);}
+@override String toString() {return 'ChatCompletionRequestMessageContentPartText(type: $type, text: $text)';}
+}

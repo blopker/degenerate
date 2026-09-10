@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls how immutable releases are enforced in the organization.
 @immutable final class ImmutableReleasesOrganizationSettingsEnforcedRepositories {const ImmutableReleasesOrganizationSettingsEnforcedRepositories._(this.value);
 
-factory ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(String json) { return switch (json) {
+factory ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(String json) {return switch (json) {
   'all' => all,
   'none' => none,
   'selected' => selected,
   _ => ImmutableReleasesOrganizationSettingsEnforcedRepositories._(json),
-}; }
+};}
 
 static const ImmutableReleasesOrganizationSettingsEnforcedRepositories all = ImmutableReleasesOrganizationSettingsEnforcedRepositories._('all');
 
@@ -20,21 +20,21 @@ static const List<ImmutableReleasesOrganizationSettingsEnforcedRepositories> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImmutableReleasesOrganizationSettingsEnforcedRepositories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImmutableReleasesOrganizationSettingsEnforcedRepositories($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImmutableReleasesOrganizationSettingsEnforcedRepositories && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImmutableReleasesOrganizationSettingsEnforcedRepositories($value)';}
+}
 /// Check immutable releases settings for an organization.
 @immutable final class ImmutableReleasesOrganizationSettings {const ImmutableReleasesOrganizationSettings({required this.enforcedRepositories, this.selectedRepositoriesUrl, });
 
-factory ImmutableReleasesOrganizationSettings.fromJson(Map<String, dynamic> json) { return ImmutableReleasesOrganizationSettings(
+factory ImmutableReleasesOrganizationSettings.fromJson(Map<String, dynamic> json) {return ImmutableReleasesOrganizationSettings(
   enforcedRepositories: ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(json['enforced_repositories'] as String),
   selectedRepositoriesUrl: json['selected_repositories_url'] as String?,
-); }
+);}
 
 /// The policy that controls how immutable releases are enforced in the organization.
 final ImmutableReleasesOrganizationSettingsEnforcedRepositories enforcedRepositories;
@@ -42,19 +42,19 @@ final ImmutableReleasesOrganizationSettingsEnforcedRepositories enforcedReposito
 /// The API URL to use to get or set the selected repositories for immutable releases enforcement, when `enforced_repositories` is set to `selected`.
 final String? selectedRepositoriesUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enforced_repositories': enforcedRepositories.toJson(),
   'selected_repositories_url': ?selectedRepositoriesUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enforced_repositories'); } 
-ImmutableReleasesOrganizationSettings copyWith({ImmutableReleasesOrganizationSettingsEnforcedRepositories? enforcedRepositories, String? Function()? selectedRepositoriesUrl, }) { return ImmutableReleasesOrganizationSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enforced_repositories');}
+ImmutableReleasesOrganizationSettings copyWith({ImmutableReleasesOrganizationSettingsEnforcedRepositories? enforcedRepositories, String? Function()? selectedRepositoriesUrl, }) {return ImmutableReleasesOrganizationSettings(
   enforcedRepositories: enforcedRepositories ?? this.enforcedRepositories,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImmutableReleasesOrganizationSettings &&
           enforcedRepositories == other.enforcedRepositories &&
-          selectedRepositoriesUrl == other.selectedRepositoriesUrl; } 
-@override int get hashCode { return Object.hash(enforcedRepositories, selectedRepositoriesUrl); } 
-@override String toString() { return 'ImmutableReleasesOrganizationSettings(enforcedRepositories: $enforcedRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl)'; } 
- }
+          selectedRepositoriesUrl == other.selectedRepositoriesUrl;}
+@override int get hashCode {return Object.hash(enforcedRepositories, selectedRepositoriesUrl);}
+@override String toString() {return 'ImmutableReleasesOrganizationSettings(enforcedRepositories: $enforcedRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl)';}
+}

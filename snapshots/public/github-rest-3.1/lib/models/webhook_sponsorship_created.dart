@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipCreatedAction {const WebhookSponsorshipCreatedAction._(this.value);
 
-factory WebhookSponsorshipCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookSponsorshipCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookSponsorshipCreatedAction._(json),
-}; }
+};}
 
 static const WebhookSponsorshipCreatedAction created = WebhookSponsorshipCreatedAction._('created');
 
@@ -13,17 +13,17 @@ static const List<WebhookSponsorshipCreatedAction> values = [created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSponsorshipCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookSponsorshipCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookSponsorshipCreatedAction($value)';}
+}
 @immutable final class WebhookSponsorshipCreated {const WebhookSponsorshipCreated({required this.action, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookSponsorshipCreated.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipCreated(
+factory WebhookSponsorshipCreated.fromJson(Map<String, dynamic> json) {return WebhookSponsorshipCreated(
   action: WebhookSponsorshipCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookSponsorshipCreated.fromJson(Map<String, dynamic> json) { return W
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookSponsorshipCreatedAction action;
 
@@ -47,7 +47,7 @@ final SimpleUser sender;
 
 final WebhooksSponsorship sponsorship;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,11 +55,11 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('sender') &&
-      json.containsKey('sponsorship'); } 
-WebhookSponsorshipCreated copyWith({WebhookSponsorshipCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipCreated(
+      json.containsKey('sponsorship');}
+WebhookSponsorshipCreated copyWith({WebhookSponsorshipCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) {return WebhookSponsorshipCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -67,8 +67,8 @@ WebhookSponsorshipCreated copyWith({WebhookSponsorshipCreatedAction? action, Ent
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookSponsorshipCreated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -76,7 +76,7 @@ WebhookSponsorshipCreated copyWith({WebhookSponsorshipCreatedAction? action, Ent
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          sponsorship == other.sponsorship; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, sponsorship); } 
-@override String toString() { return 'WebhookSponsorshipCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
- }
+          sponsorship == other.sponsorship;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, repository, sender, sponsorship);}
+@override String toString() {return 'WebhookSponsorshipCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';}
+}

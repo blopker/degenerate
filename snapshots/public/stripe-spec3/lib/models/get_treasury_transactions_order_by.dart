@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryTransactionsOrderBy {const GetTreasuryTransactionsOrderBy._(this.value);
 
-factory GetTreasuryTransactionsOrderBy.fromJson(String json) { return switch (json) {
+factory GetTreasuryTransactionsOrderBy.fromJson(String json) {return switch (json) {
   'created' => created,
   'posted_at' => postedAt,
   _ => GetTreasuryTransactionsOrderBy._(json),
-}; }
+};}
 
 static const GetTreasuryTransactionsOrderBy created = GetTreasuryTransactionsOrderBy._('created');
 
@@ -16,11 +16,11 @@ static const List<GetTreasuryTransactionsOrderBy> values = [created, postedAt];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTreasuryTransactionsOrderBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTreasuryTransactionsOrderBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTreasuryTransactionsOrderBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTreasuryTransactionsOrderBy($value)';}
+}

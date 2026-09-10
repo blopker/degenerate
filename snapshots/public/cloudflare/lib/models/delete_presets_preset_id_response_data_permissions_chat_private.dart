@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletePresetsPresetIdResponseDataPermissionsChatPrivate {const DeletePresetsPresetIdResponseDataPermissionsChatPrivate({required this.canReceive, required this.canSend, required this.files, required this.text, });
 
-factory DeletePresetsPresetIdResponseDataPermissionsChatPrivate.fromJson(Map<String, dynamic> json) { return DeletePresetsPresetIdResponseDataPermissionsChatPrivate(
+factory DeletePresetsPresetIdResponseDataPermissionsChatPrivate.fromJson(Map<String, dynamic> json) {return DeletePresetsPresetIdResponseDataPermissionsChatPrivate(
   canReceive: json['can_receive'] as bool,
   canSend: json['can_send'] as bool,
   files: json['files'] as bool,
   text: json['text'] as bool,
-); }
+);}
 
 final bool canReceive;
 
@@ -17,28 +17,28 @@ final bool files;
 
 final bool text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_receive': canReceive,
   'can_send': canSend,
   'files': files,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('can_receive') && json['can_receive'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('can_receive') && json['can_receive'] is bool &&
       json.containsKey('can_send') && json['can_send'] is bool &&
       json.containsKey('files') && json['files'] is bool &&
-      json.containsKey('text') && json['text'] is bool; } 
-DeletePresetsPresetIdResponseDataPermissionsChatPrivate copyWith({bool? canReceive, bool? canSend, bool? files, bool? text, }) { return DeletePresetsPresetIdResponseDataPermissionsChatPrivate(
+      json.containsKey('text') && json['text'] is bool;}
+DeletePresetsPresetIdResponseDataPermissionsChatPrivate copyWith({bool? canReceive, bool? canSend, bool? files, bool? text, }) {return DeletePresetsPresetIdResponseDataPermissionsChatPrivate(
   canReceive: canReceive ?? this.canReceive,
   canSend: canSend ?? this.canSend,
   files: files ?? this.files,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeletePresetsPresetIdResponseDataPermissionsChatPrivate &&
           canReceive == other.canReceive &&
           canSend == other.canSend &&
           files == other.files &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(canReceive, canSend, files, text); } 
-@override String toString() { return 'DeletePresetsPresetIdResponseDataPermissionsChatPrivate(canReceive: $canReceive, canSend: $canSend, files: $files, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(canReceive, canSend, files, text);}
+@override String toString() {return 'DeletePresetsPresetIdResponseDataPermissionsChatPrivate(canReceive: $canReceive, canSend: $canSend, files: $files, text: $text)';}
+}

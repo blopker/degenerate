@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_credential_list_sip_credential.dart';@immutable final class ListSipCredentialResponse {const ListSipCredentialResponse({this.credentials, this.end, this.firstPageUri, this.nextPageUri = const Omittable.absent(), this.page, this.pageSize, this.previousPageUri = const Omittable.absent(), this.start, this.uri, });
 
-factory ListSipCredentialResponse.fromJson(Map<String, dynamic> json) { return ListSipCredentialResponse(
+factory ListSipCredentialResponse.fromJson(Map<String, dynamic> json) {return ListSipCredentialResponse(
   credentials: (json['credentials'] as List<dynamic>?)?.map((e) => AccountSipSipCredentialListSipCredential.fromJson(e as Map<String, dynamic>)).toList(),
   end: json['end'] != null ? (json['end'] as num).toInt() : null,
   firstPageUri: json['first_page_uri'] != null ? Uri.parse(json['first_page_uri'] as String) : null,
@@ -12,7 +12,7 @@ factory ListSipCredentialResponse.fromJson(Map<String, dynamic> json) { return L
   previousPageUri: json.containsKey('previous_page_uri') ? Omittable(json['previous_page_uri'] != null ? Uri.parse(json['previous_page_uri'] as String) : null) : const Omittable.absent(),
   start: json['start'] != null ? (json['start'] as num).toInt() : null,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
-); }
+);}
 
 final List<AccountSipSipCredentialListSipCredential>? credentials;
 
@@ -32,7 +32,7 @@ final int? start;
 
 final Uri? uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (credentials != null) 'credentials': credentials?.map((e) => e.toJson()).toList(),
   'end': ?end,
   if (firstPageUri != null) 'first_page_uri': firstPageUri?.toString(),
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (previousPageUri.isPresent) 'previous_page_uri': previousPageUri.value?.toString(),
   'start': ?start,
   if (uri != null) 'uri': uri?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'credentials', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
-ListSipCredentialResponse copyWith({List<AccountSipSipCredentialListSipCredential>? Function()? credentials, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) { return ListSipCredentialResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'credentials', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key));}
+ListSipCredentialResponse copyWith({List<AccountSipSipCredentialListSipCredential>? Function()? credentials, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) {return ListSipCredentialResponse(
   credentials: credentials != null ? credentials() : this.credentials,
   end: end != null ? end() : this.end,
   firstPageUri: firstPageUri != null ? firstPageUri() : this.firstPageUri,
@@ -54,8 +54,8 @@ ListSipCredentialResponse copyWith({List<AccountSipSipCredentialListSipCredentia
   previousPageUri: previousPageUri ?? this.previousPageUri,
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListSipCredentialResponse &&
           listEquals(credentials, other.credentials) &&
           end == other.end &&
@@ -65,7 +65,7 @@ ListSipCredentialResponse copyWith({List<AccountSipSipCredentialListSipCredentia
           pageSize == other.pageSize &&
           previousPageUri == other.previousPageUri &&
           start == other.start &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(credentials ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri); } 
-@override String toString() { return 'ListSipCredentialResponse(credentials: $credentials, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)'; } 
- }
+          uri == other.uri;}
+@override int get hashCode {return Object.hash(Object.hashAll(credentials ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);}
+@override String toString() {return 'ListSipCredentialResponse(credentials: $credentials, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';}
+}

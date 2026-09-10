@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperJobStatus {const R2SlurperJobStatus._(this.value);
 
-factory R2SlurperJobStatus.fromJson(String json) { return switch (json) {
+factory R2SlurperJobStatus.fromJson(String json) {return switch (json) {
   'running' => running,
   'paused' => paused,
   'aborted' => aborted,
   'completed' => completed,
   _ => R2SlurperJobStatus._(json),
-}; }
+};}
 
 static const R2SlurperJobStatus running = R2SlurperJobStatus._('running');
 
@@ -22,11 +22,11 @@ static const List<R2SlurperJobStatus> values = [running, paused, aborted, comple
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperJobStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperJobStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2SlurperJobStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2SlurperJobStatus($value)';}
+}

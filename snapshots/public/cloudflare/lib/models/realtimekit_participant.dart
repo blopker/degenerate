@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a participant.
 @immutable final class RealtimekitParticipant {const RealtimekitParticipant({required this.createdAt, required this.customParticipantId, required this.id, required this.presetName, required this.updatedAt, this.name = const Omittable.absent(), this.picture = const Omittable.absent(), });
 
-factory RealtimekitParticipant.fromJson(Map<String, dynamic> json) { return RealtimekitParticipant(
+factory RealtimekitParticipant.fromJson(Map<String, dynamic> json) {return RealtimekitParticipant(
   createdAt: DateTime.parse(json['created_at'] as String),
   customParticipantId: json['custom_participant_id'] as String,
   id: json['id'] as String,
@@ -11,7 +11,7 @@ factory RealtimekitParticipant.fromJson(Map<String, dynamic> json) { return Real
   picture: json.containsKey('picture') ? Omittable(json['picture'] != null ? Uri.parse(json['picture'] as String) : null) : const Omittable.absent(),
   presetName: json['preset_name'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// When this object was created. The time is returned in ISO format.
 final DateTime createdAt;
@@ -34,7 +34,7 @@ final String presetName;
 /// When this object was updated. The time is returned in ISO format.
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'custom_participant_id': customParticipantId,
   'id': id,
@@ -42,13 +42,13 @@ Map<String, dynamic> toJson() { return {
   if (picture.isPresent) 'picture': picture.value?.toString(),
   'preset_name': presetName,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('custom_participant_id') && json['custom_participant_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('preset_name') && json['preset_name'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitParticipant copyWith({DateTime? createdAt, String? customParticipantId, String? id, Omittable<String?>? name, Omittable<Uri?>? picture, String? presetName, DateTime? updatedAt, }) { return RealtimekitParticipant(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+RealtimekitParticipant copyWith({DateTime? createdAt, String? customParticipantId, String? id, Omittable<String?>? name, Omittable<Uri?>? picture, String? presetName, DateTime? updatedAt, }) {return RealtimekitParticipant(
   createdAt: createdAt ?? this.createdAt,
   customParticipantId: customParticipantId ?? this.customParticipantId,
   id: id ?? this.id,
@@ -56,8 +56,8 @@ RealtimekitParticipant copyWith({DateTime? createdAt, String? customParticipantI
   picture: picture ?? this.picture,
   presetName: presetName ?? this.presetName,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitParticipant &&
           createdAt == other.createdAt &&
           customParticipantId == other.customParticipantId &&
@@ -65,7 +65,7 @@ RealtimekitParticipant copyWith({DateTime? createdAt, String? customParticipantI
           name == other.name &&
           picture == other.picture &&
           presetName == other.presetName &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, customParticipantId, id, name, picture, presetName, updatedAt); } 
-@override String toString() { return 'RealtimekitParticipant(createdAt: $createdAt, customParticipantId: $customParticipantId, id: $id, name: $name, picture: $picture, presetName: $presetName, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, customParticipantId, id, name, picture, presetName, updatedAt);}
+@override String toString() {return 'RealtimekitParticipant(createdAt: $createdAt, customParticipantId: $customParticipantId, id: $id, name: $name, picture: $picture, presetName: $presetName, updatedAt: $updatedAt)';}
+}

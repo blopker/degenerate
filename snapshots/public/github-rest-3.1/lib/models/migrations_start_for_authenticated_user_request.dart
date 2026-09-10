@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
 @immutable final class MigrationsStartForAuthenticatedUserRequestExclude {const MigrationsStartForAuthenticatedUserRequestExclude._(this.value);
 
-factory MigrationsStartForAuthenticatedUserRequestExclude.fromJson(String json) { return switch (json) {
+factory MigrationsStartForAuthenticatedUserRequestExclude.fromJson(String json) {return switch (json) {
   'repositories' => repositories,
   _ => MigrationsStartForAuthenticatedUserRequestExclude._(json),
-}; }
+};}
 
 static const MigrationsStartForAuthenticatedUserRequestExclude repositories = MigrationsStartForAuthenticatedUserRequestExclude._('repositories');
 
@@ -14,17 +14,17 @@ static const List<MigrationsStartForAuthenticatedUserRequestExclude> values = [r
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MigrationsStartForAuthenticatedUserRequestExclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MigrationsStartForAuthenticatedUserRequestExclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MigrationsStartForAuthenticatedUserRequestExclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MigrationsStartForAuthenticatedUserRequestExclude($value)';}
+}
 @immutable final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly, this.exclude, });
 
-factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartForAuthenticatedUserRequest(
+factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: json['lock_repositories'] as bool?,
   excludeMetadata: json['exclude_metadata'] as bool?,
   excludeGitData: json['exclude_git_data'] as bool?,
@@ -34,7 +34,7 @@ factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic>
   orgMetadataOnly: json['org_metadata_only'] as bool?,
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => MigrationsStartForAuthenticatedUserRequestExclude.fromJson(e as String)).toList(),
   repositories: (json['repositories'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Lock the repositories being migrated at the start of the migration
 final bool? lockRepositories;
@@ -63,8 +63,8 @@ final List<MigrationsStartForAuthenticatedUserRequestExclude>? exclude;
 final List<String> repositories;
 
 /// The value with the schema default applied when absent.
-bool get orgMetadataOnlyOrDefault { return orgMetadataOnly ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get orgMetadataOnlyOrDefault {return orgMetadataOnly ?? false;}
+Map<String, dynamic> toJson() {return {
   'lock_repositories': ?lockRepositories,
   'exclude_metadata': ?excludeMetadata,
   'exclude_git_data': ?excludeGitData,
@@ -74,9 +74,9 @@ Map<String, dynamic> toJson() { return {
   'org_metadata_only': ?orgMetadataOnly,
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   'repositories': repositories,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repositories'); } 
-MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool? Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, List<String>? repositories, }) { return MigrationsStartForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repositories');}
+MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool? Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, List<String>? repositories, }) {return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: lockRepositories != null ? lockRepositories() : this.lockRepositories,
   excludeMetadata: excludeMetadata != null ? excludeMetadata() : this.excludeMetadata,
   excludeGitData: excludeGitData != null ? excludeGitData() : this.excludeGitData,
@@ -86,8 +86,8 @@ MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepos
   orgMetadataOnly: orgMetadataOnly != null ? orgMetadataOnly() : this.orgMetadataOnly,
   exclude: exclude != null ? exclude() : this.exclude,
   repositories: repositories ?? this.repositories,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MigrationsStartForAuthenticatedUserRequest &&
           lockRepositories == other.lockRepositories &&
           excludeMetadata == other.excludeMetadata &&
@@ -97,7 +97,7 @@ MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepos
           excludeOwnerProjects == other.excludeOwnerProjects &&
           orgMetadataOnly == other.orgMetadataOnly &&
           listEquals(exclude, other.exclude) &&
-          listEquals(repositories, other.repositories); } 
-@override int get hashCode { return Object.hash(lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const []), Object.hashAll(repositories)); } 
-@override String toString() { return 'MigrationsStartForAuthenticatedUserRequest(lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude, repositories: $repositories)'; } 
- }
+          listEquals(repositories, other.repositories);}
+@override int get hashCode {return Object.hash(lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const []), Object.hashAll(repositories));}
+@override String toString() {return 'MigrationsStartForAuthenticatedUserRequest(lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude, repositories: $repositories)';}
+}

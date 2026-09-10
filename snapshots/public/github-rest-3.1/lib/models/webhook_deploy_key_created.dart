@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_key.dart';@immutable final class WebhookDeployKeyCreatedAction {const WebhookDeployKeyCreatedAction._(this.value);
 
-factory WebhookDeployKeyCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookDeployKeyCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookDeployKeyCreatedAction._(json),
-}; }
+};}
 
 static const WebhookDeployKeyCreatedAction created = WebhookDeployKeyCreatedAction._('created');
 
@@ -13,17 +13,17 @@ static const List<WebhookDeployKeyCreatedAction> values = [created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeployKeyCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeployKeyCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDeployKeyCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDeployKeyCreatedAction($value)';}
+}
 @immutable final class WebhookDeployKeyCreated {const WebhookDeployKeyCreated({required this.action, required this.key, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDeployKeyCreated.fromJson(Map<String, dynamic> json) { return WebhookDeployKeyCreated(
+factory WebhookDeployKeyCreated.fromJson(Map<String, dynamic> json) {return WebhookDeployKeyCreated(
   action: WebhookDeployKeyCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookDeployKeyCreated.fromJson(Map<String, dynamic> json) { return Web
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDeployKeyCreatedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('key') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDeployKeyCreated copyWith({WebhookDeployKeyCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksDeployKey? key, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDeployKeyCreated(
+      json.containsKey('sender');}
+WebhookDeployKeyCreated copyWith({WebhookDeployKeyCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksDeployKey? key, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDeployKeyCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -68,8 +68,8 @@ WebhookDeployKeyCreated copyWith({WebhookDeployKeyCreatedAction? action, Enterpr
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeployKeyCreated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -77,7 +77,7 @@ WebhookDeployKeyCreated copyWith({WebhookDeployKeyCreatedAction? action, Enterpr
           key == other.key &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, key, organization, repository, sender); } 
-@override String toString() { return 'WebhookDeployKeyCreated(action: $action, enterprise: $enterprise, installation: $installation, key: $key, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, key, organization, repository, sender);}
+@override String toString() {return 'WebhookDeployKeyCreated(action: $action, enterprise: $enterprise, installation: $installation, key: $key, organization: $organization, repository: $repository, sender: $sender)';}
+}

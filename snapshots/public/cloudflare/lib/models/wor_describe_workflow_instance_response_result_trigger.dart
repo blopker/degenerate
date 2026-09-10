@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultTriggerSource {const WorDescribeWorkflowInstanceResponseResultTriggerSource._(this.value);
 
-factory WorDescribeWorkflowInstanceResponseResultTriggerSource.fromJson(String json) { return switch (json) {
+factory WorDescribeWorkflowInstanceResponseResultTriggerSource.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'api' => api,
   'binding' => binding,
   'event' => event,
   'cron' => cron,
   _ => WorDescribeWorkflowInstanceResponseResultTriggerSource._(json),
-}; }
+};}
 
 static const WorDescribeWorkflowInstanceResponseResultTriggerSource unknown = WorDescribeWorkflowInstanceResponseResultTriggerSource._('unknown');
 
@@ -25,32 +25,32 @@ static const List<WorDescribeWorkflowInstanceResponseResultTriggerSource> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorDescribeWorkflowInstanceResponseResultTriggerSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultTriggerSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorDescribeWorkflowInstanceResponseResultTriggerSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultTriggerSource($value)';}
+}
 @immutable final class WorDescribeWorkflowInstanceResponseResultTrigger {const WorDescribeWorkflowInstanceResponseResultTrigger({required this.source});
 
-factory WorDescribeWorkflowInstanceResponseResultTrigger.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultTrigger(
+factory WorDescribeWorkflowInstanceResponseResultTrigger.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseResultTrigger(
   source: WorDescribeWorkflowInstanceResponseResultTriggerSource.fromJson(json['source'] as String),
-); }
+);}
 
 final WorDescribeWorkflowInstanceResponseResultTriggerSource source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'source': source.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('source'); } 
-WorDescribeWorkflowInstanceResponseResultTrigger copyWith({WorDescribeWorkflowInstanceResponseResultTriggerSource? source}) { return WorDescribeWorkflowInstanceResponseResultTrigger(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('source');}
+WorDescribeWorkflowInstanceResponseResultTrigger copyWith({WorDescribeWorkflowInstanceResponseResultTriggerSource? source}) {return WorDescribeWorkflowInstanceResponseResultTrigger(
   source: source ?? this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResultTrigger &&
-          source == other.source; } 
-@override int get hashCode { return source.hashCode; } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultTrigger(source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return source.hashCode;}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultTrigger(source: $source)';}
+}

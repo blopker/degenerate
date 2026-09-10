@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_kakao_pay_display_preference.dart';/// Kakao Pay is a popular local wallet available in South Korea.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestKakaoPay {const PostPaymentMethodConfigurationsConfigurationRequestKakaoPay({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestKakaoPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestKakaoPay(
+factory PostPaymentMethodConfigurationsConfigurationRequestKakaoPay.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestKakaoPay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKakaoPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsConfigurationRequestKakaoPayDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestKakaoPay copyWith({PostPaymentMethodConfigurationsConfigurationRequestKakaoPayDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestKakaoPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestKakaoPay copyWith({PostPaymentMethodConfigurationsConfigurationRequestKakaoPayDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsConfigurationRequestKakaoPay(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestKakaoPay &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestKakaoPay(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsConfigurationRequestKakaoPay(displayPreference: $displayPreference)';}
+}

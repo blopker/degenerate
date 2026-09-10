@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiSearchModelResponse404 {const WorkersAiSearchModelResponse404({required this.errors, required this.success, });
 
-factory WorkersAiSearchModelResponse404.fromJson(Map<String, dynamic> json) { return WorkersAiSearchModelResponse404(
+factory WorkersAiSearchModelResponse404.fromJson(Map<String, dynamic> json) {return WorkersAiSearchModelResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<Map<String,dynamic>> errors;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
-      json.containsKey('success') && json['success'] is bool; } 
-WorkersAiSearchModelResponse404 copyWith({List<Map<String,dynamic>>? errors, bool? success, }) { return WorkersAiSearchModelResponse404(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool;}
+WorkersAiSearchModelResponse404 copyWith({List<Map<String,dynamic>>? errors, bool? success, }) {return WorkersAiSearchModelResponse404(
   errors: errors ?? this.errors,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiSearchModelResponse404 &&
           listEquals(errors, other.errors) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), success); } 
-@override String toString() { return 'WorkersAiSearchModelResponse404(errors: $errors, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), success);}
+@override String toString() {return 'WorkersAiSearchModelResponse404(errors: $errors, success: $success)';}
+}

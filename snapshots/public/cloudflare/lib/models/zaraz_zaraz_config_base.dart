@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_base_analytics.dart';import 'zaraz_zaraz_config_base_consent.dart';import 'zaraz_zaraz_config_base_settings.dart';import 'zaraz_zaraz_config_base_triggers_value.dart';import 'zaraz_zaraz_config_base_variables_value.dart';/// Zaraz configuration
 @immutable final class ZarazZarazConfigBase {const ZarazZarazConfigBase({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, this.analytics, this.consent, this.historyChange, });
 
-factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBase(
+factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigBase(
   analytics: json['analytics'] != null ? ZarazZarazConfigBaseAnalytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
   consent: json['consent'] != null ? ZarazZarazConfigBaseConsent.fromJson(json['consent'] as Map<String, dynamic>) : null,
   dataLayer: json['dataLayer'] as bool,
@@ -13,7 +13,7 @@ factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZ
   triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBaseTriggersValue.fromJson(v as Map<String, dynamic>))),
   variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBaseVariablesValue.fromJson(v as Map<String, dynamic>))),
   zarazVersion: (json['zarazVersion'] as num).toInt(),
-); }
+);}
 
 /// Cloudflare Monitoring settings.
 final ZarazZarazConfigBaseAnalytics? analytics;
@@ -42,7 +42,7 @@ final Map<String,ZarazZarazConfigBaseVariablesValue> variables;
 /// Zaraz internal version of the config.
 final int zarazVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (analytics != null) 'analytics': analytics?.toJson(),
   if (consent != null) 'consent': consent?.toJson(),
   'dataLayer': dataLayer,
@@ -52,14 +52,14 @@ Map<String, dynamic> toJson() { return {
   'triggers': triggers.map((k, v) => MapEntry(k, v.toJson())),
   'variables': variables.map((k, v) => MapEntry(k, v.toJson())),
   'zarazVersion': zarazVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataLayer') && json['dataLayer'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataLayer') && json['dataLayer'] is bool &&
       json.containsKey('debugKey') && json['debugKey'] is String &&
       json.containsKey('settings') &&
       json.containsKey('triggers') &&
       json.containsKey('variables') &&
-      json.containsKey('zarazVersion') && json['zarazVersion'] is num; } 
-ZarazZarazConfigBase copyWith({ZarazZarazConfigBaseAnalytics? Function()? analytics, ZarazZarazConfigBaseConsent? Function()? consent, bool? dataLayer, String? debugKey, bool? Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,ZarazZarazConfigBaseTriggersValue>? triggers, Map<String,ZarazZarazConfigBaseVariablesValue>? variables, int? zarazVersion, }) { return ZarazZarazConfigBase(
+      json.containsKey('zarazVersion') && json['zarazVersion'] is num;}
+ZarazZarazConfigBase copyWith({ZarazZarazConfigBaseAnalytics? Function()? analytics, ZarazZarazConfigBaseConsent? Function()? consent, bool? dataLayer, String? debugKey, bool? Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,ZarazZarazConfigBaseTriggersValue>? triggers, Map<String,ZarazZarazConfigBaseVariablesValue>? variables, int? zarazVersion, }) {return ZarazZarazConfigBase(
   analytics: analytics != null ? analytics() : this.analytics,
   consent: consent != null ? consent() : this.consent,
   dataLayer: dataLayer ?? this.dataLayer,
@@ -69,8 +69,8 @@ ZarazZarazConfigBase copyWith({ZarazZarazConfigBaseAnalytics? Function()? analyt
   triggers: triggers ?? this.triggers,
   variables: variables ?? this.variables,
   zarazVersion: zarazVersion ?? this.zarazVersion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZarazZarazConfigBase &&
           analytics == other.analytics &&
           consent == other.consent &&
@@ -80,7 +80,7 @@ ZarazZarazConfigBase copyWith({ZarazZarazConfigBaseAnalytics? Function()? analyt
           settings == other.settings &&
           triggers == other.triggers &&
           variables == other.variables &&
-          zarazVersion == other.zarazVersion; } 
-@override int get hashCode { return Object.hash(analytics, consent, dataLayer, debugKey, historyChange, settings, triggers, variables, zarazVersion); } 
-@override String toString() { return 'ZarazZarazConfigBase(analytics: $analytics, consent: $consent, dataLayer: $dataLayer, debugKey: $debugKey, historyChange: $historyChange, settings: $settings, triggers: $triggers, variables: $variables, zarazVersion: $zarazVersion)'; } 
- }
+          zarazVersion == other.zarazVersion;}
+@override int get hashCode {return Object.hash(analytics, consent, dataLayer, debugKey, historyChange, settings, triggers, variables, zarazVersion);}
+@override String toString() {return 'ZarazZarazConfigBase(analytics: $analytics, consent: $consent, dataLayer: $dataLayer, debugKey: $debugKey, historyChange: $historyChange, settings: $settings, triggers: $triggers, variables: $variables, zarazVersion: $zarazVersion)';}
+}

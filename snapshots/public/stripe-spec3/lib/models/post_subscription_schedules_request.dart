@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_billing_mode.dart';import 'post_subscription_schedules_request_default_settings.dart';import 'post_subscription_schedules_request_metadata.dart';import 'post_subscription_schedules_request_phases.dart';import 'post_subscription_schedules_request_start_date.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
 @immutable final class PostSubscriptionSchedulesRequestEndBehavior {const PostSubscriptionSchedulesRequestEndBehavior._(this.value);
 
-factory PostSubscriptionSchedulesRequestEndBehavior.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestEndBehavior.fromJson(String json) {return switch (json) {
   'cancel' => cancel,
   'none' => none,
   'release' => release,
   'renew' => renew,
   _ => PostSubscriptionSchedulesRequestEndBehavior._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestEndBehavior cancel = PostSubscriptionSchedulesRequestEndBehavior._('cancel');
 
@@ -23,17 +23,17 @@ static const List<PostSubscriptionSchedulesRequestEndBehavior> values = [cancel,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestEndBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestEndBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestEndBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestEndBehavior($value)';}
+}
 @immutable final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
 
-factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequest(
+factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequest(
   billingMode: json['billing_mode'] != null ? PostSubscriptionSchedulesRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
@@ -44,7 +44,7 @@ factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { r
   metadata: json['metadata'] != null ? PostSubscriptionSchedulesRequestMetadata.fromJson(json['metadata']) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
   startDate: json['start_date'] != null ? PostSubscriptionSchedulesRequestStartDate.fromJson(json['start_date']) : null,
-); }
+);}
 
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 final PostSubscriptionSchedulesRequestBillingMode? billingMode;
@@ -76,7 +76,7 @@ final List<PostSubscriptionSchedulesRequestPhases>? phases;
 /// When the subscription schedule starts. We recommend using `now` so that it starts the subscription immediately. You can also use a Unix timestamp to backdate the subscription so that it starts on a past date, or set a future date for the subscription to start on.
 final PostSubscriptionSchedulesRequestStartDate? startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingMode != null) 'billing_mode': billingMode?.toJson(),
   'customer': ?customer,
   'customer_account': ?customerAccount,
@@ -87,9 +87,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (phases != null) 'phases': phases?.map((e) => e.toJson()).toList(),
   if (startDate != null) 'start_date': startDate?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'customer', 'customer_account', 'default_settings', 'end_behavior', 'expand', 'from_subscription', 'metadata', 'phases', 'start_date'}.contains(key)); } 
-PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, String? Function()? customer, String? Function()? customerAccount, PostSubscriptionSchedulesRequestDefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, String? Function()? fromSubscription, PostSubscriptionSchedulesRequestMetadata? Function()? metadata, List<PostSubscriptionSchedulesRequestPhases>? Function()? phases, PostSubscriptionSchedulesRequestStartDate? Function()? startDate, }) { return PostSubscriptionSchedulesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_mode', 'customer', 'customer_account', 'default_settings', 'end_behavior', 'expand', 'from_subscription', 'metadata', 'phases', 'start_date'}.contains(key));}
+PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, String? Function()? customer, String? Function()? customerAccount, PostSubscriptionSchedulesRequestDefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, String? Function()? fromSubscription, PostSubscriptionSchedulesRequestMetadata? Function()? metadata, List<PostSubscriptionSchedulesRequestPhases>? Function()? phases, PostSubscriptionSchedulesRequestStartDate? Function()? startDate, }) {return PostSubscriptionSchedulesRequest(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
@@ -100,8 +100,8 @@ PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBilli
   metadata: metadata != null ? metadata() : this.metadata,
   phases: phases != null ? phases() : this.phases,
   startDate: startDate != null ? startDate() : this.startDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequest &&
           billingMode == other.billingMode &&
           customer == other.customer &&
@@ -112,7 +112,7 @@ PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBilli
           fromSubscription == other.fromSubscription &&
           metadata == other.metadata &&
           listEquals(phases, other.phases) &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(billingMode, customer, customerAccount, defaultSettings, endBehavior, Object.hashAll(expand ?? const []), fromSubscription, metadata, Object.hashAll(phases ?? const []), startDate); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequest(billingMode: $billingMode, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, fromSubscription: $fromSubscription, metadata: $metadata, phases: $phases, startDate: $startDate)'; } 
- }
+          startDate == other.startDate;}
+@override int get hashCode {return Object.hash(billingMode, customer, customerAccount, defaultSettings, endBehavior, Object.hashAll(expand ?? const []), fromSubscription, metadata, Object.hashAll(phases ?? const []), startDate);}
+@override String toString() {return 'PostSubscriptionSchedulesRequest(billingMode: $billingMode, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, fromSubscription: $fromSubscription, metadata: $metadata, phases: $phases, startDate: $startDate)';}
+}

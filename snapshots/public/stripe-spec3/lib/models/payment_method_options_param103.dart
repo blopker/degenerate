@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam103AmountIncludesIof {const PaymentMethodOptionsParam103AmountIncludesIof._(this.value);
 
-factory PaymentMethodOptionsParam103AmountIncludesIof.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam103AmountIncludesIof.fromJson(String json) {return switch (json) {
   'always' => always,
   'never' => never,
   _ => PaymentMethodOptionsParam103AmountIncludesIof._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam103AmountIncludesIof always = PaymentMethodOptionsParam103AmountIncludesIof._('always');
 
@@ -16,20 +16,20 @@ static const List<PaymentMethodOptionsParam103AmountIncludesIof> values = [alway
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam103AmountIncludesIof && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam103AmountIncludesIof($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam103AmountIncludesIof && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam103AmountIncludesIof($value)';}
+}
 @immutable final class PaymentMethodOptionsParam103SetupFutureUsage {const PaymentMethodOptionsParam103SetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsParam103SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam103SetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentMethodOptionsParam103SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam103SetupFutureUsage none = PaymentMethodOptionsParam103SetupFutureUsage._('none');
 
@@ -37,22 +37,22 @@ static const List<PaymentMethodOptionsParam103SetupFutureUsage> values = [none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam103SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam103SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam103SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam103SetupFutureUsage($value)';}
+}
 @immutable final class PaymentMethodOptionsParam103 {const PaymentMethodOptionsParam103({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsParam103.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam103(
+factory PaymentMethodOptionsParam103.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam103(
   amountIncludesIof: json['amount_includes_iof'] != null ? PaymentMethodOptionsParam103AmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
   expiresAfterSeconds: json['expires_after_seconds'] != null ? (json['expires_after_seconds'] as num).toInt() : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam103SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentMethodOptionsParam103AmountIncludesIof? amountIncludesIof;
 
@@ -62,25 +62,25 @@ final int? expiresAt;
 
 final PaymentMethodOptionsParam103SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountIncludesIof != null) 'amount_includes_iof': amountIncludesIof?.toJson(),
   'expires_after_seconds': ?expiresAfterSeconds,
   'expires_at': ?expiresAt,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'expires_at', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam103 copyWith({PaymentMethodOptionsParam103AmountIncludesIof? Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, int? Function()? expiresAt, PaymentMethodOptionsParam103SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam103(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'expires_at', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsParam103 copyWith({PaymentMethodOptionsParam103AmountIncludesIof? Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, int? Function()? expiresAt, PaymentMethodOptionsParam103SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsParam103(
   amountIncludesIof: amountIncludesIof != null ? amountIncludesIof() : this.amountIncludesIof,
   expiresAfterSeconds: expiresAfterSeconds != null ? expiresAfterSeconds() : this.expiresAfterSeconds,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsParam103 &&
           amountIncludesIof == other.amountIncludesIof &&
           expiresAfterSeconds == other.expiresAfterSeconds &&
           expiresAt == other.expiresAt &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(amountIncludesIof, expiresAfterSeconds, expiresAt, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsParam103(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, expiresAt: $expiresAt, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(amountIncludesIof, expiresAfterSeconds, expiresAt, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsParam103(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, expiresAt: $expiresAt, setupFutureUsage: $setupFutureUsage)';}
+}

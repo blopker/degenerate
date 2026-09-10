@@ -11,7 +11,7 @@ final class AttackerApi with ApiExecutor {const AttackerApi(this.apiConfig);
 /// Lists attackers across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/attackers`
-Future<ApiResult<GetAttackerListResponse, GetAttackerListResponse400>> getAttackerList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAttackerListResponse, GetAttackerListResponse400>> getAttackerList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -30,22 +30,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAttackerListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAttackerListResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetAttackerListResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  GetAttackerListResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

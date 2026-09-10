@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ServiceNotAsDescribedAdditionalDocumentationVariant2 {const ServiceNotAsDescribedAdditionalDocumentationVariant2._(this.value);
 
-factory ServiceNotAsDescribedAdditionalDocumentationVariant2.fromJson(String json) { return switch (json) {
+factory ServiceNotAsDescribedAdditionalDocumentationVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => ServiceNotAsDescribedAdditionalDocumentationVariant2._(json),
-}; }
+};}
 
 static const ServiceNotAsDescribedAdditionalDocumentationVariant2 $empty = ServiceNotAsDescribedAdditionalDocumentationVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<ServiceNotAsDescribedAdditionalDocumentationVariant2> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ServiceNotAsDescribedAdditionalDocumentationVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ServiceNotAsDescribedAdditionalDocumentationVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ServiceNotAsDescribedAdditionalDocumentationVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ServiceNotAsDescribedAdditionalDocumentationVariant2($value)';}
+}
 
 @immutable
 final class ServiceNotAsDescribedAdditionalDocumentation {

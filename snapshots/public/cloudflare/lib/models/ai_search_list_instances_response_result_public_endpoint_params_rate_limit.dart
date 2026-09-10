@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique {const AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique._(this.value);
 
-factory AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique.fromJson(String json) { return switch (json) {
+factory AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'sliding' => sliding,
   _ => AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique._(json),
-}; }
+};}
 
 static const AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique fixed = AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique._('fixed');
 
@@ -16,21 +16,21 @@ static const List<AiSearchListInstancesResponseResultPublicEndpointParamsRateLim
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique($value)';}
+}
 @immutable final class AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit {const AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit({this.periodMs, this.requests, this.technique, });
 
-factory AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit(
+factory AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit.fromJson(Map<String, dynamic> json) {return AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit(
   periodMs: json['period_ms'] != null ? (json['period_ms'] as num).toInt() : null,
   requests: json['requests'] != null ? (json['requests'] as num).toInt() : null,
   technique: json['technique'] != null ? AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique.fromJson(json['technique'] as String) : null,
-); }
+);}
 
 final int? periodMs;
 
@@ -38,22 +38,22 @@ final int? requests;
 
 final AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique? technique;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'period_ms': ?periodMs,
   'requests': ?requests,
   if (technique != null) 'technique': technique?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key)); } 
-AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit copyWith({int? Function()? periodMs, int? Function()? requests, AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique? Function()? technique, }) { return AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key));}
+AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit copyWith({int? Function()? periodMs, int? Function()? requests, AiSearchListInstancesResponseResultPublicEndpointParamsRateLimitTechnique? Function()? technique, }) {return AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit(
   periodMs: periodMs != null ? periodMs() : this.periodMs,
   requests: requests != null ? requests() : this.requests,
   technique: technique != null ? technique() : this.technique,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit &&
           periodMs == other.periodMs &&
           requests == other.requests &&
-          technique == other.technique; } 
-@override int get hashCode { return Object.hash(periodMs, requests, technique); } 
-@override String toString() { return 'AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)'; } 
- }
+          technique == other.technique;}
+@override int get hashCode {return Object.hash(periodMs, requests, technique);}
+@override String toString() {return 'AiSearchListInstancesResponseResultPublicEndpointParamsRateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)';}
+}

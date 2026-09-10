@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_claim.dart';import 'resource_quantity.dart';/// ResourceRequirements describes the compute resource requirements.
 @immutable final class ResourceRequirements {const ResourceRequirements({this.claims, this.limits, this.requests, });
 
-factory ResourceRequirements.fromJson(Map<String, dynamic> json) { return ResourceRequirements(
+factory ResourceRequirements.fromJson(Map<String, dynamic> json) {return ResourceRequirements(
   claims: (json['claims'] as List<dynamic>?)?.map((e) => ResourceClaim.fromJson(e as Map<String, dynamic>)).toList(),
   limits: (json['limits'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
   requests: (json['requests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
-); }
+);}
 
 /// Claims lists the names of resources, defined in spec.resourceClaims, that are used by this container.
 /// 
@@ -22,22 +22,22 @@ final Map<String,ResourceQuantity>? limits;
 /// Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. Requests cannot exceed Limits. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
 final Map<String,ResourceQuantity>? requests;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (claims != null) 'claims': claims?.map((e) => e.toJson()).toList(),
   if (limits != null) 'limits': limits?.map((k, v) => MapEntry(k, v.toJson())),
   if (requests != null) 'requests': requests?.map((k, v) => MapEntry(k, v.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'claims', 'limits', 'requests'}.contains(key)); } 
-ResourceRequirements copyWith({List<ResourceClaim>? Function()? claims, Map<String, ResourceQuantity>? Function()? limits, Map<String, ResourceQuantity>? Function()? requests, }) { return ResourceRequirements(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'claims', 'limits', 'requests'}.contains(key));}
+ResourceRequirements copyWith({List<ResourceClaim>? Function()? claims, Map<String, ResourceQuantity>? Function()? limits, Map<String, ResourceQuantity>? Function()? requests, }) {return ResourceRequirements(
   claims: claims != null ? claims() : this.claims,
   limits: limits != null ? limits() : this.limits,
   requests: requests != null ? requests() : this.requests,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceRequirements &&
           listEquals(claims, other.claims) &&
           limits == other.limits &&
-          requests == other.requests; } 
-@override int get hashCode { return Object.hash(Object.hashAll(claims ?? const []), limits, requests); } 
-@override String toString() { return 'ResourceRequirements(claims: $claims, limits: $limits, requests: $requests)'; } 
- }
+          requests == other.requests;}
+@override int get hashCode {return Object.hash(Object.hashAll(claims ?? const []), limits, requests);}
+@override String toString() {return 'ResourceRequirements(claims: $claims, limits: $limits, requests: $requests)';}
+}

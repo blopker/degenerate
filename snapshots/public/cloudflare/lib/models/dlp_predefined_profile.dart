@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class DlpPredefinedProfile {const DlpPredefinedProfile({required this.allowedMatchCount, required this.entries, required this.id, required this.name, this.aiContextEnabled, this.confidenceThreshold, this.contextAwareness, this.ocrEnabled, this.openAccess, });
 
-factory DlpPredefinedProfile.fromJson(Map<String, dynamic> json) { return DlpPredefinedProfile(
+factory DlpPredefinedProfile.fromJson(Map<String, dynamic> json) {return DlpPredefinedProfile(
   aiContextEnabled: json['ai_context_enabled'] as bool?,
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
   confidenceThreshold: json['confidence_threshold'] != null ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : null,
@@ -12,7 +12,7 @@ factory DlpPredefinedProfile.fromJson(Map<String, dynamic> json) { return DlpPre
   name: json['name'] as String,
   ocrEnabled: json['ocr_enabled'] as bool?,
   openAccess: json['open_access'] as bool?,
-); }
+);}
 
 final bool? aiContextEnabled;
 
@@ -36,12 +36,12 @@ final bool? ocrEnabled;
 final bool? openAccess;
 
 /// The value with the schema default applied when absent.
-bool get aiContextEnabledOrDefault { return aiContextEnabled ?? false; } 
+bool get aiContextEnabledOrDefault {return aiContextEnabled ?? false;}
 /// The value with the schema default applied when absent.
-DlpConfidence get confidenceThresholdOrDefault { return confidenceThreshold ?? DlpConfidence.fromJson('low'); } 
+DlpConfidence get confidenceThresholdOrDefault {return confidenceThreshold ?? DlpConfidence.fromJson('low');}
 /// The value with the schema default applied when absent.
-bool get ocrEnabledOrDefault { return ocrEnabled ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get ocrEnabledOrDefault {return ocrEnabled ?? false;}
+Map<String, dynamic> toJson() {return {
   'ai_context_enabled': ?aiContextEnabled,
   'allowed_match_count': allowedMatchCount,
   if (confidenceThreshold != null) 'confidence_threshold': confidenceThreshold?.toJson(),
@@ -51,12 +51,12 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'ocr_enabled': ?ocrEnabled,
   'open_access': ?openAccess,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
       json.containsKey('entries') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-DlpPredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool? Function()? ocrEnabled, bool? Function()? openAccess, }) { return DlpPredefinedProfile(
+      json.containsKey('name') && json['name'] is String;}
+DlpPredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool? Function()? ocrEnabled, bool? Function()? openAccess, }) {return DlpPredefinedProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,
@@ -66,8 +66,8 @@ DlpPredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedM
   name: name ?? this.name,
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
   openAccess: openAccess != null ? openAccess() : this.openAccess,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpPredefinedProfile &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
@@ -77,7 +77,7 @@ DlpPredefinedProfile copyWith({bool? Function()? aiContextEnabled, int? allowedM
           id == other.id &&
           name == other.name &&
           ocrEnabled == other.ocrEnabled &&
-          openAccess == other.openAccess; } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess); } 
-@override String toString() { return 'DlpPredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess)'; } 
- }
+          openAccess == other.openAccess;}
+@override int get hashCode {return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess);}
+@override String toString() {return 'DlpPredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess)';}
+}

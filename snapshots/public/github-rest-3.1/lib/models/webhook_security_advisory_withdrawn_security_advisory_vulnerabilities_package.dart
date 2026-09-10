@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage({required this.ecosystem, required this.name, });
 
-factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage(
+factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage.fromJson(Map<String, dynamic> json) {return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage(
   ecosystem: json['ecosystem'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String ecosystem;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ecosystem': ecosystem,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ecosystem') && json['ecosystem'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage copyWith({String? ecosystem, String? name, }) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ecosystem') && json['ecosystem'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage copyWith({String? ecosystem, String? name, }) {return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage(
   ecosystem: ecosystem ?? this.ecosystem,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage &&
           ecosystem == other.ecosystem &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(ecosystem, name); } 
-@override String toString() { return 'WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage(ecosystem: $ecosystem, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(ecosystem, name);}
+@override String toString() {return 'WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesPackage(ecosystem: $ecosystem, name: $name)';}
+}

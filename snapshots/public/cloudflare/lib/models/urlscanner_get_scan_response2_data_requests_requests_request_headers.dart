@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders {const UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders({required this.name});
 
-factory UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders(
+factory UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders(
   name: json['name'] as String,
-); }
+);}
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders copyWith({String? name}) { return UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders copyWith({String? name}) {return UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders(
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders(name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return name.hashCode;}
+@override String toString() {return 'UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders(name: $name)';}
+}

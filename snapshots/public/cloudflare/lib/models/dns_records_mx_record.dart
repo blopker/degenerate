@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_priority.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';/// Record type.
 @immutable final class DnsRecordsMxRecordType {const DnsRecordsMxRecordType._(this.value);
 
-factory DnsRecordsMxRecordType.fromJson(String json) { return switch (json) {
+factory DnsRecordsMxRecordType.fromJson(String json) {return switch (json) {
   'MX' => mx,
   _ => DnsRecordsMxRecordType._(json),
-}; }
+};}
 
 static const DnsRecordsMxRecordType mx = DnsRecordsMxRecordType._('MX');
 
@@ -14,17 +14,17 @@ static const List<DnsRecordsMxRecordType> values = [mx];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsMxRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsRecordsMxRecordType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnsRecordsMxRecordType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnsRecordsMxRecordType($value)';}
+}
 @immutable final class DnsRecordsMxRecord {const DnsRecordsMxRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.priority, this.type, });
 
-factory DnsRecordsMxRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsMxRecord(
+factory DnsRecordsMxRecord.fromJson(Map<String, dynamic> json) {return DnsRecordsMxRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
   name: json['name'] != null ? DnsRecordsName.fromJson(json['name'] as String) : null,
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
@@ -34,7 +34,7 @@ factory DnsRecordsMxRecord.fromJson(Map<String, dynamic> json) { return DnsRecor
   content: json['content'] as String?,
   priority: json['priority'] != null ? DnsRecordsPriority.fromJson(json['priority'] as num) : null,
   type: json['type'] != null ? DnsRecordsMxRecordType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final DnsRecordsComment? comment;
 
@@ -56,7 +56,7 @@ final DnsRecordsPriority? priority;
 /// Record type.
 final DnsRecordsMxRecordType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (proxied != null) 'proxied': proxied?.toJson(),
@@ -66,9 +66,9 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
   if (priority != null) 'priority': priority?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'priority', 'type'}.contains(key)); } 
-DnsRecordsMxRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsPriority? Function()? priority, DnsRecordsMxRecordType? Function()? type, }) { return DnsRecordsMxRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'priority', 'type'}.contains(key));}
+DnsRecordsMxRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsPriority? Function()? priority, DnsRecordsMxRecordType? Function()? type, }) {return DnsRecordsMxRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,
@@ -78,8 +78,8 @@ DnsRecordsMxRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsN
   content: content != null ? content() : this.content,
   priority: priority != null ? priority() : this.priority,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsMxRecord &&
           comment == other.comment &&
           name == other.name &&
@@ -89,7 +89,7 @@ DnsRecordsMxRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsN
           ttl == other.ttl &&
           content == other.content &&
           priority == other.priority &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, priority, type); } 
-@override String toString() { return 'DnsRecordsMxRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, priority: $priority, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, priority, type);}
+@override String toString() {return 'DnsRecordsMxRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, priority: $priority, type: $type)';}
+}

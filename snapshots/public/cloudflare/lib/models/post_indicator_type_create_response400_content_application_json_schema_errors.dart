@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors {const PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors({required this.message});
 
-factory PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors(
+factory PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors.fromJson(Map<String, dynamic> json) {return PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors copyWith({String? message}) { return PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors copyWith({String? message}) {return PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'PostIndicatorTypeCreateResponse400ContentApplicationJsonSchemaErrors(message: $message)';}
+}

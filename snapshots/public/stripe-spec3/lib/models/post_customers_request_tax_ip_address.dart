@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersRequestTaxIpAddressVariant2 {const PostCustomersRequestTaxIpAddressVariant2._(this.value);
 
-factory PostCustomersRequestTaxIpAddressVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersRequestTaxIpAddressVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersRequestTaxIpAddressVariant2._(json),
-}; }
+};}
 
 static const PostCustomersRequestTaxIpAddressVariant2 $empty = PostCustomersRequestTaxIpAddressVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersRequestTaxIpAddressVariant2> values = [$empty];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersRequestTaxIpAddressVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersRequestTaxIpAddressVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersRequestTaxIpAddressVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersRequestTaxIpAddressVariant2($value)';}
+}
 
 @immutable
 final class PostCustomersRequestTaxIpAddress {

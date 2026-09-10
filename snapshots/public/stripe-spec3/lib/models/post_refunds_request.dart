@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_refunds_request_metadata.dart';/// Origin of the refund
 @immutable final class PostRefundsRequestOrigin {const PostRefundsRequestOrigin._(this.value);
 
-factory PostRefundsRequestOrigin.fromJson(String json) { return switch (json) {
+factory PostRefundsRequestOrigin.fromJson(String json) {return switch (json) {
   'customer_balance' => customerBalance,
   _ => PostRefundsRequestOrigin._(json),
-}; }
+};}
 
 static const PostRefundsRequestOrigin customerBalance = PostRefundsRequestOrigin._('customer_balance');
 
@@ -14,23 +14,23 @@ static const List<PostRefundsRequestOrigin> values = [customerBalance];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRefundsRequestOrigin && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRefundsRequestOrigin($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostRefundsRequestOrigin && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostRefundsRequestOrigin($value)';}
+}
 /// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
 @immutable final class PostRefundsRequestReason {const PostRefundsRequestReason._(this.value);
 
-factory PostRefundsRequestReason.fromJson(String json) { return switch (json) {
+factory PostRefundsRequestReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'requested_by_customer' => requestedByCustomer,
   _ => PostRefundsRequestReason._(json),
-}; }
+};}
 
 static const PostRefundsRequestReason duplicate = PostRefundsRequestReason._('duplicate');
 
@@ -42,17 +42,17 @@ static const List<PostRefundsRequestReason> values = [duplicate, fraudulent, req
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRefundsRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRefundsRequestReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostRefundsRequestReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostRefundsRequestReason($value)';}
+}
 @immutable final class PostRefundsRequest {const PostRefundsRequest({this.amount, this.charge, this.currency, this.customer, this.expand, this.instructionsEmail, this.metadata, this.origin, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
-factory PostRefundsRequest.fromJson(Map<String, dynamic> json) { return PostRefundsRequest(
+factory PostRefundsRequest.fromJson(Map<String, dynamic> json) {return PostRefundsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   charge: json['charge'] as String?,
   currency: json['currency'] as String?,
@@ -65,7 +65,7 @@ factory PostRefundsRequest.fromJson(Map<String, dynamic> json) { return PostRefu
   reason: json['reason'] != null ? PostRefundsRequestReason.fromJson(json['reason'] as String) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
   reverseTransfer: json['reverse_transfer'] as bool?,
-); }
+);}
 
 final int? amount;
 
@@ -102,7 +102,7 @@ final bool? refundApplicationFee;
 /// Boolean indicating whether the transfer should be reversed when refunding this charge. The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount).`<br>``<br>`A transfer can be reversed only by the application that created the charge.
 final bool? reverseTransfer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'charge': ?charge,
   'currency': ?currency,
@@ -115,9 +115,9 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
   'refund_application_fee': ?refundApplicationFee,
   'reverse_transfer': ?reverseTransfer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'currency', 'customer', 'expand', 'instructions_email', 'metadata', 'origin', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
-PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge, String? Function()? currency, String? Function()? customer, List<String>? Function()? expand, String? Function()? instructionsEmail, PostRefundsRequestMetadata? Function()? metadata, PostRefundsRequestOrigin? Function()? origin, String? Function()? paymentIntent, PostRefundsRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) { return PostRefundsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'charge', 'currency', 'customer', 'expand', 'instructions_email', 'metadata', 'origin', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key));}
+PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge, String? Function()? currency, String? Function()? customer, List<String>? Function()? expand, String? Function()? instructionsEmail, PostRefundsRequestMetadata? Function()? metadata, PostRefundsRequestOrigin? Function()? origin, String? Function()? paymentIntent, PostRefundsRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) {return PostRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   currency: currency != null ? currency() : this.currency,
@@ -130,8 +130,8 @@ PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge
   reason: reason != null ? reason() : this.reason,
   refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
   reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostRefundsRequest &&
           amount == other.amount &&
           charge == other.charge &&
@@ -144,7 +144,7 @@ PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge
           paymentIntent == other.paymentIntent &&
           reason == other.reason &&
           refundApplicationFee == other.refundApplicationFee &&
-          reverseTransfer == other.reverseTransfer; } 
-@override int get hashCode { return Object.hash(amount, charge, currency, customer, Object.hashAll(expand ?? const []), instructionsEmail, metadata, origin, paymentIntent, reason, refundApplicationFee, reverseTransfer); } 
-@override String toString() { return 'PostRefundsRequest(amount: $amount, charge: $charge, currency: $currency, customer: $customer, expand: $expand, instructionsEmail: $instructionsEmail, metadata: $metadata, origin: $origin, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)'; } 
- }
+          reverseTransfer == other.reverseTransfer;}
+@override int get hashCode {return Object.hash(amount, charge, currency, customer, Object.hashAll(expand ?? const []), instructionsEmail, metadata, origin, paymentIntent, reason, refundApplicationFee, reverseTransfer);}
+@override String toString() {return 'PostRefundsRequest(amount: $amount, charge: $charge, currency: $currency, customer: $customer, expand: $expand, instructionsEmail: $instructionsEmail, metadata: $metadata, origin: $origin, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)';}
+}

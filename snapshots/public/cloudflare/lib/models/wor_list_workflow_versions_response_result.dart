@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_list_workflow_versions_response_result_limits.dart';@immutable final class WorListWorkflowVersionsResponseResult {const WorListWorkflowVersionsResponseResult({required this.className, required this.createdOn, required this.hasDag, required this.id, required this.modifiedOn, required this.workflowId, this.limits, });
 
-factory WorListWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> json) { return WorListWorkflowVersionsResponseResult(
+factory WorListWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> json) {return WorListWorkflowVersionsResponseResult(
   className: json['class_name'] as String,
   createdOn: DateTime.parse(json['created_on'] as String),
   hasDag: json['has_dag'] as bool,
@@ -10,7 +10,7 @@ factory WorListWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> json
   limits: json['limits'] != null ? WorListWorkflowVersionsResponseResultLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   workflowId: json['workflow_id'] as String,
-); }
+);}
 
 final String className;
 
@@ -26,7 +26,7 @@ final DateTime modifiedOn;
 
 final String workflowId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'class_name': className,
   'created_on': createdOn.toIso8601String(),
   'has_dag': hasDag,
@@ -34,14 +34,14 @@ Map<String, dynamic> toJson() { return {
   if (limits != null) 'limits': limits?.toJson(),
   'modified_on': modifiedOn.toIso8601String(),
   'workflow_id': workflowId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('class_name') && json['class_name'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('has_dag') && json['has_dag'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
-      json.containsKey('workflow_id') && json['workflow_id'] is String; } 
-WorListWorkflowVersionsResponseResult copyWith({String? className, DateTime? createdOn, bool? hasDag, String? id, WorListWorkflowVersionsResponseResultLimits? Function()? limits, DateTime? modifiedOn, String? workflowId, }) { return WorListWorkflowVersionsResponseResult(
+      json.containsKey('workflow_id') && json['workflow_id'] is String;}
+WorListWorkflowVersionsResponseResult copyWith({String? className, DateTime? createdOn, bool? hasDag, String? id, WorListWorkflowVersionsResponseResultLimits? Function()? limits, DateTime? modifiedOn, String? workflowId, }) {return WorListWorkflowVersionsResponseResult(
   className: className ?? this.className,
   createdOn: createdOn ?? this.createdOn,
   hasDag: hasDag ?? this.hasDag,
@@ -49,8 +49,8 @@ WorListWorkflowVersionsResponseResult copyWith({String? className, DateTime? cre
   limits: limits != null ? limits() : this.limits,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   workflowId: workflowId ?? this.workflowId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorListWorkflowVersionsResponseResult &&
           className == other.className &&
           createdOn == other.createdOn &&
@@ -58,7 +58,7 @@ WorListWorkflowVersionsResponseResult copyWith({String? className, DateTime? cre
           id == other.id &&
           limits == other.limits &&
           modifiedOn == other.modifiedOn &&
-          workflowId == other.workflowId; } 
-@override int get hashCode { return Object.hash(className, createdOn, hasDag, id, limits, modifiedOn, workflowId); } 
-@override String toString() { return 'WorListWorkflowVersionsResponseResult(className: $className, createdOn: $createdOn, hasDag: $hasDag, id: $id, limits: $limits, modifiedOn: $modifiedOn, workflowId: $workflowId)'; } 
- }
+          workflowId == other.workflowId;}
+@override int get hashCode {return Object.hash(className, createdOn, hasDag, id, limits, modifiedOn, workflowId);}
+@override String toString() {return 'WorListWorkflowVersionsResponseResult(className: $className, createdOn: $createdOn, hasDag: $hasDag, id: $id, limits: $limits, modifiedOn: $modifiedOn, workflowId: $workflowId)';}
+}

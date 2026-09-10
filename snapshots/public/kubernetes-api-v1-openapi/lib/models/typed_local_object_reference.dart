@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
 @immutable final class TypedLocalObjectReference {const TypedLocalObjectReference({required this.kind, required this.name, this.apiGroup, });
 
-factory TypedLocalObjectReference.fromJson(Map<String, dynamic> json) { return TypedLocalObjectReference(
+factory TypedLocalObjectReference.fromJson(Map<String, dynamic> json) {return TypedLocalObjectReference(
   apiGroup: json['apiGroup'] as String?,
   kind: json['kind'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
 final String? apiGroup;
@@ -18,23 +18,23 @@ final String kind;
 /// Name is the name of resource being referenced
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiGroup': ?apiGroup,
   'kind': kind,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-TypedLocalObjectReference copyWith({String? Function()? apiGroup, String? kind, String? name, }) { return TypedLocalObjectReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') && json['kind'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+TypedLocalObjectReference copyWith({String? Function()? apiGroup, String? kind, String? name, }) {return TypedLocalObjectReference(
   apiGroup: apiGroup != null ? apiGroup() : this.apiGroup,
   kind: kind ?? this.kind,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TypedLocalObjectReference &&
           apiGroup == other.apiGroup &&
           kind == other.kind &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(apiGroup, kind, name); } 
-@override String toString() { return 'TypedLocalObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(apiGroup, kind, name);}
+@override String toString() {return 'TypedLocalObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name)';}
+}

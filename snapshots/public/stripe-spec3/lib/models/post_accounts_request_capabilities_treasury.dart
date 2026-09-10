@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestCapabilitiesTreasury {const PostAccountsRequestCapabilitiesTreasury({this.requested});
 
-factory PostAccountsRequestCapabilitiesTreasury.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesTreasury(
+factory PostAccountsRequestCapabilitiesTreasury.fromJson(Map<String, dynamic> json) {return PostAccountsRequestCapabilitiesTreasury(
   requested: json['requested'] as bool?,
-); }
+);}
 
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PostAccountsRequestCapabilitiesTreasury copyWith({bool? Function()? requested}) { return PostAccountsRequestCapabilitiesTreasury(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+PostAccountsRequestCapabilitiesTreasury copyWith({bool? Function()? requested}) {return PostAccountsRequestCapabilitiesTreasury(
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestCapabilitiesTreasury &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostAccountsRequestCapabilitiesTreasury(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostAccountsRequestCapabilitiesTreasury(requested: $requested)';}
+}

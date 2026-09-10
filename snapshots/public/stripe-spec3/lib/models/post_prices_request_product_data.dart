@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// These fields can be used to create a new product that this price will belong to.
 @immutable final class PostPricesRequestProductData {const PostPricesRequestProductData({required this.name, this.active, this.id, this.metadata, this.statementDescriptor, this.taxCode, this.unitLabel, });
 
-factory PostPricesRequestProductData.fromJson(Map<String, dynamic> json) { return PostPricesRequestProductData(
+factory PostPricesRequestProductData.fromJson(Map<String, dynamic> json) {return PostPricesRequestProductData(
   active: json['active'] as bool?,
   id: json['id'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -11,7 +11,7 @@ factory PostPricesRequestProductData.fromJson(Map<String, dynamic> json) { retur
   statementDescriptor: json['statement_descriptor'] as String?,
   taxCode: json['tax_code'] as String?,
   unitLabel: json['unit_label'] as String?,
-); }
+);}
 
 final bool? active;
 
@@ -27,7 +27,7 @@ final String? taxCode;
 
 final String? unitLabel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'id': ?id,
   'metadata': ?metadata,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor': ?statementDescriptor,
   'tax_code': ?taxCode,
   'unit_label': ?unitLabel,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PostPricesRequestProductData copyWith({bool? Function()? active, String? Function()? id, Map<String, String>? Function()? metadata, String? name, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, }) { return PostPricesRequestProductData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+PostPricesRequestProductData copyWith({bool? Function()? active, String? Function()? id, Map<String, String>? Function()? metadata, String? name, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, }) {return PostPricesRequestProductData(
   active: active != null ? active() : this.active,
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -45,8 +45,8 @@ PostPricesRequestProductData copyWith({bool? Function()? active, String? Functio
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPricesRequestProductData &&
           active == other.active &&
           id == other.id &&
@@ -54,7 +54,7 @@ PostPricesRequestProductData copyWith({bool? Function()? active, String? Functio
           name == other.name &&
           statementDescriptor == other.statementDescriptor &&
           taxCode == other.taxCode &&
-          unitLabel == other.unitLabel; } 
-@override int get hashCode { return Object.hash(active, id, metadata, name, statementDescriptor, taxCode, unitLabel); } 
-@override String toString() { return 'PostPricesRequestProductData(active: $active, id: $id, metadata: $metadata, name: $name, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel)'; } 
- }
+          unitLabel == other.unitLabel;}
+@override int get hashCode {return Object.hash(active, id, metadata, name, statementDescriptor, taxCode, unitLabel);}
+@override String toString() {return 'PostPricesRequestProductData(active: $active, id: $id, metadata: $metadata, name: $name, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel)';}
+}

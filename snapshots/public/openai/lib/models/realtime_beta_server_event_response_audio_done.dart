@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio.done`.
 @immutable final class RealtimeBetaServerEventResponseAudioDoneType {const RealtimeBetaServerEventResponseAudioDoneType._(this.value);
 
-factory RealtimeBetaServerEventResponseAudioDoneType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseAudioDoneType.fromJson(String json) {return switch (json) {
   'response.output_audio.done' => responseOutputAudioDone,
   _ => RealtimeBetaServerEventResponseAudioDoneType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseAudioDoneType responseOutputAudioDone = RealtimeBetaServerEventResponseAudioDoneType._('response.output_audio.done');
 
@@ -14,27 +14,27 @@ static const List<RealtimeBetaServerEventResponseAudioDoneType> values = [respon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseAudioDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioDoneType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventResponseAudioDoneType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventResponseAudioDoneType($value)';}
+}
 /// Returned when the model-generated audio is done. Also emitted when a Response
 /// is interrupted, incomplete, or cancelled.
 /// 
 @immutable final class RealtimeBetaServerEventResponseAudioDone {const RealtimeBetaServerEventResponseAudioDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, });
 
-factory RealtimeBetaServerEventResponseAudioDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseAudioDone(
+factory RealtimeBetaServerEventResponseAudioDone.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseAudioDone(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseAudioDoneType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -54,36 +54,36 @@ final int outputIndex;
 /// The index of the content part in the item's content array.
 final int contentIndex;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
   'item_id': itemId,
   'output_index': outputIndex,
   'content_index': contentIndex,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
-      json.containsKey('content_index') && json['content_index'] is num; } 
-RealtimeBetaServerEventResponseAudioDone copyWith({String? eventId, RealtimeBetaServerEventResponseAudioDoneType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, }) { return RealtimeBetaServerEventResponseAudioDone(
+      json.containsKey('content_index') && json['content_index'] is num;}
+RealtimeBetaServerEventResponseAudioDone copyWith({String? eventId, RealtimeBetaServerEventResponseAudioDoneType? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, }) {return RealtimeBetaServerEventResponseAudioDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventResponseAudioDone &&
           eventId == other.eventId &&
           type == other.type &&
           responseId == other.responseId &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
-          contentIndex == other.contentIndex; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex)'; } 
- }
+          contentIndex == other.contentIndex;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex);}
+@override String toString() {return 'RealtimeBetaServerEventResponseAudioDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex)';}
+}

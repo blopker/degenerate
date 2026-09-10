@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListAttestationsBulkRequest {const OrgsListAttestationsBulkRequest({required this.subjectDigests, this.predicateType, });
 
-factory OrgsListAttestationsBulkRequest.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsBulkRequest(
+factory OrgsListAttestationsBulkRequest.fromJson(Map<String, dynamic> json) {return OrgsListAttestationsBulkRequest(
   subjectDigests: (json['subject_digests'] as List<dynamic>).map((e) => e as String).toList(),
   predicateType: json['predicate_type'] as String?,
-); }
+);}
 
 /// List of subject digests to fetch attestations for.
 final List<String> subjectDigests;
@@ -15,19 +15,19 @@ final List<String> subjectDigests;
 /// for custom predicate types.
 final String? predicateType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'subject_digests': subjectDigests,
   'predicate_type': ?predicateType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('subject_digests'); } 
-OrgsListAttestationsBulkRequest copyWith({List<String>? subjectDigests, String? Function()? predicateType, }) { return OrgsListAttestationsBulkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('subject_digests');}
+OrgsListAttestationsBulkRequest copyWith({List<String>? subjectDigests, String? Function()? predicateType, }) {return OrgsListAttestationsBulkRequest(
   subjectDigests: subjectDigests ?? this.subjectDigests,
   predicateType: predicateType != null ? predicateType() : this.predicateType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsListAttestationsBulkRequest &&
           listEquals(subjectDigests, other.subjectDigests) &&
-          predicateType == other.predicateType; } 
-@override int get hashCode { return Object.hash(Object.hashAll(subjectDigests), predicateType); } 
-@override String toString() { return 'OrgsListAttestationsBulkRequest(subjectDigests: $subjectDigests, predicateType: $predicateType)'; } 
- }
+          predicateType == other.predicateType;}
+@override int get hashCode {return Object.hash(Object.hashAll(subjectDigests), predicateType);}
+@override String toString() {return 'OrgsListAttestationsBulkRequest(subjectDigests: $subjectDigests, predicateType: $predicateType)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_klarna_on_demand.dart';import 'post_setup_intents_intent_request_payment_method_options_klarna_subscriptions.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale {const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._(this.value);
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(String json) {return switch (json) {
   'cs-CZ' => csCz,
   'da-DK' => daDk,
   'de-AT' => deAt,
@@ -50,7 +50,7 @@ factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale.f
   'sv-FI' => svFi,
   'sv-SE' => svSe,
   _ => PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale csCz = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('cs-CZ');
 
@@ -148,22 +148,22 @@ static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale($value)';}
+}
 @immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna {const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna({this.currency, this.onDemand, this.preferredLocale, this.subscriptions, });
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
   currency: json['currency'] as String?,
   onDemand: json['on_demand'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   subscriptions: json['subscriptions'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions']) : null,
-); }
+);}
 
 final String? currency;
 
@@ -173,25 +173,25 @@ final PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale? pr
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions? subscriptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'currency': ?currency,
   if (onDemand != null) 'on_demand': onDemand?.toJson(),
   if (preferredLocale != null) 'preferred_locale': preferredLocale?.toJson(),
   if (subscriptions != null) 'subscriptions': subscriptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'on_demand', 'preferred_locale', 'subscriptions'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna copyWith({String? Function()? currency, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand? Function()? onDemand, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale? Function()? preferredLocale, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions? Function()? subscriptions, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'currency', 'on_demand', 'preferred_locale', 'subscriptions'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna copyWith({String? Function()? currency, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand? Function()? onDemand, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale? Function()? preferredLocale, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions? Function()? subscriptions, }) {return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
   currency: currency != null ? currency() : this.currency,
   onDemand: onDemand != null ? onDemand() : this.onDemand,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   subscriptions: subscriptions != null ? subscriptions() : this.subscriptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna &&
           currency == other.currency &&
           onDemand == other.onDemand &&
           preferredLocale == other.preferredLocale &&
-          subscriptions == other.subscriptions; } 
-@override int get hashCode { return Object.hash(currency, onDemand, preferredLocale, subscriptions); } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(currency: $currency, onDemand: $onDemand, preferredLocale: $preferredLocale, subscriptions: $subscriptions)'; } 
- }
+          subscriptions == other.subscriptions;}
+@override int get hashCode {return Object.hash(currency, onDemand, preferredLocale, subscriptions);}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(currency: $currency, onDemand: $onDemand, preferredLocale: $preferredLocale, subscriptions: $subscriptions)';}
+}

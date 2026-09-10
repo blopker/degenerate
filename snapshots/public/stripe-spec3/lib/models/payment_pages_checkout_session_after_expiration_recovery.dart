@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionAfterExpirationRecovery {const PaymentPagesCheckoutSessionAfterExpirationRecovery({required this.allowPromotionCodes, required this.enabled, this.expiresAt = const Omittable.absent(), this.url = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionAfterExpirationRecovery.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAfterExpirationRecovery(
+factory PaymentPagesCheckoutSessionAfterExpirationRecovery.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionAfterExpirationRecovery(
   allowPromotionCodes: json['allow_promotion_codes'] as bool,
   enabled: json['enabled'] as bool,
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Enables user redeemable promotion codes on the recovered Checkout Sessions. Defaults to `false`
 final bool allowPromotionCodes;
@@ -24,26 +24,26 @@ final Omittable<int?> expiresAt;
 /// URL that creates a new Checkout Session when clicked that is a copy of this expired Checkout Session
 final Omittable<String?> url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allow_promotion_codes': allowPromotionCodes,
   'enabled': enabled,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (url.isPresent) 'url': url.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow_promotion_codes') && json['allow_promotion_codes'] is bool &&
-      json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentPagesCheckoutSessionAfterExpirationRecovery copyWith({bool? allowPromotionCodes, bool? enabled, Omittable<int?>? expiresAt, Omittable<String?>? url, }) { return PaymentPagesCheckoutSessionAfterExpirationRecovery(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allow_promotion_codes') && json['allow_promotion_codes'] is bool &&
+      json.containsKey('enabled') && json['enabled'] is bool;}
+PaymentPagesCheckoutSessionAfterExpirationRecovery copyWith({bool? allowPromotionCodes, bool? enabled, Omittable<int?>? expiresAt, Omittable<String?>? url, }) {return PaymentPagesCheckoutSessionAfterExpirationRecovery(
   allowPromotionCodes: allowPromotionCodes ?? this.allowPromotionCodes,
   enabled: enabled ?? this.enabled,
   expiresAt: expiresAt ?? this.expiresAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionAfterExpirationRecovery &&
           allowPromotionCodes == other.allowPromotionCodes &&
           enabled == other.enabled &&
           expiresAt == other.expiresAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(allowPromotionCodes, enabled, expiresAt, url); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionAfterExpirationRecovery(allowPromotionCodes: $allowPromotionCodes, enabled: $enabled, expiresAt: $expiresAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(allowPromotionCodes, enabled, expiresAt, url);}
+@override String toString() {return 'PaymentPagesCheckoutSessionAfterExpirationRecovery(allowPromotionCodes: $allowPromotionCodes, enabled: $enabled, expiresAt: $expiresAt, url: $url)';}
+}

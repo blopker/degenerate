@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPaymentMethodsType {const GetPaymentMethodsType._(this.value);
 
-factory GetPaymentMethodsType.fromJson(String json) { return switch (json) {
+factory GetPaymentMethodsType.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -55,7 +55,7 @@ factory GetPaymentMethodsType.fromJson(String json) { return switch (json) {
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => GetPaymentMethodsType._(json),
-}; }
+};}
 
 static const GetPaymentMethodsType acssDebit = GetPaymentMethodsType._('acss_debit');
 
@@ -163,11 +163,11 @@ static const List<GetPaymentMethodsType> values = [acssDebit, affirm, afterpayCl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPaymentMethodsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPaymentMethodsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetPaymentMethodsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetPaymentMethodsType($value)';}
+}

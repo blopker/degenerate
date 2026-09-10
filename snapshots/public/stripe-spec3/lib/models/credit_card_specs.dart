@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_card_specs_networks.dart';@immutable final class CreditCardSpecs {const CreditCardSpecs({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.currency, this.cvc, this.name, this.networks, });
 
-factory CreditCardSpecs.fromJson(Map<String, dynamic> json) { return CreditCardSpecs(
+factory CreditCardSpecs.fromJson(Map<String, dynamic> json) {return CreditCardSpecs(
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -16,7 +16,7 @@ factory CreditCardSpecs.fromJson(Map<String, dynamic> json) { return CreditCardS
   name: json['name'] as String?,
   networks: json['networks'] != null ? CreditCardSpecsNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   number: json['number'] as String,
-); }
+);}
 
 final String? addressCity;
 
@@ -44,7 +44,7 @@ final CreditCardSpecsNetworks? networks;
 
 final String number;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address_city': ?addressCity,
   'address_country': ?addressCountry,
   'address_line1': ?addressLine1,
@@ -58,11 +58,11 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (networks != null) 'networks': networks?.toJson(),
   'number': number,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is String &&
       json.containsKey('exp_year') && json['exp_year'] is String &&
-      json.containsKey('number') && json['number'] is String; } 
-CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? currency, String? Function()? cvc, String? expMonth, String? expYear, String? Function()? name, CreditCardSpecsNetworks? Function()? networks, String? number, }) { return CreditCardSpecs(
+      json.containsKey('number') && json['number'] is String;}
+CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? currency, String? Function()? cvc, String? expMonth, String? expYear, String? Function()? name, CreditCardSpecsNetworks? Function()? networks, String? number, }) {return CreditCardSpecs(
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
   addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
@@ -76,8 +76,8 @@ CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? a
   name: name != null ? name() : this.name,
   networks: networks != null ? networks() : this.networks,
   number: number ?? this.number,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreditCardSpecs &&
           addressCity == other.addressCity &&
           addressCountry == other.addressCountry &&
@@ -91,7 +91,7 @@ CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? a
           expYear == other.expYear &&
           name == other.name &&
           networks == other.networks &&
-          number == other.number; } 
-@override int get hashCode { return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, currency, cvc, expMonth, expYear, name, networks, number); } 
-@override String toString() { return 'CreditCardSpecs(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, name: $name, networks: $networks, number: $number)'; } 
- }
+          number == other.number;}
+@override int get hashCode {return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, currency, cvc, expMonth, expYear, name, networks, number);}
+@override String toString() {return 'CreditCardSpecs(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, name: $name, networks: $networks, number: $number)';}
+}

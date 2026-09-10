@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_allow_policy_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestPuts {const EmailSecurityBatchAllowPoliciesRequestPuts({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.id, this.comments = const Omittable.absent(), this.isRecipient, this.isSender, this.isSpoof, });
 
-factory EmailSecurityBatchAllowPoliciesRequestPuts.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesRequestPuts(
+factory EmailSecurityBatchAllowPoliciesRequestPuts.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchAllowPoliciesRequestPuts(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isAcceptableSender: json['is_acceptable_sender'] as bool,
   isExemptRecipient: json['is_exempt_recipient'] as bool,
@@ -15,7 +15,7 @@ factory EmailSecurityBatchAllowPoliciesRequestPuts.fromJson(Map<String, dynamic>
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
   verifySender: json['verify_sender'] as bool,
   id: EmailSecurityAllowPolicyId.fromJson(json['id'] as num),
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -48,7 +48,7 @@ final bool verifySender;
 /// The unique identifier for the allow policy.
 final EmailSecurityAllowPolicyId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_acceptable_sender': isAcceptableSender,
   'is_exempt_recipient': isExemptRecipient,
@@ -61,16 +61,16 @@ Map<String, dynamic> toJson() { return {
   'pattern_type': patternType?.toJson(),
   'verify_sender': verifySender,
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
       json.containsKey('is_exempt_recipient') && json['is_exempt_recipient'] is bool &&
       json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('is_trusted_sender') && json['is_trusted_sender'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type') &&
       json.containsKey('verify_sender') && json['verify_sender'] is bool &&
-      json.containsKey('id'); } 
-EmailSecurityBatchAllowPoliciesRequestPuts copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, EmailSecurityAllowPolicyId? id, }) { return EmailSecurityBatchAllowPoliciesRequestPuts(
+      json.containsKey('id');}
+EmailSecurityBatchAllowPoliciesRequestPuts copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, EmailSecurityAllowPolicyId? id, }) {return EmailSecurityBatchAllowPoliciesRequestPuts(
   comments: comments ?? this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,
@@ -83,8 +83,8 @@ EmailSecurityBatchAllowPoliciesRequestPuts copyWith({Omittable<String?>? comment
   patternType: patternType != null ? patternType() : this.patternType,
   verifySender: verifySender ?? this.verifySender,
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityBatchAllowPoliciesRequestPuts &&
           comments == other.comments &&
           isAcceptableSender == other.isAcceptableSender &&
@@ -97,7 +97,7 @@ EmailSecurityBatchAllowPoliciesRequestPuts copyWith({Omittable<String?>? comment
           pattern == other.pattern &&
           patternType == other.patternType &&
           verifySender == other.verifySender &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, id); } 
-@override String toString() { return 'EmailSecurityBatchAllowPoliciesRequestPuts(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, id);}
+@override String toString() {return 'EmailSecurityBatchAllowPoliciesRequestPuts(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, id: $id)';}
+}

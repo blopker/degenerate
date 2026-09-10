@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iteration_settings.dart';/// Configuration for iteration fields.
 @immutable final class FieldConfiguration {const FieldConfiguration({this.startDay, this.duration, this.iterations, });
 
-factory FieldConfiguration.fromJson(Map<String, dynamic> json) { return FieldConfiguration(
+factory FieldConfiguration.fromJson(Map<String, dynamic> json) {return FieldConfiguration(
   startDay: json['start_day'] != null ? (json['start_day'] as num).toInt() : null,
   duration: json['duration'] != null ? (json['duration'] as num).toInt() : null,
   iterations: (json['iterations'] as List<dynamic>?)?.map((e) => IterationSettings.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The day of the week when the iteration starts.
 final int? startDay;
@@ -17,22 +17,22 @@ final int? duration;
 
 final List<IterationSettings>? iterations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'start_day': ?startDay,
   'duration': ?duration,
   if (iterations != null) 'iterations': iterations?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'start_day', 'duration', 'iterations'}.contains(key)); } 
-FieldConfiguration copyWith({int? Function()? startDay, int? Function()? duration, List<IterationSettings>? Function()? iterations, }) { return FieldConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'start_day', 'duration', 'iterations'}.contains(key));}
+FieldConfiguration copyWith({int? Function()? startDay, int? Function()? duration, List<IterationSettings>? Function()? iterations, }) {return FieldConfiguration(
   startDay: startDay != null ? startDay() : this.startDay,
   duration: duration != null ? duration() : this.duration,
   iterations: iterations != null ? iterations() : this.iterations,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FieldConfiguration &&
           startDay == other.startDay &&
           duration == other.duration &&
-          listEquals(iterations, other.iterations); } 
-@override int get hashCode { return Object.hash(startDay, duration, Object.hashAll(iterations ?? const [])); } 
-@override String toString() { return 'FieldConfiguration(startDay: $startDay, duration: $duration, iterations: $iterations)'; } 
- }
+          listEquals(iterations, other.iterations);}
+@override int get hashCode {return Object.hash(startDay, duration, Object.hashAll(iterations ?? const []));}
+@override String toString() {return 'FieldConfiguration(startDay: $startDay, duration: $duration, iterations: $iterations)';}
+}

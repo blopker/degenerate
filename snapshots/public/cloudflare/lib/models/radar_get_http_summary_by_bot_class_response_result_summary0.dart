@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByBotClassResponseResultSummary0 {const RadarGetHttpSummaryByBotClassResponseResultSummary0({required this.bot, required this.human, });
 
-factory RadarGetHttpSummaryByBotClassResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByBotClassResponseResultSummary0(
+factory RadarGetHttpSummaryByBotClassResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByBotClassResponseResultSummary0(
   bot: json['bot'] as String,
   human: json['human'] as String,
-); }
+);}
 
 /// A numeric string.
 final String bot;
@@ -13,20 +13,20 @@ final String bot;
 /// A numeric string.
 final String human;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bot': bot,
   'human': human,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bot') && json['bot'] is String &&
-      json.containsKey('human') && json['human'] is String; } 
-RadarGetHttpSummaryByBotClassResponseResultSummary0 copyWith({String? bot, String? human, }) { return RadarGetHttpSummaryByBotClassResponseResultSummary0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bot') && json['bot'] is String &&
+      json.containsKey('human') && json['human'] is String;}
+RadarGetHttpSummaryByBotClassResponseResultSummary0 copyWith({String? bot, String? human, }) {return RadarGetHttpSummaryByBotClassResponseResultSummary0(
   bot: bot ?? this.bot,
   human: human ?? this.human,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpSummaryByBotClassResponseResultSummary0 &&
           bot == other.bot &&
-          human == other.human; } 
-@override int get hashCode { return Object.hash(bot, human); } 
-@override String toString() { return 'RadarGetHttpSummaryByBotClassResponseResultSummary0(bot: $bot, human: $human)'; } 
- }
+          human == other.human;}
+@override int get hashCode {return Object.hash(bot, human);}
+@override String toString() {return 'RadarGetHttpSummaryByBotClassResponseResultSummary0(bot: $bot, human: $human)';}
+}

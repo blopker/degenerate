@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_subscriptions_subscription_exposed_id_request_cancellation_details_comment.dart';@immutable final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback {const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(this.value);
 
-factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(String json) { return switch (json) {
+factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(String json) {return switch (json) {
   '' => $empty,
   'customer_service' => customerService,
   'low_quality' => lowQuality,
@@ -13,7 +13,7 @@ factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedba
   'too_expensive' => tooExpensive,
   'unused' => unused,
   _ => DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(json),
-}; }
+};}
 
 static const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback $empty = DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('');
 
@@ -37,39 +37,39 @@ static const List<DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)';}
+}
 /// Details about why this subscription was cancelled
 @immutable final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
 
-factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(Map<String, dynamic> json) { return DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
+factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(Map<String, dynamic> json) {return DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
   comment: json['comment'] != null ? DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment.fromJson(json['comment']) : null,
   feedback: json['feedback'] != null ? DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(json['feedback'] as String) : null,
-); }
+);}
 
 final DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment? comment;
 
 final DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback? feedback;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (feedback != null) 'feedback': feedback?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'feedback'}.contains(key)); } 
-DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails copyWith({DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment? Function()? comment, DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback? Function()? feedback, }) { return DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'feedback'}.contains(key));}
+DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails copyWith({DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment? Function()? comment, DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback? Function()? feedback, }) {return DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
   comment: comment != null ? comment() : this.comment,
   feedback: feedback != null ? feedback() : this.feedback,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails &&
           comment == other.comment &&
-          feedback == other.feedback; } 
-@override int get hashCode { return Object.hash(comment, feedback); } 
-@override String toString() { return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(comment: $comment, feedback: $feedback)'; } 
- }
+          feedback == other.feedback;}
+@override int get hashCode {return Object.hash(comment, feedback);}
+@override String toString() {return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(comment: $comment, feedback: $feedback)';}
+}

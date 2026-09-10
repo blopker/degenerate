@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when refusal text is finalized.
 @immutable final class ResponseRefusalDoneEvent {const ResponseRefusalDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.refusal, required this.sequenceNumber, });
 
-factory ResponseRefusalDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseRefusalDoneEvent(
+factory ResponseRefusalDoneEvent.fromJson(Map<String, dynamic> json) {return ResponseRefusalDoneEvent(
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   refusal: json['refusal'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `response.refusal.done`.
 /// 
@@ -36,36 +36,36 @@ final String refusal;
 /// 
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'content_index': contentIndex,
   'refusal': refusal,
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('refusal') && json['refusal'] is String &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseRefusalDoneEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, String? refusal, int? sequenceNumber, }) { return ResponseRefusalDoneEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseRefusalDoneEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, String? refusal, int? sequenceNumber, }) {return ResponseRefusalDoneEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   refusal: refusal ?? this.refusal,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseRefusalDoneEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
           refusal == other.refusal &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, refusal, sequenceNumber); } 
-@override String toString() { return 'ResponseRefusalDoneEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, refusal: $refusal, sequenceNumber: $sequenceNumber)'; } 
- }
+          sequenceNumber == other.sequenceNumber;}
+@override int get hashCode {return Object.hash(type, itemId, outputIndex, contentIndex, refusal, sequenceNumber);}
+@override String toString() {return 'ResponseRefusalDoneEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, refusal: $refusal, sequenceNumber: $sequenceNumber)';}
+}

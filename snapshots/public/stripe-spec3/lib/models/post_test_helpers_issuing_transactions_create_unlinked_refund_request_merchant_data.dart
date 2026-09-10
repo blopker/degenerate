@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory._(this.value);
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory.fromJson(String json) {return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
   'accounting_bookkeeping_services' => accountingBookkeepingServices,
   'advertising_services' => advertisingServices,
@@ -298,7 +298,7 @@ factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDat
   'womens_ready_to_wear_stores' => womensReadyToWearStores,
   'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
   _ => PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory acRefrigerationRepair = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory._('ac_refrigeration_repair');
 
@@ -892,18 +892,18 @@ static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory($value)';}
+}
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
 @immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(
   category: json['category'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory.fromJson(json['category'] as String) : null,
   city: json['city'] as String?,
   country: json['country'] as String?,
@@ -913,7 +913,7 @@ factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDat
   state: json['state'] as String?,
   terminalId: json['terminal_id'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory? category;
 
@@ -933,7 +933,7 @@ final String? terminalId;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (category != null) 'category': category?.toJson(),
   'city': ?city,
   'country': ?country,
@@ -943,9 +943,9 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
   'terminal_id': ?terminalId,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'city', 'country', 'name', 'network_id', 'postal_code', 'state', 'terminal_id', 'url'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory? Function()? category, String? Function()? city, String? Function()? country, String? Function()? name, String? Function()? networkId, String? Function()? postalCode, String? Function()? state, String? Function()? terminalId, String? Function()? url, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'category', 'city', 'country', 'name', 'network_id', 'postal_code', 'state', 'terminal_id', 'url'}.contains(key));}
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory? Function()? category, String? Function()? city, String? Function()? country, String? Function()? name, String? Function()? networkId, String? Function()? postalCode, String? Function()? state, String? Function()? terminalId, String? Function()? url, }) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(
   category: category != null ? category() : this.category,
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
@@ -955,8 +955,8 @@ PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData copyWi
   state: state != null ? state() : this.state,
   terminalId: terminalId != null ? terminalId() : this.terminalId,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData &&
           category == other.category &&
           city == other.city &&
@@ -966,7 +966,7 @@ PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData copyWi
           postalCode == other.postalCode &&
           state == other.state &&
           terminalId == other.terminalId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(category, city, country, name, networkId, postalCode, state, terminalId, url); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(category: $category, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, terminalId: $terminalId, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(category, city, country, name, networkId, postalCode, state, terminalId, url);}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(category: $category, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, terminalId: $terminalId, url: $url)';}
+}

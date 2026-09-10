@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_to_text_variant2_image.dart';@immutable final class ImageToTextVariant2 {const ImageToTextVariant2({required this.image, this.frequencyPenalty, this.maxTokens, this.presencePenalty, this.prompt, this.raw, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
-factory ImageToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageToTextVariant2(
+factory ImageToTextVariant2.fromJson(Map<String, dynamic> json) {return ImageToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   image: OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => base64Decode(v as String),),
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
@@ -14,7 +14,7 @@ factory ImageToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageTo
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -49,10 +49,10 @@ final double? topK;
 final double? topP;
 
 /// The value with the schema default applied when absent.
-int get maxTokensOrDefault { return maxTokens ?? 512; } 
+int get maxTokensOrDefault {return maxTokens ?? 512;}
 /// The value with the schema default applied when absent.
-bool get rawOrDefault { return raw ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get rawOrDefault {return raw ?? false;}
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   'image': image.toJson(),
   'max_tokens': ?maxTokens,
@@ -64,9 +64,9 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image'); } 
-ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, ImageToTextVariant2Image? image, int? Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageToTextVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image');}
+ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, ImageToTextVariant2Image? image, int? Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) {return ImageToTextVariant2(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   image: image ?? this.image,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -78,8 +78,8 @@ ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, ImageToTextV
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageToTextVariant2 &&
           frequencyPenalty == other.frequencyPenalty &&
           image == other.image &&
@@ -91,7 +91,7 @@ ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, ImageToTextV
           seed == other.seed &&
           temperature == other.temperature &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, image, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, seed, temperature, topK, topP); } 
-@override String toString() { return 'ImageToTextVariant2(frequencyPenalty: $frequencyPenalty, image: $image, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)'; } 
- }
+          topP == other.topP;}
+@override int get hashCode {return Object.hash(frequencyPenalty, image, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, seed, temperature, topK, topP);}
+@override String toString() {return 'ImageToTextVariant2(frequencyPenalty: $frequencyPenalty, image: $image, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)';}
+}

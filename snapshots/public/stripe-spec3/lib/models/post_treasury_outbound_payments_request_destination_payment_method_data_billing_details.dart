@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_address.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_email.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_name.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details_phone.dart';@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, });
 
-factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(
+factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) {return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(
   address: json['address'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress.fromJson(json['address']) : null,
   email: json['email'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail.fromJson(json['email']) : null,
   name: json['name'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsName.fromJson(json['name']) : null,
   phone: json['phone'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone.fromJson(json['phone']) : null,
-); }
+);}
 
 final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress? address;
 
@@ -17,25 +17,25 @@ final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDeta
 
 final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (email != null) 'email': email?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (phone != null) 'phone': phone?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key)); } 
-PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails copyWith({PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress? Function()? address, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail? Function()? email, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsName? Function()? name, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone? Function()? phone, }) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key));}
+PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails copyWith({PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress? Function()? address, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail? Function()? email, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsName? Function()? name, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone? Function()? phone, }) {return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
   phone: phone != null ? phone() : this.phone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails &&
           address == other.address &&
           email == other.email &&
           name == other.name &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, email, name, phone); } 
-@override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(address: $address, email: $email, name: $name, phone: $phone)'; } 
- }
+          phone == other.phone;}
+@override int get hashCode {return Object.hash(address, email, name, phone);}
+@override String toString() {return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(address: $address, email: $email, name: $name, phone: $phone)';}
+}

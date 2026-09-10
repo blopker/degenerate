@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentTreeLinks {const ContentTreeLinks({required this.git, required this.html, required this.self, });
 
-factory ContentTreeLinks.fromJson(Map<String, dynamic> json) { return ContentTreeLinks(
+factory ContentTreeLinks.fromJson(Map<String, dynamic> json) {return ContentTreeLinks(
   git: json['git'] != null ? Uri.parse(json['git'] as String) : null,
   html: json['html'] != null ? Uri.parse(json['html'] as String) : null,
   self: Uri.parse(json['self'] as String),
-); }
+);}
 
 final Uri? git;
 
@@ -14,24 +14,24 @@ final Uri? html;
 
 final Uri self;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'git': git?.toString(),
   'html': html?.toString(),
   'self': self.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('git') && (json['git'] == null || json['git'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('git') && (json['git'] == null || json['git'] is String) &&
       json.containsKey('html') && (json['html'] == null || json['html'] is String) &&
-      json.containsKey('self') && json['self'] is String; } 
-ContentTreeLinks copyWith({Uri? Function()? git, Uri? Function()? html, Uri? self, }) { return ContentTreeLinks(
+      json.containsKey('self') && json['self'] is String;}
+ContentTreeLinks copyWith({Uri? Function()? git, Uri? Function()? html, Uri? self, }) {return ContentTreeLinks(
   git: git != null ? git() : this.git,
   html: html != null ? html() : this.html,
   self: self ?? this.self,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContentTreeLinks &&
           git == other.git &&
           html == other.html &&
-          self == other.self; } 
-@override int get hashCode { return Object.hash(git, html, self); } 
-@override String toString() { return 'ContentTreeLinks(git: $git, html: $html, self: $self)'; } 
- }
+          self == other.self;}
+@override int get hashCode {return Object.hash(git, html, self);}
+@override String toString() {return 'ContentTreeLinks(git: $git, html: $html, self: $self)';}
+}

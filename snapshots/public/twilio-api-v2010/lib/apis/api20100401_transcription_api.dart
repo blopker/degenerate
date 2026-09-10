@@ -11,7 +11,7 @@ final class Api20100401TranscriptionApi with ApiExecutor {const Api20100401Trans
 /// Fetch an instance of a Transcription
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<AccountTranscription, Never>> fetchTranscription({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountTranscription, Never>> fetchTranscription({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,18 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountTranscription.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountTranscription.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a transcription from the account used to make the request
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<void, Never>> deleteTranscription({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteTranscription({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -40,15 +35,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of transcriptions belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Transcriptions.json`
-Future<ApiResult<ListTranscriptionResponse, Never>> listTranscription({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListTranscriptionResponse, Never>> listTranscription({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -71,12 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListTranscriptionResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListTranscriptionResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

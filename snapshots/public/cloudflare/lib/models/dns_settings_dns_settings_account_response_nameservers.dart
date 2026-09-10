@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Nameserver type
 @immutable final class DnsSettingsDnsSettingsAccountResponseNameserversType {const DnsSettingsDnsSettingsAccountResponseNameserversType._(this.value);
 
-factory DnsSettingsDnsSettingsAccountResponseNameserversType.fromJson(String json) { return switch (json) {
+factory DnsSettingsDnsSettingsAccountResponseNameserversType.fromJson(String json) {return switch (json) {
   'cloudflare.standard' => cloudflareStandard,
   'cloudflare.standard.random' => cloudflareStandardRandom,
   'custom.account' => customAccount,
   'custom.tenant' => customTenant,
   _ => DnsSettingsDnsSettingsAccountResponseNameserversType._(json),
-}; }
+};}
 
 static const DnsSettingsDnsSettingsAccountResponseNameserversType cloudflareStandard = DnsSettingsDnsSettingsAccountResponseNameserversType._('cloudflare.standard');
 
@@ -23,34 +23,34 @@ static const List<DnsSettingsDnsSettingsAccountResponseNameserversType> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsSettingsDnsSettingsAccountResponseNameserversType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsSettingsDnsSettingsAccountResponseNameserversType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnsSettingsDnsSettingsAccountResponseNameserversType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnsSettingsDnsSettingsAccountResponseNameserversType($value)';}
+}
 /// Settings determining the nameservers through which the zone should be available.
 @immutable final class DnsSettingsDnsSettingsAccountResponseNameservers {const DnsSettingsDnsSettingsAccountResponseNameservers({required this.type});
 
-factory DnsSettingsDnsSettingsAccountResponseNameservers.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsSettingsAccountResponseNameservers(
+factory DnsSettingsDnsSettingsAccountResponseNameservers.fromJson(Map<String, dynamic> json) {return DnsSettingsDnsSettingsAccountResponseNameservers(
   type: DnsSettingsDnsSettingsAccountResponseNameserversType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Nameserver type
 final DnsSettingsDnsSettingsAccountResponseNameserversType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-DnsSettingsDnsSettingsAccountResponseNameservers copyWith({DnsSettingsDnsSettingsAccountResponseNameserversType? type}) { return DnsSettingsDnsSettingsAccountResponseNameservers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+DnsSettingsDnsSettingsAccountResponseNameservers copyWith({DnsSettingsDnsSettingsAccountResponseNameserversType? type}) {return DnsSettingsDnsSettingsAccountResponseNameservers(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsSettingsDnsSettingsAccountResponseNameservers &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'DnsSettingsDnsSettingsAccountResponseNameservers(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'DnsSettingsDnsSettingsAccountResponseNameservers(type: $type)';}
+}

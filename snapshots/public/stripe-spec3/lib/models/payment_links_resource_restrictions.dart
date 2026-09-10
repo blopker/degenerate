@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_completed_sessions.dart';/// 
 @immutable final class PaymentLinksResourceRestrictions {const PaymentLinksResourceRestrictions({required this.completedSessions});
 
-factory PaymentLinksResourceRestrictions.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceRestrictions(
+factory PaymentLinksResourceRestrictions.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceRestrictions(
   completedSessions: PaymentLinksResourceCompletedSessions.fromJson(json['completed_sessions'] as Map<String, dynamic>),
-); }
+);}
 
 final PaymentLinksResourceCompletedSessions completedSessions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completed_sessions': completedSessions.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_sessions'); } 
-PaymentLinksResourceRestrictions copyWith({PaymentLinksResourceCompletedSessions? completedSessions}) { return PaymentLinksResourceRestrictions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completed_sessions');}
+PaymentLinksResourceRestrictions copyWith({PaymentLinksResourceCompletedSessions? completedSessions}) {return PaymentLinksResourceRestrictions(
   completedSessions: completedSessions ?? this.completedSessions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentLinksResourceRestrictions &&
-          completedSessions == other.completedSessions; } 
-@override int get hashCode { return completedSessions.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceRestrictions(completedSessions: $completedSessions)'; } 
- }
+          completedSessions == other.completedSessions;}
+@override int get hashCode {return completedSessions.hashCode;}
+@override String toString() {return 'PaymentLinksResourceRestrictions(completedSessions: $completedSessions)';}
+}

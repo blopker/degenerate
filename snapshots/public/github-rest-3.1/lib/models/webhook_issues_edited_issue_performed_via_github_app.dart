@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_issues_edited_issue_performed_via_github_app_owner.dart';import 'webhook_issues_edited_issue_performed_via_github_app_permissions.dart';@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents._(this.value);
 
-factory WebhookIssuesEditedIssuePerformedViaGithubAppEvents.fromJson(String json) { return switch (json) {
+factory WebhookIssuesEditedIssuePerformedViaGithubAppEvents.fromJson(String json) {return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
   'check_run' => checkRun,
   'check_suite' => checkSuite,
@@ -52,7 +52,7 @@ factory WebhookIssuesEditedIssuePerformedViaGithubAppEvents.fromJson(String json
   'pull_request_review_thread' => pullRequestReviewThread,
   'reminder' => reminder,
   _ => WebhookIssuesEditedIssuePerformedViaGithubAppEvents._(json),
-}; }
+};}
 
 static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents branchProtectionRule = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('branch_protection_rule');
 
@@ -154,18 +154,18 @@ static const List<WebhookIssuesEditedIssuePerformedViaGithubAppEvents> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesEditedIssuePerformedViaGithubAppEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesEditedIssuePerformedViaGithubAppEvents($value)';}
+}
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class WebhookIssuesEditedIssuePerformedViaGithubApp {const WebhookIssuesEditedIssuePerformedViaGithubApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.permissions, this.slug, });
 
-factory WebhookIssuesEditedIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) { return WebhookIssuesEditedIssuePerformedViaGithubApp(
+factory WebhookIssuesEditedIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) {return WebhookIssuesEditedIssuePerformedViaGithubApp(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   description: json['description'] as String?,
   events: (json['events'] as List<dynamic>?)?.map((e) => WebhookIssuesEditedIssuePerformedViaGithubAppEvents.fromJson(e as String)).toList(),
@@ -178,7 +178,7 @@ factory WebhookIssuesEditedIssuePerformedViaGithubApp.fromJson(Map<String, dynam
   permissions: json['permissions'] != null ? WebhookIssuesEditedIssuePerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   slug: json['slug'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -209,7 +209,7 @@ final String? slug;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt?.toIso8601String(),
   'description': description,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
@@ -222,8 +222,8 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
   'slug': ?slug,
   'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('external_url') && (json['external_url'] == null || json['external_url'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -231,8 +231,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
-      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
-WebhookIssuesEditedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookIssuesEditedIssuePerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookIssuesEditedIssuePerformedViaGithubAppOwner? Function()? owner, WebhookIssuesEditedIssuePerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookIssuesEditedIssuePerformedViaGithubApp(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String);}
+WebhookIssuesEditedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookIssuesEditedIssuePerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookIssuesEditedIssuePerformedViaGithubAppOwner? Function()? owner, WebhookIssuesEditedIssuePerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) {return WebhookIssuesEditedIssuePerformedViaGithubApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,
@@ -245,8 +245,8 @@ WebhookIssuesEditedIssuePerformedViaGithubApp copyWith({DateTime? Function()? cr
   permissions: permissions != null ? permissions() : this.permissions,
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesEditedIssuePerformedViaGithubApp &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -259,7 +259,7 @@ WebhookIssuesEditedIssuePerformedViaGithubApp copyWith({DateTime? Function()? cr
           owner == other.owner &&
           permissions == other.permissions &&
           slug == other.slug &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt); } 
-@override String toString() { return 'WebhookIssuesEditedIssuePerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt);}
+@override String toString() {return 'WebhookIssuesEditedIssuePerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)';}
+}

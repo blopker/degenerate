@@ -13,7 +13,7 @@ final class StreamVideosApi with ApiExecutor {const StreamVideosApi(this.apiConf
 /// Lists up to 1000 videos from a single request. For a specific range, refer to the optional parameters.
 ///
 /// `GET /accounts/{account_id}/stream`
-Future<ApiResult<List<StreamVideos>?, ResponseCommonFailure69>> streamVideosListVideos({required StreamAccountIdentifier accountId, StreamMediaState? status, StreamCreator? creator, StreamType? type, StreamAsc? asc, StreamVideoName? videoName, StreamSearch? search, StreamStart? start, StreamEnd? end, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<StreamVideos>?, ResponseCommonFailure69>> streamVideosListVideos({required StreamAccountIdentifier accountId, StreamMediaState? status, StreamCreator? creator, StreamType? type, StreamAsc? asc, StreamVideoName? videoName, StreamSearch? search, StreamStart? start, StreamEnd? end, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -54,30 +54,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => StreamVideos.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => StreamVideos.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Initiate video uploads using TUS
 ///
 /// Initiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.
 ///
 /// `POST /accounts/{account_id}/stream`
-Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required StreamAccountIdentifier accountId, required StreamTusResumable tusResumable, required StreamUploadLength uploadLength, StreamDirectUser? directUser, StreamCreator? uploadCreator, StreamUploadMetadata? uploadMetadata, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required StreamAccountIdentifier accountId, required StreamTusResumable tusResumable, required StreamUploadLength uploadLength, StreamDirectUser? directUser, StreamCreator? uploadCreator, StreamUploadMetadata? uploadMetadata, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (directUser != null) {
   queryParameters['direct_user'] = directUser.toString();
@@ -102,17 +91,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve video details
 ///
 /// Fetches details for a single video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<StreamVideos?, ResponseCommonFailure69>> streamVideosRetrieveVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamVideos?, ResponseCommonFailure69>> streamVideosRetrieveVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -121,30 +107,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Edit video details
 ///
 /// Edit details for a single video.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<StreamVideos?, ResponseCommonFailure69>> streamVideosUpdateVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamVideoUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamVideos?, ResponseCommonFailure69>> streamVideosUpdateVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamVideoUpdate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -155,30 +130,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete video
 ///
 /// Deletes a video and its copies from Cloudflare Stream.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<void, Never>> streamVideosDeleteVideo({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> streamVideosDeleteVideo({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -187,17 +151,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve embed Code HTML
 ///
 /// Fetches an HTML code snippet to embed a video in a web page delivered through Cloudflare. On success, returns an HTML fragment for use on web pages to display a video. On failure, returns a JSON response body.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/embed`
-Future<ApiResult<String, ResponseCommonFailure69>> streamVideosRetreieveEmbedCodeHtml({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, ResponseCommonFailure69>> streamVideosRetreieveEmbedCodeHtml({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -206,30 +167,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create signed URL tokens for videos
 ///
 /// Creates a signed URL token for a video. If a body is not provided in the request, a token is created with default values.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/token`
-Future<ApiResult<StreamSignedTokenResponseResult?, ResponseCommonFailure69>> streamVideosCreateSignedUrlTokensForVideos({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamSignedTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamSignedTokenResponseResult?, ResponseCommonFailure69>> streamVideosCreateSignedUrlTokensForVideos({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamSignedTokenRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -240,30 +190,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? StreamSignedTokenResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? StreamSignedTokenResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Upload videos from a URL
 ///
 /// Uploads a video to Stream from a provided URL.
 ///
 /// `POST /accounts/{account_id}/stream/copy`
-Future<ApiResult<StreamVideos?, ResponseCommonFailure69>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, required StreamVideoCopyRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamVideos?, ResponseCommonFailure69>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, required StreamVideoCopyRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
   headers['Upload-Creator'] = uploadCreator.toString();
@@ -277,30 +216,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Upload videos via direct upload URLs
 ///
 /// Creates a direct upload that allows video uploads without an API key.
 ///
 /// `POST /accounts/{account_id}/stream/direct_upload`
-Future<ApiResult<StreamDirectUploadResponseResult?, ResponseCommonFailure69>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, required StreamDirectUploadRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamDirectUploadResponseResult?, ResponseCommonFailure69>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, required StreamDirectUploadRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
   headers['Upload-Creator'] = uploadCreator.toString();
@@ -314,30 +242,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? StreamDirectUploadResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? StreamDirectUploadResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Storage use
 ///
 /// Returns information about an account's storage use.
 ///
 /// `GET /accounts/{account_id}/stream/storage-usage`
-Future<ApiResult<StreamStorageUseResponseResult?, ResponseCommonFailure69>> streamVideosStorageUsage({required StreamAccountIdentifier accountId, StreamCreator? creator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<StreamStorageUseResponseResult?, ResponseCommonFailure69>> streamVideosStorageUsage({required StreamAccountIdentifier accountId, StreamCreator? creator, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (creator != null) {
   queryParameters['creator'] = creator.toString();
@@ -354,22 +271,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? StreamStorageUseResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? StreamStorageUseResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

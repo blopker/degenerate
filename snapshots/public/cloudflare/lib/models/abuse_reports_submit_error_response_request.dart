@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_submission_report_type.dart';@immutable final class AbuseReportsSubmitErrorResponseRequest {const AbuseReportsSubmitErrorResponseRequest({required this.act});
 
-factory AbuseReportsSubmitErrorResponseRequest.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitErrorResponseRequest(
+factory AbuseReportsSubmitErrorResponseRequest.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitErrorResponseRequest(
   act: AbuseReportsSubmissionReportType.fromJson(json['act'] as String),
-); }
+);}
 
 /// The report type for submitted reports.
 final AbuseReportsSubmissionReportType act;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act'); } 
-AbuseReportsSubmitErrorResponseRequest copyWith({AbuseReportsSubmissionReportType? act}) { return AbuseReportsSubmitErrorResponseRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act');}
+AbuseReportsSubmitErrorResponseRequest copyWith({AbuseReportsSubmissionReportType? act}) {return AbuseReportsSubmitErrorResponseRequest(
   act: act ?? this.act,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsSubmitErrorResponseRequest &&
-          act == other.act; } 
-@override int get hashCode { return act.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitErrorResponseRequest(act: $act)'; } 
- }
+          act == other.act;}
+@override int get hashCode {return act.hashCode;}
+@override String toString() {return 'AbuseReportsSubmitErrorResponseRequest(act: $act)';}
+}

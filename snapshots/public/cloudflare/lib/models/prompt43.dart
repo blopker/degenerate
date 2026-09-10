@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_audio_variant1.dart';import 'prompt43_chat_template_kwargs.dart';import 'prompt43_function_call.dart';import 'prompt43_functions.dart';import 'prompt43_prediction_content.dart';import 'prompt43_response_format_variant1.dart';import 'prompt43_response_format_variant1_json_object.dart';import 'prompt43_response_format_variant1_json_schema.dart';import 'prompt43_response_format_variant1_text.dart';import 'prompt43_stop.dart';import 'prompt43_stream_options_variant1.dart';import 'prompt43_tool_choice_variant1.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';import 'prompt43_tools.dart';import 'prompt43_tools_custom.dart';import 'prompt43_tools_function.dart';import 'prompt43_web_search_options_variant1.dart';@immutable final class Prompt43Modalities {const Prompt43Modalities._(this.value);
 
-factory Prompt43Modalities.fromJson(String json) { return switch (json) {
+factory Prompt43Modalities.fromJson(String json) {return switch (json) {
   'text' => text,
   'audio' => audio,
   _ => Prompt43Modalities._(json),
-}; }
+};}
 
 static const Prompt43Modalities text = Prompt43Modalities._('text');
 
@@ -16,22 +16,22 @@ static const List<Prompt43Modalities> values = [text, audio];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt43Modalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt43Modalities($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt43Modalities && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt43Modalities($value)';}
+}
 @immutable final class Prompt43ReasoningEffort {const Prompt43ReasoningEffort._(this.value);
 
-factory Prompt43ReasoningEffort.fromJson(String json) { return switch (json) {
+factory Prompt43ReasoningEffort.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => Prompt43ReasoningEffort._(json),
-}; }
+};}
 
 static const Prompt43ReasoningEffort low = Prompt43ReasoningEffort._('low');
 
@@ -43,24 +43,24 @@ static const List<Prompt43ReasoningEffort> values = [low, medium, high];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt43ReasoningEffort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt43ReasoningEffort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt43ReasoningEffort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt43ReasoningEffort($value)';}
+}
 @immutable final class Prompt43ServiceTier {const Prompt43ServiceTier._(this.value);
 
-factory Prompt43ServiceTier.fromJson(String json) { return switch (json) {
+factory Prompt43ServiceTier.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'default' => $default,
   'flex' => flex,
   'scale' => scale,
   'priority' => priority,
   _ => Prompt43ServiceTier._(json),
-}; }
+};}
 
 static const Prompt43ServiceTier auto = Prompt43ServiceTier._('auto');
 
@@ -76,17 +76,17 @@ static const List<Prompt43ServiceTier> values = [auto, $default, flex, scale, pr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Prompt43ServiceTier && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Prompt43ServiceTier($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Prompt43ServiceTier && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Prompt43ServiceTier($value)';}
+}
 @immutable final class Prompt43 {const Prompt43({required this.prompt, this.audio, this.chatTemplateKwargs, this.frequencyPenalty = const Omittable.absent(), this.functionCall, this.functions, this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.maxTokens = const Omittable.absent(), this.metadata = const Omittable.absent(), this.modalities = const Omittable.absent(), this.model, this.n = const Omittable.absent(), this.parallelToolCalls, this.prediction, this.presencePenalty = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.responseFormat, this.seed = const Omittable.absent(), this.serviceTier = const Omittable.absent(), this.stop, this.store = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions, this.temperature = const Omittable.absent(), this.toolChoice, this.tools, this.topLogprobs = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.webSearchOptions, });
 
-factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
+factory Prompt43.fromJson(Map<String, dynamic> json) {return Prompt43(
   audio: json['audio'] != null ? Prompt43AudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
   chatTemplateKwargs: json['chat_template_kwargs'] != null ? Prompt43ChatTemplateKwargs.fromJson(json['chat_template_kwargs'] as Map<String, dynamic>) : null,
   frequencyPenalty: json.containsKey('frequency_penalty') ? Omittable(json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null) : const Omittable.absent(),
@@ -119,7 +119,7 @@ factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   user: json['user'] as String?,
   webSearchOptions: json['web_search_options'] != null ? Prompt43WebSearchOptionsVariant1.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Parameters for audio output. Required when modalities includes 'audio'.
 final Prompt43AudioVariant1? audio;
@@ -195,8 +195,8 @@ final String? user;
 final Prompt43WebSearchOptionsVariant1? webSearchOptions;
 
 /// The value with the schema default applied when absent.
-bool get parallelToolCallsOrDefault { return parallelToolCalls ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get parallelToolCallsOrDefault {return parallelToolCalls ?? true;}
+Map<String, dynamic> toJson() {return {
   if (audio != null) 'audio': audio?.toJson(),
   if (chatTemplateKwargs != null) 'chat_template_kwargs': chatTemplateKwargs?.toJson(),
   if (frequencyPenalty.isPresent) 'frequency_penalty': frequencyPenalty.value,
@@ -229,9 +229,9 @@ Map<String, dynamic> toJson() { return {
   if (topP.isPresent) 'top_p': topP.value,
   'user': ?user,
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt43 copyWith({Prompt43AudioVariant1? Function()? audio, Prompt43ChatTemplateKwargs? Function()? chatTemplateKwargs, Omittable<double?>? frequencyPenalty, Prompt43FunctionCall? Function()? functionCall, List<Prompt43Functions>? Function()? functions, Omittable<Map<String,dynamic>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxCompletionTokens, Omittable<int?>? maxTokens, Omittable<Map<String,dynamic>?>? metadata, Omittable<List<Prompt43Modalities>?>? modalities, String? Function()? model, Omittable<int?>? n, bool? Function()? parallelToolCalls, Prompt43PredictionContent? Function()? prediction, Omittable<double?>? presencePenalty, String? prompt, Omittable<Prompt43ReasoningEffort?>? reasoningEffort, Prompt43ResponseFormatVariant1? Function()? responseFormat, Omittable<int?>? seed, Omittable<Prompt43ServiceTier?>? serviceTier, Prompt43Stop? Function()? stop, Omittable<bool?>? store, Omittable<bool?>? stream, Prompt43StreamOptionsVariant1? Function()? streamOptions, Omittable<double?>? temperature, Prompt43ToolChoiceVariant1? Function()? toolChoice, List<Prompt43Tools>? Function()? tools, Omittable<int?>? topLogprobs, Omittable<double?>? topP, String? Function()? user, Prompt43WebSearchOptionsVariant1? Function()? webSearchOptions, }) { return Prompt43(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+Prompt43 copyWith({Prompt43AudioVariant1? Function()? audio, Prompt43ChatTemplateKwargs? Function()? chatTemplateKwargs, Omittable<double?>? frequencyPenalty, Prompt43FunctionCall? Function()? functionCall, List<Prompt43Functions>? Function()? functions, Omittable<Map<String,dynamic>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxCompletionTokens, Omittable<int?>? maxTokens, Omittable<Map<String,dynamic>?>? metadata, Omittable<List<Prompt43Modalities>?>? modalities, String? Function()? model, Omittable<int?>? n, bool? Function()? parallelToolCalls, Prompt43PredictionContent? Function()? prediction, Omittable<double?>? presencePenalty, String? prompt, Omittable<Prompt43ReasoningEffort?>? reasoningEffort, Prompt43ResponseFormatVariant1? Function()? responseFormat, Omittable<int?>? seed, Omittable<Prompt43ServiceTier?>? serviceTier, Prompt43Stop? Function()? stop, Omittable<bool?>? store, Omittable<bool?>? stream, Prompt43StreamOptionsVariant1? Function()? streamOptions, Omittable<double?>? temperature, Prompt43ToolChoiceVariant1? Function()? toolChoice, List<Prompt43Tools>? Function()? tools, Omittable<int?>? topLogprobs, Omittable<double?>? topP, String? Function()? user, Prompt43WebSearchOptionsVariant1? Function()? webSearchOptions, }) {return Prompt43(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty ?? this.frequencyPenalty,
@@ -264,8 +264,8 @@ Prompt43 copyWith({Prompt43AudioVariant1? Function()? audio, Prompt43ChatTemplat
   topP: topP ?? this.topP,
   user: user != null ? user() : this.user,
   webSearchOptions: webSearchOptions != null ? webSearchOptions() : this.webSearchOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Prompt43 &&
           audio == other.audio &&
           chatTemplateKwargs == other.chatTemplateKwargs &&
@@ -299,7 +299,7 @@ Prompt43 copyWith({Prompt43AudioVariant1? Function()? audio, Prompt43ChatTemplat
           topLogprobs == other.topLogprobs &&
           topP == other.topP &&
           user == other.user &&
-          webSearchOptions == other.webSearchOptions; } 
-@override int get hashCode { return Object.hashAll([audio, chatTemplateKwargs, frequencyPenalty, functionCall, Object.hashAll(functions ?? const []), logitBias, logprobs, maxCompletionTokens, maxTokens, metadata, Object.hashAll(modalities.value ?? const []), model, n, parallelToolCalls, prediction, presencePenalty, prompt, reasoningEffort, responseFormat, seed, serviceTier, stop, store, stream, streamOptions, temperature, toolChoice, Object.hashAll(tools ?? const []), topLogprobs, topP, user, webSearchOptions]); } 
-@override String toString() { return 'Prompt43(audio: $audio, chatTemplateKwargs: $chatTemplateKwargs, frequencyPenalty: $frequencyPenalty, functionCall: $functionCall, functions: $functions, logitBias: $logitBias, logprobs: $logprobs, maxCompletionTokens: $maxCompletionTokens, maxTokens: $maxTokens, metadata: $metadata, modalities: $modalities, model: $model, n: $n, parallelToolCalls: $parallelToolCalls, prediction: $prediction, presencePenalty: $presencePenalty, prompt: $prompt, reasoningEffort: $reasoningEffort, responseFormat: $responseFormat, seed: $seed, serviceTier: $serviceTier, stop: $stop, store: $store, stream: $stream, streamOptions: $streamOptions, temperature: $temperature, toolChoice: $toolChoice, tools: $tools, topLogprobs: $topLogprobs, topP: $topP, user: $user, webSearchOptions: $webSearchOptions)'; } 
- }
+          webSearchOptions == other.webSearchOptions;}
+@override int get hashCode {return Object.hashAll([audio, chatTemplateKwargs, frequencyPenalty, functionCall, Object.hashAll(functions ?? const []), logitBias, logprobs, maxCompletionTokens, maxTokens, metadata, Object.hashAll(modalities.value ?? const []), model, n, parallelToolCalls, prediction, presencePenalty, prompt, reasoningEffort, responseFormat, seed, serviceTier, stop, store, stream, streamOptions, temperature, toolChoice, Object.hashAll(tools ?? const []), topLogprobs, topP, user, webSearchOptions]);}
+@override String toString() {return 'Prompt43(audio: $audio, chatTemplateKwargs: $chatTemplateKwargs, frequencyPenalty: $frequencyPenalty, functionCall: $functionCall, functions: $functions, logitBias: $logitBias, logprobs: $logprobs, maxCompletionTokens: $maxCompletionTokens, maxTokens: $maxTokens, metadata: $metadata, modalities: $modalities, model: $model, n: $n, parallelToolCalls: $parallelToolCalls, prediction: $prediction, presencePenalty: $presencePenalty, prompt: $prompt, reasoningEffort: $reasoningEffort, responseFormat: $responseFormat, seed: $seed, serviceTier: $serviceTier, stop: $stop, store: $store, stream: $stream, streamOptions: $streamOptions, temperature: $temperature, toolChoice: $toolChoice, tools: $tools, topLogprobs: $topLogprobs, topP: $topP, user: $user, webSearchOptions: $webSearchOptions)';}
+}

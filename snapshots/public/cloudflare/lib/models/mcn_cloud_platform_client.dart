@@ -8,10 +8,10 @@ String toJson() => value;
 }
 @immutable final class McnCloudPlatformClientClientType {const McnCloudPlatformClientClientType._(this.value);
 
-factory McnCloudPlatformClientClientType.fromJson(String json) { return switch (json) {
+factory McnCloudPlatformClientClientType.fromJson(String json) {return switch (json) {
   'MAGIC_WAN_CLOUD_ONRAMP' => magicWanCloudOnramp,
   _ => McnCloudPlatformClientClientType._(json),
-}; }
+};}
 
 static const McnCloudPlatformClientClientType magicWanCloudOnramp = McnCloudPlatformClientClientType._('MAGIC_WAN_CLOUD_ONRAMP');
 
@@ -19,21 +19,21 @@ static const List<McnCloudPlatformClientClientType> values = [magicWanCloudOnram
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnCloudPlatformClientClientType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnCloudPlatformClientClientType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is McnCloudPlatformClientClientType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'McnCloudPlatformClientClientType($value)';}
+}
 @immutable final class McnCloudPlatformClient {const McnCloudPlatformClient({required this.clientType, required this.id, required this.name, });
 
-factory McnCloudPlatformClient.fromJson(Map<String, dynamic> json) { return McnCloudPlatformClient(
+factory McnCloudPlatformClient.fromJson(Map<String, dynamic> json) {return McnCloudPlatformClient(
   clientType: McnCloudPlatformClientClientType.fromJson(json['client_type'] as String),
   id: McnPlatformClientId.fromJson(json['id'] as String),
   name: json['name'] as String,
-); }
+);}
 
 final McnCloudPlatformClientClientType clientType;
 
@@ -41,24 +41,24 @@ final McnPlatformClientId id;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_type': clientType.toJson(),
   'id': id.toJson(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_type') &&
       json.containsKey('id') &&
-      json.containsKey('name') && json['name'] is String; } 
-McnCloudPlatformClient copyWith({McnCloudPlatformClientClientType? clientType, McnPlatformClientId? id, String? name, }) { return McnCloudPlatformClient(
+      json.containsKey('name') && json['name'] is String;}
+McnCloudPlatformClient copyWith({McnCloudPlatformClientClientType? clientType, McnPlatformClientId? id, String? name, }) {return McnCloudPlatformClient(
   clientType: clientType ?? this.clientType,
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnCloudPlatformClient &&
           clientType == other.clientType &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(clientType, id, name); } 
-@override String toString() { return 'McnCloudPlatformClient(clientType: $clientType, id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(clientType, id, name);}
+@override String toString() {return 'McnCloudPlatformClient(clientType: $clientType, id: $id, name: $name)';}
+}

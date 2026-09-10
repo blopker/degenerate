@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs7.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2 {const PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2._(this.value);
 
-factory PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2 $empty = PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsSubscriptionExposedIdRequestTransferDataVaria
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2($value)';}
+}
 /// If specified, the funds from the subscription's invoices will be transferred to the destination and the ID of the resulting transfers will be found on the resulting charges. This will be unset if you POST an empty value.
 @immutable
 final class PostSubscriptionsSubscriptionExposedIdRequestTransferData {

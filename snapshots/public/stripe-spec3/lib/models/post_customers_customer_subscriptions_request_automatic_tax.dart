@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_request_automatic_tax_liability.dart';/// Automatic tax settings for this subscription.
 @immutable final class PostCustomersCustomerSubscriptionsRequestAutomaticTax {const PostCustomersCustomerSubscriptionsRequestAutomaticTax({required this.enabled, this.liability, });
 
-factory PostCustomersCustomerSubscriptionsRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestAutomaticTax(
+factory PostCustomersCustomerSubscriptionsRequestAutomaticTax.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerSubscriptionsRequestAutomaticTax(
   enabled: json['enabled'] as bool,
   liability: json['liability'] != null ? PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability? liability;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (liability != null) 'liability': liability?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCustomersCustomerSubscriptionsRequestAutomaticTax copyWith({bool? enabled, PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability? Function()? liability, }) { return PostCustomersCustomerSubscriptionsRequestAutomaticTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostCustomersCustomerSubscriptionsRequestAutomaticTax copyWith({bool? enabled, PostCustomersCustomerSubscriptionsRequestAutomaticTaxLiability? Function()? liability, }) {return PostCustomersCustomerSubscriptionsRequestAutomaticTax(
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestAutomaticTax &&
           enabled == other.enabled &&
-          liability == other.liability; } 
-@override int get hashCode { return Object.hash(enabled, liability); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestAutomaticTax(enabled: $enabled, liability: $liability)'; } 
- }
+          liability == other.liability;}
+@override int get hashCode {return Object.hash(enabled, liability);}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestAutomaticTax(enabled: $enabled, liability: $liability)';}
+}

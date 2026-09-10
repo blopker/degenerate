@@ -10,6 +10,8 @@ Future<dynamic> runGeneratedClient(
   String program, {
   OmittableMode mode = OmittableMode.nullableOnly,
   Map<String, dynamic> paths = const {},
+  List<String> unwrapFields = const [],
+  bool analyze = false,
 }) async {
   final root = Directory('outputs/generated_tests')
     ..createSync(recursive: true);
@@ -28,12 +30,36 @@ Future<dynamic> runGeneratedClient(
       dryRun: true,
       quiet: true,
       omittable: mode,
+      unwrapFields: unwrapFields,
     ),
   ).generate();
   for (final entry in files.entries.where((e) => e.key.endsWith('.dart'))) {
     final file = File('${dir.path}/${entry.key}');
     file.parent.createSync(recursive: true);
     file.writeAsStringSync(entry.value);
+  }
+  if (analyze) {
+    File('${dir.path}/pubspec.yaml').writeAsStringSync(
+      'name: generated\nenvironment:\n  sdk: ^3.11.1\ndependencies:\n  degenerate_runtime: any\n',
+    );
+    final configFile = File('.dart_tool/package_config.json').absolute;
+    final config =
+        jsonDecode(configFile.readAsStringSync()) as Map<String, dynamic>;
+    for (final package in config['packages'] as List) {
+      final entry = package as Map<String, dynamic>;
+      entry['rootUri'] = configFile.uri
+          .resolve(entry['rootUri'] as String)
+          .toString();
+    }
+    final target = File('${dir.path}/.dart_tool/package_config.json');
+    target.parent.createSync();
+    target.writeAsStringSync(jsonEncode(config));
+    final result = await Process.run(Platform.resolvedExecutable, [
+      'analyze',
+      '--fatal-infos',
+      dir.path,
+    ]);
+    expect(result.exitCode, 0, reason: '${result.stdout}\n${result.stderr}');
   }
   final runner = File('${dir.path}/probe.dart')
     ..writeAsStringSync('''

@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A description of
 /// 
 @immutable final class RealtimeResponseStatusDetailsError {const RealtimeResponseStatusDetailsError({this.type, this.code, });
 
-factory RealtimeResponseStatusDetailsError.fromJson(Map<String, dynamic> json) { return RealtimeResponseStatusDetailsError(
+factory RealtimeResponseStatusDetailsError.fromJson(Map<String, dynamic> json) {return RealtimeResponseStatusDetailsError(
   type: json['type'] as String?,
   code: json['code'] as String?,
-); }
+);}
 
 /// The type of error.
 final String? type;
@@ -16,19 +16,19 @@ final String? type;
 /// Error code, if any.
 final String? code;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   'code': ?code,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'code'}.contains(key)); } 
-RealtimeResponseStatusDetailsError copyWith({String? Function()? type, String? Function()? code, }) { return RealtimeResponseStatusDetailsError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'code'}.contains(key));}
+RealtimeResponseStatusDetailsError copyWith({String? Function()? type, String? Function()? code, }) {return RealtimeResponseStatusDetailsError(
   type: type != null ? type() : this.type,
   code: code != null ? code() : this.code,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeResponseStatusDetailsError &&
           type == other.type &&
-          code == other.code; } 
-@override int get hashCode { return Object.hash(type, code); } 
-@override String toString() { return 'RealtimeResponseStatusDetailsError(type: $type, code: $code)'; } 
- }
+          code == other.code;}
+@override int get hashCode {return Object.hash(type, code);}
+@override String toString() {return 'RealtimeResponseStatusDetailsError(type: $type, code: $code)';}
+}

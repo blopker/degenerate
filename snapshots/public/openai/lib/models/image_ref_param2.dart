@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageRefParam2 {const ImageRefParam2({this.imageUrl, this.fileId, });
 
-factory ImageRefParam2.fromJson(Map<String, dynamic> json) { return ImageRefParam2(
+factory ImageRefParam2.fromJson(Map<String, dynamic> json) {return ImageRefParam2(
   imageUrl: json['image_url'] as String?,
   fileId: json['file_id'] as String?,
-); }
+);}
 
 /// A fully qualified URL or base64-encoded data URL.
 final String? imageUrl;
 
 final String? fileId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'image_url': ?imageUrl,
   'file_id': ?fileId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'file_id'}.contains(key)); } 
-ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileId, }) { return ImageRefParam2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'image_url', 'file_id'}.contains(key));}
+ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileId, }) {return ImageRefParam2(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageRefParam2 &&
           imageUrl == other.imageUrl &&
-          fileId == other.fileId; } 
-@override int get hashCode { return Object.hash(imageUrl, fileId); } 
-@override String toString() { return 'ImageRefParam2(imageUrl: $imageUrl, fileId: $fileId)'; } 
- }
+          fileId == other.fileId;}
+@override int get hashCode {return Object.hash(imageUrl, fileId);}
+@override String toString() {return 'ImageRefParam2(imageUrl: $imageUrl, fileId: $fileId)';}
+}

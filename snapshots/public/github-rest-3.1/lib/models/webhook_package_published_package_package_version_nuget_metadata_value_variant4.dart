@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4 {const WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4({this.url, this.branch, this.commit, this.type, });
 
-factory WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(
+factory WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4.fromJson(Map<String, dynamic> json) {return WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(
   url: json['url'] as String?,
   branch: json['branch'] as String?,
   commit: json['commit'] as String?,
   type: json['type'] as String?,
-); }
+);}
 
 final String? url;
 
@@ -17,25 +17,25 @@ final String? commit;
 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': ?url,
   'branch': ?branch,
   'commit': ?commit,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'branch', 'commit', 'type'}.contains(key)); } 
-WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4 copyWith({String? Function()? url, String? Function()? branch, String? Function()? commit, String? Function()? type, }) { return WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url', 'branch', 'commit', 'type'}.contains(key));}
+WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4 copyWith({String? Function()? url, String? Function()? branch, String? Function()? commit, String? Function()? type, }) {return WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(
   url: url != null ? url() : this.url,
   branch: branch != null ? branch() : this.branch,
   commit: commit != null ? commit() : this.commit,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4 &&
           url == other.url &&
           branch == other.branch &&
           commit == other.commit &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(url, branch, commit, type); } 
-@override String toString() { return 'WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(url: $url, branch: $branch, commit: $commit, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(url, branch, commit, type);}
+@override String toString() {return 'WebhookPackagePublishedPackagePackageVersionNugetMetadataValueVariant4(url: $url, branch: $branch, commit: $commit, type: $type)';}
+}

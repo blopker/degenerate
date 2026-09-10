@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_dismissed_review_links.dart';import 'webhook_pull_request_review_dismissed_review_user.dart';/// How the author is associated with the repository.
 @immutable final class WebhookPullRequestReviewDismissedReviewAuthorAssociation {const WebhookPullRequestReviewDismissedReviewAuthorAssociation._(this.value);
 
-factory WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -13,7 +13,7 @@ factory WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(String
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhookPullRequestReviewDismissedReviewAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewDismissedReviewAuthorAssociation collaborator = WebhookPullRequestReviewDismissedReviewAuthorAssociation._('COLLABORATOR');
 
@@ -35,22 +35,22 @@ static const List<WebhookPullRequestReviewDismissedReviewAuthorAssociation> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewDismissedReviewAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewDismissedReviewAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewDismissedReviewAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewDismissedReviewAuthorAssociation($value)';}
+}
 @immutable final class WebhookPullRequestReviewDismissedReviewState {const WebhookPullRequestReviewDismissedReviewState._(this.value);
 
-factory WebhookPullRequestReviewDismissedReviewState.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewDismissedReviewState.fromJson(String json) {return switch (json) {
   'dismissed' => dismissed,
   'approved' => approved,
   'changes_requested' => changesRequested,
   _ => WebhookPullRequestReviewDismissedReviewState._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewDismissedReviewState dismissed = WebhookPullRequestReviewDismissedReviewState._('dismissed');
 
@@ -62,18 +62,18 @@ static const List<WebhookPullRequestReviewDismissedReviewState> values = [dismis
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewDismissedReviewState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewDismissedReviewState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewDismissedReviewState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewDismissedReviewState($value)';}
+}
 /// The review that was affected.
 @immutable final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt = const Omittable.absent(), });
 
-factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedReview(
+factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewDismissedReview(
   links: WebhookPullRequestReviewDismissedReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
@@ -86,7 +86,7 @@ factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> js
   submittedAt: DateTime.parse(json['submitted_at'] as String),
   updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
   user: json['user'] != null ? WebhookPullRequestReviewDismissedReviewUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookPullRequestReviewDismissedReviewLinks links;
 
@@ -116,7 +116,7 @@ final Omittable<DateTime?> updatedAt;
 
 final WebhookPullRequestReviewDismissedReviewUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
   'body': body,
@@ -129,8 +129,8 @@ Map<String, dynamic> toJson() { return {
   'submitted_at': submittedAt.toIso8601String(),
   if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
@@ -140,8 +140,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('state') &&
       json.containsKey('submitted_at') && json['submitted_at'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestReviewDismissedReview copyWith({WebhookPullRequestReviewDismissedReviewLinks? links, WebhookPullRequestReviewDismissedReviewAuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, WebhookPullRequestReviewDismissedReviewState? state, DateTime? submittedAt, Omittable<DateTime?>? updatedAt, WebhookPullRequestReviewDismissedReviewUser? Function()? user, }) { return WebhookPullRequestReviewDismissedReview(
+      json.containsKey('user');}
+WebhookPullRequestReviewDismissedReview copyWith({WebhookPullRequestReviewDismissedReviewLinks? links, WebhookPullRequestReviewDismissedReviewAuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, WebhookPullRequestReviewDismissedReviewState? state, DateTime? submittedAt, Omittable<DateTime?>? updatedAt, WebhookPullRequestReviewDismissedReviewUser? Function()? user, }) {return WebhookPullRequestReviewDismissedReview(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body != null ? body() : this.body,
@@ -154,8 +154,8 @@ WebhookPullRequestReviewDismissedReview copyWith({WebhookPullRequestReviewDismis
   submittedAt: submittedAt ?? this.submittedAt,
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewDismissedReview &&
           links == other.links &&
           authorAssociation == other.authorAssociation &&
@@ -168,7 +168,7 @@ WebhookPullRequestReviewDismissedReview copyWith({WebhookPullRequestReviewDismis
           state == other.state &&
           submittedAt == other.submittedAt &&
           updatedAt == other.updatedAt &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(links, authorAssociation, body, commitId, htmlUrl, id, nodeId, pullRequestUrl, state, submittedAt, updatedAt, user); } 
-@override String toString() { return 'WebhookPullRequestReviewDismissedReview(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, pullRequestUrl: $pullRequestUrl, state: $state, submittedAt: $submittedAt, updatedAt: $updatedAt, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(links, authorAssociation, body, commitId, htmlUrl, id, nodeId, pullRequestUrl, state, submittedAt, updatedAt, user);}
+@override String toString() {return 'WebhookPullRequestReviewDismissedReview(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, pullRequestUrl: $pullRequestUrl, state: $state, submittedAt: $submittedAt, updatedAt: $updatedAt, user: $user)';}
+}

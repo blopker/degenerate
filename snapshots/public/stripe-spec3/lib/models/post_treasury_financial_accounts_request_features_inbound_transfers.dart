@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_request_features_inbound_transfers_ach.dart';@immutable final class PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers {const PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers({this.ach});
 
-factory PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers(
+factory PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers(
   ach: json['ach'] != null ? PostTreasuryFinancialAccountsRequestFeaturesInboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTreasuryFinancialAccountsRequestFeaturesInboundTransfersAch? ach;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ach != null) 'ach': ach?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ach'}.contains(key)); } 
-PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers copyWith({PostTreasuryFinancialAccountsRequestFeaturesInboundTransfersAch? Function()? ach}) { return PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ach'}.contains(key));}
+PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers copyWith({PostTreasuryFinancialAccountsRequestFeaturesInboundTransfersAch? Function()? ach}) {return PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers(
   ach: ach != null ? ach() : this.ach,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers &&
-          ach == other.ach; } 
-@override int get hashCode { return ach.hashCode; } 
-@override String toString() { return 'PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers(ach: $ach)'; } 
- }
+          ach == other.ach;}
+@override int get hashCode {return ach.hashCode;}
+@override String toString() {return 'PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers(ach: $ach)';}
+}

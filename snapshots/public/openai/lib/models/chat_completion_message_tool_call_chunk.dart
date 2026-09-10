@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_call_chunk_function.dart';/// The type of the tool. Currently, only `function` is supported.
 @immutable final class ChatCompletionMessageToolCallChunkType {const ChatCompletionMessageToolCallChunkType._(this.value);
 
-factory ChatCompletionMessageToolCallChunkType.fromJson(String json) { return switch (json) {
+factory ChatCompletionMessageToolCallChunkType.fromJson(String json) {return switch (json) {
   'function' => function,
   _ => ChatCompletionMessageToolCallChunkType._(json),
-}; }
+};}
 
 static const ChatCompletionMessageToolCallChunkType function = ChatCompletionMessageToolCallChunkType._('function');
 
@@ -14,22 +14,22 @@ static const List<ChatCompletionMessageToolCallChunkType> values = [function];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionMessageToolCallChunkType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageToolCallChunkType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChatCompletionMessageToolCallChunkType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChatCompletionMessageToolCallChunkType($value)';}
+}
 @immutable final class ChatCompletionMessageToolCallChunk {const ChatCompletionMessageToolCallChunk({required this.index, this.id, this.type, this.function, });
 
-factory ChatCompletionMessageToolCallChunk.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageToolCallChunk(
+factory ChatCompletionMessageToolCallChunk.fromJson(Map<String, dynamic> json) {return ChatCompletionMessageToolCallChunk(
   index: (json['index'] as num).toInt(),
   id: json['id'] as String?,
   type: json['type'] != null ? ChatCompletionMessageToolCallChunkType.fromJson(json['type'] as String) : null,
   function: json['function'] != null ? ChatCompletionMessageToolCallChunkFunction.fromJson(json['function'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int index;
 
@@ -41,25 +41,25 @@ final ChatCompletionMessageToolCallChunkType? type;
 
 final ChatCompletionMessageToolCallChunkFunction? function;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'index': index,
   'id': ?id,
   if (type != null) 'type': type?.toJson(),
   if (function != null) 'function': function?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num; } 
-ChatCompletionMessageToolCallChunk copyWith({int? index, String? Function()? id, ChatCompletionMessageToolCallChunkType? Function()? type, ChatCompletionMessageToolCallChunkFunction? Function()? function, }) { return ChatCompletionMessageToolCallChunk(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('index') && json['index'] is num;}
+ChatCompletionMessageToolCallChunk copyWith({int? index, String? Function()? id, ChatCompletionMessageToolCallChunkType? Function()? type, ChatCompletionMessageToolCallChunkFunction? Function()? function, }) {return ChatCompletionMessageToolCallChunk(
   index: index ?? this.index,
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   function: function != null ? function() : this.function,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionMessageToolCallChunk &&
           index == other.index &&
           id == other.id &&
           type == other.type &&
-          function == other.function; } 
-@override int get hashCode { return Object.hash(index, id, type, function); } 
-@override String toString() { return 'ChatCompletionMessageToolCallChunk(index: $index, id: $id, type: $type, function: $function)'; } 
- }
+          function == other.function;}
+@override int get hashCode {return Object.hash(index, id, type, function);}
+@override String toString() {return 'ChatCompletionMessageToolCallChunk(index: $index, id: $id, type: $type, function: $function)';}
+}

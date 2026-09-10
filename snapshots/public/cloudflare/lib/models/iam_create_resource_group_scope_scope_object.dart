@@ -10,22 +10,22 @@ dynamic toJson() => value;
 /// A scope object represents any resource that can have actions applied against invite.
 @immutable final class IamCreateResourceGroupScopeScopeObject {const IamCreateResourceGroupScopeScopeObject({required this.key});
 
-factory IamCreateResourceGroupScopeScopeObject.fromJson(Map<String, dynamic> json) { return IamCreateResourceGroupScopeScopeObject(
+factory IamCreateResourceGroupScopeScopeObject.fromJson(Map<String, dynamic> json) {return IamCreateResourceGroupScopeScopeObject(
   key: json['key'] != null ? IamCreateResourceGroupScopeScopeObjectKey.fromJson(json['key'] as dynamic) : null,
-); }
+);}
 
 final IamCreateResourceGroupScopeScopeObjectKey? key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key'); } 
-IamCreateResourceGroupScopeScopeObject copyWith({IamCreateResourceGroupScopeScopeObjectKey? Function()? key}) { return IamCreateResourceGroupScopeScopeObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key');}
+IamCreateResourceGroupScopeScopeObject copyWith({IamCreateResourceGroupScopeScopeObjectKey? Function()? key}) {return IamCreateResourceGroupScopeScopeObject(
   key: key != null ? key() : this.key,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamCreateResourceGroupScopeScopeObject &&
-          key == other.key; } 
-@override int get hashCode { return key.hashCode; } 
-@override String toString() { return 'IamCreateResourceGroupScopeScopeObject(key: $key)'; } 
- }
+          key == other.key;}
+@override int get hashCode {return key.hashCode;}
+@override String toString() {return 'IamCreateResourceGroupScopeScopeObject(key: $key)';}
+}

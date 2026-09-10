@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A ruleset to skip the execution of. This option is incompatible with the rulesets option.
 @immutable final class RulesetsSkipRuleset {const RulesetsSkipRuleset._(this.value);
 
-factory RulesetsSkipRuleset.fromJson(String json) { return switch (json) {
+factory RulesetsSkipRuleset.fromJson(String json) {return switch (json) {
   'current' => current,
   _ => RulesetsSkipRuleset._(json),
-}; }
+};}
 
 static const RulesetsSkipRuleset current = RulesetsSkipRuleset._('current');
 
@@ -14,11 +14,11 @@ static const List<RulesetsSkipRuleset> values = [current];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSkipRuleset && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSkipRuleset($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsSkipRuleset && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsSkipRuleset($value)';}
+}

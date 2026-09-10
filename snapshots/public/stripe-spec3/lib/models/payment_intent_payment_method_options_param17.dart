@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param17_mandate_options.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage._('');
 
@@ -22,21 +22,21 @@ static const List<PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam17 {const PaymentIntentPaymentMethodOptionsParam17({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
-factory PaymentIntentPaymentMethodOptionsParam17.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam17(
+factory PaymentIntentPaymentMethodOptionsParam17.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam17(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam17MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsParam17MandateOptions? mandateOptions;
 
@@ -44,22 +44,22 @@ final PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage? setupFutureUsage
 
 final String? targetDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'target_date': ?targetDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam17 copyWith({PaymentIntentPaymentMethodOptionsParam17MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam17(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam17 copyWith({PaymentIntentPaymentMethodOptionsParam17MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam17SetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) {return PaymentIntentPaymentMethodOptionsParam17(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam17 &&
           mandateOptions == other.mandateOptions &&
           setupFutureUsage == other.setupFutureUsage &&
-          targetDate == other.targetDate; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage, targetDate); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam17(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)'; } 
- }
+          targetDate == other.targetDate;}
+@override int get hashCode {return Object.hash(mandateOptions, setupFutureUsage, targetDate);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam17(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)';}
+}

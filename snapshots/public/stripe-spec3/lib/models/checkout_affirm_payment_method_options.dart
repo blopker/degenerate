@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class CheckoutAffirmPaymentMethodOptionsCaptureMethod {const CheckoutAffirmPaymentMethodOptionsCaptureMethod._(this.value);
 
-factory CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
+factory CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => CheckoutAffirmPaymentMethodOptionsCaptureMethod._(json),
-}; }
+};}
 
 static const CheckoutAffirmPaymentMethodOptionsCaptureMethod manual = CheckoutAffirmPaymentMethodOptionsCaptureMethod._('manual');
 
@@ -14,14 +14,14 @@ static const List<CheckoutAffirmPaymentMethodOptionsCaptureMethod> values = [man
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutAffirmPaymentMethodOptionsCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutAffirmPaymentMethodOptionsCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutAffirmPaymentMethodOptionsCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutAffirmPaymentMethodOptionsCaptureMethod($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -31,10 +31,10 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class CheckoutAffirmPaymentMethodOptionsSetupFutureUsage {const CheckoutAffirmPaymentMethodOptionsSetupFutureUsage._(this.value);
 
-factory CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => CheckoutAffirmPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
+};}
 
 static const CheckoutAffirmPaymentMethodOptionsSetupFutureUsage none = CheckoutAffirmPaymentMethodOptionsSetupFutureUsage._('none');
 
@@ -42,21 +42,21 @@ static const List<CheckoutAffirmPaymentMethodOptionsSetupFutureUsage> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutAffirmPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutAffirmPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutAffirmPaymentMethodOptionsSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutAffirmPaymentMethodOptionsSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class CheckoutAffirmPaymentMethodOptions {const CheckoutAffirmPaymentMethodOptions({this.captureMethod, this.setupFutureUsage, });
 
-factory CheckoutAffirmPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutAffirmPaymentMethodOptions(
+factory CheckoutAffirmPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutAffirmPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
@@ -70,19 +70,19 @@ final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-CheckoutAffirmPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutAffirmPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key));}
+CheckoutAffirmPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return CheckoutAffirmPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutAffirmPaymentMethodOptions &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'CheckoutAffirmPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(captureMethod, setupFutureUsage);}
+@override String toString() {return 'CheckoutAffirmPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';}
+}

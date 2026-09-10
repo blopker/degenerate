@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Per
 /// An AWS EBS disk must exist before mounting to a container. The disk must also be in the same AWS zone as the kubelet. An AWS EBS disk can only be mounted as read/write once. AWS EBS volumes support ownership management and SELinux relabeling.
 @immutable final class AwsElasticBlockStoreVolumeSource {const AwsElasticBlockStoreVolumeSource({required this.volumeId, this.fsType, this.partition, this.readOnly, });
 
-factory AwsElasticBlockStoreVolumeSource.fromJson(Map<String, dynamic> json) { return AwsElasticBlockStoreVolumeSource(
+factory AwsElasticBlockStoreVolumeSource.fromJson(Map<String, dynamic> json) {return AwsElasticBlockStoreVolumeSource(
   fsType: json['fsType'] as String?,
   partition: json['partition'] != null ? (json['partition'] as num).toInt() : null,
   readOnly: json['readOnly'] as bool?,
   volumeId: json['volumeID'] as String,
-); }
+);}
 
 /// fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
 final String? fsType;
@@ -24,25 +24,25 @@ final bool? readOnly;
 /// volumeID is unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
 final String volumeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'partition': ?partition,
   'readOnly': ?readOnly,
   'volumeID': volumeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumeID') && json['volumeID'] is String; } 
-AwsElasticBlockStoreVolumeSource copyWith({String? Function()? fsType, int? Function()? partition, bool? Function()? readOnly, String? volumeId, }) { return AwsElasticBlockStoreVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('volumeID') && json['volumeID'] is String;}
+AwsElasticBlockStoreVolumeSource copyWith({String? Function()? fsType, int? Function()? partition, bool? Function()? readOnly, String? volumeId, }) {return AwsElasticBlockStoreVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   partition: partition != null ? partition() : this.partition,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeId: volumeId ?? this.volumeId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AwsElasticBlockStoreVolumeSource &&
           fsType == other.fsType &&
           partition == other.partition &&
           readOnly == other.readOnly &&
-          volumeId == other.volumeId; } 
-@override int get hashCode { return Object.hash(fsType, partition, readOnly, volumeId); } 
-@override String toString() { return 'AwsElasticBlockStoreVolumeSource(fsType: $fsType, partition: $partition, readOnly: $readOnly, volumeId: $volumeId)'; } 
- }
+          volumeId == other.volumeId;}
+@override int get hashCode {return Object.hash(fsType, partition, readOnly, volumeId);}
+@override String toString() {return 'AwsElasticBlockStoreVolumeSource(fsType: $fsType, partition: $partition, readOnly: $readOnly, volumeId: $volumeId)';}
+}

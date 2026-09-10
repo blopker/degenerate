@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_auto_param_network_policy.dart';import 'container_auto_param_skills.dart';import 'container_memory_limit.dart';/// Automatically creates a container for this request
 @immutable final class ContainerAutoParamType {const ContainerAutoParamType._(this.value);
 
-factory ContainerAutoParamType.fromJson(String json) { return switch (json) {
+factory ContainerAutoParamType.fromJson(String json) {return switch (json) {
   'container_auto' => containerAuto,
   _ => ContainerAutoParamType._(json),
-}; }
+};}
 
 static const ContainerAutoParamType containerAuto = ContainerAutoParamType._('container_auto');
 
@@ -14,23 +14,23 @@ static const List<ContainerAutoParamType> values = [containerAuto];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerAutoParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerAutoParamType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ContainerAutoParamType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ContainerAutoParamType($value)';}
+}
 @immutable final class ContainerAutoParam {const ContainerAutoParam({required this.type, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, this.skills, });
 
-factory ContainerAutoParam.fromJson(Map<String, dynamic> json) { return ContainerAutoParam(
+factory ContainerAutoParam.fromJson(Map<String, dynamic> json) {return ContainerAutoParam(
   type: ContainerAutoParamType.fromJson(json['type'] as String),
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   memoryLimit: json.containsKey('memory_limit') ? Omittable(json['memory_limit'] != null ? ContainerMemoryLimit.fromJson(json['memory_limit'] as String) : null) : const Omittable.absent(),
   networkPolicy: json['network_policy'] != null ? ContainerAutoParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
   skills: (json['skills'] as List<dynamic>?)?.map((e) => ContainerAutoParamSkills.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Automatically creates a container for this request
 final ContainerAutoParamType type;
@@ -46,28 +46,28 @@ final ContainerAutoParamNetworkPolicy? networkPolicy;
 /// An optional list of skills referenced by id or inline data.
 final List<ContainerAutoParamSkills>? skills;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'file_ids': ?fileIds,
   if (memoryLimit.isPresent) 'memory_limit': memoryLimit.value?.toJson(),
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String>? Function()? fileIds, Omittable<ContainerMemoryLimit?>? memoryLimit, ContainerAutoParamNetworkPolicy? Function()? networkPolicy, List<ContainerAutoParamSkills>? Function()? skills, }) { return ContainerAutoParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String>? Function()? fileIds, Omittable<ContainerMemoryLimit?>? memoryLimit, ContainerAutoParamNetworkPolicy? Function()? networkPolicy, List<ContainerAutoParamSkills>? Function()? skills, }) {return ContainerAutoParam(
   type: type ?? this.type,
   fileIds: fileIds != null ? fileIds() : this.fileIds,
   memoryLimit: memoryLimit ?? this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
   skills: skills != null ? skills() : this.skills,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerAutoParam &&
           type == other.type &&
           listEquals(fileIds, other.fileIds) &&
           memoryLimit == other.memoryLimit &&
           networkPolicy == other.networkPolicy &&
-          listEquals(skills, other.skills); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(fileIds ?? const []), memoryLimit, networkPolicy, Object.hashAll(skills ?? const [])); } 
-@override String toString() { return 'ContainerAutoParam(type: $type, fileIds: $fileIds, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy, skills: $skills)'; } 
- }
+          listEquals(skills, other.skills);}
+@override int get hashCode {return Object.hash(type, Object.hashAll(fileIds ?? const []), memoryLimit, networkPolicy, Object.hashAll(skills ?? const []));}
+@override String toString() {return 'ContainerAutoParam(type: $type, fileIds: $fileIds, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy, skills: $skills)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventReferenceCreateRequest {const PostEventReferenceCreateRequest({required this.events});
 
-factory PostEventReferenceCreateRequest.fromJson(Map<String, dynamic> json) { return PostEventReferenceCreateRequest(
+factory PostEventReferenceCreateRequest.fromJson(Map<String, dynamic> json) {return PostEventReferenceCreateRequest(
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> events;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'events': events,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('events'); } 
-PostEventReferenceCreateRequest copyWith({List<String>? events}) { return PostEventReferenceCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('events');}
+PostEventReferenceCreateRequest copyWith({List<String>? events}) {return PostEventReferenceCreateRequest(
   events: events ?? this.events,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostEventReferenceCreateRequest &&
-          listEquals(events, other.events); } 
-@override int get hashCode { return Object.hashAll(events).hashCode; } 
-@override String toString() { return 'PostEventReferenceCreateRequest(events: $events)'; } 
- }
+          listEquals(events, other.events);}
+@override int get hashCode {return Object.hashAll(events).hashCode;}
+@override String toString() {return 'PostEventReferenceCreateRequest(events: $events)';}
+}

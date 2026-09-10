@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_branch.dart';import 'builds_build_command.dart';import 'builds_build_token_name.dart';import 'builds_build_token_uuid.dart';import 'builds_deploy_command.dart';import 'builds_provider_account_name.dart';import 'builds_repo_name.dart';import 'builds_root_directory.dart';import 'builds_scm_provider_type.dart';@immutable final class BuildsBuildTriggerSource {const BuildsBuildTriggerSource._(this.value);
 
-factory BuildsBuildTriggerSource.fromJson(String json) { return switch (json) {
+factory BuildsBuildTriggerSource.fromJson(String json) {return switch (json) {
   'push' => push,
   'pull_request' => pullRequest,
   'manual' => manual,
   'api' => api,
   _ => BuildsBuildTriggerSource._(json),
-}; }
+};}
 
 static const BuildsBuildTriggerSource push = BuildsBuildTriggerSource._('push');
 
@@ -22,14 +22,14 @@ static const List<BuildsBuildTriggerSource> values = [push, pullRequest, manual,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BuildsBuildTriggerSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BuildsBuildTriggerSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BuildsBuildTriggerSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BuildsBuildTriggerSource($value)';}
+}
 /// Git commit hash
 extension type const BuildsCommitHash(String value) {
 factory BuildsCommitHash.fromJson(String json) => BuildsCommitHash(json);
@@ -39,7 +39,7 @@ String toJson() => value;
 }
 @immutable final class BuildsBuildTriggerMetadataResponse {const BuildsBuildTriggerMetadataResponse({this.author, this.branch, this.buildCommand, this.buildTokenName, this.buildTokenUuid, this.buildTriggerSource, this.commitHash, this.commitMessage, this.deployCommand, this.environmentVariables, this.providerAccountName, this.providerType, this.repoName, this.rootDirectory, });
 
-factory BuildsBuildTriggerMetadataResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildTriggerMetadataResponse(
+factory BuildsBuildTriggerMetadataResponse.fromJson(Map<String, dynamic> json) {return BuildsBuildTriggerMetadataResponse(
   author: json['author'] as String?,
   branch: json['branch'] != null ? BuildsBranch.fromJson(json['branch'] as String) : null,
   buildCommand: json['build_command'] != null ? BuildsBuildCommand.fromJson(json['build_command'] as String) : null,
@@ -54,7 +54,7 @@ factory BuildsBuildTriggerMetadataResponse.fromJson(Map<String, dynamic> json) {
   providerType: json['provider_type'] != null ? BuildsScmProviderType.fromJson(json['provider_type'] as String) : null,
   repoName: json['repo_name'] != null ? BuildsRepoName.fromJson(json['repo_name'] as String) : null,
   rootDirectory: json['root_directory'] != null ? BuildsRootDirectory.fromJson(json['root_directory'] as String) : null,
-); }
+);}
 
 final String? author;
 
@@ -84,7 +84,7 @@ final BuildsRepoName? repoName;
 
 final BuildsRootDirectory? rootDirectory;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': ?author,
   if (branch != null) 'branch': branch?.toJson(),
   if (buildCommand != null) 'build_command': buildCommand?.toJson(),
@@ -99,9 +99,9 @@ Map<String, dynamic> toJson() { return {
   if (providerType != null) 'provider_type': providerType?.toJson(),
   if (repoName != null) 'repo_name': repoName?.toJson(),
   if (rootDirectory != null) 'root_directory': rootDirectory?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author', 'branch', 'build_command', 'build_token_name', 'build_token_uuid', 'build_trigger_source', 'commit_hash', 'commit_message', 'deploy_command', 'environment_variables', 'provider_account_name', 'provider_type', 'repo_name', 'root_directory'}.contains(key)); } 
-BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsBranch? Function()? branch, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsBuildTriggerSource? Function()? buildTriggerSource, BuildsCommitHash? Function()? commitHash, String? Function()? commitMessage, BuildsDeployCommand? Function()? deployCommand, Map<String, String>? Function()? environmentVariables, BuildsProviderAccountName? Function()? providerAccountName, BuildsScmProviderType? Function()? providerType, BuildsRepoName? Function()? repoName, BuildsRootDirectory? Function()? rootDirectory, }) { return BuildsBuildTriggerMetadataResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'author', 'branch', 'build_command', 'build_token_name', 'build_token_uuid', 'build_trigger_source', 'commit_hash', 'commit_message', 'deploy_command', 'environment_variables', 'provider_account_name', 'provider_type', 'repo_name', 'root_directory'}.contains(key));}
+BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsBranch? Function()? branch, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsBuildTriggerSource? Function()? buildTriggerSource, BuildsCommitHash? Function()? commitHash, String? Function()? commitMessage, BuildsDeployCommand? Function()? deployCommand, Map<String, String>? Function()? environmentVariables, BuildsProviderAccountName? Function()? providerAccountName, BuildsScmProviderType? Function()? providerType, BuildsRepoName? Function()? repoName, BuildsRootDirectory? Function()? rootDirectory, }) {return BuildsBuildTriggerMetadataResponse(
   author: author != null ? author() : this.author,
   branch: branch != null ? branch() : this.branch,
   buildCommand: buildCommand != null ? buildCommand() : this.buildCommand,
@@ -116,8 +116,8 @@ BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsB
   providerType: providerType != null ? providerType() : this.providerType,
   repoName: repoName != null ? repoName() : this.repoName,
   rootDirectory: rootDirectory != null ? rootDirectory() : this.rootDirectory,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BuildsBuildTriggerMetadataResponse &&
           author == other.author &&
           branch == other.branch &&
@@ -132,7 +132,7 @@ BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsB
           providerAccountName == other.providerAccountName &&
           providerType == other.providerType &&
           repoName == other.repoName &&
-          rootDirectory == other.rootDirectory; } 
-@override int get hashCode { return Object.hash(author, branch, buildCommand, buildTokenName, buildTokenUuid, buildTriggerSource, commitHash, commitMessage, deployCommand, environmentVariables, providerAccountName, providerType, repoName, rootDirectory); } 
-@override String toString() { return 'BuildsBuildTriggerMetadataResponse(author: $author, branch: $branch, buildCommand: $buildCommand, buildTokenName: $buildTokenName, buildTokenUuid: $buildTokenUuid, buildTriggerSource: $buildTriggerSource, commitHash: $commitHash, commitMessage: $commitMessage, deployCommand: $deployCommand, environmentVariables: $environmentVariables, providerAccountName: $providerAccountName, providerType: $providerType, repoName: $repoName, rootDirectory: $rootDirectory)'; } 
- }
+          rootDirectory == other.rootDirectory;}
+@override int get hashCode {return Object.hash(author, branch, buildCommand, buildTokenName, buildTokenUuid, buildTriggerSource, commitHash, commitMessage, deployCommand, environmentVariables, providerAccountName, providerType, repoName, rootDirectory);}
+@override String toString() {return 'BuildsBuildTriggerMetadataResponse(author: $author, branch: $branch, buildCommand: $buildCommand, buildTokenName: $buildTokenName, buildTokenUuid: $buildTokenUuid, buildTriggerSource: $buildTriggerSource, commitHash: $commitHash, commitMessage: $commitMessage, deployCommand: $deployCommand, environmentVariables: $environmentVariables, providerAccountName: $providerAccountName, providerType: $providerType, repoName: $repoName, rootDirectory: $rootDirectory)';}
+}

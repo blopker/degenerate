@@ -8,10 +8,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_vers
 /// 
 @immutable final class WorkersVersionAssets {const WorkersVersionAssets({this.config, this.jwt, });
 
-factory WorkersVersionAssets.fromJson(Map<String, dynamic> json) { return WorkersVersionAssets(
+factory WorkersVersionAssets.fromJson(Map<String, dynamic> json) {return WorkersVersionAssets(
   config: json['config'] != null ? WorkersVersionAssetsConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   jwt: json['jwt'] as String?,
-); }
+);}
 
 /// Configuration for assets within a Worker.
 final WorkersVersionAssetsConfig? config;
@@ -19,19 +19,19 @@ final WorkersVersionAssetsConfig? config;
 /// Token provided upon successful upload of all files from a registered manifest.
 final String? jwt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   'jwt': ?jwt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'jwt'}.contains(key)); } 
-WorkersVersionAssets copyWith({WorkersVersionAssetsConfig? Function()? config, String? Function()? jwt, }) { return WorkersVersionAssets(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'config', 'jwt'}.contains(key));}
+WorkersVersionAssets copyWith({WorkersVersionAssetsConfig? Function()? config, String? Function()? jwt, }) {return WorkersVersionAssets(
   config: config != null ? config() : this.config,
   jwt: jwt != null ? jwt() : this.jwt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersVersionAssets &&
           config == other.config &&
-          jwt == other.jwt; } 
-@override int get hashCode { return Object.hash(config, jwt); } 
-@override String toString() { return 'WorkersVersionAssets(config: $config, jwt: $jwt)'; } 
- }
+          jwt == other.jwt;}
+@override int get hashCode {return Object.hash(config, jwt);}
+@override String toString() {return 'WorkersVersionAssets(config: $config, jwt: $jwt)';}
+}

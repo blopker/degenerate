@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_domain_resource_payment_method_status.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentMethodDomainObject {const PaymentMethodDomainObject._(this.value);
 
-factory PaymentMethodDomainObject.fromJson(String json) { return switch (json) {
+factory PaymentMethodDomainObject.fromJson(String json) {return switch (json) {
   'payment_method_domain' => paymentMethodDomain,
   _ => PaymentMethodDomainObject._(json),
-}; }
+};}
 
 static const PaymentMethodDomainObject paymentMethodDomain = PaymentMethodDomainObject._('payment_method_domain');
 
@@ -14,21 +14,21 @@ static const List<PaymentMethodDomainObject> values = [paymentMethodDomain];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDomainObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDomainObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDomainObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDomainObject($value)';}
+}
 /// A payment method domain represents a web domain that you have registered with Stripe.
 /// Stripe Elements use registered payment method domains to control where certain payment methods are shown.
 /// 
 /// Related guide: [Payment method domains](https://docs.stripe.com/payments/payment-methods/pmd-registration).
 @immutable final class PaymentMethodDomain {const PaymentMethodDomain({required this.amazonPay, required this.applePay, required this.created, required this.domainName, required this.enabled, required this.googlePay, required this.id, required this.klarna, required this.link, required this.livemode, required this.object, required this.paypal, });
 
-factory PaymentMethodDomain.fromJson(Map<String, dynamic> json) { return PaymentMethodDomain(
+factory PaymentMethodDomain.fromJson(Map<String, dynamic> json) {return PaymentMethodDomain(
   amazonPay: PaymentMethodDomainResourcePaymentMethodStatus.fromJson(json['amazon_pay'] as Map<String, dynamic>),
   applePay: PaymentMethodDomainResourcePaymentMethodStatus.fromJson(json['apple_pay'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
@@ -41,7 +41,7 @@ factory PaymentMethodDomain.fromJson(Map<String, dynamic> json) { return Payment
   livemode: json['livemode'] as bool,
   object: PaymentMethodDomainObject.fromJson(json['object'] as String),
   paypal: PaymentMethodDomainResourcePaymentMethodStatus.fromJson(json['paypal'] as Map<String, dynamic>),
-); }
+);}
 
 final PaymentMethodDomainResourcePaymentMethodStatus amazonPay;
 
@@ -73,7 +73,7 @@ final PaymentMethodDomainObject object;
 
 final PaymentMethodDomainResourcePaymentMethodStatus paypal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amazon_pay': amazonPay.toJson(),
   'apple_pay': applePay.toJson(),
   'created': created,
@@ -86,8 +86,8 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'object': object.toJson(),
   'paypal': paypal.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amazon_pay') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amazon_pay') &&
       json.containsKey('apple_pay') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('domain_name') && json['domain_name'] is String &&
@@ -98,8 +98,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amazo
       json.containsKey('link') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('paypal'); } 
-PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? amazonPay, PaymentMethodDomainResourcePaymentMethodStatus? applePay, int? created, String? domainName, bool? enabled, PaymentMethodDomainResourcePaymentMethodStatus? googlePay, String? id, PaymentMethodDomainResourcePaymentMethodStatus? klarna, PaymentMethodDomainResourcePaymentMethodStatus? link, bool? livemode, PaymentMethodDomainObject? object, PaymentMethodDomainResourcePaymentMethodStatus? paypal, }) { return PaymentMethodDomain(
+      json.containsKey('paypal');}
+PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? amazonPay, PaymentMethodDomainResourcePaymentMethodStatus? applePay, int? created, String? domainName, bool? enabled, PaymentMethodDomainResourcePaymentMethodStatus? googlePay, String? id, PaymentMethodDomainResourcePaymentMethodStatus? klarna, PaymentMethodDomainResourcePaymentMethodStatus? link, bool? livemode, PaymentMethodDomainObject? object, PaymentMethodDomainResourcePaymentMethodStatus? paypal, }) {return PaymentMethodDomain(
   amazonPay: amazonPay ?? this.amazonPay,
   applePay: applePay ?? this.applePay,
   created: created ?? this.created,
@@ -112,8 +112,8 @@ PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? am
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   paypal: paypal ?? this.paypal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDomain &&
           amazonPay == other.amazonPay &&
           applePay == other.applePay &&
@@ -126,7 +126,7 @@ PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? am
           link == other.link &&
           livemode == other.livemode &&
           object == other.object &&
-          paypal == other.paypal; } 
-@override int get hashCode { return Object.hash(amazonPay, applePay, created, domainName, enabled, googlePay, id, klarna, link, livemode, object, paypal); } 
-@override String toString() { return 'PaymentMethodDomain(amazonPay: $amazonPay, applePay: $applePay, created: $created, domainName: $domainName, enabled: $enabled, googlePay: $googlePay, id: $id, klarna: $klarna, link: $link, livemode: $livemode, object: $object, paypal: $paypal)'; } 
- }
+          paypal == other.paypal;}
+@override int get hashCode {return Object.hash(amazonPay, applePay, created, domainName, enabled, googlePay, id, klarna, link, livemode, object, paypal);}
+@override String toString() {return 'PaymentMethodDomain(amazonPay: $amazonPay, applePay: $applePay, created: $created, domainName: $domainName, enabled: $enabled, googlePay: $googlePay, id: $id, klarna: $klarna, link: $link, livemode: $livemode, object: $object, paypal: $paypal)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
 @immutable final class ReactionsCreateForPullRequestReviewCommentRequestContent {const ReactionsCreateForPullRequestReviewCommentRequestContent._(this.value);
 
-factory ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(String json) { return switch (json) {
+factory ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(String json) {return switch (json) {
   '+1' => plus1,
   '-1' => minus1,
   'laugh' => laugh,
@@ -13,7 +13,7 @@ factory ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(String
   'rocket' => rocket,
   'eyes' => eyes,
   _ => ReactionsCreateForPullRequestReviewCommentRequestContent._(json),
-}; }
+};}
 
 static const ReactionsCreateForPullRequestReviewCommentRequestContent plus1 = ReactionsCreateForPullRequestReviewCommentRequestContent._('+1');
 
@@ -35,33 +35,33 @@ static const List<ReactionsCreateForPullRequestReviewCommentRequestContent> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReactionsCreateForPullRequestReviewCommentRequestContent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReactionsCreateForPullRequestReviewCommentRequestContent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReactionsCreateForPullRequestReviewCommentRequestContent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReactionsCreateForPullRequestReviewCommentRequestContent($value)';}
+}
 @immutable final class ReactionsCreateForPullRequestReviewCommentRequest {const ReactionsCreateForPullRequestReviewCommentRequest({required this.content});
 
-factory ReactionsCreateForPullRequestReviewCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForPullRequestReviewCommentRequest(
+factory ReactionsCreateForPullRequestReviewCommentRequest.fromJson(Map<String, dynamic> json) {return ReactionsCreateForPullRequestReviewCommentRequest(
   content: ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(json['content'] as String),
-); }
+);}
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
 final ReactionsCreateForPullRequestReviewCommentRequestContent content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content'); } 
-ReactionsCreateForPullRequestReviewCommentRequest copyWith({ReactionsCreateForPullRequestReviewCommentRequestContent? content}) { return ReactionsCreateForPullRequestReviewCommentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content');}
+ReactionsCreateForPullRequestReviewCommentRequest copyWith({ReactionsCreateForPullRequestReviewCommentRequestContent? content}) {return ReactionsCreateForPullRequestReviewCommentRequest(
   content: content ?? this.content,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReactionsCreateForPullRequestReviewCommentRequest &&
-          content == other.content; } 
-@override int get hashCode { return content.hashCode; } 
-@override String toString() { return 'ReactionsCreateForPullRequestReviewCommentRequest(content: $content)'; } 
- }
+          content == other.content;}
+@override int get hashCode {return content.hashCode;}
+@override String toString() {return 'ReactionsCreateForPullRequestReviewCommentRequest(content: $content)';}
+}

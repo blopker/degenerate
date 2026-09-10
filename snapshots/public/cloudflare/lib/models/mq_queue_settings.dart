@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqQueueSettings {const MqQueueSettings({this.deliveryDelay, this.deliveryPaused, this.messageRetentionPeriod, });
 
-factory MqQueueSettings.fromJson(Map<String, dynamic> json) { return MqQueueSettings(
+factory MqQueueSettings.fromJson(Map<String, dynamic> json) {return MqQueueSettings(
   deliveryDelay: json['delivery_delay'] != null ? (json['delivery_delay'] as num).toDouble() : null,
   deliveryPaused: json['delivery_paused'] as bool?,
   messageRetentionPeriod: json['message_retention_period'] != null ? (json['message_retention_period'] as num).toDouble() : null,
-); }
+);}
 
 /// Number of seconds to delay delivery of all messages to consumers.
 final double? deliveryDelay;
@@ -17,22 +17,22 @@ final bool? deliveryPaused;
 /// Number of seconds after which an unconsumed message will be delayed.
 final double? messageRetentionPeriod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'delivery_delay': ?deliveryDelay,
   'delivery_paused': ?deliveryPaused,
   'message_retention_period': ?messageRetentionPeriod,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delivery_delay', 'delivery_paused', 'message_retention_period'}.contains(key)); } 
-MqQueueSettings copyWith({double? Function()? deliveryDelay, bool? Function()? deliveryPaused, double? Function()? messageRetentionPeriod, }) { return MqQueueSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'delivery_delay', 'delivery_paused', 'message_retention_period'}.contains(key));}
+MqQueueSettings copyWith({double? Function()? deliveryDelay, bool? Function()? deliveryPaused, double? Function()? messageRetentionPeriod, }) {return MqQueueSettings(
   deliveryDelay: deliveryDelay != null ? deliveryDelay() : this.deliveryDelay,
   deliveryPaused: deliveryPaused != null ? deliveryPaused() : this.deliveryPaused,
   messageRetentionPeriod: messageRetentionPeriod != null ? messageRetentionPeriod() : this.messageRetentionPeriod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MqQueueSettings &&
           deliveryDelay == other.deliveryDelay &&
           deliveryPaused == other.deliveryPaused &&
-          messageRetentionPeriod == other.messageRetentionPeriod; } 
-@override int get hashCode { return Object.hash(deliveryDelay, deliveryPaused, messageRetentionPeriod); } 
-@override String toString() { return 'MqQueueSettings(deliveryDelay: $deliveryDelay, deliveryPaused: $deliveryPaused, messageRetentionPeriod: $messageRetentionPeriod)'; } 
- }
+          messageRetentionPeriod == other.messageRetentionPeriod;}
+@override int get hashCode {return Object.hash(deliveryDelay, deliveryPaused, messageRetentionPeriod);}
+@override String toString() {return 'MqQueueSettings(deliveryDelay: $deliveryDelay, deliveryPaused: $deliveryPaused, messageRetentionPeriod: $messageRetentionPeriod)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_destination_conf.dart';import 'logpush_enabled.dart';import 'logpush_filter.dart';import 'logpush_frequency.dart';import 'logpush_kind.dart';import 'logpush_logpull_options.dart';import 'logpush_max_upload_bytes.dart';import 'logpush_max_upload_interval_seconds.dart';import 'logpush_max_upload_records.dart';import 'logpush_name.dart';import 'logpush_output_options.dart';import 'logpush_ownership_challenge.dart';@immutable final class PutZonesZoneIdLogpushJobsJobIdRequest {const PutZonesZoneIdLogpushJobsJobIdRequest({this.destinationConf, this.enabled, this.filter = const Omittable.absent(), this.frequency = const Omittable.absent(), this.kind, this.logpullOptions = const Omittable.absent(), this.maxUploadBytes = const Omittable.absent(), this.maxUploadIntervalSeconds = const Omittable.absent(), this.maxUploadRecords = const Omittable.absent(), this.name = const Omittable.absent(), this.outputOptions = const Omittable.absent(), this.ownershipChallenge, });
 
-factory PutZonesZoneIdLogpushJobsJobIdRequest.fromJson(Map<String, dynamic> json) { return PutZonesZoneIdLogpushJobsJobIdRequest(
+factory PutZonesZoneIdLogpushJobsJobIdRequest.fromJson(Map<String, dynamic> json) {return PutZonesZoneIdLogpushJobsJobIdRequest(
   destinationConf: json['destination_conf'] != null ? LogpushDestinationConf.fromJson(json['destination_conf'] as String) : null,
   enabled: json['enabled'] != null ? LogpushEnabled.fromJson(json['enabled'] as bool) : null,
   filter: json.containsKey('filter') ? Omittable(json['filter'] != null ? LogpushFilter.fromJson(json['filter'] as String) : null) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory PutZonesZoneIdLogpushJobsJobIdRequest.fromJson(Map<String, dynamic> json
   name: json.containsKey('name') ? Omittable(json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null) : const Omittable.absent(),
   outputOptions: json.containsKey('output_options') ? Omittable(json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   ownershipChallenge: json['ownership_challenge'] != null ? LogpushOwnershipChallenge.fromJson(json['ownership_challenge'] as String) : null,
-); }
+);}
 
 /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf? destinationConf;
@@ -49,7 +49,7 @@ final Omittable<LogpushOutputOptions?> outputOptions;
 /// Ownership challenge token to prove destination ownership.
 final LogpushOwnershipChallenge? ownershipChallenge;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (destinationConf != null) 'destination_conf': destinationConf?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (filter.isPresent) 'filter': filter.value?.toJson(),
@@ -62,9 +62,9 @@ Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value?.toJson(),
   if (outputOptions.isPresent) 'output_options': outputOptions.value?.toJson(),
   if (ownershipChallenge != null) 'ownership_challenge': ownershipChallenge?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination_conf', 'enabled', 'filter', 'frequency', 'kind', 'logpull_options', 'max_upload_bytes', 'max_upload_interval_seconds', 'max_upload_records', 'name', 'output_options', 'ownership_challenge'}.contains(key)); } 
-PutZonesZoneIdLogpushJobsJobIdRequest copyWith({LogpushDestinationConf? Function()? destinationConf, LogpushEnabled? Function()? enabled, Omittable<LogpushFilter?>? filter, Omittable<LogpushFrequency?>? frequency, LogpushKind? Function()? kind, Omittable<LogpushLogpullOptions?>? logpullOptions, Omittable<LogpushMaxUploadBytes?>? maxUploadBytes, Omittable<LogpushMaxUploadIntervalSeconds?>? maxUploadIntervalSeconds, Omittable<LogpushMaxUploadRecords?>? maxUploadRecords, Omittable<LogpushName?>? name, Omittable<LogpushOutputOptions?>? outputOptions, LogpushOwnershipChallenge? Function()? ownershipChallenge, }) { return PutZonesZoneIdLogpushJobsJobIdRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'destination_conf', 'enabled', 'filter', 'frequency', 'kind', 'logpull_options', 'max_upload_bytes', 'max_upload_interval_seconds', 'max_upload_records', 'name', 'output_options', 'ownership_challenge'}.contains(key));}
+PutZonesZoneIdLogpushJobsJobIdRequest copyWith({LogpushDestinationConf? Function()? destinationConf, LogpushEnabled? Function()? enabled, Omittable<LogpushFilter?>? filter, Omittable<LogpushFrequency?>? frequency, LogpushKind? Function()? kind, Omittable<LogpushLogpullOptions?>? logpullOptions, Omittable<LogpushMaxUploadBytes?>? maxUploadBytes, Omittable<LogpushMaxUploadIntervalSeconds?>? maxUploadIntervalSeconds, Omittable<LogpushMaxUploadRecords?>? maxUploadRecords, Omittable<LogpushName?>? name, Omittable<LogpushOutputOptions?>? outputOptions, LogpushOwnershipChallenge? Function()? ownershipChallenge, }) {return PutZonesZoneIdLogpushJobsJobIdRequest(
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,
   enabled: enabled != null ? enabled() : this.enabled,
   filter: filter ?? this.filter,
@@ -77,8 +77,8 @@ PutZonesZoneIdLogpushJobsJobIdRequest copyWith({LogpushDestinationConf? Function
   name: name ?? this.name,
   outputOptions: outputOptions ?? this.outputOptions,
   ownershipChallenge: ownershipChallenge != null ? ownershipChallenge() : this.ownershipChallenge,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PutZonesZoneIdLogpushJobsJobIdRequest &&
           destinationConf == other.destinationConf &&
           enabled == other.enabled &&
@@ -91,7 +91,7 @@ PutZonesZoneIdLogpushJobsJobIdRequest copyWith({LogpushDestinationConf? Function
           maxUploadRecords == other.maxUploadRecords &&
           name == other.name &&
           outputOptions == other.outputOptions &&
-          ownershipChallenge == other.ownershipChallenge; } 
-@override int get hashCode { return Object.hash(destinationConf, enabled, filter, frequency, kind, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions, ownershipChallenge); } 
-@override String toString() { return 'PutZonesZoneIdLogpushJobsJobIdRequest(destinationConf: $destinationConf, enabled: $enabled, filter: $filter, frequency: $frequency, kind: $kind, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions, ownershipChallenge: $ownershipChallenge)'; } 
- }
+          ownershipChallenge == other.ownershipChallenge;}
+@override int get hashCode {return Object.hash(destinationConf, enabled, filter, frequency, kind, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions, ownershipChallenge);}
+@override String toString() {return 'PutZonesZoneIdLogpushJobsJobIdRequest(destinationConf: $destinationConf, enabled: $enabled, filter: $filter, frequency: $frequency, kind: $kind, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions, ownershipChallenge: $ownershipChallenge)';}
+}

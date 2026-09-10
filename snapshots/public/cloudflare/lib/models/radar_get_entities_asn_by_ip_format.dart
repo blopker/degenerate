@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetEntitiesAsnByIpFormat {const RadarGetEntitiesAsnByIpFormat._(this.value);
 
-factory RadarGetEntitiesAsnByIpFormat.fromJson(String json) { return switch (json) {
+factory RadarGetEntitiesAsnByIpFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEntitiesAsnByIpFormat._(json),
-}; }
+};}
 
 static const RadarGetEntitiesAsnByIpFormat $json = RadarGetEntitiesAsnByIpFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetEntitiesAsnByIpFormat> values = [$json, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEntitiesAsnByIpFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEntitiesAsnByIpFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEntitiesAsnByIpFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEntitiesAsnByIpFormat($value)';}
+}

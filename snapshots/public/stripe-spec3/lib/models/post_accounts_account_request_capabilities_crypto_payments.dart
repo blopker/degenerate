@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestCapabilitiesCryptoPayments {const PostAccountsAccountRequestCapabilitiesCryptoPayments({this.requested});
 
-factory PostAccountsAccountRequestCapabilitiesCryptoPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesCryptoPayments(
+factory PostAccountsAccountRequestCapabilitiesCryptoPayments.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestCapabilitiesCryptoPayments(
   requested: json['requested'] as bool?,
-); }
+);}
 
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PostAccountsAccountRequestCapabilitiesCryptoPayments copyWith({bool? Function()? requested}) { return PostAccountsAccountRequestCapabilitiesCryptoPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+PostAccountsAccountRequestCapabilitiesCryptoPayments copyWith({bool? Function()? requested}) {return PostAccountsAccountRequestCapabilitiesCryptoPayments(
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestCapabilitiesCryptoPayments &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestCapabilitiesCryptoPayments(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestCapabilitiesCryptoPayments(requested: $requested)';}
+}

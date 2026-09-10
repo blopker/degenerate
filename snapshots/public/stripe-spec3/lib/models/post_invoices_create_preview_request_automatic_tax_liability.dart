@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType {const PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType._(this.value);
 
-factory PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType.fromJson(String json) {return switch (json) {
   'account' => account,
   'self' => self,
   _ => PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType account = PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType._('account');
 
@@ -16,38 +16,38 @@ static const List<PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestAutomaticTaxLiability {const PostInvoicesCreatePreviewRequestAutomaticTaxLiability({required this.type, this.account, });
 
-factory PostInvoicesCreatePreviewRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestAutomaticTaxLiability(
+factory PostInvoicesCreatePreviewRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestAutomaticTaxLiability(
   account: json['account'] as String?,
   type: PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
 final PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostInvoicesCreatePreviewRequestAutomaticTaxLiability copyWith({String? Function()? account, PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType? type, }) { return PostInvoicesCreatePreviewRequestAutomaticTaxLiability(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostInvoicesCreatePreviewRequestAutomaticTaxLiability copyWith({String? Function()? account, PostInvoicesCreatePreviewRequestAutomaticTaxLiabilityType? type, }) {return PostInvoicesCreatePreviewRequestAutomaticTaxLiability(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestAutomaticTaxLiability &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestAutomaticTaxLiability(account: $account, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, type);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestAutomaticTaxLiability(account: $account, type: $type)';}
+}

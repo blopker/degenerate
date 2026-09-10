@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopAsesDnssec {const RadarGetDnsTopAsesDnssec._(this.value);
 
-factory RadarGetDnsTopAsesDnssec.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTopAsesDnssec.fromJson(String json) {return switch (json) {
   'INVALID' => invalid,
   'INSECURE' => insecure,
   'SECURE' => secure,
   'OTHER' => $other,
   _ => RadarGetDnsTopAsesDnssec._(json),
-}; }
+};}
 
 static const RadarGetDnsTopAsesDnssec invalid = RadarGetDnsTopAsesDnssec._('INVALID');
 
@@ -22,11 +22,11 @@ static const List<RadarGetDnsTopAsesDnssec> values = [invalid, insecure, secure,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTopAsesDnssec && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTopAsesDnssec($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTopAsesDnssec && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTopAsesDnssec($value)';}
+}

@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class GelatoSessionIdNumberOptions {const GelatoSessionIdNumberOptions();
 
-factory GelatoSessionIdNumberOptions.fromJson(Map<String, dynamic> _) { return const GelatoSessionIdNumberOptions(); }
+factory GelatoSessionIdNumberOptions.fromJson(Map<String, dynamic> _) {return const GelatoSessionIdNumberOptions();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GelatoSessionIdNumberOptions copyWith() { return const GelatoSessionIdNumberOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GelatoSessionIdNumberOptions copyWith() {return const GelatoSessionIdNumberOptions(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GelatoSessionIdNumberOptions; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GelatoSessionIdNumberOptions()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GelatoSessionIdNumberOptions;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GelatoSessionIdNumberOptions()';}
+}

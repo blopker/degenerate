@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetOriginsSummaryResponseResultMetaUnits {const RadarGetOriginsSummaryResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetOriginsSummaryResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetOriginsSummaryResponseResultMetaUnits(
+factory RadarGetOriginsSummaryResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetOriginsSummaryResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetOriginsSummaryResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetOriginsSummaryResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetOriginsSummaryResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetOriginsSummaryResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetOriginsSummaryResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetOriginsSummaryResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetOriginsSummaryResponseResultMetaUnits(name: $name, value: $value)';}
+}

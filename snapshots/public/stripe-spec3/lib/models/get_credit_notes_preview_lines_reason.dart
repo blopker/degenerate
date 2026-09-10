@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewLinesReason {const GetCreditNotesPreviewLinesReason._(this.value);
 
-factory GetCreditNotesPreviewLinesReason.fromJson(String json) { return switch (json) {
+factory GetCreditNotesPreviewLinesReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'order_change' => orderChange,
   'product_unsatisfactory' => productUnsatisfactory,
   _ => GetCreditNotesPreviewLinesReason._(json),
-}; }
+};}
 
 static const GetCreditNotesPreviewLinesReason duplicate = GetCreditNotesPreviewLinesReason._('duplicate');
 
@@ -22,11 +22,11 @@ static const List<GetCreditNotesPreviewLinesReason> values = [duplicate, fraudul
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewLinesReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewLinesReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetCreditNotesPreviewLinesReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetCreditNotesPreviewLinesReason($value)';}
+}

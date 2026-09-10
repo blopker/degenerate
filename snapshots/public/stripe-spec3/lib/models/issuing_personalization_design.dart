@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_personalization_design_card_logo.dart';import 'issuing_personalization_design_carrier_text.dart';import 'issuing_personalization_design_physical_bundle.dart';import 'issuing_personalization_design_preferences.dart';import 'issuing_personalization_design_rejection_reasons.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);
 
-factory IssuingPersonalizationDesignObject.fromJson(String json) { return switch (json) {
+factory IssuingPersonalizationDesignObject.fromJson(String json) {return switch (json) {
   'issuing.personalization_design' => issuingPersonalizationDesign,
   _ => IssuingPersonalizationDesignObject._(json),
-}; }
+};}
 
 static const IssuingPersonalizationDesignObject issuingPersonalizationDesign = IssuingPersonalizationDesignObject._('issuing.personalization_design');
 
@@ -14,24 +14,24 @@ static const List<IssuingPersonalizationDesignObject> values = [issuingPersonali
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPersonalizationDesignObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPersonalizationDesignObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingPersonalizationDesignObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingPersonalizationDesignObject($value)';}
+}
 /// Whether this personalization design can be used to create cards.
 @immutable final class IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus._(this.value);
 
-factory IssuingPersonalizationDesignStatus.fromJson(String json) { return switch (json) {
+factory IssuingPersonalizationDesignStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'rejected' => rejected,
   'review' => review,
   _ => IssuingPersonalizationDesignStatus._(json),
-}; }
+};}
 
 static const IssuingPersonalizationDesignStatus active = IssuingPersonalizationDesignStatus._('active');
 
@@ -45,18 +45,18 @@ static const List<IssuingPersonalizationDesignStatus> values = [active, inactive
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPersonalizationDesignStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPersonalizationDesignStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingPersonalizationDesignStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingPersonalizationDesignStatus($value)';}
+}
 /// A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.
 @immutable final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, this.cardLogo = const Omittable.absent(), this.carrierText = const Omittable.absent(), this.lookupKey = const Omittable.absent(), this.name = const Omittable.absent(), });
 
-factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesign(
+factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) {return IssuingPersonalizationDesign(
   cardLogo: json.containsKey('card_logo') ? Omittable(json['card_logo'] != null ? IssuingPersonalizationDesignCardLogo.fromJson(json['card_logo']) : null) : const Omittable.absent(),
   carrierText: json.containsKey('carrier_text') ? Omittable(json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -70,7 +70,7 @@ factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { retur
   preferences: IssuingPersonalizationDesignPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
   rejectionReasons: IssuingPersonalizationDesignRejectionReasons.fromJson(json['rejection_reasons'] as Map<String, dynamic>),
   status: IssuingPersonalizationDesignStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// The file for the card logo to use with physical bundles that support card logos. Must have a `purpose` value of `issuing_logo`.
 final Omittable<IssuingPersonalizationDesignCardLogo?> cardLogo;
@@ -109,7 +109,7 @@ final IssuingPersonalizationDesignRejectionReasons rejectionReasons;
 /// Whether this personalization design can be used to create cards.
 final IssuingPersonalizationDesignStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cardLogo.isPresent) 'card_logo': cardLogo.value?.toJson(),
   if (carrierText.isPresent) 'carrier_text': carrierText.value?.toJson(),
   'created': created,
@@ -123,8 +123,8 @@ Map<String, dynamic> toJson() { return {
   'preferences': preferences.toJson(),
   'rejection_reasons': rejectionReasons.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
@@ -132,8 +132,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('physical_bundle') &&
       json.containsKey('preferences') &&
       json.containsKey('rejection_reasons') &&
-      json.containsKey('status'); } 
-IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCardLogo?>? cardLogo, Omittable<IssuingPersonalizationDesignCarrierText?>? carrierText, int? created, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? name, IssuingPersonalizationDesignObject? object, IssuingPersonalizationDesignPhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
+      json.containsKey('status');}
+IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCardLogo?>? cardLogo, Omittable<IssuingPersonalizationDesignCarrierText?>? carrierText, int? created, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? name, IssuingPersonalizationDesignObject? object, IssuingPersonalizationDesignPhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) {return IssuingPersonalizationDesign(
   cardLogo: cardLogo ?? this.cardLogo,
   carrierText: carrierText ?? this.carrierText,
   created: created ?? this.created,
@@ -147,8 +147,8 @@ IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCar
   preferences: preferences ?? this.preferences,
   rejectionReasons: rejectionReasons ?? this.rejectionReasons,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingPersonalizationDesign &&
           cardLogo == other.cardLogo &&
           carrierText == other.carrierText &&
@@ -162,7 +162,7 @@ IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCar
           physicalBundle == other.physicalBundle &&
           preferences == other.preferences &&
           rejectionReasons == other.rejectionReasons &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(cardLogo, carrierText, created, id, livemode, lookupKey, metadata, name, object, physicalBundle, preferences, rejectionReasons, status); } 
-@override String toString() { return 'IssuingPersonalizationDesign(cardLogo: $cardLogo, carrierText: $carrierText, created: $created, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object, physicalBundle: $physicalBundle, preferences: $preferences, rejectionReasons: $rejectionReasons, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(cardLogo, carrierText, created, id, livemode, lookupKey, metadata, name, object, physicalBundle, preferences, rejectionReasons, status);}
+@override String toString() {return 'IssuingPersonalizationDesign(cardLogo: $cardLogo, carrierText: $carrierText, created: $created, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object, physicalBundle: $physicalBundle, preferences: $preferences, rejectionReasons: $rejectionReasons, status: $status)';}
+}

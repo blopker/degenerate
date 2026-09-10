@@ -17,7 +17,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_all
 /// 
 @immutable final class McpToolConnectorId {const McpToolConnectorId._(this.value);
 
-factory McpToolConnectorId.fromJson(String json) { return switch (json) {
+factory McpToolConnectorId.fromJson(String json) {return switch (json) {
   'connector_dropbox' => connectorDropbox,
   'connector_gmail' => connectorGmail,
   'connector_googlecalendar' => connectorGooglecalendar,
@@ -27,7 +27,7 @@ factory McpToolConnectorId.fromJson(String json) { return switch (json) {
   'connector_outlookemail' => connectorOutlookemail,
   'connector_sharepoint' => connectorSharepoint,
   _ => McpToolConnectorId._(json),
-}; }
+};}
 
 static const McpToolConnectorId connectorDropbox = McpToolConnectorId._('connector_dropbox');
 
@@ -49,20 +49,20 @@ static const List<McpToolConnectorId> values = [connectorDropbox, connectorGmail
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McpToolConnectorId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McpToolConnectorId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is McpToolConnectorId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'McpToolConnectorId($value)';}
+}
 /// Give the model access to additional tools via remote Model Context Protocol
 /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
 /// 
 @immutable final class McpTool {const McpTool({required this.type, required this.serverLabel, this.serverUrl, this.connectorId, this.authorization, this.serverDescription, this.headers = const Omittable.absent(), this.allowedTools = const Omittable.absent(), this.requireApproval = const Omittable.absent(), this.deferLoading, });
 
-factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
+factory McpTool.fromJson(Map<String, dynamic> json) {return McpTool(
   type: json['type'] as String,
   serverLabel: json['server_label'] as String,
   serverUrl: json['server_url'] as String?,
@@ -73,7 +73,7 @@ factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
   allowedTools: json.containsKey('allowed_tools') ? Omittable(json['allowed_tools'] != null ? OneOf2.parse(json['allowed_tools'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => McpToolFilter.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   requireApproval: json.containsKey('require_approval') ? Omittable(json['require_approval'] != null ? OneOf2.parse(json['require_approval'], fromA: (v) => McpToolApprovalFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => McpToolApprovalSetting.fromJson(v as String),) : null) : const Omittable.absent(),
   deferLoading: json['defer_loading'] as bool?,
-); }
+);}
 
 /// The type of the MCP tool. Always `mcp`.
 final String type;
@@ -130,7 +130,7 @@ final Omittable<McpToolRequireApproval?> requireApproval;
 /// 
 final bool? deferLoading;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'server_label': serverLabel,
   'server_url': ?serverUrl,
@@ -141,10 +141,10 @@ Map<String, dynamic> toJson() { return {
   if (allowedTools.isPresent) 'allowed_tools': allowedTools.value?.toJson(),
   if (requireApproval.isPresent) 'require_approval': requireApproval.value?.toJson(),
   'defer_loading': ?deferLoading,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('server_label') && json['server_label'] is String; } 
-McpTool copyWith({String? type, String? serverLabel, String? Function()? serverUrl, McpToolConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Omittable<Map<String,String>?>? headers, Omittable<McpToolAllowedTools?>? allowedTools, Omittable<McpToolRequireApproval?>? requireApproval, bool? Function()? deferLoading, }) { return McpTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('server_label') && json['server_label'] is String;}
+McpTool copyWith({String? type, String? serverLabel, String? Function()? serverUrl, McpToolConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Omittable<Map<String,String>?>? headers, Omittable<McpToolAllowedTools?>? allowedTools, Omittable<McpToolRequireApproval?>? requireApproval, bool? Function()? deferLoading, }) {return McpTool(
   type: type ?? this.type,
   serverLabel: serverLabel ?? this.serverLabel,
   serverUrl: serverUrl != null ? serverUrl() : this.serverUrl,
@@ -155,8 +155,8 @@ McpTool copyWith({String? type, String? serverLabel, String? Function()? serverU
   allowedTools: allowedTools ?? this.allowedTools,
   requireApproval: requireApproval ?? this.requireApproval,
   deferLoading: deferLoading != null ? deferLoading() : this.deferLoading,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McpTool &&
           type == other.type &&
           serverLabel == other.serverLabel &&
@@ -167,7 +167,7 @@ McpTool copyWith({String? type, String? serverLabel, String? Function()? serverU
           headers == other.headers &&
           allowedTools == other.allowedTools &&
           requireApproval == other.requireApproval &&
-          deferLoading == other.deferLoading; } 
-@override int get hashCode { return Object.hash(type, serverLabel, serverUrl, connectorId, authorization, serverDescription, headers, allowedTools, requireApproval, deferLoading); } 
-@override String toString() { return 'McpTool(type: $type, serverLabel: $serverLabel, serverUrl: $serverUrl, connectorId: $connectorId, authorization: $authorization, serverDescription: $serverDescription, headers: $headers, allowedTools: $allowedTools, requireApproval: $requireApproval, deferLoading: $deferLoading)'; } 
- }
+          deferLoading == other.deferLoading;}
+@override int get hashCode {return Object.hash(type, serverLabel, serverUrl, connectorId, authorization, serverDescription, headers, allowedTools, requireApproval, deferLoading);}
+@override String toString() {return 'McpTool(type: $type, serverLabel: $serverLabel, serverUrl: $serverUrl, connectorId: $connectorId, authorization: $authorization, serverDescription: $serverDescription, headers: $headers, allowedTools: $allowedTools, requireApproval: $requireApproval, deferLoading: $deferLoading)';}
+}

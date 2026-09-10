@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'skill_resource.dart';/// The type of object returned, must be `list`.
 @immutable final class SkillListResourceObject {const SkillListResourceObject._(this.value);
 
-factory SkillListResourceObject.fromJson(String json) { return switch (json) {
+factory SkillListResourceObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => SkillListResourceObject._(json),
-}; }
+};}
 
 static const SkillListResourceObject list = SkillListResourceObject._('list');
 
@@ -14,23 +14,23 @@ static const List<SkillListResourceObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SkillListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SkillListResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SkillListResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SkillListResourceObject($value)';}
+}
 @immutable final class SkillListResource {const SkillListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
-factory SkillListResource.fromJson(Map<String, dynamic> json) { return SkillListResource(
+factory SkillListResource.fromJson(Map<String, dynamic> json) {return SkillListResource(
   object: SkillListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => SkillResource.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
-); }
+);}
 
 /// The type of object returned, must be `list`.
 final SkillListResourceObject object;
@@ -47,32 +47,32 @@ final String? lastId;
 /// Whether there are more items available.
 final bool hasMore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'first_id': firstId,
   'last_id': lastId,
   'has_more': hasMore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('first_id') && (json['first_id'] == null || json['first_id'] is String) &&
       json.containsKey('last_id') && (json['last_id'] == null || json['last_id'] is String) &&
-      json.containsKey('has_more') && json['has_more'] is bool; } 
-SkillListResource copyWith({SkillListResourceObject? object, List<SkillResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return SkillListResource(
+      json.containsKey('has_more') && json['has_more'] is bool;}
+SkillListResource copyWith({SkillListResourceObject? object, List<SkillResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) {return SkillListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,
   lastId: lastId != null ? lastId() : this.lastId,
   hasMore: hasMore ?? this.hasMore,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SkillListResource &&
           object == other.object &&
           listEquals(data, other.data) &&
           firstId == other.firstId &&
           lastId == other.lastId &&
-          hasMore == other.hasMore; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), firstId, lastId, hasMore); } 
-@override String toString() { return 'SkillListResource(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)'; } 
- }
+          hasMore == other.hasMore;}
+@override int get hashCode {return Object.hash(object, Object.hashAll(data), firstId, lastId, hasMore);}
+@override String toString() {return 'SkillListResource(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';}
+}

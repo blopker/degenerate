@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Subdomain settings for the Worker.
 @immutable final class WorkersWorkerSubdomain {const WorkersWorkerSubdomain({this.enabled, this.previewsEnabled, });
 
-factory WorkersWorkerSubdomain.fromJson(Map<String, dynamic> json) { return WorkersWorkerSubdomain(
+factory WorkersWorkerSubdomain.fromJson(Map<String, dynamic> json) {return WorkersWorkerSubdomain(
   enabled: json['enabled'] as bool?,
   previewsEnabled: json['previews_enabled'] as bool?,
-); }
+);}
 
 /// Whether the *.workers.dev subdomain is enabled for the Worker.
 final bool? enabled;
@@ -15,20 +15,20 @@ final bool? enabled;
 final bool? previewsEnabled;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? false;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'previews_enabled': ?previewsEnabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'previews_enabled'}.contains(key)); } 
-WorkersWorkerSubdomain copyWith({bool? Function()? enabled, bool? Function()? previewsEnabled, }) { return WorkersWorkerSubdomain(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'previews_enabled'}.contains(key));}
+WorkersWorkerSubdomain copyWith({bool? Function()? enabled, bool? Function()? previewsEnabled, }) {return WorkersWorkerSubdomain(
   enabled: enabled != null ? enabled() : this.enabled,
   previewsEnabled: previewsEnabled != null ? previewsEnabled() : this.previewsEnabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersWorkerSubdomain &&
           enabled == other.enabled &&
-          previewsEnabled == other.previewsEnabled; } 
-@override int get hashCode { return Object.hash(enabled, previewsEnabled); } 
-@override String toString() { return 'WorkersWorkerSubdomain(enabled: $enabled, previewsEnabled: $previewsEnabled)'; } 
- }
+          previewsEnabled == other.previewsEnabled;}
+@override int get hashCode {return Object.hash(enabled, previewsEnabled);}
+@override String toString() {return 'WorkersWorkerSubdomain(enabled: $enabled, previewsEnabled: $previewsEnabled)';}
+}

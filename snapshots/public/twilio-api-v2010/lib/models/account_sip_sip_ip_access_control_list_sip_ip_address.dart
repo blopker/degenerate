@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipIpAccessControlListSipIpAddress {const AccountSipSipIpAccessControlListSipIpAddress({this.sid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.ipAddress = const Omittable.absent(), this.cidrPrefixLength, this.ipAccessControlListSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountSipSipIpAccessControlListSipIpAddress.fromJson(Map<String, dynamic> json) { return AccountSipSipIpAccessControlListSipIpAddress(
+factory AccountSipSipIpAccessControlListSipIpAddress.fromJson(Map<String, dynamic> json) {return AccountSipSipIpAccessControlListSipIpAddress(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory AccountSipSipIpAccessControlListSipIpAddress.fromJson(Map<String, dynami
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A 34 character string that uniquely identifies this resource.
 final Omittable<String?> sid;
@@ -42,8 +42,8 @@ final Omittable<String?> dateUpdated;
 final Omittable<String?> uri;
 
 /// The value with the schema default applied when absent.
-int get cidrPrefixLengthOrDefault { return cidrPrefixLength ?? 0; } 
-Map<String, dynamic> toJson() { return {
+int get cidrPrefixLengthOrDefault {return cidrPrefixLength ?? 0;}
+Map<String, dynamic> toJson() {return {
   if (sid.isPresent) 'sid': sid.value,
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
@@ -53,9 +53,9 @@ Map<String, dynamic> toJson() { return {
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'ip_address', 'cidr_prefix_length', 'ip_access_control_list_sid', 'date_created', 'date_updated', 'uri'}.contains(key)); } 
-AccountSipSipIpAccessControlListSipIpAddress copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? friendlyName, Omittable<String?>? ipAddress, int? Function()? cidrPrefixLength, Omittable<String?>? ipAccessControlListSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? uri, }) { return AccountSipSipIpAccessControlListSipIpAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'ip_address', 'cidr_prefix_length', 'ip_access_control_list_sid', 'date_created', 'date_updated', 'uri'}.contains(key));}
+AccountSipSipIpAccessControlListSipIpAddress copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? friendlyName, Omittable<String?>? ipAddress, int? Function()? cidrPrefixLength, Omittable<String?>? ipAccessControlListSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? uri, }) {return AccountSipSipIpAccessControlListSipIpAddress(
   sid: sid ?? this.sid,
   accountSid: accountSid ?? this.accountSid,
   friendlyName: friendlyName ?? this.friendlyName,
@@ -65,8 +65,8 @@ AccountSipSipIpAccessControlListSipIpAddress copyWith({Omittable<String?>? sid, 
   dateCreated: dateCreated ?? this.dateCreated,
   dateUpdated: dateUpdated ?? this.dateUpdated,
   uri: uri ?? this.uri,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountSipSipIpAccessControlListSipIpAddress &&
           sid == other.sid &&
           accountSid == other.accountSid &&
@@ -76,7 +76,7 @@ AccountSipSipIpAccessControlListSipIpAddress copyWith({Omittable<String?>? sid, 
           ipAccessControlListSid == other.ipAccessControlListSid &&
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(sid, accountSid, friendlyName, ipAddress, cidrPrefixLength, ipAccessControlListSid, dateCreated, dateUpdated, uri); } 
-@override String toString() { return 'AccountSipSipIpAccessControlListSipIpAddress(sid: $sid, accountSid: $accountSid, friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength, ipAccessControlListSid: $ipAccessControlListSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)'; } 
- }
+          uri == other.uri;}
+@override int get hashCode {return Object.hash(sid, accountSid, friendlyName, ipAddress, cidrPrefixLength, ipAccessControlListSid, dateCreated, dateUpdated, uri);}
+@override String toString() {return 'AccountSipSipIpAccessControlListSipIpAddress(sid: $sid, accountSid: $accountSid, friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength, ipAccessControlListSid: $ipAccessControlListSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)';}
+}

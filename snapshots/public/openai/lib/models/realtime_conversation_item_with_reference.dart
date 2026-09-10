@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_con
 /// 
 @immutable final class RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType._(this.value);
 
-factory RealtimeConversationItemWithReferenceType.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemWithReferenceType.fromJson(String json) {return switch (json) {
   'message' => message,
   'function_call' => functionCall,
   'function_call_output' => functionCallOutput,
   _ => RealtimeConversationItemWithReferenceType._(json),
-}; }
+};}
 
 static const RealtimeConversationItemWithReferenceType message = RealtimeConversationItemWithReferenceType._('message');
 
@@ -21,22 +21,22 @@ static const List<RealtimeConversationItemWithReferenceType> values = [message, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemWithReferenceType($value)';}
+}
 /// Identifier for the API object being returned - always `realtime.item`.
 /// 
 @immutable final class RealtimeConversationItemWithReferenceObject {const RealtimeConversationItemWithReferenceObject._(this.value);
 
-factory RealtimeConversationItemWithReferenceObject.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemWithReferenceObject.fromJson(String json) {return switch (json) {
   'realtime.item' => realtimeItem,
   _ => RealtimeConversationItemWithReferenceObject._(json),
-}; }
+};}
 
 static const RealtimeConversationItemWithReferenceObject realtimeItem = RealtimeConversationItemWithReferenceObject._('realtime.item');
 
@@ -44,26 +44,26 @@ static const List<RealtimeConversationItemWithReferenceObject> values = [realtim
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemWithReferenceObject($value)';}
+}
 /// The status of the item (`completed`, `incomplete`, `in_progress`). These have no effect
 /// on the conversation, but are accepted for consistency with the
 /// `conversation.item.created` event.
 /// 
 @immutable final class RealtimeConversationItemWithReferenceStatus {const RealtimeConversationItemWithReferenceStatus._(this.value);
 
-factory RealtimeConversationItemWithReferenceStatus.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemWithReferenceStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'incomplete' => incomplete,
   'in_progress' => inProgress,
   _ => RealtimeConversationItemWithReferenceStatus._(json),
-}; }
+};}
 
 static const RealtimeConversationItemWithReferenceStatus completed = RealtimeConversationItemWithReferenceStatus._('completed');
 
@@ -75,25 +75,25 @@ static const List<RealtimeConversationItemWithReferenceStatus> values = [complet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemWithReferenceStatus($value)';}
+}
 /// The role of the message sender (`user`, `assistant`, `system`), only
 /// applicable for `message` items.
 /// 
 @immutable final class RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole._(this.value);
 
-factory RealtimeConversationItemWithReferenceRole.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemWithReferenceRole.fromJson(String json) {return switch (json) {
   'user' => user,
   'assistant' => assistant,
   'system' => system,
   _ => RealtimeConversationItemWithReferenceRole._(json),
-}; }
+};}
 
 static const RealtimeConversationItemWithReferenceRole user = RealtimeConversationItemWithReferenceRole._('user');
 
@@ -105,18 +105,18 @@ static const List<RealtimeConversationItemWithReferenceRole> values = [user, ass
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemWithReferenceRole($value)';}
+}
 /// The item to add to the conversation.
 @immutable final class RealtimeConversationItemWithReference {const RealtimeConversationItemWithReference({this.id, this.type, this.object, this.status, this.role, this.content, this.callId, this.name, this.arguments, this.output, });
 
-factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemWithReference(
+factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemWithReference(
   id: json['id'] as String?,
   type: json['type'] != null ? RealtimeConversationItemWithReferenceType.fromJson(json['type'] as String) : null,
   object: json['object'] != null ? RealtimeConversationItemWithReferenceObject.fromJson(json['object'] as String) : null,
@@ -127,7 +127,7 @@ factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json
   name: json['name'] as String?,
   arguments: json['arguments'] as String?,
   output: json['output'] as String?,
-); }
+);}
 
 /// For an item of type (`message` | `function_call` | `function_call_output`)
 /// this field allows the client to assign the unique ID of the item. It is
@@ -184,7 +184,7 @@ final String? arguments;
 /// 
 final String? output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (type != null) 'type': type?.toJson(),
   if (object != null) 'object': object?.toJson(),
@@ -195,9 +195,9 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'arguments': ?arguments,
   'output': ?output,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type', 'object', 'status', 'role', 'content', 'call_id', 'name', 'arguments', 'output'}.contains(key)); } 
-RealtimeConversationItemWithReference copyWith({String? Function()? id, RealtimeConversationItemWithReferenceType? Function()? type, RealtimeConversationItemWithReferenceObject? Function()? object, RealtimeConversationItemWithReferenceStatus? Function()? status, RealtimeConversationItemWithReferenceRole? Function()? role, List<RealtimeConversationItemWithReferenceContent>? Function()? content, String? Function()? callId, String? Function()? name, String? Function()? arguments, String? Function()? output, }) { return RealtimeConversationItemWithReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'type', 'object', 'status', 'role', 'content', 'call_id', 'name', 'arguments', 'output'}.contains(key));}
+RealtimeConversationItemWithReference copyWith({String? Function()? id, RealtimeConversationItemWithReferenceType? Function()? type, RealtimeConversationItemWithReferenceObject? Function()? object, RealtimeConversationItemWithReferenceStatus? Function()? status, RealtimeConversationItemWithReferenceRole? Function()? role, List<RealtimeConversationItemWithReferenceContent>? Function()? content, String? Function()? callId, String? Function()? name, String? Function()? arguments, String? Function()? output, }) {return RealtimeConversationItemWithReference(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   object: object != null ? object() : this.object,
@@ -208,8 +208,8 @@ RealtimeConversationItemWithReference copyWith({String? Function()? id, Realtime
   name: name != null ? name() : this.name,
   arguments: arguments != null ? arguments() : this.arguments,
   output: output != null ? output() : this.output,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeConversationItemWithReference &&
           id == other.id &&
           type == other.type &&
@@ -220,7 +220,7 @@ RealtimeConversationItemWithReference copyWith({String? Function()? id, Realtime
           callId == other.callId &&
           name == other.name &&
           arguments == other.arguments &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(id, type, object, status, role, Object.hashAll(content ?? const []), callId, name, arguments, output); } 
-@override String toString() { return 'RealtimeConversationItemWithReference(id: $id, type: $type, object: $object, status: $status, role: $role, content: $content, callId: $callId, name: $name, arguments: $arguments, output: $output)'; } 
- }
+          output == other.output;}
+@override int get hashCode {return Object.hash(id, type, object, status, role, Object.hashAll(content ?? const []), callId, name, arguments, output);}
+@override String toString() {return 'RealtimeConversationItemWithReference(id: $id, type: $type, object: $object, status: $status, role: $role, content: $content, callId: $callId, name: $name, arguments: $arguments, output: $output)';}
+}

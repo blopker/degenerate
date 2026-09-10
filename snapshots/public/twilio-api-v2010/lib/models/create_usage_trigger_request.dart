@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_trigger_enum_recurring.dart';import 'usage_trigger_enum_trigger_field.dart';/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
 @immutable final class CreateUsageTriggerRequestCallbackMethod {const CreateUsageTriggerRequestCallbackMethod._(this.value);
 
-factory CreateUsageTriggerRequestCallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateUsageTriggerRequestCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateUsageTriggerRequestCallbackMethod._(json),
-}; }
+};}
 
 static const CreateUsageTriggerRequestCallbackMethod $get = CreateUsageTriggerRequestCallbackMethod._('GET');
 
@@ -17,17 +17,17 @@ static const List<CreateUsageTriggerRequestCallbackMethod> values = [$get, post]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateUsageTriggerRequestCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateUsageTriggerRequestCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateUsageTriggerRequestCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateUsageTriggerRequestCallbackMethod($value)';}
+}
 @immutable final class CreateUsageTriggerRequest {const CreateUsageTriggerRequest({required this.callbackUrl, required this.triggerValue, required this.usageCategory, this.callbackMethod, this.friendlyName, this.recurring, this.triggerBy, });
 
-factory CreateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return CreateUsageTriggerRequest(
+factory CreateUsageTriggerRequest.fromJson(Map<String, dynamic> json) {return CreateUsageTriggerRequest(
   callbackUrl: Uri.parse(json['CallbackUrl'] as String),
   triggerValue: json['TriggerValue'] as String,
   usageCategory: json['UsageCategory'] as String,
@@ -35,7 +35,7 @@ factory CreateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return C
   friendlyName: json['FriendlyName'] as String?,
   recurring: json['Recurring'] != null ? UsageTriggerEnumRecurring.fromJson(json['Recurring'] as String) : null,
   triggerBy: json['TriggerBy'] != null ? UsageTriggerEnumTriggerField.fromJson(json['TriggerBy'] as String) : null,
-); }
+);}
 
 /// The URL we should call using `callback_method` when the trigger fires.
 final Uri callbackUrl;
@@ -58,7 +58,7 @@ final UsageTriggerEnumRecurring? recurring;
 /// The field in the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource that fires the trigger.  Can be: `count`, `usage`, or `price`, as described in the [UsageRecords documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-count-price).
 final UsageTriggerEnumTriggerField? triggerBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'CallbackUrl': callbackUrl.toString(),
   'TriggerValue': triggerValue,
   'UsageCategory': usageCategory,
@@ -66,11 +66,11 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
   if (recurring != null) 'Recurring': recurring?.toJson(),
   if (triggerBy != null) 'TriggerBy': triggerBy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('CallbackUrl') && json['CallbackUrl'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('CallbackUrl') && json['CallbackUrl'] is String &&
       json.containsKey('TriggerValue') && json['TriggerValue'] is String &&
-      json.containsKey('UsageCategory') && json['UsageCategory'] is String; } 
-CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, String? usageCategory, CreateUsageTriggerRequestCallbackMethod? Function()? callbackMethod, String? Function()? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, UsageTriggerEnumTriggerField? Function()? triggerBy, }) { return CreateUsageTriggerRequest(
+      json.containsKey('UsageCategory') && json['UsageCategory'] is String;}
+CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, String? usageCategory, CreateUsageTriggerRequestCallbackMethod? Function()? callbackMethod, String? Function()? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, UsageTriggerEnumTriggerField? Function()? triggerBy, }) {return CreateUsageTriggerRequest(
   callbackUrl: callbackUrl ?? this.callbackUrl,
   triggerValue: triggerValue ?? this.triggerValue,
   usageCategory: usageCategory ?? this.usageCategory,
@@ -78,8 +78,8 @@ CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, Stri
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   recurring: recurring != null ? recurring() : this.recurring,
   triggerBy: triggerBy != null ? triggerBy() : this.triggerBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateUsageTriggerRequest &&
           callbackUrl == other.callbackUrl &&
           triggerValue == other.triggerValue &&
@@ -87,7 +87,7 @@ CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, Stri
           callbackMethod == other.callbackMethod &&
           friendlyName == other.friendlyName &&
           recurring == other.recurring &&
-          triggerBy == other.triggerBy; } 
-@override int get hashCode { return Object.hash(callbackUrl, triggerValue, usageCategory, callbackMethod, friendlyName, recurring, triggerBy); } 
-@override String toString() { return 'CreateUsageTriggerRequest(callbackUrl: $callbackUrl, triggerValue: $triggerValue, usageCategory: $usageCategory, callbackMethod: $callbackMethod, friendlyName: $friendlyName, recurring: $recurring, triggerBy: $triggerBy)'; } 
- }
+          triggerBy == other.triggerBy;}
+@override int get hashCode {return Object.hash(callbackUrl, triggerValue, usageCategory, callbackMethod, friendlyName, recurring, triggerBy);}
+@override String toString() {return 'CreateUsageTriggerRequest(callbackUrl: $callbackUrl, triggerValue: $triggerValue, usageCategory: $usageCategory, callbackMethod: $callbackMethod, friendlyName: $friendlyName, recurring: $recurring, triggerBy: $triggerBy)';}
+}

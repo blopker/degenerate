@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingCardsRequestShippingCustoms {const PostIssuingCardsRequestShippingCustoms({this.eoriNumber});
 
-factory PostIssuingCardsRequestShippingCustoms.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequestShippingCustoms(
+factory PostIssuingCardsRequestShippingCustoms.fromJson(Map<String, dynamic> json) {return PostIssuingCardsRequestShippingCustoms(
   eoriNumber: json['eori_number'] as String?,
-); }
+);}
 
 final String? eoriNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'eori_number': ?eoriNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eori_number'}.contains(key)); } 
-PostIssuingCardsRequestShippingCustoms copyWith({String? Function()? eoriNumber}) { return PostIssuingCardsRequestShippingCustoms(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'eori_number'}.contains(key));}
+PostIssuingCardsRequestShippingCustoms copyWith({String? Function()? eoriNumber}) {return PostIssuingCardsRequestShippingCustoms(
   eoriNumber: eoriNumber != null ? eoriNumber() : this.eoriNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingCardsRequestShippingCustoms &&
-          eoriNumber == other.eoriNumber; } 
-@override int get hashCode { return eoriNumber.hashCode; } 
-@override String toString() { return 'PostIssuingCardsRequestShippingCustoms(eoriNumber: $eoriNumber)'; } 
- }
+          eoriNumber == other.eoriNumber;}
+@override int get hashCode {return eoriNumber.hashCode;}
+@override String toString() {return 'PostIssuingCardsRequestShippingCustoms(eoriNumber: $eoriNumber)';}
+}

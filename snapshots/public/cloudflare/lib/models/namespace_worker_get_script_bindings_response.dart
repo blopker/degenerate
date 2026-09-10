@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item_response.dart';import 'workers_messages2.dart';@immutable final class NamespaceWorkerGetScriptBindingsResponse {const NamespaceWorkerGetScriptBindingsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory NamespaceWorkerGetScriptBindingsResponse.fromJson(Map<String, dynamic> json) { return NamespaceWorkerGetScriptBindingsResponse(
+factory NamespaceWorkerGetScriptBindingsResponse.fromJson(Map<String, dynamic> json) {return NamespaceWorkerGetScriptBindingsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>).map((e) => WorkersBindingItemResponse.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<WorkersMessages2> errors;
 
@@ -19,28 +19,28 @@ final bool success;
 /// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItemResponse> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-NamespaceWorkerGetScriptBindingsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, List<WorkersBindingItemResponse>? result, }) { return NamespaceWorkerGetScriptBindingsResponse(
+      json.containsKey('result');}
+NamespaceWorkerGetScriptBindingsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, List<WorkersBindingItemResponse>? result, }) {return NamespaceWorkerGetScriptBindingsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NamespaceWorkerGetScriptBindingsResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result)); } 
-@override String toString() { return 'NamespaceWorkerGetScriptBindingsResponse(errors: $errors, messages: $messages, success: $success, result: $result)'; } 
- }
+          listEquals(result, other.result);}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result));}
+@override String toString() {return 'NamespaceWorkerGetScriptBindingsResponse(errors: $errors, messages: $messages, success: $success, result: $result)';}
+}

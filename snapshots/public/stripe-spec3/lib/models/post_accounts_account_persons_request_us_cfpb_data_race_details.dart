@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace {const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._(this.value);
 
-factory PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace.fromJson(String json) {return switch (json) {
   'african_american' => africanAmerican,
   'american_indian_or_alaska_native' => americanIndianOrAlaskaNative,
   'asian' => asian,
@@ -28,7 +28,7 @@ factory PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace.fromJson(Stri
   'vietnamese' => vietnamese,
   'white' => white,
   _ => PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._(json),
-}; }
+};}
 
 static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace africanAmerican = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('african_american');
 
@@ -82,38 +82,38 @@ static const List<PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace($value)';}
+}
 @immutable final class PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails {const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails({this.race, this.raceOther, });
 
-factory PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(
+factory PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(
   race: (json['race'] as List<dynamic>?)?.map((e) => PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace.fromJson(e as String)).toList(),
   raceOther: json['race_other'] as String?,
-); }
+);}
 
 final List<PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace>? race;
 
 final String? raceOther;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (race != null) 'race': race?.map((e) => e.toJson()).toList(),
   'race_other': ?raceOther,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'race', 'race_other'}.contains(key)); } 
-PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails copyWith({List<PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace>? Function()? race, String? Function()? raceOther, }) { return PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'race', 'race_other'}.contains(key));}
+PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails copyWith({List<PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace>? Function()? race, String? Function()? raceOther, }) {return PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(
   race: race != null ? race() : this.race,
   raceOther: raceOther != null ? raceOther() : this.raceOther,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails &&
           listEquals(race, other.race) &&
-          raceOther == other.raceOther; } 
-@override int get hashCode { return Object.hash(Object.hashAll(race ?? const []), raceOther); } 
-@override String toString() { return 'PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(race: $race, raceOther: $raceOther)'; } 
- }
+          raceOther == other.raceOther;}
+@override int get hashCode {return Object.hash(Object.hashAll(race ?? const []), raceOther);}
+@override String toString() {return 'PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(race: $race, raceOther: $raceOther)';}
+}

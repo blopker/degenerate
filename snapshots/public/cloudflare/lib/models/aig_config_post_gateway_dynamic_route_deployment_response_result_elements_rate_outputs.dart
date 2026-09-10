@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_rate_outputs_fallback.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_rate_outputs_success.dart';@immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs({required this.fallback, required this.success, });
 
-factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs(
+factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs(
   fallback: AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsFallback.fromJson(json['fallback'] as Map<String, dynamic>),
   success: AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsSuccess.fromJson(json['success'] as Map<String, dynamic>),
-); }
+);}
 
 final AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsFallback fallback;
 
 final AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsSuccess success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fallback': fallback.toJson(),
   'success': success.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('fallback') &&
-      json.containsKey('success'); } 
-AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs copyWith({AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsFallback? fallback, AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsSuccess? success, }) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('fallback') &&
+      json.containsKey('success');}
+AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs copyWith({AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsFallback? fallback, AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputsSuccess? success, }) {return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs(
   fallback: fallback ?? this.fallback,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs &&
           fallback == other.fallback &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(fallback, success); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs(fallback: $fallback, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(fallback, success);}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateOutputs(fallback: $fallback, success: $success)';}
+}

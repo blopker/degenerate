@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantQualityStatsQualityStatsVideoStats {const RealtimekitParticipantQualityStatsQualityStatsVideoStats({this.frameHeight, this.frameWidth, this.framesDropped, this.framesPerSecond, this.jitter, this.packetsLost, this.quality, this.timestamp, });
 
-factory RealtimekitParticipantQualityStatsQualityStatsVideoStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantQualityStatsQualityStatsVideoStats(
+factory RealtimekitParticipantQualityStatsQualityStatsVideoStats.fromJson(Map<String, dynamic> json) {return RealtimekitParticipantQualityStatsQualityStatsVideoStats(
   frameHeight: json['frame_height'] != null ? (json['frame_height'] as num).toDouble() : null,
   frameWidth: json['frame_width'] != null ? (json['frame_width'] as num).toDouble() : null,
   framesDropped: json['frames_dropped'] != null ? (json['frames_dropped'] as num).toDouble() : null,
@@ -11,7 +11,7 @@ factory RealtimekitParticipantQualityStatsQualityStatsVideoStats.fromJson(Map<St
   packetsLost: json['packets_lost'] != null ? (json['packets_lost'] as num).toDouble() : null,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
   timestamp: json['timestamp'] as String?,
-); }
+);}
 
 final double? frameHeight;
 
@@ -29,7 +29,7 @@ final double? quality;
 
 final String? timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'frame_height': ?frameHeight,
   'frame_width': ?frameWidth,
   'frames_dropped': ?framesDropped,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   'packets_lost': ?packetsLost,
   'quality': ?quality,
   'timestamp': ?timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'frame_height', 'frame_width', 'frames_dropped', 'frames_per_second', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key)); } 
-RealtimekitParticipantQualityStatsQualityStatsVideoStats copyWith({double? Function()? frameHeight, double? Function()? frameWidth, double? Function()? framesDropped, double? Function()? framesPerSecond, double? Function()? jitter, double? Function()? packetsLost, double? Function()? quality, String? Function()? timestamp, }) { return RealtimekitParticipantQualityStatsQualityStatsVideoStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'frame_height', 'frame_width', 'frames_dropped', 'frames_per_second', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key));}
+RealtimekitParticipantQualityStatsQualityStatsVideoStats copyWith({double? Function()? frameHeight, double? Function()? frameWidth, double? Function()? framesDropped, double? Function()? framesPerSecond, double? Function()? jitter, double? Function()? packetsLost, double? Function()? quality, String? Function()? timestamp, }) {return RealtimekitParticipantQualityStatsQualityStatsVideoStats(
   frameHeight: frameHeight != null ? frameHeight() : this.frameHeight,
   frameWidth: frameWidth != null ? frameWidth() : this.frameWidth,
   framesDropped: framesDropped != null ? framesDropped() : this.framesDropped,
@@ -49,8 +49,8 @@ RealtimekitParticipantQualityStatsQualityStatsVideoStats copyWith({double? Funct
   packetsLost: packetsLost != null ? packetsLost() : this.packetsLost,
   quality: quality != null ? quality() : this.quality,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitParticipantQualityStatsQualityStatsVideoStats &&
           frameHeight == other.frameHeight &&
           frameWidth == other.frameWidth &&
@@ -59,7 +59,7 @@ RealtimekitParticipantQualityStatsQualityStatsVideoStats copyWith({double? Funct
           jitter == other.jitter &&
           packetsLost == other.packetsLost &&
           quality == other.quality &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(frameHeight, frameWidth, framesDropped, framesPerSecond, jitter, packetsLost, quality, timestamp); } 
-@override String toString() { return 'RealtimekitParticipantQualityStatsQualityStatsVideoStats(frameHeight: $frameHeight, frameWidth: $frameWidth, framesDropped: $framesDropped, framesPerSecond: $framesPerSecond, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)'; } 
- }
+          timestamp == other.timestamp;}
+@override int get hashCode {return Object.hash(frameHeight, frameWidth, framesDropped, framesPerSecond, jitter, packetsLost, quality, timestamp);}
+@override String toString() {return 'RealtimekitParticipantQualityStatsQualityStatsVideoStats(frameHeight: $frameHeight, frameWidth: $frameWidth, framesDropped: $framesDropped, framesPerSecond: $framesPerSecond, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)';}
+}

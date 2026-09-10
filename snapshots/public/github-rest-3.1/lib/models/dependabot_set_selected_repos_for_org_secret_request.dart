@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotSetSelectedReposForOrgSecretRequest {const DependabotSetSelectedReposForOrgSecretRequest({required this.selectedRepositoryIds});
 
-factory DependabotSetSelectedReposForOrgSecretRequest.fromJson(Map<String, dynamic> json) { return DependabotSetSelectedReposForOrgSecretRequest(
+factory DependabotSetSelectedReposForOrgSecretRequest.fromJson(Map<String, dynamic> json) {return DependabotSetSelectedReposForOrgSecretRequest(
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
 final List<int> selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'selected_repository_ids': selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_repository_ids'); } 
-DependabotSetSelectedReposForOrgSecretRequest copyWith({List<int>? selectedRepositoryIds}) { return DependabotSetSelectedReposForOrgSecretRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('selected_repository_ids');}
+DependabotSetSelectedReposForOrgSecretRequest copyWith({List<int>? selectedRepositoryIds}) {return DependabotSetSelectedReposForOrgSecretRequest(
   selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotSetSelectedReposForOrgSecretRequest &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
-@override String toString() { return 'DependabotSetSelectedReposForOrgSecretRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
- }
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);}
+@override int get hashCode {return Object.hashAll(selectedRepositoryIds).hashCode;}
+@override String toString() {return 'DependabotSetSelectedReposForOrgSecretRequest(selectedRepositoryIds: $selectedRepositoryIds)';}
+}

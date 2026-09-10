@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityTraceLine {const EmailSecurityTraceLine({required this.lineno, required this.message, required this.ts, });
 
-factory EmailSecurityTraceLine.fromJson(Map<String, dynamic> json) { return EmailSecurityTraceLine(
+factory EmailSecurityTraceLine.fromJson(Map<String, dynamic> json) {return EmailSecurityTraceLine(
   lineno: (json['lineno'] as num).toInt(),
   message: json['message'] as String,
   ts: DateTime.parse(json['ts'] as String),
-); }
+);}
 
 final int lineno;
 
@@ -14,24 +14,24 @@ final String message;
 
 final DateTime ts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'lineno': lineno,
   'message': message,
   'ts': ts.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('lineno') && json['lineno'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('lineno') && json['lineno'] is num &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('ts') && json['ts'] is String; } 
-EmailSecurityTraceLine copyWith({int? lineno, String? message, DateTime? ts, }) { return EmailSecurityTraceLine(
+      json.containsKey('ts') && json['ts'] is String;}
+EmailSecurityTraceLine copyWith({int? lineno, String? message, DateTime? ts, }) {return EmailSecurityTraceLine(
   lineno: lineno ?? this.lineno,
   message: message ?? this.message,
   ts: ts ?? this.ts,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityTraceLine &&
           lineno == other.lineno &&
           message == other.message &&
-          ts == other.ts; } 
-@override int get hashCode { return Object.hash(lineno, message, ts); } 
-@override String toString() { return 'EmailSecurityTraceLine(lineno: $lineno, message: $message, ts: $ts)'; } 
- }
+          ts == other.ts;}
+@override int get hashCode {return Object.hash(lineno, message, ts);}
+@override String toString() {return 'EmailSecurityTraceLine(lineno: $lineno, message: $message, ts: $ts)';}
+}

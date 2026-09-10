@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field's data type.
 @immutable final class ProjectsAddFieldForUserRequestVariant1DataType {const ProjectsAddFieldForUserRequestVariant1DataType._(this.value);
 
-factory ProjectsAddFieldForUserRequestVariant1DataType.fromJson(String json) { return switch (json) {
+factory ProjectsAddFieldForUserRequestVariant1DataType.fromJson(String json) {return switch (json) {
   'text' => text,
   'number' => number,
   'date' => date,
   _ => ProjectsAddFieldForUserRequestVariant1DataType._(json),
-}; }
+};}
 
 static const ProjectsAddFieldForUserRequestVariant1DataType text = ProjectsAddFieldForUserRequestVariant1DataType._('text');
 
@@ -20,20 +20,20 @@ static const List<ProjectsAddFieldForUserRequestVariant1DataType> values = [text
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectsAddFieldForUserRequestVariant1DataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectsAddFieldForUserRequestVariant1DataType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectsAddFieldForUserRequestVariant1DataType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectsAddFieldForUserRequestVariant1DataType($value)';}
+}
 @immutable final class ProjectsAddFieldForUserRequestVariant1 {const ProjectsAddFieldForUserRequestVariant1({required this.name, required this.dataType, });
 
-factory ProjectsAddFieldForUserRequestVariant1.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForUserRequestVariant1(
+factory ProjectsAddFieldForUserRequestVariant1.fromJson(Map<String, dynamic> json) {return ProjectsAddFieldForUserRequestVariant1(
   name: json['name'] as String,
   dataType: ProjectsAddFieldForUserRequestVariant1DataType.fromJson(json['data_type'] as String),
-); }
+);}
 
 /// The name of the field.
 final String name;
@@ -41,20 +41,20 @@ final String name;
 /// The field's data type.
 final ProjectsAddFieldForUserRequestVariant1DataType dataType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'data_type': dataType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('data_type'); } 
-ProjectsAddFieldForUserRequestVariant1 copyWith({String? name, ProjectsAddFieldForUserRequestVariant1DataType? dataType, }) { return ProjectsAddFieldForUserRequestVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('data_type');}
+ProjectsAddFieldForUserRequestVariant1 copyWith({String? name, ProjectsAddFieldForUserRequestVariant1DataType? dataType, }) {return ProjectsAddFieldForUserRequestVariant1(
   name: name ?? this.name,
   dataType: dataType ?? this.dataType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectsAddFieldForUserRequestVariant1 &&
           name == other.name &&
-          dataType == other.dataType; } 
-@override int get hashCode { return Object.hash(name, dataType); } 
-@override String toString() { return 'ProjectsAddFieldForUserRequestVariant1(name: $name, dataType: $dataType)'; } 
- }
+          dataType == other.dataType;}
+@override int get hashCode {return Object.hash(name, dataType);}
+@override String toString() {return 'ProjectsAddFieldForUserRequestVariant1(name: $name, dataType: $dataType)';}
+}

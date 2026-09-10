@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesQuoteRequestInvoiceSettingsIssuerType {const PostQuotesQuoteRequestInvoiceSettingsIssuerType._(this.value);
 
-factory PostQuotesQuoteRequestInvoiceSettingsIssuerType.fromJson(String json) { return switch (json) {
+factory PostQuotesQuoteRequestInvoiceSettingsIssuerType.fromJson(String json) {return switch (json) {
   'account' => account,
   'self' => self,
   _ => PostQuotesQuoteRequestInvoiceSettingsIssuerType._(json),
-}; }
+};}
 
 static const PostQuotesQuoteRequestInvoiceSettingsIssuerType account = PostQuotesQuoteRequestInvoiceSettingsIssuerType._('account');
 
@@ -16,38 +16,38 @@ static const List<PostQuotesQuoteRequestInvoiceSettingsIssuerType> values = [acc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesQuoteRequestInvoiceSettingsIssuerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesQuoteRequestInvoiceSettingsIssuerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesQuoteRequestInvoiceSettingsIssuerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesQuoteRequestInvoiceSettingsIssuerType($value)';}
+}
 @immutable final class PostQuotesQuoteRequestInvoiceSettingsIssuer {const PostQuotesQuoteRequestInvoiceSettingsIssuer({required this.type, this.account, });
 
-factory PostQuotesQuoteRequestInvoiceSettingsIssuer.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestInvoiceSettingsIssuer(
+factory PostQuotesQuoteRequestInvoiceSettingsIssuer.fromJson(Map<String, dynamic> json) {return PostQuotesQuoteRequestInvoiceSettingsIssuer(
   account: json['account'] as String?,
   type: PostQuotesQuoteRequestInvoiceSettingsIssuerType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
 final PostQuotesQuoteRequestInvoiceSettingsIssuerType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostQuotesQuoteRequestInvoiceSettingsIssuer copyWith({String? Function()? account, PostQuotesQuoteRequestInvoiceSettingsIssuerType? type, }) { return PostQuotesQuoteRequestInvoiceSettingsIssuer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostQuotesQuoteRequestInvoiceSettingsIssuer copyWith({String? Function()? account, PostQuotesQuoteRequestInvoiceSettingsIssuerType? type, }) {return PostQuotesQuoteRequestInvoiceSettingsIssuer(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostQuotesQuoteRequestInvoiceSettingsIssuer &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'PostQuotesQuoteRequestInvoiceSettingsIssuer(account: $account, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, type);}
+@override String toString() {return 'PostQuotesQuoteRequestInvoiceSettingsIssuer(account: $account, type: $type)';}
+}

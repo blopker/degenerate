@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param3_installments.dart';import 'payment_intent_param3_mandate_options.dart';import 'payment_intent_param3_statement_descriptor_suffix_kana.dart';import 'payment_intent_param3_statement_descriptor_suffix_kanji.dart';import 'payment_intent_param3_three_d_secure.dart';@immutable final class PaymentIntentParam3CaptureMethod {const PaymentIntentParam3CaptureMethod._(this.value);
 
-factory PaymentIntentParam3CaptureMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3CaptureMethod.fromJson(String json) {return switch (json) {
   '' => $empty,
   'manual' => manual,
   _ => PaymentIntentParam3CaptureMethod._(json),
-}; }
+};}
 
 static const PaymentIntentParam3CaptureMethod $empty = PaymentIntentParam3CaptureMethod._('');
 
@@ -16,17 +16,17 @@ static const List<PaymentIntentParam3CaptureMethod> values = [$empty, manual];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3CaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3CaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3CaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3CaptureMethod($value)';}
+}
 @immutable final class PaymentIntentParam3Network {const PaymentIntentParam3Network._(this.value);
 
-factory PaymentIntentParam3Network.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3Network.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -41,7 +41,7 @@ factory PaymentIntentParam3Network.fromJson(String json) { return switch (json) 
   'unknown' => unknown,
   'visa' => visa,
   _ => PaymentIntentParam3Network._(json),
-}; }
+};}
 
 static const PaymentIntentParam3Network amex = PaymentIntentParam3Network._('amex');
 
@@ -73,21 +73,21 @@ static const List<PaymentIntentParam3Network> values = [amex, cartesBancaires, d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3Network && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3Network($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3Network && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3Network($value)';}
+}
 @immutable final class PaymentIntentParam3RequestExtendedAuthorization {const PaymentIntentParam3RequestExtendedAuthorization._(this.value);
 
-factory PaymentIntentParam3RequestExtendedAuthorization.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3RequestExtendedAuthorization.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => PaymentIntentParam3RequestExtendedAuthorization._(json),
-}; }
+};}
 
 static const PaymentIntentParam3RequestExtendedAuthorization ifAvailable = PaymentIntentParam3RequestExtendedAuthorization._('if_available');
 
@@ -97,21 +97,21 @@ static const List<PaymentIntentParam3RequestExtendedAuthorization> values = [ifA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3RequestExtendedAuthorization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3RequestExtendedAuthorization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3RequestExtendedAuthorization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3RequestExtendedAuthorization($value)';}
+}
 @immutable final class PaymentIntentParam3RequestIncrementalAuthorization {const PaymentIntentParam3RequestIncrementalAuthorization._(this.value);
 
-factory PaymentIntentParam3RequestIncrementalAuthorization.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3RequestIncrementalAuthorization.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => PaymentIntentParam3RequestIncrementalAuthorization._(json),
-}; }
+};}
 
 static const PaymentIntentParam3RequestIncrementalAuthorization ifAvailable = PaymentIntentParam3RequestIncrementalAuthorization._('if_available');
 
@@ -121,21 +121,21 @@ static const List<PaymentIntentParam3RequestIncrementalAuthorization> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3RequestIncrementalAuthorization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3RequestIncrementalAuthorization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3RequestIncrementalAuthorization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3RequestIncrementalAuthorization($value)';}
+}
 @immutable final class PaymentIntentParam3RequestMulticapture {const PaymentIntentParam3RequestMulticapture._(this.value);
 
-factory PaymentIntentParam3RequestMulticapture.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3RequestMulticapture.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => PaymentIntentParam3RequestMulticapture._(json),
-}; }
+};}
 
 static const PaymentIntentParam3RequestMulticapture ifAvailable = PaymentIntentParam3RequestMulticapture._('if_available');
 
@@ -145,21 +145,21 @@ static const List<PaymentIntentParam3RequestMulticapture> values = [ifAvailable,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3RequestMulticapture && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3RequestMulticapture($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3RequestMulticapture && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3RequestMulticapture($value)';}
+}
 @immutable final class PaymentIntentParam3RequestOvercapture {const PaymentIntentParam3RequestOvercapture._(this.value);
 
-factory PaymentIntentParam3RequestOvercapture.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3RequestOvercapture.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => PaymentIntentParam3RequestOvercapture._(json),
-}; }
+};}
 
 static const PaymentIntentParam3RequestOvercapture ifAvailable = PaymentIntentParam3RequestOvercapture._('if_available');
 
@@ -169,22 +169,22 @@ static const List<PaymentIntentParam3RequestOvercapture> values = [ifAvailable, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3RequestOvercapture && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3RequestOvercapture($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3RequestOvercapture && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3RequestOvercapture($value)';}
+}
 @immutable final class PaymentIntentParam3RequestThreeDSecure {const PaymentIntentParam3RequestThreeDSecure._(this.value);
 
-factory PaymentIntentParam3RequestThreeDSecure.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3RequestThreeDSecure.fromJson(String json) {return switch (json) {
   'any' => any,
   'automatic' => automatic,
   'challenge' => challenge,
   _ => PaymentIntentParam3RequestThreeDSecure._(json),
-}; }
+};}
 
 static const PaymentIntentParam3RequestThreeDSecure any = PaymentIntentParam3RequestThreeDSecure._('any');
 
@@ -196,23 +196,23 @@ static const List<PaymentIntentParam3RequestThreeDSecure> values = [any, automat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3RequestThreeDSecure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3RequestThreeDSecure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3RequestThreeDSecure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3RequestThreeDSecure($value)';}
+}
 @immutable final class PaymentIntentParam3SetupFutureUsage {const PaymentIntentParam3SetupFutureUsage._(this.value);
 
-factory PaymentIntentParam3SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentParam3SetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentIntentParam3SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentParam3SetupFutureUsage $empty = PaymentIntentParam3SetupFutureUsage._('');
 
@@ -226,17 +226,17 @@ static const List<PaymentIntentParam3SetupFutureUsage> values = [$empty, none, o
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentParam3SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentParam3SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentParam3SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentParam3SetupFutureUsage($value)';}
+}
 @immutable final class PaymentIntentParam3 {const PaymentIntentParam3({this.captureMethod, this.cvcToken, this.installments, this.mandateOptions, this.network, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure, this.requireCvcRecollection, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, this.threeDSecure, });
 
-factory PaymentIntentParam3.fromJson(Map<String, dynamic> json) { return PaymentIntentParam3(
+factory PaymentIntentParam3.fromJson(Map<String, dynamic> json) {return PaymentIntentParam3(
   captureMethod: json['capture_method'] != null ? PaymentIntentParam3CaptureMethod.fromJson(json['capture_method'] as String) : null,
   cvcToken: json['cvc_token'] as String?,
   installments: json['installments'] != null ? PaymentIntentParam3Installments.fromJson(json['installments'] as Map<String, dynamic>) : null,
@@ -252,7 +252,7 @@ factory PaymentIntentParam3.fromJson(Map<String, dynamic> json) { return Payment
   statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] != null ? PaymentIntentParam3StatementDescriptorSuffixKana.fromJson(json['statement_descriptor_suffix_kana']) : null,
   statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] != null ? PaymentIntentParam3StatementDescriptorSuffixKanji.fromJson(json['statement_descriptor_suffix_kanji']) : null,
   threeDSecure: json['three_d_secure'] != null ? PaymentIntentParam3ThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentIntentParam3CaptureMethod? captureMethod;
 
@@ -284,7 +284,7 @@ final PaymentIntentParam3StatementDescriptorSuffixKanji? statementDescriptorSuff
 
 final PaymentIntentParam3ThreeDSecure? threeDSecure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   'cvc_token': ?cvcToken,
   if (installments != null) 'installments': installments?.toJson(),
@@ -300,9 +300,9 @@ Map<String, dynamic> toJson() { return {
   if (statementDescriptorSuffixKana != null) 'statement_descriptor_suffix_kana': statementDescriptorSuffixKana?.toJson(),
   if (statementDescriptorSuffixKanji != null) 'statement_descriptor_suffix_kanji': statementDescriptorSuffixKanji?.toJson(),
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'cvc_token', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji', 'three_d_secure'}.contains(key)); } 
-PaymentIntentParam3 copyWith({PaymentIntentParam3CaptureMethod? Function()? captureMethod, String? Function()? cvcToken, PaymentIntentParam3Installments? Function()? installments, PaymentIntentParam3MandateOptions? Function()? mandateOptions, PaymentIntentParam3Network? Function()? network, PaymentIntentParam3RequestExtendedAuthorization? Function()? requestExtendedAuthorization, PaymentIntentParam3RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, PaymentIntentParam3RequestMulticapture? Function()? requestMulticapture, PaymentIntentParam3RequestOvercapture? Function()? requestOvercapture, PaymentIntentParam3RequestThreeDSecure? Function()? requestThreeDSecure, bool? Function()? requireCvcRecollection, PaymentIntentParam3SetupFutureUsage? Function()? setupFutureUsage, PaymentIntentParam3StatementDescriptorSuffixKana? Function()? statementDescriptorSuffixKana, PaymentIntentParam3StatementDescriptorSuffixKanji? Function()? statementDescriptorSuffixKanji, PaymentIntentParam3ThreeDSecure? Function()? threeDSecure, }) { return PaymentIntentParam3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'cvc_token', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji', 'three_d_secure'}.contains(key));}
+PaymentIntentParam3 copyWith({PaymentIntentParam3CaptureMethod? Function()? captureMethod, String? Function()? cvcToken, PaymentIntentParam3Installments? Function()? installments, PaymentIntentParam3MandateOptions? Function()? mandateOptions, PaymentIntentParam3Network? Function()? network, PaymentIntentParam3RequestExtendedAuthorization? Function()? requestExtendedAuthorization, PaymentIntentParam3RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, PaymentIntentParam3RequestMulticapture? Function()? requestMulticapture, PaymentIntentParam3RequestOvercapture? Function()? requestOvercapture, PaymentIntentParam3RequestThreeDSecure? Function()? requestThreeDSecure, bool? Function()? requireCvcRecollection, PaymentIntentParam3SetupFutureUsage? Function()? setupFutureUsage, PaymentIntentParam3StatementDescriptorSuffixKana? Function()? statementDescriptorSuffixKana, PaymentIntentParam3StatementDescriptorSuffixKanji? Function()? statementDescriptorSuffixKanji, PaymentIntentParam3ThreeDSecure? Function()? threeDSecure, }) {return PaymentIntentParam3(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   cvcToken: cvcToken != null ? cvcToken() : this.cvcToken,
   installments: installments != null ? installments() : this.installments,
@@ -318,8 +318,8 @@ PaymentIntentParam3 copyWith({PaymentIntentParam3CaptureMethod? Function()? capt
   statementDescriptorSuffixKana: statementDescriptorSuffixKana != null ? statementDescriptorSuffixKana() : this.statementDescriptorSuffixKana,
   statementDescriptorSuffixKanji: statementDescriptorSuffixKanji != null ? statementDescriptorSuffixKanji() : this.statementDescriptorSuffixKanji,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentParam3 &&
           captureMethod == other.captureMethod &&
           cvcToken == other.cvcToken &&
@@ -335,7 +335,7 @@ PaymentIntentParam3 copyWith({PaymentIntentParam3CaptureMethod? Function()? capt
           setupFutureUsage == other.setupFutureUsage &&
           statementDescriptorSuffixKana == other.statementDescriptorSuffixKana &&
           statementDescriptorSuffixKanji == other.statementDescriptorSuffixKanji &&
-          threeDSecure == other.threeDSecure; } 
-@override int get hashCode { return Object.hash(captureMethod, cvcToken, installments, mandateOptions, network, requestExtendedAuthorization, requestIncrementalAuthorization, requestMulticapture, requestOvercapture, requestThreeDSecure, requireCvcRecollection, setupFutureUsage, statementDescriptorSuffixKana, statementDescriptorSuffixKanji, threeDSecure); } 
-@override String toString() { return 'PaymentIntentParam3(captureMethod: $captureMethod, cvcToken: $cvcToken, installments: $installments, mandateOptions: $mandateOptions, network: $network, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorization: $requestIncrementalAuthorization, requestMulticapture: $requestMulticapture, requestOvercapture: $requestOvercapture, requestThreeDSecure: $requestThreeDSecure, requireCvcRecollection: $requireCvcRecollection, setupFutureUsage: $setupFutureUsage, statementDescriptorSuffixKana: $statementDescriptorSuffixKana, statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji, threeDSecure: $threeDSecure)'; } 
- }
+          threeDSecure == other.threeDSecure;}
+@override int get hashCode {return Object.hash(captureMethod, cvcToken, installments, mandateOptions, network, requestExtendedAuthorization, requestIncrementalAuthorization, requestMulticapture, requestOvercapture, requestThreeDSecure, requireCvcRecollection, setupFutureUsage, statementDescriptorSuffixKana, statementDescriptorSuffixKanji, threeDSecure);}
+@override String toString() {return 'PaymentIntentParam3(captureMethod: $captureMethod, cvcToken: $cvcToken, installments: $installments, mandateOptions: $mandateOptions, network: $network, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorization: $requestIncrementalAuthorization, requestMulticapture: $requestMulticapture, requestOvercapture: $requestOvercapture, requestThreeDSecure: $requestThreeDSecure, requireCvcRecollection: $requireCvcRecollection, setupFutureUsage: $setupFutureUsage, statementDescriptorSuffixKana: $statementDescriptorSuffixKana, statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji, threeDSecure: $threeDSecure)';}
+}

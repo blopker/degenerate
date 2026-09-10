@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_status.dart';import 'host_ip.dart';import 'pod_condition.dart';import 'pod_extended_resource_claim_status.dart';import 'pod_ip.dart';import 'pod_resource_claim_status.dart';import 'resource_quantity.dart';import 'resource_requirements.dart';import 'time.dart';/// PodStatus represents information about the status of a pod. Status may trail the actual state of a system, especially if the node that hosts the pod cannot contact the control plane.
 @immutable final class PodStatus {const PodStatus({this.allocatedResources, this.conditions, this.containerStatuses, this.ephemeralContainerStatuses, this.extendedResourceClaimStatus, this.hostIp, this.hostIPs, this.initContainerStatuses, this.message, this.nominatedNodeName, this.observedGeneration, this.phase, this.podIp, this.podIPs, this.qosClass, this.reason, this.resize, this.resourceClaimStatuses, this.resources, this.startTime, });
 
-factory PodStatus.fromJson(Map<String, dynamic> json) { return PodStatus(
+factory PodStatus.fromJson(Map<String, dynamic> json) {return PodStatus(
   allocatedResources: (json['allocatedResources'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => PodCondition.fromJson(e as Map<String, dynamic>)).toList(),
   containerStatuses: (json['containerStatuses'] as List<dynamic>?)?.map((e) => ContainerStatus.fromJson(e as Map<String, dynamic>)).toList(),
@@ -24,7 +24,7 @@ factory PodStatus.fromJson(Map<String, dynamic> json) { return PodStatus(
   resourceClaimStatuses: (json['resourceClaimStatuses'] as List<dynamic>?)?.map((e) => PodResourceClaimStatus.fromJson(e as Map<String, dynamic>)).toList(),
   resources: json['resources'] != null ? ResourceRequirements.fromJson(json['resources'] as Map<String, dynamic>) : null,
   startTime: json['startTime'] != null ? Time.fromJson(json['startTime'] as String) : null,
-); }
+);}
 
 /// AllocatedResources is the total requests allocated for this pod by the node. If pod-level requests are not set, this will be the total requests aggregated across containers in the pod.
 final Map<String,ResourceQuantity>? allocatedResources;
@@ -90,7 +90,7 @@ final ResourceRequirements? resources;
 /// RFC 3339 date and time at which the object was acknowledged by the Kubelet. This is before the Kubelet pulled the container image(s) for the pod.
 final Time? startTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allocatedResources != null) 'allocatedResources': allocatedResources?.map((k, v) => MapEntry(k, v.toJson())),
   if (conditions != null) 'conditions': conditions?.map((e) => e.toJson()).toList(),
   if (containerStatuses != null) 'containerStatuses': containerStatuses?.map((e) => e.toJson()).toList(),
@@ -111,9 +111,9 @@ Map<String, dynamic> toJson() { return {
   if (resourceClaimStatuses != null) 'resourceClaimStatuses': resourceClaimStatuses?.map((e) => e.toJson()).toList(),
   if (resources != null) 'resources': resources?.toJson(),
   if (startTime != null) 'startTime': startTime?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allocatedResources', 'conditions', 'containerStatuses', 'ephemeralContainerStatuses', 'extendedResourceClaimStatus', 'hostIP', 'hostIPs', 'initContainerStatuses', 'message', 'nominatedNodeName', 'observedGeneration', 'phase', 'podIP', 'podIPs', 'qosClass', 'reason', 'resize', 'resourceClaimStatuses', 'resources', 'startTime'}.contains(key)); } 
-PodStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResources, List<PodCondition>? Function()? conditions, List<ContainerStatus>? Function()? containerStatuses, List<ContainerStatus>? Function()? ephemeralContainerStatuses, PodExtendedResourceClaimStatus? Function()? extendedResourceClaimStatus, String? Function()? hostIp, List<HostIp>? Function()? hostIPs, List<ContainerStatus>? Function()? initContainerStatuses, String? Function()? message, String? Function()? nominatedNodeName, int? Function()? observedGeneration, String? Function()? phase, String? Function()? podIp, List<PodIp>? Function()? podIPs, String? Function()? qosClass, String? Function()? reason, String? Function()? resize, List<PodResourceClaimStatus>? Function()? resourceClaimStatuses, ResourceRequirements? Function()? resources, Time? Function()? startTime, }) { return PodStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allocatedResources', 'conditions', 'containerStatuses', 'ephemeralContainerStatuses', 'extendedResourceClaimStatus', 'hostIP', 'hostIPs', 'initContainerStatuses', 'message', 'nominatedNodeName', 'observedGeneration', 'phase', 'podIP', 'podIPs', 'qosClass', 'reason', 'resize', 'resourceClaimStatuses', 'resources', 'startTime'}.contains(key));}
+PodStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResources, List<PodCondition>? Function()? conditions, List<ContainerStatus>? Function()? containerStatuses, List<ContainerStatus>? Function()? ephemeralContainerStatuses, PodExtendedResourceClaimStatus? Function()? extendedResourceClaimStatus, String? Function()? hostIp, List<HostIp>? Function()? hostIPs, List<ContainerStatus>? Function()? initContainerStatuses, String? Function()? message, String? Function()? nominatedNodeName, int? Function()? observedGeneration, String? Function()? phase, String? Function()? podIp, List<PodIp>? Function()? podIPs, String? Function()? qosClass, String? Function()? reason, String? Function()? resize, List<PodResourceClaimStatus>? Function()? resourceClaimStatuses, ResourceRequirements? Function()? resources, Time? Function()? startTime, }) {return PodStatus(
   allocatedResources: allocatedResources != null ? allocatedResources() : this.allocatedResources,
   conditions: conditions != null ? conditions() : this.conditions,
   containerStatuses: containerStatuses != null ? containerStatuses() : this.containerStatuses,
@@ -134,8 +134,8 @@ PodStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResource
   resourceClaimStatuses: resourceClaimStatuses != null ? resourceClaimStatuses() : this.resourceClaimStatuses,
   resources: resources != null ? resources() : this.resources,
   startTime: startTime != null ? startTime() : this.startTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PodStatus &&
           allocatedResources == other.allocatedResources &&
           listEquals(conditions, other.conditions) &&
@@ -156,7 +156,7 @@ PodStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResource
           resize == other.resize &&
           listEquals(resourceClaimStatuses, other.resourceClaimStatuses) &&
           resources == other.resources &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(allocatedResources, Object.hashAll(conditions ?? const []), Object.hashAll(containerStatuses ?? const []), Object.hashAll(ephemeralContainerStatuses ?? const []), extendedResourceClaimStatus, hostIp, Object.hashAll(hostIPs ?? const []), Object.hashAll(initContainerStatuses ?? const []), message, nominatedNodeName, observedGeneration, phase, podIp, Object.hashAll(podIPs ?? const []), qosClass, reason, resize, Object.hashAll(resourceClaimStatuses ?? const []), resources, startTime); } 
-@override String toString() { return 'PodStatus(allocatedResources: $allocatedResources, conditions: $conditions, containerStatuses: $containerStatuses, ephemeralContainerStatuses: $ephemeralContainerStatuses, extendedResourceClaimStatus: $extendedResourceClaimStatus, hostIp: $hostIp, hostIPs: $hostIPs, initContainerStatuses: $initContainerStatuses, message: $message, nominatedNodeName: $nominatedNodeName, observedGeneration: $observedGeneration, phase: $phase, podIp: $podIp, podIPs: $podIPs, qosClass: $qosClass, reason: $reason, resize: $resize, resourceClaimStatuses: $resourceClaimStatuses, resources: $resources, startTime: $startTime)'; } 
- }
+          startTime == other.startTime;}
+@override int get hashCode {return Object.hash(allocatedResources, Object.hashAll(conditions ?? const []), Object.hashAll(containerStatuses ?? const []), Object.hashAll(ephemeralContainerStatuses ?? const []), extendedResourceClaimStatus, hostIp, Object.hashAll(hostIPs ?? const []), Object.hashAll(initContainerStatuses ?? const []), message, nominatedNodeName, observedGeneration, phase, podIp, Object.hashAll(podIPs ?? const []), qosClass, reason, resize, Object.hashAll(resourceClaimStatuses ?? const []), resources, startTime);}
+@override String toString() {return 'PodStatus(allocatedResources: $allocatedResources, conditions: $conditions, containerStatuses: $containerStatuses, ephemeralContainerStatuses: $ephemeralContainerStatuses, extendedResourceClaimStatus: $extendedResourceClaimStatus, hostIp: $hostIp, hostIPs: $hostIPs, initContainerStatuses: $initContainerStatuses, message: $message, nominatedNodeName: $nominatedNodeName, observedGeneration: $observedGeneration, phase: $phase, podIp: $podIp, podIPs: $podIPs, qosClass: $qosClass, reason: $reason, resize: $resize, resourceClaimStatuses: $resourceClaimStatuses, resources: $resources, startTime: $startTime)';}
+}

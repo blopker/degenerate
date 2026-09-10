@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Wifi2EnterpriseEapTls {const Wifi2EnterpriseEapTls({required this.clientCertificateFile, required this.privateKeyFile, required this.ssid, this.caCertificateFile, this.privateKeyFilePassword, });
 
-factory Wifi2EnterpriseEapTls.fromJson(Map<String, dynamic> json) { return Wifi2EnterpriseEapTls(
+factory Wifi2EnterpriseEapTls.fromJson(Map<String, dynamic> json) {return Wifi2EnterpriseEapTls(
   caCertificateFile: json['ca_certificate_file'] as String?,
   clientCertificateFile: json['client_certificate_file'] as String,
   privateKeyFile: json['private_key_file'] as String,
   privateKeyFilePassword: json['private_key_file_password'] as String?,
   ssid: json['ssid'] as String,
-); }
+);}
 
 final String? caCertificateFile;
 
@@ -20,30 +20,30 @@ final String? privateKeyFilePassword;
 
 final String ssid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ca_certificate_file': ?caCertificateFile,
   'client_certificate_file': clientCertificateFile,
   'private_key_file': privateKeyFile,
   'private_key_file_password': ?privateKeyFilePassword,
   'ssid': ssid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_certificate_file') && json['client_certificate_file'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_certificate_file') && json['client_certificate_file'] is String &&
       json.containsKey('private_key_file') && json['private_key_file'] is String &&
-      json.containsKey('ssid') && json['ssid'] is String; } 
-Wifi2EnterpriseEapTls copyWith({String? Function()? caCertificateFile, String? clientCertificateFile, String? privateKeyFile, String? Function()? privateKeyFilePassword, String? ssid, }) { return Wifi2EnterpriseEapTls(
+      json.containsKey('ssid') && json['ssid'] is String;}
+Wifi2EnterpriseEapTls copyWith({String? Function()? caCertificateFile, String? clientCertificateFile, String? privateKeyFile, String? Function()? privateKeyFilePassword, String? ssid, }) {return Wifi2EnterpriseEapTls(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,
   clientCertificateFile: clientCertificateFile ?? this.clientCertificateFile,
   privateKeyFile: privateKeyFile ?? this.privateKeyFile,
   privateKeyFilePassword: privateKeyFilePassword != null ? privateKeyFilePassword() : this.privateKeyFilePassword,
   ssid: ssid ?? this.ssid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Wifi2EnterpriseEapTls &&
           caCertificateFile == other.caCertificateFile &&
           clientCertificateFile == other.clientCertificateFile &&
           privateKeyFile == other.privateKeyFile &&
           privateKeyFilePassword == other.privateKeyFilePassword &&
-          ssid == other.ssid; } 
-@override int get hashCode { return Object.hash(caCertificateFile, clientCertificateFile, privateKeyFile, privateKeyFilePassword, ssid); } 
-@override String toString() { return 'Wifi2EnterpriseEapTls(caCertificateFile: $caCertificateFile, clientCertificateFile: $clientCertificateFile, privateKeyFile: $privateKeyFile, privateKeyFilePassword: $privateKeyFilePassword, ssid: $ssid)'; } 
- }
+          ssid == other.ssid;}
+@override int get hashCode {return Object.hash(caCertificateFile, clientCertificateFile, privateKeyFile, privateKeyFilePassword, ssid);}
+@override String toString() {return 'Wifi2EnterpriseEapTls(caCertificateFile: $caCertificateFile, clientCertificateFile: $clientCertificateFile, privateKeyFile: $privateKeyFile, privateKeyFilePassword: $privateKeyFilePassword, ssid: $ssid)';}
+}

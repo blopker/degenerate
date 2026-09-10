@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AI binding.
 @immutable final class PagesDeploymentConfigValuesRequestAiBindingsValue {const PagesDeploymentConfigValuesRequestAiBindingsValue({required this.projectId});
 
-factory PagesDeploymentConfigValuesRequestAiBindingsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestAiBindingsValue(
+factory PagesDeploymentConfigValuesRequestAiBindingsValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesRequestAiBindingsValue(
   projectId: json['project_id'] as String,
-); }
+);}
 
 final String projectId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'project_id': projectId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('project_id') && json['project_id'] is String; } 
-PagesDeploymentConfigValuesRequestAiBindingsValue copyWith({String? projectId}) { return PagesDeploymentConfigValuesRequestAiBindingsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('project_id') && json['project_id'] is String;}
+PagesDeploymentConfigValuesRequestAiBindingsValue copyWith({String? projectId}) {return PagesDeploymentConfigValuesRequestAiBindingsValue(
   projectId: projectId ?? this.projectId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestAiBindingsValue &&
-          projectId == other.projectId; } 
-@override int get hashCode { return projectId.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesRequestAiBindingsValue(projectId: $projectId)'; } 
- }
+          projectId == other.projectId;}
+@override int get hashCode {return projectId.hashCode;}
+@override String toString() {return 'PagesDeploymentConfigValuesRequestAiBindingsValue(projectId: $projectId)';}
+}

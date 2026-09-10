@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType._(this.value);
 
-factory DlpRiskScoreIntegrationType.fromJson(String json) { return switch (json) {
+factory DlpRiskScoreIntegrationType.fromJson(String json) {return switch (json) {
   'Okta' => okta,
   _ => DlpRiskScoreIntegrationType._(json),
-}; }
+};}
 
 static const DlpRiskScoreIntegrationType okta = DlpRiskScoreIntegrationType._('Okta');
 
@@ -13,11 +13,11 @@ static const List<DlpRiskScoreIntegrationType> values = [okta];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpRiskScoreIntegrationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpRiskScoreIntegrationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DlpRiskScoreIntegrationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DlpRiskScoreIntegrationType($value)';}
+}

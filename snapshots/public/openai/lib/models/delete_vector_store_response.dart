@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteVectorStoreResponseObject {const DeleteVectorStoreResponseObject._(this.value);
 
-factory DeleteVectorStoreResponseObject.fromJson(String json) { return switch (json) {
+factory DeleteVectorStoreResponseObject.fromJson(String json) {return switch (json) {
   'vector_store.deleted' => vectorStoreDeleted,
   _ => DeleteVectorStoreResponseObject._(json),
-}; }
+};}
 
 static const DeleteVectorStoreResponseObject vectorStoreDeleted = DeleteVectorStoreResponseObject._('vector_store.deleted');
 
@@ -13,21 +13,21 @@ static const List<DeleteVectorStoreResponseObject> values = [vectorStoreDeleted]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeleteVectorStoreResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeleteVectorStoreResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeleteVectorStoreResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeleteVectorStoreResponseObject($value)';}
+}
 @immutable final class DeleteVectorStoreResponse {const DeleteVectorStoreResponse({required this.id, required this.deleted, required this.object, });
 
-factory DeleteVectorStoreResponse.fromJson(Map<String, dynamic> json) { return DeleteVectorStoreResponse(
+factory DeleteVectorStoreResponse.fromJson(Map<String, dynamic> json) {return DeleteVectorStoreResponse(
   id: json['id'] as String,
   deleted: json['deleted'] as bool,
   object: DeleteVectorStoreResponseObject.fromJson(json['object'] as String),
-); }
+);}
 
 final String id;
 
@@ -35,24 +35,24 @@ final bool deleted;
 
 final DeleteVectorStoreResponseObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'deleted': deleted,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('deleted') && json['deleted'] is bool &&
-      json.containsKey('object'); } 
-DeleteVectorStoreResponse copyWith({String? id, bool? deleted, DeleteVectorStoreResponseObject? object, }) { return DeleteVectorStoreResponse(
+      json.containsKey('object');}
+DeleteVectorStoreResponse copyWith({String? id, bool? deleted, DeleteVectorStoreResponseObject? object, }) {return DeleteVectorStoreResponse(
   id: id ?? this.id,
   deleted: deleted ?? this.deleted,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeleteVectorStoreResponse &&
           id == other.id &&
           deleted == other.deleted &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(id, deleted, object); } 
-@override String toString() { return 'DeleteVectorStoreResponse(id: $id, deleted: $deleted, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(id, deleted, object);}
+@override String toString() {return 'DeleteVectorStoreResponse(id: $id, deleted: $deleted, object: $object)';}
+}

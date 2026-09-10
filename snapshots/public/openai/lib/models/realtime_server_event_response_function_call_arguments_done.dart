@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when th
 /// 
 @immutable final class RealtimeServerEventResponseFunctionCallArgumentsDone {const RealtimeServerEventResponseFunctionCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.name, required this.arguments, });
 
-factory RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseFunctionCallArgumentsDone(
+factory RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseFunctionCallArgumentsDone(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
@@ -14,7 +14,7 @@ factory RealtimeServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String
   callId: json['call_id'] as String,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -41,7 +41,7 @@ final String name;
 /// The final arguments as a JSON string.
 final String arguments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
@@ -50,16 +50,16 @@ Map<String, dynamic> toJson() { return {
   'call_id': callId,
   'name': name,
   'arguments': arguments,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? name, String? arguments, }) { return RealtimeServerEventResponseFunctionCallArgumentsDone(
+      json.containsKey('arguments') && json['arguments'] is String;}
+RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? name, String? arguments, }) {return RealtimeServerEventResponseFunctionCallArgumentsDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -68,8 +68,8 @@ RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, 
   callId: callId ?? this.callId,
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventResponseFunctionCallArgumentsDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -78,7 +78,7 @@ RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, 
           outputIndex == other.outputIndex &&
           callId == other.callId &&
           name == other.name &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, name, arguments); } 
-@override String toString() { return 'RealtimeServerEventResponseFunctionCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, name: $name, arguments: $arguments)'; } 
- }
+          arguments == other.arguments;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, name, arguments);}
+@override String toString() {return 'RealtimeServerEventResponseFunctionCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, name: $name, arguments: $arguments)';}
+}

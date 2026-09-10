@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor that can bypass a ruleset.
 @immutable final class RepositoryRulesetBypassActorActorType {const RepositoryRulesetBypassActorActorType._(this.value);
 
-factory RepositoryRulesetBypassActorActorType.fromJson(String json) { return switch (json) {
+factory RepositoryRulesetBypassActorActorType.fromJson(String json) {return switch (json) {
   'Integration' => integration,
   'OrganizationAdmin' => organizationAdmin,
   'RepositoryRole' => repositoryRole,
   'Team' => team,
   'DeployKey' => deployKey,
   _ => RepositoryRulesetBypassActorActorType._(json),
-}; }
+};}
 
 static const RepositoryRulesetBypassActorActorType integration = RepositoryRulesetBypassActorActorType._('Integration');
 
@@ -26,23 +26,23 @@ static const List<RepositoryRulesetBypassActorActorType> values = [integration, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetBypassActorActorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetBypassActorActorType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRulesetBypassActorActorType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRulesetBypassActorActorType($value)';}
+}
 /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
 @immutable final class RepositoryRulesetBypassActorBypassMode {const RepositoryRulesetBypassActorBypassMode._(this.value);
 
-factory RepositoryRulesetBypassActorBypassMode.fromJson(String json) { return switch (json) {
+factory RepositoryRulesetBypassActorBypassMode.fromJson(String json) {return switch (json) {
   'always' => always,
   'pull_request' => pullRequest,
   'exempt' => exempt,
   _ => RepositoryRulesetBypassActorBypassMode._(json),
-}; }
+};}
 
 static const RepositoryRulesetBypassActorBypassMode always = RepositoryRulesetBypassActorBypassMode._('always');
 
@@ -54,22 +54,22 @@ static const List<RepositoryRulesetBypassActorBypassMode> values = [always, pull
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetBypassActorBypassMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetBypassActorBypassMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRulesetBypassActorBypassMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRulesetBypassActorBypassMode($value)';}
+}
 /// An actor that can bypass rules in a ruleset
 @immutable final class RepositoryRulesetBypassActor {const RepositoryRulesetBypassActor({required this.actorType, this.actorId = const Omittable.absent(), this.bypassMode, });
 
-factory RepositoryRulesetBypassActor.fromJson(Map<String, dynamic> json) { return RepositoryRulesetBypassActor(
+factory RepositoryRulesetBypassActor.fromJson(Map<String, dynamic> json) {return RepositoryRulesetBypassActor(
   actorId: json.containsKey('actor_id') ? Omittable(json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null) : const Omittable.absent(),
   actorType: RepositoryRulesetBypassActorActorType.fromJson(json['actor_type'] as String),
   bypassMode: json['bypass_mode'] != null ? RepositoryRulesetBypassActorBypassMode.fromJson(json['bypass_mode'] as String) : null,
-); }
+);}
 
 /// The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, and `Team` actor types. If `actor_type` is `OrganizationAdmin`, `actor_id` is ignored. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
 final Omittable<int?> actorId;
@@ -81,23 +81,23 @@ final RepositoryRulesetBypassActorActorType actorType;
 final RepositoryRulesetBypassActorBypassMode? bypassMode;
 
 /// The value with the schema default applied when absent.
-RepositoryRulesetBypassActorBypassMode get bypassModeOrDefault { return bypassMode ?? RepositoryRulesetBypassActorBypassMode.fromJson('always'); } 
-Map<String, dynamic> toJson() { return {
+RepositoryRulesetBypassActorBypassMode get bypassModeOrDefault {return bypassMode ?? RepositoryRulesetBypassActorBypassMode.fromJson('always');}
+Map<String, dynamic> toJson() {return {
   if (actorId.isPresent) 'actor_id': actorId.value,
   'actor_type': actorType.toJson(),
   if (bypassMode != null) 'bypass_mode': bypassMode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor_type'); } 
-RepositoryRulesetBypassActor copyWith({Omittable<int?>? actorId, RepositoryRulesetBypassActorActorType? actorType, RepositoryRulesetBypassActorBypassMode? Function()? bypassMode, }) { return RepositoryRulesetBypassActor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actor_type');}
+RepositoryRulesetBypassActor copyWith({Omittable<int?>? actorId, RepositoryRulesetBypassActorActorType? actorType, RepositoryRulesetBypassActorBypassMode? Function()? bypassMode, }) {return RepositoryRulesetBypassActor(
   actorId: actorId ?? this.actorId,
   actorType: actorType ?? this.actorType,
   bypassMode: bypassMode != null ? bypassMode() : this.bypassMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRulesetBypassActor &&
           actorId == other.actorId &&
           actorType == other.actorType &&
-          bypassMode == other.bypassMode; } 
-@override int get hashCode { return Object.hash(actorId, actorType, bypassMode); } 
-@override String toString() { return 'RepositoryRulesetBypassActor(actorId: $actorId, actorType: $actorType, bypassMode: $bypassMode)'; } 
- }
+          bypassMode == other.bypassMode;}
+@override int get hashCode {return Object.hash(actorId, actorType, bypassMode);}
+@override String toString() {return 'RepositoryRulesetBypassActor(actorId: $actorId, actorType: $actorType, bypassMode: $bypassMode)';}
+}

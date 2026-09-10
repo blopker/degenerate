@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_refund_payment_request_refund_payment_config.dart';@immutable final class PostTerminalReadersReaderRefundPaymentRequest {const PostTerminalReadersReaderRefundPaymentRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 
-factory PostTerminalReadersReaderRefundPaymentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRefundPaymentRequest(
+factory PostTerminalReadersReaderRefundPaymentRequest.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderRefundPaymentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   charge: json['charge'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -11,7 +11,7 @@ factory PostTerminalReadersReaderRefundPaymentRequest.fromJson(Map<String, dynam
   refundApplicationFee: json['refund_application_fee'] as bool?,
   refundPaymentConfig: json['refund_payment_config'] != null ? PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
   reverseTransfer: json['reverse_transfer'] as bool?,
-); }
+);}
 
 /// A positive integer in __cents__ representing how much of this charge to refund.
 final int? amount;
@@ -37,7 +37,7 @@ final PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig? refundPa
 /// Boolean indicating whether the transfer should be reversed when refunding this charge. The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount). A transfer can be reversed only by the application that created the charge.
 final bool? reverseTransfer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'charge': ?charge,
   'expand': ?expand,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'refund_application_fee': ?refundApplicationFee,
   if (refundPaymentConfig != null) 'refund_payment_config': refundPaymentConfig?.toJson(),
   'reverse_transfer': ?reverseTransfer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key)); } 
-PostTerminalReadersReaderRefundPaymentRequest copyWith({int? Function()? amount, String? Function()? charge, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? paymentIntent, bool? Function()? refundApplicationFee, PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig? Function()? refundPaymentConfig, bool? Function()? reverseTransfer, }) { return PostTerminalReadersReaderRefundPaymentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key));}
+PostTerminalReadersReaderRefundPaymentRequest copyWith({int? Function()? amount, String? Function()? charge, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? paymentIntent, bool? Function()? refundApplicationFee, PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig? Function()? refundPaymentConfig, bool? Function()? reverseTransfer, }) {return PostTerminalReadersReaderRefundPaymentRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   expand: expand != null ? expand() : this.expand,
@@ -57,8 +57,8 @@ PostTerminalReadersReaderRefundPaymentRequest copyWith({int? Function()? amount,
   refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
   refundPaymentConfig: refundPaymentConfig != null ? refundPaymentConfig() : this.refundPaymentConfig,
   reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalReadersReaderRefundPaymentRequest &&
           amount == other.amount &&
           charge == other.charge &&
@@ -67,7 +67,7 @@ PostTerminalReadersReaderRefundPaymentRequest copyWith({int? Function()? amount,
           paymentIntent == other.paymentIntent &&
           refundApplicationFee == other.refundApplicationFee &&
           refundPaymentConfig == other.refundPaymentConfig &&
-          reverseTransfer == other.reverseTransfer; } 
-@override int get hashCode { return Object.hash(amount, charge, Object.hashAll(expand ?? const []), metadata, paymentIntent, refundApplicationFee, refundPaymentConfig, reverseTransfer); } 
-@override String toString() { return 'PostTerminalReadersReaderRefundPaymentRequest(amount: $amount, charge: $charge, expand: $expand, metadata: $metadata, paymentIntent: $paymentIntent, refundApplicationFee: $refundApplicationFee, refundPaymentConfig: $refundPaymentConfig, reverseTransfer: $reverseTransfer)'; } 
- }
+          reverseTransfer == other.reverseTransfer;}
+@override int get hashCode {return Object.hash(amount, charge, Object.hashAll(expand ?? const []), metadata, paymentIntent, refundApplicationFee, refundPaymentConfig, reverseTransfer);}
+@override String toString() {return 'PostTerminalReadersReaderRefundPaymentRequest(amount: $amount, charge: $charge, expand: $expand, metadata: $metadata, paymentIntent: $paymentIntent, refundApplicationFee: $refundApplicationFee, refundPaymentConfig: $refundPaymentConfig, reverseTransfer: $reverseTransfer)';}
+}

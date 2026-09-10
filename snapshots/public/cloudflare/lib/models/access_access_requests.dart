@@ -51,7 +51,7 @@ String toJson() => value;
 }
 @immutable final class AccessAccessRequests {const AccessAccessRequests({this.action, this.allowed, this.appDomain, this.appUid, this.connection, this.createdAt, this.ipAddress, this.rayId, this.userEmail, });
 
-factory AccessAccessRequests.fromJson(Map<String, dynamic> json) { return AccessAccessRequests(
+factory AccessAccessRequests.fromJson(Map<String, dynamic> json) {return AccessAccessRequests(
   action: json['action'] != null ? AccessAction.fromJson(json['action'] as String) : null,
   allowed: json['allowed'] != null ? AccessAllowed.fromJson(json['allowed'] as bool) : null,
   appDomain: json['app_domain'] != null ? AccessAppDomain.fromJson(json['app_domain'] as String) : null,
@@ -61,7 +61,7 @@ factory AccessAccessRequests.fromJson(Map<String, dynamic> json) { return Access
   ipAddress: json['ip_address'] != null ? AccessIp.fromJson(json['ip_address'] as String) : null,
   rayId: json['ray_id'] != null ? AccessRayId.fromJson(json['ray_id'] as String) : null,
   userEmail: json['user_email'] != null ? AccessComponentsSchemasEmail.fromJson(json['user_email'] as String) : null,
-); }
+);}
 
 final AccessAction? action;
 
@@ -81,7 +81,7 @@ final AccessRayId? rayId;
 
 final AccessComponentsSchemasEmail? userEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (allowed != null) 'allowed': allowed?.toJson(),
   if (appDomain != null) 'app_domain': appDomain?.toJson(),
@@ -91,9 +91,9 @@ Map<String, dynamic> toJson() { return {
   if (ipAddress != null) 'ip_address': ipAddress?.toJson(),
   if (rayId != null) 'ray_id': rayId?.toJson(),
   if (userEmail != null) 'user_email': userEmail?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'allowed', 'app_domain', 'app_uid', 'connection', 'created_at', 'ip_address', 'ray_id', 'user_email'}.contains(key)); } 
-AccessAccessRequests copyWith({AccessAction? Function()? action, AccessAllowed? Function()? allowed, AccessAppDomain? Function()? appDomain, AccessAppUid? Function()? appUid, AccessConnection? Function()? connection, AccessTimestamp? Function()? createdAt, AccessIp? Function()? ipAddress, AccessRayId? Function()? rayId, AccessComponentsSchemasEmail? Function()? userEmail, }) { return AccessAccessRequests(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'allowed', 'app_domain', 'app_uid', 'connection', 'created_at', 'ip_address', 'ray_id', 'user_email'}.contains(key));}
+AccessAccessRequests copyWith({AccessAction? Function()? action, AccessAllowed? Function()? allowed, AccessAppDomain? Function()? appDomain, AccessAppUid? Function()? appUid, AccessConnection? Function()? connection, AccessTimestamp? Function()? createdAt, AccessIp? Function()? ipAddress, AccessRayId? Function()? rayId, AccessComponentsSchemasEmail? Function()? userEmail, }) {return AccessAccessRequests(
   action: action != null ? action() : this.action,
   allowed: allowed != null ? allowed() : this.allowed,
   appDomain: appDomain != null ? appDomain() : this.appDomain,
@@ -103,8 +103,8 @@ AccessAccessRequests copyWith({AccessAction? Function()? action, AccessAllowed? 
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   rayId: rayId != null ? rayId() : this.rayId,
   userEmail: userEmail != null ? userEmail() : this.userEmail,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessAccessRequests &&
           action == other.action &&
           allowed == other.allowed &&
@@ -114,7 +114,7 @@ AccessAccessRequests copyWith({AccessAction? Function()? action, AccessAllowed? 
           createdAt == other.createdAt &&
           ipAddress == other.ipAddress &&
           rayId == other.rayId &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(action, allowed, appDomain, appUid, connection, createdAt, ipAddress, rayId, userEmail); } 
-@override String toString() { return 'AccessAccessRequests(action: $action, allowed: $allowed, appDomain: $appDomain, appUid: $appUid, connection: $connection, createdAt: $createdAt, ipAddress: $ipAddress, rayId: $rayId, userEmail: $userEmail)'; } 
- }
+          userEmail == other.userEmail;}
+@override int get hashCode {return Object.hash(action, allowed, appDomain, appUid, connection, createdAt, ipAddress, rayId, userEmail);}
+@override String toString() {return 'AccessAccessRequests(action: $action, allowed: $allowed, appDomain: $appDomain, appUid: $appUid, connection: $connection, createdAt: $createdAt, ipAddress: $ipAddress, rayId: $rayId, userEmail: $userEmail)';}
+}

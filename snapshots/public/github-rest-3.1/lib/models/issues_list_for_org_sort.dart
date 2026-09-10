@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForOrgSort {const IssuesListForOrgSort._(this.value);
 
-factory IssuesListForOrgSort.fromJson(String json) { return switch (json) {
+factory IssuesListForOrgSort.fromJson(String json) {return switch (json) {
   'created' => created,
   'updated' => updated,
   'comments' => comments,
   _ => IssuesListForOrgSort._(json),
-}; }
+};}
 
 static const IssuesListForOrgSort created = IssuesListForOrgSort._('created');
 
@@ -19,11 +19,11 @@ static const List<IssuesListForOrgSort> values = [created, updated, comments];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuesListForOrgSort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuesListForOrgSort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuesListForOrgSort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuesListForOrgSort($value)';}
+}

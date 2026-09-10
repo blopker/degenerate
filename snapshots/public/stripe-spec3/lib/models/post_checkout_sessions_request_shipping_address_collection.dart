@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries {const PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries._(this.value);
 
-factory PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries.fromJson(String json) {return switch (json) {
   'AC' => ac,
   'AD' => ad,
   'AE' => ae,
@@ -242,7 +242,7 @@ factory PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries.fro
   'ZW' => zw,
   'ZZ' => zz,
   _ => PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries ac = PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries._('AC');
 
@@ -724,33 +724,33 @@ static const List<PostCheckoutSessionsRequestShippingAddressCollectionAllowedCou
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries($value)';}
+}
 /// When set, provides configuration for Checkout to collect a shipping address from a customer.
 @immutable final class PostCheckoutSessionsRequestShippingAddressCollection {const PostCheckoutSessionsRequestShippingAddressCollection({required this.allowedCountries});
 
-factory PostCheckoutSessionsRequestShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingAddressCollection(
+factory PostCheckoutSessionsRequestShippingAddressCollection.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestShippingAddressCollection(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries> allowedCountries;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_countries': allowedCountries.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_countries'); } 
-PostCheckoutSessionsRequestShippingAddressCollection copyWith({List<PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries>? allowedCountries}) { return PostCheckoutSessionsRequestShippingAddressCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_countries');}
+PostCheckoutSessionsRequestShippingAddressCollection copyWith({List<PostCheckoutSessionsRequestShippingAddressCollectionAllowedCountries>? allowedCountries}) {return PostCheckoutSessionsRequestShippingAddressCollection(
   allowedCountries: allowedCountries ?? this.allowedCountries,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestShippingAddressCollection &&
-          listEquals(allowedCountries, other.allowedCountries); } 
-@override int get hashCode { return Object.hashAll(allowedCountries).hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestShippingAddressCollection(allowedCountries: $allowedCountries)'; } 
- }
+          listEquals(allowedCountries, other.allowedCountries);}
+@override int get hashCode {return Object.hashAll(allowedCountries).hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestShippingAddressCollection(allowedCountries: $allowedCountries)';}
+}

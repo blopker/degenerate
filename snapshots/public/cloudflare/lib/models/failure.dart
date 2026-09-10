@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';@immutable final class Failure {const Failure({this.errors, this.messages, this.success, });
 
-factory Failure.fromJson(Map<String, dynamic> json) { return Failure(
+factory Failure.fromJson(Map<String, dynamic> json) {return Failure(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel22.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as String).toList(),
   success: json['success'] as bool?,
-); }
+);}
 
 final List<ErrorModel22>? errors;
 
@@ -15,22 +15,22 @@ final List<String>? messages;
 /// Indicates if the API call was successful or not.
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   'messages': ?messages,
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key)); } 
-Failure copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, }) { return Failure(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key));}
+Failure copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, }) {return Failure(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Failure &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), success); } 
-@override String toString() { return 'Failure(errors: $errors, messages: $messages, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), success);}
+@override String toString() {return 'Failure(errors: $errors, messages: $messages, success: $success)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'simple_user.dart';@immutable final class PackagePackageType {const PackagePackageType._(this.value);
 
-factory PackagePackageType.fromJson(String json) { return switch (json) {
+factory PackagePackageType.fromJson(String json) {return switch (json) {
   'npm' => npm,
   'maven' => maven,
   'rubygems' => rubygems,
@@ -10,7 +10,7 @@ factory PackagePackageType.fromJson(String json) { return switch (json) {
   'nuget' => nuget,
   'container' => container,
   _ => PackagePackageType._(json),
-}; }
+};}
 
 static const PackagePackageType npm = PackagePackageType._('npm');
 
@@ -28,21 +28,21 @@ static const List<PackagePackageType> values = [npm, maven, rubygems, docker, nu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PackagePackageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PackagePackageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PackagePackageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PackagePackageType($value)';}
+}
 @immutable final class PackageVisibility {const PackageVisibility._(this.value);
 
-factory PackageVisibility.fromJson(String json) { return switch (json) {
+factory PackageVisibility.fromJson(String json) {return switch (json) {
   'private' => private,
   'public' => public,
   _ => PackageVisibility._(json),
-}; }
+};}
 
 static const PackageVisibility private = PackageVisibility._('private');
 
@@ -52,18 +52,18 @@ static const List<PackageVisibility> values = [private, public];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PackageVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PackageVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PackageVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PackageVisibility($value)';}
+}
 /// A software package
 @immutable final class Package {const Package({required this.id, required this.name, required this.packageType, required this.url, required this.htmlUrl, required this.versionCount, required this.visibility, required this.createdAt, required this.updatedAt, this.owner = const Omittable.absent(), this.repository = const Omittable.absent(), });
 
-factory Package.fromJson(Map<String, dynamic> json) { return Package(
+factory Package.fromJson(Map<String, dynamic> json) {return Package(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   packageType: PackagePackageType.fromJson(json['package_type'] as String),
@@ -75,7 +75,7 @@ factory Package.fromJson(Map<String, dynamic> json) { return Package(
   repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// Unique identifier of the package.
 final int id;
@@ -102,7 +102,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'package_type': packageType.toJson(),
@@ -114,8 +114,8 @@ Map<String, dynamic> toJson() { return {
   if (repository.isPresent) 'repository': repository.value?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('package_type') &&
       json.containsKey('url') && json['url'] is String &&
@@ -123,8 +123,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('version_count') && json['version_count'] is num &&
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-Package copyWith({int? id, String? name, PackagePackageType? packageType, String? url, String? htmlUrl, int? versionCount, PackageVisibility? visibility, Omittable<SimpleUser?>? owner, Omittable<MinimalRepository?>? repository, DateTime? createdAt, DateTime? updatedAt, }) { return Package(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+Package copyWith({int? id, String? name, PackagePackageType? packageType, String? url, String? htmlUrl, int? versionCount, PackageVisibility? visibility, Omittable<SimpleUser?>? owner, Omittable<MinimalRepository?>? repository, DateTime? createdAt, DateTime? updatedAt, }) {return Package(
   id: id ?? this.id,
   name: name ?? this.name,
   packageType: packageType ?? this.packageType,
@@ -136,8 +136,8 @@ Package copyWith({int? id, String? name, PackagePackageType? packageType, String
   repository: repository ?? this.repository,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Package &&
           id == other.id &&
           name == other.name &&
@@ -149,7 +149,7 @@ Package copyWith({int? id, String? name, PackagePackageType? packageType, String
           owner == other.owner &&
           repository == other.repository &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, packageType, url, htmlUrl, versionCount, visibility, owner, repository, createdAt, updatedAt); } 
-@override String toString() { return 'Package(id: $id, name: $name, packageType: $packageType, url: $url, htmlUrl: $htmlUrl, versionCount: $versionCount, visibility: $visibility, owner: $owner, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(id, name, packageType, url, htmlUrl, versionCount, visibility, owner, repository, createdAt, updatedAt);}
+@override String toString() {return 'Package(id: $id, name: $name, packageType: $packageType, url: $url, htmlUrl: $htmlUrl, versionCount: $versionCount, visibility: $visibility, owner: $owner, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

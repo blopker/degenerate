@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest({this.expand, this.reverseAmount, });
 
-factory PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(
+factory PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   reverseAmount: json['reverse_amount'] != null ? (json['reverse_amount'] as num).toInt() : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -13,19 +13,19 @@ final List<String>? expand;
 /// The amount to reverse from the authorization. If not provided, the full amount of the authorization will be reversed. This amount is in the authorization currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int? reverseAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'reverse_amount': ?reverseAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'reverse_amount'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest copyWith({List<String>? Function()? expand, int? Function()? reverseAmount, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'reverse_amount'}.contains(key));}
+PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest copyWith({List<String>? Function()? expand, int? Function()? reverseAmount, }) {return PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(
   expand: expand != null ? expand() : this.expand,
   reverseAmount: reverseAmount != null ? reverseAmount() : this.reverseAmount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest &&
           listEquals(expand, other.expand) &&
-          reverseAmount == other.reverseAmount; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), reverseAmount); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(expand: $expand, reverseAmount: $reverseAmount)'; } 
- }
+          reverseAmount == other.reverseAmount;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), reverseAmount);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(expand: $expand, reverseAmount: $reverseAmount)';}
+}

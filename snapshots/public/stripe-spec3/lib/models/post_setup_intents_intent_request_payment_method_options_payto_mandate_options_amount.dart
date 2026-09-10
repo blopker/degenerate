@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2 {const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2._(this.value);
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2 $empty = PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateO
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2($value)';}
+}
 
 @immutable
 final class PostSetupIntentsIntentRequestPaymentMethodOptionsPaytoMandateOptionsAmount {

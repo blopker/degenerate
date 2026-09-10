@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions2.dart';import 'repository_ruleset_links.dart';/// The target of the ruleset
 @immutable final class RepositoryRulesetTarget {const RepositoryRulesetTarget._(this.value);
 
-factory RepositoryRulesetTarget.fromJson(String json) { return switch (json) {
+factory RepositoryRulesetTarget.fromJson(String json) {return switch (json) {
   'branch' => branch,
   'tag' => tag,
   'push' => push,
   'repository' => repository,
   _ => RepositoryRulesetTarget._(json),
-}; }
+};}
 
 static const RepositoryRulesetTarget branch = RepositoryRulesetTarget._('branch');
 
@@ -23,23 +23,23 @@ static const List<RepositoryRulesetTarget> values = [branch, tag, push, reposito
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetTarget($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRulesetTarget && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRulesetTarget($value)';}
+}
 /// The type of the source of the ruleset
 @immutable final class RepositoryRulesetSourceType {const RepositoryRulesetSourceType._(this.value);
 
-factory RepositoryRulesetSourceType.fromJson(String json) { return switch (json) {
+factory RepositoryRulesetSourceType.fromJson(String json) {return switch (json) {
   'Repository' => repository,
   'Organization' => organization,
   'Enterprise' => enterprise,
   _ => RepositoryRulesetSourceType._(json),
-}; }
+};}
 
 static const RepositoryRulesetSourceType repository = RepositoryRulesetSourceType._('Repository');
 
@@ -51,25 +51,25 @@ static const List<RepositoryRulesetSourceType> values = [repository, organizatio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetSourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRulesetSourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRulesetSourceType($value)';}
+}
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when
 /// querying the repository-level endpoint.
 @immutable final class RepositoryRulesetCurrentUserCanBypass {const RepositoryRulesetCurrentUserCanBypass._(this.value);
 
-factory RepositoryRulesetCurrentUserCanBypass.fromJson(String json) { return switch (json) {
+factory RepositoryRulesetCurrentUserCanBypass.fromJson(String json) {return switch (json) {
   'always' => always,
   'pull_requests_only' => pullRequestsOnly,
   'never' => never,
   'exempt' => exempt,
   _ => RepositoryRulesetCurrentUserCanBypass._(json),
-}; }
+};}
 
 static const RepositoryRulesetCurrentUserCanBypass always = RepositoryRulesetCurrentUserCanBypass._('always');
 
@@ -83,18 +83,18 @@ static const List<RepositoryRulesetCurrentUserCanBypass> values = [always, pullR
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetCurrentUserCanBypass && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetCurrentUserCanBypass($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRulesetCurrentUserCanBypass && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRulesetCurrentUserCanBypass($value)';}
+}
 /// A set of rules to apply when specified conditions are met.
 @immutable final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, required this.source, required this.enforcement, this.target, this.sourceType, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions = const Omittable.absent(), this.rules, this.createdAt, this.updatedAt, });
 
-factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return RepositoryRuleset(
+factory RepositoryRuleset.fromJson(Map<String, dynamic> json) {return RepositoryRuleset(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   target: json['target'] != null ? RepositoryRulesetTarget.fromJson(json['target'] as String) : null,
@@ -109,7 +109,7 @@ factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return Repositor
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The ID of the ruleset
 final int id;
@@ -148,7 +148,7 @@ final DateTime? createdAt;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (target != null) 'target': target?.toJson(),
@@ -163,12 +163,12 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
-      json.containsKey('enforcement'); } 
-RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetCurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, Omittable<RepositoryRulesetConditions2?>? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return RepositoryRuleset(
+      json.containsKey('enforcement');}
+RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetCurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, Omittable<RepositoryRulesetConditions2?>? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) {return RepositoryRuleset(
   id: id ?? this.id,
   name: name ?? this.name,
   target: target != null ? target() : this.target,
@@ -183,8 +183,8 @@ RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget? Func
   rules: rules != null ? rules() : this.rules,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRuleset &&
           id == other.id &&
           name == other.name &&
@@ -199,7 +199,7 @@ RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget? Func
           conditions == other.conditions &&
           listEquals(rules, other.rules) &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, target, sourceType, source, enforcement, Object.hashAll(bypassActors ?? const []), currentUserCanBypass, nodeId, links, conditions, Object.hashAll(rules ?? const []), createdAt, updatedAt); } 
-@override String toString() { return 'RepositoryRuleset(id: $id, name: $name, target: $target, sourceType: $sourceType, source: $source, enforcement: $enforcement, bypassActors: $bypassActors, currentUserCanBypass: $currentUserCanBypass, nodeId: $nodeId, links: $links, conditions: $conditions, rules: $rules, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(id, name, target, sourceType, source, enforcement, Object.hashAll(bypassActors ?? const []), currentUserCanBypass, nodeId, links, conditions, Object.hashAll(rules ?? const []), createdAt, updatedAt);}
+@override String toString() {return 'RepositoryRuleset(id: $id, name: $name, target: $target, sourceType: $sourceType, source: $source, enforcement: $enforcement, bypassActors: $bypassActors, currentUserCanBypass: $currentUserCanBypass, nodeId: $nodeId, links: $links, conditions: $conditions, rules: $rules, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

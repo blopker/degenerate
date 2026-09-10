@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingMetersRequestDefaultAggregationFormula {const PostBillingMetersRequestDefaultAggregationFormula._(this.value);
 
-factory PostBillingMetersRequestDefaultAggregationFormula.fromJson(String json) { return switch (json) {
+factory PostBillingMetersRequestDefaultAggregationFormula.fromJson(String json) {return switch (json) {
   'count' => count,
   'last' => last,
   'sum' => sum,
   _ => PostBillingMetersRequestDefaultAggregationFormula._(json),
-}; }
+};}
 
 static const PostBillingMetersRequestDefaultAggregationFormula count = PostBillingMetersRequestDefaultAggregationFormula._('count');
 
@@ -19,33 +19,33 @@ static const List<PostBillingMetersRequestDefaultAggregationFormula> values = [c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingMetersRequestDefaultAggregationFormula && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingMetersRequestDefaultAggregationFormula($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingMetersRequestDefaultAggregationFormula && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingMetersRequestDefaultAggregationFormula($value)';}
+}
 /// The default settings to aggregate a meter's events with.
 @immutable final class PostBillingMetersRequestDefaultAggregation {const PostBillingMetersRequestDefaultAggregation({required this.formula});
 
-factory PostBillingMetersRequestDefaultAggregation.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequestDefaultAggregation(
+factory PostBillingMetersRequestDefaultAggregation.fromJson(Map<String, dynamic> json) {return PostBillingMetersRequestDefaultAggregation(
   formula: PostBillingMetersRequestDefaultAggregationFormula.fromJson(json['formula'] as String),
-); }
+);}
 
 final PostBillingMetersRequestDefaultAggregationFormula formula;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'formula': formula.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('formula'); } 
-PostBillingMetersRequestDefaultAggregation copyWith({PostBillingMetersRequestDefaultAggregationFormula? formula}) { return PostBillingMetersRequestDefaultAggregation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('formula');}
+PostBillingMetersRequestDefaultAggregation copyWith({PostBillingMetersRequestDefaultAggregationFormula? formula}) {return PostBillingMetersRequestDefaultAggregation(
   formula: formula ?? this.formula,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingMetersRequestDefaultAggregation &&
-          formula == other.formula; } 
-@override int get hashCode { return formula.hashCode; } 
-@override String toString() { return 'PostBillingMetersRequestDefaultAggregation(formula: $formula)'; } 
- }
+          formula == other.formula;}
+@override int get hashCode {return formula.hashCode;}
+@override String toString() {return 'PostBillingMetersRequestDefaultAggregation(formula: $formula)';}
+}

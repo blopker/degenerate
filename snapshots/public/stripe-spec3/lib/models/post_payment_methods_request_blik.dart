@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `blik` PaymentMethod, this hash contains details about the BLIK payment method.
 @immutable final class PostPaymentMethodsRequestBlik {const PostPaymentMethodsRequestBlik();
 
-factory PostPaymentMethodsRequestBlik.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestBlik(); }
+factory PostPaymentMethodsRequestBlik.fromJson(Map<String, dynamic> _) {return const PostPaymentMethodsRequestBlik();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestBlik copyWith() { return const PostPaymentMethodsRequestBlik(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentMethodsRequestBlik copyWith() {return const PostPaymentMethodsRequestBlik(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestBlik; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestBlik()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostPaymentMethodsRequestBlik;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostPaymentMethodsRequestBlik()';}
+}

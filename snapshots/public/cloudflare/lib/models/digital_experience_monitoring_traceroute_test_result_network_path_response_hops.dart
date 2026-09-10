@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_result_network_path_response_hops_location.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile._(this.value);
 
-factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile.fromJson(String json) { return switch (json) {
+factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile.fromJson(String json) {return switch (json) {
   'client-to-app' => clientToApp,
   'client-to-cf-egress' => clientToCfEgress,
   'client-to-cf-ingress' => clientToCfIngress,
   'client-to-isp' => clientToIsp,
   _ => DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile._(json),
-}; }
+};}
 
 static const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile clientToApp = DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile._('client-to-app');
 
@@ -22,17 +22,17 @@ static const List<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile($value)';}
+}
 @immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops({required this.ttl, this.asn = const Omittable.absent(), this.aso = const Omittable.absent(), this.ipAddress = const Omittable.absent(), this.location = const Omittable.absent(), this.mile = const Omittable.absent(), this.name = const Omittable.absent(), this.packetLossPct = const Omittable.absent(), this.rttMs = const Omittable.absent(), });
 
-factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops(
+factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops(
   asn: json.containsKey('asn') ? Omittable(json['asn'] != null ? (json['asn'] as num).toInt() : null) : const Omittable.absent(),
   aso: json.containsKey('aso') ? Omittable(json['aso'] as String?) : const Omittable.absent(),
   ipAddress: json.containsKey('ipAddress') ? Omittable(json['ipAddress'] as String?) : const Omittable.absent(),
@@ -42,7 +42,7 @@ factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops.f
   packetLossPct: json.containsKey('packetLossPct') ? Omittable(json['packetLossPct'] != null ? (json['packetLossPct'] as num).toDouble() : null) : const Omittable.absent(),
   rttMs: json.containsKey('rttMs') ? Omittable(json['rttMs'] != null ? (json['rttMs'] as num).toInt() : null) : const Omittable.absent(),
   ttl: (json['ttl'] as num).toInt(),
-); }
+);}
 
 final Omittable<int?> asn;
 
@@ -62,7 +62,7 @@ final Omittable<int?> rttMs;
 
 final int ttl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (asn.isPresent) 'asn': asn.value,
   if (aso.isPresent) 'aso': aso.value,
   if (ipAddress.isPresent) 'ipAddress': ipAddress.value,
@@ -72,9 +72,9 @@ Map<String, dynamic> toJson() { return {
   if (packetLossPct.isPresent) 'packetLossPct': packetLossPct.value,
   if (rttMs.isPresent) 'rttMs': rttMs.value,
   'ttl': ttl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ttl') && json['ttl'] is num; } 
-DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops copyWith({Omittable<int?>? asn, Omittable<String?>? aso, Omittable<String?>? ipAddress, Omittable<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation?>? location, Omittable<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile?>? mile, Omittable<String?>? name, Omittable<double?>? packetLossPct, Omittable<int?>? rttMs, int? ttl, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ttl') && json['ttl'] is num;}
+DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops copyWith({Omittable<int?>? asn, Omittable<String?>? aso, Omittable<String?>? ipAddress, Omittable<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation?>? location, Omittable<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsMile?>? mile, Omittable<String?>? name, Omittable<double?>? packetLossPct, Omittable<int?>? rttMs, int? ttl, }) {return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops(
   asn: asn ?? this.asn,
   aso: aso ?? this.aso,
   ipAddress: ipAddress ?? this.ipAddress,
@@ -84,8 +84,8 @@ DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops copyWith(
   packetLossPct: packetLossPct ?? this.packetLossPct,
   rttMs: rttMs ?? this.rttMs,
   ttl: ttl ?? this.ttl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops &&
           asn == other.asn &&
           aso == other.aso &&
@@ -95,7 +95,7 @@ DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops copyWith(
           name == other.name &&
           packetLossPct == other.packetLossPct &&
           rttMs == other.rttMs &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(asn, aso, ipAddress, location, mile, name, packetLossPct, rttMs, ttl); } 
-@override String toString() { return 'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops(asn: $asn, aso: $aso, ipAddress: $ipAddress, location: $location, mile: $mile, name: $name, packetLossPct: $packetLossPct, rttMs: $rttMs, ttl: $ttl)'; } 
- }
+          ttl == other.ttl;}
+@override int get hashCode {return Object.hash(asn, aso, ipAddress, location, mile, name, packetLossPct, rttMs, ttl);}
+@override String toString() {return 'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops(asn: $asn, aso: $aso, ipAddress: $ipAddress, location: $location, mile: $mile, name: $name, packetLossPct: $packetLossPct, rttMs: $rttMs, ttl: $ttl)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto({required this.taxId});
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto(
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto.fromJson(Map<String, dynamic> json) {return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto(
   taxId: json['tax_id'] as String,
-); }
+);}
 
 final String taxId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tax_id': taxId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_id') && json['tax_id'] is String; } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto copyWith({String? taxId}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tax_id') && json['tax_id'] is String;}
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto copyWith({String? taxId}) {return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto(
   taxId: taxId ?? this.taxId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto &&
-          taxId == other.taxId; } 
-@override int get hashCode { return taxId.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto(taxId: $taxId)'; } 
- }
+          taxId == other.taxId;}
+@override int get hashCode {return taxId.hashCode;}
+@override String toString() {return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataBoleto(taxId: $taxId)';}
+}

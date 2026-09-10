@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A header from th
 /// 
 @immutable final class WebhookRealtimeCallIncomingDataSipHeaders {const WebhookRealtimeCallIncomingDataSipHeaders({required this.name, required this.value, });
 
-factory WebhookRealtimeCallIncomingDataSipHeaders.fromJson(Map<String, dynamic> json) { return WebhookRealtimeCallIncomingDataSipHeaders(
+factory WebhookRealtimeCallIncomingDataSipHeaders.fromJson(Map<String, dynamic> json) {return WebhookRealtimeCallIncomingDataSipHeaders(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// Name of the SIP Header.
 /// 
@@ -17,20 +17,20 @@ final String name;
 /// 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-WebhookRealtimeCallIncomingDataSipHeaders copyWith({String? name, String? value, }) { return WebhookRealtimeCallIncomingDataSipHeaders(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+WebhookRealtimeCallIncomingDataSipHeaders copyWith({String? name, String? value, }) {return WebhookRealtimeCallIncomingDataSipHeaders(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRealtimeCallIncomingDataSipHeaders &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'WebhookRealtimeCallIncomingDataSipHeaders(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'WebhookRealtimeCallIncomingDataSipHeaders(name: $name, value: $value)';}
+}

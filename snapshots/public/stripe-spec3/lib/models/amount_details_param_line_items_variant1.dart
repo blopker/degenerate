@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param_line_items_variant1_payment_method_options.dart';import 'amount_details_param_line_items_variant1_tax.dart';@immutable final class AmountDetailsParamLineItemsVariant1 {const AmountDetailsParamLineItemsVariant1({required this.productName, required this.quantity, required this.unitCost, this.discountAmount, this.paymentMethodOptions, this.productCode, this.tax, this.unitOfMeasure, });
 
-factory AmountDetailsParamLineItemsVariant1.fromJson(Map<String, dynamic> json) { return AmountDetailsParamLineItemsVariant1(
+factory AmountDetailsParamLineItemsVariant1.fromJson(Map<String, dynamic> json) {return AmountDetailsParamLineItemsVariant1(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
   paymentMethodOptions: json['payment_method_options'] != null ? AmountDetailsParamLineItemsVariant1PaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   productCode: json['product_code'] as String?,
@@ -11,7 +11,7 @@ factory AmountDetailsParamLineItemsVariant1.fromJson(Map<String, dynamic> json) 
   tax: json['tax'] != null ? AmountDetailsParamLineItemsVariant1Tax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   unitCost: (json['unit_cost'] as num).toInt(),
   unitOfMeasure: json['unit_of_measure'] as String?,
-); }
+);}
 
 final int? discountAmount;
 
@@ -29,7 +29,7 @@ final int unitCost;
 
 final String? unitOfMeasure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'discount_amount': ?discountAmount,
   if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
   'product_code': ?productCode,
@@ -38,11 +38,11 @@ Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
   'unit_cost': unitCost,
   'unit_of_measure': ?unitOfMeasure,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('product_name') && json['product_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('product_name') && json['product_name'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
-      json.containsKey('unit_cost') && json['unit_cost'] is num; } 
-AmountDetailsParamLineItemsVariant1 copyWith({int? Function()? discountAmount, AmountDetailsParamLineItemsVariant1PaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, AmountDetailsParamLineItemsVariant1Tax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) { return AmountDetailsParamLineItemsVariant1(
+      json.containsKey('unit_cost') && json['unit_cost'] is num;}
+AmountDetailsParamLineItemsVariant1 copyWith({int? Function()? discountAmount, AmountDetailsParamLineItemsVariant1PaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, AmountDetailsParamLineItemsVariant1Tax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) {return AmountDetailsParamLineItemsVariant1(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   productCode: productCode != null ? productCode() : this.productCode,
@@ -51,8 +51,8 @@ AmountDetailsParamLineItemsVariant1 copyWith({int? Function()? discountAmount, A
   tax: tax != null ? tax() : this.tax,
   unitCost: unitCost ?? this.unitCost,
   unitOfMeasure: unitOfMeasure != null ? unitOfMeasure() : this.unitOfMeasure,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AmountDetailsParamLineItemsVariant1 &&
           discountAmount == other.discountAmount &&
           paymentMethodOptions == other.paymentMethodOptions &&
@@ -61,7 +61,7 @@ AmountDetailsParamLineItemsVariant1 copyWith({int? Function()? discountAmount, A
           quantity == other.quantity &&
           tax == other.tax &&
           unitCost == other.unitCost &&
-          unitOfMeasure == other.unitOfMeasure; } 
-@override int get hashCode { return Object.hash(discountAmount, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure); } 
-@override String toString() { return 'AmountDetailsParamLineItemsVariant1(discountAmount: $discountAmount, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)'; } 
- }
+          unitOfMeasure == other.unitOfMeasure;}
+@override int get hashCode {return Object.hash(discountAmount, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure);}
+@override String toString() {return 'AmountDetailsParamLineItemsVariant1(discountAmount: $discountAmount, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)';}
+}

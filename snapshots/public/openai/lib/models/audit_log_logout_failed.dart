@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class AuditLogLogoutFailed {const AuditLogLogoutFailed({this.errorCode, this.errorMessage, });
 
-factory AuditLogLogoutFailed.fromJson(Map<String, dynamic> json) { return AuditLogLogoutFailed(
+factory AuditLogLogoutFailed.fromJson(Map<String, dynamic> json) {return AuditLogLogoutFailed(
   errorCode: json['error_code'] as String?,
   errorMessage: json['error_message'] as String?,
-); }
+);}
 
 /// The error code of the failure.
 final String? errorCode;
@@ -14,19 +14,19 @@ final String? errorCode;
 /// The error message of the failure.
 final String? errorMessage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error_code': ?errorCode,
   'error_message': ?errorMessage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'error_code', 'error_message'}.contains(key)); } 
-AuditLogLogoutFailed copyWith({String? Function()? errorCode, String? Function()? errorMessage, }) { return AuditLogLogoutFailed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'error_code', 'error_message'}.contains(key));}
+AuditLogLogoutFailed copyWith({String? Function()? errorCode, String? Function()? errorMessage, }) {return AuditLogLogoutFailed(
   errorCode: errorCode != null ? errorCode() : this.errorCode,
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogLogoutFailed &&
           errorCode == other.errorCode &&
-          errorMessage == other.errorMessage; } 
-@override int get hashCode { return Object.hash(errorCode, errorMessage); } 
-@override String toString() { return 'AuditLogLogoutFailed(errorCode: $errorCode, errorMessage: $errorMessage)'; } 
- }
+          errorMessage == other.errorMessage;}
+@override int get hashCode {return Object.hash(errorCode, errorMessage);}
+@override String toString() {return 'AuditLogLogoutFailed(errorCode: $errorCode, errorMessage: $errorMessage)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_credit_types.dart';@immutable final class RepositoryAdvisoryCreateCredits {const RepositoryAdvisoryCreateCredits({required this.login, required this.type, });
 
-factory RepositoryAdvisoryCreateCredits.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreateCredits(
+factory RepositoryAdvisoryCreateCredits.fromJson(Map<String, dynamic> json) {return RepositoryAdvisoryCreateCredits(
   login: json['login'] as String,
   type: SecurityAdvisoryCreditTypes.fromJson(json['type'] as String),
-); }
+);}
 
 /// The username of the user credited.
 final String login;
@@ -13,20 +13,20 @@ final String login;
 /// The type of credit the user is receiving.
 final SecurityAdvisoryCreditTypes type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
-      json.containsKey('type'); } 
-RepositoryAdvisoryCreateCredits copyWith({String? login, SecurityAdvisoryCreditTypes? type, }) { return RepositoryAdvisoryCreateCredits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
+      json.containsKey('type');}
+RepositoryAdvisoryCreateCredits copyWith({String? login, SecurityAdvisoryCreditTypes? type, }) {return RepositoryAdvisoryCreateCredits(
   login: login ?? this.login,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryAdvisoryCreateCredits &&
           login == other.login &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(login, type); } 
-@override String toString() { return 'RepositoryAdvisoryCreateCredits(login: $login, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(login, type);}
+@override String toString() {return 'RepositoryAdvisoryCreateCredits(login: $login, type: $type)';}
+}

@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_chat_
 /// 
 @immutable final class WebSearchContextSize {const WebSearchContextSize._(this.value);
 
-factory WebSearchContextSize.fromJson(String json) { return switch (json) {
+factory WebSearchContextSize.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => WebSearchContextSize._(json),
-}; }
+};}
 
 static const WebSearchContextSize low = WebSearchContextSize._('low');
 
@@ -22,23 +22,23 @@ static const List<WebSearchContextSize> values = [low, medium, high];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchContextSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebSearchContextSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebSearchContextSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebSearchContextSize($value)';}
+}
 /// This tool searches the web for relevant results to use in a response.
 /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
 /// 
 @immutable final class CreateChatCompletionRequestWebSearchOptions {const CreateChatCompletionRequestWebSearchOptions({this.userLocation = const Omittable.absent(), this.searchContextSize, });
 
-factory CreateChatCompletionRequestWebSearchOptions.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestWebSearchOptions(
+factory CreateChatCompletionRequestWebSearchOptions.fromJson(Map<String, dynamic> json) {return CreateChatCompletionRequestWebSearchOptions(
   userLocation: json.containsKey('user_location') ? Omittable(json['user_location'] != null ? CreateChatCompletionRequestWebSearchOptionsUserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   searchContextSize: json['search_context_size'] != null ? WebSearchContextSize.fromJson(json['search_context_size'] as String) : null,
-); }
+);}
 
 /// Approximate location parameters for the search.
 /// 
@@ -46,19 +46,19 @@ final Omittable<CreateChatCompletionRequestWebSearchOptionsUserLocation?> userLo
 
 final WebSearchContextSize? searchContextSize;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (userLocation.isPresent) 'user_location': userLocation.value?.toJson(),
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_location', 'search_context_size'}.contains(key)); } 
-CreateChatCompletionRequestWebSearchOptions copyWith({Omittable<CreateChatCompletionRequestWebSearchOptionsUserLocation?>? userLocation, WebSearchContextSize? Function()? searchContextSize, }) { return CreateChatCompletionRequestWebSearchOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'user_location', 'search_context_size'}.contains(key));}
+CreateChatCompletionRequestWebSearchOptions copyWith({Omittable<CreateChatCompletionRequestWebSearchOptionsUserLocation?>? userLocation, WebSearchContextSize? Function()? searchContextSize, }) {return CreateChatCompletionRequestWebSearchOptions(
   userLocation: userLocation ?? this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateChatCompletionRequestWebSearchOptions &&
           userLocation == other.userLocation &&
-          searchContextSize == other.searchContextSize; } 
-@override int get hashCode { return Object.hash(userLocation, searchContextSize); } 
-@override String toString() { return 'CreateChatCompletionRequestWebSearchOptions(userLocation: $userLocation, searchContextSize: $searchContextSize)'; } 
- }
+          searchContextSize == other.searchContextSize;}
+@override int get hashCode {return Object.hash(userLocation, searchContextSize);}
+@override String toString() {return 'CreateChatCompletionRequestWebSearchOptions(userLocation: $userLocation, searchContextSize: $searchContextSize)';}
+}

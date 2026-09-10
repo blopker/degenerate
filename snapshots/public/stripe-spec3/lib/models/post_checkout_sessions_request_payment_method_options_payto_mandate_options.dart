@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_amount.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_end_date.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_payments_per_period.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options_start_date.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'fixed' => fixed,
   'maximum' => maximum,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType $empty = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType._('');
 
@@ -19,17 +19,17 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOpt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(String json) {return switch (json) {
   '' => $empty,
   'adhoc' => adhoc,
   'annual' => annual,
@@ -40,7 +40,7 @@ factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymen
   'semi_annual' => semiAnnual,
   'weekly' => weekly,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule $empty = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule._('');
 
@@ -64,17 +64,17 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOpt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(String json) {return switch (json) {
   '' => $empty,
   'dependant_support' => dependantSupport,
   'government' => government,
@@ -88,7 +88,7 @@ factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpos
   'tax' => tax,
   'utility' => utility,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose $empty = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose._('');
 
@@ -118,17 +118,17 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOpt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(
   amount: json['amount'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(json['amount']) : null,
   amountType: json['amount_type'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
   endDate: json['end_date'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate.fromJson(json['end_date']) : null,
@@ -136,7 +136,7 @@ factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJ
   paymentsPerPeriod: json['payments_per_period'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period']) : null,
   purpose: json['purpose'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
   startDate: json['start_date'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate.fromJson(json['start_date']) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmount? amount;
 
@@ -152,7 +152,7 @@ final PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose?
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate? startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount != null) 'amount': amount?.toJson(),
   if (amountType != null) 'amount_type': amountType?.toJson(),
   if (endDate != null) 'end_date': endDate?.toJson(),
@@ -160,9 +160,9 @@ Map<String, dynamic> toJson() { return {
   if (paymentsPerPeriod != null) 'payments_per_period': paymentsPerPeriod?.toJson(),
   if (purpose != null) 'purpose': purpose?.toJson(),
   if (startDate != null) 'start_date': startDate?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmount? Function()? amount, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType? Function()? amountType, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate? Function()? endDate, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule? Function()? paymentSchedule, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod? Function()? paymentsPerPeriod, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose? Function()? purpose, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate? Function()? startDate, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmount? Function()? amount, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType? Function()? amountType, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate? Function()? endDate, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule? Function()? paymentSchedule, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod? Function()? paymentsPerPeriod, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose? Function()? purpose, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate? Function()? startDate, }) {return PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,
   endDate: endDate != null ? endDate() : this.endDate,
@@ -170,8 +170,8 @@ PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions copyWith({Pos
   paymentsPerPeriod: paymentsPerPeriod != null ? paymentsPerPeriod() : this.paymentsPerPeriod,
   purpose: purpose != null ? purpose() : this.purpose,
   startDate: startDate != null ? startDate() : this.startDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
@@ -179,7 +179,7 @@ PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions copyWith({Pos
           paymentSchedule == other.paymentSchedule &&
           paymentsPerPeriod == other.paymentsPerPeriod &&
           purpose == other.purpose &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)'; } 
- }
+          startDate == other.startDate;}
+@override int get hashCode {return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
 @immutable final class ReposCreateRepoRulesetRequestTarget {const ReposCreateRepoRulesetRequestTarget._(this.value);
 
-factory ReposCreateRepoRulesetRequestTarget.fromJson(String json) { return switch (json) {
+factory ReposCreateRepoRulesetRequestTarget.fromJson(String json) {return switch (json) {
   'branch' => branch,
   'tag' => tag,
   'push' => push,
   _ => ReposCreateRepoRulesetRequestTarget._(json),
-}; }
+};}
 
 static const ReposCreateRepoRulesetRequestTarget branch = ReposCreateRepoRulesetRequestTarget._('branch');
 
@@ -20,24 +20,24 @@ static const List<ReposCreateRepoRulesetRequestTarget> values = [branch, tag, pu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateRepoRulesetRequestTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateRepoRulesetRequestTarget($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateRepoRulesetRequestTarget && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateRepoRulesetRequestTarget($value)';}
+}
 @immutable final class ReposCreateRepoRulesetRequest {const ReposCreateRepoRulesetRequest({required this.name, required this.enforcement, this.target, this.bypassActors, this.conditions, this.rules, });
 
-factory ReposCreateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposCreateRepoRulesetRequest(
+factory ReposCreateRepoRulesetRequest.fromJson(Map<String, dynamic> json) {return ReposCreateRepoRulesetRequest(
   name: json['name'] as String,
   target: json['target'] != null ? ReposCreateRepoRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The name of the ruleset.
 final String name;
@@ -57,33 +57,33 @@ final RepositoryRulesetConditions? conditions;
 final List<RepositoryRule>? rules;
 
 /// The value with the schema default applied when absent.
-ReposCreateRepoRulesetRequestTarget get targetOrDefault { return target ?? ReposCreateRepoRulesetRequestTarget.fromJson('branch'); } 
-Map<String, dynamic> toJson() { return {
+ReposCreateRepoRulesetRequestTarget get targetOrDefault {return target ?? ReposCreateRepoRulesetRequestTarget.fromJson('branch');}
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (target != null) 'target': target?.toJson(),
   'enforcement': enforcement.toJson(),
   if (bypassActors != null) 'bypass_actors': bypassActors?.map((e) => e.toJson()).toList(),
   if (conditions != null) 'conditions': conditions?.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('enforcement'); } 
-ReposCreateRepoRulesetRequest copyWith({String? name, ReposCreateRepoRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetConditions? Function()? conditions, List<RepositoryRule>? Function()? rules, }) { return ReposCreateRepoRulesetRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('enforcement');}
+ReposCreateRepoRulesetRequest copyWith({String? name, ReposCreateRepoRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetConditions? Function()? conditions, List<RepositoryRule>? Function()? rules, }) {return ReposCreateRepoRulesetRequest(
   name: name ?? this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement ?? this.enforcement,
   bypassActors: bypassActors != null ? bypassActors() : this.bypassActors,
   conditions: conditions != null ? conditions() : this.conditions,
   rules: rules != null ? rules() : this.rules,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateRepoRulesetRequest &&
           name == other.name &&
           target == other.target &&
           enforcement == other.enforcement &&
           listEquals(bypassActors, other.bypassActors) &&
           conditions == other.conditions &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(name, target, enforcement, Object.hashAll(bypassActors ?? const []), conditions, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'ReposCreateRepoRulesetRequest(name: $name, target: $target, enforcement: $enforcement, bypassActors: $bypassActors, conditions: $conditions, rules: $rules)'; } 
- }
+          listEquals(rules, other.rules);}
+@override int get hashCode {return Object.hash(name, target, enforcement, Object.hashAll(bypassActors ?? const []), conditions, Object.hashAll(rules ?? const []));}
+@override String toString() {return 'ReposCreateRepoRulesetRequest(name: $name, target: $target, enforcement: $enforcement, bypassActors: $bypassActors, conditions: $conditions, rules: $rules)';}
+}

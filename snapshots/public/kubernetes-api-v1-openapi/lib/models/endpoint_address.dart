@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_reference.dart';/// EndpointAddress is a tuple that describes single IP address. Deprecated: This API is deprecated in v1.33+.
 @immutable final class EndpointAddress {const EndpointAddress({required this.ip, this.hostname, this.nodeName, this.targetRef, });
 
-factory EndpointAddress.fromJson(Map<String, dynamic> json) { return EndpointAddress(
+factory EndpointAddress.fromJson(Map<String, dynamic> json) {return EndpointAddress(
   hostname: json['hostname'] as String?,
   ip: json['ip'] as String,
   nodeName: json['nodeName'] as String?,
   targetRef: json['targetRef'] != null ? ObjectReference.fromJson(json['targetRef'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The Hostname of this endpoint
 final String? hostname;
@@ -22,25 +22,25 @@ final String? nodeName;
 /// Reference to object providing the endpoint.
 final ObjectReference? targetRef;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostname': ?hostname,
   'ip': ip,
   'nodeName': ?nodeName,
   if (targetRef != null) 'targetRef': targetRef?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-EndpointAddress copyWith({String? Function()? hostname, String? ip, String? Function()? nodeName, ObjectReference? Function()? targetRef, }) { return EndpointAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip') && json['ip'] is String;}
+EndpointAddress copyWith({String? Function()? hostname, String? ip, String? Function()? nodeName, ObjectReference? Function()? targetRef, }) {return EndpointAddress(
   hostname: hostname != null ? hostname() : this.hostname,
   ip: ip ?? this.ip,
   nodeName: nodeName != null ? nodeName() : this.nodeName,
   targetRef: targetRef != null ? targetRef() : this.targetRef,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EndpointAddress &&
           hostname == other.hostname &&
           ip == other.ip &&
           nodeName == other.nodeName &&
-          targetRef == other.targetRef; } 
-@override int get hashCode { return Object.hash(hostname, ip, nodeName, targetRef); } 
-@override String toString() { return 'EndpointAddress(hostname: $hostname, ip: $ip, nodeName: $nodeName, targetRef: $targetRef)'; } 
- }
+          targetRef == other.targetRef;}
+@override int get hashCode {return Object.hash(hostname, ip, nodeName, targetRef);}
+@override String toString() {return 'EndpointAddress(hostname: $hostname, ip: $ip, nodeName: $nodeName, targetRef: $targetRef)';}
+}

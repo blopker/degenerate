@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ValidateSqlResponseResultTablesValue {const ValidateSqlResponseResultTablesValue({required this.id, required this.name, required this.type, required this.version, });
 
-factory ValidateSqlResponseResultTablesValue.fromJson(Map<String, dynamic> json) { return ValidateSqlResponseResultTablesValue(
+factory ValidateSqlResponseResultTablesValue.fromJson(Map<String, dynamic> json) {return ValidateSqlResponseResultTablesValue(
   id: json['id'] as String,
   name: json['name'] as String,
   type: json['type'] as String,
   version: (json['version'] as num).toDouble(),
-); }
+);}
 
 final String id;
 
@@ -17,28 +17,28 @@ final String type;
 
 final double version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'type': type,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('version') && json['version'] is num; } 
-ValidateSqlResponseResultTablesValue copyWith({String? id, String? name, String? type, double? version, }) { return ValidateSqlResponseResultTablesValue(
+      json.containsKey('version') && json['version'] is num;}
+ValidateSqlResponseResultTablesValue copyWith({String? id, String? name, String? type, double? version, }) {return ValidateSqlResponseResultTablesValue(
   id: id ?? this.id,
   name: name ?? this.name,
   type: type ?? this.type,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ValidateSqlResponseResultTablesValue &&
           id == other.id &&
           name == other.name &&
           type == other.type &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(id, name, type, version); } 
-@override String toString() { return 'ValidateSqlResponseResultTablesValue(id: $id, name: $name, type: $type, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(id, name, type, version);}
+@override String toString() {return 'ValidateSqlResponseResultTablesValue(id: $id, name: $name, type: $type, version: $version)';}
+}

@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issues_demilestoned_issue_assignee.dart';import 'webhook_issues_demilestoned_issue_assignees.dart';import 'webhook_issues_demilestoned_issue_labels.dart';import 'webhook_issues_demilestoned_issue_milestone.dart';import 'webhook_issues_demilestoned_issue_performed_via_github_app.dart';import 'webhook_issues_demilestoned_issue_pull_request.dart';import 'webhook_issues_demilestoned_issue_reactions.dart';import 'webhook_issues_demilestoned_issue_user.dart';@immutable final class WebhookIssuesDemilestonedIssueActiveLockReason {const WebhookIssuesDemilestonedIssueActiveLockReason._(this.value);
 
-factory WebhookIssuesDemilestonedIssueActiveLockReason.fromJson(String json) { return switch (json) {
+factory WebhookIssuesDemilestonedIssueActiveLockReason.fromJson(String json) {return switch (json) {
   'resolved' => resolved,
   'off-topic' => offTopic,
   'too heated' => tooHeated,
   'spam' => spam,
   'null' => $null,
   _ => WebhookIssuesDemilestonedIssueActiveLockReason._(json),
-}; }
+};}
 
 static const WebhookIssuesDemilestonedIssueActiveLockReason resolved = WebhookIssuesDemilestonedIssueActiveLockReason._('resolved');
 
@@ -25,18 +25,18 @@ static const List<WebhookIssuesDemilestonedIssueActiveLockReason> values = [reso
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesDemilestonedIssueActiveLockReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesDemilestonedIssueActiveLockReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesDemilestonedIssueActiveLockReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesDemilestonedIssueActiveLockReason($value)';}
+}
 /// How the author is associated with the repository.
 @immutable final class WebhookIssuesDemilestonedIssueAuthorAssociation {const WebhookIssuesDemilestonedIssueAuthorAssociation._(this.value);
 
-factory WebhookIssuesDemilestonedIssueAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhookIssuesDemilestonedIssueAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -46,7 +46,7 @@ factory WebhookIssuesDemilestonedIssueAuthorAssociation.fromJson(String json) { 
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhookIssuesDemilestonedIssueAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhookIssuesDemilestonedIssueAuthorAssociation collaborator = WebhookIssuesDemilestonedIssueAuthorAssociation._('COLLABORATOR');
 
@@ -68,22 +68,22 @@ static const List<WebhookIssuesDemilestonedIssueAuthorAssociation> values = [col
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesDemilestonedIssueAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesDemilestonedIssueAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesDemilestonedIssueAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesDemilestonedIssueAuthorAssociation($value)';}
+}
 /// State of the issue; either 'open' or 'closed'
 @immutable final class WebhookIssuesDemilestonedIssueState {const WebhookIssuesDemilestonedIssueState._(this.value);
 
-factory WebhookIssuesDemilestonedIssueState.fromJson(String json) { return switch (json) {
+factory WebhookIssuesDemilestonedIssueState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => WebhookIssuesDemilestonedIssueState._(json),
-}; }
+};}
 
 static const WebhookIssuesDemilestonedIssueState open = WebhookIssuesDemilestonedIssueState._('open');
 
@@ -93,18 +93,18 @@ static const List<WebhookIssuesDemilestonedIssueState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesDemilestonedIssueState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesDemilestonedIssueState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesDemilestonedIssueState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesDemilestonedIssueState($value)';}
+}
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
 @immutable final class WebhookIssuesDemilestonedIssue {const WebhookIssuesDemilestonedIssue({required this.id, required this.url, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.updatedAt, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.title, required this.labelsUrl, required this.user, required this.milestone, required this.nodeId, required this.number, required this.repositoryUrl, required this.reactions, this.performedViaGithubApp = const Omittable.absent(), this.locked, this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason = const Omittable.absent(), this.timelineUrl, this.labels, this.type = const Omittable.absent(), this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
 
-factory WebhookIssuesDemilestonedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesDemilestonedIssue(
+factory WebhookIssuesDemilestonedIssue.fromJson(Map<String, dynamic> json) {return WebhookIssuesDemilestonedIssue(
   activeLockReason: json['active_lock_reason'] != null ? WebhookIssuesDemilestonedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? WebhookIssuesDemilestonedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : WebhookIssuesDemilestonedIssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
@@ -140,7 +140,7 @@ factory WebhookIssuesDemilestonedIssue.fromJson(Map<String, dynamic> json) { ret
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhookIssuesDemilestonedIssueUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookIssuesDemilestonedIssueActiveLockReason? activeLockReason;
 
@@ -219,7 +219,7 @@ final Uri url;
 
 final WebhookIssuesDemilestonedIssueUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_lock_reason': activeLockReason?.toJson(),
   if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
@@ -255,8 +255,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_lock_reason') &&
       json.containsKey('assignees') &&
       json.containsKey('author_association') &&
       json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
@@ -276,8 +276,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookIssuesDemilestonedIssue copyWith({WebhookIssuesDemilestonedIssueActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesDemilestonedIssueAssignee?>? assignee, List<WebhookIssuesDemilestonedIssueAssignees?>? assignees, WebhookIssuesDemilestonedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesDemilestonedIssueLabels?>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhookIssuesDemilestonedIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesDemilestonedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesDemilestonedIssuePullRequest? Function()? pullRequest, WebhookIssuesDemilestonedIssueReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesDemilestonedIssueState? Function()? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? title, Omittable<IssueType?>? type, DateTime? updatedAt, Uri? url, WebhookIssuesDemilestonedIssueUser? Function()? user, }) { return WebhookIssuesDemilestonedIssue(
+      json.containsKey('user');}
+WebhookIssuesDemilestonedIssue copyWith({WebhookIssuesDemilestonedIssueActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesDemilestonedIssueAssignee?>? assignee, List<WebhookIssuesDemilestonedIssueAssignees?>? assignees, WebhookIssuesDemilestonedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesDemilestonedIssueLabels?>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhookIssuesDemilestonedIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesDemilestonedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesDemilestonedIssuePullRequest? Function()? pullRequest, WebhookIssuesDemilestonedIssueReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesDemilestonedIssueState? Function()? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? title, Omittable<IssueType?>? type, DateTime? updatedAt, Uri? url, WebhookIssuesDemilestonedIssueUser? Function()? user, }) {return WebhookIssuesDemilestonedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee ?? this.assignee,
   assignees: assignees ?? this.assignees,
@@ -313,8 +313,8 @@ WebhookIssuesDemilestonedIssue copyWith({WebhookIssuesDemilestonedIssueActiveLoc
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesDemilestonedIssue &&
           activeLockReason == other.activeLockReason &&
           assignee == other.assignee &&
@@ -350,7 +350,7 @@ WebhookIssuesDemilestonedIssue copyWith({WebhookIssuesDemilestonedIssueActiveLoc
           type == other.type &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels ?? const []), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, pinnedComment, subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, timelineUrl, title, type, updatedAt, url, user]); } 
-@override String toString() { return 'WebhookIssuesDemilestonedIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, pinnedComment: $pinnedComment, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, type: $type, updatedAt: $updatedAt, url: $url, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels ?? const []), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, pinnedComment, subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, timelineUrl, title, type, updatedAt, url, user]);}
+@override String toString() {return 'WebhookIssuesDemilestonedIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, pinnedComment: $pinnedComment, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, type: $type, updatedAt: $updatedAt, url: $url, user: $user)';}
+}

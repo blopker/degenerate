@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsCustomNameserversZoneMetadata {const DnsCustomNameserversZoneMetadata({this.enabled, this.nsSet, });
 
-factory DnsCustomNameserversZoneMetadata.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversZoneMetadata(
+factory DnsCustomNameserversZoneMetadata.fromJson(Map<String, dynamic> json) {return DnsCustomNameserversZoneMetadata(
   enabled: json['enabled'] as bool?,
   nsSet: json['ns_set'] != null ? (json['ns_set'] as num).toDouble() : null,
-); }
+);}
 
 /// Whether zone uses account-level custom nameservers.
 final bool? enabled;
@@ -14,20 +14,20 @@ final bool? enabled;
 final double? nsSet;
 
 /// The value with the schema default applied when absent.
-double get nsSetOrDefault { return nsSet ?? 1.0; } 
-Map<String, dynamic> toJson() { return {
+double get nsSetOrDefault {return nsSet ?? 1.0;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'ns_set': ?nsSet,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'ns_set'}.contains(key)); } 
-DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double? Function()? nsSet, }) { return DnsCustomNameserversZoneMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'ns_set'}.contains(key));}
+DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double? Function()? nsSet, }) {return DnsCustomNameserversZoneMetadata(
   enabled: enabled != null ? enabled() : this.enabled,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsCustomNameserversZoneMetadata &&
           enabled == other.enabled &&
-          nsSet == other.nsSet; } 
-@override int get hashCode { return Object.hash(enabled, nsSet); } 
-@override String toString() { return 'DnsCustomNameserversZoneMetadata(enabled: $enabled, nsSet: $nsSet)'; } 
- }
+          nsSet == other.nsSet;}
+@override int get hashCode {return Object.hash(enabled, nsSet);}
+@override String toString() {return 'DnsCustomNameserversZoneMetadata(enabled: $enabled, nsSet: $nsSet)';}
+}

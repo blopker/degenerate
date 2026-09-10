@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestOffSessionVariant2 {const PostPaymentIntentsRequestOffSessionVariant2._(this.value);
 
-factory PostPaymentIntentsRequestOffSessionVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestOffSessionVariant2.fromJson(String json) {return switch (json) {
   'one_off' => oneOff,
   'recurring' => recurring,
   _ => PostPaymentIntentsRequestOffSessionVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestOffSessionVariant2 oneOff = PostPaymentIntentsRequestOffSessionVariant2._('one_off');
 
@@ -16,14 +16,14 @@ static const List<PostPaymentIntentsRequestOffSessionVariant2> values = [oneOff,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsRequestOffSessionVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestOffSessionVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsRequestOffSessionVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestOffSessionVariant2($value)';}
+}
 /// Set to `true` to indicate that the customer isn't in your checkout flow during this payment attempt and can't authenticate. Use this parameter in scenarios where you collect card details and [charge them later](https://docs.stripe.com/payments/cards/charging-saved-cards). This parameter can only be used with [`confirm=true`](https://docs.stripe.com/api/payment_intents/create#create_payment_intent-confirm).
 @immutable
 final class PostPaymentIntentsRequestOffSession {

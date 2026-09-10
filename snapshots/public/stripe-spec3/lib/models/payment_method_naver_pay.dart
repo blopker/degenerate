@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to fund this transaction with Naver Pay points or a card.
 @immutable final class PaymentMethodNaverPayFunding {const PaymentMethodNaverPayFunding._(this.value);
 
-factory PaymentMethodNaverPayFunding.fromJson(String json) { return switch (json) {
+factory PaymentMethodNaverPayFunding.fromJson(String json) {return switch (json) {
   'card' => card,
   'points' => points,
   _ => PaymentMethodNaverPayFunding._(json),
-}; }
+};}
 
 static const PaymentMethodNaverPayFunding card = PaymentMethodNaverPayFunding._('card');
 
@@ -17,21 +17,21 @@ static const List<PaymentMethodNaverPayFunding> values = [card, points];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodNaverPayFunding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodNaverPayFunding($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodNaverPayFunding && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodNaverPayFunding($value)';}
+}
 /// 
 @immutable final class PaymentMethodNaverPay {const PaymentMethodNaverPay({required this.funding, this.buyerId = const Omittable.absent(), });
 
-factory PaymentMethodNaverPay.fromJson(Map<String, dynamic> json) { return PaymentMethodNaverPay(
+factory PaymentMethodNaverPay.fromJson(Map<String, dynamic> json) {return PaymentMethodNaverPay(
   buyerId: json.containsKey('buyer_id') ? Omittable(json['buyer_id'] as String?) : const Omittable.absent(),
   funding: PaymentMethodNaverPayFunding.fromJson(json['funding'] as String),
-); }
+);}
 
 /// Uniquely identifies this particular Naver Pay account. You can use this attribute to check whether two Naver Pay accounts are the same.
 final Omittable<String?> buyerId;
@@ -39,19 +39,19 @@ final Omittable<String?> buyerId;
 /// Whether to fund this transaction with Naver Pay points or a card.
 final PaymentMethodNaverPayFunding funding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buyerId.isPresent) 'buyer_id': buyerId.value,
   'funding': funding.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('funding'); } 
-PaymentMethodNaverPay copyWith({Omittable<String?>? buyerId, PaymentMethodNaverPayFunding? funding, }) { return PaymentMethodNaverPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('funding');}
+PaymentMethodNaverPay copyWith({Omittable<String?>? buyerId, PaymentMethodNaverPayFunding? funding, }) {return PaymentMethodNaverPay(
   buyerId: buyerId ?? this.buyerId,
   funding: funding ?? this.funding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodNaverPay &&
           buyerId == other.buyerId &&
-          funding == other.funding; } 
-@override int get hashCode { return Object.hash(buyerId, funding); } 
-@override String toString() { return 'PaymentMethodNaverPay(buyerId: $buyerId, funding: $funding)'; } 
- }
+          funding == other.funding;}
+@override int get hashCode {return Object.hash(buyerId, funding);}
+@override String toString() {return 'PaymentMethodNaverPay(buyerId: $buyerId, funding: $funding)';}
+}

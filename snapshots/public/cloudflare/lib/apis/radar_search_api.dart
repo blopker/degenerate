@@ -13,7 +13,7 @@ final class RadarSearchApi with ApiExecutor {const RadarSearchApi(this.apiConfig
 /// Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals
 ///
 /// `GET /radar/search/global`
-Future<ApiResult<RadarGetSearchGlobalResponseResult, RadarGetSearchGlobalResponse400>> radarGetSearchGlobal({required String query, int? limit, double? limitPerGroup, List<RadarGetSearchGlobalInclude>? include, List<RadarGetSearchGlobalExclude>? exclude, RadarGetSearchGlobalFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetSearchGlobalResponseResult, RadarGetSearchGlobalResponse400>> radarGetSearchGlobal({required String query, int? limit, double? limitPerGroup, List<RadarGetSearchGlobalInclude>? include, List<RadarGetSearchGlobalExclude>? exclude, RadarGetSearchGlobalFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -47,22 +47,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetSearchGlobalResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetSearchGlobalResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetSearchGlobalResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  RadarGetSearchGlobalResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

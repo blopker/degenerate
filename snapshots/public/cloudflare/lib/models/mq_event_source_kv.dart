@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
 @immutable final class MqEventSourceKvType {const MqEventSourceKvType._(this.value);
 
-factory MqEventSourceKvType.fromJson(String json) { return switch (json) {
+factory MqEventSourceKvType.fromJson(String json) {return switch (json) {
   'kv' => kv,
   _ => MqEventSourceKvType._(json),
-}; }
+};}
 
 static const MqEventSourceKvType kv = MqEventSourceKvType._('kv');
 
@@ -14,33 +14,33 @@ static const List<MqEventSourceKvType> values = [kv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqEventSourceKvType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqEventSourceKvType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MqEventSourceKvType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MqEventSourceKvType($value)';}
+}
 @immutable final class MqEventSourceKv {const MqEventSourceKv({this.type});
 
-factory MqEventSourceKv.fromJson(Map<String, dynamic> json) { return MqEventSourceKv(
+factory MqEventSourceKv.fromJson(Map<String, dynamic> json) {return MqEventSourceKv(
   type: json['type'] != null ? MqEventSourceKvType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Type of source
 final MqEventSourceKvType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-MqEventSourceKv copyWith({MqEventSourceKvType? Function()? type}) { return MqEventSourceKv(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type'}.contains(key));}
+MqEventSourceKv copyWith({MqEventSourceKvType? Function()? type}) {return MqEventSourceKv(
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MqEventSourceKv &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'MqEventSourceKv(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'MqEventSourceKv(type: $type)';}
+}

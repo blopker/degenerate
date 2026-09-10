@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_tool_calls_code_object.dart';import 'run_step_delta_step_details_tool_calls_file_search_object.dart';import 'run_step_delta_step_details_tool_calls_function_object.dart';import 'run_step_delta_step_details_tool_calls_object_tool_calls.dart';/// Always `tool_calls`.
 @immutable final class RunStepDeltaStepDetailsToolCallsObjectType {const RunStepDeltaStepDetailsToolCallsObjectType._(this.value);
 
-factory RunStepDeltaStepDetailsToolCallsObjectType.fromJson(String json) { return switch (json) {
+factory RunStepDeltaStepDetailsToolCallsObjectType.fromJson(String json) {return switch (json) {
   'tool_calls' => toolCalls,
   _ => RunStepDeltaStepDetailsToolCallsObjectType._(json),
-}; }
+};}
 
 static const RunStepDeltaStepDetailsToolCallsObjectType toolCalls = RunStepDeltaStepDetailsToolCallsObjectType._('tool_calls');
 
@@ -14,21 +14,21 @@ static const List<RunStepDeltaStepDetailsToolCallsObjectType> values = [toolCall
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDeltaStepDetailsToolCallsObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepDeltaStepDetailsToolCallsObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepDeltaStepDetailsToolCallsObjectType($value)';}
+}
 /// Details of the tool call.
 @immutable final class RunStepDeltaStepDetailsToolCallsObject {const RunStepDeltaStepDetailsToolCallsObject({required this.type, this.toolCalls, });
 
-factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsObject(
+factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) {return RunStepDeltaStepDetailsToolCallsObject(
   type: RunStepDeltaStepDetailsToolCallsObjectType.fromJson(json['type'] as String),
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(v as Map<String, dynamic>), fromC: (v) => RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 /// Always `tool_calls`.
 final RunStepDeltaStepDetailsToolCallsObjectType type;
@@ -37,19 +37,19 @@ final RunStepDeltaStepDetailsToolCallsObjectType type;
 /// 
 final List<RunStepDeltaStepDetailsToolCallsObjectToolCalls>? toolCalls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCallsObjectType? type, List<RunStepDeltaStepDetailsToolCallsObjectToolCalls>? Function()? toolCalls, }) { return RunStepDeltaStepDetailsToolCallsObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCallsObjectType? type, List<RunStepDeltaStepDetailsToolCallsObjectToolCalls>? Function()? toolCalls, }) {return RunStepDeltaStepDetailsToolCallsObject(
   type: type ?? this.type,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsObject &&
           type == other.type &&
-          listEquals(toolCalls, other.toolCalls); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(toolCalls ?? const [])); } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsObject(type: $type, toolCalls: $toolCalls)'; } 
- }
+          listEquals(toolCalls, other.toolCalls);}
+@override int get hashCode {return Object.hash(type, Object.hashAll(toolCalls ?? const []));}
+@override String toString() {return 'RunStepDeltaStepDetailsToolCallsObject(type: $type, toolCalls: $toolCalls)';}
+}

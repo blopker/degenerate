@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "checkpoint.permission".
 @immutable final class DeleteFineTuningCheckpointPermissionResponseObject {const DeleteFineTuningCheckpointPermissionResponseObject._(this.value);
 
-factory DeleteFineTuningCheckpointPermissionResponseObject.fromJson(String json) { return switch (json) {
+factory DeleteFineTuningCheckpointPermissionResponseObject.fromJson(String json) {return switch (json) {
   'checkpoint.permission' => checkpointPermission,
   _ => DeleteFineTuningCheckpointPermissionResponseObject._(json),
-}; }
+};}
 
 static const DeleteFineTuningCheckpointPermissionResponseObject checkpointPermission = DeleteFineTuningCheckpointPermissionResponseObject._('checkpoint.permission');
 
@@ -14,21 +14,21 @@ static const List<DeleteFineTuningCheckpointPermissionResponseObject> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeleteFineTuningCheckpointPermissionResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeleteFineTuningCheckpointPermissionResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeleteFineTuningCheckpointPermissionResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeleteFineTuningCheckpointPermissionResponseObject($value)';}
+}
 @immutable final class DeleteFineTuningCheckpointPermissionResponse {const DeleteFineTuningCheckpointPermissionResponse({required this.id, required this.object, required this.deleted, });
 
-factory DeleteFineTuningCheckpointPermissionResponse.fromJson(Map<String, dynamic> json) { return DeleteFineTuningCheckpointPermissionResponse(
+factory DeleteFineTuningCheckpointPermissionResponse.fromJson(Map<String, dynamic> json) {return DeleteFineTuningCheckpointPermissionResponse(
   id: json['id'] as String,
   object: DeleteFineTuningCheckpointPermissionResponseObject.fromJson(json['object'] as String),
   deleted: json['deleted'] as bool,
-); }
+);}
 
 /// The ID of the fine-tuned model checkpoint permission that was deleted.
 final String id;
@@ -39,24 +39,24 @@ final DeleteFineTuningCheckpointPermissionResponseObject object;
 /// Whether the fine-tuned model checkpoint permission was successfully deleted.
 final bool deleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'deleted': deleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('deleted') && json['deleted'] is bool; } 
-DeleteFineTuningCheckpointPermissionResponse copyWith({String? id, DeleteFineTuningCheckpointPermissionResponseObject? object, bool? deleted, }) { return DeleteFineTuningCheckpointPermissionResponse(
+      json.containsKey('deleted') && json['deleted'] is bool;}
+DeleteFineTuningCheckpointPermissionResponse copyWith({String? id, DeleteFineTuningCheckpointPermissionResponseObject? object, bool? deleted, }) {return DeleteFineTuningCheckpointPermissionResponse(
   id: id ?? this.id,
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeleteFineTuningCheckpointPermissionResponse &&
           id == other.id &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(id, object, deleted); } 
-@override String toString() { return 'DeleteFineTuningCheckpointPermissionResponse(id: $id, object: $object, deleted: $deleted)'; } 
- }
+          deleted == other.deleted;}
+@override int get hashCode {return Object.hash(id, object, deleted);}
+@override String toString() {return 'DeleteFineTuningCheckpointPermissionResponse(id: $id, object: $object, deleted: $deleted)';}
+}

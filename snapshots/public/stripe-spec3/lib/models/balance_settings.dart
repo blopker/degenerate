@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_settings_resource_payments.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BalanceSettingsObject {const BalanceSettingsObject._(this.value);
 
-factory BalanceSettingsObject.fromJson(String json) { return switch (json) {
+factory BalanceSettingsObject.fromJson(String json) {return switch (json) {
   'balance_settings' => balanceSettings,
   _ => BalanceSettingsObject._(json),
-}; }
+};}
 
 static const BalanceSettingsObject balanceSettings = BalanceSettingsObject._('balance_settings');
 
@@ -14,41 +14,41 @@ static const List<BalanceSettingsObject> values = [balanceSettings];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceSettingsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceSettingsObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BalanceSettingsObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BalanceSettingsObject($value)';}
+}
 /// Options for customizing account balances and payout settings for a Stripe platform’s connected accounts.
 @immutable final class BalanceSettings {const BalanceSettings({required this.object, required this.payments, });
 
-factory BalanceSettings.fromJson(Map<String, dynamic> json) { return BalanceSettings(
+factory BalanceSettings.fromJson(Map<String, dynamic> json) {return BalanceSettings(
   object: BalanceSettingsObject.fromJson(json['object'] as String),
   payments: BalanceSettingsResourcePayments.fromJson(json['payments'] as Map<String, dynamic>),
-); }
+);}
 
 /// String representing the object's type. Objects of the same type share the same value.
 final BalanceSettingsObject object;
 
 final BalanceSettingsResourcePayments payments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'payments': payments.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
-      json.containsKey('payments'); } 
-BalanceSettings copyWith({BalanceSettingsObject? object, BalanceSettingsResourcePayments? payments, }) { return BalanceSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
+      json.containsKey('payments');}
+BalanceSettings copyWith({BalanceSettingsObject? object, BalanceSettingsResourcePayments? payments, }) {return BalanceSettings(
   object: object ?? this.object,
   payments: payments ?? this.payments,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BalanceSettings &&
           object == other.object &&
-          payments == other.payments; } 
-@override int get hashCode { return Object.hash(object, payments); } 
-@override String toString() { return 'BalanceSettings(object: $object, payments: $payments)'; } 
- }
+          payments == other.payments;}
+@override int get hashCode {return Object.hash(object, payments);}
+@override String toString() {return 'BalanceSettings(object: $object, payments: $payments)';}
+}

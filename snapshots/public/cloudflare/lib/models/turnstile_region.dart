@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Region where thi
 /// 
 @immutable final class TurnstileRegion {const TurnstileRegion._(this.value);
 
-factory TurnstileRegion.fromJson(String json) { return switch (json) {
+factory TurnstileRegion.fromJson(String json) {return switch (json) {
   'world' => world,
   'china' => china,
   _ => TurnstileRegion._(json),
-}; }
+};}
 
 static const TurnstileRegion world = TurnstileRegion._('world');
 
@@ -18,11 +18,11 @@ static const List<TurnstileRegion> values = [world, china];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TurnstileRegion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TurnstileRegion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TurnstileRegion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TurnstileRegion($value)';}
+}

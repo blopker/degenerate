@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel._(this.value);
 
-factory EmailSecurityDispositionLabel.fromJson(String json) { return switch (json) {
+factory EmailSecurityDispositionLabel.fromJson(String json) {return switch (json) {
   'MALICIOUS' => malicious,
   'MALICIOUS-BEC' => maliciousBec,
   'SUSPICIOUS' => suspicious,
@@ -14,7 +14,7 @@ factory EmailSecurityDispositionLabel.fromJson(String json) { return switch (jso
   'UNKNOWN' => unknown,
   'NONE' => none,
   _ => EmailSecurityDispositionLabel._(json),
-}; }
+};}
 
 static const EmailSecurityDispositionLabel malicious = EmailSecurityDispositionLabel._('MALICIOUS');
 
@@ -40,11 +40,11 @@ static const List<EmailSecurityDispositionLabel> values = [malicious, maliciousB
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDispositionLabel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDispositionLabel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityDispositionLabel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityDispositionLabel($value)';}
+}

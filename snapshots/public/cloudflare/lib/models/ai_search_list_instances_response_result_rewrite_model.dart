@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchListInstancesResponseResultRewriteModelVariant1 {const AiSearchListInstancesResponseResultRewriteModelVariant1._(this.value);
 
-factory AiSearchListInstancesResponseResultRewriteModelVariant1.fromJson(String json) { return switch (json) {
+factory AiSearchListInstancesResponseResultRewriteModelVariant1.fromJson(String json) {return switch (json) {
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
   '@cf/zai-org/glm-4.7-flash' => cfZaiOrgGlm47Flash,
   '@cf/meta/llama-3.1-8b-instruct-fast' => cfMetaLlama318bInstructFast,
@@ -31,7 +31,7 @@ factory AiSearchListInstancesResponseResultRewriteModelVariant1.fromJson(String 
   'openai/gpt-5-mini' => openaiGpt5Mini,
   'openai/gpt-5-nano' => openaiGpt5Nano,
   _ => AiSearchListInstancesResponseResultRewriteModelVariant1._(json),
-}; }
+};}
 
 static const AiSearchListInstancesResponseResultRewriteModelVariant1 cfMetaLlama3370bInstructFp8Fast = AiSearchListInstancesResponseResultRewriteModelVariant1._('@cf/meta/llama-3.3-70b-instruct-fp8-fast');
 
@@ -91,20 +91,20 @@ static const List<AiSearchListInstancesResponseResultRewriteModelVariant1> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchListInstancesResponseResultRewriteModelVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchListInstancesResponseResultRewriteModelVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchListInstancesResponseResultRewriteModelVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchListInstancesResponseResultRewriteModelVariant1($value)';}
+}
 @immutable final class AiSearchListInstancesResponseResultRewriteModelVariant2 {const AiSearchListInstancesResponseResultRewriteModelVariant2._(this.value);
 
-factory AiSearchListInstancesResponseResultRewriteModelVariant2.fromJson(String json) { return switch (json) {
+factory AiSearchListInstancesResponseResultRewriteModelVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => AiSearchListInstancesResponseResultRewriteModelVariant2._(json),
-}; }
+};}
 
 static const AiSearchListInstancesResponseResultRewriteModelVariant2 $empty = AiSearchListInstancesResponseResultRewriteModelVariant2._('');
 
@@ -112,14 +112,14 @@ static const List<AiSearchListInstancesResponseResultRewriteModelVariant2> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchListInstancesResponseResultRewriteModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchListInstancesResponseResultRewriteModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchListInstancesResponseResultRewriteModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchListInstancesResponseResultRewriteModelVariant2($value)';}
+}
 
 @immutable
 final class AiSearchListInstancesResponseResultRewriteModel {

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesMinTlsVersionValue {const ZonesMinTlsVersionValue._(this.value);
 
-factory ZonesMinTlsVersionValue.fromJson(String json) { return switch (json) {
+factory ZonesMinTlsVersionValue.fromJson(String json) {return switch (json) {
   '1.0' => $10,
   '1.1' => $11,
   '1.2' => $12,
   '1.3' => $13,
   _ => ZonesMinTlsVersionValue._(json),
-}; }
+};}
 
 static const ZonesMinTlsVersionValue $10 = ZonesMinTlsVersionValue._('1.0');
 
@@ -23,11 +23,11 @@ static const List<ZonesMinTlsVersionValue> values = [$10, $11, $12, $13];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesMinTlsVersionValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesMinTlsVersionValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesMinTlsVersionValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesMinTlsVersionValue($value)';}
+}

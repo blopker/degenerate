@@ -311,12 +311,40 @@ properties; response models exclude write-only properties and their required
 constraints. Nested and recursive references use the same direction. Models
 whose shapes do not change stay shared.
 
-Declared `2xx` responses determine the success type. A `200` model plus an
-empty `204` returns `ApiResult<Model?, E>`;
-different body types use `OneOfN` on the success or error side. Decoders select
-the shape by status and `Content-Type`. Exact statuses override ranges such
-as `2XX`. A `default` response supplies the fallback error type; it contributes
-to the success type only when the operation declares no `2xx` response.
+Declared `2xx` responses determine the success type. Operations with multiple
+response shapes generate named sealed classes on the success or error side.
+Each variant exposes its typed `data`; empty responses have payload-free
+variants. Operations with one shape keep their plain `ApiResult<T, E>` signature.
+
+For example, a `postAuth` operation returning a token at `200` and a new user ID
+at `201` allows an exhaustive switch:
+
+```dart
+final result = await api.postAuth(body: credentials);
+switch (result.dataOrThrow) {
+  case PostAuthSuccess200(:final data):
+    print(data.accessToken);
+  case PostAuthSuccess201(:final data):
+    print(data.userId);
+  case PostAuthSuccessUnknown(:final response):
+    print('New status ${response.statusCode}: ${response.body}');
+}
+```
+
+Decoders select the variant by status and `Content-Type`. Exact statuses
+override ranges such as `2XX`, which produce variants such as `PostAuthSuccess2xx`.
+When a status offers different media shapes, variant names include the media
+type, such as `FetchSuccess200ApplicationJson` and `FetchSuccess200TextPlain`.
+Inline models keep the bare `PostAuthResponse` name for the primary success;
+other statuses use names such as `PostAuthResponse201` and `PostAuthResponseDefault`.
+
+A `default` response supplies fallback errors; it contributes to success only
+when the operation declares no `2xx` response. A response union without a default
+has an `Unknown` variant retaining the original `ApiResponse`, including status,
+headers, and body bytes. Malformed declared payloads still produce
+`ApiParseException`. Single-shape successes continue decoding compatible new
+`2xx` statuses into their existing type. Envelope unwrapping applies to each
+success payload before determining whether a response union is needed.
 
 ### Enums
 

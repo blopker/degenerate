@@ -9,13 +9,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscri
 /// Use `error_if_incomplete` if you want Stripe to return an HTTP 402 status code if a subscription's invoice cannot be paid. For example, if a payment method requires 3DS authentication due to SCA regulation and further user action is needed, this parameter does not update the subscription and returns an error instead. This was the default behavior for API versions prior to 2019-03-14. See the [changelog](https://docs.stripe.com/changelog/2019-03-14) to learn more.
 @immutable final class PostSubscriptionItemsRequestPaymentBehavior {const PostSubscriptionItemsRequestPaymentBehavior._(this.value);
 
-factory PostSubscriptionItemsRequestPaymentBehavior.fromJson(String json) { return switch (json) {
+factory PostSubscriptionItemsRequestPaymentBehavior.fromJson(String json) {return switch (json) {
   'allow_incomplete' => allowIncomplete,
   'default_incomplete' => defaultIncomplete,
   'error_if_incomplete' => errorIfIncomplete,
   'pending_if_incomplete' => pendingIfIncomplete,
   _ => PostSubscriptionItemsRequestPaymentBehavior._(json),
-}; }
+};}
 
 static const PostSubscriptionItemsRequestPaymentBehavior allowIncomplete = PostSubscriptionItemsRequestPaymentBehavior._('allow_incomplete');
 
@@ -29,23 +29,23 @@ static const List<PostSubscriptionItemsRequestPaymentBehavior> values = [allowIn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionItemsRequestPaymentBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionItemsRequestPaymentBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionItemsRequestPaymentBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionItemsRequestPaymentBehavior($value)';}
+}
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) when the billing cycle changes (e.g., when switching plans, resetting `billing_cycle_anchor=now`, or starting a trial), or if an item's `quantity` changes. The default value is `create_prorations`.
 @immutable final class PostSubscriptionItemsRequestProrationBehavior {const PostSubscriptionItemsRequestProrationBehavior._(this.value);
 
-factory PostSubscriptionItemsRequestProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostSubscriptionItemsRequestProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostSubscriptionItemsRequestProrationBehavior._(json),
-}; }
+};}
 
 static const PostSubscriptionItemsRequestProrationBehavior alwaysInvoice = PostSubscriptionItemsRequestProrationBehavior._('always_invoice');
 
@@ -57,17 +57,17 @@ static const List<PostSubscriptionItemsRequestProrationBehavior> values = [alway
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionItemsRequestProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionItemsRequestProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionItemsRequestProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionItemsRequestProrationBehavior($value)';}
+}
 @immutable final class PostSubscriptionItemsRequest {const PostSubscriptionItemsRequest({required this.subscription, this.billingThresholds, this.discounts, this.expand, this.metadata, this.paymentBehavior, this.price, this.priceData, this.prorationBehavior, this.prorationDate, this.quantity, this.taxRates, });
 
-factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsRequest(
+factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) {return PostSubscriptionItemsRequest(
   billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionItemsRequestBillingThresholds.fromJson(json['billing_thresholds']) : null,
   discounts: json['discounts'] != null ? PostSubscriptionItemsRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -80,7 +80,7 @@ factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { retur
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String,
   taxRates: json['tax_rates'] != null ? PostSubscriptionItemsRequestTaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period. Pass an empty string to remove previously-defined thresholds.
 final PostSubscriptionItemsRequestBillingThresholds? billingThresholds;
@@ -124,7 +124,7 @@ final String subscription;
 /// A list of [Tax Rate](https://docs.stripe.com/api/tax_rates) ids. These Tax Rates will override the [`default_tax_rates`](https://docs.stripe.com/api/subscriptions/create#create_subscription-default_tax_rates) on the Subscription. When updating, pass an empty string to remove previously-defined tax rates.
 final PostSubscriptionItemsRequestTaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
   if (discounts != null) 'discounts': discounts?.toJson(),
   'expand': ?expand,
@@ -137,9 +137,9 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   'subscription': subscription,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
-PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsRequestBillingThresholds? Function()? billingThresholds, PostSubscriptionItemsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostSubscriptionItemsRequestPaymentBehavior? Function()? paymentBehavior, String? Function()? price, PostSubscriptionItemsRequestPriceData? Function()? priceData, PostSubscriptionItemsRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, int? Function()? quantity, String? subscription, PostSubscriptionItemsRequestTaxRates? Function()? taxRates, }) { return PostSubscriptionItemsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('subscription') && json['subscription'] is String;}
+PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsRequestBillingThresholds? Function()? billingThresholds, PostSubscriptionItemsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostSubscriptionItemsRequestPaymentBehavior? Function()? paymentBehavior, String? Function()? price, PostSubscriptionItemsRequestPriceData? Function()? priceData, PostSubscriptionItemsRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, int? Function()? quantity, String? subscription, PostSubscriptionItemsRequestTaxRates? Function()? taxRates, }) {return PostSubscriptionItemsRequest(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,
   expand: expand != null ? expand() : this.expand,
@@ -152,8 +152,8 @@ PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsRequestBillingThresh
   quantity: quantity != null ? quantity() : this.quantity,
   subscription: subscription ?? this.subscription,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionItemsRequest &&
           billingThresholds == other.billingThresholds &&
           discounts == other.discounts &&
@@ -166,7 +166,7 @@ PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsRequestBillingThresh
           prorationDate == other.prorationDate &&
           quantity == other.quantity &&
           subscription == other.subscription &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, subscription, taxRates); } 
-@override String toString() { return 'PostSubscriptionItemsRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)'; } 
- }
+          taxRates == other.taxRates;}
+@override int get hashCode {return Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, subscription, taxRates);}
+@override String toString() {return 'PostSubscriptionItemsRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)';}
+}

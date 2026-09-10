@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories {const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories._(this.value);
 
-factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories.fromJson(String json) { return switch (json) {
+factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories.fromJson(String json) {return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
   'accounting_bookkeeping_services' => accountingBookkeepingServices,
   'advertising_services' => advertisingServices,
@@ -299,7 +299,7 @@ factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories.fr
   'womens_ready_to_wear_stores' => womensReadyToWearStores,
   'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
   _ => PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories._(json),
-}; }
+};}
 
 static const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories acRefrigerationRepair = PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories._('ac_refrigeration_repair');
 
@@ -895,17 +895,17 @@ static const List<PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories($value)';}
+}
 @immutable final class PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval {const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval._(this.value);
 
-factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval.fromJson(String json) { return switch (json) {
+factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval.fromJson(String json) {return switch (json) {
   'all_time' => allTime,
   'daily' => daily,
   'monthly' => monthly,
@@ -913,7 +913,7 @@ factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval.from
   'weekly' => weekly,
   'yearly' => yearly,
   _ => PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval._(json),
-}; }
+};}
 
 static const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval allTime = PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval._('all_time');
 
@@ -931,21 +931,21 @@ static const List<PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval($value)';}
+}
 @immutable final class PostIssuingCardholdersRequestSpendingControlsSpendingLimits {const PostIssuingCardholdersRequestSpendingControlsSpendingLimits({required this.amount, required this.interval, this.categories, });
 
-factory PostIssuingCardholdersRequestSpendingControlsSpendingLimits.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestSpendingControlsSpendingLimits(
+factory PostIssuingCardholdersRequestSpendingControlsSpendingLimits.fromJson(Map<String, dynamic> json) {return PostIssuingCardholdersRequestSpendingControlsSpendingLimits(
   amount: (json['amount'] as num).toInt(),
   categories: (json['categories'] as List<dynamic>?)?.map((e) => PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories.fromJson(e as String)).toList(),
   interval: PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval.fromJson(json['interval'] as String),
-); }
+);}
 
 final int amount;
 
@@ -953,23 +953,23 @@ final List<PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories
 
 final PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval interval;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
   'interval': interval.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('interval'); } 
-PostIssuingCardholdersRequestSpendingControlsSpendingLimits copyWith({int? amount, List<PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories>? Function()? categories, PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval? interval, }) { return PostIssuingCardholdersRequestSpendingControlsSpendingLimits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('interval');}
+PostIssuingCardholdersRequestSpendingControlsSpendingLimits copyWith({int? amount, List<PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories>? Function()? categories, PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval? interval, }) {return PostIssuingCardholdersRequestSpendingControlsSpendingLimits(
   amount: amount ?? this.amount,
   categories: categories != null ? categories() : this.categories,
   interval: interval ?? this.interval,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingCardholdersRequestSpendingControlsSpendingLimits &&
           amount == other.amount &&
           listEquals(categories, other.categories) &&
-          interval == other.interval; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(categories ?? const []), interval); } 
-@override String toString() { return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimits(amount: $amount, categories: $categories, interval: $interval)'; } 
- }
+          interval == other.interval;}
+@override int get hashCode {return Object.hash(amount, Object.hashAll(categories ?? const []), interval);}
+@override String toString() {return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimits(amount: $amount, categories: $categories, interval: $interval)';}
+}

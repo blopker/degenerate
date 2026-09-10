@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_interpr
 /// 
 @immutable final class CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus._(this.value);
 
-factory CodeInterpreterToolCallStatus.fromJson(String json) { return switch (json) {
+factory CodeInterpreterToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   'interpreting' => interpreting,
   'failed' => failed,
   _ => CodeInterpreterToolCallStatus._(json),
-}; }
+};}
 
 static const CodeInterpreterToolCallStatus inProgress = CodeInterpreterToolCallStatus._('in_progress');
 
@@ -27,26 +27,26 @@ static const List<CodeInterpreterToolCallStatus> values = [inProgress, completed
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeInterpreterToolCallStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeInterpreterToolCallStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeInterpreterToolCallStatus($value)';}
+}
 /// A tool call to run code.
 /// 
 @immutable final class CodeInterpreterToolCall {const CodeInterpreterToolCall({required this.type, required this.id, required this.status, required this.containerId, required this.code, required this.outputs, });
 
-factory CodeInterpreterToolCall.fromJson(Map<String, dynamic> json) { return CodeInterpreterToolCall(
+factory CodeInterpreterToolCall.fromJson(Map<String, dynamic> json) {return CodeInterpreterToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   status: CodeInterpreterToolCallStatus.fromJson(json['status'] as String),
   containerId: json['container_id'] as String,
   code: json['code'] as String?,
   outputs: (json['outputs'] as List<dynamic>?)?.map((e) => CodeInterpreterToolCallOutputs2.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The type of the code interpreter tool call. Always `code_interpreter_call`.
 /// 
@@ -73,36 +73,36 @@ final String? code;
 /// 
 final List<CodeInterpreterToolCallOutputs2>? outputs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'status': status.toJson(),
   'container_id': containerId,
   'code': code,
   'outputs': outputs?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
       json.containsKey('container_id') && json['container_id'] is String &&
       json.containsKey('code') && (json['code'] == null || json['code'] is String) &&
-      json.containsKey('outputs'); } 
-CodeInterpreterToolCall copyWith({String? type, String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs2>? Function()? outputs, }) { return CodeInterpreterToolCall(
+      json.containsKey('outputs');}
+CodeInterpreterToolCall copyWith({String? type, String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs2>? Function()? outputs, }) {return CodeInterpreterToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   status: status ?? this.status,
   containerId: containerId ?? this.containerId,
   code: code != null ? code() : this.code,
   outputs: outputs != null ? outputs() : this.outputs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeInterpreterToolCall &&
           type == other.type &&
           id == other.id &&
           status == other.status &&
           containerId == other.containerId &&
           code == other.code &&
-          listEquals(outputs, other.outputs); } 
-@override int get hashCode { return Object.hash(type, id, status, containerId, code, Object.hashAll(outputs ?? const [])); } 
-@override String toString() { return 'CodeInterpreterToolCall(type: $type, id: $id, status: $status, containerId: $containerId, code: $code, outputs: $outputs)'; } 
- }
+          listEquals(outputs, other.outputs);}
+@override int get hashCode {return Object.hash(type, id, status, containerId, code, Object.hashAll(outputs ?? const []));}
+@override String toString() {return 'CodeInterpreterToolCall(type: $type, id: $id, status: $status, containerId: $containerId, code: $code, outputs: $outputs)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MaxCountAllocationType {const MaxCountAllocationType._(this.value);
 
-factory MaxCountAllocationType.fromJson(String json) { return switch (json) {
+factory MaxCountAllocationType.fromJson(String json) {return switch (json) {
   'max_count' => maxCount,
   _ => MaxCountAllocationType._(json),
-}; }
+};}
 
 static const MaxCountAllocationType maxCount = MaxCountAllocationType._('max_count');
 
@@ -13,39 +13,39 @@ static const List<MaxCountAllocationType> values = [maxCount];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MaxCountAllocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MaxCountAllocationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MaxCountAllocationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MaxCountAllocationType($value)';}
+}
 @immutable final class MaxCountAllocation {const MaxCountAllocation({required this.type, required this.value, });
 
-factory MaxCountAllocation.fromJson(Map<String, dynamic> json) { return MaxCountAllocation(
+factory MaxCountAllocation.fromJson(Map<String, dynamic> json) {return MaxCountAllocation(
   type: MaxCountAllocationType.fromJson(json['type'] as String),
   value: (json['value'] as num).toInt(),
-); }
+);}
 
 final MaxCountAllocationType type;
 
 final int value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is num; } 
-MaxCountAllocation copyWith({MaxCountAllocationType? type, int? value, }) { return MaxCountAllocation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is num;}
+MaxCountAllocation copyWith({MaxCountAllocationType? type, int? value, }) {return MaxCountAllocation(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MaxCountAllocation &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'MaxCountAllocation(type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, value);}
+@override String toString() {return 'MaxCountAllocation(type: $type, value: $value)';}
+}

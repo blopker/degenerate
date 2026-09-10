@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A test region.
 @immutable final class ObservatoryRegion {const ObservatoryRegion._(this.value);
 
-factory ObservatoryRegion.fromJson(String json) { return switch (json) {
+factory ObservatoryRegion.fromJson(String json) {return switch (json) {
   'asia-east1' => asiaEast1,
   'asia-northeast1' => asiaNortheast1,
   'asia-northeast2' => asiaNortheast2,
@@ -26,7 +26,7 @@ factory ObservatoryRegion.fromJson(String json) { return switch (json) {
   'us-south1' => usSouth1,
   'us-west1' => usWest1,
   _ => ObservatoryRegion._(json),
-}; }
+};}
 
 static const ObservatoryRegion asiaEast1 = ObservatoryRegion._('asia-east1');
 
@@ -74,11 +74,11 @@ static const List<ObservatoryRegion> values = [asiaEast1, asiaNortheast1, asiaNo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ObservatoryRegion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ObservatoryRegion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ObservatoryRegion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ObservatoryRegion($value)';}
+}

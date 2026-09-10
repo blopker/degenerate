@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors {const RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors({required this.message});
 
-factory RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors(
+factory RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors copyWith({String? message}) { return RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors copyWith({String? message}) {return RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'RadarGetEmailSecurityTimeseriesGroupBySpfResponse400Errors(message: $message)';}
+}

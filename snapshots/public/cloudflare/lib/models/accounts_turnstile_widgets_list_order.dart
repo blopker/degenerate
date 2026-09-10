@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order widgets by.
 @immutable final class AccountsTurnstileWidgetsListOrder {const AccountsTurnstileWidgetsListOrder._(this.value);
 
-factory AccountsTurnstileWidgetsListOrder.fromJson(String json) { return switch (json) {
+factory AccountsTurnstileWidgetsListOrder.fromJson(String json) {return switch (json) {
   'id' => id,
   'sitekey' => sitekey,
   'name' => $name,
   'created_on' => createdOn,
   'modified_on' => modifiedOn,
   _ => AccountsTurnstileWidgetsListOrder._(json),
-}; }
+};}
 
 static const AccountsTurnstileWidgetsListOrder id = AccountsTurnstileWidgetsListOrder._('id');
 
@@ -26,11 +26,11 @@ static const List<AccountsTurnstileWidgetsListOrder> values = [id, sitekey, $nam
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountsTurnstileWidgetsListOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountsTurnstileWidgetsListOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountsTurnstileWidgetsListOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountsTurnstileWidgetsListOrder($value)';}
+}

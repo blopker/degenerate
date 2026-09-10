@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_audio_formats.dart';import 'voice_ids_shared.dart';@immutable final class RealtimeResponseAudioOutput {const RealtimeResponseAudioOutput({this.format, this.voice, });
 
-factory RealtimeResponseAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeResponseAudioOutput(
+factory RealtimeResponseAudioOutput.fromJson(Map<String, dynamic> json) {return RealtimeResponseAudioOutput(
   format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice']) : null,
-); }
+);}
 
 /// The format of the output audio.
 final RealtimeAudioFormats? format;
@@ -18,19 +18,19 @@ final RealtimeAudioFormats? format;
 /// 
 final VoiceIdsShared? voice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice'}.contains(key)); } 
-RealtimeResponseAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, }) { return RealtimeResponseAudioOutput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'voice'}.contains(key));}
+RealtimeResponseAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, }) {return RealtimeResponseAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeResponseAudioOutput &&
           format == other.format &&
-          voice == other.voice; } 
-@override int get hashCode { return Object.hash(format, voice); } 
-@override String toString() { return 'RealtimeResponseAudioOutput(format: $format, voice: $voice)'; } 
- }
+          voice == other.voice;}
+@override int get hashCode {return Object.hash(format, voice);}
+@override String toString() {return 'RealtimeResponseAudioOutput(format: $format, voice: $voice)';}
+}

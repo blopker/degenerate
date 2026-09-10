@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_id.dart';@immutable final class PageShieldCookieSameSiteAttribute {const PageShieldCookieSameSiteAttribute._(this.value);
 
-factory PageShieldCookieSameSiteAttribute.fromJson(String json) { return switch (json) {
+factory PageShieldCookieSameSiteAttribute.fromJson(String json) {return switch (json) {
   'lax' => lax,
   'strict' => strict,
   'none' => none,
   _ => PageShieldCookieSameSiteAttribute._(json),
-}; }
+};}
 
 static const PageShieldCookieSameSiteAttribute lax = PageShieldCookieSameSiteAttribute._('lax');
 
@@ -19,21 +19,21 @@ static const List<PageShieldCookieSameSiteAttribute> values = [lax, strict, none
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageShieldCookieSameSiteAttribute && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageShieldCookieSameSiteAttribute($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PageShieldCookieSameSiteAttribute && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PageShieldCookieSameSiteAttribute($value)';}
+}
 @immutable final class PageShieldCookieType {const PageShieldCookieType._(this.value);
 
-factory PageShieldCookieType.fromJson(String json) { return switch (json) {
+factory PageShieldCookieType.fromJson(String json) {return switch (json) {
   'first_party' => firstParty,
   'unknown' => unknown,
   _ => PageShieldCookieType._(json),
-}; }
+};}
 
 static const PageShieldCookieType firstParty = PageShieldCookieType._('first_party');
 
@@ -43,17 +43,17 @@ static const List<PageShieldCookieType> values = [firstParty, unknown];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageShieldCookieType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageShieldCookieType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PageShieldCookieType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PageShieldCookieType($value)';}
+}
 @immutable final class PageShieldCookie {const PageShieldCookie({required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, required this.name, required this.type, this.domainAttribute, this.expiresAttribute, this.httpOnlyAttribute, this.maxAgeAttribute, this.pageUrls, this.pathAttribute, this.sameSiteAttribute, this.secureAttribute, });
 
-factory PageShieldCookie.fromJson(Map<String, dynamic> json) { return PageShieldCookie(
+factory PageShieldCookie.fromJson(Map<String, dynamic> json) {return PageShieldCookie(
   domainAttribute: json['domain_attribute'] as String?,
   expiresAttribute: json['expires_attribute'] != null ? DateTime.parse(json['expires_attribute'] as String) : null,
   firstSeenAt: DateTime.parse(json['first_seen_at'] as String),
@@ -68,7 +68,7 @@ factory PageShieldCookie.fromJson(Map<String, dynamic> json) { return PageShield
   sameSiteAttribute: json['same_site_attribute'] != null ? PageShieldCookieSameSiteAttribute.fromJson(json['same_site_attribute'] as String) : null,
   secureAttribute: json['secure_attribute'] as bool?,
   type: PageShieldCookieType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? domainAttribute;
 
@@ -98,7 +98,7 @@ final bool? secureAttribute;
 
 final PageShieldCookieType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain_attribute': ?domainAttribute,
   if (expiresAttribute != null) 'expires_attribute': expiresAttribute?.toIso8601String(),
   'first_seen_at': firstSeenAt.toIso8601String(),
@@ -113,14 +113,14 @@ Map<String, dynamic> toJson() { return {
   if (sameSiteAttribute != null) 'same_site_attribute': sameSiteAttribute?.toJson(),
   'secure_attribute': ?secureAttribute,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('first_seen_at') && json['first_seen_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('first_seen_at') && json['first_seen_at'] is String &&
       json.containsKey('host') && json['host'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
-PageShieldCookie copyWith({String? Function()? domainAttribute, DateTime? Function()? expiresAttribute, DateTime? firstSeenAt, String? host, bool? Function()? httpOnlyAttribute, PageShieldId? id, DateTime? lastSeenAt, int? Function()? maxAgeAttribute, String? name, List<String>? Function()? pageUrls, String? Function()? pathAttribute, PageShieldCookieSameSiteAttribute? Function()? sameSiteAttribute, bool? Function()? secureAttribute, PageShieldCookieType? type, }) { return PageShieldCookie(
+      json.containsKey('type');}
+PageShieldCookie copyWith({String? Function()? domainAttribute, DateTime? Function()? expiresAttribute, DateTime? firstSeenAt, String? host, bool? Function()? httpOnlyAttribute, PageShieldId? id, DateTime? lastSeenAt, int? Function()? maxAgeAttribute, String? name, List<String>? Function()? pageUrls, String? Function()? pathAttribute, PageShieldCookieSameSiteAttribute? Function()? sameSiteAttribute, bool? Function()? secureAttribute, PageShieldCookieType? type, }) {return PageShieldCookie(
   domainAttribute: domainAttribute != null ? domainAttribute() : this.domainAttribute,
   expiresAttribute: expiresAttribute != null ? expiresAttribute() : this.expiresAttribute,
   firstSeenAt: firstSeenAt ?? this.firstSeenAt,
@@ -135,8 +135,8 @@ PageShieldCookie copyWith({String? Function()? domainAttribute, DateTime? Functi
   sameSiteAttribute: sameSiteAttribute != null ? sameSiteAttribute() : this.sameSiteAttribute,
   secureAttribute: secureAttribute != null ? secureAttribute() : this.secureAttribute,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PageShieldCookie &&
           domainAttribute == other.domainAttribute &&
           expiresAttribute == other.expiresAttribute &&
@@ -151,7 +151,7 @@ PageShieldCookie copyWith({String? Function()? domainAttribute, DateTime? Functi
           pathAttribute == other.pathAttribute &&
           sameSiteAttribute == other.sameSiteAttribute &&
           secureAttribute == other.secureAttribute &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(domainAttribute, expiresAttribute, firstSeenAt, host, httpOnlyAttribute, id, lastSeenAt, maxAgeAttribute, name, Object.hashAll(pageUrls ?? const []), pathAttribute, sameSiteAttribute, secureAttribute, type); } 
-@override String toString() { return 'PageShieldCookie(domainAttribute: $domainAttribute, expiresAttribute: $expiresAttribute, firstSeenAt: $firstSeenAt, host: $host, httpOnlyAttribute: $httpOnlyAttribute, id: $id, lastSeenAt: $lastSeenAt, maxAgeAttribute: $maxAgeAttribute, name: $name, pageUrls: $pageUrls, pathAttribute: $pathAttribute, sameSiteAttribute: $sameSiteAttribute, secureAttribute: $secureAttribute, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(domainAttribute, expiresAttribute, firstSeenAt, host, httpOnlyAttribute, id, lastSeenAt, maxAgeAttribute, name, Object.hashAll(pageUrls ?? const []), pathAttribute, sameSiteAttribute, secureAttribute, type);}
+@override String toString() {return 'PageShieldCookie(domainAttribute: $domainAttribute, expiresAttribute: $expiresAttribute, firstSeenAt: $firstSeenAt, host: $host, httpOnlyAttribute: $httpOnlyAttribute, id: $id, lastSeenAt: $lastSeenAt, maxAgeAttribute: $maxAgeAttribute, name: $name, pageUrls: $pageUrls, pathAttribute: $pathAttribute, sameSiteAttribute: $sameSiteAttribute, secureAttribute: $secureAttribute, type: $type)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_response_result_retrieval_options_boost_by.dart';/// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
 @immutable final class AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode {const AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode._(this.value);
 
-factory AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson(String json) { return switch (json) {
+factory AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson(String json) {return switch (json) {
   'exact_match' => exactMatch,
   'fuzzy_match' => fuzzyMatch,
   _ => AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode._(json),
-}; }
+};}
 
 static const AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode exactMatch = AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode._('exact_match');
 
@@ -17,20 +17,20 @@ static const List<AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode($value)';}
+}
 @immutable final class AiSearchUpdateInstancesResponseResultRetrievalOptions {const AiSearchUpdateInstancesResponseResultRetrievalOptions({this.boostBy, this.keywordMatchMode, });
 
-factory AiSearchUpdateInstancesResponseResultRetrievalOptions.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResultRetrievalOptions(
+factory AiSearchUpdateInstancesResponseResultRetrievalOptions.fromJson(Map<String, dynamic> json) {return AiSearchUpdateInstancesResponseResultRetrievalOptions(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
   keywordMatchMode: json['keyword_match_mode'] != null ? AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : null,
-); }
+);}
 
 /// Metadata fields to boost search results by. Each entry specifies a metadata field and an optional direction. Direction defaults to 'asc' for numeric fields and 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
 final List<AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy>? boostBy;
@@ -39,20 +39,20 @@ final List<AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy>? boostB
 final AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode? keywordMatchMode;
 
 /// The value with the schema default applied when absent.
-AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode get keywordMatchModeOrDefault { return keywordMatchMode ?? AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson('exact_match'); } 
-Map<String, dynamic> toJson() { return {
+AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode get keywordMatchModeOrDefault {return keywordMatchMode ?? AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson('exact_match');}
+Map<String, dynamic> toJson() {return {
   if (boostBy != null) 'boost_by': boostBy?.map((e) => e.toJson()).toList(),
   if (keywordMatchMode != null) 'keyword_match_mode': keywordMatchMode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'keyword_match_mode'}.contains(key)); } 
-AiSearchUpdateInstancesResponseResultRetrievalOptions copyWith({List<AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy>? Function()? boostBy, AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode? Function()? keywordMatchMode, }) { return AiSearchUpdateInstancesResponseResultRetrievalOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'boost_by', 'keyword_match_mode'}.contains(key));}
+AiSearchUpdateInstancesResponseResultRetrievalOptions copyWith({List<AiSearchUpdateInstancesResponseResultRetrievalOptionsBoostBy>? Function()? boostBy, AiSearchUpdateInstancesResponseResultRetrievalOptionsKeywordMatchMode? Function()? keywordMatchMode, }) {return AiSearchUpdateInstancesResponseResultRetrievalOptions(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   keywordMatchMode: keywordMatchMode != null ? keywordMatchMode() : this.keywordMatchMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchUpdateInstancesResponseResultRetrievalOptions &&
           listEquals(boostBy, other.boostBy) &&
-          keywordMatchMode == other.keywordMatchMode; } 
-@override int get hashCode { return Object.hash(Object.hashAll(boostBy ?? const []), keywordMatchMode); } 
-@override String toString() { return 'AiSearchUpdateInstancesResponseResultRetrievalOptions(boostBy: $boostBy, keywordMatchMode: $keywordMatchMode)'; } 
- }
+          keywordMatchMode == other.keywordMatchMode;}
+@override int get hashCode {return Object.hash(Object.hashAll(boostBy ?? const []), keywordMatchMode);}
+@override String toString() {return 'AiSearchUpdateInstancesResponseResultRetrievalOptions(boostBy: $boostBy, keywordMatchMode: $keywordMatchMode)';}
+}

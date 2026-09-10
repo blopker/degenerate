@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invite_projects.dart';/// The object type, which is always `organization.invite`
 @immutable final class InviteObject {const InviteObject._(this.value);
 
-factory InviteObject.fromJson(String json) { return switch (json) {
+factory InviteObject.fromJson(String json) {return switch (json) {
   'organization.invite' => organizationInvite,
   _ => InviteObject._(json),
-}; }
+};}
 
 static const InviteObject organizationInvite = InviteObject._('organization.invite');
 
@@ -14,22 +14,22 @@ static const List<InviteObject> values = [organizationInvite];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InviteObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InviteObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InviteObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InviteObject($value)';}
+}
 /// `owner` or `reader`
 @immutable final class InviteRole {const InviteRole._(this.value);
 
-factory InviteRole.fromJson(String json) { return switch (json) {
+factory InviteRole.fromJson(String json) {return switch (json) {
   'owner' => owner,
   'reader' => reader,
   _ => InviteRole._(json),
-}; }
+};}
 
 static const InviteRole owner = InviteRole._('owner');
 
@@ -39,23 +39,23 @@ static const List<InviteRole> values = [owner, reader];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InviteRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InviteRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InviteRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InviteRole($value)';}
+}
 /// `accepted`,`expired`, or `pending`
 @immutable final class InviteStatus {const InviteStatus._(this.value);
 
-factory InviteStatus.fromJson(String json) { return switch (json) {
+factory InviteStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'expired' => expired,
   'pending' => pending,
   _ => InviteStatus._(json),
-}; }
+};}
 
 static const InviteStatus accepted = InviteStatus._('accepted');
 
@@ -67,18 +67,18 @@ static const List<InviteStatus> values = [accepted, expired, pending];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InviteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InviteStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InviteStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InviteStatus($value)';}
+}
 /// Represents an individual `invite` to the organization.
 @immutable final class Invite {const Invite({required this.object, required this.id, required this.email, required this.role, required this.status, required this.invitedAt, required this.expiresAt, this.acceptedAt, this.projects, });
 
-factory Invite.fromJson(Map<String, dynamic> json) { return Invite(
+factory Invite.fromJson(Map<String, dynamic> json) {return Invite(
   object: InviteObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   email: json['email'] as String,
@@ -88,7 +88,7 @@ factory Invite.fromJson(Map<String, dynamic> json) { return Invite(
   expiresAt: (json['expires_at'] as num).toInt(),
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,
   projects: (json['projects'] as List<dynamic>?)?.map((e) => InviteProjects.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The object type, which is always `organization.invite`
 final InviteObject object;
@@ -117,7 +117,7 @@ final int? acceptedAt;
 /// The projects that were granted membership upon acceptance of the invite.
 final List<InviteProjects>? projects;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'email': email,
@@ -127,15 +127,15 @@ Map<String, dynamic> toJson() { return {
   'expires_at': expiresAt,
   'accepted_at': ?acceptedAt,
   if (projects != null) 'projects': projects?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('role') &&
       json.containsKey('status') &&
       json.containsKey('invited_at') && json['invited_at'] is num &&
-      json.containsKey('expires_at') && json['expires_at'] is num; } 
-Invite copyWith({InviteObject? object, String? id, String? email, InviteRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int? Function()? acceptedAt, List<InviteProjects>? Function()? projects, }) { return Invite(
+      json.containsKey('expires_at') && json['expires_at'] is num;}
+Invite copyWith({InviteObject? object, String? id, String? email, InviteRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int? Function()? acceptedAt, List<InviteProjects>? Function()? projects, }) {return Invite(
   object: object ?? this.object,
   id: id ?? this.id,
   email: email ?? this.email,
@@ -145,8 +145,8 @@ Invite copyWith({InviteObject? object, String? id, String? email, InviteRole? ro
   expiresAt: expiresAt ?? this.expiresAt,
   acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
   projects: projects != null ? projects() : this.projects,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Invite &&
           object == other.object &&
           id == other.id &&
@@ -156,7 +156,7 @@ Invite copyWith({InviteObject? object, String? id, String? email, InviteRole? ro
           invitedAt == other.invitedAt &&
           expiresAt == other.expiresAt &&
           acceptedAt == other.acceptedAt &&
-          listEquals(projects, other.projects); } 
-@override int get hashCode { return Object.hash(object, id, email, role, status, invitedAt, expiresAt, acceptedAt, Object.hashAll(projects ?? const [])); } 
-@override String toString() { return 'Invite(object: $object, id: $id, email: $email, role: $role, status: $status, invitedAt: $invitedAt, expiresAt: $expiresAt, acceptedAt: $acceptedAt, projects: $projects)'; } 
- }
+          listEquals(projects, other.projects);}
+@override int get hashCode {return Object.hash(object, id, email, role, status, invitedAt, expiresAt, acceptedAt, Object.hashAll(projects ?? const []));}
+@override String toString() {return 'Invite(object: $object, id: $id, email: $email, role: $role, status: $status, invitedAt: $invitedAt, expiresAt: $expiresAt, acceptedAt: $acceptedAt, projects: $projects)';}
+}

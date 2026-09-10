@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';import 'status_update.dart';/// The current state of the project.
 @immutable final class ProjectsState {const ProjectsState._(this.value);
 
-factory ProjectsState.fromJson(String json) { return switch (json) {
+factory ProjectsState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => ProjectsState._(json),
-}; }
+};}
 
 static const ProjectsState open = ProjectsState._('open');
 
@@ -17,18 +17,18 @@ static const List<ProjectsState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectsState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectsState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectsState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectsState($value)';}
+}
 /// A projects v2 project
 @immutable final class Projects {const Projects({required this.id, required this.nodeId, required this.owner, required this.creator, required this.title, required this.description, required this.public, required this.closedAt, required this.createdAt, required this.updatedAt, required this.number, required this.shortDescription, required this.deletedAt, required this.deletedBy, this.state, this.latestStatusUpdate = const Omittable.absent(), this.isTemplate, });
 
-factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
+factory Projects.fromJson(Map<String, dynamic> json) {return Projects(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String,
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
@@ -46,7 +46,7 @@ factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
   state: json['state'] != null ? ProjectsState.fromJson(json['state'] as String) : null,
   latestStatusUpdate: json.containsKey('latest_status_update') ? Omittable(json['latest_status_update'] != null ? StatusUpdate.fromJson(json['latest_status_update'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   isTemplate: json['is_template'] as bool?,
-); }
+);}
 
 /// The unique identifier of the project.
 final double id;
@@ -95,7 +95,7 @@ final Omittable<StatusUpdate?> latestStatusUpdate;
 /// Whether this project is a template
 final bool? isTemplate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'owner': owner.toJson(),
@@ -113,8 +113,8 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (latestStatusUpdate.isPresent) 'latest_status_update': latestStatusUpdate.value?.toJson(),
   'is_template': ?isTemplate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
       json.containsKey('creator') &&
@@ -127,8 +127,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('short_description') && (json['short_description'] == null || json['short_description'] is String) &&
       json.containsKey('deleted_at') && (json['deleted_at'] == null || json['deleted_at'] is String) &&
-      json.containsKey('deleted_by'); } 
-Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, ProjectsState? Function()? state, Omittable<StatusUpdate?>? latestStatusUpdate, bool? Function()? isTemplate, }) { return Projects(
+      json.containsKey('deleted_by');}
+Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, ProjectsState? Function()? state, Omittable<StatusUpdate?>? latestStatusUpdate, bool? Function()? isTemplate, }) {return Projects(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   owner: owner ?? this.owner,
@@ -146,8 +146,8 @@ Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? cr
   state: state != null ? state() : this.state,
   latestStatusUpdate: latestStatusUpdate ?? this.latestStatusUpdate,
   isTemplate: isTemplate != null ? isTemplate() : this.isTemplate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Projects &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -165,7 +165,7 @@ Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? cr
           deletedBy == other.deletedBy &&
           state == other.state &&
           latestStatusUpdate == other.latestStatusUpdate &&
-          isTemplate == other.isTemplate; } 
-@override int get hashCode { return Object.hash(id, nodeId, owner, creator, title, description, public, closedAt, createdAt, updatedAt, number, shortDescription, deletedAt, deletedBy, state, latestStatusUpdate, isTemplate); } 
-@override String toString() { return 'Projects(id: $id, nodeId: $nodeId, owner: $owner, creator: $creator, title: $title, description: $description, public: $public, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, number: $number, shortDescription: $shortDescription, deletedAt: $deletedAt, deletedBy: $deletedBy, state: $state, latestStatusUpdate: $latestStatusUpdate, isTemplate: $isTemplate)'; } 
- }
+          isTemplate == other.isTemplate;}
+@override int get hashCode {return Object.hash(id, nodeId, owner, creator, title, description, public, closedAt, createdAt, updatedAt, number, shortDescription, deletedAt, deletedBy, state, latestStatusUpdate, isTemplate);}
+@override String toString() {return 'Projects(id: $id, nodeId: $nodeId, owner: $owner, creator: $creator, title: $title, description: $description, public: $public, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, number: $number, shortDescription: $shortDescription, deletedAt: $deletedAt, deletedBy: $deletedBy, state: $state, latestStatusUpdate: $latestStatusUpdate, isTemplate: $isTemplate)';}
+}

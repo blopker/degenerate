@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsnsAsSetResponseResultAsSets {const RadarGetAsnsAsSetResponseResultAsSets({required this.asMembersCount, required this.asSetMembersCount, required this.asSetUpstreamsCount, required this.asnConeSize, required this.irrSources, required this.name, this.hierarchicalAsn, this.inferredAsn, this.peeringdbAsn, });
 
-factory RadarGetAsnsAsSetResponseResultAsSets.fromJson(Map<String, dynamic> json) { return RadarGetAsnsAsSetResponseResultAsSets(
+factory RadarGetAsnsAsSetResponseResultAsSets.fromJson(Map<String, dynamic> json) {return RadarGetAsnsAsSetResponseResultAsSets(
   asMembersCount: (json['as_members_count'] as num).toInt(),
   asSetMembersCount: (json['as_set_members_count'] as num).toInt(),
   asSetUpstreamsCount: (json['as_set_upstreams_count'] as num).toInt(),
@@ -12,7 +12,7 @@ factory RadarGetAsnsAsSetResponseResultAsSets.fromJson(Map<String, dynamic> json
   irrSources: (json['irr_sources'] as List<dynamic>).map((e) => e as String).toList(),
   name: json['name'] as String,
   peeringdbAsn: json['peeringdb_asn'] != null ? (json['peeringdb_asn'] as num).toInt() : null,
-); }
+);}
 
 /// The number of AS members in the AS-SET
 final int asMembersCount;
@@ -41,7 +41,7 @@ final String name;
 /// The AS number matching PeeringDB record
 final int? peeringdbAsn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'as_members_count': asMembersCount,
   'as_set_members_count': asSetMembersCount,
   'as_set_upstreams_count': asSetUpstreamsCount,
@@ -51,14 +51,14 @@ Map<String, dynamic> toJson() { return {
   'irr_sources': irrSources,
   'name': name,
   'peeringdb_asn': ?peeringdbAsn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('as_members_count') && json['as_members_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('as_members_count') && json['as_members_count'] is num &&
       json.containsKey('as_set_members_count') && json['as_set_members_count'] is num &&
       json.containsKey('as_set_upstreams_count') && json['as_set_upstreams_count'] is num &&
       json.containsKey('asn_cone_size') && json['asn_cone_size'] is num &&
       json.containsKey('irr_sources') &&
-      json.containsKey('name') && json['name'] is String; } 
-RadarGetAsnsAsSetResponseResultAsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstreamsCount, int? asnConeSize, int? Function()? hierarchicalAsn, int? Function()? inferredAsn, List<String>? irrSources, String? name, int? Function()? peeringdbAsn, }) { return RadarGetAsnsAsSetResponseResultAsSets(
+      json.containsKey('name') && json['name'] is String;}
+RadarGetAsnsAsSetResponseResultAsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstreamsCount, int? asnConeSize, int? Function()? hierarchicalAsn, int? Function()? inferredAsn, List<String>? irrSources, String? name, int? Function()? peeringdbAsn, }) {return RadarGetAsnsAsSetResponseResultAsSets(
   asMembersCount: asMembersCount ?? this.asMembersCount,
   asSetMembersCount: asSetMembersCount ?? this.asSetMembersCount,
   asSetUpstreamsCount: asSetUpstreamsCount ?? this.asSetUpstreamsCount,
@@ -68,8 +68,8 @@ RadarGetAsnsAsSetResponseResultAsSets copyWith({int? asMembersCount, int? asSetM
   irrSources: irrSources ?? this.irrSources,
   name: name ?? this.name,
   peeringdbAsn: peeringdbAsn != null ? peeringdbAsn() : this.peeringdbAsn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAsnsAsSetResponseResultAsSets &&
           asMembersCount == other.asMembersCount &&
           asSetMembersCount == other.asSetMembersCount &&
@@ -79,7 +79,7 @@ RadarGetAsnsAsSetResponseResultAsSets copyWith({int? asMembersCount, int? asSetM
           inferredAsn == other.inferredAsn &&
           listEquals(irrSources, other.irrSources) &&
           name == other.name &&
-          peeringdbAsn == other.peeringdbAsn; } 
-@override int get hashCode { return Object.hash(asMembersCount, asSetMembersCount, asSetUpstreamsCount, asnConeSize, hierarchicalAsn, inferredAsn, Object.hashAll(irrSources), name, peeringdbAsn); } 
-@override String toString() { return 'RadarGetAsnsAsSetResponseResultAsSets(asMembersCount: $asMembersCount, asSetMembersCount: $asSetMembersCount, asSetUpstreamsCount: $asSetUpstreamsCount, asnConeSize: $asnConeSize, hierarchicalAsn: $hierarchicalAsn, inferredAsn: $inferredAsn, irrSources: $irrSources, name: $name, peeringdbAsn: $peeringdbAsn)'; } 
- }
+          peeringdbAsn == other.peeringdbAsn;}
+@override int get hashCode {return Object.hash(asMembersCount, asSetMembersCount, asSetUpstreamsCount, asnConeSize, hierarchicalAsn, inferredAsn, Object.hashAll(irrSources), name, peeringdbAsn);}
+@override String toString() {return 'RadarGetAsnsAsSetResponseResultAsSets(asMembersCount: $asMembersCount, asSetMembersCount: $asSetMembersCount, asSetUpstreamsCount: $asSetUpstreamsCount, asnConeSize: $asnConeSize, hierarchicalAsn: $hierarchicalAsn, inferredAsn: $inferredAsn, irrSources: $irrSources, name: $name, peeringdbAsn: $peeringdbAsn)';}
+}

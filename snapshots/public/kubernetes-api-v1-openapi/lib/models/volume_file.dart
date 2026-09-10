@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_field_selector.dart';import 'resource_field_selector.dart';/// DownwardAPIVolumeFile represents information to create the file containing the pod field
 @immutable final class VolumeFile {const VolumeFile({required this.path, this.fieldRef, this.mode, this.resourceFieldRef, });
 
-factory VolumeFile.fromJson(Map<String, dynamic> json) { return VolumeFile(
+factory VolumeFile.fromJson(Map<String, dynamic> json) {return VolumeFile(
   fieldRef: json['fieldRef'] != null ? ObjectFieldSelector.fromJson(json['fieldRef'] as Map<String, dynamic>) : null,
   mode: json['mode'] != null ? (json['mode'] as num).toInt() : null,
   path: json['path'] as String,
   resourceFieldRef: json['resourceFieldRef'] != null ? ResourceFieldSelector.fromJson(json['resourceFieldRef'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Required: Selects a field of the pod: only annotations, labels, name, namespace and uid are supported.
 final ObjectFieldSelector? fieldRef;
@@ -22,25 +22,25 @@ final String path;
 /// Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, requests.cpu and requests.memory) are currently supported.
 final ResourceFieldSelector? resourceFieldRef;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fieldRef != null) 'fieldRef': fieldRef?.toJson(),
   'mode': ?mode,
   'path': path,
   if (resourceFieldRef != null) 'resourceFieldRef': resourceFieldRef?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-VolumeFile copyWith({ObjectFieldSelector? Function()? fieldRef, int? Function()? mode, String? path, ResourceFieldSelector? Function()? resourceFieldRef, }) { return VolumeFile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String;}
+VolumeFile copyWith({ObjectFieldSelector? Function()? fieldRef, int? Function()? mode, String? path, ResourceFieldSelector? Function()? resourceFieldRef, }) {return VolumeFile(
   fieldRef: fieldRef != null ? fieldRef() : this.fieldRef,
   mode: mode != null ? mode() : this.mode,
   path: path ?? this.path,
   resourceFieldRef: resourceFieldRef != null ? resourceFieldRef() : this.resourceFieldRef,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VolumeFile &&
           fieldRef == other.fieldRef &&
           mode == other.mode &&
           path == other.path &&
-          resourceFieldRef == other.resourceFieldRef; } 
-@override int get hashCode { return Object.hash(fieldRef, mode, path, resourceFieldRef); } 
-@override String toString() { return 'VolumeFile(fieldRef: $fieldRef, mode: $mode, path: $path, resourceFieldRef: $resourceFieldRef)'; } 
- }
+          resourceFieldRef == other.resourceFieldRef;}
+@override int get hashCode {return Object.hash(fieldRef, mode, path, resourceFieldRef);}
+@override String toString() {return 'VolumeFile(fieldRef: $fieldRef, mode: $mode, path: $path, resourceFieldRef: $resourceFieldRef)';}
+}

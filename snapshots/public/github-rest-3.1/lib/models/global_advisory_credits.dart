@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_credit_types.dart';import 'simple_user.dart';@immutable final class GlobalAdvisoryCredits {const GlobalAdvisoryCredits({required this.user, required this.type, });
 
-factory GlobalAdvisoryCredits.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryCredits(
+factory GlobalAdvisoryCredits.fromJson(Map<String, dynamic> json) {return GlobalAdvisoryCredits(
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
   type: SecurityAdvisoryCreditTypes.fromJson(json['type'] as String),
-); }
+);}
 
 final SimpleUser user;
 
 /// The type of credit the user is receiving.
 final SecurityAdvisoryCreditTypes type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'user': user.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('user') &&
-      json.containsKey('type'); } 
-GlobalAdvisoryCredits copyWith({SimpleUser? user, SecurityAdvisoryCreditTypes? type, }) { return GlobalAdvisoryCredits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('user') &&
+      json.containsKey('type');}
+GlobalAdvisoryCredits copyWith({SimpleUser? user, SecurityAdvisoryCreditTypes? type, }) {return GlobalAdvisoryCredits(
   user: user ?? this.user,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GlobalAdvisoryCredits &&
           user == other.user &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(user, type); } 
-@override String toString() { return 'GlobalAdvisoryCredits(user: $user, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(user, type);}
+@override String toString() {return 'GlobalAdvisoryCredits(user: $user, type: $type)';}
+}

@@ -11,7 +11,7 @@ final class AccountRequestTracerApi with ApiExecutor {const AccountRequestTracer
 /// Request Trace
 ///
 /// `POST /accounts/{account_id}/request-tracer/trace`
-Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, ResponseCommonFailure57>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, ResponseCommonFailure57>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -22,22 +22,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? AccountRequestTracerRequestTraceResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? AccountRequestTracerRequestTraceResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure57.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure57.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

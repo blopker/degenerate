@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetAiInferenceTimeseriesGroupDimension {const RadarGetAiInferenceTimeseriesGroupDimension._(this.value);
 
-factory RadarGetAiInferenceTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetAiInferenceTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'MODEL' => model,
   'TASK' => task,
   _ => RadarGetAiInferenceTimeseriesGroupDimension._(json),
-}; }
+};}
 
 static const RadarGetAiInferenceTimeseriesGroupDimension model = RadarGetAiInferenceTimeseriesGroupDimension._('MODEL');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAiInferenceTimeseriesGroupDimension> values = [model, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAiInferenceTimeseriesGroupDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAiInferenceTimeseriesGroupDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAiInferenceTimeseriesGroupDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAiInferenceTimeseriesGroupDimension($value)';}
+}

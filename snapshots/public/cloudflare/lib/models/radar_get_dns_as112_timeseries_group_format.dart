@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetDnsAs112TimeseriesGroupFormat {const RadarGetDnsAs112TimeseriesGroupFormat._(this.value);
 
-factory RadarGetDnsAs112TimeseriesGroupFormat.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesGroupFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsAs112TimeseriesGroupFormat._(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesGroupFormat $json = RadarGetDnsAs112TimeseriesGroupFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetDnsAs112TimeseriesGroupFormat> values = [$json, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsAs112TimeseriesGroupFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsAs112TimeseriesGroupFormat($value)';}
+}

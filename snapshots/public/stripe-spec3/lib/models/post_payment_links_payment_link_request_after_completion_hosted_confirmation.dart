@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation {const PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation({this.customMessage});
 
-factory PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(
+factory PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation.fromJson(Map<String, dynamic> json) {return PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(
   customMessage: json['custom_message'] as String?,
-); }
+);}
 
 final String? customMessage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'custom_message': ?customMessage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_message'}.contains(key)); } 
-PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation copyWith({String? Function()? customMessage}) { return PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'custom_message'}.contains(key));}
+PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation copyWith({String? Function()? customMessage}) {return PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(
   customMessage: customMessage != null ? customMessage() : this.customMessage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation &&
-          customMessage == other.customMessage; } 
-@override int get hashCode { return customMessage.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(customMessage: $customMessage)'; } 
- }
+          customMessage == other.customMessage;}
+@override int get hashCode {return customMessage.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(customMessage: $customMessage)';}
+}

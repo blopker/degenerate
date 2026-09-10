@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateVectorStoreFileAttributesRequest {const UpdateVectorStoreFileAttributesRequest({required this.attributes});
 
-factory UpdateVectorStoreFileAttributesRequest.fromJson(Map<String, dynamic> json) { return UpdateVectorStoreFileAttributesRequest(
+factory UpdateVectorStoreFileAttributesRequest.fromJson(Map<String, dynamic> json) {return UpdateVectorStoreFileAttributesRequest(
   attributes: json['attributes'] as Map<String, dynamic>?,
-); }
+);}
 
 final Map<String,dynamic>? attributes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attributes': attributes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('attributes'); } 
-UpdateVectorStoreFileAttributesRequest copyWith({Map<String, dynamic>? Function()? attributes}) { return UpdateVectorStoreFileAttributesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('attributes');}
+UpdateVectorStoreFileAttributesRequest copyWith({Map<String, dynamic>? Function()? attributes}) {return UpdateVectorStoreFileAttributesRequest(
   attributes: attributes != null ? attributes() : this.attributes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateVectorStoreFileAttributesRequest &&
-          attributes == other.attributes; } 
-@override int get hashCode { return attributes.hashCode; } 
-@override String toString() { return 'UpdateVectorStoreFileAttributesRequest(attributes: $attributes)'; } 
- }
+          attributes == other.attributes;}
+@override int get hashCode {return attributes.hashCode;}
+@override String toString() {return 'UpdateVectorStoreFileAttributesRequest(attributes: $attributes)';}
+}

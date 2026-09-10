@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class QueryObject {const QueryObject._(this.value);
 
-factory QueryObject.fromJson(String json) { return switch (json) {
+factory QueryObject.fromJson(String json) {return switch (json) {
   'sigma.sigma_api_query' => sigmaSigmaApiQuery,
   _ => QueryObject._(json),
-}; }
+};}
 
 static const QueryObject sigmaSigmaApiQuery = QueryObject._('sigma.sigma_api_query');
 
@@ -14,25 +14,25 @@ static const List<QueryObject> values = [sigmaSigmaApiQuery];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QueryObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QueryObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is QueryObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'QueryObject($value)';}
+}
 /// A saved query object represents a query that can be executed for a run.
 @immutable final class Query {const Query({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.sql, });
 
-factory Query.fromJson(Map<String, dynamic> json) { return Query(
+factory Query.fromJson(Map<String, dynamic> json) {return Query(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   name: json['name'] as String,
   object: QueryObject.fromJson(json['object'] as String),
   sql: json['sql'] as String,
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -52,36 +52,36 @@ final QueryObject object;
 /// The sql statement for the query.
 final String sql;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'id': id,
   'livemode': livemode,
   'name': name,
   'object': object.toJson(),
   'sql': sql,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
-      json.containsKey('sql') && json['sql'] is String; } 
-Query copyWith({int? created, String? id, bool? livemode, String? name, QueryObject? object, String? sql, }) { return Query(
+      json.containsKey('sql') && json['sql'] is String;}
+Query copyWith({int? created, String? id, bool? livemode, String? name, QueryObject? object, String? sql, }) {return Query(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   name: name ?? this.name,
   object: object ?? this.object,
   sql: sql ?? this.sql,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Query &&
           created == other.created &&
           id == other.id &&
           livemode == other.livemode &&
           name == other.name &&
           object == other.object &&
-          sql == other.sql; } 
-@override int get hashCode { return Object.hash(created, id, livemode, name, object, sql); } 
-@override String toString() { return 'Query(created: $created, id: $id, livemode: $livemode, name: $name, object: $object, sql: $sql)'; } 
- }
+          sql == other.sql;}
+@override int get hashCode {return Object.hash(created, id, livemode, name, object, sql);}
+@override String toString() {return 'Query(created: $created, id: $id, livemode: $livemode, name: $name, object: $object, sql: $sql)';}
+}

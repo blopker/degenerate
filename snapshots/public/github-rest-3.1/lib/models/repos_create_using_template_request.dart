@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateUsingTemplateRequest {const ReposCreateUsingTemplateRequest({required this.name, this.owner, this.description, this.includeAllBranches, this.private, });
 
-factory ReposCreateUsingTemplateRequest.fromJson(Map<String, dynamic> json) { return ReposCreateUsingTemplateRequest(
+factory ReposCreateUsingTemplateRequest.fromJson(Map<String, dynamic> json) {return ReposCreateUsingTemplateRequest(
   owner: json['owner'] as String?,
   name: json['name'] as String,
   description: json['description'] as String?,
   includeAllBranches: json['include_all_branches'] as bool?,
   private: json['private'] as bool?,
-); }
+);}
 
 /// The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
 final String? owner;
@@ -26,31 +26,31 @@ final bool? includeAllBranches;
 final bool? private;
 
 /// The value with the schema default applied when absent.
-bool get includeAllBranchesOrDefault { return includeAllBranches ?? false; } 
+bool get includeAllBranchesOrDefault {return includeAllBranches ?? false;}
 /// The value with the schema default applied when absent.
-bool get privateOrDefault { return private ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get privateOrDefault {return private ?? false;}
+Map<String, dynamic> toJson() {return {
   'owner': ?owner,
   'name': name,
   'description': ?description,
   'include_all_branches': ?includeAllBranches,
   'private': ?private,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateUsingTemplateRequest copyWith({String? Function()? owner, String? name, String? Function()? description, bool? Function()? includeAllBranches, bool? Function()? private, }) { return ReposCreateUsingTemplateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ReposCreateUsingTemplateRequest copyWith({String? Function()? owner, String? name, String? Function()? description, bool? Function()? includeAllBranches, bool? Function()? private, }) {return ReposCreateUsingTemplateRequest(
   owner: owner != null ? owner() : this.owner,
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   includeAllBranches: includeAllBranches != null ? includeAllBranches() : this.includeAllBranches,
   private: private != null ? private() : this.private,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateUsingTemplateRequest &&
           owner == other.owner &&
           name == other.name &&
           description == other.description &&
           includeAllBranches == other.includeAllBranches &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(owner, name, description, includeAllBranches, private); } 
-@override String toString() { return 'ReposCreateUsingTemplateRequest(owner: $owner, name: $name, description: $description, includeAllBranches: $includeAllBranches, private: $private)'; } 
- }
+          private == other.private;}
+@override int get hashCode {return Object.hash(owner, name, description, includeAllBranches, private);}
+@override String toString() {return 'ReposCreateUsingTemplateRequest(owner: $owner, name: $name, description: $description, includeAllBranches: $includeAllBranches, private: $private)';}
+}

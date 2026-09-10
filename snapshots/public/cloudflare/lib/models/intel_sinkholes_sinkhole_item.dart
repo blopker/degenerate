@@ -16,7 +16,7 @@ String toJson() => value;
 }
 @immutable final class IntelSinkholesSinkholeItem {const IntelSinkholesSinkholeItem({this.accountTag, this.createdOn, this.id, this.modifiedOn, this.name, this.r2Bucket, this.r2Id, });
 
-factory IntelSinkholesSinkholeItem.fromJson(Map<String, dynamic> json) { return IntelSinkholesSinkholeItem(
+factory IntelSinkholesSinkholeItem.fromJson(Map<String, dynamic> json) {return IntelSinkholesSinkholeItem(
   accountTag: json['account_tag'] as String?,
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   id: json['id'] != null ? IntelSinkholesId.fromJson(json['id'] as num) : null,
@@ -24,7 +24,7 @@ factory IntelSinkholesSinkholeItem.fromJson(Map<String, dynamic> json) { return 
   name: json['name'] != null ? IntelSinkholesName.fromJson(json['name'] as String) : null,
   r2Bucket: json['r2_bucket'] as String?,
   r2Id: json['r2_id'] as String?,
-); }
+);}
 
 /// The account tag that owns this sinkhole
 final String? accountTag;
@@ -47,7 +47,7 @@ final String? r2Bucket;
 /// The id of the R2 instance
 final String? r2Id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_tag': ?accountTag,
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
   if (id != null) 'id': id?.toJson(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   'r2_bucket': ?r2Bucket,
   'r2_id': ?r2Id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'created_on', 'id', 'modified_on', 'name', 'r2_bucket', 'r2_id'}.contains(key)); } 
-IntelSinkholesSinkholeItem copyWith({String? Function()? accountTag, DateTime? Function()? createdOn, IntelSinkholesId? Function()? id, DateTime? Function()? modifiedOn, IntelSinkholesName? Function()? name, String? Function()? r2Bucket, String? Function()? r2Id, }) { return IntelSinkholesSinkholeItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tag', 'created_on', 'id', 'modified_on', 'name', 'r2_bucket', 'r2_id'}.contains(key));}
+IntelSinkholesSinkholeItem copyWith({String? Function()? accountTag, DateTime? Function()? createdOn, IntelSinkholesId? Function()? id, DateTime? Function()? modifiedOn, IntelSinkholesName? Function()? name, String? Function()? r2Bucket, String? Function()? r2Id, }) {return IntelSinkholesSinkholeItem(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   id: id != null ? id() : this.id,
@@ -65,8 +65,8 @@ IntelSinkholesSinkholeItem copyWith({String? Function()? accountTag, DateTime? F
   name: name != null ? name() : this.name,
   r2Bucket: r2Bucket != null ? r2Bucket() : this.r2Bucket,
   r2Id: r2Id != null ? r2Id() : this.r2Id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelSinkholesSinkholeItem &&
           accountTag == other.accountTag &&
           createdOn == other.createdOn &&
@@ -74,7 +74,7 @@ IntelSinkholesSinkholeItem copyWith({String? Function()? accountTag, DateTime? F
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           r2Bucket == other.r2Bucket &&
-          r2Id == other.r2Id; } 
-@override int get hashCode { return Object.hash(accountTag, createdOn, id, modifiedOn, name, r2Bucket, r2Id); } 
-@override String toString() { return 'IntelSinkholesSinkholeItem(accountTag: $accountTag, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, name: $name, r2Bucket: $r2Bucket, r2Id: $r2Id)'; } 
- }
+          r2Id == other.r2Id;}
+@override int get hashCode {return Object.hash(accountTag, createdOn, id, modifiedOn, name, r2Bucket, r2Id);}
+@override String toString() {return 'IntelSinkholesSinkholeItem(accountTag: $accountTag, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, name: $name, r2Bucket: $r2Bucket, r2Id: $r2Id)';}
+}

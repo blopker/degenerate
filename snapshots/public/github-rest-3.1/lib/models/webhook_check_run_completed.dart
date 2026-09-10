@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCheckRunCompletedAction {const WebhookCheckRunCompletedAction._(this.value);
 
-factory WebhookCheckRunCompletedAction.fromJson(String json) { return switch (json) {
+factory WebhookCheckRunCompletedAction.fromJson(String json) {return switch (json) {
   'completed' => completed,
   _ => WebhookCheckRunCompletedAction._(json),
-}; }
+};}
 
 static const WebhookCheckRunCompletedAction completed = WebhookCheckRunCompletedAction._('completed');
 
@@ -13,17 +13,17 @@ static const List<WebhookCheckRunCompletedAction> values = [completed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckRunCompletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckRunCompletedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckRunCompletedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckRunCompletedAction($value)';}
+}
 @immutable final class WebhookCheckRunCompleted {const WebhookCheckRunCompleted({required this.checkRun, required this.repository, required this.sender, this.action, this.installation, this.enterprise, this.organization, });
 
-factory WebhookCheckRunCompleted.fromJson(Map<String, dynamic> json) { return WebhookCheckRunCompleted(
+factory WebhookCheckRunCompleted.fromJson(Map<String, dynamic> json) {return WebhookCheckRunCompleted(
   action: json['action'] != null ? WebhookCheckRunCompletedAction.fromJson(json['action'] as String) : null,
   checkRun: CheckRunWithSimpleCheckSuite.fromJson(json['check_run'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookCheckRunCompleted.fromJson(Map<String, dynamic> json) { return We
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookCheckRunCompletedAction? action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'check_run': checkRun.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,11 +55,11 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_run') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('check_run') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCheckRunCompleted copyWith({WebhookCheckRunCompletedAction? Function()? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation? Function()? installation, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckRunCompleted(
+      json.containsKey('sender');}
+WebhookCheckRunCompleted copyWith({WebhookCheckRunCompletedAction? Function()? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation? Function()? installation, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCheckRunCompleted(
   action: action != null ? action() : this.action,
   checkRun: checkRun ?? this.checkRun,
   installation: installation != null ? installation() : this.installation,
@@ -67,8 +67,8 @@ WebhookCheckRunCompleted copyWith({WebhookCheckRunCompletedAction? Function()? a
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCheckRunCompleted &&
           action == other.action &&
           checkRun == other.checkRun &&
@@ -76,7 +76,7 @@ WebhookCheckRunCompleted copyWith({WebhookCheckRunCompletedAction? Function()? a
           enterprise == other.enterprise &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, checkRun, installation, enterprise, organization, repository, sender); } 
-@override String toString() { return 'WebhookCheckRunCompleted(action: $action, checkRun: $checkRun, installation: $installation, enterprise: $enterprise, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, checkRun, installation, enterprise, organization, repository, sender);}
+@override String toString() {return 'WebhookCheckRunCompleted(action: $action, checkRun: $checkRun, installation: $installation, enterprise: $enterprise, organization: $organization, repository: $repository, sender: $sender)';}
+}

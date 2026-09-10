@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_company.dart';import 'post_tokens_request_account_individual.dart';@immutable final class PostTokensRequestAccountBusinessType {const PostTokensRequestAccountBusinessType._(this.value);
 
-factory PostTokensRequestAccountBusinessType.fromJson(String json) { return switch (json) {
+factory PostTokensRequestAccountBusinessType.fromJson(String json) {return switch (json) {
   'company' => company,
   'government_entity' => governmentEntity,
   'individual' => individual,
   'non_profit' => nonProfit,
   _ => PostTokensRequestAccountBusinessType._(json),
-}; }
+};}
 
 static const PostTokensRequestAccountBusinessType company = PostTokensRequestAccountBusinessType._('company');
 
@@ -22,23 +22,23 @@ static const List<PostTokensRequestAccountBusinessType> values = [company, gover
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTokensRequestAccountBusinessType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTokensRequestAccountBusinessType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTokensRequestAccountBusinessType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTokensRequestAccountBusinessType($value)';}
+}
 /// Information for the account this token represents.
 @immutable final class PostTokensRequestAccount {const PostTokensRequestAccount({this.businessType, this.company, this.individual, this.tosShownAndAccepted, });
 
-factory PostTokensRequestAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccount(
+factory PostTokensRequestAccount.fromJson(Map<String, dynamic> json) {return PostTokensRequestAccount(
   businessType: json['business_type'] != null ? PostTokensRequestAccountBusinessType.fromJson(json['business_type'] as String) : null,
   company: json['company'] != null ? PostTokensRequestAccountCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? PostTokensRequestAccountIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
   tosShownAndAccepted: json['tos_shown_and_accepted'] as bool?,
-); }
+);}
 
 final PostTokensRequestAccountBusinessType? businessType;
 
@@ -48,25 +48,25 @@ final PostTokensRequestAccountIndividual? individual;
 
 final bool? tosShownAndAccepted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (businessType != null) 'business_type': businessType?.toJson(),
   if (company != null) 'company': company?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
   'tos_shown_and_accepted': ?tosShownAndAccepted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business_type', 'company', 'individual', 'tos_shown_and_accepted'}.contains(key)); } 
-PostTokensRequestAccount copyWith({PostTokensRequestAccountBusinessType? Function()? businessType, PostTokensRequestAccountCompany? Function()? company, PostTokensRequestAccountIndividual? Function()? individual, bool? Function()? tosShownAndAccepted, }) { return PostTokensRequestAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'business_type', 'company', 'individual', 'tos_shown_and_accepted'}.contains(key));}
+PostTokensRequestAccount copyWith({PostTokensRequestAccountBusinessType? Function()? businessType, PostTokensRequestAccountCompany? Function()? company, PostTokensRequestAccountIndividual? Function()? individual, bool? Function()? tosShownAndAccepted, }) {return PostTokensRequestAccount(
   businessType: businessType != null ? businessType() : this.businessType,
   company: company != null ? company() : this.company,
   individual: individual != null ? individual() : this.individual,
   tosShownAndAccepted: tosShownAndAccepted != null ? tosShownAndAccepted() : this.tosShownAndAccepted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTokensRequestAccount &&
           businessType == other.businessType &&
           company == other.company &&
           individual == other.individual &&
-          tosShownAndAccepted == other.tosShownAndAccepted; } 
-@override int get hashCode { return Object.hash(businessType, company, individual, tosShownAndAccepted); } 
-@override String toString() { return 'PostTokensRequestAccount(businessType: $businessType, company: $company, individual: $individual, tosShownAndAccepted: $tosShownAndAccepted)'; } 
- }
+          tosShownAndAccepted == other.tosShownAndAccepted;}
+@override int get hashCode {return Object.hash(businessType, company, individual, tosShownAndAccepted);}
+@override String toString() {return 'PostTokensRequestAccount(businessType: $businessType, company: $company, individual: $individual, tosShownAndAccepted: $tosShownAndAccepted)';}
+}

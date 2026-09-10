@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How the author is associated with the repository.
 @immutable final class AuthorAssociation {const AuthorAssociation._(this.value);
 
-factory AuthorAssociation.fromJson(String json) { return switch (json) {
+factory AuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -13,7 +13,7 @@ factory AuthorAssociation.fromJson(String json) { return switch (json) {
   'NONE' => none,
   'OWNER' => owner,
   _ => AuthorAssociation._(json),
-}; }
+};}
 
 static const AuthorAssociation collaborator = AuthorAssociation._('COLLABORATOR');
 
@@ -35,11 +35,11 @@ static const List<AuthorAssociation> values = [collaborator, contributor, firstT
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AuthorAssociation($value)';}
+}

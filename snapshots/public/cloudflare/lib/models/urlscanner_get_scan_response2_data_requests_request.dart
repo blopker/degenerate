@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_requests_request_initiator.dart';import 'urlscanner_get_scan_response2_data_requests_request_redirect_response.dart';import 'urlscanner_get_scan_response2_data_requests_request_request.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequest {const UrlscannerGetScanResponse2DataRequestsRequest({required this.documentUrl, required this.hasUserGesture, required this.initiator, required this.redirectHasExtraInfo, required this.request, required this.requestId, required this.type, required this.wallTime, this.frameId, this.loaderId, this.primaryRequest, this.redirectResponse, });
 
-factory UrlscannerGetScanResponse2DataRequestsRequest.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequest(
+factory UrlscannerGetScanResponse2DataRequestsRequest.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2DataRequestsRequest(
   documentUrl: json['documentURL'] as String,
   frameId: json['frameId'] as String?,
   hasUserGesture: json['hasUserGesture'] as bool,
@@ -15,7 +15,7 @@ factory UrlscannerGetScanResponse2DataRequestsRequest.fromJson(Map<String, dynam
   requestId: json['requestId'] as String,
   type: json['type'] as String,
   wallTime: (json['wallTime'] as num).toDouble(),
-); }
+);}
 
 final String documentUrl;
 
@@ -41,7 +41,7 @@ final String type;
 
 final double wallTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'documentURL': documentUrl,
   'frameId': ?frameId,
   'hasUserGesture': hasUserGesture,
@@ -54,16 +54,16 @@ Map<String, dynamic> toJson() { return {
   'requestId': requestId,
   'type': type,
   'wallTime': wallTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('documentURL') && json['documentURL'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('documentURL') && json['documentURL'] is String &&
       json.containsKey('hasUserGesture') && json['hasUserGesture'] is bool &&
       json.containsKey('initiator') &&
       json.containsKey('redirectHasExtraInfo') && json['redirectHasExtraInfo'] is bool &&
       json.containsKey('request') &&
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('wallTime') && json['wallTime'] is num; } 
-UrlscannerGetScanResponse2DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, bool? hasUserGesture, UrlscannerGetScanResponse2DataRequestsRequestInitiator? initiator, String? Function()? loaderId, bool? Function()? primaryRequest, bool? redirectHasExtraInfo, UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse? Function()? redirectResponse, UrlscannerGetScanResponse2DataRequestsRequestRequest? request, String? requestId, String? type, double? wallTime, }) { return UrlscannerGetScanResponse2DataRequestsRequest(
+      json.containsKey('wallTime') && json['wallTime'] is num;}
+UrlscannerGetScanResponse2DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, bool? hasUserGesture, UrlscannerGetScanResponse2DataRequestsRequestInitiator? initiator, String? Function()? loaderId, bool? Function()? primaryRequest, bool? redirectHasExtraInfo, UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse? Function()? redirectResponse, UrlscannerGetScanResponse2DataRequestsRequestRequest? request, String? requestId, String? type, double? wallTime, }) {return UrlscannerGetScanResponse2DataRequestsRequest(
   documentUrl: documentUrl ?? this.documentUrl,
   frameId: frameId != null ? frameId() : this.frameId,
   hasUserGesture: hasUserGesture ?? this.hasUserGesture,
@@ -76,8 +76,8 @@ UrlscannerGetScanResponse2DataRequestsRequest copyWith({String? documentUrl, Str
   requestId: requestId ?? this.requestId,
   type: type ?? this.type,
   wallTime: wallTime ?? this.wallTime,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2DataRequestsRequest &&
           documentUrl == other.documentUrl &&
           frameId == other.frameId &&
@@ -90,7 +90,7 @@ UrlscannerGetScanResponse2DataRequestsRequest copyWith({String? documentUrl, Str
           request == other.request &&
           requestId == other.requestId &&
           type == other.type &&
-          wallTime == other.wallTime; } 
-@override int get hashCode { return Object.hash(documentUrl, frameId, hasUserGesture, initiator, loaderId, primaryRequest, redirectHasExtraInfo, redirectResponse, request, requestId, type, wallTime); } 
-@override String toString() { return 'UrlscannerGetScanResponse2DataRequestsRequest(documentUrl: $documentUrl, frameId: $frameId, hasUserGesture: $hasUserGesture, initiator: $initiator, loaderId: $loaderId, primaryRequest: $primaryRequest, redirectHasExtraInfo: $redirectHasExtraInfo, redirectResponse: $redirectResponse, request: $request, requestId: $requestId, type: $type, wallTime: $wallTime)'; } 
- }
+          wallTime == other.wallTime;}
+@override int get hashCode {return Object.hash(documentUrl, frameId, hasUserGesture, initiator, loaderId, primaryRequest, redirectHasExtraInfo, redirectResponse, request, requestId, type, wallTime);}
+@override String toString() {return 'UrlscannerGetScanResponse2DataRequestsRequest(documentUrl: $documentUrl, frameId: $frameId, hasUserGesture: $hasUserGesture, initiator: $initiator, loaderId: $loaderId, primaryRequest: $primaryRequest, redirectHasExtraInfo: $redirectHasExtraInfo, redirectResponse: $redirectResponse, request: $request, requestId: $requestId, type: $type, wallTime: $wallTime)';}
+}

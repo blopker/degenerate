@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_card_wallet_amex_express_checkout.dart';import 'payment_method_card_wallet_apple_pay.dart';import 'payment_method_card_wallet_google_pay.dart';import 'payment_method_card_wallet_link.dart';import 'payment_method_card_wallet_masterpass.dart';import 'payment_method_card_wallet_samsung_pay.dart';import 'payment_method_card_wallet_visa_checkout.dart';/// The type of the card wallet, one of `amex_express_checkout`, `apple_pay`, `google_pay`, `masterpass`, `samsung_pay`, `visa_checkout`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
 @immutable final class PaymentMethodCardWalletType {const PaymentMethodCardWalletType._(this.value);
 
-factory PaymentMethodCardWalletType.fromJson(String json) { return switch (json) {
+factory PaymentMethodCardWalletType.fromJson(String json) {return switch (json) {
   'amex_express_checkout' => amexExpressCheckout,
   'apple_pay' => applePay,
   'google_pay' => googlePay,
@@ -12,7 +12,7 @@ factory PaymentMethodCardWalletType.fromJson(String json) { return switch (json)
   'samsung_pay' => samsungPay,
   'visa_checkout' => visaCheckout,
   _ => PaymentMethodCardWalletType._(json),
-}; }
+};}
 
 static const PaymentMethodCardWalletType amexExpressCheckout = PaymentMethodCardWalletType._('amex_express_checkout');
 
@@ -32,18 +32,18 @@ static const List<PaymentMethodCardWalletType> values = [amexExpressCheckout, ap
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodCardWalletType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodCardWalletType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodCardWalletType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodCardWalletType($value)';}
+}
 /// 
 @immutable final class PaymentMethodCardWallet {const PaymentMethodCardWallet({required this.type, this.amexExpressCheckout, this.applePay, this.dynamicLast4 = const Omittable.absent(), this.googlePay, this.link, this.masterpass, this.samsungPay, this.visaCheckout, });
 
-factory PaymentMethodCardWallet.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWallet(
+factory PaymentMethodCardWallet.fromJson(Map<String, dynamic> json) {return PaymentMethodCardWallet(
   amexExpressCheckout: json['amex_express_checkout'] != null ? PaymentMethodCardWalletAmexExpressCheckout.fromJson(json['amex_express_checkout'] as Map<String, dynamic>) : null,
   applePay: json['apple_pay'] != null ? PaymentMethodCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
   dynamicLast4: json.containsKey('dynamic_last4') ? Omittable(json['dynamic_last4'] as String?) : const Omittable.absent(),
@@ -53,7 +53,7 @@ factory PaymentMethodCardWallet.fromJson(Map<String, dynamic> json) { return Pay
   samsungPay: json['samsung_pay'] != null ? PaymentMethodCardWalletSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>) : null,
   type: PaymentMethodCardWalletType.fromJson(json['type'] as String),
   visaCheckout: json['visa_checkout'] != null ? PaymentMethodCardWalletVisaCheckout.fromJson(json['visa_checkout'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentMethodCardWalletAmexExpressCheckout? amexExpressCheckout;
 
@@ -75,7 +75,7 @@ final PaymentMethodCardWalletType type;
 
 final PaymentMethodCardWalletVisaCheckout? visaCheckout;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amexExpressCheckout != null) 'amex_express_checkout': amexExpressCheckout?.toJson(),
   if (applePay != null) 'apple_pay': applePay?.toJson(),
   if (dynamicLast4.isPresent) 'dynamic_last4': dynamicLast4.value,
@@ -85,9 +85,9 @@ Map<String, dynamic> toJson() { return {
   if (samsungPay != null) 'samsung_pay': samsungPay?.toJson(),
   'type': type.toJson(),
   if (visaCheckout != null) 'visa_checkout': visaCheckout?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Function()? amexExpressCheckout, PaymentMethodCardWalletApplePay? Function()? applePay, Omittable<String?>? dynamicLast4, PaymentMethodCardWalletGooglePay? Function()? googlePay, PaymentMethodCardWalletLink? Function()? link, PaymentMethodCardWalletMasterpass? Function()? masterpass, PaymentMethodCardWalletSamsungPay? Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodCardWalletVisaCheckout? Function()? visaCheckout, }) { return PaymentMethodCardWallet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Function()? amexExpressCheckout, PaymentMethodCardWalletApplePay? Function()? applePay, Omittable<String?>? dynamicLast4, PaymentMethodCardWalletGooglePay? Function()? googlePay, PaymentMethodCardWalletLink? Function()? link, PaymentMethodCardWalletMasterpass? Function()? masterpass, PaymentMethodCardWalletSamsungPay? Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodCardWalletVisaCheckout? Function()? visaCheckout, }) {return PaymentMethodCardWallet(
   amexExpressCheckout: amexExpressCheckout != null ? amexExpressCheckout() : this.amexExpressCheckout,
   applePay: applePay != null ? applePay() : this.applePay,
   dynamicLast4: dynamicLast4 ?? this.dynamicLast4,
@@ -97,8 +97,8 @@ PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Fu
   samsungPay: samsungPay != null ? samsungPay() : this.samsungPay,
   type: type ?? this.type,
   visaCheckout: visaCheckout != null ? visaCheckout() : this.visaCheckout,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodCardWallet &&
           amexExpressCheckout == other.amexExpressCheckout &&
           applePay == other.applePay &&
@@ -108,7 +108,7 @@ PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Fu
           masterpass == other.masterpass &&
           samsungPay == other.samsungPay &&
           type == other.type &&
-          visaCheckout == other.visaCheckout; } 
-@override int get hashCode { return Object.hash(amexExpressCheckout, applePay, dynamicLast4, googlePay, link, masterpass, samsungPay, type, visaCheckout); } 
-@override String toString() { return 'PaymentMethodCardWallet(amexExpressCheckout: $amexExpressCheckout, applePay: $applePay, dynamicLast4: $dynamicLast4, googlePay: $googlePay, link: $link, masterpass: $masterpass, samsungPay: $samsungPay, type: $type, visaCheckout: $visaCheckout)'; } 
- }
+          visaCheckout == other.visaCheckout;}
+@override int get hashCode {return Object.hash(amexExpressCheckout, applePay, dynamicLast4, googlePay, link, masterpass, samsungPay, type, visaCheckout);}
+@override String toString() {return 'PaymentMethodCardWallet(amexExpressCheckout: $amexExpressCheckout, applePay: $applePay, dynamicLast4: $dynamicLast4, googlePay: $googlePay, link: $link, masterpass: $masterpass, samsungPay: $samsungPay, type: $type, visaCheckout: $visaCheckout)';}
+}

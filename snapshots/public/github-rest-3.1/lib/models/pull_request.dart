@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'auto_merge.dart';import 'milestone.dart';import 'pull_request_base.dart';import 'pull_request_head.dart';import 'pull_request_labels.dart';import 'pull_request_links.dart';import 'simple_user.dart';import 'team_simple.dart';/// State of this Pull Request. Either `open` or `closed`.
 @immutable final class PullRequestState {const PullRequestState._(this.value);
 
-factory PullRequestState.fromJson(String json) { return switch (json) {
+factory PullRequestState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => PullRequestState._(json),
-}; }
+};}
 
 static const PullRequestState open = PullRequestState._('open');
 
@@ -17,18 +17,18 @@ static const List<PullRequestState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullRequestState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullRequestState($value)';}
+}
 /// Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
 @immutable final class PullRequest {const PullRequest({required this.title, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.url, required this.user, required this.body, required this.labels, required this.milestone, required this.deletions, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.additions, required this.commits, required this.maintainerCanModify, required this.head, required this.changedFiles, required this.links, required this.authorAssociation, required this.autoMerge, required this.reviewComments, required this.merged, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.base, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason = const Omittable.absent(), this.rebaseable = const Omittable.absent(), });
 
-factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
+factory PullRequest.fromJson(Map<String, dynamic> json) {return PullRequest(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -77,7 +77,7 @@ factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
   additions: (json['additions'] as num).toInt(),
   deletions: (json['deletions'] as num).toInt(),
   changedFiles: (json['changed_files'] as num).toInt(),
-); }
+);}
 
 final Uri url;
 
@@ -181,7 +181,7 @@ final int deletions;
 
 final int changedFiles;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'node_id': nodeId,
@@ -230,8 +230,8 @@ Map<String, dynamic> toJson() { return {
   'additions': additions,
   'deletions': deletions,
   'changed_files': changedFiles,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -272,8 +272,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('commits') && json['commits'] is num &&
       json.containsKey('additions') && json['additions'] is num &&
       json.containsKey('deletions') && json['deletions'] is num &&
-      json.containsKey('changed_files') && json['changed_files'] is num; } 
-PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
+      json.containsKey('changed_files') && json['changed_files'] is num;}
+PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) {return PullRequest(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -322,8 +322,8 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
   additions: additions ?? this.additions,
   deletions: deletions ?? this.deletions,
   changedFiles: changedFiles ?? this.changedFiles,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequest &&
           url == other.url &&
           id == other.id &&
@@ -372,7 +372,7 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
           commits == other.commits &&
           additions == other.additions &&
           deletions == other.deletions &&
-          changedFiles == other.changedFiles; } 
-@override int get hashCode { return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft, merged, mergeable, rebaseable, mergeableState, mergedBy, comments, reviewComments, maintainerCanModify, commits, additions, deletions, changedFiles]); } 
-@override String toString() { return 'PullRequest(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft, merged: $merged, mergeable: $mergeable, rebaseable: $rebaseable, mergeableState: $mergeableState, mergedBy: $mergedBy, comments: $comments, reviewComments: $reviewComments, maintainerCanModify: $maintainerCanModify, commits: $commits, additions: $additions, deletions: $deletions, changedFiles: $changedFiles)'; } 
- }
+          changedFiles == other.changedFiles;}
+@override int get hashCode {return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft, merged, mergeable, rebaseable, mergeableState, mergedBy, comments, reviewComments, maintainerCanModify, commits, additions, deletions, changedFiles]);}
+@override String toString() {return 'PullRequest(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft, merged: $merged, mergeable: $mergeable, rebaseable: $rebaseable, mergeableState: $mergeableState, mergedBy: $mergedBy, comments: $comments, reviewComments: $reviewComments, maintainerCanModify: $maintainerCanModify, commits: $commits, additions: $additions, deletions: $deletions, changedFiles: $changedFiles)';}
+}

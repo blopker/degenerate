@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_real
 /// 
 @immutable final class WebhookRealtimeCallIncomingObject {const WebhookRealtimeCallIncomingObject._(this.value);
 
-factory WebhookRealtimeCallIncomingObject.fromJson(String json) { return switch (json) {
+factory WebhookRealtimeCallIncomingObject.fromJson(String json) {return switch (json) {
   'event' => event,
   _ => WebhookRealtimeCallIncomingObject._(json),
-}; }
+};}
 
 static const WebhookRealtimeCallIncomingObject event = WebhookRealtimeCallIncomingObject._('event');
 
@@ -15,22 +15,22 @@ static const List<WebhookRealtimeCallIncomingObject> values = [event];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRealtimeCallIncomingObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRealtimeCallIncomingObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookRealtimeCallIncomingObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookRealtimeCallIncomingObject($value)';}
+}
 /// The type of the event. Always `realtime.call.incoming`.
 /// 
 @immutable final class WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType._(this.value);
 
-factory WebhookRealtimeCallIncomingType.fromJson(String json) { return switch (json) {
+factory WebhookRealtimeCallIncomingType.fromJson(String json) {return switch (json) {
   'realtime.call.incoming' => realtimeCallIncoming,
   _ => WebhookRealtimeCallIncomingType._(json),
-}; }
+};}
 
 static const WebhookRealtimeCallIncomingType realtimeCallIncoming = WebhookRealtimeCallIncomingType._('realtime.call.incoming');
 
@@ -38,25 +38,25 @@ static const List<WebhookRealtimeCallIncomingType> values = [realtimeCallIncomin
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRealtimeCallIncomingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRealtimeCallIncomingType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookRealtimeCallIncomingType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookRealtimeCallIncomingType($value)';}
+}
 /// Sent when Realtime API Receives a incoming SIP call.
 /// 
 @immutable final class WebhookRealtimeCallIncoming {const WebhookRealtimeCallIncoming({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
-factory WebhookRealtimeCallIncoming.fromJson(Map<String, dynamic> json) { return WebhookRealtimeCallIncoming(
+factory WebhookRealtimeCallIncoming.fromJson(Map<String, dynamic> json) {return WebhookRealtimeCallIncoming(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookRealtimeCallIncomingData.fromJson(json['data'] as Map<String, dynamic>),
   object: json['object'] != null ? WebhookRealtimeCallIncomingObject.fromJson(json['object'] as String) : null,
   type: WebhookRealtimeCallIncomingType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The Unix timestamp (in seconds) of when the model response was completed.
 /// 
@@ -78,31 +78,31 @@ final WebhookRealtimeCallIncomingObject? object;
 /// 
 final WebhookRealtimeCallIncomingType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'data': data.toJson(),
   if (object != null) 'object': object?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
-WebhookRealtimeCallIncoming copyWith({int? createdAt, String? id, WebhookRealtimeCallIncomingData? data, WebhookRealtimeCallIncomingObject? Function()? object, WebhookRealtimeCallIncomingType? type, }) { return WebhookRealtimeCallIncoming(
+      json.containsKey('type');}
+WebhookRealtimeCallIncoming copyWith({int? createdAt, String? id, WebhookRealtimeCallIncomingData? data, WebhookRealtimeCallIncomingObject? Function()? object, WebhookRealtimeCallIncomingType? type, }) {return WebhookRealtimeCallIncoming(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRealtimeCallIncoming &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookRealtimeCallIncoming(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, id, data, object, type);}
+@override String toString() {return 'WebhookRealtimeCallIncoming(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';}
+}

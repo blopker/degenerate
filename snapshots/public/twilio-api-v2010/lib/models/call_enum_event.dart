@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CallEnumEvent {const CallEnumEvent._(this.value);
 
-factory CallEnumEvent.fromJson(String json) { return switch (json) {
+factory CallEnumEvent.fromJson(String json) {return switch (json) {
   'initiated' => initiated,
   'ringing' => ringing,
   'answered' => answered,
   'completed' => completed,
   _ => CallEnumEvent._(json),
-}; }
+};}
 
 static const CallEnumEvent initiated = CallEnumEvent._('initiated');
 
@@ -22,11 +22,11 @@ static const List<CallEnumEvent> values = [initiated, ringing, answered, complet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallEnumEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallEnumEvent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CallEnumEvent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CallEnumEvent($value)';}
+}

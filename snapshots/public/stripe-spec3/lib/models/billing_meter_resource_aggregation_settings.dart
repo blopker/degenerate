@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies how events are aggregated.
 @immutable final class BillingMeterResourceAggregationSettingsFormula {const BillingMeterResourceAggregationSettingsFormula._(this.value);
 
-factory BillingMeterResourceAggregationSettingsFormula.fromJson(String json) { return switch (json) {
+factory BillingMeterResourceAggregationSettingsFormula.fromJson(String json) {return switch (json) {
   'count' => count,
   'last' => last,
   'sum' => sum,
   _ => BillingMeterResourceAggregationSettingsFormula._(json),
-}; }
+};}
 
 static const BillingMeterResourceAggregationSettingsFormula count = BillingMeterResourceAggregationSettingsFormula._('count');
 
@@ -20,34 +20,34 @@ static const List<BillingMeterResourceAggregationSettingsFormula> values = [coun
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterResourceAggregationSettingsFormula && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterResourceAggregationSettingsFormula($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingMeterResourceAggregationSettingsFormula && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingMeterResourceAggregationSettingsFormula($value)';}
+}
 /// 
 @immutable final class BillingMeterResourceAggregationSettings {const BillingMeterResourceAggregationSettings({required this.formula});
 
-factory BillingMeterResourceAggregationSettings.fromJson(Map<String, dynamic> json) { return BillingMeterResourceAggregationSettings(
+factory BillingMeterResourceAggregationSettings.fromJson(Map<String, dynamic> json) {return BillingMeterResourceAggregationSettings(
   formula: BillingMeterResourceAggregationSettingsFormula.fromJson(json['formula'] as String),
-); }
+);}
 
 /// Specifies how events are aggregated.
 final BillingMeterResourceAggregationSettingsFormula formula;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'formula': formula.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('formula'); } 
-BillingMeterResourceAggregationSettings copyWith({BillingMeterResourceAggregationSettingsFormula? formula}) { return BillingMeterResourceAggregationSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('formula');}
+BillingMeterResourceAggregationSettings copyWith({BillingMeterResourceAggregationSettingsFormula? formula}) {return BillingMeterResourceAggregationSettings(
   formula: formula ?? this.formula,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingMeterResourceAggregationSettings &&
-          formula == other.formula; } 
-@override int get hashCode { return formula.hashCode; } 
-@override String toString() { return 'BillingMeterResourceAggregationSettings(formula: $formula)'; } 
- }
+          formula == other.formula;}
+@override int get hashCode {return formula.hashCode;}
+@override String toString() {return 'BillingMeterResourceAggregationSettings(formula: $formula)';}
+}

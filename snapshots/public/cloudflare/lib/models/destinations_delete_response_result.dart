@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destinations_delete_response_result_configuration.dart';@immutable final class DestinationsDeleteResponseResult {const DestinationsDeleteResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
 
-factory DestinationsDeleteResponseResult.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponseResult(
+factory DestinationsDeleteResponseResult.fromJson(Map<String, dynamic> json) {return DestinationsDeleteResponseResult(
   configuration: DestinationsDeleteResponseResultConfiguration.fromJson(json['configuration'] as Map<String, dynamic>),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   scripts: (json['scripts'] as List<dynamic>).map((e) => e as String).toList(),
   slug: json['slug'] as String,
-); }
+);}
 
 final DestinationsDeleteResponseResultConfiguration configuration;
 
@@ -20,32 +20,32 @@ final List<String> scripts;
 
 final String slug;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configuration': configuration.toJson(),
   'enabled': enabled,
   'name': name,
   'scripts': scripts,
   'slug': slug,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('configuration') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('scripts') &&
-      json.containsKey('slug') && json['slug'] is String; } 
-DestinationsDeleteResponseResult copyWith({DestinationsDeleteResponseResultConfiguration? configuration, bool? enabled, String? name, List<String>? scripts, String? slug, }) { return DestinationsDeleteResponseResult(
+      json.containsKey('slug') && json['slug'] is String;}
+DestinationsDeleteResponseResult copyWith({DestinationsDeleteResponseResultConfiguration? configuration, bool? enabled, String? name, List<String>? scripts, String? slug, }) {return DestinationsDeleteResponseResult(
   configuration: configuration ?? this.configuration,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   scripts: scripts ?? this.scripts,
   slug: slug ?? this.slug,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DestinationsDeleteResponseResult &&
           configuration == other.configuration &&
           enabled == other.enabled &&
           name == other.name &&
           listEquals(scripts, other.scripts) &&
-          slug == other.slug; } 
-@override int get hashCode { return Object.hash(configuration, enabled, name, Object.hashAll(scripts), slug); } 
-@override String toString() { return 'DestinationsDeleteResponseResult(configuration: $configuration, enabled: $enabled, name: $name, scripts: $scripts, slug: $slug)'; } 
- }
+          slug == other.slug;}
+@override int get hashCode {return Object.hash(configuration, enabled, name, Object.hashAll(scripts), slug);}
+@override String toString() {return 'DestinationsDeleteResponseResult(configuration: $configuration, enabled: $enabled, name: $name, scripts: $scripts, slug: $slug)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAnnotationsFormat {const RadarGetAnnotationsFormat._(this.value);
 
-factory RadarGetAnnotationsFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAnnotationsFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAnnotationsFormat._(json),
-}; }
+};}
 
 static const RadarGetAnnotationsFormat $json = RadarGetAnnotationsFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAnnotationsFormat> values = [$json, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAnnotationsFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAnnotationsFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAnnotationsFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAnnotationsFormat($value)';}
+}

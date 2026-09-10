@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_redirect_rule_request_action_parameters.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';@immutable final class RulesetsRedirectRuleRequest {const RulesetsRedirectRuleRequest({this.action = const Omittable.absent(), this.actionParameters, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
-factory RulesetsRedirectRuleRequest.fromJson(Map<String, dynamic> json) { return RulesetsRedirectRuleRequest(
+factory RulesetsRedirectRuleRequest.fromJson(Map<String, dynamic> json) {return RulesetsRedirectRuleRequest(
   action: json.containsKey('action') ? Omittable(json['action']) : const Omittable.absent(),
   actionParameters: json['action_parameters'] != null ? RulesetsRedirectRuleRequestActionParameters.fromJson(json['action_parameters'] as Map<String, dynamic>) : null,
   description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory RulesetsRedirectRuleRequest.fromJson(Map<String, dynamic> json) { return
   logging: json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null,
   ratelimit: json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String?,
-); }
+);}
 
 final Omittable<dynamic> action;
 
@@ -39,7 +39,7 @@ final RulesetsRuleRatelimit? ratelimit;
 /// The reference of the rule (the rule's ID by default).
 final String? ref;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action.isPresent) 'action': action.value,
   if (actionParameters != null) 'action_parameters': actionParameters?.toJson(),
   if (description.isPresent) 'description': description.value,
@@ -50,9 +50,9 @@ Map<String, dynamic> toJson() { return {
   if (logging != null) 'logging': logging?.toJson(),
   if (ratelimit != null) 'ratelimit': ratelimit?.toJson(),
   'ref': ?ref,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key)); } 
-RulesetsRedirectRuleRequest copyWith({Omittable<dynamic>? action, RulesetsRedirectRuleRequestActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRedirectRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key));}
+RulesetsRedirectRuleRequest copyWith({Omittable<dynamic>? action, RulesetsRedirectRuleRequestActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRedirectRuleRequest(
   action: action ?? this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   description: description ?? this.description,
@@ -63,8 +63,8 @@ RulesetsRedirectRuleRequest copyWith({Omittable<dynamic>? action, RulesetsRedire
   logging: logging != null ? logging() : this.logging,
   ratelimit: ratelimit != null ? ratelimit() : this.ratelimit,
   ref: ref != null ? ref() : this.ref,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsRedirectRuleRequest &&
           action == other.action &&
           actionParameters == other.actionParameters &&
@@ -75,7 +75,7 @@ RulesetsRedirectRuleRequest copyWith({Omittable<dynamic>? action, RulesetsRedire
           id == other.id &&
           logging == other.logging &&
           ratelimit == other.ratelimit &&
-          ref == other.ref; } 
-@override int get hashCode { return Object.hash(action, actionParameters, description, enabled, exposedCredentialCheck, expression, id, logging, ratelimit, ref); } 
-@override String toString() { return 'RulesetsRedirectRuleRequest(action: $action, actionParameters: $actionParameters, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, logging: $logging, ratelimit: $ratelimit, ref: $ref)'; } 
- }
+          ref == other.ref;}
+@override int get hashCode {return Object.hash(action, actionParameters, description, enabled, exposedCredentialCheck, expression, id, logging, ratelimit, ref);}
+@override String toString() {return 'RulesetsRedirectRuleRequest(action: $action, actionParameters: $actionParameters, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, logging: $logging, ratelimit: $ratelimit, ref: $ref)';}
+}

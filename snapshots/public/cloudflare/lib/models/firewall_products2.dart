@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of products to bypass for a request when using the `bypass` action.
 @immutable final class FirewallProducts2 {const FirewallProducts2._(this.value);
 
-factory FirewallProducts2.fromJson(String json) { return switch (json) {
+factory FirewallProducts2.fromJson(String json) {return switch (json) {
   'zoneLockdown' => zoneLockdown,
   'uaBlock' => uaBlock,
   'bic' => bic,
@@ -12,7 +12,7 @@ factory FirewallProducts2.fromJson(String json) { return switch (json) {
   'rateLimit' => rateLimit,
   'waf' => waf,
   _ => FirewallProducts2._(json),
-}; }
+};}
 
 static const FirewallProducts2 zoneLockdown = FirewallProducts2._('zoneLockdown');
 
@@ -32,11 +32,11 @@ static const List<FirewallProducts2> values = [zoneLockdown, uaBlock, bic, hot, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallProducts2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallProducts2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FirewallProducts2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FirewallProducts2($value)';}
+}

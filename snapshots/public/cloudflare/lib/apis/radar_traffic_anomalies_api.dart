@@ -13,7 +13,7 @@ final class RadarTrafficAnomaliesApi with ApiExecutor {const RadarTrafficAnomali
 /// Retrieves the latest Internet traffic anomalies, which are signals that might indicate an outage. These alerts are automatically detected by Radar and manually verified by our team.
 ///
 /// `GET /radar/traffic_anomalies`
-Future<ApiResult<RadarGetTrafficAnomaliesResponseResult, RadarGetTrafficAnomaliesResponse400>> radarGetTrafficAnomalies({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesStatus? status, List<RadarGetTrafficAnomaliesType>? type, int? asn, String? location, String? origin, RadarGetTrafficAnomaliesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTrafficAnomaliesResponseResult, RadarGetTrafficAnomaliesResponse400>> radarGetTrafficAnomalies({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesStatus? status, List<RadarGetTrafficAnomaliesType>? type, int? asn, String? location, String? origin, RadarGetTrafficAnomaliesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -62,30 +62,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetTrafficAnomaliesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetTrafficAnomaliesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetTrafficAnomaliesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RadarGetTrafficAnomaliesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top locations by total traffic anomalies
 ///
 /// Retrieves the sum of Internet traffic anomalies, grouped by location. These anomalies are signals that might indicate an outage, automatically detected by Radar and manually verified by our team.
 ///
 /// `GET /radar/traffic_anomalies/locations`
-Future<ApiResult<RadarGetTrafficAnomaliesTopResponseResult, RadarGetTrafficAnomaliesTopResponse400>> radarGetTrafficAnomaliesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesTopStatus? status, RadarGetTrafficAnomaliesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTrafficAnomaliesTopResponseResult, RadarGetTrafficAnomaliesTopResponse400>> radarGetTrafficAnomaliesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesTopStatus? status, RadarGetTrafficAnomaliesTopFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -117,22 +106,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetTrafficAnomaliesTopResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetTrafficAnomaliesTopResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetTrafficAnomaliesTopResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  RadarGetTrafficAnomaliesTopResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

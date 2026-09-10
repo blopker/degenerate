@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key4.dart';@immutable final class ProjectServiceAccountCreateResponseObject {const ProjectServiceAccountCreateResponseObject._(this.value);
 
-factory ProjectServiceAccountCreateResponseObject.fromJson(String json) { return switch (json) {
+factory ProjectServiceAccountCreateResponseObject.fromJson(String json) {return switch (json) {
   'organization.project.service_account' => organizationProjectServiceAccount,
   _ => ProjectServiceAccountCreateResponseObject._(json),
-}; }
+};}
 
 static const ProjectServiceAccountCreateResponseObject organizationProjectServiceAccount = ProjectServiceAccountCreateResponseObject._('organization.project.service_account');
 
@@ -13,21 +13,21 @@ static const List<ProjectServiceAccountCreateResponseObject> values = [organizat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectServiceAccountCreateResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectServiceAccountCreateResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectServiceAccountCreateResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectServiceAccountCreateResponseObject($value)';}
+}
 /// Service accounts can only have one role of type `member`
 @immutable final class ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole._(this.value);
 
-factory ProjectServiceAccountCreateResponseRole.fromJson(String json) { return switch (json) {
+factory ProjectServiceAccountCreateResponseRole.fromJson(String json) {return switch (json) {
   'member' => member,
   _ => ProjectServiceAccountCreateResponseRole._(json),
-}; }
+};}
 
 static const ProjectServiceAccountCreateResponseRole member = ProjectServiceAccountCreateResponseRole._('member');
 
@@ -35,24 +35,24 @@ static const List<ProjectServiceAccountCreateResponseRole> values = [member];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectServiceAccountCreateResponseRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectServiceAccountCreateResponseRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectServiceAccountCreateResponseRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectServiceAccountCreateResponseRole($value)';}
+}
 @immutable final class ProjectServiceAccountCreateResponse {const ProjectServiceAccountCreateResponse({required this.object, required this.id, required this.name, required this.role, required this.createdAt, required this.apiKey, });
 
-factory ProjectServiceAccountCreateResponse.fromJson(Map<String, dynamic> json) { return ProjectServiceAccountCreateResponse(
+factory ProjectServiceAccountCreateResponse.fromJson(Map<String, dynamic> json) {return ProjectServiceAccountCreateResponse(
   object: ProjectServiceAccountCreateResponseObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
   role: ProjectServiceAccountCreateResponseRole.fromJson(json['role'] as String),
   createdAt: (json['created_at'] as num).toInt(),
   apiKey: Key4.fromJson(json['api_key'] as Map<String, dynamic>),
-); }
+);}
 
 final ProjectServiceAccountCreateResponseObject object;
 
@@ -67,36 +67,36 @@ final int createdAt;
 
 final Key4 apiKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'name': name,
   'role': role.toJson(),
   'created_at': createdAt,
   'api_key': apiKey.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('role') &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('api_key'); } 
-ProjectServiceAccountCreateResponse copyWith({ProjectServiceAccountCreateResponseObject? object, String? id, String? name, ProjectServiceAccountCreateResponseRole? role, int? createdAt, Key4? apiKey, }) { return ProjectServiceAccountCreateResponse(
+      json.containsKey('api_key');}
+ProjectServiceAccountCreateResponse copyWith({ProjectServiceAccountCreateResponseObject? object, String? id, String? name, ProjectServiceAccountCreateResponseRole? role, int? createdAt, Key4? apiKey, }) {return ProjectServiceAccountCreateResponse(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,
   role: role ?? this.role,
   createdAt: createdAt ?? this.createdAt,
   apiKey: apiKey ?? this.apiKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProjectServiceAccountCreateResponse &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           role == other.role &&
           createdAt == other.createdAt &&
-          apiKey == other.apiKey; } 
-@override int get hashCode { return Object.hash(object, id, name, role, createdAt, apiKey); } 
-@override String toString() { return 'ProjectServiceAccountCreateResponse(object: $object, id: $id, name: $name, role: $role, createdAt: $createdAt, apiKey: $apiKey)'; } 
- }
+          apiKey == other.apiKey;}
+@override int get hashCode {return Object.hash(object, id, name, role, createdAt, apiKey);}
+@override String toString() {return 'ProjectServiceAccountCreateResponse(object: $object, id: $id, name: $name, role: $role, createdAt: $createdAt, apiKey: $apiKey)';}
+}

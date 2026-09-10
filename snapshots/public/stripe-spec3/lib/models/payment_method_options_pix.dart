@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the amount includes the IOF tax.
 @immutable final class PaymentMethodOptionsPixAmountIncludesIof {const PaymentMethodOptionsPixAmountIncludesIof._(this.value);
 
-factory PaymentMethodOptionsPixAmountIncludesIof.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsPixAmountIncludesIof.fromJson(String json) {return switch (json) {
   'always' => always,
   'never' => never,
   _ => PaymentMethodOptionsPixAmountIncludesIof._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsPixAmountIncludesIof always = PaymentMethodOptionsPixAmountIncludesIof._('always');
 
@@ -17,14 +17,14 @@ static const List<PaymentMethodOptionsPixAmountIncludesIof> values = [always, ne
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsPixAmountIncludesIof && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsPixAmountIncludesIof($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsPixAmountIncludesIof && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsPixAmountIncludesIof($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -34,10 +34,10 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsPixSetupFutureUsage {const PaymentMethodOptionsPixSetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsPixSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsPixSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentMethodOptionsPixSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsPixSetupFutureUsage none = PaymentMethodOptionsPixSetupFutureUsage._('none');
 
@@ -45,23 +45,23 @@ static const List<PaymentMethodOptionsPixSetupFutureUsage> values = [none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsPixSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsPixSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsPixSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsPixSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsPix {const PaymentMethodOptionsPix({this.amountIncludesIof, this.expiresAfterSeconds = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsPix(
+factory PaymentMethodOptionsPix.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsPix(
   amountIncludesIof: json['amount_includes_iof'] != null ? PaymentMethodOptionsPixAmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
   expiresAfterSeconds: json.containsKey('expires_after_seconds') ? Omittable(json['expires_after_seconds'] != null ? (json['expires_after_seconds'] as num).toInt() : null) : const Omittable.absent(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsPixSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Determines if the amount includes the IOF tax.
 final PaymentMethodOptionsPixAmountIncludesIof? amountIncludesIof;
@@ -81,25 +81,25 @@ final Omittable<int?> expiresAt;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsPixSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountIncludesIof != null) 'amount_includes_iof': amountIncludesIof?.toJson(),
   if (expiresAfterSeconds.isPresent) 'expires_after_seconds': expiresAfterSeconds.value,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'expires_at', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsPix copyWith({PaymentMethodOptionsPixAmountIncludesIof? Function()? amountIncludesIof, Omittable<int?>? expiresAfterSeconds, Omittable<int?>? expiresAt, PaymentMethodOptionsPixSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsPix(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'expires_at', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsPix copyWith({PaymentMethodOptionsPixAmountIncludesIof? Function()? amountIncludesIof, Omittable<int?>? expiresAfterSeconds, Omittable<int?>? expiresAt, PaymentMethodOptionsPixSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsPix(
   amountIncludesIof: amountIncludesIof != null ? amountIncludesIof() : this.amountIncludesIof,
   expiresAfterSeconds: expiresAfterSeconds ?? this.expiresAfterSeconds,
   expiresAt: expiresAt ?? this.expiresAt,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsPix &&
           amountIncludesIof == other.amountIncludesIof &&
           expiresAfterSeconds == other.expiresAfterSeconds &&
           expiresAt == other.expiresAt &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(amountIncludesIof, expiresAfterSeconds, expiresAt, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsPix(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, expiresAt: $expiresAt, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(amountIncludesIof, expiresAfterSeconds, expiresAt, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsPix(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, expiresAt: $expiresAt, setupFutureUsage: $setupFutureUsage)';}
+}

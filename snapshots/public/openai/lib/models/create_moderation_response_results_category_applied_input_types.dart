@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHate {const CreateModerationResponseResultsCategoryAppliedInputTypesHate._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesHate.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHate.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesHate._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesHate text = CreateModerationResponseResultsCategoryAppliedInputTypesHate._('text');
 
@@ -13,20 +13,20 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHate> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesHate && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHate($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHate && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesHate($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening text = CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._('text');
 
@@ -34,20 +34,20 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHateTh
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassment {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassment.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassment.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesHarassment text = CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._('text');
 
@@ -55,20 +55,20 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHarass
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesHarassment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassment($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHarassment && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassment($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening text = CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._('text');
 
@@ -76,20 +76,20 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHarass
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicit {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicit.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicit.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesIllicit text = CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._('text');
 
@@ -97,20 +97,20 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesIllici
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesIllicit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesIllicit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicit($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent text = CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._('text');
 
@@ -118,21 +118,21 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesIllici
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm text = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._('text');
 
@@ -142,21 +142,21 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent text = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._('text');
 
@@ -166,21 +166,21 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions text = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._('text');
 
@@ -190,21 +190,21 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSexual {const CreateModerationResponseResultsCategoryAppliedInputTypesSexual._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesSexual.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSexual.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesSexual._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesSexual text = CreateModerationResponseResultsCategoryAppliedInputTypesSexual._('text');
 
@@ -214,20 +214,20 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesSexual && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexual($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSexual && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexual($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors {const CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.fromJson(String json) {return switch (json) {
   'text' => text,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors text = CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._('text');
 
@@ -235,21 +235,21 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesViolence {const CreateModerationResponseResultsCategoryAppliedInputTypesViolence._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesViolence.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesViolence.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesViolence._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesViolence text = CreateModerationResponseResultsCategoryAppliedInputTypesViolence._('text');
 
@@ -259,21 +259,21 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesViolen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesViolence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolence($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesViolence && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolence($value)';}
+}
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic {const CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._(this.value);
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic.fromJson(String json) { return switch (json) {
+factory CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._(json),
-}; }
+};}
 
 static const CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic text = CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._('text');
 
@@ -283,18 +283,18 @@ static const List<CreateModerationResponseResultsCategoryAppliedInputTypesViolen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic($value)';}
+}
 /// A list of the categories along with the input type(s) that the score applies to.
 @immutable final class CreateModerationResponseResultsCategoryAppliedInputTypes {const CreateModerationResponseResultsCategoryAppliedInputTypes({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
 
-factory CreateModerationResponseResultsCategoryAppliedInputTypes.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResultsCategoryAppliedInputTypes(
+factory CreateModerationResponseResultsCategoryAppliedInputTypes.fromJson(Map<String, dynamic> json) {return CreateModerationResponseResultsCategoryAppliedInputTypes(
   hate: (json['hate'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHate.fromJson(e as String)).toList(),
   hateThreatening: (json['hate/threatening'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening.fromJson(e as String)).toList(),
   harassment: (json['harassment'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHarassment.fromJson(e as String)).toList(),
@@ -308,7 +308,7 @@ factory CreateModerationResponseResultsCategoryAppliedInputTypes.fromJson(Map<St
   sexualMinors: (json['sexual/minors'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.fromJson(e as String)).toList(),
   violence: (json['violence'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesViolence.fromJson(e as String)).toList(),
   violenceGraphic: (json['violence/graphic'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The applied input type(s) for the category 'hate'.
 final List<CreateModerationResponseResultsCategoryAppliedInputTypesHate> hate;
@@ -349,7 +349,7 @@ final List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence> vio
 /// The applied input type(s) for the category 'violence/graphic'.
 final List<CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic> violenceGraphic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hate': hate.map((e) => e.toJson()).toList(),
   'hate/threatening': hateThreatening.map((e) => e.toJson()).toList(),
   'harassment': harassment.map((e) => e.toJson()).toList(),
@@ -363,8 +363,8 @@ Map<String, dynamic> toJson() { return {
   'sexual/minors': sexualMinors.map((e) => e.toJson()).toList(),
   'violence': violence.map((e) => e.toJson()).toList(),
   'violence/graphic': violenceGraphic.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hate') &&
       json.containsKey('hate/threatening') &&
       json.containsKey('harassment') &&
       json.containsKey('harassment/threatening') &&
@@ -376,8 +376,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate'
       json.containsKey('sexual') &&
       json.containsKey('sexual/minors') &&
       json.containsKey('violence') &&
-      json.containsKey('violence/graphic'); } 
-CreateModerationResponseResultsCategoryAppliedInputTypes copyWith({List<CreateModerationResponseResultsCategoryAppliedInputTypesHate>? hate, List<CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening>? hateThreatening, List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment>? harassment, List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening>? harassmentThreatening, List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit>? illicit, List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent>? illicitViolent, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm>? selfHarm, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent>? selfHarmIntent, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions>? selfHarmInstructions, List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual>? sexual, List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors>? sexualMinors, List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence>? violence, List<CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic>? violenceGraphic, }) { return CreateModerationResponseResultsCategoryAppliedInputTypes(
+      json.containsKey('violence/graphic');}
+CreateModerationResponseResultsCategoryAppliedInputTypes copyWith({List<CreateModerationResponseResultsCategoryAppliedInputTypesHate>? hate, List<CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening>? hateThreatening, List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment>? harassment, List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening>? harassmentThreatening, List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit>? illicit, List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent>? illicitViolent, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm>? selfHarm, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent>? selfHarmIntent, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions>? selfHarmInstructions, List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual>? sexual, List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors>? sexualMinors, List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence>? violence, List<CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic>? violenceGraphic, }) {return CreateModerationResponseResultsCategoryAppliedInputTypes(
   hate: hate ?? this.hate,
   hateThreatening: hateThreatening ?? this.hateThreatening,
   harassment: harassment ?? this.harassment,
@@ -391,8 +391,8 @@ CreateModerationResponseResultsCategoryAppliedInputTypes copyWith({List<CreateMo
   sexualMinors: sexualMinors ?? this.sexualMinors,
   violence: violence ?? this.violence,
   violenceGraphic: violenceGraphic ?? this.violenceGraphic,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateModerationResponseResultsCategoryAppliedInputTypes &&
           listEquals(hate, other.hate) &&
           listEquals(hateThreatening, other.hateThreatening) &&
@@ -406,7 +406,7 @@ CreateModerationResponseResultsCategoryAppliedInputTypes copyWith({List<CreateMo
           listEquals(sexual, other.sexual) &&
           listEquals(sexualMinors, other.sexualMinors) &&
           listEquals(violence, other.violence) &&
-          listEquals(violenceGraphic, other.violenceGraphic); } 
-@override int get hashCode { return Object.hash(Object.hashAll(hate), Object.hashAll(hateThreatening), Object.hashAll(harassment), Object.hashAll(harassmentThreatening), Object.hashAll(illicit), Object.hashAll(illicitViolent), Object.hashAll(selfHarm), Object.hashAll(selfHarmIntent), Object.hashAll(selfHarmInstructions), Object.hashAll(sexual), Object.hashAll(sexualMinors), Object.hashAll(violence), Object.hashAll(violenceGraphic)); } 
-@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypes(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)'; } 
- }
+          listEquals(violenceGraphic, other.violenceGraphic);}
+@override int get hashCode {return Object.hash(Object.hashAll(hate), Object.hashAll(hateThreatening), Object.hashAll(harassment), Object.hashAll(harassmentThreatening), Object.hashAll(illicit), Object.hashAll(illicitViolent), Object.hashAll(selfHarm), Object.hashAll(selfHarmIntent), Object.hashAll(selfHarmInstructions), Object.hashAll(sexual), Object.hashAll(sexualMinors), Object.hashAll(violence), Object.hashAll(violenceGraphic));}
+@override String toString() {return 'CreateModerationResponseResultsCategoryAppliedInputTypes(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)';}
+}

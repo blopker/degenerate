@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_permissions.dart';import 'team_simple.dart';/// The ownership type of the team
 @immutable final class TeamType {const TeamType._(this.value);
 
-factory TeamType.fromJson(String json) { return switch (json) {
+factory TeamType.fromJson(String json) {return switch (json) {
   'enterprise' => enterprise,
   'organization' => organization,
   _ => TeamType._(json),
-}; }
+};}
 
 static const TeamType enterprise = TeamType._('enterprise');
 
@@ -17,18 +17,18 @@ static const List<TeamType> values = [enterprise, organization];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamType($value)';}
+}
 /// Groups of organization members that gives permissions on specified repositories.
 @immutable final class Team {const Team({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.type, required this.parent, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
-factory Team.fromJson(Map<String, dynamic> json) { return Team(
+factory Team.fromJson(Map<String, dynamic> json) {return Team(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -46,7 +46,7 @@ factory Team.fromJson(Map<String, dynamic> json) { return Team(
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
   parent: json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -85,7 +85,7 @@ final int? enterpriseId;
 
 final TeamSimple? parent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -103,8 +103,8 @@ Map<String, dynamic> toJson() { return {
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
   'parent': parent?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
@@ -115,8 +115,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('type') &&
-      json.containsKey('parent'); } 
-Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamType? type, int? Function()? organizationId, int? Function()? enterpriseId, TeamSimple? Function()? parent, }) { return Team(
+      json.containsKey('parent');}
+Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamType? type, int? Function()? organizationId, int? Function()? enterpriseId, TeamSimple? Function()? parent, }) {return Team(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -134,8 +134,8 @@ Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Func
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
   parent: parent != null ? parent() : this.parent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Team &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -153,7 +153,7 @@ Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Func
           type == other.type &&
           organizationId == other.organizationId &&
           enterpriseId == other.enterpriseId &&
-          parent == other.parent; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, type, organizationId, enterpriseId, parent); } 
-@override String toString() { return 'Team(id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId, parent: $parent)'; } 
- }
+          parent == other.parent;}
+@override int get hashCode {return Object.hash(id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, type, organizationId, enterpriseId, parent);}
+@override String toString() {return 'Team(id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId, parent: $parent)';}
+}

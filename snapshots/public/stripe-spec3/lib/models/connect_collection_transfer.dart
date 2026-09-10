@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_collection_transfer_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ConnectCollectionTransferObject {const ConnectCollectionTransferObject._(this.value);
 
-factory ConnectCollectionTransferObject.fromJson(String json) { return switch (json) {
+factory ConnectCollectionTransferObject.fromJson(String json) {return switch (json) {
   'connect_collection_transfer' => connectCollectionTransfer,
   _ => ConnectCollectionTransferObject._(json),
-}; }
+};}
 
 static const ConnectCollectionTransferObject connectCollectionTransfer = ConnectCollectionTransferObject._('connect_collection_transfer');
 
@@ -14,25 +14,25 @@ static const List<ConnectCollectionTransferObject> values = [connectCollectionTr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConnectCollectionTransferObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConnectCollectionTransferObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ConnectCollectionTransferObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ConnectCollectionTransferObject($value)';}
+}
 /// 
 @immutable final class ConnectCollectionTransfer {const ConnectCollectionTransfer({required this.amount, required this.currency, required this.destination, required this.id, required this.livemode, required this.object, });
 
-factory ConnectCollectionTransfer.fromJson(Map<String, dynamic> json) { return ConnectCollectionTransfer(
+factory ConnectCollectionTransfer.fromJson(Map<String, dynamic> json) {return ConnectCollectionTransfer(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   destination: ConnectCollectionTransferDestination.fromJson(json['destination']),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ConnectCollectionTransferObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Amount transferred, in cents (or local equivalent).
 final int amount;
@@ -52,36 +52,36 @@ final bool livemode;
 /// String representing the object's type. Objects of the same type share the same value.
 final ConnectCollectionTransferObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'destination': destination.toJson(),
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('destination') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-ConnectCollectionTransfer copyWith({int? amount, String? currency, ConnectCollectionTransferDestination? destination, String? id, bool? livemode, ConnectCollectionTransferObject? object, }) { return ConnectCollectionTransfer(
+      json.containsKey('object');}
+ConnectCollectionTransfer copyWith({int? amount, String? currency, ConnectCollectionTransferDestination? destination, String? id, bool? livemode, ConnectCollectionTransferObject? object, }) {return ConnectCollectionTransfer(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   destination: destination ?? this.destination,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConnectCollectionTransfer &&
           amount == other.amount &&
           currency == other.currency &&
           destination == other.destination &&
           id == other.id &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(amount, currency, destination, id, livemode, object); } 
-@override String toString() { return 'ConnectCollectionTransfer(amount: $amount, currency: $currency, destination: $destination, id: $id, livemode: $livemode, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(amount, currency, destination, id, livemode, object);}
+@override String toString() {return 'ConnectCollectionTransfer(amount: $amount, currency: $currency, destination: $destination, id: $id, livemode: $livemode, object: $object)';}
+}

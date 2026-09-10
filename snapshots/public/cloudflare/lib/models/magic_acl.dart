@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_forward_locally.dart';import 'magic_identifier.dart';import 'magic_lan_acl_configuration.dart';import 'magic_unidirectional.dart';/// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
 @immutable final class MagicAclProtocols {const MagicAclProtocols._(this.value);
 
-factory MagicAclProtocols.fromJson(String json) { return switch (json) {
+factory MagicAclProtocols.fromJson(String json) {return switch (json) {
   'tcp' => tcp,
   'udp' => udp,
   'icmp' => icmp,
   _ => MagicAclProtocols._(json),
-}; }
+};}
 
 static const MagicAclProtocols tcp = MagicAclProtocols._('tcp');
 
@@ -20,18 +20,18 @@ static const List<MagicAclProtocols> values = [tcp, udp, icmp];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicAclProtocols && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicAclProtocols($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicAclProtocols && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicAclProtocols($value)';}
+}
 /// Bidirectional ACL policy for network traffic within a site.
 @immutable final class MagicAcl {const MagicAcl({this.description, this.forwardLocally, this.id, this.lan1, this.lan2, this.name, this.protocols, this.unidirectional, });
 
-factory MagicAcl.fromJson(Map<String, dynamic> json) { return MagicAcl(
+factory MagicAcl.fromJson(Map<String, dynamic> json) {return MagicAcl(
   description: json['description'] as String?,
   forwardLocally: json['forward_locally'] != null ? MagicForwardLocally.fromJson(json['forward_locally'] as bool) : null,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
@@ -40,7 +40,7 @@ factory MagicAcl.fromJson(Map<String, dynamic> json) { return MagicAcl(
   name: json['name'] as String?,
   protocols: (json['protocols'] as List<dynamic>?)?.map((e) => MagicAclProtocols.fromJson(e as String)).toList(),
   unidirectional: json['unidirectional'] != null ? MagicUnidirectional.fromJson(json['unidirectional'] as bool) : null,
-); }
+);}
 
 /// Description for the ACL.
 final String? description;
@@ -60,7 +60,7 @@ final List<MagicAclProtocols>? protocols;
 
 final MagicUnidirectional? unidirectional;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   if (forwardLocally != null) 'forward_locally': forwardLocally?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -69,9 +69,9 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (protocols != null) 'protocols': protocols?.map((e) => e.toJson()).toList(),
   if (unidirectional != null) 'unidirectional': unidirectional?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'forward_locally', 'id', 'lan_1', 'lan_2', 'name', 'protocols', 'unidirectional'}.contains(key)); } 
-MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Function()? forwardLocally, MagicIdentifier? Function()? id, MagicLanAclConfiguration? Function()? lan1, MagicLanAclConfiguration? Function()? lan2, String? Function()? name, List<MagicAclProtocols>? Function()? protocols, MagicUnidirectional? Function()? unidirectional, }) { return MagicAcl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'forward_locally', 'id', 'lan_1', 'lan_2', 'name', 'protocols', 'unidirectional'}.contains(key));}
+MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Function()? forwardLocally, MagicIdentifier? Function()? id, MagicLanAclConfiguration? Function()? lan1, MagicLanAclConfiguration? Function()? lan2, String? Function()? name, List<MagicAclProtocols>? Function()? protocols, MagicUnidirectional? Function()? unidirectional, }) {return MagicAcl(
   description: description != null ? description() : this.description,
   forwardLocally: forwardLocally != null ? forwardLocally() : this.forwardLocally,
   id: id != null ? id() : this.id,
@@ -80,8 +80,8 @@ MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Functio
   name: name != null ? name() : this.name,
   protocols: protocols != null ? protocols() : this.protocols,
   unidirectional: unidirectional != null ? unidirectional() : this.unidirectional,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicAcl &&
           description == other.description &&
           forwardLocally == other.forwardLocally &&
@@ -90,7 +90,7 @@ MagicAcl copyWith({String? Function()? description, MagicForwardLocally? Functio
           lan2 == other.lan2 &&
           name == other.name &&
           listEquals(protocols, other.protocols) &&
-          unidirectional == other.unidirectional; } 
-@override int get hashCode { return Object.hash(description, forwardLocally, id, lan1, lan2, name, Object.hashAll(protocols ?? const []), unidirectional); } 
-@override String toString() { return 'MagicAcl(description: $description, forwardLocally: $forwardLocally, id: $id, lan1: $lan1, lan2: $lan2, name: $name, protocols: $protocols, unidirectional: $unidirectional)'; } 
- }
+          unidirectional == other.unidirectional;}
+@override int get hashCode {return Object.hash(description, forwardLocally, id, lan1, lan2, name, Object.hashAll(protocols ?? const []), unidirectional);}
+@override String toString() {return 'MagicAcl(description: $description, forwardLocally: $forwardLocally, id: $id, lan1: $lan1, lan2: $lan2, name: $name, protocols: $protocols, unidirectional: $unidirectional)';}
+}

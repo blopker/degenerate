@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
 @immutable final class LabelSelectorRequirement {const LabelSelectorRequirement({required this.key, required this.$operator, this.values, });
 
-factory LabelSelectorRequirement.fromJson(Map<String, dynamic> json) { return LabelSelectorRequirement(
+factory LabelSelectorRequirement.fromJson(Map<String, dynamic> json) {return LabelSelectorRequirement(
   key: json['key'] as String,
   $operator: json['operator'] as String,
   values: (json['values'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// key is the label key that the selector applies to.
 final String key;
@@ -18,23 +18,23 @@ final String $operator;
 /// values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.
 final List<String>? values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'operator': $operator,
   'values': ?values,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
-      json.containsKey('operator') && json['operator'] is String; } 
-LabelSelectorRequirement copyWith({String? key, String? $operator, List<String>? Function()? values, }) { return LabelSelectorRequirement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
+      json.containsKey('operator') && json['operator'] is String;}
+LabelSelectorRequirement copyWith({String? key, String? $operator, List<String>? Function()? values, }) {return LabelSelectorRequirement(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   values: values != null ? values() : this.values,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LabelSelectorRequirement &&
           key == other.key &&
           $operator == other.$operator &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'LabelSelectorRequirement(key: $key, \$operator: ${$operator}, values: $values)'; } 
- }
+          listEquals(values, other.values);}
+@override int get hashCode {return Object.hash(key, $operator, Object.hashAll(values ?? const []));}
+@override String toString() {return 'LabelSelectorRequirement(key: $key, \$operator: ${$operator}, values: $values)';}
+}

@@ -11,7 +11,7 @@ final class Api20100401AssignedAddOnApi with ApiExecutor {const Api20100401Assig
 /// Fetch an instance of an Add-on installation currently assigned to this Number.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> fetchIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> fetchIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,18 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);}, );}
 /// Remove the assignment of an Add-on installation from the Number specified.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json`
-Future<ApiResult<void, Never>> deleteIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -40,15 +35,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of Add-on installations currently assigned to this Number.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
-Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnResponse, Never>> listIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListIncomingPhoneNumberAssignedAddOnResponse, Never>> listIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -71,18 +63,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListIncomingPhoneNumberAssignedAddOnResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListIncomingPhoneNumberAssignedAddOnResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Assign an Add-on installation to the Number specified.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
-Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> createIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, CreateIncomingPhoneNumberAssignedAddOnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn, Never>> createIncomingPhoneNumberAssignedAddOn({required String accountSid, required String resourceSid, CreateIncomingPhoneNumberAssignedAddOnRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -95,12 +82,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);}, );}
+}

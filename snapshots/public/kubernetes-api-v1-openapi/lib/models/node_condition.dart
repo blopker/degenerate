@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// NodeCondition contains condition information for a node.
 @immutable final class NodeCondition {const NodeCondition({required this.status, required this.type, this.lastHeartbeatTime, this.lastTransitionTime, this.message, this.reason, });
 
-factory NodeCondition.fromJson(Map<String, dynamic> json) { return NodeCondition(
+factory NodeCondition.fromJson(Map<String, dynamic> json) {return NodeCondition(
   lastHeartbeatTime: json['lastHeartbeatTime'] != null ? Time.fromJson(json['lastHeartbeatTime'] as String) : null,
   lastTransitionTime: json['lastTransitionTime'] != null ? Time.fromJson(json['lastTransitionTime'] as String) : null,
   message: json['message'] as String?,
   reason: json['reason'] as String?,
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// Last time we got an update on a given condition.
 final Time? lastHeartbeatTime;
@@ -30,32 +30,32 @@ final String status;
 /// Type of node condition.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (lastHeartbeatTime != null) 'lastHeartbeatTime': lastHeartbeatTime?.toJson(),
   if (lastTransitionTime != null) 'lastTransitionTime': lastTransitionTime?.toJson(),
   'message': ?message,
   'reason': ?reason,
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-NodeCondition copyWith({Time? Function()? lastHeartbeatTime, Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) { return NodeCondition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+NodeCondition copyWith({Time? Function()? lastHeartbeatTime, Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) {return NodeCondition(
   lastHeartbeatTime: lastHeartbeatTime != null ? lastHeartbeatTime() : this.lastHeartbeatTime,
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NodeCondition &&
           lastHeartbeatTime == other.lastHeartbeatTime &&
           lastTransitionTime == other.lastTransitionTime &&
           message == other.message &&
           reason == other.reason &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(lastHeartbeatTime, lastTransitionTime, message, reason, status, type); } 
-@override String toString() { return 'NodeCondition(lastHeartbeatTime: $lastHeartbeatTime, lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(lastHeartbeatTime, lastTransitionTime, message, reason, status, type);}
+@override String toString() {return 'NodeCondition(lastHeartbeatTime: $lastHeartbeatTime, lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)';}
+}

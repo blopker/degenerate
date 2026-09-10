@@ -12,7 +12,7 @@ Map<String, dynamic> _jsonResponse(Map<String, dynamic> schema) => {
 void main() {
   for (final errors in [false, true]) {
     test(
-      'response union merges repeated type nullability (errors=$errors)',
+      'response variants preserve per-status nullability (errors=$errors)',
       () async {
         final statuses = errors ? [400, 401, 402] : [200, 201, 202];
         final result = await runGeneratedClient(
@@ -21,8 +21,8 @@ void main() {
   final client = RecordingClient(nextResponse: ApiResponse(statusCode: ${statuses[1]}, body: 'null'));
   final result = await DefaultApi(ApiConfig(client: client)).fetch();
   print(jsonEncode(switch (result) {
-    ApiSuccess(:final data) => ${errors ? 'null' : 'data?.toJson()'},
-    ApiError(:final error) => ${errors ? 'error?.toJson()' : 'null'},
+    ApiSuccess(:final data) => ${errors ? 'null' : '(data as FetchSuccess201).data'},
+    ApiError(:final error) => ${errors ? '(error as FetchError401).data' : 'null'},
     _ => 'failed',
   }));
 ''',
@@ -139,7 +139,7 @@ void main() {
       {},
       '''
   final client = RecordingClient(nextResponse: ApiResponse(statusCode: 200, body: '3', headers: {'Content-Type': 'text/plain'}));
-  print(jsonEncode((await DefaultApi(ApiConfig(client: client)).fetch()).dataOrThrow.toJson()));
+  print(jsonEncode(((await DefaultApi(ApiConfig(client: client)).fetch()).dataOrThrow as FetchSuccess200Text).data));
 ''',
       paths: {
         '/fetch': {
@@ -166,7 +166,7 @@ void main() {
   });
 
   test(
-    'more than nine response shapes retain typed nested union values',
+    'more than nine response shapes retain directly typed payloads',
     () async {
       final schemas = <String, dynamic>{
         for (var i = 0; i < 11; i++)
@@ -182,7 +182,9 @@ void main() {
         schemas,
         '''
   final client = RecordingClient(nextResponse: ApiResponse(statusCode: 210, body: '{"value10":10}'));
-  print(jsonEncode((await DefaultApi(ApiConfig(client: client)).fetch()).dataOrThrow.toJson()));
+  final result = (await DefaultApi(ApiConfig(client: client)).fetch()).dataOrThrow as FetchSuccess210;
+  final Shape10 data = result.data;
+  print(jsonEncode(data.toJson()));
 ''',
         paths: {
           '/fetch': {

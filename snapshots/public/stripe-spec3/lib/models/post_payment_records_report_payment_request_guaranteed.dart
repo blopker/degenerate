@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt guarantee.
 @immutable final class PostPaymentRecordsReportPaymentRequestGuaranteed {const PostPaymentRecordsReportPaymentRequestGuaranteed({required this.guaranteedAt});
 
-factory PostPaymentRecordsReportPaymentRequestGuaranteed.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestGuaranteed(
+factory PostPaymentRecordsReportPaymentRequestGuaranteed.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsReportPaymentRequestGuaranteed(
   guaranteedAt: (json['guaranteed_at'] as num).toInt(),
-); }
+);}
 
 final int guaranteedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'guaranteed_at': guaranteedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('guaranteed_at') && json['guaranteed_at'] is num; } 
-PostPaymentRecordsReportPaymentRequestGuaranteed copyWith({int? guaranteedAt}) { return PostPaymentRecordsReportPaymentRequestGuaranteed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('guaranteed_at') && json['guaranteed_at'] is num;}
+PostPaymentRecordsReportPaymentRequestGuaranteed copyWith({int? guaranteedAt}) {return PostPaymentRecordsReportPaymentRequestGuaranteed(
   guaranteedAt: guaranteedAt ?? this.guaranteedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentRecordsReportPaymentRequestGuaranteed &&
-          guaranteedAt == other.guaranteedAt; } 
-@override int get hashCode { return guaranteedAt.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestGuaranteed(guaranteedAt: $guaranteedAt)'; } 
- }
+          guaranteedAt == other.guaranteedAt;}
+@override int get hashCode {return guaranteedAt.hashCode;}
+@override String toString() {return 'PostPaymentRecordsReportPaymentRequestGuaranteed(guaranteedAt: $guaranteedAt)';}
+}

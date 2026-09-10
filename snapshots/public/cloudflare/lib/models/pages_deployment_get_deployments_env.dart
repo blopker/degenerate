@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// What type of deployments to fetch.
 @immutable final class PagesDeploymentGetDeploymentsEnv {const PagesDeploymentGetDeploymentsEnv._(this.value);
 
-factory PagesDeploymentGetDeploymentsEnv.fromJson(String json) { return switch (json) {
+factory PagesDeploymentGetDeploymentsEnv.fromJson(String json) {return switch (json) {
   'production' => production,
   'preview' => preview,
   _ => PagesDeploymentGetDeploymentsEnv._(json),
-}; }
+};}
 
 static const PagesDeploymentGetDeploymentsEnv production = PagesDeploymentGetDeploymentsEnv._('production');
 
@@ -17,11 +17,11 @@ static const List<PagesDeploymentGetDeploymentsEnv> values = [production, previe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDeploymentGetDeploymentsEnv && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDeploymentGetDeploymentsEnv($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesDeploymentGetDeploymentsEnv && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesDeploymentGetDeploymentsEnv($value)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_transaction_amount_details.dart';import 'issuing_transaction_authorization.dart';import 'issuing_transaction_balance_transaction.dart';import 'issuing_transaction_card.dart';import 'issuing_transaction_cardholder.dart';import 'issuing_transaction_dispute.dart';import 'issuing_transaction_network_data.dart';import 'issuing_transaction_purchase_details.dart';import 'issuing_transaction_token.dart';import 'issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingTransactionObject {const IssuingTransactionObject._(this.value);
 
-factory IssuingTransactionObject.fromJson(String json) { return switch (json) {
+factory IssuingTransactionObject.fromJson(String json) {return switch (json) {
   'issuing.transaction' => issuingTransaction,
   _ => IssuingTransactionObject._(json),
-}; }
+};}
 
 static const IssuingTransactionObject issuingTransaction = IssuingTransactionObject._('issuing.transaction');
 
@@ -14,22 +14,22 @@ static const List<IssuingTransactionObject> values = [issuingTransaction];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTransactionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingTransactionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingTransactionObject($value)';}
+}
 /// The nature of the transaction.
 @immutable final class IssuingTransactionType {const IssuingTransactionType._(this.value);
 
-factory IssuingTransactionType.fromJson(String json) { return switch (json) {
+factory IssuingTransactionType.fromJson(String json) {return switch (json) {
   'capture' => capture,
   'refund' => refund,
   _ => IssuingTransactionType._(json),
-}; }
+};}
 
 static const IssuingTransactionType capture = IssuingTransactionType._('capture');
 
@@ -39,23 +39,23 @@ static const List<IssuingTransactionType> values = [capture, refund];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTransactionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingTransactionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingTransactionType($value)';}
+}
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`.
 @immutable final class IssuingTransactionWallet {const IssuingTransactionWallet._(this.value);
 
-factory IssuingTransactionWallet.fromJson(String json) { return switch (json) {
+factory IssuingTransactionWallet.fromJson(String json) {return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
   _ => IssuingTransactionWallet._(json),
-}; }
+};}
 
 static const IssuingTransactionWallet applePay = IssuingTransactionWallet._('apple_pay');
 
@@ -67,14 +67,14 @@ static const List<IssuingTransactionWallet> values = [applePay, googlePay, samsu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTransactionWallet && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTransactionWallet($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingTransactionWallet && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingTransactionWallet($value)';}
+}
 /// Any use of an [issued card](https://docs.stripe.com/issuing) that results in funds entering or leaving
 /// your Stripe account, such as a completed purchase or refund, is represented by an Issuing
 /// `Transaction` object.
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Issued card transactions](https://docs.stripe.com/issuing/purchases/transactions)
 @immutable final class IssuingTransaction {const IssuingTransaction({required this.amount, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.type, this.amountDetails = const Omittable.absent(), this.authorization = const Omittable.absent(), this.balanceTransaction = const Omittable.absent(), this.cardholder = const Omittable.absent(), this.dispute = const Omittable.absent(), this.networkData = const Omittable.absent(), this.purchaseDetails = const Omittable.absent(), this.token = const Omittable.absent(), this.treasury = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingTransaction(
+factory IssuingTransaction.fromJson(Map<String, dynamic> json) {return IssuingTransaction(
   amount: (json['amount'] as num).toInt(),
   amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingTransactionAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   authorization: json.containsKey('authorization') ? Omittable(json['authorization'] != null ? IssuingTransactionAuthorization.fromJson(json['authorization']) : null) : const Omittable.absent(),
@@ -105,7 +105,7 @@ factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingT
   treasury: json.containsKey('treasury') ? Omittable(json['treasury'] != null ? IssuingTransactionTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: IssuingTransactionType.fromJson(json['type'] as String),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? IssuingTransactionWallet.fromJson(json['wallet'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The transaction amount, which will be reflected in your balance. This amount is in your currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int amount;
@@ -172,7 +172,7 @@ final IssuingTransactionType type;
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`.
 final Omittable<IssuingTransactionWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
   if (authorization.isPresent) 'authorization': authorization.value?.toJson(),
@@ -195,8 +195,8 @@ Map<String, dynamic> toJson() { return {
   if (treasury.isPresent) 'treasury': treasury.value?.toJson(),
   'type': type.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('card') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -207,8 +207,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('merchant_data') &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
-IssuingTransaction copyWith({int? amount, Omittable<IssuingTransactionAmountDetails?>? amountDetails, Omittable<IssuingTransactionAuthorization?>? authorization, Omittable<IssuingTransactionBalanceTransaction?>? balanceTransaction, IssuingTransactionCard? card, Omittable<IssuingTransactionCardholder?>? cardholder, int? created, String? currency, Omittable<IssuingTransactionDispute?>? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, Omittable<IssuingTransactionNetworkData?>? networkData, IssuingTransactionObject? object, Omittable<IssuingTransactionPurchaseDetails?>? purchaseDetails, Omittable<IssuingTransactionToken?>? token, Omittable<IssuingTransactionTreasury?>? treasury, IssuingTransactionType? type, Omittable<IssuingTransactionWallet?>? wallet, }) { return IssuingTransaction(
+      json.containsKey('type');}
+IssuingTransaction copyWith({int? amount, Omittable<IssuingTransactionAmountDetails?>? amountDetails, Omittable<IssuingTransactionAuthorization?>? authorization, Omittable<IssuingTransactionBalanceTransaction?>? balanceTransaction, IssuingTransactionCard? card, Omittable<IssuingTransactionCardholder?>? cardholder, int? created, String? currency, Omittable<IssuingTransactionDispute?>? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, Omittable<IssuingTransactionNetworkData?>? networkData, IssuingTransactionObject? object, Omittable<IssuingTransactionPurchaseDetails?>? purchaseDetails, Omittable<IssuingTransactionToken?>? token, Omittable<IssuingTransactionTreasury?>? treasury, IssuingTransactionType? type, Omittable<IssuingTransactionWallet?>? wallet, }) {return IssuingTransaction(
   amount: amount ?? this.amount,
   amountDetails: amountDetails ?? this.amountDetails,
   authorization: authorization ?? this.authorization,
@@ -231,8 +231,8 @@ IssuingTransaction copyWith({int? amount, Omittable<IssuingTransactionAmountDeta
   treasury: treasury ?? this.treasury,
   type: type ?? this.type,
   wallet: wallet ?? this.wallet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingTransaction &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -255,7 +255,7 @@ IssuingTransaction copyWith({int? amount, Omittable<IssuingTransactionAmountDeta
           token == other.token &&
           treasury == other.treasury &&
           type == other.type &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([amount, amountDetails, authorization, balanceTransaction, card, cardholder, created, currency, dispute, id, livemode, merchantAmount, merchantCurrency, merchantData, metadata, networkData, object, purchaseDetails, token, treasury, type, wallet]); } 
-@override String toString() { return 'IssuingTransaction(amount: $amount, amountDetails: $amountDetails, authorization: $authorization, balanceTransaction: $balanceTransaction, card: $card, cardholder: $cardholder, created: $created, currency: $currency, dispute: $dispute, id: $id, livemode: $livemode, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, metadata: $metadata, networkData: $networkData, object: $object, purchaseDetails: $purchaseDetails, token: $token, treasury: $treasury, type: $type, wallet: $wallet)'; } 
- }
+          wallet == other.wallet;}
+@override int get hashCode {return Object.hashAll([amount, amountDetails, authorization, balanceTransaction, card, cardholder, created, currency, dispute, id, livemode, merchantAmount, merchantCurrency, merchantData, metadata, networkData, object, purchaseDetails, token, treasury, type, wallet]);}
+@override String toString() {return 'IssuingTransaction(amount: $amount, amountDetails: $amountDetails, authorization: $authorization, balanceTransaction: $balanceTransaction, card: $card, cardholder: $cardholder, created: $created, currency: $currency, dispute: $dispute, id: $id, livemode: $livemode, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, metadata: $metadata, networkData: $networkData, object: $object, purchaseDetails: $purchaseDetails, token: $token, treasury: $treasury, type: $type, wallet: $wallet)';}
+}

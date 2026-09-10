@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOktaRequestConfig {const AccessOktaRequestConfig({this.clientId, this.clientSecret, this.claims, this.emailClaimName, this.authorizationServerId, this.oktaAccount, });
 
-factory AccessOktaRequestConfig.fromJson(Map<String, dynamic> json) { return AccessOktaRequestConfig(
+factory AccessOktaRequestConfig.fromJson(Map<String, dynamic> json) {return AccessOktaRequestConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),
   emailClaimName: json['email_claim_name'] as String?,
   authorizationServerId: json['authorization_server_id'] as String?,
   oktaAccount: json['okta_account'] as String?,
-); }
+);}
 
 /// Your OAuth Client ID
 final String? clientId;
@@ -29,31 +29,31 @@ final String? authorizationServerId;
 /// Your okta account url
 final String? oktaAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
   'claims': ?claims,
   'email_claim_name': ?emailClaimName,
   'authorization_server_id': ?authorizationServerId,
   'okta_account': ?oktaAccount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'authorization_server_id', 'okta_account'}.contains(key)); } 
-AccessOktaRequestConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authorizationServerId, String? Function()? oktaAccount, }) { return AccessOktaRequestConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'authorization_server_id', 'okta_account'}.contains(key));}
+AccessOktaRequestConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authorizationServerId, String? Function()? oktaAccount, }) {return AccessOktaRequestConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,
   emailClaimName: emailClaimName != null ? emailClaimName() : this.emailClaimName,
   authorizationServerId: authorizationServerId != null ? authorizationServerId() : this.authorizationServerId,
   oktaAccount: oktaAccount != null ? oktaAccount() : this.oktaAccount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOktaRequestConfig &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
           listEquals(claims, other.claims) &&
           emailClaimName == other.emailClaimName &&
           authorizationServerId == other.authorizationServerId &&
-          oktaAccount == other.oktaAccount; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret, Object.hashAll(claims ?? const []), emailClaimName, authorizationServerId, oktaAccount); } 
-@override String toString() { return 'AccessOktaRequestConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, authorizationServerId: $authorizationServerId, oktaAccount: $oktaAccount)'; } 
- }
+          oktaAccount == other.oktaAccount;}
+@override int get hashCode {return Object.hash(clientId, clientSecret, Object.hashAll(claims ?? const []), emailClaimName, authorizationServerId, oktaAccount);}
+@override String toString() {return 'AccessOktaRequestConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, authorizationServerId: $authorizationServerId, oktaAccount: $oktaAccount)';}
+}

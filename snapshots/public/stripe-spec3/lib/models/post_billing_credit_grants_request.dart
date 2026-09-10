@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_amount.dart';import 'post_billing_credit_grants_request_applicability_config.dart';/// The category of this credit grant. It defaults to `paid` if not specified.
 @immutable final class PostBillingCreditGrantsRequestCategory {const PostBillingCreditGrantsRequestCategory._(this.value);
 
-factory PostBillingCreditGrantsRequestCategory.fromJson(String json) { return switch (json) {
+factory PostBillingCreditGrantsRequestCategory.fromJson(String json) {return switch (json) {
   'paid' => paid,
   'promotional' => promotional,
   _ => PostBillingCreditGrantsRequestCategory._(json),
-}; }
+};}
 
 static const PostBillingCreditGrantsRequestCategory paid = PostBillingCreditGrantsRequestCategory._('paid');
 
@@ -17,17 +17,17 @@ static const List<PostBillingCreditGrantsRequestCategory> values = [paid, promot
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingCreditGrantsRequestCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingCreditGrantsRequestCategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingCreditGrantsRequestCategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingCreditGrantsRequestCategory($value)';}
+}
 @immutable final class PostBillingCreditGrantsRequest {const PostBillingCreditGrantsRequest({required this.amount, required this.applicabilityConfig, this.category, this.customer, this.customerAccount, this.effectiveAt, this.expand, this.expiresAt, this.metadata, this.name, this.priority, });
 
-factory PostBillingCreditGrantsRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequest(
+factory PostBillingCreditGrantsRequest.fromJson(Map<String, dynamic> json) {return PostBillingCreditGrantsRequest(
   amount: PostBillingCreditGrantsRequestAmount.fromJson(json['amount'] as Map<String, dynamic>),
   applicabilityConfig: PostBillingCreditGrantsRequestApplicabilityConfig.fromJson(json['applicability_config'] as Map<String, dynamic>),
   category: json['category'] != null ? PostBillingCreditGrantsRequestCategory.fromJson(json['category'] as String) : null,
@@ -39,7 +39,7 @@ factory PostBillingCreditGrantsRequest.fromJson(Map<String, dynamic> json) { ret
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
-); }
+);}
 
 /// Amount of this credit grant.
 final PostBillingCreditGrantsRequestAmount amount;
@@ -74,7 +74,7 @@ final String? name;
 /// The desired priority for applying this credit grant. If not specified, it will be set to the default value of 50. The highest priority is 0 and the lowest is 100.
 final int? priority;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount.toJson(),
   'applicability_config': applicabilityConfig.toJson(),
   if (category != null) 'category': category?.toJson(),
@@ -86,10 +86,10 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'name': ?name,
   'priority': ?priority,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
-      json.containsKey('applicability_config'); } 
-PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? amount, PostBillingCreditGrantsRequestApplicabilityConfig? applicabilityConfig, PostBillingCreditGrantsRequestCategory? Function()? category, String? Function()? customer, String? Function()? customerAccount, int? Function()? effectiveAt, List<String>? Function()? expand, int? Function()? expiresAt, Map<String, String>? Function()? metadata, String? Function()? name, int? Function()? priority, }) { return PostBillingCreditGrantsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') &&
+      json.containsKey('applicability_config');}
+PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? amount, PostBillingCreditGrantsRequestApplicabilityConfig? applicabilityConfig, PostBillingCreditGrantsRequestCategory? Function()? category, String? Function()? customer, String? Function()? customerAccount, int? Function()? effectiveAt, List<String>? Function()? expand, int? Function()? expiresAt, Map<String, String>? Function()? metadata, String? Function()? name, int? Function()? priority, }) {return PostBillingCreditGrantsRequest(
   amount: amount ?? this.amount,
   applicabilityConfig: applicabilityConfig ?? this.applicabilityConfig,
   category: category != null ? category() : this.category,
@@ -101,8 +101,8 @@ PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? a
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingCreditGrantsRequest &&
           amount == other.amount &&
           applicabilityConfig == other.applicabilityConfig &&
@@ -114,7 +114,7 @@ PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? a
           expiresAt == other.expiresAt &&
           metadata == other.metadata &&
           name == other.name &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(amount, applicabilityConfig, category, customer, customerAccount, effectiveAt, Object.hashAll(expand ?? const []), expiresAt, metadata, name, priority); } 
-@override String toString() { return 'PostBillingCreditGrantsRequest(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expand: $expand, expiresAt: $expiresAt, metadata: $metadata, name: $name, priority: $priority)'; } 
- }
+          priority == other.priority;}
+@override int get hashCode {return Object.hash(amount, applicabilityConfig, category, customer, customerAccount, effectiveAt, Object.hashAll(expand ?? const []), expiresAt, metadata, name, priority);}
+@override String toString() {return 'PostBillingCreditGrantsRequest(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expand: $expand, expiresAt: $expiresAt, metadata: $metadata, name: $name, priority: $priority)';}
+}

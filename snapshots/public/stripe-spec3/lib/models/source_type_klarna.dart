@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeKlarna {const SourceTypeKlarna({this.backgroundImageUrl, this.clientToken = const Omittable.absent(), this.firstName, this.lastName, this.locale, this.logoUrl, this.pageTitle, this.payLaterAssetUrlsDescriptive, this.payLaterAssetUrlsStandard, this.payLaterName, this.payLaterRedirectUrl, this.payNowAssetUrlsDescriptive, this.payNowAssetUrlsStandard, this.payNowName, this.payNowRedirectUrl, this.payOverTimeAssetUrlsDescriptive, this.payOverTimeAssetUrlsStandard, this.payOverTimeName, this.payOverTimeRedirectUrl, this.paymentMethodCategories, this.purchaseCountry, this.purchaseType, this.redirectUrl, this.shippingDelay, this.shippingFirstName, this.shippingLastName, });
 
-factory SourceTypeKlarna.fromJson(Map<String, dynamic> json) { return SourceTypeKlarna(
+factory SourceTypeKlarna.fromJson(Map<String, dynamic> json) {return SourceTypeKlarna(
   backgroundImageUrl: json['background_image_url'] as String?,
   clientToken: json.containsKey('client_token') ? Omittable(json['client_token'] as String?) : const Omittable.absent(),
   firstName: json['first_name'] as String?,
@@ -29,7 +29,7 @@ factory SourceTypeKlarna.fromJson(Map<String, dynamic> json) { return SourceType
   shippingDelay: json['shipping_delay'] != null ? (json['shipping_delay'] as num).toInt() : null,
   shippingFirstName: json['shipping_first_name'] as String?,
   shippingLastName: json['shipping_last_name'] as String?,
-); }
+);}
 
 final String? backgroundImageUrl;
 
@@ -83,7 +83,7 @@ final String? shippingFirstName;
 
 final String? shippingLastName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'background_image_url': ?backgroundImageUrl,
   if (clientToken.isPresent) 'client_token': clientToken.value,
   'first_name': ?firstName,
@@ -110,9 +110,9 @@ Map<String, dynamic> toJson() { return {
   'shipping_delay': ?shippingDelay,
   'shipping_first_name': ?shippingFirstName,
   'shipping_last_name': ?shippingLastName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_image_url', 'client_token', 'first_name', 'last_name', 'locale', 'logo_url', 'page_title', 'pay_later_asset_urls_descriptive', 'pay_later_asset_urls_standard', 'pay_later_name', 'pay_later_redirect_url', 'pay_now_asset_urls_descriptive', 'pay_now_asset_urls_standard', 'pay_now_name', 'pay_now_redirect_url', 'pay_over_time_asset_urls_descriptive', 'pay_over_time_asset_urls_standard', 'pay_over_time_name', 'pay_over_time_redirect_url', 'payment_method_categories', 'purchase_country', 'purchase_type', 'redirect_url', 'shipping_delay', 'shipping_first_name', 'shipping_last_name'}.contains(key)); } 
-SourceTypeKlarna copyWith({String? Function()? backgroundImageUrl, Omittable<String?>? clientToken, String? Function()? firstName, String? Function()? lastName, String? Function()? locale, String? Function()? logoUrl, String? Function()? pageTitle, String? Function()? payLaterAssetUrlsDescriptive, String? Function()? payLaterAssetUrlsStandard, String? Function()? payLaterName, String? Function()? payLaterRedirectUrl, String? Function()? payNowAssetUrlsDescriptive, String? Function()? payNowAssetUrlsStandard, String? Function()? payNowName, String? Function()? payNowRedirectUrl, String? Function()? payOverTimeAssetUrlsDescriptive, String? Function()? payOverTimeAssetUrlsStandard, String? Function()? payOverTimeName, String? Function()? payOverTimeRedirectUrl, String? Function()? paymentMethodCategories, String? Function()? purchaseCountry, String? Function()? purchaseType, String? Function()? redirectUrl, int? Function()? shippingDelay, String? Function()? shippingFirstName, String? Function()? shippingLastName, }) { return SourceTypeKlarna(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'background_image_url', 'client_token', 'first_name', 'last_name', 'locale', 'logo_url', 'page_title', 'pay_later_asset_urls_descriptive', 'pay_later_asset_urls_standard', 'pay_later_name', 'pay_later_redirect_url', 'pay_now_asset_urls_descriptive', 'pay_now_asset_urls_standard', 'pay_now_name', 'pay_now_redirect_url', 'pay_over_time_asset_urls_descriptive', 'pay_over_time_asset_urls_standard', 'pay_over_time_name', 'pay_over_time_redirect_url', 'payment_method_categories', 'purchase_country', 'purchase_type', 'redirect_url', 'shipping_delay', 'shipping_first_name', 'shipping_last_name'}.contains(key));}
+SourceTypeKlarna copyWith({String? Function()? backgroundImageUrl, Omittable<String?>? clientToken, String? Function()? firstName, String? Function()? lastName, String? Function()? locale, String? Function()? logoUrl, String? Function()? pageTitle, String? Function()? payLaterAssetUrlsDescriptive, String? Function()? payLaterAssetUrlsStandard, String? Function()? payLaterName, String? Function()? payLaterRedirectUrl, String? Function()? payNowAssetUrlsDescriptive, String? Function()? payNowAssetUrlsStandard, String? Function()? payNowName, String? Function()? payNowRedirectUrl, String? Function()? payOverTimeAssetUrlsDescriptive, String? Function()? payOverTimeAssetUrlsStandard, String? Function()? payOverTimeName, String? Function()? payOverTimeRedirectUrl, String? Function()? paymentMethodCategories, String? Function()? purchaseCountry, String? Function()? purchaseType, String? Function()? redirectUrl, int? Function()? shippingDelay, String? Function()? shippingFirstName, String? Function()? shippingLastName, }) {return SourceTypeKlarna(
   backgroundImageUrl: backgroundImageUrl != null ? backgroundImageUrl() : this.backgroundImageUrl,
   clientToken: clientToken ?? this.clientToken,
   firstName: firstName != null ? firstName() : this.firstName,
@@ -139,8 +139,8 @@ SourceTypeKlarna copyWith({String? Function()? backgroundImageUrl, Omittable<Str
   shippingDelay: shippingDelay != null ? shippingDelay() : this.shippingDelay,
   shippingFirstName: shippingFirstName != null ? shippingFirstName() : this.shippingFirstName,
   shippingLastName: shippingLastName != null ? shippingLastName() : this.shippingLastName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SourceTypeKlarna &&
           backgroundImageUrl == other.backgroundImageUrl &&
           clientToken == other.clientToken &&
@@ -167,7 +167,7 @@ SourceTypeKlarna copyWith({String? Function()? backgroundImageUrl, Omittable<Str
           redirectUrl == other.redirectUrl &&
           shippingDelay == other.shippingDelay &&
           shippingFirstName == other.shippingFirstName &&
-          shippingLastName == other.shippingLastName; } 
-@override int get hashCode { return Object.hashAll([backgroundImageUrl, clientToken, firstName, lastName, locale, logoUrl, pageTitle, payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard, payLaterName, payLaterRedirectUrl, payNowAssetUrlsDescriptive, payNowAssetUrlsStandard, payNowName, payNowRedirectUrl, payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard, payOverTimeName, payOverTimeRedirectUrl, paymentMethodCategories, purchaseCountry, purchaseType, redirectUrl, shippingDelay, shippingFirstName, shippingLastName]); } 
-@override String toString() { return 'SourceTypeKlarna(backgroundImageUrl: $backgroundImageUrl, clientToken: $clientToken, firstName: $firstName, lastName: $lastName, locale: $locale, logoUrl: $logoUrl, pageTitle: $pageTitle, payLaterAssetUrlsDescriptive: $payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard: $payLaterAssetUrlsStandard, payLaterName: $payLaterName, payLaterRedirectUrl: $payLaterRedirectUrl, payNowAssetUrlsDescriptive: $payNowAssetUrlsDescriptive, payNowAssetUrlsStandard: $payNowAssetUrlsStandard, payNowName: $payNowName, payNowRedirectUrl: $payNowRedirectUrl, payOverTimeAssetUrlsDescriptive: $payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard: $payOverTimeAssetUrlsStandard, payOverTimeName: $payOverTimeName, payOverTimeRedirectUrl: $payOverTimeRedirectUrl, paymentMethodCategories: $paymentMethodCategories, purchaseCountry: $purchaseCountry, purchaseType: $purchaseType, redirectUrl: $redirectUrl, shippingDelay: $shippingDelay, shippingFirstName: $shippingFirstName, shippingLastName: $shippingLastName)'; } 
- }
+          shippingLastName == other.shippingLastName;}
+@override int get hashCode {return Object.hashAll([backgroundImageUrl, clientToken, firstName, lastName, locale, logoUrl, pageTitle, payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard, payLaterName, payLaterRedirectUrl, payNowAssetUrlsDescriptive, payNowAssetUrlsStandard, payNowName, payNowRedirectUrl, payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard, payOverTimeName, payOverTimeRedirectUrl, paymentMethodCategories, purchaseCountry, purchaseType, redirectUrl, shippingDelay, shippingFirstName, shippingLastName]);}
+@override String toString() {return 'SourceTypeKlarna(backgroundImageUrl: $backgroundImageUrl, clientToken: $clientToken, firstName: $firstName, lastName: $lastName, locale: $locale, logoUrl: $logoUrl, pageTitle: $pageTitle, payLaterAssetUrlsDescriptive: $payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard: $payLaterAssetUrlsStandard, payLaterName: $payLaterName, payLaterRedirectUrl: $payLaterRedirectUrl, payNowAssetUrlsDescriptive: $payNowAssetUrlsDescriptive, payNowAssetUrlsStandard: $payNowAssetUrlsStandard, payNowName: $payNowName, payNowRedirectUrl: $payNowRedirectUrl, payOverTimeAssetUrlsDescriptive: $payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard: $payOverTimeAssetUrlsStandard, payOverTimeName: $payOverTimeName, payOverTimeRedirectUrl: $payOverTimeRedirectUrl, paymentMethodCategories: $paymentMethodCategories, purchaseCountry: $purchaseCountry, purchaseType: $purchaseType, redirectUrl: $redirectUrl, shippingDelay: $shippingDelay, shippingFirstName: $shippingFirstName, shippingLastName: $shippingLastName)';}
+}

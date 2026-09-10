@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBotsTimeseriesGroupBotKind {const RadarGetBotsTimeseriesGroupBotKind._(this.value);
 
-factory RadarGetBotsTimeseriesGroupBotKind.fromJson(String json) { return switch (json) {
+factory RadarGetBotsTimeseriesGroupBotKind.fromJson(String json) {return switch (json) {
   'AGENT' => agent,
   'BOT' => bot,
   _ => RadarGetBotsTimeseriesGroupBotKind._(json),
-}; }
+};}
 
 static const RadarGetBotsTimeseriesGroupBotKind agent = RadarGetBotsTimeseriesGroupBotKind._('AGENT');
 
@@ -16,11 +16,11 @@ static const List<RadarGetBotsTimeseriesGroupBotKind> values = [agent, bot];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBotsTimeseriesGroupBotKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBotsTimeseriesGroupBotKind($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetBotsTimeseriesGroupBotKind && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetBotsTimeseriesGroupBotKind($value)';}
+}

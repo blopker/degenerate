@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
 @immutable final class ZeroTrustGatewaySchedule {const ZeroTrustGatewaySchedule({this.fri, this.mon, this.sat, this.sun, this.thu, this.timeZone, this.tue, this.wed, });
 
-factory ZeroTrustGatewaySchedule.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySchedule(
+factory ZeroTrustGatewaySchedule.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewaySchedule(
   fri: json['fri'] as String?,
   mon: json['mon'] as String?,
   sat: json['sat'] as String?,
@@ -12,7 +12,7 @@ factory ZeroTrustGatewaySchedule.fromJson(Map<String, dynamic> json) { return Ze
   timeZone: json['time_zone'] as String?,
   tue: json['tue'] as String?,
   wed: json['wed'] as String?,
-); }
+);}
 
 /// Specify the time intervals when the rule is active on Fridays, in the increasing order from 00:00-24:00.  If this parameter omitted, the rule is deactivated on Fridays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.
 final String? fri;
@@ -38,7 +38,7 @@ final String? tue;
 /// Specify the time intervals when the rule is active on Wednesdays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Wednesdays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.
 final String? wed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fri': ?fri,
   'mon': ?mon,
   'sat': ?sat,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'time_zone': ?timeZone,
   'tue': ?tue,
   'wed': ?wed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fri', 'mon', 'sat', 'sun', 'thu', 'time_zone', 'tue', 'wed'}.contains(key)); } 
-ZeroTrustGatewaySchedule copyWith({String? Function()? fri, String? Function()? mon, String? Function()? sat, String? Function()? sun, String? Function()? thu, String? Function()? timeZone, String? Function()? tue, String? Function()? wed, }) { return ZeroTrustGatewaySchedule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fri', 'mon', 'sat', 'sun', 'thu', 'time_zone', 'tue', 'wed'}.contains(key));}
+ZeroTrustGatewaySchedule copyWith({String? Function()? fri, String? Function()? mon, String? Function()? sat, String? Function()? sun, String? Function()? thu, String? Function()? timeZone, String? Function()? tue, String? Function()? wed, }) {return ZeroTrustGatewaySchedule(
   fri: fri != null ? fri() : this.fri,
   mon: mon != null ? mon() : this.mon,
   sat: sat != null ? sat() : this.sat,
@@ -58,8 +58,8 @@ ZeroTrustGatewaySchedule copyWith({String? Function()? fri, String? Function()? 
   timeZone: timeZone != null ? timeZone() : this.timeZone,
   tue: tue != null ? tue() : this.tue,
   wed: wed != null ? wed() : this.wed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewaySchedule &&
           fri == other.fri &&
           mon == other.mon &&
@@ -68,7 +68,7 @@ ZeroTrustGatewaySchedule copyWith({String? Function()? fri, String? Function()? 
           thu == other.thu &&
           timeZone == other.timeZone &&
           tue == other.tue &&
-          wed == other.wed; } 
-@override int get hashCode { return Object.hash(fri, mon, sat, sun, thu, timeZone, tue, wed); } 
-@override String toString() { return 'ZeroTrustGatewaySchedule(fri: $fri, mon: $mon, sat: $sat, sun: $sun, thu: $thu, timeZone: $timeZone, tue: $tue, wed: $wed)'; } 
- }
+          wed == other.wed;}
+@override int get hashCode {return Object.hash(fri, mon, sat, sun, thu, timeZone, tue, wed);}
+@override String toString() {return 'ZeroTrustGatewaySchedule(fri: $fri, mon: $mon, sat: $sat, sun: $sun, thu: $thu, timeZone: $timeZone, tue: $tue, wed: $wed)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'savings' => savings,
   _ => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories checking = PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._('checking');
 
@@ -16,32 +16,32 @@ static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories($value)';}
+}
 @immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories>? accountSubcategories;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters copyWith({List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories>? Function()? accountSubcategories}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_subcategories'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters copyWith({List<PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories>? Function()? accountSubcategories}) {return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters &&
-          listEquals(accountSubcategories, other.accountSubcategories); } 
-@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []).hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(accountSubcategories: $accountSubcategories)'; } 
- }
+          listEquals(accountSubcategories, other.accountSubcategories);}
+@override int get hashCode {return Object.hashAll(accountSubcategories ?? const []).hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(accountSubcategories: $accountSubcategories)';}
+}

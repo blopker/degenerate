@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_function_tool.dart';import 'realtime_session_create_response_audio.dart';import 'realtime_session_create_response_max_output_tokens.dart';import 'realtime_session_create_response_tracing.dart';import 'realtime_session_create_response_turn_detection.dart';import 'tracing_configuration4.dart';@immutable final class RealtimeSessionCreateResponseInclude {const RealtimeSessionCreateResponseInclude._(this.value);
 
-factory RealtimeSessionCreateResponseInclude.fromJson(String json) { return switch (json) {
+factory RealtimeSessionCreateResponseInclude.fromJson(String json) {return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
   _ => RealtimeSessionCreateResponseInclude._(json),
-}; }
+};}
 
 static const RealtimeSessionCreateResponseInclude itemInputAudioTranscriptionLogprobs = RealtimeSessionCreateResponseInclude._('item.input_audio_transcription.logprobs');
 
@@ -13,19 +13,19 @@ static const List<RealtimeSessionCreateResponseInclude> values = [itemInputAudio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseInclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionCreateResponseInclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionCreateResponseInclude($value)';}
+}
 /// A Realtime session configuration object.
 /// 
 @immutable final class RealtimeSessionCreateResponse {const RealtimeSessionCreateResponse({this.id, this.object, this.expiresAt, this.include, this.model, this.outputModalities = const Omittable.absent(), this.instructions, this.audio, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.maxOutputTokens, });
 
-factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponse(
+factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateResponse(
   id: json['id'] as String?,
   object: json['object'] as String?,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
@@ -39,7 +39,7 @@ factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) { retu
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] as String?,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeSessionCreateResponseMaxOutputTokensVariant2.fromJson(v as String),) : null,
-); }
+);}
 
 /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
 /// 
@@ -112,7 +112,7 @@ final String? toolChoice;
 /// 
 final RealtimeSessionCreateResponseMaxOutputTokens? maxOutputTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'object': ?object,
   'expires_at': ?expiresAt,
@@ -126,9 +126,9 @@ Map<String, dynamic> toJson() { return {
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   'tool_choice': ?toolChoice,
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'expires_at', 'include', 'model', 'output_modalities', 'instructions', 'audio', 'tracing', 'turn_detection', 'tools', 'tool_choice', 'max_output_tokens'}.contains(key)); } 
-RealtimeSessionCreateResponse copyWith({String? Function()? id, String? Function()? object, int? Function()? expiresAt, List<RealtimeSessionCreateResponseInclude>? Function()? include, String? Function()? model, Omittable<dynamic>? outputModalities, String? Function()? instructions, RealtimeSessionCreateResponseAudio? Function()? audio, RealtimeSessionCreateResponseTracing? Function()? tracing, RealtimeSessionCreateResponseTurnDetection? Function()? turnDetection, List<RealtimeFunctionTool>? Function()? tools, String? Function()? toolChoice, RealtimeSessionCreateResponseMaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeSessionCreateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'object', 'expires_at', 'include', 'model', 'output_modalities', 'instructions', 'audio', 'tracing', 'turn_detection', 'tools', 'tool_choice', 'max_output_tokens'}.contains(key));}
+RealtimeSessionCreateResponse copyWith({String? Function()? id, String? Function()? object, int? Function()? expiresAt, List<RealtimeSessionCreateResponseInclude>? Function()? include, String? Function()? model, Omittable<dynamic>? outputModalities, String? Function()? instructions, RealtimeSessionCreateResponseAudio? Function()? audio, RealtimeSessionCreateResponseTracing? Function()? tracing, RealtimeSessionCreateResponseTurnDetection? Function()? turnDetection, List<RealtimeFunctionTool>? Function()? tools, String? Function()? toolChoice, RealtimeSessionCreateResponseMaxOutputTokens? Function()? maxOutputTokens, }) {return RealtimeSessionCreateResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
@@ -142,8 +142,8 @@ RealtimeSessionCreateResponse copyWith({String? Function()? id, String? Function
   tools: tools != null ? tools() : this.tools,
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionCreateResponse &&
           id == other.id &&
           object == other.object &&
@@ -157,7 +157,7 @@ RealtimeSessionCreateResponse copyWith({String? Function()? id, String? Function
           turnDetection == other.turnDetection &&
           listEquals(tools, other.tools) &&
           toolChoice == other.toolChoice &&
-          maxOutputTokens == other.maxOutputTokens; } 
-@override int get hashCode { return Object.hash(id, object, expiresAt, Object.hashAll(include ?? const []), model, outputModalities, instructions, audio, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens); } 
-@override String toString() { return 'RealtimeSessionCreateResponse(id: $id, object: $object, expiresAt: $expiresAt, include: $include, model: $model, outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens)'; } 
- }
+          maxOutputTokens == other.maxOutputTokens;}
+@override int get hashCode {return Object.hash(id, object, expiresAt, Object.hashAll(include ?? const []), model, outputModalities, instructions, audio, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens);}
+@override String toString() {return 'RealtimeSessionCreateResponse(id: $id, object: $object, expiresAt: $expiresAt, include: $include, model: $model, outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens)';}
+}

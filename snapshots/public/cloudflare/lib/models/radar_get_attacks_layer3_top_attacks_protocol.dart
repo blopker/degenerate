@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol._(this.value);
 
-factory RadarGetAttacksLayer3TopAttacksProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TopAttacksProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'ICMP' => icmp,
   'GRE' => gre,
   _ => RadarGetAttacksLayer3TopAttacksProtocol._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TopAttacksProtocol udp = RadarGetAttacksLayer3TopAttacksProtocol._('UDP');
 
@@ -22,11 +22,11 @@ static const List<RadarGetAttacksLayer3TopAttacksProtocol> values = [udp, tcp, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TopAttacksProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TopAttacksProtocol($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TopAttacksProtocol && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TopAttacksProtocol($value)';}
+}

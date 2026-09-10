@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issues_closed_issue_pull_request.dart';import 'webhook_issues_closed_issue_reactions.dart';import 'webhook_issues_closed_issue_user.dart';@immutable final class WebhookIssuesClosedIssueState {const WebhookIssuesClosedIssueState._(this.value);
 
-factory WebhookIssuesClosedIssueState.fromJson(String json) { return switch (json) {
+factory WebhookIssuesClosedIssueState.fromJson(String json) {return switch (json) {
   'closed' => closed,
   'open' => open,
   _ => WebhookIssuesClosedIssueState._(json),
-}; }
+};}
 
 static const WebhookIssuesClosedIssueState closed = WebhookIssuesClosedIssueState._('closed');
 
@@ -16,18 +16,18 @@ static const List<WebhookIssuesClosedIssueState> values = [closed, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesClosedIssueState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesClosedIssueState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookIssuesClosedIssueState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookIssuesClosedIssueState($value)';}
+}
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
 @immutable final class WebhookIssuesClosedIssue {const WebhookIssuesClosedIssue({required this.id, required this.url, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.updatedAt, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.title, required this.labelsUrl, required this.state, required this.milestone, required this.nodeId, required this.number, required this.user, required this.reactions, required this.repositoryUrl, this.performedViaGithubApp = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.locked, this.stateReason = const Omittable.absent(), this.timelineUrl, this.labels, this.type = const Omittable.absent(), this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
 
-factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesClosedIssue(
+factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) {return WebhookIssuesClosedIssue(
   activeLockReason: json['active_lock_reason'] as String?,
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] as Map<String, dynamic>?) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>).map((e) => e as Map<String, dynamic>?).toList(),
@@ -63,7 +63,7 @@ factory WebhookIssuesClosedIssue.fromJson(Map<String, dynamic> json) { return We
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,
   user: WebhookIssuesClosedIssueUser.fromJson(json['user'] as Map<String, dynamic>),
-); }
+);}
 
 final String? activeLockReason;
 
@@ -135,7 +135,7 @@ final String url;
 
 final WebhookIssuesClosedIssueUser user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_lock_reason': activeLockReason,
   if (assignee.isPresent) 'assignee': assignee.value,
   'assignees': assignees.map((e) => e).toList(),
@@ -171,8 +171,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt,
   'url': url,
   'user': user.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
       json.containsKey('assignees') &&
       json.containsKey('author_association') && json['author_association'] is String &&
       json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
@@ -193,8 +193,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookIssuesClosedIssue copyWith({String? Function()? activeLockReason, Omittable<Map<String,dynamic>?>? assignee, List<Map<String,dynamic>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool? Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<Map<String, dynamic>?>? Function()? labels, String? labelsUrl, bool? Function()? locked, Map<String, dynamic>? Function()? milestone, String? nodeId, int? number, Omittable<Map<String,dynamic>?>? performedViaGithubApp, WebhookIssuesClosedIssuePullRequest? Function()? pullRequest, WebhookIssuesClosedIssueReactions? reactions, String? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesClosedIssueState? state, Omittable<String?>? stateReason, String? Function()? timelineUrl, String? title, Omittable<IssueType?>? type, String? updatedAt, String? url, WebhookIssuesClosedIssueUser? user, }) { return WebhookIssuesClosedIssue(
+      json.containsKey('user');}
+WebhookIssuesClosedIssue copyWith({String? Function()? activeLockReason, Omittable<Map<String,dynamic>?>? assignee, List<Map<String,dynamic>?>? assignees, String? authorAssociation, String? Function()? body, String? Function()? closedAt, int? comments, String? commentsUrl, String? createdAt, bool? Function()? draft, String? eventsUrl, String? htmlUrl, int? id, List<Map<String, dynamic>?>? Function()? labels, String? labelsUrl, bool? Function()? locked, Map<String, dynamic>? Function()? milestone, String? nodeId, int? number, Omittable<Map<String,dynamic>?>? performedViaGithubApp, WebhookIssuesClosedIssuePullRequest? Function()? pullRequest, WebhookIssuesClosedIssueReactions? reactions, String? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesClosedIssueState? state, Omittable<String?>? stateReason, String? Function()? timelineUrl, String? title, Omittable<IssueType?>? type, String? updatedAt, String? url, WebhookIssuesClosedIssueUser? user, }) {return WebhookIssuesClosedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee ?? this.assignee,
   assignees: assignees ?? this.assignees,
@@ -230,8 +230,8 @@ WebhookIssuesClosedIssue copyWith({String? Function()? activeLockReason, Omittab
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user ?? this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookIssuesClosedIssue &&
           activeLockReason == other.activeLockReason &&
           assignee == other.assignee &&
@@ -267,7 +267,7 @@ WebhookIssuesClosedIssue copyWith({String? Function()? activeLockReason, Omittab
           type == other.type &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels ?? const []), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, pinnedComment, subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, timelineUrl, title, type, updatedAt, url, user]); } 
-@override String toString() { return 'WebhookIssuesClosedIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, pinnedComment: $pinnedComment, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, type: $type, updatedAt: $updatedAt, url: $url, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels ?? const []), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, pinnedComment, subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, timelineUrl, title, type, updatedAt, url, user]);}
+@override String toString() {return 'WebhookIssuesClosedIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, pinnedComment: $pinnedComment, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, type: $type, updatedAt: $updatedAt, url: $url, user: $user)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_team_edited_changes_repository_permissions.dart';@immutable final class WebhookTeamEditedChangesRepository {const WebhookTeamEditedChangesRepository({required this.permissions});
 
-factory WebhookTeamEditedChangesRepository.fromJson(Map<String, dynamic> json) { return WebhookTeamEditedChangesRepository(
+factory WebhookTeamEditedChangesRepository.fromJson(Map<String, dynamic> json) {return WebhookTeamEditedChangesRepository(
   permissions: WebhookTeamEditedChangesRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookTeamEditedChangesRepositoryPermissions permissions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'permissions': permissions.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('permissions'); } 
-WebhookTeamEditedChangesRepository copyWith({WebhookTeamEditedChangesRepositoryPermissions? permissions}) { return WebhookTeamEditedChangesRepository(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('permissions');}
+WebhookTeamEditedChangesRepository copyWith({WebhookTeamEditedChangesRepositoryPermissions? permissions}) {return WebhookTeamEditedChangesRepository(
   permissions: permissions ?? this.permissions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookTeamEditedChangesRepository &&
-          permissions == other.permissions; } 
-@override int get hashCode { return permissions.hashCode; } 
-@override String toString() { return 'WebhookTeamEditedChangesRepository(permissions: $permissions)'; } 
- }
+          permissions == other.permissions;}
+@override int get hashCode {return permissions.hashCode;}
+@override String toString() {return 'WebhookTeamEditedChangesRepository(permissions: $permissions)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param14_financial_connections.dart';import 'payment_intent_payment_method_options_param14_mandate_options.dart';import 'payment_intent_payment_method_options_param14_networks.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._('');
 
@@ -22,24 +22,24 @@ static const List<PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam14TransactionPurpose {const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam14TransactionPurpose.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam14TransactionPurpose.fromJson(String json) {return switch (json) {
   '' => $empty,
   'goods' => goods,
   'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
   _ => PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose $empty = PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._('');
 
@@ -55,22 +55,22 @@ static const List<PaymentIntentPaymentMethodOptionsParam14TransactionPurpose> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam14TransactionPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14TransactionPurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam14TransactionPurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam14TransactionPurpose($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam14VerificationMethod {const PaymentIntentPaymentMethodOptionsParam14VerificationMethod._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam14VerificationMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam14VerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   'microdeposits' => microdeposits,
   _ => PaymentIntentPaymentMethodOptionsParam14VerificationMethod._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam14VerificationMethod automatic = PaymentIntentPaymentMethodOptionsParam14VerificationMethod._('automatic');
 
@@ -82,17 +82,17 @@ static const List<PaymentIntentPaymentMethodOptionsParam14VerificationMethod> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam14VerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14VerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam14VerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam14VerificationMethod($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam14 {const PaymentIntentPaymentMethodOptionsParam14({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
 
-factory PaymentIntentPaymentMethodOptionsParam14.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam14(
+factory PaymentIntentPaymentMethodOptionsParam14.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam14(
   financialConnections: json['financial_connections'] != null ? PaymentIntentPaymentMethodOptionsParam14FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam14MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   networks: json['networks'] != null ? PaymentIntentPaymentMethodOptionsParam14Networks.fromJson(json['networks'] as Map<String, dynamic>) : null,
@@ -100,7 +100,7 @@ factory PaymentIntentPaymentMethodOptionsParam14.fromJson(Map<String, dynamic> j
   targetDate: json['target_date'] as String?,
   transactionPurpose: json['transaction_purpose'] != null ? PaymentIntentPaymentMethodOptionsParam14TransactionPurpose.fromJson(json['transaction_purpose'] as String) : null,
   verificationMethod: json['verification_method'] != null ? PaymentIntentPaymentMethodOptionsParam14VerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsParam14FinancialConnections? financialConnections;
 
@@ -116,7 +116,7 @@ final PaymentIntentPaymentMethodOptionsParam14TransactionPurpose? transactionPur
 
 final PaymentIntentPaymentMethodOptionsParam14VerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (networks != null) 'networks': networks?.toJson(),
@@ -124,9 +124,9 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
   if (transactionPurpose != null) 'transaction_purpose': transactionPurpose?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'setup_future_usage', 'target_date', 'transaction_purpose', 'verification_method'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOptionsParam14FinancialConnections? Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam14Networks? Function()? networks, PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, PaymentIntentPaymentMethodOptionsParam14TransactionPurpose? Function()? transactionPurpose, PaymentIntentPaymentMethodOptionsParam14VerificationMethod? Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam14(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'setup_future_usage', 'target_date', 'transaction_purpose', 'verification_method'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOptionsParam14FinancialConnections? Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam14Networks? Function()? networks, PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, PaymentIntentPaymentMethodOptionsParam14TransactionPurpose? Function()? transactionPurpose, PaymentIntentPaymentMethodOptionsParam14VerificationMethod? Function()? verificationMethod, }) {return PaymentIntentPaymentMethodOptionsParam14(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   networks: networks != null ? networks() : this.networks,
@@ -134,8 +134,8 @@ PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOpt
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   transactionPurpose: transactionPurpose != null ? transactionPurpose() : this.transactionPurpose,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam14 &&
           financialConnections == other.financialConnections &&
           mandateOptions == other.mandateOptions &&
@@ -143,7 +143,7 @@ PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOpt
           setupFutureUsage == other.setupFutureUsage &&
           targetDate == other.targetDate &&
           transactionPurpose == other.transactionPurpose &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, mandateOptions, networks, setupFutureUsage, targetDate, transactionPurpose, verificationMethod); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, transactionPurpose: $transactionPurpose, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(financialConnections, mandateOptions, networks, setupFutureUsage, targetDate, transactionPurpose, verificationMethod);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam14(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, transactionPurpose: $transactionPurpose, verificationMethod: $verificationMethod)';}
+}

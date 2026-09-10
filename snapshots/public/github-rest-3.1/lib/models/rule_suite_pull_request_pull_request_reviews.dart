@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_pull_request_pull_request_reviews_user.dart';@immutable final class RuleSuitePullRequestPullRequestReviews {const RuleSuitePullRequestPullRequestReviews({this.id, this.user, this.state, });
 
-factory RuleSuitePullRequestPullRequestReviews.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequestPullRequestReviews(
+factory RuleSuitePullRequestPullRequestReviews.fromJson(Map<String, dynamic> json) {return RuleSuitePullRequestPullRequestReviews(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   user: json['user'] != null ? RuleSuitePullRequestPullRequestReviewsUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   state: json['state'] as String?,
-); }
+);}
 
 /// The unique identifier of the review.
 final int? id;
@@ -17,22 +17,22 @@ final RuleSuitePullRequestPullRequestReviewsUser? user;
 /// The state of the review.
 final String? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (user != null) 'user': user?.toJson(),
   'state': ?state,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'user', 'state'}.contains(key)); } 
-RuleSuitePullRequestPullRequestReviews copyWith({int? Function()? id, RuleSuitePullRequestPullRequestReviewsUser? Function()? user, String? Function()? state, }) { return RuleSuitePullRequestPullRequestReviews(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'user', 'state'}.contains(key));}
+RuleSuitePullRequestPullRequestReviews copyWith({int? Function()? id, RuleSuitePullRequestPullRequestReviewsUser? Function()? user, String? Function()? state, }) {return RuleSuitePullRequestPullRequestReviews(
   id: id != null ? id() : this.id,
   user: user != null ? user() : this.user,
   state: state != null ? state() : this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RuleSuitePullRequestPullRequestReviews &&
           id == other.id &&
           user == other.user &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(id, user, state); } 
-@override String toString() { return 'RuleSuitePullRequestPullRequestReviews(id: $id, user: $user, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(id, user, state);}
+@override String toString() {return 'RuleSuitePullRequestPullRequestReviews(id: $id, user: $user, state: $state)';}
+}

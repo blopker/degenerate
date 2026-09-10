@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank {const PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank._(this.value);
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank.fromJson(String json) {return switch (json) {
   'abn_amro' => abnAmro,
   'adyen' => adyen,
   'asn_bank' => asnBank,
@@ -24,7 +24,7 @@ factory PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank.fromJson(Strin
   'van_lanschot' => vanLanschot,
   'yoursafe' => yoursafe,
   _ => PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank abnAmro = PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank._('abn_amro');
 
@@ -70,32 +70,32 @@ static const List<PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank($value)';}
+}
 @immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataIdeal {const PostPaymentIntentsIntentRequestPaymentMethodDataIdeal({this.bank});
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataIdeal.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataIdeal(
+factory PostPaymentIntentsIntentRequestPaymentMethodDataIdeal.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentRequestPaymentMethodDataIdeal(
   bank: json['bank'] != null ? PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostPaymentIntentsIntentRequestPaymentMethodDataIdeal copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank? Function()? bank}) { return PostPaymentIntentsIntentRequestPaymentMethodDataIdeal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostPaymentIntentsIntentRequestPaymentMethodDataIdeal copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataIdealBank? Function()? bank}) {return PostPaymentIntentsIntentRequestPaymentMethodDataIdeal(
   bank: bank != null ? bank() : this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentRequestPaymentMethodDataIdeal &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataIdeal(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataIdeal(bank: $bank)';}
+}

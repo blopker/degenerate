@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_populate_response_properties_datasets_items_properties_target_industries_properties_errors_items.dart';@immutable final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors({required this.items, required this.type, });
 
-factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors(
+factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors.fromJson(Map<String, dynamic> json) {return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors(
   items: PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrorsItems.fromJson(json['items'] as Map<String, dynamic>),
   type: json['type'] as String,
-); }
+);}
 
 final PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrorsItems items;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'items': items.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
-      json.containsKey('type') && json['type'] is String; } 
-PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrorsItems? items, String? type, }) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items') &&
+      json.containsKey('type') && json['type'] is String;}
+PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrorsItems? items, String? type, }) {return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors(
   items: items ?? this.items,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors &&
           items == other.items &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(items, type); } 
-@override String toString() { return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors(items: $items, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(items, type);}
+@override String toString() {return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors(items: $items, type: $type)';}
+}

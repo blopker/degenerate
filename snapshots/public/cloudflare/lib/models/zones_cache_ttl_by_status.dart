@@ -14,10 +14,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_
 /// 
 @immutable final class ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId._(this.value);
 
-factory ZonesCacheTtlByStatusId.fromJson(String json) { return switch (json) {
+factory ZonesCacheTtlByStatusId.fromJson(String json) {return switch (json) {
   'cache_ttl_by_status' => cacheTtlByStatus,
   _ => ZonesCacheTtlByStatusId._(json),
-}; }
+};}
 
 static const ZonesCacheTtlByStatusId cacheTtlByStatus = ZonesCacheTtlByStatusId._('cache_ttl_by_status');
 
@@ -25,20 +25,20 @@ static const List<ZonesCacheTtlByStatusId> values = [cacheTtlByStatus];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheTtlByStatusId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheTtlByStatusId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheTtlByStatusId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheTtlByStatusId($value)';}
+}
 @immutable final class ZonesCacheTtlByStatus {const ZonesCacheTtlByStatus({this.id, this.value, });
 
-factory ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) { return ZonesCacheTtlByStatus(
+factory ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) {return ZonesCacheTtlByStatus(
   id: json['id'] != null ? ZonesCacheTtlByStatusId.fromJson(json['id'] as String) : null,
   value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ZonesCacheTtlByStatusValueValue.fromJson(v))),
-); }
+);}
 
 /// Enterprise customers can set cache time-to-live (TTL) based on the
 /// response status from the origin web server. Cache TTL refers to the
@@ -69,19 +69,19 @@ final ZonesCacheTtlByStatusId? id;
 /// 
 final Map<String,ZonesCacheTtlByStatusValueValue>? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.map((k, v) => MapEntry(k, v.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId? Function()? id, Map<String, ZonesCacheTtlByStatusValueValue>? Function()? value, }) { return ZonesCacheTtlByStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId? Function()? id, Map<String, ZonesCacheTtlByStatusValueValue>? Function()? value, }) {return ZonesCacheTtlByStatus(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheTtlByStatus &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesCacheTtlByStatus(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ZonesCacheTtlByStatus(id: $id, value: $value)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_discussion_comment_edited_changes_body.dart';@immutable final class WebhookDiscussionCommentEditedChanges {const WebhookDiscussionCommentEditedChanges({required this.body});
 
-factory WebhookDiscussionCommentEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookDiscussionCommentEditedChanges(
+factory WebhookDiscussionCommentEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookDiscussionCommentEditedChanges(
   body: WebhookDiscussionCommentEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDiscussionCommentEditedChangesBody body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body'); } 
-WebhookDiscussionCommentEditedChanges copyWith({WebhookDiscussionCommentEditedChangesBody? body}) { return WebhookDiscussionCommentEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body');}
+WebhookDiscussionCommentEditedChanges copyWith({WebhookDiscussionCommentEditedChangesBody? body}) {return WebhookDiscussionCommentEditedChanges(
   body: body ?? this.body,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDiscussionCommentEditedChanges &&
-          body == other.body; } 
-@override int get hashCode { return body.hashCode; } 
-@override String toString() { return 'WebhookDiscussionCommentEditedChanges(body: $body)'; } 
- }
+          body == other.body;}
+@override int get hashCode {return body.hashCode;}
+@override String toString() {return 'WebhookDiscussionCommentEditedChanges(body: $body)';}
+}

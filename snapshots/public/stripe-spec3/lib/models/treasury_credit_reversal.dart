@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_credit_reversal_transaction.dart';import 'treasury_received_credits_resource_status_transitions.dart';/// The rails used to reverse the funds.
 @immutable final class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork._(this.value);
 
-factory TreasuryCreditReversalNetwork.fromJson(String json) { return switch (json) {
+factory TreasuryCreditReversalNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'stripe' => stripe,
   _ => TreasuryCreditReversalNetwork._(json),
-}; }
+};}
 
 static const TreasuryCreditReversalNetwork ach = TreasuryCreditReversalNetwork._('ach');
 
@@ -17,21 +17,21 @@ static const List<TreasuryCreditReversalNetwork> values = [ach, stripe];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryCreditReversalNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryCreditReversalNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryCreditReversalNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryCreditReversalNetwork($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryCreditReversalObject {const TreasuryCreditReversalObject._(this.value);
 
-factory TreasuryCreditReversalObject.fromJson(String json) { return switch (json) {
+factory TreasuryCreditReversalObject.fromJson(String json) {return switch (json) {
   'treasury.credit_reversal' => treasuryCreditReversal,
   _ => TreasuryCreditReversalObject._(json),
-}; }
+};}
 
 static const TreasuryCreditReversalObject treasuryCreditReversal = TreasuryCreditReversalObject._('treasury.credit_reversal');
 
@@ -39,23 +39,23 @@ static const List<TreasuryCreditReversalObject> values = [treasuryCreditReversal
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryCreditReversalObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryCreditReversalObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryCreditReversalObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryCreditReversalObject($value)';}
+}
 /// Status of the CreditReversal
 @immutable final class TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus._(this.value);
 
-factory TreasuryCreditReversalStatus.fromJson(String json) { return switch (json) {
+factory TreasuryCreditReversalStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'posted' => posted,
   'processing' => processing,
   _ => TreasuryCreditReversalStatus._(json),
-}; }
+};}
 
 static const TreasuryCreditReversalStatus canceled = TreasuryCreditReversalStatus._('canceled');
 
@@ -67,18 +67,18 @@ static const List<TreasuryCreditReversalStatus> values = [canceled, posted, proc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryCreditReversalStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryCreditReversalStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryCreditReversalStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryCreditReversalStatus($value)';}
+}
 /// You can reverse some [ReceivedCredits](https://api.stripe.com#received_credits) depending on their network and source flow. Reversing a ReceivedCredit leads to the creation of a new object known as a CreditReversal.
 @immutable final class TreasuryCreditReversal {const TreasuryCreditReversal({required this.amount, required this.created, required this.currency, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedCredit, required this.status, required this.statusTransitions, this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
-factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) { return TreasuryCreditReversal(
+factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) {return TreasuryCreditReversal(
   amount: (json['amount'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -93,7 +93,7 @@ factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) { return Trea
   status: TreasuryCreditReversalStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryReceivedCreditsResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryCreditReversalTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -136,7 +136,7 @@ final TreasuryReceivedCreditsResourceStatusTransitions statusTransitions;
 /// The Transaction associated with this object.
 final Omittable<TreasuryCreditReversalTransaction?> transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'created': created,
   'currency': currency,
@@ -151,8 +151,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
   if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
@@ -163,8 +163,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('received_credit') && json['received_credit'] is String &&
       json.containsKey('status') &&
-      json.containsKey('status_transitions'); } 
-TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryCreditReversalNetwork? network, TreasuryCreditReversalObject? object, String? receivedCredit, TreasuryCreditReversalStatus? status, TreasuryReceivedCreditsResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) { return TreasuryCreditReversal(
+      json.containsKey('status_transitions');}
+TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryCreditReversalNetwork? network, TreasuryCreditReversalObject? object, String? receivedCredit, TreasuryCreditReversalStatus? status, TreasuryReceivedCreditsResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) {return TreasuryCreditReversal(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,
@@ -179,8 +179,8 @@ TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, St
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
   transaction: transaction ?? this.transaction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryCreditReversal &&
           amount == other.amount &&
           created == other.created &&
@@ -195,7 +195,7 @@ TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, St
           receivedCredit == other.receivedCredit &&
           status == other.status &&
           statusTransitions == other.statusTransitions &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(amount, created, currency, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, network, object, receivedCredit, status, statusTransitions, transaction); } 
-@override String toString() { return 'TreasuryCreditReversal(amount: $amount, created: $created, currency: $currency, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, network: $network, object: $object, receivedCredit: $receivedCredit, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)'; } 
- }
+          transaction == other.transaction;}
+@override int get hashCode {return Object.hash(amount, created, currency, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, network, object, receivedCredit, status, statusTransitions, transaction);}
+@override String toString() {return 'TreasuryCreditReversal(amount: $amount, created: $created, currency: $currency, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, network: $network, object: $object, receivedCredit: $receivedCredit, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)';}
+}

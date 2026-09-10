@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_request_address.dart';import 'post_customers_customer_request_bank_account.dart';import 'post_customers_customer_request_business_name.dart';import 'post_customers_customer_request_card.dart';import 'post_customers_customer_request_cash_balance.dart';import 'post_customers_customer_request_individual_name.dart';import 'post_customers_customer_request_invoice_settings.dart';import 'post_customers_customer_request_metadata.dart';import 'post_customers_customer_request_shipping.dart';import 'post_customers_customer_request_tax.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
 @immutable final class PostCustomersCustomerRequestTaxExempt {const PostCustomersCustomerRequestTaxExempt._(this.value);
 
-factory PostCustomersCustomerRequestTaxExempt.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerRequestTaxExempt.fromJson(String json) {return switch (json) {
   '' => $empty,
   'exempt' => exempt,
   'none' => none,
   'reverse' => reverse,
   _ => PostCustomersCustomerRequestTaxExempt._(json),
-}; }
+};}
 
 static const PostCustomersCustomerRequestTaxExempt $empty = PostCustomersCustomerRequestTaxExempt._('');
 
@@ -23,17 +23,17 @@ static const List<PostCustomersCustomerRequestTaxExempt> values = [$empty, exemp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerRequestTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerRequestTaxExempt($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerRequestTaxExempt && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerRequestTaxExempt($value)';}
+}
 @immutable final class PostCustomersCustomerRequest {const PostCustomersCustomerRequest({this.address, this.balance, this.bankAccount, this.businessName, this.card, this.cashBalance, this.defaultAlipayAccount, this.defaultBankAccount, this.defaultCard, this.defaultSource, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, });
 
-factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequest(
+factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerRequest(
   address: json['address'] != null ? PostCustomersCustomerRequestAddress.fromJson(json['address']) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
   bankAccount: json['bank_account'] != null ? PostCustomersCustomerRequestBankAccount.fromJson(json['bank_account']) : null,
@@ -59,7 +59,7 @@ factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { retur
   source: json['source'] as String?,
   tax: json['tax'] != null ? PostCustomersCustomerRequestTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersCustomerRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
-); }
+);}
 
 /// The customer's address. Learn about [country-specific requirements for calculating tax](https://docs.stripe.com/invoicing/taxes?dashboard-or-api=dashboard#set-up-customer).
 final PostCustomersCustomerRequestAddress? address;
@@ -139,7 +139,7 @@ final PostCustomersCustomerRequestTax? tax;
 /// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
 final PostCustomersCustomerRequestTaxExempt? taxExempt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   'balance': ?balance,
   if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
@@ -165,9 +165,9 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
   if (tax != null) 'tax': tax?.toJson(),
   if (taxExempt != null) 'tax_exempt': taxExempt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'balance', 'bank_account', 'business_name', 'card', 'cash_balance', 'default_alipay_account', 'default_bank_account', 'default_card', 'default_source', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt'}.contains(key)); } 
-PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, PostCustomersCustomerRequestBankAccount? Function()? bankAccount, PostCustomersCustomerRequestBusinessName? Function()? businessName, PostCustomersCustomerRequestCard? Function()? card, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? defaultAlipayAccount, String? Function()? defaultBankAccount, String? Function()? defaultCard, String? Function()? defaultSource, String? Function()? description, String? Function()? email, List<String>? Function()? expand, PostCustomersCustomerRequestIndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, PostCustomersCustomerRequestMetadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersCustomerRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, }) { return PostCustomersCustomerRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'balance', 'bank_account', 'business_name', 'card', 'cash_balance', 'default_alipay_account', 'default_bank_account', 'default_card', 'default_source', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt'}.contains(key));}
+PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, PostCustomersCustomerRequestBankAccount? Function()? bankAccount, PostCustomersCustomerRequestBusinessName? Function()? businessName, PostCustomersCustomerRequestCard? Function()? card, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? defaultAlipayAccount, String? Function()? defaultBankAccount, String? Function()? defaultCard, String? Function()? defaultSource, String? Function()? description, String? Function()? email, List<String>? Function()? expand, PostCustomersCustomerRequestIndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, PostCustomersCustomerRequestMetadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersCustomerRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, }) {return PostCustomersCustomerRequest(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
@@ -193,8 +193,8 @@ PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Func
   source: source != null ? source() : this.source,
   tax: tax != null ? tax() : this.tax,
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerRequest &&
           address == other.address &&
           balance == other.balance &&
@@ -220,7 +220,7 @@ PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Func
           shipping == other.shipping &&
           source == other.source &&
           tax == other.tax &&
-          taxExempt == other.taxExempt; } 
-@override int get hashCode { return Object.hashAll([address, balance, bankAccount, businessName, card, cashBalance, defaultAlipayAccount, defaultBankAccount, defaultCard, defaultSource, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt]); } 
-@override String toString() { return 'PostCustomersCustomerRequest(address: $address, balance: $balance, bankAccount: $bankAccount, businessName: $businessName, card: $card, cashBalance: $cashBalance, defaultAlipayAccount: $defaultAlipayAccount, defaultBankAccount: $defaultBankAccount, defaultCard: $defaultCard, defaultSource: $defaultSource, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt)'; } 
- }
+          taxExempt == other.taxExempt;}
+@override int get hashCode {return Object.hashAll([address, balance, bankAccount, businessName, card, cashBalance, defaultAlipayAccount, defaultBankAccount, defaultCard, defaultSource, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt]);}
+@override String toString() {return 'PostCustomersCustomerRequest(address: $address, balance: $balance, bankAccount: $bankAccount, businessName: $businessName, card: $card, cashBalance: $cashBalance, defaultAlipayAccount: $defaultAlipayAccount, defaultBankAccount: $defaultBankAccount, defaultCard: $defaultCard, defaultSource: $defaultSource, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt)';}
+}

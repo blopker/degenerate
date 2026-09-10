@@ -24,11 +24,11 @@ String toJson() => value;
 /// Details for streaming to a live input using SRT.
 @immutable final class StreamInputSrt {const StreamInputSrt({this.passphrase, this.streamId, this.url, });
 
-factory StreamInputSrt.fromJson(Map<String, dynamic> json) { return StreamInputSrt(
+factory StreamInputSrt.fromJson(Map<String, dynamic> json) {return StreamInputSrt(
   passphrase: json['passphrase'] != null ? StreamInputSrtStreamPassphrase.fromJson(json['passphrase'] as String) : null,
   streamId: json['streamId'] != null ? StreamInputSrtStreamId.fromJson(json['streamId'] as String) : null,
   url: json['url'] != null ? StreamInputSrtUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 final StreamInputSrtStreamPassphrase? passphrase;
 
@@ -36,22 +36,22 @@ final StreamInputSrtStreamId? streamId;
 
 final StreamInputSrtUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (passphrase != null) 'passphrase': passphrase?.toJson(),
   if (streamId != null) 'streamId': streamId?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'passphrase', 'streamId', 'url'}.contains(key)); } 
-StreamInputSrt copyWith({StreamInputSrtStreamPassphrase? Function()? passphrase, StreamInputSrtStreamId? Function()? streamId, StreamInputSrtUrl? Function()? url, }) { return StreamInputSrt(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'passphrase', 'streamId', 'url'}.contains(key));}
+StreamInputSrt copyWith({StreamInputSrtStreamPassphrase? Function()? passphrase, StreamInputSrtStreamId? Function()? streamId, StreamInputSrtUrl? Function()? url, }) {return StreamInputSrt(
   passphrase: passphrase != null ? passphrase() : this.passphrase,
   streamId: streamId != null ? streamId() : this.streamId,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamInputSrt &&
           passphrase == other.passphrase &&
           streamId == other.streamId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(passphrase, streamId, url); } 
-@override String toString() { return 'StreamInputSrt(passphrase: $passphrase, streamId: $streamId, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(passphrase, streamId, url);}
+@override String toString() {return 'StreamInputSrt(passphrase: $passphrase, streamId: $streamId, url: $url)';}
+}

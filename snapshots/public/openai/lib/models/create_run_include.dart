@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateRunInclude {const CreateRunInclude._(this.value);
 
-factory CreateRunInclude.fromJson(String json) { return switch (json) {
+factory CreateRunInclude.fromJson(String json) {return switch (json) {
   'step_details.tool_calls[*].file_search.results[*].content' => stepDetailsToolCallsFileSearchResultsContent,
   _ => CreateRunInclude._(json),
-}; }
+};}
 
 static const CreateRunInclude stepDetailsToolCallsFileSearchResultsContent = CreateRunInclude._('step_details.tool_calls[*].file_search.results[*].content');
 
@@ -13,11 +13,11 @@ static const List<CreateRunInclude> values = [stepDetailsToolCallsFileSearchResu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateRunInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateRunInclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateRunInclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateRunInclude($value)';}
+}

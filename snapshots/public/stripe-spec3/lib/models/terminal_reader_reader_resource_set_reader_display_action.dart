@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_cart.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
 @immutable final class TerminalReaderReaderResourceSetReaderDisplayActionType {const TerminalReaderReaderResourceSetReaderDisplayActionType._(this.value);
 
-factory TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(String json) { return switch (json) {
+factory TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(String json) {return switch (json) {
   'cart' => cart,
   _ => TerminalReaderReaderResourceSetReaderDisplayActionType._(json),
-}; }
+};}
 
 static const TerminalReaderReaderResourceSetReaderDisplayActionType cart = TerminalReaderReaderResourceSetReaderDisplayActionType._('cart');
 
@@ -14,21 +14,21 @@ static const List<TerminalReaderReaderResourceSetReaderDisplayActionType> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceSetReaderDisplayActionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceSetReaderDisplayActionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalReaderReaderResourceSetReaderDisplayActionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalReaderReaderResourceSetReaderDisplayActionType($value)';}
+}
 /// Represents a reader action to set the reader display
 @immutable final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({required this.type, this.cart = const Omittable.absent(), });
 
-factory TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSetReaderDisplayAction(
+factory TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceSetReaderDisplayAction(
   cart: json.containsKey('cart') ? Omittable(json['cart'] != null ? TerminalReaderReaderResourceCart.fromJson(json['cart'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Cart object to be displayed by the reader, including line items, amounts, and currency.
 final Omittable<TerminalReaderReaderResourceCart?> cart;
@@ -36,19 +36,19 @@ final Omittable<TerminalReaderReaderResourceCart?> cart;
 /// Type of information to be displayed by the reader. Only `cart` is currently supported.
 final TerminalReaderReaderResourceSetReaderDisplayActionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cart.isPresent) 'cart': cart.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TerminalReaderReaderResourceSetReaderDisplayAction copyWith({Omittable<TerminalReaderReaderResourceCart?>? cart, TerminalReaderReaderResourceSetReaderDisplayActionType? type, }) { return TerminalReaderReaderResourceSetReaderDisplayAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+TerminalReaderReaderResourceSetReaderDisplayAction copyWith({Omittable<TerminalReaderReaderResourceCart?>? cart, TerminalReaderReaderResourceSetReaderDisplayActionType? type, }) {return TerminalReaderReaderResourceSetReaderDisplayAction(
   cart: cart ?? this.cart,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalReaderReaderResourceSetReaderDisplayAction &&
           cart == other.cart &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cart, type); } 
-@override String toString() { return 'TerminalReaderReaderResourceSetReaderDisplayAction(cart: $cart, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(cart, type);}
+@override String toString() {return 'TerminalReaderReaderResourceSetReaderDisplayAction(cart: $cart, type: $type)';}
+}

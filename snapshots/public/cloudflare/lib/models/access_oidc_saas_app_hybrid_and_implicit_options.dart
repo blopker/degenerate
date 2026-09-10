@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOidcSaasAppHybridAndImplicitOptions {const AccessOidcSaasAppHybridAndImplicitOptions({this.returnAccessTokenFromAuthorizationEndpoint, this.returnIdTokenFromAuthorizationEndpoint, });
 
-factory AccessOidcSaasAppHybridAndImplicitOptions.fromJson(Map<String, dynamic> json) { return AccessOidcSaasAppHybridAndImplicitOptions(
+factory AccessOidcSaasAppHybridAndImplicitOptions.fromJson(Map<String, dynamic> json) {return AccessOidcSaasAppHybridAndImplicitOptions(
   returnAccessTokenFromAuthorizationEndpoint: json['return_access_token_from_authorization_endpoint'] as bool?,
   returnIdTokenFromAuthorizationEndpoint: json['return_id_token_from_authorization_endpoint'] as bool?,
-); }
+);}
 
 /// If an Access Token should be returned from the OIDC Authorization endpoint
 final bool? returnAccessTokenFromAuthorizationEndpoint;
@@ -13,19 +13,19 @@ final bool? returnAccessTokenFromAuthorizationEndpoint;
 /// If an ID Token should be returned from the OIDC Authorization endpoint
 final bool? returnIdTokenFromAuthorizationEndpoint;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'return_access_token_from_authorization_endpoint': ?returnAccessTokenFromAuthorizationEndpoint,
   'return_id_token_from_authorization_endpoint': ?returnIdTokenFromAuthorizationEndpoint,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_access_token_from_authorization_endpoint', 'return_id_token_from_authorization_endpoint'}.contains(key)); } 
-AccessOidcSaasAppHybridAndImplicitOptions copyWith({bool? Function()? returnAccessTokenFromAuthorizationEndpoint, bool? Function()? returnIdTokenFromAuthorizationEndpoint, }) { return AccessOidcSaasAppHybridAndImplicitOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'return_access_token_from_authorization_endpoint', 'return_id_token_from_authorization_endpoint'}.contains(key));}
+AccessOidcSaasAppHybridAndImplicitOptions copyWith({bool? Function()? returnAccessTokenFromAuthorizationEndpoint, bool? Function()? returnIdTokenFromAuthorizationEndpoint, }) {return AccessOidcSaasAppHybridAndImplicitOptions(
   returnAccessTokenFromAuthorizationEndpoint: returnAccessTokenFromAuthorizationEndpoint != null ? returnAccessTokenFromAuthorizationEndpoint() : this.returnAccessTokenFromAuthorizationEndpoint,
   returnIdTokenFromAuthorizationEndpoint: returnIdTokenFromAuthorizationEndpoint != null ? returnIdTokenFromAuthorizationEndpoint() : this.returnIdTokenFromAuthorizationEndpoint,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOidcSaasAppHybridAndImplicitOptions &&
           returnAccessTokenFromAuthorizationEndpoint == other.returnAccessTokenFromAuthorizationEndpoint &&
-          returnIdTokenFromAuthorizationEndpoint == other.returnIdTokenFromAuthorizationEndpoint; } 
-@override int get hashCode { return Object.hash(returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint); } 
-@override String toString() { return 'AccessOidcSaasAppHybridAndImplicitOptions(returnAccessTokenFromAuthorizationEndpoint: $returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint: $returnIdTokenFromAuthorizationEndpoint)'; } 
- }
+          returnIdTokenFromAuthorizationEndpoint == other.returnIdTokenFromAuthorizationEndpoint;}
+@override int get hashCode {return Object.hash(returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint);}
+@override String toString() {return 'AccessOidcSaasAppHybridAndImplicitOptions(returnAccessTokenFromAuthorizationEndpoint: $returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint: $returnIdTokenFromAuthorizationEndpoint)';}
+}

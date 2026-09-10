@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policies_components_schemas_name.dart';import 'access_purpose_justification_prompt.dart';import 'access_rule.dart';import 'access_schemas_approval_group.dart';import 'access_schemas_approval_required.dart';import 'access_schemas_decision.dart';import 'access_schemas_isolation_required.dart';import 'access_schemas_precedence.dart';import 'access_schemas_purpose_justification_required.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessPolicies {const AccessPolicies({this.approvalGroups, this.approvalRequired, this.createdAt, this.decision, this.exclude, this.id, this.include, this.isolationRequired, this.name, this.precedence, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.require, this.updatedAt, });
 
-factory AccessPolicies.fromJson(Map<String, dynamic> json) { return AccessPolicies(
+factory AccessPolicies.fromJson(Map<String, dynamic> json) {return AccessPolicies(
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessSchemasApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
   approvalRequired: json['approval_required'] != null ? AccessSchemasApprovalRequired.fromJson(json['approval_required'] as bool) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
@@ -17,7 +17,7 @@ factory AccessPolicies.fromJson(Map<String, dynamic> json) { return AccessPolici
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessSchemasPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
   require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final List<AccessSchemasApprovalGroup>? approvalGroups;
 
@@ -50,7 +50,7 @@ final List<AccessRule>? require;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (approvalGroups != null) 'approval_groups': approvalGroups?.map((e) => e.toJson()).toList(),
   if (approvalRequired != null) 'approval_required': approvalRequired?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
@@ -65,9 +65,9 @@ Map<String, dynamic> toJson() { return {
   if (purposeJustificationRequired != null) 'purpose_justification_required': purposeJustificationRequired?.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_groups', 'approval_required', 'created_at', 'decision', 'exclude', 'id', 'include', 'isolation_required', 'name', 'precedence', 'purpose_justification_prompt', 'purpose_justification_required', 'require', 'updated_at'}.contains(key)); } 
-AccessPolicies copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalGroups, AccessSchemasApprovalRequired? Function()? approvalRequired, AccessTimestamp? Function()? createdAt, AccessSchemasDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessUuid? Function()? id, List<AccessRule>? Function()? include, AccessSchemasIsolationRequired? Function()? isolationRequired, AccessPoliciesComponentsSchemasName? Function()? name, AccessSchemasPrecedence? Function()? precedence, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessSchemasPurposeJustificationRequired? Function()? purposeJustificationRequired, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, }) { return AccessPolicies(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'approval_groups', 'approval_required', 'created_at', 'decision', 'exclude', 'id', 'include', 'isolation_required', 'name', 'precedence', 'purpose_justification_prompt', 'purpose_justification_required', 'require', 'updated_at'}.contains(key));}
+AccessPolicies copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalGroups, AccessSchemasApprovalRequired? Function()? approvalRequired, AccessTimestamp? Function()? createdAt, AccessSchemasDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessUuid? Function()? id, List<AccessRule>? Function()? include, AccessSchemasIsolationRequired? Function()? isolationRequired, AccessPoliciesComponentsSchemasName? Function()? name, AccessSchemasPrecedence? Function()? precedence, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessSchemasPurposeJustificationRequired? Function()? purposeJustificationRequired, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, }) {return AccessPolicies(
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -82,8 +82,8 @@ AccessPolicies copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalG
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   require: require != null ? require() : this.require,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessPolicies &&
           listEquals(approvalGroups, other.approvalGroups) &&
           approvalRequired == other.approvalRequired &&
@@ -98,7 +98,7 @@ AccessPolicies copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalG
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
           listEquals(require, other.require) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), isolationRequired, name, precedence, purposeJustificationPrompt, purposeJustificationRequired, Object.hashAll(require ?? const []), updatedAt); } 
-@override String toString() { return 'AccessPolicies(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, isolationRequired: $isolationRequired, name: $name, precedence: $precedence, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, require: $require, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), isolationRequired, name, precedence, purposeJustificationPrompt, purposeJustificationRequired, Object.hashAll(require ?? const []), updatedAt);}
+@override String toString() {return 'AccessPolicies(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, isolationRequired: $isolationRequired, name: $name, precedence: $precedence, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, require: $require, updatedAt: $updatedAt)';}
+}

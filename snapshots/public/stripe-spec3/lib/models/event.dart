@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'notification_event_data.dart';import 'notification_event_request.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class EventObject {const EventObject._(this.value);
 
-factory EventObject.fromJson(String json) { return switch (json) {
+factory EventObject.fromJson(String json) {return switch (json) {
   'event' => event,
   _ => EventObject._(json),
-}; }
+};}
 
 static const EventObject event = EventObject._('event');
 
@@ -14,14 +14,14 @@ static const List<EventObject> values = [event];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EventObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EventObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EventObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EventObject($value)';}
+}
 /// Snapshot events allow you to track and react to activity in your Stripe integration. When
 /// the state of another API resource changes, Stripe creates an `Event` object that contains
 /// all the relevant information associated with that action, including the affected API
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 /// for 30 days.
 @immutable final class Event {const Event({required this.created, required this.data, required this.id, required this.livemode, required this.object, required this.pendingWebhooks, required this.type, this.account, this.apiVersion = const Omittable.absent(), this.context, this.request = const Omittable.absent(), });
 
-factory Event.fromJson(Map<String, dynamic> json) { return Event(
+factory Event.fromJson(Map<String, dynamic> json) {return Event(
   account: json['account'] as String?,
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   context: json['context'] as String?,
@@ -54,7 +54,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   pendingWebhooks: (json['pending_webhooks'] as num).toInt(),
   request: json.containsKey('request') ? Omittable(json['request'] != null ? NotificationEventRequest.fromJson(json['request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: json['type'] as String,
-); }
+);}
 
 /// The connected account that originates the event.
 final String? account;
@@ -88,7 +88,7 @@ final Omittable<NotificationEventRequest?> request;
 /// Description of the event (for example, `invoice.created` or `charge.refunded`).
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   'context': ?context,
@@ -100,15 +100,15 @@ Map<String, dynamic> toJson() { return {
   'pending_webhooks': pendingWebhooks,
   if (request.isPresent) 'request': request.value?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('data') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('pending_webhooks') && json['pending_webhooks'] is num &&
-      json.containsKey('type') && json['type'] is String; } 
-Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, String? Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, Omittable<NotificationEventRequest?>? request, String? type, }) { return Event(
+      json.containsKey('type') && json['type'] is String;}
+Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, String? Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, Omittable<NotificationEventRequest?>? request, String? type, }) {return Event(
   account: account != null ? account() : this.account,
   apiVersion: apiVersion ?? this.apiVersion,
   context: context != null ? context() : this.context,
@@ -120,8 +120,8 @@ Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, Str
   pendingWebhooks: pendingWebhooks ?? this.pendingWebhooks,
   request: request ?? this.request,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Event &&
           account == other.account &&
           apiVersion == other.apiVersion &&
@@ -133,7 +133,7 @@ Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, Str
           object == other.object &&
           pendingWebhooks == other.pendingWebhooks &&
           request == other.request &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, apiVersion, context, created, data, id, livemode, object, pendingWebhooks, request, type); } 
-@override String toString() { return 'Event(account: $account, apiVersion: $apiVersion, context: $context, created: $created, data: $data, id: $id, livemode: $livemode, object: $object, pendingWebhooks: $pendingWebhooks, request: $request, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, apiVersion, context, created, data, id, livemode, object, pendingWebhooks, request, type);}
+@override String toString() {return 'Event(account: $account, apiVersion: $apiVersion, context: $context, created: $created, data: $data, id: $id, livemode: $livemode, object: $object, pendingWebhooks: $pendingWebhooks, request: $request, type: $type)';}
+}

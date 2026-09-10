@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorCreateNewWorkflowInstanceRequestInstanceRetention {const WorCreateNewWorkflowInstanceRequestInstanceRetention({this.errorRetention, this.successRetention, });
 
-factory WorCreateNewWorkflowInstanceRequestInstanceRetention.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceRequestInstanceRetention(
+factory WorCreateNewWorkflowInstanceRequestInstanceRetention.fromJson(Map<String, dynamic> json) {return WorCreateNewWorkflowInstanceRequestInstanceRetention(
   errorRetention: json['error_retention'],
   successRetention: json['success_retention'],
-); }
+);}
 
 /// Specifies the duration in milliseconds or as a string like '5 minutes'.
 /// 
@@ -21,19 +21,19 @@ final dynamic errorRetention;
 /// One of: int, String
 final dynamic successRetention;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error_retention': ?errorRetention,
   'success_retention': ?successRetention,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'error_retention', 'success_retention'}.contains(key)); } 
-WorCreateNewWorkflowInstanceRequestInstanceRetention copyWith({dynamic Function()? errorRetention, dynamic Function()? successRetention, }) { return WorCreateNewWorkflowInstanceRequestInstanceRetention(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'error_retention', 'success_retention'}.contains(key));}
+WorCreateNewWorkflowInstanceRequestInstanceRetention copyWith({dynamic Function()? errorRetention, dynamic Function()? successRetention, }) {return WorCreateNewWorkflowInstanceRequestInstanceRetention(
   errorRetention: errorRetention != null ? errorRetention() : this.errorRetention,
   successRetention: successRetention != null ? successRetention() : this.successRetention,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorCreateNewWorkflowInstanceRequestInstanceRetention &&
           errorRetention == other.errorRetention &&
-          successRetention == other.successRetention; } 
-@override int get hashCode { return Object.hash(errorRetention, successRetention); } 
-@override String toString() { return 'WorCreateNewWorkflowInstanceRequestInstanceRetention(errorRetention: $errorRetention, successRetention: $successRetention)'; } 
- }
+          successRetention == other.successRetention;}
+@override int get hashCode {return Object.hash(errorRetention, successRetention);}
+@override String toString() {return 'WorCreateNewWorkflowInstanceRequestInstanceRetention(errorRetention: $errorRetention, successRetention: $successRetention)';}
+}

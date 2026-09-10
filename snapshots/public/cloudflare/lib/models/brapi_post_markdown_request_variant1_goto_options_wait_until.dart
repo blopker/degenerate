@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1 {const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1._(this.value);
 
-factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1.fromJson(String json) { return switch (json) {
+factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1.fromJson(String json) {return switch (json) {
   'load' => load,
   _ => BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1._(json),
-}; }
+};}
 
 static const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1 load = BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1._('load');
 
@@ -13,20 +13,20 @@ static const List<BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant1($value)';}
+}
 @immutable final class BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2 {const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2._(this.value);
 
-factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2.fromJson(String json) { return switch (json) {
+factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2.fromJson(String json) {return switch (json) {
   'domcontentloaded' => domcontentloaded,
   _ => BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2._(json),
-}; }
+};}
 
 static const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2 domcontentloaded = BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2._('domcontentloaded');
 
@@ -34,20 +34,20 @@ static const List<BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant2($value)';}
+}
 @immutable final class BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3 {const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3._(this.value);
 
-factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3.fromJson(String json) { return switch (json) {
+factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3.fromJson(String json) {return switch (json) {
   'networkidle0' => networkidle0,
   _ => BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3._(json),
-}; }
+};}
 
 static const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3 networkidle0 = BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3._('networkidle0');
 
@@ -55,20 +55,20 @@ static const List<BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant3($value)';}
+}
 @immutable final class BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4 {const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4._(this.value);
 
-factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4.fromJson(String json) { return switch (json) {
+factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4.fromJson(String json) {return switch (json) {
   'networkidle2' => networkidle2,
   _ => BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4._(json),
-}; }
+};}
 
 static const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4 networkidle2 = BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4._('networkidle2');
 
@@ -76,23 +76,23 @@ static const List<BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant4($value)';}
+}
 @immutable final class BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5 {const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5._(this.value);
 
-factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5.fromJson(String json) { return switch (json) {
+factory BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5.fromJson(String json) {return switch (json) {
   'load' => load,
   'domcontentloaded' => domcontentloaded,
   'networkidle0' => networkidle0,
   'networkidle2' => networkidle2,
   _ => BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5._(json),
-}; }
+};}
 
 static const BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5 load = BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5._('load');
 
@@ -106,14 +106,14 @@ static const List<BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntilVariant5($value)';}
+}
 
 @immutable
 final class BrapiPostMarkdownRequestVariant1GotoOptionsWaitUntil {

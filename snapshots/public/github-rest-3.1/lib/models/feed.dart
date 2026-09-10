@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'feed_links.dart';/// Feed
 @immutable final class Feed {const Feed({required this.timelineUrl, required this.userUrl, required this.links, this.currentUserPublicUrl, this.currentUserUrl, this.currentUserActorUrl, this.currentUserOrganizationUrl, this.currentUserOrganizationUrls, this.securityAdvisoriesUrl, this.repositoryDiscussionsUrl, this.repositoryDiscussionsCategoryUrl, });
 
-factory Feed.fromJson(Map<String, dynamic> json) { return Feed(
+factory Feed.fromJson(Map<String, dynamic> json) {return Feed(
   timelineUrl: json['timeline_url'] as String,
   userUrl: json['user_url'] as String,
   currentUserPublicUrl: json['current_user_public_url'] as String?,
@@ -15,7 +15,7 @@ factory Feed.fromJson(Map<String, dynamic> json) { return Feed(
   repositoryDiscussionsUrl: json['repository_discussions_url'] as String?,
   repositoryDiscussionsCategoryUrl: json['repository_discussions_category_url'] as String?,
   links: FeedLinks.fromJson(json['_links'] as Map<String, dynamic>),
-); }
+);}
 
 final String timelineUrl;
 
@@ -41,7 +41,7 @@ final String? repositoryDiscussionsCategoryUrl;
 
 final FeedLinks links;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'timeline_url': timelineUrl,
   'user_url': userUrl,
   'current_user_public_url': ?currentUserPublicUrl,
@@ -53,11 +53,11 @@ Map<String, dynamic> toJson() { return {
   'repository_discussions_url': ?repositoryDiscussionsUrl,
   'repository_discussions_category_url': ?repositoryDiscussionsCategoryUrl,
   '_links': links.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('timeline_url') && json['timeline_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('timeline_url') && json['timeline_url'] is String &&
       json.containsKey('user_url') && json['user_url'] is String &&
-      json.containsKey('_links'); } 
-Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? currentUserPublicUrl, String? Function()? currentUserUrl, String? Function()? currentUserActorUrl, String? Function()? currentUserOrganizationUrl, List<Uri>? Function()? currentUserOrganizationUrls, String? Function()? securityAdvisoriesUrl, String? Function()? repositoryDiscussionsUrl, String? Function()? repositoryDiscussionsCategoryUrl, FeedLinks? links, }) { return Feed(
+      json.containsKey('_links');}
+Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? currentUserPublicUrl, String? Function()? currentUserUrl, String? Function()? currentUserActorUrl, String? Function()? currentUserOrganizationUrl, List<Uri>? Function()? currentUserOrganizationUrls, String? Function()? securityAdvisoriesUrl, String? Function()? repositoryDiscussionsUrl, String? Function()? repositoryDiscussionsCategoryUrl, FeedLinks? links, }) {return Feed(
   timelineUrl: timelineUrl ?? this.timelineUrl,
   userUrl: userUrl ?? this.userUrl,
   currentUserPublicUrl: currentUserPublicUrl != null ? currentUserPublicUrl() : this.currentUserPublicUrl,
@@ -69,8 +69,8 @@ Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? current
   repositoryDiscussionsUrl: repositoryDiscussionsUrl != null ? repositoryDiscussionsUrl() : this.repositoryDiscussionsUrl,
   repositoryDiscussionsCategoryUrl: repositoryDiscussionsCategoryUrl != null ? repositoryDiscussionsCategoryUrl() : this.repositoryDiscussionsCategoryUrl,
   links: links ?? this.links,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Feed &&
           timelineUrl == other.timelineUrl &&
           userUrl == other.userUrl &&
@@ -82,7 +82,7 @@ Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? current
           securityAdvisoriesUrl == other.securityAdvisoriesUrl &&
           repositoryDiscussionsUrl == other.repositoryDiscussionsUrl &&
           repositoryDiscussionsCategoryUrl == other.repositoryDiscussionsCategoryUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(timelineUrl, userUrl, currentUserPublicUrl, currentUserUrl, currentUserActorUrl, currentUserOrganizationUrl, Object.hashAll(currentUserOrganizationUrls ?? const []), securityAdvisoriesUrl, repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl, links); } 
-@override String toString() { return 'Feed(timelineUrl: $timelineUrl, userUrl: $userUrl, currentUserPublicUrl: $currentUserPublicUrl, currentUserUrl: $currentUserUrl, currentUserActorUrl: $currentUserActorUrl, currentUserOrganizationUrl: $currentUserOrganizationUrl, currentUserOrganizationUrls: $currentUserOrganizationUrls, securityAdvisoriesUrl: $securityAdvisoriesUrl, repositoryDiscussionsUrl: $repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl, links: $links)'; } 
- }
+          links == other.links;}
+@override int get hashCode {return Object.hash(timelineUrl, userUrl, currentUserPublicUrl, currentUserUrl, currentUserActorUrl, currentUserOrganizationUrl, Object.hashAll(currentUserOrganizationUrls ?? const []), securityAdvisoriesUrl, repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl, links);}
+@override String toString() {return 'Feed(timelineUrl: $timelineUrl, userUrl: $userUrl, currentUserPublicUrl: $currentUserPublicUrl, currentUserUrl: $currentUserUrl, currentUserActorUrl: $currentUserActorUrl, currentUserOrganizationUrl: $currentUserOrganizationUrl, currentUserOrganizationUrls: $currentUserOrganizationUrls, securityAdvisoriesUrl: $securityAdvisoriesUrl, repositoryDiscussionsUrl: $repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl, links: $links)';}
+}

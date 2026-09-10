@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory {const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory._(this.value);
 
-factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(String json) {return switch (json) {
   'digital_goods' => digitalGoods,
   'donation' => donation,
   'physical_goods' => physicalGoods,
   _ => PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory digitalGoods = PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory._('digital_goods');
 
@@ -19,21 +19,21 @@ static const List<PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory($value)';}
+}
 @immutable final class PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal {const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal({this.category, this.description, this.soldBy, });
 
-factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
+factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
   category: json['category'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(json['category'] as String) : null,
   description: json['description'] as String?,
   soldBy: json['sold_by'] as String?,
-); }
+);}
 
 final PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory? category;
 
@@ -41,22 +41,22 @@ final String? description;
 
 final String? soldBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (category != null) 'category': category?.toJson(),
   'description': ?description,
   'sold_by': ?soldBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'description', 'sold_by'}.contains(key)); } 
-PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory? Function()? category, String? Function()? description, String? Function()? soldBy, }) { return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'category', 'description', 'sold_by'}.contains(key));}
+PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory? Function()? category, String? Function()? description, String? Function()? soldBy, }) {return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
   category: category != null ? category() : this.category,
   description: description != null ? description() : this.description,
   soldBy: soldBy != null ? soldBy() : this.soldBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal &&
           category == other.category &&
           description == other.description &&
-          soldBy == other.soldBy; } 
-@override int get hashCode { return Object.hash(category, description, soldBy); } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(category: $category, description: $description, soldBy: $soldBy)'; } 
- }
+          soldBy == other.soldBy;}
+@override int get hashCode {return Object.hash(category, description, soldBy);}
+@override String toString() {return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(category: $category, description: $description, soldBy: $soldBy)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1 {const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1._(this.value);
 
-factory PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -53,7 +53,7 @@ factory PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1.fromJson
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1 acssDebit = PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1._('acss_debit');
 
@@ -157,20 +157,20 @@ static const List<PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1($value)';}
+}
 @immutable final class PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2 {const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2._(this.value);
 
-factory PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2 $empty = PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2._('');
 
@@ -178,14 +178,14 @@ static const List<PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2($value)';}
+}
 /// The list of payment method types to exclude from use with this SetupIntent.
 @immutable
 final class PostSetupIntentsIntentRequestExcludedPaymentMethodTypes {

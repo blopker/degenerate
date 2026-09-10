@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_country_options_ie_standard.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsIeType {const PostTaxRegistrationsRequestCountryOptionsIeType._(this.value);
 
-factory PostTaxRegistrationsRequestCountryOptionsIeType.fromJson(String json) { return switch (json) {
+factory PostTaxRegistrationsRequestCountryOptionsIeType.fromJson(String json) {return switch (json) {
   'ioss' => ioss,
   'oss_non_union' => ossNonUnion,
   'oss_union' => ossUnion,
   'standard' => standard,
   _ => PostTaxRegistrationsRequestCountryOptionsIeType._(json),
-}; }
+};}
 
 static const PostTaxRegistrationsRequestCountryOptionsIeType ioss = PostTaxRegistrationsRequestCountryOptionsIeType._('ioss');
 
@@ -22,38 +22,38 @@ static const List<PostTaxRegistrationsRequestCountryOptionsIeType> values = [ios
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxRegistrationsRequestCountryOptionsIeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsIeType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsIeType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsIeType($value)';}
+}
 @immutable final class PostTaxRegistrationsRequestCountryOptionsIe {const PostTaxRegistrationsRequestCountryOptionsIe({required this.type, this.standard, });
 
-factory PostTaxRegistrationsRequestCountryOptionsIe.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsIe(
+factory PostTaxRegistrationsRequestCountryOptionsIe.fromJson(Map<String, dynamic> json) {return PostTaxRegistrationsRequestCountryOptionsIe(
   standard: json['standard'] != null ? PostTaxRegistrationsRequestCountryOptionsIeStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,
   type: PostTaxRegistrationsRequestCountryOptionsIeType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostTaxRegistrationsRequestCountryOptionsIeStandard? standard;
 
 final PostTaxRegistrationsRequestCountryOptionsIeType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (standard != null) 'standard': standard?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTaxRegistrationsRequestCountryOptionsIe copyWith({PostTaxRegistrationsRequestCountryOptionsIeStandard? Function()? standard, PostTaxRegistrationsRequestCountryOptionsIeType? type, }) { return PostTaxRegistrationsRequestCountryOptionsIe(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTaxRegistrationsRequestCountryOptionsIe copyWith({PostTaxRegistrationsRequestCountryOptionsIeStandard? Function()? standard, PostTaxRegistrationsRequestCountryOptionsIeType? type, }) {return PostTaxRegistrationsRequestCountryOptionsIe(
   standard: standard != null ? standard() : this.standard,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRegistrationsRequestCountryOptionsIe &&
           standard == other.standard &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(standard, type); } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsIe(standard: $standard, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(standard, type);}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsIe(standard: $standard, type: $type)';}
+}

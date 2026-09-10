@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CardDetailsParamsNetworksPreferred {const CardDetailsParamsNetworksPreferred._(this.value);
 
-factory CardDetailsParamsNetworksPreferred.fromJson(String json) { return switch (json) {
+factory CardDetailsParamsNetworksPreferred.fromJson(String json) {return switch (json) {
   'cartes_bancaires' => cartesBancaires,
   'mastercard' => mastercard,
   'visa' => visa,
   _ => CardDetailsParamsNetworksPreferred._(json),
-}; }
+};}
 
 static const CardDetailsParamsNetworksPreferred cartesBancaires = CardDetailsParamsNetworksPreferred._('cartes_bancaires');
 
@@ -19,32 +19,32 @@ static const List<CardDetailsParamsNetworksPreferred> values = [cartesBancaires,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardDetailsParamsNetworksPreferred && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardDetailsParamsNetworksPreferred($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CardDetailsParamsNetworksPreferred && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CardDetailsParamsNetworksPreferred($value)';}
+}
 @immutable final class CardDetailsParamsNetworks {const CardDetailsParamsNetworks({this.preferred});
 
-factory CardDetailsParamsNetworks.fromJson(Map<String, dynamic> json) { return CardDetailsParamsNetworks(
+factory CardDetailsParamsNetworks.fromJson(Map<String, dynamic> json) {return CardDetailsParamsNetworks(
   preferred: json['preferred'] != null ? CardDetailsParamsNetworksPreferred.fromJson(json['preferred'] as String) : null,
-); }
+);}
 
 final CardDetailsParamsNetworksPreferred? preferred;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preferred != null) 'preferred': preferred?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred'}.contains(key)); } 
-CardDetailsParamsNetworks copyWith({CardDetailsParamsNetworksPreferred? Function()? preferred}) { return CardDetailsParamsNetworks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preferred'}.contains(key));}
+CardDetailsParamsNetworks copyWith({CardDetailsParamsNetworksPreferred? Function()? preferred}) {return CardDetailsParamsNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CardDetailsParamsNetworks &&
-          preferred == other.preferred; } 
-@override int get hashCode { return preferred.hashCode; } 
-@override String toString() { return 'CardDetailsParamsNetworks(preferred: $preferred)'; } 
- }
+          preferred == other.preferred;}
+@override int get hashCode {return preferred.hashCode;}
+@override String toString() {return 'CardDetailsParamsNetworks(preferred: $preferred)';}
+}

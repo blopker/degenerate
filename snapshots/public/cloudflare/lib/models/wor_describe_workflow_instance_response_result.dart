@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_error.dart';import 'wor_describe_workflow_instance_response_result_steps.dart';import 'wor_describe_workflow_instance_response_result_trigger.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStatus {const WorDescribeWorkflowInstanceResponseResultStatus._(this.value);
 
-factory WorDescribeWorkflowInstanceResponseResultStatus.fromJson(String json) { return switch (json) {
+factory WorDescribeWorkflowInstanceResponseResultStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'running' => running,
   'paused' => paused,
@@ -12,7 +12,7 @@ factory WorDescribeWorkflowInstanceResponseResultStatus.fromJson(String json) { 
   'waitingForPause' => waitingForPause,
   'waiting' => waiting,
   _ => WorDescribeWorkflowInstanceResponseResultStatus._(json),
-}; }
+};}
 
 static const WorDescribeWorkflowInstanceResponseResultStatus queued = WorDescribeWorkflowInstanceResponseResultStatus._('queued');
 
@@ -34,17 +34,17 @@ static const List<WorDescribeWorkflowInstanceResponseResultStatus> values = [que
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorDescribeWorkflowInstanceResponseResultStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorDescribeWorkflowInstanceResponseResultStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultStatus($value)';}
+}
 @immutable final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
 
-factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResult(
+factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseResult(
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
   error: json['error'] != null ? WorDescribeWorkflowInstanceResponseResultError.fromJson(json['error'] as Map<String, dynamic>) : null,
   output: json['output'],
@@ -57,7 +57,7 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   success: json['success'] as bool?,
   trigger: WorDescribeWorkflowInstanceResponseResultTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   versionId: json['versionId'] as String,
-); }
+);}
 
 final DateTime? end;
 
@@ -84,7 +84,7 @@ final WorDescribeWorkflowInstanceResponseResultTrigger trigger;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': end?.toIso8601String(),
   'error': error?.toJson(),
   'output': output,
@@ -97,8 +97,8 @@ Map<String, dynamic> toJson() { return {
   'success': success,
   'trigger': trigger.toJson(),
   'versionId': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('error') &&
       json.containsKey('output') &&
       json.containsKey('params') &&
@@ -109,8 +109,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('end')
       json.containsKey('steps') &&
       json.containsKey('success') && (json['success'] == null || json['success'] is bool) &&
       json.containsKey('trigger') &&
-      json.containsKey('versionId') && json['versionId'] is String; } 
-WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, WorDescribeWorkflowInstanceResponseResultError? Function()? error, dynamic output, Map<String,dynamic>? params, DateTime? queued, DateTime? Function()? start, WorDescribeWorkflowInstanceResponseResultStatus? status, int? stepCount, List<WorDescribeWorkflowInstanceResponseResultSteps>? steps, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultTrigger? trigger, String? versionId, }) { return WorDescribeWorkflowInstanceResponseResult(
+      json.containsKey('versionId') && json['versionId'] is String;}
+WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, WorDescribeWorkflowInstanceResponseResultError? Function()? error, dynamic output, Map<String,dynamic>? params, DateTime? queued, DateTime? Function()? start, WorDescribeWorkflowInstanceResponseResultStatus? status, int? stepCount, List<WorDescribeWorkflowInstanceResponseResultSteps>? steps, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultTrigger? trigger, String? versionId, }) {return WorDescribeWorkflowInstanceResponseResult(
   end: end != null ? end() : this.end,
   error: error != null ? error() : this.error,
   output: output ?? this.output,
@@ -123,8 +123,8 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, W
   success: success != null ? success() : this.success,
   trigger: trigger ?? this.trigger,
   versionId: versionId ?? this.versionId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResult &&
           end == other.end &&
           error == other.error &&
@@ -137,7 +137,7 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, W
           listEquals(steps, other.steps) &&
           success == other.success &&
           trigger == other.trigger &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(end, error, output, params, queued, start, status, stepCount, Object.hashAll(steps), success, trigger, versionId); } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResult(end: $end, error: $error, output: $output, params: $params, queued: $queued, start: $start, status: $status, stepCount: $stepCount, steps: $steps, success: $success, trigger: $trigger, versionId: $versionId)'; } 
- }
+          versionId == other.versionId;}
+@override int get hashCode {return Object.hash(end, error, output, params, queued, start, status, stepCount, Object.hashAll(steps), success, trigger, versionId);}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResult(end: $end, error: $error, output: $output, params: $params, queued: $queued, start: $start, status: $status, stepCount: $stepCount, steps: $steps, success: $success, trigger: $trigger, versionId: $versionId)';}
+}

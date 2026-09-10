@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_submitted_pull_request_links_comments.dart';import 'webhook_pull_request_review_submitted_pull_request_links_commits.dart';import 'webhook_pull_request_review_submitted_pull_request_links_html.dart';import 'webhook_pull_request_review_submitted_pull_request_links_issue.dart';import 'webhook_pull_request_review_submitted_pull_request_links_review_comment.dart';import 'webhook_pull_request_review_submitted_pull_request_links_review_comments.dart';import 'webhook_pull_request_review_submitted_pull_request_links_self.dart';import 'webhook_pull_request_review_submitted_pull_request_links_statuses.dart';@immutable final class WebhookPullRequestReviewSubmittedPullRequestLinks {const WebhookPullRequestReviewSubmittedPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses, });
 
-factory WebhookPullRequestReviewSubmittedPullRequestLinks.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewSubmittedPullRequestLinks(
+factory WebhookPullRequestReviewSubmittedPullRequestLinks.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewSubmittedPullRequestLinks(
   comments: WebhookPullRequestReviewSubmittedPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>),
   commits: WebhookPullRequestReviewSubmittedPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>),
   html: WebhookPullRequestReviewSubmittedPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory WebhookPullRequestReviewSubmittedPullRequestLinks.fromJson(Map<String, d
   reviewComments: WebhookPullRequestReviewSubmittedPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>),
   self: WebhookPullRequestReviewSubmittedPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>),
   statuses: WebhookPullRequestReviewSubmittedPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestReviewSubmittedPullRequestLinksComments comments;
 
@@ -29,7 +29,7 @@ final WebhookPullRequestReviewSubmittedPullRequestLinksSelf self;
 
 final WebhookPullRequestReviewSubmittedPullRequestLinksStatuses statuses;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': comments.toJson(),
   'commits': commits.toJson(),
   'html': html.toJson(),
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'review_comments': reviewComments.toJson(),
   'self': self.toJson(),
   'statuses': statuses.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comments') &&
       json.containsKey('commits') &&
       json.containsKey('html') &&
       json.containsKey('issue') &&
       json.containsKey('review_comment') &&
       json.containsKey('review_comments') &&
       json.containsKey('self') &&
-      json.containsKey('statuses'); } 
-WebhookPullRequestReviewSubmittedPullRequestLinks copyWith({WebhookPullRequestReviewSubmittedPullRequestLinksComments? comments, WebhookPullRequestReviewSubmittedPullRequestLinksCommits? commits, WebhookPullRequestReviewSubmittedPullRequestLinksHtml? html, WebhookPullRequestReviewSubmittedPullRequestLinksIssue? issue, WebhookPullRequestReviewSubmittedPullRequestLinksReviewComment? reviewComment, WebhookPullRequestReviewSubmittedPullRequestLinksReviewComments? reviewComments, WebhookPullRequestReviewSubmittedPullRequestLinksSelf? self, WebhookPullRequestReviewSubmittedPullRequestLinksStatuses? statuses, }) { return WebhookPullRequestReviewSubmittedPullRequestLinks(
+      json.containsKey('statuses');}
+WebhookPullRequestReviewSubmittedPullRequestLinks copyWith({WebhookPullRequestReviewSubmittedPullRequestLinksComments? comments, WebhookPullRequestReviewSubmittedPullRequestLinksCommits? commits, WebhookPullRequestReviewSubmittedPullRequestLinksHtml? html, WebhookPullRequestReviewSubmittedPullRequestLinksIssue? issue, WebhookPullRequestReviewSubmittedPullRequestLinksReviewComment? reviewComment, WebhookPullRequestReviewSubmittedPullRequestLinksReviewComments? reviewComments, WebhookPullRequestReviewSubmittedPullRequestLinksSelf? self, WebhookPullRequestReviewSubmittedPullRequestLinksStatuses? statuses, }) {return WebhookPullRequestReviewSubmittedPullRequestLinks(
   comments: comments ?? this.comments,
   commits: commits ?? this.commits,
   html: html ?? this.html,
@@ -56,8 +56,8 @@ WebhookPullRequestReviewSubmittedPullRequestLinks copyWith({WebhookPullRequestRe
   reviewComments: reviewComments ?? this.reviewComments,
   self: self ?? this.self,
   statuses: statuses ?? this.statuses,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewSubmittedPullRequestLinks &&
           comments == other.comments &&
           commits == other.commits &&
@@ -66,7 +66,7 @@ WebhookPullRequestReviewSubmittedPullRequestLinks copyWith({WebhookPullRequestRe
           reviewComment == other.reviewComment &&
           reviewComments == other.reviewComments &&
           self == other.self &&
-          statuses == other.statuses; } 
-@override int get hashCode { return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses); } 
-@override String toString() { return 'WebhookPullRequestReviewSubmittedPullRequestLinks(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)'; } 
- }
+          statuses == other.statuses;}
+@override int get hashCode {return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses);}
+@override String toString() {return 'WebhookPullRequestReviewSubmittedPullRequestLinks(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)';}
+}

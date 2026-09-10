@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesRequestSourceOrderItemsType {const PostSourcesRequestSourceOrderItemsType._(this.value);
 
-factory PostSourcesRequestSourceOrderItemsType.fromJson(String json) { return switch (json) {
+factory PostSourcesRequestSourceOrderItemsType.fromJson(String json) {return switch (json) {
   'discount' => discount,
   'shipping' => shipping,
   'sku' => sku,
   'tax' => tax,
   _ => PostSourcesRequestSourceOrderItemsType._(json),
-}; }
+};}
 
 static const PostSourcesRequestSourceOrderItemsType discount = PostSourcesRequestSourceOrderItemsType._('discount');
 
@@ -22,24 +22,24 @@ static const List<PostSourcesRequestSourceOrderItemsType> values = [discount, sh
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestSourceOrderItemsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestSourceOrderItemsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesRequestSourceOrderItemsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesRequestSourceOrderItemsType($value)';}
+}
 @immutable final class PostSourcesRequestSourceOrderItems {const PostSourcesRequestSourceOrderItems({this.amount, this.currency, this.description, this.parent, this.quantity, this.type, });
 
-factory PostSourcesRequestSourceOrderItems.fromJson(Map<String, dynamic> json) { return PostSourcesRequestSourceOrderItems(
+factory PostSourcesRequestSourceOrderItems.fromJson(Map<String, dynamic> json) {return PostSourcesRequestSourceOrderItems(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   currency: json['currency'] as String?,
   description: json['description'] as String?,
   parent: json['parent'] as String?,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   type: json['type'] != null ? PostSourcesRequestSourceOrderItemsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final int? amount;
 
@@ -53,31 +53,31 @@ final int? quantity;
 
 final PostSourcesRequestSourceOrderItemsType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'currency': ?currency,
   'description': ?description,
   'parent': ?parent,
   'quantity': ?quantity,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'description', 'parent', 'quantity', 'type'}.contains(key)); } 
-PostSourcesRequestSourceOrderItems copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, String? Function()? parent, int? Function()? quantity, PostSourcesRequestSourceOrderItemsType? Function()? type, }) { return PostSourcesRequestSourceOrderItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'currency', 'description', 'parent', 'quantity', 'type'}.contains(key));}
+PostSourcesRequestSourceOrderItems copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, String? Function()? parent, int? Function()? quantity, PostSourcesRequestSourceOrderItemsType? Function()? type, }) {return PostSourcesRequestSourceOrderItems(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   description: description != null ? description() : this.description,
   parent: parent != null ? parent() : this.parent,
   quantity: quantity != null ? quantity() : this.quantity,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSourcesRequestSourceOrderItems &&
           amount == other.amount &&
           currency == other.currency &&
           description == other.description &&
           parent == other.parent &&
           quantity == other.quantity &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, currency, description, parent, quantity, type); } 
-@override String toString() { return 'PostSourcesRequestSourceOrderItems(amount: $amount, currency: $currency, description: $description, parent: $parent, quantity: $quantity, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(amount, currency, description, parent, quantity, type);}
+@override String toString() {return 'PostSourcesRequestSourceOrderItems(amount: $amount, currency: $currency, description: $description, parent: $parent, quantity: $quantity, type: $type)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAdvisoriesListGlobalAdvisoriesType {const SecurityAdvisoriesListGlobalAdvisoriesType._(this.value);
 
-factory SecurityAdvisoriesListGlobalAdvisoriesType.fromJson(String json) { return switch (json) {
+factory SecurityAdvisoriesListGlobalAdvisoriesType.fromJson(String json) {return switch (json) {
   'reviewed' => reviewed,
   'malware' => malware,
   'unreviewed' => unreviewed,
   _ => SecurityAdvisoriesListGlobalAdvisoriesType._(json),
-}; }
+};}
 
 static const SecurityAdvisoriesListGlobalAdvisoriesType reviewed = SecurityAdvisoriesListGlobalAdvisoriesType._('reviewed');
 
@@ -19,11 +19,11 @@ static const List<SecurityAdvisoriesListGlobalAdvisoriesType> values = [reviewed
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAdvisoriesListGlobalAdvisoriesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAdvisoriesListGlobalAdvisoriesType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecurityAdvisoriesListGlobalAdvisoriesType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecurityAdvisoriesListGlobalAdvisoriesType($value)';}
+}

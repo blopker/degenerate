@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_health_check_base_target.dart';import 'magic_health_check_target.dart';/// How frequent the health check is run. The default value is `mid`.
 @immutable final class MagicHealthCheckBaseRate {const MagicHealthCheckBaseRate._(this.value);
 
-factory MagicHealthCheckBaseRate.fromJson(String json) { return switch (json) {
+factory MagicHealthCheckBaseRate.fromJson(String json) {return switch (json) {
   'low' => low,
   'mid' => mid,
   'high' => high,
   _ => MagicHealthCheckBaseRate._(json),
-}; }
+};}
 
 static const MagicHealthCheckBaseRate low = MagicHealthCheckBaseRate._('low');
 
@@ -20,22 +20,22 @@ static const List<MagicHealthCheckBaseRate> values = [low, mid, high];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicHealthCheckBaseRate && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicHealthCheckBaseRate($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicHealthCheckBaseRate && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicHealthCheckBaseRate($value)';}
+}
 /// The type of healthcheck to run, reply or request. The default value is `reply`.
 @immutable final class MagicHealthCheckBaseType {const MagicHealthCheckBaseType._(this.value);
 
-factory MagicHealthCheckBaseType.fromJson(String json) { return switch (json) {
+factory MagicHealthCheckBaseType.fromJson(String json) {return switch (json) {
   'reply' => reply,
   'request' => request,
   _ => MagicHealthCheckBaseType._(json),
-}; }
+};}
 
 static const MagicHealthCheckBaseType reply = MagicHealthCheckBaseType._('reply');
 
@@ -45,22 +45,22 @@ static const List<MagicHealthCheckBaseType> values = [reply, request];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicHealthCheckBaseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicHealthCheckBaseType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicHealthCheckBaseType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicHealthCheckBaseType($value)';}
+}
 @immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled, this.rate, this.target, this.type, });
 
-factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) { return MagicHealthCheckBase(
+factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) {return MagicHealthCheckBase(
   enabled: json['enabled'] as bool?,
   rate: json['rate'] != null ? MagicHealthCheckBaseRate.fromJson(json['rate'] as String) : null,
   target: json['target'] != null ? OneOf2.parse(json['target'], fromA: (v) => MagicHealthCheckTarget.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   type: json['type'] != null ? MagicHealthCheckBaseType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Determines whether to run healthchecks for a tunnel.
 final bool? enabled;
@@ -75,30 +75,30 @@ final MagicHealthCheckBaseTarget? target;
 final MagicHealthCheckBaseType? type;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? true; } 
+bool get enabledOrDefault {return enabled ?? true;}
 /// The value with the schema default applied when absent.
-MagicHealthCheckBaseRate get rateOrDefault { return rate ?? MagicHealthCheckBaseRate.fromJson('mid'); } 
+MagicHealthCheckBaseRate get rateOrDefault {return rate ?? MagicHealthCheckBaseRate.fromJson('mid');}
 /// The value with the schema default applied when absent.
-MagicHealthCheckBaseType get typeOrDefault { return type ?? MagicHealthCheckBaseType.fromJson('reply'); } 
-Map<String, dynamic> toJson() { return {
+MagicHealthCheckBaseType get typeOrDefault {return type ?? MagicHealthCheckBaseType.fromJson('reply');}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (rate != null) 'rate': rate?.toJson(),
   if (target != null) 'target': target?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type'}.contains(key)); } 
-MagicHealthCheckBase copyWith({bool? Function()? enabled, MagicHealthCheckBaseRate? Function()? rate, MagicHealthCheckBaseTarget? Function()? target, MagicHealthCheckBaseType? Function()? type, }) { return MagicHealthCheckBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type'}.contains(key));}
+MagicHealthCheckBase copyWith({bool? Function()? enabled, MagicHealthCheckBaseRate? Function()? rate, MagicHealthCheckBaseTarget? Function()? target, MagicHealthCheckBaseType? Function()? type, }) {return MagicHealthCheckBase(
   enabled: enabled != null ? enabled() : this.enabled,
   rate: rate != null ? rate() : this.rate,
   target: target != null ? target() : this.target,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicHealthCheckBase &&
           enabled == other.enabled &&
           rate == other.rate &&
           target == other.target &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(enabled, rate, target, type); } 
-@override String toString() { return 'MagicHealthCheckBase(enabled: $enabled, rate: $rate, target: $target, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(enabled, rate, target, type);}
+@override String toString() {return 'MagicHealthCheckBase(enabled: $enabled, rate: $rate, target: $target, type: $type)';}
+}

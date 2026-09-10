@@ -8,24 +8,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration fo
 /// 
 @immutable final class RealtimeSessionCreateRequestInputAudioTranscription {const RealtimeSessionCreateRequestInputAudioTranscription({this.model});
 
-factory RealtimeSessionCreateRequestInputAudioTranscription.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestInputAudioTranscription(
+factory RealtimeSessionCreateRequestInputAudioTranscription.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestInputAudioTranscription(
   model: json['model'] as String?,
-); }
+);}
 
 /// The model to use for transcription.
 /// 
 final String? model;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': ?model,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model'}.contains(key)); } 
-RealtimeSessionCreateRequestInputAudioTranscription copyWith({String? Function()? model}) { return RealtimeSessionCreateRequestInputAudioTranscription(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'model'}.contains(key));}
+RealtimeSessionCreateRequestInputAudioTranscription copyWith({String? Function()? model}) {return RealtimeSessionCreateRequestInputAudioTranscription(
   model: model != null ? model() : this.model,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSessionCreateRequestInputAudioTranscription &&
-          model == other.model; } 
-@override int get hashCode { return model.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateRequestInputAudioTranscription(model: $model)'; } 
- }
+          model == other.model;}
+@override int get hashCode {return model.hashCode;}
+@override String toString() {return 'RealtimeSessionCreateRequestInputAudioTranscription(model: $model)';}
+}

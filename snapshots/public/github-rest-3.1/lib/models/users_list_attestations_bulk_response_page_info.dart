@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the current page.
 @immutable final class UsersListAttestationsBulkResponsePageInfo {const UsersListAttestationsBulkResponsePageInfo({this.hasNext, this.hasPrevious, this.next, this.previous, });
 
-factory UsersListAttestationsBulkResponsePageInfo.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponsePageInfo(
+factory UsersListAttestationsBulkResponsePageInfo.fromJson(Map<String, dynamic> json) {return UsersListAttestationsBulkResponsePageInfo(
   hasNext: json['has_next'] as bool?,
   hasPrevious: json['has_previous'] as bool?,
   next: json['next'] as String?,
   previous: json['previous'] as String?,
-); }
+);}
 
 /// Indicates whether there is a next page.
 final bool? hasNext;
@@ -22,25 +22,25 @@ final String? next;
 /// The cursor to the previous page.
 final String? previous;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'has_next': ?hasNext,
   'has_previous': ?hasPrevious,
   'next': ?next,
   'previous': ?previous,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'has_next', 'has_previous', 'next', 'previous'}.contains(key)); } 
-UsersListAttestationsBulkResponsePageInfo copyWith({bool? Function()? hasNext, bool? Function()? hasPrevious, String? Function()? next, String? Function()? previous, }) { return UsersListAttestationsBulkResponsePageInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'has_next', 'has_previous', 'next', 'previous'}.contains(key));}
+UsersListAttestationsBulkResponsePageInfo copyWith({bool? Function()? hasNext, bool? Function()? hasPrevious, String? Function()? next, String? Function()? previous, }) {return UsersListAttestationsBulkResponsePageInfo(
   hasNext: hasNext != null ? hasNext() : this.hasNext,
   hasPrevious: hasPrevious != null ? hasPrevious() : this.hasPrevious,
   next: next != null ? next() : this.next,
   previous: previous != null ? previous() : this.previous,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UsersListAttestationsBulkResponsePageInfo &&
           hasNext == other.hasNext &&
           hasPrevious == other.hasPrevious &&
           next == other.next &&
-          previous == other.previous; } 
-@override int get hashCode { return Object.hash(hasNext, hasPrevious, next, previous); } 
-@override String toString() { return 'UsersListAttestationsBulkResponsePageInfo(hasNext: $hasNext, hasPrevious: $hasPrevious, next: $next, previous: $previous)'; } 
- }
+          previous == other.previous;}
+@override int get hashCode {return Object.hash(hasNext, hasPrevious, next, previous);}
+@override String toString() {return 'UsersListAttestationsBulkResponsePageInfo(hasNext: $hasNext, hasPrevious: $hasPrevious, next: $next, previous: $previous)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 {const RadarGetHttpSummaryByDeviceTypeResponseResultSummary0({required this.desktop, required this.mobile, required this.other, });
 
-factory RadarGetHttpSummaryByDeviceTypeResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(
+factory RadarGetHttpSummaryByDeviceTypeResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(
   desktop: json['desktop'] as String,
   mobile: json['mobile'] as String,
   other: json['other'] as String,
-); }
+);}
 
 /// A numeric string.
 final String desktop;
@@ -17,24 +17,24 @@ final String mobile;
 /// A numeric string.
 final String other;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'desktop': desktop,
   'mobile': mobile,
   'other': other,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('desktop') && json['desktop'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('desktop') && json['desktop'] is String &&
       json.containsKey('mobile') && json['mobile'] is String &&
-      json.containsKey('other') && json['other'] is String; } 
-RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 copyWith({String? desktop, String? mobile, String? other, }) { return RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(
+      json.containsKey('other') && json['other'] is String;}
+RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 copyWith({String? desktop, String? mobile, String? other, }) {return RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(
   desktop: desktop ?? this.desktop,
   mobile: mobile ?? this.mobile,
   other: other ?? this.other,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 &&
           desktop == other.desktop &&
           mobile == other.mobile &&
-          this.other == other.other; } 
-@override int get hashCode { return Object.hash(desktop, mobile, other); } 
-@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(desktop: $desktop, mobile: $mobile, other: $other)'; } 
- }
+          this.other == other.other;}
+@override int get hashCode {return Object.hash(desktop, mobile, other);}
+@override String toString() {return 'RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(desktop: $desktop, mobile: $mobile, other: $other)';}
+}

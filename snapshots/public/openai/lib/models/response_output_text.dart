@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_output_text_annotations.dart';/// Type discriminator that is always `output_text`.
 @immutable final class ResponseOutputTextType {const ResponseOutputTextType._(this.value);
 
-factory ResponseOutputTextType.fromJson(String json) { return switch (json) {
+factory ResponseOutputTextType.fromJson(String json) {return switch (json) {
   'output_text' => outputText,
   _ => ResponseOutputTextType._(json),
-}; }
+};}
 
 static const ResponseOutputTextType outputText = ResponseOutputTextType._('output_text');
 
@@ -14,22 +14,22 @@ static const List<ResponseOutputTextType> values = [outputText];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseOutputTextType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseOutputTextType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponseOutputTextType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponseOutputTextType($value)';}
+}
 /// Assistant response text accompanied by optional annotations.
 @immutable final class ResponseOutputText {const ResponseOutputText({required this.type, required this.text, required this.annotations, });
 
-factory ResponseOutputText.fromJson(Map<String, dynamic> json) { return ResponseOutputText(
+factory ResponseOutputText.fromJson(Map<String, dynamic> json) {return ResponseOutputText(
   type: ResponseOutputTextType.fromJson(json['type'] as String),
   text: json['text'] as String,
   annotations: (json['annotations'] as List<dynamic>).map((e) => ResponseOutputTextAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Type discriminator that is always `output_text`.
 final ResponseOutputTextType type;
@@ -40,24 +40,24 @@ final String text;
 /// Ordered list of annotations attached to the response text.
 final List<ResponseOutputTextAnnotations> annotations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'text': text,
   'annotations': annotations.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('text') && json['text'] is String &&
-      json.containsKey('annotations'); } 
-ResponseOutputText copyWith({ResponseOutputTextType? type, String? text, List<ResponseOutputTextAnnotations>? annotations, }) { return ResponseOutputText(
+      json.containsKey('annotations');}
+ResponseOutputText copyWith({ResponseOutputTextType? type, String? text, List<ResponseOutputTextAnnotations>? annotations, }) {return ResponseOutputText(
   type: type ?? this.type,
   text: text ?? this.text,
   annotations: annotations ?? this.annotations,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseOutputText &&
           type == other.type &&
           text == other.text &&
-          listEquals(annotations, other.annotations); } 
-@override int get hashCode { return Object.hash(type, text, Object.hashAll(annotations)); } 
-@override String toString() { return 'ResponseOutputText(type: $type, text: $text, annotations: $annotations)'; } 
- }
+          listEquals(annotations, other.annotations);}
+@override int get hashCode {return Object.hash(type, text, Object.hashAll(annotations));}
+@override String toString() {return 'ResponseOutputText(type: $type, text: $text, annotations: $annotations)';}
+}

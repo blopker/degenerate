@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the milestone. Either `open` or `closed`.
 @immutable final class IssuesCreateMilestoneRequestState {const IssuesCreateMilestoneRequestState._(this.value);
 
-factory IssuesCreateMilestoneRequestState.fromJson(String json) { return switch (json) {
+factory IssuesCreateMilestoneRequestState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => IssuesCreateMilestoneRequestState._(json),
-}; }
+};}
 
 static const IssuesCreateMilestoneRequestState open = IssuesCreateMilestoneRequestState._('open');
 
@@ -17,22 +17,22 @@ static const List<IssuesCreateMilestoneRequestState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuesCreateMilestoneRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuesCreateMilestoneRequestState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuesCreateMilestoneRequestState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuesCreateMilestoneRequestState($value)';}
+}
 @immutable final class IssuesCreateMilestoneRequest {const IssuesCreateMilestoneRequest({required this.title, this.state, this.description, this.dueOn, });
 
-factory IssuesCreateMilestoneRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateMilestoneRequest(
+factory IssuesCreateMilestoneRequest.fromJson(Map<String, dynamic> json) {return IssuesCreateMilestoneRequest(
   title: json['title'] as String,
   state: json['state'] != null ? IssuesCreateMilestoneRequestState.fromJson(json['state'] as String) : null,
   description: json['description'] as String?,
   dueOn: json['due_on'] != null ? DateTime.parse(json['due_on'] as String) : null,
-); }
+);}
 
 /// The title of the milestone.
 final String title;
@@ -47,26 +47,26 @@ final String? description;
 final DateTime? dueOn;
 
 /// The value with the schema default applied when absent.
-IssuesCreateMilestoneRequestState get stateOrDefault { return state ?? IssuesCreateMilestoneRequestState.fromJson('open'); } 
-Map<String, dynamic> toJson() { return {
+IssuesCreateMilestoneRequestState get stateOrDefault {return state ?? IssuesCreateMilestoneRequestState.fromJson('open');}
+Map<String, dynamic> toJson() {return {
   'title': title,
   if (state != null) 'state': state?.toJson(),
   'description': ?description,
   if (dueOn != null) 'due_on': dueOn?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
-IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneRequestState? Function()? state, String? Function()? description, DateTime? Function()? dueOn, }) { return IssuesCreateMilestoneRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('title') && json['title'] is String;}
+IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneRequestState? Function()? state, String? Function()? description, DateTime? Function()? dueOn, }) {return IssuesCreateMilestoneRequest(
   title: title ?? this.title,
   state: state != null ? state() : this.state,
   description: description != null ? description() : this.description,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuesCreateMilestoneRequest &&
           title == other.title &&
           state == other.state &&
           description == other.description &&
-          dueOn == other.dueOn; } 
-@override int get hashCode { return Object.hash(title, state, description, dueOn); } 
-@override String toString() { return 'IssuesCreateMilestoneRequest(title: $title, state: $state, description: $description, dueOn: $dueOn)'; } 
- }
+          dueOn == other.dueOn;}
+@override int get hashCode {return Object.hash(title, state, description, dueOn);}
+@override String toString() {return 'IssuesCreateMilestoneRequest(title: $title, state: $state, description: $description, dueOn: $dueOn)';}
+}

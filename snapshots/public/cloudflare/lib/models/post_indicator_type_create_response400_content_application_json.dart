@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_type_create_response400_content_application_json_schema.dart';@immutable final class PostIndicatorTypeCreateResponse400ContentApplicationJson {const PostIndicatorTypeCreateResponse400ContentApplicationJson({required this.schema});
 
-factory PostIndicatorTypeCreateResponse400ContentApplicationJson.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse400ContentApplicationJson(
+factory PostIndicatorTypeCreateResponse400ContentApplicationJson.fromJson(Map<String, dynamic> json) {return PostIndicatorTypeCreateResponse400ContentApplicationJson(
   schema: PostIndicatorTypeCreateResponse400ContentApplicationJsonSchema.fromJson(json['schema'] as Map<String, dynamic>),
-); }
+);}
 
 final PostIndicatorTypeCreateResponse400ContentApplicationJsonSchema schema;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'schema': schema.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('schema'); } 
-PostIndicatorTypeCreateResponse400ContentApplicationJson copyWith({PostIndicatorTypeCreateResponse400ContentApplicationJsonSchema? schema}) { return PostIndicatorTypeCreateResponse400ContentApplicationJson(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('schema');}
+PostIndicatorTypeCreateResponse400ContentApplicationJson copyWith({PostIndicatorTypeCreateResponse400ContentApplicationJsonSchema? schema}) {return PostIndicatorTypeCreateResponse400ContentApplicationJson(
   schema: schema ?? this.schema,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIndicatorTypeCreateResponse400ContentApplicationJson &&
-          schema == other.schema; } 
-@override int get hashCode { return schema.hashCode; } 
-@override String toString() { return 'PostIndicatorTypeCreateResponse400ContentApplicationJson(schema: $schema)'; } 
- }
+          schema == other.schema;}
+@override int get hashCode {return schema.hashCode;}
+@override String toString() {return 'PostIndicatorTypeCreateResponse400ContentApplicationJson(schema: $schema)';}
+}

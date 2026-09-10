@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_suite_preference_preferences_auto_trigger_checks.dart';@immutable final class CheckSuitePreferencePreferences {const CheckSuitePreferencePreferences({this.autoTriggerChecks});
 
-factory CheckSuitePreferencePreferences.fromJson(Map<String, dynamic> json) { return CheckSuitePreferencePreferences(
+factory CheckSuitePreferencePreferences.fromJson(Map<String, dynamic> json) {return CheckSuitePreferencePreferences(
   autoTriggerChecks: (json['auto_trigger_checks'] as List<dynamic>?)?.map((e) => CheckSuitePreferencePreferencesAutoTriggerChecks.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<CheckSuitePreferencePreferencesAutoTriggerChecks>? autoTriggerChecks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (autoTriggerChecks != null) 'auto_trigger_checks': autoTriggerChecks?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_trigger_checks'}.contains(key)); } 
-CheckSuitePreferencePreferences copyWith({List<CheckSuitePreferencePreferencesAutoTriggerChecks>? Function()? autoTriggerChecks}) { return CheckSuitePreferencePreferences(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auto_trigger_checks'}.contains(key));}
+CheckSuitePreferencePreferences copyWith({List<CheckSuitePreferencePreferencesAutoTriggerChecks>? Function()? autoTriggerChecks}) {return CheckSuitePreferencePreferences(
   autoTriggerChecks: autoTriggerChecks != null ? autoTriggerChecks() : this.autoTriggerChecks,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckSuitePreferencePreferences &&
-          listEquals(autoTriggerChecks, other.autoTriggerChecks); } 
-@override int get hashCode { return Object.hashAll(autoTriggerChecks ?? const []).hashCode; } 
-@override String toString() { return 'CheckSuitePreferencePreferences(autoTriggerChecks: $autoTriggerChecks)'; } 
- }
+          listEquals(autoTriggerChecks, other.autoTriggerChecks);}
+@override int get hashCode {return Object.hashAll(autoTriggerChecks ?? const []).hashCode;}
+@override String toString() {return 'CheckSuitePreferencePreferences(autoTriggerChecks: $autoTriggerChecks)';}
+}

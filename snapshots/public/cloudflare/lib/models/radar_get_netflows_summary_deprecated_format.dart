@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetNetflowsSummaryDeprecatedFormat {const RadarGetNetflowsSummaryDeprecatedFormat._(this.value);
 
-factory RadarGetNetflowsSummaryDeprecatedFormat.fromJson(String json) { return switch (json) {
+factory RadarGetNetflowsSummaryDeprecatedFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetNetflowsSummaryDeprecatedFormat._(json),
-}; }
+};}
 
 static const RadarGetNetflowsSummaryDeprecatedFormat $json = RadarGetNetflowsSummaryDeprecatedFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetNetflowsSummaryDeprecatedFormat> values = [$json, csv]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetNetflowsSummaryDeprecatedFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetNetflowsSummaryDeprecatedFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetNetflowsSummaryDeprecatedFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetNetflowsSummaryDeprecatedFormat($value)';}
+}

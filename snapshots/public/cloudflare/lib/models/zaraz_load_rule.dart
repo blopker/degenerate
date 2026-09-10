@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazLoadRuleOp {const ZarazLoadRuleOp._(this.value);
 
-factory ZarazLoadRuleOp.fromJson(String json) { return switch (json) {
+factory ZarazLoadRuleOp.fromJson(String json) {return switch (json) {
   'CONTAINS' => contains,
   'EQUALS' => equals,
   'STARTS_WITH' => startsWith,
@@ -14,7 +14,7 @@ factory ZarazLoadRuleOp.fromJson(String json) { return switch (json) {
   'LESS_THAN' => lessThan,
   'LESS_THAN_OR_EQUAL' => lessThanOrEqual,
   _ => ZarazLoadRuleOp._(json),
-}; }
+};}
 
 static const ZarazLoadRuleOp contains = ZarazLoadRuleOp._('CONTAINS');
 
@@ -40,22 +40,22 @@ static const List<ZarazLoadRuleOp> values = [contains, equals, startsWith, endsW
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZarazLoadRuleOp && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZarazLoadRuleOp($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZarazLoadRuleOp && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZarazLoadRuleOp($value)';}
+}
 @immutable final class ZarazLoadRule {const ZarazLoadRule({required this.id, required this.match, required this.op, required this.value, });
 
-factory ZarazLoadRule.fromJson(Map<String, dynamic> json) { return ZarazLoadRule(
+factory ZarazLoadRule.fromJson(Map<String, dynamic> json) {return ZarazLoadRule(
   id: json['id'] as String,
   match: json['match'] as String,
   op: ZarazLoadRuleOp.fromJson(json['op'] as String),
   value: json['value'] as String,
-); }
+);}
 
 final String id;
 
@@ -65,28 +65,28 @@ final ZarazLoadRuleOp op;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'match': match,
   'op': op.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('match') && json['match'] is String &&
       json.containsKey('op') &&
-      json.containsKey('value') && json['value'] is String; } 
-ZarazLoadRule copyWith({String? id, String? match, ZarazLoadRuleOp? op, String? value, }) { return ZarazLoadRule(
+      json.containsKey('value') && json['value'] is String;}
+ZarazLoadRule copyWith({String? id, String? match, ZarazLoadRuleOp? op, String? value, }) {return ZarazLoadRule(
   id: id ?? this.id,
   match: match ?? this.match,
   op: op ?? this.op,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZarazLoadRule &&
           id == other.id &&
           match == other.match &&
           op == other.op &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, match, op, value); } 
-@override String toString() { return 'ZarazLoadRule(id: $id, match: $match, op: $op, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, match, op, value);}
+@override String toString() {return 'ZarazLoadRule(id: $id, match: $match, op: $op, value: $value)';}
+}

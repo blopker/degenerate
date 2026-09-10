@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set, the event will override the waiting room's `turnstile_action` property while it is active. If null, the event will inherit it.
 @immutable final class WaitingroomEventTurnstileAction {const WaitingroomEventTurnstileAction._(this.value);
 
-factory WaitingroomEventTurnstileAction.fromJson(String json) { return switch (json) {
+factory WaitingroomEventTurnstileAction.fromJson(String json) {return switch (json) {
   'log' => log,
   'infinite_queue' => infiniteQueue,
   _ => WaitingroomEventTurnstileAction._(json),
-}; }
+};}
 
 static const WaitingroomEventTurnstileAction log = WaitingroomEventTurnstileAction._('log');
 
@@ -17,11 +17,11 @@ static const List<WaitingroomEventTurnstileAction> values = [log, infiniteQueue]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitingroomEventTurnstileAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitingroomEventTurnstileAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WaitingroomEventTurnstileAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WaitingroomEventTurnstileAction($value)';}
+}

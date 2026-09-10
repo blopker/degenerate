@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'country_spec_verification_field_details.dart';/// 
 @immutable final class CountrySpecVerificationFields {const CountrySpecVerificationFields({required this.company, required this.individual, });
 
-factory CountrySpecVerificationFields.fromJson(Map<String, dynamic> json) { return CountrySpecVerificationFields(
+factory CountrySpecVerificationFields.fromJson(Map<String, dynamic> json) {return CountrySpecVerificationFields(
   company: CountrySpecVerificationFieldDetails.fromJson(json['company'] as Map<String, dynamic>),
   individual: CountrySpecVerificationFieldDetails.fromJson(json['individual'] as Map<String, dynamic>),
-); }
+);}
 
 final CountrySpecVerificationFieldDetails company;
 
 final CountrySpecVerificationFieldDetails individual;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'company': company.toJson(),
   'individual': individual.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('company') &&
-      json.containsKey('individual'); } 
-CountrySpecVerificationFields copyWith({CountrySpecVerificationFieldDetails? company, CountrySpecVerificationFieldDetails? individual, }) { return CountrySpecVerificationFields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('company') &&
+      json.containsKey('individual');}
+CountrySpecVerificationFields copyWith({CountrySpecVerificationFieldDetails? company, CountrySpecVerificationFieldDetails? individual, }) {return CountrySpecVerificationFields(
   company: company ?? this.company,
   individual: individual ?? this.individual,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CountrySpecVerificationFields &&
           company == other.company &&
-          individual == other.individual; } 
-@override int get hashCode { return Object.hash(company, individual); } 
-@override String toString() { return 'CountrySpecVerificationFields(company: $company, individual: $individual)'; } 
- }
+          individual == other.individual;}
+@override int get hashCode {return Object.hash(company, individual);}
+@override String toString() {return 'CountrySpecVerificationFields(company: $company, individual: $individual)';}
+}

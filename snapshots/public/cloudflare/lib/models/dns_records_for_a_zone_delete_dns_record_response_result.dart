@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_identifier.dart';@immutable final class DnsRecordsForAZoneDeleteDnsRecordResponseResult {const DnsRecordsForAZoneDeleteDnsRecordResponseResult({this.id});
 
-factory DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
+factory DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(Map<String, dynamic> json) {return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
   id: json['id'] != null ? DnsRecordsIdentifier.fromJson(json['id'] as String) : null,
-); }
+);}
 
 /// Identifier.
 final DnsRecordsIdentifier? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-DnsRecordsForAZoneDeleteDnsRecordResponseResult copyWith({DnsRecordsIdentifier? Function()? id}) { return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+DnsRecordsForAZoneDeleteDnsRecordResponseResult copyWith({DnsRecordsIdentifier? Function()? id}) {return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsForAZoneDeleteDnsRecordResponseResult &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'DnsRecordsForAZoneDeleteDnsRecordResponseResult(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'DnsRecordsForAZoneDeleteDnsRecordResponseResult(id: $id)';}
+}

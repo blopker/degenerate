@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The total number of seats created for the specified user(s).
 @immutable final class CopilotAddCopilotSeatsForUsersResponse {const CopilotAddCopilotSeatsForUsersResponse({required this.seatsCreated});
 
-factory CopilotAddCopilotSeatsForUsersResponse.fromJson(Map<String, dynamic> json) { return CopilotAddCopilotSeatsForUsersResponse(
+factory CopilotAddCopilotSeatsForUsersResponse.fromJson(Map<String, dynamic> json) {return CopilotAddCopilotSeatsForUsersResponse(
   seatsCreated: (json['seats_created'] as num).toInt(),
-); }
+);}
 
 final int seatsCreated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'seats_created': seatsCreated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('seats_created') && json['seats_created'] is num; } 
-CopilotAddCopilotSeatsForUsersResponse copyWith({int? seatsCreated}) { return CopilotAddCopilotSeatsForUsersResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('seats_created') && json['seats_created'] is num;}
+CopilotAddCopilotSeatsForUsersResponse copyWith({int? seatsCreated}) {return CopilotAddCopilotSeatsForUsersResponse(
   seatsCreated: seatsCreated ?? this.seatsCreated,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotAddCopilotSeatsForUsersResponse &&
-          seatsCreated == other.seatsCreated; } 
-@override int get hashCode { return seatsCreated.hashCode; } 
-@override String toString() { return 'CopilotAddCopilotSeatsForUsersResponse(seatsCreated: $seatsCreated)'; } 
- }
+          seatsCreated == other.seatsCreated;}
+@override int get hashCode {return seatsCreated.hashCode;}
+@override String toString() {return 'CopilotAddCopilotSeatsForUsersResponse(seatsCreated: $seatsCreated)';}
+}

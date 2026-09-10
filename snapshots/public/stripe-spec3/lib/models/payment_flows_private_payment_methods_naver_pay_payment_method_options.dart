@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod {const PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod._(this.value);
 
-factory PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
+factory PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod._(json),
-}; }
+};}
 
 static const PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod manual = PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod._('manual');
 
@@ -14,14 +14,14 @@ static const List<PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -31,11 +31,11 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage {const PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage._(this.value);
 
-factory PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage none = PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage._('none');
 
@@ -45,21 +45,21 @@ static const List<PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsS
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions({this.captureMethod, this.setupFutureUsage, });
 
-factory PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions(
+factory PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod? captureMethod;
@@ -73,19 +73,19 @@ final PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions copyWith({PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod? Function()? captureMethod, PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key));}
+PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions copyWith({PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsCaptureMethod? Function()? captureMethod, PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(captureMethod, setupFutureUsage);}
+@override String toString() {return 'PaymentFlowsPrivatePaymentMethodsNaverPayPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';}
+}

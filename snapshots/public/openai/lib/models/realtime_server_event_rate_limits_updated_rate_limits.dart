@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the 
 /// 
 @immutable final class RealtimeServerEventRateLimitsUpdatedRateLimitsName {const RealtimeServerEventRateLimitsUpdatedRateLimitsName._(this.value);
 
-factory RealtimeServerEventRateLimitsUpdatedRateLimitsName.fromJson(String json) { return switch (json) {
+factory RealtimeServerEventRateLimitsUpdatedRateLimitsName.fromJson(String json) {return switch (json) {
   'requests' => requests,
   'tokens' => tokens,
   _ => RealtimeServerEventRateLimitsUpdatedRateLimitsName._(json),
-}; }
+};}
 
 static const RealtimeServerEventRateLimitsUpdatedRateLimitsName requests = RealtimeServerEventRateLimitsUpdatedRateLimitsName._('requests');
 
@@ -18,22 +18,22 @@ static const List<RealtimeServerEventRateLimitsUpdatedRateLimitsName> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeServerEventRateLimitsUpdatedRateLimitsName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeServerEventRateLimitsUpdatedRateLimitsName($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeServerEventRateLimitsUpdatedRateLimitsName && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeServerEventRateLimitsUpdatedRateLimitsName($value)';}
+}
 @immutable final class RealtimeServerEventRateLimitsUpdatedRateLimits {const RealtimeServerEventRateLimitsUpdatedRateLimits({this.name, this.limit, this.remaining, this.resetSeconds, });
 
-factory RealtimeServerEventRateLimitsUpdatedRateLimits.fromJson(Map<String, dynamic> json) { return RealtimeServerEventRateLimitsUpdatedRateLimits(
+factory RealtimeServerEventRateLimitsUpdatedRateLimits.fromJson(Map<String, dynamic> json) {return RealtimeServerEventRateLimitsUpdatedRateLimits(
   name: json['name'] != null ? RealtimeServerEventRateLimitsUpdatedRateLimitsName.fromJson(json['name'] as String) : null,
   limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
   remaining: json['remaining'] != null ? (json['remaining'] as num).toInt() : null,
   resetSeconds: json['reset_seconds'] != null ? (json['reset_seconds'] as num).toDouble() : null,
-); }
+);}
 
 /// The name of the rate limit (`requests`, `tokens`).
 /// 
@@ -48,25 +48,25 @@ final int? remaining;
 /// Seconds until the rate limit resets.
 final double? resetSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name != null) 'name': name?.toJson(),
   'limit': ?limit,
   'remaining': ?remaining,
   'reset_seconds': ?resetSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'limit', 'remaining', 'reset_seconds'}.contains(key)); } 
-RealtimeServerEventRateLimitsUpdatedRateLimits copyWith({RealtimeServerEventRateLimitsUpdatedRateLimitsName? Function()? name, int? Function()? limit, int? Function()? remaining, double? Function()? resetSeconds, }) { return RealtimeServerEventRateLimitsUpdatedRateLimits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'limit', 'remaining', 'reset_seconds'}.contains(key));}
+RealtimeServerEventRateLimitsUpdatedRateLimits copyWith({RealtimeServerEventRateLimitsUpdatedRateLimitsName? Function()? name, int? Function()? limit, int? Function()? remaining, double? Function()? resetSeconds, }) {return RealtimeServerEventRateLimitsUpdatedRateLimits(
   name: name != null ? name() : this.name,
   limit: limit != null ? limit() : this.limit,
   remaining: remaining != null ? remaining() : this.remaining,
   resetSeconds: resetSeconds != null ? resetSeconds() : this.resetSeconds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventRateLimitsUpdatedRateLimits &&
           name == other.name &&
           limit == other.limit &&
           remaining == other.remaining &&
-          resetSeconds == other.resetSeconds; } 
-@override int get hashCode { return Object.hash(name, limit, remaining, resetSeconds); } 
-@override String toString() { return 'RealtimeServerEventRateLimitsUpdatedRateLimits(name: $name, limit: $limit, remaining: $remaining, resetSeconds: $resetSeconds)'; } 
- }
+          resetSeconds == other.resetSeconds;}
+@override int get hashCode {return Object.hash(name, limit, remaining, resetSeconds);}
+@override String toString() {return 'RealtimeServerEventRateLimitsUpdatedRateLimits(name: $name, limit: $limit, remaining: $remaining, resetSeconds: $resetSeconds)';}
+}

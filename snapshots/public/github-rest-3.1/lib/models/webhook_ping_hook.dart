@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hook_response.dart';import 'webhook_ping_hook_config.dart';/// The type of webhook. The only valid value is 'web'.
 @immutable final class WebhookPingHookName {const WebhookPingHookName._(this.value);
 
-factory WebhookPingHookName.fromJson(String json) { return switch (json) {
+factory WebhookPingHookName.fromJson(String json) {return switch (json) {
   'web' => web,
   _ => WebhookPingHookName._(json),
-}; }
+};}
 
 static const WebhookPingHookName web = WebhookPingHookName._('web');
 
@@ -14,18 +14,18 @@ static const List<WebhookPingHookName> values = [web];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPingHookName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPingHookName($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPingHookName && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPingHookName($value)';}
+}
 /// The webhook that is being pinged
 @immutable final class WebhookPingHook {const WebhookPingHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, this.appId, this.deliveriesUrl, this.lastResponse, this.pingUrl, this.testUrl, this.url, });
 
-factory WebhookPingHook.fromJson(Map<String, dynamic> json) { return WebhookPingHook(
+factory WebhookPingHook.fromJson(Map<String, dynamic> json) {return WebhookPingHook(
   active: json['active'] as bool,
   appId: json['app_id'] != null ? (json['app_id'] as num).toInt() : null,
   config: WebhookPingHookConfig.fromJson(json['config'] as Map<String, dynamic>),
@@ -40,7 +40,7 @@ factory WebhookPingHook.fromJson(Map<String, dynamic> json) { return WebhookPing
   type: json['type'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 /// Determines whether the hook is actually triggered for the events it subscribes to.
 final bool active;
@@ -75,7 +75,7 @@ final DateTime updatedAt;
 
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'app_id': ?appId,
   'config': config.toJson(),
@@ -90,16 +90,16 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'updated_at': updatedAt.toIso8601String(),
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('config') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('events') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookPingHook copyWith({bool? active, int? Function()? appId, WebhookPingHookConfig? config, DateTime? createdAt, Uri? Function()? deliveriesUrl, List<String>? events, int? id, HookResponse? Function()? lastResponse, WebhookPingHookName? name, Uri? Function()? pingUrl, Uri? Function()? testUrl, String? type, DateTime? updatedAt, Uri? Function()? url, }) { return WebhookPingHook(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookPingHook copyWith({bool? active, int? Function()? appId, WebhookPingHookConfig? config, DateTime? createdAt, Uri? Function()? deliveriesUrl, List<String>? events, int? id, HookResponse? Function()? lastResponse, WebhookPingHookName? name, Uri? Function()? pingUrl, Uri? Function()? testUrl, String? type, DateTime? updatedAt, Uri? Function()? url, }) {return WebhookPingHook(
   active: active ?? this.active,
   appId: appId != null ? appId() : this.appId,
   config: config ?? this.config,
@@ -114,8 +114,8 @@ WebhookPingHook copyWith({bool? active, int? Function()? appId, WebhookPingHookC
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPingHook &&
           active == other.active &&
           appId == other.appId &&
@@ -130,7 +130,7 @@ WebhookPingHook copyWith({bool? active, int? Function()? appId, WebhookPingHookC
           testUrl == other.testUrl &&
           type == other.type &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(active, appId, config, createdAt, deliveriesUrl, Object.hashAll(events), id, lastResponse, name, pingUrl, testUrl, type, updatedAt, url); } 
-@override String toString() { return 'WebhookPingHook(active: $active, appId: $appId, config: $config, createdAt: $createdAt, deliveriesUrl: $deliveriesUrl, events: $events, id: $id, lastResponse: $lastResponse, name: $name, pingUrl: $pingUrl, testUrl: $testUrl, type: $type, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(active, appId, config, createdAt, deliveriesUrl, Object.hashAll(events), id, lastResponse, name, pingUrl, testUrl, type, updatedAt, url);}
+@override String toString() {return 'WebhookPingHook(active: $active, appId: $appId, config: $config, createdAt: $createdAt, deliveriesUrl: $deliveriesUrl, events: $events, id: $id, lastResponse: $lastResponse, name: $name, pingUrl: $pingUrl, testUrl: $testUrl, type: $type, updatedAt: $updatedAt, url: $url)';}
+}

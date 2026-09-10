@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';import 'object_meta.dart';import 'object_reference.dart';/// ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets
 @immutable final class ServiceAccount {const ServiceAccount({this.apiVersion, this.automountServiceAccountToken, this.imagePullSecrets, this.kind, this.metadata, this.secrets, });
 
-factory ServiceAccount.fromJson(Map<String, dynamic> json) { return ServiceAccount(
+factory ServiceAccount.fromJson(Map<String, dynamic> json) {return ServiceAccount(
   apiVersion: json['apiVersion'] as String?,
   automountServiceAccountToken: json['automountServiceAccountToken'] as bool?,
   imagePullSecrets: (json['imagePullSecrets'] as List<dynamic>?)?.map((e) => LocalObjectReference.fromJson(e as Map<String, dynamic>)).toList(),
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   secrets: (json['secrets'] as List<dynamic>?)?.map((e) => ObjectReference.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -30,31 +30,31 @@ final ObjectMeta? metadata;
 /// Secrets is a list of the secrets in the same namespace that pods running using this ServiceAccount are allowed to use. Pods are only limited to this list if this service account has a "kubernetes.io/enforce-mountable-secrets" annotation set to "true". The "kubernetes.io/enforce-mountable-secrets" annotation is deprecated since v1.32. Prefer separate namespaces to isolate access to mounted secrets. This field should not be used to find auto-generated service account token secrets for use outside of pods. Instead, tokens can be requested directly using the TokenRequest API, or service account token secrets can be manually created. More info: https://kubernetes.io/docs/concepts/configuration/secret
 final List<ObjectReference>? secrets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'automountServiceAccountToken': ?automountServiceAccountToken,
   if (imagePullSecrets != null) 'imagePullSecrets': imagePullSecrets?.map((e) => e.toJson()).toList(),
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (secrets != null) 'secrets': secrets?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'automountServiceAccountToken', 'imagePullSecrets', 'kind', 'metadata', 'secrets'}.contains(key)); } 
-ServiceAccount copyWith({String? Function()? apiVersion, bool? Function()? automountServiceAccountToken, List<LocalObjectReference>? Function()? imagePullSecrets, String? Function()? kind, ObjectMeta? Function()? metadata, List<ObjectReference>? Function()? secrets, }) { return ServiceAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'automountServiceAccountToken', 'imagePullSecrets', 'kind', 'metadata', 'secrets'}.contains(key));}
+ServiceAccount copyWith({String? Function()? apiVersion, bool? Function()? automountServiceAccountToken, List<LocalObjectReference>? Function()? imagePullSecrets, String? Function()? kind, ObjectMeta? Function()? metadata, List<ObjectReference>? Function()? secrets, }) {return ServiceAccount(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   automountServiceAccountToken: automountServiceAccountToken != null ? automountServiceAccountToken() : this.automountServiceAccountToken,
   imagePullSecrets: imagePullSecrets != null ? imagePullSecrets() : this.imagePullSecrets,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
   secrets: secrets != null ? secrets() : this.secrets,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ServiceAccount &&
           apiVersion == other.apiVersion &&
           automountServiceAccountToken == other.automountServiceAccountToken &&
           listEquals(imagePullSecrets, other.imagePullSecrets) &&
           kind == other.kind &&
           metadata == other.metadata &&
-          listEquals(secrets, other.secrets); } 
-@override int get hashCode { return Object.hash(apiVersion, automountServiceAccountToken, Object.hashAll(imagePullSecrets ?? const []), kind, metadata, Object.hashAll(secrets ?? const [])); } 
-@override String toString() { return 'ServiceAccount(apiVersion: $apiVersion, automountServiceAccountToken: $automountServiceAccountToken, imagePullSecrets: $imagePullSecrets, kind: $kind, metadata: $metadata, secrets: $secrets)'; } 
- }
+          listEquals(secrets, other.secrets);}
+@override int get hashCode {return Object.hash(apiVersion, automountServiceAccountToken, Object.hashAll(imagePullSecrets ?? const []), kind, metadata, Object.hashAll(secrets ?? const []));}
+@override String toString() {return 'ServiceAccount(apiVersion: $apiVersion, automountServiceAccountToken: $automountServiceAccountToken, imagePullSecrets: $imagePullSecrets, kind: $kind, metadata: $metadata, secrets: $secrets)';}
+}

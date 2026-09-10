@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InstallmentPlan5Interval {const InstallmentPlan5Interval._(this.value);
 
-factory InstallmentPlan5Interval.fromJson(String json) { return switch (json) {
+factory InstallmentPlan5Interval.fromJson(String json) {return switch (json) {
   'month' => month,
   _ => InstallmentPlan5Interval._(json),
-}; }
+};}
 
 static const InstallmentPlan5Interval month = InstallmentPlan5Interval._('month');
 
@@ -13,22 +13,22 @@ static const List<InstallmentPlan5Interval> values = [month];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InstallmentPlan5Interval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InstallmentPlan5Interval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InstallmentPlan5Interval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InstallmentPlan5Interval($value)';}
+}
 @immutable final class InstallmentPlan5Type {const InstallmentPlan5Type._(this.value);
 
-factory InstallmentPlan5Type.fromJson(String json) { return switch (json) {
+factory InstallmentPlan5Type.fromJson(String json) {return switch (json) {
   'bonus' => bonus,
   'fixed_count' => fixedCount,
   'revolving' => revolving,
   _ => InstallmentPlan5Type._(json),
-}; }
+};}
 
 static const InstallmentPlan5Type bonus = InstallmentPlan5Type._('bonus');
 
@@ -40,21 +40,21 @@ static const List<InstallmentPlan5Type> values = [bonus, fixedCount, revolving];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InstallmentPlan5Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InstallmentPlan5Type($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InstallmentPlan5Type && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InstallmentPlan5Type($value)';}
+}
 @immutable final class InstallmentPlan5 {const InstallmentPlan5({required this.type, this.count, this.interval, });
 
-factory InstallmentPlan5.fromJson(Map<String, dynamic> json) { return InstallmentPlan5(
+factory InstallmentPlan5.fromJson(Map<String, dynamic> json) {return InstallmentPlan5(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   interval: json['interval'] != null ? InstallmentPlan5Interval.fromJson(json['interval'] as String) : null,
   type: InstallmentPlan5Type.fromJson(json['type'] as String),
-); }
+);}
 
 final int? count;
 
@@ -62,22 +62,22 @@ final InstallmentPlan5Interval? interval;
 
 final InstallmentPlan5Type type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   if (interval != null) 'interval': interval?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InstallmentPlan5 copyWith({int? Function()? count, InstallmentPlan5Interval? Function()? interval, InstallmentPlan5Type? type, }) { return InstallmentPlan5(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+InstallmentPlan5 copyWith({int? Function()? count, InstallmentPlan5Interval? Function()? interval, InstallmentPlan5Type? type, }) {return InstallmentPlan5(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InstallmentPlan5 &&
           count == other.count &&
           interval == other.interval &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(count, interval, type); } 
-@override String toString() { return 'InstallmentPlan5(count: $count, interval: $interval, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(count, interval, type);}
+@override String toString() {return 'InstallmentPlan5(count: $count, interval: $interval, type: $type)';}
+}

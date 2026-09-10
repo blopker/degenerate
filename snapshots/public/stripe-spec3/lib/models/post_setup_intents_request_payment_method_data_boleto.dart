@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataBoleto {const PostSetupIntentsRequestPaymentMethodDataBoleto({required this.taxId});
 
-factory PostSetupIntentsRequestPaymentMethodDataBoleto.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataBoleto(
+factory PostSetupIntentsRequestPaymentMethodDataBoleto.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodDataBoleto(
   taxId: json['tax_id'] as String,
-); }
+);}
 
 final String taxId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tax_id': taxId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_id') && json['tax_id'] is String; } 
-PostSetupIntentsRequestPaymentMethodDataBoleto copyWith({String? taxId}) { return PostSetupIntentsRequestPaymentMethodDataBoleto(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tax_id') && json['tax_id'] is String;}
+PostSetupIntentsRequestPaymentMethodDataBoleto copyWith({String? taxId}) {return PostSetupIntentsRequestPaymentMethodDataBoleto(
   taxId: taxId ?? this.taxId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodDataBoleto &&
-          taxId == other.taxId; } 
-@override int get hashCode { return taxId.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataBoleto(taxId: $taxId)'; } 
- }
+          taxId == other.taxId;}
+@override int get hashCode {return taxId.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataBoleto(taxId: $taxId)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_search_result_item.dart';@immutable final class SearchIssuesAndPullRequestsResponse {const SearchIssuesAndPullRequestsResponse({required this.totalCount, required this.incompleteResults, required this.items, });
 
-factory SearchIssuesAndPullRequestsResponse.fromJson(Map<String, dynamic> json) { return SearchIssuesAndPullRequestsResponse(
+factory SearchIssuesAndPullRequestsResponse.fromJson(Map<String, dynamic> json) {return SearchIssuesAndPullRequestsResponse(
   totalCount: (json['total_count'] as num).toInt(),
   incompleteResults: json['incomplete_results'] as bool,
   items: (json['items'] as List<dynamic>).map((e) => IssueSearchResultItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
@@ -14,24 +14,24 @@ final bool incompleteResults;
 
 final List<IssueSearchResultItem> items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'incomplete_results': incompleteResults,
   'items': items.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
       json.containsKey('incomplete_results') && json['incomplete_results'] is bool &&
-      json.containsKey('items'); } 
-SearchIssuesAndPullRequestsResponse copyWith({int? totalCount, bool? incompleteResults, List<IssueSearchResultItem>? items, }) { return SearchIssuesAndPullRequestsResponse(
+      json.containsKey('items');}
+SearchIssuesAndPullRequestsResponse copyWith({int? totalCount, bool? incompleteResults, List<IssueSearchResultItem>? items, }) {return SearchIssuesAndPullRequestsResponse(
   totalCount: totalCount ?? this.totalCount,
   incompleteResults: incompleteResults ?? this.incompleteResults,
   items: items ?? this.items,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SearchIssuesAndPullRequestsResponse &&
           totalCount == other.totalCount &&
           incompleteResults == other.incompleteResults &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(totalCount, incompleteResults, Object.hashAll(items)); } 
-@override String toString() { return 'SearchIssuesAndPullRequestsResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)'; } 
- }
+          listEquals(items, other.items);}
+@override int get hashCode {return Object.hash(totalCount, incompleteResults, Object.hashAll(items));}
+@override String toString() {return 'SearchIssuesAndPullRequestsResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)';}
+}

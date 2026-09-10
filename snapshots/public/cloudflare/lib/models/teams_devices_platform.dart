@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesPlatform {const TeamsDevicesPlatform._(this.value);
 
-factory TeamsDevicesPlatform.fromJson(String json) { return switch (json) {
+factory TeamsDevicesPlatform.fromJson(String json) {return switch (json) {
   'windows' => windows,
   'mac' => mac,
   'linux' => linux,
@@ -10,7 +10,7 @@ factory TeamsDevicesPlatform.fromJson(String json) { return switch (json) {
   'ios' => ios,
   'chromeos' => chromeos,
   _ => TeamsDevicesPlatform._(json),
-}; }
+};}
 
 static const TeamsDevicesPlatform windows = TeamsDevicesPlatform._('windows');
 
@@ -28,11 +28,11 @@ static const List<TeamsDevicesPlatform> values = [windows, mac, linux, android, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesPlatform && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesPlatform($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsDevicesPlatform && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsDevicesPlatform($value)';}
+}

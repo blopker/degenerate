@@ -9,7 +9,7 @@ String toJson() => value;
 }
 @immutable final class MagicInterconnect {const MagicInterconnect({this.automaticReturnRouting, this.coloName, this.createdOn, this.description, this.gre, this.healthCheck, this.id, this.interfaceAddress, this.interfaceAddress6, this.modifiedOn, this.mtu, this.name, });
 
-factory MagicInterconnect.fromJson(Map<String, dynamic> json) { return MagicInterconnect(
+factory MagicInterconnect.fromJson(Map<String, dynamic> json) {return MagicInterconnect(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
   coloName: json['colo_name'] != null ? MagicComponentsSchemasName.fromJson(json['colo_name'] as String) : null,
   createdOn: json['created_on'] != null ? MagicSchemasCreatedOn.fromJson(json['created_on'] as String) : null,
@@ -22,7 +22,7 @@ factory MagicInterconnect.fromJson(Map<String, dynamic> json) { return MagicInte
   modifiedOn: json['modified_on'] != null ? MagicSchemasModifiedOn.fromJson(json['modified_on'] as String) : null,
   mtu: json['mtu'] != null ? MagicSchemasMtu.fromJson(json['mtu'] as num) : null,
   name: json['name'] != null ? MagicComponentsSchemasName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
@@ -51,7 +51,7 @@ final MagicSchemasMtu? mtu;
 /// The name of the interconnect. The name cannot share a name with other tunnels.
 final MagicComponentsSchemasName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (automaticReturnRouting != null) 'automatic_return_routing': automaticReturnRouting?.toJson(),
   if (coloName != null) 'colo_name': coloName?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
@@ -64,9 +64,9 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   if (mtu != null) 'mtu': mtu?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_return_routing', 'colo_name', 'created_on', 'description', 'gre', 'health_check', 'id', 'interface_address', 'interface_address6', 'modified_on', 'mtu', 'name'}.contains(key)); } 
-MagicInterconnect copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicComponentsSchemasName? Function()? coloName, MagicSchemasCreatedOn? Function()? createdOn, MagicInterconnectComponentsSchemasDescription? Function()? description, MagicGre? Function()? gre, MagicHealthCheckBase? Function()? healthCheck, MagicSchemasIdentifier? Function()? id, MagicInterfaceAddress? Function()? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicSchemasModifiedOn? Function()? modifiedOn, MagicSchemasMtu? Function()? mtu, MagicComponentsSchemasName? Function()? name, }) { return MagicInterconnect(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'automatic_return_routing', 'colo_name', 'created_on', 'description', 'gre', 'health_check', 'id', 'interface_address', 'interface_address6', 'modified_on', 'mtu', 'name'}.contains(key));}
+MagicInterconnect copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicComponentsSchemasName? Function()? coloName, MagicSchemasCreatedOn? Function()? createdOn, MagicInterconnectComponentsSchemasDescription? Function()? description, MagicGre? Function()? gre, MagicHealthCheckBase? Function()? healthCheck, MagicSchemasIdentifier? Function()? id, MagicInterfaceAddress? Function()? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicSchemasModifiedOn? Function()? modifiedOn, MagicSchemasMtu? Function()? mtu, MagicComponentsSchemasName? Function()? name, }) {return MagicInterconnect(
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   coloName: coloName != null ? coloName() : this.coloName,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -79,8 +79,8 @@ MagicInterconnect copyWith({MagicAutomaticReturnRouting? Function()? automaticRe
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   mtu: mtu != null ? mtu() : this.mtu,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicInterconnect &&
           automaticReturnRouting == other.automaticReturnRouting &&
           coloName == other.coloName &&
@@ -93,7 +93,7 @@ MagicInterconnect copyWith({MagicAutomaticReturnRouting? Function()? automaticRe
           interfaceAddress6 == other.interfaceAddress6 &&
           modifiedOn == other.modifiedOn &&
           mtu == other.mtu &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, coloName, createdOn, description, gre, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name); } 
-@override String toString() { return 'MagicInterconnect(automaticReturnRouting: $automaticReturnRouting, coloName: $coloName, createdOn: $createdOn, description: $description, gre: $gre, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(automaticReturnRouting, coloName, createdOn, description, gre, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name);}
+@override String toString() {return 'MagicInterconnect(automaticReturnRouting: $automaticReturnRouting, coloName: $coloName, createdOn: $createdOn, description: $description, gre: $gre, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name)';}
+}

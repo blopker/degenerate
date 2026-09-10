@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseErrors {const WorDescribeWorkflowInstanceResponseErrors({required this.code, required this.message, });
 
-factory WorDescribeWorkflowInstanceResponseErrors.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseErrors(
+factory WorDescribeWorkflowInstanceResponseErrors.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseErrors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 final double code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-WorDescribeWorkflowInstanceResponseErrors copyWith({double? code, String? message, }) { return WorDescribeWorkflowInstanceResponseErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+WorDescribeWorkflowInstanceResponseErrors copyWith({double? code, String? message, }) {return WorDescribeWorkflowInstanceResponseErrors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseErrors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseErrors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseErrors(code: $code, message: $message)';}
+}

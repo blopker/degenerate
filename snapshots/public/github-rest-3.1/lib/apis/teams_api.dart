@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/minimal_repository.dart';import '../models/organization_invitation.dart';import '../models/simple_user.dart';import '../models/team.dart';import '../models/team_full.dart';import '../models/team_membership.dart';import '../models/team_repository.dart';import '../models/teams_add_or_update_membership_for_user_in_org_request.dart';import '../models/teams_add_or_update_repo_permissions_in_org_request.dart';import '../models/teams_create_request.dart';import '../models/teams_list_members_in_org_role.dart';import '../models/teams_list_team_type.dart';import '../models/teams_update_in_org_request.dart';import '../models/validation_error.dart';/// TeamsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/minimal_repository.dart';import '../models/organization_invitation.dart';import '../models/simple_user.dart';import '../models/team.dart';import '../models/team_full.dart';import '../models/team_membership.dart';import '../models/teams_add_or_update_membership_for_user_in_org_request.dart';import '../models/teams_add_or_update_repo_permissions_in_org_request.dart';import '../models/teams_check_permissions_for_repo_in_org_success.dart';import '../models/teams_create_error.dart';import '../models/teams_create_request.dart';import '../models/teams_list_for_authenticated_user_error.dart';import '../models/teams_list_members_in_org_role.dart';import '../models/teams_list_team_type.dart';import '../models/teams_update_in_org_error.dart';import '../models/teams_update_in_org_request.dart';/// TeamsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TeamsApi with ApiExecutor {const TeamsApi(this.apiConfig);
 /// Lists all teams in an organization that are visible to the authenticated user.
 ///
 /// `GET /orgs/{org}/teams`
-Future<ApiResult<List<Team>, BasicError>> teamsList({required String org, int? perPage, int? page, TeamsListTeamType? teamType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Team>, BasicError>> teamsList({required String org, int? perPage, int? page, TeamsListTeamType? teamType, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -36,24 +36,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a team
 ///
 /// To create a team, the authenticated user must be a member or owner of `{org}`. By default, organization members can create teams. Organization owners can limit team creation to organization owners. For more information, see "[Setting team creation permissions](https://docs.github.com/articles/setting-team-creation-permissions-in-your-organization)."
@@ -61,7 +50,7 @@ return null;
 /// When you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see "[About teams](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/about-teams)".
 ///
 /// `POST /orgs/{org}/teams`
-Future<ApiResult<TeamFull, OneOf2<BasicError, ValidationError>>> teamsCreate({required String org, required TeamsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamFull, TeamsCreateError>> teamsCreate({required String org, required TeamsCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -72,27 +61,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TeamFull.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TeamFull.fromJson(json as Map<String, dynamic>);}, onError: TeamsCreateError.parse, );}
 /// Get a team by name
 ///
 /// Gets a team using the team's `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `"My TEam Näme"` would become `my-team-name`.
@@ -101,7 +72,7 @@ return null;
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<TeamFull, BasicError>> teamsGetByName({required String org, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamFull, BasicError>> teamsGetByName({required String org, required String teamSlug, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -110,24 +81,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TeamFull.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TeamFull.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a team
 ///
 /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.
@@ -136,7 +96,7 @@ return null;
 /// > You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
 ///
 /// `PATCH /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<TeamFull, OneOf2<BasicError, ValidationError>>> teamsUpdateInOrg({required String org, required String teamSlug, TeamsUpdateInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamFull, TeamsUpdateInOrgError>> teamsUpdateInOrg({required String org, required String teamSlug, TeamsUpdateInOrgRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -147,34 +107,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final json = jsonDecode(response.body);
-return TeamFull.fromJson(json as Map<String, dynamic>);
-default:
+return  TeamFull.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return TeamFull.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
-);
- } 
+return  TeamFull.fromJson(json as Map<String, dynamic>); }}, onError: TeamsUpdateInOrgError.parse, );}
 /// Delete a team
 ///
 /// To delete a team, the authenticated user must be an organization owner or team maintainer.
@@ -185,7 +124,7 @@ return null;
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<void, Never>> teamsDeleteInOrg({required String org, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> teamsDeleteInOrg({required String org, required String teamSlug, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -194,11 +133,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List pending team invitations
 ///
 /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
@@ -207,7 +143,7 @@ return await execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/invitations`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/invitations`
-Future<ApiResult<List<OrganizationInvitation>, Never>> teamsListPendingInvitationsInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationInvitation>, Never>> teamsListPendingInvitationsInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -227,14 +163,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List team members
 ///
 /// Team members will include the members of child teams.
@@ -242,7 +173,7 @@ return (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as M
 /// To list members in a team, the team must be visible to the authenticated user.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/members`
-Future<ApiResult<List<SimpleUser>, Never>> teamsListMembersInOrg({required String org, required String teamSlug, TeamsListMembersInOrgRole? role, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> teamsListMembersInOrg({required String org, required String teamSlug, TeamsListMembersInOrgRole? role, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (role != null) {
   queryParameters['role'] = role.toJson();
@@ -265,14 +196,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get team membership for a user
 ///
 /// Team members will include the members of child teams.
@@ -288,7 +214,7 @@ return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, d
 /// The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/teams/teams#create-a-team).
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/memberships/{username}`
-Future<ApiResult<TeamMembership, Never>> teamsGetMembershipForUserInOrg({required String org, required String teamSlug, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamMembership, Never>> teamsGetMembershipForUserInOrg({required String org, required String teamSlug, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -297,14 +223,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TeamMembership.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TeamMembership.fromJson(json as Map<String, dynamic>);}, );}
 /// Add or update team membership for a user
 ///
 /// Adds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.
@@ -322,7 +243,7 @@ return TeamMembership.fromJson(json as Map<String, dynamic>);
 /// > You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
 /// `PUT /orgs/{org}/teams/{team_slug}/memberships/{username}`
-Future<ApiResult<TeamMembership, Never>> teamsAddOrUpdateMembershipForUserInOrg({required String org, required String teamSlug, required String username, TeamsAddOrUpdateMembershipForUserInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamMembership, Never>> teamsAddOrUpdateMembershipForUserInOrg({required String org, required String teamSlug, required String username, TeamsAddOrUpdateMembershipForUserInOrgRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -333,14 +254,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TeamMembership.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TeamMembership.fromJson(json as Map<String, dynamic>);}, );}
 /// Remove team membership for a user
 ///
 /// To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.
@@ -354,7 +270,7 @@ return TeamMembership.fromJson(json as Map<String, dynamic>);
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}`
-Future<ApiResult<void, Never>> teamsRemoveMembershipForUserInOrg({required String org, required String teamSlug, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> teamsRemoveMembershipForUserInOrg({required String org, required String teamSlug, required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -363,11 +279,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List team repositories
 ///
 /// Lists a team's repositories visible to the authenticated user.
@@ -376,7 +289,7 @@ return await execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/repos`
-Future<ApiResult<List<MinimalRepository>, Never>> teamsListReposInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, Never>> teamsListReposInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -396,14 +309,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Check team permissions for a repository
 ///
 /// Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
@@ -418,7 +326,7 @@ return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<St
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
-Future<ApiResult<TeamRepository?, Never>> teamsCheckPermissionsForRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsCheckPermissionsForRepoInOrgSuccess, Never>> teamsCheckPermissionsForRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -427,23 +335,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 200:
-final json = jsonDecode(response.body);
-return TeamRepository.fromJson(json as Map<String, dynamic>);
-case 204:
-return null;
-default:
-final json = jsonDecode(response.body);
-return TeamRepository.fromJson(json as Map<String, dynamic>);
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: TeamsCheckPermissionsForRepoInOrgSuccess.parse, );}
 /// Add or update team repository permissions
 ///
 /// To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
@@ -454,7 +347,7 @@ return TeamRepository.fromJson(json as Map<String, dynamic>);
 /// For more information about the permission levels, see "[Repository permission levels for an organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)".
 ///
 /// `PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
-Future<ApiResult<void, Never>> teamsAddOrUpdateRepoPermissionsInOrg({required String org, required String teamSlug, required String owner, required String repo, TeamsAddOrUpdateRepoPermissionsInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> teamsAddOrUpdateRepoPermissionsInOrg({required String org, required String teamSlug, required String owner, required String repo, TeamsAddOrUpdateRepoPermissionsInOrgRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -465,11 +358,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove a repository from a team
 ///
 /// If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. This does not delete the repository, it just removes it from the team.
@@ -478,7 +368,7 @@ return await execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
-Future<ApiResult<void, Never>> teamsRemoveRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> teamsRemoveRepoInOrg({required String org, required String teamSlug, required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -487,11 +377,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List child teams
 ///
 /// Lists the child teams of the team specified by `{team_slug}`.
@@ -500,7 +387,7 @@ return await execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/teams`
-Future<ApiResult<List<Team>, Never>> teamsListChildInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Team>, Never>> teamsListChildInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -520,14 +407,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List teams for the authenticated user
 ///
 /// List all of the teams across all of the organizations to which the authenticated
@@ -538,7 +420,7 @@ return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic
 /// When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
 ///
 /// `GET /user/teams`
-Future<ApiResult<List<TeamFull>, BasicError>> teamsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TeamFull>, TeamsListForAuthenticatedUserError>> teamsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -558,24 +440,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => TeamFull.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
- }
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => TeamFull.fromJson(e as Map<String, dynamic>)).toList();}, onError: TeamsListForAuthenticatedUserError.parse, );}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_availabilities_quota_quotas_per_plan.dart';import 'observatory_availabilities_quota_schedule_quotas_per_plan.dart';@immutable final class ObservatoryAvailabilitiesQuota {const ObservatoryAvailabilitiesQuota({this.plan, this.quotasPerPlan, this.remainingSchedules, this.remainingTests, this.scheduleQuotasPerPlan, });
 
-factory ObservatoryAvailabilitiesQuota.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesQuota(
+factory ObservatoryAvailabilitiesQuota.fromJson(Map<String, dynamic> json) {return ObservatoryAvailabilitiesQuota(
   plan: json['plan'] as String?,
   quotasPerPlan: json['quotasPerPlan'] != null ? ObservatoryAvailabilitiesQuotaQuotasPerPlan.fromJson(json['quotasPerPlan'] as Map<String, dynamic>) : null,
   remainingSchedules: json['remainingSchedules'] != null ? (json['remainingSchedules'] as num).toDouble() : null,
   remainingTests: json['remainingTests'] != null ? (json['remainingTests'] as num).toDouble() : null,
   scheduleQuotasPerPlan: json['scheduleQuotasPerPlan'] != null ? ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan.fromJson(json['scheduleQuotasPerPlan'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Cloudflare plan.
 final String? plan;
@@ -25,28 +25,28 @@ final double? remainingTests;
 /// The number of schedules available per plan.
 final ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan? scheduleQuotasPerPlan;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'plan': ?plan,
   if (quotasPerPlan != null) 'quotasPerPlan': quotasPerPlan?.toJson(),
   'remainingSchedules': ?remainingSchedules,
   'remainingTests': ?remainingTests,
   if (scheduleQuotasPerPlan != null) 'scheduleQuotasPerPlan': scheduleQuotasPerPlan?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'plan', 'quotasPerPlan', 'remainingSchedules', 'remainingTests', 'scheduleQuotasPerPlan'}.contains(key)); } 
-ObservatoryAvailabilitiesQuota copyWith({String? Function()? plan, ObservatoryAvailabilitiesQuotaQuotasPerPlan? Function()? quotasPerPlan, double? Function()? remainingSchedules, double? Function()? remainingTests, ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan? Function()? scheduleQuotasPerPlan, }) { return ObservatoryAvailabilitiesQuota(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'plan', 'quotasPerPlan', 'remainingSchedules', 'remainingTests', 'scheduleQuotasPerPlan'}.contains(key));}
+ObservatoryAvailabilitiesQuota copyWith({String? Function()? plan, ObservatoryAvailabilitiesQuotaQuotasPerPlan? Function()? quotasPerPlan, double? Function()? remainingSchedules, double? Function()? remainingTests, ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan? Function()? scheduleQuotasPerPlan, }) {return ObservatoryAvailabilitiesQuota(
   plan: plan != null ? plan() : this.plan,
   quotasPerPlan: quotasPerPlan != null ? quotasPerPlan() : this.quotasPerPlan,
   remainingSchedules: remainingSchedules != null ? remainingSchedules() : this.remainingSchedules,
   remainingTests: remainingTests != null ? remainingTests() : this.remainingTests,
   scheduleQuotasPerPlan: scheduleQuotasPerPlan != null ? scheduleQuotasPerPlan() : this.scheduleQuotasPerPlan,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ObservatoryAvailabilitiesQuota &&
           plan == other.plan &&
           quotasPerPlan == other.quotasPerPlan &&
           remainingSchedules == other.remainingSchedules &&
           remainingTests == other.remainingTests &&
-          scheduleQuotasPerPlan == other.scheduleQuotasPerPlan; } 
-@override int get hashCode { return Object.hash(plan, quotasPerPlan, remainingSchedules, remainingTests, scheduleQuotasPerPlan); } 
-@override String toString() { return 'ObservatoryAvailabilitiesQuota(plan: $plan, quotasPerPlan: $quotasPerPlan, remainingSchedules: $remainingSchedules, remainingTests: $remainingTests, scheduleQuotasPerPlan: $scheduleQuotasPerPlan)'; } 
- }
+          scheduleQuotasPerPlan == other.scheduleQuotasPerPlan;}
+@override int get hashCode {return Object.hash(plan, quotasPerPlan, remainingSchedules, remainingTests, scheduleQuotasPerPlan);}
+@override String toString() {return 'ObservatoryAvailabilitiesQuota(plan: $plan, quotasPerPlan: $quotasPerPlan, remainingSchedules: $remainingSchedules, remainingTests: $remainingTests, scheduleQuotasPerPlan: $scheduleQuotasPerPlan)';}
+}

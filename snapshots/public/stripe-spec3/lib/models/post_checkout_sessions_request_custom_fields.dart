@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_custom_fields_dropdown.dart';import 'post_checkout_sessions_request_custom_fields_label.dart';import 'post_checkout_sessions_request_custom_fields_numeric.dart';import 'post_checkout_sessions_request_custom_fields_text.dart';@immutable final class PostCheckoutSessionsRequestCustomFieldsType {const PostCheckoutSessionsRequestCustomFieldsType._(this.value);
 
-factory PostCheckoutSessionsRequestCustomFieldsType.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestCustomFieldsType.fromJson(String json) {return switch (json) {
   'dropdown' => dropdown,
   'numeric' => numeric,
   'text' => text,
   _ => PostCheckoutSessionsRequestCustomFieldsType._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestCustomFieldsType dropdown = PostCheckoutSessionsRequestCustomFieldsType._('dropdown');
 
@@ -19,17 +19,17 @@ static const List<PostCheckoutSessionsRequestCustomFieldsType> values = [dropdow
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestCustomFieldsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestCustomFieldsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestCustomFieldsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestCustomFieldsType($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestCustomFields {const PostCheckoutSessionsRequestCustomFields({required this.key, required this.label, required this.type, this.dropdown, this.numeric, this.optional, this.text, });
 
-factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFields(
+factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestCustomFields(
   dropdown: json['dropdown'] != null ? PostCheckoutSessionsRequestCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: PostCheckoutSessionsRequestCustomFieldsLabel.fromJson(json['label'] as Map<String, dynamic>),
@@ -37,7 +37,7 @@ factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> js
   optional: json['optional'] as bool?,
   text: json['text'] != null ? PostCheckoutSessionsRequestCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PostCheckoutSessionsRequestCustomFieldsType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostCheckoutSessionsRequestCustomFieldsDropdown? dropdown;
 
@@ -53,7 +53,7 @@ final PostCheckoutSessionsRequestCustomFieldsText? text;
 
 final PostCheckoutSessionsRequestCustomFieldsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dropdown != null) 'dropdown': dropdown?.toJson(),
   'key': key,
   'label': label.toJson(),
@@ -61,11 +61,11 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
   if (text != null) 'text': text?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
-      json.containsKey('type'); } 
-PostCheckoutSessionsRequestCustomFields copyWith({PostCheckoutSessionsRequestCustomFieldsDropdown? Function()? dropdown, String? key, PostCheckoutSessionsRequestCustomFieldsLabel? label, PostCheckoutSessionsRequestCustomFieldsNumeric? Function()? numeric, bool? Function()? optional, PostCheckoutSessionsRequestCustomFieldsText? Function()? text, PostCheckoutSessionsRequestCustomFieldsType? type, }) { return PostCheckoutSessionsRequestCustomFields(
+      json.containsKey('type');}
+PostCheckoutSessionsRequestCustomFields copyWith({PostCheckoutSessionsRequestCustomFieldsDropdown? Function()? dropdown, String? key, PostCheckoutSessionsRequestCustomFieldsLabel? label, PostCheckoutSessionsRequestCustomFieldsNumeric? Function()? numeric, bool? Function()? optional, PostCheckoutSessionsRequestCustomFieldsText? Function()? text, PostCheckoutSessionsRequestCustomFieldsType? type, }) {return PostCheckoutSessionsRequestCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,
@@ -73,8 +73,8 @@ PostCheckoutSessionsRequestCustomFields copyWith({PostCheckoutSessionsRequestCus
   optional: optional != null ? optional() : this.optional,
   text: text != null ? text() : this.text,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestCustomFields &&
           dropdown == other.dropdown &&
           key == other.key &&
@@ -82,7 +82,7 @@ PostCheckoutSessionsRequestCustomFields copyWith({PostCheckoutSessionsRequestCus
           numeric == other.numeric &&
           optional == other.optional &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(dropdown, key, label, numeric, optional, text, type); } 
-@override String toString() { return 'PostCheckoutSessionsRequestCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(dropdown, key, label, numeric, optional, text, type);}
+@override String toString() {return 'PostCheckoutSessionsRequestCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';}
+}

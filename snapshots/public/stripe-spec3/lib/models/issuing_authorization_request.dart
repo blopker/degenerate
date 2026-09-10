@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
 @immutable final class IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason._(this.value);
 
-factory IssuingAuthorizationRequestReason.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationRequestReason.fromJson(String json) {return switch (json) {
   'account_disabled' => accountDisabled,
   'card_active' => cardActive,
   'card_canceled' => cardCanceled,
@@ -25,7 +25,7 @@ factory IssuingAuthorizationRequestReason.fromJson(String json) { return switch 
   'webhook_error' => webhookError,
   'webhook_timeout' => webhookTimeout,
   _ => IssuingAuthorizationRequestReason._(json),
-}; }
+};}
 
 static const IssuingAuthorizationRequestReason accountDisabled = IssuingAuthorizationRequestReason._('account_disabled');
 
@@ -71,18 +71,18 @@ static const List<IssuingAuthorizationRequestReason> values = [accountDisabled, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationRequestReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingAuthorizationRequestReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingAuthorizationRequestReason($value)';}
+}
 /// 
 @immutable final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({required this.amount, required this.approved, required this.created, required this.currency, required this.merchantAmount, required this.merchantCurrency, required this.reason, this.amountDetails = const Omittable.absent(), this.authorizationCode = const Omittable.absent(), this.networkRiskScore = const Omittable.absent(), this.reasonMessage = const Omittable.absent(), this.requestedAt = const Omittable.absent(), });
 
-factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationRequest(
+factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) {return IssuingAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),
   amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   approved: json['approved'] as bool,
@@ -95,7 +95,7 @@ factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) { return
   reason: IssuingAuthorizationRequestReason.fromJson(json['reason'] as String),
   reasonMessage: json.containsKey('reason_message') ? Omittable(json['reason_message'] as String?) : const Omittable.absent(),
   requestedAt: json.containsKey('requested_at') ? Omittable(json['requested_at'] != null ? (json['requested_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The `pending_request.amount` at the time of the request, presented in your card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Stripe held this amount from your account to fund the authorization if the request was approved.
 final int amount;
@@ -133,7 +133,7 @@ final Omittable<String?> reasonMessage;
 /// Time when the card network received an authorization request from the acquirer in UTC. Referred to by networks as transmission time.
 final Omittable<int?> requestedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
   'approved': approved,
@@ -146,15 +146,15 @@ Map<String, dynamic> toJson() { return {
   'reason': reason.toJson(),
   if (reasonMessage.isPresent) 'reason_message': reasonMessage.value,
   if (requestedAt.isPresent) 'requested_at': requestedAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('approved') && json['approved'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('merchant_amount') && json['merchant_amount'] is num &&
       json.containsKey('merchant_currency') && json['merchant_currency'] is String &&
-      json.containsKey('reason'); } 
-IssuingAuthorizationRequest copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, bool? approved, Omittable<String?>? authorizationCode, int? created, String? currency, int? merchantAmount, String? merchantCurrency, Omittable<int?>? networkRiskScore, IssuingAuthorizationRequestReason? reason, Omittable<String?>? reasonMessage, Omittable<int?>? requestedAt, }) { return IssuingAuthorizationRequest(
+      json.containsKey('reason');}
+IssuingAuthorizationRequest copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, bool? approved, Omittable<String?>? authorizationCode, int? created, String? currency, int? merchantAmount, String? merchantCurrency, Omittable<int?>? networkRiskScore, IssuingAuthorizationRequestReason? reason, Omittable<String?>? reasonMessage, Omittable<int?>? requestedAt, }) {return IssuingAuthorizationRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails ?? this.amountDetails,
   approved: approved ?? this.approved,
@@ -167,8 +167,8 @@ IssuingAuthorizationRequest copyWith({int? amount, Omittable<IssuingAuthorizatio
   reason: reason ?? this.reason,
   reasonMessage: reasonMessage ?? this.reasonMessage,
   requestedAt: requestedAt ?? this.requestedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingAuthorizationRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -181,7 +181,7 @@ IssuingAuthorizationRequest copyWith({int? amount, Omittable<IssuingAuthorizatio
           networkRiskScore == other.networkRiskScore &&
           reason == other.reason &&
           reasonMessage == other.reasonMessage &&
-          requestedAt == other.requestedAt; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, approved, authorizationCode, created, currency, merchantAmount, merchantCurrency, networkRiskScore, reason, reasonMessage, requestedAt); } 
-@override String toString() { return 'IssuingAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationCode: $authorizationCode, created: $created, currency: $currency, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore, reason: $reason, reasonMessage: $reasonMessage, requestedAt: $requestedAt)'; } 
- }
+          requestedAt == other.requestedAt;}
+@override int get hashCode {return Object.hash(amount, amountDetails, approved, authorizationCode, created, currency, merchantAmount, merchantCurrency, networkRiskScore, reason, reasonMessage, requestedAt);}
+@override String toString() {return 'IssuingAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationCode: $authorizationCode, created: $created, currency: $currency, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore, reason: $reason, reasonMessage: $reasonMessage, requestedAt: $requestedAt)';}
+}

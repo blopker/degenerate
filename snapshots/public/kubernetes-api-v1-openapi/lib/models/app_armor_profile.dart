@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AppArmorProfile defines a pod or container's AppArmor settings.
 @immutable final class AppArmorProfile {const AppArmorProfile({required this.type, this.localhostProfile, });
 
-factory AppArmorProfile.fromJson(Map<String, dynamic> json) { return AppArmorProfile(
+factory AppArmorProfile.fromJson(Map<String, dynamic> json) {return AppArmorProfile(
   localhostProfile: json['localhostProfile'] as String?,
   type: json['type'] as String,
-); }
+);}
 
 /// localhostProfile indicates a profile loaded on the node that should be used. The profile must be preconfigured on the node to work. Must match the loaded name of the profile. Must be set if and only if type is "Localhost".
 final String? localhostProfile;
@@ -17,19 +17,19 @@ final String? localhostProfile;
 ///   Unconfined - no AppArmor enforcement.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'localhostProfile': ?localhostProfile,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-AppArmorProfile copyWith({String? Function()? localhostProfile, String? type, }) { return AppArmorProfile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+AppArmorProfile copyWith({String? Function()? localhostProfile, String? type, }) {return AppArmorProfile(
   localhostProfile: localhostProfile != null ? localhostProfile() : this.localhostProfile,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AppArmorProfile &&
           localhostProfile == other.localhostProfile &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(localhostProfile, type); } 
-@override String toString() { return 'AppArmorProfile(localhostProfile: $localhostProfile, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(localhostProfile, type);}
+@override String toString() {return 'AppArmorProfile(localhostProfile: $localhostProfile, type: $type)';}
+}

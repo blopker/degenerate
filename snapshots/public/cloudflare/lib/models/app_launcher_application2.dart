@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_logo_url.dart';import 'access_app_policy_response.dart';import 'access_bg_color.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_footer_links2.dart';import 'access_header_bg_color.dart';import 'access_landing_page_design.dart';import 'access_schemas_aud.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_skip_app_launcher_login_page.dart';import 'access_timestamp.dart';import 'access_type.dart';import 'access_uuid.dart';/// The policies that Access applies to the application.
 @immutable final class AppLauncherApplication2 {const AppLauncherApplication2({required this.type, this.aud, this.createdAt, this.id, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain = const Omittable.absent(), this.name = const Omittable.absent(), this.sessionDuration, this.appLauncherLogoUrl, this.bgColor, this.footerLinks, this.headerBgColor, this.landingPageDesign, this.skipAppLauncherLoginPage, this.policies, });
 
-factory AppLauncherApplication2.fromJson(Map<String, dynamic> json) { return AppLauncherApplication2(
+factory AppLauncherApplication2.fromJson(Map<String, dynamic> json) {return AppLauncherApplication2(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -24,7 +24,7 @@ factory AppLauncherApplication2.fromJson(Map<String, dynamic> json) { return App
   landingPageDesign: json['landing_page_design'] != null ? AccessLandingPageDesign.fromJson(json['landing_page_design'] as Map<String, dynamic>) : null,
   skipAppLauncherLoginPage: json['skip_app_launcher_login_page'] != null ? AccessSkipAppLauncherLoginPage.fromJson(json['skip_app_launcher_login_page'] as bool) : null,
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessAppPolicyResponse.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -68,7 +68,7 @@ final AccessSkipAppLauncherLoginPage? skipAppLauncherLoginPage;
 
 final List<AccessAppPolicyResponse>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -89,9 +89,9 @@ Map<String, dynamic> toJson() { return {
   if (landingPageDesign != null) 'landing_page_design': landingPageDesign?.toJson(),
   if (skipAppLauncherLoginPage != null) 'skip_app_launcher_login_page': skipAppLauncherLoginPage?.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AppLauncherApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, AccessAppLauncherLogoUrl? Function()? appLauncherLogoUrl, AccessBgColor? Function()? bgColor, List<AccessFooterLinks2>? Function()? footerLinks, AccessHeaderBgColor? Function()? headerBgColor, AccessLandingPageDesign? Function()? landingPageDesign, AccessSkipAppLauncherLoginPage? Function()? skipAppLauncherLoginPage, List<AccessAppPolicyResponse>? Function()? policies, }) { return AppLauncherApplication2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AppLauncherApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, AccessAppLauncherLogoUrl? Function()? appLauncherLogoUrl, AccessBgColor? Function()? bgColor, List<AccessFooterLinks2>? Function()? footerLinks, AccessHeaderBgColor? Function()? headerBgColor, AccessLandingPageDesign? Function()? landingPageDesign, AccessSkipAppLauncherLoginPage? Function()? skipAppLauncherLoginPage, List<AccessAppPolicyResponse>? Function()? policies, }) {return AppLauncherApplication2(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -112,8 +112,8 @@ AppLauncherApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimes
   landingPageDesign: landingPageDesign != null ? landingPageDesign() : this.landingPageDesign,
   skipAppLauncherLoginPage: skipAppLauncherLoginPage != null ? skipAppLauncherLoginPage() : this.skipAppLauncherLoginPage,
   policies: policies != null ? policies() : this.policies,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AppLauncherApplication2 &&
           aud == other.aud &&
           createdAt == other.createdAt &&
@@ -134,7 +134,7 @@ AppLauncherApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimes
           headerBgColor == other.headerBgColor &&
           landingPageDesign == other.landingPageDesign &&
           skipAppLauncherLoginPage == other.skipAppLauncherLoginPage &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hash(aud, createdAt, id, updatedAt, Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), domain, name, sessionDuration, type, appLauncherLogoUrl, bgColor, Object.hashAll(footerLinks ?? const []), headerBgColor, landingPageDesign, skipAppLauncherLoginPage, Object.hashAll(policies ?? const [])); } 
-@override String toString() { return 'AppLauncherApplication2(aud: $aud, createdAt: $createdAt, id: $id, updatedAt: $updatedAt, allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type, appLauncherLogoUrl: $appLauncherLogoUrl, bgColor: $bgColor, footerLinks: $footerLinks, headerBgColor: $headerBgColor, landingPageDesign: $landingPageDesign, skipAppLauncherLoginPage: $skipAppLauncherLoginPage, policies: $policies)'; } 
- }
+          listEquals(policies, other.policies);}
+@override int get hashCode {return Object.hash(aud, createdAt, id, updatedAt, Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), domain, name, sessionDuration, type, appLauncherLogoUrl, bgColor, Object.hashAll(footerLinks ?? const []), headerBgColor, landingPageDesign, skipAppLauncherLoginPage, Object.hashAll(policies ?? const []));}
+@override String toString() {return 'AppLauncherApplication2(aud: $aud, createdAt: $createdAt, id: $id, updatedAt: $updatedAt, allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type, appLauncherLogoUrl: $appLauncherLogoUrl, bgColor: $bgColor, footerLinks: $footerLinks, headerBgColor: $headerBgColor, landingPageDesign: $landingPageDesign, skipAppLauncherLoginPage: $skipAppLauncherLoginPage, policies: $policies)';}
+}

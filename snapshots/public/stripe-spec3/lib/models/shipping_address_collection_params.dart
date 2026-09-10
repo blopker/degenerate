@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShippingAddressCollectionParamsAllowedCountries {const ShippingAddressCollectionParamsAllowedCountries._(this.value);
 
-factory ShippingAddressCollectionParamsAllowedCountries.fromJson(String json) { return switch (json) {
+factory ShippingAddressCollectionParamsAllowedCountries.fromJson(String json) {return switch (json) {
   'AC' => ac,
   'AD' => ad,
   'AE' => ae,
@@ -242,7 +242,7 @@ factory ShippingAddressCollectionParamsAllowedCountries.fromJson(String json) { 
   'ZW' => zw,
   'ZZ' => zz,
   _ => ShippingAddressCollectionParamsAllowedCountries._(json),
-}; }
+};}
 
 static const ShippingAddressCollectionParamsAllowedCountries ac = ShippingAddressCollectionParamsAllowedCountries._('AC');
 
@@ -724,32 +724,32 @@ static const List<ShippingAddressCollectionParamsAllowedCountries> values = [ac,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingAddressCollectionParamsAllowedCountries && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingAddressCollectionParamsAllowedCountries($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShippingAddressCollectionParamsAllowedCountries && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShippingAddressCollectionParamsAllowedCountries($value)';}
+}
 @immutable final class ShippingAddressCollectionParams {const ShippingAddressCollectionParams({required this.allowedCountries});
 
-factory ShippingAddressCollectionParams.fromJson(Map<String, dynamic> json) { return ShippingAddressCollectionParams(
+factory ShippingAddressCollectionParams.fromJson(Map<String, dynamic> json) {return ShippingAddressCollectionParams(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => ShippingAddressCollectionParamsAllowedCountries.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<ShippingAddressCollectionParamsAllowedCountries> allowedCountries;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_countries': allowedCountries.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_countries'); } 
-ShippingAddressCollectionParams copyWith({List<ShippingAddressCollectionParamsAllowedCountries>? allowedCountries}) { return ShippingAddressCollectionParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_countries');}
+ShippingAddressCollectionParams copyWith({List<ShippingAddressCollectionParamsAllowedCountries>? allowedCountries}) {return ShippingAddressCollectionParams(
   allowedCountries: allowedCountries ?? this.allowedCountries,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShippingAddressCollectionParams &&
-          listEquals(allowedCountries, other.allowedCountries); } 
-@override int get hashCode { return Object.hashAll(allowedCountries).hashCode; } 
-@override String toString() { return 'ShippingAddressCollectionParams(allowedCountries: $allowedCountries)'; } 
- }
+          listEquals(allowedCountries, other.allowedCountries);}
+@override int get hashCode {return Object.hashAll(allowedCountries).hashCode;}
+@override String toString() {return 'ShippingAddressCollectionParams(allowedCountries: $allowedCountries)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension._(this.value);
 
-factory RadarGetEmailRoutingTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'IP_VERSION' => ipVersion,
   'ENCRYPTED' => encrypted,
   'ARC' => arc,
@@ -11,7 +11,7 @@ factory RadarGetEmailRoutingTimeseriesGroupDimension.fromJson(String json) { ret
   'DMARC' => dmarc,
   'SPF' => spf,
   _ => RadarGetEmailRoutingTimeseriesGroupDimension._(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingTimeseriesGroupDimension ipVersion = RadarGetEmailRoutingTimeseriesGroupDimension._('IP_VERSION');
 
@@ -29,11 +29,11 @@ static const List<RadarGetEmailRoutingTimeseriesGroupDimension> values = [ipVers
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailRoutingTimeseriesGroupDimension($value)';}
+}

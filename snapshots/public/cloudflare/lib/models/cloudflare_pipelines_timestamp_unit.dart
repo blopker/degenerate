@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit._(this.value);
 
-factory CloudflarePipelinesTimestampUnit.fromJson(String json) { return switch (json) {
+factory CloudflarePipelinesTimestampUnit.fromJson(String json) {return switch (json) {
   'second' => second,
   'millisecond' => millisecond,
   'microsecond' => microsecond,
   'nanosecond' => nanosecond,
   _ => CloudflarePipelinesTimestampUnit._(json),
-}; }
+};}
 
 static const CloudflarePipelinesTimestampUnit second = CloudflarePipelinesTimestampUnit._('second');
 
@@ -22,11 +22,11 @@ static const List<CloudflarePipelinesTimestampUnit> values = [second, millisecon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesTimestampUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesTimestampUnit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CloudflarePipelinesTimestampUnit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CloudflarePipelinesTimestampUnit($value)';}
+}

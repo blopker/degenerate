@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'legal_entity_person_verification_document_back.dart';import 'legal_entity_person_verification_document_front.dart';/// 
 @immutable final class LegalEntityPersonVerificationDocument {const LegalEntityPersonVerificationDocument({this.back = const Omittable.absent(), this.details = const Omittable.absent(), this.detailsCode = const Omittable.absent(), this.front = const Omittable.absent(), });
 
-factory LegalEntityPersonVerificationDocument.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerificationDocument(
+factory LegalEntityPersonVerificationDocument.fromJson(Map<String, dynamic> json) {return LegalEntityPersonVerificationDocument(
   back: json.containsKey('back') ? Omittable(json['back'] != null ? LegalEntityPersonVerificationDocumentBack.fromJson(json['back']) : null) : const Omittable.absent(),
   details: json.containsKey('details') ? Omittable(json['details'] as String?) : const Omittable.absent(),
   detailsCode: json.containsKey('details_code') ? Omittable(json['details_code'] as String?) : const Omittable.absent(),
   front: json.containsKey('front') ? Omittable(json['front'] != null ? LegalEntityPersonVerificationDocumentFront.fromJson(json['front']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The back of an ID returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
 final Omittable<LegalEntityPersonVerificationDocumentBack?> back;
@@ -22,25 +22,25 @@ final Omittable<String?> detailsCode;
 /// The front of an ID returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
 final Omittable<LegalEntityPersonVerificationDocumentFront?> front;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (back.isPresent) 'back': back.value?.toJson(),
   if (details.isPresent) 'details': details.value,
   if (detailsCode.isPresent) 'details_code': detailsCode.value,
   if (front.isPresent) 'front': front.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key)); } 
-LegalEntityPersonVerificationDocument copyWith({Omittable<LegalEntityPersonVerificationDocumentBack?>? back, Omittable<String?>? details, Omittable<String?>? detailsCode, Omittable<LegalEntityPersonVerificationDocumentFront?>? front, }) { return LegalEntityPersonVerificationDocument(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key));}
+LegalEntityPersonVerificationDocument copyWith({Omittable<LegalEntityPersonVerificationDocumentBack?>? back, Omittable<String?>? details, Omittable<String?>? detailsCode, Omittable<LegalEntityPersonVerificationDocumentFront?>? front, }) {return LegalEntityPersonVerificationDocument(
   back: back ?? this.back,
   details: details ?? this.details,
   detailsCode: detailsCode ?? this.detailsCode,
   front: front ?? this.front,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LegalEntityPersonVerificationDocument &&
           back == other.back &&
           details == other.details &&
           detailsCode == other.detailsCode &&
-          front == other.front; } 
-@override int get hashCode { return Object.hash(back, details, detailsCode, front); } 
-@override String toString() { return 'LegalEntityPersonVerificationDocument(back: $back, details: $details, detailsCode: $detailsCode, front: $front)'; } 
- }
+          front == other.front;}
+@override int get hashCode {return Object.hash(back, details, detailsCode, front);}
+@override String toString() {return 'LegalEntityPersonVerificationDocument(back: $back, details: $details, detailsCode: $detailsCode, front: $front)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_base_consent_button_text_translations.dart';import 'zaraz_zaraz_config_base_consent_purposes_value.dart';import 'zaraz_zaraz_config_base_consent_purposes_with_translations_value.dart';/// Consent management configuration.
 @immutable final class ZarazZarazConfigBaseConsent {const ZarazZarazConfigBaseConsent({required this.enabled, this.buttonTextTranslations, this.companyEmail, this.companyName, this.companyStreetAddress, this.consentModalIntroHtml, this.consentModalIntroHtmlWithTranslations, this.cookieName, this.customCss, this.customIntroDisclaimerDismissed, this.defaultLanguage, this.hideModal, this.purposes, this.purposesWithTranslations, this.tcfCompliant, });
 
-factory ZarazZarazConfigBaseConsent.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBaseConsent(
+factory ZarazZarazConfigBaseConsent.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigBaseConsent(
   buttonTextTranslations: json['buttonTextTranslations'] != null ? ZarazZarazConfigBaseConsentButtonTextTranslations.fromJson(json['buttonTextTranslations'] as Map<String, dynamic>) : null,
   companyEmail: json['companyEmail'] as String?,
   companyName: json['companyName'] as String?,
@@ -19,7 +19,7 @@ factory ZarazZarazConfigBaseConsent.fromJson(Map<String, dynamic> json) { return
   purposes: (json['purposes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ZarazZarazConfigBaseConsentPurposesValue.fromJson(v as Map<String, dynamic>))),
   purposesWithTranslations: (json['purposesWithTranslations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ZarazZarazConfigBaseConsentPurposesWithTranslationsValue.fromJson(v as Map<String, dynamic>))),
   tcfCompliant: json['tcfCompliant'] as bool?,
-); }
+);}
 
 final ZarazZarazConfigBaseConsentButtonTextTranslations? buttonTextTranslations;
 
@@ -54,7 +54,7 @@ final Map<String,ZarazZarazConfigBaseConsentPurposesWithTranslationsValue>? purp
 
 final bool? tcfCompliant;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buttonTextTranslations != null) 'buttonTextTranslations': buttonTextTranslations?.toJson(),
   'companyEmail': ?companyEmail,
   'companyName': ?companyName,
@@ -70,9 +70,9 @@ Map<String, dynamic> toJson() { return {
   if (purposes != null) 'purposes': purposes?.map((k, v) => MapEntry(k, v.toJson())),
   if (purposesWithTranslations != null) 'purposesWithTranslations': purposesWithTranslations?.map((k, v) => MapEntry(k, v.toJson())),
   'tcfCompliant': ?tcfCompliant,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-ZarazZarazConfigBaseConsent copyWith({ZarazZarazConfigBaseConsentButtonTextTranslations? Function()? buttonTextTranslations, String? Function()? companyEmail, String? Function()? companyName, String? Function()? companyStreetAddress, String? Function()? consentModalIntroHtml, Map<String, String>? Function()? consentModalIntroHtmlWithTranslations, String? Function()? cookieName, String? Function()? customCss, bool? Function()? customIntroDisclaimerDismissed, String? Function()? defaultLanguage, bool? enabled, bool? Function()? hideModal, Map<String, ZarazZarazConfigBaseConsentPurposesValue>? Function()? purposes, Map<String, ZarazZarazConfigBaseConsentPurposesWithTranslationsValue>? Function()? purposesWithTranslations, bool? Function()? tcfCompliant, }) { return ZarazZarazConfigBaseConsent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+ZarazZarazConfigBaseConsent copyWith({ZarazZarazConfigBaseConsentButtonTextTranslations? Function()? buttonTextTranslations, String? Function()? companyEmail, String? Function()? companyName, String? Function()? companyStreetAddress, String? Function()? consentModalIntroHtml, Map<String, String>? Function()? consentModalIntroHtmlWithTranslations, String? Function()? cookieName, String? Function()? customCss, bool? Function()? customIntroDisclaimerDismissed, String? Function()? defaultLanguage, bool? enabled, bool? Function()? hideModal, Map<String, ZarazZarazConfigBaseConsentPurposesValue>? Function()? purposes, Map<String, ZarazZarazConfigBaseConsentPurposesWithTranslationsValue>? Function()? purposesWithTranslations, bool? Function()? tcfCompliant, }) {return ZarazZarazConfigBaseConsent(
   buttonTextTranslations: buttonTextTranslations != null ? buttonTextTranslations() : this.buttonTextTranslations,
   companyEmail: companyEmail != null ? companyEmail() : this.companyEmail,
   companyName: companyName != null ? companyName() : this.companyName,
@@ -88,8 +88,8 @@ ZarazZarazConfigBaseConsent copyWith({ZarazZarazConfigBaseConsentButtonTextTrans
   purposes: purposes != null ? purposes() : this.purposes,
   purposesWithTranslations: purposesWithTranslations != null ? purposesWithTranslations() : this.purposesWithTranslations,
   tcfCompliant: tcfCompliant != null ? tcfCompliant() : this.tcfCompliant,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZarazZarazConfigBaseConsent &&
           buttonTextTranslations == other.buttonTextTranslations &&
           companyEmail == other.companyEmail &&
@@ -105,7 +105,7 @@ ZarazZarazConfigBaseConsent copyWith({ZarazZarazConfigBaseConsentButtonTextTrans
           hideModal == other.hideModal &&
           purposes == other.purposes &&
           purposesWithTranslations == other.purposesWithTranslations &&
-          tcfCompliant == other.tcfCompliant; } 
-@override int get hashCode { return Object.hash(buttonTextTranslations, companyEmail, companyName, companyStreetAddress, consentModalIntroHtml, consentModalIntroHtmlWithTranslations, cookieName, customCss, customIntroDisclaimerDismissed, defaultLanguage, enabled, hideModal, purposes, purposesWithTranslations, tcfCompliant); } 
-@override String toString() { return 'ZarazZarazConfigBaseConsent(buttonTextTranslations: $buttonTextTranslations, companyEmail: $companyEmail, companyName: $companyName, companyStreetAddress: $companyStreetAddress, consentModalIntroHtml: $consentModalIntroHtml, consentModalIntroHtmlWithTranslations: $consentModalIntroHtmlWithTranslations, cookieName: $cookieName, customCss: $customCss, customIntroDisclaimerDismissed: $customIntroDisclaimerDismissed, defaultLanguage: $defaultLanguage, enabled: $enabled, hideModal: $hideModal, purposes: $purposes, purposesWithTranslations: $purposesWithTranslations, tcfCompliant: $tcfCompliant)'; } 
- }
+          tcfCompliant == other.tcfCompliant;}
+@override int get hashCode {return Object.hash(buttonTextTranslations, companyEmail, companyName, companyStreetAddress, consentModalIntroHtml, consentModalIntroHtmlWithTranslations, cookieName, customCss, customIntroDisclaimerDismissed, defaultLanguage, enabled, hideModal, purposes, purposesWithTranslations, tcfCompliant);}
+@override String toString() {return 'ZarazZarazConfigBaseConsent(buttonTextTranslations: $buttonTextTranslations, companyEmail: $companyEmail, companyName: $companyName, companyStreetAddress: $companyStreetAddress, consentModalIntroHtml: $consentModalIntroHtml, consentModalIntroHtmlWithTranslations: $consentModalIntroHtmlWithTranslations, cookieName: $cookieName, customCss: $customCss, customIntroDisclaimerDismissed: $customIntroDisclaimerDismissed, defaultLanguage: $defaultLanguage, enabled: $enabled, hideModal: $hideModal, purposes: $purposes, purposesWithTranslations: $purposesWithTranslations, tcfCompliant: $tcfCompliant)';}
+}

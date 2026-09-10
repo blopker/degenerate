@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryCreditReversalsRequest {const PostTreasuryCreditReversalsRequest({required this.receivedCredit, this.expand, this.metadata, });
 
-factory PostTreasuryCreditReversalsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryCreditReversalsRequest(
+factory PostTreasuryCreditReversalsRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryCreditReversalsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   receivedCredit: json['received_credit'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -17,22 +17,22 @@ final Map<String,String>? metadata;
 /// The ReceivedCredit to reverse.
 final String receivedCredit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'metadata': ?metadata,
   'received_credit': receivedCredit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_credit') && json['received_credit'] is String; } 
-PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedCredit, }) { return PostTreasuryCreditReversalsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('received_credit') && json['received_credit'] is String;}
+PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedCredit, }) {return PostTreasuryCreditReversalsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   receivedCredit: receivedCredit ?? this.receivedCredit,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryCreditReversalsRequest &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          receivedCredit == other.receivedCredit; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), metadata, receivedCredit); } 
-@override String toString() { return 'PostTreasuryCreditReversalsRequest(expand: $expand, metadata: $metadata, receivedCredit: $receivedCredit)'; } 
- }
+          receivedCredit == other.receivedCredit;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), metadata, receivedCredit);}
+@override String toString() {return 'PostTreasuryCreditReversalsRequest(expand: $expand, metadata: $metadata, receivedCredit: $receivedCredit)';}
+}

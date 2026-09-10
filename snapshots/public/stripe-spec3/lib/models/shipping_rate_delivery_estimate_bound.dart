@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A unit of time.
 @immutable final class ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit._(this.value);
 
-factory ShippingRateDeliveryEstimateBoundUnit.fromJson(String json) { return switch (json) {
+factory ShippingRateDeliveryEstimateBoundUnit.fromJson(String json) {return switch (json) {
   'business_day' => businessDay,
   'day' => day,
   'hour' => hour,
   'month' => month,
   'week' => week,
   _ => ShippingRateDeliveryEstimateBoundUnit._(json),
-}; }
+};}
 
 static const ShippingRateDeliveryEstimateBoundUnit businessDay = ShippingRateDeliveryEstimateBoundUnit._('business_day');
 
@@ -26,21 +26,21 @@ static const List<ShippingRateDeliveryEstimateBoundUnit> values = [businessDay, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateDeliveryEstimateBoundUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateDeliveryEstimateBoundUnit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShippingRateDeliveryEstimateBoundUnit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShippingRateDeliveryEstimateBoundUnit($value)';}
+}
 /// 
 @immutable final class ShippingRateDeliveryEstimateBound {const ShippingRateDeliveryEstimateBound({required this.unit, required this.value, });
 
-factory ShippingRateDeliveryEstimateBound.fromJson(Map<String, dynamic> json) { return ShippingRateDeliveryEstimateBound(
+factory ShippingRateDeliveryEstimateBound.fromJson(Map<String, dynamic> json) {return ShippingRateDeliveryEstimateBound(
   unit: ShippingRateDeliveryEstimateBoundUnit.fromJson(json['unit'] as String),
   value: (json['value'] as num).toInt(),
-); }
+);}
 
 /// A unit of time.
 final ShippingRateDeliveryEstimateBoundUnit unit;
@@ -48,20 +48,20 @@ final ShippingRateDeliveryEstimateBoundUnit unit;
 /// Must be greater than 0.
 final int value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'unit': unit.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
-      json.containsKey('value') && json['value'] is num; } 
-ShippingRateDeliveryEstimateBound copyWith({ShippingRateDeliveryEstimateBoundUnit? unit, int? value, }) { return ShippingRateDeliveryEstimateBound(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('unit') &&
+      json.containsKey('value') && json['value'] is num;}
+ShippingRateDeliveryEstimateBound copyWith({ShippingRateDeliveryEstimateBoundUnit? unit, int? value, }) {return ShippingRateDeliveryEstimateBound(
   unit: unit ?? this.unit,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShippingRateDeliveryEstimateBound &&
           unit == other.unit &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(unit, value); } 
-@override String toString() { return 'ShippingRateDeliveryEstimateBound(unit: $unit, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(unit, value);}
+@override String toString() {return 'ShippingRateDeliveryEstimateBound(unit: $unit, value: $value)';}
+}

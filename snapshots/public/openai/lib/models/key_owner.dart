@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KeyOwner {const KeyOwner({this.type, this.object, this.id, this.name, this.createdAt, this.role, });
 
-factory KeyOwner.fromJson(Map<String, dynamic> json) { return KeyOwner(
+factory KeyOwner.fromJson(Map<String, dynamic> json) {return KeyOwner(
   type: json['type'] as String?,
   object: json['object'] as String?,
   id: json['id'] as String?,
   name: json['name'] as String?,
   createdAt: json['created_at'] != null ? (json['created_at'] as num).toInt() : null,
   role: json['role'] as String?,
-); }
+);}
 
 /// Always `user`
 final String? type;
@@ -29,31 +29,31 @@ final int? createdAt;
 /// Always `owner`
 final String? role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   'object': ?object,
   'id': ?id,
   'name': ?name,
   'created_at': ?createdAt,
   'role': ?role,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'object', 'id', 'name', 'created_at', 'role'}.contains(key)); } 
-KeyOwner copyWith({String? Function()? type, String? Function()? object, String? Function()? id, String? Function()? name, int? Function()? createdAt, String? Function()? role, }) { return KeyOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'object', 'id', 'name', 'created_at', 'role'}.contains(key));}
+KeyOwner copyWith({String? Function()? type, String? Function()? object, String? Function()? id, String? Function()? name, int? Function()? createdAt, String? Function()? role, }) {return KeyOwner(
   type: type != null ? type() : this.type,
   object: object != null ? object() : this.object,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   role: role != null ? role() : this.role,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is KeyOwner &&
           type == other.type &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(type, object, id, name, createdAt, role); } 
-@override String toString() { return 'KeyOwner(type: $type, object: $object, id: $id, name: $name, createdAt: $createdAt, role: $role)'; } 
- }
+          role == other.role;}
+@override int get hashCode {return Object.hash(type, object, id, name, createdAt, role);}
+@override String toString() {return 'KeyOwner(type: $type, object: $object, id: $id, name: $name, createdAt: $createdAt, role: $role)';}
+}

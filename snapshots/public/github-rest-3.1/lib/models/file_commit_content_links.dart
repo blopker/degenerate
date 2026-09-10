@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitContentLinks {const FileCommitContentLinks({this.self, this.git, this.html, });
 
-factory FileCommitContentLinks.fromJson(Map<String, dynamic> json) { return FileCommitContentLinks(
+factory FileCommitContentLinks.fromJson(Map<String, dynamic> json) {return FileCommitContentLinks(
   self: json['self'] as String?,
   git: json['git'] as String?,
   html: json['html'] as String?,
-); }
+);}
 
 final String? self;
 
@@ -14,22 +14,22 @@ final String? git;
 
 final String? html;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'self': ?self,
   'git': ?git,
   'html': ?html,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'self', 'git', 'html'}.contains(key)); } 
-FileCommitContentLinks copyWith({String? Function()? self, String? Function()? git, String? Function()? html, }) { return FileCommitContentLinks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'self', 'git', 'html'}.contains(key));}
+FileCommitContentLinks copyWith({String? Function()? self, String? Function()? git, String? Function()? html, }) {return FileCommitContentLinks(
   self: self != null ? self() : this.self,
   git: git != null ? git() : this.git,
   html: html != null ? html() : this.html,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FileCommitContentLinks &&
           self == other.self &&
           git == other.git &&
-          html == other.html; } 
-@override int get hashCode { return Object.hash(self, git, html); } 
-@override String toString() { return 'FileCommitContentLinks(self: $self, git: $git, html: $html)'; } 
- }
+          html == other.html;}
+@override int get hashCode {return Object.hash(self, git, html);}
+@override String toString() {return 'FileCommitContentLinks(self: $self, git: $git, html: $html)';}
+}

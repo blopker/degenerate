@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck {const AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck._(this.value);
 
-factory AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck.fromJson(String json) { return switch (json) {
+factory AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck.fromJson(String json) {return switch (json) {
   'REQUEST' => request,
   'RESPONSE' => response,
   _ => AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck._(json),
-}; }
+};}
 
 static const AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck request = AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck._('REQUEST');
 
@@ -16,21 +16,21 @@ static const List<AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck($value)';}
+}
 @immutable final class AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction {const AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction._(this.value);
 
-factory AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction.fromJson(String json) { return switch (json) {
+factory AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction.fromJson(String json) {return switch (json) {
   'FLAG' => flag,
   'BLOCK' => block,
   _ => AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction._(json),
-}; }
+};}
 
 static const AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction flag = AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction._('FLAG');
 
@@ -40,23 +40,23 @@ static const List<AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction($value)';}
+}
 @immutable final class AigConfigFetchGatewayResponseResultDlpVariant2Policies {const AigConfigFetchGatewayResponseResultDlpVariant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });
 
-factory AigConfigFetchGatewayResponseResultDlpVariant2Policies.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResultDlpVariant2Policies(
+factory AigConfigFetchGatewayResponseResultDlpVariant2Policies.fromJson(Map<String, dynamic> json) {return AigConfigFetchGatewayResponseResultDlpVariant2Policies(
   action: AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction.fromJson(json['action'] as String),
   check: (json['check'] as List<dynamic>).map((e) => AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck.fromJson(e as String)).toList(),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   profiles: (json['profiles'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction action;
 
@@ -68,32 +68,32 @@ final String id;
 
 final List<String> profiles;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'check': check.map((e) => e.toJson()).toList(),
   'enabled': enabled,
   'id': id,
   'profiles': profiles,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('check') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('profiles'); } 
-AigConfigFetchGatewayResponseResultDlpVariant2Policies copyWith({AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction? action, List<AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck>? check, bool? enabled, String? id, List<String>? profiles, }) { return AigConfigFetchGatewayResponseResultDlpVariant2Policies(
+      json.containsKey('profiles');}
+AigConfigFetchGatewayResponseResultDlpVariant2Policies copyWith({AigConfigFetchGatewayResponseResultDlpVariant2PoliciesAction? action, List<AigConfigFetchGatewayResponseResultDlpVariant2PoliciesCheck>? check, bool? enabled, String? id, List<String>? profiles, }) {return AigConfigFetchGatewayResponseResultDlpVariant2Policies(
   action: action ?? this.action,
   check: check ?? this.check,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   profiles: profiles ?? this.profiles,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigFetchGatewayResponseResultDlpVariant2Policies &&
           action == other.action &&
           listEquals(check, other.check) &&
           enabled == other.enabled &&
           id == other.id &&
-          listEquals(profiles, other.profiles); } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(check), enabled, id, Object.hashAll(profiles)); } 
-@override String toString() { return 'AigConfigFetchGatewayResponseResultDlpVariant2Policies(action: $action, check: $check, enabled: $enabled, id: $id, profiles: $profiles)'; } 
- }
+          listEquals(profiles, other.profiles);}
+@override int get hashCode {return Object.hash(action, Object.hashAll(check), enabled, id, Object.hashAll(profiles));}
+@override String toString() {return 'AigConfigFetchGatewayResponseResultDlpVariant2Policies(action: $action, check: $check, enabled: $enabled, id: $id, profiles: $profiles)';}
+}

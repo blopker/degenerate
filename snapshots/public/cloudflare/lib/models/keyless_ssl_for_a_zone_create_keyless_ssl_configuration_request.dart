@@ -9,14 +9,14 @@ String toJson() => value;
 }
 @immutable final class KeylessSslForAZoneCreateKeylessSslConfigurationRequest {const KeylessSslForAZoneCreateKeylessSslConfigurationRequest({required this.certificate, required this.host, required this.port, this.bundleMethod, this.name, this.tunnel, });
 
-factory KeylessSslForAZoneCreateKeylessSslConfigurationRequest.fromJson(Map<String, dynamic> json) { return KeylessSslForAZoneCreateKeylessSslConfigurationRequest(
+factory KeylessSslForAZoneCreateKeylessSslConfigurationRequest.fromJson(Map<String, dynamic> json) {return KeylessSslForAZoneCreateKeylessSslConfigurationRequest(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificate: TlsCertificatesAndHostnamesSchemasCertificate.fromJson(json['certificate'] as String),
   host: TlsCertificatesAndHostnamesHost.fromJson(json['host'] as String),
   name: json['name'] != null ? TlsCertificatesAndHostnamesNameWrite.fromJson(json['name'] as String) : null,
   port: TlsCertificatesAndHostnamesPort.fromJson(json['port'] as num),
   tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
@@ -35,33 +35,33 @@ final TlsCertificatesAndHostnamesPort port;
 
 final TlsCertificatesAndHostnamesKeylessTunnel? tunnel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   'certificate': certificate.toJson(),
   'host': host.toJson(),
   if (name != null) 'name': name?.toJson(),
   'port': port.toJson(),
   if (tunnel != null) 'tunnel': tunnel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate') &&
       json.containsKey('host') &&
-      json.containsKey('port'); } 
-KeylessSslForAZoneCreateKeylessSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesSchemasCertificate? certificate, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesNameWrite? Function()? name, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesKeylessTunnel? Function()? tunnel, }) { return KeylessSslForAZoneCreateKeylessSslConfigurationRequest(
+      json.containsKey('port');}
+KeylessSslForAZoneCreateKeylessSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesSchemasCertificate? certificate, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesNameWrite? Function()? name, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesKeylessTunnel? Function()? tunnel, }) {return KeylessSslForAZoneCreateKeylessSslConfigurationRequest(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificate: certificate ?? this.certificate,
   host: host ?? this.host,
   name: name != null ? name() : this.name,
   port: port ?? this.port,
   tunnel: tunnel != null ? tunnel() : this.tunnel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is KeylessSslForAZoneCreateKeylessSslConfigurationRequest &&
           bundleMethod == other.bundleMethod &&
           certificate == other.certificate &&
           host == other.host &&
           name == other.name &&
           port == other.port &&
-          tunnel == other.tunnel; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificate, host, name, port, tunnel); } 
-@override String toString() { return 'KeylessSslForAZoneCreateKeylessSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, host: $host, name: $name, port: $port, tunnel: $tunnel)'; } 
- }
+          tunnel == other.tunnel;}
+@override int get hashCode {return Object.hash(bundleMethod, certificate, host, name, port, tunnel);}
+@override String toString() {return 'KeylessSslForAZoneCreateKeylessSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, host: $host, name: $name, port: $port, tunnel: $tunnel)';}
+}

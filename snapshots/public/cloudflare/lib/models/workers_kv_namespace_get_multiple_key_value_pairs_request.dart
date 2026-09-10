@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_key_name_bulk.dart';/// Whether to parse JSON values in the response.
 @immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequestType {const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._(this.value);
 
-factory WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(String json) { return switch (json) {
+factory WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(String json) {return switch (json) {
   'text' => text,
   'json' => $json,
   _ => WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._(json),
-}; }
+};}
 
 static const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType text = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._('text');
 
@@ -17,21 +17,21 @@ static const List<WorkersKvNamespaceGetMultipleKeyValuePairsRequestType> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersKvNamespaceGetMultipleKeyValuePairsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersKvNamespaceGetMultipleKeyValuePairsRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequestType($value)';}
+}
 @immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequest {const WorkersKvNamespaceGetMultipleKeyValuePairsRequest({required this.keys, this.type, this.withMetadata, });
 
-factory WorkersKvNamespaceGetMultipleKeyValuePairsRequest.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
+factory WorkersKvNamespaceGetMultipleKeyValuePairsRequest.fromJson(Map<String, dynamic> json) {return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
   keys: (json['keys'] as List<dynamic>).map((e) => WorkersKvKeyNameBulk.fromJson(e as String)).toList(),
   type: json['type'] != null ? WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(json['type'] as String) : null,
   withMetadata: json['withMetadata'] as bool?,
-); }
+);}
 
 /// Array of keys to retrieve (maximum of 100).
 final List<WorkersKvKeyNameBulk> keys;
@@ -43,25 +43,25 @@ final WorkersKvNamespaceGetMultipleKeyValuePairsRequestType? type;
 final bool? withMetadata;
 
 /// The value with the schema default applied when absent.
-WorkersKvNamespaceGetMultipleKeyValuePairsRequestType get typeOrDefault { return type ?? WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson('text'); } 
+WorkersKvNamespaceGetMultipleKeyValuePairsRequestType get typeOrDefault {return type ?? WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson('text');}
 /// The value with the schema default applied when absent.
-bool get withMetadataOrDefault { return withMetadata ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get withMetadataOrDefault {return withMetadata ?? false;}
+Map<String, dynamic> toJson() {return {
   'keys': keys.map((e) => e.toJson()).toList(),
   if (type != null) 'type': type?.toJson(),
   'withMetadata': ?withMetadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('keys'); } 
-WorkersKvNamespaceGetMultipleKeyValuePairsRequest copyWith({List<WorkersKvKeyNameBulk>? keys, WorkersKvNamespaceGetMultipleKeyValuePairsRequestType? Function()? type, bool? Function()? withMetadata, }) { return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('keys');}
+WorkersKvNamespaceGetMultipleKeyValuePairsRequest copyWith({List<WorkersKvKeyNameBulk>? keys, WorkersKvNamespaceGetMultipleKeyValuePairsRequestType? Function()? type, bool? Function()? withMetadata, }) {return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
   keys: keys ?? this.keys,
   type: type != null ? type() : this.type,
   withMetadata: withMetadata != null ? withMetadata() : this.withMetadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersKvNamespaceGetMultipleKeyValuePairsRequest &&
           listEquals(keys, other.keys) &&
           type == other.type &&
-          withMetadata == other.withMetadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(keys), type, withMetadata); } 
-@override String toString() { return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequest(keys: $keys, type: $type, withMetadata: $withMetadata)'; } 
- }
+          withMetadata == other.withMetadata;}
+@override int get hashCode {return Object.hash(Object.hashAll(keys), type, withMetadata);}
+@override String toString() {return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequest(keys: $keys, type: $type, withMetadata: $withMetadata)';}
+}

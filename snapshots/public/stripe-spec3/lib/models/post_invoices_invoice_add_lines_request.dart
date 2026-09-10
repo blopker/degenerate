@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_add_lines_request_invoice_metadata.dart';import 'post_invoices_invoice_add_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceAddLinesRequest {const PostInvoicesInvoiceAddLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 
-factory PostInvoicesInvoiceAddLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAddLinesRequest(
+factory PostInvoicesInvoiceAddLinesRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceAddLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoiceMetadata: json['invoice_metadata'] != null ? PostInvoicesInvoiceAddLinesRequestInvoiceMetadata.fromJson(json['invoice_metadata']) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceAddLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -17,22 +17,22 @@ final PostInvoicesInvoiceAddLinesRequestInvoiceMetadata? invoiceMetadata;
 /// The line items to add.
 final List<PostInvoicesInvoiceAddLinesRequestLines> lines;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (invoiceMetadata != null) 'invoice_metadata': invoiceMetadata?.toJson(),
   'lines': lines.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('lines'); } 
-PostInvoicesInvoiceAddLinesRequest copyWith({List<String>? Function()? expand, PostInvoicesInvoiceAddLinesRequestInvoiceMetadata? Function()? invoiceMetadata, List<PostInvoicesInvoiceAddLinesRequestLines>? lines, }) { return PostInvoicesInvoiceAddLinesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('lines');}
+PostInvoicesInvoiceAddLinesRequest copyWith({List<String>? Function()? expand, PostInvoicesInvoiceAddLinesRequestInvoiceMetadata? Function()? invoiceMetadata, List<PostInvoicesInvoiceAddLinesRequestLines>? lines, }) {return PostInvoicesInvoiceAddLinesRequest(
   expand: expand != null ? expand() : this.expand,
   invoiceMetadata: invoiceMetadata != null ? invoiceMetadata() : this.invoiceMetadata,
   lines: lines ?? this.lines,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesInvoiceAddLinesRequest &&
           listEquals(expand, other.expand) &&
           invoiceMetadata == other.invoiceMetadata &&
-          listEquals(lines, other.lines); } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), invoiceMetadata, Object.hashAll(lines)); } 
-@override String toString() { return 'PostInvoicesInvoiceAddLinesRequest(expand: $expand, invoiceMetadata: $invoiceMetadata, lines: $lines)'; } 
- }
+          listEquals(lines, other.lines);}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), invoiceMetadata, Object.hashAll(lines));}
+@override String toString() {return 'PostInvoicesInvoiceAddLinesRequest(expand: $expand, invoiceMetadata: $invoiceMetadata, lines: $lines)';}
+}

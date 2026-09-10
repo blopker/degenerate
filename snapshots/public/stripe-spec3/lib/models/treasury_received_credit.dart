@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit_transaction.dart';import 'treasury_received_credits_resource_linked_flows.dart';import 'treasury_received_credits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
 @immutable final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
 
-factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedCreditFailureCode.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'international_transaction' => internationalTransaction,
   'other' => $other,
   _ => TreasuryReceivedCreditFailureCode._(json),
-}; }
+};}
 
 static const TreasuryReceivedCreditFailureCode accountClosed = TreasuryReceivedCreditFailureCode._('account_closed');
 
@@ -23,24 +23,24 @@ static const List<TreasuryReceivedCreditFailureCode> values = [accountClosed, ac
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedCreditFailureCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedCreditFailureCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedCreditFailureCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedCreditFailureCode($value)';}
+}
 /// The rails used to send the funds.
 @immutable final class TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork._(this.value);
 
-factory TreasuryReceivedCreditNetwork.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedCreditNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'card' => card,
   'stripe' => stripe,
   'us_domestic_wire' => usDomesticWire,
   _ => TreasuryReceivedCreditNetwork._(json),
-}; }
+};}
 
 static const TreasuryReceivedCreditNetwork ach = TreasuryReceivedCreditNetwork._('ach');
 
@@ -54,21 +54,21 @@ static const List<TreasuryReceivedCreditNetwork> values = [ach, card, stripe, us
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedCreditNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedCreditNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedCreditNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedCreditNetwork($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryReceivedCreditObject {const TreasuryReceivedCreditObject._(this.value);
 
-factory TreasuryReceivedCreditObject.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedCreditObject.fromJson(String json) {return switch (json) {
   'treasury.received_credit' => treasuryReceivedCredit,
   _ => TreasuryReceivedCreditObject._(json),
-}; }
+};}
 
 static const TreasuryReceivedCreditObject treasuryReceivedCredit = TreasuryReceivedCreditObject._('treasury.received_credit');
 
@@ -76,22 +76,22 @@ static const List<TreasuryReceivedCreditObject> values = [treasuryReceivedCredit
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedCreditObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedCreditObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedCreditObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedCreditObject($value)';}
+}
 /// Status of the ReceivedCredit. ReceivedCredits are created either `succeeded` (approved) or `failed` (declined). If a ReceivedCredit is declined, the failure reason can be found in the `failure_code` field.
 @immutable final class TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus._(this.value);
 
-factory TreasuryReceivedCreditStatus.fromJson(String json) { return switch (json) {
+factory TreasuryReceivedCreditStatus.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'succeeded' => succeeded,
   _ => TreasuryReceivedCreditStatus._(json),
-}; }
+};}
 
 static const TreasuryReceivedCreditStatus failed = TreasuryReceivedCreditStatus._('failed');
 
@@ -101,18 +101,18 @@ static const List<TreasuryReceivedCreditStatus> values = [failed, succeeded];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedCreditStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedCreditStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryReceivedCreditStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryReceivedCreditStatus($value)';}
+}
 /// ReceivedCredits represent funds sent to a [FinancialAccount](https://api.stripe.com#financial_accounts) (for example, via ACH or wire). These money movements are not initiated from the FinancialAccount.
 @immutable final class TreasuryReceivedCredit {const TreasuryReceivedCredit({required this.amount, required this.created, required this.currency, required this.description, required this.id, required this.initiatingPaymentMethodDetails, required this.linkedFlows, required this.livemode, required this.network, required this.object, required this.status, this.failureCode = const Omittable.absent(), this.financialAccount = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.reversalDetails = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
-factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCredit(
+factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) {return TreasuryReceivedCredit(
   amount: (json['amount'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -129,7 +129,7 @@ factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) { return Trea
   reversalDetails: json.containsKey('reversal_details') ? Omittable(json['reversal_details'] != null ? TreasuryReceivedCreditsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: TreasuryReceivedCreditStatus.fromJson(json['status'] as String),
   transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryReceivedCreditTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -177,7 +177,7 @@ final TreasuryReceivedCreditStatus status;
 /// The Transaction associated with this object.
 final Omittable<TreasuryReceivedCreditTransaction?> transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'created': created,
   'currency': currency,
@@ -194,8 +194,8 @@ Map<String, dynamic> toJson() { return {
   if (reversalDetails.isPresent) 'reversal_details': reversalDetails.value?.toJson(),
   'status': status.toJson(),
   if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -205,8 +205,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('network') &&
       json.containsKey('object') &&
-      json.containsKey('status'); } 
-TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, Omittable<TreasuryReceivedCreditFailureCode?>? failureCode, Omittable<String?>? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, Omittable<TreasuryReceivedCreditsResourceReversalDetails?>? reversalDetails, TreasuryReceivedCreditStatus? status, Omittable<TreasuryReceivedCreditTransaction?>? transaction, }) { return TreasuryReceivedCredit(
+      json.containsKey('status');}
+TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, Omittable<TreasuryReceivedCreditFailureCode?>? failureCode, Omittable<String?>? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, Omittable<TreasuryReceivedCreditsResourceReversalDetails?>? reversalDetails, TreasuryReceivedCreditStatus? status, Omittable<TreasuryReceivedCreditTransaction?>? transaction, }) {return TreasuryReceivedCredit(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,
@@ -223,8 +223,8 @@ TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, St
   reversalDetails: reversalDetails ?? this.reversalDetails,
   status: status ?? this.status,
   transaction: transaction ?? this.transaction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryReceivedCredit &&
           amount == other.amount &&
           created == other.created &&
@@ -241,7 +241,7 @@ TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, St
           object == other.object &&
           reversalDetails == other.reversalDetails &&
           status == other.status &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(amount, created, currency, description, failureCode, financialAccount, hostedRegulatoryReceiptUrl, id, initiatingPaymentMethodDetails, linkedFlows, livemode, network, object, reversalDetails, status, transaction); } 
-@override String toString() { return 'TreasuryReceivedCredit(amount: $amount, created: $created, currency: $currency, description: $description, failureCode: $failureCode, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, linkedFlows: $linkedFlows, livemode: $livemode, network: $network, object: $object, reversalDetails: $reversalDetails, status: $status, transaction: $transaction)'; } 
- }
+          transaction == other.transaction;}
+@override int get hashCode {return Object.hash(amount, created, currency, description, failureCode, financialAccount, hostedRegulatoryReceiptUrl, id, initiatingPaymentMethodDetails, linkedFlows, livemode, network, object, reversalDetails, status, transaction);}
+@override String toString() {return 'TreasuryReceivedCredit(amount: $amount, created: $created, currency: $currency, description: $description, failureCode: $failureCode, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, linkedFlows: $linkedFlows, livemode: $livemode, network: $network, object: $object, reversalDetails: $reversalDetails, status: $status, transaction: $transaction)';}
+}

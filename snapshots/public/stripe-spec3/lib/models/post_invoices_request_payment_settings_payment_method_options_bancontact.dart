@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param16.dart';@immutable final class PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 {const PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2._(this.value);
 
-factory PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 $empty = PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBanconta
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2($value)';}
+}
 
 @immutable
 final class PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontact {

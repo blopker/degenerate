@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_tool_content.dart';@immutable final class Messages51MessagesToolRole {const Messages51MessagesToolRole._(this.value);
 
-factory Messages51MessagesToolRole.fromJson(String json) { return switch (json) {
+factory Messages51MessagesToolRole.fromJson(String json) {return switch (json) {
   'tool' => tool,
   _ => Messages51MessagesToolRole._(json),
-}; }
+};}
 
 static const Messages51MessagesToolRole tool = Messages51MessagesToolRole._('tool');
 
@@ -13,21 +13,21 @@ static const List<Messages51MessagesToolRole> values = [tool];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Messages51MessagesToolRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Messages51MessagesToolRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Messages51MessagesToolRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Messages51MessagesToolRole($value)';}
+}
 @immutable final class Messages51MessagesTool {const Messages51MessagesTool({required this.content, required this.role, required this.toolCallId, });
 
-factory Messages51MessagesTool.fromJson(Map<String, dynamic> json) { return Messages51MessagesTool(
+factory Messages51MessagesTool.fromJson(Map<String, dynamic> json) {return Messages51MessagesTool(
   content: Messages51MessagesToolContent.fromJson(json['content']),
   role: Messages51MessagesToolRole.fromJson(json['role'] as String),
   toolCallId: json['tool_call_id'] as String,
-); }
+);}
 
 final Messages51MessagesToolContent content;
 
@@ -35,24 +35,24 @@ final Messages51MessagesToolRole role;
 
 final String toolCallId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'role': role.toJson(),
   'tool_call_id': toolCallId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
       json.containsKey('role') &&
-      json.containsKey('tool_call_id') && json['tool_call_id'] is String; } 
-Messages51MessagesTool copyWith({Messages51MessagesToolContent? content, Messages51MessagesToolRole? role, String? toolCallId, }) { return Messages51MessagesTool(
+      json.containsKey('tool_call_id') && json['tool_call_id'] is String;}
+Messages51MessagesTool copyWith({Messages51MessagesToolContent? content, Messages51MessagesToolRole? role, String? toolCallId, }) {return Messages51MessagesTool(
   content: content ?? this.content,
   role: role ?? this.role,
   toolCallId: toolCallId ?? this.toolCallId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages51MessagesTool &&
           content == other.content &&
           role == other.role &&
-          toolCallId == other.toolCallId; } 
-@override int get hashCode { return Object.hash(content, role, toolCallId); } 
-@override String toString() { return 'Messages51MessagesTool(content: $content, role: $role, toolCallId: $toolCallId)'; } 
- }
+          toolCallId == other.toolCallId;}
+@override int get hashCode {return Object.hash(content, role, toolCallId);}
+@override String toString() {return 'Messages51MessagesTool(content: $content, role: $role, toolCallId: $toolCallId)';}
+}

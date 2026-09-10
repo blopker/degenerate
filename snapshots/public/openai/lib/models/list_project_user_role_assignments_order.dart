@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListProjectUserRoleAssignmentsOrder {const ListProjectUserRoleAssignmentsOrder._(this.value);
 
-factory ListProjectUserRoleAssignmentsOrder.fromJson(String json) { return switch (json) {
+factory ListProjectUserRoleAssignmentsOrder.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => ListProjectUserRoleAssignmentsOrder._(json),
-}; }
+};}
 
 static const ListProjectUserRoleAssignmentsOrder asc = ListProjectUserRoleAssignmentsOrder._('asc');
 
@@ -16,11 +16,11 @@ static const List<ListProjectUserRoleAssignmentsOrder> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListProjectUserRoleAssignmentsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListProjectUserRoleAssignmentsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListProjectUserRoleAssignmentsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListProjectUserRoleAssignmentsOrder($value)';}
+}

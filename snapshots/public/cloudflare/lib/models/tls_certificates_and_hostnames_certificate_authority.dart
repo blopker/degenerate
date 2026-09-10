@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Certificate Authority that will issue the certificate
 @immutable final class TlsCertificatesAndHostnamesCertificateAuthority {const TlsCertificatesAndHostnamesCertificateAuthority._(this.value);
 
-factory TlsCertificatesAndHostnamesCertificateAuthority.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesCertificateAuthority.fromJson(String json) {return switch (json) {
   'digicert' => digicert,
   'google' => google,
   'lets_encrypt' => letsEncrypt,
   'ssl_com' => sslCom,
   _ => TlsCertificatesAndHostnamesCertificateAuthority._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesCertificateAuthority digicert = TlsCertificatesAndHostnamesCertificateAuthority._('digicert');
 
@@ -23,11 +23,11 @@ static const List<TlsCertificatesAndHostnamesCertificateAuthority> values = [dig
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCertificateAuthority && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificateAuthority($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesCertificateAuthority && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesCertificateAuthority($value)';}
+}

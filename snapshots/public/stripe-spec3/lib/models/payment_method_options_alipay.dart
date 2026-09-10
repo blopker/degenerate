@@ -9,11 +9,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsAlipaySetupFutureUsage {const PaymentMethodOptionsAlipaySetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsAlipaySetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsAlipaySetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => PaymentMethodOptionsAlipaySetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsAlipaySetupFutureUsage none = PaymentMethodOptionsAlipaySetupFutureUsage._('none');
 
@@ -23,20 +23,20 @@ static const List<PaymentMethodOptionsAlipaySetupFutureUsage> values = [none, of
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsAlipaySetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsAlipaySetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsAlipaySetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsAlipaySetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsAlipay {const PaymentMethodOptionsAlipay({this.setupFutureUsage});
 
-factory PaymentMethodOptionsAlipay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsAlipay(
+factory PaymentMethodOptionsAlipay.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsAlipay(
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsAlipaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -47,16 +47,16 @@ factory PaymentMethodOptionsAlipay.fromJson(Map<String, dynamic> json) { return 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsAlipaySetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsAlipay copyWith({PaymentMethodOptionsAlipaySetupFutureUsage? Function()? setupFutureUsage}) { return PaymentMethodOptionsAlipay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsAlipay copyWith({PaymentMethodOptionsAlipaySetupFutureUsage? Function()? setupFutureUsage}) {return PaymentMethodOptionsAlipay(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsAlipay &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return setupFutureUsage.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsAlipay(setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return setupFutureUsage.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsAlipay(setupFutureUsage: $setupFutureUsage)';}
+}

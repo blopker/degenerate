@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_dns_settings_account_patch_nameservers.dart';import 'dns_settings_flatten_all_cnames.dart';import 'dns_settings_foundation_dns.dart';import 'dns_settings_internal_dns_base.dart';import 'dns_settings_multi_provider.dart';import 'dns_settings_ns_ttl.dart';import 'dns_settings_secondary_overrides.dart';import 'dns_settings_soa_base.dart';import 'dns_settings_zone_mode.dart';@immutable final class DnsSettingsDnsSettingsAccountPatch {const DnsSettingsDnsSettingsAccountPatch({this.flattenAllCnames, this.foundationDns, this.internalDns, this.multiProvider, this.nsTtl, this.secondaryOverrides, this.soa, this.zoneMode, this.nameservers, });
 
-factory DnsSettingsDnsSettingsAccountPatch.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsSettingsAccountPatch(
+factory DnsSettingsDnsSettingsAccountPatch.fromJson(Map<String, dynamic> json) {return DnsSettingsDnsSettingsAccountPatch(
   flattenAllCnames: json['flatten_all_cnames'] != null ? DnsSettingsFlattenAllCnames.fromJson(json['flatten_all_cnames'] as bool) : null,
   foundationDns: json['foundation_dns'] != null ? DnsSettingsFoundationDns.fromJson(json['foundation_dns'] as bool) : null,
   internalDns: json['internal_dns'] != null ? DnsSettingsInternalDnsBase.fromJson(json['internal_dns'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory DnsSettingsDnsSettingsAccountPatch.fromJson(Map<String, dynamic> json) {
   soa: json['soa'] != null ? DnsSettingsSoaBase.fromJson(json['soa'] as Map<String, dynamic>) : null,
   zoneMode: json['zone_mode'] != null ? DnsSettingsZoneMode.fromJson(json['zone_mode'] as String) : null,
   nameservers: json['nameservers'] != null ? DnsSettingsDnsSettingsAccountPatchNameservers.fromJson(json['nameservers'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DnsSettingsFlattenAllCnames? flattenAllCnames;
 
@@ -33,7 +33,7 @@ final DnsSettingsZoneMode? zoneMode;
 /// Settings determining the nameservers through which the zone should be available.
 final DnsSettingsDnsSettingsAccountPatchNameservers? nameservers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (flattenAllCnames != null) 'flatten_all_cnames': flattenAllCnames?.toJson(),
   if (foundationDns != null) 'foundation_dns': foundationDns?.toJson(),
   if (internalDns != null) 'internal_dns': internalDns?.toJson(),
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (soa != null) 'soa': soa?.toJson(),
   if (zoneMode != null) 'zone_mode': zoneMode?.toJson(),
   if (nameservers != null) 'nameservers': nameservers?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flatten_all_cnames', 'foundation_dns', 'internal_dns', 'multi_provider', 'ns_ttl', 'secondary_overrides', 'soa', 'zone_mode', 'nameservers'}.contains(key)); } 
-DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsFlattenAllCnames? Function()? flattenAllCnames, DnsSettingsFoundationDns? Function()? foundationDns, DnsSettingsInternalDnsBase? Function()? internalDns, DnsSettingsMultiProvider? Function()? multiProvider, DnsSettingsNsTtl? Function()? nsTtl, DnsSettingsSecondaryOverrides? Function()? secondaryOverrides, DnsSettingsSoaBase? Function()? soa, DnsSettingsZoneMode? Function()? zoneMode, DnsSettingsDnsSettingsAccountPatchNameservers? Function()? nameservers, }) { return DnsSettingsDnsSettingsAccountPatch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'flatten_all_cnames', 'foundation_dns', 'internal_dns', 'multi_provider', 'ns_ttl', 'secondary_overrides', 'soa', 'zone_mode', 'nameservers'}.contains(key));}
+DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsFlattenAllCnames? Function()? flattenAllCnames, DnsSettingsFoundationDns? Function()? foundationDns, DnsSettingsInternalDnsBase? Function()? internalDns, DnsSettingsMultiProvider? Function()? multiProvider, DnsSettingsNsTtl? Function()? nsTtl, DnsSettingsSecondaryOverrides? Function()? secondaryOverrides, DnsSettingsSoaBase? Function()? soa, DnsSettingsZoneMode? Function()? zoneMode, DnsSettingsDnsSettingsAccountPatchNameservers? Function()? nameservers, }) {return DnsSettingsDnsSettingsAccountPatch(
   flattenAllCnames: flattenAllCnames != null ? flattenAllCnames() : this.flattenAllCnames,
   foundationDns: foundationDns != null ? foundationDns() : this.foundationDns,
   internalDns: internalDns != null ? internalDns() : this.internalDns,
@@ -55,8 +55,8 @@ DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsFlattenAllCnames? Functi
   soa: soa != null ? soa() : this.soa,
   zoneMode: zoneMode != null ? zoneMode() : this.zoneMode,
   nameservers: nameservers != null ? nameservers() : this.nameservers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsSettingsDnsSettingsAccountPatch &&
           flattenAllCnames == other.flattenAllCnames &&
           foundationDns == other.foundationDns &&
@@ -66,7 +66,7 @@ DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsFlattenAllCnames? Functi
           secondaryOverrides == other.secondaryOverrides &&
           soa == other.soa &&
           zoneMode == other.zoneMode &&
-          nameservers == other.nameservers; } 
-@override int get hashCode { return Object.hash(flattenAllCnames, foundationDns, internalDns, multiProvider, nsTtl, secondaryOverrides, soa, zoneMode, nameservers); } 
-@override String toString() { return 'DnsSettingsDnsSettingsAccountPatch(flattenAllCnames: $flattenAllCnames, foundationDns: $foundationDns, internalDns: $internalDns, multiProvider: $multiProvider, nsTtl: $nsTtl, secondaryOverrides: $secondaryOverrides, soa: $soa, zoneMode: $zoneMode, nameservers: $nameservers)'; } 
- }
+          nameservers == other.nameservers;}
+@override int get hashCode {return Object.hash(flattenAllCnames, foundationDns, internalDns, multiProvider, nsTtl, secondaryOverrides, soa, zoneMode, nameservers);}
+@override String toString() {return 'DnsSettingsDnsSettingsAccountPatch(flattenAllCnames: $flattenAllCnames, foundationDns: $foundationDns, internalDns: $internalDns, multiProvider: $multiProvider, nsTtl: $nsTtl, secondaryOverrides: $secondaryOverrides, soa: $soa, zoneMode: $zoneMode, nameservers: $nameservers)';}
+}

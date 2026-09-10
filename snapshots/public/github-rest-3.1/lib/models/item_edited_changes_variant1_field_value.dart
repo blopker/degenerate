@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_edited_changes_variant1_field_value_from.dart';import 'item_edited_changes_variant1_field_value_to.dart';import 'iteration_setting.dart';import 'single_select_option.dart';@immutable final class ItemEditedChangesVariant1FieldValue {const ItemEditedChangesVariant1FieldValue({this.fieldNodeId, this.fieldType, this.fieldName, this.projectNumber, this.from = const Omittable.absent(), this.to = const Omittable.absent(), });
 
-factory ItemEditedChangesVariant1FieldValue.fromJson(Map<String, dynamic> json) { return ItemEditedChangesVariant1FieldValue(
+factory ItemEditedChangesVariant1FieldValue.fromJson(Map<String, dynamic> json) {return ItemEditedChangesVariant1FieldValue(
   fieldNodeId: json['field_node_id'] as String?,
   fieldType: json['field_type'] as String?,
   fieldName: json['field_name'] as String?,
   projectNumber: json['project_number'] != null ? (json['project_number'] as num).toInt() : null,
   from: json.containsKey('from') ? Omittable(json['from'] != null ? OneOf4.parse(json['from'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(), fromC: (v) => SingleSelectOption.fromJson(v as Map<String, dynamic>), fromD: (v) => IterationSetting.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   to: json.containsKey('to') ? Omittable(json['to'] != null ? OneOf4.parse(json['to'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(), fromC: (v) => SingleSelectOption.fromJson(v as Map<String, dynamic>), fromD: (v) => IterationSetting.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-); }
+);}
 
 final String? fieldNodeId;
 
@@ -23,31 +23,31 @@ final Omittable<ItemEditedChangesVariant1FieldValueFrom?> from;
 
 final Omittable<ItemEditedChangesVariant1FieldValueTo?> to;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'field_node_id': ?fieldNodeId,
   'field_type': ?fieldType,
   'field_name': ?fieldName,
   'project_number': ?projectNumber,
   if (from.isPresent) 'from': from.value?.toJson(),
   if (to.isPresent) 'to': to.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'field_node_id', 'field_type', 'field_name', 'project_number', 'from', 'to'}.contains(key)); } 
-ItemEditedChangesVariant1FieldValue copyWith({String? Function()? fieldNodeId, String? Function()? fieldType, String? Function()? fieldName, int? Function()? projectNumber, Omittable<ItemEditedChangesVariant1FieldValueFrom?>? from, Omittable<ItemEditedChangesVariant1FieldValueTo?>? to, }) { return ItemEditedChangesVariant1FieldValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'field_node_id', 'field_type', 'field_name', 'project_number', 'from', 'to'}.contains(key));}
+ItemEditedChangesVariant1FieldValue copyWith({String? Function()? fieldNodeId, String? Function()? fieldType, String? Function()? fieldName, int? Function()? projectNumber, Omittable<ItemEditedChangesVariant1FieldValueFrom?>? from, Omittable<ItemEditedChangesVariant1FieldValueTo?>? to, }) {return ItemEditedChangesVariant1FieldValue(
   fieldNodeId: fieldNodeId != null ? fieldNodeId() : this.fieldNodeId,
   fieldType: fieldType != null ? fieldType() : this.fieldType,
   fieldName: fieldName != null ? fieldName() : this.fieldName,
   projectNumber: projectNumber != null ? projectNumber() : this.projectNumber,
   from: from ?? this.from,
   to: to ?? this.to,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ItemEditedChangesVariant1FieldValue &&
           fieldNodeId == other.fieldNodeId &&
           fieldType == other.fieldType &&
           fieldName == other.fieldName &&
           projectNumber == other.projectNumber &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(fieldNodeId, fieldType, fieldName, projectNumber, from, to); } 
-@override String toString() { return 'ItemEditedChangesVariant1FieldValue(fieldNodeId: $fieldNodeId, fieldType: $fieldType, fieldName: $fieldName, projectNumber: $projectNumber, from: $from, to: $to)'; } 
- }
+          to == other.to;}
+@override int get hashCode {return Object.hash(fieldNodeId, fieldType, fieldName, projectNumber, from, to);}
+@override String toString() {return 'ItemEditedChangesVariant1FieldValue(fieldNodeId: $fieldNodeId, fieldType: $fieldType, fieldName: $fieldName, projectNumber: $projectNumber, from: $from, to: $to)';}
+}

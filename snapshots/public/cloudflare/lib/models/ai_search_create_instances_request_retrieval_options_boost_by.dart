@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boost direction. 'desc' = higher values rank higher (e.g. newer timestamps). 'asc' = lower values rank higher. 'exists' = boost chunks that have the field. 'not_exists' = boost chunks that lack the field. Optional ��� defaults to 'asc' for numeric fields, 'exists' for text/boolean fields.
 @immutable final class AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection {const AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection._(this.value);
 
-factory AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection.fromJson(String json) { return switch (json) {
+factory AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   'exists' => exists,
   'not_exists' => notExists,
   _ => AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection._(json),
-}; }
+};}
 
 static const AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection asc = AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection._('asc');
 
@@ -23,20 +23,20 @@ static const List<AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection($value)';}
+}
 @immutable final class AiSearchCreateInstancesRequestRetrievalOptionsBoostBy {const AiSearchCreateInstancesRequestRetrievalOptionsBoostBy({required this.field, this.direction, });
 
-factory AiSearchCreateInstancesRequestRetrievalOptionsBoostBy.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequestRetrievalOptionsBoostBy(
+factory AiSearchCreateInstancesRequestRetrievalOptionsBoostBy.fromJson(Map<String, dynamic> json) {return AiSearchCreateInstancesRequestRetrievalOptionsBoostBy(
   direction: json['direction'] != null ? AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection.fromJson(json['direction'] as String) : null,
   field: json['field'] as String,
-); }
+);}
 
 /// Boost direction. 'desc' = higher values rank higher (e.g. newer timestamps). 'asc' = lower values rank higher. 'exists' = boost chunks that have the field. 'not_exists' = boost chunks that lack the field. Optional ��� defaults to 'asc' for numeric fields, 'exists' for text/boolean fields.
 final AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection? direction;
@@ -44,19 +44,19 @@ final AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection? direction;
 /// Metadata field name to boost by. Use 'timestamp' for document freshness, or any custom_metadata field. Numeric fields support asc/desc directions; text/boolean fields support exists/not_exists.
 final String field;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (direction != null) 'direction': direction?.toJson(),
   'field': field,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('field') && json['field'] is String; } 
-AiSearchCreateInstancesRequestRetrievalOptionsBoostBy copyWith({AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection? Function()? direction, String? field, }) { return AiSearchCreateInstancesRequestRetrievalOptionsBoostBy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('field') && json['field'] is String;}
+AiSearchCreateInstancesRequestRetrievalOptionsBoostBy copyWith({AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection? Function()? direction, String? field, }) {return AiSearchCreateInstancesRequestRetrievalOptionsBoostBy(
   direction: direction != null ? direction() : this.direction,
   field: field ?? this.field,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchCreateInstancesRequestRetrievalOptionsBoostBy &&
           direction == other.direction &&
-          field == other.field; } 
-@override int get hashCode { return Object.hash(direction, field); } 
-@override String toString() { return 'AiSearchCreateInstancesRequestRetrievalOptionsBoostBy(direction: $direction, field: $field)'; } 
- }
+          field == other.field;}
+@override int get hashCode {return Object.hash(direction, field);}
+@override String toString() {return 'AiSearchCreateInstancesRequestRetrievalOptionsBoostBy(direction: $direction, field: $field)';}
+}

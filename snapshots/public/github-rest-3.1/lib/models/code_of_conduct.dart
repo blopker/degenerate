@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code Of Conduct
 @immutable final class CodeOfConduct {const CodeOfConduct({required this.key, required this.name, required this.url, required this.htmlUrl, this.body, });
 
-factory CodeOfConduct.fromJson(Map<String, dynamic> json) { return CodeOfConduct(
+factory CodeOfConduct.fromJson(Map<String, dynamic> json) {return CodeOfConduct(
   key: json['key'] as String,
   name: json['name'] as String,
   url: Uri.parse(json['url'] as String),
   body: json['body'] as String?,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
-); }
+);}
 
 final String key;
 
@@ -21,31 +21,31 @@ final String? body;
 
 final Uri? htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'name': name,
   'url': url.toString(),
   'body': ?body,
   'html_url': htmlUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String); } 
-CodeOfConduct copyWith({String? key, String? name, Uri? url, String? Function()? body, Uri? Function()? htmlUrl, }) { return CodeOfConduct(
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String);}
+CodeOfConduct copyWith({String? key, String? name, Uri? url, String? Function()? body, Uri? Function()? htmlUrl, }) {return CodeOfConduct(
   key: key ?? this.key,
   name: name ?? this.name,
   url: url ?? this.url,
   body: body != null ? body() : this.body,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeOfConduct &&
           key == other.key &&
           name == other.name &&
           url == other.url &&
           body == other.body &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(key, name, url, body, htmlUrl); } 
-@override String toString() { return 'CodeOfConduct(key: $key, name: $name, url: $url, body: $body, htmlUrl: $htmlUrl)'; } 
- }
+          htmlUrl == other.htmlUrl;}
+@override int get hashCode {return Object.hash(key, name, url, body, htmlUrl);}
+@override String toString() {return 'CodeOfConduct(key: $key, name: $name, url: $url, body: $body, htmlUrl: $htmlUrl)';}
+}

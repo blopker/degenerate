@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tax type, such as `vat` or `sales_tax`.
 @immutable final class TaxProductResourceLineItemTaxRateDetailsTaxType {const TaxProductResourceLineItemTaxRateDetailsTaxType._(this.value);
 
-factory TaxProductResourceLineItemTaxRateDetailsTaxType.fromJson(String json) { return switch (json) {
+factory TaxProductResourceLineItemTaxRateDetailsTaxType.fromJson(String json) {return switch (json) {
   'amusement_tax' => amusementTax,
   'communications_tax' => communicationsTax,
   'gst' => gst,
@@ -19,7 +19,7 @@ factory TaxProductResourceLineItemTaxRateDetailsTaxType.fromJson(String json) { 
   'service_tax' => serviceTax,
   'vat' => vat,
   _ => TaxProductResourceLineItemTaxRateDetailsTaxType._(json),
-}; }
+};}
 
 static const TaxProductResourceLineItemTaxRateDetailsTaxType amusementTax = TaxProductResourceLineItemTaxRateDetailsTaxType._('amusement_tax');
 
@@ -53,22 +53,22 @@ static const List<TaxProductResourceLineItemTaxRateDetailsTaxType> values = [amu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceLineItemTaxRateDetailsTaxType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceLineItemTaxRateDetailsTaxType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxProductResourceLineItemTaxRateDetailsTaxType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxProductResourceLineItemTaxRateDetailsTaxType($value)';}
+}
 /// 
 @immutable final class TaxProductResourceLineItemTaxRateDetails {const TaxProductResourceLineItemTaxRateDetails({required this.displayName, required this.percentageDecimal, required this.taxType, });
 
-factory TaxProductResourceLineItemTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceLineItemTaxRateDetails(
+factory TaxProductResourceLineItemTaxRateDetails.fromJson(Map<String, dynamic> json) {return TaxProductResourceLineItemTaxRateDetails(
   displayName: json['display_name'] as String,
   percentageDecimal: json['percentage_decimal'] as String,
   taxType: TaxProductResourceLineItemTaxRateDetailsTaxType.fromJson(json['tax_type'] as String),
-); }
+);}
 
 /// A localized display name for tax type, intended to be human-readable. For example, "Local Sales and Use Tax", "Value-added tax (VAT)", or "Umsatzsteuer (USt.)".
 final String displayName;
@@ -79,24 +79,24 @@ final String percentageDecimal;
 /// The tax type, such as `vat` or `sales_tax`.
 final TaxProductResourceLineItemTaxRateDetailsTaxType taxType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'display_name': displayName,
   'percentage_decimal': percentageDecimal,
   'tax_type': taxType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('percentage_decimal') && json['percentage_decimal'] is String &&
-      json.containsKey('tax_type'); } 
-TaxProductResourceLineItemTaxRateDetails copyWith({String? displayName, String? percentageDecimal, TaxProductResourceLineItemTaxRateDetailsTaxType? taxType, }) { return TaxProductResourceLineItemTaxRateDetails(
+      json.containsKey('tax_type');}
+TaxProductResourceLineItemTaxRateDetails copyWith({String? displayName, String? percentageDecimal, TaxProductResourceLineItemTaxRateDetailsTaxType? taxType, }) {return TaxProductResourceLineItemTaxRateDetails(
   displayName: displayName ?? this.displayName,
   percentageDecimal: percentageDecimal ?? this.percentageDecimal,
   taxType: taxType ?? this.taxType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxProductResourceLineItemTaxRateDetails &&
           displayName == other.displayName &&
           percentageDecimal == other.percentageDecimal &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(displayName, percentageDecimal, taxType); } 
-@override String toString() { return 'TaxProductResourceLineItemTaxRateDetails(displayName: $displayName, percentageDecimal: $percentageDecimal, taxType: $taxType)'; } 
- }
+          taxType == other.taxType;}
+@override int get hashCode {return Object.hash(displayName, percentageDecimal, taxType);}
+@override String toString() {return 'TaxProductResourceLineItemTaxRateDetails(displayName: $displayName, percentageDecimal: $percentageDecimal, taxType: $taxType)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'env_var_source.dart';/// EnvVar represents an environment variable present in a Container.
 @immutable final class EnvVar {const EnvVar({required this.name, this.value, this.valueFrom, });
 
-factory EnvVar.fromJson(Map<String, dynamic> json) { return EnvVar(
+factory EnvVar.fromJson(Map<String, dynamic> json) {return EnvVar(
   name: json['name'] as String,
   value: json['value'] as String?,
   valueFrom: json['valueFrom'] != null ? EnvVarSource.fromJson(json['valueFrom'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Name of the environment variable. May consist of any printable ASCII characters except '='.
 final String name;
@@ -18,22 +18,22 @@ final String? value;
 /// Source for the environment variable's value. Cannot be used if value is not empty.
 final EnvVarSource? valueFrom;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': ?value,
   if (valueFrom != null) 'valueFrom': valueFrom?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-EnvVar copyWith({String? name, String? Function()? value, EnvVarSource? Function()? valueFrom, }) { return EnvVar(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+EnvVar copyWith({String? name, String? Function()? value, EnvVarSource? Function()? valueFrom, }) {return EnvVar(
   name: name ?? this.name,
   value: value != null ? value() : this.value,
   valueFrom: valueFrom != null ? valueFrom() : this.valueFrom,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnvVar &&
           name == other.name &&
           value == other.value &&
-          valueFrom == other.valueFrom; } 
-@override int get hashCode { return Object.hash(name, value, valueFrom); } 
-@override String toString() { return 'EnvVar(name: $name, value: $value, valueFrom: $valueFrom)'; } 
- }
+          valueFrom == other.valueFrom;}
+@override int get hashCode {return Object.hash(name, value, valueFrom);}
+@override String toString() {return 'EnvVar(name: $name, value: $value, valueFrom: $valueFrom)';}
+}

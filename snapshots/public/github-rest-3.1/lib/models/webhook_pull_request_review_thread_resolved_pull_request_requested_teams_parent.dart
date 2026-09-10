@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy {const WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy._(this.value);
 
-factory WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'secret' => secret,
   _ => WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy open = WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy._('open');
 
@@ -19,17 +19,17 @@ static const List<WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeam
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy($value)';}
+}
 @immutable final class WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent {const WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
-factory WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent(
+factory WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent(
   description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -41,7 +41,7 @@ factory WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent.fr
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   slug: json['slug'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// Description of the team
 final String? description;
@@ -70,7 +70,7 @@ final String slug;
 /// URL for the team
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
@@ -82,8 +82,8 @@ Map<String, dynamic> toJson() { return {
   'repositories_url': repositoriesUrl.toString(),
   'slug': slug,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('members_url') && json['members_url'] is String &&
@@ -93,8 +93,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('privacy') &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent(
+      json.containsKey('url') && json['url'] is String;}
+WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParentPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) {return WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent(
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   id: id ?? this.id,
@@ -106,8 +106,8 @@ WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent copyWith({
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
   slug: slug ?? this.slug,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent &&
           description == other.description &&
           htmlUrl == other.htmlUrl &&
@@ -119,7 +119,7 @@ WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent copyWith({
           privacy == other.privacy &&
           repositoriesUrl == other.repositoriesUrl &&
           slug == other.slug &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, repositoriesUrl, slug, url); } 
-@override String toString() { return 'WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, repositoriesUrl, slug, url);}
+@override String toString() {return 'WebhookPullRequestReviewThreadResolvedPullRequestRequestedTeamsParent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)';}
+}

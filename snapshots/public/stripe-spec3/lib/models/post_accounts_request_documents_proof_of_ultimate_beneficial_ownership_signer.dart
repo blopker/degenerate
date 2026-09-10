@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner {const PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner({this.person});
 
-factory PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner.fromJson(Map<String, dynamic> json) { return PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner(
+factory PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner.fromJson(Map<String, dynamic> json) {return PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner(
   person: json['person'] as String?,
-); }
+);}
 
 final String? person;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'person': ?person,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'person'}.contains(key)); } 
-PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner copyWith({String? Function()? person}) { return PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'person'}.contains(key));}
+PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner copyWith({String? Function()? person}) {return PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner(
   person: person != null ? person() : this.person,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner &&
-          person == other.person; } 
-@override int get hashCode { return person.hashCode; } 
-@override String toString() { return 'PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner(person: $person)'; } 
- }
+          person == other.person;}
+@override int get hashCode {return person.hashCode;}
+@override String toString() {return 'PostAccountsRequestDocumentsProofOfUltimateBeneficialOwnershipSigner(person: $person)';}
+}

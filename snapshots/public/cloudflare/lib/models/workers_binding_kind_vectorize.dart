@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindVectorize {const WorkersBindingKindVectorize({required this.indexName, required this.name, required this.type, });
 
-factory WorkersBindingKindVectorize.fromJson(Map<String, dynamic> json) { return WorkersBindingKindVectorize(
+factory WorkersBindingKindVectorize.fromJson(Map<String, dynamic> json) {return WorkersBindingKindVectorize(
   indexName: json['index_name'] as String,
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
-); }
+);}
 
 /// Name of the Vectorize index to bind to.
 final String indexName;
@@ -16,24 +16,24 @@ final WorkersBindingName name;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'index_name': indexName,
   'name': name.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('index_name') && json['index_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('index_name') && json['index_name'] is String &&
       json.containsKey('name') &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindVectorize copyWith({String? indexName, WorkersBindingName? name, String? type, }) { return WorkersBindingKindVectorize(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindVectorize copyWith({String? indexName, WorkersBindingName? name, String? type, }) {return WorkersBindingKindVectorize(
   indexName: indexName ?? this.indexName,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersBindingKindVectorize &&
           indexName == other.indexName &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(indexName, name, type); } 
-@override String toString() { return 'WorkersBindingKindVectorize(indexName: $indexName, name: $name, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(indexName, name, type);}
+@override String toString() {return 'WorkersBindingKindVectorize(indexName: $indexName, name: $name, type: $type)';}
+}

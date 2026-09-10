@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Submitted visibility status.
 @immutable final class UrlscannerCreateScanResponseResultVisibility {const UrlscannerCreateScanResponseResultVisibility._(this.value);
 
-factory UrlscannerCreateScanResponseResultVisibility.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanResponseResultVisibility.fromJson(String json) {return switch (json) {
   'public' => public,
   'unlisted' => unlisted,
   _ => UrlscannerCreateScanResponseResultVisibility._(json),
-}; }
+};}
 
 static const UrlscannerCreateScanResponseResultVisibility public = UrlscannerCreateScanResponseResultVisibility._('public');
 
@@ -17,22 +17,22 @@ static const List<UrlscannerCreateScanResponseResultVisibility> values = [public
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerCreateScanResponseResultVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanResponseResultVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerCreateScanResponseResultVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanResponseResultVisibility($value)';}
+}
 @immutable final class UrlscannerCreateScanResponseResult {const UrlscannerCreateScanResponseResult({required this.time, required this.url, required this.uuid, required this.visibility, });
 
-factory UrlscannerCreateScanResponseResult.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponseResult(
+factory UrlscannerCreateScanResponseResult.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanResponseResult(
   time: DateTime.parse(json['time'] as String),
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: UrlscannerCreateScanResponseResultVisibility.fromJson(json['visibility'] as String),
-); }
+);}
 
 /// Time when url was submitted for scanning.
 final DateTime time;
@@ -46,28 +46,28 @@ final String uuid;
 /// Submitted visibility status.
 final UrlscannerCreateScanResponseResultVisibility visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'time': time.toIso8601String(),
   'url': url,
   'uuid': uuid,
   'visibility': visibility.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('time') && json['time'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('time') && json['time'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility'); } 
-UrlscannerCreateScanResponseResult copyWith({DateTime? time, String? url, String? uuid, UrlscannerCreateScanResponseResultVisibility? visibility, }) { return UrlscannerCreateScanResponseResult(
+      json.containsKey('visibility');}
+UrlscannerCreateScanResponseResult copyWith({DateTime? time, String? url, String? uuid, UrlscannerCreateScanResponseResultVisibility? visibility, }) {return UrlscannerCreateScanResponseResult(
   time: time ?? this.time,
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerCreateScanResponseResult &&
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(time, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanResponseResult(time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(time, url, uuid, visibility);}
+@override String toString() {return 'UrlscannerCreateScanResponseResult(time: $time, url: $url, uuid: $uuid, visibility: $visibility)';}
+}

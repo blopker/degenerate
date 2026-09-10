@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_unassigned_pull_request_head_repo.dart';import 'webhook_pull_request_unassigned_pull_request_head_user.dart';@immutable final class WebhookPullRequestUnassignedPullRequestHead {const WebhookPullRequestUnassignedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
-factory WebhookPullRequestUnassignedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnassignedPullRequestHead(
+factory WebhookPullRequestUnassignedPullRequestHead.fromJson(Map<String, dynamic> json) {return WebhookPullRequestUnassignedPullRequestHead(
   label: json['label'] as String?,
   ref: json['ref'] as String,
   repo: json['repo'] != null ? WebhookPullRequestUnassignedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null,
   sha: json['sha'] as String,
   user: json['user'] != null ? WebhookPullRequestUnassignedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? label;
 
@@ -21,32 +21,32 @@ final String sha;
 
 final WebhookPullRequestUnassignedPullRequestHeadUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'label': label,
   'ref': ref,
   'repo': repo?.toJson(),
   'sha': sha,
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && (json['label'] == null || json['label'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && (json['label'] == null || json['label'] is String) &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repo') &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestUnassignedPullRequestHead copyWith({String? Function()? label, String? ref, WebhookPullRequestUnassignedPullRequestHeadRepo? Function()? repo, String? sha, WebhookPullRequestUnassignedPullRequestHeadUser? Function()? user, }) { return WebhookPullRequestUnassignedPullRequestHead(
+      json.containsKey('user');}
+WebhookPullRequestUnassignedPullRequestHead copyWith({String? Function()? label, String? ref, WebhookPullRequestUnassignedPullRequestHeadRepo? Function()? repo, String? sha, WebhookPullRequestUnassignedPullRequestHeadUser? Function()? user, }) {return WebhookPullRequestUnassignedPullRequestHead(
   label: label != null ? label() : this.label,
   ref: ref ?? this.ref,
   repo: repo != null ? repo() : this.repo,
   sha: sha ?? this.sha,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestUnassignedPullRequestHead &&
           label == other.label &&
           ref == other.ref &&
           repo == other.repo &&
           sha == other.sha &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(label, ref, repo, sha, user); } 
-@override String toString() { return 'WebhookPullRequestUnassignedPullRequestHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(label, ref, repo, sha, user);}
+@override String toString() {return 'WebhookPullRequestUnassignedPullRequestHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)';}
+}

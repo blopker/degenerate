@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CachePurgeSingleFileWithUrlAndHeadersFiles {const CachePurgeSingleFileWithUrlAndHeadersFiles({this.headers, this.url, });
 
-factory CachePurgeSingleFileWithUrlAndHeadersFiles.fromJson(Map<String, dynamic> json) { return CachePurgeSingleFileWithUrlAndHeadersFiles(
+factory CachePurgeSingleFileWithUrlAndHeadersFiles.fromJson(Map<String, dynamic> json) {return CachePurgeSingleFileWithUrlAndHeadersFiles(
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   url: json['url'] as String?,
-); }
+);}
 
 final Map<String,String>? headers;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'headers': ?headers,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headers', 'url'}.contains(key)); } 
-CachePurgeSingleFileWithUrlAndHeadersFiles copyWith({Map<String, String>? Function()? headers, String? Function()? url, }) { return CachePurgeSingleFileWithUrlAndHeadersFiles(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'headers', 'url'}.contains(key));}
+CachePurgeSingleFileWithUrlAndHeadersFiles copyWith({Map<String, String>? Function()? headers, String? Function()? url, }) {return CachePurgeSingleFileWithUrlAndHeadersFiles(
   headers: headers != null ? headers() : this.headers,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CachePurgeSingleFileWithUrlAndHeadersFiles &&
           headers == other.headers &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(headers, url); } 
-@override String toString() { return 'CachePurgeSingleFileWithUrlAndHeadersFiles(headers: $headers, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(headers, url);}
+@override String toString() {return 'CachePurgeSingleFileWithUrlAndHeadersFiles(headers: $headers, url: $url)';}
+}

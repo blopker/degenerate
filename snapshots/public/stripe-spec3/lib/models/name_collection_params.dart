@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'name_collection_params_business.dart';import 'name_collection_params_individual.dart';@immutable final class NameCollectionParams {const NameCollectionParams({this.business, this.individual, });
 
-factory NameCollectionParams.fromJson(Map<String, dynamic> json) { return NameCollectionParams(
+factory NameCollectionParams.fromJson(Map<String, dynamic> json) {return NameCollectionParams(
   business: json['business'] != null ? NameCollectionParamsBusiness.fromJson(json['business'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? NameCollectionParamsIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final NameCollectionParamsBusiness? business;
 
 final NameCollectionParamsIndividual? individual;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (business != null) 'business': business?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-NameCollectionParams copyWith({NameCollectionParamsBusiness? Function()? business, NameCollectionParamsIndividual? Function()? individual, }) { return NameCollectionParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'business', 'individual'}.contains(key));}
+NameCollectionParams copyWith({NameCollectionParamsBusiness? Function()? business, NameCollectionParamsIndividual? Function()? individual, }) {return NameCollectionParams(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NameCollectionParams &&
           business == other.business &&
-          individual == other.individual; } 
-@override int get hashCode { return Object.hash(business, individual); } 
-@override String toString() { return 'NameCollectionParams(business: $business, individual: $individual)'; } 
- }
+          individual == other.individual;}
+@override int get hashCode {return Object.hash(business, individual);}
+@override String toString() {return 'NameCollectionParams(business: $business, individual: $individual)';}
+}

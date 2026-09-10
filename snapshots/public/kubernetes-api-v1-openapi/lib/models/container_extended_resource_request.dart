@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerExtendedResourceRequest has the mapping of container name, extended resource name to the device request name.
 @immutable final class ContainerExtendedResourceRequest {const ContainerExtendedResourceRequest({required this.containerName, required this.requestName, required this.resourceName, });
 
-factory ContainerExtendedResourceRequest.fromJson(Map<String, dynamic> json) { return ContainerExtendedResourceRequest(
+factory ContainerExtendedResourceRequest.fromJson(Map<String, dynamic> json) {return ContainerExtendedResourceRequest(
   containerName: json['containerName'] as String,
   requestName: json['requestName'] as String,
   resourceName: json['resourceName'] as String,
-); }
+);}
 
 /// The name of the container requesting resources.
 final String containerName;
@@ -18,24 +18,24 @@ final String requestName;
 /// The name of the extended resource in that container which gets backed by DRA.
 final String resourceName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'containerName': containerName,
   'requestName': requestName,
   'resourceName': resourceName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('containerName') && json['containerName'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('containerName') && json['containerName'] is String &&
       json.containsKey('requestName') && json['requestName'] is String &&
-      json.containsKey('resourceName') && json['resourceName'] is String; } 
-ContainerExtendedResourceRequest copyWith({String? containerName, String? requestName, String? resourceName, }) { return ContainerExtendedResourceRequest(
+      json.containsKey('resourceName') && json['resourceName'] is String;}
+ContainerExtendedResourceRequest copyWith({String? containerName, String? requestName, String? resourceName, }) {return ContainerExtendedResourceRequest(
   containerName: containerName ?? this.containerName,
   requestName: requestName ?? this.requestName,
   resourceName: resourceName ?? this.resourceName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerExtendedResourceRequest &&
           containerName == other.containerName &&
           requestName == other.requestName &&
-          resourceName == other.resourceName; } 
-@override int get hashCode { return Object.hash(containerName, requestName, resourceName); } 
-@override String toString() { return 'ContainerExtendedResourceRequest(containerName: $containerName, requestName: $requestName, resourceName: $resourceName)'; } 
- }
+          resourceName == other.resourceName;}
+@override int get hashCode {return Object.hash(containerName, requestName, resourceName);}
+@override String toString() {return 'ContainerExtendedResourceRequest(containerName: $containerName, requestName: $requestName, resourceName: $resourceName)';}
+}

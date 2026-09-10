@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pending_invoice_item_interval_params.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2 {const PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2._(this.value);
 
-factory PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2 $empty = PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemInt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2($value)';}
+}
 /// Specifies an interval for how often to bill for any pending invoice items. It is analogous to calling [Create an invoice](https://docs.stripe.com/api#create_invoice) for the given subscription at the specified interval.
 @immutable
 final class PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemInterval {

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_schema_issue_notification_source.dart';@immutable final class ShieldSchemaIssueNotification {const ShieldSchemaIssueNotification({required this.code, required this.message, this.source = const Omittable.absent(), });
 
-factory ShieldSchemaIssueNotification.fromJson(Map<String, dynamic> json) { return ShieldSchemaIssueNotification(
+factory ShieldSchemaIssueNotification.fromJson(Map<String, dynamic> json) {return ShieldSchemaIssueNotification(
   code: (json['code'] as num).toInt(),
   message: json['message'] as String,
   source: json.containsKey('source') ? Omittable(json['source'] != null ? ShieldSchemaIssueNotificationSource.fromJson(json['source'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// A unique error code that describes the kind of issue with the schema
 final int code;
@@ -16,23 +16,23 @@ final String message;
 
 final Omittable<ShieldSchemaIssueNotificationSource?> source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
   if (source.isPresent) 'source': source.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-ShieldSchemaIssueNotification copyWith({int? code, String? message, Omittable<ShieldSchemaIssueNotificationSource?>? source, }) { return ShieldSchemaIssueNotification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+ShieldSchemaIssueNotification copyWith({int? code, String? message, Omittable<ShieldSchemaIssueNotificationSource?>? source, }) {return ShieldSchemaIssueNotification(
   code: code ?? this.code,
   message: message ?? this.message,
   source: source ?? this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShieldSchemaIssueNotification &&
           code == other.code &&
           message == other.message &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, message, source); } 
-@override String toString() { return 'ShieldSchemaIssueNotification(code: $code, message: $message, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(code, message, source);}
+@override String toString() {return 'ShieldSchemaIssueNotification(code: $code, message: $message, source: $source)';}
+}

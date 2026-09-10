@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the status for Content Scanning.
 @immutable final class BundleSchemasStatus {const BundleSchemasStatus({this.modified, this.value, });
 
-factory BundleSchemasStatus.fromJson(Map<String, dynamic> json) { return BundleSchemasStatus(
+factory BundleSchemasStatus.fromJson(Map<String, dynamic> json) {return BundleSchemasStatus(
   modified: json['modified'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 /// Defines the last modification date (ISO 8601) of the Content Scanning status.
 final String? modified;
@@ -14,19 +14,19 @@ final String? modified;
 /// Defines the status of Content Scanning.
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'modified': ?modified,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'value'}.contains(key)); } 
-BundleSchemasStatus copyWith({String? Function()? modified, String? Function()? value, }) { return BundleSchemasStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'modified', 'value'}.contains(key));}
+BundleSchemasStatus copyWith({String? Function()? modified, String? Function()? value, }) {return BundleSchemasStatus(
   modified: modified != null ? modified() : this.modified,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BundleSchemasStatus &&
           modified == other.modified &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(modified, value); } 
-@override String toString() { return 'BundleSchemasStatus(modified: $modified, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(modified, value);}
+@override String toString() {return 'BundleSchemasStatus(modified: $modified, value: $value)';}
+}

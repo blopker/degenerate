@@ -6,13 +6,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_ser
 /// 
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionFailed {const RealtimeServerEventConversationItemInputAudioTranscriptionFailed({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.error, });
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
+factory RealtimeServerEventConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   error: RealtimeServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -31,32 +31,32 @@ final int contentIndex;
 /// Details of the transcription error.
 final RealtimeServerEventConversationItemInputAudioTranscriptionFailedError error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'item_id': itemId,
   'content_index': contentIndex,
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('error'); } 
-RealtimeServerEventConversationItemInputAudioTranscriptionFailed copyWith({String? eventId, String? type, String? itemId, int? contentIndex, RealtimeServerEventConversationItemInputAudioTranscriptionFailedError? error, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
+      json.containsKey('error');}
+RealtimeServerEventConversationItemInputAudioTranscriptionFailed copyWith({String? eventId, String? type, String? itemId, int? contentIndex, RealtimeServerEventConversationItemInputAudioTranscriptionFailedError? error, }) {return RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   contentIndex: contentIndex ?? this.contentIndex,
   error: error ?? this.error,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionFailed &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, error); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionFailed(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, error: $error)'; } 
- }
+          error == other.error;}
+@override int get hashCode {return Object.hash(eventId, type, itemId, contentIndex, error);}
+@override String toString() {return 'RealtimeServerEventConversationItemInputAudioTranscriptionFailed(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, error: $error)';}
+}

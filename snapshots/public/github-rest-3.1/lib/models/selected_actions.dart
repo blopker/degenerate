@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SelectedActions {const SelectedActions({this.githubOwnedAllowed, this.verifiedAllowed, this.patternsAllowed, });
 
-factory SelectedActions.fromJson(Map<String, dynamic> json) { return SelectedActions(
+factory SelectedActions.fromJson(Map<String, dynamic> json) {return SelectedActions(
   githubOwnedAllowed: json['github_owned_allowed'] as bool?,
   verifiedAllowed: json['verified_allowed'] as bool?,
   patternsAllowed: (json['patterns_allowed'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
 final bool? githubOwnedAllowed;
@@ -20,22 +20,22 @@ final bool? verifiedAllowed;
 /// > The `patterns_allowed` setting only applies to public repositories.
 final List<String>? patternsAllowed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'github_owned_allowed': ?githubOwnedAllowed,
   'verified_allowed': ?verifiedAllowed,
   'patterns_allowed': ?patternsAllowed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'github_owned_allowed', 'verified_allowed', 'patterns_allowed'}.contains(key)); } 
-SelectedActions copyWith({bool? Function()? githubOwnedAllowed, bool? Function()? verifiedAllowed, List<String>? Function()? patternsAllowed, }) { return SelectedActions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'github_owned_allowed', 'verified_allowed', 'patterns_allowed'}.contains(key));}
+SelectedActions copyWith({bool? Function()? githubOwnedAllowed, bool? Function()? verifiedAllowed, List<String>? Function()? patternsAllowed, }) {return SelectedActions(
   githubOwnedAllowed: githubOwnedAllowed != null ? githubOwnedAllowed() : this.githubOwnedAllowed,
   verifiedAllowed: verifiedAllowed != null ? verifiedAllowed() : this.verifiedAllowed,
   patternsAllowed: patternsAllowed != null ? patternsAllowed() : this.patternsAllowed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SelectedActions &&
           githubOwnedAllowed == other.githubOwnedAllowed &&
           verifiedAllowed == other.verifiedAllowed &&
-          listEquals(patternsAllowed, other.patternsAllowed); } 
-@override int get hashCode { return Object.hash(githubOwnedAllowed, verifiedAllowed, Object.hashAll(patternsAllowed ?? const [])); } 
-@override String toString() { return 'SelectedActions(githubOwnedAllowed: $githubOwnedAllowed, verifiedAllowed: $verifiedAllowed, patternsAllowed: $patternsAllowed)'; } 
- }
+          listEquals(patternsAllowed, other.patternsAllowed);}
+@override int get hashCode {return Object.hash(githubOwnedAllowed, verifiedAllowed, Object.hashAll(patternsAllowed ?? const []));}
+@override String toString() {return 'SelectedActions(githubOwnedAllowed: $githubOwnedAllowed, verifiedAllowed: $verifiedAllowed, patternsAllowed: $patternsAllowed)';}
+}

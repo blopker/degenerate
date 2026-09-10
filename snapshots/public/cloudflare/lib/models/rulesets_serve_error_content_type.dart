@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type header to set with the error response.
 @immutable final class RulesetsServeErrorContentType {const RulesetsServeErrorContentType._(this.value);
 
-factory RulesetsServeErrorContentType.fromJson(String json) { return switch (json) {
+factory RulesetsServeErrorContentType.fromJson(String json) {return switch (json) {
   'application/json' => applicationJson,
   'text/html' => textHtml,
   'text/plain' => textPlain,
   'text/xml' => textXml,
   _ => RulesetsServeErrorContentType._(json),
-}; }
+};}
 
 static const RulesetsServeErrorContentType applicationJson = RulesetsServeErrorContentType._('application/json');
 
@@ -23,11 +23,11 @@ static const List<RulesetsServeErrorContentType> values = [applicationJson, text
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsServeErrorContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsServeErrorContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsServeErrorContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsServeErrorContentType($value)';}
+}

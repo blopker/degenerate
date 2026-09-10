@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesRequestRenderingPdfPageSize {const PostInvoicesRequestRenderingPdfPageSize._(this.value);
 
-factory PostInvoicesRequestRenderingPdfPageSize.fromJson(String json) { return switch (json) {
+factory PostInvoicesRequestRenderingPdfPageSize.fromJson(String json) {return switch (json) {
   'a4' => a4,
   'auto' => auto,
   'letter' => letter,
   _ => PostInvoicesRequestRenderingPdfPageSize._(json),
-}; }
+};}
 
 static const PostInvoicesRequestRenderingPdfPageSize a4 = PostInvoicesRequestRenderingPdfPageSize._('a4');
 
@@ -19,32 +19,32 @@ static const List<PostInvoicesRequestRenderingPdfPageSize> values = [a4, auto, l
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesRequestRenderingPdfPageSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesRequestRenderingPdfPageSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesRequestRenderingPdfPageSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesRequestRenderingPdfPageSize($value)';}
+}
 @immutable final class PostInvoicesRequestRenderingPdf {const PostInvoicesRequestRenderingPdf({this.pageSize});
 
-factory PostInvoicesRequestRenderingPdf.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestRenderingPdf(
+factory PostInvoicesRequestRenderingPdf.fromJson(Map<String, dynamic> json) {return PostInvoicesRequestRenderingPdf(
   pageSize: json['page_size'] != null ? PostInvoicesRequestRenderingPdfPageSize.fromJson(json['page_size'] as String) : null,
-); }
+);}
 
 final PostInvoicesRequestRenderingPdfPageSize? pageSize;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (pageSize != null) 'page_size': pageSize?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'page_size'}.contains(key)); } 
-PostInvoicesRequestRenderingPdf copyWith({PostInvoicesRequestRenderingPdfPageSize? Function()? pageSize}) { return PostInvoicesRequestRenderingPdf(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'page_size'}.contains(key));}
+PostInvoicesRequestRenderingPdf copyWith({PostInvoicesRequestRenderingPdfPageSize? Function()? pageSize}) {return PostInvoicesRequestRenderingPdf(
   pageSize: pageSize != null ? pageSize() : this.pageSize,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesRequestRenderingPdf &&
-          pageSize == other.pageSize; } 
-@override int get hashCode { return pageSize.hashCode; } 
-@override String toString() { return 'PostInvoicesRequestRenderingPdf(pageSize: $pageSize)'; } 
- }
+          pageSize == other.pageSize;}
+@override int get hashCode {return pageSize.hashCode;}
+@override String toString() {return 'PostInvoicesRequestRenderingPdf(pageSize: $pageSize)';}
+}

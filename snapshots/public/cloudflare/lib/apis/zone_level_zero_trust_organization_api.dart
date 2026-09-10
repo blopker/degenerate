@@ -13,7 +13,7 @@ final class ZoneLevelZeroTrustOrganizationApi with ApiExecutor {const ZoneLevelZ
 /// Returns the configuration for your Zero Trust organization.
 ///
 /// `GET /zones/{zone_id}/access/organizations`
-Future<ApiResult<AccessSchemasOrganizations?, ResponseCommonFailure4>> zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasOrganizations?, ResponseCommonFailure4>> zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,30 +22,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure4.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure4.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create your Zero Trust organization
 ///
 /// Sets up a Zero Trust organization for your account.
 ///
 /// `POST /zones/{zone_id}/access/organizations`
-Future<ApiResult<AccessSchemasOrganizations?, ResponseCommonFailure4>> zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasOrganizations?, ResponseCommonFailure4>> zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,30 +45,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure4.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure4.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update your Zero Trust organization
 ///
 /// Updates the configuration for your Zero Trust organization.
 ///
 /// `PUT /zones/{zone_id}/access/organizations`
-Future<ApiResult<AccessSchemasOrganizations?, ResponseCommonFailure4>> zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasOrganizations?, ResponseCommonFailure4>> zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,30 +68,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure4.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure4.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Revoke all Access tokens for a user
 ///
 /// Revokes a user's access across all applications.
 ///
 /// `POST /zones/{zone_id}/access/organizations/revoke_user`
-Future<ApiResult<bool?, Never>> zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<bool?, Never>> zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,12 +91,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as bool?;
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as bool?;}, );}
+}

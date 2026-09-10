@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_pull_request.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_requested_team.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action._(this.value);
 
-factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action.fromJson(String json) {return switch (json) {
   'review_request_removed' => reviewRequestRemoved,
   _ => WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action reviewRequestRemoved = WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action._('review_request_removed');
 
@@ -13,17 +13,17 @@ static const List<WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Act
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action($value)';}
+}
 @immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2({required this.action, required this.number, required this.pullRequest, required this.repository, required this.requestedTeam, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(
+factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(
   action: WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2.fromJson(Map
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   requestedTeam: WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam.fromJson(json['requested_team'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action action;
 
@@ -55,7 +55,7 @@ final WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam r
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -65,14 +65,14 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'requested_team': requestedTeam.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('requested_team') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 copyWith({WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, int? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequest? pullRequest, RepositoryWebhooks? repository, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam? requestedTeam, SimpleUser? sender, }) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(
+      json.containsKey('sender');}
+WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 copyWith({WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2Action? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, int? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequest? pullRequest, RepositoryWebhooks? repository, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam? requestedTeam, SimpleUser? sender, }) {return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -82,8 +82,8 @@ WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 copyWith({WebhookPul
   repository: repository ?? this.repository,
   requestedTeam: requestedTeam ?? this.requestedTeam,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -93,7 +93,7 @@ WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 copyWith({WebhookPul
           pullRequest == other.pullRequest &&
           repository == other.repository &&
           requestedTeam == other.requestedTeam &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, number, organization, pullRequest, repository, requestedTeam, sender); } 
-@override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, requestedTeam: $requestedTeam, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, number, organization, pullRequest, repository, requestedTeam, sender);}
+@override String toString() {return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, requestedTeam: $requestedTeam, sender: $sender)';}
+}

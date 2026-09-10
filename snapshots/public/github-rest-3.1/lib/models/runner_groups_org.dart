@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunnerGroupsOrg {const RunnerGroupsOrg({required this.id, required this.name, required this.visibility, required this.$default, required this.runnersUrl, required this.inherited, required this.allowsPublicRepositories, this.selectedRepositoriesUrl, this.hostedRunnersUrl, this.networkConfigurationId, this.inheritedAllowsPublicRepositories, this.workflowRestrictionsReadOnly, this.restrictedToWorkflows, this.selectedWorkflows, });
 
-factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) { return RunnerGroupsOrg(
+factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) {return RunnerGroupsOrg(
   id: (json['id'] as num).toDouble(),
   name: json['name'] as String,
   visibility: json['visibility'] as String,
@@ -17,7 +17,7 @@ factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) { return RunnerGroup
   workflowRestrictionsReadOnly: json['workflow_restrictions_read_only'] as bool?,
   restrictedToWorkflows: json['restricted_to_workflows'] as bool?,
   selectedWorkflows: (json['selected_workflows'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final double id;
 
@@ -53,10 +53,10 @@ final bool? restrictedToWorkflows;
 final List<String>? selectedWorkflows;
 
 /// The value with the schema default applied when absent.
-bool get workflowRestrictionsReadOnlyOrDefault { return workflowRestrictionsReadOnly ?? false; } 
+bool get workflowRestrictionsReadOnlyOrDefault {return workflowRestrictionsReadOnly ?? false;}
 /// The value with the schema default applied when absent.
-bool get restrictedToWorkflowsOrDefault { return restrictedToWorkflows ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get restrictedToWorkflowsOrDefault {return restrictedToWorkflows ?? false;}
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'visibility': visibility,
@@ -71,15 +71,15 @@ Map<String, dynamic> toJson() { return {
   'workflow_restrictions_read_only': ?workflowRestrictionsReadOnly,
   'restricted_to_workflows': ?restrictedToWorkflows,
   'selected_workflows': ?selectedWorkflows,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('visibility') && json['visibility'] is String &&
       json.containsKey('default') && json['default'] is bool &&
       json.containsKey('runners_url') && json['runners_url'] is String &&
       json.containsKey('inherited') && json['inherited'] is bool &&
-      json.containsKey('allows_public_repositories') && json['allows_public_repositories'] is bool; } 
-RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String? Function()? selectedRepositoriesUrl, String? runnersUrl, String? Function()? hostedRunnersUrl, String? Function()? networkConfigurationId, bool? inherited, bool? Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool? Function()? workflowRestrictionsReadOnly, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, }) { return RunnerGroupsOrg(
+      json.containsKey('allows_public_repositories') && json['allows_public_repositories'] is bool;}
+RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String? Function()? selectedRepositoriesUrl, String? runnersUrl, String? Function()? hostedRunnersUrl, String? Function()? networkConfigurationId, bool? inherited, bool? Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool? Function()? workflowRestrictionsReadOnly, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, }) {return RunnerGroupsOrg(
   id: id ?? this.id,
   name: name ?? this.name,
   visibility: visibility ?? this.visibility,
@@ -94,8 +94,8 @@ RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $d
   workflowRestrictionsReadOnly: workflowRestrictionsReadOnly != null ? workflowRestrictionsReadOnly() : this.workflowRestrictionsReadOnly,
   restrictedToWorkflows: restrictedToWorkflows != null ? restrictedToWorkflows() : this.restrictedToWorkflows,
   selectedWorkflows: selectedWorkflows != null ? selectedWorkflows() : this.selectedWorkflows,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunnerGroupsOrg &&
           id == other.id &&
           name == other.name &&
@@ -110,7 +110,7 @@ RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $d
           allowsPublicRepositories == other.allowsPublicRepositories &&
           workflowRestrictionsReadOnly == other.workflowRestrictionsReadOnly &&
           restrictedToWorkflows == other.restrictedToWorkflows &&
-          listEquals(selectedWorkflows, other.selectedWorkflows); } 
-@override int get hashCode { return Object.hash(id, name, visibility, $default, selectedRepositoriesUrl, runnersUrl, hostedRunnersUrl, networkConfigurationId, inherited, inheritedAllowsPublicRepositories, allowsPublicRepositories, workflowRestrictionsReadOnly, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const [])); } 
-@override String toString() { return 'RunnerGroupsOrg(id: $id, name: $name, visibility: $visibility, \$default: ${$default}, selectedRepositoriesUrl: $selectedRepositoriesUrl, runnersUrl: $runnersUrl, hostedRunnersUrl: $hostedRunnersUrl, networkConfigurationId: $networkConfigurationId, inherited: $inherited, inheritedAllowsPublicRepositories: $inheritedAllowsPublicRepositories, allowsPublicRepositories: $allowsPublicRepositories, workflowRestrictionsReadOnly: $workflowRestrictionsReadOnly, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows)'; } 
- }
+          listEquals(selectedWorkflows, other.selectedWorkflows);}
+@override int get hashCode {return Object.hash(id, name, visibility, $default, selectedRepositoriesUrl, runnersUrl, hostedRunnersUrl, networkConfigurationId, inherited, inheritedAllowsPublicRepositories, allowsPublicRepositories, workflowRestrictionsReadOnly, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []));}
+@override String toString() {return 'RunnerGroupsOrg(id: $id, name: $name, visibility: $visibility, \$default: ${$default}, selectedRepositoriesUrl: $selectedRepositoriesUrl, runnersUrl: $runnersUrl, hostedRunnersUrl: $hostedRunnersUrl, networkConfigurationId: $networkConfigurationId, inherited: $inherited, inheritedAllowsPublicRepositories: $inheritedAllowsPublicRepositories, allowsPublicRepositories: $allowsPublicRepositories, workflowRestrictionsReadOnly: $workflowRestrictionsReadOnly, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows)';}
+}

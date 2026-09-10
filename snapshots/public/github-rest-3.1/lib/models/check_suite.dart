@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';import 'simple_commit.dart';/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
 @immutable final class CheckSuiteStatus {const CheckSuiteStatus._(this.value);
 
-factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
+factory CheckSuiteStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
@@ -12,7 +12,7 @@ factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'null' => $null,
   _ => CheckSuiteStatus._(json),
-}; }
+};}
 
 static const CheckSuiteStatus queued = CheckSuiteStatus._('queued');
 
@@ -32,17 +32,17 @@ static const List<CheckSuiteStatus> values = [queued, inProgress, completed, wai
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckSuiteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckSuiteStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckSuiteStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckSuiteStatus($value)';}
+}
 @immutable final class CheckSuiteConclusion {const CheckSuiteConclusion._(this.value);
 
-factory CheckSuiteConclusion.fromJson(String json) { return switch (json) {
+factory CheckSuiteConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'neutral' => neutral,
@@ -54,7 +54,7 @@ factory CheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'stale' => stale,
   'null' => $null,
   _ => CheckSuiteConclusion._(json),
-}; }
+};}
 
 static const CheckSuiteConclusion success = CheckSuiteConclusion._('success');
 
@@ -80,18 +80,18 @@ static const List<CheckSuiteConclusion> values = [success, failure, neutral, can
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckSuiteConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckSuiteConclusion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckSuiteConclusion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckSuiteConclusion($value)';}
+}
 /// A suite of checks performed on the code of a given code change
 @immutable final class CheckSuite {const CheckSuite({required this.id, required this.nodeId, required this.headBranch, required this.headSha, required this.status, required this.conclusion, required this.url, required this.before, required this.after, required this.pullRequests, required this.app, required this.repository, required this.createdAt, required this.updatedAt, required this.headCommit, required this.latestCheckRunsCount, required this.checkRunsUrl, this.rerequestable, this.runsRerequestable, });
 
-factory CheckSuite.fromJson(Map<String, dynamic> json) { return CheckSuite(
+factory CheckSuite.fromJson(Map<String, dynamic> json) {return CheckSuite(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   headBranch: json['head_branch'] as String?,
@@ -111,7 +111,7 @@ factory CheckSuite.fromJson(Map<String, dynamic> json) { return CheckSuite(
   checkRunsUrl: json['check_runs_url'] as String,
   rerequestable: json['rerequestable'] as bool?,
   runsRerequestable: json['runs_rerequestable'] as bool?,
-); }
+);}
 
 final int id;
 
@@ -153,7 +153,7 @@ final bool? rerequestable;
 
 final bool? runsRerequestable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'head_branch': headBranch,
@@ -173,8 +173,8 @@ Map<String, dynamic> toJson() { return {
   'check_runs_url': checkRunsUrl,
   'rerequestable': ?rerequestable,
   'runs_rerequestable': ?runsRerequestable,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
@@ -190,8 +190,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('head_commit') &&
       json.containsKey('latest_check_runs_count') && json['latest_check_runs_count'] is num &&
-      json.containsKey('check_runs_url') && json['check_runs_url'] is String; } 
-CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, String? headSha, CheckSuiteStatus? Function()? status, CheckSuiteConclusion? Function()? conclusion, String? Function()? url, String? Function()? before, String? Function()? after, List<PullRequestMinimal>? Function()? pullRequests, Integration? Function()? app, MinimalRepository? repository, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, SimpleCommit? headCommit, int? latestCheckRunsCount, String? checkRunsUrl, bool? Function()? rerequestable, bool? Function()? runsRerequestable, }) { return CheckSuite(
+      json.containsKey('check_runs_url') && json['check_runs_url'] is String;}
+CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, String? headSha, CheckSuiteStatus? Function()? status, CheckSuiteConclusion? Function()? conclusion, String? Function()? url, String? Function()? before, String? Function()? after, List<PullRequestMinimal>? Function()? pullRequests, Integration? Function()? app, MinimalRepository? repository, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, SimpleCommit? headCommit, int? latestCheckRunsCount, String? checkRunsUrl, bool? Function()? rerequestable, bool? Function()? runsRerequestable, }) {return CheckSuite(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   headBranch: headBranch != null ? headBranch() : this.headBranch,
@@ -211,8 +211,8 @@ CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, St
   checkRunsUrl: checkRunsUrl ?? this.checkRunsUrl,
   rerequestable: rerequestable != null ? rerequestable() : this.rerequestable,
   runsRerequestable: runsRerequestable != null ? runsRerequestable() : this.runsRerequestable,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckSuite &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -232,7 +232,7 @@ CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, St
           latestCheckRunsCount == other.latestCheckRunsCount &&
           checkRunsUrl == other.checkRunsUrl &&
           rerequestable == other.rerequestable &&
-          runsRerequestable == other.runsRerequestable; } 
-@override int get hashCode { return Object.hash(id, nodeId, headBranch, headSha, status, conclusion, url, before, after, Object.hashAll(pullRequests ?? const []), app, repository, createdAt, updatedAt, headCommit, latestCheckRunsCount, checkRunsUrl, rerequestable, runsRerequestable); } 
-@override String toString() { return 'CheckSuite(id: $id, nodeId: $nodeId, headBranch: $headBranch, headSha: $headSha, status: $status, conclusion: $conclusion, url: $url, before: $before, after: $after, pullRequests: $pullRequests, app: $app, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt, headCommit: $headCommit, latestCheckRunsCount: $latestCheckRunsCount, checkRunsUrl: $checkRunsUrl, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable)'; } 
- }
+          runsRerequestable == other.runsRerequestable;}
+@override int get hashCode {return Object.hash(id, nodeId, headBranch, headSha, status, conclusion, url, before, after, Object.hashAll(pullRequests ?? const []), app, repository, createdAt, updatedAt, headCommit, latestCheckRunsCount, checkRunsUrl, rerequestable, runsRerequestable);}
+@override String toString() {return 'CheckSuite(id: $id, nodeId: $nodeId, headBranch: $headBranch, headSha: $headSha, status: $status, conclusion: $conclusion, url: $url, before: $before, after: $after, pullRequests: $pullRequests, app: $app, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt, headCommit: $headCommit, latestCheckRunsCount: $latestCheckRunsCount, checkRunsUrl: $checkRunsUrl, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable)';}
+}

@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify addition
 /// - `reasoning.encrypted_content`: Includes an encrypted version of reasoning tokens in reasoning item outputs. This enables reasoning items to be used in multi-turn conversations when using the Responses API statelessly (like when the `store` parameter is set to `false`, or when an organization is enrolled in the zero data retention program).
 @immutable final class IncludeEnum {const IncludeEnum._(this.value);
 
-factory IncludeEnum.fromJson(String json) { return switch (json) {
+factory IncludeEnum.fromJson(String json) {return switch (json) {
   'file_search_call.results' => fileSearchCallResults,
   'web_search_call.results' => webSearchCallResults,
   'web_search_call.action.sources' => webSearchCallActionSources,
@@ -20,7 +20,7 @@ factory IncludeEnum.fromJson(String json) { return switch (json) {
   'reasoning.encrypted_content' => reasoningEncryptedContent,
   'message.output_text.logprobs' => messageOutputTextLogprobs,
   _ => IncludeEnum._(json),
-}; }
+};}
 
 static const IncludeEnum fileSearchCallResults = IncludeEnum._('file_search_call.results');
 
@@ -42,11 +42,11 @@ static const List<IncludeEnum> values = [fileSearchCallResults, webSearchCallRes
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IncludeEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IncludeEnum($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IncludeEnum && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IncludeEnum($value)';}
+}

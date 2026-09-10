@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tokens used in a completion.
 @immutable final class CompletionUsageCompletionTokensDetails {const CompletionUsageCompletionTokensDetails({this.acceptedPredictionTokens, this.audioTokens, this.reasoningTokens, this.rejectedPredictionTokens, });
 
-factory CompletionUsageCompletionTokensDetails.fromJson(Map<String, dynamic> json) { return CompletionUsageCompletionTokensDetails(
+factory CompletionUsageCompletionTokensDetails.fromJson(Map<String, dynamic> json) {return CompletionUsageCompletionTokensDetails(
   acceptedPredictionTokens: json['accepted_prediction_tokens'] != null ? (json['accepted_prediction_tokens'] as num).toInt() : null,
   audioTokens: json['audio_tokens'] != null ? (json['audio_tokens'] as num).toInt() : null,
   reasoningTokens: json['reasoning_tokens'] != null ? (json['reasoning_tokens'] as num).toInt() : null,
   rejectedPredictionTokens: json['rejected_prediction_tokens'] != null ? (json['rejected_prediction_tokens'] as num).toInt() : null,
-); }
+);}
 
 /// When using Predicted Outputs, the number of tokens in the
 /// prediction that appeared in the completion.
@@ -30,32 +30,32 @@ final int? reasoningTokens;
 final int? rejectedPredictionTokens;
 
 /// The value with the schema default applied when absent.
-int get acceptedPredictionTokensOrDefault { return acceptedPredictionTokens ?? 0; } 
+int get acceptedPredictionTokensOrDefault {return acceptedPredictionTokens ?? 0;}
 /// The value with the schema default applied when absent.
-int get audioTokensOrDefault { return audioTokens ?? 0; } 
+int get audioTokensOrDefault {return audioTokens ?? 0;}
 /// The value with the schema default applied when absent.
-int get reasoningTokensOrDefault { return reasoningTokens ?? 0; } 
+int get reasoningTokensOrDefault {return reasoningTokens ?? 0;}
 /// The value with the schema default applied when absent.
-int get rejectedPredictionTokensOrDefault { return rejectedPredictionTokens ?? 0; } 
-Map<String, dynamic> toJson() { return {
+int get rejectedPredictionTokensOrDefault {return rejectedPredictionTokens ?? 0;}
+Map<String, dynamic> toJson() {return {
   'accepted_prediction_tokens': ?acceptedPredictionTokens,
   'audio_tokens': ?audioTokens,
   'reasoning_tokens': ?reasoningTokens,
   'rejected_prediction_tokens': ?rejectedPredictionTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accepted_prediction_tokens', 'audio_tokens', 'reasoning_tokens', 'rejected_prediction_tokens'}.contains(key)); } 
-CompletionUsageCompletionTokensDetails copyWith({int? Function()? acceptedPredictionTokens, int? Function()? audioTokens, int? Function()? reasoningTokens, int? Function()? rejectedPredictionTokens, }) { return CompletionUsageCompletionTokensDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accepted_prediction_tokens', 'audio_tokens', 'reasoning_tokens', 'rejected_prediction_tokens'}.contains(key));}
+CompletionUsageCompletionTokensDetails copyWith({int? Function()? acceptedPredictionTokens, int? Function()? audioTokens, int? Function()? reasoningTokens, int? Function()? rejectedPredictionTokens, }) {return CompletionUsageCompletionTokensDetails(
   acceptedPredictionTokens: acceptedPredictionTokens != null ? acceptedPredictionTokens() : this.acceptedPredictionTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
   reasoningTokens: reasoningTokens != null ? reasoningTokens() : this.reasoningTokens,
   rejectedPredictionTokens: rejectedPredictionTokens != null ? rejectedPredictionTokens() : this.rejectedPredictionTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CompletionUsageCompletionTokensDetails &&
           acceptedPredictionTokens == other.acceptedPredictionTokens &&
           audioTokens == other.audioTokens &&
           reasoningTokens == other.reasoningTokens &&
-          rejectedPredictionTokens == other.rejectedPredictionTokens; } 
-@override int get hashCode { return Object.hash(acceptedPredictionTokens, audioTokens, reasoningTokens, rejectedPredictionTokens); } 
-@override String toString() { return 'CompletionUsageCompletionTokensDetails(acceptedPredictionTokens: $acceptedPredictionTokens, audioTokens: $audioTokens, reasoningTokens: $reasoningTokens, rejectedPredictionTokens: $rejectedPredictionTokens)'; } 
- }
+          rejectedPredictionTokens == other.rejectedPredictionTokens;}
+@override int get hashCode {return Object.hash(acceptedPredictionTokens, audioTokens, reasoningTokens, rejectedPredictionTokens);}
+@override String toString() {return 'CompletionUsageCompletionTokensDetails(acceptedPredictionTokens: $acceptedPredictionTokens, audioTokens: $audioTokens, reasoningTokens: $reasoningTokens, rejectedPredictionTokens: $rejectedPredictionTokens)';}
+}

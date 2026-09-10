@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_page_without_html.dart';import 'access_custom_pages_components_schemas_response_collection_result_info.dart';import 'access_messages2.dart';@immutable final class AccessCustomPagesComponentsSchemasResponseCollection {const AccessCustomPagesComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
-factory AccessCustomPagesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessCustomPagesComponentsSchemasResponseCollection(
+factory AccessCustomPagesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) {return AccessCustomPagesComponentsSchemasResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessCustomPagesComponentsSchemasResponseCollectionResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessCustomPageWithoutHtml.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<AccessMessages2> errors;
 
@@ -21,30 +21,30 @@ final AccessCustomPagesComponentsSchemasResponseCollectionResultInfo? resultInfo
 
 final List<AccessCustomPageWithoutHtml>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AccessCustomPagesComponentsSchemasResponseCollection copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessCustomPagesComponentsSchemasResponseCollectionResultInfo? Function()? resultInfo, List<AccessCustomPageWithoutHtml>? Function()? result, }) { return AccessCustomPagesComponentsSchemasResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+AccessCustomPagesComponentsSchemasResponseCollection copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessCustomPagesComponentsSchemasResponseCollectionResultInfo? Function()? resultInfo, List<AccessCustomPageWithoutHtml>? Function()? result, }) {return AccessCustomPagesComponentsSchemasResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessCustomPagesComponentsSchemasResponseCollection &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
           resultInfo == other.resultInfo &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, Object.hashAll(result ?? const [])); } 
-@override String toString() { return 'AccessCustomPagesComponentsSchemasResponseCollection(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)'; } 
- }
+          listEquals(result, other.result);}
+@override int get hashCode {return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, Object.hashAll(result ?? const []));}
+@override String toString() {return 'AccessCustomPagesComponentsSchemasResponseCollection(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';}
+}

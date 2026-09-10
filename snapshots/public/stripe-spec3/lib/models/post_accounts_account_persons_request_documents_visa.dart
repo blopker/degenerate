@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_request_documents_visa_files.dart';@immutable final class PostAccountsAccountPersonsRequestDocumentsVisa {const PostAccountsAccountPersonsRequestDocumentsVisa({this.files});
 
-factory PostAccountsAccountPersonsRequestDocumentsVisa.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestDocumentsVisa(
+factory PostAccountsAccountPersonsRequestDocumentsVisa.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPersonsRequestDocumentsVisa(
   files: (json['files'] as List<dynamic>?)?.map(PostAccountsAccountPersonsRequestDocumentsVisaFiles.fromJson).toList(),
-); }
+);}
 
 final List<PostAccountsAccountPersonsRequestDocumentsVisaFiles>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-PostAccountsAccountPersonsRequestDocumentsVisa copyWith({List<PostAccountsAccountPersonsRequestDocumentsVisaFiles>? Function()? files}) { return PostAccountsAccountPersonsRequestDocumentsVisa(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'files'}.contains(key));}
+PostAccountsAccountPersonsRequestDocumentsVisa copyWith({List<PostAccountsAccountPersonsRequestDocumentsVisaFiles>? Function()? files}) {return PostAccountsAccountPersonsRequestDocumentsVisa(
   files: files != null ? files() : this.files,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountPersonsRequestDocumentsVisa &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
-@override String toString() { return 'PostAccountsAccountPersonsRequestDocumentsVisa(files: $files)'; } 
- }
+          listEquals(files, other.files);}
+@override int get hashCode {return Object.hashAll(files ?? const []).hashCode;}
+@override String toString() {return 'PostAccountsAccountPersonsRequestDocumentsVisa(files: $files)';}
+}

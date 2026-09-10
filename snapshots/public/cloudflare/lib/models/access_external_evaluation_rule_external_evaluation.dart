@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessExternalEvaluationRuleExternalEvaluation {const AccessExternalEvaluationRuleExternalEvaluation({required this.evaluateUrl, required this.keysUrl, });
 
-factory AccessExternalEvaluationRuleExternalEvaluation.fromJson(Map<String, dynamic> json) { return AccessExternalEvaluationRuleExternalEvaluation(
+factory AccessExternalEvaluationRuleExternalEvaluation.fromJson(Map<String, dynamic> json) {return AccessExternalEvaluationRuleExternalEvaluation(
   evaluateUrl: json['evaluate_url'] as String,
   keysUrl: json['keys_url'] as String,
-); }
+);}
 
 /// The API endpoint containing your business logic.
 final String evaluateUrl;
@@ -13,20 +13,20 @@ final String evaluateUrl;
 /// The API endpoint containing the key that Access uses to verify that the response came from your API.
 final String keysUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'evaluate_url': evaluateUrl,
   'keys_url': keysUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('evaluate_url') && json['evaluate_url'] is String &&
-      json.containsKey('keys_url') && json['keys_url'] is String; } 
-AccessExternalEvaluationRuleExternalEvaluation copyWith({String? evaluateUrl, String? keysUrl, }) { return AccessExternalEvaluationRuleExternalEvaluation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('evaluate_url') && json['evaluate_url'] is String &&
+      json.containsKey('keys_url') && json['keys_url'] is String;}
+AccessExternalEvaluationRuleExternalEvaluation copyWith({String? evaluateUrl, String? keysUrl, }) {return AccessExternalEvaluationRuleExternalEvaluation(
   evaluateUrl: evaluateUrl ?? this.evaluateUrl,
   keysUrl: keysUrl ?? this.keysUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessExternalEvaluationRuleExternalEvaluation &&
           evaluateUrl == other.evaluateUrl &&
-          keysUrl == other.keysUrl; } 
-@override int get hashCode { return Object.hash(evaluateUrl, keysUrl); } 
-@override String toString() { return 'AccessExternalEvaluationRuleExternalEvaluation(evaluateUrl: $evaluateUrl, keysUrl: $keysUrl)'; } 
- }
+          keysUrl == other.keysUrl;}
+@override int get hashCode {return Object.hash(evaluateUrl, keysUrl);}
+@override String toString() {return 'AccessExternalEvaluationRuleExternalEvaluation(evaluateUrl: $evaluateUrl, keysUrl: $keysUrl)';}
+}

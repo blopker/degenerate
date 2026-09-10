@@ -9,10 +9,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsGrabpaySetupFutureUsage {const PaymentMethodOptionsGrabpaySetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsGrabpaySetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsGrabpaySetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentMethodOptionsGrabpaySetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsGrabpaySetupFutureUsage none = PaymentMethodOptionsGrabpaySetupFutureUsage._('none');
 
@@ -20,20 +20,20 @@ static const List<PaymentMethodOptionsGrabpaySetupFutureUsage> values = [none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsGrabpaySetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsGrabpaySetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsGrabpaySetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsGrabpaySetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsGrabpay {const PaymentMethodOptionsGrabpay({this.setupFutureUsage});
 
-factory PaymentMethodOptionsGrabpay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsGrabpay(
+factory PaymentMethodOptionsGrabpay.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsGrabpay(
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsGrabpaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -44,16 +44,16 @@ factory PaymentMethodOptionsGrabpay.fromJson(Map<String, dynamic> json) { return
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsGrabpaySetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsGrabpay copyWith({PaymentMethodOptionsGrabpaySetupFutureUsage? Function()? setupFutureUsage}) { return PaymentMethodOptionsGrabpay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsGrabpay copyWith({PaymentMethodOptionsGrabpaySetupFutureUsage? Function()? setupFutureUsage}) {return PaymentMethodOptionsGrabpay(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsGrabpay &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return setupFutureUsage.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsGrabpay(setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return setupFutureUsage.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsGrabpay(setupFutureUsage: $setupFutureUsage)';}
+}

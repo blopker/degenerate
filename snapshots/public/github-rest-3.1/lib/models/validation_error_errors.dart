@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'validation_error_errors_value.dart';@immutable final class ValidationErrorErrors {const ValidationErrorErrors({required this.code, this.resource, this.field, this.message, this.index, this.value, });
 
-factory ValidationErrorErrors.fromJson(Map<String, dynamic> json) { return ValidationErrorErrors(
+factory ValidationErrorErrors.fromJson(Map<String, dynamic> json) {return ValidationErrorErrors(
   resource: json['resource'] as String?,
   field: json['field'] as String?,
   message: json['message'] as String?,
   code: json['code'] as String,
   index: json['index'] != null ? (json['index'] as num).toInt() : null,
   value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(), fromC: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
-); }
+);}
 
 final String? resource;
 
@@ -23,31 +23,31 @@ final int? index;
 
 final ValidationErrorErrorsValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resource': ?resource,
   'field': ?field,
   'message': ?message,
   'code': code,
   'index': ?index,
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String; } 
-ValidationErrorErrors copyWith({String? Function()? resource, String? Function()? field, String? Function()? message, String? code, int? Function()? index, ValidationErrorErrorsValue? Function()? value, }) { return ValidationErrorErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String;}
+ValidationErrorErrors copyWith({String? Function()? resource, String? Function()? field, String? Function()? message, String? code, int? Function()? index, ValidationErrorErrorsValue? Function()? value, }) {return ValidationErrorErrors(
   resource: resource != null ? resource() : this.resource,
   field: field != null ? field() : this.field,
   message: message != null ? message() : this.message,
   code: code ?? this.code,
   index: index != null ? index() : this.index,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ValidationErrorErrors &&
           resource == other.resource &&
           field == other.field &&
           message == other.message &&
           code == other.code &&
           index == other.index &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(resource, field, message, code, index, value); } 
-@override String toString() { return 'ValidationErrorErrors(resource: $resource, field: $field, message: $message, code: $code, index: $index, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(resource, field, message, code, index, value);}
+@override String toString() {return 'ValidationErrorErrors(resource: $resource, field: $field, message: $message, code: $code, index: $index, value: $value)';}
+}

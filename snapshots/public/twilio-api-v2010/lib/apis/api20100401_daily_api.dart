@@ -11,7 +11,7 @@ final class Api20100401DailyApi with ApiExecutor {const Api20100401DailyApi(this
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Records/Daily.json`
-Future<ApiResult<ListUsageRecordDailyResponse, Never>> listUsageRecordDaily({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListUsageRecordDailyResponse, Never>> listUsageRecordDaily({required String accountSid, String? category, String? startDate, String? endDate, bool? includeSubaccounts, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (category != null) {
   queryParameters['Category'] = category;
@@ -46,12 +46,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListUsageRecordDailyResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListUsageRecordDailyResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

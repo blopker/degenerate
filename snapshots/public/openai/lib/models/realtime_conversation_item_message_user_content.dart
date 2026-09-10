@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type (`input_text`, `input_audio`, or `input_image`).
 @immutable final class RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType._(this.value);
 
-factory RealtimeConversationItemMessageUserContentType.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageUserContentType.fromJson(String json) {return switch (json) {
   'input_text' => inputText,
   'input_audio' => inputAudio,
   'input_image' => inputImage,
   _ => RealtimeConversationItemMessageUserContentType._(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageUserContentType inputText = RealtimeConversationItemMessageUserContentType._('input_text');
 
@@ -20,23 +20,23 @@ static const List<RealtimeConversationItemMessageUserContentType> values = [inpu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemMessageUserContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemMessageUserContentType($value)';}
+}
 /// The detail level of the image (for `input_image`). `auto` will default to `high`.
 @immutable final class RealtimeConversationItemMessageUserContentDetail {const RealtimeConversationItemMessageUserContentDetail._(this.value);
 
-factory RealtimeConversationItemMessageUserContentDetail.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageUserContentDetail.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'low' => low,
   'high' => high,
   _ => RealtimeConversationItemMessageUserContentDetail._(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageUserContentDetail auto = RealtimeConversationItemMessageUserContentDetail._('auto');
 
@@ -48,24 +48,24 @@ static const List<RealtimeConversationItemMessageUserContentDetail> values = [au
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserContentDetail && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserContentDetail($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeConversationItemMessageUserContentDetail && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeConversationItemMessageUserContentDetail($value)';}
+}
 @immutable final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail, this.transcript, });
 
-factory RealtimeConversationItemMessageUserContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUserContent(
+factory RealtimeConversationItemMessageUserContent.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemMessageUserContent(
   type: json['type'] != null ? RealtimeConversationItemMessageUserContentType.fromJson(json['type'] as String) : null,
   text: json['text'] as String?,
   audio: json['audio'] as String?,
   imageUrl: json['image_url'] as String?,
   detail: json['detail'] != null ? RealtimeConversationItemMessageUserContentDetail.fromJson(json['detail'] as String) : null,
   transcript: json['transcript'] as String?,
-); }
+);}
 
 /// The content type (`input_text`, `input_audio`, or `input_image`).
 final RealtimeConversationItemMessageUserContentType? type;
@@ -86,32 +86,32 @@ final RealtimeConversationItemMessageUserContentDetail? detail;
 final String? transcript;
 
 /// The value with the schema default applied when absent.
-RealtimeConversationItemMessageUserContentDetail get detailOrDefault { return detail ?? RealtimeConversationItemMessageUserContentDetail.fromJson('auto'); } 
-Map<String, dynamic> toJson() { return {
+RealtimeConversationItemMessageUserContentDetail get detailOrDefault {return detail ?? RealtimeConversationItemMessageUserContentDetail.fromJson('auto');}
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'text': ?text,
   'audio': ?audio,
   'image_url': ?imageUrl,
   if (detail != null) 'detail': detail?.toJson(),
   'transcript': ?transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'audio', 'image_url', 'detail', 'transcript'}.contains(key)); } 
-RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMessageUserContentType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? imageUrl, RealtimeConversationItemMessageUserContentDetail? Function()? detail, String? Function()? transcript, }) { return RealtimeConversationItemMessageUserContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'text', 'audio', 'image_url', 'detail', 'transcript'}.contains(key));}
+RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMessageUserContentType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? imageUrl, RealtimeConversationItemMessageUserContentDetail? Function()? detail, String? Function()? transcript, }) {return RealtimeConversationItemMessageUserContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   audio: audio != null ? audio() : this.audio,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   detail: detail != null ? detail() : this.detail,
   transcript: transcript != null ? transcript() : this.transcript,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeConversationItemMessageUserContent &&
           type == other.type &&
           text == other.text &&
           audio == other.audio &&
           imageUrl == other.imageUrl &&
           detail == other.detail &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, text, audio, imageUrl, detail, transcript); } 
-@override String toString() { return 'RealtimeConversationItemMessageUserContent(type: $type, text: $text, audio: $audio, imageUrl: $imageUrl, detail: $detail, transcript: $transcript)'; } 
- }
+          transcript == other.transcript;}
+@override int get hashCode {return Object.hash(type, text, audio, imageUrl, detail, transcript);}
+@override String toString() {return 'RealtimeConversationItemMessageUserContent(type: $type, text: $text, audio: $audio, imageUrl: $imageUrl, detail: $detail, transcript: $transcript)';}
+}

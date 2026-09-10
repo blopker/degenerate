@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_usage_report_usage_items.dart';@immutable final class BillingUsageReport {const BillingUsageReport({this.usageItems});
 
-factory BillingUsageReport.fromJson(Map<String, dynamic> json) { return BillingUsageReport(
+factory BillingUsageReport.fromJson(Map<String, dynamic> json) {return BillingUsageReport(
   usageItems: (json['usageItems'] as List<dynamic>?)?.map((e) => BillingUsageReportUsageItems.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<BillingUsageReportUsageItems>? usageItems;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (usageItems != null) 'usageItems': usageItems?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'usageItems'}.contains(key)); } 
-BillingUsageReport copyWith({List<BillingUsageReportUsageItems>? Function()? usageItems}) { return BillingUsageReport(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'usageItems'}.contains(key));}
+BillingUsageReport copyWith({List<BillingUsageReportUsageItems>? Function()? usageItems}) {return BillingUsageReport(
   usageItems: usageItems != null ? usageItems() : this.usageItems,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingUsageReport &&
-          listEquals(usageItems, other.usageItems); } 
-@override int get hashCode { return Object.hashAll(usageItems ?? const []).hashCode; } 
-@override String toString() { return 'BillingUsageReport(usageItems: $usageItems)'; } 
- }
+          listEquals(usageItems, other.usageItems);}
+@override int get hashCode {return Object.hashAll(usageItems ?? const []).hashCode;}
+@override String toString() {return 'BillingUsageReport(usageItems: $usageItems)';}
+}

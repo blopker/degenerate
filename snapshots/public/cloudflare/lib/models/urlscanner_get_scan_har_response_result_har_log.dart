@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response_result_har_log_creator.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries.dart';import 'urlscanner_get_scan_har_response_result_har_log_pages.dart';@immutable final class UrlscannerGetScanHarResponseResultHarLog {const UrlscannerGetScanHarResponseResultHarLog({required this.creator, required this.entries, required this.pages, required this.version, });
 
-factory UrlscannerGetScanHarResponseResultHarLog.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponseResultHarLog(
+factory UrlscannerGetScanHarResponseResultHarLog.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponseResultHarLog(
   creator: UrlscannerGetScanHarResponseResultHarLogCreator.fromJson(json['creator'] as Map<String, dynamic>),
   entries: (json['entries'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponseResultHarLogEntries.fromJson(e as Map<String, dynamic>)).toList(),
   pages: (json['pages'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponseResultHarLogPages.fromJson(e as Map<String, dynamic>)).toList(),
   version: json['version'] as String,
-); }
+);}
 
 final UrlscannerGetScanHarResponseResultHarLogCreator creator;
 
@@ -17,28 +17,28 @@ final List<UrlscannerGetScanHarResponseResultHarLogPages> pages;
 
 final String version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'creator': creator.toJson(),
   'entries': entries.map((e) => e.toJson()).toList(),
   'pages': pages.map((e) => e.toJson()).toList(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('creator') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('creator') &&
       json.containsKey('entries') &&
       json.containsKey('pages') &&
-      json.containsKey('version') && json['version'] is String; } 
-UrlscannerGetScanHarResponseResultHarLog copyWith({UrlscannerGetScanHarResponseResultHarLogCreator? creator, List<UrlscannerGetScanHarResponseResultHarLogEntries>? entries, List<UrlscannerGetScanHarResponseResultHarLogPages>? pages, String? version, }) { return UrlscannerGetScanHarResponseResultHarLog(
+      json.containsKey('version') && json['version'] is String;}
+UrlscannerGetScanHarResponseResultHarLog copyWith({UrlscannerGetScanHarResponseResultHarLogCreator? creator, List<UrlscannerGetScanHarResponseResultHarLogEntries>? entries, List<UrlscannerGetScanHarResponseResultHarLogPages>? pages, String? version, }) {return UrlscannerGetScanHarResponseResultHarLog(
   creator: creator ?? this.creator,
   entries: entries ?? this.entries,
   pages: pages ?? this.pages,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponseResultHarLog &&
           creator == other.creator &&
           listEquals(entries, other.entries) &&
           listEquals(pages, other.pages) &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(creator, Object.hashAll(entries), Object.hashAll(pages), version); } 
-@override String toString() { return 'UrlscannerGetScanHarResponseResultHarLog(creator: $creator, entries: $entries, pages: $pages, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(creator, Object.hashAll(entries), Object.hashAll(pages), version);}
+@override String toString() {return 'UrlscannerGetScanHarResponseResultHarLog(creator: $creator, entries: $entries, pages: $pages, version: $version)';}
+}

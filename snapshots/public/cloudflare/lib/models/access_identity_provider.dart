@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_name.dart';import 'access_identity_provider_scim_config.dart';import 'access_uuid.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 @immutable final class AccessIdentityProviderType {const AccessIdentityProviderType._(this.value);
 
-factory AccessIdentityProviderType.fromJson(String json) { return switch (json) {
+factory AccessIdentityProviderType.fromJson(String json) {return switch (json) {
   'onetimepin' => onetimepin,
   'azureAD' => azureAd,
   'saml' => saml,
@@ -19,7 +19,7 @@ factory AccessIdentityProviderType.fromJson(String json) { return switch (json) 
   'pingone' => pingone,
   'yandex' => yandex,
   _ => AccessIdentityProviderType._(json),
-}; }
+};}
 
 static const AccessIdentityProviderType onetimepin = AccessIdentityProviderType._('onetimepin');
 
@@ -53,23 +53,23 @@ static const List<AccessIdentityProviderType> values = [onetimepin, azureAd, sam
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessIdentityProviderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessIdentityProviderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessIdentityProviderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessIdentityProviderType($value)';}
+}
 @immutable final class AccessIdentityProvider {const AccessIdentityProvider({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
-factory AccessIdentityProvider.fromJson(Map<String, dynamic> json) { return AccessIdentityProvider(
+factory AccessIdentityProvider.fromJson(Map<String, dynamic> json) {return AccessIdentityProvider(
   config: json['config'] as Map<String, dynamic>,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
   scimConfig: json['scim_config'] != null ? AccessIdentityProviderScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   type: AccessIdentityProviderType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The configuration parameters for the identity provider. To view the required parameters for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 final Map<String,dynamic> config;
@@ -85,30 +85,30 @@ final AccessIdentityProviderScimConfig? scimConfig;
 /// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 final AccessIdentityProviderType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config,
   if (id != null) 'id': id?.toJson(),
   'name': name.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
       json.containsKey('name') &&
-      json.containsKey('type'); } 
-AccessIdentityProvider copyWith({Map<String,dynamic>? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessIdentityProviderScimConfig? Function()? scimConfig, AccessIdentityProviderType? type, }) { return AccessIdentityProvider(
+      json.containsKey('type');}
+AccessIdentityProvider copyWith({Map<String,dynamic>? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessIdentityProviderScimConfig? Function()? scimConfig, AccessIdentityProviderType? type, }) {return AccessIdentityProvider(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessIdentityProvider &&
           config == other.config &&
           id == other.id &&
           name == other.name &&
           scimConfig == other.scimConfig &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, id, name, scimConfig, type); } 
-@override String toString() { return 'AccessIdentityProvider(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, id, name, scimConfig, type);}
+@override String toString() {return 'AccessIdentityProvider(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)';}
+}

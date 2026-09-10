@@ -6,12 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains the v
 /// 
 @immutable final class Verbosity {const Verbosity._(this.value);
 
-factory Verbosity.fromJson(String json) { return switch (json) {
+factory Verbosity.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => Verbosity._(json),
-}; }
+};}
 
 static const Verbosity low = Verbosity._('low');
 
@@ -23,11 +23,11 @@ static const List<Verbosity> values = [low, medium, high];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Verbosity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Verbosity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Verbosity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Verbosity($value)';}
+}

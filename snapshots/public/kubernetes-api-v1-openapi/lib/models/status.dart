@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'status_details.dart';/// Status is a return value for calls that don't return other objects.
 @immutable final class Status {const Status({this.apiVersion, this.code, this.details, this.kind, this.message, this.metadata, this.reason, this.status, });
 
-factory Status.fromJson(Map<String, dynamic> json) { return Status(
+factory Status.fromJson(Map<String, dynamic> json) {return Status(
   apiVersion: json['apiVersion'] as String?,
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   details: json['details'] != null ? StatusDetails.fromJson(json['details'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory Status.fromJson(Map<String, dynamic> json) { return Status(
   metadata: json['metadata'] != null ? ListMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String?,
   status: json['status'] as String?,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -38,7 +38,7 @@ final String? reason;
 /// Status of the operation. One of: "Success" or "Failure". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'code': ?code,
   if (details != null) 'details': details?.toJson(),
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'reason': ?reason,
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'code', 'details', 'kind', 'message', 'metadata', 'reason', 'status'}.contains(key)); } 
-Status copyWith({String? Function()? apiVersion, int? Function()? code, StatusDetails? Function()? details, String? Function()? kind, String? Function()? message, ListMeta? Function()? metadata, String? Function()? reason, String? Function()? status, }) { return Status(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'code', 'details', 'kind', 'message', 'metadata', 'reason', 'status'}.contains(key));}
+Status copyWith({String? Function()? apiVersion, int? Function()? code, StatusDetails? Function()? details, String? Function()? kind, String? Function()? message, ListMeta? Function()? metadata, String? Function()? reason, String? Function()? status, }) {return Status(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   code: code != null ? code() : this.code,
   details: details != null ? details() : this.details,
@@ -58,8 +58,8 @@ Status copyWith({String? Function()? apiVersion, int? Function()? code, StatusDe
   metadata: metadata != null ? metadata() : this.metadata,
   reason: reason != null ? reason() : this.reason,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Status &&
           apiVersion == other.apiVersion &&
           code == other.code &&
@@ -68,7 +68,7 @@ Status copyWith({String? Function()? apiVersion, int? Function()? code, StatusDe
           message == other.message &&
           metadata == other.metadata &&
           reason == other.reason &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(apiVersion, code, details, kind, message, metadata, reason, status); } 
-@override String toString() { return 'Status(apiVersion: $apiVersion, code: $code, details: $details, kind: $kind, message: $message, metadata: $metadata, reason: $reason, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(apiVersion, code, details, kind, message, metadata, reason, status);}
+@override String toString() {return 'Status(apiVersion: $apiVersion, code: $code, details: $details, kind: $kind, message: $message, metadata: $metadata, reason: $reason, status: $status)';}
+}

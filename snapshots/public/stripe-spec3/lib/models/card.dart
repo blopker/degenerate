@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'card_account.dart';import 'card_customer.dart';import 'token_card_networks.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
 @immutable final class CardAllowRedisplay {const CardAllowRedisplay._(this.value);
 
-factory CardAllowRedisplay.fromJson(String json) { return switch (json) {
+factory CardAllowRedisplay.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => CardAllowRedisplay._(json),
-}; }
+};}
 
 static const CardAllowRedisplay always = CardAllowRedisplay._('always');
 
@@ -20,21 +20,21 @@ static const List<CardAllowRedisplay> values = [always, limited, unspecified];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardAllowRedisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CardAllowRedisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CardAllowRedisplay($value)';}
+}
 @immutable final class CardAvailablePayoutMethods {const CardAvailablePayoutMethods._(this.value);
 
-factory CardAvailablePayoutMethods.fromJson(String json) { return switch (json) {
+factory CardAvailablePayoutMethods.fromJson(String json) {return switch (json) {
   'instant' => instant,
   'standard' => standard,
   _ => CardAvailablePayoutMethods._(json),
-}; }
+};}
 
 static const CardAvailablePayoutMethods instant = CardAvailablePayoutMethods._('instant');
 
@@ -44,21 +44,21 @@ static const List<CardAvailablePayoutMethods> values = [instant, standard];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardAvailablePayoutMethods && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardAvailablePayoutMethods($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CardAvailablePayoutMethods && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CardAvailablePayoutMethods($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CardObject {const CardObject._(this.value);
 
-factory CardObject.fromJson(String json) { return switch (json) {
+factory CardObject.fromJson(String json) {return switch (json) {
   'card' => card,
   _ => CardObject._(json),
-}; }
+};}
 
 static const CardObject card = CardObject._('card');
 
@@ -66,22 +66,22 @@ static const List<CardObject> values = [card];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CardObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CardObject($value)';}
+}
 /// Status of a card based on the card issuer.
 @immutable final class CardRegulatedStatus {const CardRegulatedStatus._(this.value);
 
-factory CardRegulatedStatus.fromJson(String json) { return switch (json) {
+factory CardRegulatedStatus.fromJson(String json) {return switch (json) {
   'regulated' => regulated,
   'unregulated' => unregulated,
   _ => CardRegulatedStatus._(json),
-}; }
+};}
 
 static const CardRegulatedStatus regulated = CardRegulatedStatus._('regulated');
 
@@ -91,14 +91,14 @@ static const List<CardRegulatedStatus> values = [regulated, unregulated];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardRegulatedStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardRegulatedStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CardRegulatedStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CardRegulatedStatus($value)';}
+}
 /// You can store multiple cards on a customer in order to charge the customer
 /// later. You can also store multiple debit cards on a recipient in order to
 /// transfer to those cards later.
@@ -106,7 +106,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Card payments with Sources](https://docs.stripe.com/sources/cards)
 @immutable final class Card {const Card({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.id, required this.last4, required this.object, this.account = const Omittable.absent(), this.addressCity = const Omittable.absent(), this.addressCountry = const Omittable.absent(), this.addressLine1 = const Omittable.absent(), this.addressLine1Check = const Omittable.absent(), this.addressLine2 = const Omittable.absent(), this.addressState = const Omittable.absent(), this.addressZip = const Omittable.absent(), this.addressZipCheck = const Omittable.absent(), this.allowRedisplay = const Omittable.absent(), this.availablePayoutMethods = const Omittable.absent(), this.country = const Omittable.absent(), this.currency = const Omittable.absent(), this.customer = const Omittable.absent(), this.cvcCheck = const Omittable.absent(), this.defaultForCurrency = const Omittable.absent(), this.dynamicLast4 = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.iin, this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), this.networks, this.regulatedStatus = const Omittable.absent(), this.status = const Omittable.absent(), this.tokenizationMethod = const Omittable.absent(), });
 
-factory Card.fromJson(Map<String, dynamic> json) { return Card(
+factory Card.fromJson(Map<String, dynamic> json) {return Card(
   account: json.containsKey('account') ? Omittable(json['account'] != null ? CardAccount.fromJson(json['account']) : null) : const Omittable.absent(),
   addressCity: json.containsKey('address_city') ? Omittable(json['address_city'] as String?) : const Omittable.absent(),
   addressCountry: json.containsKey('address_country') ? Omittable(json['address_country'] as String?) : const Omittable.absent(),
@@ -139,7 +139,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   regulatedStatus: json.containsKey('regulated_status') ? Omittable(json['regulated_status'] != null ? CardRegulatedStatus.fromJson(json['regulated_status'] as String) : null) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] as String?) : const Omittable.absent(),
   tokenizationMethod: json.containsKey('tokenization_method') ? Omittable(json['tokenization_method'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<CardAccount?> account;
 
@@ -237,7 +237,7 @@ final Omittable<String?> status;
 /// If the card number is tokenized, this is the method that was used. Can be `android_pay` (includes Google Pay), `apple_pay`, `masterpass`, `visa_checkout`, or null.
 final Omittable<String?> tokenizationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account.isPresent) 'account': account.value?.toJson(),
   if (addressCity.isPresent) 'address_city': addressCity.value,
   if (addressCountry.isPresent) 'address_country': addressCountry.value,
@@ -270,15 +270,15 @@ Map<String, dynamic> toJson() { return {
   if (regulatedStatus.isPresent) 'regulated_status': regulatedStatus.value?.toJson(),
   if (status.isPresent) 'status': status.value,
   if (tokenizationMethod.isPresent) 'tokenization_method': tokenizationMethod.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') && json['funding'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last4') && json['last4'] is String &&
-      json.containsKey('object'); } 
-Card copyWith({Omittable<CardAccount?>? account, Omittable<String?>? addressCity, Omittable<String?>? addressCountry, Omittable<String?>? addressLine1, Omittable<String?>? addressLine1Check, Omittable<String?>? addressLine2, Omittable<String?>? addressState, Omittable<String?>? addressZip, Omittable<String?>? addressZipCheck, Omittable<CardAllowRedisplay?>? allowRedisplay, Omittable<List<CardAvailablePayoutMethods>?>? availablePayoutMethods, String? brand, Omittable<String?>? country, Omittable<String?>? currency, Omittable<CardCustomer?>? customer, Omittable<String?>? cvcCheck, Omittable<bool?>? defaultForCurrency, Omittable<String?>? dynamicLast4, int? expMonth, int? expYear, Omittable<String?>? fingerprint, String? funding, String? id, String? Function()? iin, String? last4, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, TokenCardNetworks? Function()? networks, CardObject? object, Omittable<CardRegulatedStatus?>? regulatedStatus, Omittable<String?>? status, Omittable<String?>? tokenizationMethod, }) { return Card(
+      json.containsKey('object');}
+Card copyWith({Omittable<CardAccount?>? account, Omittable<String?>? addressCity, Omittable<String?>? addressCountry, Omittable<String?>? addressLine1, Omittable<String?>? addressLine1Check, Omittable<String?>? addressLine2, Omittable<String?>? addressState, Omittable<String?>? addressZip, Omittable<String?>? addressZipCheck, Omittable<CardAllowRedisplay?>? allowRedisplay, Omittable<List<CardAvailablePayoutMethods>?>? availablePayoutMethods, String? brand, Omittable<String?>? country, Omittable<String?>? currency, Omittable<CardCustomer?>? customer, Omittable<String?>? cvcCheck, Omittable<bool?>? defaultForCurrency, Omittable<String?>? dynamicLast4, int? expMonth, int? expYear, Omittable<String?>? fingerprint, String? funding, String? id, String? Function()? iin, String? last4, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, TokenCardNetworks? Function()? networks, CardObject? object, Omittable<CardRegulatedStatus?>? regulatedStatus, Omittable<String?>? status, Omittable<String?>? tokenizationMethod, }) {return Card(
   account: account ?? this.account,
   addressCity: addressCity ?? this.addressCity,
   addressCountry: addressCountry ?? this.addressCountry,
@@ -311,8 +311,8 @@ Card copyWith({Omittable<CardAccount?>? account, Omittable<String?>? addressCity
   regulatedStatus: regulatedStatus ?? this.regulatedStatus,
   status: status ?? this.status,
   tokenizationMethod: tokenizationMethod ?? this.tokenizationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Card &&
           account == other.account &&
           addressCity == other.addressCity &&
@@ -346,7 +346,7 @@ Card copyWith({Omittable<CardAccount?>? account, Omittable<String?>? addressCity
           object == other.object &&
           regulatedStatus == other.regulatedStatus &&
           status == other.status &&
-          tokenizationMethod == other.tokenizationMethod; } 
-@override int get hashCode { return Object.hashAll([account, addressCity, addressCountry, addressLine1, addressLine1Check, addressLine2, addressState, addressZip, addressZipCheck, allowRedisplay, Object.hashAll(availablePayoutMethods.value ?? const []), brand, country, currency, customer, cvcCheck, defaultForCurrency, dynamicLast4, expMonth, expYear, fingerprint, funding, id, iin, last4, metadata, name, networks, object, regulatedStatus, status, tokenizationMethod]); } 
-@override String toString() { return 'Card(account: $account, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine1Check: $addressLine1Check, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, addressZipCheck: $addressZipCheck, allowRedisplay: $allowRedisplay, availablePayoutMethods: $availablePayoutMethods, brand: $brand, country: $country, currency: $currency, customer: $customer, cvcCheck: $cvcCheck, defaultForCurrency: $defaultForCurrency, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, id: $id, iin: $iin, last4: $last4, metadata: $metadata, name: $name, networks: $networks, object: $object, regulatedStatus: $regulatedStatus, status: $status, tokenizationMethod: $tokenizationMethod)'; } 
- }
+          tokenizationMethod == other.tokenizationMethod;}
+@override int get hashCode {return Object.hashAll([account, addressCity, addressCountry, addressLine1, addressLine1Check, addressLine2, addressState, addressZip, addressZipCheck, allowRedisplay, Object.hashAll(availablePayoutMethods.value ?? const []), brand, country, currency, customer, cvcCheck, defaultForCurrency, dynamicLast4, expMonth, expYear, fingerprint, funding, id, iin, last4, metadata, name, networks, object, regulatedStatus, status, tokenizationMethod]);}
+@override String toString() {return 'Card(account: $account, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine1Check: $addressLine1Check, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, addressZipCheck: $addressZipCheck, allowRedisplay: $allowRedisplay, availablePayoutMethods: $availablePayoutMethods, brand: $brand, country: $country, currency: $currency, customer: $customer, cvcCheck: $cvcCheck, defaultForCurrency: $defaultForCurrency, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, id: $id, iin: $iin, last4: $last4, metadata: $metadata, name: $name, networks: $networks, object: $object, regulatedStatus: $regulatedStatus, status: $status, tokenizationMethod: $tokenizationMethod)';}
+}

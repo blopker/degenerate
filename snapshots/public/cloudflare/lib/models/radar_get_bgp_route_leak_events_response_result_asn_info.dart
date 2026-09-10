@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRouteLeakEventsResponseResultAsnInfo {const RadarGetBgpRouteLeakEventsResponseResultAsnInfo({required this.asn, required this.countryCode, required this.orgName, });
 
-factory RadarGetBgpRouteLeakEventsResponseResultAsnInfo.fromJson(Map<String, dynamic> json) { return RadarGetBgpRouteLeakEventsResponseResultAsnInfo(
+factory RadarGetBgpRouteLeakEventsResponseResultAsnInfo.fromJson(Map<String, dynamic> json) {return RadarGetBgpRouteLeakEventsResponseResultAsnInfo(
   asn: (json['asn'] as num).toInt(),
   countryCode: json['country_code'] as String,
   orgName: json['org_name'] as String,
-); }
+);}
 
 final int asn;
 
@@ -14,24 +14,24 @@ final String countryCode;
 
 final String orgName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'country_code': countryCode,
   'org_name': orgName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('country_code') && json['country_code'] is String &&
-      json.containsKey('org_name') && json['org_name'] is String; } 
-RadarGetBgpRouteLeakEventsResponseResultAsnInfo copyWith({int? asn, String? countryCode, String? orgName, }) { return RadarGetBgpRouteLeakEventsResponseResultAsnInfo(
+      json.containsKey('org_name') && json['org_name'] is String;}
+RadarGetBgpRouteLeakEventsResponseResultAsnInfo copyWith({int? asn, String? countryCode, String? orgName, }) {return RadarGetBgpRouteLeakEventsResponseResultAsnInfo(
   asn: asn ?? this.asn,
   countryCode: countryCode ?? this.countryCode,
   orgName: orgName ?? this.orgName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRouteLeakEventsResponseResultAsnInfo &&
           asn == other.asn &&
           countryCode == other.countryCode &&
-          orgName == other.orgName; } 
-@override int get hashCode { return Object.hash(asn, countryCode, orgName); } 
-@override String toString() { return 'RadarGetBgpRouteLeakEventsResponseResultAsnInfo(asn: $asn, countryCode: $countryCode, orgName: $orgName)'; } 
- }
+          orgName == other.orgName;}
+@override int get hashCode {return Object.hash(asn, countryCode, orgName);}
+@override String toString() {return 'RadarGetBgpRouteLeakEventsResponseResultAsnInfo(asn: $asn, countryCode: $countryCode, orgName: $orgName)';}
+}

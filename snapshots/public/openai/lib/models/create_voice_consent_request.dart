@@ -2,11 +2,11 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateVoiceConsentRequest {const CreateVoiceConsentRequest({required this.name, required this.recording, required this.language, });
 
-factory CreateVoiceConsentRequest.fromJson(Map<String, dynamic> json) { return CreateVoiceConsentRequest(
+factory CreateVoiceConsentRequest.fromJson(Map<String, dynamic> json) {return CreateVoiceConsentRequest(
   name: json['name'] as String,
   recording: base64Decode(json['recording'] as String),
   language: json['language'] as String,
-); }
+);}
 
 /// The label to use for this consent recording.
 final String name;
@@ -21,24 +21,24 @@ final Uint8List recording;
 /// The BCP 47 language tag for the consent phrase (for example, `en-US`).
 final String language;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'recording': base64Encode(recording),
   'language': language,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('recording') &&
-      json.containsKey('language') && json['language'] is String; } 
-CreateVoiceConsentRequest copyWith({String? name, Uint8List? recording, String? language, }) { return CreateVoiceConsentRequest(
+      json.containsKey('language') && json['language'] is String;}
+CreateVoiceConsentRequest copyWith({String? name, Uint8List? recording, String? language, }) {return CreateVoiceConsentRequest(
   name: name ?? this.name,
   recording: recording ?? this.recording,
   language: language ?? this.language,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateVoiceConsentRequest &&
           name == other.name &&
           listEquals(recording, other.recording) &&
-          language == other.language; } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(recording), language); } 
-@override String toString() { return 'CreateVoiceConsentRequest(name: $name, recording: $recording, language: $language)'; } 
- }
+          language == other.language;}
+@override int get hashCode {return Object.hash(name, Object.hashAll(recording), language);}
+@override String toString() {return 'CreateVoiceConsentRequest(name: $name, recording: $recording, language: $language)';}
+}

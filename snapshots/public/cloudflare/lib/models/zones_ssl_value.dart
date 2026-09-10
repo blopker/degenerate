@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zon
 /// Notes: Depends on the zone's plan level
 @immutable final class ZonesSslValue {const ZonesSslValue._(this.value);
 
-factory ZonesSslValue.fromJson(String json) { return switch (json) {
+factory ZonesSslValue.fromJson(String json) {return switch (json) {
   'off' => off,
   'flexible' => flexible,
   'full' => full,
   'strict' => strict,
   _ => ZonesSslValue._(json),
-}; }
+};}
 
 static const ZonesSslValue off = ZonesSslValue._('off');
 
@@ -24,11 +24,11 @@ static const List<ZonesSslValue> values = [off, flexible, full, strict];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSslValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesSslValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesSslValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesSslValue($value)';}
+}

@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A call to a cust
 /// 
 @immutable final class CustomToolCall {const CustomToolCall({required this.type, required this.callId, required this.name, required this.input, this.id, this.namespace, });
 
-factory CustomToolCall.fromJson(Map<String, dynamic> json) { return CustomToolCall(
+factory CustomToolCall.fromJson(Map<String, dynamic> json) {return CustomToolCall(
   type: json['type'] as String,
   id: json['id'] as String?,
   callId: json['call_id'] as String,
   namespace: json['namespace'] as String?,
   name: json['name'] as String,
   input: json['input'] as String,
-); }
+);}
 
 /// The type of the custom tool call. Always `custom_tool_call`.
 /// 
@@ -37,34 +37,34 @@ final String name;
 /// 
 final String input;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': ?id,
   'call_id': callId,
   'namespace': ?namespace,
   'name': name,
   'input': input,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('input') && json['input'] is String; } 
-CustomToolCall copyWith({String? type, String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) { return CustomToolCall(
+      json.containsKey('input') && json['input'] is String;}
+CustomToolCall copyWith({String? type, String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) {return CustomToolCall(
   type: type ?? this.type,
   id: id != null ? id() : this.id,
   callId: callId ?? this.callId,
   namespace: namespace != null ? namespace() : this.namespace,
   name: name ?? this.name,
   input: input ?? this.input,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomToolCall &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
           namespace == other.namespace &&
           name == other.name &&
-          input == other.input; } 
-@override int get hashCode { return Object.hash(type, id, callId, namespace, name, input); } 
-@override String toString() { return 'CustomToolCall(type: $type, id: $id, callId: $callId, namespace: $namespace, name: $name, input: $input)'; } 
- }
+          input == other.input;}
+@override int get hashCode {return Object.hash(type, id, callId, namespace, name, input);}
+@override String toString() {return 'CustomToolCall(type: $type, id: $id, callId: $callId, namespace: $namespace, name: $name, input: $input)';}
+}

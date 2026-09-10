@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserSAccountMembershipsUpdateMembershipRequest {const UserSAccountMembershipsUpdateMembershipRequest({required this.status});
 
-factory UserSAccountMembershipsUpdateMembershipRequest.fromJson(Map<String, dynamic> json) { return UserSAccountMembershipsUpdateMembershipRequest(
+factory UserSAccountMembershipsUpdateMembershipRequest.fromJson(Map<String, dynamic> json) {return UserSAccountMembershipsUpdateMembershipRequest(
   status: json['status'],
-); }
+);}
 
 /// Whether to accept or reject this account invitation.
 final dynamic status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-UserSAccountMembershipsUpdateMembershipRequest copyWith({dynamic Function()? status}) { return UserSAccountMembershipsUpdateMembershipRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+UserSAccountMembershipsUpdateMembershipRequest copyWith({dynamic Function()? status}) {return UserSAccountMembershipsUpdateMembershipRequest(
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UserSAccountMembershipsUpdateMembershipRequest &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'UserSAccountMembershipsUpdateMembershipRequest(status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return status.hashCode;}
+@override String toString() {return 'UserSAccountMembershipsUpdateMembershipRequest(status: $status)';}
+}

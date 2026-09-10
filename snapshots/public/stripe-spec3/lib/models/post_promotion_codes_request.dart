@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_request_promotion.dart';import 'post_promotion_codes_request_restrictions.dart';@immutable final class PostPromotionCodesRequest {const PostPromotionCodesRequest({required this.promotion, this.active, this.code, this.customer, this.customerAccount, this.expand, this.expiresAt, this.maxRedemptions, this.metadata, this.restrictions, });
 
-factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesRequest(
+factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) {return PostPromotionCodesRequest(
   active: json['active'] as bool?,
   code: json['code'] as String?,
   customer: json['customer'] as String?,
@@ -13,7 +13,7 @@ factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return P
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   promotion: PostPromotionCodesRequestPromotion.fromJson(json['promotion'] as Map<String, dynamic>),
   restrictions: json['restrictions'] != null ? PostPromotionCodesRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Whether the promotion code is currently active.
 final bool? active;
@@ -47,7 +47,7 @@ final PostPromotionCodesRequestPromotion promotion;
 /// Settings that restrict the redemption of the promotion code.
 final PostPromotionCodesRequestRestrictions? restrictions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'code': ?code,
   'customer': ?customer,
@@ -58,9 +58,9 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'promotion': promotion.toJson(),
   if (restrictions != null) 'restrictions': restrictions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('promotion'); } 
-PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()? code, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, int? Function()? expiresAt, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, PostPromotionCodesRequestPromotion? promotion, PostPromotionCodesRequestRestrictions? Function()? restrictions, }) { return PostPromotionCodesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('promotion');}
+PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()? code, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, int? Function()? expiresAt, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, PostPromotionCodesRequestPromotion? promotion, PostPromotionCodesRequestRestrictions? Function()? restrictions, }) {return PostPromotionCodesRequest(
   active: active != null ? active() : this.active,
   code: code != null ? code() : this.code,
   customer: customer != null ? customer() : this.customer,
@@ -71,8 +71,8 @@ PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()
   metadata: metadata != null ? metadata() : this.metadata,
   promotion: promotion ?? this.promotion,
   restrictions: restrictions != null ? restrictions() : this.restrictions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPromotionCodesRequest &&
           active == other.active &&
           code == other.code &&
@@ -83,7 +83,7 @@ PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()
           maxRedemptions == other.maxRedemptions &&
           metadata == other.metadata &&
           promotion == other.promotion &&
-          restrictions == other.restrictions; } 
-@override int get hashCode { return Object.hash(active, code, customer, customerAccount, Object.hashAll(expand ?? const []), expiresAt, maxRedemptions, metadata, promotion, restrictions); } 
-@override String toString() { return 'PostPromotionCodesRequest(active: $active, code: $code, customer: $customer, customerAccount: $customerAccount, expand: $expand, expiresAt: $expiresAt, maxRedemptions: $maxRedemptions, metadata: $metadata, promotion: $promotion, restrictions: $restrictions)'; } 
- }
+          restrictions == other.restrictions;}
+@override int get hashCode {return Object.hash(active, code, customer, customerAccount, Object.hashAll(expand ?? const []), expiresAt, maxRedemptions, metadata, promotion, restrictions);}
+@override String toString() {return 'PostPromotionCodesRequest(active: $active, code: $code, customer: $customer, customerAccount: $customerAccount, expand: $expand, expiresAt: $expiresAt, maxRedemptions: $maxRedemptions, metadata: $metadata, promotion: $promotion, restrictions: $restrictions)';}
+}

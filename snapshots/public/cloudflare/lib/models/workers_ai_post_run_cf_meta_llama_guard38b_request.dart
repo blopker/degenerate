@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_messages.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_response_format.dart';@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequest {const WorkersAiPostRunCfMetaLlamaGuard38bRequest({required this.messages, this.maxTokens, this.responseFormat, this.temperature, });
 
-factory WorkersAiPostRunCfMetaLlamaGuard38bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
+factory WorkersAiPostRunCfMetaLlamaGuard38bRequest.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
   responseFormat: json['response_format'] != null ? WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-); }
+);}
 
 /// The maximum number of tokens to generate in the response.
 final int? maxTokens;
@@ -22,28 +22,28 @@ final WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? responseFormat;
 final double? temperature;
 
 /// The value with the schema default applied when absent.
-int get maxTokensOrDefault { return maxTokens ?? 256; } 
+int get maxTokensOrDefault {return maxTokens ?? 256;}
 /// The value with the schema default applied when absent.
-double get temperatureOrDefault { return temperature ?? 0.6; } 
-Map<String, dynamic> toJson() { return {
+double get temperatureOrDefault {return temperature ?? 0.6;}
+Map<String, dynamic> toJson() {return {
   'max_tokens': ?maxTokens,
   'messages': messages.map((e) => e.toJson()).toList(),
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   'temperature': ?temperature,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int? Function()? maxTokens, List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages>? messages, WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? Function()? responseFormat, double? Function()? temperature, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages');}
+WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int? Function()? maxTokens, List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages>? messages, WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? Function()? responseFormat, double? Function()? temperature, }) {return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
   messages: messages ?? this.messages,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   temperature: temperature != null ? temperature() : this.temperature,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfMetaLlamaGuard38bRequest &&
           maxTokens == other.maxTokens &&
           listEquals(messages, other.messages) &&
           responseFormat == other.responseFormat &&
-          temperature == other.temperature; } 
-@override int get hashCode { return Object.hash(maxTokens, Object.hashAll(messages), responseFormat, temperature); } 
-@override String toString() { return 'WorkersAiPostRunCfMetaLlamaGuard38bRequest(maxTokens: $maxTokens, messages: $messages, responseFormat: $responseFormat, temperature: $temperature)'; } 
- }
+          temperature == other.temperature;}
+@override int get hashCode {return Object.hash(maxTokens, Object.hashAll(messages), responseFormat, temperature);}
+@override String toString() {return 'WorkersAiPostRunCfMetaLlamaGuard38bRequest(maxTokens: $maxTokens, messages: $messages, responseFormat: $responseFormat, temperature: $temperature)';}
+}

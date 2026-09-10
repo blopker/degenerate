@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesSources {const UsageImagesSources._(this.value);
 
-factory UsageImagesSources.fromJson(String json) { return switch (json) {
+factory UsageImagesSources.fromJson(String json) {return switch (json) {
   'image.generation' => imageGeneration,
   'image.edit' => imageEdit,
   'image.variation' => imageVariation,
   _ => UsageImagesSources._(json),
-}; }
+};}
 
 static const UsageImagesSources imageGeneration = UsageImagesSources._('image.generation');
 
@@ -19,11 +19,11 @@ static const List<UsageImagesSources> values = [imageGeneration, imageEdit, imag
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageImagesSources && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageImagesSources($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageImagesSources && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageImagesSources($value)';}
+}

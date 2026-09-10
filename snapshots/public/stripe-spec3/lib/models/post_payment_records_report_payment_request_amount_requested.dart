@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The amount you initially requested for this payment.
 @immutable final class PostPaymentRecordsReportPaymentRequestAmountRequested {const PostPaymentRecordsReportPaymentRequestAmountRequested({required this.currency, required this.value, });
 
-factory PostPaymentRecordsReportPaymentRequestAmountRequested.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestAmountRequested(
+factory PostPaymentRecordsReportPaymentRequestAmountRequested.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsReportPaymentRequestAmountRequested(
   currency: json['currency'] as String,
   value: (json['value'] as num).toInt(),
-); }
+);}
 
 final String currency;
 
 final int value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'currency': currency,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('value') && json['value'] is num; } 
-PostPaymentRecordsReportPaymentRequestAmountRequested copyWith({String? currency, int? value, }) { return PostPaymentRecordsReportPaymentRequestAmountRequested(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('value') && json['value'] is num;}
+PostPaymentRecordsReportPaymentRequestAmountRequested copyWith({String? currency, int? value, }) {return PostPaymentRecordsReportPaymentRequestAmountRequested(
   currency: currency ?? this.currency,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentRecordsReportPaymentRequestAmountRequested &&
           currency == other.currency &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(currency, value); } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestAmountRequested(currency: $currency, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(currency, value);}
+@override String toString() {return 'PostPaymentRecordsReportPaymentRequestAmountRequested(currency: $currency, value: $value)';}
+}

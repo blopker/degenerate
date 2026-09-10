@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect {const PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect({required this.returnUrl});
 
-factory PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect(
+factory PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect.fromJson(Map<String, dynamic> json) {return PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect(
   returnUrl: json['return_url'] as String,
-); }
+);}
 
 final String returnUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'return_url': returnUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('return_url') && json['return_url'] is String; } 
-PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect copyWith({String? returnUrl}) { return PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('return_url') && json['return_url'] is String;}
+PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect copyWith({String? returnUrl}) {return PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect(
   returnUrl: returnUrl ?? this.returnUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return returnUrl.hashCode; } 
-@override String toString() { return 'PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect(returnUrl: $returnUrl)'; } 
- }
+          returnUrl == other.returnUrl;}
+@override int get hashCode {return returnUrl.hashCode;}
+@override String toString() {return 'PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect(returnUrl: $returnUrl)';}
+}

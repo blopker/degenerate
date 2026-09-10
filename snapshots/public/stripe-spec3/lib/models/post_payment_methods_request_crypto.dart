@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a Crypto PaymentMethod, this hash contains details about the Crypto payment method.
 @immutable final class PostPaymentMethodsRequestCrypto {const PostPaymentMethodsRequestCrypto();
 
-factory PostPaymentMethodsRequestCrypto.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestCrypto(); }
+factory PostPaymentMethodsRequestCrypto.fromJson(Map<String, dynamic> _) {return const PostPaymentMethodsRequestCrypto();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestCrypto copyWith() { return const PostPaymentMethodsRequestCrypto(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentMethodsRequestCrypto copyWith() {return const PostPaymentMethodsRequestCrypto(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestCrypto; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestCrypto()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostPaymentMethodsRequestCrypto;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostPaymentMethodsRequestCrypto()';}
+}

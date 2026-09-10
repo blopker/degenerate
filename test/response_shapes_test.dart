@@ -43,16 +43,16 @@ void main() {
     },
   };
 
-  test('declared empty success is represented by a nullable result', () async {
+  test('declared empty success has a payload-free variant', () async {
     final result = await runGeneratedClient(
       schemas,
       '''
   final client = RecordingClient(nextResponse: ApiResponse(statusCode: 204, body: ''));
   final api = DefaultApi(ApiConfig(client: client));
-  final Item? empty = (await api.getItem()).dataOrThrow;
+  final empty = (await api.getItem()).dataOrThrow;
   client.nextResponse = ApiResponse(statusCode: 200, body: '{"id":"1"}');
-  final Item? item = (await api.getItem()).dataOrThrow;
-  print(jsonEncode([empty, item?.id]));
+  final item = (await api.getItem()).dataOrThrow as GetItemSuccess200;
+  print(jsonEncode([empty is GetItemSuccess204, item.data.id]));
 ''',
       paths: {
         '/item': {
@@ -66,7 +66,7 @@ void main() {
         },
       },
     );
-    expect(result, [null, '1']);
+    expect(result, [true, '1']);
   });
 
   test(
@@ -80,10 +80,19 @@ void main() {
   final output = <Object?>[];
   for (final entry in <int, String>{200: '{"id":"1"}', 202: '{"job":"2"}', 400: '{"field":"name"}', 409: '{"version":3}'}.entries) {
     client.nextResponse = ApiResponse(statusCode: entry.key, body: entry.value);
-    final ApiResult<OneOf2<Item, Job>, OneOf2<Invalid, Conflict>> result = await api.submit();
+    final ApiResult<SubmitSuccess, SubmitError> result = await api.submit();
     output.add(switch (result) {
-      ApiSuccess(:final data) => data.toJson(),
-      ApiError(:final error) => error?.toJson(),
+      ApiSuccess(:final data) => switch (data) {
+        SubmitSuccess200(:final data) => data.toJson(),
+        SubmitSuccess202(:final data) => data.toJson(),
+        SubmitSuccessUnknown() => 'unknown',
+      },
+      ApiError(:final error) => switch (error) {
+        SubmitError400(:final data) => data.toJson(),
+        SubmitError409(:final data) => data.toJson(),
+        SubmitErrorDefault(:final data) => data.toJson(),
+        null => null,
+      },
       _ => result.toString(),
     });
   }
@@ -121,9 +130,9 @@ void main() {
         '''
   final client = RecordingClient(nextResponse: ApiResponse(statusCode: 200, body: 'plain', headers: {'Content-Type': 'text/plain; charset=utf-8'}));
   final api = DefaultApi(ApiConfig(client: client));
-  final first = (await api.getItem()).dataOrThrow.toJson();
+  final first = ((await api.getItem()).dataOrThrow as GetItemSuccess200TextPlain).data;
   client.nextResponse = ApiResponse(statusCode: 200, body: '{"id":"1"}', headers: {'content-type': 'application/json'});
-  print(jsonEncode([first, (await api.getItem()).dataOrThrow.toJson()]));
+  print(jsonEncode([first, ((await api.getItem()).dataOrThrow as GetItemSuccess200ApplicationJson).data.toJson()]));
 ''',
         paths: {
           '/item': {
@@ -162,10 +171,19 @@ void main() {
   final output = <Object?>[];
   for (final entry in <int, String>{200: '{"id":"1"}', 299: '{"job":"2"}', 422: '{"field":"name"}', 409: '{"version":3}'}.entries) {
     client.nextResponse = ApiResponse(statusCode: entry.key, body: entry.value);
-    final ApiResult<OneOf2<Item, Job>, OneOf2<Invalid, Conflict>> result = await api.submit();
+    final ApiResult<SubmitSuccess, SubmitError> result = await api.submit();
     output.add(switch (result) {
-      ApiSuccess(:final data) => data.toJson(),
-      ApiError(:final error) => error?.toJson(),
+      ApiSuccess(:final data) => switch (data) {
+        SubmitSuccess200(:final data) => data.toJson(),
+        SubmitSuccess2xx(:final data) => data.toJson(),
+        SubmitSuccessUnknown() => 'unknown',
+      },
+      ApiError(:final error) => switch (error) {
+        SubmitError4xx(:final data) => data.toJson(),
+        SubmitError409(:final data) => data.toJson(),
+        SubmitErrorUnknown() => 'unknown',
+        null => null,
+      },
       _ => result.toString(),
     });
   }
@@ -239,7 +257,7 @@ void main() {
       '''
   final client = RecordingClient(nextResponse: ApiResponse(statusCode: 200, body: '3', headers: {'Content-Type': 'application/json; profile="number"'}));
   final api = DefaultApi(ApiConfig(client: client));
-  print(jsonEncode((await api.getValue()).dataOrThrow.toJson()));
+  print(jsonEncode(((await api.getValue()).dataOrThrow as GetValueSuccess200ApplicationJsonProfileNumber).data));
 ''',
       paths: {
         '/value': {

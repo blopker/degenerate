@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.
 @immutable final class AaaAlertType {const AaaAlertType._(this.value);
 
-factory AaaAlertType.fromJson(String json) { return switch (json) {
+factory AaaAlertType.fromJson(String json) {return switch (json) {
   'abuse_report_alert' => abuseReportAlert,
   'access_custom_certificate_expiration_type' => accessCustomCertificateExpirationType,
   'advanced_ddos_attack_l4_alert' => advancedDdosAttackL4Alert,
@@ -73,7 +73,7 @@ factory AaaAlertType.fromJson(String json) { return switch (json) {
   'web_analytics_metrics_update' => webAnalyticsMetricsUpdate,
   'zone_aop_custom_certificate_expiration_type' => zoneAopCustomCertificateExpirationType,
   _ => AaaAlertType._(json),
-}; }
+};}
 
 static const AaaAlertType abuseReportAlert = AaaAlertType._('abuse_report_alert');
 
@@ -215,11 +215,11 @@ static const List<AaaAlertType> values = [abuseReportAlert, accessCustomCertific
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaAlertType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaAlertType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AaaAlertType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AaaAlertType($value)';}
+}

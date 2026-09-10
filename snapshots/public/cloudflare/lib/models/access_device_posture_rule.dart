@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_device_posture_rule_device_posture.dart';/// Enforces a device posture rule has run successfully
 @immutable final class AccessDevicePostureRule {const AccessDevicePostureRule({required this.devicePosture});
 
-factory AccessDevicePostureRule.fromJson(Map<String, dynamic> json) { return AccessDevicePostureRule(
+factory AccessDevicePostureRule.fromJson(Map<String, dynamic> json) {return AccessDevicePostureRule(
   devicePosture: AccessDevicePostureRuleDevicePosture.fromJson(json['device_posture'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessDevicePostureRuleDevicePosture devicePosture;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'device_posture': devicePosture.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('device_posture'); } 
-AccessDevicePostureRule copyWith({AccessDevicePostureRuleDevicePosture? devicePosture}) { return AccessDevicePostureRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('device_posture');}
+AccessDevicePostureRule copyWith({AccessDevicePostureRuleDevicePosture? devicePosture}) {return AccessDevicePostureRule(
   devicePosture: devicePosture ?? this.devicePosture,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessDevicePostureRule &&
-          devicePosture == other.devicePosture; } 
-@override int get hashCode { return devicePosture.hashCode; } 
-@override String toString() { return 'AccessDevicePostureRule(devicePosture: $devicePosture)'; } 
- }
+          devicePosture == other.devicePosture;}
+@override int get hashCode {return devicePosture.hashCode;}
+@override String toString() {return 'AccessDevicePostureRule(devicePosture: $devicePosture)';}
+}

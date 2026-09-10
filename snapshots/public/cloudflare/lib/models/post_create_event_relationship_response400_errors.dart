@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreateEventRelationshipResponse400Errors {const PostCreateEventRelationshipResponse400Errors({required this.message});
 
-factory PostCreateEventRelationshipResponse400Errors.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponse400Errors(
+factory PostCreateEventRelationshipResponse400Errors.fromJson(Map<String, dynamic> json) {return PostCreateEventRelationshipResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-PostCreateEventRelationshipResponse400Errors copyWith({String? message}) { return PostCreateEventRelationshipResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+PostCreateEventRelationshipResponse400Errors copyWith({String? message}) {return PostCreateEventRelationshipResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCreateEventRelationshipResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'PostCreateEventRelationshipResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'PostCreateEventRelationshipResponse400Errors(message: $message)';}
+}

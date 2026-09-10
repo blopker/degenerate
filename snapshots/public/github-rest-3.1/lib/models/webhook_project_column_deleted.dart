@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';@immutable final class WebhookProjectColumnDeletedAction {const WebhookProjectColumnDeletedAction._(this.value);
 
-factory WebhookProjectColumnDeletedAction.fromJson(String json) { return switch (json) {
+factory WebhookProjectColumnDeletedAction.fromJson(String json) {return switch (json) {
   'deleted' => deleted,
   _ => WebhookProjectColumnDeletedAction._(json),
-}; }
+};}
 
 static const WebhookProjectColumnDeletedAction deleted = WebhookProjectColumnDeletedAction._('deleted');
 
@@ -13,17 +13,17 @@ static const List<WebhookProjectColumnDeletedAction> values = [deleted];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectColumnDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectColumnDeletedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookProjectColumnDeletedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookProjectColumnDeletedAction($value)';}
+}
 @immutable final class WebhookProjectColumnDeleted {const WebhookProjectColumnDeleted({required this.action, required this.projectColumn, this.enterprise, this.installation, this.organization, this.repository = const Omittable.absent(), this.sender, });
 
-factory WebhookProjectColumnDeleted.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnDeleted(
+factory WebhookProjectColumnDeleted.fromJson(Map<String, dynamic> json) {return WebhookProjectColumnDeleted(
   action: WebhookProjectColumnDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookProjectColumnDeleted.fromJson(Map<String, dynamic> json) { return
   projectColumn: WebhooksProjectColumn.fromJson(json['project_column'] as Map<String, dynamic>),
   repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookProjectColumnDeletedAction action;
 
@@ -47,7 +47,7 @@ final Omittable<RepositoryWebhooks?> repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,10 +55,10 @@ Map<String, dynamic> toJson() { return {
   'project_column': projectColumn.toJson(),
   if (repository.isPresent) 'repository': repository.value?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('project_column'); } 
-WebhookProjectColumnDeleted copyWith({WebhookProjectColumnDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProjectColumn? projectColumn, Omittable<RepositoryWebhooks?>? repository, SimpleUser? Function()? sender, }) { return WebhookProjectColumnDeleted(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('project_column');}
+WebhookProjectColumnDeleted copyWith({WebhookProjectColumnDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProjectColumn? projectColumn, Omittable<RepositoryWebhooks?>? repository, SimpleUser? Function()? sender, }) {return WebhookProjectColumnDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -66,8 +66,8 @@ WebhookProjectColumnDeleted copyWith({WebhookProjectColumnDeletedAction? action,
   projectColumn: projectColumn ?? this.projectColumn,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookProjectColumnDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -75,7 +75,7 @@ WebhookProjectColumnDeleted copyWith({WebhookProjectColumnDeletedAction? action,
           organization == other.organization &&
           projectColumn == other.projectColumn &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, projectColumn, repository, sender); } 
-@override String toString() { return 'WebhookProjectColumnDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectColumn: $projectColumn, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, projectColumn, repository, sender);}
+@override String toString() {return 'WebhookProjectColumnDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectColumn: $projectColumn, repository: $repository, sender: $sender)';}
+}

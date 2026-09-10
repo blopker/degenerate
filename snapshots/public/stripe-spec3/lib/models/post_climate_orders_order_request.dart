@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_climate_orders_order_request_beneficiary.dart';@immutable final class PostClimateOrdersOrderRequest {const PostClimateOrdersOrderRequest({this.beneficiary, this.expand, this.metadata, });
 
-factory PostClimateOrdersOrderRequest.fromJson(Map<String, dynamic> json) { return PostClimateOrdersOrderRequest(
+factory PostClimateOrdersOrderRequest.fromJson(Map<String, dynamic> json) {return PostClimateOrdersOrderRequest(
   beneficiary: json['beneficiary'] != null ? PostClimateOrdersOrderRequestBeneficiary.fromJson(json['beneficiary']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Publicly sharable reference for the end beneficiary of carbon removal. Assumed to be the Stripe account if not set.
 final PostClimateOrdersOrderRequestBeneficiary? beneficiary;
@@ -17,22 +17,22 @@ final List<String>? expand;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (beneficiary != null) 'beneficiary': beneficiary?.toJson(),
   'expand': ?expand,
   'metadata': ?metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'beneficiary', 'expand', 'metadata'}.contains(key)); } 
-PostClimateOrdersOrderRequest copyWith({PostClimateOrdersOrderRequestBeneficiary? Function()? beneficiary, List<String>? Function()? expand, Map<String, String>? Function()? metadata, }) { return PostClimateOrdersOrderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'beneficiary', 'expand', 'metadata'}.contains(key));}
+PostClimateOrdersOrderRequest copyWith({PostClimateOrdersOrderRequestBeneficiary? Function()? beneficiary, List<String>? Function()? expand, Map<String, String>? Function()? metadata, }) {return PostClimateOrdersOrderRequest(
   beneficiary: beneficiary != null ? beneficiary() : this.beneficiary,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostClimateOrdersOrderRequest &&
           beneficiary == other.beneficiary &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(beneficiary, Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostClimateOrdersOrderRequest(beneficiary: $beneficiary, expand: $expand, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(beneficiary, Object.hashAll(expand ?? const []), metadata);}
+@override String toString() {return 'PostClimateOrdersOrderRequest(beneficiary: $beneficiary, expand: $expand, metadata: $metadata)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListForUserSort {const ReposListForUserSort._(this.value);
 
-factory ReposListForUserSort.fromJson(String json) { return switch (json) {
+factory ReposListForUserSort.fromJson(String json) {return switch (json) {
   'created' => created,
   'updated' => updated,
   'pushed' => pushed,
   'full_name' => fullName,
   _ => ReposListForUserSort._(json),
-}; }
+};}
 
 static const ReposListForUserSort created = ReposListForUserSort._('created');
 
@@ -22,11 +22,11 @@ static const List<ReposListForUserSort> values = [created, updated, pushed, full
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposListForUserSort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposListForUserSort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposListForUserSort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposListForUserSort($value)';}
+}

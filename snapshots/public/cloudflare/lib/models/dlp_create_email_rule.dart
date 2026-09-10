@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_action.dart';import 'dlp_email_rule_condition.dart';@immutable final class DlpCreateEmailRule {const DlpCreateEmailRule({required this.action, required this.conditions, required this.enabled, required this.name, this.description = const Omittable.absent(), });
 
-factory DlpCreateEmailRule.fromJson(Map<String, dynamic> json) { return DlpCreateEmailRule(
+factory DlpCreateEmailRule.fromJson(Map<String, dynamic> json) {return DlpCreateEmailRule(
   action: DlpEmailRuleAction.fromJson(json['action'] as Map<String, dynamic>),
   conditions: (json['conditions'] as List<dynamic>).map((e) => DlpEmailRuleCondition.fromJson(e as Map<String, dynamic>)).toList(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
-); }
+);}
 
 final DlpEmailRuleAction action;
 
@@ -21,31 +21,31 @@ final bool enabled;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'conditions': conditions.map((e) => e.toJson()).toList(),
   if (description.isPresent) 'description': description.value,
   'enabled': enabled,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('conditions') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('name') && json['name'] is String; } 
-DlpCreateEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? conditions, Omittable<String?>? description, bool? enabled, String? name, }) { return DlpCreateEmailRule(
+      json.containsKey('name') && json['name'] is String;}
+DlpCreateEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? conditions, Omittable<String?>? description, bool? enabled, String? name, }) {return DlpCreateEmailRule(
   action: action ?? this.action,
   conditions: conditions ?? this.conditions,
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpCreateEmailRule &&
           action == other.action &&
           listEquals(conditions, other.conditions) &&
           description == other.description &&
           enabled == other.enabled &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(conditions), description, enabled, name); } 
-@override String toString() { return 'DlpCreateEmailRule(action: $action, conditions: $conditions, description: $description, enabled: $enabled, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(action, Object.hashAll(conditions), description, enabled, name);}
+@override String toString() {return 'DlpCreateEmailRule(action: $action, conditions: $conditions, description: $description, enabled: $enabled, name: $name)';}
+}

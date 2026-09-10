@@ -8,12 +8,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'certificate_
 /// 
 @immutable final class CertificateObject {const CertificateObject._(this.value);
 
-factory CertificateObject.fromJson(String json) { return switch (json) {
+factory CertificateObject.fromJson(String json) {return switch (json) {
   'certificate' => certificate,
   'organization.certificate' => organizationCertificate,
   'organization.project.certificate' => organizationProjectCertificate,
   _ => CertificateObject._(json),
-}; }
+};}
 
 static const CertificateObject certificate = CertificateObject._('certificate');
 
@@ -25,25 +25,25 @@ static const List<CertificateObject> values = [certificate, organizationCertific
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CertificateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CertificateObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CertificateObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CertificateObject($value)';}
+}
 /// Represents an individual `certificate` uploaded to the organization.
 @immutable final class Certificate {const Certificate({required this.object, required this.id, required this.name, required this.createdAt, required this.certificateDetails, this.active, });
 
-factory Certificate.fromJson(Map<String, dynamic> json) { return Certificate(
+factory Certificate.fromJson(Map<String, dynamic> json) {return Certificate(
   object: CertificateObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   certificateDetails: CertificateCertificateDetails.fromJson(json['certificate_details'] as Map<String, dynamic>),
   active: json['active'] as bool?,
-); }
+);}
 
 /// The object type.
 /// 
@@ -67,35 +67,35 @@ final CertificateCertificateDetails certificateDetails;
 /// Whether the certificate is currently active at the specified scope. Not returned when getting details for a specific certificate.
 final bool? active;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'name': name,
   'created_at': createdAt,
   'certificate_details': certificateDetails.toJson(),
   'active': ?active,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('certificate_details'); } 
-Certificate copyWith({CertificateObject? object, String? id, String? name, int? createdAt, CertificateCertificateDetails? certificateDetails, bool? Function()? active, }) { return Certificate(
+      json.containsKey('certificate_details');}
+Certificate copyWith({CertificateObject? object, String? id, String? name, int? createdAt, CertificateCertificateDetails? certificateDetails, bool? Function()? active, }) {return Certificate(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   certificateDetails: certificateDetails ?? this.certificateDetails,
   active: active != null ? active() : this.active,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Certificate &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
           certificateDetails == other.certificateDetails &&
-          active == other.active; } 
-@override int get hashCode { return Object.hash(object, id, name, createdAt, certificateDetails, active); } 
-@override String toString() { return 'Certificate(object: $object, id: $id, name: $name, createdAt: $createdAt, certificateDetails: $certificateDetails, active: $active)'; } 
- }
+          active == other.active;}
+@override int get hashCode {return Object.hash(object, id, name, createdAt, certificateDetails, active);}
+@override String toString() {return 'Certificate(object: $object, id: $id, name: $name, createdAt: $createdAt, certificateDetails: $certificateDetails, active: $active)';}
+}

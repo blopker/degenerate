@@ -11,7 +11,7 @@ final class AutoRagRagSearchApi with ApiExecutor {const AutoRagRagSearchApi(this
 /// AI Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/ai-search`
-Future<ApiResult<AutoragConfigAiSearchResponseResult, AutoragConfigAiSearchResponse404>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigAiSearchResponseResult, AutoragConfigAiSearchResponse404>> autoragConfigAiSearch({required String id, required String accountId, AutoragConfigAiSearchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -22,28 +22,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AutoragConfigAiSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AutoragConfigAiSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AutoragConfigAiSearchResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  AutoragConfigAiSearchResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Search
 ///
 /// `POST /accounts/{account_id}/autorag/rags/{id}/search`
-Future<ApiResult<AutoragConfigSearchResponseResult, AutoragConfigSearchResponse404>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigSearchResponseResult, AutoragConfigSearchResponse404>> autoragConfigSearch({required String id, required String accountId, AutoragConfigSearchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,22 +43,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AutoragConfigSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AutoragConfigSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AutoragConfigSearchResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  AutoragConfigSearchResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

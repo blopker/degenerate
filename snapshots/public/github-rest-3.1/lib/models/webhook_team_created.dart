@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_created_repository.dart';import 'webhooks_team1.dart';@immutable final class WebhookTeamCreatedAction {const WebhookTeamCreatedAction._(this.value);
 
-factory WebhookTeamCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookTeamCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookTeamCreatedAction._(json),
-}; }
+};}
 
 static const WebhookTeamCreatedAction created = WebhookTeamCreatedAction._('created');
 
@@ -13,17 +13,17 @@ static const List<WebhookTeamCreatedAction> values = [created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookTeamCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookTeamCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookTeamCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookTeamCreatedAction($value)';}
+}
 @immutable final class WebhookTeamCreated {const WebhookTeamCreated({required this.action, required this.organization, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
-factory WebhookTeamCreated.fromJson(Map<String, dynamic> json) { return WebhookTeamCreated(
+factory WebhookTeamCreated.fromJson(Map<String, dynamic> json) {return WebhookTeamCreated(
   action: WebhookTeamCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookTeamCreated.fromJson(Map<String, dynamic> json) { return WebhookT
   repository: json['repository'] != null ? WebhookTeamCreatedRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookTeamCreatedAction action;
 
@@ -48,7 +48,7 @@ final SimpleUser sender;
 
 final WebhooksTeam1 team;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -56,12 +56,12 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'team': team.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('sender') &&
-      json.containsKey('team'); } 
-WebhookTeamCreated copyWith({WebhookTeamCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamCreatedRepository? Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) { return WebhookTeamCreated(
+      json.containsKey('team');}
+WebhookTeamCreated copyWith({WebhookTeamCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamCreatedRepository? Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) {return WebhookTeamCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -69,8 +69,8 @@ WebhookTeamCreated copyWith({WebhookTeamCreatedAction? action, EnterpriseWebhook
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   team: team ?? this.team,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookTeamCreated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -78,7 +78,7 @@ WebhookTeamCreated copyWith({WebhookTeamCreatedAction? action, EnterpriseWebhook
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          team == other.team; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, team); } 
-@override String toString() { return 'WebhookTeamCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)'; } 
- }
+          team == other.team;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, repository, sender, team);}
+@override String toString() {return 'WebhookTeamCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)';}
+}

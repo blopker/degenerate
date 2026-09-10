@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_components_schemas_identifier.dart';import 'secondary_dns_components_schemas_name.dart';import 'secondary_dns_ip.dart';import 'secondary_dns_ixfr_enable.dart';import 'secondary_dns_port.dart';import 'secondary_dns_tsig_id.dart';@immutable final class SecondaryDnsPeer {const SecondaryDnsPeer({required this.id, required this.name, this.ip, this.ixfrEnable, this.port, this.tsigId, });
 
-factory SecondaryDnsPeer.fromJson(Map<String, dynamic> json) { return SecondaryDnsPeer(
+factory SecondaryDnsPeer.fromJson(Map<String, dynamic> json) {return SecondaryDnsPeer(
   id: SecondaryDnsComponentsSchemasIdentifier.fromJson(json['id'] as String),
   ip: json['ip'] != null ? SecondaryDnsIp.fromJson(json['ip'] as String) : null,
   ixfrEnable: json['ixfr_enable'] != null ? SecondaryDnsIxfrEnable.fromJson(json['ixfr_enable'] as bool) : null,
   name: SecondaryDnsComponentsSchemasName.fromJson(json['name'] as String),
   port: json['port'] != null ? SecondaryDnsPort.fromJson(json['port'] as num) : null,
   tsigId: json['tsig_id'] != null ? SecondaryDnsTsigId.fromJson(json['tsig_id'] as String) : null,
-); }
+);}
 
 final SecondaryDnsComponentsSchemasIdentifier id;
 
@@ -26,32 +26,32 @@ final SecondaryDnsPort? port;
 
 final SecondaryDnsTsigId? tsigId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   if (ip != null) 'ip': ip?.toJson(),
   if (ixfrEnable != null) 'ixfr_enable': ixfrEnable?.toJson(),
   'name': name.toJson(),
   if (port != null) 'port': port?.toJson(),
   if (tsigId != null) 'tsig_id': tsigId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('name'); } 
-SecondaryDnsPeer copyWith({SecondaryDnsComponentsSchemasIdentifier? id, SecondaryDnsIp? Function()? ip, SecondaryDnsIxfrEnable? Function()? ixfrEnable, SecondaryDnsComponentsSchemasName? name, SecondaryDnsPort? Function()? port, SecondaryDnsTsigId? Function()? tsigId, }) { return SecondaryDnsPeer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('name');}
+SecondaryDnsPeer copyWith({SecondaryDnsComponentsSchemasIdentifier? id, SecondaryDnsIp? Function()? ip, SecondaryDnsIxfrEnable? Function()? ixfrEnable, SecondaryDnsComponentsSchemasName? name, SecondaryDnsPort? Function()? port, SecondaryDnsTsigId? Function()? tsigId, }) {return SecondaryDnsPeer(
   id: id ?? this.id,
   ip: ip != null ? ip() : this.ip,
   ixfrEnable: ixfrEnable != null ? ixfrEnable() : this.ixfrEnable,
   name: name ?? this.name,
   port: port != null ? port() : this.port,
   tsigId: tsigId != null ? tsigId() : this.tsigId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecondaryDnsPeer &&
           id == other.id &&
           ip == other.ip &&
           ixfrEnable == other.ixfrEnable &&
           name == other.name &&
           port == other.port &&
-          tsigId == other.tsigId; } 
-@override int get hashCode { return Object.hash(id, ip, ixfrEnable, name, port, tsigId); } 
-@override String toString() { return 'SecondaryDnsPeer(id: $id, ip: $ip, ixfrEnable: $ixfrEnable, name: $name, port: $port, tsigId: $tsigId)'; } 
- }
+          tsigId == other.tsigId;}
+@override int get hashCode {return Object.hash(id, ip, ixfrEnable, name, port, tsigId);}
+@override String toString() {return 'SecondaryDnsPeer(id: $id, ip: $ip, ixfrEnable: $ixfrEnable, name: $name, port: $port, tsigId: $tsigId)';}
+}

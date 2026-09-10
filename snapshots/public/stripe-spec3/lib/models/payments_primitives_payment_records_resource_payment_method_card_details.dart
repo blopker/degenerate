@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(this.value);
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -17,7 +17,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fr
   'unknown' => unknown,
   'visa' => visa,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('amex');
 
@@ -47,24 +47,24 @@ static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetai
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)';}
+}
 /// Card funding type. Can be `credit`, `debit`, `prepaid`, or `unknown`.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._(this.value);
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(String json) {return switch (json) {
   'credit' => credit,
   'debit' => debit,
   'prepaid' => prepaid,
   'unknown' => unknown,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding credit = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._('credit');
 
@@ -78,18 +78,18 @@ static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetai
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)';}
+}
 /// Identifies which network this charge was processed on. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `interac`, `jcb`, `link`, `mastercard`, `unionpay`, `visa`, or `unknown`.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._(this.value);
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -103,7 +103,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.
   'unknown' => unknown,
   'visa' => visa,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('amex');
 
@@ -133,22 +133,22 @@ static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetai
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)';}
+}
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._(this.value);
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(String json) {return switch (json) {
   'recurring' => recurring,
   'unscheduled' => unscheduled,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage recurring = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._('recurring');
 
@@ -158,18 +158,18 @@ static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetai
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage($value)';}
+}
 /// Details of the card used for this payment attempt.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.authorizationCode = const Omittable.absent(), this.captureBefore, this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.iin = const Omittable.absent(), this.installments = const Omittable.absent(), this.issuer = const Omittable.absent(), this.network = const Omittable.absent(), this.networkAdviceCode = const Omittable.absent(), this.networkDeclineCode = const Omittable.absent(), this.networkToken = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.storedCredentialUsage = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
   brand: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(json['brand'] as String),
   captureBefore: json['capture_before'] != null ? (json['capture_before'] as num).toInt() : null,
@@ -192,7 +192,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJso
   storedCredentialUsage: json.containsKey('stored_credential_usage') ? Omittable(json['stored_credential_usage'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null) : const Omittable.absent(),
   threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The authorization code of the payment.
 final Omittable<String?> authorizationCode;
@@ -262,7 +262,7 @@ final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
 final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
   'brand': brand.toJson(),
   'capture_before': ?captureBefore,
@@ -285,13 +285,13 @@ Map<String, dynamic> toJson() { return {
   if (storedCredentialUsage.isPresent) 'stored_credential_usage': storedCredentialUsage.value?.toJson(),
   if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('brand') &&
       json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') &&
-      json.containsKey('last4') && json['last4'] is String; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omittable<String?>? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int? Function()? captureBefore, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks?>? checks, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, Omittable<String?>? iin, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments?>? installments, Omittable<String?>? issuer, String? last4, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork?>? network, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage?>? storedCredentialUsage, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure?>? threeDSecure, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?>? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
+      json.containsKey('last4') && json['last4'] is String;}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omittable<String?>? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int? Function()? captureBefore, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks?>? checks, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, Omittable<String?>? iin, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments?>? installments, Omittable<String?>? issuer, String? last4, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork?>? network, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage?>? storedCredentialUsage, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure?>? threeDSecure, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?>? wallet, }) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: authorizationCode ?? this.authorizationCode,
   brand: brand ?? this.brand,
   captureBefore: captureBefore != null ? captureBefore() : this.captureBefore,
@@ -314,8 +314,8 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omitt
   storedCredentialUsage: storedCredentialUsage ?? this.storedCredentialUsage,
   threeDSecure: threeDSecure ?? this.threeDSecure,
   wallet: wallet ?? this.wallet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails &&
           authorizationCode == other.authorizationCode &&
           brand == other.brand &&
@@ -338,7 +338,7 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omitt
           networkTransactionId == other.networkTransactionId &&
           storedCredentialUsage == other.storedCredentialUsage &&
           threeDSecure == other.threeDSecure &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([authorizationCode, brand, captureBefore, checks, country, description, expMonth, expYear, fingerprint, funding, iin, installments, issuer, last4, network, networkAdviceCode, networkDeclineCode, networkToken, networkTransactionId, storedCredentialUsage, threeDSecure, wallet]); } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, iin: $iin, installments: $installments, issuer: $issuer, last4: $last4, network: $network, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkToken: $networkToken, networkTransactionId: $networkTransactionId, storedCredentialUsage: $storedCredentialUsage, threeDSecure: $threeDSecure, wallet: $wallet)'; } 
- }
+          wallet == other.wallet;}
+@override int get hashCode {return Object.hashAll([authorizationCode, brand, captureBefore, checks, country, description, expMonth, expYear, fingerprint, funding, iin, installments, issuer, last4, network, networkAdviceCode, networkDeclineCode, networkToken, networkTransactionId, storedCredentialUsage, threeDSecure, wallet]);}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, iin: $iin, installments: $installments, issuer: $issuer, last4: $last4, network: $network, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkToken: $networkToken, networkTransactionId: $networkTransactionId, storedCredentialUsage: $storedCredentialUsage, threeDSecure: $threeDSecure, wallet: $wallet)';}
+}

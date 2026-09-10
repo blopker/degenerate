@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Authentication m
 /// 
 @immutable final class RealtimekitStorageConfigResponseAuthMethod {const RealtimekitStorageConfigResponseAuthMethod._(this.value);
 
-factory RealtimekitStorageConfigResponseAuthMethod.fromJson(String json) { return switch (json) {
+factory RealtimekitStorageConfigResponseAuthMethod.fromJson(String json) {return switch (json) {
   'KEY' => key,
   'PASSWORD' => password,
   _ => RealtimekitStorageConfigResponseAuthMethod._(json),
-}; }
+};}
 
 static const RealtimekitStorageConfigResponseAuthMethod key = RealtimekitStorageConfigResponseAuthMethod._('KEY');
 
@@ -18,25 +18,25 @@ static const List<RealtimekitStorageConfigResponseAuthMethod> values = [key, pas
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitStorageConfigResponseAuthMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitStorageConfigResponseAuthMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitStorageConfigResponseAuthMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitStorageConfigResponseAuthMethod($value)';}
+}
 /// Type of storage media.
 @immutable final class RealtimekitStorageConfigResponseType {const RealtimekitStorageConfigResponseType._(this.value);
 
-factory RealtimekitStorageConfigResponseType.fromJson(String json) { return switch (json) {
+factory RealtimekitStorageConfigResponseType.fromJson(String json) {return switch (json) {
   'aws' => aws,
   'azure' => azure,
   'digitalocean' => digitalocean,
   'gcs' => gcs,
   'sftp' => sftp,
   _ => RealtimekitStorageConfigResponseType._(json),
-}; }
+};}
 
 static const RealtimekitStorageConfigResponseType aws = RealtimekitStorageConfigResponseType._('aws');
 
@@ -52,17 +52,17 @@ static const List<RealtimekitStorageConfigResponseType> values = [aws, azure, di
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitStorageConfigResponseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitStorageConfigResponseType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitStorageConfigResponseType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitStorageConfigResponseType($value)';}
+}
 @immutable final class RealtimekitStorageConfigResponse {const RealtimekitStorageConfigResponse({required this.type, this.authMethod, this.bucket, this.host, this.password, this.path, this.port, this.privateKey, this.region, this.secret, this.username, });
 
-factory RealtimekitStorageConfigResponse.fromJson(Map<String, dynamic> json) { return RealtimekitStorageConfigResponse(
+factory RealtimekitStorageConfigResponse.fromJson(Map<String, dynamic> json) {return RealtimekitStorageConfigResponse(
   authMethod: json['auth_method'] != null ? RealtimekitStorageConfigResponseAuthMethod.fromJson(json['auth_method'] as String) : null,
   bucket: json['bucket'] as String?,
   host: json['host'] as String?,
@@ -74,7 +74,7 @@ factory RealtimekitStorageConfigResponse.fromJson(Map<String, dynamic> json) { r
   secret: json['secret'] as String?,
   type: RealtimekitStorageConfigResponseType.fromJson(json['type'] as String),
   username: json['username'] as String?,
-); }
+);}
 
 /// Authentication method used for "sftp" type storage medium
 /// 
@@ -110,7 +110,7 @@ final RealtimekitStorageConfigResponseType type;
 /// SSH destination server username for SFTP type storage medium
 final String? username;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authMethod != null) 'auth_method': authMethod?.toJson(),
   'bucket': ?bucket,
   'host': ?host,
@@ -122,9 +122,9 @@ Map<String, dynamic> toJson() { return {
   'secret': ?secret,
   'type': type.toJson(),
   'username': ?username,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimekitStorageConfigResponse copyWith({RealtimekitStorageConfigResponseAuthMethod? Function()? authMethod, String? Function()? bucket, String? Function()? host, String? Function()? password, String? Function()? path, double? Function()? port, String? Function()? privateKey, String? Function()? region, String? Function()? secret, RealtimekitStorageConfigResponseType? type, String? Function()? username, }) { return RealtimekitStorageConfigResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RealtimekitStorageConfigResponse copyWith({RealtimekitStorageConfigResponseAuthMethod? Function()? authMethod, String? Function()? bucket, String? Function()? host, String? Function()? password, String? Function()? path, double? Function()? port, String? Function()? privateKey, String? Function()? region, String? Function()? secret, RealtimekitStorageConfigResponseType? type, String? Function()? username, }) {return RealtimekitStorageConfigResponse(
   authMethod: authMethod != null ? authMethod() : this.authMethod,
   bucket: bucket != null ? bucket() : this.bucket,
   host: host != null ? host() : this.host,
@@ -136,8 +136,8 @@ RealtimekitStorageConfigResponse copyWith({RealtimekitStorageConfigResponseAuthM
   secret: secret != null ? secret() : this.secret,
   type: type ?? this.type,
   username: username != null ? username() : this.username,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitStorageConfigResponse &&
           authMethod == other.authMethod &&
           bucket == other.bucket &&
@@ -149,7 +149,7 @@ RealtimekitStorageConfigResponse copyWith({RealtimekitStorageConfigResponseAuthM
           region == other.region &&
           secret == other.secret &&
           type == other.type &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(authMethod, bucket, host, password, path, port, privateKey, region, secret, type, username); } 
-@override String toString() { return 'RealtimekitStorageConfigResponse(authMethod: $authMethod, bucket: $bucket, host: $host, password: $password, path: $path, port: $port, privateKey: $privateKey, region: $region, secret: $secret, type: $type, username: $username)'; } 
- }
+          username == other.username;}
+@override int get hashCode {return Object.hash(authMethod, bucket, host, password, path, port, privateKey, region, secret, type, username);}
+@override String toString() {return 'RealtimekitStorageConfigResponse(authMethod: $authMethod, bucket: $bucket, host: $host, password: $password, path: $path, port: $port, privateKey: $privateKey, region: $region, secret: $secret, type: $type, username: $username)';}
+}

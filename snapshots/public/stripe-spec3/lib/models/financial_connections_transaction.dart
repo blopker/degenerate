@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_transaction_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject._(this.value);
 
-factory FinancialConnectionsTransactionObject.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsTransactionObject.fromJson(String json) {return switch (json) {
   'financial_connections.transaction' => financialConnectionsTransaction,
   _ => FinancialConnectionsTransactionObject._(json),
-}; }
+};}
 
 static const FinancialConnectionsTransactionObject financialConnectionsTransaction = FinancialConnectionsTransactionObject._('financial_connections.transaction');
 
@@ -14,23 +14,23 @@ static const List<FinancialConnectionsTransactionObject> values = [financialConn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsTransactionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsTransactionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsTransactionObject($value)';}
+}
 /// The status of the transaction.
 @immutable final class FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus._(this.value);
 
-factory FinancialConnectionsTransactionStatus.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsTransactionStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'posted' => posted,
   'void' => $void,
   _ => FinancialConnectionsTransactionStatus._(json),
-}; }
+};}
 
 static const FinancialConnectionsTransactionStatus pending = FinancialConnectionsTransactionStatus._('pending');
 
@@ -42,18 +42,18 @@ static const List<FinancialConnectionsTransactionStatus> values = [pending, post
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsTransactionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsTransactionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsTransactionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsTransactionStatus($value)';}
+}
 /// A Transaction represents a real transaction that affects a Financial Connections Account balance.
 @immutable final class FinancialConnectionsTransaction {const FinancialConnectionsTransaction({required this.account, required this.amount, required this.currency, required this.description, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.transactedAt, required this.transactionRefresh, required this.updated, });
 
-factory FinancialConnectionsTransaction.fromJson(Map<String, dynamic> json) { return FinancialConnectionsTransaction(
+factory FinancialConnectionsTransaction.fromJson(Map<String, dynamic> json) {return FinancialConnectionsTransaction(
   account: json['account'] as String,
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
@@ -66,7 +66,7 @@ factory FinancialConnectionsTransaction.fromJson(Map<String, dynamic> json) { re
   transactedAt: (json['transacted_at'] as num).toInt(),
   transactionRefresh: json['transaction_refresh'] as String,
   updated: (json['updated'] as num).toInt(),
-); }
+);}
 
 /// The ID of the Financial Connections Account this transaction belongs to.
 final String account;
@@ -103,7 +103,7 @@ final String transactionRefresh;
 /// Time at which the object was last updated. Measured in seconds since the Unix epoch.
 final int updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'amount': amount,
   'currency': currency,
@@ -116,8 +116,8 @@ Map<String, dynamic> toJson() { return {
   'transacted_at': transactedAt,
   'transaction_refresh': transactionRefresh,
   'updated': updated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -128,8 +128,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('status_transitions') &&
       json.containsKey('transacted_at') && json['transacted_at'] is num &&
       json.containsKey('transaction_refresh') && json['transaction_refresh'] is String &&
-      json.containsKey('updated') && json['updated'] is num; } 
-FinancialConnectionsTransaction copyWith({String? account, int? amount, String? currency, String? description, String? id, bool? livemode, FinancialConnectionsTransactionObject? object, FinancialConnectionsTransactionStatus? status, BankConnectionsResourceTransactionResourceStatusTransitions? statusTransitions, int? transactedAt, String? transactionRefresh, int? updated, }) { return FinancialConnectionsTransaction(
+      json.containsKey('updated') && json['updated'] is num;}
+FinancialConnectionsTransaction copyWith({String? account, int? amount, String? currency, String? description, String? id, bool? livemode, FinancialConnectionsTransactionObject? object, FinancialConnectionsTransactionStatus? status, BankConnectionsResourceTransactionResourceStatusTransitions? statusTransitions, int? transactedAt, String? transactionRefresh, int? updated, }) {return FinancialConnectionsTransaction(
   account: account ?? this.account,
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
@@ -142,8 +142,8 @@ FinancialConnectionsTransaction copyWith({String? account, int? amount, String? 
   transactedAt: transactedAt ?? this.transactedAt,
   transactionRefresh: transactionRefresh ?? this.transactionRefresh,
   updated: updated ?? this.updated,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FinancialConnectionsTransaction &&
           account == other.account &&
           amount == other.amount &&
@@ -156,7 +156,7 @@ FinancialConnectionsTransaction copyWith({String? account, int? amount, String? 
           statusTransitions == other.statusTransitions &&
           transactedAt == other.transactedAt &&
           transactionRefresh == other.transactionRefresh &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(account, amount, currency, description, id, livemode, object, status, statusTransitions, transactedAt, transactionRefresh, updated); } 
-@override String toString() { return 'FinancialConnectionsTransaction(account: $account, amount: $amount, currency: $currency, description: $description, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, transactedAt: $transactedAt, transactionRefresh: $transactionRefresh, updated: $updated)'; } 
- }
+          updated == other.updated;}
+@override int get hashCode {return Object.hash(account, amount, currency, description, id, livemode, object, status, statusTransitions, transactedAt, transactionRefresh, updated);}
+@override String toString() {return 'FinancialConnectionsTransaction(account: $account, amount: $amount, currency: $currency, description: $description, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, transactedAt: $transactedAt, transactionRefresh: $transactionRefresh, updated: $updated)';}
+}

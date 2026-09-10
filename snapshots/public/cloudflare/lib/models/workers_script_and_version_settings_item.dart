@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_limits.dart';import 'workers_logpush.dart';import 'workers_multiple_step_migrations.dart';import 'workers_observability.dart';import 'workers_placement_info_no_status.dart';import 'workers_placement_info_no_status_smart.dart';import 'workers_placement_info_no_status_targeted.dart';import 'workers_placement_info_no_status_targeted2.dart';import 'workers_placement_info_no_status_targeted3.dart';import 'workers_placement_info_no_status_targeted4.dart';import 'workers_placement_info_no_status_variant2.dart';import 'workers_placement_info_no_status_variant3.dart';import 'workers_placement_info_no_status_variant4.dart';import 'workers_script_and_version_settings_item_annotations.dart';import 'workers_script_and_version_settings_item_migrations.dart';import 'workers_single_step_migrations.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';@immutable final class WorkersScriptAndVersionSettingsItem {const WorkersScriptAndVersionSettingsItem({this.annotations, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.logpush, this.migrations, this.observability, this.placement, this.tags = const Omittable.absent(), this.tailConsumers = const Omittable.absent(), this.usageModel, });
 
-factory WorkersScriptAndVersionSettingsItem.fromJson(Map<String, dynamic> json) { return WorkersScriptAndVersionSettingsItem(
+factory WorkersScriptAndVersionSettingsItem.fromJson(Map<String, dynamic> json) {return WorkersScriptAndVersionSettingsItem(
   annotations: json['annotations'] != null ? WorkersScriptAndVersionSettingsItemAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
@@ -15,7 +15,7 @@ factory WorkersScriptAndVersionSettingsItem.fromJson(Map<String, dynamic> json) 
   tags: json.containsKey('tags') ? Omittable((json['tags'] as List<dynamic>?)?.map((e) => WorkersTag.fromJson(e as String)).toList()) : const Omittable.absent(),
   tailConsumers: json.containsKey('tail_consumers') ? Omittable((json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
-); }
+);}
 
 /// Annotations for the Worker version. Annotations are not inherited across settings updates; omitting this field means the new version will have no annotations.
 final WorkersScriptAndVersionSettingsItemAnnotations? annotations;
@@ -48,7 +48,7 @@ final Omittable<List<WorkersTailConsumersScript>?> tailConsumers;
 
 final WorkersUsageModel? usageModel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
   if (compatibilityDate != null) 'compatibility_date': compatibilityDate?.toJson(),
@@ -61,9 +61,9 @@ Map<String, dynamic> toJson() { return {
   if (tags.isPresent) 'tags': tags.value?.map((e) => e.toJson()).toList(),
   if (tailConsumers.isPresent) 'tail_consumers': tailConsumers.value?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'logpush', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
-WorkersScriptAndVersionSettingsItem copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, WorkersScriptAndVersionSettingsItemMigrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoNoStatus? Function()? placement, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) { return WorkersScriptAndVersionSettingsItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'annotations', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'logpush', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key));}
+WorkersScriptAndVersionSettingsItem copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, WorkersScriptAndVersionSettingsItemMigrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoNoStatus? Function()? placement, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) {return WorkersScriptAndVersionSettingsItem(
   annotations: annotations != null ? annotations() : this.annotations,
   bindings: bindings != null ? bindings() : this.bindings,
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
@@ -76,8 +76,8 @@ WorkersScriptAndVersionSettingsItem copyWith({WorkersScriptAndVersionSettingsIte
   tags: tags ?? this.tags,
   tailConsumers: tailConsumers ?? this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersScriptAndVersionSettingsItem &&
           annotations == other.annotations &&
           listEquals(bindings, other.bindings) &&
@@ -92,7 +92,7 @@ WorkersScriptAndVersionSettingsItem copyWith({WorkersScriptAndVersionSettingsIte
           listEquals(tags.value, other.tags.value) &&
           tailConsumers.isPresent == other.tailConsumers.isPresent &&
           listEquals(tailConsumers.value, other.tailConsumers.value) &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(annotations, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, logpush, migrations, observability, placement, Object.hashAll(tags.value ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel); } 
-@override String toString() { return 'WorkersScriptAndVersionSettingsItem(annotations: $annotations, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, logpush: $logpush, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)'; } 
- }
+          usageModel == other.usageModel;}
+@override int get hashCode {return Object.hash(annotations, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, logpush, migrations, observability, placement, Object.hashAll(tags.value ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel);}
+@override String toString() {return 'WorkersScriptAndVersionSettingsItem(annotations: $annotations, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, logpush: $logpush, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)';}
+}

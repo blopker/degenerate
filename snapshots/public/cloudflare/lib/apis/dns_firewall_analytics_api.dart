@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_analytics_dimensions.dart';import '../models/dns_analytics_filters.dart';import '../models/dns_analytics_identifier.dart';import '../models/dns_analytics_limit.dart';import '../models/dns_analytics_metrics.dart';import '../models/dns_analytics_report.dart';import '../models/dns_analytics_report_bytime.dart';import '../models/dns_analytics_since.dart';import '../models/dns_analytics_sort.dart';import '../models/dns_analytics_time_delta.dart';import '../models/dns_analytics_until.dart';import '../models/dns_firewall_analytics_by_time_response4_xx.dart';import '../models/dns_firewall_analytics_table_response4_xx.dart';/// DnsFirewallAnalyticsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_analytics_dimensions.dart';import '../models/dns_analytics_filters.dart';import '../models/dns_analytics_identifier.dart';import '../models/dns_analytics_limit.dart';import '../models/dns_analytics_metrics.dart';import '../models/dns_analytics_report.dart';import '../models/dns_analytics_report_bytime.dart';import '../models/dns_analytics_since.dart';import '../models/dns_analytics_sort.dart';import '../models/dns_analytics_time_delta.dart';import '../models/dns_analytics_until.dart';import '../models/dns_firewall_analytics_by_time_response4xx.dart';import '../models/dns_firewall_analytics_table_response4xx.dart';/// DnsFirewallAnalyticsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class DnsFirewallAnalyticsApi with ApiExecutor {const DnsFirewallAnalytics
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report`
-Future<ApiResult<DnsAnalyticsReport?, DnsFirewallAnalyticsTableResponse4Xx>> dnsFirewallAnalyticsTable({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsReport?, DnsFirewallAnalyticsTableResponse4xx>> dnsFirewallAnalyticsTable({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toString();
@@ -50,24 +50,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? DnsAnalyticsReport.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? DnsAnalyticsReport.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DnsFirewallAnalyticsTableResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  DnsFirewallAnalyticsTableResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// By Time
 ///
 /// Retrieves a list of aggregate metrics grouped by time interval.
@@ -75,7 +64,7 @@ return null;
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report/bytime`
-Future<ApiResult<DnsAnalyticsReportBytime?, DnsFirewallAnalyticsByTimeResponse4Xx>> dnsFirewallAnalyticsByTime({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsReportBytime?, DnsFirewallAnalyticsByTimeResponse4xx>> dnsFirewallAnalyticsByTime({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toString();
@@ -113,22 +102,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? DnsAnalyticsReportBytime.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? DnsAnalyticsReportBytime.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DnsFirewallAnalyticsByTimeResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  DnsFirewallAnalyticsByTimeResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

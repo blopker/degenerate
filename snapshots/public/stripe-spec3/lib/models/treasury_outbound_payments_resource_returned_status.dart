@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_payments_resource_returned_status_transaction.dart';/// Reason for the return.
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode._(this.value);
 
-factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json) { return switch (json) {
+factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'bank_account_restricted' => bankAccountRestricted,
@@ -15,7 +15,7 @@ factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json)
   'no_account' => noAccount,
   'other' => $other,
   _ => TreasuryOutboundPaymentsResourceReturnedStatusCode._(json),
-}; }
+};}
 
 static const TreasuryOutboundPaymentsResourceReturnedStatusCode accountClosed = TreasuryOutboundPaymentsResourceReturnedStatusCode._('account_closed');
 
@@ -41,21 +41,21 @@ static const List<TreasuryOutboundPaymentsResourceReturnedStatusCode> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryOutboundPaymentsResourceReturnedStatusCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryOutboundPaymentsResourceReturnedStatusCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryOutboundPaymentsResourceReturnedStatusCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryOutboundPaymentsResourceReturnedStatusCode($value)';}
+}
 /// 
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatus {const TreasuryOutboundPaymentsResourceReturnedStatus({required this.code, required this.transaction, });
 
-factory TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceReturnedStatus(
+factory TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(Map<String, dynamic> json) {return TreasuryOutboundPaymentsResourceReturnedStatus(
   code: TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(json['code'] as String),
   transaction: TreasuryOutboundPaymentsResourceReturnedStatusTransaction.fromJson(json['transaction']),
-); }
+);}
 
 /// Reason for the return.
 final TreasuryOutboundPaymentsResourceReturnedStatusCode code;
@@ -63,20 +63,20 @@ final TreasuryOutboundPaymentsResourceReturnedStatusCode code;
 /// The Transaction associated with this object.
 final TreasuryOutboundPaymentsResourceReturnedStatusTransaction transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'transaction': transaction.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('transaction'); } 
-TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, TreasuryOutboundPaymentsResourceReturnedStatusTransaction? transaction, }) { return TreasuryOutboundPaymentsResourceReturnedStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('transaction');}
+TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, TreasuryOutboundPaymentsResourceReturnedStatusTransaction? transaction, }) {return TreasuryOutboundPaymentsResourceReturnedStatus(
   code: code ?? this.code,
   transaction: transaction ?? this.transaction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceReturnedStatus &&
           code == other.code &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(code, transaction); } 
-@override String toString() { return 'TreasuryOutboundPaymentsResourceReturnedStatus(code: $code, transaction: $transaction)'; } 
- }
+          transaction == other.transaction;}
+@override int get hashCode {return Object.hash(code, transaction);}
+@override String toString() {return 'TreasuryOutboundPaymentsResourceReturnedStatus(code: $code, transaction: $transaction)';}
+}

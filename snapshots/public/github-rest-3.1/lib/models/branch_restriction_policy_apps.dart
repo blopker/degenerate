@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_restriction_policy_apps_owner.dart';import 'branch_restriction_policy_apps_permissions.dart';@immutable final class BranchRestrictionPolicyApps {const BranchRestrictionPolicyApps({this.id, this.slug, this.nodeId, this.owner, this.name, this.clientId, this.description, this.externalUrl, this.htmlUrl, this.createdAt, this.updatedAt, this.permissions, this.events, });
 
-factory BranchRestrictionPolicyApps.fromJson(Map<String, dynamic> json) { return BranchRestrictionPolicyApps(
+factory BranchRestrictionPolicyApps.fromJson(Map<String, dynamic> json) {return BranchRestrictionPolicyApps(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   slug: json['slug'] as String?,
   nodeId: json['node_id'] as String?,
@@ -16,7 +16,7 @@ factory BranchRestrictionPolicyApps.fromJson(Map<String, dynamic> json) { return
   updatedAt: json['updated_at'] as String?,
   permissions: json['permissions'] != null ? BranchRestrictionPolicyAppsPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final int? id;
 
@@ -44,7 +44,7 @@ final BranchRestrictionPolicyAppsPermissions? permissions;
 
 final List<String>? events;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'slug': ?slug,
   'node_id': ?nodeId,
@@ -58,9 +58,9 @@ Map<String, dynamic> toJson() { return {
   'updated_at': ?updatedAt,
   if (permissions != null) 'permissions': permissions?.toJson(),
   'events': ?events,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'slug', 'node_id', 'owner', 'name', 'client_id', 'description', 'external_url', 'html_url', 'created_at', 'updated_at', 'permissions', 'events'}.contains(key)); } 
-BranchRestrictionPolicyApps copyWith({int? Function()? id, String? Function()? slug, String? Function()? nodeId, BranchRestrictionPolicyAppsOwner? Function()? owner, String? Function()? name, String? Function()? clientId, String? Function()? description, String? Function()? externalUrl, String? Function()? htmlUrl, String? Function()? createdAt, String? Function()? updatedAt, BranchRestrictionPolicyAppsPermissions? Function()? permissions, List<String>? Function()? events, }) { return BranchRestrictionPolicyApps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'slug', 'node_id', 'owner', 'name', 'client_id', 'description', 'external_url', 'html_url', 'created_at', 'updated_at', 'permissions', 'events'}.contains(key));}
+BranchRestrictionPolicyApps copyWith({int? Function()? id, String? Function()? slug, String? Function()? nodeId, BranchRestrictionPolicyAppsOwner? Function()? owner, String? Function()? name, String? Function()? clientId, String? Function()? description, String? Function()? externalUrl, String? Function()? htmlUrl, String? Function()? createdAt, String? Function()? updatedAt, BranchRestrictionPolicyAppsPermissions? Function()? permissions, List<String>? Function()? events, }) {return BranchRestrictionPolicyApps(
   id: id != null ? id() : this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
@@ -74,8 +74,8 @@ BranchRestrictionPolicyApps copyWith({int? Function()? id, String? Function()? s
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   permissions: permissions != null ? permissions() : this.permissions,
   events: events != null ? events() : this.events,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BranchRestrictionPolicyApps &&
           id == other.id &&
           slug == other.slug &&
@@ -89,7 +89,7 @@ BranchRestrictionPolicyApps copyWith({int? Function()? id, String? Function()? s
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           permissions == other.permissions &&
-          listEquals(events, other.events); } 
-@override int get hashCode { return Object.hash(id, slug, nodeId, owner, name, clientId, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events ?? const [])); } 
-@override String toString() { return 'BranchRestrictionPolicyApps(id: $id, slug: $slug, nodeId: $nodeId, owner: $owner, name: $name, clientId: $clientId, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events)'; } 
- }
+          listEquals(events, other.events);}
+@override int get hashCode {return Object.hash(id, slug, nodeId, owner, name, clientId, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events ?? const []));}
+@override String toString() {return 'BranchRestrictionPolicyApps(id: $id, slug: $slug, nodeId: $nodeId, owner: $owner, name: $name, clientId: $clientId, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events)';}
+}

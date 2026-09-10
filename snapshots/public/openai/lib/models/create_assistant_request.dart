@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'create_assistant_request_model.dart';import 'create_assistant_request_tool_resources.dart';import 'create_assistant_request_tools.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';@immutable final class CreateAssistantRequest {const CreateAssistantRequest({required this.model, this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.instructions = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.tools, this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
-factory CreateAssistantRequest.fromJson(Map<String, dynamic> json) { return CreateAssistantRequest(
+factory CreateAssistantRequest.fromJson(Map<String, dynamic> json) {return CreateAssistantRequest(
   model: CreateAssistantRequestModel.fromJson(json['model']),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
@@ -14,7 +14,7 @@ factory CreateAssistantRequest.fromJson(Map<String, dynamic> json) { return Crea
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
 /// 
@@ -57,8 +57,8 @@ final Omittable<double?> topP;
 final Omittable<ResponseFormatOption?> responseFormat;
 
 /// The value with the schema default applied when absent.
-List<CreateAssistantRequestTools> get toolsOrDefault { return tools ?? const []; } 
-Map<String, dynamic> toJson() { return {
+List<CreateAssistantRequestTools> get toolsOrDefault {return tools ?? const [];}
+Map<String, dynamic> toJson() {return {
   'model': model.toJson(),
   if (name.isPresent) 'name': name.value,
   if (description.isPresent) 'description': description.value,
@@ -70,9 +70,9 @@ Map<String, dynamic> toJson() { return {
   if (temperature.isPresent) 'temperature': temperature.value,
   if (topP.isPresent) 'top_p': topP.value,
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model'); } 
-CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, Omittable<ReasoningEffort?>? reasoningEffort, List<CreateAssistantRequestTools>? Function()? tools, Omittable<CreateAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return CreateAssistantRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model');}
+CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, Omittable<ReasoningEffort?>? reasoningEffort, List<CreateAssistantRequestTools>? Function()? tools, Omittable<CreateAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) {return CreateAssistantRequest(
   model: model ?? this.model,
   name: name ?? this.name,
   description: description ?? this.description,
@@ -84,8 +84,8 @@ CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<S
   temperature: temperature ?? this.temperature,
   topP: topP ?? this.topP,
   responseFormat: responseFormat ?? this.responseFormat,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateAssistantRequest &&
           model == other.model &&
           name == other.name &&
@@ -97,7 +97,7 @@ CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<S
           metadata == other.metadata &&
           temperature == other.temperature &&
           topP == other.topP &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hash(model, name, description, instructions, reasoningEffort, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, responseFormat); } 
-@override String toString() { return 'CreateAssistantRequest(model: $model, name: $name, description: $description, instructions: $instructions, reasoningEffort: $reasoningEffort, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)'; } 
- }
+          responseFormat == other.responseFormat;}
+@override int get hashCode {return Object.hash(model, name, description, instructions, reasoningEffort, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, responseFormat);}
+@override String toString() {return 'CreateAssistantRequest(model: $model, name: $name, description: $description, instructions: $instructions, reasoningEffort: $reasoningEffort, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)';}
+}

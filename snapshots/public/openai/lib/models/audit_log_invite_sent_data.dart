@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the invite.
 @immutable final class AuditLogInviteSentData {const AuditLogInviteSentData({this.email, this.role, });
 
-factory AuditLogInviteSentData.fromJson(Map<String, dynamic> json) { return AuditLogInviteSentData(
+factory AuditLogInviteSentData.fromJson(Map<String, dynamic> json) {return AuditLogInviteSentData(
   email: json['email'] as String?,
   role: json['role'] as String?,
-); }
+);}
 
 /// The email invited to the organization.
 final String? email;
@@ -14,19 +14,19 @@ final String? email;
 /// The role the email was invited to be. Is either `owner` or `member`.
 final String? role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': ?email,
   'role': ?role,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'role'}.contains(key)); } 
-AuditLogInviteSentData copyWith({String? Function()? email, String? Function()? role, }) { return AuditLogInviteSentData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'email', 'role'}.contains(key));}
+AuditLogInviteSentData copyWith({String? Function()? email, String? Function()? role, }) {return AuditLogInviteSentData(
   email: email != null ? email() : this.email,
   role: role != null ? role() : this.role,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogInviteSentData &&
           email == other.email &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(email, role); } 
-@override String toString() { return 'AuditLogInviteSentData(email: $email, role: $role)'; } 
- }
+          role == other.role;}
+@override int get hashCode {return Object.hash(email, role);}
+@override String toString() {return 'AuditLogInviteSentData(email: $email, role: $role)';}
+}

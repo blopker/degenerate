@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Durable Object binding.
 @immutable final class PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue {const PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue({required this.namespaceId});
 
-factory PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
+factory PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
   namespaceId: json['namespace_id'] as String,
-); }
+);}
 
 /// ID of the Durable Object namespace.
 final String namespaceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'namespace_id': namespaceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('namespace_id') && json['namespace_id'] is String; } 
-PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue copyWith({String? namespaceId}) { return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('namespace_id') && json['namespace_id'] is String;}
+PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue copyWith({String? namespaceId}) {return PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(
   namespaceId: namespaceId ?? this.namespaceId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue &&
-          namespaceId == other.namespaceId; } 
-@override int get hashCode { return namespaceId.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(namespaceId: $namespaceId)'; } 
- }
+          namespaceId == other.namespaceId;}
+@override int get hashCode {return namespaceId.hashCode;}
+@override String toString() {return 'PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue(namespaceId: $namespaceId)';}
+}

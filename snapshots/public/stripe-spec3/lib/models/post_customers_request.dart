@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_request_address.dart';import 'post_customers_request_business_name.dart';import 'post_customers_request_cash_balance.dart';import 'post_customers_request_individual_name.dart';import 'post_customers_request_invoice_settings.dart';import 'post_customers_request_metadata.dart';import 'post_customers_request_shipping.dart';import 'post_customers_request_tax.dart';import 'post_customers_request_tax_id_data.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
 @immutable final class PostCustomersRequestTaxExempt {const PostCustomersRequestTaxExempt._(this.value);
 
-factory PostCustomersRequestTaxExempt.fromJson(String json) { return switch (json) {
+factory PostCustomersRequestTaxExempt.fromJson(String json) {return switch (json) {
   '' => $empty,
   'exempt' => exempt,
   'none' => none,
   'reverse' => reverse,
   _ => PostCustomersRequestTaxExempt._(json),
-}; }
+};}
 
 static const PostCustomersRequestTaxExempt $empty = PostCustomersRequestTaxExempt._('');
 
@@ -23,17 +23,17 @@ static const List<PostCustomersRequestTaxExempt> values = [$empty, exempt, none,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersRequestTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersRequestTaxExempt($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersRequestTaxExempt && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersRequestTaxExempt($value)';}
+}
 @immutable final class PostCustomersRequest {const PostCustomersRequest({this.address, this.balance, this.businessName, this.cashBalance, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.paymentMethod, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, this.taxIdData, this.testClock, });
 
-factory PostCustomersRequest.fromJson(Map<String, dynamic> json) { return PostCustomersRequest(
+factory PostCustomersRequest.fromJson(Map<String, dynamic> json) {return PostCustomersRequest(
   address: json['address'] != null ? PostCustomersRequestAddress.fromJson(json['address']) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
   businessName: json['business_name'] != null ? PostCustomersRequestBusinessName.fromJson(json['business_name']) : null,
@@ -56,7 +56,7 @@ factory PostCustomersRequest.fromJson(Map<String, dynamic> json) { return PostCu
   taxExempt: json['tax_exempt'] != null ? PostCustomersRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
   taxIdData: (json['tax_id_data'] as List<dynamic>?)?.map((e) => PostCustomersRequestTaxIdData.fromJson(e as Map<String, dynamic>)).toList(),
   testClock: json['test_clock'] as String?,
-); }
+);}
 
 /// The customer's address. Learn about [country-specific requirements for calculating tax](https://docs.stripe.com/invoicing/taxes?dashboard-or-api=dashboard#set-up-customer).
 final PostCustomersRequestAddress? address;
@@ -122,7 +122,7 @@ final List<PostCustomersRequestTaxIdData>? taxIdData;
 /// ID of the test clock to attach to the customer.
 final String? testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   'balance': ?balance,
   if (businessName != null) 'business_name': businessName?.toJson(),
@@ -145,9 +145,9 @@ Map<String, dynamic> toJson() { return {
   if (taxExempt != null) 'tax_exempt': taxExempt?.toJson(),
   if (taxIdData != null) 'tax_id_data': taxIdData?.map((e) => e.toJson()).toList(),
   'test_clock': ?testClock,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'balance', 'business_name', 'cash_balance', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'payment_method', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt', 'tax_id_data', 'test_clock'}.contains(key)); } 
-PostCustomersRequest copyWith({PostCustomersRequestAddress? Function()? address, int? Function()? balance, PostCustomersRequestBusinessName? Function()? businessName, PostCustomersRequestCashBalance? Function()? cashBalance, String? Function()? description, String? Function()? email, List<String>? Function()? expand, PostCustomersRequestIndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersRequestInvoiceSettings? Function()? invoiceSettings, PostCustomersRequestMetadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? paymentMethod, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersRequestShipping? Function()? shipping, String? Function()? source, PostCustomersRequestTax? Function()? tax, PostCustomersRequestTaxExempt? Function()? taxExempt, List<PostCustomersRequestTaxIdData>? Function()? taxIdData, String? Function()? testClock, }) { return PostCustomersRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'balance', 'business_name', 'cash_balance', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'payment_method', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt', 'tax_id_data', 'test_clock'}.contains(key));}
+PostCustomersRequest copyWith({PostCustomersRequestAddress? Function()? address, int? Function()? balance, PostCustomersRequestBusinessName? Function()? businessName, PostCustomersRequestCashBalance? Function()? cashBalance, String? Function()? description, String? Function()? email, List<String>? Function()? expand, PostCustomersRequestIndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersRequestInvoiceSettings? Function()? invoiceSettings, PostCustomersRequestMetadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? paymentMethod, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersRequestShipping? Function()? shipping, String? Function()? source, PostCustomersRequestTax? Function()? tax, PostCustomersRequestTaxExempt? Function()? taxExempt, List<PostCustomersRequestTaxIdData>? Function()? taxIdData, String? Function()? testClock, }) {return PostCustomersRequest(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,
   businessName: businessName != null ? businessName() : this.businessName,
@@ -170,8 +170,8 @@ PostCustomersRequest copyWith({PostCustomersRequestAddress? Function()? address,
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
   taxIdData: taxIdData != null ? taxIdData() : this.taxIdData,
   testClock: testClock != null ? testClock() : this.testClock,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersRequest &&
           address == other.address &&
           balance == other.balance &&
@@ -194,7 +194,7 @@ PostCustomersRequest copyWith({PostCustomersRequestAddress? Function()? address,
           tax == other.tax &&
           taxExempt == other.taxExempt &&
           listEquals(taxIdData, other.taxIdData) &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hashAll([address, balance, businessName, cashBalance, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, paymentMethod, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt, Object.hashAll(taxIdData ?? const []), testClock]); } 
-@override String toString() { return 'PostCustomersRequest(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, paymentMethod: $paymentMethod, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt, taxIdData: $taxIdData, testClock: $testClock)'; } 
- }
+          testClock == other.testClock;}
+@override int get hashCode {return Object.hashAll([address, balance, businessName, cashBalance, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, paymentMethod, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt, Object.hashAll(taxIdData ?? const []), testClock]);}
+@override String toString() {return 'PostCustomersRequest(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, paymentMethod: $paymentMethod, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt, taxIdData: $taxIdData, testClock: $testClock)';}
+}

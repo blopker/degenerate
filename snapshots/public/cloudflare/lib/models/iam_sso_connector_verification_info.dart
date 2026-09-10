@@ -10,13 +10,13 @@ String toJson() => value;
 /// The status of the verification code from the verification process.
 @immutable final class IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus._(this.value);
 
-factory IamSsoConnectorVerificationInfoStatus.fromJson(String json) { return switch (json) {
+factory IamSsoConnectorVerificationInfoStatus.fromJson(String json) {return switch (json) {
   'awaiting' => awaiting,
   'pending' => pending,
   'failed' => failed,
   'verified' => verified,
   _ => IamSsoConnectorVerificationInfoStatus._(json),
-}; }
+};}
 
 static const IamSsoConnectorVerificationInfoStatus awaiting = IamSsoConnectorVerificationInfoStatus._('awaiting');
 
@@ -30,20 +30,20 @@ static const List<IamSsoConnectorVerificationInfoStatus> values = [awaiting, pen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IamSsoConnectorVerificationInfoStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IamSsoConnectorVerificationInfoStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IamSsoConnectorVerificationInfoStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IamSsoConnectorVerificationInfoStatus($value)';}
+}
 @immutable final class IamSsoConnectorVerificationInfo {const IamSsoConnectorVerificationInfo({this.code, this.status, });
 
-factory IamSsoConnectorVerificationInfo.fromJson(Map<String, dynamic> json) { return IamSsoConnectorVerificationInfo(
+factory IamSsoConnectorVerificationInfo.fromJson(Map<String, dynamic> json) {return IamSsoConnectorVerificationInfo(
   code: json['code'] != null ? IamDnsVerificationCode.fromJson(json['code'] as String) : null,
   status: json['status'] != null ? IamSsoConnectorVerificationInfoStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
 final IamDnsVerificationCode? code;
@@ -51,19 +51,19 @@ final IamDnsVerificationCode? code;
 /// The status of the verification code from the verification process.
 final IamSsoConnectorVerificationInfoStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (code != null) 'code': code?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'status'}.contains(key)); } 
-IamSsoConnectorVerificationInfo copyWith({IamDnsVerificationCode? Function()? code, IamSsoConnectorVerificationInfoStatus? Function()? status, }) { return IamSsoConnectorVerificationInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'status'}.contains(key));}
+IamSsoConnectorVerificationInfo copyWith({IamDnsVerificationCode? Function()? code, IamSsoConnectorVerificationInfoStatus? Function()? status, }) {return IamSsoConnectorVerificationInfo(
   code: code != null ? code() : this.code,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamSsoConnectorVerificationInfo &&
           code == other.code &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(code, status); } 
-@override String toString() { return 'IamSsoConnectorVerificationInfo(code: $code, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(code, status);}
+@override String toString() {return 'IamSsoConnectorVerificationInfo(code: $code, status: $status)';}
+}

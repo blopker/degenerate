@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_action.dart';import 'zero_trust_gateway_components_schemas_name.dart';import 'zero_trust_gateway_device_posture.dart';import 'zero_trust_gateway_enabled.dart';import 'zero_trust_gateway_expiration_request.dart';import 'zero_trust_gateway_filters2.dart';import 'zero_trust_gateway_identity.dart';import 'zero_trust_gateway_precedence.dart';import 'zero_trust_gateway_rule_settings.dart';import 'zero_trust_gateway_schedule.dart';import 'zero_trust_gateway_schemas_description.dart';import 'zero_trust_gateway_traffic.dart';@immutable final class ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest {const ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest({required this.action, required this.name, this.description, this.devicePosture, this.enabled, this.expiration = const Omittable.absent(), this.filters, this.identity, this.precedence, this.ruleSettings, this.schedule = const Omittable.absent(), this.traffic, });
 
-factory ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(
+factory ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(
   action: ZeroTrustGatewayAction.fromJson(json['action'] as String),
   description: json['description'] != null ? ZeroTrustGatewaySchemasDescription.fromJson(json['description'] as String) : null,
   devicePosture: json['device_posture'] != null ? ZeroTrustGatewayDevicePosture.fromJson(json['device_posture'] as String) : null,
@@ -15,7 +15,7 @@ factory ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest.fromJson(Map<Stri
   ruleSettings: json['rule_settings'] != null ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>) : null,
   schedule: json.containsKey('schedule') ? Omittable(json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   traffic: json['traffic'] != null ? ZeroTrustGatewayTraffic.fromJson(json['traffic'] as String) : null,
-); }
+);}
 
 /// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
 final ZeroTrustGatewayAction action;
@@ -50,7 +50,7 @@ final Omittable<ZeroTrustGatewaySchedule?> schedule;
 /// Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
 final ZeroTrustGatewayTraffic? traffic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (devicePosture != null) 'device_posture': devicePosture?.toJson(),
@@ -63,10 +63,10 @@ Map<String, dynamic> toJson() { return {
   if (ruleSettings != null) 'rule_settings': ruleSettings?.toJson(),
   if (schedule.isPresent) 'schedule': schedule.value?.toJson(),
   if (traffic != null) 'traffic': traffic?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('name'); } 
-ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? Function()? enabled, Omittable<ZeroTrustGatewayExpirationRequest?>? expiration, List<ZeroTrustGatewayFilters2>? Function()? filters, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? Function()? precedence, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, Omittable<ZeroTrustGatewaySchedule?>? schedule, ZeroTrustGatewayTraffic? Function()? traffic, }) { return ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('name');}
+ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? Function()? enabled, Omittable<ZeroTrustGatewayExpirationRequest?>? expiration, List<ZeroTrustGatewayFilters2>? Function()? filters, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? Function()? precedence, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, Omittable<ZeroTrustGatewaySchedule?>? schedule, ZeroTrustGatewayTraffic? Function()? traffic, }) {return ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(
   action: action ?? this.action,
   description: description != null ? description() : this.description,
   devicePosture: devicePosture != null ? devicePosture() : this.devicePosture,
@@ -79,8 +79,8 @@ ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewa
   ruleSettings: ruleSettings != null ? ruleSettings() : this.ruleSettings,
   schedule: schedule ?? this.schedule,
   traffic: traffic != null ? traffic() : this.traffic,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest &&
           action == other.action &&
           description == other.description &&
@@ -93,7 +93,7 @@ ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewa
           precedence == other.precedence &&
           ruleSettings == other.ruleSettings &&
           schedule == other.schedule &&
-          traffic == other.traffic; } 
-@override int get hashCode { return Object.hash(action, description, devicePosture, enabled, expiration, Object.hashAll(filters ?? const []), identity, name, precedence, ruleSettings, schedule, traffic); } 
-@override String toString() { return 'ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(action: $action, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, identity: $identity, name: $name, precedence: $precedence, ruleSettings: $ruleSettings, schedule: $schedule, traffic: $traffic)'; } 
- }
+          traffic == other.traffic;}
+@override int get hashCode {return Object.hash(action, description, devicePosture, enabled, expiration, Object.hashAll(filters ?? const []), identity, name, precedence, ruleSettings, schedule, traffic);}
+@override String toString() {return 'ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest(action: $action, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, identity: $identity, name: $name, precedence: $precedence, ruleSettings: $ruleSettings, schedule: $schedule, traffic: $traffic)';}
+}

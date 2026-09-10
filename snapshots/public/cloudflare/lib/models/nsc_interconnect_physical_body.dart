@@ -9,7 +9,7 @@ String toJson() => value;
 }
 @immutable final class NscInterconnectPhysicalBody {const NscInterconnectPhysicalBody({required this.account, required this.name, required this.type, required this.facility, required this.site, required this.slotId, required this.speed, this.owner, });
 
-factory NscInterconnectPhysicalBody.fromJson(Map<String, dynamic> json) { return NscInterconnectPhysicalBody(
+factory NscInterconnectPhysicalBody.fromJson(Map<String, dynamic> json) {return NscInterconnectPhysicalBody(
   account: json['account'] as String,
   name: json['name'] as String,
   owner: json['owner'] as String?,
@@ -18,7 +18,7 @@ factory NscInterconnectPhysicalBody.fromJson(Map<String, dynamic> json) { return
   site: NscCloudflareSite.fromJson(json['site'] as String),
   slotId: json['slot_id'] as String,
   speed: json['speed'] as String,
-); }
+);}
 
 final String account;
 
@@ -37,7 +37,7 @@ final String slotId;
 
 final String speed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'name': name,
   'owner': ?owner,
@@ -46,15 +46,15 @@ Map<String, dynamic> toJson() { return {
   'site': site.toJson(),
   'slot_id': slotId,
   'speed': speed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('facility') &&
       json.containsKey('site') &&
       json.containsKey('slot_id') && json['slot_id'] is String &&
-      json.containsKey('speed') && json['speed'] is String; } 
-NscInterconnectPhysicalBody copyWith({String? account, String? name, String? Function()? owner, String? type, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) { return NscInterconnectPhysicalBody(
+      json.containsKey('speed') && json['speed'] is String;}
+NscInterconnectPhysicalBody copyWith({String? account, String? name, String? Function()? owner, String? type, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) {return NscInterconnectPhysicalBody(
   account: account ?? this.account,
   name: name ?? this.name,
   owner: owner != null ? owner() : this.owner,
@@ -63,8 +63,8 @@ NscInterconnectPhysicalBody copyWith({String? account, String? name, String? Fun
   site: site ?? this.site,
   slotId: slotId ?? this.slotId,
   speed: speed ?? this.speed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscInterconnectPhysicalBody &&
           account == other.account &&
           name == other.name &&
@@ -73,7 +73,7 @@ NscInterconnectPhysicalBody copyWith({String? account, String? name, String? Fun
           facility == other.facility &&
           site == other.site &&
           slotId == other.slotId &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(account, name, owner, type, facility, site, slotId, speed); } 
-@override String toString() { return 'NscInterconnectPhysicalBody(account: $account, name: $name, owner: $owner, type: $type, facility: $facility, site: $site, slotId: $slotId, speed: $speed)'; } 
- }
+          speed == other.speed;}
+@override int get hashCode {return Object.hash(account, name, owner, type, facility, site, slotId, speed);}
+@override String toString() {return 'NscInterconnectPhysicalBody(account: $account, name: $name, owner: $owner, type: $type, facility: $facility, site: $site, slotId: $slotId, speed: $speed)';}
+}

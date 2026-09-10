@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_action.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';@immutable final class RulesetsRule {const RulesetsRule({required this.lastUpdated, required this.version, this.action, this.actionParameters, this.categories, this.description, this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
-factory RulesetsRule.fromJson(Map<String, dynamic> json) { return RulesetsRule(
+factory RulesetsRule.fromJson(Map<String, dynamic> json) {return RulesetsRule(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
   actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
@@ -16,7 +16,7 @@ factory RulesetsRule.fromJson(Map<String, dynamic> json) { return RulesetsRule(
   ratelimit: json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String?,
   version: json['version'] as String,
-); }
+);}
 
 final RulesetsRuleAction? action;
 
@@ -51,10 +51,10 @@ final String? ref;
 final String version;
 
 /// The value with the schema default applied when absent.
-Map<String,dynamic> get actionParametersOrDefault { return actionParameters ?? const {}; } 
+Map<String,dynamic> get actionParametersOrDefault {return actionParameters ?? const {};}
 /// The value with the schema default applied when absent.
-String get descriptionOrDefault { return description ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get descriptionOrDefault {return description ?? '';}
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'action_parameters': ?actionParameters,
   if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
@@ -68,10 +68,10 @@ Map<String, dynamic> toJson() { return {
   if (ratelimit != null) 'ratelimit': ratelimit?.toJson(),
   'ref': ?ref,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_updated') && json['last_updated'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String? Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('last_updated') && json['last_updated'] is String &&
+      json.containsKey('version') && json['version'] is String;}
+RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String? Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) {return RulesetsRule(
   action: action != null ? action() : this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   categories: categories != null ? categories() : this.categories,
@@ -85,8 +85,8 @@ RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynam
   ratelimit: ratelimit != null ? ratelimit() : this.ratelimit,
   ref: ref != null ? ref() : this.ref,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsRule &&
           action == other.action &&
           actionParameters == other.actionParameters &&
@@ -100,7 +100,7 @@ RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynam
           logging == other.logging &&
           ratelimit == other.ratelimit &&
           ref == other.ref &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(action, actionParameters, Object.hashAll(categories ?? const []), description, enabled, exposedCredentialCheck, expression, id, lastUpdated, logging, ratelimit, ref, version); } 
-@override String toString() { return 'RulesetsRule(action: $action, actionParameters: $actionParameters, categories: $categories, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, lastUpdated: $lastUpdated, logging: $logging, ratelimit: $ratelimit, ref: $ref, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(action, actionParameters, Object.hashAll(categories ?? const []), description, enabled, exposedCredentialCheck, expression, id, lastUpdated, logging, ratelimit, ref, version);}
+@override String toString() {return 'RulesetsRule(action: $action, actionParameters: $actionParameters, categories: $categories, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, lastUpdated: $lastUpdated, logging: $logging, ratelimit: $ratelimit, ref: $ref, version: $version)';}
+}

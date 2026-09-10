@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhook_installation_repositories_added_repositories_removed.dart';import 'webhooks_repositories_added2.dart';import 'webhooks_repository_selection.dart';import 'webhooks_user.dart';@immutable final class WebhookInstallationRepositoriesAddedAction {const WebhookInstallationRepositoriesAddedAction._(this.value);
 
-factory WebhookInstallationRepositoriesAddedAction.fromJson(String json) { return switch (json) {
+factory WebhookInstallationRepositoriesAddedAction.fromJson(String json) {return switch (json) {
   'added' => added,
   _ => WebhookInstallationRepositoriesAddedAction._(json),
-}; }
+};}
 
 static const WebhookInstallationRepositoriesAddedAction added = WebhookInstallationRepositoriesAddedAction._('added');
 
@@ -13,17 +13,17 @@ static const List<WebhookInstallationRepositoriesAddedAction> values = [added];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookInstallationRepositoriesAddedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookInstallationRepositoriesAddedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookInstallationRepositoriesAddedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookInstallationRepositoriesAddedAction($value)';}
+}
 @immutable final class WebhookInstallationRepositoriesAdded {const WebhookInstallationRepositoriesAdded({required this.action, required this.installation, required this.repositoriesAdded, required this.repositoriesRemoved, required this.repositorySelection, required this.requester, required this.sender, this.enterprise, this.organization, this.repository, });
 
-factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesAdded(
+factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json) {return WebhookInstallationRepositoriesAdded(
   action: WebhookInstallationRepositoriesAddedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
@@ -34,7 +34,7 @@ factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json)
   repositorySelection: WebhooksRepositorySelection.fromJson(json['repository_selection'] as String),
   requester: json['requester'] != null ? WebhooksUser.fromJson(json['requester'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookInstallationRepositoriesAddedAction action;
 
@@ -59,7 +59,7 @@ final WebhooksUser? requester;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'installation': installation.toJson(),
@@ -70,15 +70,15 @@ Map<String, dynamic> toJson() { return {
   'repository_selection': repositorySelection.toJson(),
   'requester': requester?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('installation') &&
       json.containsKey('repositories_added') &&
       json.containsKey('repositories_removed') &&
       json.containsKey('repository_selection') &&
       json.containsKey('requester') &&
-      json.containsKey('sender'); } 
-WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAddedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositoriesAdded2>? repositoriesAdded, List<WebhookInstallationRepositoriesAddedRepositoriesRemoved>? repositoriesRemoved, RepositoryWebhooks? Function()? repository, WebhooksRepositorySelection? repositorySelection, WebhooksUser? Function()? requester, SimpleUser? sender, }) { return WebhookInstallationRepositoriesAdded(
+      json.containsKey('sender');}
+WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAddedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositoriesAdded2>? repositoriesAdded, List<WebhookInstallationRepositoriesAddedRepositoriesRemoved>? repositoriesRemoved, RepositoryWebhooks? Function()? repository, WebhooksRepositorySelection? repositorySelection, WebhooksUser? Function()? requester, SimpleUser? sender, }) {return WebhookInstallationRepositoriesAdded(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,
@@ -89,8 +89,8 @@ WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAd
   repositorySelection: repositorySelection ?? this.repositorySelection,
   requester: requester != null ? requester() : this.requester,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookInstallationRepositoriesAdded &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -101,7 +101,7 @@ WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAd
           repository == other.repository &&
           repositorySelection == other.repositorySelection &&
           requester == other.requester &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositoriesAdded), Object.hashAll(repositoriesRemoved), repository, repositorySelection, requester, sender); } 
-@override String toString() { return 'WebhookInstallationRepositoriesAdded(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositoriesAdded: $repositoriesAdded, repositoriesRemoved: $repositoriesRemoved, repository: $repository, repositorySelection: $repositorySelection, requester: $requester, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositoriesAdded), Object.hashAll(repositoriesRemoved), repository, repositorySelection, requester, sender);}
+@override String toString() {return 'WebhookInstallationRepositoriesAdded(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositoriesAdded: $repositoriesAdded, repositoriesRemoved: $repositoriesRemoved, repository: $repository, repositorySelection: $repositorySelection, requester: $requester, sender: $sender)';}
+}

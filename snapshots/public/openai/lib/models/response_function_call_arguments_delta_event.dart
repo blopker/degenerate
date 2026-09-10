@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when there is a partial function-call arguments delta.
 @immutable final class ResponseFunctionCallArgumentsDeltaEvent {const ResponseFunctionCallArgumentsDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, required this.delta, });
 
-factory ResponseFunctionCallArgumentsDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseFunctionCallArgumentsDeltaEvent(
+factory ResponseFunctionCallArgumentsDeltaEvent.fromJson(Map<String, dynamic> json) {return ResponseFunctionCallArgumentsDeltaEvent(
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   delta: json['delta'] as String,
-); }
+);}
 
 /// The type of the event. Always `response.function_call_arguments.delta`.
 /// 
@@ -30,32 +30,32 @@ final int sequenceNumber;
 /// 
 final String delta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'sequence_number': sequenceNumber,
   'delta': delta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
-      json.containsKey('delta') && json['delta'] is String; } 
-ResponseFunctionCallArgumentsDeltaEvent copyWith({String? type, String? itemId, int? outputIndex, int? sequenceNumber, String? delta, }) { return ResponseFunctionCallArgumentsDeltaEvent(
+      json.containsKey('delta') && json['delta'] is String;}
+ResponseFunctionCallArgumentsDeltaEvent copyWith({String? type, String? itemId, int? outputIndex, int? sequenceNumber, String? delta, }) {return ResponseFunctionCallArgumentsDeltaEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   delta: delta ?? this.delta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseFunctionCallArgumentsDeltaEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           sequenceNumber == other.sequenceNumber &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, sequenceNumber, delta); } 
-@override String toString() { return 'ResponseFunctionCallArgumentsDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, delta: $delta)'; } 
- }
+          delta == other.delta;}
+@override int get hashCode {return Object.hash(type, itemId, outputIndex, sequenceNumber, delta);}
+@override String toString() {return 'ResponseFunctionCallArgumentsDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, delta: $delta)';}
+}

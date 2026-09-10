@@ -9,12 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_inte
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage {const PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage none = PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage._('none');
 
@@ -26,23 +26,23 @@ static const List<PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage($value)';}
+}
 /// Bank account verification method.
 @immutable final class PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod {const PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   'microdeposits' => microdeposits,
   _ => PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod automatic = PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod._('automatic');
 
@@ -54,23 +54,23 @@ static const List<PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod($value)';}
+}
 /// 
 @immutable final class PaymentIntentPaymentMethodOptionsAcssDebit {const PaymentIntentPaymentMethodOptionsAcssDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
-factory PaymentIntentPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsAcssDebit(
+factory PaymentIntentPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsAcssDebit(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit? mandateOptions;
 
@@ -89,25 +89,25 @@ final String? targetDate;
 /// Bank account verification method.
 final PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'target_date': ?targetDate,
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsAcssDebit copyWith({PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod? Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsAcssDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key));}
+PaymentIntentPaymentMethodOptionsAcssDebit copyWith({PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsAcssDebitSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, PaymentIntentPaymentMethodOptionsAcssDebitVerificationMethod? Function()? verificationMethod, }) {return PaymentIntentPaymentMethodOptionsAcssDebit(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsAcssDebit &&
           mandateOptions == other.mandateOptions &&
           setupFutureUsage == other.setupFutureUsage &&
           targetDate == other.targetDate &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage, targetDate, verificationMethod); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsAcssDebit(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(mandateOptions, setupFutureUsage, targetDate, verificationMethod);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsAcssDebit(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)';}
+}

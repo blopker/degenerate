@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct._(this.value);
 
-factory RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct.fromJson(String json) {return switch (json) {
   'DDOS' => ddos,
   'WAF' => waf,
   'BOT_MANAGEMENT' => botManagement,
@@ -11,7 +11,7 @@ factory RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct.fromJson
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
   _ => RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct ddos = RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct._('DDOS');
 
@@ -31,11 +31,11 @@ static const List<RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7TimeseriesGroupByIndustryMitigationProduct($value)';}
+}

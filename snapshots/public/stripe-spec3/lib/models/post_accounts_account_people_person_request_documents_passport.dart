@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_person_request_documents_passport_files.dart';@immutable final class PostAccountsAccountPeoplePersonRequestDocumentsPassport {const PostAccountsAccountPeoplePersonRequestDocumentsPassport({this.files});
 
-factory PostAccountsAccountPeoplePersonRequestDocumentsPassport.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestDocumentsPassport(
+factory PostAccountsAccountPeoplePersonRequestDocumentsPassport.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPeoplePersonRequestDocumentsPassport(
   files: (json['files'] as List<dynamic>?)?.map(PostAccountsAccountPeoplePersonRequestDocumentsPassportFiles.fromJson).toList(),
-); }
+);}
 
 final List<PostAccountsAccountPeoplePersonRequestDocumentsPassportFiles>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-PostAccountsAccountPeoplePersonRequestDocumentsPassport copyWith({List<PostAccountsAccountPeoplePersonRequestDocumentsPassportFiles>? Function()? files}) { return PostAccountsAccountPeoplePersonRequestDocumentsPassport(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'files'}.contains(key));}
+PostAccountsAccountPeoplePersonRequestDocumentsPassport copyWith({List<PostAccountsAccountPeoplePersonRequestDocumentsPassportFiles>? Function()? files}) {return PostAccountsAccountPeoplePersonRequestDocumentsPassport(
   files: files != null ? files() : this.files,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountPeoplePersonRequestDocumentsPassport &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
-@override String toString() { return 'PostAccountsAccountPeoplePersonRequestDocumentsPassport(files: $files)'; } 
- }
+          listEquals(files, other.files);}
+@override int get hashCode {return Object.hashAll(files ?? const []).hashCode;}
+@override String toString() {return 'PostAccountsAccountPeoplePersonRequestDocumentsPassport(files: $files)';}
+}

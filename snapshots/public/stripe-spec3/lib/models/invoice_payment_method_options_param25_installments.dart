@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param25_installments_plan.dart';@immutable final class InvoicePaymentMethodOptionsParam25Installments {const InvoicePaymentMethodOptionsParam25Installments({this.enabled, this.plan, });
 
-factory InvoicePaymentMethodOptionsParam25Installments.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam25Installments(
+factory InvoicePaymentMethodOptionsParam25Installments.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam25Installments(
   enabled: json['enabled'] as bool?,
   plan: json['plan'] != null ? InvoicePaymentMethodOptionsParam25InstallmentsPlan.fromJson(json['plan']) : null,
-); }
+);}
 
 final bool? enabled;
 
 final InvoicePaymentMethodOptionsParam25InstallmentsPlan? plan;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (plan != null) 'plan': plan?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'plan'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam25Installments copyWith({bool? Function()? enabled, InvoicePaymentMethodOptionsParam25InstallmentsPlan? Function()? plan, }) { return InvoicePaymentMethodOptionsParam25Installments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'plan'}.contains(key));}
+InvoicePaymentMethodOptionsParam25Installments copyWith({bool? Function()? enabled, InvoicePaymentMethodOptionsParam25InstallmentsPlan? Function()? plan, }) {return InvoicePaymentMethodOptionsParam25Installments(
   enabled: enabled != null ? enabled() : this.enabled,
   plan: plan != null ? plan() : this.plan,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam25Installments &&
           enabled == other.enabled &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(enabled, plan); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam25Installments(enabled: $enabled, plan: $plan)'; } 
- }
+          plan == other.plan;}
+@override int get hashCode {return Object.hash(enabled, plan);}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam25Installments(enabled: $enabled, plan: $plan)';}
+}

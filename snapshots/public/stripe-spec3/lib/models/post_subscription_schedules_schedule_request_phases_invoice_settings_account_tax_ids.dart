@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2 {const PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2._(this.value);
 
-factory PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2 $empty = PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIdsVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettingsAccountTaxIds {

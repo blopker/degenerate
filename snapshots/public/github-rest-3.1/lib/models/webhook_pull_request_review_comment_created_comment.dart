@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_comment_created_comment_links.dart';import 'webhook_pull_request_review_comment_created_comment_reactions.dart';import 'webhook_pull_request_review_comment_created_comment_user.dart';/// How the author is associated with the repository.
 @immutable final class WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation {const WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(this.value);
 
-factory WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -13,7 +13,7 @@ factory WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.fromJson(
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation collaborator = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('COLLABORATOR');
 
@@ -35,22 +35,22 @@ static const List<WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation($value)';}
+}
 /// The side of the first line of the range for a multi-line comment.
 @immutable final class WebhookPullRequestReviewCommentCreatedCommentSide {const WebhookPullRequestReviewCommentCreatedCommentSide._(this.value);
 
-factory WebhookPullRequestReviewCommentCreatedCommentSide.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewCommentCreatedCommentSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   _ => WebhookPullRequestReviewCommentCreatedCommentSide._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewCommentCreatedCommentSide left = WebhookPullRequestReviewCommentCreatedCommentSide._('LEFT');
 
@@ -60,23 +60,23 @@ static const List<WebhookPullRequestReviewCommentCreatedCommentSide> values = [l
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewCommentCreatedCommentSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedCommentSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewCommentCreatedCommentSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedCommentSide($value)';}
+}
 /// The side of the first line of the range for a multi-line comment.
 @immutable final class WebhookPullRequestReviewCommentCreatedCommentStartSide {const WebhookPullRequestReviewCommentCreatedCommentStartSide._(this.value);
 
-factory WebhookPullRequestReviewCommentCreatedCommentStartSide.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewCommentCreatedCommentStartSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   'null' => $null,
   _ => WebhookPullRequestReviewCommentCreatedCommentStartSide._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewCommentCreatedCommentStartSide left = WebhookPullRequestReviewCommentCreatedCommentStartSide._('LEFT');
 
@@ -88,22 +88,22 @@ static const List<WebhookPullRequestReviewCommentCreatedCommentStartSide> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewCommentCreatedCommentStartSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedCommentStartSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewCommentCreatedCommentStartSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedCommentStartSide($value)';}
+}
 /// The level at which the comment is targeted, can be a diff line or a file.
 @immutable final class WebhookPullRequestReviewCommentCreatedCommentSubjectType {const WebhookPullRequestReviewCommentCreatedCommentSubjectType._(this.value);
 
-factory WebhookPullRequestReviewCommentCreatedCommentSubjectType.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewCommentCreatedCommentSubjectType.fromJson(String json) {return switch (json) {
   'line' => line,
   'file' => file,
   _ => WebhookPullRequestReviewCommentCreatedCommentSubjectType._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewCommentCreatedCommentSubjectType line = WebhookPullRequestReviewCommentCreatedCommentSubjectType._('line');
 
@@ -113,18 +113,18 @@ static const List<WebhookPullRequestReviewCommentCreatedCommentSubjectType> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewCommentCreatedCommentSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedCommentSubjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewCommentCreatedCommentSubjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedCommentSubjectType($value)';}
+}
 /// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
 @immutable final class WebhookPullRequestReviewCommentCreatedComment {const WebhookPullRequestReviewCommentCreatedComment({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, required this.startSide, required this.updatedAt, required this.url, required this.user, this.inReplyToId, this.subjectType, });
 
-factory WebhookPullRequestReviewCommentCreatedComment.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentCreatedComment(
+factory WebhookPullRequestReviewCommentCreatedComment.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewCommentCreatedComment(
   links: WebhookPullRequestReviewCommentCreatedCommentLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
@@ -152,7 +152,7 @@ factory WebhookPullRequestReviewCommentCreatedComment.fromJson(Map<String, dynam
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhookPullRequestReviewCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookPullRequestReviewCommentCreatedCommentLinks links;
 
@@ -230,7 +230,7 @@ final Uri url;
 
 final WebhookPullRequestReviewCommentCreatedCommentUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
   'body': body,
@@ -258,8 +258,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
@@ -283,8 +283,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('start_side') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestReviewCommentCreatedComment copyWith({WebhookPullRequestReviewCommentCreatedCommentLinks? links, WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? Function()? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, WebhookPullRequestReviewCommentCreatedCommentReactions? reactions, WebhookPullRequestReviewCommentCreatedCommentSide? side, int? Function()? startLine, WebhookPullRequestReviewCommentCreatedCommentStartSide? Function()? startSide, WebhookPullRequestReviewCommentCreatedCommentSubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewCommentCreatedCommentUser? Function()? user, }) { return WebhookPullRequestReviewCommentCreatedComment(
+      json.containsKey('user');}
+WebhookPullRequestReviewCommentCreatedComment copyWith({WebhookPullRequestReviewCommentCreatedCommentLinks? links, WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? Function()? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, WebhookPullRequestReviewCommentCreatedCommentReactions? reactions, WebhookPullRequestReviewCommentCreatedCommentSide? side, int? Function()? startLine, WebhookPullRequestReviewCommentCreatedCommentStartSide? Function()? startSide, WebhookPullRequestReviewCommentCreatedCommentSubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewCommentCreatedCommentUser? Function()? user, }) {return WebhookPullRequestReviewCommentCreatedComment(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
@@ -312,8 +312,8 @@ WebhookPullRequestReviewCommentCreatedComment copyWith({WebhookPullRequestReview
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewCommentCreatedComment &&
           links == other.links &&
           authorAssociation == other.authorAssociation &&
@@ -341,7 +341,7 @@ WebhookPullRequestReviewCommentCreatedComment copyWith({WebhookPullRequestReview
           subjectType == other.subjectType &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([links, authorAssociation, body, commitId, createdAt, diffHunk, htmlUrl, id, inReplyToId, line, nodeId, originalCommitId, originalLine, originalPosition, originalStartLine, path, position, pullRequestReviewId, pullRequestUrl, reactions, side, startLine, startSide, subjectType, updatedAt, url, user]); } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedComment(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, diffHunk: $diffHunk, htmlUrl: $htmlUrl, id: $id, inReplyToId: $inReplyToId, line: $line, nodeId: $nodeId, originalCommitId: $originalCommitId, originalLine: $originalLine, originalPosition: $originalPosition, originalStartLine: $originalStartLine, path: $path, position: $position, pullRequestReviewId: $pullRequestReviewId, pullRequestUrl: $pullRequestUrl, reactions: $reactions, side: $side, startLine: $startLine, startSide: $startSide, subjectType: $subjectType, updatedAt: $updatedAt, url: $url, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hashAll([links, authorAssociation, body, commitId, createdAt, diffHunk, htmlUrl, id, inReplyToId, line, nodeId, originalCommitId, originalLine, originalPosition, originalStartLine, path, position, pullRequestReviewId, pullRequestUrl, reactions, side, startLine, startSide, subjectType, updatedAt, url, user]);}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedComment(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, diffHunk: $diffHunk, htmlUrl: $htmlUrl, id: $id, inReplyToId: $inReplyToId, line: $line, nodeId: $nodeId, originalCommitId: $originalCommitId, originalLine: $originalLine, originalPosition: $originalPosition, originalStartLine: $originalStartLine, path: $path, position: $position, pullRequestReviewId: $pullRequestReviewId, pullRequestUrl: $pullRequestUrl, reactions: $reactions, side: $side, startLine: $startLine, startSide: $startSide, subjectType: $subjectType, updatedAt: $updatedAt, url: $url, user: $user)';}
+}

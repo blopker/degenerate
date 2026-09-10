@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_cache_reserve_clear_end_ts.dart';import 'smartshield_cache_reserve_clear_start_ts.dart';import 'smartshield_cache_reserve_clear_state.dart';/// ID of the zone setting.
 @immutable final class SmartshieldCacheReserveClearResponseValueResultId {const SmartshieldCacheReserveClearResponseValueResultId._(this.value);
 
-factory SmartshieldCacheReserveClearResponseValueResultId.fromJson(String json) { return switch (json) {
+factory SmartshieldCacheReserveClearResponseValueResultId.fromJson(String json) {return switch (json) {
   'cache_reserve_clear' => cacheReserveClear,
   _ => SmartshieldCacheReserveClearResponseValueResultId._(json),
-}; }
+};}
 
 static const SmartshieldCacheReserveClearResponseValueResultId cacheReserveClear = SmartshieldCacheReserveClearResponseValueResultId._('cache_reserve_clear');
 
@@ -14,23 +14,23 @@ static const List<SmartshieldCacheReserveClearResponseValueResultId> values = [c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmartshieldCacheReserveClearResponseValueResultId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldCacheReserveClearResponseValueResultId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SmartshieldCacheReserveClearResponseValueResultId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmartshieldCacheReserveClearResponseValueResultId($value)';}
+}
 @immutable final class SmartshieldCacheReserveClearResponseValueResult {const SmartshieldCacheReserveClearResponseValueResult({required this.id, required this.startTs, required this.state, this.modifiedOn = const Omittable.absent(), this.endTs, });
 
-factory SmartshieldCacheReserveClearResponseValueResult.fromJson(Map<String, dynamic> json) { return SmartshieldCacheReserveClearResponseValueResult(
+factory SmartshieldCacheReserveClearResponseValueResult.fromJson(Map<String, dynamic> json) {return SmartshieldCacheReserveClearResponseValueResult(
   id: SmartshieldCacheReserveClearResponseValueResultId.fromJson(json['id'] as String),
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   endTs: json['end_ts'] != null ? SmartshieldCacheReserveClearEndTs.fromJson(json['end_ts'] as String) : null,
   startTs: SmartshieldCacheReserveClearStartTs.fromJson(json['start_ts'] as String),
   state: SmartshieldCacheReserveClearState.fromJson(json['state'] as String),
-); }
+);}
 
 /// ID of the zone setting.
 final SmartshieldCacheReserveClearResponseValueResultId id;
@@ -45,30 +45,30 @@ final SmartshieldCacheReserveClearStartTs startTs;
 
 final SmartshieldCacheReserveClearState state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (endTs != null) 'end_ts': endTs?.toJson(),
   'start_ts': startTs.toJson(),
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('start_ts') &&
-      json.containsKey('state'); } 
-SmartshieldCacheReserveClearResponseValueResult copyWith({SmartshieldCacheReserveClearResponseValueResultId? id, Omittable<DateTime?>? modifiedOn, SmartshieldCacheReserveClearEndTs? Function()? endTs, SmartshieldCacheReserveClearStartTs? startTs, SmartshieldCacheReserveClearState? state, }) { return SmartshieldCacheReserveClearResponseValueResult(
+      json.containsKey('state');}
+SmartshieldCacheReserveClearResponseValueResult copyWith({SmartshieldCacheReserveClearResponseValueResultId? id, Omittable<DateTime?>? modifiedOn, SmartshieldCacheReserveClearEndTs? Function()? endTs, SmartshieldCacheReserveClearStartTs? startTs, SmartshieldCacheReserveClearState? state, }) {return SmartshieldCacheReserveClearResponseValueResult(
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   endTs: endTs != null ? endTs() : this.endTs,
   startTs: startTs ?? this.startTs,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SmartshieldCacheReserveClearResponseValueResult &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
           endTs == other.endTs &&
           startTs == other.startTs &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(id, modifiedOn, endTs, startTs, state); } 
-@override String toString() { return 'SmartshieldCacheReserveClearResponseValueResult(id: $id, modifiedOn: $modifiedOn, endTs: $endTs, startTs: $startTs, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(id, modifiedOn, endTs, startTs, state);}
+@override String toString() {return 'SmartshieldCacheReserveClearResponseValueResult(id: $id, modifiedOn: $modifiedOn, endTs: $endTs, startTs: $startTs, state: $state)';}
+}

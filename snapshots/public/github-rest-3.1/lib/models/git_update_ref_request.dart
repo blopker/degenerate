@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force, });
 
-factory GitUpdateRefRequest.fromJson(Map<String, dynamic> json) { return GitUpdateRefRequest(
+factory GitUpdateRefRequest.fromJson(Map<String, dynamic> json) {return GitUpdateRefRequest(
   sha: json['sha'] as String,
   force: json['force'] as bool?,
-); }
+);}
 
 /// The SHA1 value to set this reference to
 final String sha;
@@ -14,20 +14,20 @@ final String sha;
 final bool? force;
 
 /// The value with the schema default applied when absent.
-bool get forceOrDefault { return force ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get forceOrDefault {return force ?? false;}
+Map<String, dynamic> toJson() {return {
   'sha': sha,
   'force': ?force,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String; } 
-GitUpdateRefRequest copyWith({String? sha, bool? Function()? force, }) { return GitUpdateRefRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String;}
+GitUpdateRefRequest copyWith({String? sha, bool? Function()? force, }) {return GitUpdateRefRequest(
   sha: sha ?? this.sha,
   force: force != null ? force() : this.force,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitUpdateRefRequest &&
           sha == other.sha &&
-          force == other.force; } 
-@override int get hashCode { return Object.hash(sha, force); } 
-@override String toString() { return 'GitUpdateRefRequest(sha: $sha, force: $force)'; } 
- }
+          force == other.force;}
+@override int get hashCode {return Object.hash(sha, force);}
+@override String toString() {return 'GitUpdateRefRequest(sha: $sha, force: $force)';}
+}

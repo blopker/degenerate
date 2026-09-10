@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Storage class for newly uploaded objects, unless specified otherwise.
 @immutable final class R2StorageClass {const R2StorageClass._(this.value);
 
-factory R2StorageClass.fromJson(String json) { return switch (json) {
+factory R2StorageClass.fromJson(String json) {return switch (json) {
   'Standard' => standard,
   'InfrequentAccess' => infrequentAccess,
   _ => R2StorageClass._(json),
-}; }
+};}
 
 static const R2StorageClass standard = R2StorageClass._('Standard');
 
@@ -17,11 +17,11 @@ static const List<R2StorageClass> values = [standard, infrequentAccess];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2StorageClass && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2StorageClass($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2StorageClass && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2StorageClass($value)';}
+}

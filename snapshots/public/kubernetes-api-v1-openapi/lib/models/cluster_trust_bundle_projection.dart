@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label_selector.dart';/// ClusterTrustBundleProjection describes how to select a set of ClusterTrustBundle objects and project their contents into the pod filesystem.
 @immutable final class ClusterTrustBundleProjection {const ClusterTrustBundleProjection({required this.path, this.labelSelector, this.name, this.optional, this.signerName, });
 
-factory ClusterTrustBundleProjection.fromJson(Map<String, dynamic> json) { return ClusterTrustBundleProjection(
+factory ClusterTrustBundleProjection.fromJson(Map<String, dynamic> json) {return ClusterTrustBundleProjection(
   labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   optional: json['optional'] as bool?,
   path: json['path'] as String,
   signerName: json['signerName'] as String?,
-); }
+);}
 
 /// Select all ClusterTrustBundles that match this label selector.  Only has effect if signerName is set.  Mutually-exclusive with name.  If unset, interpreted as "match nothing".  If set but empty, interpreted as "match everything".
 final LabelSelector? labelSelector;
@@ -26,28 +26,28 @@ final String path;
 /// Select all ClusterTrustBundles that match this signer name. Mutually-exclusive with name.  The contents of all selected ClusterTrustBundles will be unified and deduplicated.
 final String? signerName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (labelSelector != null) 'labelSelector': labelSelector?.toJson(),
   'name': ?name,
   'optional': ?optional,
   'path': path,
   'signerName': ?signerName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-ClusterTrustBundleProjection copyWith({LabelSelector? Function()? labelSelector, String? Function()? name, bool? Function()? optional, String? path, String? Function()? signerName, }) { return ClusterTrustBundleProjection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String;}
+ClusterTrustBundleProjection copyWith({LabelSelector? Function()? labelSelector, String? Function()? name, bool? Function()? optional, String? path, String? Function()? signerName, }) {return ClusterTrustBundleProjection(
   labelSelector: labelSelector != null ? labelSelector() : this.labelSelector,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
   path: path ?? this.path,
   signerName: signerName != null ? signerName() : this.signerName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ClusterTrustBundleProjection &&
           labelSelector == other.labelSelector &&
           name == other.name &&
           optional == other.optional &&
           path == other.path &&
-          signerName == other.signerName; } 
-@override int get hashCode { return Object.hash(labelSelector, name, optional, path, signerName); } 
-@override String toString() { return 'ClusterTrustBundleProjection(labelSelector: $labelSelector, name: $name, optional: $optional, path: $path, signerName: $signerName)'; } 
- }
+          signerName == other.signerName;}
+@override int get hashCode {return Object.hash(labelSelector, name, optional, path, signerName);}
+@override String toString() {return 'ClusterTrustBundleProjection(labelSelector: $labelSelector, name: $name, optional: $optional, path: $path, signerName: $signerName)';}
+}

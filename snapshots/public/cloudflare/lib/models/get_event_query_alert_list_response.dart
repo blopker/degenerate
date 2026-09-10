@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
 @immutable final class GetEventQueryAlertListResponseFrequency {const GetEventQueryAlertListResponseFrequency._(this.value);
 
-factory GetEventQueryAlertListResponseFrequency.fromJson(String json) { return switch (json) {
+factory GetEventQueryAlertListResponseFrequency.fromJson(String json) {return switch (json) {
   'immediate' => immediate,
   'daily' => daily,
   _ => GetEventQueryAlertListResponseFrequency._(json),
-}; }
+};}
 
 static const GetEventQueryAlertListResponseFrequency immediate = GetEventQueryAlertListResponseFrequency._('immediate');
 
@@ -17,17 +17,17 @@ static const List<GetEventQueryAlertListResponseFrequency> values = [immediate, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetEventQueryAlertListResponseFrequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetEventQueryAlertListResponseFrequency($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetEventQueryAlertListResponseFrequency && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetEventQueryAlertListResponseFrequency($value)';}
+}
 @immutable final class GetEventQueryAlertListResponse {const GetEventQueryAlertListResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
 
-factory GetEventQueryAlertListResponse.fromJson(Map<String, dynamic> json) { return GetEventQueryAlertListResponse(
+factory GetEventQueryAlertListResponse.fromJson(Map<String, dynamic> json) {return GetEventQueryAlertListResponse(
   accountId: (json['account_id'] as num).toInt(),
   createdAt: json['created_at'] as String,
   enabled: json['enabled'] as bool,
@@ -38,7 +38,7 @@ factory GetEventQueryAlertListResponse.fromJson(Map<String, dynamic> json) { ret
   queryId: (json['query_id'] as num).toInt(),
   updatedAt: json['updated_at'] as String,
   userEmail: json['user_email'] as String,
-); }
+);}
 
 /// Account ID
 final int accountId;
@@ -70,7 +70,7 @@ final String updatedAt;
 /// Email of the user who created the alert
 final String userEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId,
   'created_at': createdAt,
   'enabled': enabled,
@@ -81,8 +81,8 @@ Map<String, dynamic> toJson() { return {
   'query_id': queryId,
   'updated_at': updatedAt,
   'user_email': userEmail,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') && json['account_id'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('frequency') &&
@@ -90,8 +90,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('notification_type') && json['notification_type'] is String &&
       json.containsKey('query_id') && json['query_id'] is num &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user_email') && json['user_email'] is String; } 
-GetEventQueryAlertListResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String? Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return GetEventQueryAlertListResponse(
+      json.containsKey('user_email') && json['user_email'] is String;}
+GetEventQueryAlertListResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String? Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) {return GetEventQueryAlertListResponse(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
@@ -102,8 +102,8 @@ GetEventQueryAlertListResponse copyWith({int? accountId, String? createdAt, bool
   queryId: queryId ?? this.queryId,
   updatedAt: updatedAt ?? this.updatedAt,
   userEmail: userEmail ?? this.userEmail,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetEventQueryAlertListResponse &&
           accountId == other.accountId &&
           createdAt == other.createdAt &&
@@ -114,7 +114,7 @@ GetEventQueryAlertListResponse copyWith({int? accountId, String? createdAt, bool
           notificationType == other.notificationType &&
           queryId == other.queryId &&
           updatedAt == other.updatedAt &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(accountId, createdAt, enabled, frequency, id, lastSentAt, notificationType, queryId, updatedAt, userEmail); } 
-@override String toString() { return 'GetEventQueryAlertListResponse(accountId: $accountId, createdAt: $createdAt, enabled: $enabled, frequency: $frequency, id: $id, lastSentAt: $lastSentAt, notificationType: $notificationType, queryId: $queryId, updatedAt: $updatedAt, userEmail: $userEmail)'; } 
- }
+          userEmail == other.userEmail;}
+@override int get hashCode {return Object.hash(accountId, createdAt, enabled, frequency, id, lastSentAt, notificationType, queryId, updatedAt, userEmail);}
+@override String toString() {return 'GetEventQueryAlertListResponse(accountId: $accountId, createdAt: $createdAt, enabled: $enabled, frequency: $frequency, id: $id, lastSentAt: $lastSentAt, notificationType: $notificationType, queryId: $queryId, updatedAt: $updatedAt, userEmail: $userEmail)';}
+}

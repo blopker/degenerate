@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Coordinates defining the bounding box around the detected object
 @immutable final class ObjectDetection2Box {const ObjectDetection2Box({this.xmax, this.xmin, this.ymax, this.ymin, });
 
-factory ObjectDetection2Box.fromJson(Map<String, dynamic> json) { return ObjectDetection2Box(
+factory ObjectDetection2Box.fromJson(Map<String, dynamic> json) {return ObjectDetection2Box(
   xmax: json['xmax'] != null ? (json['xmax'] as num).toDouble() : null,
   xmin: json['xmin'] != null ? (json['xmin'] as num).toDouble() : null,
   ymax: json['ymax'] != null ? (json['ymax'] as num).toDouble() : null,
   ymin: json['ymin'] != null ? (json['ymin'] as num).toDouble() : null,
-); }
+);}
 
 /// The x-coordinate of the bottom-right corner of the bounding box
 final double? xmax;
@@ -22,25 +22,25 @@ final double? ymax;
 /// The y-coordinate of the top-left corner of the bounding box
 final double? ymin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'xmax': ?xmax,
   'xmin': ?xmin,
   'ymax': ?ymax,
   'ymin': ?ymin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'xmax', 'xmin', 'ymax', 'ymin'}.contains(key)); } 
-ObjectDetection2Box copyWith({double? Function()? xmax, double? Function()? xmin, double? Function()? ymax, double? Function()? ymin, }) { return ObjectDetection2Box(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'xmax', 'xmin', 'ymax', 'ymin'}.contains(key));}
+ObjectDetection2Box copyWith({double? Function()? xmax, double? Function()? xmin, double? Function()? ymax, double? Function()? ymin, }) {return ObjectDetection2Box(
   xmax: xmax != null ? xmax() : this.xmax,
   xmin: xmin != null ? xmin() : this.xmin,
   ymax: ymax != null ? ymax() : this.ymax,
   ymin: ymin != null ? ymin() : this.ymin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ObjectDetection2Box &&
           xmax == other.xmax &&
           xmin == other.xmin &&
           ymax == other.ymax &&
-          ymin == other.ymin; } 
-@override int get hashCode { return Object.hash(xmax, xmin, ymax, ymin); } 
-@override String toString() { return 'ObjectDetection2Box(xmax: $xmax, xmin: $xmin, ymax: $ymax, ymin: $ymin)'; } 
- }
+          ymin == other.ymin;}
+@override int get hashCode {return Object.hash(xmax, xmin, ymax, ymin);}
+@override String toString() {return 'ObjectDetection2Box(xmax: $xmax, xmin: $xmin, ymax: $ymax, ymin: $ymin)';}
+}

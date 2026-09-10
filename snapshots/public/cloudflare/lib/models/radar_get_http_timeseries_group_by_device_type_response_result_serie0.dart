@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0({required this.desktop, required this.mobile, required this.other, required this.timestamps, });
 
-factory RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(
+factory RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(
   desktop: (json['desktop'] as List<dynamic>).map((e) => e as String).toList(),
   mobile: (json['mobile'] as List<dynamic>).map((e) => e as String).toList(),
   other: (json['other'] as List<dynamic>).map((e) => e as String).toList(),
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
-); }
+);}
 
 final List<String> desktop;
 
@@ -17,28 +17,28 @@ final List<String> other;
 
 final List<DateTime> timestamps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'desktop': desktop,
   'mobile': mobile,
   'other': other,
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('desktop') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('desktop') &&
       json.containsKey('mobile') &&
       json.containsKey('other') &&
-      json.containsKey('timestamps'); } 
-RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 copyWith({List<String>? desktop, List<String>? mobile, List<String>? other, List<DateTime>? timestamps, }) { return RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(
+      json.containsKey('timestamps');}
+RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 copyWith({List<String>? desktop, List<String>? mobile, List<String>? other, List<DateTime>? timestamps, }) {return RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(
   desktop: desktop ?? this.desktop,
   mobile: mobile ?? this.mobile,
   other: other ?? this.other,
   timestamps: timestamps ?? this.timestamps,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 &&
           listEquals(desktop, other.desktop) &&
           listEquals(mobile, other.mobile) &&
           listEquals(this.other, other.other) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(desktop), Object.hashAll(mobile), Object.hashAll(other), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(desktop: $desktop, mobile: $mobile, other: $other, timestamps: $timestamps)'; } 
- }
+          listEquals(timestamps, other.timestamps);}
+@override int get hashCode {return Object.hash(Object.hashAll(desktop), Object.hashAll(mobile), Object.hashAll(other), Object.hashAll(timestamps));}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(desktop: $desktop, mobile: $mobile, other: $other, timestamps: $timestamps)';}
+}

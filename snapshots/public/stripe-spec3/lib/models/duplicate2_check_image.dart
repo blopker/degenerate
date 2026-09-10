@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Duplicate2CheckImageVariant2 {const Duplicate2CheckImageVariant2._(this.value);
 
-factory Duplicate2CheckImageVariant2.fromJson(String json) { return switch (json) {
+factory Duplicate2CheckImageVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => Duplicate2CheckImageVariant2._(json),
-}; }
+};}
 
 static const Duplicate2CheckImageVariant2 $empty = Duplicate2CheckImageVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<Duplicate2CheckImageVariant2> values = [$empty];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Duplicate2CheckImageVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Duplicate2CheckImageVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Duplicate2CheckImageVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Duplicate2CheckImageVariant2($value)';}
+}
 
 @immutable
 final class Duplicate2CheckImage {

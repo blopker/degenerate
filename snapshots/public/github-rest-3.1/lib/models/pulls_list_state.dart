@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsListState {const PullsListState._(this.value);
 
-factory PullsListState.fromJson(String json) { return switch (json) {
+factory PullsListState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'all' => all,
   _ => PullsListState._(json),
-}; }
+};}
 
 static const PullsListState open = PullsListState._('open');
 
@@ -19,11 +19,11 @@ static const List<PullsListState> values = [open, closed, all];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsListState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsListState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullsListState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullsListState($value)';}
+}

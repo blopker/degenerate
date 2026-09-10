@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod manual = PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod._('manual');
 
@@ -13,20 +13,20 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage._('none');
 
@@ -34,38 +34,38 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirm {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirm({this.captureMethod, this.setupFutureUsage, });
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirm.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAffirm(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirm.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsAffirm(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod? captureMethod;
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsAffirm copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAffirm(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsAffirm copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage? Function()? setupFutureUsage, }) {return PostCheckoutSessionsRequestPaymentMethodOptionsAffirm(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsAffirm &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirm(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(captureMethod, setupFutureUsage);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirm(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';}
+}

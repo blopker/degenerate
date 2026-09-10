@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax {const TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax({required this.jurisdiction});
 
-factory TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(
+factory TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax.fromJson(Map<String, dynamic> json) {return TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(
   jurisdiction: json['jurisdiction'] as String,
-); }
+);}
 
 /// A [FIPS code](https://www.census.gov/library/reference/code-lists/ansi.html) representing the local jurisdiction.
 final String jurisdiction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'jurisdiction': jurisdiction,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('jurisdiction') && json['jurisdiction'] is String; } 
-TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax copyWith({String? jurisdiction}) { return TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('jurisdiction') && json['jurisdiction'] is String;}
+TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax copyWith({String? jurisdiction}) {return TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(
   jurisdiction: jurisdiction ?? this.jurisdiction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax &&
-          jurisdiction == other.jurisdiction; } 
-@override int get hashCode { return jurisdiction.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(jurisdiction: $jurisdiction)'; } 
- }
+          jurisdiction == other.jurisdiction;}
+@override int get hashCode {return jurisdiction.hashCode;}
+@override String toString() {return 'TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(jurisdiction: $jurisdiction)';}
+}

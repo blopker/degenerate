@@ -12,9 +12,9 @@ bool toJson() => value;
 }
 @immutable final class AccountsTurnstileWidgetRotateSecretRequest {const AccountsTurnstileWidgetRotateSecretRequest({this.invalidateImmediately});
 
-factory AccountsTurnstileWidgetRotateSecretRequest.fromJson(Map<String, dynamic> json) { return AccountsTurnstileWidgetRotateSecretRequest(
+factory AccountsTurnstileWidgetRotateSecretRequest.fromJson(Map<String, dynamic> json) {return AccountsTurnstileWidgetRotateSecretRequest(
   invalidateImmediately: json['invalidate_immediately'] != null ? TurnstileInvalidateImmediately.fromJson(json['invalidate_immediately'] as bool) : null,
-); }
+);}
 
 /// If `invalidate_immediately` is set to `false`, the previous secret will
 /// remain valid for two hours. Otherwise, the secret is immediately
@@ -22,16 +22,16 @@ factory AccountsTurnstileWidgetRotateSecretRequest.fromJson(Map<String, dynamic>
 /// 
 final TurnstileInvalidateImmediately? invalidateImmediately;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (invalidateImmediately != null) 'invalidate_immediately': invalidateImmediately?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invalidate_immediately'}.contains(key)); } 
-AccountsTurnstileWidgetRotateSecretRequest copyWith({TurnstileInvalidateImmediately? Function()? invalidateImmediately}) { return AccountsTurnstileWidgetRotateSecretRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'invalidate_immediately'}.contains(key));}
+AccountsTurnstileWidgetRotateSecretRequest copyWith({TurnstileInvalidateImmediately? Function()? invalidateImmediately}) {return AccountsTurnstileWidgetRotateSecretRequest(
   invalidateImmediately: invalidateImmediately != null ? invalidateImmediately() : this.invalidateImmediately,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountsTurnstileWidgetRotateSecretRequest &&
-          invalidateImmediately == other.invalidateImmediately; } 
-@override int get hashCode { return invalidateImmediately.hashCode; } 
-@override String toString() { return 'AccountsTurnstileWidgetRotateSecretRequest(invalidateImmediately: $invalidateImmediately)'; } 
- }
+          invalidateImmediately == other.invalidateImmediately;}
+@override int get hashCode {return invalidateImmediately.hashCode;}
+@override String toString() {return 'AccountsTurnstileWidgetRotateSecretRequest(invalidateImmediately: $invalidateImmediately)';}
+}

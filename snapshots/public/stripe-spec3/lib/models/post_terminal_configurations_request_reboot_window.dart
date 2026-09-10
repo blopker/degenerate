@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reboot time settings for readers. that support customized reboot time configuration.
 @immutable final class PostTerminalConfigurationsRequestRebootWindow {const PostTerminalConfigurationsRequestRebootWindow({required this.endHour, required this.startHour, });
 
-factory PostTerminalConfigurationsRequestRebootWindow.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestRebootWindow(
+factory PostTerminalConfigurationsRequestRebootWindow.fromJson(Map<String, dynamic> json) {return PostTerminalConfigurationsRequestRebootWindow(
   endHour: (json['end_hour'] as num).toInt(),
   startHour: (json['start_hour'] as num).toInt(),
-); }
+);}
 
 final int endHour;
 
 final int startHour;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_hour': endHour,
   'start_hour': startHour,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_hour') && json['end_hour'] is num &&
-      json.containsKey('start_hour') && json['start_hour'] is num; } 
-PostTerminalConfigurationsRequestRebootWindow copyWith({int? endHour, int? startHour, }) { return PostTerminalConfigurationsRequestRebootWindow(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end_hour') && json['end_hour'] is num &&
+      json.containsKey('start_hour') && json['start_hour'] is num;}
+PostTerminalConfigurationsRequestRebootWindow copyWith({int? endHour, int? startHour, }) {return PostTerminalConfigurationsRequestRebootWindow(
   endHour: endHour ?? this.endHour,
   startHour: startHour ?? this.startHour,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalConfigurationsRequestRebootWindow &&
           endHour == other.endHour &&
-          startHour == other.startHour; } 
-@override int get hashCode { return Object.hash(endHour, startHour); } 
-@override String toString() { return 'PostTerminalConfigurationsRequestRebootWindow(endHour: $endHour, startHour: $startHour)'; } 
- }
+          startHour == other.startHour;}
+@override int get hashCode {return Object.hash(endHour, startHour);}
+@override String toString() {return 'PostTerminalConfigurationsRequestRebootWindow(endHour: $endHour, startHour: $startHour)';}
+}

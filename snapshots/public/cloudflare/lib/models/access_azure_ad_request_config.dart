@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the type of user interaction that is required. prompt=login forces the user to enter their credentials on that request, negating single-sign on. prompt=none is the opposite. It ensures that the user isn't presented with any interactive prompt. If the request can't be completed silently by using single-sign on, the Microsoft identity platform returns an interaction_required error. prompt=select_account interrupts single sign-on providing account selection experience listing all the accounts either in session or any remembered account or an option to choose to use a different account altogether.
 @immutable final class AccessAzureAdRequestConfigPrompt {const AccessAzureAdRequestConfigPrompt._(this.value);
 
-factory AccessAzureAdRequestConfigPrompt.fromJson(String json) { return switch (json) {
+factory AccessAzureAdRequestConfigPrompt.fromJson(String json) {return switch (json) {
   'login' => login,
   'select_account' => selectAccount,
   'none' => none,
   _ => AccessAzureAdRequestConfigPrompt._(json),
-}; }
+};}
 
 static const AccessAzureAdRequestConfigPrompt login = AccessAzureAdRequestConfigPrompt._('login');
 
@@ -20,17 +20,17 @@ static const List<AccessAzureAdRequestConfigPrompt> values = [login, selectAccou
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessAzureAdRequestConfigPrompt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessAzureAdRequestConfigPrompt($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessAzureAdRequestConfigPrompt && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessAzureAdRequestConfigPrompt($value)';}
+}
 @immutable final class AccessAzureAdRequestConfig {const AccessAzureAdRequestConfig({this.clientId, this.clientSecret, this.claims, this.emailClaimName, this.conditionalAccessEnabled, this.directoryId, this.prompt, this.supportGroups, });
 
-factory AccessAzureAdRequestConfig.fromJson(Map<String, dynamic> json) { return AccessAzureAdRequestConfig(
+factory AccessAzureAdRequestConfig.fromJson(Map<String, dynamic> json) {return AccessAzureAdRequestConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -39,7 +39,7 @@ factory AccessAzureAdRequestConfig.fromJson(Map<String, dynamic> json) { return 
   directoryId: json['directory_id'] as String?,
   prompt: json['prompt'] != null ? AccessAzureAdRequestConfigPrompt.fromJson(json['prompt'] as String) : null,
   supportGroups: json['support_groups'] as bool?,
-); }
+);}
 
 /// Your OAuth Client ID
 final String? clientId;
@@ -65,7 +65,7 @@ final AccessAzureAdRequestConfigPrompt? prompt;
 /// Should Cloudflare try to load groups from your account
 final bool? supportGroups;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
   'claims': ?claims,
@@ -74,9 +74,9 @@ Map<String, dynamic> toJson() { return {
   'directory_id': ?directoryId,
   if (prompt != null) 'prompt': prompt?.toJson(),
   'support_groups': ?supportGroups,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'conditional_access_enabled', 'directory_id', 'prompt', 'support_groups'}.contains(key)); } 
-AccessAzureAdRequestConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, bool? Function()? conditionalAccessEnabled, String? Function()? directoryId, AccessAzureAdRequestConfigPrompt? Function()? prompt, bool? Function()? supportGroups, }) { return AccessAzureAdRequestConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'conditional_access_enabled', 'directory_id', 'prompt', 'support_groups'}.contains(key));}
+AccessAzureAdRequestConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, bool? Function()? conditionalAccessEnabled, String? Function()? directoryId, AccessAzureAdRequestConfigPrompt? Function()? prompt, bool? Function()? supportGroups, }) {return AccessAzureAdRequestConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,
@@ -85,8 +85,8 @@ AccessAzureAdRequestConfig copyWith({String? Function()? clientId, String? Funct
   directoryId: directoryId != null ? directoryId() : this.directoryId,
   prompt: prompt != null ? prompt() : this.prompt,
   supportGroups: supportGroups != null ? supportGroups() : this.supportGroups,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessAzureAdRequestConfig &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
@@ -95,7 +95,7 @@ AccessAzureAdRequestConfig copyWith({String? Function()? clientId, String? Funct
           conditionalAccessEnabled == other.conditionalAccessEnabled &&
           directoryId == other.directoryId &&
           prompt == other.prompt &&
-          supportGroups == other.supportGroups; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret, Object.hashAll(claims ?? const []), emailClaimName, conditionalAccessEnabled, directoryId, prompt, supportGroups); } 
-@override String toString() { return 'AccessAzureAdRequestConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, conditionalAccessEnabled: $conditionalAccessEnabled, directoryId: $directoryId, prompt: $prompt, supportGroups: $supportGroups)'; } 
- }
+          supportGroups == other.supportGroups;}
+@override int get hashCode {return Object.hash(clientId, clientSecret, Object.hashAll(claims ?? const []), emailClaimName, conditionalAccessEnabled, directoryId, prompt, supportGroups);}
+@override String toString() {return 'AccessAzureAdRequestConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, conditionalAccessEnabled: $conditionalAccessEnabled, directoryId: $directoryId, prompt: $prompt, supportGroups: $supportGroups)';}
+}

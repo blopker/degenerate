@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_query_and_contexts_contexts.dart';@immutable final class InputQueryAndContexts {const InputQueryAndContexts({required this.contexts, this.query, this.truncateInputs, });
 
-factory InputQueryAndContexts.fromJson(Map<String, dynamic> json) { return InputQueryAndContexts(
+factory InputQueryAndContexts.fromJson(Map<String, dynamic> json) {return InputQueryAndContexts(
   contexts: (json['contexts'] as List<dynamic>).map((e) => InputQueryAndContextsContexts.fromJson(e as Map<String, dynamic>)).toList(),
   query: json['query'] as String?,
   truncateInputs: json['truncate_inputs'] as bool?,
-); }
+);}
 
 /// List of provided contexts. Note that the index in this array is important, as the response will refer to it.
 final List<InputQueryAndContextsContexts> contexts;
@@ -18,23 +18,23 @@ final String? query;
 final bool? truncateInputs;
 
 /// The value with the schema default applied when absent.
-bool get truncateInputsOrDefault { return truncateInputs ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get truncateInputsOrDefault {return truncateInputs ?? false;}
+Map<String, dynamic> toJson() {return {
   'contexts': contexts.map((e) => e.toJson()).toList(),
   'query': ?query,
   'truncate_inputs': ?truncateInputs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts'); } 
-InputQueryAndContexts copyWith({List<InputQueryAndContextsContexts>? contexts, String? Function()? query, bool? Function()? truncateInputs, }) { return InputQueryAndContexts(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('contexts');}
+InputQueryAndContexts copyWith({List<InputQueryAndContextsContexts>? contexts, String? Function()? query, bool? Function()? truncateInputs, }) {return InputQueryAndContexts(
   contexts: contexts ?? this.contexts,
   query: query != null ? query() : this.query,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InputQueryAndContexts &&
           listEquals(contexts, other.contexts) &&
           query == other.query &&
-          truncateInputs == other.truncateInputs; } 
-@override int get hashCode { return Object.hash(Object.hashAll(contexts), query, truncateInputs); } 
-@override String toString() { return 'InputQueryAndContexts(contexts: $contexts, query: $query, truncateInputs: $truncateInputs)'; } 
- }
+          truncateInputs == other.truncateInputs;}
+@override int get hashCode {return Object.hash(Object.hashAll(contexts), query, truncateInputs);}
+@override String toString() {return 'InputQueryAndContexts(contexts: $contexts, query: $query, truncateInputs: $truncateInputs)';}
+}

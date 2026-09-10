@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EditImageBodyJsonParamModelVariant2 {const EditImageBodyJsonParamModelVariant2._(this.value);
 
-factory EditImageBodyJsonParamModelVariant2.fromJson(String json) { return switch (json) {
+factory EditImageBodyJsonParamModelVariant2.fromJson(String json) {return switch (json) {
   'gpt-image-1.5' => gptImage15,
   'gpt-image-1' => gptImage1,
   'gpt-image-1-mini' => gptImage1Mini,
   'chatgpt-image-latest' => chatgptImageLatest,
   _ => EditImageBodyJsonParamModelVariant2._(json),
-}; }
+};}
 
 static const EditImageBodyJsonParamModelVariant2 gptImage15 = EditImageBodyJsonParamModelVariant2._('gpt-image-1.5');
 
@@ -22,14 +22,14 @@ static const List<EditImageBodyJsonParamModelVariant2> values = [gptImage15, gpt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EditImageBodyJsonParamModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EditImageBodyJsonParamModelVariant2($value)';}
+}
 /// The model to use for image editing.
 @immutable
 final class EditImageBodyJsonParamModel {

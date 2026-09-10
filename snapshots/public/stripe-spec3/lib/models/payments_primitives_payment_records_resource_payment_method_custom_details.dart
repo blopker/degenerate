@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom Payment M
 /// used for this payment attempt.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type = const Omittable.absent(), });
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: json['display_name'] as String,
   type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Display name for the custom (user-defined) payment method type used to make this payment.
 final String displayName;
@@ -16,19 +16,19 @@ final String displayName;
 /// The custom payment method type associated with this payment.
 final Omittable<String?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'display_name': displayName,
   if (type.isPresent) 'type': type.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, Omittable<String?>? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String;}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, Omittable<String?>? type, }) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: displayName ?? this.displayName,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails &&
           displayName == other.displayName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(displayName, type); } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(displayName: $displayName, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(displayName, type);}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(displayName: $displayName, type: $type)';}
+}

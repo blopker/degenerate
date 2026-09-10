@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_account_tag.dart';import 'nsc_bgp_control.dart';import 'nsc_magic_settings.dart';@immutable final class NscCni {const NscCni({required this.account, required this.custIp, required this.id, required this.interconnect, required this.magic, required this.p2pIp, this.bgp, });
 
-factory NscCni.fromJson(Map<String, dynamic> json) { return NscCni(
+factory NscCni.fromJson(Map<String, dynamic> json) {return NscCni(
   account: NscAccountTag.fromJson(json['account'] as String),
   bgp: json['bgp'] != null ? NscBgpControl.fromJson(json['bgp'] as Map<String, dynamic>) : null,
   custIp: json['cust_ip'] as String,
@@ -10,7 +10,7 @@ factory NscCni.fromJson(Map<String, dynamic> json) { return NscCni(
   interconnect: json['interconnect'] as String,
   magic: NscMagicSettings.fromJson(json['magic'] as Map<String, dynamic>),
   p2pIp: json['p2p_ip'] as String,
-); }
+);}
 
 /// Customer account tag
 final NscAccountTag account;
@@ -32,7 +32,7 @@ final NscMagicSettings magic;
 /// Cloudflare end of the point-to-point link
 final String p2pIp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   if (bgp != null) 'bgp': bgp?.toJson(),
   'cust_ip': custIp,
@@ -40,14 +40,14 @@ Map<String, dynamic> toJson() { return {
   'interconnect': interconnect,
   'magic': magic.toJson(),
   'p2p_ip': p2pIp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('cust_ip') && json['cust_ip'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('interconnect') && json['interconnect'] is String &&
       json.containsKey('magic') &&
-      json.containsKey('p2p_ip') && json['p2p_ip'] is String; } 
-NscCni copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? custIp, String? id, String? interconnect, NscMagicSettings? magic, String? p2pIp, }) { return NscCni(
+      json.containsKey('p2p_ip') && json['p2p_ip'] is String;}
+NscCni copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? custIp, String? id, String? interconnect, NscMagicSettings? magic, String? p2pIp, }) {return NscCni(
   account: account ?? this.account,
   bgp: bgp != null ? bgp() : this.bgp,
   custIp: custIp ?? this.custIp,
@@ -55,8 +55,8 @@ NscCni copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String?
   interconnect: interconnect ?? this.interconnect,
   magic: magic ?? this.magic,
   p2pIp: p2pIp ?? this.p2pIp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscCni &&
           account == other.account &&
           bgp == other.bgp &&
@@ -64,7 +64,7 @@ NscCni copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String?
           id == other.id &&
           interconnect == other.interconnect &&
           magic == other.magic &&
-          p2pIp == other.p2pIp; } 
-@override int get hashCode { return Object.hash(account, bgp, custIp, id, interconnect, magic, p2pIp); } 
-@override String toString() { return 'NscCni(account: $account, bgp: $bgp, custIp: $custIp, id: $id, interconnect: $interconnect, magic: $magic, p2pIp: $p2pIp)'; } 
- }
+          p2pIp == other.p2pIp;}
+@override int get hashCode {return Object.hash(account, bgp, custIp, id, interconnect, magic, p2pIp);}
+@override String toString() {return 'NscCni(account: $account, bgp: $bgp, custIp: $custIp, id: $id, interconnect: $interconnect, magic: $magic, p2pIp: $p2pIp)';}
+}

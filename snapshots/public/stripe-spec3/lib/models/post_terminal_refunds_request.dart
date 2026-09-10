@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
 @immutable final class PostTerminalRefundsRequestReason {const PostTerminalRefundsRequestReason._(this.value);
 
-factory PostTerminalRefundsRequestReason.fromJson(String json) { return switch (json) {
+factory PostTerminalRefundsRequestReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'requested_by_customer' => requestedByCustomer,
   _ => PostTerminalRefundsRequestReason._(json),
-}; }
+};}
 
 static const PostTerminalRefundsRequestReason duplicate = PostTerminalRefundsRequestReason._('duplicate');
 
@@ -20,17 +20,17 @@ static const List<PostTerminalRefundsRequestReason> values = [duplicate, fraudul
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalRefundsRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalRefundsRequestReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalRefundsRequestReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalRefundsRequestReason($value)';}
+}
 @immutable final class PostTerminalRefundsRequest {const PostTerminalRefundsRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
-factory PostTerminalRefundsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalRefundsRequest(
+factory PostTerminalRefundsRequest.fromJson(Map<String, dynamic> json) {return PostTerminalRefundsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   charge: json['charge'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -39,7 +39,7 @@ factory PostTerminalRefundsRequest.fromJson(Map<String, dynamic> json) { return 
   reason: json['reason'] != null ? PostTerminalRefundsRequestReason.fromJson(json['reason'] as String) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
   reverseTransfer: json['reverse_transfer'] as bool?,
-); }
+);}
 
 /// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this charge to refund. Can refund only up to the remaining, unrefunded amount of the charge.
 final int? amount;
@@ -65,7 +65,7 @@ final bool? refundApplicationFee;
 /// Boolean indicating whether the transfer should be reversed when refunding this charge. The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount).`<br>``<br>`A transfer can be reversed only by the application that created the charge.
 final bool? reverseTransfer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'charge': ?charge,
   'expand': ?expand,
@@ -74,9 +74,9 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
   'refund_application_fee': ?refundApplicationFee,
   'reverse_transfer': ?reverseTransfer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
-PostTerminalRefundsRequest copyWith({int? Function()? amount, String? Function()? charge, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? paymentIntent, PostTerminalRefundsRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) { return PostTerminalRefundsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key));}
+PostTerminalRefundsRequest copyWith({int? Function()? amount, String? Function()? charge, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? paymentIntent, PostTerminalRefundsRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) {return PostTerminalRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   expand: expand != null ? expand() : this.expand,
@@ -85,8 +85,8 @@ PostTerminalRefundsRequest copyWith({int? Function()? amount, String? Function()
   reason: reason != null ? reason() : this.reason,
   refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
   reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalRefundsRequest &&
           amount == other.amount &&
           charge == other.charge &&
@@ -95,7 +95,7 @@ PostTerminalRefundsRequest copyWith({int? Function()? amount, String? Function()
           paymentIntent == other.paymentIntent &&
           reason == other.reason &&
           refundApplicationFee == other.refundApplicationFee &&
-          reverseTransfer == other.reverseTransfer; } 
-@override int get hashCode { return Object.hash(amount, charge, Object.hashAll(expand ?? const []), metadata, paymentIntent, reason, refundApplicationFee, reverseTransfer); } 
-@override String toString() { return 'PostTerminalRefundsRequest(amount: $amount, charge: $charge, expand: $expand, metadata: $metadata, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)'; } 
- }
+          reverseTransfer == other.reverseTransfer;}
+@override int get hashCode {return Object.hash(amount, charge, Object.hashAll(expand ?? const []), metadata, paymentIntent, reason, refundApplicationFee, reverseTransfer);}
+@override String toString() {return 'PostTerminalRefundsRequest(amount: $amount, charge: $charge, expand: $expand, metadata: $metadata, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)';}
+}

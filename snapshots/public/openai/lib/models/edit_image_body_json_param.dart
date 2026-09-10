@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'edit_image_body_json_param_model.dart';import 'image_ref_param.dart';import 'partial_images.dart';@immutable final class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality._(this.value);
 
-factory EditImageBodyJsonParamQuality.fromJson(String json) { return switch (json) {
+factory EditImageBodyJsonParamQuality.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
   _ => EditImageBodyJsonParamQuality._(json),
-}; }
+};}
 
 static const EditImageBodyJsonParamQuality low = EditImageBodyJsonParamQuality._('low');
 
@@ -22,21 +22,21 @@ static const List<EditImageBodyJsonParamQuality> values = [low, medium, high, au
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamQuality($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EditImageBodyJsonParamQuality && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EditImageBodyJsonParamQuality($value)';}
+}
 @immutable final class EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity._(this.value);
 
-factory EditImageBodyJsonParamInputFidelity.fromJson(String json) { return switch (json) {
+factory EditImageBodyJsonParamInputFidelity.fromJson(String json) {return switch (json) {
   'high' => high,
   'low' => low,
   _ => EditImageBodyJsonParamInputFidelity._(json),
-}; }
+};}
 
 static const EditImageBodyJsonParamInputFidelity high = EditImageBodyJsonParamInputFidelity._('high');
 
@@ -46,23 +46,23 @@ static const List<EditImageBodyJsonParamInputFidelity> values = [high, low];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamInputFidelity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamInputFidelity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EditImageBodyJsonParamInputFidelity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EditImageBodyJsonParamInputFidelity($value)';}
+}
 @immutable final class EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize._(this.value);
 
-factory EditImageBodyJsonParamSize.fromJson(String json) { return switch (json) {
+factory EditImageBodyJsonParamSize.fromJson(String json) {return switch (json) {
   'auto' => auto,
   '1024x1024' => $1024x1024,
   '1536x1024' => $1536x1024,
   '1024x1536' => $1024x1536,
   _ => EditImageBodyJsonParamSize._(json),
-}; }
+};}
 
 static const EditImageBodyJsonParamSize auto = EditImageBodyJsonParamSize._('auto');
 
@@ -76,22 +76,22 @@ static const List<EditImageBodyJsonParamSize> values = [auto, $1024x1024, $1536x
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EditImageBodyJsonParamSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EditImageBodyJsonParamSize($value)';}
+}
 @immutable final class EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat._(this.value);
 
-factory EditImageBodyJsonParamOutputFormat.fromJson(String json) { return switch (json) {
+factory EditImageBodyJsonParamOutputFormat.fromJson(String json) {return switch (json) {
   'png' => png,
   'jpeg' => jpeg,
   'webp' => webp,
   _ => EditImageBodyJsonParamOutputFormat._(json),
-}; }
+};}
 
 static const EditImageBodyJsonParamOutputFormat png = EditImageBodyJsonParamOutputFormat._('png');
 
@@ -103,21 +103,21 @@ static const List<EditImageBodyJsonParamOutputFormat> values = [png, jpeg, webp]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamOutputFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EditImageBodyJsonParamOutputFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EditImageBodyJsonParamOutputFormat($value)';}
+}
 @immutable final class EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration._(this.value);
 
-factory EditImageBodyJsonParamModeration.fromJson(String json) { return switch (json) {
+factory EditImageBodyJsonParamModeration.fromJson(String json) {return switch (json) {
   'low' => low,
   'auto' => auto,
   _ => EditImageBodyJsonParamModeration._(json),
-}; }
+};}
 
 static const EditImageBodyJsonParamModeration low = EditImageBodyJsonParamModeration._('low');
 
@@ -127,22 +127,22 @@ static const List<EditImageBodyJsonParamModeration> values = [low, auto];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamModeration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamModeration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EditImageBodyJsonParamModeration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EditImageBodyJsonParamModeration($value)';}
+}
 @immutable final class EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground._(this.value);
 
-factory EditImageBodyJsonParamBackground.fromJson(String json) { return switch (json) {
+factory EditImageBodyJsonParamBackground.fromJson(String json) {return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
   _ => EditImageBodyJsonParamBackground._(json),
-}; }
+};}
 
 static const EditImageBodyJsonParamBackground transparent = EditImageBodyJsonParamBackground._('transparent');
 
@@ -154,14 +154,14 @@ static const List<EditImageBodyJsonParamBackground> values = [transparent, opaqu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamBackground($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EditImageBodyJsonParamBackground && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EditImageBodyJsonParamBackground($value)';}
+}
 /// JSON request body for image edits.
 /// 
 /// Use `images` (array of `ImageRefParam`) instead of multipart `image` uploads.
@@ -170,7 +170,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model = const Omittable.absent(), this.mask = const Omittable.absent(), this.n = const Omittable.absent(), this.quality = const Omittable.absent(), this.inputFidelity = const Omittable.absent(), this.size = const Omittable.absent(), this.user, this.outputFormat = const Omittable.absent(), this.outputCompression = const Omittable.absent(), this.moderation = const Omittable.absent(), this.background = const Omittable.absent(), this.stream = const Omittable.absent(), this.partialImages = const Omittable.absent(), });
 
-factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
+factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) {return EditImageBodyJsonParam(
   model: json.containsKey('model') ? Omittable(json['model'] != null ? EditImageBodyJsonParamModel.fromJson(json['model']) : null) : const Omittable.absent(),
   images: (json['images'] as List<dynamic>).map((e) => e == null ? null : ImageRefParam.fromJson(e)).toList(),
   mask: json.containsKey('mask') ? Omittable(json['mask'] != null ? ImageRefParam.fromJson(json['mask']) : null) : const Omittable.absent(),
@@ -186,7 +186,7 @@ factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return Edit
   background: json.containsKey('background') ? Omittable(json['background'] != null ? EditImageBodyJsonParamBackground.fromJson(json['background'] as String) : null) : const Omittable.absent(),
   stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
   partialImages: json.containsKey('partial_images') ? Omittable(json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The model to use for image editing.
 final Omittable<EditImageBodyJsonParamModel?> model;
@@ -237,20 +237,20 @@ final Omittable<bool?> stream;
 final Omittable<PartialImages?> partialImages;
 
 /// The value with the schema default applied when absent.
-int? get nOrDefault { return n.valueOr(1); } 
+int? get nOrDefault {return n.valueOr(1);}
 /// The value with the schema default applied when absent.
-EditImageBodyJsonParamQuality? get qualityOrDefault { return quality.valueOr(EditImageBodyJsonParamQuality.fromJson('auto')); } 
+EditImageBodyJsonParamQuality? get qualityOrDefault {return quality.valueOr(EditImageBodyJsonParamQuality.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-EditImageBodyJsonParamSize? get sizeOrDefault { return size.valueOr(EditImageBodyJsonParamSize.fromJson('auto')); } 
+EditImageBodyJsonParamSize? get sizeOrDefault {return size.valueOr(EditImageBodyJsonParamSize.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-EditImageBodyJsonParamOutputFormat? get outputFormatOrDefault { return outputFormat.valueOr(EditImageBodyJsonParamOutputFormat.fromJson('png')); } 
+EditImageBodyJsonParamOutputFormat? get outputFormatOrDefault {return outputFormat.valueOr(EditImageBodyJsonParamOutputFormat.fromJson('png'));}
 /// The value with the schema default applied when absent.
-EditImageBodyJsonParamModeration? get moderationOrDefault { return moderation.valueOr(EditImageBodyJsonParamModeration.fromJson('auto')); } 
+EditImageBodyJsonParamModeration? get moderationOrDefault {return moderation.valueOr(EditImageBodyJsonParamModeration.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-EditImageBodyJsonParamBackground? get backgroundOrDefault { return background.valueOr(EditImageBodyJsonParamBackground.fromJson('auto')); } 
+EditImageBodyJsonParamBackground? get backgroundOrDefault {return background.valueOr(EditImageBodyJsonParamBackground.fromJson('auto'));}
 /// The value with the schema default applied when absent.
-bool? get streamOrDefault { return stream.valueOr(false); } 
-Map<String, dynamic> toJson() { return {
+bool? get streamOrDefault {return stream.valueOr(false);}
+Map<String, dynamic> toJson() {return {
   if (model.isPresent) 'model': model.value?.toJson(),
   'images': images.map((e) => e?.toJson()).toList(),
   if (mask.isPresent) 'mask': mask.value?.toJson(),
@@ -266,10 +266,10 @@ Map<String, dynamic> toJson() { return {
   if (background.isPresent) 'background': background.value?.toJson(),
   if (stream.isPresent) 'stream': stream.value,
   if (partialImages.isPresent) 'partial_images': partialImages.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('images') &&
-      json.containsKey('prompt') && json['prompt'] is String; } 
-EditImageBodyJsonParam copyWith({Omittable<EditImageBodyJsonParamModel?>? model, List<ImageRefParam?>? images, Omittable<ImageRefParam?>? mask, String? prompt, Omittable<int?>? n, Omittable<EditImageBodyJsonParamQuality?>? quality, Omittable<EditImageBodyJsonParamInputFidelity?>? inputFidelity, Omittable<EditImageBodyJsonParamSize?>? size, String? Function()? user, Omittable<EditImageBodyJsonParamOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, Omittable<EditImageBodyJsonParamModeration?>? moderation, Omittable<EditImageBodyJsonParamBackground?>? background, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, }) { return EditImageBodyJsonParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('images') &&
+      json.containsKey('prompt') && json['prompt'] is String;}
+EditImageBodyJsonParam copyWith({Omittable<EditImageBodyJsonParamModel?>? model, List<ImageRefParam?>? images, Omittable<ImageRefParam?>? mask, String? prompt, Omittable<int?>? n, Omittable<EditImageBodyJsonParamQuality?>? quality, Omittable<EditImageBodyJsonParamInputFidelity?>? inputFidelity, Omittable<EditImageBodyJsonParamSize?>? size, String? Function()? user, Omittable<EditImageBodyJsonParamOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, Omittable<EditImageBodyJsonParamModeration?>? moderation, Omittable<EditImageBodyJsonParamBackground?>? background, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, }) {return EditImageBodyJsonParam(
   model: model ?? this.model,
   images: images ?? this.images,
   mask: mask ?? this.mask,
@@ -285,8 +285,8 @@ EditImageBodyJsonParam copyWith({Omittable<EditImageBodyJsonParamModel?>? model,
   background: background ?? this.background,
   stream: stream ?? this.stream,
   partialImages: partialImages ?? this.partialImages,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EditImageBodyJsonParam &&
           model == other.model &&
           listEquals(images, other.images) &&
@@ -302,7 +302,7 @@ EditImageBodyJsonParam copyWith({Omittable<EditImageBodyJsonParamModel?>? model,
           moderation == other.moderation &&
           background == other.background &&
           stream == other.stream &&
-          partialImages == other.partialImages; } 
-@override int get hashCode { return Object.hash(model, Object.hashAll(images), mask, prompt, n, quality, inputFidelity, size, user, outputFormat, outputCompression, moderation, background, stream, partialImages); } 
-@override String toString() { return 'EditImageBodyJsonParam(model: $model, images: $images, mask: $mask, prompt: $prompt, n: $n, quality: $quality, inputFidelity: $inputFidelity, size: $size, user: $user, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, stream: $stream, partialImages: $partialImages)'; } 
- }
+          partialImages == other.partialImages;}
+@override int get hashCode {return Object.hash(model, Object.hashAll(images), mask, prompt, n, quality, inputFidelity, size, user, outputFormat, outputCompression, moderation, background, stream, partialImages);}
+@override String toString() {return 'EditImageBodyJsonParam(model: $model, images: $images, mask: $mask, prompt: $prompt, n: $n, quality: $quality, inputFidelity: $inputFidelity, size: $size, user: $user, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, stream: $stream, partialImages: $partialImages)';}
+}

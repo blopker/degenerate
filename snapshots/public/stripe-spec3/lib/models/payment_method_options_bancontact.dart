@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the Bancontact authorization page that the customer is redirected to.
 @immutable final class PaymentMethodOptionsBancontactPreferredLanguage {const PaymentMethodOptionsBancontactPreferredLanguage._(this.value);
 
-factory PaymentMethodOptionsBancontactPreferredLanguage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsBancontactPreferredLanguage.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'fr' => fr,
   'nl' => nl,
   _ => PaymentMethodOptionsBancontactPreferredLanguage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsBancontactPreferredLanguage de = PaymentMethodOptionsBancontactPreferredLanguage._('de');
 
@@ -23,14 +23,14 @@ static const List<PaymentMethodOptionsBancontactPreferredLanguage> values = [de,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsBancontactPreferredLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsBancontactPreferredLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsBancontactPreferredLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsBancontactPreferredLanguage($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -40,11 +40,11 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentMethodOptionsBancontactSetupFutureUsage {const PaymentMethodOptionsBancontactSetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsBancontactSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsBancontactSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => PaymentMethodOptionsBancontactSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsBancontactSetupFutureUsage none = PaymentMethodOptionsBancontactSetupFutureUsage._('none');
 
@@ -54,21 +54,21 @@ static const List<PaymentMethodOptionsBancontactSetupFutureUsage> values = [none
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsBancontactSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsBancontactSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsBancontactSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsBancontactSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentMethodOptionsBancontact {const PaymentMethodOptionsBancontact({required this.preferredLanguage, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsBancontact(
+factory PaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsBancontact(
   preferredLanguage: PaymentMethodOptionsBancontactPreferredLanguage.fromJson(json['preferred_language'] as String),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsBancontactSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Preferred language of the Bancontact authorization page that the customer is redirected to.
 final PaymentMethodOptionsBancontactPreferredLanguage preferredLanguage;
@@ -82,19 +82,19 @@ final PaymentMethodOptionsBancontactPreferredLanguage preferredLanguage;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentMethodOptionsBancontactSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'preferred_language': preferredLanguage.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('preferred_language'); } 
-PaymentMethodOptionsBancontact copyWith({PaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage, PaymentMethodOptionsBancontactSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsBancontact(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('preferred_language');}
+PaymentMethodOptionsBancontact copyWith({PaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage, PaymentMethodOptionsBancontactSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsBancontact(
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsBancontact &&
           preferredLanguage == other.preferredLanguage &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(preferredLanguage, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsBancontact(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(preferredLanguage, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsBancontact(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)';}
+}

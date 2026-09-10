@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationRepositoriesAddedRepositoriesRemoved {const WebhookInstallationRepositoriesAddedRepositoriesRemoved({this.fullName, this.id, this.name, this.nodeId, this.private, });
 
-factory WebhookInstallationRepositoriesAddedRepositoriesRemoved.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesAddedRepositoriesRemoved(
+factory WebhookInstallationRepositoriesAddedRepositoriesRemoved.fromJson(Map<String, dynamic> json) {return WebhookInstallationRepositoriesAddedRepositoriesRemoved(
   fullName: json['full_name'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   name: json['name'] as String?,
   nodeId: json['node_id'] as String?,
   private: json['private'] as bool?,
-); }
+);}
 
 final String? fullName;
 
@@ -23,28 +23,28 @@ final String? nodeId;
 /// Whether the repository is private or public.
 final bool? private;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'full_name': ?fullName,
   'id': ?id,
   'name': ?name,
   'node_id': ?nodeId,
   'private': ?private,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'full_name', 'id', 'name', 'node_id', 'private'}.contains(key)); } 
-WebhookInstallationRepositoriesAddedRepositoriesRemoved copyWith({String? Function()? fullName, int? Function()? id, String? Function()? name, String? Function()? nodeId, bool? Function()? private, }) { return WebhookInstallationRepositoriesAddedRepositoriesRemoved(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'full_name', 'id', 'name', 'node_id', 'private'}.contains(key));}
+WebhookInstallationRepositoriesAddedRepositoriesRemoved copyWith({String? Function()? fullName, int? Function()? id, String? Function()? name, String? Function()? nodeId, bool? Function()? private, }) {return WebhookInstallationRepositoriesAddedRepositoriesRemoved(
   fullName: fullName != null ? fullName() : this.fullName,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   private: private != null ? private() : this.private,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookInstallationRepositoriesAddedRepositoriesRemoved &&
           fullName == other.fullName &&
           id == other.id &&
           name == other.name &&
           nodeId == other.nodeId &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(fullName, id, name, nodeId, private); } 
-@override String toString() { return 'WebhookInstallationRepositoriesAddedRepositoriesRemoved(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)'; } 
- }
+          private == other.private;}
+@override int get hashCode {return Object.hash(fullName, id, name, nodeId, private);}
+@override String toString() {return 'WebhookInstallationRepositoriesAddedRepositoriesRemoved(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)';}
+}

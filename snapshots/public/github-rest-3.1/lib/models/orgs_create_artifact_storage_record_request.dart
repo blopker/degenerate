@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the artifact (e.g., active, inactive).
 @immutable final class OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus._(this.value);
 
-factory OrgsCreateArtifactStorageRecordRequestStatus.fromJson(String json) { return switch (json) {
+factory OrgsCreateArtifactStorageRecordRequestStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'eol' => eol,
   'deleted' => deleted,
   _ => OrgsCreateArtifactStorageRecordRequestStatus._(json),
-}; }
+};}
 
 static const OrgsCreateArtifactStorageRecordRequestStatus active = OrgsCreateArtifactStorageRecordRequestStatus._('active');
 
@@ -20,17 +20,17 @@ static const List<OrgsCreateArtifactStorageRecordRequestStatus> values = [active
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsCreateArtifactStorageRecordRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsCreateArtifactStorageRecordRequestStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsCreateArtifactStorageRecordRequestStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsCreateArtifactStorageRecordRequestStatus($value)';}
+}
 @immutable final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, required this.registryUrl, this.version, this.artifactUrl, this.path, this.repository, this.status, this.githubRepository, });
 
-factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactStorageRecordRequest(
+factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> json) {return OrgsCreateArtifactStorageRecordRequest(
   name: json['name'] as String,
   digest: json['digest'] as String,
   version: json['version'] as String?,
@@ -40,7 +40,7 @@ factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> jso
   repository: json['repository'] as String?,
   status: json['status'] != null ? OrgsCreateArtifactStorageRecordRequestStatus.fromJson(json['status'] as String) : null,
   githubRepository: json['github_repository'] as String?,
-); }
+);}
 
 /// The name of the artifact.
 final String name;
@@ -75,8 +75,8 @@ final OrgsCreateArtifactStorageRecordRequestStatus? status;
 final String? githubRepository;
 
 /// The value with the schema default applied when absent.
-OrgsCreateArtifactStorageRecordRequestStatus get statusOrDefault { return status ?? OrgsCreateArtifactStorageRecordRequestStatus.fromJson('active'); } 
-Map<String, dynamic> toJson() { return {
+OrgsCreateArtifactStorageRecordRequestStatus get statusOrDefault {return status ?? OrgsCreateArtifactStorageRecordRequestStatus.fromJson('active');}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'digest': digest,
   'version': ?version,
@@ -86,11 +86,11 @@ Map<String, dynamic> toJson() { return {
   'repository': ?repository,
   if (status != null) 'status': status?.toJson(),
   'github_repository': ?githubRepository,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
-      json.containsKey('registry_url') && json['registry_url'] is String; } 
-OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String? Function()? version, Uri? Function()? artifactUrl, Uri? Function()? path, Uri? registryUrl, String? Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus? Function()? status, String? Function()? githubRepository, }) { return OrgsCreateArtifactStorageRecordRequest(
+      json.containsKey('registry_url') && json['registry_url'] is String;}
+OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String? Function()? version, Uri? Function()? artifactUrl, Uri? Function()? path, Uri? registryUrl, String? Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus? Function()? status, String? Function()? githubRepository, }) {return OrgsCreateArtifactStorageRecordRequest(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,
@@ -100,8 +100,8 @@ OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, S
   repository: repository != null ? repository() : this.repository,
   status: status != null ? status() : this.status,
   githubRepository: githubRepository != null ? githubRepository() : this.githubRepository,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsCreateArtifactStorageRecordRequest &&
           name == other.name &&
           digest == other.digest &&
@@ -111,7 +111,7 @@ OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, S
           registryUrl == other.registryUrl &&
           repository == other.repository &&
           status == other.status &&
-          githubRepository == other.githubRepository; } 
-@override int get hashCode { return Object.hash(name, digest, version, artifactUrl, path, registryUrl, repository, status, githubRepository); } 
-@override String toString() { return 'OrgsCreateArtifactStorageRecordRequest(name: $name, digest: $digest, version: $version, artifactUrl: $artifactUrl, path: $path, registryUrl: $registryUrl, repository: $repository, status: $status, githubRepository: $githubRepository)'; } 
- }
+          githubRepository == other.githubRepository;}
+@override int get hashCode {return Object.hash(name, digest, version, artifactUrl, path, registryUrl, repository, status, githubRepository);}
+@override String toString() {return 'OrgsCreateArtifactStorageRecordRequest(name: $name, digest: $digest, version: $version, artifactUrl: $artifactUrl, path: $path, registryUrl: $registryUrl, repository: $repository, status: $status, githubRepository: $githubRepository)';}
+}

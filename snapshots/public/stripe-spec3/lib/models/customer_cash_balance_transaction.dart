@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft.dart';import 'customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_transferred_to_balance.dart';import 'customer_balance_resource_cash_balance_transaction_resource_unapplied_from_payment_transaction.dart';import 'customer_cash_balance_transaction_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerCashBalanceTransactionObject {const CustomerCashBalanceTransactionObject._(this.value);
 
-factory CustomerCashBalanceTransactionObject.fromJson(String json) { return switch (json) {
+factory CustomerCashBalanceTransactionObject.fromJson(String json) {return switch (json) {
   'customer_cash_balance_transaction' => customerCashBalanceTransaction,
   _ => CustomerCashBalanceTransactionObject._(json),
-}; }
+};}
 
 static const CustomerCashBalanceTransactionObject customerCashBalanceTransaction = CustomerCashBalanceTransactionObject._('customer_cash_balance_transaction');
 
@@ -14,18 +14,18 @@ static const List<CustomerCashBalanceTransactionObject> values = [customerCashBa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerCashBalanceTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerCashBalanceTransactionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerCashBalanceTransactionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerCashBalanceTransactionObject($value)';}
+}
 /// The type of the cash balance transaction. New types may be added in future. See [Customer Balance](https://docs.stripe.com/payments/customer-balance#types) to learn more about these types.
 @immutable final class CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType._(this.value);
 
-factory CustomerCashBalanceTransactionType.fromJson(String json) { return switch (json) {
+factory CustomerCashBalanceTransactionType.fromJson(String json) {return switch (json) {
   'adjusted_for_overdraft' => adjustedForOverdraft,
   'applied_to_payment' => appliedToPayment,
   'funded' => funded,
@@ -36,7 +36,7 @@ factory CustomerCashBalanceTransactionType.fromJson(String json) { return switch
   'transferred_to_balance' => transferredToBalance,
   'unapplied_from_payment' => unappliedFromPayment,
   _ => CustomerCashBalanceTransactionType._(json),
-}; }
+};}
 
 static const CustomerCashBalanceTransactionType adjustedForOverdraft = CustomerCashBalanceTransactionType._('adjusted_for_overdraft');
 
@@ -60,21 +60,21 @@ static const List<CustomerCashBalanceTransactionType> values = [adjustedForOverd
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerCashBalanceTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerCashBalanceTransactionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerCashBalanceTransactionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerCashBalanceTransactionType($value)';}
+}
 /// Customers with certain payments enabled have a cash balance, representing funds that were paid
 /// by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions
 /// represent when funds are moved into or out of this balance. This includes funding by the customer, allocation
 /// to payments, and refunds to the customer.
 @immutable final class CustomerCashBalanceTransaction {const CustomerCashBalanceTransaction({required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.netAmount, required this.object, required this.type, this.adjustedForOverdraft, this.appliedToPayment, this.customerAccount = const Omittable.absent(), this.funded, this.refundedFromPayment, this.transferredToBalance, this.unappliedFromPayment, });
 
-factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerCashBalanceTransaction(
+factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) {return CustomerCashBalanceTransaction(
   adjustedForOverdraft: json['adjusted_for_overdraft'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(json['adjusted_for_overdraft'] as Map<String, dynamic>) : null,
   appliedToPayment: json['applied_to_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction.fromJson(json['applied_to_payment'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
@@ -91,7 +91,7 @@ factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { ret
   transferredToBalance: json['transferred_to_balance'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance.fromJson(json['transferred_to_balance'] as Map<String, dynamic>) : null,
   type: CustomerCashBalanceTransactionType.fromJson(json['type'] as String),
   unappliedFromPayment: json['unapplied_from_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction.fromJson(json['unapplied_from_payment'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? adjustedForOverdraft;
 
@@ -135,7 +135,7 @@ final CustomerCashBalanceTransactionType type;
 
 final CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? unappliedFromPayment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustedForOverdraft != null) 'adjusted_for_overdraft': adjustedForOverdraft?.toJson(),
   if (appliedToPayment != null) 'applied_to_payment': appliedToPayment?.toJson(),
   'created': created,
@@ -152,8 +152,8 @@ Map<String, dynamic> toJson() { return {
   if (transferredToBalance != null) 'transferred_to_balance': transferredToBalance?.toJson(),
   'type': type.toJson(),
   if (unappliedFromPayment != null) 'unapplied_from_payment': unappliedFromPayment?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer') &&
       json.containsKey('ending_balance') && json['ending_balance'] is num &&
@@ -161,8 +161,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('net_amount') && json['net_amount'] is num &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
-CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? Function()? adjustedForOverdraft, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction? Function()? appliedToPayment, int? created, String? currency, CustomerCashBalanceTransactionCustomer? customer, Omittable<String?>? customerAccount, int? endingBalance, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction? Function()? funded, String? id, bool? livemode, int? netAmount, CustomerCashBalanceTransactionObject? object, CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction? Function()? refundedFromPayment, CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance? Function()? transferredToBalance, CustomerCashBalanceTransactionType? type, CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? Function()? unappliedFromPayment, }) { return CustomerCashBalanceTransaction(
+      json.containsKey('type');}
+CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? Function()? adjustedForOverdraft, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction? Function()? appliedToPayment, int? created, String? currency, CustomerCashBalanceTransactionCustomer? customer, Omittable<String?>? customerAccount, int? endingBalance, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction? Function()? funded, String? id, bool? livemode, int? netAmount, CustomerCashBalanceTransactionObject? object, CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction? Function()? refundedFromPayment, CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance? Function()? transferredToBalance, CustomerCashBalanceTransactionType? type, CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? Function()? unappliedFromPayment, }) {return CustomerCashBalanceTransaction(
   adjustedForOverdraft: adjustedForOverdraft != null ? adjustedForOverdraft() : this.adjustedForOverdraft,
   appliedToPayment: appliedToPayment != null ? appliedToPayment() : this.appliedToPayment,
   created: created ?? this.created,
@@ -179,8 +179,8 @@ CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTrans
   transferredToBalance: transferredToBalance != null ? transferredToBalance() : this.transferredToBalance,
   type: type ?? this.type,
   unappliedFromPayment: unappliedFromPayment != null ? unappliedFromPayment() : this.unappliedFromPayment,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerCashBalanceTransaction &&
           adjustedForOverdraft == other.adjustedForOverdraft &&
           appliedToPayment == other.appliedToPayment &&
@@ -197,7 +197,7 @@ CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTrans
           refundedFromPayment == other.refundedFromPayment &&
           transferredToBalance == other.transferredToBalance &&
           type == other.type &&
-          unappliedFromPayment == other.unappliedFromPayment; } 
-@override int get hashCode { return Object.hash(adjustedForOverdraft, appliedToPayment, created, currency, customer, customerAccount, endingBalance, funded, id, livemode, netAmount, object, refundedFromPayment, transferredToBalance, type, unappliedFromPayment); } 
-@override String toString() { return 'CustomerCashBalanceTransaction(adjustedForOverdraft: $adjustedForOverdraft, appliedToPayment: $appliedToPayment, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, endingBalance: $endingBalance, funded: $funded, id: $id, livemode: $livemode, netAmount: $netAmount, object: $object, refundedFromPayment: $refundedFromPayment, transferredToBalance: $transferredToBalance, type: $type, unappliedFromPayment: $unappliedFromPayment)'; } 
- }
+          unappliedFromPayment == other.unappliedFromPayment;}
+@override int get hashCode {return Object.hash(adjustedForOverdraft, appliedToPayment, created, currency, customer, customerAccount, endingBalance, funded, id, livemode, netAmount, object, refundedFromPayment, transferredToBalance, type, unappliedFromPayment);}
+@override String toString() {return 'CustomerCashBalanceTransaction(adjustedForOverdraft: $adjustedForOverdraft, appliedToPayment: $appliedToPayment, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, endingBalance: $endingBalance, funded: $funded, id: $id, livemode: $livemode, netAmount: $netAmount, object: $object, refundedFromPayment: $refundedFromPayment, transferredToBalance: $transferredToBalance, type: $type, unappliedFromPayment: $unappliedFromPayment)';}
+}

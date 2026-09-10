@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source_input_messages.dart';import 'create_eval_completions_run_data_source_sampling_params.dart';import 'create_eval_completions_run_data_source_source.dart';import 'eval_jsonl_file_content_source.dart';import 'eval_jsonl_file_id_source.dart';import 'eval_stored_completions_source.dart';import 'item_reference_input_messages.dart';import 'template_input_messages.dart';/// The type of run data source. Always `completions`.
 @immutable final class CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType._(this.value);
 
-factory CreateEvalCompletionsRunDataSourceType.fromJson(String json) { return switch (json) {
+factory CreateEvalCompletionsRunDataSourceType.fromJson(String json) {return switch (json) {
   'completions' => completions,
   _ => CreateEvalCompletionsRunDataSourceType._(json),
-}; }
+};}
 
 static const CreateEvalCompletionsRunDataSourceType completions = CreateEvalCompletionsRunDataSourceType._('completions');
 
@@ -14,25 +14,25 @@ static const List<CreateEvalCompletionsRunDataSourceType> values = [completions]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEvalCompletionsRunDataSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEvalCompletionsRunDataSourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateEvalCompletionsRunDataSourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateEvalCompletionsRunDataSourceType($value)';}
+}
 /// A CompletionsRunDataSource object describing a model sampling configuration.
 /// 
 @immutable final class CreateEvalCompletionsRunDataSource {const CreateEvalCompletionsRunDataSource({required this.type, required this.source, this.inputMessages, this.samplingParams, this.model, });
 
-factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalCompletionsRunDataSource(
+factory CreateEvalCompletionsRunDataSource.fromJson(Map<String, dynamic> json) {return CreateEvalCompletionsRunDataSource(
   type: CreateEvalCompletionsRunDataSourceType.fromJson(json['type'] as String),
   inputMessages: json['input_messages'] != null ? OneOf2.parse(json['input_messages'], fromA: (v) => TemplateInputMessages.fromJson(v as Map<String, dynamic>), fromB: (v) => ItemReferenceInputMessages.fromJson(v as Map<String, dynamic>),) : null,
   samplingParams: json['sampling_params'] != null ? CreateEvalCompletionsRunDataSourceSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
   model: json['model'] as String?,
   source: OneOf3.parse(json['source'], fromA: (v) => EvalJsonlFileContentSource.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalJsonlFileIdSource.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalStoredCompletionsSource.fromJson(v as Map<String, dynamic>),),
-); }
+);}
 
 /// The type of run data source. Always `completions`.
 final CreateEvalCompletionsRunDataSourceType type;
@@ -48,29 +48,29 @@ final String? model;
 /// Determines what populates the `item` namespace in this run's data source.
 final CreateEvalCompletionsRunDataSourceSource source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (inputMessages != null) 'input_messages': inputMessages?.toJson(),
   if (samplingParams != null) 'sampling_params': samplingParams?.toJson(),
   'model': ?model,
   'source': source.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('source'); } 
-CreateEvalCompletionsRunDataSource copyWith({CreateEvalCompletionsRunDataSourceType? type, CreateEvalCompletionsRunDataSourceInputMessages? Function()? inputMessages, CreateEvalCompletionsRunDataSourceSamplingParams? Function()? samplingParams, String? Function()? model, CreateEvalCompletionsRunDataSourceSource? source, }) { return CreateEvalCompletionsRunDataSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('source');}
+CreateEvalCompletionsRunDataSource copyWith({CreateEvalCompletionsRunDataSourceType? type, CreateEvalCompletionsRunDataSourceInputMessages? Function()? inputMessages, CreateEvalCompletionsRunDataSourceSamplingParams? Function()? samplingParams, String? Function()? model, CreateEvalCompletionsRunDataSourceSource? source, }) {return CreateEvalCompletionsRunDataSource(
   type: type ?? this.type,
   inputMessages: inputMessages != null ? inputMessages() : this.inputMessages,
   samplingParams: samplingParams != null ? samplingParams() : this.samplingParams,
   model: model != null ? model() : this.model,
   source: source ?? this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateEvalCompletionsRunDataSource &&
           type == other.type &&
           inputMessages == other.inputMessages &&
           samplingParams == other.samplingParams &&
           model == other.model &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(type, inputMessages, samplingParams, model, source); } 
-@override String toString() { return 'CreateEvalCompletionsRunDataSource(type: $type, inputMessages: $inputMessages, samplingParams: $samplingParams, model: $model, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(type, inputMessages, samplingParams, model, source);}
+@override String toString() {return 'CreateEvalCompletionsRunDataSource(type: $type, inputMessages: $inputMessages, samplingParams: $samplingParams, model: $model, source: $source)';}
+}

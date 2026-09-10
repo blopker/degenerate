@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax {const PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax({required this.jurisdiction});
 
-factory PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax(
+factory PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax.fromJson(Map<String, dynamic> json) {return PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax(
   jurisdiction: json['jurisdiction'] as String,
-); }
+);}
 
 final String jurisdiction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'jurisdiction': jurisdiction,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('jurisdiction') && json['jurisdiction'] is String; } 
-PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax copyWith({String? jurisdiction}) { return PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('jurisdiction') && json['jurisdiction'] is String;}
+PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax copyWith({String? jurisdiction}) {return PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax(
   jurisdiction: jurisdiction ?? this.jurisdiction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax &&
-          jurisdiction == other.jurisdiction; } 
-@override int get hashCode { return jurisdiction.hashCode; } 
-@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax(jurisdiction: $jurisdiction)'; } 
- }
+          jurisdiction == other.jurisdiction;}
+@override int get hashCode {return jurisdiction.hashCode;}
+@override String toString() {return 'PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax(jurisdiction: $jurisdiction)';}
+}

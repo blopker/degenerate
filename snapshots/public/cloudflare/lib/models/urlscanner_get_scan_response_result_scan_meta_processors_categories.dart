@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_categories_content.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_categories_risks.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsCategories {const UrlscannerGetScanResponseResultScanMetaProcessorsCategories({required this.content, required this.risks, });
 
-factory UrlscannerGetScanResponseResultScanMetaProcessorsCategories.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsCategories(
+factory UrlscannerGetScanResponseResultScanMetaProcessorsCategories.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanMetaProcessorsCategories(
   content: (json['content'] as List<dynamic>).map((e) => UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesContent.fromJson(e as Map<String, dynamic>)).toList(),
   risks: (json['risks'] as List<dynamic>).map((e) => UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesContent> content;
 
 final List<UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks> risks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.map((e) => e.toJson()).toList(),
   'risks': risks.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('risks'); } 
-UrlscannerGetScanResponseResultScanMetaProcessorsCategories copyWith({List<UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesContent>? content, List<UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks>? risks, }) { return UrlscannerGetScanResponseResultScanMetaProcessorsCategories(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('risks');}
+UrlscannerGetScanResponseResultScanMetaProcessorsCategories copyWith({List<UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesContent>? content, List<UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks>? risks, }) {return UrlscannerGetScanResponseResultScanMetaProcessorsCategories(
   content: content ?? this.content,
   risks: risks ?? this.risks,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanMetaProcessorsCategories &&
           listEquals(content, other.content) &&
-          listEquals(risks, other.risks); } 
-@override int get hashCode { return Object.hash(Object.hashAll(content), Object.hashAll(risks)); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanMetaProcessorsCategories(content: $content, risks: $risks)'; } 
- }
+          listEquals(risks, other.risks);}
+@override int get hashCode {return Object.hash(Object.hashAll(content), Object.hashAll(risks));}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanMetaProcessorsCategories(content: $content, risks: $risks)';}
+}

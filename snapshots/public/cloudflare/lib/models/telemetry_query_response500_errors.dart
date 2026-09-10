@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryResponse500ErrorsMessage {const TelemetryQueryResponse500ErrorsMessage._(this.value);
 
-factory TelemetryQueryResponse500ErrorsMessage.fromJson(String json) { return switch (json) {
+factory TelemetryQueryResponse500ErrorsMessage.fromJson(String json) {return switch (json) {
   'Internal error' => internalError,
   _ => TelemetryQueryResponse500ErrorsMessage._(json),
-}; }
+};}
 
 static const TelemetryQueryResponse500ErrorsMessage internalError = TelemetryQueryResponse500ErrorsMessage._('Internal error');
 
@@ -13,38 +13,38 @@ static const List<TelemetryQueryResponse500ErrorsMessage> values = [internalErro
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryQueryResponse500ErrorsMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryQueryResponse500ErrorsMessage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TelemetryQueryResponse500ErrorsMessage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TelemetryQueryResponse500ErrorsMessage($value)';}
+}
 @immutable final class TelemetryQueryResponse500Errors {const TelemetryQueryResponse500Errors({required this.message, this.detail, });
 
-factory TelemetryQueryResponse500Errors.fromJson(Map<String, dynamic> json) { return TelemetryQueryResponse500Errors(
+factory TelemetryQueryResponse500Errors.fromJson(Map<String, dynamic> json) {return TelemetryQueryResponse500Errors(
   detail: json['detail'] as String?,
   message: TelemetryQueryResponse500ErrorsMessage.fromJson(json['message'] as String),
-); }
+);}
 
 final String? detail;
 
 final TelemetryQueryResponse500ErrorsMessage message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'detail': ?detail,
   'message': message.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-TelemetryQueryResponse500Errors copyWith({String? Function()? detail, TelemetryQueryResponse500ErrorsMessage? message, }) { return TelemetryQueryResponse500Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message');}
+TelemetryQueryResponse500Errors copyWith({String? Function()? detail, TelemetryQueryResponse500ErrorsMessage? message, }) {return TelemetryQueryResponse500Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TelemetryQueryResponse500Errors &&
           detail == other.detail &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(detail, message); } 
-@override String toString() { return 'TelemetryQueryResponse500Errors(detail: $detail, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(detail, message);}
+@override String toString() {return 'TelemetryQueryResponse500Errors(detail: $detail, message: $message)';}
+}

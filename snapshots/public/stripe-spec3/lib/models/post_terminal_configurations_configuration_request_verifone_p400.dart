@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'verifone_p400.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2 {const PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2._(this.value);
 
-factory PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2.fromJson(String json) { return switch (json) {
+factory PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2._(json),
-}; }
+};}
 
 static const PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2 $empty = PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalConfigurationsConfigurationRequestVerifoneP400Vari
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalConfigurationsConfigurationRequestVerifoneP400Variant2($value)';}
+}
 /// An object containing device type specific settings for Verifone P400 readers.
 @immutable
 final class PostTerminalConfigurationsConfigurationRequestVerifoneP400 {

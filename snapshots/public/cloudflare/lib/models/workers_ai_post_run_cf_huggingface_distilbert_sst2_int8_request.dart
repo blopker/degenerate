@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request({required this.text});
 
-factory WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(
+factory WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(
   text: json['text'] as String,
-); }
+);}
 
 /// The text that you want to classify
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request copyWith({String? text}) { return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text') && json['text'] is String;}
+WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request copyWith({String? text}) {return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return text.hashCode;}
+@override String toString() {return 'WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(text: $text)';}
+}

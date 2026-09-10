@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties {const AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties({this.conditions});
 
-factory AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(
+factory AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties.fromJson(Map<String, dynamic> json) {return AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(
   conditions: json['conditions'] as Map<String, dynamic>?,
-); }
+);}
 
 final Map<String,dynamic>? conditions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'conditions': ?conditions,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conditions'}.contains(key)); } 
-AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties copyWith({Map<String, dynamic>? Function()? conditions}) { return AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'conditions'}.contains(key));}
+AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties copyWith({Map<String, dynamic>? Function()? conditions}) {return AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(
   conditions: conditions != null ? conditions() : this.conditions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties &&
-          conditions == other.conditions; } 
-@override int get hashCode { return conditions.hashCode; } 
-@override String toString() { return 'AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(conditions: $conditions)'; } 
- }
+          conditions == other.conditions;}
+@override int get hashCode {return conditions.hashCode;}
+@override String toString() {return 'AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties(conditions: $conditions)';}
+}

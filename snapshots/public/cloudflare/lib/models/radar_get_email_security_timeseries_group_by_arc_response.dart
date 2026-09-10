@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_arc_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByArcResponse {const RadarGetEmailSecurityTimeseriesGroupByArcResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecurityTimeseriesGroupByArcResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByArcResponse(
+factory RadarGetEmailSecurityTimeseriesGroupByArcResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupByArcResponse(
   result: RadarGetEmailSecurityTimeseriesGroupByArcResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailSecurityTimeseriesGroupByArcResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecurityTimeseriesGroupByArcResponse copyWith({RadarGetEmailSecurityTimeseriesGroupByArcResponseResult? result, bool? success, }) { return RadarGetEmailSecurityTimeseriesGroupByArcResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecurityTimeseriesGroupByArcResponse copyWith({RadarGetEmailSecurityTimeseriesGroupByArcResponseResult? result, bool? success, }) {return RadarGetEmailSecurityTimeseriesGroupByArcResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupByArcResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByArcResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetEmailSecurityTimeseriesGroupByArcResponse(result: $result, success: $success)';}
+}

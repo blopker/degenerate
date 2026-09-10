@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to use labeled runners or standard GitHub runners.
 @immutable final class CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType._(this.value);
 
-factory CodeScanningDefaultSetupOptionsRunnerType.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupOptionsRunnerType.fromJson(String json) {return switch (json) {
   'standard' => standard,
   'labeled' => labeled,
   'not_set' => notSet,
   _ => CodeScanningDefaultSetupOptionsRunnerType._(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupOptionsRunnerType standard = CodeScanningDefaultSetupOptionsRunnerType._('standard');
 
@@ -20,21 +20,21 @@ static const List<CodeScanningDefaultSetupOptionsRunnerType> values = [standard,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupOptionsRunnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupOptionsRunnerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningDefaultSetupOptionsRunnerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningDefaultSetupOptionsRunnerType($value)';}
+}
 /// Feature options for code scanning default setup
 @immutable final class CodeScanningDefaultSetupOptions {const CodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel = const Omittable.absent(), });
 
-factory CodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupOptions(
+factory CodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) {return CodeScanningDefaultSetupOptions(
   runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null,
   runnerLabel: json.containsKey('runner_label') ? Omittable(json['runner_label'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Whether to use labeled runners or standard GitHub runners.
 final CodeScanningDefaultSetupOptionsRunnerType? runnerType;
@@ -42,19 +42,19 @@ final CodeScanningDefaultSetupOptionsRunnerType? runnerType;
 /// The label of the runner to use for code scanning default setup when runner_type is 'labeled'.
 final Omittable<String?> runnerLabel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (runnerType != null) 'runner_type': runnerType?.toJson(),
   if (runnerLabel.isPresent) 'runner_label': runnerLabel.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'runner_type', 'runner_label'}.contains(key)); } 
-CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, }) { return CodeScanningDefaultSetupOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'runner_type', 'runner_label'}.contains(key));}
+CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, }) {return CodeScanningDefaultSetupOptions(
   runnerType: runnerType != null ? runnerType() : this.runnerType,
   runnerLabel: runnerLabel ?? this.runnerLabel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeScanningDefaultSetupOptions &&
           runnerType == other.runnerType &&
-          runnerLabel == other.runnerLabel; } 
-@override int get hashCode { return Object.hash(runnerType, runnerLabel); } 
-@override String toString() { return 'CodeScanningDefaultSetupOptions(runnerType: $runnerType, runnerLabel: $runnerLabel)'; } 
- }
+          runnerLabel == other.runnerLabel;}
+@override int get hashCode {return Object.hash(runnerType, runnerLabel);}
+@override String toString() {return 'CodeScanningDefaultSetupOptions(runnerType: $runnerType, runnerLabel: $runnerLabel)';}
+}

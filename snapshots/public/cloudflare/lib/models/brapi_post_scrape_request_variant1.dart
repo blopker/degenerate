@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_request_variant1_add_script_tag.dart';import 'brapi_post_scrape_request_variant1_add_style_tag.dart';import 'brapi_post_scrape_request_variant1_authenticate.dart';import 'brapi_post_scrape_request_variant1_cookies.dart';import 'brapi_post_scrape_request_variant1_elements.dart';import 'brapi_post_scrape_request_variant1_goto_options.dart';import 'brapi_post_scrape_request_variant1_viewport.dart';import 'brapi_post_scrape_request_variant1_wait_for_selector.dart';@immutable final class BrapiPostScrapeRequestVariant1AllowResourceTypes {const BrapiPostScrapeRequestVariant1AllowResourceTypes._(this.value);
 
-factory BrapiPostScrapeRequestVariant1AllowResourceTypes.fromJson(String json) { return switch (json) {
+factory BrapiPostScrapeRequestVariant1AllowResourceTypes.fromJson(String json) {return switch (json) {
   'document' => document,
   'stylesheet' => stylesheet,
   'image' => image,
@@ -22,7 +22,7 @@ factory BrapiPostScrapeRequestVariant1AllowResourceTypes.fromJson(String json) {
   'preflight' => preflight,
   'other' => $other,
   _ => BrapiPostScrapeRequestVariant1AllowResourceTypes._(json),
-}; }
+};}
 
 static const BrapiPostScrapeRequestVariant1AllowResourceTypes document = BrapiPostScrapeRequestVariant1AllowResourceTypes._('document');
 
@@ -64,17 +64,17 @@ static const List<BrapiPostScrapeRequestVariant1AllowResourceTypes> values = [do
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostScrapeRequestVariant1AllowResourceTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant1AllowResourceTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostScrapeRequestVariant1AllowResourceTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostScrapeRequestVariant1AllowResourceTypes($value)';}
+}
 @immutable final class BrapiPostScrapeRequestVariant1RejectResourceTypes {const BrapiPostScrapeRequestVariant1RejectResourceTypes._(this.value);
 
-factory BrapiPostScrapeRequestVariant1RejectResourceTypes.fromJson(String json) { return switch (json) {
+factory BrapiPostScrapeRequestVariant1RejectResourceTypes.fromJson(String json) {return switch (json) {
   'document' => document,
   'stylesheet' => stylesheet,
   'image' => image,
@@ -94,7 +94,7 @@ factory BrapiPostScrapeRequestVariant1RejectResourceTypes.fromJson(String json) 
   'preflight' => preflight,
   'other' => $other,
   _ => BrapiPostScrapeRequestVariant1RejectResourceTypes._(json),
-}; }
+};}
 
 static const BrapiPostScrapeRequestVariant1RejectResourceTypes document = BrapiPostScrapeRequestVariant1RejectResourceTypes._('document');
 
@@ -136,17 +136,17 @@ static const List<BrapiPostScrapeRequestVariant1RejectResourceTypes> values = [d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostScrapeRequestVariant1RejectResourceTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant1RejectResourceTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostScrapeRequestVariant1RejectResourceTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostScrapeRequestVariant1RejectResourceTypes($value)';}
+}
 @immutable final class BrapiPostScrapeRequestVariant1 {const BrapiPostScrapeRequestVariant1({required this.elements, required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent, this.viewport, this.waitForSelector, this.waitForTimeout, });
 
-factory BrapiPostScrapeRequestVariant1.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeRequestVariant1(
+factory BrapiPostScrapeRequestVariant1.fromJson(Map<String, dynamic> json) {return BrapiPostScrapeRequestVariant1(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,
   addScriptTag: (json['addScriptTag'] as List<dynamic>?)?.map((e) => BrapiPostScrapeRequestVariant1AddScriptTag.fromJson(e as Map<String, dynamic>)).toList(),
   addStyleTag: (json['addStyleTag'] as List<dynamic>?)?.map((e) => BrapiPostScrapeRequestVariant1AddStyleTag.fromJson(e as Map<String, dynamic>)).toList(),
@@ -167,7 +167,7 @@ factory BrapiPostScrapeRequestVariant1.fromJson(Map<String, dynamic> json) { ret
   viewport: json['viewport'] != null ? BrapiPostScrapeRequestVariant1Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
   waitForSelector: json['waitForSelector'] != null ? BrapiPostScrapeRequestVariant1WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
-); }
+);}
 
 /// The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.
 final double? actionTimeout;
@@ -225,8 +225,8 @@ final BrapiPostScrapeRequestVariant1WaitForSelector? waitForSelector;
 final double? waitForTimeout;
 
 /// The value with the schema default applied when absent.
-String get userAgentOrDefault { return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'; } 
-Map<String, dynamic> toJson() { return {
+String get userAgentOrDefault {return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36';}
+Map<String, dynamic> toJson() {return {
   'actionTimeout': ?actionTimeout,
   if (addScriptTag != null) 'addScriptTag': addScriptTag?.map((e) => e.toJson()).toList(),
   if (addStyleTag != null) 'addStyleTag': addStyleTag?.map((e) => e.toJson()).toList(),
@@ -247,10 +247,10 @@ Map<String, dynamic> toJson() { return {
   if (viewport != null) 'viewport': viewport?.toJson(),
   if (waitForSelector != null) 'waitForSelector': waitForSelector?.toJson(),
   'waitForTimeout': ?waitForTimeout,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elements') &&
-      json.containsKey('html') && json['html'] is String; } 
-BrapiPostScrapeRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostScrapeRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostScrapeRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostScrapeRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostScrapeRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostScrapeRequestVariant1Cookies>? Function()? cookies, List<BrapiPostScrapeRequestVariant1Elements>? elements, String? Function()? emulateMediaType, BrapiPostScrapeRequestVariant1GotoOptions? Function()? gotoOptions, String? html, List<String>? Function()? rejectRequestPattern, List<BrapiPostScrapeRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String? Function()? userAgent, BrapiPostScrapeRequestVariant1Viewport? Function()? viewport, BrapiPostScrapeRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostScrapeRequestVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elements') &&
+      json.containsKey('html') && json['html'] is String;}
+BrapiPostScrapeRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostScrapeRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostScrapeRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostScrapeRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostScrapeRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostScrapeRequestVariant1Cookies>? Function()? cookies, List<BrapiPostScrapeRequestVariant1Elements>? elements, String? Function()? emulateMediaType, BrapiPostScrapeRequestVariant1GotoOptions? Function()? gotoOptions, String? html, List<String>? Function()? rejectRequestPattern, List<BrapiPostScrapeRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String? Function()? userAgent, BrapiPostScrapeRequestVariant1Viewport? Function()? viewport, BrapiPostScrapeRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) {return BrapiPostScrapeRequestVariant1(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,
   addStyleTag: addStyleTag != null ? addStyleTag() : this.addStyleTag,
@@ -271,8 +271,8 @@ BrapiPostScrapeRequestVariant1 copyWith({double? Function()? actionTimeout, List
   viewport: viewport != null ? viewport() : this.viewport,
   waitForSelector: waitForSelector != null ? waitForSelector() : this.waitForSelector,
   waitForTimeout: waitForTimeout != null ? waitForTimeout() : this.waitForTimeout,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostScrapeRequestVariant1 &&
           actionTimeout == other.actionTimeout &&
           listEquals(addScriptTag, other.addScriptTag) &&
@@ -293,7 +293,7 @@ BrapiPostScrapeRequestVariant1 copyWith({double? Function()? actionTimeout, List
           userAgent == other.userAgent &&
           viewport == other.viewport &&
           waitForSelector == other.waitForSelector &&
-          waitForTimeout == other.waitForTimeout; } 
-@override int get hashCode { return Object.hash(actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), Object.hashAll(elements), emulateMediaType, gotoOptions, html, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), setExtraHttpHeaders, setJavaScriptEnabled, userAgent, viewport, waitForSelector, waitForTimeout); } 
-@override String toString() { return 'BrapiPostScrapeRequestVariant1(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, elements: $elements, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, html: $html, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)'; } 
- }
+          waitForTimeout == other.waitForTimeout;}
+@override int get hashCode {return Object.hash(actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), Object.hashAll(elements), emulateMediaType, gotoOptions, html, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), setExtraHttpHeaders, setJavaScriptEnabled, userAgent, viewport, waitForSelector, waitForTimeout);}
+@override String toString() {return 'BrapiPostScrapeRequestVariant1(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, elements: $elements, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, html: $html, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)';}
+}

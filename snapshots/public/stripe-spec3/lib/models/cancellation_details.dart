@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
 @immutable final class CancellationDetailsFeedback {const CancellationDetailsFeedback._(this.value);
 
-factory CancellationDetailsFeedback.fromJson(String json) { return switch (json) {
+factory CancellationDetailsFeedback.fromJson(String json) {return switch (json) {
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
@@ -13,7 +13,7 @@ factory CancellationDetailsFeedback.fromJson(String json) { return switch (json)
   'too_expensive' => tooExpensive,
   'unused' => unused,
   _ => CancellationDetailsFeedback._(json),
-}; }
+};}
 
 static const CancellationDetailsFeedback customerService = CancellationDetailsFeedback._('customer_service');
 
@@ -35,23 +35,23 @@ static const List<CancellationDetailsFeedback> values = [customerService, lowQua
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CancellationDetailsFeedback && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CancellationDetailsFeedback($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CancellationDetailsFeedback && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CancellationDetailsFeedback($value)';}
+}
 /// Why this subscription was canceled.
 @immutable final class CancellationDetailsReason {const CancellationDetailsReason._(this.value);
 
-factory CancellationDetailsReason.fromJson(String json) { return switch (json) {
+factory CancellationDetailsReason.fromJson(String json) {return switch (json) {
   'cancellation_requested' => cancellationRequested,
   'payment_disputed' => paymentDisputed,
   'payment_failed' => paymentFailed,
   _ => CancellationDetailsReason._(json),
-}; }
+};}
 
 static const CancellationDetailsReason cancellationRequested = CancellationDetailsReason._('cancellation_requested');
 
@@ -63,22 +63,22 @@ static const List<CancellationDetailsReason> values = [cancellationRequested, pa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CancellationDetailsReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CancellationDetailsReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CancellationDetailsReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CancellationDetailsReason($value)';}
+}
 /// 
 @immutable final class CancellationDetails {const CancellationDetails({this.comment = const Omittable.absent(), this.feedback = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory CancellationDetails.fromJson(Map<String, dynamic> json) { return CancellationDetails(
+factory CancellationDetails.fromJson(Map<String, dynamic> json) {return CancellationDetails(
   comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   feedback: json.containsKey('feedback') ? Omittable(json['feedback'] != null ? CancellationDetailsFeedback.fromJson(json['feedback'] as String) : null) : const Omittable.absent(),
   reason: json.containsKey('reason') ? Omittable(json['reason'] != null ? CancellationDetailsReason.fromJson(json['reason'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Additional comments about why the user canceled the subscription, if the subscription was canceled explicitly by the user.
 final Omittable<String?> comment;
@@ -89,22 +89,22 @@ final Omittable<CancellationDetailsFeedback?> feedback;
 /// Why this subscription was canceled.
 final Omittable<CancellationDetailsReason?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment.isPresent) 'comment': comment.value,
   if (feedback.isPresent) 'feedback': feedback.value?.toJson(),
   if (reason.isPresent) 'reason': reason.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'feedback', 'reason'}.contains(key)); } 
-CancellationDetails copyWith({Omittable<String?>? comment, Omittable<CancellationDetailsFeedback?>? feedback, Omittable<CancellationDetailsReason?>? reason, }) { return CancellationDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'feedback', 'reason'}.contains(key));}
+CancellationDetails copyWith({Omittable<String?>? comment, Omittable<CancellationDetailsFeedback?>? feedback, Omittable<CancellationDetailsReason?>? reason, }) {return CancellationDetails(
   comment: comment ?? this.comment,
   feedback: feedback ?? this.feedback,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CancellationDetails &&
           comment == other.comment &&
           feedback == other.feedback &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(comment, feedback, reason); } 
-@override String toString() { return 'CancellationDetails(comment: $comment, feedback: $feedback, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(comment, feedback, reason);}
+@override String toString() {return 'CancellationDetails(comment: $comment, feedback: $feedback, reason: $reason)';}
+}

@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_request_verification_additional_document.dart';import 'post_accounts_account_persons_request_verification_document.dart';/// The person's verification status.
 @immutable final class PostAccountsAccountPersonsRequestVerification {const PostAccountsAccountPersonsRequestVerification({this.additionalDocument, this.document, });
 
-factory PostAccountsAccountPersonsRequestVerification.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestVerification(
+factory PostAccountsAccountPersonsRequestVerification.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPersonsRequestVerification(
   additionalDocument: json['additional_document'] != null ? PostAccountsAccountPersonsRequestVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
   document: json['document'] != null ? PostAccountsAccountPersonsRequestVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountPersonsRequestVerificationAdditionalDocument? additionalDocument;
 
 final PostAccountsAccountPersonsRequestVerificationDocument? document;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocument != null) 'additional_document': additionalDocument?.toJson(),
   if (document != null) 'document': document?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_document', 'document'}.contains(key)); } 
-PostAccountsAccountPersonsRequestVerification copyWith({PostAccountsAccountPersonsRequestVerificationAdditionalDocument? Function()? additionalDocument, PostAccountsAccountPersonsRequestVerificationDocument? Function()? document, }) { return PostAccountsAccountPersonsRequestVerification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_document', 'document'}.contains(key));}
+PostAccountsAccountPersonsRequestVerification copyWith({PostAccountsAccountPersonsRequestVerificationAdditionalDocument? Function()? additionalDocument, PostAccountsAccountPersonsRequestVerificationDocument? Function()? document, }) {return PostAccountsAccountPersonsRequestVerification(
   additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
   document: document != null ? document() : this.document,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountPersonsRequestVerification &&
           additionalDocument == other.additionalDocument &&
-          document == other.document; } 
-@override int get hashCode { return Object.hash(additionalDocument, document); } 
-@override String toString() { return 'PostAccountsAccountPersonsRequestVerification(additionalDocument: $additionalDocument, document: $document)'; } 
- }
+          document == other.document;}
+@override int get hashCode {return Object.hash(additionalDocument, document);}
+@override String toString() {return 'PostAccountsAccountPersonsRequestVerification(additionalDocument: $additionalDocument, document: $document)';}
+}

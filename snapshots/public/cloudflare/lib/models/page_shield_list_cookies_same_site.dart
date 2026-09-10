@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters the returned cookies that match the specified same_site attribute
 @immutable final class PageShieldListCookiesSameSite {const PageShieldListCookiesSameSite._(this.value);
 
-factory PageShieldListCookiesSameSite.fromJson(String json) { return switch (json) {
+factory PageShieldListCookiesSameSite.fromJson(String json) {return switch (json) {
   'lax' => lax,
   'strict' => strict,
   'none' => none,
   _ => PageShieldListCookiesSameSite._(json),
-}; }
+};}
 
 static const PageShieldListCookiesSameSite lax = PageShieldListCookiesSameSite._('lax');
 
@@ -20,11 +20,11 @@ static const List<PageShieldListCookiesSameSite> values = [lax, strict, none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageShieldListCookiesSameSite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageShieldListCookiesSameSite($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PageShieldListCookiesSameSite && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PageShieldListCookiesSameSite($value)';}
+}

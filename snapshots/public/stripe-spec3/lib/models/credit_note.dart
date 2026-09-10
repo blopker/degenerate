@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'credit_note_customer.dart';import 'credit_note_customer_balance_transaction.dart';import 'credit_note_invoice.dart';import 'credit_note_lines.dart';import 'credit_note_refund.dart';import 'credit_notes_pretax_credit_amount.dart';import 'discounts_resource_discount_amount.dart';import 'invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CreditNoteObject {const CreditNoteObject._(this.value);
 
-factory CreditNoteObject.fromJson(String json) { return switch (json) {
+factory CreditNoteObject.fromJson(String json) {return switch (json) {
   'credit_note' => creditNote,
   _ => CreditNoteObject._(json),
-}; }
+};}
 
 static const CreditNoteObject creditNote = CreditNoteObject._('credit_note');
 
@@ -14,24 +14,24 @@ static const List<CreditNoteObject> values = [creditNote];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreditNoteObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreditNoteObject($value)';}
+}
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
 @immutable final class CreditNoteReason {const CreditNoteReason._(this.value);
 
-factory CreditNoteReason.fromJson(String json) { return switch (json) {
+factory CreditNoteReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'order_change' => orderChange,
   'product_unsatisfactory' => productUnsatisfactory,
   _ => CreditNoteReason._(json),
-}; }
+};}
 
 static const CreditNoteReason duplicate = CreditNoteReason._('duplicate');
 
@@ -45,22 +45,22 @@ static const List<CreditNoteReason> values = [duplicate, fraudulent, orderChange
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreditNoteReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreditNoteReason($value)';}
+}
 /// Status of this credit note, one of `issued` or `void`. Learn more about [voiding credit notes](https://docs.stripe.com/billing/invoices/credit-notes#voiding).
 @immutable final class CreditNoteStatus {const CreditNoteStatus._(this.value);
 
-factory CreditNoteStatus.fromJson(String json) { return switch (json) {
+factory CreditNoteStatus.fromJson(String json) {return switch (json) {
   'issued' => issued,
   'void' => $void,
   _ => CreditNoteStatus._(json),
-}; }
+};}
 
 static const CreditNoteStatus issued = CreditNoteStatus._('issued');
 
@@ -70,23 +70,23 @@ static const List<CreditNoteStatus> values = [issued, $void];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreditNoteStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreditNoteStatus($value)';}
+}
 /// Type of this credit note, one of `pre_payment` or `post_payment`. A `pre_payment` credit note means it was issued when the invoice was open. A `post_payment` credit note means it was issued when the invoice was paid.
 @immutable final class CreditNoteType {const CreditNoteType._(this.value);
 
-factory CreditNoteType.fromJson(String json) { return switch (json) {
+factory CreditNoteType.fromJson(String json) {return switch (json) {
   'mixed' => mixed,
   'post_payment' => postPayment,
   'pre_payment' => prePayment,
   _ => CreditNoteType._(json),
-}; }
+};}
 
 static const CreditNoteType mixed = CreditNoteType._('mixed');
 
@@ -98,20 +98,20 @@ static const List<CreditNoteType> values = [mixed, postPayment, prePayment];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreditNoteType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreditNoteType($value)';}
+}
 /// Issue a credit note to adjust an invoice's amount after the invoice is finalized.
 /// 
 /// Related guide: [Credit notes](https://docs.stripe.com/billing/invoices/credit-notes)
 @immutable final class CreditNote {const CreditNote({required this.number, required this.amountShipping, required this.created, required this.currency, required this.customer, required this.invoice, required this.discountAmount, required this.discountAmounts, required this.id, required this.amount, required this.lines, required this.livemode, required this.prePaymentAmount, required this.object, required this.pdf, required this.postPaymentAmount, required this.type, required this.total, required this.refunds, required this.subtotal, required this.status, required this.pretaxCreditAmounts, this.voidedAt = const Omittable.absent(), this.reason = const Omittable.absent(), this.outOfBandAmount = const Omittable.absent(), this.shippingCost = const Omittable.absent(), this.metadata = const Omittable.absent(), this.memo = const Omittable.absent(), this.subtotalExcludingTax = const Omittable.absent(), this.effectiveAt = const Omittable.absent(), this.totalExcludingTax = const Omittable.absent(), this.totalTaxes = const Omittable.absent(), this.customerBalanceTransaction = const Omittable.absent(), this.customerAccount = const Omittable.absent(), });
 
-factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
+factory CreditNote.fromJson(Map<String, dynamic> json) {return CreditNote(
   amount: (json['amount'] as num).toInt(),
   amountShipping: (json['amount_shipping'] as num).toInt(),
   created: (json['created'] as num).toInt(),
@@ -146,7 +146,7 @@ factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   totalTaxes: json.containsKey('total_taxes') ? Omittable((json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   type: CreditNoteType.fromJson(json['type'] as String),
   voidedAt: json.containsKey('voided_at') ? Omittable(json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the credit note, including tax.
 final int amount;
@@ -250,7 +250,7 @@ final CreditNoteType type;
 /// The time that the credit note was voided.
 final Omittable<int?> voidedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_shipping': amountShipping,
   'created': created,
@@ -285,8 +285,8 @@ Map<String, dynamic> toJson() { return {
   if (totalTaxes.isPresent) 'total_taxes': totalTaxes.value?.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
   if (voidedAt.isPresent) 'voided_at': voidedAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_shipping') && json['amount_shipping'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -307,8 +307,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num &&
-      json.containsKey('type'); } 
-CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, CreditNoteCustomer? customer, Omittable<String?>? customerAccount, Omittable<CreditNoteCustomerBalanceTransaction?>? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, Omittable<int?>? effectiveAt, String? id, CreditNoteInvoice? invoice, CreditNoteLines? lines, bool? livemode, Omittable<String?>? memo, Omittable<Map<String,String>?>? metadata, String? number, CreditNoteObject? object, Omittable<int?>? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<CreditNoteReason?>? reason, List<CreditNoteRefund>? refunds, Omittable<InvoicesResourceShippingCost?>? shippingCost, CreditNoteStatus? status, int? subtotal, Omittable<int?>? subtotalExcludingTax, int? total, Omittable<int?>? totalExcludingTax, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, CreditNoteType? type, Omittable<int?>? voidedAt, }) { return CreditNote(
+      json.containsKey('type');}
+CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, CreditNoteCustomer? customer, Omittable<String?>? customerAccount, Omittable<CreditNoteCustomerBalanceTransaction?>? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, Omittable<int?>? effectiveAt, String? id, CreditNoteInvoice? invoice, CreditNoteLines? lines, bool? livemode, Omittable<String?>? memo, Omittable<Map<String,String>?>? metadata, String? number, CreditNoteObject? object, Omittable<int?>? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<CreditNoteReason?>? reason, List<CreditNoteRefund>? refunds, Omittable<InvoicesResourceShippingCost?>? shippingCost, CreditNoteStatus? status, int? subtotal, Omittable<int?>? subtotalExcludingTax, int? total, Omittable<int?>? totalExcludingTax, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, CreditNoteType? type, Omittable<int?>? voidedAt, }) {return CreditNote(
   amount: amount ?? this.amount,
   amountShipping: amountShipping ?? this.amountShipping,
   created: created ?? this.created,
@@ -343,8 +343,8 @@ CreditNote copyWith({int? amount, int? amountShipping, int? created, String? cur
   totalTaxes: totalTaxes ?? this.totalTaxes,
   type: type ?? this.type,
   voidedAt: voidedAt ?? this.voidedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreditNote &&
           amount == other.amount &&
           amountShipping == other.amountShipping &&
@@ -380,7 +380,7 @@ CreditNote copyWith({int? amount, int? amountShipping, int? created, String? cur
           totalTaxes.isPresent == other.totalTaxes.isPresent &&
           listEquals(totalTaxes.value, other.totalTaxes.value) &&
           type == other.type &&
-          voidedAt == other.voidedAt; } 
-@override int get hashCode { return Object.hashAll([amount, amountShipping, created, currency, customer, customerAccount, customerBalanceTransaction, discountAmount, Object.hashAll(discountAmounts), effectiveAt, id, invoice, lines, livemode, memo, metadata, number, object, outOfBandAmount, pdf, postPaymentAmount, prePaymentAmount, Object.hashAll(pretaxCreditAmounts), reason, Object.hashAll(refunds), shippingCost, status, subtotal, subtotalExcludingTax, total, totalExcludingTax, Object.hashAll(totalTaxes.value ?? const []), type, voidedAt]); } 
-@override String toString() { return 'CreditNote(amount: $amount, amountShipping: $amountShipping, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerBalanceTransaction: $customerBalanceTransaction, discountAmount: $discountAmount, discountAmounts: $discountAmounts, effectiveAt: $effectiveAt, id: $id, invoice: $invoice, lines: $lines, livemode: $livemode, memo: $memo, metadata: $metadata, number: $number, object: $object, outOfBandAmount: $outOfBandAmount, pdf: $pdf, postPaymentAmount: $postPaymentAmount, prePaymentAmount: $prePaymentAmount, pretaxCreditAmounts: $pretaxCreditAmounts, reason: $reason, refunds: $refunds, shippingCost: $shippingCost, status: $status, subtotal: $subtotal, subtotalExcludingTax: $subtotalExcludingTax, total: $total, totalExcludingTax: $totalExcludingTax, totalTaxes: $totalTaxes, type: $type, voidedAt: $voidedAt)'; } 
- }
+          voidedAt == other.voidedAt;}
+@override int get hashCode {return Object.hashAll([amount, amountShipping, created, currency, customer, customerAccount, customerBalanceTransaction, discountAmount, Object.hashAll(discountAmounts), effectiveAt, id, invoice, lines, livemode, memo, metadata, number, object, outOfBandAmount, pdf, postPaymentAmount, prePaymentAmount, Object.hashAll(pretaxCreditAmounts), reason, Object.hashAll(refunds), shippingCost, status, subtotal, subtotalExcludingTax, total, totalExcludingTax, Object.hashAll(totalTaxes.value ?? const []), type, voidedAt]);}
+@override String toString() {return 'CreditNote(amount: $amount, amountShipping: $amountShipping, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerBalanceTransaction: $customerBalanceTransaction, discountAmount: $discountAmount, discountAmounts: $discountAmounts, effectiveAt: $effectiveAt, id: $id, invoice: $invoice, lines: $lines, livemode: $livemode, memo: $memo, metadata: $metadata, number: $number, object: $object, outOfBandAmount: $outOfBandAmount, pdf: $pdf, postPaymentAmount: $postPaymentAmount, prePaymentAmount: $prePaymentAmount, pretaxCreditAmounts: $pretaxCreditAmounts, reason: $reason, refunds: $refunds, shippingCost: $shippingCost, status: $status, subtotal: $subtotal, subtotalExcludingTax: $subtotalExcludingTax, total: $total, totalExcludingTax: $totalExcludingTax, totalTaxes: $totalTaxes, type: $type, voidedAt: $voidedAt)';}
+}

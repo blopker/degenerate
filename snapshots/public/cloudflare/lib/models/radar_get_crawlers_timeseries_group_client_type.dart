@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the client.
 @immutable final class RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType._(this.value);
 
-factory RadarGetCrawlersTimeseriesGroupClientType.fromJson(String json) { return switch (json) {
+factory RadarGetCrawlersTimeseriesGroupClientType.fromJson(String json) {return switch (json) {
   'HUMAN' => human,
   'NON_AI_BOT' => nonAiBot,
   'AI_BOT' => aiBot,
   'MIXED_PURPOSE' => mixedPurpose,
   _ => RadarGetCrawlersTimeseriesGroupClientType._(json),
-}; }
+};}
 
 static const RadarGetCrawlersTimeseriesGroupClientType human = RadarGetCrawlersTimeseriesGroupClientType._('HUMAN');
 
@@ -23,11 +23,11 @@ static const List<RadarGetCrawlersTimeseriesGroupClientType> values = [human, no
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCrawlersTimeseriesGroupClientType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCrawlersTimeseriesGroupClientType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCrawlersTimeseriesGroupClientType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCrawlersTimeseriesGroupClientType($value)';}
+}

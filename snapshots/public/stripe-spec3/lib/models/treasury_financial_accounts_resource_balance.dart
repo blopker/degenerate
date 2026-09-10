@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Balance information for the FinancialAccount
 @immutable final class TreasuryFinancialAccountsResourceBalance {const TreasuryFinancialAccountsResourceBalance({required this.cash, required this.inboundPending, required this.outboundPending, });
 
-factory TreasuryFinancialAccountsResourceBalance.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceBalance(
+factory TreasuryFinancialAccountsResourceBalance.fromJson(Map<String, dynamic> json) {return TreasuryFinancialAccountsResourceBalance(
   cash: (json['cash'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
   inboundPending: (json['inbound_pending'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
   outboundPending: (json['outbound_pending'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
-); }
+);}
 
 /// Funds the user can spend right now.
 final Map<String,int> cash;
@@ -18,24 +18,24 @@ final Map<String,int> inboundPending;
 /// Funds in the account, but not spendable because they are being held for pending outbound flows.
 final Map<String,int> outboundPending;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cash': cash,
   'inbound_pending': inboundPending,
   'outbound_pending': outboundPending,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cash') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cash') &&
       json.containsKey('inbound_pending') &&
-      json.containsKey('outbound_pending'); } 
-TreasuryFinancialAccountsResourceBalance copyWith({Map<String,int>? cash, Map<String,int>? inboundPending, Map<String,int>? outboundPending, }) { return TreasuryFinancialAccountsResourceBalance(
+      json.containsKey('outbound_pending');}
+TreasuryFinancialAccountsResourceBalance copyWith({Map<String,int>? cash, Map<String,int>? inboundPending, Map<String,int>? outboundPending, }) {return TreasuryFinancialAccountsResourceBalance(
   cash: cash ?? this.cash,
   inboundPending: inboundPending ?? this.inboundPending,
   outboundPending: outboundPending ?? this.outboundPending,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryFinancialAccountsResourceBalance &&
           cash == other.cash &&
           inboundPending == other.inboundPending &&
-          outboundPending == other.outboundPending; } 
-@override int get hashCode { return Object.hash(cash, inboundPending, outboundPending); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceBalance(cash: $cash, inboundPending: $inboundPending, outboundPending: $outboundPending)'; } 
- }
+          outboundPending == other.outboundPending;}
+@override int get hashCode {return Object.hash(cash, inboundPending, outboundPending);}
+@override String toString() {return 'TreasuryFinancialAccountsResourceBalance(cash: $cash, inboundPending: $inboundPending, outboundPending: $outboundPending)';}
+}

@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_ip_response_result.dart';@immutable final class RadarGetEntitiesIpResponse {const RadarGetEntitiesIpResponse({required this.result, required this.success, });
 
-factory RadarGetEntitiesIpResponse.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesIpResponse(
+factory RadarGetEntitiesIpResponse.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesIpResponse(
   result: RadarGetEntitiesIpResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEntitiesIpResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEntitiesIpResponse copyWith({RadarGetEntitiesIpResponseResult? result, bool? success, }) { return RadarGetEntitiesIpResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEntitiesIpResponse copyWith({RadarGetEntitiesIpResponseResult? result, bool? success, }) {return RadarGetEntitiesIpResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEntitiesIpResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetEntitiesIpResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetEntitiesIpResponse(result: $result, success: $success)';}
+}

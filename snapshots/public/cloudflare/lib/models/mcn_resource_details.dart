@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_account_id.dart';import 'mcn_cloud_platform_client.dart';import 'mcn_cloud_type.dart';import 'mcn_cost.dart';import 'mcn_observation.dart';import 'mcn_provider_id.dart';import 'mcn_resource_details_section.dart';import 'mcn_resource_id.dart';import 'mcn_resource_type.dart';@immutable final class McnResourceDetails {const McnResourceDetails({required this.accountId, required this.cloudType, required this.config, required this.deploymentProvider, required this.id, required this.managed, required this.monthlyCostEstimate, required this.name, required this.nativeId, required this.observations, required this.providerIds, required this.providerNamesById, required this.region, required this.resourceGroup, required this.resourceType, required this.sections, required this.state, required this.tags, required this.updatedAt, required this.url, this.managedBy, });
 
-factory McnResourceDetails.fromJson(Map<String, dynamic> json) { return McnResourceDetails(
+factory McnResourceDetails.fromJson(Map<String, dynamic> json) {return McnResourceDetails(
   accountId: McnAccountId.fromJson(json['account_id'] as String),
   cloudType: McnCloudType.fromJson(json['cloud_type'] as String),
   config: json['config'] as Map<String, dynamic>,
@@ -24,7 +24,7 @@ factory McnResourceDetails.fromJson(Map<String, dynamic> json) { return McnResou
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final McnAccountId accountId;
 
@@ -68,7 +68,7 @@ final String updatedAt;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId.toJson(),
   'cloud_type': cloudType.toJson(),
   'config': config,
@@ -90,8 +90,8 @@ Map<String, dynamic> toJson() { return {
   'tags': tags,
   'updated_at': updatedAt,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') &&
       json.containsKey('cloud_type') &&
       json.containsKey('config') &&
       json.containsKey('deployment_provider') &&
@@ -110,8 +110,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('state') &&
       json.containsKey('tags') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, Map<String,dynamic>? config, McnProviderId? deploymentProvider, McnResourceId? id, bool? managed, List<McnCloudPlatformClient>? Function()? managedBy, McnCost? monthlyCostEstimate, String? name, String? nativeId, Map<String,McnObservation>? observations, List<McnProviderId>? providerIds, Map<String,String>? providerNamesById, String? region, String? resourceGroup, McnResourceType? resourceType, List<McnResourceDetailsSection>? sections, Map<String,dynamic>? state, Map<String,String>? tags, String? updatedAt, String? url, }) { return McnResourceDetails(
+      json.containsKey('url') && json['url'] is String;}
+McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, Map<String,dynamic>? config, McnProviderId? deploymentProvider, McnResourceId? id, bool? managed, List<McnCloudPlatformClient>? Function()? managedBy, McnCost? monthlyCostEstimate, String? name, String? nativeId, Map<String,McnObservation>? observations, List<McnProviderId>? providerIds, Map<String,String>? providerNamesById, String? region, String? resourceGroup, McnResourceType? resourceType, List<McnResourceDetailsSection>? sections, Map<String,dynamic>? state, Map<String,String>? tags, String? updatedAt, String? url, }) {return McnResourceDetails(
   accountId: accountId ?? this.accountId,
   cloudType: cloudType ?? this.cloudType,
   config: config ?? this.config,
@@ -133,8 +133,8 @@ McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, M
   tags: tags ?? this.tags,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnResourceDetails &&
           accountId == other.accountId &&
           cloudType == other.cloudType &&
@@ -156,7 +156,7 @@ McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, M
           state == other.state &&
           tags == other.tags &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([accountId, cloudType, config, deploymentProvider, id, managed, Object.hashAll(managedBy ?? const []), monthlyCostEstimate, name, nativeId, observations, Object.hashAll(providerIds), providerNamesById, region, resourceGroup, resourceType, Object.hashAll(sections), state, tags, updatedAt, url]); } 
-@override String toString() { return 'McnResourceDetails(accountId: $accountId, cloudType: $cloudType, config: $config, deploymentProvider: $deploymentProvider, id: $id, managed: $managed, managedBy: $managedBy, monthlyCostEstimate: $monthlyCostEstimate, name: $name, nativeId: $nativeId, observations: $observations, providerIds: $providerIds, providerNamesById: $providerNamesById, region: $region, resourceGroup: $resourceGroup, resourceType: $resourceType, sections: $sections, state: $state, tags: $tags, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hashAll([accountId, cloudType, config, deploymentProvider, id, managed, Object.hashAll(managedBy ?? const []), monthlyCostEstimate, name, nativeId, observations, Object.hashAll(providerIds), providerNamesById, region, resourceGroup, resourceType, Object.hashAll(sections), state, tags, updatedAt, url]);}
+@override String toString() {return 'McnResourceDetails(accountId: $accountId, cloudType: $cloudType, config: $config, deploymentProvider: $deploymentProvider, id: $id, managed: $managed, managedBy: $managedBy, monthlyCostEstimate: $monthlyCostEstimate, name: $name, nativeId: $nativeId, observations: $observations, providerIds: $providerIds, providerNamesById: $providerNamesById, region: $region, resourceGroup: $resourceGroup, resourceType: $resourceType, sections: $sections, state: $state, tags: $tags, updatedAt: $updatedAt, url: $url)';}
+}

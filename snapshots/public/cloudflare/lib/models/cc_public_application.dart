@@ -33,7 +33,7 @@ String toJson() => value;
 /// Provides the current state and configuration of a Containers application.
 @immutable final class CcPublicApplication {const CcPublicApplication({required this.createdAt, required this.health, required this.id, required this.image, required this.instanceType, required this.maxInstances, required this.name, required this.updatedAt, required this.version, this.durableObject, this.network, this.observability, this.rolloutActiveGracePeriod, });
 
-factory CcPublicApplication.fromJson(Map<String, dynamic> json) { return CcPublicApplication(
+factory CcPublicApplication.fromJson(Map<String, dynamic> json) {return CcPublicApplication(
   createdAt: CcIso8601Timestamp.fromJson(json['created_at'] as String),
   durableObject: json['durable_object'] != null ? CcDurableObjectsConfigurationNamespaceId.fromJson(json['durable_object'] as Map<String, dynamic>) : null,
   health: CcApplicationHealthInstances.fromJson(json['health'] as Map<String, dynamic>),
@@ -47,7 +47,7 @@ factory CcPublicApplication.fromJson(Map<String, dynamic> json) { return CcPubli
   rolloutActiveGracePeriod: json['rollout_active_grace_period'] != null ? CcApplicationRolloutActiveGracePeriod.fromJson(json['rollout_active_grace_period'] as num) : null,
   updatedAt: CcIso8601Timestamp.fromJson(json['updated_at'] as String),
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 /// UTC timestamp string in ISO 8601 format
 final CcIso8601Timestamp createdAt;
@@ -85,7 +85,7 @@ final CcIso8601Timestamp updatedAt;
 /// The current version number of this application. This increments with application rollouts.
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toJson(),
   if (durableObject != null) 'durable_object': durableObject?.toJson(),
   'health': health.toJson(),
@@ -99,8 +99,8 @@ Map<String, dynamic> toJson() { return {
   if (rolloutActiveGracePeriod != null) 'rollout_active_grace_period': rolloutActiveGracePeriod?.toJson(),
   'updated_at': updatedAt.toJson(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') &&
       json.containsKey('health') &&
       json.containsKey('id') &&
       json.containsKey('image') &&
@@ -108,8 +108,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('max_instances') && json['max_instances'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') &&
-      json.containsKey('version') && json['version'] is num; } 
-CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsConfigurationNamespaceId? Function()? durableObject, CcApplicationHealthInstances? health, CcApplicationId? id, CcImage? image, CcPublicInstanceType? instanceType, int? maxInstances, String? name, CcApplicationNetwork? Function()? network, CcObservability? Function()? observability, CcApplicationRolloutActiveGracePeriod? Function()? rolloutActiveGracePeriod, CcIso8601Timestamp? updatedAt, int? version, }) { return CcPublicApplication(
+      json.containsKey('version') && json['version'] is num;}
+CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsConfigurationNamespaceId? Function()? durableObject, CcApplicationHealthInstances? health, CcApplicationId? id, CcImage? image, CcPublicInstanceType? instanceType, int? maxInstances, String? name, CcApplicationNetwork? Function()? network, CcObservability? Function()? observability, CcApplicationRolloutActiveGracePeriod? Function()? rolloutActiveGracePeriod, CcIso8601Timestamp? updatedAt, int? version, }) {return CcPublicApplication(
   createdAt: createdAt ?? this.createdAt,
   durableObject: durableObject != null ? durableObject() : this.durableObject,
   health: health ?? this.health,
@@ -123,8 +123,8 @@ CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsCon
   rolloutActiveGracePeriod: rolloutActiveGracePeriod != null ? rolloutActiveGracePeriod() : this.rolloutActiveGracePeriod,
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CcPublicApplication &&
           createdAt == other.createdAt &&
           durableObject == other.durableObject &&
@@ -138,7 +138,7 @@ CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsCon
           observability == other.observability &&
           rolloutActiveGracePeriod == other.rolloutActiveGracePeriod &&
           updatedAt == other.updatedAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, durableObject, health, id, image, instanceType, maxInstances, name, network, observability, rolloutActiveGracePeriod, updatedAt, version); } 
-@override String toString() { return 'CcPublicApplication(createdAt: $createdAt, durableObject: $durableObject, health: $health, id: $id, image: $image, instanceType: $instanceType, maxInstances: $maxInstances, name: $name, network: $network, observability: $observability, rolloutActiveGracePeriod: $rolloutActiveGracePeriod, updatedAt: $updatedAt, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(createdAt, durableObject, health, id, image, instanceType, maxInstances, name, network, observability, rolloutActiveGracePeriod, updatedAt, version);}
+@override String toString() {return 'CcPublicApplication(createdAt: $createdAt, durableObject: $durableObject, health: $health, id: $id, image: $image, instanceType: $instanceType, maxInstances: $maxInstances, name: $name, network: $network, observability: $observability, rolloutActiveGracePeriod: $rolloutActiveGracePeriod, updatedAt: $updatedAt, version: $version)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptionSegment {const TranscriptionSegment({required this.id, required this.seek, required this.start, required this.end, required this.text, required this.tokens, required this.temperature, required this.avgLogprob, required this.compressionRatio, required this.noSpeechProb, });
 
-factory TranscriptionSegment.fromJson(Map<String, dynamic> json) { return TranscriptionSegment(
+factory TranscriptionSegment.fromJson(Map<String, dynamic> json) {return TranscriptionSegment(
   id: (json['id'] as num).toInt(),
   seek: (json['seek'] as num).toInt(),
   start: (json['start'] as num).toDouble(),
@@ -13,7 +13,7 @@ factory TranscriptionSegment.fromJson(Map<String, dynamic> json) { return Transc
   avgLogprob: (json['avg_logprob'] as num).toDouble(),
   compressionRatio: (json['compression_ratio'] as num).toDouble(),
   noSpeechProb: (json['no_speech_prob'] as num).toDouble(),
-); }
+);}
 
 /// Unique identifier of the segment.
 final int id;
@@ -45,7 +45,7 @@ final double compressionRatio;
 /// Probability of no speech in the segment. If the value is higher than 1.0 and the `avg_logprob` is below -1, consider this segment silent.
 final double noSpeechProb;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'seek': seek,
   'start': start,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'avg_logprob': avgLogprob,
   'compression_ratio': compressionRatio,
   'no_speech_prob': noSpeechProb,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('seek') && json['seek'] is num &&
       json.containsKey('start') && json['start'] is num &&
       json.containsKey('end') && json['end'] is num &&
@@ -66,8 +66,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('temperature') && json['temperature'] is num &&
       json.containsKey('avg_logprob') && json['avg_logprob'] is num &&
       json.containsKey('compression_ratio') && json['compression_ratio'] is num &&
-      json.containsKey('no_speech_prob') && json['no_speech_prob'] is num; } 
-TranscriptionSegment copyWith({int? id, int? seek, double? start, double? end, String? text, List<int>? tokens, double? temperature, double? avgLogprob, double? compressionRatio, double? noSpeechProb, }) { return TranscriptionSegment(
+      json.containsKey('no_speech_prob') && json['no_speech_prob'] is num;}
+TranscriptionSegment copyWith({int? id, int? seek, double? start, double? end, String? text, List<int>? tokens, double? temperature, double? avgLogprob, double? compressionRatio, double? noSpeechProb, }) {return TranscriptionSegment(
   id: id ?? this.id,
   seek: seek ?? this.seek,
   start: start ?? this.start,
@@ -78,8 +78,8 @@ TranscriptionSegment copyWith({int? id, int? seek, double? start, double? end, S
   avgLogprob: avgLogprob ?? this.avgLogprob,
   compressionRatio: compressionRatio ?? this.compressionRatio,
   noSpeechProb: noSpeechProb ?? this.noSpeechProb,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TranscriptionSegment &&
           id == other.id &&
           seek == other.seek &&
@@ -90,7 +90,7 @@ TranscriptionSegment copyWith({int? id, int? seek, double? start, double? end, S
           temperature == other.temperature &&
           avgLogprob == other.avgLogprob &&
           compressionRatio == other.compressionRatio &&
-          noSpeechProb == other.noSpeechProb; } 
-@override int get hashCode { return Object.hash(id, seek, start, end, text, Object.hashAll(tokens), temperature, avgLogprob, compressionRatio, noSpeechProb); } 
-@override String toString() { return 'TranscriptionSegment(id: $id, seek: $seek, start: $start, end: $end, text: $text, tokens: $tokens, temperature: $temperature, avgLogprob: $avgLogprob, compressionRatio: $compressionRatio, noSpeechProb: $noSpeechProb)'; } 
- }
+          noSpeechProb == other.noSpeechProb;}
+@override int get hashCode {return Object.hash(id, seek, start, end, text, Object.hashAll(tokens), temperature, avgLogprob, compressionRatio, noSpeechProb);}
+@override String toString() {return 'TranscriptionSegment(id: $id, seek: $seek, start: $start, end: $end, text: $text, tokens: $tokens, temperature: $temperature, avgLogprob: $avgLogprob, compressionRatio: $compressionRatio, noSpeechProb: $noSpeechProb)';}
+}

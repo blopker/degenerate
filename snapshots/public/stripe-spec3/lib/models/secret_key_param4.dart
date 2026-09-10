@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_key_param4_customer_acceptance.dart';@immutable final class SecretKeyParam4 {const SecretKeyParam4({required this.customerAcceptance});
 
-factory SecretKeyParam4.fromJson(Map<String, dynamic> json) { return SecretKeyParam4(
+factory SecretKeyParam4.fromJson(Map<String, dynamic> json) {return SecretKeyParam4(
   customerAcceptance: SecretKeyParam4CustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),
-); }
+);}
 
 final SecretKeyParam4CustomerAcceptance customerAcceptance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer_acceptance': customerAcceptance.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_acceptance'); } 
-SecretKeyParam4 copyWith({SecretKeyParam4CustomerAcceptance? customerAcceptance}) { return SecretKeyParam4(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customer_acceptance');}
+SecretKeyParam4 copyWith({SecretKeyParam4CustomerAcceptance? customerAcceptance}) {return SecretKeyParam4(
   customerAcceptance: customerAcceptance ?? this.customerAcceptance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretKeyParam4 &&
-          customerAcceptance == other.customerAcceptance; } 
-@override int get hashCode { return customerAcceptance.hashCode; } 
-@override String toString() { return 'SecretKeyParam4(customerAcceptance: $customerAcceptance)'; } 
- }
+          customerAcceptance == other.customerAcceptance;}
+@override int get hashCode {return customerAcceptance.hashCode;}
+@override String toString() {return 'SecretKeyParam4(customerAcceptance: $customerAcceptance)';}
+}

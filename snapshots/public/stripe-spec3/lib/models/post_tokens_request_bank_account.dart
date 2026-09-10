@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestBankAccountAccountHolderType {const PostTokensRequestBankAccountAccountHolderType._(this.value);
 
-factory PostTokensRequestBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+factory PostTokensRequestBankAccountAccountHolderType.fromJson(String json) {return switch (json) {
   'company' => company,
   'individual' => individual,
   _ => PostTokensRequestBankAccountAccountHolderType._(json),
-}; }
+};}
 
 static const PostTokensRequestBankAccountAccountHolderType company = PostTokensRequestBankAccountAccountHolderType._('company');
 
@@ -16,23 +16,23 @@ static const List<PostTokensRequestBankAccountAccountHolderType> values = [compa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTokensRequestBankAccountAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTokensRequestBankAccountAccountHolderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTokensRequestBankAccountAccountHolderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTokensRequestBankAccountAccountHolderType($value)';}
+}
 @immutable final class PostTokensRequestBankAccountAccountType {const PostTokensRequestBankAccountAccountType._(this.value);
 
-factory PostTokensRequestBankAccountAccountType.fromJson(String json) { return switch (json) {
+factory PostTokensRequestBankAccountAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'futsu' => futsu,
   'savings' => savings,
   'toza' => toza,
   _ => PostTokensRequestBankAccountAccountType._(json),
-}; }
+};}
 
 static const PostTokensRequestBankAccountAccountType checking = PostTokensRequestBankAccountAccountType._('checking');
 
@@ -46,18 +46,18 @@ static const List<PostTokensRequestBankAccountAccountType> values = [checking, f
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTokensRequestBankAccountAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTokensRequestBankAccountAccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTokensRequestBankAccountAccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTokensRequestBankAccountAccountType($value)';}
+}
 /// The bank account this token will represent.
 @immutable final class PostTokensRequestBankAccount {const PostTokensRequestBankAccount({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.accountType, this.currency, this.paymentMethod, this.routingNumber, });
 
-factory PostTokensRequestBankAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestBankAccount(
+factory PostTokensRequestBankAccount.fromJson(Map<String, dynamic> json) {return PostTokensRequestBankAccount(
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] != null ? PostTokensRequestBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String,
@@ -66,7 +66,7 @@ factory PostTokensRequestBankAccount.fromJson(Map<String, dynamic> json) { retur
   currency: json['currency'] as String?,
   paymentMethod: json['payment_method'] as String?,
   routingNumber: json['routing_number'] as String?,
-); }
+);}
 
 final String? accountHolderName;
 
@@ -84,7 +84,7 @@ final String? paymentMethod;
 
 final String? routingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder_name': ?accountHolderName,
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
   'account_number': accountNumber,
@@ -93,10 +93,10 @@ Map<String, dynamic> toJson() { return {
   'currency': ?currency,
   'payment_method': ?paymentMethod,
   'routing_number': ?routingNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
-      json.containsKey('country') && json['country'] is String; } 
-PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, PostTokensRequestBankAccountAccountHolderType? Function()? accountHolderType, String? accountNumber, PostTokensRequestBankAccountAccountType? Function()? accountType, String? country, String? Function()? currency, String? Function()? paymentMethod, String? Function()? routingNumber, }) { return PostTokensRequestBankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_number') && json['account_number'] is String &&
+      json.containsKey('country') && json['country'] is String;}
+PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, PostTokensRequestBankAccountAccountHolderType? Function()? accountHolderType, String? accountNumber, PostTokensRequestBankAccountAccountType? Function()? accountType, String? country, String? Function()? currency, String? Function()? paymentMethod, String? Function()? routingNumber, }) {return PostTokensRequestBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,
@@ -105,8 +105,8 @@ PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, Po
   currency: currency != null ? currency() : this.currency,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTokensRequestBankAccount &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
@@ -115,7 +115,7 @@ PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, Po
           country == other.country &&
           currency == other.currency &&
           paymentMethod == other.paymentMethod &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, paymentMethod, routingNumber); } 
-@override String toString() { return 'PostTokensRequestBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, paymentMethod: $paymentMethod, routingNumber: $routingNumber)'; } 
- }
+          routingNumber == other.routingNumber;}
+@override int get hashCode {return Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, paymentMethod, routingNumber);}
+@override String toString() {return 'PostTokensRequestBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, paymentMethod: $paymentMethod, routingNumber: $routingNumber)';}
+}

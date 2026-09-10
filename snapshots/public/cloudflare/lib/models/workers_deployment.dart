@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_deployment_annotations.dart';import 'workers_deployment_versions.dart';@immutable final class WorkersDeploymentStrategy {const WorkersDeploymentStrategy._(this.value);
 
-factory WorkersDeploymentStrategy.fromJson(String json) { return switch (json) {
+factory WorkersDeploymentStrategy.fromJson(String json) {return switch (json) {
   'percentage' => percentage,
   _ => WorkersDeploymentStrategy._(json),
-}; }
+};}
 
 static const WorkersDeploymentStrategy percentage = WorkersDeploymentStrategy._('percentage');
 
@@ -13,17 +13,17 @@ static const List<WorkersDeploymentStrategy> values = [percentage];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersDeploymentStrategy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersDeploymentStrategy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersDeploymentStrategy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersDeploymentStrategy($value)';}
+}
 @immutable final class WorkersDeployment {const WorkersDeployment({required this.createdOn, required this.id, required this.source, required this.strategy, required this.versions, this.annotations, this.authorEmail, });
 
-factory WorkersDeployment.fromJson(Map<String, dynamic> json) { return WorkersDeployment(
+factory WorkersDeployment.fromJson(Map<String, dynamic> json) {return WorkersDeployment(
   annotations: json['annotations'] != null ? WorkersDeploymentAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   authorEmail: json['author_email'] as String?,
   createdOn: DateTime.parse(json['created_on'] as String),
@@ -31,7 +31,7 @@ factory WorkersDeployment.fromJson(Map<String, dynamic> json) { return WorkersDe
   source: json['source'] as String,
   strategy: WorkersDeploymentStrategy.fromJson(json['strategy'] as String),
   versions: (json['versions'] as List<dynamic>).map((e) => WorkersDeploymentVersions.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final WorkersDeploymentAnnotations? annotations;
 
@@ -47,7 +47,7 @@ final WorkersDeploymentStrategy strategy;
 
 final List<WorkersDeploymentVersions> versions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   'author_email': ?authorEmail,
   'created_on': createdOn.toIso8601String(),
@@ -55,13 +55,13 @@ Map<String, dynamic> toJson() { return {
   'source': source,
   'strategy': strategy.toJson(),
   'versions': versions.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('strategy') &&
-      json.containsKey('versions'); } 
-WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotations, String? Function()? authorEmail, DateTime? createdOn, String? id, String? source, WorkersDeploymentStrategy? strategy, List<WorkersDeploymentVersions>? versions, }) { return WorkersDeployment(
+      json.containsKey('versions');}
+WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotations, String? Function()? authorEmail, DateTime? createdOn, String? id, String? source, WorkersDeploymentStrategy? strategy, List<WorkersDeploymentVersions>? versions, }) {return WorkersDeployment(
   annotations: annotations != null ? annotations() : this.annotations,
   authorEmail: authorEmail != null ? authorEmail() : this.authorEmail,
   createdOn: createdOn ?? this.createdOn,
@@ -69,8 +69,8 @@ WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotation
   source: source ?? this.source,
   strategy: strategy ?? this.strategy,
   versions: versions ?? this.versions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersDeployment &&
           annotations == other.annotations &&
           authorEmail == other.authorEmail &&
@@ -78,7 +78,7 @@ WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotation
           id == other.id &&
           source == other.source &&
           strategy == other.strategy &&
-          listEquals(versions, other.versions); } 
-@override int get hashCode { return Object.hash(annotations, authorEmail, createdOn, id, source, strategy, Object.hashAll(versions)); } 
-@override String toString() { return 'WorkersDeployment(annotations: $annotations, authorEmail: $authorEmail, createdOn: $createdOn, id: $id, source: $source, strategy: $strategy, versions: $versions)'; } 
- }
+          listEquals(versions, other.versions);}
+@override int get hashCode {return Object.hash(annotations, authorEmail, createdOn, id, source, strategy, Object.hashAll(versions));}
+@override String toString() {return 'WorkersDeployment(annotations: $annotations, authorEmail: $authorEmail, createdOn: $createdOn, id: $id, source: $source, strategy: $strategy, versions: $versions)';}
+}

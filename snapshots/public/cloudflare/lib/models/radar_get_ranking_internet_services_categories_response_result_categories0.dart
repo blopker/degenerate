@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRankingInternetServicesCategoriesResponseResultCategories0 {const RadarGetRankingInternetServicesCategoriesResponseResultCategories0({required this.name});
 
-factory RadarGetRankingInternetServicesCategoriesResponseResultCategories0.fromJson(Map<String, dynamic> json) { return RadarGetRankingInternetServicesCategoriesResponseResultCategories0(
+factory RadarGetRankingInternetServicesCategoriesResponseResultCategories0.fromJson(Map<String, dynamic> json) {return RadarGetRankingInternetServicesCategoriesResponseResultCategories0(
   name: json['name'] as String,
-); }
+);}
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-RadarGetRankingInternetServicesCategoriesResponseResultCategories0 copyWith({String? name}) { return RadarGetRankingInternetServicesCategoriesResponseResultCategories0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+RadarGetRankingInternetServicesCategoriesResponseResultCategories0 copyWith({String? name}) {return RadarGetRankingInternetServicesCategoriesResponseResultCategories0(
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetRankingInternetServicesCategoriesResponseResultCategories0 &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'RadarGetRankingInternetServicesCategoriesResponseResultCategories0(name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return name.hashCode;}
+@override String toString() {return 'RadarGetRankingInternetServicesCategoriesResponseResultCategories0(name: $name)';}
+}

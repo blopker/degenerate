@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTopupsStatus {const GetTopupsStatus._(this.value);
 
-factory GetTopupsStatus.fromJson(String json) { return switch (json) {
+factory GetTopupsStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'pending' => pending,
   'succeeded' => succeeded,
   _ => GetTopupsStatus._(json),
-}; }
+};}
 
 static const GetTopupsStatus canceled = GetTopupsStatus._('canceled');
 
@@ -22,11 +22,11 @@ static const List<GetTopupsStatus> values = [canceled, failed, pending, succeede
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTopupsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTopupsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTopupsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTopupsStatus($value)';}
+}

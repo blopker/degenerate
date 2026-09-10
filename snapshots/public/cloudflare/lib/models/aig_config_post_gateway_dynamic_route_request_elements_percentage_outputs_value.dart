@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue {const AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue({required this.elementId});
 
-factory AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue(
+factory AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue copyWith({String? elementId}) { return AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue copyWith({String? elementId}) {return AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue(
   elementId: elementId ?? this.elementId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue &&
-          elementId == other.elementId; } 
-@override int get hashCode { return elementId.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue(elementId: $elementId)'; } 
- }
+          elementId == other.elementId;}
+@override int get hashCode {return elementId.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteRequestElementsPercentageOutputsValue(elementId: $elementId)';}
+}

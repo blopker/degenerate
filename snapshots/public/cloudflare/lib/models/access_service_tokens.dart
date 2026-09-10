@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_client_id.dart';import 'access_duration.dart';import 'access_schemas_name.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessServiceTokens {const AccessServiceTokens({this.clientId, this.createdAt, this.duration, this.expiresAt, this.id, this.lastSeenAt, this.name, this.updatedAt, });
 
-factory AccessServiceTokens.fromJson(Map<String, dynamic> json) { return AccessServiceTokens(
+factory AccessServiceTokens.fromJson(Map<String, dynamic> json) {return AccessServiceTokens(
   clientId: json['client_id'] != null ? AccessClientId.fromJson(json['client_id'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   duration: json['duration'] != null ? AccessDuration.fromJson(json['duration'] as String) : null,
@@ -11,7 +11,7 @@ factory AccessServiceTokens.fromJson(Map<String, dynamic> json) { return AccessS
   lastSeenAt: json['last_seen_at'] != null ? AccessTimestamp.fromJson(json['last_seen_at'] as String) : null,
   name: json['name'] != null ? AccessSchemasName.fromJson(json['name'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The Client ID for the service token. Access will check for this value in the `CF-Access-Client-ID` request header.
 final AccessClientId? clientId;
@@ -33,7 +33,7 @@ final AccessSchemasName? name;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientId != null) 'client_id': clientId?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (duration != null) 'duration': duration?.toJson(),
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (lastSeenAt != null) 'last_seen_at': lastSeenAt?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'created_at', 'duration', 'expires_at', 'id', 'last_seen_at', 'name', 'updated_at'}.contains(key)); } 
-AccessServiceTokens copyWith({AccessClientId? Function()? clientId, AccessTimestamp? Function()? createdAt, AccessDuration? Function()? duration, AccessTimestamp? Function()? expiresAt, AccessUuid? Function()? id, AccessTimestamp? Function()? lastSeenAt, AccessSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) { return AccessServiceTokens(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'created_at', 'duration', 'expires_at', 'id', 'last_seen_at', 'name', 'updated_at'}.contains(key));}
+AccessServiceTokens copyWith({AccessClientId? Function()? clientId, AccessTimestamp? Function()? createdAt, AccessDuration? Function()? duration, AccessTimestamp? Function()? expiresAt, AccessUuid? Function()? id, AccessTimestamp? Function()? lastSeenAt, AccessSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) {return AccessServiceTokens(
   clientId: clientId != null ? clientId() : this.clientId,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   duration: duration != null ? duration() : this.duration,
@@ -53,8 +53,8 @@ AccessServiceTokens copyWith({AccessClientId? Function()? clientId, AccessTimest
   lastSeenAt: lastSeenAt != null ? lastSeenAt() : this.lastSeenAt,
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessServiceTokens &&
           clientId == other.clientId &&
           createdAt == other.createdAt &&
@@ -63,7 +63,7 @@ AccessServiceTokens copyWith({AccessClientId? Function()? clientId, AccessTimest
           id == other.id &&
           lastSeenAt == other.lastSeenAt &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(clientId, createdAt, duration, expiresAt, id, lastSeenAt, name, updatedAt); } 
-@override String toString() { return 'AccessServiceTokens(clientId: $clientId, createdAt: $createdAt, duration: $duration, expiresAt: $expiresAt, id: $id, lastSeenAt: $lastSeenAt, name: $name, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(clientId, createdAt, duration, expiresAt, id, lastSeenAt, name, updatedAt);}
+@override String toString() {return 'AccessServiceTokens(clientId: $clientId, createdAt: $createdAt, duration: $duration, expiresAt: $expiresAt, id: $id, lastSeenAt: $lastSeenAt, name: $name, updatedAt: $updatedAt)';}
+}

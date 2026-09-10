@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioSpeechesResultObject {const UsageAudioSpeechesResultObject._(this.value);
 
-factory UsageAudioSpeechesResultObject.fromJson(String json) { return switch (json) {
+factory UsageAudioSpeechesResultObject.fromJson(String json) {return switch (json) {
   'organization.usage.audio_speeches.result' => organizationUsageAudioSpeechesResult,
   _ => UsageAudioSpeechesResultObject._(json),
-}; }
+};}
 
 static const UsageAudioSpeechesResultObject organizationUsageAudioSpeechesResult = UsageAudioSpeechesResultObject._('organization.usage.audio_speeches.result');
 
@@ -13,18 +13,18 @@ static const List<UsageAudioSpeechesResultObject> values = [organizationUsageAud
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageAudioSpeechesResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageAudioSpeechesResultObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageAudioSpeechesResultObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageAudioSpeechesResultObject($value)';}
+}
 /// The aggregated audio speeches usage details of the specific time bucket.
 @immutable final class UsageAudioSpeechesResult {const UsageAudioSpeechesResult({required this.object, required this.characters, required this.numModelRequests, this.projectId = const Omittable.absent(), this.userId = const Omittable.absent(), this.apiKeyId = const Omittable.absent(), this.model = const Omittable.absent(), });
 
-factory UsageAudioSpeechesResult.fromJson(Map<String, dynamic> json) { return UsageAudioSpeechesResult(
+factory UsageAudioSpeechesResult.fromJson(Map<String, dynamic> json) {return UsageAudioSpeechesResult(
   object: UsageAudioSpeechesResultObject.fromJson(json['object'] as String),
   characters: (json['characters'] as num).toInt(),
   numModelRequests: (json['num_model_requests'] as num).toInt(),
@@ -32,7 +32,7 @@ factory UsageAudioSpeechesResult.fromJson(Map<String, dynamic> json) { return Us
   userId: json.containsKey('user_id') ? Omittable(json['user_id'] as String?) : const Omittable.absent(),
   apiKeyId: json.containsKey('api_key_id') ? Omittable(json['api_key_id'] as String?) : const Omittable.absent(),
   model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final UsageAudioSpeechesResultObject object;
 
@@ -54,7 +54,7 @@ final Omittable<String?> apiKeyId;
 /// When `group_by=model`, this field provides the model name of the grouped usage result.
 final Omittable<String?> model;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'characters': characters,
   'num_model_requests': numModelRequests,
@@ -62,11 +62,11 @@ Map<String, dynamic> toJson() { return {
   if (userId.isPresent) 'user_id': userId.value,
   if (apiKeyId.isPresent) 'api_key_id': apiKeyId.value,
   if (model.isPresent) 'model': model.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('characters') && json['characters'] is num &&
-      json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
-UsageAudioSpeechesResult copyWith({UsageAudioSpeechesResultObject? object, int? characters, int? numModelRequests, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, }) { return UsageAudioSpeechesResult(
+      json.containsKey('num_model_requests') && json['num_model_requests'] is num;}
+UsageAudioSpeechesResult copyWith({UsageAudioSpeechesResultObject? object, int? characters, int? numModelRequests, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, }) {return UsageAudioSpeechesResult(
   object: object ?? this.object,
   characters: characters ?? this.characters,
   numModelRequests: numModelRequests ?? this.numModelRequests,
@@ -74,8 +74,8 @@ UsageAudioSpeechesResult copyWith({UsageAudioSpeechesResultObject? object, int? 
   userId: userId ?? this.userId,
   apiKeyId: apiKeyId ?? this.apiKeyId,
   model: model ?? this.model,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UsageAudioSpeechesResult &&
           object == other.object &&
           characters == other.characters &&
@@ -83,7 +83,7 @@ UsageAudioSpeechesResult copyWith({UsageAudioSpeechesResultObject? object, int? 
           projectId == other.projectId &&
           userId == other.userId &&
           apiKeyId == other.apiKeyId &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(object, characters, numModelRequests, projectId, userId, apiKeyId, model); } 
-@override String toString() { return 'UsageAudioSpeechesResult(object: $object, characters: $characters, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)'; } 
- }
+          model == other.model;}
+@override int get hashCode {return Object.hash(object, characters, numModelRequests, projectId, userId, apiKeyId, model);}
+@override String toString() {return 'UsageAudioSpeechesResult(object: $object, characters: $characters, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)';}
+}

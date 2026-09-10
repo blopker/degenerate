@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.dart';import 'webhook_config_secret.dart';import 'webhook_config_url.dart';/// Key/value pairs to provide settings for this webhook.
 @immutable final class OrgsUpdateWebhookRequestConfig {const OrgsUpdateWebhookRequestConfig({required this.url, this.contentType, this.secret, this.insecureSsl, });
 
-factory OrgsUpdateWebhookRequestConfig.fromJson(Map<String, dynamic> json) { return OrgsUpdateWebhookRequestConfig(
+factory OrgsUpdateWebhookRequestConfig.fromJson(Map<String, dynamic> json) {return OrgsUpdateWebhookRequestConfig(
   url: WebhookConfigUrl.fromJson(json['url'] as String),
   contentType: json['content_type'] != null ? WebhookConfigContentType.fromJson(json['content_type'] as String) : null,
   secret: json['secret'] != null ? WebhookConfigSecret.fromJson(json['secret'] as String) : null,
   insecureSsl: json['insecure_ssl'] != null ? OneOf2.parse(json['insecure_ssl'], fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),) : null,
-); }
+);}
 
 /// The URL to which the payloads will be delivered.
 final WebhookConfigUrl url;
@@ -21,25 +21,25 @@ final WebhookConfigSecret? secret;
 
 final WebhookConfigInsecureSsl? insecureSsl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toJson(),
   if (contentType != null) 'content_type': contentType?.toJson(),
   if (secret != null) 'secret': secret?.toJson(),
   if (insecureSsl != null) 'insecure_ssl': insecureSsl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url'); } 
-OrgsUpdateWebhookRequestConfig copyWith({WebhookConfigUrl? url, WebhookConfigContentType? Function()? contentType, WebhookConfigSecret? Function()? secret, WebhookConfigInsecureSsl? Function()? insecureSsl, }) { return OrgsUpdateWebhookRequestConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url');}
+OrgsUpdateWebhookRequestConfig copyWith({WebhookConfigUrl? url, WebhookConfigContentType? Function()? contentType, WebhookConfigSecret? Function()? secret, WebhookConfigInsecureSsl? Function()? insecureSsl, }) {return OrgsUpdateWebhookRequestConfig(
   url: url ?? this.url,
   contentType: contentType != null ? contentType() : this.contentType,
   secret: secret != null ? secret() : this.secret,
   insecureSsl: insecureSsl != null ? insecureSsl() : this.insecureSsl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsUpdateWebhookRequestConfig &&
           url == other.url &&
           contentType == other.contentType &&
           secret == other.secret &&
-          insecureSsl == other.insecureSsl; } 
-@override int get hashCode { return Object.hash(url, contentType, secret, insecureSsl); } 
-@override String toString() { return 'OrgsUpdateWebhookRequestConfig(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl)'; } 
- }
+          insecureSsl == other.insecureSsl;}
+@override int get hashCode {return Object.hash(url, contentType, secret, insecureSsl);}
+@override String toString() {return 'OrgsUpdateWebhookRequestConfig(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl)';}
+}

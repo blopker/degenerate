@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_version_metadata.dart';/// A version of a software package
 @immutable final class PackageVersion {const PackageVersion({required this.id, required this.name, required this.url, required this.packageHtmlUrl, required this.createdAt, required this.updatedAt, this.htmlUrl, this.license, this.description, this.deletedAt, this.metadata, });
 
-factory PackageVersion.fromJson(Map<String, dynamic> json) { return PackageVersion(
+factory PackageVersion.fromJson(Map<String, dynamic> json) {return PackageVersion(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   url: json['url'] as String,
@@ -15,7 +15,7 @@ factory PackageVersion.fromJson(Map<String, dynamic> json) { return PackageVersi
   updatedAt: DateTime.parse(json['updated_at'] as String),
   deletedAt: json['deleted_at'] != null ? DateTime.parse(json['deleted_at'] as String) : null,
   metadata: json['metadata'] != null ? PackageVersionMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Unique identifier of the package version.
 final int id;
@@ -41,7 +41,7 @@ final DateTime? deletedAt;
 
 final PackageVersionMetadata? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'url': url,
@@ -53,14 +53,14 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   if (deletedAt != null) 'deleted_at': deletedAt?.toIso8601String(),
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('package_html_url') && json['package_html_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-PackageVersion copyWith({int? id, String? name, String? url, String? packageHtmlUrl, String? Function()? htmlUrl, String? Function()? license, String? Function()? description, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? deletedAt, PackageVersionMetadata? Function()? metadata, }) { return PackageVersion(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+PackageVersion copyWith({int? id, String? name, String? url, String? packageHtmlUrl, String? Function()? htmlUrl, String? Function()? license, String? Function()? description, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? deletedAt, PackageVersionMetadata? Function()? metadata, }) {return PackageVersion(
   id: id ?? this.id,
   name: name ?? this.name,
   url: url ?? this.url,
@@ -72,8 +72,8 @@ PackageVersion copyWith({int? id, String? name, String? url, String? packageHtml
   updatedAt: updatedAt ?? this.updatedAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PackageVersion &&
           id == other.id &&
           name == other.name &&
@@ -85,7 +85,7 @@ PackageVersion copyWith({int? id, String? name, String? url, String? packageHtml
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           deletedAt == other.deletedAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, name, url, packageHtmlUrl, htmlUrl, license, description, createdAt, updatedAt, deletedAt, metadata); } 
-@override String toString() { return 'PackageVersion(id: $id, name: $name, url: $url, packageHtmlUrl: $packageHtmlUrl, htmlUrl: $htmlUrl, license: $license, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(id, name, url, packageHtmlUrl, htmlUrl, license, description, createdAt, updatedAt, deletedAt, metadata);}
+@override String toString() {return 'PackageVersion(id: $id, name: $name, url: $url, packageHtmlUrl: $packageHtmlUrl, htmlUrl: $htmlUrl, license: $license, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, metadata: $metadata)';}
+}

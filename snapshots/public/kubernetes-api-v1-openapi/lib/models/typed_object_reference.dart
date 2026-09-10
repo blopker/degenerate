@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// TypedObjectReference contains enough information to let you locate the typed referenced object
 @immutable final class TypedObjectReference {const TypedObjectReference({required this.kind, required this.name, this.apiGroup, this.namespace, });
 
-factory TypedObjectReference.fromJson(Map<String, dynamic> json) { return TypedObjectReference(
+factory TypedObjectReference.fromJson(Map<String, dynamic> json) {return TypedObjectReference(
   apiGroup: json['apiGroup'] as String?,
   kind: json['kind'] as String,
   name: json['name'] as String,
   namespace: json['namespace'] as String?,
-); }
+);}
 
 /// APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
 final String? apiGroup;
@@ -22,26 +22,26 @@ final String name;
 /// Namespace is the namespace of resource being referenced Note that when a namespace is specified, a gateway.networking.k8s.io/ReferenceGrant object is required in the referent namespace to allow that namespace's owner to accept the reference. See the ReferenceGrant documentation for details. (Alpha) This field requires the CrossNamespaceVolumeDataSource feature gate to be enabled.
 final String? namespace;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiGroup': ?apiGroup,
   'kind': kind,
   'name': name,
   'namespace': ?namespace,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-TypedObjectReference copyWith({String? Function()? apiGroup, String? kind, String? name, String? Function()? namespace, }) { return TypedObjectReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') && json['kind'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+TypedObjectReference copyWith({String? Function()? apiGroup, String? kind, String? name, String? Function()? namespace, }) {return TypedObjectReference(
   apiGroup: apiGroup != null ? apiGroup() : this.apiGroup,
   kind: kind ?? this.kind,
   name: name ?? this.name,
   namespace: namespace != null ? namespace() : this.namespace,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TypedObjectReference &&
           apiGroup == other.apiGroup &&
           kind == other.kind &&
           name == other.name &&
-          namespace == other.namespace; } 
-@override int get hashCode { return Object.hash(apiGroup, kind, name, namespace); } 
-@override String toString() { return 'TypedObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name, namespace: $namespace)'; } 
- }
+          namespace == other.namespace;}
+@override int get hashCode {return Object.hash(apiGroup, kind, name, namespace);}
+@override String toString() {return 'TypedObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name, namespace: $namespace)';}
+}

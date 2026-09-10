@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_queues_config_rules.dart';@immutable final class R2QueuesConfig {const R2QueuesConfig({this.queueId, this.queueName, this.rules, });
 
-factory R2QueuesConfig.fromJson(Map<String, dynamic> json) { return R2QueuesConfig(
+factory R2QueuesConfig.fromJson(Map<String, dynamic> json) {return R2QueuesConfig(
   queueId: json['queueId'] as String?,
   queueName: json['queueName'] as String?,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => R2QueuesConfigRules.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Queue ID.
 final String? queueId;
@@ -16,22 +16,22 @@ final String? queueName;
 
 final List<R2QueuesConfigRules>? rules;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'queueId': ?queueId,
   'queueName': ?queueName,
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'queueId', 'queueName', 'rules'}.contains(key)); } 
-R2QueuesConfig copyWith({String? Function()? queueId, String? Function()? queueName, List<R2QueuesConfigRules>? Function()? rules, }) { return R2QueuesConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'queueId', 'queueName', 'rules'}.contains(key));}
+R2QueuesConfig copyWith({String? Function()? queueId, String? Function()? queueName, List<R2QueuesConfigRules>? Function()? rules, }) {return R2QueuesConfig(
   queueId: queueId != null ? queueId() : this.queueId,
   queueName: queueName != null ? queueName() : this.queueName,
   rules: rules != null ? rules() : this.rules,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2QueuesConfig &&
           queueId == other.queueId &&
           queueName == other.queueName &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(queueId, queueName, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'R2QueuesConfig(queueId: $queueId, queueName: $queueName, rules: $rules)'; } 
- }
+          listEquals(rules, other.rules);}
+@override int get hashCode {return Object.hash(queueId, queueName, Object.hashAll(rules ?? const []));}
+@override String toString() {return 'R2QueuesConfig(queueId: $queueId, queueName: $queueName, rules: $rules)';}
+}

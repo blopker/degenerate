@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_collect_inputs_action.dart';import 'terminal_reader_reader_resource_collect_payment_method_action.dart';import 'terminal_reader_reader_resource_confirm_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_setup_intent_action.dart';import 'terminal_reader_reader_resource_refund_payment_action.dart';import 'terminal_reader_reader_resource_set_reader_display_action.dart';/// Status of the action performed by the reader.
 @immutable final class TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus._(this.value);
 
-factory TerminalReaderReaderResourceReaderActionStatus.fromJson(String json) { return switch (json) {
+factory TerminalReaderReaderResourceReaderActionStatus.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'in_progress' => inProgress,
   'succeeded' => succeeded,
   _ => TerminalReaderReaderResourceReaderActionStatus._(json),
-}; }
+};}
 
 static const TerminalReaderReaderResourceReaderActionStatus failed = TerminalReaderReaderResourceReaderActionStatus._('failed');
 
@@ -20,18 +20,18 @@ static const List<TerminalReaderReaderResourceReaderActionStatus> values = [fail
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceReaderActionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceReaderActionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalReaderReaderResourceReaderActionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalReaderReaderResourceReaderActionStatus($value)';}
+}
 /// Type of action performed by the reader.
 @immutable final class TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType._(this.value);
 
-factory TerminalReaderReaderResourceReaderActionType.fromJson(String json) { return switch (json) {
+factory TerminalReaderReaderResourceReaderActionType.fromJson(String json) {return switch (json) {
   'collect_inputs' => collectInputs,
   'collect_payment_method' => collectPaymentMethod,
   'confirm_payment_intent' => confirmPaymentIntent,
@@ -40,7 +40,7 @@ factory TerminalReaderReaderResourceReaderActionType.fromJson(String json) { ret
   'refund_payment' => refundPayment,
   'set_reader_display' => setReaderDisplay,
   _ => TerminalReaderReaderResourceReaderActionType._(json),
-}; }
+};}
 
 static const TerminalReaderReaderResourceReaderActionType collectInputs = TerminalReaderReaderResourceReaderActionType._('collect_inputs');
 
@@ -60,18 +60,18 @@ static const List<TerminalReaderReaderResourceReaderActionType> values = [collec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceReaderActionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceReaderActionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalReaderReaderResourceReaderActionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalReaderReaderResourceReaderActionType($value)';}
+}
 /// Represents an action performed by the reader
 @immutable final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({required this.status, required this.type, this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode = const Omittable.absent(), this.failureMessage = const Omittable.absent(), this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, });
 
-factory TerminalReaderReaderResourceReaderAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceReaderAction(
+factory TerminalReaderReaderResourceReaderAction.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceReaderAction(
   collectInputs: json['collect_inputs'] != null ? TerminalReaderReaderResourceCollectInputsAction.fromJson(json['collect_inputs'] as Map<String, dynamic>) : null,
   collectPaymentMethod: json['collect_payment_method'] != null ? TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(json['collect_payment_method'] as Map<String, dynamic>) : null,
   confirmPaymentIntent: json['confirm_payment_intent'] != null ? TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(json['confirm_payment_intent'] as Map<String, dynamic>) : null,
@@ -83,7 +83,7 @@ factory TerminalReaderReaderResourceReaderAction.fromJson(Map<String, dynamic> j
   setReaderDisplay: json['set_reader_display'] != null ? TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(json['set_reader_display'] as Map<String, dynamic>) : null,
   status: TerminalReaderReaderResourceReaderActionStatus.fromJson(json['status'] as String),
   type: TerminalReaderReaderResourceReaderActionType.fromJson(json['type'] as String),
-); }
+);}
 
 final TerminalReaderReaderResourceCollectInputsAction? collectInputs;
 
@@ -111,7 +111,7 @@ final TerminalReaderReaderResourceReaderActionStatus status;
 /// Type of action performed by the reader.
 final TerminalReaderReaderResourceReaderActionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (collectInputs != null) 'collect_inputs': collectInputs?.toJson(),
   if (collectPaymentMethod != null) 'collect_payment_method': collectPaymentMethod?.toJson(),
   if (confirmPaymentIntent != null) 'confirm_payment_intent': confirmPaymentIntent?.toJson(),
@@ -123,10 +123,10 @@ Map<String, dynamic> toJson() { return {
   if (setReaderDisplay != null) 'set_reader_display': setReaderDisplay?.toJson(),
   'status': status.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
-      json.containsKey('type'); } 
-TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceCollectInputsAction? Function()? collectInputs, TerminalReaderReaderResourceCollectPaymentMethodAction? Function()? collectPaymentMethod, TerminalReaderReaderResourceConfirmPaymentIntentAction? Function()? confirmPaymentIntent, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, TerminalReaderReaderResourceProcessPaymentIntentAction? Function()? processPaymentIntent, TerminalReaderReaderResourceProcessSetupIntentAction? Function()? processSetupIntent, TerminalReaderReaderResourceRefundPaymentAction? Function()? refundPayment, TerminalReaderReaderResourceSetReaderDisplayAction? Function()? setReaderDisplay, TerminalReaderReaderResourceReaderActionStatus? status, TerminalReaderReaderResourceReaderActionType? type, }) { return TerminalReaderReaderResourceReaderAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') &&
+      json.containsKey('type');}
+TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceCollectInputsAction? Function()? collectInputs, TerminalReaderReaderResourceCollectPaymentMethodAction? Function()? collectPaymentMethod, TerminalReaderReaderResourceConfirmPaymentIntentAction? Function()? confirmPaymentIntent, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, TerminalReaderReaderResourceProcessPaymentIntentAction? Function()? processPaymentIntent, TerminalReaderReaderResourceProcessSetupIntentAction? Function()? processSetupIntent, TerminalReaderReaderResourceRefundPaymentAction? Function()? refundPayment, TerminalReaderReaderResourceSetReaderDisplayAction? Function()? setReaderDisplay, TerminalReaderReaderResourceReaderActionStatus? status, TerminalReaderReaderResourceReaderActionType? type, }) {return TerminalReaderReaderResourceReaderAction(
   collectInputs: collectInputs != null ? collectInputs() : this.collectInputs,
   collectPaymentMethod: collectPaymentMethod != null ? collectPaymentMethod() : this.collectPaymentMethod,
   confirmPaymentIntent: confirmPaymentIntent != null ? confirmPaymentIntent() : this.confirmPaymentIntent,
@@ -138,8 +138,8 @@ TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceC
   setReaderDisplay: setReaderDisplay != null ? setReaderDisplay() : this.setReaderDisplay,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalReaderReaderResourceReaderAction &&
           collectInputs == other.collectInputs &&
           collectPaymentMethod == other.collectPaymentMethod &&
@@ -151,7 +151,7 @@ TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceC
           refundPayment == other.refundPayment &&
           setReaderDisplay == other.setReaderDisplay &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(collectInputs, collectPaymentMethod, confirmPaymentIntent, failureCode, failureMessage, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay, status, type); } 
-@override String toString() { return 'TerminalReaderReaderResourceReaderAction(collectInputs: $collectInputs, collectPaymentMethod: $collectPaymentMethod, confirmPaymentIntent: $confirmPaymentIntent, failureCode: $failureCode, failureMessage: $failureMessage, processPaymentIntent: $processPaymentIntent, processSetupIntent: $processSetupIntent, refundPayment: $refundPayment, setReaderDisplay: $setReaderDisplay, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(collectInputs, collectPaymentMethod, confirmPaymentIntent, failureCode, failureMessage, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay, status, type);}
+@override String toString() {return 'TerminalReaderReaderResourceReaderAction(collectInputs: $collectInputs, collectPaymentMethod: $collectPaymentMethod, confirmPaymentIntent: $confirmPaymentIntent, failureCode: $failureCode, failureMessage: $failureMessage, processPaymentIntent: $processPaymentIntent, processSetupIntent: $processSetupIntent, refundPayment: $refundPayment, setReaderDisplay: $setReaderDisplay, status: $status, type: $type)';}
+}

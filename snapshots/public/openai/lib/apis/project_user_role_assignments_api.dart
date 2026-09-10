@@ -11,7 +11,7 @@ final class ProjectUserRoleAssignmentsApi with ApiExecutor {const ProjectUserRol
 /// Lists the project roles assigned to a user within a project.
 ///
 /// `GET /projects/{project_id}/users/{user_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listProjectUserRoleAssignments({required String projectId, required String userId, int? limit, String? after, ListProjectUserRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RoleListResource, Never>> listProjectUserRoleAssignments({required String projectId, required String userId, int? limit, String? after, ListProjectUserRoleAssignmentsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -34,18 +34,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RoleListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RoleListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Assigns a project role to a user within a project.
 ///
 /// `POST /projects/{project_id}/users/{user_id}/roles`
-Future<ApiResult<UserRoleAssignment, Never>> assignProjectUserRole({required String projectId, required String userId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UserRoleAssignment, Never>> assignProjectUserRole({required String projectId, required String userId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,18 +51,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserRoleAssignment.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserRoleAssignment.fromJson(json as Map<String, dynamic>);}, );}
 /// Unassigns a project role from a user within a project.
 ///
 /// `DELETE /projects/{project_id}/users/{user_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignProjectUserRole({required String projectId, required String userId, required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignProjectUserRole({required String projectId, required String userId, required String roleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -76,12 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);}, );}
+}

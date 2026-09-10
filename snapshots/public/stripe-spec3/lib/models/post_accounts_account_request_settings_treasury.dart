@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_treasury_tos_acceptance.dart';@immutable final class PostAccountsAccountRequestSettingsTreasury {const PostAccountsAccountRequestSettingsTreasury({this.tosAcceptance});
 
-factory PostAccountsAccountRequestSettingsTreasury.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsTreasury(
+factory PostAccountsAccountRequestSettingsTreasury.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestSettingsTreasury(
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestSettingsTreasuryTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountRequestSettingsTreasuryTosAcceptance? tosAcceptance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tos_acceptance'}.contains(key)); } 
-PostAccountsAccountRequestSettingsTreasury copyWith({PostAccountsAccountRequestSettingsTreasuryTosAcceptance? Function()? tosAcceptance}) { return PostAccountsAccountRequestSettingsTreasury(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tos_acceptance'}.contains(key));}
+PostAccountsAccountRequestSettingsTreasury copyWith({PostAccountsAccountRequestSettingsTreasuryTosAcceptance? Function()? tosAcceptance}) {return PostAccountsAccountRequestSettingsTreasury(
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestSettingsTreasury &&
-          tosAcceptance == other.tosAcceptance; } 
-@override int get hashCode { return tosAcceptance.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestSettingsTreasury(tosAcceptance: $tosAcceptance)'; } 
- }
+          tosAcceptance == other.tosAcceptance;}
+@override int get hashCode {return tosAcceptance.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestSettingsTreasury(tosAcceptance: $tosAcceptance)';}
+}

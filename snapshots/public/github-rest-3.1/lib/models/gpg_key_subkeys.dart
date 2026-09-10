@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gpg_key_subkeys_emails.dart';@immutable final class GpgKeySubkeys {const GpgKeySubkeys({this.id, this.primaryKeyId, this.keyId, this.publicKey, this.emails, this.subkeys, this.canSign, this.canEncryptComms, this.canEncryptStorage, this.canCertify, this.createdAt, this.expiresAt = const Omittable.absent(), this.rawKey = const Omittable.absent(), this.revoked, });
 
-factory GpgKeySubkeys.fromJson(Map<String, dynamic> json) { return GpgKeySubkeys(
+factory GpgKeySubkeys.fromJson(Map<String, dynamic> json) {return GpgKeySubkeys(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   primaryKeyId: json['primary_key_id'] != null ? (json['primary_key_id'] as num).toInt() : null,
   keyId: json['key_id'] as String?,
@@ -17,7 +17,7 @@ factory GpgKeySubkeys.fromJson(Map<String, dynamic> json) { return GpgKeySubkeys
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] as String?) : const Omittable.absent(),
   rawKey: json.containsKey('raw_key') ? Omittable(json['raw_key'] as String?) : const Omittable.absent(),
   revoked: json['revoked'] as bool?,
-); }
+);}
 
 final int? id;
 
@@ -47,7 +47,7 @@ final Omittable<String?> rawKey;
 
 final bool? revoked;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'primary_key_id': ?primaryKeyId,
   'key_id': ?keyId,
@@ -62,9 +62,9 @@ Map<String, dynamic> toJson() { return {
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (rawKey.isPresent) 'raw_key': rawKey.value,
   'revoked': ?revoked,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'primary_key_id', 'key_id', 'public_key', 'emails', 'subkeys', 'can_sign', 'can_encrypt_comms', 'can_encrypt_storage', 'can_certify', 'created_at', 'expires_at', 'raw_key', 'revoked'}.contains(key)); } 
-GpgKeySubkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Function()? keyId, String? Function()? publicKey, List<GpgKeySubkeysEmails>? Function()? emails, List<dynamic>? Function()? subkeys, bool? Function()? canSign, bool? Function()? canEncryptComms, bool? Function()? canEncryptStorage, bool? Function()? canCertify, String? Function()? createdAt, Omittable<String?>? expiresAt, Omittable<String?>? rawKey, bool? Function()? revoked, }) { return GpgKeySubkeys(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'primary_key_id', 'key_id', 'public_key', 'emails', 'subkeys', 'can_sign', 'can_encrypt_comms', 'can_encrypt_storage', 'can_certify', 'created_at', 'expires_at', 'raw_key', 'revoked'}.contains(key));}
+GpgKeySubkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Function()? keyId, String? Function()? publicKey, List<GpgKeySubkeysEmails>? Function()? emails, List<dynamic>? Function()? subkeys, bool? Function()? canSign, bool? Function()? canEncryptComms, bool? Function()? canEncryptStorage, bool? Function()? canCertify, String? Function()? createdAt, Omittable<String?>? expiresAt, Omittable<String?>? rawKey, bool? Function()? revoked, }) {return GpgKeySubkeys(
   id: id != null ? id() : this.id,
   primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,
   keyId: keyId != null ? keyId() : this.keyId,
@@ -79,8 +79,8 @@ GpgKeySubkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, Stri
   expiresAt: expiresAt ?? this.expiresAt,
   rawKey: rawKey ?? this.rawKey,
   revoked: revoked != null ? revoked() : this.revoked,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GpgKeySubkeys &&
           id == other.id &&
           primaryKeyId == other.primaryKeyId &&
@@ -95,7 +95,7 @@ GpgKeySubkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, Stri
           createdAt == other.createdAt &&
           expiresAt == other.expiresAt &&
           rawKey == other.rawKey &&
-          revoked == other.revoked; } 
-@override int get hashCode { return Object.hash(id, primaryKeyId, keyId, publicKey, Object.hashAll(emails ?? const []), Object.hashAll(subkeys ?? const []), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, rawKey, revoked); } 
-@override String toString() { return 'GpgKeySubkeys(id: $id, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, rawKey: $rawKey, revoked: $revoked)'; } 
- }
+          revoked == other.revoked;}
+@override int get hashCode {return Object.hash(id, primaryKeyId, keyId, publicKey, Object.hashAll(emails ?? const []), Object.hashAll(subkeys ?? const []), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, rawKey, revoked);}
+@override String toString() {return 'GpgKeySubkeys(id: $id, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, rawKey: $rawKey, revoked: $revoked)';}
+}

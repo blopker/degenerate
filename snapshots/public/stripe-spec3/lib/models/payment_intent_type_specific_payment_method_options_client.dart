@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_installment_options.dart';import 'payment_intent_payment_method_options_mandate_options_payto.dart';import 'payment_method_options_card_present_routing.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod {const PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod._(this.value);
 
-factory PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   'manual_preferred' => manualPreferred,
   _ => PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod._(json),
-}; }
+};}
 
 static const PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod manual = PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod._('manual');
 
@@ -17,14 +17,14 @@ static const List<PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMeth
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -34,12 +34,12 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage {const PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage._(this.value);
 
-factory PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage none = PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage._('none');
 
@@ -51,23 +51,23 @@ static const List<PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFuture
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage($value)';}
+}
 /// Bank account verification method.
 @immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod {const PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(this.value);
 
-factory PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   'microdeposits' => microdeposits,
   _ => PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(json),
-}; }
+};}
 
 static const PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod automatic = PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._('automatic');
 
@@ -79,18 +79,18 @@ static const List<PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificatio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod($value)';}
+}
 /// 
 @immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClient {const PaymentIntentTypeSpecificPaymentMethodOptionsClient({this.captureMethod, this.installments, this.mandateOptions, this.requestIncrementalAuthorizationSupport, this.requireCvcRecollection, this.routing, this.setupFutureUsage, this.verificationMethod, });
 
-factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
+factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) {return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
   captureMethod: json['capture_method'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod.fromJson(json['capture_method'] as String) : null,
   installments: json['installments'] != null ? PaymentFlowsInstallmentOptions.fromJson(json['installments'] as Map<String, dynamic>) : null,
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
@@ -99,7 +99,7 @@ factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String,
   routing: json['routing'] != null ? PaymentMethodOptionsCardPresentRouting.fromJson(json['routing'] as Map<String, dynamic>) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   verificationMethod: json['verification_method'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod? captureMethod;
@@ -128,7 +128,7 @@ final PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage? setup
 /// Bank account verification method.
 final PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (installments != null) 'installments': installments?.toJson(),
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
@@ -137,9 +137,9 @@ Map<String, dynamic> toJson() { return {
   if (routing != null) 'routing': routing?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'request_incremental_authorization_support', 'require_cvc_recollection', 'routing', 'setup_future_usage', 'verification_method'}.contains(key)); } 
-PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod? Function()? captureMethod, PaymentFlowsInstallmentOptions? Function()? installments, PaymentIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, bool? Function()? requestIncrementalAuthorizationSupport, bool? Function()? requireCvcRecollection, PaymentMethodOptionsCardPresentRouting? Function()? routing, PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage? Function()? setupFutureUsage, PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod? Function()? verificationMethod, }) { return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'request_incremental_authorization_support', 'require_cvc_recollection', 'routing', 'setup_future_usage', 'verification_method'}.contains(key));}
+PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod? Function()? captureMethod, PaymentFlowsInstallmentOptions? Function()? installments, PaymentIntentPaymentMethodOptionsMandateOptionsPayto? Function()? mandateOptions, bool? Function()? requestIncrementalAuthorizationSupport, bool? Function()? requireCvcRecollection, PaymentMethodOptionsCardPresentRouting? Function()? routing, PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage? Function()? setupFutureUsage, PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod? Function()? verificationMethod, }) {return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
@@ -148,8 +148,8 @@ PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeS
   routing: routing != null ? routing() : this.routing,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentTypeSpecificPaymentMethodOptionsClient &&
           captureMethod == other.captureMethod &&
           installments == other.installments &&
@@ -158,7 +158,7 @@ PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeS
           requireCvcRecollection == other.requireCvcRecollection &&
           routing == other.routing &&
           setupFutureUsage == other.setupFutureUsage &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(captureMethod, installments, mandateOptions, requestIncrementalAuthorizationSupport, requireCvcRecollection, routing, setupFutureUsage, verificationMethod); } 
-@override String toString() { return 'PaymentIntentTypeSpecificPaymentMethodOptionsClient(captureMethod: $captureMethod, installments: $installments, mandateOptions: $mandateOptions, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, requireCvcRecollection: $requireCvcRecollection, routing: $routing, setupFutureUsage: $setupFutureUsage, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(captureMethod, installments, mandateOptions, requestIncrementalAuthorizationSupport, requireCvcRecollection, routing, setupFutureUsage, verificationMethod);}
+@override String toString() {return 'PaymentIntentTypeSpecificPaymentMethodOptionsClient(captureMethod: $captureMethod, installments: $installments, mandateOptions: $mandateOptions, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, requireCvcRecollection: $requireCvcRecollection, routing: $routing, setupFutureUsage: $setupFutureUsage, verificationMethod: $verificationMethod)';}
+}

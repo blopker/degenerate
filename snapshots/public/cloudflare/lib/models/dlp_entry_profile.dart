@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Computed entry field for a profile that an entry is shared into.
 @immutable final class DlpEntryProfile {const DlpEntryProfile({required this.id, required this.name, });
 
-factory DlpEntryProfile.fromJson(Map<String, dynamic> json) { return DlpEntryProfile(
+factory DlpEntryProfile.fromJson(Map<String, dynamic> json) {return DlpEntryProfile(
   id: json['id'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String id;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-DlpEntryProfile copyWith({String? id, String? name, }) { return DlpEntryProfile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+DlpEntryProfile copyWith({String? id, String? name, }) {return DlpEntryProfile(
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpEntryProfile &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'DlpEntryProfile(id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(id, name);}
+@override String toString() {return 'DlpEntryProfile(id: $id, name: $name)';}
+}

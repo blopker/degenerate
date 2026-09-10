@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_presets_response_data_ui_design_tokens_colors_background.dart';import 'post_presets_response_data_ui_design_tokens_colors_brand.dart';@immutable final class PostPresetsResponseDataUiDesignTokensColors {const PostPresetsResponseDataUiDesignTokensColors({required this.background, required this.brand, required this.danger, required this.success, required this.text, required this.textOnBrand, required this.videoBg, required this.warning, });
 
-factory PostPresetsResponseDataUiDesignTokensColors.fromJson(Map<String, dynamic> json) { return PostPresetsResponseDataUiDesignTokensColors(
+factory PostPresetsResponseDataUiDesignTokensColors.fromJson(Map<String, dynamic> json) {return PostPresetsResponseDataUiDesignTokensColors(
   background: PostPresetsResponseDataUiDesignTokensColorsBackground.fromJson(json['background'] as Map<String, dynamic>),
   brand: PostPresetsResponseDataUiDesignTokensColorsBrand.fromJson(json['brand'] as Map<String, dynamic>),
   danger: json['danger'] as String,
@@ -11,7 +11,7 @@ factory PostPresetsResponseDataUiDesignTokensColors.fromJson(Map<String, dynamic
   textOnBrand: json['text_on_brand'] as String,
   videoBg: json['video_bg'] as String,
   warning: json['warning'] as String,
-); }
+);}
 
 final PostPresetsResponseDataUiDesignTokensColorsBackground background;
 
@@ -29,7 +29,7 @@ final String videoBg;
 
 final String warning;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'background': background.toJson(),
   'brand': brand.toJson(),
   'danger': danger,
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'text_on_brand': textOnBrand,
   'video_bg': videoBg,
   'warning': warning,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('background') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('background') &&
       json.containsKey('brand') &&
       json.containsKey('danger') && json['danger'] is String &&
       json.containsKey('success') && json['success'] is String &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('text_on_brand') && json['text_on_brand'] is String &&
       json.containsKey('video_bg') && json['video_bg'] is String &&
-      json.containsKey('warning') && json['warning'] is String; } 
-PostPresetsResponseDataUiDesignTokensColors copyWith({PostPresetsResponseDataUiDesignTokensColorsBackground? background, PostPresetsResponseDataUiDesignTokensColorsBrand? brand, String? danger, String? success, String? text, String? textOnBrand, String? videoBg, String? warning, }) { return PostPresetsResponseDataUiDesignTokensColors(
+      json.containsKey('warning') && json['warning'] is String;}
+PostPresetsResponseDataUiDesignTokensColors copyWith({PostPresetsResponseDataUiDesignTokensColorsBackground? background, PostPresetsResponseDataUiDesignTokensColorsBrand? brand, String? danger, String? success, String? text, String? textOnBrand, String? videoBg, String? warning, }) {return PostPresetsResponseDataUiDesignTokensColors(
   background: background ?? this.background,
   brand: brand ?? this.brand,
   danger: danger ?? this.danger,
@@ -56,8 +56,8 @@ PostPresetsResponseDataUiDesignTokensColors copyWith({PostPresetsResponseDataUiD
   textOnBrand: textOnBrand ?? this.textOnBrand,
   videoBg: videoBg ?? this.videoBg,
   warning: warning ?? this.warning,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPresetsResponseDataUiDesignTokensColors &&
           background == other.background &&
           brand == other.brand &&
@@ -66,7 +66,7 @@ PostPresetsResponseDataUiDesignTokensColors copyWith({PostPresetsResponseDataUiD
           text == other.text &&
           textOnBrand == other.textOnBrand &&
           videoBg == other.videoBg &&
-          warning == other.warning; } 
-@override int get hashCode { return Object.hash(background, brand, danger, success, text, textOnBrand, videoBg, warning); } 
-@override String toString() { return 'PostPresetsResponseDataUiDesignTokensColors(background: $background, brand: $brand, danger: $danger, success: $success, text: $text, textOnBrand: $textOnBrand, videoBg: $videoBg, warning: $warning)'; } 
- }
+          warning == other.warning;}
+@override int get hashCode {return Object.hash(background, brand, danger, success, text, textOnBrand, videoBg, warning);}
+@override String toString() {return 'PostPresetsResponseDataUiDesignTokensColors(background: $background, brand: $brand, danger: $danger, success: $success, text: $text, textOnBrand: $textOnBrand, videoBg: $videoBg, warning: $warning)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2 {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2._(this.value);
 
-factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2._(json),
-}; }
+};}
 
 static const PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2 $empty = PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2($value)';}
+}
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 @immutable
 final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadata {

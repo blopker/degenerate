@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_financial_connections.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_mandate_options.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_networks.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'instant' => instant,
   'microdeposits' => microdeposits,
   _ => PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod automatic = PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._('automatic');
 
@@ -19,22 +19,22 @@ static const List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerifi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.networks, this.verificationMethod, });
 
-factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount(
+factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   mandateOptions: json['mandate_options'] != null ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   networks: json['networks'] != null ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   verificationMethod: json['verification_method'] != null ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,
-); }
+);}
 
 final PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections? financialConnections;
 
@@ -44,25 +44,25 @@ final PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks? networks
 
 final PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod? verificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (networks != null) 'networks': networks?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'verification_method'}.contains(key)); } 
-PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount copyWith({PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections? Function()? financialConnections, PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountMandateOptions? Function()? mandateOptions, PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks? Function()? networks, PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod? Function()? verificationMethod, }) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'verification_method'}.contains(key));}
+PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount copyWith({PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections? Function()? financialConnections, PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountMandateOptions? Function()? mandateOptions, PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks? Function()? networks, PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod? Function()? verificationMethod, }) {return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   networks: networks != null ? networks() : this.networks,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount &&
           financialConnections == other.financialConnections &&
           mandateOptions == other.mandateOptions &&
           networks == other.networks &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, mandateOptions, networks, verificationMethod); } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, verificationMethod: $verificationMethod)'; } 
- }
+          verificationMethod == other.verificationMethod;}
+@override int get hashCode {return Object.hash(financialConnections, mandateOptions, networks, verificationMethod);}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, verificationMethod: $verificationMethod)';}
+}

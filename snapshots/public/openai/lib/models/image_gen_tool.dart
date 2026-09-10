@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_gen_tool_input_image_mask.dart';import 'image_gen_tool_model.dart';import 'input_fidelity.dart';@immutable final class ImageGenActionEnum {const ImageGenActionEnum._(this.value);
 
-factory ImageGenActionEnum.fromJson(String json) { return switch (json) {
+factory ImageGenActionEnum.fromJson(String json) {return switch (json) {
   'generate' => generate,
   'edit' => edit,
   'auto' => auto,
   _ => ImageGenActionEnum._(json),
-}; }
+};}
 
 static const ImageGenActionEnum generate = ImageGenActionEnum._('generate');
 
@@ -19,26 +19,26 @@ static const List<ImageGenActionEnum> values = [generate, edit, auto];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenActionEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenActionEnum($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenActionEnum && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenActionEnum($value)';}
+}
 /// The quality of the generated image. One of `low`, `medium`, `high`,
 /// or `auto`. Default: `auto`.
 /// 
 @immutable final class ImageGenToolQuality {const ImageGenToolQuality._(this.value);
 
-factory ImageGenToolQuality.fromJson(String json) { return switch (json) {
+factory ImageGenToolQuality.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
   _ => ImageGenToolQuality._(json),
-}; }
+};}
 
 static const ImageGenToolQuality low = ImageGenToolQuality._('low');
 
@@ -52,26 +52,26 @@ static const List<ImageGenToolQuality> values = [low, medium, high, auto];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolQuality($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenToolQuality && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenToolQuality($value)';}
+}
 /// The size of the generated image. One of `1024x1024`, `1024x1536`,
 /// `1536x1024`, or `auto`. Default: `auto`.
 /// 
 @immutable final class ImageGenToolSize {const ImageGenToolSize._(this.value);
 
-factory ImageGenToolSize.fromJson(String json) { return switch (json) {
+factory ImageGenToolSize.fromJson(String json) {return switch (json) {
   '1024x1024' => $1024x1024,
   '1024x1536' => $1024x1536,
   '1536x1024' => $1536x1024,
   'auto' => auto,
   _ => ImageGenToolSize._(json),
-}; }
+};}
 
 static const ImageGenToolSize $1024x1024 = ImageGenToolSize._('1024x1024');
 
@@ -85,25 +85,25 @@ static const List<ImageGenToolSize> values = [$1024x1024, $1024x1536, $1536x1024
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenToolSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenToolSize($value)';}
+}
 /// The output format of the generated image. One of `png`, `webp`, or
 /// `jpeg`. Default: `png`.
 /// 
 @immutable final class ImageGenToolOutputFormat {const ImageGenToolOutputFormat._(this.value);
 
-factory ImageGenToolOutputFormat.fromJson(String json) { return switch (json) {
+factory ImageGenToolOutputFormat.fromJson(String json) {return switch (json) {
   'png' => png,
   'webp' => webp,
   'jpeg' => jpeg,
   _ => ImageGenToolOutputFormat._(json),
-}; }
+};}
 
 static const ImageGenToolOutputFormat png = ImageGenToolOutputFormat._('png');
 
@@ -115,23 +115,23 @@ static const List<ImageGenToolOutputFormat> values = [png, webp, jpeg];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolOutputFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenToolOutputFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenToolOutputFormat($value)';}
+}
 /// Moderation level for the generated image. Default: `auto`.
 /// 
 @immutable final class ImageGenToolModeration {const ImageGenToolModeration._(this.value);
 
-factory ImageGenToolModeration.fromJson(String json) { return switch (json) {
+factory ImageGenToolModeration.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'low' => low,
   _ => ImageGenToolModeration._(json),
-}; }
+};}
 
 static const ImageGenToolModeration auto = ImageGenToolModeration._('auto');
 
@@ -141,25 +141,25 @@ static const List<ImageGenToolModeration> values = [auto, low];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolModeration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolModeration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenToolModeration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenToolModeration($value)';}
+}
 /// Background type for the generated image. One of `transparent`,
 /// `opaque`, or `auto`. Default: `auto`.
 /// 
 @immutable final class ImageGenToolBackground {const ImageGenToolBackground._(this.value);
 
-factory ImageGenToolBackground.fromJson(String json) { return switch (json) {
+factory ImageGenToolBackground.fromJson(String json) {return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
   _ => ImageGenToolBackground._(json),
-}; }
+};}
 
 static const ImageGenToolBackground transparent = ImageGenToolBackground._('transparent');
 
@@ -171,19 +171,19 @@ static const List<ImageGenToolBackground> values = [transparent, opaque, auto];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolBackground($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageGenToolBackground && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageGenToolBackground($value)';}
+}
 /// A tool that generates images using the GPT image models.
 /// 
 @immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality, this.size, this.outputFormat, this.outputCompression, this.moderation, this.background, this.inputFidelity = const Omittable.absent(), this.inputImageMask, this.partialImages, this.action, });
 
-factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
+factory ImageGenTool.fromJson(Map<String, dynamic> json) {return ImageGenTool(
   type: json['type'] as String,
   model: json['model'] != null ? ImageGenToolModel.fromJson(json['model']) : null,
   quality: json['quality'] != null ? ImageGenToolQuality.fromJson(json['quality'] as String) : null,
@@ -196,7 +196,7 @@ factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   inputImageMask: json['input_image_mask'] != null ? ImageGenToolInputImageMask.fromJson(json['input_image_mask'] as Map<String, dynamic>) : null,
   partialImages: json['partial_images'] != null ? (json['partial_images'] as num).toInt() : null,
   action: json['action'] != null ? ImageGenActionEnum.fromJson(json['action'] as String) : null,
-); }
+);}
 
 /// The type of the image generation tool. Always `image_generation`.
 /// 
@@ -248,20 +248,20 @@ final int? partialImages;
 final ImageGenActionEnum? action;
 
 /// The value with the schema default applied when absent.
-ImageGenToolQuality get qualityOrDefault { return quality ?? ImageGenToolQuality.fromJson('auto'); } 
+ImageGenToolQuality get qualityOrDefault {return quality ?? ImageGenToolQuality.fromJson('auto');}
 /// The value with the schema default applied when absent.
-ImageGenToolSize get sizeOrDefault { return size ?? ImageGenToolSize.fromJson('auto'); } 
+ImageGenToolSize get sizeOrDefault {return size ?? ImageGenToolSize.fromJson('auto');}
 /// The value with the schema default applied when absent.
-ImageGenToolOutputFormat get outputFormatOrDefault { return outputFormat ?? ImageGenToolOutputFormat.fromJson('png'); } 
+ImageGenToolOutputFormat get outputFormatOrDefault {return outputFormat ?? ImageGenToolOutputFormat.fromJson('png');}
 /// The value with the schema default applied when absent.
-int get outputCompressionOrDefault { return outputCompression ?? 100; } 
+int get outputCompressionOrDefault {return outputCompression ?? 100;}
 /// The value with the schema default applied when absent.
-ImageGenToolModeration get moderationOrDefault { return moderation ?? ImageGenToolModeration.fromJson('auto'); } 
+ImageGenToolModeration get moderationOrDefault {return moderation ?? ImageGenToolModeration.fromJson('auto');}
 /// The value with the schema default applied when absent.
-ImageGenToolBackground get backgroundOrDefault { return background ?? ImageGenToolBackground.fromJson('auto'); } 
+ImageGenToolBackground get backgroundOrDefault {return background ?? ImageGenToolBackground.fromJson('auto');}
 /// The value with the schema default applied when absent.
-int get partialImagesOrDefault { return partialImages ?? 0; } 
-Map<String, dynamic> toJson() { return {
+int get partialImagesOrDefault {return partialImages ?? 0;}
+Map<String, dynamic> toJson() {return {
   'type': type,
   if (model != null) 'model': model?.toJson(),
   if (quality != null) 'quality': quality?.toJson(),
@@ -274,9 +274,9 @@ Map<String, dynamic> toJson() { return {
   if (inputImageMask != null) 'input_image_mask': inputImageMask?.toJson(),
   'partial_images': ?partialImages,
   if (action != null) 'action': action?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageGenToolQuality? Function()? quality, ImageGenToolSize? Function()? size, ImageGenToolOutputFormat? Function()? outputFormat, int? Function()? outputCompression, ImageGenToolModeration? Function()? moderation, ImageGenToolBackground? Function()? background, Omittable<InputFidelity?>? inputFidelity, ImageGenToolInputImageMask? Function()? inputImageMask, int? Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ImageGenTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageGenToolQuality? Function()? quality, ImageGenToolSize? Function()? size, ImageGenToolOutputFormat? Function()? outputFormat, int? Function()? outputCompression, ImageGenToolModeration? Function()? moderation, ImageGenToolBackground? Function()? background, Omittable<InputFidelity?>? inputFidelity, ImageGenToolInputImageMask? Function()? inputImageMask, int? Function()? partialImages, ImageGenActionEnum? Function()? action, }) {return ImageGenTool(
   type: type ?? this.type,
   model: model != null ? model() : this.model,
   quality: quality != null ? quality() : this.quality,
@@ -289,8 +289,8 @@ ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, Image
   inputImageMask: inputImageMask != null ? inputImageMask() : this.inputImageMask,
   partialImages: partialImages != null ? partialImages() : this.partialImages,
   action: action != null ? action() : this.action,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageGenTool &&
           type == other.type &&
           model == other.model &&
@@ -303,7 +303,7 @@ ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, Image
           inputFidelity == other.inputFidelity &&
           inputImageMask == other.inputImageMask &&
           partialImages == other.partialImages &&
-          action == other.action; } 
-@override int get hashCode { return Object.hash(type, model, quality, size, outputFormat, outputCompression, moderation, background, inputFidelity, inputImageMask, partialImages, action); } 
-@override String toString() { return 'ImageGenTool(type: $type, model: $model, quality: $quality, size: $size, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, inputFidelity: $inputFidelity, inputImageMask: $inputImageMask, partialImages: $partialImages, action: $action)'; } 
- }
+          action == other.action;}
+@override int get hashCode {return Object.hash(type, model, quality, size, outputFormat, outputCompression, moderation, background, inputFidelity, inputImageMask, partialImages, action);}
+@override String toString() {return 'ImageGenTool(type: $type, model: $model, quality: $quality, size: $size, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, inputFidelity: $inputFidelity, inputImageMask: $inputImageMask, partialImages: $partialImages, action: $action)';}
+}

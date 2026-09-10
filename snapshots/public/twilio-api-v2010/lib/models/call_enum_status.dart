@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of this call. Can be: `queued`, `ringing`, `in-progress`, `canceled`, `completed`, `failed`, `busy` or `no-answer`. See [Call Status Values](https://www.twilio.com/docs/voice/api/call-resource#call-status-values) below for more information.
 @immutable final class CallEnumStatus {const CallEnumStatus._(this.value);
 
-factory CallEnumStatus.fromJson(String json) { return switch (json) {
+factory CallEnumStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'ringing' => ringing,
   'in-progress' => inProgress,
@@ -13,7 +13,7 @@ factory CallEnumStatus.fromJson(String json) { return switch (json) {
   'no-answer' => noAnswer,
   'canceled' => canceled,
   _ => CallEnumStatus._(json),
-}; }
+};}
 
 static const CallEnumStatus queued = CallEnumStatus._('queued');
 
@@ -35,11 +35,11 @@ static const List<CallEnumStatus> values = [queued, ringing, inProgress, complet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallEnumStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CallEnumStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CallEnumStatus($value)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayDnsResolverSettings2 {const ZeroTrustGatewayDnsResolverSettings2({required this.ip, this.port, this.routeThroughPrivateNetwork, this.vnetId, });
 
-factory ZeroTrustGatewayDnsResolverSettings2.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayDnsResolverSettings2(
+factory ZeroTrustGatewayDnsResolverSettings2.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayDnsResolverSettings2(
   ip: json['ip'] as String,
   port: json['port'] != null ? (json['port'] as num).toInt() : null,
   routeThroughPrivateNetwork: json['route_through_private_network'] as bool?,
   vnetId: json['vnet_id'] as String?,
-); }
+);}
 
 /// Specify the IPv6 address of the upstream resolver.
 final String ip;
@@ -21,25 +21,25 @@ final bool? routeThroughPrivateNetwork;
 /// Specify an optional virtual network for this resolver. Uses default virtual network id if omitted.
 final String? vnetId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip': ip,
   'port': ?port,
   'route_through_private_network': ?routeThroughPrivateNetwork,
   'vnet_id': ?vnetId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-ZeroTrustGatewayDnsResolverSettings2 copyWith({String? ip, int? Function()? port, bool? Function()? routeThroughPrivateNetwork, String? Function()? vnetId, }) { return ZeroTrustGatewayDnsResolverSettings2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip') && json['ip'] is String;}
+ZeroTrustGatewayDnsResolverSettings2 copyWith({String? ip, int? Function()? port, bool? Function()? routeThroughPrivateNetwork, String? Function()? vnetId, }) {return ZeroTrustGatewayDnsResolverSettings2(
   ip: ip ?? this.ip,
   port: port != null ? port() : this.port,
   routeThroughPrivateNetwork: routeThroughPrivateNetwork != null ? routeThroughPrivateNetwork() : this.routeThroughPrivateNetwork,
   vnetId: vnetId != null ? vnetId() : this.vnetId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayDnsResolverSettings2 &&
           ip == other.ip &&
           port == other.port &&
           routeThroughPrivateNetwork == other.routeThroughPrivateNetwork &&
-          vnetId == other.vnetId; } 
-@override int get hashCode { return Object.hash(ip, port, routeThroughPrivateNetwork, vnetId); } 
-@override String toString() { return 'ZeroTrustGatewayDnsResolverSettings2(ip: $ip, port: $port, routeThroughPrivateNetwork: $routeThroughPrivateNetwork, vnetId: $vnetId)'; } 
- }
+          vnetId == other.vnetId;}
+@override int get hashCode {return Object.hash(ip, port, routeThroughPrivateNetwork, vnetId);}
+@override String toString() {return 'ZeroTrustGatewayDnsResolverSettings2(ip: $ip, port: $port, routeThroughPrivateNetwork: $routeThroughPrivateNetwork, vnetId: $vnetId)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `logs`.
 @immutable final class EvalLogsDataSourceConfigType {const EvalLogsDataSourceConfigType._(this.value);
 
-factory EvalLogsDataSourceConfigType.fromJson(String json) { return switch (json) {
+factory EvalLogsDataSourceConfigType.fromJson(String json) {return switch (json) {
   'logs' => logs,
   _ => EvalLogsDataSourceConfigType._(json),
-}; }
+};}
 
 static const EvalLogsDataSourceConfigType logs = EvalLogsDataSourceConfigType._('logs');
 
@@ -14,14 +14,14 @@ static const List<EvalLogsDataSourceConfigType> values = [logs];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalLogsDataSourceConfigType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalLogsDataSourceConfigType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalLogsDataSourceConfigType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalLogsDataSourceConfigType($value)';}
+}
 /// A LogsDataSourceConfig which specifies the metadata property of your logs query.
 /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.
 /// The schema returned by this data source config is used to defined what variables are available in your evals.
@@ -29,11 +29,11 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({required this.type, required this.schema, this.metadata = const Omittable.absent(), });
 
-factory EvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalLogsDataSourceConfig(
+factory EvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) {return EvalLogsDataSourceConfig(
   type: EvalLogsDataSourceConfigType.fromJson(json['type'] as String),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   schema: json['schema'] as Map<String, dynamic>,
-); }
+);}
 
 /// The type of data source. Always `logs`.
 final EvalLogsDataSourceConfigType type;
@@ -45,23 +45,23 @@ final Omittable<Map<String,String>?> metadata;
 /// 
 final Map<String,dynamic> schema;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   'schema': schema,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('schema'); } 
-EvalLogsDataSourceConfig copyWith({EvalLogsDataSourceConfigType? type, Omittable<Map<String,String>?>? metadata, Map<String,dynamic>? schema, }) { return EvalLogsDataSourceConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('schema');}
+EvalLogsDataSourceConfig copyWith({EvalLogsDataSourceConfigType? type, Omittable<Map<String,String>?>? metadata, Map<String,dynamic>? schema, }) {return EvalLogsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata ?? this.metadata,
   schema: schema ?? this.schema,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalLogsDataSourceConfig &&
           type == other.type &&
           metadata == other.metadata &&
-          schema == other.schema; } 
-@override int get hashCode { return Object.hash(type, metadata, schema); } 
-@override String toString() { return 'EvalLogsDataSourceConfig(type: $type, metadata: $metadata, schema: $schema)'; } 
- }
+          schema == other.schema;}
+@override int get hashCode {return Object.hash(type, metadata, schema);}
+@override String toString() {return 'EvalLogsDataSourceConfig(type: $type, metadata: $metadata, schema: $schema)';}
+}

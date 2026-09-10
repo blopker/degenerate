@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_account_config_claim.dart';import 'connect_embedded_base_config_claim.dart';import 'connect_embedded_disputes_list_config.dart';import 'connect_embedded_financial_account_config_claim.dart';import 'connect_embedded_financial_account_transactions_config_claim.dart';import 'connect_embedded_instant_payouts_promotion_config.dart';import 'connect_embedded_issuing_card_config_claim.dart';import 'connect_embedded_issuing_cards_list_config_claim.dart';import 'connect_embedded_payment_disputes_config.dart';import 'connect_embedded_payments_config_claim.dart';import 'connect_embedded_payouts_config.dart';/// 
 @immutable final class ConnectEmbeddedAccountSessionCreateComponents {const ConnectEmbeddedAccountSessionCreateComponents({required this.accountManagement, required this.accountOnboarding, required this.balances, required this.disputesList, required this.documents, required this.financialAccount, required this.financialAccountTransactions, required this.instantPayoutsPromotion, required this.issuingCard, required this.issuingCardsList, required this.notificationBanner, required this.paymentDetails, required this.paymentDisputes, required this.payments, required this.payoutDetails, required this.payouts, required this.payoutsList, required this.taxRegistrations, required this.taxSettings, });
 
-factory ConnectEmbeddedAccountSessionCreateComponents.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedAccountSessionCreateComponents(
+factory ConnectEmbeddedAccountSessionCreateComponents.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedAccountSessionCreateComponents(
   accountManagement: ConnectEmbeddedAccountConfigClaim.fromJson(json['account_management'] as Map<String, dynamic>),
   accountOnboarding: ConnectEmbeddedAccountConfigClaim.fromJson(json['account_onboarding'] as Map<String, dynamic>),
   balances: ConnectEmbeddedPayoutsConfig.fromJson(json['balances'] as Map<String, dynamic>),
@@ -23,7 +23,7 @@ factory ConnectEmbeddedAccountSessionCreateComponents.fromJson(Map<String, dynam
   payoutsList: ConnectEmbeddedBaseConfigClaim.fromJson(json['payouts_list'] as Map<String, dynamic>),
   taxRegistrations: ConnectEmbeddedBaseConfigClaim.fromJson(json['tax_registrations'] as Map<String, dynamic>),
   taxSettings: ConnectEmbeddedBaseConfigClaim.fromJson(json['tax_settings'] as Map<String, dynamic>),
-); }
+);}
 
 final ConnectEmbeddedAccountConfigClaim accountManagement;
 
@@ -63,7 +63,7 @@ final ConnectEmbeddedBaseConfigClaim taxRegistrations;
 
 final ConnectEmbeddedBaseConfigClaim taxSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_management': accountManagement.toJson(),
   'account_onboarding': accountOnboarding.toJson(),
   'balances': balances.toJson(),
@@ -83,8 +83,8 @@ Map<String, dynamic> toJson() { return {
   'payouts_list': payoutsList.toJson(),
   'tax_registrations': taxRegistrations.toJson(),
   'tax_settings': taxSettings.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_management') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_management') &&
       json.containsKey('account_onboarding') &&
       json.containsKey('balances') &&
       json.containsKey('disputes_list') &&
@@ -102,8 +102,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('payouts') &&
       json.containsKey('payouts_list') &&
       json.containsKey('tax_registrations') &&
-      json.containsKey('tax_settings'); } 
-ConnectEmbeddedAccountSessionCreateComponents copyWith({ConnectEmbeddedAccountConfigClaim? accountManagement, ConnectEmbeddedAccountConfigClaim? accountOnboarding, ConnectEmbeddedPayoutsConfig? balances, ConnectEmbeddedDisputesListConfig? disputesList, ConnectEmbeddedBaseConfigClaim? documents, ConnectEmbeddedFinancialAccountConfigClaim? financialAccount, ConnectEmbeddedFinancialAccountTransactionsConfigClaim? financialAccountTransactions, ConnectEmbeddedInstantPayoutsPromotionConfig? instantPayoutsPromotion, ConnectEmbeddedIssuingCardConfigClaim? issuingCard, ConnectEmbeddedIssuingCardsListConfigClaim? issuingCardsList, ConnectEmbeddedAccountConfigClaim? notificationBanner, ConnectEmbeddedPaymentsConfigClaim? paymentDetails, ConnectEmbeddedPaymentDisputesConfig? paymentDisputes, ConnectEmbeddedPaymentsConfigClaim? payments, ConnectEmbeddedBaseConfigClaim? payoutDetails, ConnectEmbeddedPayoutsConfig? payouts, ConnectEmbeddedBaseConfigClaim? payoutsList, ConnectEmbeddedBaseConfigClaim? taxRegistrations, ConnectEmbeddedBaseConfigClaim? taxSettings, }) { return ConnectEmbeddedAccountSessionCreateComponents(
+      json.containsKey('tax_settings');}
+ConnectEmbeddedAccountSessionCreateComponents copyWith({ConnectEmbeddedAccountConfigClaim? accountManagement, ConnectEmbeddedAccountConfigClaim? accountOnboarding, ConnectEmbeddedPayoutsConfig? balances, ConnectEmbeddedDisputesListConfig? disputesList, ConnectEmbeddedBaseConfigClaim? documents, ConnectEmbeddedFinancialAccountConfigClaim? financialAccount, ConnectEmbeddedFinancialAccountTransactionsConfigClaim? financialAccountTransactions, ConnectEmbeddedInstantPayoutsPromotionConfig? instantPayoutsPromotion, ConnectEmbeddedIssuingCardConfigClaim? issuingCard, ConnectEmbeddedIssuingCardsListConfigClaim? issuingCardsList, ConnectEmbeddedAccountConfigClaim? notificationBanner, ConnectEmbeddedPaymentsConfigClaim? paymentDetails, ConnectEmbeddedPaymentDisputesConfig? paymentDisputes, ConnectEmbeddedPaymentsConfigClaim? payments, ConnectEmbeddedBaseConfigClaim? payoutDetails, ConnectEmbeddedPayoutsConfig? payouts, ConnectEmbeddedBaseConfigClaim? payoutsList, ConnectEmbeddedBaseConfigClaim? taxRegistrations, ConnectEmbeddedBaseConfigClaim? taxSettings, }) {return ConnectEmbeddedAccountSessionCreateComponents(
   accountManagement: accountManagement ?? this.accountManagement,
   accountOnboarding: accountOnboarding ?? this.accountOnboarding,
   balances: balances ?? this.balances,
@@ -123,8 +123,8 @@ ConnectEmbeddedAccountSessionCreateComponents copyWith({ConnectEmbeddedAccountCo
   payoutsList: payoutsList ?? this.payoutsList,
   taxRegistrations: taxRegistrations ?? this.taxRegistrations,
   taxSettings: taxSettings ?? this.taxSettings,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConnectEmbeddedAccountSessionCreateComponents &&
           accountManagement == other.accountManagement &&
           accountOnboarding == other.accountOnboarding &&
@@ -144,7 +144,7 @@ ConnectEmbeddedAccountSessionCreateComponents copyWith({ConnectEmbeddedAccountCo
           payouts == other.payouts &&
           payoutsList == other.payoutsList &&
           taxRegistrations == other.taxRegistrations &&
-          taxSettings == other.taxSettings; } 
-@override int get hashCode { return Object.hash(accountManagement, accountOnboarding, balances, disputesList, documents, financialAccount, financialAccountTransactions, instantPayoutsPromotion, issuingCard, issuingCardsList, notificationBanner, paymentDetails, paymentDisputes, payments, payoutDetails, payouts, payoutsList, taxRegistrations, taxSettings); } 
-@override String toString() { return 'ConnectEmbeddedAccountSessionCreateComponents(accountManagement: $accountManagement, accountOnboarding: $accountOnboarding, balances: $balances, disputesList: $disputesList, documents: $documents, financialAccount: $financialAccount, financialAccountTransactions: $financialAccountTransactions, instantPayoutsPromotion: $instantPayoutsPromotion, issuingCard: $issuingCard, issuingCardsList: $issuingCardsList, notificationBanner: $notificationBanner, paymentDetails: $paymentDetails, paymentDisputes: $paymentDisputes, payments: $payments, payoutDetails: $payoutDetails, payouts: $payouts, payoutsList: $payoutsList, taxRegistrations: $taxRegistrations, taxSettings: $taxSettings)'; } 
- }
+          taxSettings == other.taxSettings;}
+@override int get hashCode {return Object.hash(accountManagement, accountOnboarding, balances, disputesList, documents, financialAccount, financialAccountTransactions, instantPayoutsPromotion, issuingCard, issuingCardsList, notificationBanner, paymentDetails, paymentDisputes, payments, payoutDetails, payouts, payoutsList, taxRegistrations, taxSettings);}
+@override String toString() {return 'ConnectEmbeddedAccountSessionCreateComponents(accountManagement: $accountManagement, accountOnboarding: $accountOnboarding, balances: $balances, disputesList: $disputesList, documents: $documents, financialAccount: $financialAccount, financialAccountTransactions: $financialAccountTransactions, instantPayoutsPromotion: $instantPayoutsPromotion, issuingCard: $issuingCard, issuingCardsList: $issuingCardsList, notificationBanner: $notificationBanner, paymentDetails: $paymentDetails, paymentDisputes: $paymentDisputes, payments: $payments, payoutDetails: $payoutDetails, payouts: $payouts, payoutsList: $payoutsList, taxRegistrations: $taxRegistrations, taxSettings: $taxSettings)';}
+}

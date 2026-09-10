@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_snapshot_interface_address.dart';/// Snapshot Interface
 @immutable final class MconnSnapshotInterface {const MconnSnapshotInterface({required this.name, required this.operstate, this.connectorId, this.ipAddresses, this.speed, });
 
-factory MconnSnapshotInterface.fromJson(Map<String, dynamic> json) { return MconnSnapshotInterface(
+factory MconnSnapshotInterface.fromJson(Map<String, dynamic> json) {return MconnSnapshotInterface(
   connectorId: json['connector_id'] as String?,
   ipAddresses: (json['ip_addresses'] as List<dynamic>?)?.map((e) => MconnSnapshotInterfaceAddress.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] as String,
   operstate: json['operstate'] as String,
   speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
-); }
+);}
 
 /// Connector identifier
 final String? connectorId;
@@ -25,29 +25,29 @@ final String operstate;
 /// Speed of the network interface (bits per second)
 final double? speed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector_id': ?connectorId,
   if (ipAddresses != null) 'ip_addresses': ipAddresses?.map((e) => e.toJson()).toList(),
   'name': name,
   'operstate': operstate,
   'speed': ?speed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('operstate') && json['operstate'] is String; } 
-MconnSnapshotInterface copyWith({String? Function()? connectorId, List<MconnSnapshotInterfaceAddress>? Function()? ipAddresses, String? name, String? operstate, double? Function()? speed, }) { return MconnSnapshotInterface(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('operstate') && json['operstate'] is String;}
+MconnSnapshotInterface copyWith({String? Function()? connectorId, List<MconnSnapshotInterfaceAddress>? Function()? ipAddresses, String? name, String? operstate, double? Function()? speed, }) {return MconnSnapshotInterface(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   ipAddresses: ipAddresses != null ? ipAddresses() : this.ipAddresses,
   name: name ?? this.name,
   operstate: operstate ?? this.operstate,
   speed: speed != null ? speed() : this.speed,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnSnapshotInterface &&
           connectorId == other.connectorId &&
           listEquals(ipAddresses, other.ipAddresses) &&
           name == other.name &&
           operstate == other.operstate &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(connectorId, Object.hashAll(ipAddresses ?? const []), name, operstate, speed); } 
-@override String toString() { return 'MconnSnapshotInterface(connectorId: $connectorId, ipAddresses: $ipAddresses, name: $name, operstate: $operstate, speed: $speed)'; } 
- }
+          speed == other.speed;}
+@override int get hashCode {return Object.hash(connectorId, Object.hashAll(ipAddresses ?? const []), name, operstate, speed);}
+@override String toString() {return 'MconnSnapshotInterface(connectorId: $connectorId, ipAddresses: $ipAddresses, name: $name, operstate: $operstate, speed: $speed)';}
+}

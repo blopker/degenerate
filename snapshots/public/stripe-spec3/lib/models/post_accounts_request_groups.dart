@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_groups_payments_pricing.dart';/// A hash of account group type to tokens. These are account groups this account should be added to.
 @immutable final class PostAccountsRequestGroups {const PostAccountsRequestGroups({this.paymentsPricing});
 
-factory PostAccountsRequestGroups.fromJson(Map<String, dynamic> json) { return PostAccountsRequestGroups(
+factory PostAccountsRequestGroups.fromJson(Map<String, dynamic> json) {return PostAccountsRequestGroups(
   paymentsPricing: json['payments_pricing'] != null ? PostAccountsRequestGroupsPaymentsPricing.fromJson(json['payments_pricing']) : null,
-); }
+);}
 
 final PostAccountsRequestGroupsPaymentsPricing? paymentsPricing;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (paymentsPricing != null) 'payments_pricing': paymentsPricing?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payments_pricing'}.contains(key)); } 
-PostAccountsRequestGroups copyWith({PostAccountsRequestGroupsPaymentsPricing? Function()? paymentsPricing}) { return PostAccountsRequestGroups(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'payments_pricing'}.contains(key));}
+PostAccountsRequestGroups copyWith({PostAccountsRequestGroupsPaymentsPricing? Function()? paymentsPricing}) {return PostAccountsRequestGroups(
   paymentsPricing: paymentsPricing != null ? paymentsPricing() : this.paymentsPricing,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestGroups &&
-          paymentsPricing == other.paymentsPricing; } 
-@override int get hashCode { return paymentsPricing.hashCode; } 
-@override String toString() { return 'PostAccountsRequestGroups(paymentsPricing: $paymentsPricing)'; } 
- }
+          paymentsPricing == other.paymentsPricing;}
+@override int get hashCode {return paymentsPricing.hashCode;}
+@override String toString() {return 'PostAccountsRequestGroups(paymentsPricing: $paymentsPricing)';}
+}

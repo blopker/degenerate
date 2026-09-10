@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class GetSubscriptionsSearchResponseObject {const GetSubscriptionsSearchResponseObject._(this.value);
 
-factory GetSubscriptionsSearchResponseObject.fromJson(String json) { return switch (json) {
+factory GetSubscriptionsSearchResponseObject.fromJson(String json) {return switch (json) {
   'search_result' => searchResult,
   _ => GetSubscriptionsSearchResponseObject._(json),
-}; }
+};}
 
 static const GetSubscriptionsSearchResponseObject searchResult = GetSubscriptionsSearchResponseObject._('search_result');
 
@@ -14,25 +14,25 @@ static const List<GetSubscriptionsSearchResponseObject> values = [searchResult];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetSubscriptionsSearchResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetSubscriptionsSearchResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetSubscriptionsSearchResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetSubscriptionsSearchResponseObject($value)';}
+}
 /// 
 @immutable final class GetSubscriptionsSearchResponse {const GetSubscriptionsSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage = const Omittable.absent(), this.totalCount, });
 
-factory GetSubscriptionsSearchResponse.fromJson(Map<String, dynamic> json) { return GetSubscriptionsSearchResponse(
+factory GetSubscriptionsSearchResponse.fromJson(Map<String, dynamic> json) {return GetSubscriptionsSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => Subscription.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   nextPage: json.containsKey('next_page') ? Omittable(json['next_page'] as String?) : const Omittable.absent(),
   object: GetSubscriptionsSearchResponseObject.fromJson(json['object'] as String),
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] as String,
-); }
+);}
 
 final List<Subscription> data;
 
@@ -48,34 +48,34 @@ final int? totalCount;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   if (nextPage.isPresent) 'next_page': nextPage.value,
   'object': object.toJson(),
   'total_count': ?totalCount,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, Omittable<String?>? nextPage, GetSubscriptionsSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetSubscriptionsSearchResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, Omittable<String?>? nextPage, GetSubscriptionsSearchResponseObject? object, int? Function()? totalCount, String? url, }) {return GetSubscriptionsSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage ?? this.nextPage,
   object: object ?? this.object,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetSubscriptionsSearchResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           nextPage == other.nextPage &&
           object == other.object &&
           totalCount == other.totalCount &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, nextPage, object, totalCount, url); } 
-@override String toString() { return 'GetSubscriptionsSearchResponse(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, totalCount: $totalCount, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, nextPage, object, totalCount, url);}
+@override String toString() {return 'GetSubscriptionsSearchResponse(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, totalCount: $totalCount, url: $url)';}
+}

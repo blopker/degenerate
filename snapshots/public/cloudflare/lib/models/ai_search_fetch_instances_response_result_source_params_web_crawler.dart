@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_instances_response_result_source_params_web_crawler_crawl_options.dart';import 'ai_search_fetch_instances_response_result_source_params_web_crawler_parse_options.dart';import 'ai_search_fetch_instances_response_result_source_params_web_crawler_store_options.dart';@immutable final class AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType {const AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType._(this.value);
 
-factory AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(String json) { return switch (json) {
+factory AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(String json) {return switch (json) {
   'sitemap' => sitemap,
   'feed-rss' => feedRss,
   'crawl' => crawl,
   _ => AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType._(json),
-}; }
+};}
 
 static const AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType sitemap = AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType._('sitemap');
 
@@ -19,22 +19,22 @@ static const List<AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerPars
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType($value)';}
+}
 @immutable final class AiSearchFetchInstancesResponseResultSourceParamsWebCrawler {const AiSearchFetchInstancesResponseResultSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType, this.storeOptions, });
 
-factory AiSearchFetchInstancesResponseResultSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultSourceParamsWebCrawler(
+factory AiSearchFetchInstancesResponseResultSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) {return AiSearchFetchInstancesResponseResultSourceParamsWebCrawler(
   crawlOptions: json['crawl_options'] != null ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
   parseOptions: json['parse_options'] != null ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
   parseType: json['parse_type'] != null ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : null,
   storeOptions: json['store_options'] != null ? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? crawlOptions;
 
@@ -45,26 +45,26 @@ final AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType? parse
 final AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerStoreOptions? storeOptions;
 
 /// The value with the schema default applied when absent.
-AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType get parseTypeOrDefault { return parseType ?? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson('sitemap'); } 
-Map<String, dynamic> toJson() { return {
+AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType get parseTypeOrDefault {return parseType ?? AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson('sitemap');}
+Map<String, dynamic> toJson() {return {
   if (crawlOptions != null) 'crawl_options': crawlOptions?.toJson(),
   if (parseOptions != null) 'parse_options': parseOptions?.toJson(),
   if (parseType != null) 'parse_type': parseType?.toJson(),
   if (storeOptions != null) 'store_options': storeOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'crawl_options', 'parse_options', 'parse_type', 'store_options'}.contains(key)); } 
-AiSearchFetchInstancesResponseResultSourceParamsWebCrawler copyWith({AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? Function()? crawlOptions, AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseOptions? Function()? parseOptions, AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType? Function()? parseType, AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerStoreOptions? Function()? storeOptions, }) { return AiSearchFetchInstancesResponseResultSourceParamsWebCrawler(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'crawl_options', 'parse_options', 'parse_type', 'store_options'}.contains(key));}
+AiSearchFetchInstancesResponseResultSourceParamsWebCrawler copyWith({AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? Function()? crawlOptions, AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseOptions? Function()? parseOptions, AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerParseType? Function()? parseType, AiSearchFetchInstancesResponseResultSourceParamsWebCrawlerStoreOptions? Function()? storeOptions, }) {return AiSearchFetchInstancesResponseResultSourceParamsWebCrawler(
   crawlOptions: crawlOptions != null ? crawlOptions() : this.crawlOptions,
   parseOptions: parseOptions != null ? parseOptions() : this.parseOptions,
   parseType: parseType != null ? parseType() : this.parseType,
   storeOptions: storeOptions != null ? storeOptions() : this.storeOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchFetchInstancesResponseResultSourceParamsWebCrawler &&
           crawlOptions == other.crawlOptions &&
           parseOptions == other.parseOptions &&
           parseType == other.parseType &&
-          storeOptions == other.storeOptions; } 
-@override int get hashCode { return Object.hash(crawlOptions, parseOptions, parseType, storeOptions); } 
-@override String toString() { return 'AiSearchFetchInstancesResponseResultSourceParamsWebCrawler(crawlOptions: $crawlOptions, parseOptions: $parseOptions, parseType: $parseType, storeOptions: $storeOptions)'; } 
- }
+          storeOptions == other.storeOptions;}
+@override int get hashCode {return Object.hash(crawlOptions, parseOptions, parseType, storeOptions);}
+@override String toString() {return 'AiSearchFetchInstancesResponseResultSourceParamsWebCrawler(crawlOptions: $crawlOptions, parseOptions: $parseOptions, parseType: $parseType, storeOptions: $storeOptions)';}
+}

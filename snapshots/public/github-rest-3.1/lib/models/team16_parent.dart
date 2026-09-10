@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Team16ParentPrivacy {const Team16ParentPrivacy._(this.value);
 
-factory Team16ParentPrivacy.fromJson(String json) { return switch (json) {
+factory Team16ParentPrivacy.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'secret' => secret,
   _ => Team16ParentPrivacy._(json),
-}; }
+};}
 
 static const Team16ParentPrivacy open = Team16ParentPrivacy._('open');
 
@@ -19,17 +19,17 @@ static const List<Team16ParentPrivacy> values = [open, closed, secret];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Team16ParentPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Team16ParentPrivacy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Team16ParentPrivacy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Team16ParentPrivacy($value)';}
+}
 @immutable final class Team16Parent {const Team16Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
-factory Team16Parent.fromJson(Map<String, dynamic> json) { return Team16Parent(
+factory Team16Parent.fromJson(Map<String, dynamic> json) {return Team16Parent(
   description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -41,7 +41,7 @@ factory Team16Parent.fromJson(Map<String, dynamic> json) { return Team16Parent(
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   slug: json['slug'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// Description of the team
 final String? description;
@@ -70,7 +70,7 @@ final String slug;
 /// URL for the team
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
@@ -82,8 +82,8 @@ Map<String, dynamic> toJson() { return {
   'repositories_url': repositoriesUrl.toString(),
   'slug': slug,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('members_url') && json['members_url'] is String &&
@@ -93,8 +93,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('privacy') &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-Team16Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, Team16ParentPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team16Parent(
+      json.containsKey('url') && json['url'] is String;}
+Team16Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, Team16ParentPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) {return Team16Parent(
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   id: id ?? this.id,
@@ -106,8 +106,8 @@ Team16Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, S
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
   slug: slug ?? this.slug,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Team16Parent &&
           description == other.description &&
           htmlUrl == other.htmlUrl &&
@@ -119,7 +119,7 @@ Team16Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, S
           privacy == other.privacy &&
           repositoriesUrl == other.repositoriesUrl &&
           slug == other.slug &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, repositoriesUrl, slug, url); } 
-@override String toString() { return 'Team16Parent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, repositoriesUrl, slug, url);}
+@override String toString() {return 'Team16Parent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)';}
+}

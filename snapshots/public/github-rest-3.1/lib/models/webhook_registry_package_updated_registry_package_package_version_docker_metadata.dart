@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata({this.tags});
 
-factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata(
+factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata(
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tags'}.contains(key)); } 
-WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata copyWith({List<String>? Function()? tags}) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tags'}.contains(key));}
+WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata copyWith({List<String>? Function()? tags}) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata(
   tags: tags != null ? tags() : this.tags,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags ?? const []).hashCode; } 
-@override String toString() { return 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata(tags: $tags)'; } 
- }
+          listEquals(tags, other.tags);}
+@override int get hashCode {return Object.hashAll(tags ?? const []).hashCode;}
+@override String toString() {return 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata(tags: $tags)';}
+}

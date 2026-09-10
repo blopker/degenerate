@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'name_collection_params.dart';@immutable final class PostPaymentLinksPaymentLinkRequestNameCollectionVariant2 {const PostPaymentLinksPaymentLinkRequestNameCollectionVariant2._(this.value);
 
-factory PostPaymentLinksPaymentLinkRequestNameCollectionVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestNameCollectionVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentLinksPaymentLinkRequestNameCollectionVariant2._(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestNameCollectionVariant2 $empty = PostPaymentLinksPaymentLinkRequestNameCollectionVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentLinksPaymentLinkRequestNameCollectionVariant2> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksPaymentLinkRequestNameCollectionVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestNameCollectionVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestNameCollectionVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksPaymentLinkRequestNameCollectionVariant2($value)';}
+}
 /// Controls settings applied for collecting the customer's name.
 @immutable
 final class PostPaymentLinksPaymentLinkRequestNameCollection {

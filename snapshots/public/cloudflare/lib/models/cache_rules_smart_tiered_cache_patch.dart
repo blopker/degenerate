@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable or disable the Smart Tiered Cache.
 @immutable final class CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue._(this.value);
 
-factory CacheRulesSmartTieredCachePatchValue.fromJson(String json) { return switch (json) {
+factory CacheRulesSmartTieredCachePatchValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => CacheRulesSmartTieredCachePatchValue._(json),
-}; }
+};}
 
 static const CacheRulesSmartTieredCachePatchValue $on = CacheRulesSmartTieredCachePatchValue._('on');
 
@@ -17,34 +17,34 @@ static const List<CacheRulesSmartTieredCachePatchValue> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesSmartTieredCachePatchValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesSmartTieredCachePatchValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CacheRulesSmartTieredCachePatchValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CacheRulesSmartTieredCachePatchValue($value)';}
+}
 /// Update enablement of Smart Tiered Cache.
 @immutable final class CacheRulesSmartTieredCachePatch {const CacheRulesSmartTieredCachePatch({required this.value});
 
-factory CacheRulesSmartTieredCachePatch.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCachePatch(
+factory CacheRulesSmartTieredCachePatch.fromJson(Map<String, dynamic> json) {return CacheRulesSmartTieredCachePatch(
   value: CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Enable or disable the Smart Tiered Cache.
 final CacheRulesSmartTieredCachePatchValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-CacheRulesSmartTieredCachePatch copyWith({CacheRulesSmartTieredCachePatchValue? value}) { return CacheRulesSmartTieredCachePatch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+CacheRulesSmartTieredCachePatch copyWith({CacheRulesSmartTieredCachePatchValue? value}) {return CacheRulesSmartTieredCachePatch(
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CacheRulesSmartTieredCachePatch &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesSmartTieredCachePatch(value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CacheRulesSmartTieredCachePatch(value: $value)';}
+}

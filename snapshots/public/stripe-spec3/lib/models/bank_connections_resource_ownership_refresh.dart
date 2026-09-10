@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the last refresh attempt.
 @immutable final class BankConnectionsResourceOwnershipRefreshStatus {const BankConnectionsResourceOwnershipRefreshStatus._(this.value);
 
-factory BankConnectionsResourceOwnershipRefreshStatus.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceOwnershipRefreshStatus.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'pending' => pending,
   'succeeded' => succeeded,
   _ => BankConnectionsResourceOwnershipRefreshStatus._(json),
-}; }
+};}
 
 static const BankConnectionsResourceOwnershipRefreshStatus failed = BankConnectionsResourceOwnershipRefreshStatus._('failed');
 
@@ -20,22 +20,22 @@ static const List<BankConnectionsResourceOwnershipRefreshStatus> values = [faile
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceOwnershipRefreshStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceOwnershipRefreshStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankConnectionsResourceOwnershipRefreshStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankConnectionsResourceOwnershipRefreshStatus($value)';}
+}
 /// 
 @immutable final class BankConnectionsResourceOwnershipRefresh {const BankConnectionsResourceOwnershipRefresh({required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt = const Omittable.absent(), });
 
-factory BankConnectionsResourceOwnershipRefresh.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceOwnershipRefresh(
+factory BankConnectionsResourceOwnershipRefresh.fromJson(Map<String, dynamic> json) {return BankConnectionsResourceOwnershipRefresh(
   lastAttemptedAt: (json['last_attempted_at'] as num).toInt(),
   nextRefreshAvailableAt: json.containsKey('next_refresh_available_at') ? Omittable(json['next_refresh_available_at'] != null ? (json['next_refresh_available_at'] as num).toInt() : null) : const Omittable.absent(),
   status: BankConnectionsResourceOwnershipRefreshStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// The time at which the last refresh attempt was initiated. Measured in seconds since the Unix epoch.
 final int lastAttemptedAt;
@@ -46,23 +46,23 @@ final Omittable<int?> nextRefreshAvailableAt;
 /// The status of the last refresh attempt.
 final BankConnectionsResourceOwnershipRefreshStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'last_attempted_at': lastAttemptedAt,
   if (nextRefreshAvailableAt.isPresent) 'next_refresh_available_at': nextRefreshAvailableAt.value,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_attempted_at') && json['last_attempted_at'] is num &&
-      json.containsKey('status'); } 
-BankConnectionsResourceOwnershipRefresh copyWith({int? lastAttemptedAt, Omittable<int?>? nextRefreshAvailableAt, BankConnectionsResourceOwnershipRefreshStatus? status, }) { return BankConnectionsResourceOwnershipRefresh(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('last_attempted_at') && json['last_attempted_at'] is num &&
+      json.containsKey('status');}
+BankConnectionsResourceOwnershipRefresh copyWith({int? lastAttemptedAt, Omittable<int?>? nextRefreshAvailableAt, BankConnectionsResourceOwnershipRefreshStatus? status, }) {return BankConnectionsResourceOwnershipRefresh(
   lastAttemptedAt: lastAttemptedAt ?? this.lastAttemptedAt,
   nextRefreshAvailableAt: nextRefreshAvailableAt ?? this.nextRefreshAvailableAt,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BankConnectionsResourceOwnershipRefresh &&
           lastAttemptedAt == other.lastAttemptedAt &&
           nextRefreshAvailableAt == other.nextRefreshAvailableAt &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(lastAttemptedAt, nextRefreshAvailableAt, status); } 
-@override String toString() { return 'BankConnectionsResourceOwnershipRefresh(lastAttemptedAt: $lastAttemptedAt, nextRefreshAvailableAt: $nextRefreshAvailableAt, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(lastAttemptedAt, nextRefreshAvailableAt, status);}
+@override String toString() {return 'BankConnectionsResourceOwnershipRefresh(lastAttemptedAt: $lastAttemptedAt, nextRefreshAvailableAt: $nextRefreshAvailableAt, status: $status)';}
+}

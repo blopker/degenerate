@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason why the customer is appealing.
 @immutable final class AbuseReportsAppealReason {const AbuseReportsAppealReason._(this.value);
 
-factory AbuseReportsAppealReason.fromJson(String json) { return switch (json) {
+factory AbuseReportsAppealReason.fromJson(String json) {return switch (json) {
   'removed' => removed,
   'misclassified' => misclassified,
   _ => AbuseReportsAppealReason._(json),
-}; }
+};}
 
 static const AbuseReportsAppealReason removed = AbuseReportsAppealReason._('removed');
 
@@ -17,20 +17,20 @@ static const List<AbuseReportsAppealReason> values = [removed, misclassified];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsAppealReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsAppealReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsAppealReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsAppealReason($value)';}
+}
 @immutable final class AbuseReportsMitigationAppeal {const AbuseReportsMitigationAppeal({required this.id, required this.reason, });
 
-factory AbuseReportsMitigationAppeal.fromJson(Map<String, dynamic> json) { return AbuseReportsMitigationAppeal(
+factory AbuseReportsMitigationAppeal.fromJson(Map<String, dynamic> json) {return AbuseReportsMitigationAppeal(
   id: json['id'] as String,
   reason: AbuseReportsAppealReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// ID of the mitigation to appeal.
 final String id;
@@ -38,20 +38,20 @@ final String id;
 /// Reason why the customer is appealing.
 final AbuseReportsAppealReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('reason'); } 
-AbuseReportsMitigationAppeal copyWith({String? id, AbuseReportsAppealReason? reason, }) { return AbuseReportsMitigationAppeal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('reason');}
+AbuseReportsMitigationAppeal copyWith({String? id, AbuseReportsAppealReason? reason, }) {return AbuseReportsMitigationAppeal(
   id: id ?? this.id,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsMitigationAppeal &&
           id == other.id &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(id, reason); } 
-@override String toString() { return 'AbuseReportsMitigationAppeal(id: $id, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(id, reason);}
+@override String toString() {return 'AbuseReportsMitigationAppeal(id: $id, reason: $reason)';}
+}

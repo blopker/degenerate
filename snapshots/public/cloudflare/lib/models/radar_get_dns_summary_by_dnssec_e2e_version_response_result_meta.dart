@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_dnssec_e2e_version_response_result_meta_confidence_info.dart';import 'radar_get_dns_summary_by_dnssec_e2e_version_response_result_meta_date_range.dart';import 'radar_get_dns_summary_by_dnssec_e2e_version_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization {const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization._(this.value);
 
-factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization.from
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization percentage = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,24 +35,24 @@ static const List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormaliz
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta {const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta(
+factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta(
   confidenceInfo: RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfo confidenceInfo;
 
@@ -67,32 +67,32 @@ final RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization normal
 /// Measurement units for the results.
 final List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidenceInfo': confidenceInfo.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta copyWith({RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization? normalization, List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaUnits>? units, }) { return RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta(
+      json.containsKey('units');}
+RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta copyWith({RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaNormalization? normalization, List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaUnits>? units, }) {return RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta(
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

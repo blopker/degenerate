@@ -21,11 +21,11 @@ String toJson() => value;
 }
 @immutable final class RumRumSite {const RumRumSite({this.editable, this.id, this.value, });
 
-factory RumRumSite.fromJson(Map<String, dynamic> json) { return RumRumSite(
+factory RumRumSite.fromJson(Map<String, dynamic> json) {return RumRumSite(
   editable: json['editable'] != null ? RumEditable.fromJson(json['editable'] as bool) : null,
   id: json['id'] != null ? RumId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? RumValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 final RumEditable? editable;
 
@@ -33,22 +33,22 @@ final RumId? id;
 
 final RumValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (editable != null) 'editable': editable?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'value'}.contains(key)); } 
-RumRumSite copyWith({RumEditable? Function()? editable, RumId? Function()? id, RumValue? Function()? value, }) { return RumRumSite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'editable', 'id', 'value'}.contains(key));}
+RumRumSite copyWith({RumEditable? Function()? editable, RumId? Function()? id, RumValue? Function()? value, }) {return RumRumSite(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RumRumSite &&
           editable == other.editable &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, value); } 
-@override String toString() { return 'RumRumSite(editable: $editable, id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, value);}
+@override String toString() {return 'RumRumSite(editable: $editable, id: $id, value: $value)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceCreateJobResponse400Errors {const AiSearchInstanceCreateJobResponse400Errors({required this.message});
 
-factory AiSearchInstanceCreateJobResponse400Errors.fromJson(Map<String, dynamic> json) { return AiSearchInstanceCreateJobResponse400Errors(
+factory AiSearchInstanceCreateJobResponse400Errors.fromJson(Map<String, dynamic> json) {return AiSearchInstanceCreateJobResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-AiSearchInstanceCreateJobResponse400Errors copyWith({String? message}) { return AiSearchInstanceCreateJobResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+AiSearchInstanceCreateJobResponse400Errors copyWith({String? message}) {return AiSearchInstanceCreateJobResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchInstanceCreateJobResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'AiSearchInstanceCreateJobResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'AiSearchInstanceCreateJobResponse400Errors(message: $message)';}
+}

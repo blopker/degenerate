@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1 {const AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1._(this.value);
 
-factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1.fromJson(String json) {return switch (json) {
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
   '@cf/zai-org/glm-4.7-flash' => cfZaiOrgGlm47Flash,
   '@cf/meta/llama-3.1-8b-instruct-fast' => cfMetaLlama318bInstructFast,
@@ -31,7 +31,7 @@ factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1.fr
   'openai/gpt-5-mini' => openaiGpt5Mini,
   'openai/gpt-5-nano' => openaiGpt5Nano,
   _ => AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1._(json),
-}; }
+};}
 
 static const AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1 cfMetaLlama3370bInstructFp8Fast = AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1._('@cf/meta/llama-3.3-70b-instruct-fp8-fast');
 
@@ -91,20 +91,20 @@ static const List<AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelV
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1($value)';}
+}
 @immutable final class AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2 {const AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2._(this.value);
 
-factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2._(json),
-}; }
+};}
 
 static const AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2 $empty = AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2._('');
 
@@ -112,14 +112,14 @@ static const List<AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelV
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2($value)';}
+}
 
 @immutable
 final class AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModel {

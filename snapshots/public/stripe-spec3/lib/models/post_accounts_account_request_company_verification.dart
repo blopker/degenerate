@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_company_verification_document.dart';@immutable final class PostAccountsAccountRequestCompanyVerification {const PostAccountsAccountRequestCompanyVerification({this.document});
 
-factory PostAccountsAccountRequestCompanyVerification.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCompanyVerification(
+factory PostAccountsAccountRequestCompanyVerification.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestCompanyVerification(
   document: json['document'] != null ? PostAccountsAccountRequestCompanyVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountRequestCompanyVerificationDocument? document;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (document != null) 'document': document?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document'}.contains(key)); } 
-PostAccountsAccountRequestCompanyVerification copyWith({PostAccountsAccountRequestCompanyVerificationDocument? Function()? document}) { return PostAccountsAccountRequestCompanyVerification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'document'}.contains(key));}
+PostAccountsAccountRequestCompanyVerification copyWith({PostAccountsAccountRequestCompanyVerificationDocument? Function()? document}) {return PostAccountsAccountRequestCompanyVerification(
   document: document != null ? document() : this.document,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestCompanyVerification &&
-          document == other.document; } 
-@override int get hashCode { return document.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestCompanyVerification(document: $document)'; } 
- }
+          document == other.document;}
+@override int get hashCode {return document.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestCompanyVerification(document: $document)';}
+}

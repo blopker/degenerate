@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_evaluations_response_result_datasets.dart';import 'aig_config_delete_evaluations_response_result_results.dart';@immutable final class AigConfigDeleteEvaluationsResponseResult {const AigConfigDeleteEvaluationsResponseResult({required this.createdAt, required this.datasets, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.processed, required this.results, required this.totalLogs, });
 
-factory AigConfigDeleteEvaluationsResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigDeleteEvaluationsResponseResult(
+factory AigConfigDeleteEvaluationsResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigDeleteEvaluationsResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),
   datasets: (json['datasets'] as List<dynamic>).map((e) => AigConfigDeleteEvaluationsResponseResultDatasets.fromJson(e as Map<String, dynamic>)).toList(),
   gatewayId: json['gateway_id'] as String,
@@ -12,7 +12,7 @@ factory AigConfigDeleteEvaluationsResponseResult.fromJson(Map<String, dynamic> j
   processed: json['processed'] as bool,
   results: (json['results'] as List<dynamic>).map((e) => AigConfigDeleteEvaluationsResponseResultResults.fromJson(e as Map<String, dynamic>)).toList(),
   totalLogs: (json['total_logs'] as num).toDouble(),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -33,7 +33,7 @@ final List<AigConfigDeleteEvaluationsResponseResultResults> results;
 
 final double totalLogs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'datasets': datasets.map((e) => e.toJson()).toList(),
   'gateway_id': gatewayId,
@@ -43,8 +43,8 @@ Map<String, dynamic> toJson() { return {
   'processed': processed,
   'results': results.map((e) => e.toJson()).toList(),
   'total_logs': totalLogs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('datasets') &&
       json.containsKey('gateway_id') && json['gateway_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -52,8 +52,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('processed') && json['processed'] is bool &&
       json.containsKey('results') &&
-      json.containsKey('total_logs') && json['total_logs'] is num; } 
-AigConfigDeleteEvaluationsResponseResult copyWith({DateTime? createdAt, List<AigConfigDeleteEvaluationsResponseResultDatasets>? datasets, String? gatewayId, String? id, DateTime? modifiedAt, String? name, bool? processed, List<AigConfigDeleteEvaluationsResponseResultResults>? results, double? totalLogs, }) { return AigConfigDeleteEvaluationsResponseResult(
+      json.containsKey('total_logs') && json['total_logs'] is num;}
+AigConfigDeleteEvaluationsResponseResult copyWith({DateTime? createdAt, List<AigConfigDeleteEvaluationsResponseResultDatasets>? datasets, String? gatewayId, String? id, DateTime? modifiedAt, String? name, bool? processed, List<AigConfigDeleteEvaluationsResponseResultResults>? results, double? totalLogs, }) {return AigConfigDeleteEvaluationsResponseResult(
   createdAt: createdAt ?? this.createdAt,
   datasets: datasets ?? this.datasets,
   gatewayId: gatewayId ?? this.gatewayId,
@@ -63,8 +63,8 @@ AigConfigDeleteEvaluationsResponseResult copyWith({DateTime? createdAt, List<Aig
   processed: processed ?? this.processed,
   results: results ?? this.results,
   totalLogs: totalLogs ?? this.totalLogs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigDeleteEvaluationsResponseResult &&
           createdAt == other.createdAt &&
           listEquals(datasets, other.datasets) &&
@@ -74,7 +74,7 @@ AigConfigDeleteEvaluationsResponseResult copyWith({DateTime? createdAt, List<Aig
           name == other.name &&
           processed == other.processed &&
           listEquals(results, other.results) &&
-          totalLogs == other.totalLogs; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(datasets), gatewayId, id, modifiedAt, name, processed, Object.hashAll(results), totalLogs); } 
-@override String toString() { return 'AigConfigDeleteEvaluationsResponseResult(createdAt: $createdAt, datasets: $datasets, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, processed: $processed, results: $results, totalLogs: $totalLogs)'; } 
- }
+          totalLogs == other.totalLogs;}
+@override int get hashCode {return Object.hash(createdAt, Object.hashAll(datasets), gatewayId, id, modifiedAt, name, processed, Object.hashAll(results), totalLogs);}
+@override String toString() {return 'AigConfigDeleteEvaluationsResponseResult(createdAt: $createdAt, datasets: $datasets, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, processed: $processed, results: $results, totalLogs: $totalLogs)';}
+}

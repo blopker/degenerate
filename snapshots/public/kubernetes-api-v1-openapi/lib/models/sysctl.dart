@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sysctl defines a kernel parameter to be set
 @immutable final class Sysctl {const Sysctl({required this.name, required this.value, });
 
-factory Sysctl.fromJson(Map<String, dynamic> json) { return Sysctl(
+factory Sysctl.fromJson(Map<String, dynamic> json) {return Sysctl(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// Name of a property to set
 final String name;
@@ -14,20 +14,20 @@ final String name;
 /// Value of a property to set
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-Sysctl copyWith({String? name, String? value, }) { return Sysctl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+Sysctl copyWith({String? name, String? value, }) {return Sysctl(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Sysctl &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'Sysctl(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'Sysctl(name: $name, value: $value)';}
+}

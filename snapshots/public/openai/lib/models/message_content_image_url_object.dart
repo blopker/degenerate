@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_image_url_object_image_url.dart';/// The type of the content part.
 @immutable final class MessageContentImageUrlObjectType {const MessageContentImageUrlObjectType._(this.value);
 
-factory MessageContentImageUrlObjectType.fromJson(String json) { return switch (json) {
+factory MessageContentImageUrlObjectType.fromJson(String json) {return switch (json) {
   'image_url' => imageUrl,
   _ => MessageContentImageUrlObjectType._(json),
-}; }
+};}
 
 static const MessageContentImageUrlObjectType imageUrl = MessageContentImageUrlObjectType._('image_url');
 
@@ -14,41 +14,41 @@ static const List<MessageContentImageUrlObjectType> values = [imageUrl];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentImageUrlObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageContentImageUrlObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageContentImageUrlObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageContentImageUrlObjectType($value)';}
+}
 /// References an image URL in the content of a message.
 @immutable final class MessageContentImageUrlObject {const MessageContentImageUrlObject({required this.type, required this.imageUrl, });
 
-factory MessageContentImageUrlObject.fromJson(Map<String, dynamic> json) { return MessageContentImageUrlObject(
+factory MessageContentImageUrlObject.fromJson(Map<String, dynamic> json) {return MessageContentImageUrlObject(
   type: MessageContentImageUrlObjectType.fromJson(json['type'] as String),
   imageUrl: MessageContentImageUrlObjectImageUrl.fromJson(json['image_url'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the content part.
 final MessageContentImageUrlObjectType type;
 
 final MessageContentImageUrlObjectImageUrl imageUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'image_url': imageUrl.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('image_url'); } 
-MessageContentImageUrlObject copyWith({MessageContentImageUrlObjectType? type, MessageContentImageUrlObjectImageUrl? imageUrl, }) { return MessageContentImageUrlObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('image_url');}
+MessageContentImageUrlObject copyWith({MessageContentImageUrlObjectType? type, MessageContentImageUrlObjectImageUrl? imageUrl, }) {return MessageContentImageUrlObject(
   type: type ?? this.type,
   imageUrl: imageUrl ?? this.imageUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageContentImageUrlObject &&
           type == other.type &&
-          imageUrl == other.imageUrl; } 
-@override int get hashCode { return Object.hash(type, imageUrl); } 
-@override String toString() { return 'MessageContentImageUrlObject(type: $type, imageUrl: $imageUrl)'; } 
- }
+          imageUrl == other.imageUrl;}
+@override int get hashCode {return Object.hash(type, imageUrl);}
+@override String toString() {return 'MessageContentImageUrlObject(type: $type, imageUrl: $imageUrl)';}
+}

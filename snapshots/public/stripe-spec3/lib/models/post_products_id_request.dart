@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_id_request_description.dart';import 'post_products_id_request_images.dart';import 'post_products_id_request_marketing_features.dart';import 'post_products_id_request_metadata.dart';import 'post_products_id_request_package_dimensions.dart';import 'post_products_id_request_tax_code.dart';import 'post_products_id_request_unit_label.dart';import 'post_products_id_request_url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
-factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostProductsIdRequest(
+factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) {return PostProductsIdRequest(
   active: json['active'] as bool?,
   defaultPrice: json['default_price'] as String?,
   description: json['description'] != null ? PostProductsIdRequestDescription.fromJson(json['description']) : null,
@@ -17,7 +17,7 @@ factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostP
   taxCode: json['tax_code'] != null ? PostProductsIdRequestTaxCode.fromJson(json['tax_code']) : null,
   unitLabel: json['unit_label'] != null ? PostProductsIdRequestUnitLabel.fromJson(json['unit_label']) : null,
   url: json['url'] != null ? PostProductsIdRequestUrl.fromJson(json['url']) : null,
-); }
+);}
 
 /// Whether the product is available for purchase.
 final bool? active;
@@ -64,7 +64,7 @@ final PostProductsIdRequestUnitLabel? unitLabel;
 /// A URL of a publicly-accessible webpage for this product.
 final PostProductsIdRequestUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'default_price': ?defaultPrice,
   if (description != null) 'description': description?.toJson(),
@@ -79,9 +79,9 @@ Map<String, dynamic> toJson() { return {
   if (taxCode != null) 'tax_code': taxCode?.toJson(),
   if (unitLabel != null) 'unit_label': unitLabel?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key)); } 
-PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, PostProductsIdRequestImages? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, PostProductsIdRequestMetadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostProductsIdRequestTaxCode? Function()? taxCode, PostProductsIdRequestUnitLabel? Function()? unitLabel, PostProductsIdRequestUrl? Function()? url, }) { return PostProductsIdRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key));}
+PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, PostProductsIdRequestImages? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, PostProductsIdRequestMetadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostProductsIdRequestTaxCode? Function()? taxCode, PostProductsIdRequestUnitLabel? Function()? unitLabel, PostProductsIdRequestUrl? Function()? url, }) {return PostProductsIdRequest(
   active: active != null ? active() : this.active,
   defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,
   description: description != null ? description() : this.description,
@@ -96,8 +96,8 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostProductsIdRequest &&
           active == other.active &&
           defaultPrice == other.defaultPrice &&
@@ -112,7 +112,7 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
           statementDescriptor == other.statementDescriptor &&
           taxCode == other.taxCode &&
           unitLabel == other.unitLabel &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(active, defaultPrice, description, Object.hashAll(expand ?? const []), images, marketingFeatures, metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url); } 
-@override String toString() { return 'PostProductsIdRequest(active: $active, defaultPrice: $defaultPrice, description: $description, expand: $expand, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(active, defaultPrice, description, Object.hashAll(expand ?? const []), images, marketingFeatures, metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url);}
+@override String toString() {return 'PostProductsIdRequest(active: $active, defaultPrice: $defaultPrice, description: $description, expand: $expand, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)';}
+}

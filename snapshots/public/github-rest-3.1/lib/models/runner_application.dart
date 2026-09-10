@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Runner Application
 @immutable final class RunnerApplication {const RunnerApplication({required this.os, required this.architecture, required this.downloadUrl, required this.filename, this.tempDownloadToken, this.sha256Checksum, });
 
-factory RunnerApplication.fromJson(Map<String, dynamic> json) { return RunnerApplication(
+factory RunnerApplication.fromJson(Map<String, dynamic> json) {return RunnerApplication(
   os: json['os'] as String,
   architecture: json['architecture'] as String,
   downloadUrl: json['download_url'] as String,
   filename: json['filename'] as String,
   tempDownloadToken: json['temp_download_token'] as String?,
   sha256Checksum: json['sha256_checksum'] as String?,
-); }
+);}
 
 final String os;
 
@@ -25,34 +25,34 @@ final String? tempDownloadToken;
 
 final String? sha256Checksum;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'os': os,
   'architecture': architecture,
   'download_url': downloadUrl,
   'filename': filename,
   'temp_download_token': ?tempDownloadToken,
   'sha256_checksum': ?sha256Checksum,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('os') && json['os'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('os') && json['os'] is String &&
       json.containsKey('architecture') && json['architecture'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
-      json.containsKey('filename') && json['filename'] is String; } 
-RunnerApplication copyWith({String? os, String? architecture, String? downloadUrl, String? filename, String? Function()? tempDownloadToken, String? Function()? sha256Checksum, }) { return RunnerApplication(
+      json.containsKey('filename') && json['filename'] is String;}
+RunnerApplication copyWith({String? os, String? architecture, String? downloadUrl, String? filename, String? Function()? tempDownloadToken, String? Function()? sha256Checksum, }) {return RunnerApplication(
   os: os ?? this.os,
   architecture: architecture ?? this.architecture,
   downloadUrl: downloadUrl ?? this.downloadUrl,
   filename: filename ?? this.filename,
   tempDownloadToken: tempDownloadToken != null ? tempDownloadToken() : this.tempDownloadToken,
   sha256Checksum: sha256Checksum != null ? sha256Checksum() : this.sha256Checksum,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunnerApplication &&
           os == other.os &&
           architecture == other.architecture &&
           downloadUrl == other.downloadUrl &&
           filename == other.filename &&
           tempDownloadToken == other.tempDownloadToken &&
-          sha256Checksum == other.sha256Checksum; } 
-@override int get hashCode { return Object.hash(os, architecture, downloadUrl, filename, tempDownloadToken, sha256Checksum); } 
-@override String toString() { return 'RunnerApplication(os: $os, architecture: $architecture, downloadUrl: $downloadUrl, filename: $filename, tempDownloadToken: $tempDownloadToken, sha256Checksum: $sha256Checksum)'; } 
- }
+          sha256Checksum == other.sha256Checksum;}
+@override int get hashCode {return Object.hash(os, architecture, downloadUrl, filename, tempDownloadToken, sha256Checksum);}
+@override String toString() {return 'RunnerApplication(os: $os, architecture: $architecture, downloadUrl: $downloadUrl, filename: $filename, tempDownloadToken: $tempDownloadToken, sha256Checksum: $sha256Checksum)';}
+}

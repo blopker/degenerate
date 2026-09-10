@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_re
 /// 
 @immutable final class FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort._(this.value);
 
-factory FineTuneReinforcementHyperparametersReasoningEffort.fromJson(String json) { return switch (json) {
+factory FineTuneReinforcementHyperparametersReasoningEffort.fromJson(String json) {return switch (json) {
   'default' => $default,
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => FineTuneReinforcementHyperparametersReasoningEffort._(json),
-}; }
+};}
 
 static const FineTuneReinforcementHyperparametersReasoningEffort $default = FineTuneReinforcementHyperparametersReasoningEffort._('default');
 
@@ -24,18 +24,18 @@ static const List<FineTuneReinforcementHyperparametersReasoningEffort> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuneReinforcementHyperparametersReasoningEffort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuneReinforcementHyperparametersReasoningEffort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FineTuneReinforcementHyperparametersReasoningEffort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FineTuneReinforcementHyperparametersReasoningEffort($value)';}
+}
 /// The hyperparameters used for the reinforcement fine-tuning job.
 @immutable final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort, this.computeMultiplier, this.evalInterval, this.evalSamples, });
 
-factory FineTuneReinforcementHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementHyperparameters(
+factory FineTuneReinforcementHyperparameters.fromJson(Map<String, dynamic> json) {return FineTuneReinforcementHyperparameters(
   batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => FineTuneReinforcementHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => FineTuneReinforcementHyperparametersLearningRateMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
   nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => FineTuneReinforcementHyperparametersNEpochsVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
@@ -43,7 +43,7 @@ factory FineTuneReinforcementHyperparameters.fromJson(Map<String, dynamic> json)
   computeMultiplier: json['compute_multiplier'] != null ? OneOf2.parse(json['compute_multiplier'], fromA: (v) => FineTuneReinforcementHyperparametersComputeMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
   evalInterval: json['eval_interval'] != null ? OneOf2.parse(json['eval_interval'], fromA: (v) => FineTuneReinforcementHyperparametersEvalIntervalVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   evalSamples: json['eval_samples'] != null ? OneOf2.parse(json['eval_samples'], fromA: (v) => FineTuneReinforcementHyperparametersEvalSamplesVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
-); }
+);}
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 /// 
@@ -74,8 +74,8 @@ final FineTuneReinforcementHyperparametersEvalInterval? evalInterval;
 final FineTuneReinforcementHyperparametersEvalSamples? evalSamples;
 
 /// The value with the schema default applied when absent.
-FineTuneReinforcementHyperparametersReasoningEffort get reasoningEffortOrDefault { return reasoningEffort ?? FineTuneReinforcementHyperparametersReasoningEffort.fromJson('default'); } 
-Map<String, dynamic> toJson() { return {
+FineTuneReinforcementHyperparametersReasoningEffort get reasoningEffortOrDefault {return reasoningEffort ?? FineTuneReinforcementHyperparametersReasoningEffort.fromJson('default');}
+Map<String, dynamic> toJson() {return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
   if (learningRateMultiplier != null) 'learning_rate_multiplier': learningRateMultiplier?.toJson(),
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   if (computeMultiplier != null) 'compute_multiplier': computeMultiplier?.toJson(),
   if (evalInterval != null) 'eval_interval': evalInterval?.toJson(),
   if (evalSamples != null) 'eval_samples': evalSamples?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs', 'reasoning_effort', 'compute_multiplier', 'eval_interval', 'eval_samples'}.contains(key)); } 
-FineTuneReinforcementHyperparameters copyWith({FineTuneReinforcementHyperparametersBatchSize? Function()? batchSize, FineTuneReinforcementHyperparametersLearningRateMultiplier? Function()? learningRateMultiplier, FineTuneReinforcementHyperparametersNEpochs? Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort? Function()? reasoningEffort, FineTuneReinforcementHyperparametersComputeMultiplier? Function()? computeMultiplier, FineTuneReinforcementHyperparametersEvalInterval? Function()? evalInterval, FineTuneReinforcementHyperparametersEvalSamples? Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs', 'reasoning_effort', 'compute_multiplier', 'eval_interval', 'eval_samples'}.contains(key));}
+FineTuneReinforcementHyperparameters copyWith({FineTuneReinforcementHyperparametersBatchSize? Function()? batchSize, FineTuneReinforcementHyperparametersLearningRateMultiplier? Function()? learningRateMultiplier, FineTuneReinforcementHyperparametersNEpochs? Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort? Function()? reasoningEffort, FineTuneReinforcementHyperparametersComputeMultiplier? Function()? computeMultiplier, FineTuneReinforcementHyperparametersEvalInterval? Function()? evalInterval, FineTuneReinforcementHyperparametersEvalSamples? Function()? evalSamples, }) {return FineTuneReinforcementHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,
@@ -93,8 +93,8 @@ FineTuneReinforcementHyperparameters copyWith({FineTuneReinforcementHyperparamet
   computeMultiplier: computeMultiplier != null ? computeMultiplier() : this.computeMultiplier,
   evalInterval: evalInterval != null ? evalInterval() : this.evalInterval,
   evalSamples: evalSamples != null ? evalSamples() : this.evalSamples,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FineTuneReinforcementHyperparameters &&
           batchSize == other.batchSize &&
           learningRateMultiplier == other.learningRateMultiplier &&
@@ -102,7 +102,7 @@ FineTuneReinforcementHyperparameters copyWith({FineTuneReinforcementHyperparamet
           reasoningEffort == other.reasoningEffort &&
           computeMultiplier == other.computeMultiplier &&
           evalInterval == other.evalInterval &&
-          evalSamples == other.evalSamples; } 
-@override int get hashCode { return Object.hash(batchSize, learningRateMultiplier, nEpochs, reasoningEffort, computeMultiplier, evalInterval, evalSamples); } 
-@override String toString() { return 'FineTuneReinforcementHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs, reasoningEffort: $reasoningEffort, computeMultiplier: $computeMultiplier, evalInterval: $evalInterval, evalSamples: $evalSamples)'; } 
- }
+          evalSamples == other.evalSamples;}
+@override int get hashCode {return Object.hash(batchSize, learningRateMultiplier, nEpochs, reasoningEffort, computeMultiplier, evalInterval, evalSamples);}
+@override String toString() {return 'FineTuneReinforcementHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs, reasoningEffort: $reasoningEffort, computeMultiplier: $computeMultiplier, evalInterval: $evalInterval, evalSamples: $evalSamples)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryTrend {const ObservatoryTrend({this.cls, this.fcp, this.lcp, this.performanceScore, this.si, this.tbt, this.ttfb, this.tti, });
 
-factory ObservatoryTrend.fromJson(Map<String, dynamic> json) { return ObservatoryTrend(
+factory ObservatoryTrend.fromJson(Map<String, dynamic> json) {return ObservatoryTrend(
   cls: (json['cls'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
   fcp: (json['fcp'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
   lcp: (json['lcp'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
@@ -11,7 +11,7 @@ factory ObservatoryTrend.fromJson(Map<String, dynamic> json) { return Observator
   tbt: (json['tbt'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
   ttfb: (json['ttfb'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
   tti: (json['tti'] as List<dynamic>?)?.map((e) => e == null ? null : (e as num).toDouble()).toList(),
-); }
+);}
 
 /// Cumulative Layout Shift trend.
 final List<double?>? cls;
@@ -37,7 +37,7 @@ final List<double?>? ttfb;
 /// Time To Interactive trend.
 final List<double?>? tti;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cls': ?cls,
   'fcp': ?fcp,
   'lcp': ?lcp,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'tbt': ?tbt,
   'ttfb': ?ttfb,
   'tti': ?tti,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cls', 'fcp', 'lcp', 'performanceScore', 'si', 'tbt', 'ttfb', 'tti'}.contains(key)); } 
-ObservatoryTrend copyWith({List<double?>? Function()? cls, List<double?>? Function()? fcp, List<double?>? Function()? lcp, List<double?>? Function()? performanceScore, List<double?>? Function()? si, List<double?>? Function()? tbt, List<double?>? Function()? ttfb, List<double?>? Function()? tti, }) { return ObservatoryTrend(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cls', 'fcp', 'lcp', 'performanceScore', 'si', 'tbt', 'ttfb', 'tti'}.contains(key));}
+ObservatoryTrend copyWith({List<double?>? Function()? cls, List<double?>? Function()? fcp, List<double?>? Function()? lcp, List<double?>? Function()? performanceScore, List<double?>? Function()? si, List<double?>? Function()? tbt, List<double?>? Function()? ttfb, List<double?>? Function()? tti, }) {return ObservatoryTrend(
   cls: cls != null ? cls() : this.cls,
   fcp: fcp != null ? fcp() : this.fcp,
   lcp: lcp != null ? lcp() : this.lcp,
@@ -57,8 +57,8 @@ ObservatoryTrend copyWith({List<double?>? Function()? cls, List<double?>? Functi
   tbt: tbt != null ? tbt() : this.tbt,
   ttfb: ttfb != null ? ttfb() : this.ttfb,
   tti: tti != null ? tti() : this.tti,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ObservatoryTrend &&
           listEquals(cls, other.cls) &&
           listEquals(fcp, other.fcp) &&
@@ -67,7 +67,7 @@ ObservatoryTrend copyWith({List<double?>? Function()? cls, List<double?>? Functi
           listEquals(si, other.si) &&
           listEquals(tbt, other.tbt) &&
           listEquals(ttfb, other.ttfb) &&
-          listEquals(tti, other.tti); } 
-@override int get hashCode { return Object.hash(Object.hashAll(cls ?? const []), Object.hashAll(fcp ?? const []), Object.hashAll(lcp ?? const []), Object.hashAll(performanceScore ?? const []), Object.hashAll(si ?? const []), Object.hashAll(tbt ?? const []), Object.hashAll(ttfb ?? const []), Object.hashAll(tti ?? const [])); } 
-@override String toString() { return 'ObservatoryTrend(cls: $cls, fcp: $fcp, lcp: $lcp, performanceScore: $performanceScore, si: $si, tbt: $tbt, ttfb: $ttfb, tti: $tti)'; } 
- }
+          listEquals(tti, other.tti);}
+@override int get hashCode {return Object.hash(Object.hashAll(cls ?? const []), Object.hashAll(fcp ?? const []), Object.hashAll(lcp ?? const []), Object.hashAll(performanceScore ?? const []), Object.hashAll(si ?? const []), Object.hashAll(tbt ?? const []), Object.hashAll(ttfb ?? const []), Object.hashAll(tti ?? const []));}
+@override String toString() {return 'ObservatoryTrend(cls: $cls, fcp: $fcp, lcp: $lcp, performanceScore: $performanceScore, si: $si, tbt: $tbt, ttfb: $ttfb, tti: $tti)';}
+}

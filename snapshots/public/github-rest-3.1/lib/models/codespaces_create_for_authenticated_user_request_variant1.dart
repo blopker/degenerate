@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 @immutable final class CodespacesCreateForAuthenticatedUserRequestVariant1Geo {const CodespacesCreateForAuthenticatedUserRequestVariant1Geo._(this.value);
 
-factory CodespacesCreateForAuthenticatedUserRequestVariant1Geo.fromJson(String json) { return switch (json) {
+factory CodespacesCreateForAuthenticatedUserRequestVariant1Geo.fromJson(String json) {return switch (json) {
   'EuropeWest' => europeWest,
   'SoutheastAsia' => southeastAsia,
   'UsEast' => usEast,
   'UsWest' => usWest,
   _ => CodespacesCreateForAuthenticatedUserRequestVariant1Geo._(json),
-}; }
+};}
 
 static const CodespacesCreateForAuthenticatedUserRequestVariant1Geo europeWest = CodespacesCreateForAuthenticatedUserRequestVariant1Geo._('EuropeWest');
 
@@ -23,17 +23,17 @@ static const List<CodespacesCreateForAuthenticatedUserRequestVariant1Geo> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespacesCreateForAuthenticatedUserRequestVariant1Geo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant1Geo($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodespacesCreateForAuthenticatedUserRequestVariant1Geo && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodespacesCreateForAuthenticatedUserRequestVariant1Geo($value)';}
+}
 @immutable final class CodespacesCreateForAuthenticatedUserRequestVariant1 {const CodespacesCreateForAuthenticatedUserRequestVariant1({required this.repositoryId, this.ref, this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
 
-factory CodespacesCreateForAuthenticatedUserRequestVariant1.fromJson(Map<String, dynamic> json) { return CodespacesCreateForAuthenticatedUserRequestVariant1(
+factory CodespacesCreateForAuthenticatedUserRequestVariant1.fromJson(Map<String, dynamic> json) {return CodespacesCreateForAuthenticatedUserRequestVariant1(
   repositoryId: (json['repository_id'] as num).toInt(),
   ref: json['ref'] as String?,
   location: json['location'] as String?,
@@ -46,7 +46,7 @@ factory CodespacesCreateForAuthenticatedUserRequestVariant1.fromJson(Map<String,
   idleTimeoutMinutes: json['idle_timeout_minutes'] != null ? (json['idle_timeout_minutes'] as num).toInt() : null,
   displayName: json['display_name'] as String?,
   retentionPeriodMinutes: json['retention_period_minutes'] != null ? (json['retention_period_minutes'] as num).toInt() : null,
-); }
+);}
 
 /// Repository id for this codespace
 final int repositoryId;
@@ -84,7 +84,7 @@ final String? displayName;
 /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
 final int? retentionPeriodMinutes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'repository_id': repositoryId,
   'ref': ?ref,
   'location': ?location,
@@ -97,9 +97,9 @@ Map<String, dynamic> toJson() { return {
   'idle_timeout_minutes': ?idleTimeoutMinutes,
   'display_name': ?displayName,
   'retention_period_minutes': ?retentionPeriodMinutes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_id') && json['repository_id'] is num; } 
-CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId, String? Function()? ref, String? Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant1Geo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) { return CodespacesCreateForAuthenticatedUserRequestVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repository_id') && json['repository_id'] is num;}
+CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId, String? Function()? ref, String? Function()? location, CodespacesCreateForAuthenticatedUserRequestVariant1Geo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) {return CodespacesCreateForAuthenticatedUserRequestVariant1(
   repositoryId: repositoryId ?? this.repositoryId,
   ref: ref != null ? ref() : this.ref,
   location: location != null ? location() : this.location,
@@ -112,8 +112,8 @@ CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId,
   idleTimeoutMinutes: idleTimeoutMinutes != null ? idleTimeoutMinutes() : this.idleTimeoutMinutes,
   displayName: displayName != null ? displayName() : this.displayName,
   retentionPeriodMinutes: retentionPeriodMinutes != null ? retentionPeriodMinutes() : this.retentionPeriodMinutes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodespacesCreateForAuthenticatedUserRequestVariant1 &&
           repositoryId == other.repositoryId &&
           ref == other.ref &&
@@ -126,7 +126,7 @@ CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId,
           workingDirectory == other.workingDirectory &&
           idleTimeoutMinutes == other.idleTimeoutMinutes &&
           displayName == other.displayName &&
-          retentionPeriodMinutes == other.retentionPeriodMinutes; } 
-@override int get hashCode { return Object.hash(repositoryId, ref, location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes); } 
-@override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant1(repositoryId: $repositoryId, ref: $ref, location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)'; } 
- }
+          retentionPeriodMinutes == other.retentionPeriodMinutes;}
+@override int get hashCode {return Object.hash(repositoryId, ref, location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes);}
+@override String toString() {return 'CodespacesCreateForAuthenticatedUserRequestVariant1(repositoryId: $repositoryId, ref: $ref, location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)';}
+}

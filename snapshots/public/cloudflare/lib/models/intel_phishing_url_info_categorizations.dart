@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlInfoCategorizations {const IntelPhishingUrlInfoCategorizations({this.category, this.verificationStatus, });
 
-factory IntelPhishingUrlInfoCategorizations.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfoCategorizations(
+factory IntelPhishingUrlInfoCategorizations.fromJson(Map<String, dynamic> json) {return IntelPhishingUrlInfoCategorizations(
   category: json['category'] as String?,
   verificationStatus: json['verification_status'] as String?,
-); }
+);}
 
 /// Name of the category applied.
 final String? category;
@@ -13,19 +13,19 @@ final String? category;
 /// Result of human review for this categorization.
 final String? verificationStatus;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'category': ?category,
   'verification_status': ?verificationStatus,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'verification_status'}.contains(key)); } 
-IntelPhishingUrlInfoCategorizations copyWith({String? Function()? category, String? Function()? verificationStatus, }) { return IntelPhishingUrlInfoCategorizations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'category', 'verification_status'}.contains(key));}
+IntelPhishingUrlInfoCategorizations copyWith({String? Function()? category, String? Function()? verificationStatus, }) {return IntelPhishingUrlInfoCategorizations(
   category: category != null ? category() : this.category,
   verificationStatus: verificationStatus != null ? verificationStatus() : this.verificationStatus,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntelPhishingUrlInfoCategorizations &&
           category == other.category &&
-          verificationStatus == other.verificationStatus; } 
-@override int get hashCode { return Object.hash(category, verificationStatus); } 
-@override String toString() { return 'IntelPhishingUrlInfoCategorizations(category: $category, verificationStatus: $verificationStatus)'; } 
- }
+          verificationStatus == other.verificationStatus;}
+@override int get hashCode {return Object.hash(category, verificationStatus);}
+@override String toString() {return 'IntelPhishingUrlInfoCategorizations(category: $category, verificationStatus: $verificationStatus)';}
+}

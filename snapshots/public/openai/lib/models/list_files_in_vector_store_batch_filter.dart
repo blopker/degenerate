@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListFilesInVectorStoreBatchFilter {const ListFilesInVectorStoreBatchFilter._(this.value);
 
-factory ListFilesInVectorStoreBatchFilter.fromJson(String json) { return switch (json) {
+factory ListFilesInVectorStoreBatchFilter.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'failed' => failed,
   'cancelled' => cancelled,
   _ => ListFilesInVectorStoreBatchFilter._(json),
-}; }
+};}
 
 static const ListFilesInVectorStoreBatchFilter inProgress = ListFilesInVectorStoreBatchFilter._('in_progress');
 
@@ -22,11 +22,11 @@ static const List<ListFilesInVectorStoreBatchFilter> values = [inProgress, compl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListFilesInVectorStoreBatchFilter && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListFilesInVectorStoreBatchFilter($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListFilesInVectorStoreBatchFilter && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListFilesInVectorStoreBatchFilter($value)';}
+}

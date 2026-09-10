@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_image_file_object.dart';import 'message_content_image_url_object.dart';import 'message_content_refusal_object.dart';import 'message_content_text_object.dart';import 'message_object_attachments2.dart';import 'message_object_content.dart';import 'message_object_incomplete_details.dart';/// The object type, which is always `thread.message`.
 @immutable final class MessageObjectObject {const MessageObjectObject._(this.value);
 
-factory MessageObjectObject.fromJson(String json) { return switch (json) {
+factory MessageObjectObject.fromJson(String json) {return switch (json) {
   'thread.message' => threadMessage,
   _ => MessageObjectObject._(json),
-}; }
+};}
 
 static const MessageObjectObject threadMessage = MessageObjectObject._('thread.message');
 
@@ -14,23 +14,23 @@ static const List<MessageObjectObject> values = [threadMessage];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageObjectObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageObjectObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageObjectObject($value)';}
+}
 /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
 @immutable final class MessageObjectStatus {const MessageObjectStatus._(this.value);
 
-factory MessageObjectStatus.fromJson(String json) { return switch (json) {
+factory MessageObjectStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'incomplete' => incomplete,
   'completed' => completed,
   _ => MessageObjectStatus._(json),
-}; }
+};}
 
 static const MessageObjectStatus inProgress = MessageObjectStatus._('in_progress');
 
@@ -42,22 +42,22 @@ static const List<MessageObjectStatus> values = [inProgress, incomplete, complet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageObjectStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageObjectStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageObjectStatus($value)';}
+}
 /// The entity that produced the message. One of `user` or `assistant`.
 @immutable final class MessageObjectRole {const MessageObjectRole._(this.value);
 
-factory MessageObjectRole.fromJson(String json) { return switch (json) {
+factory MessageObjectRole.fromJson(String json) {return switch (json) {
   'user' => user,
   'assistant' => assistant,
   _ => MessageObjectRole._(json),
-}; }
+};}
 
 static const MessageObjectRole user = MessageObjectRole._('user');
 
@@ -67,18 +67,18 @@ static const List<MessageObjectRole> values = [user, assistant];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageObjectRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageObjectRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageObjectRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageObjectRole($value)';}
+}
 /// Represents a message within a [thread](/docs/api-reference/threads).
 @immutable final class MessageObject {const MessageObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.status, required this.incompleteDetails, required this.completedAt, required this.incompleteAt, required this.role, required this.content, required this.assistantId, required this.runId, required this.attachments, required this.metadata, });
 
-factory MessageObject.fromJson(Map<String, dynamic> json) { return MessageObject(
+factory MessageObject.fromJson(Map<String, dynamic> json) {return MessageObject(
   id: json['id'] as String,
   object: MessageObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -93,7 +93,7 @@ factory MessageObject.fromJson(Map<String, dynamic> json) { return MessageObject
   runId: json['run_id'] as String?,
   attachments: (json['attachments'] as List<dynamic>?)?.map((e) => MessageObjectAttachments2.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -136,7 +136,7 @@ final List<MessageObjectAttachments2>? attachments;
 
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -151,8 +151,8 @@ Map<String, dynamic> toJson() { return {
   'run_id': runId,
   'attachments': attachments?.map((e) => e.toJson()).toList(),
   'metadata': metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
@@ -165,8 +165,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('assistant_id') && (json['assistant_id'] == null || json['assistant_id'] is String) &&
       json.containsKey('run_id') && (json['run_id'] == null || json['run_id'] is String) &&
       json.containsKey('attachments') &&
-      json.containsKey('metadata'); } 
-MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt, String? threadId, MessageObjectStatus? status, MessageObjectIncompleteDetails? Function()? incompleteDetails, int? Function()? completedAt, int? Function()? incompleteAt, MessageObjectRole? role, List<MessageObjectContent>? content, String? Function()? assistantId, String? Function()? runId, List<MessageObjectAttachments2>? Function()? attachments, Map<String, String>? Function()? metadata, }) { return MessageObject(
+      json.containsKey('metadata');}
+MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt, String? threadId, MessageObjectStatus? status, MessageObjectIncompleteDetails? Function()? incompleteDetails, int? Function()? completedAt, int? Function()? incompleteAt, MessageObjectRole? role, List<MessageObjectContent>? content, String? Function()? assistantId, String? Function()? runId, List<MessageObjectAttachments2>? Function()? attachments, Map<String, String>? Function()? metadata, }) {return MessageObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -181,8 +181,8 @@ MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt,
   runId: runId != null ? runId() : this.runId,
   attachments: attachments != null ? attachments() : this.attachments,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageObject &&
           id == other.id &&
           object == other.object &&
@@ -197,7 +197,7 @@ MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt,
           assistantId == other.assistantId &&
           runId == other.runId &&
           listEquals(attachments, other.attachments) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, status, incompleteDetails, completedAt, incompleteAt, role, Object.hashAll(content), assistantId, runId, Object.hashAll(attachments ?? const []), metadata); } 
-@override String toString() { return 'MessageObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, status: $status, incompleteDetails: $incompleteDetails, completedAt: $completedAt, incompleteAt: $incompleteAt, role: $role, content: $content, assistantId: $assistantId, runId: $runId, attachments: $attachments, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(id, object, createdAt, threadId, status, incompleteDetails, completedAt, incompleteAt, role, Object.hashAll(content), assistantId, runId, Object.hashAll(attachments ?? const []), metadata);}
+@override String toString() {return 'MessageObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, status: $status, incompleteDetails: $incompleteDetails, completedAt: $completedAt, incompleteAt: $incompleteAt, role: $role, content: $content, assistantId: $assistantId, runId: $runId, attachments: $attachments, metadata: $metadata)';}
+}

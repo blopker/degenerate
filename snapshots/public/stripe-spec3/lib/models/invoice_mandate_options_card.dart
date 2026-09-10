@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `fixed` or `maximum`. If `fixed`, the `amount` param refers to the exact amount to be charged in future payments. If `maximum`, the amount charged can be up to the value passed for the `amount` param.
 @immutable final class InvoiceMandateOptionsCardAmountType {const InvoiceMandateOptionsCardAmountType._(this.value);
 
-factory InvoiceMandateOptionsCardAmountType.fromJson(String json) { return switch (json) {
+factory InvoiceMandateOptionsCardAmountType.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'maximum' => maximum,
   _ => InvoiceMandateOptionsCardAmountType._(json),
-}; }
+};}
 
 static const InvoiceMandateOptionsCardAmountType fixed = InvoiceMandateOptionsCardAmountType._('fixed');
 
@@ -17,22 +17,22 @@ static const List<InvoiceMandateOptionsCardAmountType> values = [fixed, maximum]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceMandateOptionsCardAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceMandateOptionsCardAmountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceMandateOptionsCardAmountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceMandateOptionsCardAmountType($value)';}
+}
 /// 
 @immutable final class InvoiceMandateOptionsCard {const InvoiceMandateOptionsCard({this.amount = const Omittable.absent(), this.amountType = const Omittable.absent(), this.description = const Omittable.absent(), });
 
-factory InvoiceMandateOptionsCard.fromJson(Map<String, dynamic> json) { return InvoiceMandateOptionsCard(
+factory InvoiceMandateOptionsCard.fromJson(Map<String, dynamic> json) {return InvoiceMandateOptionsCard(
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   amountType: json.containsKey('amount_type') ? Omittable(json['amount_type'] != null ? InvoiceMandateOptionsCardAmountType.fromJson(json['amount_type'] as String) : null) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Amount to be charged for future payments.
 final Omittable<int?> amount;
@@ -43,22 +43,22 @@ final Omittable<InvoiceMandateOptionsCardAmountType?> amountType;
 /// A description of the mandate or subscription that is meant to be displayed to the customer.
 final Omittable<String?> description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount.isPresent) 'amount': amount.value,
   if (amountType.isPresent) 'amount_type': amountType.value?.toJson(),
   if (description.isPresent) 'description': description.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'description'}.contains(key)); } 
-InvoiceMandateOptionsCard copyWith({Omittable<int?>? amount, Omittable<InvoiceMandateOptionsCardAmountType?>? amountType, Omittable<String?>? description, }) { return InvoiceMandateOptionsCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'amount_type', 'description'}.contains(key));}
+InvoiceMandateOptionsCard copyWith({Omittable<int?>? amount, Omittable<InvoiceMandateOptionsCardAmountType?>? amountType, Omittable<String?>? description, }) {return InvoiceMandateOptionsCard(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   description: description ?? this.description,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoiceMandateOptionsCard &&
           amount == other.amount &&
           amountType == other.amountType &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(amount, amountType, description); } 
-@override String toString() { return 'InvoiceMandateOptionsCard(amount: $amount, amountType: $amountType, description: $description)'; } 
- }
+          description == other.description;}
+@override int get hashCode {return Object.hash(amount, amountType, description);}
+@override String toString() {return 'InvoiceMandateOptionsCard(amount: $amount, amountType: $amountType, description: $description)';}
+}

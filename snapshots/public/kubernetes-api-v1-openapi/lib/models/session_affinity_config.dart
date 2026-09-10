@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_ip_config.dart';/// SessionAffinityConfig represents the configurations of session affinity.
 @immutable final class SessionAffinityConfig {const SessionAffinityConfig({this.clientIp});
 
-factory SessionAffinityConfig.fromJson(Map<String, dynamic> json) { return SessionAffinityConfig(
+factory SessionAffinityConfig.fromJson(Map<String, dynamic> json) {return SessionAffinityConfig(
   clientIp: json['clientIP'] != null ? ClientIpConfig.fromJson(json['clientIP'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// clientIP contains the configurations of Client IP based session affinity.
 final ClientIpConfig? clientIp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientIp != null) 'clientIP': clientIp?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'clientIP'}.contains(key)); } 
-SessionAffinityConfig copyWith({ClientIpConfig? Function()? clientIp}) { return SessionAffinityConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'clientIP'}.contains(key));}
+SessionAffinityConfig copyWith({ClientIpConfig? Function()? clientIp}) {return SessionAffinityConfig(
   clientIp: clientIp != null ? clientIp() : this.clientIp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SessionAffinityConfig &&
-          clientIp == other.clientIp; } 
-@override int get hashCode { return clientIp.hashCode; } 
-@override String toString() { return 'SessionAffinityConfig(clientIp: $clientIp)'; } 
- }
+          clientIp == other.clientIp;}
+@override int get hashCode {return clientIp.hashCode;}
+@override String toString() {return 'SessionAffinityConfig(clientIp: $clientIp)';}
+}

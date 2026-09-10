@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'approximate_location.dart';@immutable final class SearchContextSize {const SearchContextSize._(this.value);
 
-factory SearchContextSize.fromJson(String json) { return switch (json) {
+factory SearchContextSize.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => SearchContextSize._(json),
-}; }
+};}
 
 static const SearchContextSize low = SearchContextSize._('low');
 
@@ -19,21 +19,21 @@ static const List<SearchContextSize> values = [low, medium, high];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SearchContextSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SearchContextSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SearchContextSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SearchContextSize($value)';}
+}
 @immutable final class SearchContentType {const SearchContentType._(this.value);
 
-factory SearchContentType.fromJson(String json) { return switch (json) {
+factory SearchContentType.fromJson(String json) {return switch (json) {
   'text' => text,
   'image' => image,
   _ => SearchContentType._(json),
-}; }
+};}
 
 static const SearchContentType text = SearchContentType._('text');
 
@@ -43,23 +43,23 @@ static const List<SearchContentType> values = [text, image];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SearchContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SearchContentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SearchContentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SearchContentType($value)';}
+}
 /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
 @immutable final class WebSearchPreviewTool {const WebSearchPreviewTool({required this.type, this.userLocation = const Omittable.absent(), this.searchContextSize, this.searchContentTypes, });
 
-factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return WebSearchPreviewTool(
+factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) {return WebSearchPreviewTool(
   type: json['type'] as String,
   userLocation: json.containsKey('user_location') ? Omittable(json['user_location'] != null ? ApproximateLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   searchContextSize: json['search_context_size'] != null ? SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   searchContentTypes: (json['search_content_types'] as List<dynamic>?)?.map((e) => SearchContentType.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The type of the web search tool. One of `web_search_preview` or `web_search_preview_2025_03_11`.
 final String type;
@@ -72,25 +72,25 @@ final SearchContextSize? searchContextSize;
 
 final List<SearchContentType>? searchContentTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   if (userLocation.isPresent) 'user_location': userLocation.value?.toJson(),
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
   if (searchContentTypes != null) 'search_content_types': searchContentTypes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-WebSearchPreviewTool copyWith({String? type, Omittable<ApproximateLocation?>? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) { return WebSearchPreviewTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+WebSearchPreviewTool copyWith({String? type, Omittable<ApproximateLocation?>? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) {return WebSearchPreviewTool(
   type: type ?? this.type,
   userLocation: userLocation ?? this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   searchContentTypes: searchContentTypes != null ? searchContentTypes() : this.searchContentTypes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebSearchPreviewTool &&
           type == other.type &&
           userLocation == other.userLocation &&
           searchContextSize == other.searchContextSize &&
-          listEquals(searchContentTypes, other.searchContentTypes); } 
-@override int get hashCode { return Object.hash(type, userLocation, searchContextSize, Object.hashAll(searchContentTypes ?? const [])); } 
-@override String toString() { return 'WebSearchPreviewTool(type: $type, userLocation: $userLocation, searchContextSize: $searchContextSize, searchContentTypes: $searchContentTypes)'; } 
- }
+          listEquals(searchContentTypes, other.searchContentTypes);}
+@override int get hashCode {return Object.hash(type, userLocation, searchContextSize, Object.hashAll(searchContentTypes ?? const []));}
+@override String toString() {return 'WebSearchPreviewTool(type: $type, userLocation: $userLocation, searchContextSize: $searchContextSize, searchContentTypes: $searchContentTypes)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'marketplace_account.dart';import 'marketplace_listing_plan.dart';/// User Marketplace Purchase
 @immutable final class UserMarketplacePurchase {const UserMarketplacePurchase({required this.billingCycle, required this.nextBillingDate, required this.unitCount, required this.onFreeTrial, required this.freeTrialEndsOn, required this.updatedAt, required this.account, required this.plan, });
 
-factory UserMarketplacePurchase.fromJson(Map<String, dynamic> json) { return UserMarketplacePurchase(
+factory UserMarketplacePurchase.fromJson(Map<String, dynamic> json) {return UserMarketplacePurchase(
   billingCycle: json['billing_cycle'] as String,
   nextBillingDate: json['next_billing_date'] != null ? DateTime.parse(json['next_billing_date'] as String) : null,
   unitCount: json['unit_count'] != null ? (json['unit_count'] as num).toInt() : null,
@@ -12,7 +12,7 @@ factory UserMarketplacePurchase.fromJson(Map<String, dynamic> json) { return Use
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   account: MarketplaceAccount.fromJson(json['account'] as Map<String, dynamic>),
   plan: MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>),
-); }
+);}
 
 final String billingCycle;
 
@@ -30,7 +30,7 @@ final MarketplaceAccount account;
 
 final MarketplaceListingPlan plan;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billing_cycle': billingCycle,
   'next_billing_date': nextBillingDate?.toIso8601String(),
   'unit_count': unitCount,
@@ -39,16 +39,16 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt?.toIso8601String(),
   'account': account.toJson(),
   'plan': plan.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_cycle') && json['billing_cycle'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing_cycle') && json['billing_cycle'] is String &&
       json.containsKey('next_billing_date') && (json['next_billing_date'] == null || json['next_billing_date'] is String) &&
       json.containsKey('unit_count') && (json['unit_count'] == null || json['unit_count'] is num) &&
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('free_trial_ends_on') && (json['free_trial_ends_on'] == null || json['free_trial_ends_on'] is String) &&
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('account') &&
-      json.containsKey('plan'); } 
-UserMarketplacePurchase copyWith({String? billingCycle, DateTime? Function()? nextBillingDate, int? Function()? unitCount, bool? onFreeTrial, DateTime? Function()? freeTrialEndsOn, DateTime? Function()? updatedAt, MarketplaceAccount? account, MarketplaceListingPlan? plan, }) { return UserMarketplacePurchase(
+      json.containsKey('plan');}
+UserMarketplacePurchase copyWith({String? billingCycle, DateTime? Function()? nextBillingDate, int? Function()? unitCount, bool? onFreeTrial, DateTime? Function()? freeTrialEndsOn, DateTime? Function()? updatedAt, MarketplaceAccount? account, MarketplaceListingPlan? plan, }) {return UserMarketplacePurchase(
   billingCycle: billingCycle ?? this.billingCycle,
   nextBillingDate: nextBillingDate != null ? nextBillingDate() : this.nextBillingDate,
   unitCount: unitCount != null ? unitCount() : this.unitCount,
@@ -57,8 +57,8 @@ UserMarketplacePurchase copyWith({String? billingCycle, DateTime? Function()? ne
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   account: account ?? this.account,
   plan: plan ?? this.plan,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UserMarketplacePurchase &&
           billingCycle == other.billingCycle &&
           nextBillingDate == other.nextBillingDate &&
@@ -67,7 +67,7 @@ UserMarketplacePurchase copyWith({String? billingCycle, DateTime? Function()? ne
           freeTrialEndsOn == other.freeTrialEndsOn &&
           updatedAt == other.updatedAt &&
           account == other.account &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(billingCycle, nextBillingDate, unitCount, onFreeTrial, freeTrialEndsOn, updatedAt, account, plan); } 
-@override String toString() { return 'UserMarketplacePurchase(billingCycle: $billingCycle, nextBillingDate: $nextBillingDate, unitCount: $unitCount, onFreeTrial: $onFreeTrial, freeTrialEndsOn: $freeTrialEndsOn, updatedAt: $updatedAt, account: $account, plan: $plan)'; } 
- }
+          plan == other.plan;}
+@override int get hashCode {return Object.hash(billingCycle, nextBillingDate, unitCount, onFreeTrial, freeTrialEndsOn, updatedAt, account, plan);}
+@override String toString() {return 'UserMarketplacePurchase(billingCycle: $billingCycle, nextBillingDate: $nextBillingDate, unitCount: $unitCount, onFreeTrial: $onFreeTrial, freeTrialEndsOn: $freeTrialEndsOn, updatedAt: $updatedAt, account: $account, plan: $plan)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_amount_details.dart';/// 
 @immutable final class IssuingAuthorizationPendingRequest {const IssuingAuthorizationPendingRequest({required this.amount, required this.currency, required this.isAmountControllable, required this.merchantAmount, required this.merchantCurrency, this.amountDetails = const Omittable.absent(), this.networkRiskScore = const Omittable.absent(), });
 
-factory IssuingAuthorizationPendingRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationPendingRequest(
+factory IssuingAuthorizationPendingRequest.fromJson(Map<String, dynamic> json) {return IssuingAuthorizationPendingRequest(
   amount: (json['amount'] as num).toInt(),
   amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   currency: json['currency'] as String,
@@ -11,7 +11,7 @@ factory IssuingAuthorizationPendingRequest.fromJson(Map<String, dynamic> json) {
   merchantAmount: (json['merchant_amount'] as num).toInt(),
   merchantCurrency: json['merchant_currency'] as String,
   networkRiskScore: json.containsKey('network_risk_score') ? Omittable(json['network_risk_score'] != null ? (json['network_risk_score'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The additional amount Stripe will hold if the authorization is approved, in the card's [currency](https://docs.stripe.com/api#issuing_authorization_object-pending-request-currency) and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int amount;
@@ -34,7 +34,7 @@ final String merchantCurrency;
 /// The card network's estimate of the likelihood that an authorization is fraudulent. Takes on values between 1 and 99.
 final Omittable<int?> networkRiskScore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
   'currency': currency,
@@ -42,13 +42,13 @@ Map<String, dynamic> toJson() { return {
   'merchant_amount': merchantAmount,
   'merchant_currency': merchantCurrency,
   if (networkRiskScore.isPresent) 'network_risk_score': networkRiskScore.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('is_amount_controllable') && json['is_amount_controllable'] is bool &&
       json.containsKey('merchant_amount') && json['merchant_amount'] is num &&
-      json.containsKey('merchant_currency') && json['merchant_currency'] is String; } 
-IssuingAuthorizationPendingRequest copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, String? currency, bool? isAmountControllable, int? merchantAmount, String? merchantCurrency, Omittable<int?>? networkRiskScore, }) { return IssuingAuthorizationPendingRequest(
+      json.containsKey('merchant_currency') && json['merchant_currency'] is String;}
+IssuingAuthorizationPendingRequest copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, String? currency, bool? isAmountControllable, int? merchantAmount, String? merchantCurrency, Omittable<int?>? networkRiskScore, }) {return IssuingAuthorizationPendingRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails ?? this.amountDetails,
   currency: currency ?? this.currency,
@@ -56,8 +56,8 @@ IssuingAuthorizationPendingRequest copyWith({int? amount, Omittable<IssuingAutho
   merchantAmount: merchantAmount ?? this.merchantAmount,
   merchantCurrency: merchantCurrency ?? this.merchantCurrency,
   networkRiskScore: networkRiskScore ?? this.networkRiskScore,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingAuthorizationPendingRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -65,7 +65,7 @@ IssuingAuthorizationPendingRequest copyWith({int? amount, Omittable<IssuingAutho
           isAmountControllable == other.isAmountControllable &&
           merchantAmount == other.merchantAmount &&
           merchantCurrency == other.merchantCurrency &&
-          networkRiskScore == other.networkRiskScore; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, currency, isAmountControllable, merchantAmount, merchantCurrency, networkRiskScore); } 
-@override String toString() { return 'IssuingAuthorizationPendingRequest(amount: $amount, amountDetails: $amountDetails, currency: $currency, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore)'; } 
- }
+          networkRiskScore == other.networkRiskScore;}
+@override int get hashCode {return Object.hash(amount, amountDetails, currency, isAmountControllable, merchantAmount, merchantCurrency, networkRiskScore);}
+@override String toString() {return 'IssuingAuthorizationPendingRequest(amount: $amount, amountDetails: $amountDetails, currency: $currency, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore)';}
+}

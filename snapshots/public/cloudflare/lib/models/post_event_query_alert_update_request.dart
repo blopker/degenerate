@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
 @immutable final class PostEventQueryAlertUpdateRequestFrequency {const PostEventQueryAlertUpdateRequestFrequency._(this.value);
 
-factory PostEventQueryAlertUpdateRequestFrequency.fromJson(String json) { return switch (json) {
+factory PostEventQueryAlertUpdateRequestFrequency.fromJson(String json) {return switch (json) {
   'immediate' => immediate,
   'daily' => daily,
   _ => PostEventQueryAlertUpdateRequestFrequency._(json),
-}; }
+};}
 
 static const PostEventQueryAlertUpdateRequestFrequency immediate = PostEventQueryAlertUpdateRequestFrequency._('immediate');
 
@@ -17,21 +17,21 @@ static const List<PostEventQueryAlertUpdateRequestFrequency> values = [immediate
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostEventQueryAlertUpdateRequestFrequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostEventQueryAlertUpdateRequestFrequency($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostEventQueryAlertUpdateRequestFrequency && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostEventQueryAlertUpdateRequestFrequency($value)';}
+}
 @immutable final class PostEventQueryAlertUpdateRequest {const PostEventQueryAlertUpdateRequest({this.enabled, this.frequency, this.notificationType, });
 
-factory PostEventQueryAlertUpdateRequest.fromJson(Map<String, dynamic> json) { return PostEventQueryAlertUpdateRequest(
+factory PostEventQueryAlertUpdateRequest.fromJson(Map<String, dynamic> json) {return PostEventQueryAlertUpdateRequest(
   enabled: json['enabled'] as bool?,
   frequency: json['frequency'] != null ? PostEventQueryAlertUpdateRequestFrequency.fromJson(json['frequency'] as String) : null,
   notificationType: json['notification_type'] as String?,
-); }
+);}
 
 /// Whether the alert is enabled
 final bool? enabled;
@@ -42,22 +42,22 @@ final PostEventQueryAlertUpdateRequestFrequency? frequency;
 /// Type of notification (e.g., ans)
 final String? notificationType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (frequency != null) 'frequency': frequency?.toJson(),
   'notification_type': ?notificationType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'frequency', 'notification_type'}.contains(key)); } 
-PostEventQueryAlertUpdateRequest copyWith({bool? Function()? enabled, PostEventQueryAlertUpdateRequestFrequency? Function()? frequency, String? Function()? notificationType, }) { return PostEventQueryAlertUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'frequency', 'notification_type'}.contains(key));}
+PostEventQueryAlertUpdateRequest copyWith({bool? Function()? enabled, PostEventQueryAlertUpdateRequestFrequency? Function()? frequency, String? Function()? notificationType, }) {return PostEventQueryAlertUpdateRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   frequency: frequency != null ? frequency() : this.frequency,
   notificationType: notificationType != null ? notificationType() : this.notificationType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostEventQueryAlertUpdateRequest &&
           enabled == other.enabled &&
           frequency == other.frequency &&
-          notificationType == other.notificationType; } 
-@override int get hashCode { return Object.hash(enabled, frequency, notificationType); } 
-@override String toString() { return 'PostEventQueryAlertUpdateRequest(enabled: $enabled, frequency: $frequency, notificationType: $notificationType)'; } 
- }
+          notificationType == other.notificationType;}
+@override int get hashCode {return Object.hash(enabled, frequency, notificationType);}
+@override String toString() {return 'PostEventQueryAlertUpdateRequest(enabled: $enabled, frequency: $frequency, notificationType: $notificationType)';}
+}

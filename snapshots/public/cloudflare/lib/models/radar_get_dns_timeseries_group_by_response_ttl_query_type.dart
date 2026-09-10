@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByResponseTtlQueryType {const RadarGetDnsTimeseriesGroupByResponseTtlQueryType._(this.value);
 
-factory RadarGetDnsTimeseriesGroupByResponseTtlQueryType.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesGroupByResponseTtlQueryType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'A6' => a6,
@@ -92,7 +92,7 @@ factory RadarGetDnsTimeseriesGroupByResponseTtlQueryType.fromJson(String json) {
   'X25' => x25,
   'ZONEMD' => zonemd,
   _ => RadarGetDnsTimeseriesGroupByResponseTtlQueryType._(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesGroupByResponseTtlQueryType a = RadarGetDnsTimeseriesGroupByResponseTtlQueryType._('A');
 
@@ -274,11 +274,11 @@ static const List<RadarGetDnsTimeseriesGroupByResponseTtlQueryType> values = [a,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByResponseTtlQueryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByResponseTtlQueryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupByResponseTtlQueryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByResponseTtlQueryType($value)';}
+}

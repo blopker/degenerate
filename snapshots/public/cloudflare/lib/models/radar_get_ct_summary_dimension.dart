@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the certificate attribute by which to group the results.
 @immutable final class RadarGetCtSummaryDimension {const RadarGetCtSummaryDimension._(this.value);
 
-factory RadarGetCtSummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetCtSummaryDimension.fromJson(String json) {return switch (json) {
   'CA' => ca,
   'CA_OWNER' => caOwner,
   'DURATION' => duration,
@@ -19,7 +19,7 @@ factory RadarGetCtSummaryDimension.fromJson(String json) { return switch (json) 
   'TLD' => tld,
   'VALIDATION_LEVEL' => validationLevel,
   _ => RadarGetCtSummaryDimension._(json),
-}; }
+};}
 
 static const RadarGetCtSummaryDimension ca = RadarGetCtSummaryDimension._('CA');
 
@@ -53,11 +53,11 @@ static const List<RadarGetCtSummaryDimension> values = [ca, caOwner, duration, e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtSummaryDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtSummaryDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtSummaryDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtSummaryDimension($value)';}
+}

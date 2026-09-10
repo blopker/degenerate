@@ -7,13 +7,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the queuein
 /// 4. `reject`: Users will be immediately rejected from the waiting room. As a result, no users will reach the origin website while this is enabled. This can be used if you wish to reject all traffic while performing maintenance, block traffic during a specified period of time (an event), or block traffic while events are not occurring. Consider a waiting room used for vaccine distribution that only allows traffic during sign-up events, and otherwise blocks all traffic. For this case, the waiting room uses `reject`, and its events override this with `fifo`, `random`, or `passthrough`. When this queueing method is enabled and neither `queueAll` is enabled nor an event is prequeueing, the waiting room page **will not refresh automatically**.
 @immutable final class WaitingroomQueueingMethod {const WaitingroomQueueingMethod._(this.value);
 
-factory WaitingroomQueueingMethod.fromJson(String json) { return switch (json) {
+factory WaitingroomQueueingMethod.fromJson(String json) {return switch (json) {
   'fifo' => fifo,
   'random' => random,
   'passthrough' => passthrough,
   'reject' => reject,
   _ => WaitingroomQueueingMethod._(json),
-}; }
+};}
 
 static const WaitingroomQueueingMethod fifo = WaitingroomQueueingMethod._('fifo');
 
@@ -27,11 +27,11 @@ static const List<WaitingroomQueueingMethod> values = [fifo, random, passthrough
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitingroomQueueingMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitingroomQueueingMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WaitingroomQueueingMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WaitingroomQueueingMethod($value)';}
+}

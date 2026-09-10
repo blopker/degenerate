@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class GetCustomersSearchResponseObject {const GetCustomersSearchResponseObject._(this.value);
 
-factory GetCustomersSearchResponseObject.fromJson(String json) { return switch (json) {
+factory GetCustomersSearchResponseObject.fromJson(String json) {return switch (json) {
   'search_result' => searchResult,
   _ => GetCustomersSearchResponseObject._(json),
-}; }
+};}
 
 static const GetCustomersSearchResponseObject searchResult = GetCustomersSearchResponseObject._('search_result');
 
@@ -14,25 +14,25 @@ static const List<GetCustomersSearchResponseObject> values = [searchResult];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCustomersSearchResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCustomersSearchResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetCustomersSearchResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetCustomersSearchResponseObject($value)';}
+}
 /// 
 @immutable final class GetCustomersSearchResponse {const GetCustomersSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage = const Omittable.absent(), this.totalCount, });
 
-factory GetCustomersSearchResponse.fromJson(Map<String, dynamic> json) { return GetCustomersSearchResponse(
+factory GetCustomersSearchResponse.fromJson(Map<String, dynamic> json) {return GetCustomersSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => Customer.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   nextPage: json.containsKey('next_page') ? Omittable(json['next_page'] as String?) : const Omittable.absent(),
   object: GetCustomersSearchResponseObject.fromJson(json['object'] as String),
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] as String,
-); }
+);}
 
 final List<Customer> data;
 
@@ -48,34 +48,34 @@ final int? totalCount;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   if (nextPage.isPresent) 'next_page': nextPage.value,
   'object': object.toJson(),
   'total_count': ?totalCount,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetCustomersSearchResponse copyWith({List<Customer>? data, bool? hasMore, Omittable<String?>? nextPage, GetCustomersSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetCustomersSearchResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetCustomersSearchResponse copyWith({List<Customer>? data, bool? hasMore, Omittable<String?>? nextPage, GetCustomersSearchResponseObject? object, int? Function()? totalCount, String? url, }) {return GetCustomersSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage ?? this.nextPage,
   object: object ?? this.object,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetCustomersSearchResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           nextPage == other.nextPage &&
           object == other.object &&
           totalCount == other.totalCount &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, nextPage, object, totalCount, url); } 
-@override String toString() { return 'GetCustomersSearchResponse(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, totalCount: $totalCount, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, nextPage, object, totalCount, url);}
+@override String toString() {return 'GetCustomersSearchResponse(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, totalCount: $totalCount, url: $url)';}
+}

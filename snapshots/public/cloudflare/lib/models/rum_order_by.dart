@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The property used to sort the list of results.
 @immutable final class RumOrderBy {const RumOrderBy._(this.value);
 
-factory RumOrderBy.fromJson(String json) { return switch (json) {
+factory RumOrderBy.fromJson(String json) {return switch (json) {
   'host' => host,
   'created' => created,
   _ => RumOrderBy._(json),
-}; }
+};}
 
 static const RumOrderBy host = RumOrderBy._('host');
 
@@ -17,11 +17,11 @@ static const List<RumOrderBy> values = [host, created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RumOrderBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RumOrderBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RumOrderBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RumOrderBy($value)';}
+}

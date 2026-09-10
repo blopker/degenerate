@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetOriginDetailsResponseResultOriginRegions {const RadarGetOriginDetailsResponseResultOriginRegions({required this.region});
 
-factory RadarGetOriginDetailsResponseResultOriginRegions.fromJson(Map<String, dynamic> json) { return RadarGetOriginDetailsResponseResultOriginRegions(
+factory RadarGetOriginDetailsResponseResultOriginRegions.fromJson(Map<String, dynamic> json) {return RadarGetOriginDetailsResponseResultOriginRegions(
   region: json['region'] as String,
-); }
+);}
 
 /// The region code.
 final String region;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'region': region,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('region') && json['region'] is String; } 
-RadarGetOriginDetailsResponseResultOriginRegions copyWith({String? region}) { return RadarGetOriginDetailsResponseResultOriginRegions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('region') && json['region'] is String;}
+RadarGetOriginDetailsResponseResultOriginRegions copyWith({String? region}) {return RadarGetOriginDetailsResponseResultOriginRegions(
   region: region ?? this.region,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetOriginDetailsResponseResultOriginRegions &&
-          region == other.region; } 
-@override int get hashCode { return region.hashCode; } 
-@override String toString() { return 'RadarGetOriginDetailsResponseResultOriginRegions(region: $region)'; } 
- }
+          region == other.region;}
+@override int get hashCode {return region.hashCode;}
+@override String toString() {return 'RadarGetOriginDetailsResponseResultOriginRegions(region: $region)';}
+}

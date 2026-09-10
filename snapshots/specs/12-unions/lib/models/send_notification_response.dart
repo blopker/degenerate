@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NotificationStatus {const NotificationStatus._(this.value);
 
-factory NotificationStatus.fromJson(String json) { return switch (json) {
+factory NotificationStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'sent' => sent,
   'failed' => failed,
   _ => NotificationStatus._(json),
-}; }
+};}
 
 static const NotificationStatus queued = NotificationStatus._('queued');
 
@@ -19,38 +19,38 @@ static const List<NotificationStatus> values = [queued, sent, failed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NotificationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NotificationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is NotificationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'NotificationStatus($value)';}
+}
 @immutable final class SendNotificationResponse {const SendNotificationResponse({this.id, this.status, });
 
-factory SendNotificationResponse.fromJson(Map<String, dynamic> json) { return SendNotificationResponse(
+factory SendNotificationResponse.fromJson(Map<String, dynamic> json) {return SendNotificationResponse(
   id: json['id'] as String?,
   status: json['status'] != null ? NotificationStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final String? id;
 
 final NotificationStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'status'}.contains(key)); } 
-SendNotificationResponse copyWith({String? Function()? id, NotificationStatus? Function()? status, }) { return SendNotificationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'status'}.contains(key));}
+SendNotificationResponse copyWith({String? Function()? id, NotificationStatus? Function()? status, }) {return SendNotificationResponse(
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SendNotificationResponse &&
           id == other.id &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, status); } 
-@override String toString() { return 'SendNotificationResponse(id: $id, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(id, status);}
+@override String toString() {return 'SendNotificationResponse(id: $id, status: $status)';}
+}

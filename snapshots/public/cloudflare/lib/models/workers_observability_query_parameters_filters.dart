@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryParametersFiltersOperation {const WorkersObservabilityQueryParametersFiltersOperation._(this.value);
 
-factory WorkersObservabilityQueryParametersFiltersOperation.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryParametersFiltersOperation.fromJson(String json) {return switch (json) {
   'includes' => includes,
   'not_includes' => notIncludes,
   'starts_with' => startsWith,
@@ -32,7 +32,7 @@ factory WorkersObservabilityQueryParametersFiltersOperation.fromJson(String json
   'NOT_IN' => notIn2,
   'STARTS_WITH' => startsWith2,
   _ => WorkersObservabilityQueryParametersFiltersOperation._(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryParametersFiltersOperation includes = WorkersObservabilityQueryParametersFiltersOperation._('includes');
 
@@ -94,22 +94,22 @@ static const List<WorkersObservabilityQueryParametersFiltersOperation> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryParametersFiltersOperation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryParametersFiltersOperation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityQueryParametersFiltersOperation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityQueryParametersFiltersOperation($value)';}
+}
 @immutable final class WorkersObservabilityQueryParametersFiltersType {const WorkersObservabilityQueryParametersFiltersType._(this.value);
 
-factory WorkersObservabilityQueryParametersFiltersType.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryParametersFiltersType.fromJson(String json) {return switch (json) {
   'string' => string,
   'number' => number,
   'boolean' => boolean,
   _ => WorkersObservabilityQueryParametersFiltersType._(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryParametersFiltersType string = WorkersObservabilityQueryParametersFiltersType._('string');
 
@@ -121,22 +121,22 @@ static const List<WorkersObservabilityQueryParametersFiltersType> values = [stri
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryParametersFiltersType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryParametersFiltersType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityQueryParametersFiltersType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityQueryParametersFiltersType($value)';}
+}
 @immutable final class WorkersObservabilityQueryParametersFilters {const WorkersObservabilityQueryParametersFilters({required this.key, required this.operation, required this.type, this.value, });
 
-factory WorkersObservabilityQueryParametersFilters.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersFilters(
+factory WorkersObservabilityQueryParametersFilters.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryParametersFilters(
   key: json['key'] as String,
   operation: WorkersObservabilityQueryParametersFiltersOperation.fromJson(json['operation'] as String),
   type: WorkersObservabilityQueryParametersFiltersType.fromJson(json['type'] as String),
   value: json['value'],
-); }
+);}
 
 final String key;
 
@@ -147,27 +147,27 @@ final WorkersObservabilityQueryParametersFiltersType type;
 /// One of: String, double, bool
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'operation': operation.toJson(),
   'type': type.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('operation') &&
-      json.containsKey('type'); } 
-WorkersObservabilityQueryParametersFilters copyWith({String? key, WorkersObservabilityQueryParametersFiltersOperation? operation, WorkersObservabilityQueryParametersFiltersType? type, dynamic Function()? value, }) { return WorkersObservabilityQueryParametersFilters(
+      json.containsKey('type');}
+WorkersObservabilityQueryParametersFilters copyWith({String? key, WorkersObservabilityQueryParametersFiltersOperation? operation, WorkersObservabilityQueryParametersFiltersType? type, dynamic Function()? value, }) {return WorkersObservabilityQueryParametersFilters(
   key: key ?? this.key,
   operation: operation ?? this.operation,
   type: type ?? this.type,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryParametersFilters &&
           key == other.key &&
           operation == other.operation &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, operation, type, value); } 
-@override String toString() { return 'WorkersObservabilityQueryParametersFilters(key: $key, operation: $operation, type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(key, operation, type, value);}
+@override String toString() {return 'WorkersObservabilityQueryParametersFilters(key: $key, operation: $operation, type: $type, value: $value)';}
+}

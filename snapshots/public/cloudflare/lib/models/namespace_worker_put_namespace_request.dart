@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_trusted_workers.dart';@immutable final class NamespaceWorkerPutNamespaceRequest {const NamespaceWorkerPutNamespaceRequest({this.name, this.trustedWorkers, });
 
-factory NamespaceWorkerPutNamespaceRequest.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPutNamespaceRequest(
+factory NamespaceWorkerPutNamespaceRequest.fromJson(Map<String, dynamic> json) {return NamespaceWorkerPutNamespaceRequest(
   name: json['name'] as String?,
   trustedWorkers: json['trusted_workers'] != null ? WorkersTrustedWorkers.fromJson(json['trusted_workers'] as bool) : null,
-); }
+);}
 
 /// The name of the dispatch namespace.
 final String? name;
@@ -13,19 +13,19 @@ final String? name;
 /// Whether the Workers in the namespace are executed in a "trusted" manner. When a Worker is trusted, it has access to the shared caches for the zone in the Cache API, and has access to the `request.cf` object on incoming Requests. When a Worker is untrusted, caches are not shared across the zone, and `request.cf` is undefined. By default, Workers in a namespace are "untrusted".
 final WorkersTrustedWorkers? trustedWorkers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   if (trustedWorkers != null) 'trusted_workers': trustedWorkers?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'trusted_workers'}.contains(key)); } 
-NamespaceWorkerPutNamespaceRequest copyWith({String? Function()? name, WorkersTrustedWorkers? Function()? trustedWorkers, }) { return NamespaceWorkerPutNamespaceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'trusted_workers'}.contains(key));}
+NamespaceWorkerPutNamespaceRequest copyWith({String? Function()? name, WorkersTrustedWorkers? Function()? trustedWorkers, }) {return NamespaceWorkerPutNamespaceRequest(
   name: name != null ? name() : this.name,
   trustedWorkers: trustedWorkers != null ? trustedWorkers() : this.trustedWorkers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NamespaceWorkerPutNamespaceRequest &&
           name == other.name &&
-          trustedWorkers == other.trustedWorkers; } 
-@override int get hashCode { return Object.hash(name, trustedWorkers); } 
-@override String toString() { return 'NamespaceWorkerPutNamespaceRequest(name: $name, trustedWorkers: $trustedWorkers)'; } 
- }
+          trustedWorkers == other.trustedWorkers;}
+@override int get hashCode {return Object.hash(name, trustedWorkers);}
+@override String toString() {return 'NamespaceWorkerPutNamespaceRequest(name: $name, trustedWorkers: $trustedWorkers)';}
+}

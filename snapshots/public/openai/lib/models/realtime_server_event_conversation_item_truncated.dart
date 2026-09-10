@@ -9,13 +9,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an
 /// 
 @immutable final class RealtimeServerEventConversationItemTruncated {const RealtimeServerEventConversationItemTruncated({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.audioEndMs, });
 
-factory RealtimeServerEventConversationItemTruncated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemTruncated(
+factory RealtimeServerEventConversationItemTruncated.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationItemTruncated(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   audioEndMs: (json['audio_end_ms'] as num).toInt(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -33,32 +33,32 @@ final int contentIndex;
 /// 
 final int audioEndMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'item_id': itemId,
   'content_index': contentIndex,
   'audio_end_ms': audioEndMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('audio_end_ms') && json['audio_end_ms'] is num; } 
-RealtimeServerEventConversationItemTruncated copyWith({String? eventId, String? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeServerEventConversationItemTruncated(
+      json.containsKey('audio_end_ms') && json['audio_end_ms'] is num;}
+RealtimeServerEventConversationItemTruncated copyWith({String? eventId, String? type, String? itemId, int? contentIndex, int? audioEndMs, }) {return RealtimeServerEventConversationItemTruncated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   contentIndex: contentIndex ?? this.contentIndex,
   audioEndMs: audioEndMs ?? this.audioEndMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventConversationItemTruncated &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
-          audioEndMs == other.audioEndMs; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, audioEndMs); } 
-@override String toString() { return 'RealtimeServerEventConversationItemTruncated(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)'; } 
- }
+          audioEndMs == other.audioEndMs;}
+@override int get hashCode {return Object.hash(eventId, type, itemId, contentIndex, audioEndMs);}
+@override String toString() {return 'RealtimeServerEventConversationItemTruncated(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the Robots Access Control License variant to use.
 @immutable final class BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant._(this.value);
 
-factory BotManagementCfRobotsVariant.fromJson(String json) { return switch (json) {
+factory BotManagementCfRobotsVariant.fromJson(String json) {return switch (json) {
   'off' => off,
   'policy_only' => policyOnly,
   _ => BotManagementCfRobotsVariant._(json),
-}; }
+};}
 
 static const BotManagementCfRobotsVariant off = BotManagementCfRobotsVariant._('off');
 
@@ -17,11 +17,11 @@ static const List<BotManagementCfRobotsVariant> values = [off, policyOnly];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementCfRobotsVariant && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementCfRobotsVariant($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BotManagementCfRobotsVariant && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BotManagementCfRobotsVariant($value)';}
+}

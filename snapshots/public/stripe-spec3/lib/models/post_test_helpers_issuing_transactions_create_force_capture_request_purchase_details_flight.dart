@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_flight_segments.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight({this.departureAt, this.passengerName, this.refundable, this.segments, this.travelAgency, });
 
-factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(
+factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(
   departureAt: json['departure_at'] != null ? (json['departure_at'] as num).toInt() : null,
   passengerName: json['passenger_name'] as String?,
   refundable: json['refundable'] as bool?,
   segments: (json['segments'] as List<dynamic>?)?.map((e) => PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments.fromJson(e as Map<String, dynamic>)).toList(),
   travelAgency: json['travel_agency'] as String?,
-); }
+);}
 
 final int? departureAt;
 
@@ -20,28 +20,28 @@ final List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDe
 
 final String? travelAgency;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'departure_at': ?departureAt,
   'passenger_name': ?passengerName,
   'refundable': ?refundable,
   if (segments != null) 'segments': segments?.map((e) => e.toJson()).toList(),
   'travel_agency': ?travelAgency,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'departure_at', 'passenger_name', 'refundable', 'segments', 'travel_agency'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight copyWith({int? Function()? departureAt, String? Function()? passengerName, bool? Function()? refundable, List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments>? Function()? segments, String? Function()? travelAgency, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'departure_at', 'passenger_name', 'refundable', 'segments', 'travel_agency'}.contains(key));}
+PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight copyWith({int? Function()? departureAt, String? Function()? passengerName, bool? Function()? refundable, List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments>? Function()? segments, String? Function()? travelAgency, }) {return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(
   departureAt: departureAt != null ? departureAt() : this.departureAt,
   passengerName: passengerName != null ? passengerName() : this.passengerName,
   refundable: refundable != null ? refundable() : this.refundable,
   segments: segments != null ? segments() : this.segments,
   travelAgency: travelAgency != null ? travelAgency() : this.travelAgency,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight &&
           departureAt == other.departureAt &&
           passengerName == other.passengerName &&
           refundable == other.refundable &&
           listEquals(segments, other.segments) &&
-          travelAgency == other.travelAgency; } 
-@override int get hashCode { return Object.hash(departureAt, passengerName, refundable, Object.hashAll(segments ?? const []), travelAgency); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(departureAt: $departureAt, passengerName: $passengerName, refundable: $refundable, segments: $segments, travelAgency: $travelAgency)'; } 
- }
+          travelAgency == other.travelAgency;}
+@override int get hashCode {return Object.hash(departureAt, passengerName, refundable, Object.hashAll(segments ?? const []), travelAgency);}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(departureAt: $departureAt, passengerName: $passengerName, refundable: $refundable, segments: $segments, travelAgency: $travelAgency)';}
+}

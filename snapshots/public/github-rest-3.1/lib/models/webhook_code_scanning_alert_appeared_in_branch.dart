@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_appeared_in_branch_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertAppearedInBranchAction {const WebhookCodeScanningAlertAppearedInBranchAction._(this.value);
 
-factory WebhookCodeScanningAlertAppearedInBranchAction.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertAppearedInBranchAction.fromJson(String json) {return switch (json) {
   'appeared_in_branch' => appearedInBranch,
   _ => WebhookCodeScanningAlertAppearedInBranchAction._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertAppearedInBranchAction appearedInBranch = WebhookCodeScanningAlertAppearedInBranchAction._('appeared_in_branch');
 
@@ -13,17 +13,17 @@ static const List<WebhookCodeScanningAlertAppearedInBranchAction> values = [appe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertAppearedInBranchAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertAppearedInBranchAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertAppearedInBranchAction($value)';}
+}
 @immutable final class WebhookCodeScanningAlertAppearedInBranch {const WebhookCodeScanningAlertAppearedInBranch({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCodeScanningAlertAppearedInBranch.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranch(
+factory WebhookCodeScanningAlertAppearedInBranch.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertAppearedInBranch(
   action: WebhookCodeScanningAlertAppearedInBranchAction.fromJson(json['action'] as String),
   alert: WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(json['alert'] as Map<String, dynamic>),
   commitOid: WebhooksCodeScanningCommitOid.fromJson(json['commit_oid'] as String),
@@ -33,7 +33,7 @@ factory WebhookCodeScanningAlertAppearedInBranch.fromJson(Map<String, dynamic> j
   ref: WebhooksCodeScanningRef.fromJson(json['ref'] as String),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookCodeScanningAlertAppearedInBranchAction action;
 
@@ -56,7 +56,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   'commit_oid': commitOid.toJson(),
@@ -66,14 +66,14 @@ Map<String, dynamic> toJson() { return {
   'ref': ref.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('commit_oid') &&
       json.containsKey('ref') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCodeScanningAlertAppearedInBranch copyWith({WebhookCodeScanningAlertAppearedInBranchAction? action, WebhookCodeScanningAlertAppearedInBranchAlert? alert, WebhooksCodeScanningCommitOid? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksCodeScanningRef? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertAppearedInBranch(
+      json.containsKey('sender');}
+WebhookCodeScanningAlertAppearedInBranch copyWith({WebhookCodeScanningAlertAppearedInBranchAction? action, WebhookCodeScanningAlertAppearedInBranchAlert? alert, WebhooksCodeScanningCommitOid? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksCodeScanningRef? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCodeScanningAlertAppearedInBranch(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   commitOid: commitOid ?? this.commitOid,
@@ -83,8 +83,8 @@ WebhookCodeScanningAlertAppearedInBranch copyWith({WebhookCodeScanningAlertAppea
   ref: ref ?? this.ref,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranch &&
           action == other.action &&
           alert == other.alert &&
@@ -94,7 +94,7 @@ WebhookCodeScanningAlertAppearedInBranch copyWith({WebhookCodeScanningAlertAppea
           organization == other.organization &&
           ref == other.ref &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender); } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranch(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender);}
+@override String toString() {return 'WebhookCodeScanningAlertAppearedInBranch(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)';}
+}

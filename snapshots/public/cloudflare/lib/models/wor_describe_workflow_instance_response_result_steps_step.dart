@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_step_attempts.dart';import 'wor_describe_workflow_instance_response_result_steps_step_config.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepType {const WorDescribeWorkflowInstanceResponseResultStepsStepType._(this.value);
 
-factory WorDescribeWorkflowInstanceResponseResultStepsStepType.fromJson(String json) { return switch (json) {
+factory WorDescribeWorkflowInstanceResponseResultStepsStepType.fromJson(String json) {return switch (json) {
   'step' => step,
   _ => WorDescribeWorkflowInstanceResponseResultStepsStepType._(json),
-}; }
+};}
 
 static const WorDescribeWorkflowInstanceResponseResultStepsStepType step = WorDescribeWorkflowInstanceResponseResultStepsStepType._('step');
 
@@ -13,17 +13,17 @@ static const List<WorDescribeWorkflowInstanceResponseResultStepsStepType> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorDescribeWorkflowInstanceResponseResultStepsStepType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsStepType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorDescribeWorkflowInstanceResponseResultStepsStepType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultStepsStepType($value)';}
+}
 @immutable final class WorDescribeWorkflowInstanceResponseResultStepsStep {const WorDescribeWorkflowInstanceResponseResultStepsStep({required this.attempts, required this.config, required this.end, required this.name, required this.output, required this.start, required this.success, required this.type, });
 
-factory WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStep(
+factory WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseResultStepsStep(
   attempts: (json['attempts'] as List<dynamic>).map((e) => WorDescribeWorkflowInstanceResponseResultStepsStepAttempts.fromJson(e as Map<String, dynamic>)).toList(),
   config: WorDescribeWorkflowInstanceResponseResultStepsStepConfig.fromJson(json['config'] as Map<String, dynamic>),
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
@@ -32,7 +32,7 @@ factory WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(Map<String, 
   start: DateTime.parse(json['start'] as String),
   success: json['success'] as bool?,
   type: WorDescribeWorkflowInstanceResponseResultStepsStepType.fromJson(json['type'] as String),
-); }
+);}
 
 final List<WorDescribeWorkflowInstanceResponseResultStepsStepAttempts> attempts;
 
@@ -50,7 +50,7 @@ final bool? success;
 
 final WorDescribeWorkflowInstanceResponseResultStepsStepType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attempts': attempts.map((e) => e.toJson()).toList(),
   'config': config.toJson(),
   'end': end?.toIso8601String(),
@@ -59,16 +59,16 @@ Map<String, dynamic> toJson() { return {
   'start': start.toIso8601String(),
   'success': success,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('attempts') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('attempts') &&
       json.containsKey('config') &&
       json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('output') &&
       json.containsKey('start') && json['start'] is String &&
       json.containsKey('success') && (json['success'] == null || json['success'] is bool) &&
-      json.containsKey('type'); } 
-WorDescribeWorkflowInstanceResponseResultStepsStep copyWith({List<WorDescribeWorkflowInstanceResponseResultStepsStepAttempts>? attempts, WorDescribeWorkflowInstanceResponseResultStepsStepConfig? config, DateTime? Function()? end, String? name, Map<String,dynamic>? output, DateTime? start, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultStepsStepType? type, }) { return WorDescribeWorkflowInstanceResponseResultStepsStep(
+      json.containsKey('type');}
+WorDescribeWorkflowInstanceResponseResultStepsStep copyWith({List<WorDescribeWorkflowInstanceResponseResultStepsStepAttempts>? attempts, WorDescribeWorkflowInstanceResponseResultStepsStepConfig? config, DateTime? Function()? end, String? name, Map<String,dynamic>? output, DateTime? start, bool? Function()? success, WorDescribeWorkflowInstanceResponseResultStepsStepType? type, }) {return WorDescribeWorkflowInstanceResponseResultStepsStep(
   attempts: attempts ?? this.attempts,
   config: config ?? this.config,
   end: end != null ? end() : this.end,
@@ -77,8 +77,8 @@ WorDescribeWorkflowInstanceResponseResultStepsStep copyWith({List<WorDescribeWor
   start: start ?? this.start,
   success: success != null ? success() : this.success,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResultStepsStep &&
           listEquals(attempts, other.attempts) &&
           config == other.config &&
@@ -87,7 +87,7 @@ WorDescribeWorkflowInstanceResponseResultStepsStep copyWith({List<WorDescribeWor
           output == other.output &&
           start == other.start &&
           success == other.success &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(attempts), config, end, name, output, start, success, type); } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsStep(attempts: $attempts, config: $config, end: $end, name: $name, output: $output, start: $start, success: $success, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(Object.hashAll(attempts), config, end, name, output, start, success, type);}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultStepsStep(attempts: $attempts, config: $config, end: $end, name: $name, output: $output, start: $start, success: $success, type: $type)';}
+}

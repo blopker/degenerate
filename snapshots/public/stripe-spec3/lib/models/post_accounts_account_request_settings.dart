@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_bacs_debit_payments.dart';import 'post_accounts_account_request_settings_branding.dart';import 'post_accounts_account_request_settings_card_issuing.dart';import 'post_accounts_account_request_settings_card_payments.dart';import 'post_accounts_account_request_settings_invoices.dart';import 'post_accounts_account_request_settings_payments.dart';import 'post_accounts_account_request_settings_payouts.dart';import 'post_accounts_account_request_settings_treasury.dart';/// Options for customizing how the account functions within Stripe.
 @immutable final class PostAccountsAccountRequestSettings {const PostAccountsAccountRequestSettings({this.bacsDebitPayments, this.branding, this.cardIssuing, this.cardPayments, this.invoices, this.payments, this.payouts, this.treasury, });
 
-factory PostAccountsAccountRequestSettings.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettings(
+factory PostAccountsAccountRequestSettings.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestSettings(
   bacsDebitPayments: json['bacs_debit_payments'] != null ? PostAccountsAccountRequestSettingsBacsDebitPayments.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,
   branding: json['branding'] != null ? PostAccountsAccountRequestSettingsBranding.fromJson(json['branding'] as Map<String, dynamic>) : null,
   cardIssuing: json['card_issuing'] != null ? PostAccountsAccountRequestSettingsCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory PostAccountsAccountRequestSettings.fromJson(Map<String, dynamic> json) {
   payments: json['payments'] != null ? PostAccountsAccountRequestSettingsPayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
   payouts: json['payouts'] != null ? PostAccountsAccountRequestSettingsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
   treasury: json['treasury'] != null ? PostAccountsAccountRequestSettingsTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountRequestSettingsBacsDebitPayments? bacsDebitPayments;
 
@@ -30,7 +30,7 @@ final PostAccountsAccountRequestSettingsPayouts? payouts;
 
 final PostAccountsAccountRequestSettingsTreasury? treasury;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bacsDebitPayments != null) 'bacs_debit_payments': bacsDebitPayments?.toJson(),
   if (branding != null) 'branding': branding?.toJson(),
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   if (payments != null) 'payments': payments?.toJson(),
   if (payouts != null) 'payouts': payouts?.toJson(),
   if (treasury != null) 'treasury': treasury?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bacs_debit_payments', 'branding', 'card_issuing', 'card_payments', 'invoices', 'payments', 'payouts', 'treasury'}.contains(key)); } 
-PostAccountsAccountRequestSettings copyWith({PostAccountsAccountRequestSettingsBacsDebitPayments? Function()? bacsDebitPayments, PostAccountsAccountRequestSettingsBranding? Function()? branding, PostAccountsAccountRequestSettingsCardIssuing? Function()? cardIssuing, PostAccountsAccountRequestSettingsCardPayments? Function()? cardPayments, PostAccountsAccountRequestSettingsInvoices? Function()? invoices, PostAccountsAccountRequestSettingsPayments? Function()? payments, PostAccountsAccountRequestSettingsPayouts? Function()? payouts, PostAccountsAccountRequestSettingsTreasury? Function()? treasury, }) { return PostAccountsAccountRequestSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bacs_debit_payments', 'branding', 'card_issuing', 'card_payments', 'invoices', 'payments', 'payouts', 'treasury'}.contains(key));}
+PostAccountsAccountRequestSettings copyWith({PostAccountsAccountRequestSettingsBacsDebitPayments? Function()? bacsDebitPayments, PostAccountsAccountRequestSettingsBranding? Function()? branding, PostAccountsAccountRequestSettingsCardIssuing? Function()? cardIssuing, PostAccountsAccountRequestSettingsCardPayments? Function()? cardPayments, PostAccountsAccountRequestSettingsInvoices? Function()? invoices, PostAccountsAccountRequestSettingsPayments? Function()? payments, PostAccountsAccountRequestSettingsPayouts? Function()? payouts, PostAccountsAccountRequestSettingsTreasury? Function()? treasury, }) {return PostAccountsAccountRequestSettings(
   bacsDebitPayments: bacsDebitPayments != null ? bacsDebitPayments() : this.bacsDebitPayments,
   branding: branding != null ? branding() : this.branding,
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
@@ -50,8 +50,8 @@ PostAccountsAccountRequestSettings copyWith({PostAccountsAccountRequestSettingsB
   payments: payments != null ? payments() : this.payments,
   payouts: payouts != null ? payouts() : this.payouts,
   treasury: treasury != null ? treasury() : this.treasury,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestSettings &&
           bacsDebitPayments == other.bacsDebitPayments &&
           branding == other.branding &&
@@ -60,7 +60,7 @@ PostAccountsAccountRequestSettings copyWith({PostAccountsAccountRequestSettingsB
           invoices == other.invoices &&
           payments == other.payments &&
           payouts == other.payouts &&
-          treasury == other.treasury; } 
-@override int get hashCode { return Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, invoices, payments, payouts, treasury); } 
-@override String toString() { return 'PostAccountsAccountRequestSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, invoices: $invoices, payments: $payments, payouts: $payouts, treasury: $treasury)'; } 
- }
+          treasury == other.treasury;}
+@override int get hashCode {return Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, invoices, payments, payouts, treasury);}
+@override String toString() {return 'PostAccountsAccountRequestSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, invoices: $invoices, payments: $payments, payouts: $payouts, treasury: $treasury)';}
+}

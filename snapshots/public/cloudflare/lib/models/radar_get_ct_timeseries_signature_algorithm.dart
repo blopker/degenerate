@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm._(this.value);
 
-factory RadarGetCtTimeseriesSignatureAlgorithm.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesSignatureAlgorithm.fromJson(String json) {return switch (json) {
   'DSA_SHA_1' => dsaSha1,
   'DSA_SHA_256' => dsaSha256,
   'ECDSA_SHA_1' => ecdsaSha1,
@@ -19,7 +19,7 @@ factory RadarGetCtTimeseriesSignatureAlgorithm.fromJson(String json) { return sw
   'RSA_SHA_384' => rsaSha384,
   'RSA_SHA_512' => rsaSha512,
   _ => RadarGetCtTimeseriesSignatureAlgorithm._(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesSignatureAlgorithm dsaSha1 = RadarGetCtTimeseriesSignatureAlgorithm._('DSA_SHA_1');
 
@@ -55,11 +55,11 @@ static const List<RadarGetCtTimeseriesSignatureAlgorithm> values = [dsaSha1, dsa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtTimeseriesSignatureAlgorithm && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtTimeseriesSignatureAlgorithm($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtTimeseriesSignatureAlgorithm && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtTimeseriesSignatureAlgorithm($value)';}
+}

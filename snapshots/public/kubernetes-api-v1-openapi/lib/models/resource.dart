@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// APIResource specifies the name of a resource and whether it is namespaced.
 @immutable final class Resource {const Resource({required this.kind, required this.name, required this.namespaced, required this.singularName, required this.verbs, this.categories, this.group, this.shortNames, this.storageVersionHash, this.version, });
 
-factory Resource.fromJson(Map<String, dynamic> json) { return Resource(
+factory Resource.fromJson(Map<String, dynamic> json) {return Resource(
   categories: (json['categories'] as List<dynamic>?)?.map((e) => e as String).toList(),
   group: json['group'] as String?,
   kind: json['kind'] as String,
@@ -14,7 +14,7 @@ factory Resource.fromJson(Map<String, dynamic> json) { return Resource(
   storageVersionHash: json['storageVersionHash'] as String?,
   verbs: (json['verbs'] as List<dynamic>).map((e) => e as String).toList(),
   version: json['version'] as String?,
-); }
+);}
 
 /// categories is a list of the grouped resources this resource belongs to (e.g. 'all')
 final List<String>? categories;
@@ -46,7 +46,7 @@ final List<String> verbs;
 /// version is the preferred version of the resource.  Empty implies the version of the containing resource list For subresources, this may have a different value, for example: v1 (while inside a v1beta1 version of the core resource's group)".
 final String? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'categories': ?categories,
   'group': ?group,
   'kind': kind,
@@ -57,13 +57,13 @@ Map<String, dynamic> toJson() { return {
   'storageVersionHash': ?storageVersionHash,
   'verbs': verbs,
   'version': ?version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('namespaced') && json['namespaced'] is bool &&
       json.containsKey('singularName') && json['singularName'] is String &&
-      json.containsKey('verbs'); } 
-Resource copyWith({List<String>? Function()? categories, String? Function()? group, String? kind, String? name, bool? namespaced, List<String>? Function()? shortNames, String? singularName, String? Function()? storageVersionHash, List<String>? verbs, String? Function()? version, }) { return Resource(
+      json.containsKey('verbs');}
+Resource copyWith({List<String>? Function()? categories, String? Function()? group, String? kind, String? name, bool? namespaced, List<String>? Function()? shortNames, String? singularName, String? Function()? storageVersionHash, List<String>? verbs, String? Function()? version, }) {return Resource(
   categories: categories != null ? categories() : this.categories,
   group: group != null ? group() : this.group,
   kind: kind ?? this.kind,
@@ -74,8 +74,8 @@ Resource copyWith({List<String>? Function()? categories, String? Function()? gro
   storageVersionHash: storageVersionHash != null ? storageVersionHash() : this.storageVersionHash,
   verbs: verbs ?? this.verbs,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Resource &&
           listEquals(categories, other.categories) &&
           group == other.group &&
@@ -86,7 +86,7 @@ Resource copyWith({List<String>? Function()? categories, String? Function()? gro
           singularName == other.singularName &&
           storageVersionHash == other.storageVersionHash &&
           listEquals(verbs, other.verbs) &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories ?? const []), group, kind, name, namespaced, Object.hashAll(shortNames ?? const []), singularName, storageVersionHash, Object.hashAll(verbs), version); } 
-@override String toString() { return 'Resource(categories: $categories, group: $group, kind: $kind, name: $name, namespaced: $namespaced, shortNames: $shortNames, singularName: $singularName, storageVersionHash: $storageVersionHash, verbs: $verbs, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(Object.hashAll(categories ?? const []), group, kind, name, namespaced, Object.hashAll(shortNames ?? const []), singularName, storageVersionHash, Object.hashAll(verbs), version);}
+@override String toString() {return 'Resource(categories: $categories, group: $group, kind: $kind, name: $name, namespaced: $namespaced, shortNames: $shortNames, singularName: $singularName, storageVersionHash: $storageVersionHash, verbs: $verbs, version: $version)';}
+}

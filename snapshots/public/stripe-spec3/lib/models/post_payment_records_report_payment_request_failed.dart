@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt failure.
 @immutable final class PostPaymentRecordsReportPaymentRequestFailed {const PostPaymentRecordsReportPaymentRequestFailed({required this.failedAt});
 
-factory PostPaymentRecordsReportPaymentRequestFailed.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestFailed(
+factory PostPaymentRecordsReportPaymentRequestFailed.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsReportPaymentRequestFailed(
   failedAt: (json['failed_at'] as num).toInt(),
-); }
+);}
 
 final int failedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'failed_at': failedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('failed_at') && json['failed_at'] is num; } 
-PostPaymentRecordsReportPaymentRequestFailed copyWith({int? failedAt}) { return PostPaymentRecordsReportPaymentRequestFailed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('failed_at') && json['failed_at'] is num;}
+PostPaymentRecordsReportPaymentRequestFailed copyWith({int? failedAt}) {return PostPaymentRecordsReportPaymentRequestFailed(
   failedAt: failedAt ?? this.failedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentRecordsReportPaymentRequestFailed &&
-          failedAt == other.failedAt; } 
-@override int get hashCode { return failedAt.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestFailed(failedAt: $failedAt)'; } 
- }
+          failedAt == other.failedAt;}
+@override int get hashCode {return failedAt.hashCode;}
+@override String toString() {return 'PostPaymentRecordsReportPaymentRequestFailed(failedAt: $failedAt)';}
+}

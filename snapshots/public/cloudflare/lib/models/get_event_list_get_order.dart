@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventListGetOrder {const GetEventListGetOrder._(this.value);
 
-factory GetEventListGetOrder.fromJson(String json) { return switch (json) {
+factory GetEventListGetOrder.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => GetEventListGetOrder._(json),
-}; }
+};}
 
 static const GetEventListGetOrder asc = GetEventListGetOrder._('asc');
 
@@ -16,11 +16,11 @@ static const List<GetEventListGetOrder> values = [asc, desc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetEventListGetOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetEventListGetOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetEventListGetOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetEventListGetOrder($value)';}
+}

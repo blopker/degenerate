@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumOs {const RadarGetHttpTimeseriesGroupByPostQuantumOs._(this.value);
 
-factory RadarGetHttpTimeseriesGroupByPostQuantumOs.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByPostQuantumOs.fromJson(String json) {return switch (json) {
   'WINDOWS' => windows,
   'MACOSX' => macosx,
   'IOS' => ios,
@@ -11,7 +11,7 @@ factory RadarGetHttpTimeseriesGroupByPostQuantumOs.fromJson(String json) { retur
   'LINUX' => linux,
   'SMART_TV' => smartTv,
   _ => RadarGetHttpTimeseriesGroupByPostQuantumOs._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByPostQuantumOs windows = RadarGetHttpTimeseriesGroupByPostQuantumOs._('WINDOWS');
 
@@ -31,11 +31,11 @@ static const List<RadarGetHttpTimeseriesGroupByPostQuantumOs> values = [windows,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByPostQuantumOs && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByPostQuantumOs($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByPostQuantumOs && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByPostQuantumOs($value)';}
+}

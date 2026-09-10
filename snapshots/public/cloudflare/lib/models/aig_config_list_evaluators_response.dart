@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_evaluators_response_result.dart';import 'aig_config_list_evaluators_response_result_info.dart';@immutable final class AigConfigListEvaluatorsResponse {const AigConfigListEvaluatorsResponse({required this.result, required this.resultInfo, required this.success, });
 
-factory AigConfigListEvaluatorsResponse.fromJson(Map<String, dynamic> json) { return AigConfigListEvaluatorsResponse(
+factory AigConfigListEvaluatorsResponse.fromJson(Map<String, dynamic> json) {return AigConfigListEvaluatorsResponse(
   result: (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluatorsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: AigConfigListEvaluatorsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AigConfigListEvaluatorsResponseResult> result;
 
@@ -14,24 +14,24 @@ final AigConfigListEvaluatorsResponseResultInfo resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.map((e) => e.toJson()).toList(),
   'result_info': resultInfo.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
       json.containsKey('result_info') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigListEvaluatorsResponse copyWith({List<AigConfigListEvaluatorsResponseResult>? result, AigConfigListEvaluatorsResponseResultInfo? resultInfo, bool? success, }) { return AigConfigListEvaluatorsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigListEvaluatorsResponse copyWith({List<AigConfigListEvaluatorsResponseResult>? result, AigConfigListEvaluatorsResponseResultInfo? resultInfo, bool? success, }) {return AigConfigListEvaluatorsResponse(
   result: result ?? this.result,
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigListEvaluatorsResponse &&
           listEquals(result, other.result) &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(result), resultInfo, success); } 
-@override String toString() { return 'AigConfigListEvaluatorsResponse(result: $result, resultInfo: $resultInfo, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(Object.hashAll(result), resultInfo, success);}
+@override String toString() {return 'AigConfigListEvaluatorsResponse(result: $result, resultInfo: $resultInfo, success: $success)';}
+}

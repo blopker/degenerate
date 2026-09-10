@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_changes8.dart';import 'webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipTierChangedAction {const WebhookSponsorshipTierChangedAction._(this.value);
 
-factory WebhookSponsorshipTierChangedAction.fromJson(String json) { return switch (json) {
+factory WebhookSponsorshipTierChangedAction.fromJson(String json) {return switch (json) {
   'tier_changed' => tierChanged,
   _ => WebhookSponsorshipTierChangedAction._(json),
-}; }
+};}
 
 static const WebhookSponsorshipTierChangedAction tierChanged = WebhookSponsorshipTierChangedAction._('tier_changed');
 
@@ -13,17 +13,17 @@ static const List<WebhookSponsorshipTierChangedAction> values = [tierChanged];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSponsorshipTierChangedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipTierChangedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookSponsorshipTierChangedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookSponsorshipTierChangedAction($value)';}
+}
 @immutable final class WebhookSponsorshipTierChanged {const WebhookSponsorshipTierChanged({required this.action, required this.changes, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookSponsorshipTierChanged.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipTierChanged(
+factory WebhookSponsorshipTierChanged.fromJson(Map<String, dynamic> json) {return WebhookSponsorshipTierChanged(
   action: WebhookSponsorshipTierChangedAction.fromJson(json['action'] as String),
   changes: WebhooksChanges8.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookSponsorshipTierChanged.fromJson(Map<String, dynamic> json) { retu
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookSponsorshipTierChangedAction action;
 
@@ -50,7 +50,7 @@ final SimpleUser sender;
 
 final WebhooksSponsorship sponsorship;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -59,12 +59,12 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('sender') &&
-      json.containsKey('sponsorship'); } 
-WebhookSponsorshipTierChanged copyWith({WebhookSponsorshipTierChangedAction? action, WebhooksChanges8? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipTierChanged(
+      json.containsKey('sponsorship');}
+WebhookSponsorshipTierChanged copyWith({WebhookSponsorshipTierChangedAction? action, WebhooksChanges8? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) {return WebhookSponsorshipTierChanged(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -73,8 +73,8 @@ WebhookSponsorshipTierChanged copyWith({WebhookSponsorshipTierChangedAction? act
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookSponsorshipTierChanged &&
           action == other.action &&
           changes == other.changes &&
@@ -83,7 +83,7 @@ WebhookSponsorshipTierChanged copyWith({WebhookSponsorshipTierChangedAction? act
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          sponsorship == other.sponsorship; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, organization, repository, sender, sponsorship); } 
-@override String toString() { return 'WebhookSponsorshipTierChanged(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
- }
+          sponsorship == other.sponsorship;}
+@override int get hashCode {return Object.hash(action, changes, enterprise, installation, organization, repository, sender, sponsorship);}
+@override String toString() {return 'WebhookSponsorshipTierChanged(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';}
+}

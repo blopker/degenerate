@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wifi.dart';@immutable final class PostTerminalConfigurationsRequestWifiVariant2 {const PostTerminalConfigurationsRequestWifiVariant2._(this.value);
 
-factory PostTerminalConfigurationsRequestWifiVariant2.fromJson(String json) { return switch (json) {
+factory PostTerminalConfigurationsRequestWifiVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalConfigurationsRequestWifiVariant2._(json),
-}; }
+};}
 
 static const PostTerminalConfigurationsRequestWifiVariant2 $empty = PostTerminalConfigurationsRequestWifiVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalConfigurationsRequestWifiVariant2> values = [$empt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalConfigurationsRequestWifiVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalConfigurationsRequestWifiVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalConfigurationsRequestWifiVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalConfigurationsRequestWifiVariant2($value)';}
+}
 /// Configurations for connecting to a WiFi network.
 @immutable
 final class PostTerminalConfigurationsRequestWifi {

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({required this.prompt, this.guidance, this.height, this.numSteps, this.seed, this.steps, this.width, });
 
-factory WorkersAiPostRunCfLeonardoLucidOriginRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
+factory WorkersAiPostRunCfLeonardoLucidOriginRequest.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfLeonardoLucidOriginRequest(
   guidance: json['guidance'] != null ? (json['guidance'] as num).toDouble() : null,
   height: json['height'] != null ? (json['height'] as num).toInt() : null,
   numSteps: json['num_steps'] != null ? (json['num_steps'] as num).toInt() : null,
@@ -10,7 +10,7 @@ factory WorkersAiPostRunCfLeonardoLucidOriginRequest.fromJson(Map<String, dynami
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   steps: json['steps'] != null ? (json['steps'] as num).toInt() : null,
   width: json['width'] != null ? (json['width'] as num).toInt() : null,
-); }
+);}
 
 /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
 final double? guidance;
@@ -34,12 +34,12 @@ final int? steps;
 final int? width;
 
 /// The value with the schema default applied when absent.
-double get guidanceOrDefault { return guidance ?? 4.5; } 
+double get guidanceOrDefault {return guidance ?? 4.5;}
 /// The value with the schema default applied when absent.
-int get heightOrDefault { return height ?? 1120; } 
+int get heightOrDefault {return height ?? 1120;}
 /// The value with the schema default applied when absent.
-int get widthOrDefault { return width ?? 1120; } 
-Map<String, dynamic> toJson() { return {
+int get widthOrDefault {return width ?? 1120;}
+Map<String, dynamic> toJson() {return {
   'guidance': ?guidance,
   'height': ?height,
   'num_steps': ?numSteps,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'seed': ?seed,
   'steps': ?steps,
   'width': ?width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double? Function()? guidance, int? Function()? height, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? steps, int? Function()? width, }) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double? Function()? guidance, int? Function()? height, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? steps, int? Function()? width, }) {return WorkersAiPostRunCfLeonardoLucidOriginRequest(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   numSteps: numSteps != null ? numSteps() : this.numSteps,
@@ -57,8 +57,8 @@ WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double? Function()? guida
   seed: seed != null ? seed() : this.seed,
   steps: steps != null ? steps() : this.steps,
   width: width != null ? width() : this.width,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfLeonardoLucidOriginRequest &&
           guidance == other.guidance &&
           height == other.height &&
@@ -66,7 +66,7 @@ WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double? Function()? guida
           prompt == other.prompt &&
           seed == other.seed &&
           steps == other.steps &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(guidance, height, numSteps, prompt, seed, steps, width); } 
-@override String toString() { return 'WorkersAiPostRunCfLeonardoLucidOriginRequest(guidance: $guidance, height: $height, numSteps: $numSteps, prompt: $prompt, seed: $seed, steps: $steps, width: $width)'; } 
- }
+          width == other.width;}
+@override int get hashCode {return Object.hash(guidance, height, numSteps, prompt, seed, steps, width);}
+@override String toString() {return 'WorkersAiPostRunCfLeonardoLucidOriginRequest(guidance: $guidance, height: $height, numSteps: $numSteps, prompt: $prompt, seed: $seed, steps: $steps, width: $width)';}
+}

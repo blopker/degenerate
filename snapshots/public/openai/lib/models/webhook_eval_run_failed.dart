@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_eval
 /// 
 @immutable final class WebhookEvalRunFailedObject {const WebhookEvalRunFailedObject._(this.value);
 
-factory WebhookEvalRunFailedObject.fromJson(String json) { return switch (json) {
+factory WebhookEvalRunFailedObject.fromJson(String json) {return switch (json) {
   'event' => event,
   _ => WebhookEvalRunFailedObject._(json),
-}; }
+};}
 
 static const WebhookEvalRunFailedObject event = WebhookEvalRunFailedObject._('event');
 
@@ -15,22 +15,22 @@ static const List<WebhookEvalRunFailedObject> values = [event];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookEvalRunFailedObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookEvalRunFailedObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookEvalRunFailedObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookEvalRunFailedObject($value)';}
+}
 /// The type of the event. Always `eval.run.failed`.
 /// 
 @immutable final class WebhookEvalRunFailedType {const WebhookEvalRunFailedType._(this.value);
 
-factory WebhookEvalRunFailedType.fromJson(String json) { return switch (json) {
+factory WebhookEvalRunFailedType.fromJson(String json) {return switch (json) {
   'eval.run.failed' => evalRunFailed,
   _ => WebhookEvalRunFailedType._(json),
-}; }
+};}
 
 static const WebhookEvalRunFailedType evalRunFailed = WebhookEvalRunFailedType._('eval.run.failed');
 
@@ -38,25 +38,25 @@ static const List<WebhookEvalRunFailedType> values = [evalRunFailed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookEvalRunFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookEvalRunFailedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookEvalRunFailedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookEvalRunFailedType($value)';}
+}
 /// Sent when an eval run has failed.
 /// 
 @immutable final class WebhookEvalRunFailed {const WebhookEvalRunFailed({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
-factory WebhookEvalRunFailed.fromJson(Map<String, dynamic> json) { return WebhookEvalRunFailed(
+factory WebhookEvalRunFailed.fromJson(Map<String, dynamic> json) {return WebhookEvalRunFailed(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookEvalRunFailedData.fromJson(json['data'] as Map<String, dynamic>),
   object: json['object'] != null ? WebhookEvalRunFailedObject.fromJson(json['object'] as String) : null,
   type: WebhookEvalRunFailedType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The Unix timestamp (in seconds) of when the eval run failed.
 /// 
@@ -78,31 +78,31 @@ final WebhookEvalRunFailedObject? object;
 /// 
 final WebhookEvalRunFailedType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'data': data.toJson(),
   if (object != null) 'object': object?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
-WebhookEvalRunFailed copyWith({int? createdAt, String? id, WebhookEvalRunFailedData? data, WebhookEvalRunFailedObject? Function()? object, WebhookEvalRunFailedType? type, }) { return WebhookEvalRunFailed(
+      json.containsKey('type');}
+WebhookEvalRunFailed copyWith({int? createdAt, String? id, WebhookEvalRunFailedData? data, WebhookEvalRunFailedObject? Function()? object, WebhookEvalRunFailedType? type, }) {return WebhookEvalRunFailed(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookEvalRunFailed &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookEvalRunFailed(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, id, data, object, type);}
+@override String toString() {return 'WebhookEvalRunFailed(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rectangle {const Rectangle({required this.kind, required this.width, required this.height, this.meta = const Omittable.absent(), });
 
-factory Rectangle.fromJson(Map<String, dynamic> json) { return Rectangle(
+factory Rectangle.fromJson(Map<String, dynamic> json) {return Rectangle(
   kind: json['kind'],
   width: (json['width'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
   meta: json.containsKey('meta') ? Omittable(json['meta']) : const Omittable.absent(),
-); }
+);}
 
 final dynamic kind;
 
@@ -17,27 +17,27 @@ final double height;
 
 final Omittable<dynamic> meta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kind': kind,
   'width': width,
   'height': height,
   if (meta.isPresent) 'meta': meta.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') &&
       json.containsKey('width') && json['width'] is num &&
-      json.containsKey('height') && json['height'] is num; } 
-Rectangle copyWith({dynamic Function()? kind, double? width, double? height, Omittable<dynamic>? meta, }) { return Rectangle(
+      json.containsKey('height') && json['height'] is num;}
+Rectangle copyWith({dynamic Function()? kind, double? width, double? height, Omittable<dynamic>? meta, }) {return Rectangle(
   kind: kind != null ? kind() : this.kind,
   width: width ?? this.width,
   height: height ?? this.height,
   meta: meta ?? this.meta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Rectangle &&
           kind == other.kind &&
           width == other.width &&
           height == other.height &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(kind, width, height, meta); } 
-@override String toString() { return 'Rectangle(kind: $kind, width: $width, height: $height, meta: $meta)'; } 
- }
+          meta == other.meta;}
+@override int get hashCode {return Object.hash(kind, width, height, meta);}
+@override String toString() {return 'Rectangle(kind: $kind, width: $width, height: $height, meta: $meta)';}
+}

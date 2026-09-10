@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_data_acss_debit.dart';import 'post_setup_intents_request_payment_method_data_affirm.dart';import 'post_setup_intents_request_payment_method_data_afterpay_clearpay.dart';import 'post_setup_intents_request_payment_method_data_alipay.dart';import 'post_setup_intents_request_payment_method_data_alma.dart';import 'post_setup_intents_request_payment_method_data_amazon_pay.dart';import 'post_setup_intents_request_payment_method_data_au_becs_debit.dart';import 'post_setup_intents_request_payment_method_data_bacs_debit.dart';import 'post_setup_intents_request_payment_method_data_bancontact.dart';import 'post_setup_intents_request_payment_method_data_billie.dart';import 'post_setup_intents_request_payment_method_data_billing_details.dart';import 'post_setup_intents_request_payment_method_data_blik.dart';import 'post_setup_intents_request_payment_method_data_boleto.dart';import 'post_setup_intents_request_payment_method_data_cashapp.dart';import 'post_setup_intents_request_payment_method_data_crypto.dart';import 'post_setup_intents_request_payment_method_data_customer_balance.dart';import 'post_setup_intents_request_payment_method_data_eps.dart';import 'post_setup_intents_request_payment_method_data_fpx.dart';import 'post_setup_intents_request_payment_method_data_giropay.dart';import 'post_setup_intents_request_payment_method_data_grabpay.dart';import 'post_setup_intents_request_payment_method_data_ideal.dart';import 'post_setup_intents_request_payment_method_data_interac_present.dart';import 'post_setup_intents_request_payment_method_data_kakao_pay.dart';import 'post_setup_intents_request_payment_method_data_klarna.dart';import 'post_setup_intents_request_payment_method_data_konbini.dart';import 'post_setup_intents_request_payment_method_data_kr_card.dart';import 'post_setup_intents_request_payment_method_data_link.dart';import 'post_setup_intents_request_payment_method_data_mb_way.dart';import 'post_setup_intents_request_payment_method_data_mobilepay.dart';import 'post_setup_intents_request_payment_method_data_multibanco.dart';import 'post_setup_intents_request_payment_method_data_naver_pay.dart';import 'post_setup_intents_request_payment_method_data_nz_bank_account.dart';import 'post_setup_intents_request_payment_method_data_oxxo.dart';import 'post_setup_intents_request_payment_method_data_p24.dart';import 'post_setup_intents_request_payment_method_data_pay_by_bank.dart';import 'post_setup_intents_request_payment_method_data_payco.dart';import 'post_setup_intents_request_payment_method_data_paynow.dart';import 'post_setup_intents_request_payment_method_data_paypal.dart';import 'post_setup_intents_request_payment_method_data_payto.dart';import 'post_setup_intents_request_payment_method_data_pix.dart';import 'post_setup_intents_request_payment_method_data_promptpay.dart';import 'post_setup_intents_request_payment_method_data_radar_options.dart';import 'post_setup_intents_request_payment_method_data_revolut_pay.dart';import 'post_setup_intents_request_payment_method_data_samsung_pay.dart';import 'post_setup_intents_request_payment_method_data_satispay.dart';import 'post_setup_intents_request_payment_method_data_sepa_debit.dart';import 'post_setup_intents_request_payment_method_data_sofort.dart';import 'post_setup_intents_request_payment_method_data_swish.dart';import 'post_setup_intents_request_payment_method_data_twint.dart';import 'post_setup_intents_request_payment_method_data_us_bank_account.dart';import 'post_setup_intents_request_payment_method_data_wechat_pay.dart';import 'post_setup_intents_request_payment_method_data_zip.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataAllowRedisplay {const PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodDataAllowRedisplay.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodDataAllowRedisplay.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodDataAllowRedisplay always = PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._('always');
 
@@ -19,17 +19,17 @@ static const List<PostSetupIntentsRequestPaymentMethodDataAllowRedisplay> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodDataAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataAllowRedisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodDataAllowRedisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataAllowRedisplay($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodDataType {const PostSetupIntentsRequestPaymentMethodDataType._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodDataType.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodDataType.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -80,7 +80,7 @@ factory PostSetupIntentsRequestPaymentMethodDataType.fromJson(String json) { ret
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostSetupIntentsRequestPaymentMethodDataType._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodDataType acssDebit = PostSetupIntentsRequestPaymentMethodDataType._('acss_debit');
 
@@ -184,19 +184,19 @@ static const List<PostSetupIntentsRequestPaymentMethodDataType> values = [acssDe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodDataType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataType($value)';}
+}
 /// When included, this hash creates a PaymentMethod that is set as the [`payment_method`](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-payment_method)
 /// value in the SetupIntent.
 @immutable final class PostSetupIntentsRequestPaymentMethodData {const PostSetupIntentsRequestPaymentMethodData({required this.type, this.fpx, this.afterpayClearpay, this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.billingDetails, this.blik, this.boleto, this.cashapp, this.crypto, this.customerBalance, this.eps, this.acssDebit, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.oxxo, this.p24, this.zip, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.affirm, this.usBankAccount, this.wechatPay, this.payByBank, });
 
-factory PostSetupIntentsRequestPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodData(
+factory PostSetupIntentsRequestPaymentMethodData.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodData(
   acssDebit: json['acss_debit'] != null ? PostSetupIntentsRequestPaymentMethodDataAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   affirm: json['affirm'] != null ? PostSetupIntentsRequestPaymentMethodDataAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
   afterpayClearpay: json['afterpay_clearpay'] != null ? PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
@@ -252,7 +252,7 @@ factory PostSetupIntentsRequestPaymentMethodData.fromJson(Map<String, dynamic> j
   usBankAccount: json['us_bank_account'] != null ? PostSetupIntentsRequestPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
   wechatPay: json['wechat_pay'] != null ? PostSetupIntentsRequestPaymentMethodDataWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
   zip: json['zip'] != null ? PostSetupIntentsRequestPaymentMethodDataZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostSetupIntentsRequestPaymentMethodDataAcssDebit? acssDebit;
 
@@ -364,7 +364,7 @@ final PostSetupIntentsRequestPaymentMethodDataWechatPay? wechatPay;
 
 final PostSetupIntentsRequestPaymentMethodDataZip? zip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (affirm != null) 'affirm': affirm?.toJson(),
   if (afterpayClearpay != null) 'afterpay_clearpay': afterpayClearpay?.toJson(),
@@ -420,9 +420,9 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
   if (wechatPay != null) 'wechat_pay': wechatPay?.toJson(),
   if (zip != null) 'zip': zip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostSetupIntentsRequestPaymentMethodData copyWith({PostSetupIntentsRequestPaymentMethodDataAcssDebit? Function()? acssDebit, PostSetupIntentsRequestPaymentMethodDataAffirm? Function()? affirm, PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay? Function()? afterpayClearpay, PostSetupIntentsRequestPaymentMethodDataAlipay? Function()? alipay, PostSetupIntentsRequestPaymentMethodDataAllowRedisplay? Function()? allowRedisplay, PostSetupIntentsRequestPaymentMethodDataAlma? Function()? alma, PostSetupIntentsRequestPaymentMethodDataAmazonPay? Function()? amazonPay, PostSetupIntentsRequestPaymentMethodDataAuBecsDebit? Function()? auBecsDebit, PostSetupIntentsRequestPaymentMethodDataBacsDebit? Function()? bacsDebit, PostSetupIntentsRequestPaymentMethodDataBancontact? Function()? bancontact, PostSetupIntentsRequestPaymentMethodDataBillie? Function()? billie, PostSetupIntentsRequestPaymentMethodDataBillingDetails? Function()? billingDetails, PostSetupIntentsRequestPaymentMethodDataBlik? Function()? blik, PostSetupIntentsRequestPaymentMethodDataBoleto? Function()? boleto, PostSetupIntentsRequestPaymentMethodDataCashapp? Function()? cashapp, PostSetupIntentsRequestPaymentMethodDataCrypto? Function()? crypto, PostSetupIntentsRequestPaymentMethodDataCustomerBalance? Function()? customerBalance, PostSetupIntentsRequestPaymentMethodDataEps? Function()? eps, PostSetupIntentsRequestPaymentMethodDataFpx? Function()? fpx, PostSetupIntentsRequestPaymentMethodDataGiropay? Function()? giropay, PostSetupIntentsRequestPaymentMethodDataGrabpay? Function()? grabpay, PostSetupIntentsRequestPaymentMethodDataIdeal? Function()? ideal, PostSetupIntentsRequestPaymentMethodDataInteracPresent? Function()? interacPresent, PostSetupIntentsRequestPaymentMethodDataKakaoPay? Function()? kakaoPay, PostSetupIntentsRequestPaymentMethodDataKlarna? Function()? klarna, PostSetupIntentsRequestPaymentMethodDataKonbini? Function()? konbini, PostSetupIntentsRequestPaymentMethodDataKrCard? Function()? krCard, PostSetupIntentsRequestPaymentMethodDataLink? Function()? link, PostSetupIntentsRequestPaymentMethodDataMbWay? Function()? mbWay, Map<String, String>? Function()? metadata, PostSetupIntentsRequestPaymentMethodDataMobilepay? Function()? mobilepay, PostSetupIntentsRequestPaymentMethodDataMultibanco? Function()? multibanco, PostSetupIntentsRequestPaymentMethodDataNaverPay? Function()? naverPay, PostSetupIntentsRequestPaymentMethodDataNzBankAccount? Function()? nzBankAccount, PostSetupIntentsRequestPaymentMethodDataOxxo? Function()? oxxo, PostSetupIntentsRequestPaymentMethodDataP24? Function()? p24, PostSetupIntentsRequestPaymentMethodDataPayByBank? Function()? payByBank, PostSetupIntentsRequestPaymentMethodDataPayco? Function()? payco, PostSetupIntentsRequestPaymentMethodDataPaynow? Function()? paynow, PostSetupIntentsRequestPaymentMethodDataPaypal? Function()? paypal, PostSetupIntentsRequestPaymentMethodDataPayto? Function()? payto, PostSetupIntentsRequestPaymentMethodDataPix? Function()? pix, PostSetupIntentsRequestPaymentMethodDataPromptpay? Function()? promptpay, PostSetupIntentsRequestPaymentMethodDataRadarOptions? Function()? radarOptions, PostSetupIntentsRequestPaymentMethodDataRevolutPay? Function()? revolutPay, PostSetupIntentsRequestPaymentMethodDataSamsungPay? Function()? samsungPay, PostSetupIntentsRequestPaymentMethodDataSatispay? Function()? satispay, PostSetupIntentsRequestPaymentMethodDataSepaDebit? Function()? sepaDebit, PostSetupIntentsRequestPaymentMethodDataSofort? Function()? sofort, PostSetupIntentsRequestPaymentMethodDataSwish? Function()? swish, PostSetupIntentsRequestPaymentMethodDataTwint? Function()? twint, PostSetupIntentsRequestPaymentMethodDataType? type, PostSetupIntentsRequestPaymentMethodDataUsBankAccount? Function()? usBankAccount, PostSetupIntentsRequestPaymentMethodDataWechatPay? Function()? wechatPay, PostSetupIntentsRequestPaymentMethodDataZip? Function()? zip, }) { return PostSetupIntentsRequestPaymentMethodData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostSetupIntentsRequestPaymentMethodData copyWith({PostSetupIntentsRequestPaymentMethodDataAcssDebit? Function()? acssDebit, PostSetupIntentsRequestPaymentMethodDataAffirm? Function()? affirm, PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay? Function()? afterpayClearpay, PostSetupIntentsRequestPaymentMethodDataAlipay? Function()? alipay, PostSetupIntentsRequestPaymentMethodDataAllowRedisplay? Function()? allowRedisplay, PostSetupIntentsRequestPaymentMethodDataAlma? Function()? alma, PostSetupIntentsRequestPaymentMethodDataAmazonPay? Function()? amazonPay, PostSetupIntentsRequestPaymentMethodDataAuBecsDebit? Function()? auBecsDebit, PostSetupIntentsRequestPaymentMethodDataBacsDebit? Function()? bacsDebit, PostSetupIntentsRequestPaymentMethodDataBancontact? Function()? bancontact, PostSetupIntentsRequestPaymentMethodDataBillie? Function()? billie, PostSetupIntentsRequestPaymentMethodDataBillingDetails? Function()? billingDetails, PostSetupIntentsRequestPaymentMethodDataBlik? Function()? blik, PostSetupIntentsRequestPaymentMethodDataBoleto? Function()? boleto, PostSetupIntentsRequestPaymentMethodDataCashapp? Function()? cashapp, PostSetupIntentsRequestPaymentMethodDataCrypto? Function()? crypto, PostSetupIntentsRequestPaymentMethodDataCustomerBalance? Function()? customerBalance, PostSetupIntentsRequestPaymentMethodDataEps? Function()? eps, PostSetupIntentsRequestPaymentMethodDataFpx? Function()? fpx, PostSetupIntentsRequestPaymentMethodDataGiropay? Function()? giropay, PostSetupIntentsRequestPaymentMethodDataGrabpay? Function()? grabpay, PostSetupIntentsRequestPaymentMethodDataIdeal? Function()? ideal, PostSetupIntentsRequestPaymentMethodDataInteracPresent? Function()? interacPresent, PostSetupIntentsRequestPaymentMethodDataKakaoPay? Function()? kakaoPay, PostSetupIntentsRequestPaymentMethodDataKlarna? Function()? klarna, PostSetupIntentsRequestPaymentMethodDataKonbini? Function()? konbini, PostSetupIntentsRequestPaymentMethodDataKrCard? Function()? krCard, PostSetupIntentsRequestPaymentMethodDataLink? Function()? link, PostSetupIntentsRequestPaymentMethodDataMbWay? Function()? mbWay, Map<String, String>? Function()? metadata, PostSetupIntentsRequestPaymentMethodDataMobilepay? Function()? mobilepay, PostSetupIntentsRequestPaymentMethodDataMultibanco? Function()? multibanco, PostSetupIntentsRequestPaymentMethodDataNaverPay? Function()? naverPay, PostSetupIntentsRequestPaymentMethodDataNzBankAccount? Function()? nzBankAccount, PostSetupIntentsRequestPaymentMethodDataOxxo? Function()? oxxo, PostSetupIntentsRequestPaymentMethodDataP24? Function()? p24, PostSetupIntentsRequestPaymentMethodDataPayByBank? Function()? payByBank, PostSetupIntentsRequestPaymentMethodDataPayco? Function()? payco, PostSetupIntentsRequestPaymentMethodDataPaynow? Function()? paynow, PostSetupIntentsRequestPaymentMethodDataPaypal? Function()? paypal, PostSetupIntentsRequestPaymentMethodDataPayto? Function()? payto, PostSetupIntentsRequestPaymentMethodDataPix? Function()? pix, PostSetupIntentsRequestPaymentMethodDataPromptpay? Function()? promptpay, PostSetupIntentsRequestPaymentMethodDataRadarOptions? Function()? radarOptions, PostSetupIntentsRequestPaymentMethodDataRevolutPay? Function()? revolutPay, PostSetupIntentsRequestPaymentMethodDataSamsungPay? Function()? samsungPay, PostSetupIntentsRequestPaymentMethodDataSatispay? Function()? satispay, PostSetupIntentsRequestPaymentMethodDataSepaDebit? Function()? sepaDebit, PostSetupIntentsRequestPaymentMethodDataSofort? Function()? sofort, PostSetupIntentsRequestPaymentMethodDataSwish? Function()? swish, PostSetupIntentsRequestPaymentMethodDataTwint? Function()? twint, PostSetupIntentsRequestPaymentMethodDataType? type, PostSetupIntentsRequestPaymentMethodDataUsBankAccount? Function()? usBankAccount, PostSetupIntentsRequestPaymentMethodDataWechatPay? Function()? wechatPay, PostSetupIntentsRequestPaymentMethodDataZip? Function()? zip, }) {return PostSetupIntentsRequestPaymentMethodData(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
@@ -478,8 +478,8 @@ PostSetupIntentsRequestPaymentMethodData copyWith({PostSetupIntentsRequestPaymen
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
   wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
   zip: zip != null ? zip() : this.zip,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodData &&
           acssDebit == other.acssDebit &&
           affirm == other.affirm &&
@@ -535,7 +535,7 @@ PostSetupIntentsRequestPaymentMethodData copyWith({PostSetupIntentsRequestPaymen
           type == other.type &&
           usBankAccount == other.usBankAccount &&
           wechatPay == other.wechatPay &&
-          zip == other.zip; } 
-@override int get hashCode { return Object.hashAll([acssDebit, affirm, afterpayClearpay, alipay, allowRedisplay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, billingDetails, blik, boleto, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, interacPresent, kakaoPay, klarna, konbini, krCard, link, mbWay, metadata, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, radarOptions, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, type, usBankAccount, wechatPay, zip]); } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodData(acssDebit: $acssDebit, affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, allowRedisplay: $allowRedisplay, alma: $alma, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, billie: $billie, billingDetails: $billingDetails, blik: $blik, boleto: $boleto, cashapp: $cashapp, crypto: $crypto, customerBalance: $customerBalance, eps: $eps, fpx: $fpx, giropay: $giropay, grabpay: $grabpay, ideal: $ideal, interacPresent: $interacPresent, kakaoPay: $kakaoPay, klarna: $klarna, konbini: $konbini, krCard: $krCard, link: $link, mbWay: $mbWay, metadata: $metadata, mobilepay: $mobilepay, multibanco: $multibanco, naverPay: $naverPay, nzBankAccount: $nzBankAccount, oxxo: $oxxo, p24: $p24, payByBank: $payByBank, payco: $payco, paynow: $paynow, paypal: $paypal, payto: $payto, pix: $pix, promptpay: $promptpay, radarOptions: $radarOptions, revolutPay: $revolutPay, samsungPay: $samsungPay, satispay: $satispay, sepaDebit: $sepaDebit, sofort: $sofort, swish: $swish, twint: $twint, type: $type, usBankAccount: $usBankAccount, wechatPay: $wechatPay, zip: $zip)'; } 
- }
+          zip == other.zip;}
+@override int get hashCode {return Object.hashAll([acssDebit, affirm, afterpayClearpay, alipay, allowRedisplay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, billingDetails, blik, boleto, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, interacPresent, kakaoPay, klarna, konbini, krCard, link, mbWay, metadata, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, radarOptions, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, type, usBankAccount, wechatPay, zip]);}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodData(acssDebit: $acssDebit, affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, allowRedisplay: $allowRedisplay, alma: $alma, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, billie: $billie, billingDetails: $billingDetails, blik: $blik, boleto: $boleto, cashapp: $cashapp, crypto: $crypto, customerBalance: $customerBalance, eps: $eps, fpx: $fpx, giropay: $giropay, grabpay: $grabpay, ideal: $ideal, interacPresent: $interacPresent, kakaoPay: $kakaoPay, klarna: $klarna, konbini: $konbini, krCard: $krCard, link: $link, mbWay: $mbWay, metadata: $metadata, mobilepay: $mobilepay, multibanco: $multibanco, naverPay: $naverPay, nzBankAccount: $nzBankAccount, oxxo: $oxxo, p24: $p24, payByBank: $payByBank, payco: $payco, paynow: $paynow, paypal: $paypal, payto: $payto, pix: $pix, promptpay: $promptpay, radarOptions: $radarOptions, revolutPay: $revolutPay, samsungPay: $samsungPay, satispay: $satispay, sepaDebit: $sepaDebit, sofort: $sofort, swish: $swish, twint: $twint, type: $type, usBankAccount: $usBankAccount, wechatPay: $wechatPay, zip: $zip)';}
+}

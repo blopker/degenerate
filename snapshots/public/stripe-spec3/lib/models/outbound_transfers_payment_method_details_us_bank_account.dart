@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_transfers_payment_method_details_us_bank_account_mandate.dart';/// Account holder type: individual or company.
 @immutable final class OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType {const OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(this.value);
 
-factory OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+factory OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(String json) {return switch (json) {
   'company' => company,
   'individual' => individual,
   _ => OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(json),
-}; }
+};}
 
 static const OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType company = OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._('company');
 
@@ -17,22 +17,22 @@ static const List<OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolde
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType($value)';}
+}
 /// Account type: checkings or savings. Defaults to checking if omitted.
 @immutable final class OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType {const OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType._(this.value);
 
-factory OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(String json) { return switch (json) {
+factory OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'savings' => savings,
   _ => OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType._(json),
-}; }
+};}
 
 static const OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType checking = OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType._('checking');
 
@@ -42,22 +42,22 @@ static const List<OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType($value)';}
+}
 /// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
 @immutable final class OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork._(this.value);
 
-factory OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) { return switch (json) {
+factory OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
   _ => OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork._(json),
-}; }
+};}
 
 static const OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork ach = OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork._('ach');
 
@@ -67,18 +67,18 @@ static const List<OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork($value)';}
+}
 /// 
 @immutable final class OutboundTransfersPaymentMethodDetailsUsBankAccount {const OutboundTransfersPaymentMethodDetailsUsBankAccount({required this.network, this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.bankName = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate, this.routingNumber = const Omittable.absent(), });
 
-factory OutboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return OutboundTransfersPaymentMethodDetailsUsBankAccount(
+factory OutboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) {return OutboundTransfersPaymentMethodDetailsUsBankAccount(
   accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] != null ? OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null) : const Omittable.absent(),
   accountType: json.containsKey('account_type') ? Omittable(json['account_type'] != null ? OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null) : const Omittable.absent(),
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
@@ -87,7 +87,7 @@ factory OutboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, 
   mandate: json['mandate'] != null ? OutboundTransfersPaymentMethodDetailsUsBankAccountMandate.fromJson(json['mandate']) : null,
   network: OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(json['network'] as String),
   routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Account holder type: individual or company.
 final Omittable<OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?> accountHolderType;
@@ -113,7 +113,7 @@ final OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork network;
 /// Routing number of the bank account.
 final Omittable<String?> routingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolderType.isPresent) 'account_holder_type': accountHolderType.value?.toJson(),
   if (accountType.isPresent) 'account_type': accountType.value?.toJson(),
   if (bankName.isPresent) 'bank_name': bankName.value,
@@ -122,9 +122,9 @@ Map<String, dynamic> toJson() { return {
   if (mandate != null) 'mandate': mandate?.toJson(),
   'network': network.toJson(),
   if (routingNumber.isPresent) 'routing_number': routingNumber.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('network'); } 
-OutboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, Omittable<String?>? fingerprint, Omittable<String?>? last4, OutboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, Omittable<String?>? routingNumber, }) { return OutboundTransfersPaymentMethodDetailsUsBankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('network');}
+OutboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<OutboundTransfersPaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, Omittable<String?>? fingerprint, Omittable<String?>? last4, OutboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, Omittable<String?>? routingNumber, }) {return OutboundTransfersPaymentMethodDetailsUsBankAccount(
   accountHolderType: accountHolderType ?? this.accountHolderType,
   accountType: accountType ?? this.accountType,
   bankName: bankName ?? this.bankName,
@@ -133,8 +133,8 @@ OutboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<OutboundT
   mandate: mandate != null ? mandate() : this.mandate,
   network: network ?? this.network,
   routingNumber: routingNumber ?? this.routingNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OutboundTransfersPaymentMethodDetailsUsBankAccount &&
           accountHolderType == other.accountHolderType &&
           accountType == other.accountType &&
@@ -143,7 +143,7 @@ OutboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<OutboundT
           last4 == other.last4 &&
           mandate == other.mandate &&
           network == other.network &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderType, accountType, bankName, fingerprint, last4, mandate, network, routingNumber); } 
-@override String toString() { return 'OutboundTransfersPaymentMethodDetailsUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, network: $network, routingNumber: $routingNumber)'; } 
- }
+          routingNumber == other.routingNumber;}
+@override int get hashCode {return Object.hash(accountHolderType, accountType, bankName, fingerprint, last4, mandate, network, routingNumber);}
+@override String toString() {return 'OutboundTransfersPaymentMethodDetailsUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, network: $network, routingNumber: $routingNumber)';}
+}

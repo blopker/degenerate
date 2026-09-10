@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_assets_config_run_worker_first.dart';/// Determines the redirects and rewrites of requests for HTML content.
 @immutable final class WorkersVersionAssetsConfigHtmlHandling {const WorkersVersionAssetsConfigHtmlHandling._(this.value);
 
-factory WorkersVersionAssetsConfigHtmlHandling.fromJson(String json) { return switch (json) {
+factory WorkersVersionAssetsConfigHtmlHandling.fromJson(String json) {return switch (json) {
   'auto-trailing-slash' => autoTrailingSlash,
   'force-trailing-slash' => forceTrailingSlash,
   'drop-trailing-slash' => dropTrailingSlash,
   'none' => none,
   _ => WorkersVersionAssetsConfigHtmlHandling._(json),
-}; }
+};}
 
 static const WorkersVersionAssetsConfigHtmlHandling autoTrailingSlash = WorkersVersionAssetsConfigHtmlHandling._('auto-trailing-slash');
 
@@ -23,23 +23,23 @@ static const List<WorkersVersionAssetsConfigHtmlHandling> values = [autoTrailing
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersVersionAssetsConfigHtmlHandling && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersVersionAssetsConfigHtmlHandling($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersVersionAssetsConfigHtmlHandling && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersVersionAssetsConfigHtmlHandling($value)';}
+}
 /// Determines the response when a request does not match a static asset, and there is no Worker script.
 @immutable final class WorkersVersionAssetsConfigNotFoundHandling {const WorkersVersionAssetsConfigNotFoundHandling._(this.value);
 
-factory WorkersVersionAssetsConfigNotFoundHandling.fromJson(String json) { return switch (json) {
+factory WorkersVersionAssetsConfigNotFoundHandling.fromJson(String json) {return switch (json) {
   'none' => none,
   '404-page' => $404Page,
   'single-page-application' => singlePageApplication,
   _ => WorkersVersionAssetsConfigNotFoundHandling._(json),
-}; }
+};}
 
 static const WorkersVersionAssetsConfigNotFoundHandling none = WorkersVersionAssetsConfigNotFoundHandling._('none');
 
@@ -51,22 +51,22 @@ static const List<WorkersVersionAssetsConfigNotFoundHandling> values = [none, $4
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersVersionAssetsConfigNotFoundHandling && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersVersionAssetsConfigNotFoundHandling($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersVersionAssetsConfigNotFoundHandling && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersVersionAssetsConfigNotFoundHandling($value)';}
+}
 /// Configuration for assets within a Worker.
 @immutable final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.htmlHandling, this.notFoundHandling, this.runWorkerFirst, });
 
-factory WorkersVersionAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersVersionAssetsConfig(
+factory WorkersVersionAssetsConfig.fromJson(Map<String, dynamic> json) {return WorkersVersionAssetsConfig(
   htmlHandling: json['html_handling'] != null ? WorkersVersionAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : null,
   notFoundHandling: json['not_found_handling'] != null ? WorkersVersionAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : null,
   runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => v as bool,) : null,
-); }
+);}
 
 /// Determines the redirects and rewrites of requests for HTML content.
 final WorkersVersionAssetsConfigHtmlHandling? htmlHandling;
@@ -77,25 +77,25 @@ final WorkersVersionAssetsConfigNotFoundHandling? notFoundHandling;
 final WorkersVersionAssetsConfigRunWorkerFirst? runWorkerFirst;
 
 /// The value with the schema default applied when absent.
-WorkersVersionAssetsConfigHtmlHandling get htmlHandlingOrDefault { return htmlHandling ?? WorkersVersionAssetsConfigHtmlHandling.fromJson('auto-trailing-slash'); } 
+WorkersVersionAssetsConfigHtmlHandling get htmlHandlingOrDefault {return htmlHandling ?? WorkersVersionAssetsConfigHtmlHandling.fromJson('auto-trailing-slash');}
 /// The value with the schema default applied when absent.
-WorkersVersionAssetsConfigNotFoundHandling get notFoundHandlingOrDefault { return notFoundHandling ?? WorkersVersionAssetsConfigNotFoundHandling.fromJson('none'); } 
-Map<String, dynamic> toJson() { return {
+WorkersVersionAssetsConfigNotFoundHandling get notFoundHandlingOrDefault {return notFoundHandling ?? WorkersVersionAssetsConfigNotFoundHandling.fromJson('none');}
+Map<String, dynamic> toJson() {return {
   if (htmlHandling != null) 'html_handling': htmlHandling?.toJson(),
   if (notFoundHandling != null) 'not_found_handling': notFoundHandling?.toJson(),
   if (runWorkerFirst != null) 'run_worker_first': runWorkerFirst?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'html_handling', 'not_found_handling', 'run_worker_first'}.contains(key)); } 
-WorkersVersionAssetsConfig copyWith({WorkersVersionAssetsConfigHtmlHandling? Function()? htmlHandling, WorkersVersionAssetsConfigNotFoundHandling? Function()? notFoundHandling, WorkersVersionAssetsConfigRunWorkerFirst? Function()? runWorkerFirst, }) { return WorkersVersionAssetsConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'html_handling', 'not_found_handling', 'run_worker_first'}.contains(key));}
+WorkersVersionAssetsConfig copyWith({WorkersVersionAssetsConfigHtmlHandling? Function()? htmlHandling, WorkersVersionAssetsConfigNotFoundHandling? Function()? notFoundHandling, WorkersVersionAssetsConfigRunWorkerFirst? Function()? runWorkerFirst, }) {return WorkersVersionAssetsConfig(
   htmlHandling: htmlHandling != null ? htmlHandling() : this.htmlHandling,
   notFoundHandling: notFoundHandling != null ? notFoundHandling() : this.notFoundHandling,
   runWorkerFirst: runWorkerFirst != null ? runWorkerFirst() : this.runWorkerFirst,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersVersionAssetsConfig &&
           htmlHandling == other.htmlHandling &&
           notFoundHandling == other.notFoundHandling &&
-          runWorkerFirst == other.runWorkerFirst; } 
-@override int get hashCode { return Object.hash(htmlHandling, notFoundHandling, runWorkerFirst); } 
-@override String toString() { return 'WorkersVersionAssetsConfig(htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst)'; } 
- }
+          runWorkerFirst == other.runWorkerFirst;}
+@override int get hashCode {return Object.hash(htmlHandling, notFoundHandling, runWorkerFirst);}
+@override String toString() {return 'WorkersVersionAssetsConfig(htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst)';}
+}

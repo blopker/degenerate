@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCreateEnvironmentVariableRequest {const ActionsCreateEnvironmentVariableRequest({required this.name, required this.value, });
 
-factory ActionsCreateEnvironmentVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateEnvironmentVariableRequest(
+factory ActionsCreateEnvironmentVariableRequest.fromJson(Map<String, dynamic> json) {return ActionsCreateEnvironmentVariableRequest(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// The name of the variable.
 final String name;
@@ -13,20 +13,20 @@ final String name;
 /// The value of the variable.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-ActionsCreateEnvironmentVariableRequest copyWith({String? name, String? value, }) { return ActionsCreateEnvironmentVariableRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+ActionsCreateEnvironmentVariableRequest copyWith({String? name, String? value, }) {return ActionsCreateEnvironmentVariableRequest(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsCreateEnvironmentVariableRequest &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'ActionsCreateEnvironmentVariableRequest(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'ActionsCreateEnvironmentVariableRequest(name: $name, value: $value)';}
+}

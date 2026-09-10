@@ -2,14 +2,14 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageBasicUpload {const ImagesImageBasicUpload({this.creator, this.file, this.id, this.metadata, this.requireSignedUrLs, this.url, });
 
-factory ImagesImageBasicUpload.fromJson(Map<String, dynamic> json) { return ImagesImageBasicUpload(
+factory ImagesImageBasicUpload.fromJson(Map<String, dynamic> json) {return ImagesImageBasicUpload(
   creator: json['creator'] as String?,
   file: json['file'] != null ? base64Decode(json['file'] as String) : null,
   id: json['id'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
   requireSignedUrLs: json['requireSignedURLs'] as bool?,
   url: json['url'] as String?,
-); }
+);}
 
 /// Can set the creator field with an internal user ID.
 final String? creator;
@@ -30,32 +30,32 @@ final bool? requireSignedUrLs;
 final String? url;
 
 /// The value with the schema default applied when absent.
-bool get requireSignedUrLsOrDefault { return requireSignedUrLs ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get requireSignedUrLsOrDefault {return requireSignedUrLs ?? false;}
+Map<String, dynamic> toJson() {return {
   'creator': ?creator,
   if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
   'id': ?id,
   'metadata': ?metadata,
   'requireSignedURLs': ?requireSignedUrLs,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'file', 'id', 'metadata', 'requireSignedURLs', 'url'}.contains(key)); } 
-ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Function()? file, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, String? Function()? url, }) { return ImagesImageBasicUpload(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'creator', 'file', 'id', 'metadata', 'requireSignedURLs', 'url'}.contains(key));}
+ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Function()? file, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, String? Function()? url, }) {return ImagesImageBasicUpload(
   creator: creator != null ? creator() : this.creator,
   file: file != null ? file() : this.file,
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImagesImageBasicUpload &&
           creator == other.creator &&
           listEquals(file, other.file) &&
           id == other.id &&
           metadata == other.metadata &&
           requireSignedUrLs == other.requireSignedUrLs &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(creator, Object.hashAll(file ?? const []), id, metadata, requireSignedUrLs, url); } 
-@override String toString() { return 'ImagesImageBasicUpload(creator: $creator, file: $file, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(creator, Object.hashAll(file ?? const []), id, metadata, requireSignedUrLs, url);}
+@override String toString() {return 'ImagesImageBasicUpload(creator: $creator, file: $file, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs, url: $url)';}
+}

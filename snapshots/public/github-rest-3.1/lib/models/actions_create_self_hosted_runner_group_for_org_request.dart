@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories.
 @immutable final class ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility {const ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility._(this.value);
 
-factory ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.fromJson(String json) { return switch (json) {
+factory ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.fromJson(String json) {return switch (json) {
   'selected' => selected,
   'all' => all,
   'private' => private,
   _ => ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility._(json),
-}; }
+};}
 
 static const ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility selected = ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility._('selected');
 
@@ -20,17 +20,17 @@ static const List<ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility($value)';}
+}
 @immutable final class ActionsCreateSelfHostedRunnerGroupForOrgRequest {const ActionsCreateSelfHostedRunnerGroupForOrgRequest({required this.name, this.visibility, this.selectedRepositoryIds, this.runners, this.allowsPublicRepositories, this.restrictedToWorkflows, this.selectedWorkflows, this.networkConfigurationId, });
 
-factory ActionsCreateSelfHostedRunnerGroupForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateSelfHostedRunnerGroupForOrgRequest(
+factory ActionsCreateSelfHostedRunnerGroupForOrgRequest.fromJson(Map<String, dynamic> json) {return ActionsCreateSelfHostedRunnerGroupForOrgRequest(
   name: json['name'] as String,
   visibility: json['visibility'] != null ? ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.fromJson(json['visibility'] as String) : null,
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
@@ -39,7 +39,7 @@ factory ActionsCreateSelfHostedRunnerGroupForOrgRequest.fromJson(Map<String, dyn
   restrictedToWorkflows: json['restricted_to_workflows'] as bool?,
   selectedWorkflows: (json['selected_workflows'] as List<dynamic>?)?.map((e) => e as String).toList(),
   networkConfigurationId: json['network_configuration_id'] as String?,
-); }
+);}
 
 /// Name of the runner group.
 final String name;
@@ -66,12 +66,12 @@ final List<String>? selectedWorkflows;
 final String? networkConfigurationId;
 
 /// The value with the schema default applied when absent.
-ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility get visibilityOrDefault { return visibility ?? ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.fromJson('all'); } 
+ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility get visibilityOrDefault {return visibility ?? ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.fromJson('all');}
 /// The value with the schema default applied when absent.
-bool get allowsPublicRepositoriesOrDefault { return allowsPublicRepositories ?? false; } 
+bool get allowsPublicRepositoriesOrDefault {return allowsPublicRepositories ?? false;}
 /// The value with the schema default applied when absent.
-bool get restrictedToWorkflowsOrDefault { return restrictedToWorkflows ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get restrictedToWorkflowsOrDefault {return restrictedToWorkflows ?? false;}
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (visibility != null) 'visibility': visibility?.toJson(),
   'selected_repository_ids': ?selectedRepositoryIds,
@@ -80,9 +80,9 @@ Map<String, dynamic> toJson() { return {
   'restricted_to_workflows': ?restrictedToWorkflows,
   'selected_workflows': ?selectedWorkflows,
   'network_configuration_id': ?networkConfigurationId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility? Function()? visibility, List<int>? Function()? selectedRepositoryIds, List<int>? Function()? runners, bool? Function()? allowsPublicRepositories, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, String? Function()? networkConfigurationId, }) { return ActionsCreateSelfHostedRunnerGroupForOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility? Function()? visibility, List<int>? Function()? selectedRepositoryIds, List<int>? Function()? runners, bool? Function()? allowsPublicRepositories, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, String? Function()? networkConfigurationId, }) {return ActionsCreateSelfHostedRunnerGroupForOrgRequest(
   name: name ?? this.name,
   visibility: visibility != null ? visibility() : this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
@@ -91,8 +91,8 @@ ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsC
   restrictedToWorkflows: restrictedToWorkflows != null ? restrictedToWorkflows() : this.restrictedToWorkflows,
   selectedWorkflows: selectedWorkflows != null ? selectedWorkflows() : this.selectedWorkflows,
   networkConfigurationId: networkConfigurationId != null ? networkConfigurationId() : this.networkConfigurationId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsCreateSelfHostedRunnerGroupForOrgRequest &&
           name == other.name &&
           visibility == other.visibility &&
@@ -101,7 +101,7 @@ ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsC
           allowsPublicRepositories == other.allowsPublicRepositories &&
           restrictedToWorkflows == other.restrictedToWorkflows &&
           listEquals(selectedWorkflows, other.selectedWorkflows) &&
-          networkConfigurationId == other.networkConfigurationId; } 
-@override int get hashCode { return Object.hash(name, visibility, Object.hashAll(selectedRepositoryIds ?? const []), Object.hashAll(runners ?? const []), allowsPublicRepositories, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []), networkConfigurationId); } 
-@override String toString() { return 'ActionsCreateSelfHostedRunnerGroupForOrgRequest(name: $name, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds, runners: $runners, allowsPublicRepositories: $allowsPublicRepositories, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows, networkConfigurationId: $networkConfigurationId)'; } 
- }
+          networkConfigurationId == other.networkConfigurationId;}
+@override int get hashCode {return Object.hash(name, visibility, Object.hashAll(selectedRepositoryIds ?? const []), Object.hashAll(runners ?? const []), allowsPublicRepositories, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []), networkConfigurationId);}
+@override String toString() {return 'ActionsCreateSelfHostedRunnerGroupForOrgRequest(name: $name, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds, runners: $runners, allowsPublicRepositories: $allowsPublicRepositories, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows, networkConfigurationId: $networkConfigurationId)';}
+}

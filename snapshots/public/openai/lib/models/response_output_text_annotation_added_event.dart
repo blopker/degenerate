@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an 
 /// 
 @immutable final class ResponseOutputTextAnnotationAddedEvent {const ResponseOutputTextAnnotationAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.annotationIndex, required this.sequenceNumber, required this.annotation, });
 
-factory ResponseOutputTextAnnotationAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputTextAnnotationAddedEvent(
+factory ResponseOutputTextAnnotationAddedEvent.fromJson(Map<String, dynamic> json) {return ResponseOutputTextAnnotationAddedEvent(
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
@@ -12,7 +12,7 @@ factory ResponseOutputTextAnnotationAddedEvent.fromJson(Map<String, dynamic> jso
   annotationIndex: (json['annotation_index'] as num).toInt(),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   annotation: json['annotation'] as Map<String, dynamic>,
-); }
+);}
 
 /// The type of the event. Always 'response.output_text.annotation.added'.
 final String type;
@@ -35,7 +35,7 @@ final int sequenceNumber;
 /// The annotation object being added. (See annotation schema for details.)
 final Map<String,dynamic> annotation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
@@ -43,15 +43,15 @@ Map<String, dynamic> toJson() { return {
   'annotation_index': annotationIndex,
   'sequence_number': sequenceNumber,
   'annotation': annotation,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('annotation_index') && json['annotation_index'] is num &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
-      json.containsKey('annotation'); } 
-ResponseOutputTextAnnotationAddedEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, int? annotationIndex, int? sequenceNumber, Map<String,dynamic>? annotation, }) { return ResponseOutputTextAnnotationAddedEvent(
+      json.containsKey('annotation');}
+ResponseOutputTextAnnotationAddedEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, int? annotationIndex, int? sequenceNumber, Map<String,dynamic>? annotation, }) {return ResponseOutputTextAnnotationAddedEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
@@ -59,8 +59,8 @@ ResponseOutputTextAnnotationAddedEvent copyWith({String? type, String? itemId, i
   annotationIndex: annotationIndex ?? this.annotationIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   annotation: annotation ?? this.annotation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseOutputTextAnnotationAddedEvent &&
           type == other.type &&
           itemId == other.itemId &&
@@ -68,7 +68,7 @@ ResponseOutputTextAnnotationAddedEvent copyWith({String? type, String? itemId, i
           contentIndex == other.contentIndex &&
           annotationIndex == other.annotationIndex &&
           sequenceNumber == other.sequenceNumber &&
-          annotation == other.annotation; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, annotationIndex, sequenceNumber, annotation); } 
-@override String toString() { return 'ResponseOutputTextAnnotationAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, annotationIndex: $annotationIndex, sequenceNumber: $sequenceNumber, annotation: $annotation)'; } 
- }
+          annotation == other.annotation;}
+@override int get hashCode {return Object.hash(type, itemId, outputIndex, contentIndex, annotationIndex, sequenceNumber, annotation);}
+@override String toString() {return 'ResponseOutputTextAnnotationAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, annotationIndex: $annotationIndex, sequenceNumber: $sequenceNumber, annotation: $annotation)';}
+}

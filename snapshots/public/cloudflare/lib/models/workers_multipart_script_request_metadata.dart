@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_assets.dart';import 'workers_binding_item.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_limits.dart';import 'workers_logpush.dart';import 'workers_multipart_script_request_metadata_migrations.dart';import 'workers_multiple_step_migrations.dart';import 'workers_observability.dart';import 'workers_placement_info_request.dart';import 'workers_placement_info_request_smart.dart';import 'workers_placement_info_request_targeted.dart';import 'workers_placement_info_request_targeted2.dart';import 'workers_placement_info_request_targeted3.dart';import 'workers_placement_info_request_targeted4.dart';import 'workers_placement_info_request_variant2.dart';import 'workers_placement_info_request_variant3.dart';import 'workers_placement_info_request_variant4.dart';import 'workers_single_step_migrations.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
 @immutable final class WorkersMultipartScriptRequestMetadata {const WorkersMultipartScriptRequestMetadata({this.assets, this.bindings, this.bodyPart, this.compatibilityDate, this.compatibilityFlags, this.keepAssets, this.keepBindings, this.limits, this.logpush, this.mainModule, this.migrations, this.observability, this.placement, this.tags, this.tailConsumers = const Omittable.absent(), this.usageModel, });
 
-factory WorkersMultipartScriptRequestMetadata.fromJson(Map<String, dynamic> json) { return WorkersMultipartScriptRequestMetadata(
+factory WorkersMultipartScriptRequestMetadata.fromJson(Map<String, dynamic> json) {return WorkersMultipartScriptRequestMetadata(
   assets: json['assets'] != null ? WorkersAssets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   bodyPart: json['body_part'] as String?,
@@ -20,7 +20,7 @@ factory WorkersMultipartScriptRequestMetadata.fromJson(Map<String, dynamic> json
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   tailConsumers: json.containsKey('tail_consumers') ? Omittable((json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
-); }
+);}
 
 final WorkersAssets? assets;
 
@@ -66,7 +66,7 @@ final Omittable<List<WorkersTailConsumersScript>?> tailConsumers;
 /// Usage model for the Worker invocations.
 final WorkersUsageModel? usageModel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assets != null) 'assets': assets?.toJson(),
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
   'body_part': ?bodyPart,
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   if (tailConsumers.isPresent) 'tail_consumers': tailConsumers.value?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'assets', 'bindings', 'body_part', 'compatibility_date', 'compatibility_flags', 'keep_assets', 'keep_bindings', 'limits', 'logpush', 'main_module', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
-WorkersMultipartScriptRequestMetadata copyWith({WorkersAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, String? Function()? bodyPart, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, bool? Function()? keepAssets, List<String>? Function()? keepBindings, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, String? Function()? mainModule, WorkersMultipartScriptRequestMetadataMigrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoRequest? Function()? placement, List<String>? Function()? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) { return WorkersMultipartScriptRequestMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'assets', 'bindings', 'body_part', 'compatibility_date', 'compatibility_flags', 'keep_assets', 'keep_bindings', 'limits', 'logpush', 'main_module', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key));}
+WorkersMultipartScriptRequestMetadata copyWith({WorkersAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, String? Function()? bodyPart, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, bool? Function()? keepAssets, List<String>? Function()? keepBindings, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, String? Function()? mainModule, WorkersMultipartScriptRequestMetadataMigrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoRequest? Function()? placement, List<String>? Function()? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) {return WorkersMultipartScriptRequestMetadata(
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,
   bodyPart: bodyPart != null ? bodyPart() : this.bodyPart,
@@ -102,8 +102,8 @@ WorkersMultipartScriptRequestMetadata copyWith({WorkersAssets? Function()? asset
   tags: tags != null ? tags() : this.tags,
   tailConsumers: tailConsumers ?? this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersMultipartScriptRequestMetadata &&
           assets == other.assets &&
           listEquals(bindings, other.bindings) &&
@@ -121,7 +121,7 @@ WorkersMultipartScriptRequestMetadata copyWith({WorkersAssets? Function()? asset
           listEquals(tags, other.tags) &&
           tailConsumers.isPresent == other.tailConsumers.isPresent &&
           listEquals(tailConsumers.value, other.tailConsumers.value) &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(assets, Object.hashAll(bindings ?? const []), bodyPart, compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), keepAssets, Object.hashAll(keepBindings ?? const []), limits, logpush, mainModule, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel); } 
-@override String toString() { return 'WorkersMultipartScriptRequestMetadata(assets: $assets, bindings: $bindings, bodyPart: $bodyPart, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepAssets: $keepAssets, keepBindings: $keepBindings, limits: $limits, logpush: $logpush, mainModule: $mainModule, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)'; } 
- }
+          usageModel == other.usageModel;}
+@override int get hashCode {return Object.hash(assets, Object.hashAll(bindings ?? const []), bodyPart, compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), keepAssets, Object.hashAll(keepBindings ?? const []), limits, logpush, mainModule, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel);}
+@override String toString() {return 'WorkersMultipartScriptRequestMetadata(assets: $assets, bindings: $bindings, bodyPart: $bodyPart, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepAssets: $keepAssets, keepBindings: $keepBindings, limits: $limits, logpush: $logpush, mainModule: $mainModule, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)';}
+}

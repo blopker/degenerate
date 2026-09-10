@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByVerticalHttpMethod {const RadarGetAttacksLayer7SummaryByVerticalHttpMethod._(this.value);
 
-factory RadarGetAttacksLayer7SummaryByVerticalHttpMethod.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7SummaryByVerticalHttpMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   'DELETE' => delete,
@@ -50,7 +50,7 @@ factory RadarGetAttacksLayer7SummaryByVerticalHttpMethod.fromJson(String json) {
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7SummaryByVerticalHttpMethod._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7SummaryByVerticalHttpMethod $get = RadarGetAttacksLayer7SummaryByVerticalHttpMethod._('GET');
 
@@ -148,11 +148,11 @@ static const List<RadarGetAttacksLayer7SummaryByVerticalHttpMethod> values = [$g
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByVerticalHttpMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7SummaryByVerticalHttpMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryByVerticalHttpMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7SummaryByVerticalHttpMethod($value)';}
+}

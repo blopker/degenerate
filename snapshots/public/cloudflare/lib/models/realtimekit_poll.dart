@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_poll_options.dart';@immutable final class RealtimekitPoll {const RealtimekitPoll({required this.id, required this.options, required this.question, this.anonymous, this.createdBy, this.hideVotes, this.voted, });
 
-factory RealtimekitPoll.fromJson(Map<String, dynamic> json) { return RealtimekitPoll(
+factory RealtimekitPoll.fromJson(Map<String, dynamic> json) {return RealtimekitPoll(
   anonymous: json['anonymous'] as bool?,
   createdBy: json['created_by'] as String?,
   hideVotes: json['hide_votes'] as bool?,
@@ -10,7 +10,7 @@ factory RealtimekitPoll.fromJson(Map<String, dynamic> json) { return Realtimekit
   options: (json['options'] as List<dynamic>).map((e) => RealtimekitPollOptions.fromJson(e as Map<String, dynamic>)).toList(),
   question: json['question'] as String,
   voted: (json['voted'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final bool? anonymous;
 
@@ -29,7 +29,7 @@ final String question;
 
 final List<String>? voted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'anonymous': ?anonymous,
   'created_by': ?createdBy,
   'hide_votes': ?hideVotes,
@@ -37,11 +37,11 @@ Map<String, dynamic> toJson() { return {
   'options': options.map((e) => e.toJson()).toList(),
   'question': question,
   'voted': ?voted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('options') &&
-      json.containsKey('question') && json['question'] is String; } 
-RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? createdBy, bool? Function()? hideVotes, String? id, List<RealtimekitPollOptions>? options, String? question, List<String>? Function()? voted, }) { return RealtimekitPoll(
+      json.containsKey('question') && json['question'] is String;}
+RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? createdBy, bool? Function()? hideVotes, String? id, List<RealtimekitPollOptions>? options, String? question, List<String>? Function()? voted, }) {return RealtimekitPoll(
   anonymous: anonymous != null ? anonymous() : this.anonymous,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   hideVotes: hideVotes != null ? hideVotes() : this.hideVotes,
@@ -49,8 +49,8 @@ RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? creat
   options: options ?? this.options,
   question: question ?? this.question,
   voted: voted != null ? voted() : this.voted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitPoll &&
           anonymous == other.anonymous &&
           createdBy == other.createdBy &&
@@ -58,7 +58,7 @@ RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? creat
           id == other.id &&
           listEquals(options, other.options) &&
           question == other.question &&
-          listEquals(voted, other.voted); } 
-@override int get hashCode { return Object.hash(anonymous, createdBy, hideVotes, id, Object.hashAll(options), question, Object.hashAll(voted ?? const [])); } 
-@override String toString() { return 'RealtimekitPoll(anonymous: $anonymous, createdBy: $createdBy, hideVotes: $hideVotes, id: $id, options: $options, question: $question, voted: $voted)'; } 
- }
+          listEquals(voted, other.voted);}
+@override int get hashCode {return Object.hash(anonymous, createdBy, hideVotes, id, Object.hashAll(options), question, Object.hashAll(voted ?? const []));}
+@override String toString() {return 'RealtimekitPoll(anonymous: $anonymous, createdBy: $createdBy, hideVotes: $hideVotes, id: $id, options: $options, question: $question, voted: $voted)';}
+}

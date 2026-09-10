@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_transactions_create_reversal_request_line_items.dart';import 'post_tax_transactions_create_reversal_request_shipping_cost.dart';/// If `partial`, the provided line item or shipping cost amounts are reversed. If `full`, the original transaction is fully reversed.
 @immutable final class PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode._(this.value);
 
-factory PostTaxTransactionsCreateReversalRequestMode.fromJson(String json) { return switch (json) {
+factory PostTaxTransactionsCreateReversalRequestMode.fromJson(String json) {return switch (json) {
   'full' => full,
   'partial' => partial,
   _ => PostTaxTransactionsCreateReversalRequestMode._(json),
-}; }
+};}
 
 static const PostTaxTransactionsCreateReversalRequestMode full = PostTaxTransactionsCreateReversalRequestMode._('full');
 
@@ -17,17 +17,17 @@ static const List<PostTaxTransactionsCreateReversalRequestMode> values = [full, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxTransactionsCreateReversalRequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxTransactionsCreateReversalRequestMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxTransactionsCreateReversalRequestMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxTransactionsCreateReversalRequestMode($value)';}
+}
 @immutable final class PostTaxTransactionsCreateReversalRequest {const PostTaxTransactionsCreateReversalRequest({required this.mode, required this.originalTransaction, required this.reference, this.expand, this.flatAmount, this.lineItems, this.metadata, this.shippingCost, });
 
-factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateReversalRequest(
+factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> json) {return PostTaxTransactionsCreateReversalRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flatAmount: json['flat_amount'] != null ? (json['flat_amount'] as num).toInt() : null,
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostTaxTransactionsCreateReversalRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
@@ -36,7 +36,7 @@ factory PostTaxTransactionsCreateReversalRequest.fromJson(Map<String, dynamic> j
   originalTransaction: json['original_transaction'] as String,
   reference: json['reference'] as String,
   shippingCost: json['shipping_cost'] != null ? PostTaxTransactionsCreateReversalRequestShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -62,7 +62,7 @@ final String reference;
 /// The shipping cost to reverse.
 final PostTaxTransactionsCreateReversalRequestShippingCost? shippingCost;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'flat_amount': ?flatAmount,
   if (lineItems != null) 'line_items': lineItems?.map((e) => e.toJson()).toList(),
@@ -71,11 +71,11 @@ Map<String, dynamic> toJson() { return {
   'original_transaction': originalTransaction,
   'reference': reference,
   if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mode') &&
       json.containsKey('original_transaction') && json['original_transaction'] is String &&
-      json.containsKey('reference') && json['reference'] is String; } 
-PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? expand, int? Function()? flatAmount, List<PostTaxTransactionsCreateReversalRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostTaxTransactionsCreateReversalRequestMode? mode, String? originalTransaction, String? reference, PostTaxTransactionsCreateReversalRequestShippingCost? Function()? shippingCost, }) { return PostTaxTransactionsCreateReversalRequest(
+      json.containsKey('reference') && json['reference'] is String;}
+PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? expand, int? Function()? flatAmount, List<PostTaxTransactionsCreateReversalRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostTaxTransactionsCreateReversalRequestMode? mode, String? originalTransaction, String? reference, PostTaxTransactionsCreateReversalRequestShippingCost? Function()? shippingCost, }) {return PostTaxTransactionsCreateReversalRequest(
   expand: expand != null ? expand() : this.expand,
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
@@ -84,8 +84,8 @@ PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? exp
   originalTransaction: originalTransaction ?? this.originalTransaction,
   reference: reference ?? this.reference,
   shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxTransactionsCreateReversalRequest &&
           listEquals(expand, other.expand) &&
           flatAmount == other.flatAmount &&
@@ -94,7 +94,7 @@ PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? exp
           mode == other.mode &&
           originalTransaction == other.originalTransaction &&
           reference == other.reference &&
-          shippingCost == other.shippingCost; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), flatAmount, Object.hashAll(lineItems ?? const []), metadata, mode, originalTransaction, reference, shippingCost); } 
-@override String toString() { return 'PostTaxTransactionsCreateReversalRequest(expand: $expand, flatAmount: $flatAmount, lineItems: $lineItems, metadata: $metadata, mode: $mode, originalTransaction: $originalTransaction, reference: $reference, shippingCost: $shippingCost)'; } 
- }
+          shippingCost == other.shippingCost;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), flatAmount, Object.hashAll(lineItems ?? const []), metadata, mode, originalTransaction, reference, shippingCost);}
+@override String toString() {return 'PostTaxTransactionsCreateReversalRequest(expand: $expand, flatAmount: $flatAmount, lineItems: $lineItems, metadata: $metadata, mode: $mode, originalTransaction: $originalTransaction, reference: $reference, shippingCost: $shippingCost)';}
+}

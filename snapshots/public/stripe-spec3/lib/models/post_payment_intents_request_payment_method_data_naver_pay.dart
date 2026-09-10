@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding {const PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding._(this.value);
 
-factory PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding.fromJson(String json) {return switch (json) {
   'card' => card,
   'points' => points,
   _ => PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding._(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding card = PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding._('card');
 
@@ -16,32 +16,32 @@ static const List<PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding($value)';}
+}
 @immutable final class PostPaymentIntentsRequestPaymentMethodDataNaverPay {const PostPaymentIntentsRequestPaymentMethodDataNaverPay({this.funding});
 
-factory PostPaymentIntentsRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataNaverPay(
+factory PostPaymentIntentsRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsRequestPaymentMethodDataNaverPay(
   funding: json['funding'] != null ? PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding.fromJson(json['funding'] as String) : null,
-); }
+);}
 
 final PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding? funding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (funding != null) 'funding': funding?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding'}.contains(key)); } 
-PostPaymentIntentsRequestPaymentMethodDataNaverPay copyWith({PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding? Function()? funding}) { return PostPaymentIntentsRequestPaymentMethodDataNaverPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'funding'}.contains(key));}
+PostPaymentIntentsRequestPaymentMethodDataNaverPay copyWith({PostPaymentIntentsRequestPaymentMethodDataNaverPayFunding? Function()? funding}) {return PostPaymentIntentsRequestPaymentMethodDataNaverPay(
   funding: funding != null ? funding() : this.funding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsRequestPaymentMethodDataNaverPay &&
-          funding == other.funding; } 
-@override int get hashCode { return funding.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodDataNaverPay(funding: $funding)'; } 
- }
+          funding == other.funding;}
+@override int get hashCode {return funding.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestPaymentMethodDataNaverPay(funding: $funding)';}
+}

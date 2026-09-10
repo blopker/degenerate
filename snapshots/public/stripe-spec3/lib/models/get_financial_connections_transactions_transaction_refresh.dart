@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetFinancialConnectionsTransactionsTransactionRefresh {const GetFinancialConnectionsTransactionsTransactionRefresh({required this.after});
 
-factory GetFinancialConnectionsTransactionsTransactionRefresh.fromJson(Map<String, dynamic> json) { return GetFinancialConnectionsTransactionsTransactionRefresh(
+factory GetFinancialConnectionsTransactionsTransactionRefresh.fromJson(Map<String, dynamic> json) {return GetFinancialConnectionsTransactionsTransactionRefresh(
   after: json['after'] as String,
-); }
+);}
 
 final String after;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after': after,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && json['after'] is String; } 
-GetFinancialConnectionsTransactionsTransactionRefresh copyWith({String? after}) { return GetFinancialConnectionsTransactionsTransactionRefresh(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('after') && json['after'] is String;}
+GetFinancialConnectionsTransactionsTransactionRefresh copyWith({String? after}) {return GetFinancialConnectionsTransactionsTransactionRefresh(
   after: after ?? this.after,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetFinancialConnectionsTransactionsTransactionRefresh &&
-          after == other.after; } 
-@override int get hashCode { return after.hashCode; } 
-@override String toString() { return 'GetFinancialConnectionsTransactionsTransactionRefresh(after: $after)'; } 
- }
+          after == other.after;}
+@override int get hashCode {return after.hashCode;}
+@override String toString() {return 'GetFinancialConnectionsTransactionsTransactionRefresh(after: $after)';}
+}

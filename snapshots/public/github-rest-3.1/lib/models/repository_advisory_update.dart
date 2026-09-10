@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_update_credits.dart';import 'repository_advisory_update_vulnerabilities.dart';/// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 @immutable final class RepositoryAdvisoryUpdateSeverity {const RepositoryAdvisoryUpdateSeverity._(this.value);
 
-factory RepositoryAdvisoryUpdateSeverity.fromJson(String json) { return switch (json) {
+factory RepositoryAdvisoryUpdateSeverity.fromJson(String json) {return switch (json) {
   'critical' => critical,
   'high' => high,
   'medium' => medium,
   'low' => low,
   'null' => $null,
   _ => RepositoryAdvisoryUpdateSeverity._(json),
-}; }
+};}
 
 static const RepositoryAdvisoryUpdateSeverity critical = RepositoryAdvisoryUpdateSeverity._('critical');
 
@@ -26,23 +26,23 @@ static const List<RepositoryAdvisoryUpdateSeverity> values = [critical, high, me
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryUpdateSeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryUpdateSeverity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryAdvisoryUpdateSeverity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryAdvisoryUpdateSeverity($value)';}
+}
 /// The state of the advisory.
 @immutable final class RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState._(this.value);
 
-factory RepositoryAdvisoryUpdateState.fromJson(String json) { return switch (json) {
+factory RepositoryAdvisoryUpdateState.fromJson(String json) {return switch (json) {
   'published' => published,
   'closed' => closed,
   'draft' => draft,
   _ => RepositoryAdvisoryUpdateState._(json),
-}; }
+};}
 
 static const RepositoryAdvisoryUpdateState published = RepositoryAdvisoryUpdateState._('published');
 
@@ -54,17 +54,17 @@ static const List<RepositoryAdvisoryUpdateState> values = [published, closed, dr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryUpdateState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryUpdateState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryAdvisoryUpdateState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryAdvisoryUpdateState($value)';}
+}
 @immutable final class RepositoryAdvisoryUpdate {const RepositoryAdvisoryUpdate({this.summary, this.description, this.cveId = const Omittable.absent(), this.vulnerabilities, this.cweIds = const Omittable.absent(), this.credits = const Omittable.absent(), this.severity = const Omittable.absent(), this.cvssVectorString = const Omittable.absent(), this.state, this.collaboratingUsers = const Omittable.absent(), this.collaboratingTeams = const Omittable.absent(), });
 
-factory RepositoryAdvisoryUpdate.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryUpdate(
+factory RepositoryAdvisoryUpdate.fromJson(Map<String, dynamic> json) {return RepositoryAdvisoryUpdate(
   summary: json['summary'] as String?,
   description: json['description'] as String?,
   cveId: json.containsKey('cve_id') ? Omittable(json['cve_id'] as String?) : const Omittable.absent(),
@@ -76,7 +76,7 @@ factory RepositoryAdvisoryUpdate.fromJson(Map<String, dynamic> json) { return Re
   state: json['state'] != null ? RepositoryAdvisoryUpdateState.fromJson(json['state'] as String) : null,
   collaboratingUsers: json.containsKey('collaborating_users') ? Omittable((json['collaborating_users'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   collaboratingTeams: json.containsKey('collaborating_teams') ? Omittable((json['collaborating_teams'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// A short summary of the advisory.
 final String? summary;
@@ -111,7 +111,7 @@ final Omittable<List<String>?> collaboratingUsers;
 /// A list of team slugs which have been granted write access to the advisory.
 final Omittable<List<String>?> collaboratingTeams;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'summary': ?summary,
   'description': ?description,
   if (cveId.isPresent) 'cve_id': cveId.value,
@@ -123,9 +123,9 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (collaboratingUsers.isPresent) 'collaborating_users': collaboratingUsers.value,
   if (collaboratingTeams.isPresent) 'collaborating_teams': collaboratingTeams.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summary', 'description', 'cve_id', 'vulnerabilities', 'cwe_ids', 'credits', 'severity', 'cvss_vector_string', 'state', 'collaborating_users', 'collaborating_teams'}.contains(key)); } 
-RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function()? description, Omittable<String?>? cveId, List<RepositoryAdvisoryUpdateVulnerabilities>? Function()? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryUpdateCredits>?>? credits, Omittable<RepositoryAdvisoryUpdateSeverity?>? severity, Omittable<String?>? cvssVectorString, RepositoryAdvisoryUpdateState? Function()? state, Omittable<List<String>?>? collaboratingUsers, Omittable<List<String>?>? collaboratingTeams, }) { return RepositoryAdvisoryUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'summary', 'description', 'cve_id', 'vulnerabilities', 'cwe_ids', 'credits', 'severity', 'cvss_vector_string', 'state', 'collaborating_users', 'collaborating_teams'}.contains(key));}
+RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function()? description, Omittable<String?>? cveId, List<RepositoryAdvisoryUpdateVulnerabilities>? Function()? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryUpdateCredits>?>? credits, Omittable<RepositoryAdvisoryUpdateSeverity?>? severity, Omittable<String?>? cvssVectorString, RepositoryAdvisoryUpdateState? Function()? state, Omittable<List<String>?>? collaboratingUsers, Omittable<List<String>?>? collaboratingTeams, }) {return RepositoryAdvisoryUpdate(
   summary: summary != null ? summary() : this.summary,
   description: description != null ? description() : this.description,
   cveId: cveId ?? this.cveId,
@@ -137,8 +137,8 @@ RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function
   state: state != null ? state() : this.state,
   collaboratingUsers: collaboratingUsers ?? this.collaboratingUsers,
   collaboratingTeams: collaboratingTeams ?? this.collaboratingTeams,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryAdvisoryUpdate &&
           summary == other.summary &&
           description == other.description &&
@@ -154,7 +154,7 @@ RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function
           collaboratingUsers.isPresent == other.collaboratingUsers.isPresent &&
           listEquals(collaboratingUsers.value, other.collaboratingUsers.value) &&
           collaboratingTeams.isPresent == other.collaboratingTeams.isPresent &&
-          listEquals(collaboratingTeams.value, other.collaboratingTeams.value); } 
-@override int get hashCode { return Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities ?? const []), Object.hashAll(cweIds.value ?? const []), Object.hashAll(credits.value ?? const []), severity, cvssVectorString, state, Object.hashAll(collaboratingUsers.value ?? const []), Object.hashAll(collaboratingTeams.value ?? const [])); } 
-@override String toString() { return 'RepositoryAdvisoryUpdate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, state: $state, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams)'; } 
- }
+          listEquals(collaboratingTeams.value, other.collaboratingTeams.value);}
+@override int get hashCode {return Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities ?? const []), Object.hashAll(cweIds.value ?? const []), Object.hashAll(credits.value ?? const []), severity, cvssVectorString, state, Object.hashAll(collaboratingUsers.value ?? const []), Object.hashAll(collaboratingTeams.value ?? const []));}
+@override String toString() {return 'RepositoryAdvisoryUpdate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, state: $state, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams)';}
+}

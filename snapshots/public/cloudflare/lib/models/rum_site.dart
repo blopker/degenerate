@@ -16,7 +16,7 @@ String toJson() => value;
 }
 @immutable final class RumSite {const RumSite({this.autoInstall, this.created, this.rules, this.ruleset, this.siteTag, this.siteToken, this.snippet, });
 
-factory RumSite.fromJson(Map<String, dynamic> json) { return RumSite(
+factory RumSite.fromJson(Map<String, dynamic> json) {return RumSite(
   autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,
   created: json['created'] != null ? RumTimestamp.fromJson(json['created'] as String) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RumRule.fromJson(e as Map<String, dynamic>)).toList(),
@@ -24,7 +24,7 @@ factory RumSite.fromJson(Map<String, dynamic> json) { return RumSite(
   siteTag: json['site_tag'] != null ? RumSiteTag.fromJson(json['site_tag'] as String) : null,
   siteToken: json['site_token'] != null ? RumSiteToken.fromJson(json['site_token'] as String) : null,
   snippet: json['snippet'] != null ? RumSnippet.fromJson(json['snippet'] as String) : null,
-); }
+);}
 
 /// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 final RumAutoInstall? autoInstall;
@@ -42,7 +42,7 @@ final RumSiteToken? siteToken;
 
 final RumSnippet? snippet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (autoInstall != null) 'auto_install': autoInstall?.toJson(),
   if (created != null) 'created': created?.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
@@ -50,9 +50,9 @@ Map<String, dynamic> toJson() { return {
   if (siteTag != null) 'site_tag': siteTag?.toJson(),
   if (siteToken != null) 'site_token': siteToken?.toJson(),
   if (snippet != null) 'snippet': snippet?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_install', 'created', 'rules', 'ruleset', 'site_tag', 'site_token', 'snippet'}.contains(key)); } 
-RumSite copyWith({RumAutoInstall? Function()? autoInstall, RumTimestamp? Function()? created, List<RumRule>? Function()? rules, RumRuleset? Function()? ruleset, RumSiteTag? Function()? siteTag, RumSiteToken? Function()? siteToken, RumSnippet? Function()? snippet, }) { return RumSite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auto_install', 'created', 'rules', 'ruleset', 'site_tag', 'site_token', 'snippet'}.contains(key));}
+RumSite copyWith({RumAutoInstall? Function()? autoInstall, RumTimestamp? Function()? created, List<RumRule>? Function()? rules, RumRuleset? Function()? ruleset, RumSiteTag? Function()? siteTag, RumSiteToken? Function()? siteToken, RumSnippet? Function()? snippet, }) {return RumSite(
   autoInstall: autoInstall != null ? autoInstall() : this.autoInstall,
   created: created != null ? created() : this.created,
   rules: rules != null ? rules() : this.rules,
@@ -60,8 +60,8 @@ RumSite copyWith({RumAutoInstall? Function()? autoInstall, RumTimestamp? Functio
   siteTag: siteTag != null ? siteTag() : this.siteTag,
   siteToken: siteToken != null ? siteToken() : this.siteToken,
   snippet: snippet != null ? snippet() : this.snippet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RumSite &&
           autoInstall == other.autoInstall &&
           created == other.created &&
@@ -69,7 +69,7 @@ RumSite copyWith({RumAutoInstall? Function()? autoInstall, RumTimestamp? Functio
           ruleset == other.ruleset &&
           siteTag == other.siteTag &&
           siteToken == other.siteToken &&
-          snippet == other.snippet; } 
-@override int get hashCode { return Object.hash(autoInstall, created, Object.hashAll(rules ?? const []), ruleset, siteTag, siteToken, snippet); } 
-@override String toString() { return 'RumSite(autoInstall: $autoInstall, created: $created, rules: $rules, ruleset: $ruleset, siteTag: $siteTag, siteToken: $siteToken, snippet: $snippet)'; } 
- }
+          snippet == other.snippet;}
+@override int get hashCode {return Object.hash(autoInstall, created, Object.hashAll(rules ?? const []), ruleset, siteTag, siteToken, snippet);}
+@override String toString() {return 'RumSite(autoInstall: $autoInstall, created: $created, rules: $rules, ruleset: $ruleset, siteTag: $siteTag, siteToken: $siteToken, snippet: $snippet)';}
+}

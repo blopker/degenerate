@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_status_created_deployment_status_creator.dart';import 'webhook_deployment_status_created_deployment_status_performed_via_github_app.dart';/// The [deployment status](https://docs.github.com/rest/deployments/statuses#list-deployment-statuses).
 @immutable final class WebhookDeploymentStatusCreatedDeploymentStatus {const WebhookDeploymentStatusCreatedDeploymentStatus({required this.createdAt, required this.creator, required this.deploymentUrl, required this.description, required this.environment, required this.id, required this.nodeId, required this.repositoryUrl, required this.state, required this.targetUrl, required this.updatedAt, required this.url, this.environmentUrl, this.logUrl, this.performedViaGithubApp = const Omittable.absent(), });
 
-factory WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedDeploymentStatus(
+factory WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(Map<String, dynamic> json) {return WebhookDeploymentStatusCreatedDeploymentStatus(
   createdAt: json['created_at'] as String,
   creator: json['creator'] != null ? WebhookDeploymentStatusCreatedDeploymentStatusCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
   deploymentUrl: Uri.parse(json['deployment_url'] as String),
@@ -19,7 +19,7 @@ factory WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(Map<String, dyna
   targetUrl: json['target_url'] as String,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String createdAt;
 
@@ -55,7 +55,7 @@ final String updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'creator': creator?.toJson(),
   'deployment_url': deploymentUrl.toString(),
@@ -71,8 +71,8 @@ Map<String, dynamic> toJson() { return {
   'target_url': targetUrl,
   'updated_at': updatedAt,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&
       json.containsKey('deployment_url') && json['deployment_url'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -83,8 +83,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('target_url') && json['target_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, WebhookDeploymentStatusCreatedDeploymentStatusCreator? Function()? creator, Uri? deploymentUrl, String? description, String? environment, Uri? Function()? environmentUrl, int? id, Uri? Function()? logUrl, String? nodeId, Omittable<WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp?>? performedViaGithubApp, Uri? repositoryUrl, String? state, String? targetUrl, String? updatedAt, Uri? url, }) { return WebhookDeploymentStatusCreatedDeploymentStatus(
+      json.containsKey('url') && json['url'] is String;}
+WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, WebhookDeploymentStatusCreatedDeploymentStatusCreator? Function()? creator, Uri? deploymentUrl, String? description, String? environment, Uri? Function()? environmentUrl, int? id, Uri? Function()? logUrl, String? nodeId, Omittable<WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp?>? performedViaGithubApp, Uri? repositoryUrl, String? state, String? targetUrl, String? updatedAt, Uri? url, }) {return WebhookDeploymentStatusCreatedDeploymentStatus(
   createdAt: createdAt ?? this.createdAt,
   creator: creator != null ? creator() : this.creator,
   deploymentUrl: deploymentUrl ?? this.deploymentUrl,
@@ -100,8 +100,8 @@ WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, Webh
   targetUrl: targetUrl ?? this.targetUrl,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentStatusCreatedDeploymentStatus &&
           createdAt == other.createdAt &&
           creator == other.creator &&
@@ -117,7 +117,7 @@ WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, Webh
           state == other.state &&
           targetUrl == other.targetUrl &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, creator, deploymentUrl, description, environment, environmentUrl, id, logUrl, nodeId, performedViaGithubApp, repositoryUrl, state, targetUrl, updatedAt, url); } 
-@override String toString() { return 'WebhookDeploymentStatusCreatedDeploymentStatus(createdAt: $createdAt, creator: $creator, deploymentUrl: $deploymentUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, id: $id, logUrl: $logUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, repositoryUrl: $repositoryUrl, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(createdAt, creator, deploymentUrl, description, environment, environmentUrl, id, logUrl, nodeId, performedViaGithubApp, repositoryUrl, state, targetUrl, updatedAt, url);}
+@override String toString() {return 'WebhookDeploymentStatusCreatedDeploymentStatus(createdAt: $createdAt, creator: $creator, deploymentUrl: $deploymentUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, id: $id, logUrl: $logUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, repositoryUrl: $repositoryUrl, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt, url: $url)';}
+}

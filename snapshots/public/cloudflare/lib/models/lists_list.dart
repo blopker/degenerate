@@ -16,7 +16,7 @@ num toJson() => value;
 }
 @immutable final class ListsList {const ListsList({required this.createdOn, required this.id, required this.kind, required this.modifiedOn, required this.name, required this.numItems, required this.numReferencingFilters, this.description, });
 
-factory ListsList.fromJson(Map<String, dynamic> json) { return ListsList(
+factory ListsList.fromJson(Map<String, dynamic> json) {return ListsList(
   createdOn: ListsCreatedOn.fromJson(json['created_on'] as String),
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
   id: ListsListId.fromJson(json['id'] as String),
@@ -25,7 +25,7 @@ factory ListsList.fromJson(Map<String, dynamic> json) { return ListsList(
   name: ListsName.fromJson(json['name'] as String),
   numItems: ListsNumItems.fromJson(json['num_items'] as num),
   numReferencingFilters: ListsNumReferencingFilters.fromJson(json['num_referencing_filters'] as num),
-); }
+);}
 
 /// The RFC 3339 timestamp of when the list was created.
 final ListsCreatedOn createdOn;
@@ -46,7 +46,7 @@ final ListsNumItems numItems;
 
 final ListsNumReferencingFilters numReferencingFilters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toJson(),
   if (description != null) 'description': description?.toJson(),
   'id': id.toJson(),
@@ -55,15 +55,15 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   'num_items': numItems.toJson(),
   'num_referencing_filters': numReferencingFilters.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('kind') &&
       json.containsKey('modified_on') &&
       json.containsKey('name') &&
       json.containsKey('num_items') &&
-      json.containsKey('num_referencing_filters'); } 
-ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription? Function()? description, ListsListId? id, ListsKind? Function()? kind, ListsModifiedOn? modifiedOn, ListsName? name, ListsNumItems? numItems, ListsNumReferencingFilters? numReferencingFilters, }) { return ListsList(
+      json.containsKey('num_referencing_filters');}
+ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription? Function()? description, ListsListId? id, ListsKind? Function()? kind, ListsModifiedOn? modifiedOn, ListsName? name, ListsNumItems? numItems, ListsNumReferencingFilters? numReferencingFilters, }) {return ListsList(
   createdOn: createdOn ?? this.createdOn,
   description: description != null ? description() : this.description,
   id: id ?? this.id,
@@ -72,8 +72,8 @@ ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription? Function()? des
   name: name ?? this.name,
   numItems: numItems ?? this.numItems,
   numReferencingFilters: numReferencingFilters ?? this.numReferencingFilters,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListsList &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -82,7 +82,7 @@ ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription? Function()? des
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           numItems == other.numItems &&
-          numReferencingFilters == other.numReferencingFilters; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, kind, modifiedOn, name, numItems, numReferencingFilters); } 
-@override String toString() { return 'ListsList(createdOn: $createdOn, description: $description, id: $id, kind: $kind, modifiedOn: $modifiedOn, name: $name, numItems: $numItems, numReferencingFilters: $numReferencingFilters)'; } 
- }
+          numReferencingFilters == other.numReferencingFilters;}
+@override int get hashCode {return Object.hash(createdOn, description, id, kind, modifiedOn, name, numItems, numReferencingFilters);}
+@override String toString() {return 'ListsList(createdOn: $createdOn, description: $description, id: $id, kind: $kind, modifiedOn: $modifiedOn, name: $name, numItems: $numItems, numReferencingFilters: $numReferencingFilters)';}
+}

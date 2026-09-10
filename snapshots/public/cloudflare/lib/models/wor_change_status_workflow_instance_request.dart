@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply action to instance.
 @immutable final class WorChangeStatusWorkflowInstanceRequestStatus {const WorChangeStatusWorkflowInstanceRequestStatus._(this.value);
 
-factory WorChangeStatusWorkflowInstanceRequestStatus.fromJson(String json) { return switch (json) {
+factory WorChangeStatusWorkflowInstanceRequestStatus.fromJson(String json) {return switch (json) {
   'resume' => resume,
   'pause' => pause,
   'terminate' => terminate,
   'restart' => restart,
   _ => WorChangeStatusWorkflowInstanceRequestStatus._(json),
-}; }
+};}
 
 static const WorChangeStatusWorkflowInstanceRequestStatus resume = WorChangeStatusWorkflowInstanceRequestStatus._('resume');
 
@@ -23,33 +23,33 @@ static const List<WorChangeStatusWorkflowInstanceRequestStatus> values = [resume
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorChangeStatusWorkflowInstanceRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorChangeStatusWorkflowInstanceRequestStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorChangeStatusWorkflowInstanceRequestStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorChangeStatusWorkflowInstanceRequestStatus($value)';}
+}
 @immutable final class WorChangeStatusWorkflowInstanceRequest {const WorChangeStatusWorkflowInstanceRequest({required this.status});
 
-factory WorChangeStatusWorkflowInstanceRequest.fromJson(Map<String, dynamic> json) { return WorChangeStatusWorkflowInstanceRequest(
+factory WorChangeStatusWorkflowInstanceRequest.fromJson(Map<String, dynamic> json) {return WorChangeStatusWorkflowInstanceRequest(
   status: WorChangeStatusWorkflowInstanceRequestStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Apply action to instance.
 final WorChangeStatusWorkflowInstanceRequestStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-WorChangeStatusWorkflowInstanceRequest copyWith({WorChangeStatusWorkflowInstanceRequestStatus? status}) { return WorChangeStatusWorkflowInstanceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+WorChangeStatusWorkflowInstanceRequest copyWith({WorChangeStatusWorkflowInstanceRequestStatus? status}) {return WorChangeStatusWorkflowInstanceRequest(
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorChangeStatusWorkflowInstanceRequest &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'WorChangeStatusWorkflowInstanceRequest(status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return status.hashCode;}
+@override String toString() {return 'WorChangeStatusWorkflowInstanceRequest(status: $status)';}
+}

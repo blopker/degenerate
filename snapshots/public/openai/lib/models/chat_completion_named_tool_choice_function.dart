@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionNamedToolChoiceFunction {const ChatCompletionNamedToolChoiceFunction({required this.name});
 
-factory ChatCompletionNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) { return ChatCompletionNamedToolChoiceFunction(
+factory ChatCompletionNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) {return ChatCompletionNamedToolChoiceFunction(
   name: json['name'] as String,
-); }
+);}
 
 /// The name of the function to call.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ChatCompletionNamedToolChoiceFunction copyWith({String? name}) { return ChatCompletionNamedToolChoiceFunction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ChatCompletionNamedToolChoiceFunction copyWith({String? name}) {return ChatCompletionNamedToolChoiceFunction(
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionNamedToolChoiceFunction &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'ChatCompletionNamedToolChoiceFunction(name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return name.hashCode;}
+@override String toString() {return 'ChatCompletionNamedToolChoiceFunction(name: $name)';}
+}

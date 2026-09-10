@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages48ResponseFormatType {const Messages48ResponseFormatType._(this.value);
 
-factory Messages48ResponseFormatType.fromJson(String json) { return switch (json) {
+factory Messages48ResponseFormatType.fromJson(String json) {return switch (json) {
   'json_object' => jsonObject,
   'json_schema' => jsonSchema,
   _ => Messages48ResponseFormatType._(json),
-}; }
+};}
 
 static const Messages48ResponseFormatType jsonObject = Messages48ResponseFormatType._('json_object');
 
@@ -16,38 +16,38 @@ static const List<Messages48ResponseFormatType> values = [jsonObject, jsonSchema
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Messages48ResponseFormatType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Messages48ResponseFormatType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Messages48ResponseFormatType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Messages48ResponseFormatType($value)';}
+}
 @immutable final class Messages48ResponseFormat {const Messages48ResponseFormat({this.jsonSchema = const Omittable.absent(), this.type, });
 
-factory Messages48ResponseFormat.fromJson(Map<String, dynamic> json) { return Messages48ResponseFormat(
+factory Messages48ResponseFormat.fromJson(Map<String, dynamic> json) {return Messages48ResponseFormat(
   jsonSchema: json.containsKey('json_schema') ? Omittable(json['json_schema']) : const Omittable.absent(),
   type: json['type'] != null ? Messages48ResponseFormatType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final Omittable<dynamic> jsonSchema;
 
 final Messages48ResponseFormatType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (jsonSchema.isPresent) 'json_schema': jsonSchema.value,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json_schema', 'type'}.contains(key)); } 
-Messages48ResponseFormat copyWith({Omittable<dynamic>? jsonSchema, Messages48ResponseFormatType? Function()? type, }) { return Messages48ResponseFormat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'json_schema', 'type'}.contains(key));}
+Messages48ResponseFormat copyWith({Omittable<dynamic>? jsonSchema, Messages48ResponseFormatType? Function()? type, }) {return Messages48ResponseFormat(
   jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages48ResponseFormat &&
           jsonSchema == other.jsonSchema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jsonSchema, type); } 
-@override String toString() { return 'Messages48ResponseFormat(jsonSchema: $jsonSchema, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(jsonSchema, type);}
+@override String toString() {return 'Messages48ResponseFormat(jsonSchema: $jsonSchema, type: $type)';}
+}

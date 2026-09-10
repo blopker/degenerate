@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card_apple_pay.dart';import 'issuing_card_google_pay.dart';/// 
 @immutable final class IssuingCardWallets {const IssuingCardWallets({required this.applePay, required this.googlePay, this.primaryAccountIdentifier = const Omittable.absent(), });
 
-factory IssuingCardWallets.fromJson(Map<String, dynamic> json) { return IssuingCardWallets(
+factory IssuingCardWallets.fromJson(Map<String, dynamic> json) {return IssuingCardWallets(
   applePay: IssuingCardApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>),
   googlePay: IssuingCardGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>),
   primaryAccountIdentifier: json.containsKey('primary_account_identifier') ? Omittable(json['primary_account_identifier'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final IssuingCardApplePay applePay;
 
@@ -16,23 +16,23 @@ final IssuingCardGooglePay googlePay;
 /// Unique identifier for a card used with digital wallets
 final Omittable<String?> primaryAccountIdentifier;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apple_pay': applePay.toJson(),
   'google_pay': googlePay.toJson(),
   if (primaryAccountIdentifier.isPresent) 'primary_account_identifier': primaryAccountIdentifier.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('apple_pay') &&
-      json.containsKey('google_pay'); } 
-IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay? googlePay, Omittable<String?>? primaryAccountIdentifier, }) { return IssuingCardWallets(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('apple_pay') &&
+      json.containsKey('google_pay');}
+IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay? googlePay, Omittable<String?>? primaryAccountIdentifier, }) {return IssuingCardWallets(
   applePay: applePay ?? this.applePay,
   googlePay: googlePay ?? this.googlePay,
   primaryAccountIdentifier: primaryAccountIdentifier ?? this.primaryAccountIdentifier,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingCardWallets &&
           applePay == other.applePay &&
           googlePay == other.googlePay &&
-          primaryAccountIdentifier == other.primaryAccountIdentifier; } 
-@override int get hashCode { return Object.hash(applePay, googlePay, primaryAccountIdentifier); } 
-@override String toString() { return 'IssuingCardWallets(applePay: $applePay, googlePay: $googlePay, primaryAccountIdentifier: $primaryAccountIdentifier)'; } 
- }
+          primaryAccountIdentifier == other.primaryAccountIdentifier;}
+@override int get hashCode {return Object.hash(applePay, googlePay, primaryAccountIdentifier);}
+@override String toString() {return 'IssuingCardWallets(applePay: $applePay, googlePay: $googlePay, primaryAccountIdentifier: $primaryAccountIdentifier)';}
+}

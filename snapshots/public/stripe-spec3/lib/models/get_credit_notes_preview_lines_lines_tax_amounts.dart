@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_lines_tax_amounts_variant1.dart';@immutable final class GetCreditNotesPreviewLinesLinesTaxAmountsVariant2 {const GetCreditNotesPreviewLinesLinesTaxAmountsVariant2._(this.value);
 
-factory GetCreditNotesPreviewLinesLinesTaxAmountsVariant2.fromJson(String json) { return switch (json) {
+factory GetCreditNotesPreviewLinesLinesTaxAmountsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => GetCreditNotesPreviewLinesLinesTaxAmountsVariant2._(json),
-}; }
+};}
 
 static const GetCreditNotesPreviewLinesLinesTaxAmountsVariant2 $empty = GetCreditNotesPreviewLinesLinesTaxAmountsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<GetCreditNotesPreviewLinesLinesTaxAmountsVariant2> values = [$
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewLinesLinesTaxAmountsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewLinesLinesTaxAmountsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetCreditNotesPreviewLinesLinesTaxAmountsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetCreditNotesPreviewLinesLinesTaxAmountsVariant2($value)';}
+}
 
 @immutable
 final class GetCreditNotesPreviewLinesLinesTaxAmounts {

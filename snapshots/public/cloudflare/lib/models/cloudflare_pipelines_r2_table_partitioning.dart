@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data-layout partitioning for sinks.
 @immutable final class CloudflarePipelinesR2TablePartitioning {const CloudflarePipelinesR2TablePartitioning({this.timePattern});
 
-factory CloudflarePipelinesR2TablePartitioning.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TablePartitioning(
+factory CloudflarePipelinesR2TablePartitioning.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesR2TablePartitioning(
   timePattern: json['time_pattern'] as String?,
-); }
+);}
 
 /// The pattern of the date string
 final String? timePattern;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'time_pattern': ?timePattern,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'time_pattern'}.contains(key)); } 
-CloudflarePipelinesR2TablePartitioning copyWith({String? Function()? timePattern}) { return CloudflarePipelinesR2TablePartitioning(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'time_pattern'}.contains(key));}
+CloudflarePipelinesR2TablePartitioning copyWith({String? Function()? timePattern}) {return CloudflarePipelinesR2TablePartitioning(
   timePattern: timePattern != null ? timePattern() : this.timePattern,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CloudflarePipelinesR2TablePartitioning &&
-          timePattern == other.timePattern; } 
-@override int get hashCode { return timePattern.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesR2TablePartitioning(timePattern: $timePattern)'; } 
- }
+          timePattern == other.timePattern;}
+@override int get hashCode {return timePattern.hashCode;}
+@override String toString() {return 'CloudflarePipelinesR2TablePartitioning(timePattern: $timePattern)';}
+}

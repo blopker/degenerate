@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_create_scan_bulk_response_options.dart';/// Submitted visibility status.
 @immutable final class UrlscannerCreateScanBulkResponseVisibility {const UrlscannerCreateScanBulkResponseVisibility._(this.value);
 
-factory UrlscannerCreateScanBulkResponseVisibility.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanBulkResponseVisibility.fromJson(String json) {return switch (json) {
   'public' => public,
   'unlisted' => unlisted,
   _ => UrlscannerCreateScanBulkResponseVisibility._(json),
-}; }
+};}
 
 static const UrlscannerCreateScanBulkResponseVisibility public = UrlscannerCreateScanBulkResponseVisibility._('public');
 
@@ -17,24 +17,24 @@ static const List<UrlscannerCreateScanBulkResponseVisibility> values = [public, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerCreateScanBulkResponseVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanBulkResponseVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerCreateScanBulkResponseVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanBulkResponseVisibility($value)';}
+}
 @immutable final class UrlscannerCreateScanBulkResponse {const UrlscannerCreateScanBulkResponse({required this.api, required this.result, required this.url, required this.uuid, required this.visibility, this.options, });
 
-factory UrlscannerCreateScanBulkResponse.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanBulkResponse(
+factory UrlscannerCreateScanBulkResponse.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanBulkResponse(
   api: json['api'] as String,
   options: json['options'] != null ? UrlscannerCreateScanBulkResponseOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
   result: json['result'] as String,
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: UrlscannerCreateScanBulkResponseVisibility.fromJson(json['visibility'] as String),
-); }
+);}
 
 /// URL to api report.
 final String api;
@@ -53,35 +53,35 @@ final String uuid;
 /// Submitted visibility status.
 final UrlscannerCreateScanBulkResponseVisibility visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'api': api,
   if (options != null) 'options': options?.toJson(),
   'result': result,
   'url': url,
   'uuid': uuid,
   'visibility': visibility.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('api') && json['api'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('api') && json['api'] is String &&
       json.containsKey('result') && json['result'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility'); } 
-UrlscannerCreateScanBulkResponse copyWith({String? api, UrlscannerCreateScanBulkResponseOptions? Function()? options, String? result, String? url, String? uuid, UrlscannerCreateScanBulkResponseVisibility? visibility, }) { return UrlscannerCreateScanBulkResponse(
+      json.containsKey('visibility');}
+UrlscannerCreateScanBulkResponse copyWith({String? api, UrlscannerCreateScanBulkResponseOptions? Function()? options, String? result, String? url, String? uuid, UrlscannerCreateScanBulkResponseVisibility? visibility, }) {return UrlscannerCreateScanBulkResponse(
   api: api ?? this.api,
   options: options != null ? options() : this.options,
   result: result ?? this.result,
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerCreateScanBulkResponse &&
           api == other.api &&
           options == other.options &&
           result == other.result &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(api, options, result, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanBulkResponse(api: $api, options: $options, result: $result, url: $url, uuid: $uuid, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(api, options, result, url, uuid, visibility);}
+@override String toString() {return 'UrlscannerCreateScanBulkResponse(api: $api, options: $options, result: $result, url: $url, uuid: $uuid, visibility: $visibility)';}
+}

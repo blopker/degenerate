@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of th
 /// 
 @immutable final class LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus._(this.value);
 
-factory LocalShellToolCallOutputStatus.fromJson(String json) { return switch (json) {
+factory LocalShellToolCallOutputStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => LocalShellToolCallOutputStatus._(json),
-}; }
+};}
 
 static const LocalShellToolCallOutputStatus inProgress = LocalShellToolCallOutputStatus._('in_progress');
 
@@ -21,24 +21,24 @@ static const List<LocalShellToolCallOutputStatus> values = [inProgress, complete
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalShellToolCallOutputStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalShellToolCallOutputStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LocalShellToolCallOutputStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LocalShellToolCallOutputStatus($value)';}
+}
 /// The output of a local shell tool call.
 /// 
 @immutable final class LocalShellToolCallOutput {const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status = const Omittable.absent(), });
 
-factory LocalShellToolCallOutput.fromJson(Map<String, dynamic> json) { return LocalShellToolCallOutput(
+factory LocalShellToolCallOutput.fromJson(Map<String, dynamic> json) {return LocalShellToolCallOutput(
   type: json['type'] as String,
   id: json['id'] as String,
   output: json['output'] as String,
   status: json.containsKey('status') ? Omittable(json['status'] != null ? LocalShellToolCallOutputStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the local shell tool call output. Always `local_shell_call_output`.
 /// 
@@ -56,27 +56,27 @@ final String output;
 /// 
 final Omittable<LocalShellToolCallOutputStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'output': output,
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('output') && json['output'] is String; } 
-LocalShellToolCallOutput copyWith({String? type, String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) { return LocalShellToolCallOutput(
+      json.containsKey('output') && json['output'] is String;}
+LocalShellToolCallOutput copyWith({String? type, String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) {return LocalShellToolCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   output: output ?? this.output,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LocalShellToolCallOutput &&
           type == other.type &&
           id == other.id &&
           output == other.output &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(type, id, output, status); } 
-@override String toString() { return 'LocalShellToolCallOutput(type: $type, id: $id, output: $output, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(type, id, output, status);}
+@override String toString() {return 'LocalShellToolCallOutput(type: $type, id: $id, output: $output, status: $status)';}
+}

@@ -4,54 +4,54 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_t
 sealed class CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsage();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory CreateTranscriptionResponseDiarizedJsonUsage.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory CreateTranscriptionResponseDiarizedJsonUsage.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'tokens' => CreateTranscriptionResponseDiarizedJsonUsageTokens.fromJson(json),
   'duration' => CreateTranscriptionResponseDiarizedJsonUsageDuration.fromJson(json),
   _ => CreateTranscriptionResponseDiarizedJsonUsage$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateTranscriptionResponseDiarizedJsonUsage$Unknown; } 
- }
+bool get isUnknown {return this is CreateTranscriptionResponseDiarizedJsonUsage$Unknown;}
+}
 @immutable final class CreateTranscriptionResponseDiarizedJsonUsageTokens extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageTokens(this.transcriptTextUsageTokens);
 
-factory CreateTranscriptionResponseDiarizedJsonUsageTokens.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(TranscriptTextUsageTokens.fromJson(json)); }
+factory CreateTranscriptionResponseDiarizedJsonUsageTokens.fromJson(Map<String, dynamic> json) {return CreateTranscriptionResponseDiarizedJsonUsageTokens(TranscriptTextUsageTokens.fromJson(json));}
 
 final TranscriptTextUsageTokens transcriptTextUsageTokens;
 
-@override String get type { return 'tokens'; } 
-@override Map<String, dynamic> toJson() { return {...transcriptTextUsageTokens.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionResponseDiarizedJsonUsageTokens && transcriptTextUsageTokens == other.transcriptTextUsageTokens; } 
-@override int get hashCode { return transcriptTextUsageTokens.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens: $transcriptTextUsageTokens)'; } 
- }
+@override String get type {return 'tokens';}
+@override Map<String, dynamic> toJson() {return {...transcriptTextUsageTokens.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateTranscriptionResponseDiarizedJsonUsageTokens && transcriptTextUsageTokens == other.transcriptTextUsageTokens;}
+@override int get hashCode {return transcriptTextUsageTokens.hashCode;}
+@override String toString() {return 'CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens: $transcriptTextUsageTokens)';}
+}
 @immutable final class CreateTranscriptionResponseDiarizedJsonUsageDuration extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageDuration(this.transcriptTextUsageDuration);
 
-factory CreateTranscriptionResponseDiarizedJsonUsageDuration.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(TranscriptTextUsageDuration.fromJson(json)); }
+factory CreateTranscriptionResponseDiarizedJsonUsageDuration.fromJson(Map<String, dynamic> json) {return CreateTranscriptionResponseDiarizedJsonUsageDuration(TranscriptTextUsageDuration.fromJson(json));}
 
 final TranscriptTextUsageDuration transcriptTextUsageDuration;
 
-@override String get type { return 'duration'; } 
-@override Map<String, dynamic> toJson() { return {...transcriptTextUsageDuration.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionResponseDiarizedJsonUsageDuration && transcriptTextUsageDuration == other.transcriptTextUsageDuration; } 
-@override int get hashCode { return transcriptTextUsageDuration.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsageDuration(transcriptTextUsageDuration: $transcriptTextUsageDuration)'; } 
- }
+@override String get type {return 'duration';}
+@override Map<String, dynamic> toJson() {return {...transcriptTextUsageDuration.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateTranscriptionResponseDiarizedJsonUsageDuration && transcriptTextUsageDuration == other.transcriptTextUsageDuration;}
+@override int get hashCode {return transcriptTextUsageDuration.hashCode;}
+@override String toString() {return 'CreateTranscriptionResponseDiarizedJsonUsageDuration(transcriptTextUsageDuration: $transcriptTextUsageDuration)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class CreateTranscriptionResponseDiarizedJsonUsage$Unknown extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsage$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionResponseDiarizedJsonUsage$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsage.unknown($json)'; } 
- }
+@override String get type {return json['type'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateTranscriptionResponseDiarizedJsonUsage$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'CreateTranscriptionResponseDiarizedJsonUsage.unknown($json)';}
+}

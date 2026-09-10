@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_intent_data_shipping.dart';import 'post_checkout_sessions_request_payment_intent_data_transfer_data.dart';@immutable final class PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod {const PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'automatic_async' => automaticAsync,
   'manual' => manual,
   _ => PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod automatic = PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod._('automatic');
 
@@ -19,21 +19,21 @@ static const List<PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage {const PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage offSession = PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage._('off_session');
 
@@ -43,18 +43,18 @@ static const List<PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage($value)';}
+}
 /// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
 @immutable final class PostCheckoutSessionsRequestPaymentIntentData {const PostCheckoutSessionsRequestPaymentIntentData({this.applicationFeeAmount, this.captureMethod, this.description, this.metadata, this.onBehalfOf, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
-factory PostCheckoutSessionsRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentIntentData(
+factory PostCheckoutSessionsRequestPaymentIntentData.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentIntentData(
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod.fromJson(json['capture_method'] as String) : null,
   description: json['description'] as String?,
@@ -67,7 +67,7 @@ factory PostCheckoutSessionsRequestPaymentIntentData.fromJson(Map<String, dynami
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostCheckoutSessionsRequestPaymentIntentDataTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 final int? applicationFeeAmount;
 
@@ -93,7 +93,7 @@ final PostCheckoutSessionsRequestPaymentIntentDataTransferData? transferData;
 
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'application_fee_amount': ?applicationFeeAmount,
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   'description': ?description,
@@ -106,9 +106,9 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_amount', 'capture_method', 'description', 'metadata', 'on_behalf_of', 'receipt_email', 'setup_future_usage', 'shipping', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicationFeeAmount, PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? receiptEmail, PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage? Function()? setupFutureUsage, PostCheckoutSessionsRequestPaymentIntentDataShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostCheckoutSessionsRequestPaymentIntentDataTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostCheckoutSessionsRequestPaymentIntentData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'application_fee_amount', 'capture_method', 'description', 'metadata', 'on_behalf_of', 'receipt_email', 'setup_future_usage', 'shipping', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key));}
+PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicationFeeAmount, PostCheckoutSessionsRequestPaymentIntentDataCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? receiptEmail, PostCheckoutSessionsRequestPaymentIntentDataSetupFutureUsage? Function()? setupFutureUsage, PostCheckoutSessionsRequestPaymentIntentDataShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostCheckoutSessionsRequestPaymentIntentDataTransferData? Function()? transferData, String? Function()? transferGroup, }) {return PostCheckoutSessionsRequestPaymentIntentData(
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   description: description != null ? description() : this.description,
@@ -121,8 +121,8 @@ PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicat
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentIntentData &&
           applicationFeeAmount == other.applicationFeeAmount &&
           captureMethod == other.captureMethod &&
@@ -135,7 +135,7 @@ PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicat
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(applicationFeeAmount, captureMethod, description, metadata, onBehalfOf, receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentIntentData(applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, description: $description, metadata: $metadata, onBehalfOf: $onBehalfOf, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hash(applicationFeeAmount, captureMethod, description, metadata, onBehalfOf, receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup);}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentIntentData(applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, description: $description, metadata: $metadata, onBehalfOf: $onBehalfOf, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';}
+}

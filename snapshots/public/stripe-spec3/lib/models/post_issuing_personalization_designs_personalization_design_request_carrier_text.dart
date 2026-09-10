@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'carrier_text_param.dart';@immutable final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._(this.value);
 
-factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2.fromJson(String json) { return switch (json) {
+factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._(json),
-}; }
+};}
 
 static const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 $empty = PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostIssuingPersonalizationDesignsPersonalizationDesignRequestC
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2($value)';}
+}
 /// Hash containing carrier text, for use with physical bundles that support carrier text.
 @immutable
 final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierText {

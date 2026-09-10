@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Address {const Address({required this.street, required this.city, required this.country, this.state = const Omittable.absent(), this.postalCode, });
 
-factory Address.fromJson(Map<String, dynamic> json) { return Address(
+factory Address.fromJson(Map<String, dynamic> json) {return Address(
   street: json['street'] as String,
   city: json['city'] as String,
   state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
   postalCode: json['postalCode'] as String?,
   country: json['country'] as String,
-); }
+);}
 
 final String street;
 
@@ -20,30 +20,30 @@ final String? postalCode;
 
 final String country;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'street': street,
   'city': city,
   if (state.isPresent) 'state': state.value,
   'postalCode': ?postalCode,
   'country': country,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('street') && json['street'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('street') && json['street'] is String &&
       json.containsKey('city') && json['city'] is String &&
-      json.containsKey('country') && json['country'] is String; } 
-Address copyWith({String? street, String? city, Omittable<String?>? state, String? Function()? postalCode, String? country, }) { return Address(
+      json.containsKey('country') && json['country'] is String;}
+Address copyWith({String? street, String? city, Omittable<String?>? state, String? Function()? postalCode, String? country, }) {return Address(
   street: street ?? this.street,
   city: city ?? this.city,
   state: state ?? this.state,
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   country: country ?? this.country,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Address &&
           street == other.street &&
           city == other.city &&
           state == other.state &&
           postalCode == other.postalCode &&
-          country == other.country; } 
-@override int get hashCode { return Object.hash(street, city, state, postalCode, country); } 
-@override String toString() { return 'Address(street: $street, city: $city, state: $state, postalCode: $postalCode, country: $country)'; } 
- }
+          country == other.country;}
+@override int get hashCode {return Object.hash(street, city, state, postalCode, country);}
+@override String toString() {return 'Address(street: $street, city: $city, state: $state, postalCode: $postalCode, country: $country)';}
+}

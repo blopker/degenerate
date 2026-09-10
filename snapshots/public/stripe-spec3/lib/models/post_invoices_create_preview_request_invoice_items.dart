@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_invoice_items_discounts.dart';import 'post_invoices_create_preview_request_invoice_items_metadata.dart';import 'post_invoices_create_preview_request_invoice_items_period.dart';import 'post_invoices_create_preview_request_invoice_items_price_data.dart';import 'post_invoices_create_preview_request_invoice_items_tax_code.dart';import 'post_invoices_create_preview_request_invoice_items_tax_rates.dart';@immutable final class PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior {const PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior._(this.value);
 
-factory PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior exclusive = PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior._('exclusive');
 
@@ -19,17 +19,17 @@ static const List<PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestInvoiceItems {const PostInvoicesCreatePreviewRequestInvoiceItems({this.amount, this.currency, this.description, this.discountable, this.discounts, this.invoiceitem, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
-factory PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestInvoiceItems(
+factory PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestInvoiceItems(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   currency: json['currency'] as String?,
   description: json['description'] as String?,
@@ -46,7 +46,7 @@ factory PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(Map<String, dynami
   taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxRates.fromJson(json['tax_rates']) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 final int? amount;
 
@@ -80,7 +80,7 @@ final int? unitAmount;
 
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'currency': ?currency,
   'description': ?description,
@@ -97,9 +97,9 @@ Map<String, dynamic> toJson() { return {
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'description', 'discountable', 'discounts', 'invoiceitem', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestInvoiceItems copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, bool? Function()? discountable, PostInvoicesCreatePreviewRequestInvoiceItemsDiscounts? Function()? discounts, String? Function()? invoiceitem, PostInvoicesCreatePreviewRequestInvoiceItemsMetadata? Function()? metadata, PostInvoicesCreatePreviewRequestInvoiceItemsPeriod? Function()? period, String? Function()? price, PostInvoicesCreatePreviewRequestInvoiceItemsPriceData? Function()? priceData, int? Function()? quantity, PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior? Function()? taxBehavior, PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode? Function()? taxCode, PostInvoicesCreatePreviewRequestInvoiceItemsTaxRates? Function()? taxRates, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostInvoicesCreatePreviewRequestInvoiceItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'currency', 'description', 'discountable', 'discounts', 'invoiceitem', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount', 'unit_amount_decimal'}.contains(key));}
+PostInvoicesCreatePreviewRequestInvoiceItems copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, bool? Function()? discountable, PostInvoicesCreatePreviewRequestInvoiceItemsDiscounts? Function()? discounts, String? Function()? invoiceitem, PostInvoicesCreatePreviewRequestInvoiceItemsMetadata? Function()? metadata, PostInvoicesCreatePreviewRequestInvoiceItemsPeriod? Function()? period, String? Function()? price, PostInvoicesCreatePreviewRequestInvoiceItemsPriceData? Function()? priceData, int? Function()? quantity, PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior? Function()? taxBehavior, PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode? Function()? taxCode, PostInvoicesCreatePreviewRequestInvoiceItemsTaxRates? Function()? taxRates, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return PostInvoicesCreatePreviewRequestInvoiceItems(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   description: description != null ? description() : this.description,
@@ -116,8 +116,8 @@ PostInvoicesCreatePreviewRequestInvoiceItems copyWith({int? Function()? amount, 
   taxRates: taxRates != null ? taxRates() : this.taxRates,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestInvoiceItems &&
           amount == other.amount &&
           currency == other.currency &&
@@ -134,7 +134,7 @@ PostInvoicesCreatePreviewRequestInvoiceItems copyWith({int? Function()? amount, 
           taxCode == other.taxCode &&
           taxRates == other.taxRates &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, currency, description, discountable, discounts, invoiceitem, metadata, period, price, priceData, quantity, taxBehavior, taxCode, taxRates, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestInvoiceItems(amount: $amount, currency: $currency, description: $description, discountable: $discountable, discounts: $discounts, invoiceitem: $invoiceitem, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
- }
+          unitAmountDecimal == other.unitAmountDecimal;}
+@override int get hashCode {return Object.hash(amount, currency, description, discountable, discounts, invoiceitem, metadata, period, price, priceData, quantity, taxBehavior, taxCode, taxRates, unitAmount, unitAmountDecimal);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestInvoiceItems(amount: $amount, currency: $currency, description: $description, discountable: $discountable, discounts: $discounts, invoiceitem: $invoiceitem, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';}
+}

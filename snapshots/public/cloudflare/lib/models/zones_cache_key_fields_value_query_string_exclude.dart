@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ignore all query
 /// 
 @immutable final class ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 {const ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._(this.value);
 
-factory ZonesCacheKeyFieldsValueQueryStringExcludeVariant1.fromJson(String json) { return switch (json) {
+factory ZonesCacheKeyFieldsValueQueryStringExcludeVariant1.fromJson(String json) {return switch (json) {
   '*' => $empty,
   _ => ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._(json),
-}; }
+};}
 
 static const ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 $empty = ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._('*');
 
@@ -15,12 +15,12 @@ static const List<ZonesCacheKeyFieldsValueQueryStringExcludeVariant1> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheKeyFieldsValueQueryStringExcludeVariant1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheKeyFieldsValueQueryStringExcludeVariant1($value)';}
+}
 typedef ZonesCacheKeyFieldsValueQueryStringExclude = OneOf2<ZonesCacheKeyFieldsValueQueryStringExcludeVariant1,List<String>>;

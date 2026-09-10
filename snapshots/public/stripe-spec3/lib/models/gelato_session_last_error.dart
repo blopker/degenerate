@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification or user-session failure.
 @immutable final class GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode._(this.value);
 
-factory GelatoSessionLastErrorCode.fromJson(String json) { return switch (json) {
+factory GelatoSessionLastErrorCode.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'consent_declined' => consentDeclined,
   'country_not_supported' => countryNotSupported,
@@ -24,7 +24,7 @@ factory GelatoSessionLastErrorCode.fromJson(String json) { return switch (json) 
   'selfie_unverified_other' => selfieUnverifiedOther,
   'under_supported_age' => underSupportedAge,
   _ => GelatoSessionLastErrorCode._(json),
-}; }
+};}
 
 static const GelatoSessionLastErrorCode abandoned = GelatoSessionLastErrorCode._('abandoned');
 
@@ -68,21 +68,21 @@ static const List<GelatoSessionLastErrorCode> values = [abandoned, consentDeclin
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoSessionLastErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoSessionLastErrorCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GelatoSessionLastErrorCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GelatoSessionLastErrorCode($value)';}
+}
 /// Shows last VerificationSession error
 @immutable final class GelatoSessionLastError {const GelatoSessionLastError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory GelatoSessionLastError.fromJson(Map<String, dynamic> json) { return GelatoSessionLastError(
+factory GelatoSessionLastError.fromJson(Map<String, dynamic> json) {return GelatoSessionLastError(
   code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoSessionLastErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A short machine-readable string giving the reason for the verification or user-session failure.
 final Omittable<GelatoSessionLastErrorCode?> code;
@@ -90,19 +90,19 @@ final Omittable<GelatoSessionLastErrorCode?> code;
 /// A message that explains the reason for verification or user-session failure.
 final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (code.isPresent) 'code': code.value?.toJson(),
   if (reason.isPresent) 'reason': reason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
-GelatoSessionLastError copyWith({Omittable<GelatoSessionLastErrorCode?>? code, Omittable<String?>? reason, }) { return GelatoSessionLastError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'reason'}.contains(key));}
+GelatoSessionLastError copyWith({Omittable<GelatoSessionLastErrorCode?>? code, Omittable<String?>? reason, }) {return GelatoSessionLastError(
   code: code ?? this.code,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GelatoSessionLastError &&
           code == other.code &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(code, reason); } 
-@override String toString() { return 'GelatoSessionLastError(code: $code, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(code, reason);}
+@override String toString() {return 'GelatoSessionLastError(code: $code, reason: $reason)';}
+}

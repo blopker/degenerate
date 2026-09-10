@@ -16,13 +16,13 @@ bool toJson() => value;
 }
 @immutable final class RumUpdateSiteRequest {const RumUpdateSiteRequest({this.autoInstall, this.enabled, this.host, this.lite, this.zoneTag, });
 
-factory RumUpdateSiteRequest.fromJson(Map<String, dynamic> json) { return RumUpdateSiteRequest(
+factory RumUpdateSiteRequest.fromJson(Map<String, dynamic> json) {return RumUpdateSiteRequest(
   autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,
   enabled: json['enabled'] != null ? RumEnabled.fromJson(json['enabled'] as bool) : null,
   host: json['host'] != null ? RumHost.fromJson(json['host'] as String) : null,
   lite: json['lite'] != null ? RumLite.fromJson(json['lite'] as bool) : null,
   zoneTag: json['zone_tag'] != null ? RumZoneTag.fromJson(json['zone_tag'] as String) : null,
-); }
+);}
 
 /// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 final RumAutoInstall? autoInstall;
@@ -38,28 +38,28 @@ final RumLite? lite;
 
 final RumZoneTag? zoneTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (autoInstall != null) 'auto_install': autoInstall?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (host != null) 'host': host?.toJson(),
   if (lite != null) 'lite': lite?.toJson(),
   if (zoneTag != null) 'zone_tag': zoneTag?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_install', 'enabled', 'host', 'lite', 'zone_tag'}.contains(key)); } 
-RumUpdateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumEnabled? Function()? enabled, RumHost? Function()? host, RumLite? Function()? lite, RumZoneTag? Function()? zoneTag, }) { return RumUpdateSiteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auto_install', 'enabled', 'host', 'lite', 'zone_tag'}.contains(key));}
+RumUpdateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumEnabled? Function()? enabled, RumHost? Function()? host, RumLite? Function()? lite, RumZoneTag? Function()? zoneTag, }) {return RumUpdateSiteRequest(
   autoInstall: autoInstall != null ? autoInstall() : this.autoInstall,
   enabled: enabled != null ? enabled() : this.enabled,
   host: host != null ? host() : this.host,
   lite: lite != null ? lite() : this.lite,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RumUpdateSiteRequest &&
           autoInstall == other.autoInstall &&
           enabled == other.enabled &&
           host == other.host &&
           lite == other.lite &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(autoInstall, enabled, host, lite, zoneTag); } 
-@override String toString() { return 'RumUpdateSiteRequest(autoInstall: $autoInstall, enabled: $enabled, host: $host, lite: $lite, zoneTag: $zoneTag)'; } 
- }
+          zoneTag == other.zoneTag;}
+@override int get hashCode {return Object.hash(autoInstall, enabled, host, lite, zoneTag);}
+@override String toString() {return 'RumUpdateSiteRequest(autoInstall: $autoInstall, enabled: $enabled, host: $host, lite: $lite, zoneTag: $zoneTag)';}
+}

@@ -10,13 +10,13 @@ String toJson() => value;
 /// The current status of the origin server according to the health check.
 @immutable final class SmartshieldStatus {const SmartshieldStatus._(this.value);
 
-factory SmartshieldStatus.fromJson(String json) { return switch (json) {
+factory SmartshieldStatus.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'healthy' => healthy,
   'unhealthy' => unhealthy,
   'suspended' => suspended,
   _ => SmartshieldStatus._(json),
-}; }
+};}
 
 static const SmartshieldStatus unknown = SmartshieldStatus._('unknown');
 
@@ -30,14 +30,14 @@ static const List<SmartshieldStatus> values = [unknown, healthy, unhealthy, susp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmartshieldStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SmartshieldStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmartshieldStatus($value)';}
+}
 extension type SmartshieldTimestamp(DateTime value) {
 factory SmartshieldTimestamp.fromJson(String json) => SmartshieldTimestamp(DateTime.parse(json));
 
@@ -46,7 +46,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class SmartshieldHealthchecks {const SmartshieldHealthchecks({this.address, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig = const Omittable.absent(), this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
-factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return SmartshieldHealthchecks(
+factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) {return SmartshieldHealthchecks(
   address: json['address'] != null ? SmartshieldAddress.fromJson(json['address'] as String) : null,
   checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? SmartshieldConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
@@ -65,7 +65,7 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
   tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? SmartshieldTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The hostname or IP address of the origin server to run health checks on.
 final SmartshieldAddress? address;
@@ -109,7 +109,7 @@ final SmartshieldTimeout? timeout;
 
 final SmartshieldType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
@@ -128,9 +128,9 @@ Map<String, dynamic> toJson() { return {
   if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key)); } 
-SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldTimestamp? Function()? createdOn, SmartshieldDescription? Function()? description, SmartshieldFailureReason? Function()? failureReason, Omittable<SmartshieldHttpConfig?>? httpConfig, SmartshieldIdentifier? Function()? id, SmartshieldInterval? Function()? interval, SmartshieldTimestamp? Function()? modifiedOn, SmartshieldName? Function()? name, SmartshieldRetries? Function()? retries, SmartshieldStatus? Function()? status, SmartshieldSuspended? Function()? suspended, Omittable<SmartshieldTcpConfig?>? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldHealthchecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key));}
+SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldTimestamp? Function()? createdOn, SmartshieldDescription? Function()? description, SmartshieldFailureReason? Function()? failureReason, Omittable<SmartshieldHttpConfig?>? httpConfig, SmartshieldIdentifier? Function()? id, SmartshieldInterval? Function()? interval, SmartshieldTimestamp? Function()? modifiedOn, SmartshieldName? Function()? name, SmartshieldRetries? Function()? retries, SmartshieldStatus? Function()? status, SmartshieldSuspended? Function()? suspended, Omittable<SmartshieldTcpConfig?>? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) {return SmartshieldHealthchecks(
   address: address != null ? address() : this.address,
   checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
@@ -149,8 +149,8 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omitt
   tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SmartshieldHealthchecks &&
           address == other.address &&
           checkRegions.isPresent == other.checkRegions.isPresent &&
@@ -170,7 +170,7 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omitt
           suspended == other.suspended &&
           tcpConfig == other.tcpConfig &&
           timeout == other.timeout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type); } 
-@override String toString() { return 'SmartshieldHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type);}
+@override String toString() {return 'SmartshieldHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)';}
+}

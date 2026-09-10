@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of account-level resource.
 @immutable final class ResourceTaggingAccountResourceType {const ResourceTaggingAccountResourceType._(this.value);
 
-factory ResourceTaggingAccountResourceType.fromJson(String json) { return switch (json) {
+factory ResourceTaggingAccountResourceType.fromJson(String json) {return switch (json) {
   'access_application' => accessApplication,
   'access_group' => accessGroup,
   'account' => account,
@@ -25,7 +25,7 @@ factory ResourceTaggingAccountResourceType.fromJson(String json) { return switch
   'worker' => worker,
   'worker_version' => workerVersion,
   _ => ResourceTaggingAccountResourceType._(json),
-}; }
+};}
 
 static const ResourceTaggingAccountResourceType accessApplication = ResourceTaggingAccountResourceType._('access_application');
 
@@ -71,11 +71,11 @@ static const List<ResourceTaggingAccountResourceType> values = [accessApplicatio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingAccountResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingAccountResourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingAccountResourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResourceTaggingAccountResourceType($value)';}
+}

@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_interac_present_receipt.dart';/// How card details were read in this transaction.
 @immutable final class PaymentMethodDetailsInteracPresentReadMethod {const PaymentMethodDetailsInteracPresentReadMethod._(this.value);
 
-factory PaymentMethodDetailsInteracPresentReadMethod.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsInteracPresentReadMethod.fromJson(String json) {return switch (json) {
   'contact_emv' => contactEmv,
   'contactless_emv' => contactlessEmv,
   'contactless_magstripe_mode' => contactlessMagstripeMode,
   'magnetic_stripe_fallback' => magneticStripeFallback,
   'magnetic_stripe_track2' => magneticStripeTrack2,
   _ => PaymentMethodDetailsInteracPresentReadMethod._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsInteracPresentReadMethod contactEmv = PaymentMethodDetailsInteracPresentReadMethod._('contact_emv');
 
@@ -26,18 +26,18 @@ static const List<PaymentMethodDetailsInteracPresentReadMethod> values = [contac
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsInteracPresentReadMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsInteracPresentReadMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsInteracPresentReadMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsInteracPresentReadMethod($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsInteracPresent {const PaymentMethodDetailsInteracPresent({required this.expMonth, required this.expYear, this.brand = const Omittable.absent(), this.cardholderName = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.emvAuthData = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.generatedCard = const Omittable.absent(), this.issuer = const Omittable.absent(), this.last4 = const Omittable.absent(), this.location, this.network = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.readMethod = const Omittable.absent(), this.reader, this.receipt = const Omittable.absent(), });
 
-factory PaymentMethodDetailsInteracPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsInteracPresent(
+factory PaymentMethodDetailsInteracPresent.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsInteracPresent(
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
   cardholderName: json.containsKey('cardholder_name') ? Omittable(json['cardholder_name'] as String?) : const Omittable.absent(),
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
@@ -57,7 +57,7 @@ factory PaymentMethodDetailsInteracPresent.fromJson(Map<String, dynamic> json) {
   readMethod: json.containsKey('read_method') ? Omittable(json['read_method'] != null ? PaymentMethodDetailsInteracPresentReadMethod.fromJson(json['read_method'] as String) : null) : const Omittable.absent(),
   reader: json['reader'] as String?,
   receipt: json.containsKey('receipt') ? Omittable(json['receipt'] != null ? PaymentMethodDetailsInteracPresentReceipt.fromJson(json['receipt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Card brand. Can be `interac`, `mastercard` or `visa`.
 final Omittable<String?> brand;
@@ -118,7 +118,7 @@ final String? reader;
 /// A collection of fields required to be displayed on receipts. Only required for EMV transactions.
 final Omittable<PaymentMethodDetailsInteracPresentReceipt?> receipt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brand.isPresent) 'brand': brand.value,
   if (cardholderName.isPresent) 'cardholder_name': cardholderName.value,
   if (country.isPresent) 'country': country.value,
@@ -138,10 +138,10 @@ Map<String, dynamic> toJson() { return {
   if (readMethod.isPresent) 'read_method': readMethod.value?.toJson(),
   'reader': ?reader,
   if (receipt.isPresent) 'receipt': receipt.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
-      json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodDetailsInteracPresent copyWith({Omittable<String?>? brand, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, Omittable<String?>? emvAuthData, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? generatedCard, Omittable<String?>? issuer, Omittable<String?>? last4, String? Function()? location, Omittable<String?>? network, Omittable<String?>? networkTransactionId, Omittable<List<String>?>? preferredLocales, Omittable<PaymentMethodDetailsInteracPresentReadMethod?>? readMethod, String? Function()? reader, Omittable<PaymentMethodDetailsInteracPresentReceipt?>? receipt, }) { return PaymentMethodDetailsInteracPresent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
+      json.containsKey('exp_year') && json['exp_year'] is num;}
+PaymentMethodDetailsInteracPresent copyWith({Omittable<String?>? brand, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, Omittable<String?>? emvAuthData, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? generatedCard, Omittable<String?>? issuer, Omittable<String?>? last4, String? Function()? location, Omittable<String?>? network, Omittable<String?>? networkTransactionId, Omittable<List<String>?>? preferredLocales, Omittable<PaymentMethodDetailsInteracPresentReadMethod?>? readMethod, String? Function()? reader, Omittable<PaymentMethodDetailsInteracPresentReceipt?>? receipt, }) {return PaymentMethodDetailsInteracPresent(
   brand: brand ?? this.brand,
   cardholderName: cardholderName ?? this.cardholderName,
   country: country ?? this.country,
@@ -161,8 +161,8 @@ PaymentMethodDetailsInteracPresent copyWith({Omittable<String?>? brand, Omittabl
   readMethod: readMethod ?? this.readMethod,
   reader: reader != null ? reader() : this.reader,
   receipt: receipt ?? this.receipt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsInteracPresent &&
           brand == other.brand &&
           cardholderName == other.cardholderName &&
@@ -183,7 +183,7 @@ PaymentMethodDetailsInteracPresent copyWith({Omittable<String?>? brand, Omittabl
           listEquals(preferredLocales.value, other.preferredLocales.value) &&
           readMethod == other.readMethod &&
           reader == other.reader &&
-          receipt == other.receipt; } 
-@override int get hashCode { return Object.hash(brand, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, issuer, last4, location, network, networkTransactionId, Object.hashAll(preferredLocales.value ?? const []), readMethod, reader, receipt); } 
-@override String toString() { return 'PaymentMethodDetailsInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt)'; } 
- }
+          receipt == other.receipt;}
+@override int get hashCode {return Object.hash(brand, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, issuer, last4, location, network, networkTransactionId, Object.hashAll(preferredLocales.value ?? const []), readMethod, reader, receipt);}
+@override String toString() {return 'PaymentMethodDetailsInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt)';}
+}

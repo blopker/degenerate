@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_and_analysis_advanced_security.dart';import 'security_and_analysis_code_security.dart';import 'security_and_analysis_dependabot_security_updates.dart';import 'security_and_analysis_secret_scanning.dart';import 'security_and_analysis_secret_scanning_ai_detection.dart';import 'security_and_analysis_secret_scanning_delegated_alert_dismissal.dart';import 'security_and_analysis_secret_scanning_delegated_bypass.dart';import 'security_and_analysis_secret_scanning_delegated_bypass_options.dart';import 'security_and_analysis_secret_scanning_non_provider_patterns.dart';import 'security_and_analysis_secret_scanning_push_protection.dart';@immutable final class SecurityAndAnalysis {const SecurityAndAnalysis({this.advancedSecurity, this.codeSecurity, this.dependabotSecurityUpdates, this.secretScanning, this.secretScanningPushProtection, this.secretScanningNonProviderPatterns, this.secretScanningAiDetection, this.secretScanningDelegatedAlertDismissal, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, });
 
-factory SecurityAndAnalysis.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysis(
+factory SecurityAndAnalysis.fromJson(Map<String, dynamic> json) {return SecurityAndAnalysis(
   advancedSecurity: json['advanced_security'] != null ? SecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>) : null,
   codeSecurity: json['code_security'] != null ? SecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>) : null,
   dependabotSecurityUpdates: json['dependabot_security_updates'] != null ? SecurityAndAnalysisDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory SecurityAndAnalysis.fromJson(Map<String, dynamic> json) { return Securit
   secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>) : null,
   secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>) : null,
   secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Enable or disable GitHub Advanced Security for the repository.
 /// 
@@ -40,7 +40,7 @@ final SecurityAndAnalysisSecretScanningDelegatedBypass? secretScanningDelegatedB
 
 final SecurityAndAnalysisSecretScanningDelegatedBypassOptions? secretScanningDelegatedBypassOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (advancedSecurity != null) 'advanced_security': advancedSecurity?.toJson(),
   if (codeSecurity != null) 'code_security': codeSecurity?.toJson(),
   if (dependabotSecurityUpdates != null) 'dependabot_security_updates': dependabotSecurityUpdates?.toJson(),
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (secretScanningDelegatedAlertDismissal != null) 'secret_scanning_delegated_alert_dismissal': secretScanningDelegatedAlertDismissal?.toJson(),
   if (secretScanningDelegatedBypass != null) 'secret_scanning_delegated_bypass': secretScanningDelegatedBypass?.toJson(),
   if (secretScanningDelegatedBypassOptions != null) 'secret_scanning_delegated_bypass_options': secretScanningDelegatedBypassOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advanced_security', 'code_security', 'dependabot_security_updates', 'secret_scanning', 'secret_scanning_push_protection', 'secret_scanning_non_provider_patterns', 'secret_scanning_ai_detection', 'secret_scanning_delegated_alert_dismissal', 'secret_scanning_delegated_bypass', 'secret_scanning_delegated_bypass_options'}.contains(key)); } 
-SecurityAndAnalysis copyWith({SecurityAndAnalysisAdvancedSecurity? Function()? advancedSecurity, SecurityAndAnalysisCodeSecurity? Function()? codeSecurity, SecurityAndAnalysisDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, SecurityAndAnalysisSecretScanning? Function()? secretScanning, SecurityAndAnalysisSecretScanningPushProtection? Function()? secretScanningPushProtection, SecurityAndAnalysisSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, SecurityAndAnalysisSecretScanningAiDetection? Function()? secretScanningAiDetection, SecurityAndAnalysisSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, SecurityAndAnalysisSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, SecurityAndAnalysisSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, }) { return SecurityAndAnalysis(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'advanced_security', 'code_security', 'dependabot_security_updates', 'secret_scanning', 'secret_scanning_push_protection', 'secret_scanning_non_provider_patterns', 'secret_scanning_ai_detection', 'secret_scanning_delegated_alert_dismissal', 'secret_scanning_delegated_bypass', 'secret_scanning_delegated_bypass_options'}.contains(key));}
+SecurityAndAnalysis copyWith({SecurityAndAnalysisAdvancedSecurity? Function()? advancedSecurity, SecurityAndAnalysisCodeSecurity? Function()? codeSecurity, SecurityAndAnalysisDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, SecurityAndAnalysisSecretScanning? Function()? secretScanning, SecurityAndAnalysisSecretScanningPushProtection? Function()? secretScanningPushProtection, SecurityAndAnalysisSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, SecurityAndAnalysisSecretScanningAiDetection? Function()? secretScanningAiDetection, SecurityAndAnalysisSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, SecurityAndAnalysisSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, SecurityAndAnalysisSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, }) {return SecurityAndAnalysis(
   advancedSecurity: advancedSecurity != null ? advancedSecurity() : this.advancedSecurity,
   codeSecurity: codeSecurity != null ? codeSecurity() : this.codeSecurity,
   dependabotSecurityUpdates: dependabotSecurityUpdates != null ? dependabotSecurityUpdates() : this.dependabotSecurityUpdates,
@@ -64,8 +64,8 @@ SecurityAndAnalysis copyWith({SecurityAndAnalysisAdvancedSecurity? Function()? a
   secretScanningDelegatedAlertDismissal: secretScanningDelegatedAlertDismissal != null ? secretScanningDelegatedAlertDismissal() : this.secretScanningDelegatedAlertDismissal,
   secretScanningDelegatedBypass: secretScanningDelegatedBypass != null ? secretScanningDelegatedBypass() : this.secretScanningDelegatedBypass,
   secretScanningDelegatedBypassOptions: secretScanningDelegatedBypassOptions != null ? secretScanningDelegatedBypassOptions() : this.secretScanningDelegatedBypassOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecurityAndAnalysis &&
           advancedSecurity == other.advancedSecurity &&
           codeSecurity == other.codeSecurity &&
@@ -76,7 +76,7 @@ SecurityAndAnalysis copyWith({SecurityAndAnalysisAdvancedSecurity? Function()? a
           secretScanningAiDetection == other.secretScanningAiDetection &&
           secretScanningDelegatedAlertDismissal == other.secretScanningDelegatedAlertDismissal &&
           secretScanningDelegatedBypass == other.secretScanningDelegatedBypass &&
-          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions; } 
-@override int get hashCode { return Object.hash(advancedSecurity, codeSecurity, dependabotSecurityUpdates, secretScanning, secretScanningPushProtection, secretScanningNonProviderPatterns, secretScanningAiDetection, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions); } 
-@override String toString() { return 'SecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, dependabotSecurityUpdates: $dependabotSecurityUpdates, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningAiDetection: $secretScanningAiDetection, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)'; } 
- }
+          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions;}
+@override int get hashCode {return Object.hash(advancedSecurity, codeSecurity, dependabotSecurityUpdates, secretScanning, secretScanningPushProtection, secretScanningNonProviderPatterns, secretScanningAiDetection, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions);}
+@override String toString() {return 'SecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, dependabotSecurityUpdates: $dependabotSecurityUpdates, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningAiDetection: $secretScanningAiDetection, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)';}
+}

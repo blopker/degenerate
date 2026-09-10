@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device resolutions.
 @immutable final class UrlscannerCreateScanRequestScreenshotsResolutions {const UrlscannerCreateScanRequestScreenshotsResolutions._(this.value);
 
-factory UrlscannerCreateScanRequestScreenshotsResolutions.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanRequestScreenshotsResolutions.fromJson(String json) {return switch (json) {
   'desktop' => desktop,
   'mobile' => mobile,
   'tablet' => tablet,
   _ => UrlscannerCreateScanRequestScreenshotsResolutions._(json),
-}; }
+};}
 
 static const UrlscannerCreateScanRequestScreenshotsResolutions desktop = UrlscannerCreateScanRequestScreenshotsResolutions._('desktop');
 
@@ -20,18 +20,18 @@ static const List<UrlscannerCreateScanRequestScreenshotsResolutions> values = [d
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerCreateScanRequestScreenshotsResolutions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanRequestScreenshotsResolutions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerCreateScanRequestScreenshotsResolutions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanRequestScreenshotsResolutions($value)';}
+}
 /// Country to geo egress from
 @immutable final class UrlscannerCreateScanRequestCountry {const UrlscannerCreateScanRequestCountry._(this.value);
 
-factory UrlscannerCreateScanRequestCountry.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanRequestCountry.fromJson(String json) {return switch (json) {
   'AF' => af,
   'AL' => al,
   'DZ' => dz,
@@ -228,7 +228,7 @@ factory UrlscannerCreateScanRequestCountry.fromJson(String json) { return switch
   'ZM' => zm,
   'ZW' => zw,
   _ => UrlscannerCreateScanRequestCountry._(json),
-}; }
+};}
 
 static const UrlscannerCreateScanRequestCountry af = UrlscannerCreateScanRequestCountry._('AF');
 
@@ -624,22 +624,22 @@ static const List<UrlscannerCreateScanRequestCountry> values = [af, al, dz, ad, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerCreateScanRequestCountry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanRequestCountry($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerCreateScanRequestCountry && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanRequestCountry($value)';}
+}
 /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 @immutable final class UrlscannerCreateScanRequestVisibility {const UrlscannerCreateScanRequestVisibility._(this.value);
 
-factory UrlscannerCreateScanRequestVisibility.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanRequestVisibility.fromJson(String json) {return switch (json) {
   'Public' => public,
   'Unlisted' => unlisted,
   _ => UrlscannerCreateScanRequestVisibility._(json),
-}; }
+};}
 
 static const UrlscannerCreateScanRequestVisibility public = UrlscannerCreateScanRequestVisibility._('Public');
 
@@ -649,23 +649,23 @@ static const List<UrlscannerCreateScanRequestVisibility> values = [public, unlis
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlscannerCreateScanRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UrlscannerCreateScanRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UrlscannerCreateScanRequestVisibility($value)';}
+}
 @immutable final class UrlscannerCreateScanRequest {const UrlscannerCreateScanRequest({required this.url, this.country, this.customHeaders, this.screenshotsResolutions, this.visibility, });
 
-factory UrlscannerCreateScanRequest.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanRequest(
+factory UrlscannerCreateScanRequest.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanRequest(
   country: json['country'] != null ? UrlscannerCreateScanRequestCountry.fromJson(json['country'] as String) : null,
   customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   screenshotsResolutions: (json['screenshotsResolutions'] as List<dynamic>?)?.map((e) => UrlscannerCreateScanRequestScreenshotsResolutions.fromJson(e as String)).toList(),
   url: json['url'] as String,
   visibility: json['visibility'] != null ? UrlscannerCreateScanRequestVisibility.fromJson(json['visibility'] as String) : null,
-); }
+);}
 
 /// Country to geo egress from
 final UrlscannerCreateScanRequestCountry? country;
@@ -682,29 +682,29 @@ final String url;
 final UrlscannerCreateScanRequestVisibility? visibility;
 
 /// The value with the schema default applied when absent.
-UrlscannerCreateScanRequestVisibility get visibilityOrDefault { return visibility ?? UrlscannerCreateScanRequestVisibility.fromJson('Public'); } 
-Map<String, dynamic> toJson() { return {
+UrlscannerCreateScanRequestVisibility get visibilityOrDefault {return visibility ?? UrlscannerCreateScanRequestVisibility.fromJson('Public');}
+Map<String, dynamic> toJson() {return {
   if (country != null) 'country': country?.toJson(),
   'customHeaders': ?customHeaders,
   if (screenshotsResolutions != null) 'screenshotsResolutions': screenshotsResolutions?.map((e) => e.toJson()).toList(),
   'url': url,
   if (visibility != null) 'visibility': visibility?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-UrlscannerCreateScanRequest copyWith({UrlscannerCreateScanRequestCountry? Function()? country, Map<String, String>? Function()? customHeaders, List<UrlscannerCreateScanRequestScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanRequestVisibility? Function()? visibility, }) { return UrlscannerCreateScanRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+UrlscannerCreateScanRequest copyWith({UrlscannerCreateScanRequestCountry? Function()? country, Map<String, String>? Function()? customHeaders, List<UrlscannerCreateScanRequestScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanRequestVisibility? Function()? visibility, }) {return UrlscannerCreateScanRequest(
   country: country != null ? country() : this.country,
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,
   url: url ?? this.url,
   visibility: visibility != null ? visibility() : this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerCreateScanRequest &&
           country == other.country &&
           customHeaders == other.customHeaders &&
           listEquals(screenshotsResolutions, other.screenshotsResolutions) &&
           url == other.url &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(country, customHeaders, Object.hashAll(screenshotsResolutions ?? const []), url, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanRequest(country: $country, customHeaders: $customHeaders, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(country, customHeaders, Object.hashAll(screenshotsResolutions ?? const []), url, visibility);}
+@override String toString() {return 'UrlscannerCreateScanRequest(country: $country, customHeaders: $customHeaders, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)';}
+}

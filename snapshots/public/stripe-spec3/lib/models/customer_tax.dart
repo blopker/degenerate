@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
 @immutable final class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax._(this.value);
 
-factory CustomerTaxAutomaticTax.fromJson(String json) { return switch (json) {
+factory CustomerTaxAutomaticTax.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'not_collecting' => notCollecting,
   'supported' => supported,
   'unrecognized_location' => unrecognizedLocation,
   _ => CustomerTaxAutomaticTax._(json),
-}; }
+};}
 
 static const CustomerTaxAutomaticTax failed = CustomerTaxAutomaticTax._('failed');
 
@@ -23,24 +23,24 @@ static const List<CustomerTaxAutomaticTax> values = [failed, notCollecting, supp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerTaxAutomaticTax && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerTaxAutomaticTax($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerTaxAutomaticTax && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerTaxAutomaticTax($value)';}
+}
 /// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 @immutable final class CustomerTaxProvider {const CustomerTaxProvider._(this.value);
 
-factory CustomerTaxProvider.fromJson(String json) { return switch (json) {
+factory CustomerTaxProvider.fromJson(String json) {return switch (json) {
   'anrok' => anrok,
   'avalara' => avalara,
   'sphere' => sphere,
   'stripe' => stripe,
   _ => CustomerTaxProvider._(json),
-}; }
+};}
 
 static const CustomerTaxProvider anrok = CustomerTaxProvider._('anrok');
 
@@ -54,23 +54,23 @@ static const List<CustomerTaxProvider> values = [anrok, avalara, sphere, stripe]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerTaxProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerTaxProvider($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerTaxProvider && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerTaxProvider($value)';}
+}
 /// 
 @immutable final class CustomerTax {const CustomerTax({required this.automaticTax, required this.provider, this.ipAddress = const Omittable.absent(), this.location = const Omittable.absent(), });
 
-factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
+factory CustomerTax.fromJson(Map<String, dynamic> json) {return CustomerTax(
   automaticTax: CustomerTaxAutomaticTax.fromJson(json['automatic_tax'] as String),
   ipAddress: json.containsKey('ip_address') ? Omittable(json['ip_address'] as String?) : const Omittable.absent(),
   location: json.containsKey('location') ? Omittable(json['location'] != null ? CustomerTaxLocation.fromJson(json['location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   provider: CustomerTaxProvider.fromJson(json['provider'] as String),
-); }
+);}
 
 /// Surfaces if automatic tax computation is possible given the current customer location information.
 final CustomerTaxAutomaticTax automaticTax;
@@ -84,26 +84,26 @@ final Omittable<CustomerTaxLocation?> location;
 /// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 final CustomerTaxProvider provider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'automatic_tax': automaticTax.toJson(),
   if (ipAddress.isPresent) 'ip_address': ipAddress.value,
   if (location.isPresent) 'location': location.value?.toJson(),
   'provider': provider.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
-      json.containsKey('provider'); } 
-CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, Omittable<String?>? ipAddress, Omittable<CustomerTaxLocation?>? location, CustomerTaxProvider? provider, }) { return CustomerTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_tax') &&
+      json.containsKey('provider');}
+CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, Omittable<String?>? ipAddress, Omittable<CustomerTaxLocation?>? location, CustomerTaxProvider? provider, }) {return CustomerTax(
   automaticTax: automaticTax ?? this.automaticTax,
   ipAddress: ipAddress ?? this.ipAddress,
   location: location ?? this.location,
   provider: provider ?? this.provider,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerTax &&
           automaticTax == other.automaticTax &&
           ipAddress == other.ipAddress &&
           location == other.location &&
-          provider == other.provider; } 
-@override int get hashCode { return Object.hash(automaticTax, ipAddress, location, provider); } 
-@override String toString() { return 'CustomerTax(automaticTax: $automaticTax, ipAddress: $ipAddress, location: $location, provider: $provider)'; } 
- }
+          provider == other.provider;}
+@override int get hashCode {return Object.hash(automaticTax, ipAddress, location, provider);}
+@override String toString() {return 'CustomerTax(automaticTax: $automaticTax, ipAddress: $ipAddress, location: $location, provider: $provider)';}
+}

@@ -17,7 +17,7 @@ String toJson() => value;
 /// Status of the latest snapshot uploaded
 @immutable final class CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus {const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._(this.value);
 
-factory CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus.fromJson(String json) { return switch (json) {
+factory CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus.fromJson(String json) {return switch (json) {
   'Mirroring' => mirroring,
   'Unifying' => unifying,
   'Loading' => loading,
@@ -25,7 +25,7 @@ factory CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus.fromJson(Str
   'Complete' => complete,
   'Error' => error,
   _ => CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._(json),
-}; }
+};}
 
 static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus mirroring = CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._('Mirroring');
 
@@ -43,17 +43,17 @@ static const List<CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus($value)';}
+}
 @immutable final class CustomIndicatorFeedsIndicatorFeedMetadata {const CustomIndicatorFeedsIndicatorFeedMetadata({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.latestUploadStatus, this.modifiedOn, this.name, this.providerId, this.providerName, });
 
-factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedMetadata(
+factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsIndicatorFeedMetadata(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   description: json['description'] != null ? CustomIndicatorFeedsDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? CustomIndicatorFeedsId.fromJson(json['id'] as num) : null,
@@ -65,7 +65,7 @@ factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> 
   name: json['name'] != null ? CustomIndicatorFeedsName.fromJson(json['name'] as String) : null,
   providerId: json['provider_id'] != null ? CustomIndicatorFeedsProviderId.fromJson(json['provider_id'] as String) : null,
   providerName: json['provider_name'] != null ? CustomIndicatorFeedsProviderName.fromJson(json['provider_name'] as String) : null,
-); }
+);}
 
 /// The date and time when the data entry was created
 final DateTime? createdOn;
@@ -94,7 +94,7 @@ final CustomIndicatorFeedsProviderId? providerId;
 
 final CustomIndicatorFeedsProviderName? providerName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
   if (description != null) 'description': description?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -106,9 +106,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (providerId != null) 'provider_id': providerId?.toJson(),
   if (providerName != null) 'provider_name': providerName?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'latest_upload_status', 'modified_on', 'name', 'provider_id', 'provider_name'}.contains(key)); } 
-CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? createdOn, CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus? Function()? latestUploadStatus, DateTime? Function()? modifiedOn, CustomIndicatorFeedsName? Function()? name, CustomIndicatorFeedsProviderId? Function()? providerId, CustomIndicatorFeedsProviderName? Function()? providerName, }) { return CustomIndicatorFeedsIndicatorFeedMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'latest_upload_status', 'modified_on', 'name', 'provider_id', 'provider_name'}.contains(key));}
+CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? createdOn, CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus? Function()? latestUploadStatus, DateTime? Function()? modifiedOn, CustomIndicatorFeedsName? Function()? name, CustomIndicatorFeedsProviderId? Function()? providerId, CustomIndicatorFeedsProviderName? Function()? providerName, }) {return CustomIndicatorFeedsIndicatorFeedMetadata(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
@@ -120,8 +120,8 @@ CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? create
   name: name != null ? name() : this.name,
   providerId: providerId != null ? providerId() : this.providerId,
   providerName: providerName != null ? providerName() : this.providerName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomIndicatorFeedsIndicatorFeedMetadata &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -133,7 +133,7 @@ CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? create
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           providerId == other.providerId &&
-          providerName == other.providerName; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, latestUploadStatus, modifiedOn, name, providerId, providerName); } 
-@override String toString() { return 'CustomIndicatorFeedsIndicatorFeedMetadata(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, latestUploadStatus: $latestUploadStatus, modifiedOn: $modifiedOn, name: $name, providerId: $providerId, providerName: $providerName)'; } 
- }
+          providerName == other.providerName;}
+@override int get hashCode {return Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, latestUploadStatus, modifiedOn, name, providerId, providerName);}
+@override String toString() {return 'CustomIndicatorFeedsIndicatorFeedMetadata(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, latestUploadStatus: $latestUploadStatus, modifiedOn: $modifiedOn, name: $name, providerId: $providerId, providerName: $providerName)';}
+}

@@ -24,11 +24,11 @@ String toJson() => value;
 /// Status of the Keyless SSL.
 @immutable final class TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus._(this.value);
 
-factory TlsCertificatesAndHostnamesSchemasStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSchemasStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'deleted' => deleted,
   _ => TlsCertificatesAndHostnamesSchemasStatus._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSchemasStatus active = TlsCertificatesAndHostnamesSchemasStatus._('active');
 
@@ -38,17 +38,17 @@ static const List<TlsCertificatesAndHostnamesSchemasStatus> values = [active, de
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSchemasStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSchemasStatus($value)';}
+}
 @immutable final class TlsCertificatesAndHostnamesBase {const TlsCertificatesAndHostnamesBase({required this.createdOn, required this.enabled, required this.host, required this.id, required this.modifiedOn, required this.name, required this.permissions, required this.port, required this.status, this.tunnel, });
 
-factory TlsCertificatesAndHostnamesBase.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesBase(
+factory TlsCertificatesAndHostnamesBase.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesBase(
   createdOn: DateTime.parse(json['created_on'] as String),
   enabled: TlsCertificatesAndHostnamesEnabled.fromJson(json['enabled'] as bool),
   host: TlsCertificatesAndHostnamesHost.fromJson(json['host'] as String),
@@ -59,7 +59,7 @@ factory TlsCertificatesAndHostnamesBase.fromJson(Map<String, dynamic> json) { re
   port: TlsCertificatesAndHostnamesPort.fromJson(json['port'] as num),
   status: TlsCertificatesAndHostnamesSchemasStatus.fromJson(json['status'] as String),
   tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// When the Keyless SSL was created.
 final DateTime createdOn;
@@ -84,7 +84,7 @@ final TlsCertificatesAndHostnamesSchemasStatus status;
 
 final TlsCertificatesAndHostnamesKeylessTunnel? tunnel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toIso8601String(),
   'enabled': enabled.toJson(),
   'host': host.toJson(),
@@ -95,8 +95,8 @@ Map<String, dynamic> toJson() { return {
   'port': port.toJson(),
   'status': status.toJson(),
   if (tunnel != null) 'tunnel': tunnel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('enabled') &&
       json.containsKey('host') &&
       json.containsKey('id') &&
@@ -104,8 +104,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') &&
       json.containsKey('permissions') &&
       json.containsKey('port') &&
-      json.containsKey('status'); } 
-TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAndHostnamesEnabled? enabled, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesSchemasIdentifier? id, DateTime? modifiedOn, TlsCertificatesAndHostnamesName? name, List<String>? permissions, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesSchemasStatus? status, TlsCertificatesAndHostnamesKeylessTunnel? Function()? tunnel, }) { return TlsCertificatesAndHostnamesBase(
+      json.containsKey('status');}
+TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAndHostnamesEnabled? enabled, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesSchemasIdentifier? id, DateTime? modifiedOn, TlsCertificatesAndHostnamesName? name, List<String>? permissions, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesSchemasStatus? status, TlsCertificatesAndHostnamesKeylessTunnel? Function()? tunnel, }) {return TlsCertificatesAndHostnamesBase(
   createdOn: createdOn ?? this.createdOn,
   enabled: enabled ?? this.enabled,
   host: host ?? this.host,
@@ -116,8 +116,8 @@ TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAn
   port: port ?? this.port,
   status: status ?? this.status,
   tunnel: tunnel != null ? tunnel() : this.tunnel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesBase &&
           createdOn == other.createdOn &&
           enabled == other.enabled &&
@@ -128,7 +128,7 @@ TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAn
           listEquals(permissions, other.permissions) &&
           port == other.port &&
           status == other.status &&
-          tunnel == other.tunnel; } 
-@override int get hashCode { return Object.hash(createdOn, enabled, host, id, modifiedOn, name, Object.hashAll(permissions), port, status, tunnel); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesBase(createdOn: $createdOn, enabled: $enabled, host: $host, id: $id, modifiedOn: $modifiedOn, name: $name, permissions: $permissions, port: $port, status: $status, tunnel: $tunnel)'; } 
- }
+          tunnel == other.tunnel;}
+@override int get hashCode {return Object.hash(createdOn, enabled, host, id, modifiedOn, name, Object.hashAll(permissions), port, status, tunnel);}
+@override String toString() {return 'TlsCertificatesAndHostnamesBase(createdOn: $createdOn, enabled: $enabled, host: $host, id: $id, modifiedOn: $modifiedOn, name: $name, permissions: $permissions, port: $port, status: $status, tunnel: $tunnel)';}
+}

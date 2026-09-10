@@ -6,12 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transc
 /// 
 @immutable final class RealtimeTranscriptionSessionCreateRequestInputAudioFormat {const RealtimeTranscriptionSessionCreateRequestInputAudioFormat._(this.value);
 
-factory RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(String json) { return switch (json) {
+factory RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(String json) {return switch (json) {
   'pcm16' => pcm16,
   'g711_ulaw' => g711Ulaw,
   'g711_alaw' => g711Alaw,
   _ => RealtimeTranscriptionSessionCreateRequestInputAudioFormat._(json),
-}; }
+};}
 
 static const RealtimeTranscriptionSessionCreateRequestInputAudioFormat pcm16 = RealtimeTranscriptionSessionCreateRequestInputAudioFormat._('pcm16');
 
@@ -23,20 +23,20 @@ static const List<RealtimeTranscriptionSessionCreateRequestInputAudioFormat> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionSessionCreateRequestInputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequestInputAudioFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeTranscriptionSessionCreateRequestInputAudioFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeTranscriptionSessionCreateRequestInputAudioFormat($value)';}
+}
 @immutable final class RealtimeTranscriptionSessionCreateRequestInclude {const RealtimeTranscriptionSessionCreateRequestInclude._(this.value);
 
-factory RealtimeTranscriptionSessionCreateRequestInclude.fromJson(String json) { return switch (json) {
+factory RealtimeTranscriptionSessionCreateRequestInclude.fromJson(String json) {return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
   _ => RealtimeTranscriptionSessionCreateRequestInclude._(json),
-}; }
+};}
 
 static const RealtimeTranscriptionSessionCreateRequestInclude itemInputAudioTranscriptionLogprobs = RealtimeTranscriptionSessionCreateRequestInclude._('item.input_audio_transcription.logprobs');
 
@@ -44,24 +44,24 @@ static const List<RealtimeTranscriptionSessionCreateRequestInclude> values = [it
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionSessionCreateRequestInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequestInclude($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeTranscriptionSessionCreateRequestInclude && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeTranscriptionSessionCreateRequestInclude($value)';}
+}
 /// Realtime transcription session object configuration.
 @immutable final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat, this.inputAudioTranscription, this.include, });
 
-factory RealtimeTranscriptionSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequest(
+factory RealtimeTranscriptionSessionCreateRequest.fromJson(Map<String, dynamic> json) {return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: json['turn_detection'] != null ? RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
   inputAudioFormat: json['input_audio_format'] != null ? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(json['input_audio_format'] as String) : null,
   inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeTranscriptionSessionCreateRequestInclude.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Configuration for turn detection. Can be set to `null` to turn off. Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
 /// 
@@ -89,29 +89,29 @@ final AudioTranscription? inputAudioTranscription;
 final List<RealtimeTranscriptionSessionCreateRequestInclude>? include;
 
 /// The value with the schema default applied when absent.
-RealtimeTranscriptionSessionCreateRequestInputAudioFormat get inputAudioFormatOrDefault { return inputAudioFormat ?? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson('pcm16'); } 
-Map<String, dynamic> toJson() { return {
+RealtimeTranscriptionSessionCreateRequestInputAudioFormat get inputAudioFormatOrDefault {return inputAudioFormat ?? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson('pcm16');}
+Map<String, dynamic> toJson() {return {
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
   if (inputAudioNoiseReduction != null) 'input_audio_noise_reduction': inputAudioNoiseReduction?.toJson(),
   if (inputAudioFormat != null) 'input_audio_format': inputAudioFormat?.toJson(),
   if (inputAudioTranscription != null) 'input_audio_transcription': inputAudioTranscription?.toJson(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'turn_detection', 'input_audio_noise_reduction', 'input_audio_format', 'input_audio_transcription', 'include'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetection? Function()? turnDetection, RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? Function()? inputAudioNoiseReduction, RealtimeTranscriptionSessionCreateRequestInputAudioFormat? Function()? inputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, List<RealtimeTranscriptionSessionCreateRequestInclude>? Function()? include, }) { return RealtimeTranscriptionSessionCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'turn_detection', 'input_audio_noise_reduction', 'input_audio_format', 'input_audio_transcription', 'include'}.contains(key));}
+RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetection? Function()? turnDetection, RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? Function()? inputAudioNoiseReduction, RealtimeTranscriptionSessionCreateRequestInputAudioFormat? Function()? inputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, List<RealtimeTranscriptionSessionCreateRequestInclude>? Function()? include, }) {return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
   inputAudioNoiseReduction: inputAudioNoiseReduction != null ? inputAudioNoiseReduction() : this.inputAudioNoiseReduction,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,
   inputAudioTranscription: inputAudioTranscription != null ? inputAudioTranscription() : this.inputAudioTranscription,
   include: include != null ? include() : this.include,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateRequest &&
           turnDetection == other.turnDetection &&
           inputAudioNoiseReduction == other.inputAudioNoiseReduction &&
           inputAudioFormat == other.inputAudioFormat &&
           inputAudioTranscription == other.inputAudioTranscription &&
-          listEquals(include, other.include); } 
-@override int get hashCode { return Object.hash(turnDetection, inputAudioNoiseReduction, inputAudioFormat, inputAudioTranscription, Object.hashAll(include ?? const [])); } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequest(turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, inputAudioFormat: $inputAudioFormat, inputAudioTranscription: $inputAudioTranscription, include: $include)'; } 
- }
+          listEquals(include, other.include);}
+@override int get hashCode {return Object.hash(turnDetection, inputAudioNoiseReduction, inputAudioFormat, inputAudioTranscription, Object.hashAll(include ?? const []));}
+@override String toString() {return 'RealtimeTranscriptionSessionCreateRequest(turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, inputAudioFormat: $inputAudioFormat, inputAudioTranscription: $inputAudioTranscription, include: $include)';}
+}

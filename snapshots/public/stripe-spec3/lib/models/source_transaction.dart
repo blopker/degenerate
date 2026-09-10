@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source_transaction_ach_credit_transfer_data.dart';import 'source_transaction_chf_credit_transfer_data.dart';import 'source_transaction_gbp_credit_transfer_data.dart';import 'source_transaction_paper_check_data.dart';import 'source_transaction_sepa_credit_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SourceTransactionObject {const SourceTransactionObject._(this.value);
 
-factory SourceTransactionObject.fromJson(String json) { return switch (json) {
+factory SourceTransactionObject.fromJson(String json) {return switch (json) {
   'source_transaction' => sourceTransaction,
   _ => SourceTransactionObject._(json),
-}; }
+};}
 
 static const SourceTransactionObject sourceTransaction = SourceTransactionObject._('source_transaction');
 
@@ -14,18 +14,18 @@ static const List<SourceTransactionObject> values = [sourceTransaction];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceTransactionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SourceTransactionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SourceTransactionObject($value)';}
+}
 /// The type of source this transaction is attached to.
 @immutable final class SourceTransactionType {const SourceTransactionType._(this.value);
 
-factory SourceTransactionType.fromJson(String json) { return switch (json) {
+factory SourceTransactionType.fromJson(String json) {return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
   'ach_debit' => achDebit,
   'alipay' => alipay,
@@ -43,7 +43,7 @@ factory SourceTransactionType.fromJson(String json) { return switch (json) {
   'three_d_secure' => threeDSecure,
   'wechat' => wechat,
   _ => SourceTransactionType._(json),
-}; }
+};}
 
 static const SourceTransactionType achCreditTransfer = SourceTransactionType._('ach_credit_transfer');
 
@@ -81,21 +81,21 @@ static const List<SourceTransactionType> values = [achCreditTransfer, achDebit, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceTransactionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SourceTransactionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SourceTransactionType($value)';}
+}
 /// Some payment methods have no required amount that a customer must send.
 /// Customers can be instructed to send any amount, and it can be made up of
 /// multiple transactions. As such, sources can have multiple associated
 /// transactions.
 @immutable final class SourceTransaction {const SourceTransaction({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.source, required this.status, required this.type, this.achCreditTransfer, this.chfCreditTransfer, this.gbpCreditTransfer, this.paperCheck, this.sepaCreditTransfer, });
 
-factory SourceTransaction.fromJson(Map<String, dynamic> json) { return SourceTransaction(
+factory SourceTransaction.fromJson(Map<String, dynamic> json) {return SourceTransaction(
   achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTransactionAchCreditTransferData.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,
   amount: (json['amount'] as num).toInt(),
   chfCreditTransfer: json['chf_credit_transfer'] != null ? SourceTransactionChfCreditTransferData.fromJson(json['chf_credit_transfer'] as Map<String, dynamic>) : null,
@@ -110,7 +110,7 @@ factory SourceTransaction.fromJson(Map<String, dynamic> json) { return SourceTra
   source: json['source'] as String,
   status: json['status'] as String,
   type: SourceTransactionType.fromJson(json['type'] as String),
-); }
+);}
 
 final SourceTransactionAchCreditTransferData? achCreditTransfer;
 
@@ -149,7 +149,7 @@ final String status;
 /// The type of source this transaction is attached to.
 final SourceTransactionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (achCreditTransfer != null) 'ach_credit_transfer': achCreditTransfer?.toJson(),
   'amount': amount,
   if (chfCreditTransfer != null) 'chf_credit_transfer': chfCreditTransfer?.toJson(),
@@ -164,8 +164,8 @@ Map<String, dynamic> toJson() { return {
   'source': source,
   'status': status,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -173,8 +173,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type'); } 
-SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? achCreditTransfer, int? amount, SourceTransactionChfCreditTransferData? Function()? chfCreditTransfer, int? created, String? currency, SourceTransactionGbpCreditTransferData? Function()? gbpCreditTransfer, String? id, bool? livemode, SourceTransactionObject? object, SourceTransactionPaperCheckData? Function()? paperCheck, SourceTransactionSepaCreditTransferData? Function()? sepaCreditTransfer, String? source, String? status, SourceTransactionType? type, }) { return SourceTransaction(
+      json.containsKey('type');}
+SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? achCreditTransfer, int? amount, SourceTransactionChfCreditTransferData? Function()? chfCreditTransfer, int? created, String? currency, SourceTransactionGbpCreditTransferData? Function()? gbpCreditTransfer, String? id, bool? livemode, SourceTransactionObject? object, SourceTransactionPaperCheckData? Function()? paperCheck, SourceTransactionSepaCreditTransferData? Function()? sepaCreditTransfer, String? source, String? status, SourceTransactionType? type, }) {return SourceTransaction(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   amount: amount ?? this.amount,
   chfCreditTransfer: chfCreditTransfer != null ? chfCreditTransfer() : this.chfCreditTransfer,
@@ -189,8 +189,8 @@ SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? 
   source: source ?? this.source,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SourceTransaction &&
           achCreditTransfer == other.achCreditTransfer &&
           amount == other.amount &&
@@ -205,7 +205,7 @@ SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? 
           sepaCreditTransfer == other.sepaCreditTransfer &&
           source == other.source &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(achCreditTransfer, amount, chfCreditTransfer, created, currency, gbpCreditTransfer, id, livemode, object, paperCheck, sepaCreditTransfer, source, status, type); } 
-@override String toString() { return 'SourceTransaction(achCreditTransfer: $achCreditTransfer, amount: $amount, chfCreditTransfer: $chfCreditTransfer, created: $created, currency: $currency, gbpCreditTransfer: $gbpCreditTransfer, id: $id, livemode: $livemode, object: $object, paperCheck: $paperCheck, sepaCreditTransfer: $sepaCreditTransfer, source: $source, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(achCreditTransfer, amount, chfCreditTransfer, created, currency, gbpCreditTransfer, id, livemode, object, paperCheck, sepaCreditTransfer, source, status, type);}
+@override String toString() {return 'SourceTransaction(achCreditTransfer: $achCreditTransfer, amount: $amount, chfCreditTransfer: $chfCreditTransfer, created: $created, currency: $currency, gbpCreditTransfer: $gbpCreditTransfer, id: $id, livemode: $livemode, object: $object, paperCheck: $paperCheck, sepaCreditTransfer: $sepaCreditTransfer, source: $source, status: $status, type: $type)';}
+}

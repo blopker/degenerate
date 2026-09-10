@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_created_deployment_performed_via_github_app_owner.dart';import 'webhook_deployment_created_deployment_performed_via_github_app_permissions.dart';@immutable final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents {const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents._(this.value);
 
-factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents.fromJson(String json) { return switch (json) {
+factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents.fromJson(String json) {return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
   'check_run' => checkRun,
   'check_suite' => checkSuite,
@@ -54,7 +54,7 @@ factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents.fromJson(S
   'secret_scanning_alert_location' => secretScanningAlertLocation,
   'merge_group' => mergeGroup,
   _ => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents._(json),
-}; }
+};}
 
 static const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents branchProtectionRule = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents._('branch_protection_rule');
 
@@ -160,18 +160,18 @@ static const List<WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents($value)';}
+}
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class WebhookDeploymentCreatedDeploymentPerformedViaGithubApp {const WebhookDeploymentCreatedDeploymentPerformedViaGithubApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.permissions, this.slug, });
 
-factory WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
+factory WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(Map<String, dynamic> json) {return WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   description: json['description'] as String?,
   events: (json['events'] as List<dynamic>?)?.map((e) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents.fromJson(e as String)).toList(),
@@ -184,7 +184,7 @@ factory WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(Map<Str
   permissions: json['permissions'] != null ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   slug: json['slug'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -215,7 +215,7 @@ final String? slug;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt?.toIso8601String(),
   'description': description,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
@@ -228,8 +228,8 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
   'slug': ?slug,
   'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('external_url') && (json['external_url'] == null || json['external_url'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -237,8 +237,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
-      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
-WebhookDeploymentCreatedDeploymentPerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner? Function()? owner, WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String);}
+WebhookDeploymentCreatedDeploymentPerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner? Function()? owner, WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) {return WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,
@@ -251,8 +251,8 @@ WebhookDeploymentCreatedDeploymentPerformedViaGithubApp copyWith({DateTime? Func
   permissions: permissions != null ? permissions() : this.permissions,
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentCreatedDeploymentPerformedViaGithubApp &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -265,7 +265,7 @@ WebhookDeploymentCreatedDeploymentPerformedViaGithubApp copyWith({DateTime? Func
           owner == other.owner &&
           permissions == other.permissions &&
           slug == other.slug &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt); } 
-@override String toString() { return 'WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt);}
+@override String toString() {return 'WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)';}
+}

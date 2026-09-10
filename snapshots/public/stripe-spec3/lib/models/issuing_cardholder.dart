@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_address.dart';import 'issuing_cardholder_authorization_controls.dart';import 'issuing_cardholder_company.dart';import 'issuing_cardholder_individual.dart';import 'issuing_cardholder_requirements.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingCardholderObject {const IssuingCardholderObject._(this.value);
 
-factory IssuingCardholderObject.fromJson(String json) { return switch (json) {
+factory IssuingCardholderObject.fromJson(String json) {return switch (json) {
   'issuing.cardholder' => issuingCardholder,
   _ => IssuingCardholderObject._(json),
-}; }
+};}
 
 static const IssuingCardholderObject issuingCardholder = IssuingCardholderObject._('issuing.cardholder');
 
@@ -14,24 +14,24 @@ static const List<IssuingCardholderObject> values = [issuingCardholder];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardholderObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardholderObject($value)';}
+}
 @immutable final class IssuingCardholderPreferredLocales {const IssuingCardholderPreferredLocales._(this.value);
 
-factory IssuingCardholderPreferredLocales.fromJson(String json) { return switch (json) {
+factory IssuingCardholderPreferredLocales.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'es' => es,
   'fr' => fr,
   'it' => it,
   _ => IssuingCardholderPreferredLocales._(json),
-}; }
+};}
 
 static const IssuingCardholderPreferredLocales de = IssuingCardholderPreferredLocales._('de');
 
@@ -47,23 +47,23 @@ static const List<IssuingCardholderPreferredLocales> values = [de, en, es, fr, i
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderPreferredLocales && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderPreferredLocales($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardholderPreferredLocales && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardholderPreferredLocales($value)';}
+}
 /// Specifies whether to permit authorizations on this cardholder's cards.
 @immutable final class IssuingCardholderStatus {const IssuingCardholderStatus._(this.value);
 
-factory IssuingCardholderStatus.fromJson(String json) { return switch (json) {
+factory IssuingCardholderStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'blocked' => blocked,
   'inactive' => inactive,
   _ => IssuingCardholderStatus._(json),
-}; }
+};}
 
 static const IssuingCardholderStatus active = IssuingCardholderStatus._('active');
 
@@ -75,22 +75,22 @@ static const List<IssuingCardholderStatus> values = [active, blocked, inactive];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardholderStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardholderStatus($value)';}
+}
 /// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
 @immutable final class IssuingCardholderType {const IssuingCardholderType._(this.value);
 
-factory IssuingCardholderType.fromJson(String json) { return switch (json) {
+factory IssuingCardholderType.fromJson(String json) {return switch (json) {
   'company' => company,
   'individual' => individual,
   _ => IssuingCardholderType._(json),
-}; }
+};}
 
 static const IssuingCardholderType company = IssuingCardholderType._('company');
 
@@ -100,20 +100,20 @@ static const List<IssuingCardholderType> values = [company, individual];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardholderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardholderType($value)';}
+}
 /// An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards.
 /// 
 /// Related guide: [How to create a cardholder](https://docs.stripe.com/issuing/cards/virtual/issue-cards#create-cardholder)
 @immutable final class IssuingCardholder {const IssuingCardholder({required this.billing, required this.created, required this.id, required this.livemode, required this.metadata, required this.name, required this.object, required this.requirements, required this.status, required this.type, this.company = const Omittable.absent(), this.email = const Omittable.absent(), this.individual = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.spendingControls = const Omittable.absent(), });
 
-factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCardholder(
+factory IssuingCardholder.fromJson(Map<String, dynamic> json) {return IssuingCardholder(
   billing: IssuingCardholderAddress.fromJson(json['billing'] as Map<String, dynamic>),
   company: json.containsKey('company') ? Omittable(json['company'] != null ? IssuingCardholderCompany.fromJson(json['company'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -130,7 +130,7 @@ factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCa
   spendingControls: json.containsKey('spending_controls') ? Omittable(json['spending_controls'] != null ? IssuingCardholderAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: IssuingCardholderStatus.fromJson(json['status'] as String),
   type: IssuingCardholderType.fromJson(json['type'] as String),
-); }
+);}
 
 final IssuingCardholderAddress billing;
 
@@ -179,7 +179,7 @@ final IssuingCardholderStatus status;
 /// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
 final IssuingCardholderType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billing': billing.toJson(),
   if (company.isPresent) 'company': company.value?.toJson(),
   'created': created,
@@ -196,8 +196,8 @@ Map<String, dynamic> toJson() { return {
   if (spendingControls.isPresent) 'spending_controls': spendingControls.value?.toJson(),
   'status': status.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
@@ -206,8 +206,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('object') &&
       json.containsKey('requirements') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-IssuingCardholder copyWith({IssuingCardholderAddress? billing, Omittable<IssuingCardholderCompany?>? company, int? created, Omittable<String?>? email, String? id, Omittable<IssuingCardholderIndividual?>? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, Omittable<String?>? phoneNumber, Omittable<List<IssuingCardholderPreferredLocales>?>? preferredLocales, IssuingCardholderRequirements? requirements, Omittable<IssuingCardholderAuthorizationControls?>? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
+      json.containsKey('type');}
+IssuingCardholder copyWith({IssuingCardholderAddress? billing, Omittable<IssuingCardholderCompany?>? company, int? created, Omittable<String?>? email, String? id, Omittable<IssuingCardholderIndividual?>? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, Omittable<String?>? phoneNumber, Omittable<List<IssuingCardholderPreferredLocales>?>? preferredLocales, IssuingCardholderRequirements? requirements, Omittable<IssuingCardholderAuthorizationControls?>? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) {return IssuingCardholder(
   billing: billing ?? this.billing,
   company: company ?? this.company,
   created: created ?? this.created,
@@ -224,8 +224,8 @@ IssuingCardholder copyWith({IssuingCardholderAddress? billing, Omittable<Issuing
   spendingControls: spendingControls ?? this.spendingControls,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingCardholder &&
           billing == other.billing &&
           company == other.company &&
@@ -243,7 +243,7 @@ IssuingCardholder copyWith({IssuingCardholderAddress? billing, Omittable<Issuing
           requirements == other.requirements &&
           spendingControls == other.spendingControls &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales.value ?? const []), requirements, spendingControls, status, type); } 
-@override String toString() { return 'IssuingCardholder(billing: $billing, company: $company, created: $created, email: $email, id: $id, individual: $individual, livemode: $livemode, metadata: $metadata, name: $name, object: $object, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, requirements: $requirements, spendingControls: $spendingControls, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales.value ?? const []), requirements, spendingControls, status, type);}
+@override String toString() {return 'IssuingCardholder(billing: $billing, company: $company, created: $created, email: $email, id: $id, individual: $individual, livemode: $livemode, metadata: $metadata, name: $name, object: $object, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, requirements: $requirements, spendingControls: $spendingControls, status: $status, type: $type)';}
+}

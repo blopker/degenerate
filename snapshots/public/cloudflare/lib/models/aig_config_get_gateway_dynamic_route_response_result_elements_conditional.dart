@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_response_result_elements_conditional_outputs.dart';import 'aig_config_get_gateway_dynamic_route_response_result_elements_conditional_properties.dart';@immutable final class AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType {const AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType._(this.value);
 
-factory AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
+factory AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType.fromJson(String json) {return switch (json) {
   'conditional' => conditional,
   _ => AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType._(json),
-}; }
+};}
 
 static const AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType conditional = AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType._('conditional');
 
@@ -13,22 +13,22 @@ static const List<AigConfigGetGatewayDynamicRouteResponseResultElementsCondition
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType($value)';}
+}
 @immutable final class AigConfigGetGatewayDynamicRouteResponseResultElementsConditional {const AigConfigGetGatewayDynamicRouteResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
-factory AigConfigGetGatewayDynamicRouteResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteResponseResultElementsConditional(
+factory AigConfigGetGatewayDynamicRouteResponseResultElementsConditional.fromJson(Map<String, dynamic> json) {return AigConfigGetGatewayDynamicRouteResponseResultElementsConditional(
   id: json['id'] as String,
   outputs: AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
   properties: AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType.fromJson(json['type'] as String),
-); }
+);}
 
 final String id;
 
@@ -38,28 +38,28 @@ final AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties
 
 final AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'outputs': outputs.toJson(),
   'properties': properties.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type'); } 
-AigConfigGetGatewayDynamicRouteResponseResultElementsConditional copyWith({String? id, AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalOutputs? outputs, AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties? properties, AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType? type, }) { return AigConfigGetGatewayDynamicRouteResponseResultElementsConditional(
+      json.containsKey('type');}
+AigConfigGetGatewayDynamicRouteResponseResultElementsConditional copyWith({String? id, AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalOutputs? outputs, AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalProperties? properties, AigConfigGetGatewayDynamicRouteResponseResultElementsConditionalType? type, }) {return AigConfigGetGatewayDynamicRouteResponseResultElementsConditional(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigGetGatewayDynamicRouteResponseResultElementsConditional &&
           id == other.id &&
           outputs == other.outputs &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, outputs, properties, type); } 
-@override String toString() { return 'AigConfigGetGatewayDynamicRouteResponseResultElementsConditional(id: $id, outputs: $outputs, properties: $properties, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(id, outputs, properties, type);}
+@override String toString() {return 'AigConfigGetGatewayDynamicRouteResponseResultElementsConditional(id: $id, outputs: $outputs, properties: $properties, type: $type)';}
+}

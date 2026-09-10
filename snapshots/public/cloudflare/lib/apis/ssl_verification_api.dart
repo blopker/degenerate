@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ssl_verification_edit_ssl_certificate_pack_validation_method_response4_xx.dart';import '../models/ssl_verification_ssl_verification_details_response4_xx.dart';import '../models/tls_certificates_and_hostnames_cert_pack_uuid.dart';import '../models/tls_certificates_and_hostnames_components_schemas_validation_method.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_ssl_validation_method_response_collection_result.dart';import '../models/tls_certificates_and_hostnames_verification.dart';/// SslVerificationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ssl_verification_edit_ssl_certificate_pack_validation_method_response4xx.dart';import '../models/ssl_verification_ssl_verification_details_response4xx.dart';import '../models/tls_certificates_and_hostnames_cert_pack_uuid.dart';import '../models/tls_certificates_and_hostnames_components_schemas_validation_method.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_ssl_validation_method_response_collection_result.dart';import '../models/tls_certificates_and_hostnames_verification.dart';/// SslVerificationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class SslVerificationApi with ApiExecutor {const SslVerificationApi(this.a
 /// Get SSL Verification Info for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/verification`
-Future<ApiResult<List<TlsCertificatesAndHostnamesVerification>?, SslVerificationSslVerificationDetailsResponse4Xx>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic retry, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TlsCertificatesAndHostnamesVerification>?, SslVerificationSslVerificationDetailsResponse4xx>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic retry, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (retry != null) {
   queryParameters['retry'] = retry.toString();
@@ -30,30 +30,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesVerification.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesVerification.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SslVerificationSslVerificationDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  SslVerificationSslVerificationDetailsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Edit SSL Certificate Pack Validation Method
 ///
 /// Edit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.
 ///
 /// `PATCH /zones/{zone_id}/ssl/verification/{certificate_pack_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult?, SslVerificationEditSslCertificatePackValidationMethodResponse4Xx>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult?, SslVerificationEditSslCertificatePackValidationMethodResponse4xx>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,22 +53,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SslVerificationEditSslCertificatePackValidationMethodResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  SslVerificationEditSslCertificatePackValidationMethodResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

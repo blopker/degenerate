@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentLinksResourcePhoneNumberCollection {const PaymentLinksResourcePhoneNumberCollection({required this.enabled});
 
-factory PaymentLinksResourcePhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourcePhoneNumberCollection(
+factory PaymentLinksResourcePhoneNumberCollection.fromJson(Map<String, dynamic> json) {return PaymentLinksResourcePhoneNumberCollection(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// If `true`, a phone number will be collected during checkout.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentLinksResourcePhoneNumberCollection copyWith({bool? enabled}) { return PaymentLinksResourcePhoneNumberCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PaymentLinksResourcePhoneNumberCollection copyWith({bool? enabled}) {return PaymentLinksResourcePhoneNumberCollection(
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentLinksResourcePhoneNumberCollection &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'PaymentLinksResourcePhoneNumberCollection(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'PaymentLinksResourcePhoneNumberCollection(enabled: $enabled)';}
+}

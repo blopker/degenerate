@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AudioTranscriptionModelVariant2 {const AudioTranscriptionModelVariant2._(this.value);
 
-factory AudioTranscriptionModelVariant2.fromJson(String json) { return switch (json) {
+factory AudioTranscriptionModelVariant2.fromJson(String json) {return switch (json) {
   'whisper-1' => whisper1,
   'gpt-4o-mini-transcribe' => gpt4oMiniTranscribe,
   'gpt-4o-mini-transcribe-2025-12-15' => gpt4oMiniTranscribe20251215,
   'gpt-4o-transcribe' => gpt4oTranscribe,
   'gpt-4o-transcribe-diarize' => gpt4oTranscribeDiarize,
   _ => AudioTranscriptionModelVariant2._(json),
-}; }
+};}
 
 static const AudioTranscriptionModelVariant2 whisper1 = AudioTranscriptionModelVariant2._('whisper-1');
 
@@ -25,14 +25,14 @@ static const List<AudioTranscriptionModelVariant2> values = [whisper1, gpt4oMini
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AudioTranscriptionModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AudioTranscriptionModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AudioTranscriptionModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AudioTranscriptionModelVariant2($value)';}
+}
 /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, and `gpt-4o-transcribe-diarize`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
 /// 
 @immutable

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'dispute_charge.dart';import 'dispute_evidence.dart';import 'dispute_evidence_details.dart';import 'dispute_payment_intent.dart';import 'dispute_payment_method_details.dart';@immutable final class DisputeEnhancedEligibilityTypes {const DisputeEnhancedEligibilityTypes._(this.value);
 
-factory DisputeEnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
+factory DisputeEnhancedEligibilityTypes.fromJson(String json) {return switch (json) {
   'visa_compelling_evidence_3' => visaCompellingEvidence3,
   'visa_compliance' => visaCompliance,
   _ => DisputeEnhancedEligibilityTypes._(json),
-}; }
+};}
 
 static const DisputeEnhancedEligibilityTypes visaCompellingEvidence3 = DisputeEnhancedEligibilityTypes._('visa_compelling_evidence_3');
 
@@ -16,21 +16,21 @@ static const List<DisputeEnhancedEligibilityTypes> values = [visaCompellingEvide
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeEnhancedEligibilityTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeEnhancedEligibilityTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DisputeEnhancedEligibilityTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DisputeEnhancedEligibilityTypes($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class DisputeObject {const DisputeObject._(this.value);
 
-factory DisputeObject.fromJson(String json) { return switch (json) {
+factory DisputeObject.fromJson(String json) {return switch (json) {
   'dispute' => dispute,
   _ => DisputeObject._(json),
-}; }
+};}
 
 static const DisputeObject dispute = DisputeObject._('dispute');
 
@@ -38,18 +38,18 @@ static const List<DisputeObject> values = [dispute];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DisputeObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DisputeObject($value)';}
+}
 /// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
 @immutable final class DisputeStatus {const DisputeStatus._(this.value);
 
-factory DisputeStatus.fromJson(String json) { return switch (json) {
+factory DisputeStatus.fromJson(String json) {return switch (json) {
   'lost' => lost,
   'needs_response' => needsResponse,
   'prevented' => prevented,
@@ -59,7 +59,7 @@ factory DisputeStatus.fromJson(String json) { return switch (json) {
   'warning_under_review' => warningUnderReview,
   'won' => won,
   _ => DisputeStatus._(json),
-}; }
+};}
 
 static const DisputeStatus lost = DisputeStatus._('lost');
 
@@ -81,14 +81,14 @@ static const List<DisputeStatus> values = [lost, needsResponse, prevented, under
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DisputeStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DisputeStatus($value)';}
+}
 /// A dispute occurs when a customer questions your charge with their card issuer.
 /// When this happens, you have the opportunity to respond to the dispute with
 /// evidence that shows that the charge is legitimate.
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Disputes and fraud](https://docs.stripe.com/disputes)
 @immutable final class Dispute {const Dispute({required this.amount, required this.balanceTransactions, required this.charge, required this.created, required this.currency, required this.enhancedEligibilityTypes, required this.evidence, required this.evidenceDetails, required this.id, required this.isChargeRefundable, required this.livemode, required this.metadata, required this.object, required this.reason, required this.status, this.paymentIntent = const Omittable.absent(), this.paymentMethodDetails, });
 
-factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
+factory Dispute.fromJson(Map<String, dynamic> json) {return Dispute(
   amount: (json['amount'] as num).toInt(),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
   charge: DisputeCharge.fromJson(json['charge']),
@@ -114,7 +114,7 @@ factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   paymentMethodDetails: json['payment_method_details'] != null ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String,
   status: DisputeStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Disputed amount. Usually the amount of the charge, but it can differ (usually because of currency fluctuation or because only part of the order is disputed).
 final int amount;
@@ -164,7 +164,7 @@ final String reason;
 /// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
 final DisputeStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'balance_transactions': balanceTransactions.map((e) => e.toJson()).toList(),
   'charge': charge.toJson(),
@@ -182,8 +182,8 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodDetails != null) 'payment_method_details': paymentMethodDetails?.toJson(),
   'reason': reason,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('balance_transactions') &&
       json.containsKey('charge') &&
       json.containsKey('created') && json['created'] is num &&
@@ -197,8 +197,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('reason') && json['reason'] is String &&
-      json.containsKey('status'); } 
-Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, DisputeCharge? charge, int? created, String? currency, List<DisputeEnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, Omittable<DisputePaymentIntent?>? paymentIntent, DisputePaymentMethodDetails? Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
+      json.containsKey('status');}
+Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, DisputeCharge? charge, int? created, String? currency, List<DisputeEnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, Omittable<DisputePaymentIntent?>? paymentIntent, DisputePaymentMethodDetails? Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) {return Dispute(
   amount: amount ?? this.amount,
   balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   charge: charge ?? this.charge,
@@ -216,8 +216,8 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Di
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
   reason: reason ?? this.reason,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Dispute &&
           amount == other.amount &&
           listEquals(balanceTransactions, other.balanceTransactions) &&
@@ -235,7 +235,7 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Di
           paymentIntent == other.paymentIntent &&
           paymentMethodDetails == other.paymentMethodDetails &&
           reason == other.reason &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(balanceTransactions), charge, created, currency, Object.hashAll(enhancedEligibilityTypes), evidence, evidenceDetails, id, isChargeRefundable, livemode, metadata, object, paymentIntent, paymentMethodDetails, reason, status); } 
-@override String toString() { return 'Dispute(amount: $amount, balanceTransactions: $balanceTransactions, charge: $charge, created: $created, currency: $currency, enhancedEligibilityTypes: $enhancedEligibilityTypes, evidence: $evidence, evidenceDetails: $evidenceDetails, id: $id, isChargeRefundable: $isChargeRefundable, livemode: $livemode, metadata: $metadata, object: $object, paymentIntent: $paymentIntent, paymentMethodDetails: $paymentMethodDetails, reason: $reason, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(amount, Object.hashAll(balanceTransactions), charge, created, currency, Object.hashAll(enhancedEligibilityTypes), evidence, evidenceDetails, id, isChargeRefundable, livemode, metadata, object, paymentIntent, paymentMethodDetails, reason, status);}
+@override String toString() {return 'Dispute(amount: $amount, balanceTransactions: $balanceTransactions, charge: $charge, created: $created, currency: $currency, enhancedEligibilityTypes: $enhancedEligibilityTypes, evidence: $evidence, evidenceDetails: $evidenceDetails, id: $id, isChargeRefundable: $isChargeRefundable, livemode: $livemode, metadata: $metadata, object: $object, paymentIntent: $paymentIntent, paymentMethodDetails: $paymentMethodDetails, reason: $reason, status: $status)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_subscription_data_trial_settings_end_behavior.dart';@immutable final class PostPaymentLinksRequestSubscriptionDataTrialSettings {const PostPaymentLinksRequestSubscriptionDataTrialSettings({required this.endBehavior});
 
-factory PostPaymentLinksRequestSubscriptionDataTrialSettings.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestSubscriptionDataTrialSettings(
+factory PostPaymentLinksRequestSubscriptionDataTrialSettings.fromJson(Map<String, dynamic> json) {return PostPaymentLinksRequestSubscriptionDataTrialSettings(
   endBehavior: PostPaymentLinksRequestSubscriptionDataTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),
-); }
+);}
 
 final PostPaymentLinksRequestSubscriptionDataTrialSettingsEndBehavior endBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_behavior': endBehavior.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_behavior'); } 
-PostPaymentLinksRequestSubscriptionDataTrialSettings copyWith({PostPaymentLinksRequestSubscriptionDataTrialSettingsEndBehavior? endBehavior}) { return PostPaymentLinksRequestSubscriptionDataTrialSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end_behavior');}
+PostPaymentLinksRequestSubscriptionDataTrialSettings copyWith({PostPaymentLinksRequestSubscriptionDataTrialSettingsEndBehavior? endBehavior}) {return PostPaymentLinksRequestSubscriptionDataTrialSettings(
   endBehavior: endBehavior ?? this.endBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksRequestSubscriptionDataTrialSettings &&
-          endBehavior == other.endBehavior; } 
-@override int get hashCode { return endBehavior.hashCode; } 
-@override String toString() { return 'PostPaymentLinksRequestSubscriptionDataTrialSettings(endBehavior: $endBehavior)'; } 
- }
+          endBehavior == other.endBehavior;}
+@override int get hashCode {return endBehavior.hashCode;}
+@override String toString() {return 'PostPaymentLinksRequestSubscriptionDataTrialSettings(endBehavior: $endBehavior)';}
+}

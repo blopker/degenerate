@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostLinkAccountSessionsRequestAccountHolderType {const PostLinkAccountSessionsRequestAccountHolderType._(this.value);
 
-factory PostLinkAccountSessionsRequestAccountHolderType.fromJson(String json) { return switch (json) {
+factory PostLinkAccountSessionsRequestAccountHolderType.fromJson(String json) {return switch (json) {
   'account' => account,
   'customer' => customer,
   _ => PostLinkAccountSessionsRequestAccountHolderType._(json),
-}; }
+};}
 
 static const PostLinkAccountSessionsRequestAccountHolderType account = PostLinkAccountSessionsRequestAccountHolderType._('account');
 
@@ -16,23 +16,23 @@ static const List<PostLinkAccountSessionsRequestAccountHolderType> values = [acc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostLinkAccountSessionsRequestAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostLinkAccountSessionsRequestAccountHolderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostLinkAccountSessionsRequestAccountHolderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostLinkAccountSessionsRequestAccountHolderType($value)';}
+}
 /// The account holder to link accounts for.
 @immutable final class PostLinkAccountSessionsRequestAccountHolder {const PostLinkAccountSessionsRequestAccountHolder({required this.type, this.account, this.customer, this.customerAccount, });
 
-factory PostLinkAccountSessionsRequestAccountHolder.fromJson(Map<String, dynamic> json) { return PostLinkAccountSessionsRequestAccountHolder(
+factory PostLinkAccountSessionsRequestAccountHolder.fromJson(Map<String, dynamic> json) {return PostLinkAccountSessionsRequestAccountHolder(
   account: json['account'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   type: PostLinkAccountSessionsRequestAccountHolderType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
@@ -42,25 +42,25 @@ final String? customerAccount;
 
 final PostLinkAccountSessionsRequestAccountHolderType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'customer': ?customer,
   'customer_account': ?customerAccount,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostLinkAccountSessionsRequestAccountHolder copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, PostLinkAccountSessionsRequestAccountHolderType? type, }) { return PostLinkAccountSessionsRequestAccountHolder(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostLinkAccountSessionsRequestAccountHolder copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, PostLinkAccountSessionsRequestAccountHolderType? type, }) {return PostLinkAccountSessionsRequestAccountHolder(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostLinkAccountSessionsRequestAccountHolder &&
           account == other.account &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, customer, customerAccount, type); } 
-@override String toString() { return 'PostLinkAccountSessionsRequestAccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, customer, customerAccount, type);}
+@override String toString() {return 'PostLinkAccountSessionsRequestAccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)';}
+}

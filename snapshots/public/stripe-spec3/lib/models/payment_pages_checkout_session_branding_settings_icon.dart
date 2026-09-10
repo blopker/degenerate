@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of image for the icon. Must be one of `file` or `url`.
 @immutable final class PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType._(this.value);
 
-factory PaymentPagesCheckoutSessionBrandingSettingsIconType.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionBrandingSettingsIconType.fromJson(String json) {return switch (json) {
   'file' => file,
   'url' => url,
   _ => PaymentPagesCheckoutSessionBrandingSettingsIconType._(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionBrandingSettingsIconType file = PaymentPagesCheckoutSessionBrandingSettingsIconType._('file');
 
@@ -17,22 +17,22 @@ static const List<PaymentPagesCheckoutSessionBrandingSettingsIconType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionBrandingSettingsIconType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsIconType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionBrandingSettingsIconType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentPagesCheckoutSessionBrandingSettingsIconType($value)';}
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionBrandingSettingsIcon {const PaymentPagesCheckoutSessionBrandingSettingsIcon({required this.type, this.file, this.url, });
 
-factory PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionBrandingSettingsIcon(
+factory PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionBrandingSettingsIcon(
   file: json['file'] as String?,
   type: PaymentPagesCheckoutSessionBrandingSettingsIconType.fromJson(json['type'] as String),
   url: json['url'] as String?,
-); }
+);}
 
 /// The ID of a [File upload](https://stripe.com/docs/api/files) representing the icon. Purpose must be `business_icon`. Required if `type` is `file` and disallowed otherwise.
 final String? file;
@@ -43,22 +43,22 @@ final PaymentPagesCheckoutSessionBrandingSettingsIconType type;
 /// The URL of the image. Present when `type` is `url`.
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': ?file,
   'type': type.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentPagesCheckoutSessionBrandingSettingsIcon copyWith({String? Function()? file, PaymentPagesCheckoutSessionBrandingSettingsIconType? type, String? Function()? url, }) { return PaymentPagesCheckoutSessionBrandingSettingsIcon(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PaymentPagesCheckoutSessionBrandingSettingsIcon copyWith({String? Function()? file, PaymentPagesCheckoutSessionBrandingSettingsIconType? type, String? Function()? url, }) {return PaymentPagesCheckoutSessionBrandingSettingsIcon(
   file: file != null ? file() : this.file,
   type: type ?? this.type,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionBrandingSettingsIcon &&
           file == other.file &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(file, type, url); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsIcon(file: $file, type: $type, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(file, type, url);}
+@override String toString() {return 'PaymentPagesCheckoutSessionBrandingSettingsIcon(file: $file, type: $type, url: $url)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxCalculationsRequestCustomerDetailsTaxIdsType {const PostTaxCalculationsRequestCustomerDetailsTaxIdsType._(this.value);
 
-factory PostTaxCalculationsRequestCustomerDetailsTaxIdsType.fromJson(String json) { return switch (json) {
+factory PostTaxCalculationsRequestCustomerDetailsTaxIdsType.fromJson(String json) {return switch (json) {
   'ad_nrt' => adNrt,
   'ae_trn' => aeTrn,
   'al_tin' => alTin,
@@ -116,7 +116,7 @@ factory PostTaxCalculationsRequestCustomerDetailsTaxIdsType.fromJson(String json
   'zm_tin' => zmTin,
   'zw_tin' => zwTin,
   _ => PostTaxCalculationsRequestCustomerDetailsTaxIdsType._(json),
-}; }
+};}
 
 static const PostTaxCalculationsRequestCustomerDetailsTaxIdsType adNrt = PostTaxCalculationsRequestCustomerDetailsTaxIdsType._('ad_nrt');
 
@@ -346,39 +346,39 @@ static const List<PostTaxCalculationsRequestCustomerDetailsTaxIdsType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxCalculationsRequestCustomerDetailsTaxIdsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxCalculationsRequestCustomerDetailsTaxIdsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxCalculationsRequestCustomerDetailsTaxIdsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxCalculationsRequestCustomerDetailsTaxIdsType($value)';}
+}
 @immutable final class PostTaxCalculationsRequestCustomerDetailsTaxIds {const PostTaxCalculationsRequestCustomerDetailsTaxIds({required this.type, required this.value, });
 
-factory PostTaxCalculationsRequestCustomerDetailsTaxIds.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetailsTaxIds(
+factory PostTaxCalculationsRequestCustomerDetailsTaxIds.fromJson(Map<String, dynamic> json) {return PostTaxCalculationsRequestCustomerDetailsTaxIds(
   type: PostTaxCalculationsRequestCustomerDetailsTaxIdsType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 final PostTaxCalculationsRequestCustomerDetailsTaxIdsType type;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PostTaxCalculationsRequestCustomerDetailsTaxIds copyWith({PostTaxCalculationsRequestCustomerDetailsTaxIdsType? type, String? value, }) { return PostTaxCalculationsRequestCustomerDetailsTaxIds(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PostTaxCalculationsRequestCustomerDetailsTaxIds copyWith({PostTaxCalculationsRequestCustomerDetailsTaxIdsType? type, String? value, }) {return PostTaxCalculationsRequestCustomerDetailsTaxIds(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxCalculationsRequestCustomerDetailsTaxIds &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'PostTaxCalculationsRequestCustomerDetailsTaxIds(type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, value);}
+@override String toString() {return 'PostTaxCalculationsRequestCustomerDetailsTaxIds(type: $type, value: $value)';}
+}

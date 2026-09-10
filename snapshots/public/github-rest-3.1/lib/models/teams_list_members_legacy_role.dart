@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsListMembersLegacyRole {const TeamsListMembersLegacyRole._(this.value);
 
-factory TeamsListMembersLegacyRole.fromJson(String json) { return switch (json) {
+factory TeamsListMembersLegacyRole.fromJson(String json) {return switch (json) {
   'member' => member,
   'maintainer' => maintainer,
   'all' => all,
   _ => TeamsListMembersLegacyRole._(json),
-}; }
+};}
 
 static const TeamsListMembersLegacyRole member = TeamsListMembersLegacyRole._('member');
 
@@ -19,11 +19,11 @@ static const List<TeamsListMembersLegacyRole> values = [member, maintainer, all]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsListMembersLegacyRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsListMembersLegacyRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsListMembersLegacyRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsListMembersLegacyRole($value)';}
+}

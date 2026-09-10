@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol._(this.value);
 
-factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
   _ => RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol._(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol udp = RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol._('UDP');
 
@@ -22,11 +22,11 @@ static const List<RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionProtocol($value)';}
+}

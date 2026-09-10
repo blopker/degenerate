@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_identifier.dart';@immutable final class WorkersRoute {const WorkersRoute({required this.id, required this.pattern, this.script, });
 
-factory WorkersRoute.fromJson(Map<String, dynamic> json) { return WorkersRoute(
+factory WorkersRoute.fromJson(Map<String, dynamic> json) {return WorkersRoute(
   id: WorkersIdentifier.fromJson(json['id'] as String),
   pattern: json['pattern'] as String,
   script: json['script'] as String?,
-); }
+);}
 
 /// Identifier.
 final WorkersIdentifier id;
@@ -17,23 +17,23 @@ final String pattern;
 /// Name of the script to run if the route matches.
 final String? script;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   'pattern': pattern,
   'script': ?script,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('pattern') && json['pattern'] is String; } 
-WorkersRoute copyWith({WorkersIdentifier? id, String? pattern, String? Function()? script, }) { return WorkersRoute(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('pattern') && json['pattern'] is String;}
+WorkersRoute copyWith({WorkersIdentifier? id, String? pattern, String? Function()? script, }) {return WorkersRoute(
   id: id ?? this.id,
   pattern: pattern ?? this.pattern,
   script: script != null ? script() : this.script,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersRoute &&
           id == other.id &&
           pattern == other.pattern &&
-          script == other.script; } 
-@override int get hashCode { return Object.hash(id, pattern, script); } 
-@override String toString() { return 'WorkersRoute(id: $id, pattern: $pattern, script: $script)'; } 
- }
+          script == other.script;}
+@override int get hashCode {return Object.hash(id, pattern, script);}
+@override String toString() {return 'WorkersRoute(id: $id, pattern: $pattern, script: $script)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems {const PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems({required this.id, this.price, this.quantity, });
 
-factory PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(
+factory PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems.fromJson(Map<String, dynamic> json) {return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(
   id: json['id'] as String,
   price: json['price'] as String?,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-); }
+);}
 
 final String id;
 
@@ -14,22 +14,22 @@ final String? price;
 
 final int? quantity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'price': ?price,
   'quantity': ?quantity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems copyWith({String? id, String? Function()? price, int? Function()? quantity, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems copyWith({String? id, String? Function()? price, int? Function()? quantity, }) {return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(
   id: id ?? this.id,
   price: price != null ? price() : this.price,
   quantity: quantity != null ? quantity() : this.quantity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems &&
           id == other.id &&
           price == other.price &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(id, price, quantity); } 
-@override String toString() { return 'PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(id: $id, price: $price, quantity: $quantity)'; } 
- }
+          quantity == other.quantity;}
+@override int get hashCode {return Object.hash(id, price, quantity);}
+@override String toString() {return 'PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems(id: $id, price: $price, quantity: $quantity)';}
+}

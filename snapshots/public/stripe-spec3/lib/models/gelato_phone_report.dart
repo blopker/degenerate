@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_phone_report_error.dart';/// Status of this `phone` check.
 @immutable final class GelatoPhoneReportStatus {const GelatoPhoneReportStatus._(this.value);
 
-factory GelatoPhoneReportStatus.fromJson(String json) { return switch (json) {
+factory GelatoPhoneReportStatus.fromJson(String json) {return switch (json) {
   'unverified' => unverified,
   'verified' => verified,
   _ => GelatoPhoneReportStatus._(json),
-}; }
+};}
 
 static const GelatoPhoneReportStatus unverified = GelatoPhoneReportStatus._('unverified');
 
@@ -17,22 +17,22 @@ static const List<GelatoPhoneReportStatus> values = [unverified, verified];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoPhoneReportStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoPhoneReportStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GelatoPhoneReportStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GelatoPhoneReportStatus($value)';}
+}
 /// Result from a phone check
 @immutable final class GelatoPhoneReport {const GelatoPhoneReport({required this.status, this.error = const Omittable.absent(), this.phone = const Omittable.absent(), });
 
-factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) { return GelatoPhoneReport(
+factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) {return GelatoPhoneReport(
   error: json.containsKey('error') ? Omittable(json['error'] != null ? GelatoPhoneReportError.fromJson(json['error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
   status: GelatoPhoneReportStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Details on the verification error. Present when status is `unverified`.
 final Omittable<GelatoPhoneReportError?> error;
@@ -43,22 +43,22 @@ final Omittable<String?> phone;
 /// Status of this `phone` check.
 final GelatoPhoneReportStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (error.isPresent) 'error': error.value?.toJson(),
   if (phone.isPresent) 'phone': phone.value,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoPhoneReport copyWith({Omittable<GelatoPhoneReportError?>? error, Omittable<String?>? phone, GelatoPhoneReportStatus? status, }) { return GelatoPhoneReport(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+GelatoPhoneReport copyWith({Omittable<GelatoPhoneReportError?>? error, Omittable<String?>? phone, GelatoPhoneReportStatus? status, }) {return GelatoPhoneReport(
   error: error ?? this.error,
   phone: phone ?? this.phone,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GelatoPhoneReport &&
           error == other.error &&
           phone == other.phone &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(error, phone, status); } 
-@override String toString() { return 'GelatoPhoneReport(error: $error, phone: $phone, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(error, phone, status);}
+@override String toString() {return 'GelatoPhoneReport(error: $error, phone: $phone, status: $status)';}
+}

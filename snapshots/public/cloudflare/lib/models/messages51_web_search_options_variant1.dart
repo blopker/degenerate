@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_web_search_options_variant1_user_location.dart';@immutable final class Messages51WebSearchOptionsVariant1SearchContextSize {const Messages51WebSearchOptionsVariant1SearchContextSize._(this.value);
 
-factory Messages51WebSearchOptionsVariant1SearchContextSize.fromJson(String json) { return switch (json) {
+factory Messages51WebSearchOptionsVariant1SearchContextSize.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => Messages51WebSearchOptionsVariant1SearchContextSize._(json),
-}; }
+};}
 
 static const Messages51WebSearchOptionsVariant1SearchContextSize low = Messages51WebSearchOptionsVariant1SearchContextSize._('low');
 
@@ -19,41 +19,41 @@ static const List<Messages51WebSearchOptionsVariant1SearchContextSize> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Messages51WebSearchOptionsVariant1SearchContextSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Messages51WebSearchOptionsVariant1SearchContextSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Messages51WebSearchOptionsVariant1SearchContextSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Messages51WebSearchOptionsVariant1SearchContextSize($value)';}
+}
 /// Options for the web search tool (when using built-in web search).
 @immutable final class Messages51WebSearchOptionsVariant1 {const Messages51WebSearchOptionsVariant1({this.searchContextSize, this.userLocation, });
 
-factory Messages51WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) { return Messages51WebSearchOptionsVariant1(
+factory Messages51WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) {return Messages51WebSearchOptionsVariant1(
   searchContextSize: json['search_context_size'] != null ? Messages51WebSearchOptionsVariant1SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   userLocation: json['user_location'] != null ? Messages51WebSearchOptionsVariant1UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Messages51WebSearchOptionsVariant1SearchContextSize? searchContextSize;
 
 final Messages51WebSearchOptionsVariant1UserLocation? userLocation;
 
 /// The value with the schema default applied when absent.
-Messages51WebSearchOptionsVariant1SearchContextSize get searchContextSizeOrDefault { return searchContextSize ?? Messages51WebSearchOptionsVariant1SearchContextSize.fromJson('medium'); } 
-Map<String, dynamic> toJson() { return {
+Messages51WebSearchOptionsVariant1SearchContextSize get searchContextSizeOrDefault {return searchContextSize ?? Messages51WebSearchOptionsVariant1SearchContextSize.fromJson('medium');}
+Map<String, dynamic> toJson() {return {
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
   if (userLocation != null) 'user_location': userLocation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key)); } 
-Messages51WebSearchOptionsVariant1 copyWith({Messages51WebSearchOptionsVariant1SearchContextSize? Function()? searchContextSize, Messages51WebSearchOptionsVariant1UserLocation? Function()? userLocation, }) { return Messages51WebSearchOptionsVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key));}
+Messages51WebSearchOptionsVariant1 copyWith({Messages51WebSearchOptionsVariant1SearchContextSize? Function()? searchContextSize, Messages51WebSearchOptionsVariant1UserLocation? Function()? userLocation, }) {return Messages51WebSearchOptionsVariant1(
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages51WebSearchOptionsVariant1 &&
           searchContextSize == other.searchContextSize &&
-          userLocation == other.userLocation; } 
-@override int get hashCode { return Object.hash(searchContextSize, userLocation); } 
-@override String toString() { return 'Messages51WebSearchOptionsVariant1(searchContextSize: $searchContextSize, userLocation: $userLocation)'; } 
- }
+          userLocation == other.userLocation;}
+@override int get hashCode {return Object.hash(searchContextSize, userLocation);}
+@override String toString() {return 'Messages51WebSearchOptionsVariant1(searchContextSize: $searchContextSize, userLocation: $userLocation)';}
+}

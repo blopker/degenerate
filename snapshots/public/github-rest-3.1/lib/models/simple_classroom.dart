@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub Classroom classroom
 @immutable final class SimpleClassroom {const SimpleClassroom({required this.id, required this.name, required this.archived, required this.url, });
 
-factory SimpleClassroom.fromJson(Map<String, dynamic> json) { return SimpleClassroom(
+factory SimpleClassroom.fromJson(Map<String, dynamic> json) {return SimpleClassroom(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   archived: json['archived'] as bool,
   url: json['url'] as String,
-); }
+);}
 
 /// Unique identifier of the classroom.
 final int id;
@@ -22,28 +22,28 @@ final bool archived;
 /// The url of the classroom on GitHub Classroom.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'archived': archived,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('archived') && json['archived'] is bool &&
-      json.containsKey('url') && json['url'] is String; } 
-SimpleClassroom copyWith({int? id, String? name, bool? archived, String? url, }) { return SimpleClassroom(
+      json.containsKey('url') && json['url'] is String;}
+SimpleClassroom copyWith({int? id, String? name, bool? archived, String? url, }) {return SimpleClassroom(
   id: id ?? this.id,
   name: name ?? this.name,
   archived: archived ?? this.archived,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SimpleClassroom &&
           id == other.id &&
           name == other.name &&
           archived == other.archived &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(id, name, archived, url); } 
-@override String toString() { return 'SimpleClassroom(id: $id, name: $name, archived: $archived, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(id, name, archived, url);}
+@override String toString() {return 'SimpleClassroom(id: $id, name: $name, archived: $archived, url: $url)';}
+}

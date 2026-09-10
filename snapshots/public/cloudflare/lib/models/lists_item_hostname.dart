@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).
 @immutable final class ListsItemHostname {const ListsItemHostname({required this.urlHostname, this.excludeExactHostname, });
 
-factory ListsItemHostname.fromJson(Map<String, dynamic> json) { return ListsItemHostname(
+factory ListsItemHostname.fromJson(Map<String, dynamic> json) {return ListsItemHostname(
   excludeExactHostname: json['exclude_exact_hostname'] as bool?,
   urlHostname: json['url_hostname'] as String,
-); }
+);}
 
 /// Only applies to wildcard hostnames (e.g., *.example.com). When true (default), only subdomains are blocked. When false, both the root domain and subdomains are blocked.
 final bool? excludeExactHostname;
 
 final String urlHostname;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'exclude_exact_hostname': ?excludeExactHostname,
   'url_hostname': urlHostname,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url_hostname') && json['url_hostname'] is String; } 
-ListsItemHostname copyWith({bool? Function()? excludeExactHostname, String? urlHostname, }) { return ListsItemHostname(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url_hostname') && json['url_hostname'] is String;}
+ListsItemHostname copyWith({bool? Function()? excludeExactHostname, String? urlHostname, }) {return ListsItemHostname(
   excludeExactHostname: excludeExactHostname != null ? excludeExactHostname() : this.excludeExactHostname,
   urlHostname: urlHostname ?? this.urlHostname,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListsItemHostname &&
           excludeExactHostname == other.excludeExactHostname &&
-          urlHostname == other.urlHostname; } 
-@override int get hashCode { return Object.hash(excludeExactHostname, urlHostname); } 
-@override String toString() { return 'ListsItemHostname(excludeExactHostname: $excludeExactHostname, urlHostname: $urlHostname)'; } 
- }
+          urlHostname == other.urlHostname;}
+@override int get hashCode {return Object.hash(excludeExactHostname, urlHostname);}
+@override String toString() {return 'ListsItemHostname(excludeExactHostname: $excludeExactHostname, urlHostname: $urlHostname)';}
+}

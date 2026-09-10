@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_presets_response_data_permissions_chat.dart';import 'post_presets_response_data_permissions_connected_meetings.dart';import 'post_presets_response_data_permissions_media.dart';import 'post_presets_response_data_permissions_plugins.dart';import 'post_presets_response_data_permissions_polls.dart';/// Type of the recording peer
 @immutable final class PostPresetsResponseDataPermissionsRecorderType {const PostPresetsResponseDataPermissionsRecorderType._(this.value);
 
-factory PostPresetsResponseDataPermissionsRecorderType.fromJson(String json) { return switch (json) {
+factory PostPresetsResponseDataPermissionsRecorderType.fromJson(String json) {return switch (json) {
   'RECORDER' => recorder,
   'LIVESTREAMER' => livestreamer,
   'NONE' => none,
   _ => PostPresetsResponseDataPermissionsRecorderType._(json),
-}; }
+};}
 
 static const PostPresetsResponseDataPermissionsRecorderType recorder = PostPresetsResponseDataPermissionsRecorderType._('RECORDER');
 
@@ -20,23 +20,23 @@ static const List<PostPresetsResponseDataPermissionsRecorderType> values = [reco
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPresetsResponseDataPermissionsRecorderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPresetsResponseDataPermissionsRecorderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPresetsResponseDataPermissionsRecorderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPresetsResponseDataPermissionsRecorderType($value)';}
+}
 /// Waiting room type
 @immutable final class PostPresetsResponseDataPermissionsWaitingRoomType {const PostPresetsResponseDataPermissionsWaitingRoomType._(this.value);
 
-factory PostPresetsResponseDataPermissionsWaitingRoomType.fromJson(String json) { return switch (json) {
+factory PostPresetsResponseDataPermissionsWaitingRoomType.fromJson(String json) {return switch (json) {
   'SKIP' => skip,
   'ON_PRIVILEGED_USER_ENTRY' => onPrivilegedUserEntry,
   'SKIP_ON_ACCEPT' => skipOnAccept,
   _ => PostPresetsResponseDataPermissionsWaitingRoomType._(json),
-}; }
+};}
 
 static const PostPresetsResponseDataPermissionsWaitingRoomType skip = PostPresetsResponseDataPermissionsWaitingRoomType._('SKIP');
 
@@ -48,17 +48,17 @@ static const List<PostPresetsResponseDataPermissionsWaitingRoomType> values = [s
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPresetsResponseDataPermissionsWaitingRoomType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPresetsResponseDataPermissionsWaitingRoomType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPresetsResponseDataPermissionsWaitingRoomType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPresetsResponseDataPermissionsWaitingRoomType($value)';}
+}
 @immutable final class PostPresetsResponseDataPermissions {const PostPresetsResponseDataPermissions({required this.acceptWaitingRequests, required this.canAcceptProductionRequests, required this.canChangeParticipantPermissions, required this.canEditDisplayName, required this.canLivestream, required this.canRecord, required this.canSpotlight, required this.chat, required this.connectedMeetings, required this.disableParticipantAudio, required this.disableParticipantScreensharing, required this.disableParticipantVideo, required this.hiddenParticipant, required this.kickParticipant, required this.media, required this.pinParticipant, required this.plugins, required this.polls, required this.recorderType, required this.showParticipantList, required this.waitingRoomType, this.isRecorder, });
 
-factory PostPresetsResponseDataPermissions.fromJson(Map<String, dynamic> json) { return PostPresetsResponseDataPermissions(
+factory PostPresetsResponseDataPermissions.fromJson(Map<String, dynamic> json) {return PostPresetsResponseDataPermissions(
   acceptWaitingRequests: json['accept_waiting_requests'] as bool,
   canAcceptProductionRequests: json['can_accept_production_requests'] as bool,
   canChangeParticipantPermissions: json['can_change_participant_permissions'] as bool,
@@ -81,7 +81,7 @@ factory PostPresetsResponseDataPermissions.fromJson(Map<String, dynamic> json) {
   recorderType: PostPresetsResponseDataPermissionsRecorderType.fromJson(json['recorder_type'] as String),
   showParticipantList: json['show_participant_list'] as bool,
   waitingRoomType: PostPresetsResponseDataPermissionsWaitingRoomType.fromJson(json['waiting_room_type'] as String),
-); }
+);}
 
 /// Whether this participant can accept waiting requests
 final bool acceptWaitingRequests;
@@ -136,8 +136,8 @@ final bool showParticipantList;
 final PostPresetsResponseDataPermissionsWaitingRoomType waitingRoomType;
 
 /// The value with the schema default applied when absent.
-bool get isRecorderOrDefault { return isRecorder ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get isRecorderOrDefault {return isRecorder ?? false;}
+Map<String, dynamic> toJson() {return {
   'accept_waiting_requests': acceptWaitingRequests,
   'can_accept_production_requests': canAcceptProductionRequests,
   'can_change_participant_permissions': canChangeParticipantPermissions,
@@ -160,8 +160,8 @@ Map<String, dynamic> toJson() { return {
   'recorder_type': recorderType.toJson(),
   'show_participant_list': showParticipantList,
   'waiting_room_type': waitingRoomType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accept_waiting_requests') && json['accept_waiting_requests'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accept_waiting_requests') && json['accept_waiting_requests'] is bool &&
       json.containsKey('can_accept_production_requests') && json['can_accept_production_requests'] is bool &&
       json.containsKey('can_change_participant_permissions') && json['can_change_participant_permissions'] is bool &&
       json.containsKey('can_edit_display_name') && json['can_edit_display_name'] is bool &&
@@ -181,8 +181,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accep
       json.containsKey('polls') &&
       json.containsKey('recorder_type') &&
       json.containsKey('show_participant_list') && json['show_participant_list'] is bool &&
-      json.containsKey('waiting_room_type'); } 
-PostPresetsResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, PostPresetsResponseDataPermissionsChat? chat, PostPresetsResponseDataPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool? Function()? isRecorder, bool? kickParticipant, PostPresetsResponseDataPermissionsMedia? media, bool? pinParticipant, PostPresetsResponseDataPermissionsPlugins? plugins, PostPresetsResponseDataPermissionsPolls? polls, PostPresetsResponseDataPermissionsRecorderType? recorderType, bool? showParticipantList, PostPresetsResponseDataPermissionsWaitingRoomType? waitingRoomType, }) { return PostPresetsResponseDataPermissions(
+      json.containsKey('waiting_room_type');}
+PostPresetsResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, PostPresetsResponseDataPermissionsChat? chat, PostPresetsResponseDataPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool? Function()? isRecorder, bool? kickParticipant, PostPresetsResponseDataPermissionsMedia? media, bool? pinParticipant, PostPresetsResponseDataPermissionsPlugins? plugins, PostPresetsResponseDataPermissionsPolls? polls, PostPresetsResponseDataPermissionsRecorderType? recorderType, bool? showParticipantList, PostPresetsResponseDataPermissionsWaitingRoomType? waitingRoomType, }) {return PostPresetsResponseDataPermissions(
   acceptWaitingRequests: acceptWaitingRequests ?? this.acceptWaitingRequests,
   canAcceptProductionRequests: canAcceptProductionRequests ?? this.canAcceptProductionRequests,
   canChangeParticipantPermissions: canChangeParticipantPermissions ?? this.canChangeParticipantPermissions,
@@ -205,8 +205,8 @@ PostPresetsResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? 
   recorderType: recorderType ?? this.recorderType,
   showParticipantList: showParticipantList ?? this.showParticipantList,
   waitingRoomType: waitingRoomType ?? this.waitingRoomType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPresetsResponseDataPermissions &&
           acceptWaitingRequests == other.acceptWaitingRequests &&
           canAcceptProductionRequests == other.canAcceptProductionRequests &&
@@ -229,7 +229,7 @@ PostPresetsResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? 
           polls == other.polls &&
           recorderType == other.recorderType &&
           showParticipantList == other.showParticipantList &&
-          waitingRoomType == other.waitingRoomType; } 
-@override int get hashCode { return Object.hashAll([acceptWaitingRequests, canAcceptProductionRequests, canChangeParticipantPermissions, canEditDisplayName, canLivestream, canRecord, canSpotlight, chat, connectedMeetings, disableParticipantAudio, disableParticipantScreensharing, disableParticipantVideo, hiddenParticipant, isRecorder, kickParticipant, media, pinParticipant, plugins, polls, recorderType, showParticipantList, waitingRoomType]); } 
-@override String toString() { return 'PostPresetsResponseDataPermissions(acceptWaitingRequests: $acceptWaitingRequests, canAcceptProductionRequests: $canAcceptProductionRequests, canChangeParticipantPermissions: $canChangeParticipantPermissions, canEditDisplayName: $canEditDisplayName, canLivestream: $canLivestream, canRecord: $canRecord, canSpotlight: $canSpotlight, chat: $chat, connectedMeetings: $connectedMeetings, disableParticipantAudio: $disableParticipantAudio, disableParticipantScreensharing: $disableParticipantScreensharing, disableParticipantVideo: $disableParticipantVideo, hiddenParticipant: $hiddenParticipant, isRecorder: $isRecorder, kickParticipant: $kickParticipant, media: $media, pinParticipant: $pinParticipant, plugins: $plugins, polls: $polls, recorderType: $recorderType, showParticipantList: $showParticipantList, waitingRoomType: $waitingRoomType)'; } 
- }
+          waitingRoomType == other.waitingRoomType;}
+@override int get hashCode {return Object.hashAll([acceptWaitingRequests, canAcceptProductionRequests, canChangeParticipantPermissions, canEditDisplayName, canLivestream, canRecord, canSpotlight, chat, connectedMeetings, disableParticipantAudio, disableParticipantScreensharing, disableParticipantVideo, hiddenParticipant, isRecorder, kickParticipant, media, pinParticipant, plugins, polls, recorderType, showParticipantList, waitingRoomType]);}
+@override String toString() {return 'PostPresetsResponseDataPermissions(acceptWaitingRequests: $acceptWaitingRequests, canAcceptProductionRequests: $canAcceptProductionRequests, canChangeParticipantPermissions: $canChangeParticipantPermissions, canEditDisplayName: $canEditDisplayName, canLivestream: $canLivestream, canRecord: $canRecord, canSpotlight: $canSpotlight, chat: $chat, connectedMeetings: $connectedMeetings, disableParticipantAudio: $disableParticipantAudio, disableParticipantScreensharing: $disableParticipantScreensharing, disableParticipantVideo: $disableParticipantVideo, hiddenParticipant: $hiddenParticipant, isRecorder: $isRecorder, kickParticipant: $kickParticipant, media: $media, pinParticipant: $pinParticipant, plugins: $plugins, polls: $polls, recorderType: $recorderType, showParticipantList: $showParticipantList, waitingRoomType: $waitingRoomType)';}
+}

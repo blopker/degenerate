@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue({required this.elementId});
 
-factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue(
+factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue copyWith({String? elementId}) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue copyWith({String? elementId}) {return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue(
   elementId: elementId ?? this.elementId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue &&
-          elementId == other.elementId; } 
-@override int get hashCode { return elementId.hashCode; } 
-@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue(elementId: $elementId)'; } 
- }
+          elementId == other.elementId;}
+@override int get hashCode {return elementId.hashCode;}
+@override String toString() {return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalOutputsTrue(elementId: $elementId)';}
+}

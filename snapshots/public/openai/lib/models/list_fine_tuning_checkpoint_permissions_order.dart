@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListFineTuningCheckpointPermissionsOrder {const ListFineTuningCheckpointPermissionsOrder._(this.value);
 
-factory ListFineTuningCheckpointPermissionsOrder.fromJson(String json) { return switch (json) {
+factory ListFineTuningCheckpointPermissionsOrder.fromJson(String json) {return switch (json) {
   'ascending' => ascending,
   'descending' => descending,
   _ => ListFineTuningCheckpointPermissionsOrder._(json),
-}; }
+};}
 
 static const ListFineTuningCheckpointPermissionsOrder ascending = ListFineTuningCheckpointPermissionsOrder._('ascending');
 
@@ -16,11 +16,11 @@ static const List<ListFineTuningCheckpointPermissionsOrder> values = [ascending,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListFineTuningCheckpointPermissionsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListFineTuningCheckpointPermissionsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListFineTuningCheckpointPermissionsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListFineTuningCheckpointPermissionsOrder($value)';}
+}

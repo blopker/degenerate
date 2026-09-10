@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TokenCardNetworks {const TokenCardNetworks({this.preferred = const Omittable.absent()});
 
-factory TokenCardNetworks.fromJson(Map<String, dynamic> json) { return TokenCardNetworks(
+factory TokenCardNetworks.fromJson(Map<String, dynamic> json) {return TokenCardNetworks(
   preferred: json.containsKey('preferred') ? Omittable(json['preferred'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The preferred network for co-branded cards. Can be `cartes_bancaires`, `mastercard`, `visa` or `invalid_preference` if requested network is not valid for the card.
 final Omittable<String?> preferred;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preferred.isPresent) 'preferred': preferred.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred'}.contains(key)); } 
-TokenCardNetworks copyWith({Omittable<String?>? preferred}) { return TokenCardNetworks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preferred'}.contains(key));}
+TokenCardNetworks copyWith({Omittable<String?>? preferred}) {return TokenCardNetworks(
   preferred: preferred ?? this.preferred,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TokenCardNetworks &&
-          preferred == other.preferred; } 
-@override int get hashCode { return preferred.hashCode; } 
-@override String toString() { return 'TokenCardNetworks(preferred: $preferred)'; } 
- }
+          preferred == other.preferred;}
+@override int get hashCode {return preferred.hashCode;}
+@override String toString() {return 'TokenCardNetworks(preferred: $preferred)';}
+}

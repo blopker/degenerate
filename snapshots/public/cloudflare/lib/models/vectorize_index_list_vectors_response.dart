@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_list_item.dart';@immutable final class VectorizeIndexListVectorsResponse {const VectorizeIndexListVectorsResponse({required this.count, required this.isTruncated, required this.totalCount, required this.vectors, this.cursorExpirationTimestamp = const Omittable.absent(), this.nextCursor = const Omittable.absent(), });
 
-factory VectorizeIndexListVectorsResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexListVectorsResponse(
+factory VectorizeIndexListVectorsResponse.fromJson(Map<String, dynamic> json) {return VectorizeIndexListVectorsResponse(
   count: (json['count'] as num).toInt(),
   cursorExpirationTimestamp: json.containsKey('cursorExpirationTimestamp') ? Omittable(json['cursorExpirationTimestamp'] != null ? DateTime.parse(json['cursorExpirationTimestamp'] as String) : null) : const Omittable.absent(),
   isTruncated: json['isTruncated'] as bool,
   nextCursor: json.containsKey('nextCursor') ? Omittable(json['nextCursor'] as String?) : const Omittable.absent(),
   totalCount: (json['totalCount'] as num).toInt(),
   vectors: (json['vectors'] as List<dynamic>).map((e) => VectorizeVectorListItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Number of vectors returned in this response
 final int count;
@@ -29,34 +29,34 @@ final int totalCount;
 /// Array of vector items
 final List<VectorizeVectorListItem> vectors;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   if (cursorExpirationTimestamp.isPresent) 'cursorExpirationTimestamp': cursorExpirationTimestamp.value?.toIso8601String(),
   'isTruncated': isTruncated,
   if (nextCursor.isPresent) 'nextCursor': nextCursor.value,
   'totalCount': totalCount,
   'vectors': vectors.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('isTruncated') && json['isTruncated'] is bool &&
       json.containsKey('totalCount') && json['totalCount'] is num &&
-      json.containsKey('vectors'); } 
-VectorizeIndexListVectorsResponse copyWith({int? count, Omittable<DateTime?>? cursorExpirationTimestamp, bool? isTruncated, Omittable<String?>? nextCursor, int? totalCount, List<VectorizeVectorListItem>? vectors, }) { return VectorizeIndexListVectorsResponse(
+      json.containsKey('vectors');}
+VectorizeIndexListVectorsResponse copyWith({int? count, Omittable<DateTime?>? cursorExpirationTimestamp, bool? isTruncated, Omittable<String?>? nextCursor, int? totalCount, List<VectorizeVectorListItem>? vectors, }) {return VectorizeIndexListVectorsResponse(
   count: count ?? this.count,
   cursorExpirationTimestamp: cursorExpirationTimestamp ?? this.cursorExpirationTimestamp,
   isTruncated: isTruncated ?? this.isTruncated,
   nextCursor: nextCursor ?? this.nextCursor,
   totalCount: totalCount ?? this.totalCount,
   vectors: vectors ?? this.vectors,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorizeIndexListVectorsResponse &&
           count == other.count &&
           cursorExpirationTimestamp == other.cursorExpirationTimestamp &&
           isTruncated == other.isTruncated &&
           nextCursor == other.nextCursor &&
           totalCount == other.totalCount &&
-          listEquals(vectors, other.vectors); } 
-@override int get hashCode { return Object.hash(count, cursorExpirationTimestamp, isTruncated, nextCursor, totalCount, Object.hashAll(vectors)); } 
-@override String toString() { return 'VectorizeIndexListVectorsResponse(count: $count, cursorExpirationTimestamp: $cursorExpirationTimestamp, isTruncated: $isTruncated, nextCursor: $nextCursor, totalCount: $totalCount, vectors: $vectors)'; } 
- }
+          listEquals(vectors, other.vectors);}
+@override int get hashCode {return Object.hash(count, cursorExpirationTimestamp, isTruncated, nextCursor, totalCount, Object.hashAll(vectors));}
+@override String toString() {return 'VectorizeIndexListVectorsResponse(count: $count, cursorExpirationTimestamp: $cursorExpirationTimestamp, isTruncated: $isTruncated, nextCursor: $nextCursor, totalCount: $totalCount, vectors: $vectors)';}
+}

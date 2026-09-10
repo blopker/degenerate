@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied, });
 
-factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneImportDnsRecordsRequest(
+factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) {return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: json['file'] as String,
   proxied: json['proxied'] as String?,
-); }
+);}
 
 /// BIND config to import.
 /// 
@@ -19,20 +19,20 @@ final String file;
 final String? proxied;
 
 /// The value with the schema default applied when absent.
-String get proxiedOrDefault { return proxied ?? 'false'; } 
-Map<String, dynamic> toJson() { return {
+String get proxiedOrDefault {return proxied ?? 'false';}
+Map<String, dynamic> toJson() {return {
   'file': file,
   'proxied': ?proxied,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String? Function()? proxied, }) { return DnsRecordsForAZoneImportDnsRecordsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') && json['file'] is String;}
+DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String? Function()? proxied, }) {return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: file ?? this.file,
   proxied: proxied != null ? proxied() : this.proxied,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsForAZoneImportDnsRecordsRequest &&
           file == other.file &&
-          proxied == other.proxied; } 
-@override int get hashCode { return Object.hash(file, proxied); } 
-@override String toString() { return 'DnsRecordsForAZoneImportDnsRecordsRequest(file: $file, proxied: $proxied)'; } 
- }
+          proxied == other.proxied;}
+@override int get hashCode {return Object.hash(file, proxied);}
+@override String toString() {return 'DnsRecordsForAZoneImportDnsRecordsRequest(file: $file, proxied: $proxied)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_status.dart';import 'tls_certificates_and_hostnames_created_at.dart';import 'tls_certificates_and_hostnames_custom_origin_server.dart';import 'tls_certificates_and_hostnames_custom_origin_sni.dart';import 'tls_certificates_and_hostnames_hostname.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_ownership_verification.dart';import 'tls_certificates_and_hostnames_ownership_verification_http.dart';import 'tls_certificates_and_hostnames_ssl.dart';@immutable final class TlsCertificatesAndHostnamesCustomhostname {const TlsCertificatesAndHostnamesCustomhostname({this.createdAt, this.customMetadata, this.customOriginServer, this.customOriginSni, this.hostname, this.id, this.ownershipVerification, this.ownershipVerificationHttp, this.ssl, this.status, this.verificationErrors, });
 
-factory TlsCertificatesAndHostnamesCustomhostname.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomhostname(
+factory TlsCertificatesAndHostnamesCustomhostname.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCustomhostname(
   createdAt: json['created_at'] != null ? TlsCertificatesAndHostnamesCreatedAt.fromJson(json['created_at'] as String) : null,
   customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   customOriginServer: json['custom_origin_server'] != null ? TlsCertificatesAndHostnamesCustomOriginServer.fromJson(json['custom_origin_server'] as String) : null,
@@ -14,7 +14,7 @@ factory TlsCertificatesAndHostnamesCustomhostname.fromJson(Map<String, dynamic> 
   ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSsl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(json['status'] as String) : null,
   verificationErrors: (json['verification_errors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// This is the time the hostname was created.
 final TlsCertificatesAndHostnamesCreatedAt? createdAt;
@@ -43,7 +43,7 @@ final TlsCertificatesAndHostnamesComponentsSchemasStatus? status;
 
 final List<String>? verificationErrors;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   'custom_metadata': ?customMetadata,
   if (customOriginServer != null) 'custom_origin_server': customOriginServer?.toJson(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (ssl != null) 'ssl': ssl?.toJson(),
   if (status != null) 'status': status?.toJson(),
   'verification_errors': ?verificationErrors,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'custom_metadata', 'custom_origin_server', 'custom_origin_sni', 'hostname', 'id', 'ownership_verification', 'ownership_verification_http', 'ssl', 'status', 'verification_errors'}.contains(key)); } 
-TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesCreatedAt? Function()? createdAt, Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer? Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni? Function()? customOriginSni, TlsCertificatesAndHostnamesHostname? Function()? hostname, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesOwnershipVerification? Function()? ownershipVerification, TlsCertificatesAndHostnamesOwnershipVerificationHttp? Function()? ownershipVerificationHttp, TlsCertificatesAndHostnamesSsl? Function()? ssl, TlsCertificatesAndHostnamesComponentsSchemasStatus? Function()? status, List<String>? Function()? verificationErrors, }) { return TlsCertificatesAndHostnamesCustomhostname(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'custom_metadata', 'custom_origin_server', 'custom_origin_sni', 'hostname', 'id', 'ownership_verification', 'ownership_verification_http', 'ssl', 'status', 'verification_errors'}.contains(key));}
+TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesCreatedAt? Function()? createdAt, Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer? Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni? Function()? customOriginSni, TlsCertificatesAndHostnamesHostname? Function()? hostname, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesOwnershipVerification? Function()? ownershipVerification, TlsCertificatesAndHostnamesOwnershipVerificationHttp? Function()? ownershipVerificationHttp, TlsCertificatesAndHostnamesSsl? Function()? ssl, TlsCertificatesAndHostnamesComponentsSchemasStatus? Function()? status, List<String>? Function()? verificationErrors, }) {return TlsCertificatesAndHostnamesCustomhostname(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
   customOriginServer: customOriginServer != null ? customOriginServer() : this.customOriginServer,
@@ -69,8 +69,8 @@ TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesC
   ssl: ssl != null ? ssl() : this.ssl,
   status: status != null ? status() : this.status,
   verificationErrors: verificationErrors != null ? verificationErrors() : this.verificationErrors,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomhostname &&
           createdAt == other.createdAt &&
           customMetadata == other.customMetadata &&
@@ -82,7 +82,7 @@ TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesC
           ownershipVerificationHttp == other.ownershipVerificationHttp &&
           ssl == other.ssl &&
           status == other.status &&
-          listEquals(verificationErrors, other.verificationErrors); } 
-@override int get hashCode { return Object.hash(createdAt, customMetadata, customOriginServer, customOriginSni, hostname, id, ownershipVerification, ownershipVerificationHttp, ssl, status, Object.hashAll(verificationErrors ?? const [])); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomhostname(createdAt: $createdAt, customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, hostname: $hostname, id: $id, ownershipVerification: $ownershipVerification, ownershipVerificationHttp: $ownershipVerificationHttp, ssl: $ssl, status: $status, verificationErrors: $verificationErrors)'; } 
- }
+          listEquals(verificationErrors, other.verificationErrors);}
+@override int get hashCode {return Object.hash(createdAt, customMetadata, customOriginServer, customOriginSni, hostname, id, ownershipVerification, ownershipVerificationHttp, ssl, status, Object.hashAll(verificationErrors ?? const []));}
+@override String toString() {return 'TlsCertificatesAndHostnamesCustomhostname(createdAt: $createdAt, customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, hostname: $hostname, id: $id, ownershipVerification: $ownershipVerification, ownershipVerificationHttp: $ownershipVerificationHttp, ssl: $ssl, status: $status, verificationErrors: $verificationErrors)';}
+}

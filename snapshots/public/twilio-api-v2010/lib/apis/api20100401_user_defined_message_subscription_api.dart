@@ -11,7 +11,7 @@ final class Api20100401UserDefinedMessageSubscriptionApi with ApiExecutor {const
 /// Subscribe to User Defined Messages for a given Call SID.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions.json`
-Future<ApiResult<AccountCallUserDefinedMessageSubscription, Never>> createUserDefinedMessageSubscription({required String accountSid, required String callSid, CreateUserDefinedMessageSubscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallUserDefinedMessageSubscription, Never>> createUserDefinedMessageSubscription({required String accountSid, required String callSid, CreateUserDefinedMessageSubscriptionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -28,18 +28,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountCallUserDefinedMessageSubscription.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountCallUserDefinedMessageSubscription.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a specific User Defined Message Subscription.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions/{Sid}.json`
-Future<ApiResult<void, Never>> deleteUserDefinedMessageSubscription({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteUserDefinedMessageSubscription({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -48,9 +43,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
- }
+
+return   await execute(request, onSuccess: (_) {}, );}
+}

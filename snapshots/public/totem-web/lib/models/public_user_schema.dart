@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'profile_avatar_type_enum.dart';@immutable final class PublicUserSchema {const PublicUserSchema({required this.profileAvatarType, required this.dateCreated, this.circleCount = const Omittable.absent(), this.name = const Omittable.absent(), this.slug = const Omittable.absent(), this.isStaff, this.profileAvatarSeed, this.profileImage = const Omittable.absent(), });
 
-factory PublicUserSchema.fromJson(Map<String, dynamic> json) { return PublicUserSchema(
+factory PublicUserSchema.fromJson(Map<String, dynamic> json) {return PublicUserSchema(
   profileAvatarType: ProfileAvatarTypeEnum.fromJson(json['profile_avatar_type'] as String),
   circleCount: json.containsKey('circle_count') ? Omittable(json['circle_count'] != null ? (json['circle_count'] as num).toInt() : null) : const Omittable.absent(),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
@@ -11,7 +11,7 @@ factory PublicUserSchema.fromJson(Map<String, dynamic> json) { return PublicUser
   profileAvatarSeed: json['profile_avatar_seed'] as String?,
   profileImage: json.containsKey('profile_image') ? Omittable(json['profile_image'] as String?) : const Omittable.absent(),
   dateCreated: DateTime.parse(json['date_created'] as String),
-); }
+);}
 
 final ProfileAvatarTypeEnum profileAvatarType;
 
@@ -32,8 +32,8 @@ final Omittable<String?> profileImage;
 final DateTime dateCreated;
 
 /// The value with the schema default applied when absent.
-bool get isStaffOrDefault { return isStaff ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get isStaffOrDefault {return isStaff ?? false;}
+Map<String, dynamic> toJson() {return {
   'profile_avatar_type': profileAvatarType.toJson(),
   if (circleCount.isPresent) 'circle_count': circleCount.value,
   if (name.isPresent) 'name': name.value,
@@ -42,10 +42,10 @@ Map<String, dynamic> toJson() { return {
   'profile_avatar_seed': ?profileAvatarSeed,
   if (profileImage.isPresent) 'profile_image': profileImage.value,
   'date_created': dateCreated.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('profile_avatar_type') &&
-      json.containsKey('date_created') && json['date_created'] is String; } 
-PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, Omittable<int?>? circleCount, Omittable<String?>? name, Omittable<String?>? slug, bool? Function()? isStaff, String? Function()? profileAvatarSeed, Omittable<String?>? profileImage, DateTime? dateCreated, }) { return PublicUserSchema(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('profile_avatar_type') &&
+      json.containsKey('date_created') && json['date_created'] is String;}
+PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, Omittable<int?>? circleCount, Omittable<String?>? name, Omittable<String?>? slug, bool? Function()? isStaff, String? Function()? profileAvatarSeed, Omittable<String?>? profileImage, DateTime? dateCreated, }) {return PublicUserSchema(
   profileAvatarType: profileAvatarType ?? this.profileAvatarType,
   circleCount: circleCount ?? this.circleCount,
   name: name ?? this.name,
@@ -54,8 +54,8 @@ PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, Omittable<i
   profileAvatarSeed: profileAvatarSeed != null ? profileAvatarSeed() : this.profileAvatarSeed,
   profileImage: profileImage ?? this.profileImage,
   dateCreated: dateCreated ?? this.dateCreated,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PublicUserSchema &&
           profileAvatarType == other.profileAvatarType &&
           circleCount == other.circleCount &&
@@ -64,7 +64,7 @@ PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, Omittable<i
           isStaff == other.isStaff &&
           profileAvatarSeed == other.profileAvatarSeed &&
           profileImage == other.profileImage &&
-          dateCreated == other.dateCreated; } 
-@override int get hashCode { return Object.hash(profileAvatarType, circleCount, name, slug, isStaff, profileAvatarSeed, profileImage, dateCreated); } 
-@override String toString() { return 'PublicUserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, dateCreated: $dateCreated)'; } 
- }
+          dateCreated == other.dateCreated;}
+@override int get hashCode {return Object.hash(profileAvatarType, circleCount, name, slug, isStaff, profileAvatarSeed, profileImage, dateCreated);}
+@override String toString() {return 'PublicUserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, dateCreated: $dateCreated)';}
+}

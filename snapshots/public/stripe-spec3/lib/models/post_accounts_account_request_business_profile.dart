@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_business_profile_annual_revenue.dart';import 'post_accounts_account_request_business_profile_monthly_estimated_revenue.dart';import 'post_accounts_account_request_business_profile_support_address.dart';import 'post_accounts_account_request_business_profile_support_url.dart';@immutable final class PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation {const PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
 
-factory PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation.fromJson(String json) {return switch (json) {
   'lgbtqi_owned_business' => lgbtqiOwnedBusiness,
   'minority_owned_business' => minorityOwnedBusiness,
   'none_of_these_apply' => noneOfTheseApply,
   'prefer_not_to_answer' => preferNotToAnswer,
   'women_owned_business' => womenOwnedBusiness,
   _ => PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation._(json),
-}; }
+};}
 
 static const PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation lgbtqiOwnedBusiness = PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation._('lgbtqi_owned_business');
 
@@ -25,18 +25,18 @@ static const List<PostAccountsAccountRequestBusinessProfileMinorityOwnedBusiness
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation($value)';}
+}
 /// Business information about the account.
 @immutable final class PostAccountsAccountRequestBusinessProfile {const PostAccountsAccountRequestBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
-factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestBusinessProfile(
+factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestBusinessProfile(
   annualRevenue: json['annual_revenue'] != null ? PostAccountsAccountRequestBusinessProfileAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
   estimatedWorkerCount: json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null,
   mcc: json['mcc'] as String?,
@@ -49,7 +49,7 @@ factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> 
   supportPhone: json['support_phone'] as String?,
   supportUrl: json['support_url'] != null ? PostAccountsAccountRequestBusinessProfileSupportUrl.fromJson(json['support_url']) : null,
   url: json['url'] as String?,
-); }
+);}
 
 final PostAccountsAccountRequestBusinessProfileAnnualRevenue? annualRevenue;
 
@@ -75,7 +75,7 @@ final PostAccountsAccountRequestBusinessProfileSupportUrl? supportUrl;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annualRevenue != null) 'annual_revenue': annualRevenue?.toJson(),
   'estimated_worker_count': ?estimatedWorkerCount,
   'mcc': ?mcc,
@@ -88,9 +88,9 @@ Map<String, dynamic> toJson() { return {
   'support_phone': ?supportPhone,
   if (supportUrl != null) 'support_url': supportUrl?.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
-PostAccountsAccountRequestBusinessProfile copyWith({PostAccountsAccountRequestBusinessProfileAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, PostAccountsAccountRequestBusinessProfileMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, PostAccountsAccountRequestBusinessProfileSupportAddress? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, PostAccountsAccountRequestBusinessProfileSupportUrl? Function()? supportUrl, String? Function()? url, }) { return PostAccountsAccountRequestBusinessProfile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key));}
+PostAccountsAccountRequestBusinessProfile copyWith({PostAccountsAccountRequestBusinessProfileAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, PostAccountsAccountRequestBusinessProfileMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, PostAccountsAccountRequestBusinessProfileSupportAddress? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, PostAccountsAccountRequestBusinessProfileSupportUrl? Function()? supportUrl, String? Function()? url, }) {return PostAccountsAccountRequestBusinessProfile(
   annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
   estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,
   mcc: mcc != null ? mcc() : this.mcc,
@@ -103,8 +103,8 @@ PostAccountsAccountRequestBusinessProfile copyWith({PostAccountsAccountRequestBu
   supportPhone: supportPhone != null ? supportPhone() : this.supportPhone,
   supportUrl: supportUrl != null ? supportUrl() : this.supportUrl,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestBusinessProfile &&
           annualRevenue == other.annualRevenue &&
           estimatedWorkerCount == other.estimatedWorkerCount &&
@@ -117,7 +117,7 @@ PostAccountsAccountRequestBusinessProfile copyWith({PostAccountsAccountRequestBu
           supportEmail == other.supportEmail &&
           supportPhone == other.supportPhone &&
           supportUrl == other.supportUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url); } 
-@override String toString() { return 'PostAccountsAccountRequestBusinessProfile(annualRevenue: $annualRevenue, estimatedWorkerCount: $estimatedWorkerCount, mcc: $mcc, minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation, monthlyEstimatedRevenue: $monthlyEstimatedRevenue, name: $name, productDescription: $productDescription, supportAddress: $supportAddress, supportEmail: $supportEmail, supportPhone: $supportPhone, supportUrl: $supportUrl, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url);}
+@override String toString() {return 'PostAccountsAccountRequestBusinessProfile(annualRevenue: $annualRevenue, estimatedWorkerCount: $estimatedWorkerCount, mcc: $mcc, minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation, monthlyEstimatedRevenue: $monthlyEstimatedRevenue, name: $name, productDescription: $productDescription, supportAddress: $supportAddress, supportEmail: $supportEmail, supportPhone: $supportPhone, supportUrl: $supportUrl, url: $url)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_schedule_application.dart';import 'subscription_schedule_current_phase.dart';import 'subscription_schedule_customer.dart';import 'subscription_schedule_phase_configuration.dart';import 'subscription_schedule_subscription.dart';import 'subscription_schedule_test_clock.dart';import 'subscription_schedules_resource_default_settings.dart';import 'subscriptions_resource_billing_mode.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
 @immutable final class SubscriptionScheduleEndBehavior {const SubscriptionScheduleEndBehavior._(this.value);
 
-factory SubscriptionScheduleEndBehavior.fromJson(String json) { return switch (json) {
+factory SubscriptionScheduleEndBehavior.fromJson(String json) {return switch (json) {
   'cancel' => cancel,
   'none' => none,
   'release' => release,
   'renew' => renew,
   _ => SubscriptionScheduleEndBehavior._(json),
-}; }
+};}
 
 static const SubscriptionScheduleEndBehavior cancel = SubscriptionScheduleEndBehavior._('cancel');
 
@@ -23,21 +23,21 @@ static const List<SubscriptionScheduleEndBehavior> values = [cancel, none, relea
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionScheduleEndBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionScheduleEndBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionScheduleEndBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionScheduleEndBehavior($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SubscriptionScheduleObject {const SubscriptionScheduleObject._(this.value);
 
-factory SubscriptionScheduleObject.fromJson(String json) { return switch (json) {
+factory SubscriptionScheduleObject.fromJson(String json) {return switch (json) {
   'subscription_schedule' => subscriptionSchedule,
   _ => SubscriptionScheduleObject._(json),
-}; }
+};}
 
 static const SubscriptionScheduleObject subscriptionSchedule = SubscriptionScheduleObject._('subscription_schedule');
 
@@ -45,25 +45,25 @@ static const List<SubscriptionScheduleObject> values = [subscriptionSchedule];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionScheduleObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionScheduleObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionScheduleObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionScheduleObject($value)';}
+}
 /// The present status of the subscription schedule. Possible values are `not_started`, `active`, `completed`, `released`, and `canceled`. You can read more about the different states in our [behavior guide](https://docs.stripe.com/billing/subscriptions/subscription-schedules).
 @immutable final class SubscriptionScheduleStatus {const SubscriptionScheduleStatus._(this.value);
 
-factory SubscriptionScheduleStatus.fromJson(String json) { return switch (json) {
+factory SubscriptionScheduleStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'canceled' => canceled,
   'completed' => completed,
   'not_started' => notStarted,
   'released' => released,
   _ => SubscriptionScheduleStatus._(json),
-}; }
+};}
 
 static const SubscriptionScheduleStatus active = SubscriptionScheduleStatus._('active');
 
@@ -79,20 +79,20 @@ static const List<SubscriptionScheduleStatus> values = [active, canceled, comple
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionScheduleStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionScheduleStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionScheduleStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionScheduleStatus($value)';}
+}
 /// A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.
 /// 
 /// Related guide: [Subscription schedules](https://docs.stripe.com/billing/subscriptions/subscription-schedules)
 @immutable final class SubscriptionSchedule {const SubscriptionSchedule({required this.billingMode, required this.created, required this.customer, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, required this.object, required this.phases, required this.status, this.application = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.completedAt = const Omittable.absent(), this.currentPhase = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.metadata = const Omittable.absent(), this.releasedAt = const Omittable.absent(), this.releasedSubscription = const Omittable.absent(), this.subscription = const Omittable.absent(), this.testClock = const Omittable.absent(), });
 
-factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return SubscriptionSchedule(
+factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) {return SubscriptionSchedule(
   application: json.containsKey('application') ? Omittable(json['application'] != null ? SubscriptionScheduleApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
   canceledAt: json.containsKey('canceled_at') ? Omittable(json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null) : const Omittable.absent(),
@@ -113,7 +113,7 @@ factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return Subscr
   status: SubscriptionScheduleStatus.fromJson(json['status'] as String),
   subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? SubscriptionScheduleSubscription.fromJson(json['subscription']) : null) : const Omittable.absent(),
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? SubscriptionScheduleTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the Connect Application that created the schedule.
 final Omittable<SubscriptionScheduleApplication?> application;
@@ -173,7 +173,7 @@ final Omittable<SubscriptionScheduleSubscription?> subscription;
 /// ID of the test clock this subscription schedule belongs to.
 final Omittable<SubscriptionScheduleTestClock?> testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (application.isPresent) 'application': application.value?.toJson(),
   'billing_mode': billingMode.toJson(),
   if (canceledAt.isPresent) 'canceled_at': canceledAt.value,
@@ -194,8 +194,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   if (subscription.isPresent) 'subscription': subscription.value?.toJson(),
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_mode') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing_mode') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('customer') &&
       json.containsKey('default_settings') &&
@@ -204,8 +204,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('phases') &&
-      json.containsKey('status'); } 
-SubscriptionSchedule copyWith({Omittable<SubscriptionScheduleApplication?>? application, SubscriptionsResourceBillingMode? billingMode, Omittable<int?>? canceledAt, Omittable<int?>? completedAt, int? created, Omittable<SubscriptionScheduleCurrentPhase?>? currentPhase, SubscriptionScheduleCustomer? customer, Omittable<String?>? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, SubscriptionScheduleEndBehavior? endBehavior, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, Omittable<int?>? releasedAt, Omittable<String?>? releasedSubscription, SubscriptionScheduleStatus? status, Omittable<SubscriptionScheduleSubscription?>? subscription, Omittable<SubscriptionScheduleTestClock?>? testClock, }) { return SubscriptionSchedule(
+      json.containsKey('status');}
+SubscriptionSchedule copyWith({Omittable<SubscriptionScheduleApplication?>? application, SubscriptionsResourceBillingMode? billingMode, Omittable<int?>? canceledAt, Omittable<int?>? completedAt, int? created, Omittable<SubscriptionScheduleCurrentPhase?>? currentPhase, SubscriptionScheduleCustomer? customer, Omittable<String?>? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, SubscriptionScheduleEndBehavior? endBehavior, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, Omittable<int?>? releasedAt, Omittable<String?>? releasedSubscription, SubscriptionScheduleStatus? status, Omittable<SubscriptionScheduleSubscription?>? subscription, Omittable<SubscriptionScheduleTestClock?>? testClock, }) {return SubscriptionSchedule(
   application: application ?? this.application,
   billingMode: billingMode ?? this.billingMode,
   canceledAt: canceledAt ?? this.canceledAt,
@@ -226,8 +226,8 @@ SubscriptionSchedule copyWith({Omittable<SubscriptionScheduleApplication?>? appl
   status: status ?? this.status,
   subscription: subscription ?? this.subscription,
   testClock: testClock ?? this.testClock,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionSchedule &&
           application == other.application &&
           billingMode == other.billingMode &&
@@ -248,7 +248,7 @@ SubscriptionSchedule copyWith({Omittable<SubscriptionScheduleApplication?>? appl
           releasedSubscription == other.releasedSubscription &&
           status == other.status &&
           subscription == other.subscription &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hash(application, billingMode, canceledAt, completedAt, created, currentPhase, customer, customerAccount, defaultSettings, endBehavior, id, livemode, metadata, object, Object.hashAll(phases), releasedAt, releasedSubscription, status, subscription, testClock); } 
-@override String toString() { return 'SubscriptionSchedule(application: $application, billingMode: $billingMode, canceledAt: $canceledAt, completedAt: $completedAt, created: $created, currentPhase: $currentPhase, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phases: $phases, releasedAt: $releasedAt, releasedSubscription: $releasedSubscription, status: $status, subscription: $subscription, testClock: $testClock)'; } 
- }
+          testClock == other.testClock;}
+@override int get hashCode {return Object.hash(application, billingMode, canceledAt, completedAt, created, currentPhase, customer, customerAccount, defaultSettings, endBehavior, id, livemode, metadata, object, Object.hashAll(phases), releasedAt, releasedSubscription, status, subscription, testClock);}
+@override String toString() {return 'SubscriptionSchedule(application: $application, billingMode: $billingMode, canceledAt: $canceledAt, completedAt: $completedAt, created: $created, currentPhase: $currentPhase, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phases: $phases, releasedAt: $releasedAt, releasedSubscription: $releasedSubscription, status: $status, subscription: $subscription, testClock: $testClock)';}
+}

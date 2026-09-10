@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunStepDeltaStepDetailsMessageCreationObjectMessageCreation {const RunStepDeltaStepDetailsMessageCreationObjectMessageCreation({this.messageId});
 
-factory RunStepDeltaStepDetailsMessageCreationObjectMessageCreation.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
+factory RunStepDeltaStepDetailsMessageCreationObjectMessageCreation.fromJson(Map<String, dynamic> json) {return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
   messageId: json['message_id'] as String?,
-); }
+);}
 
 /// The ID of the message that was created by this run step.
 final String? messageId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message_id': ?messageId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message_id'}.contains(key)); } 
-RunStepDeltaStepDetailsMessageCreationObjectMessageCreation copyWith({String? Function()? messageId}) { return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'message_id'}.contains(key));}
+RunStepDeltaStepDetailsMessageCreationObjectMessageCreation copyWith({String? Function()? messageId}) {return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
   messageId: messageId != null ? messageId() : this.messageId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepDeltaStepDetailsMessageCreationObjectMessageCreation &&
-          messageId == other.messageId; } 
-@override int get hashCode { return messageId.hashCode; } 
-@override String toString() { return 'RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(messageId: $messageId)'; } 
- }
+          messageId == other.messageId;}
+@override int get hashCode {return messageId.hashCode;}
+@override String toString() {return 'RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(messageId: $messageId)';}
+}

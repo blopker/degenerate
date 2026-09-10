@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2 {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2._(this.value);
 
-factory PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2 $empty = PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmount {

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config.dart';@immutable final class ReposUpdateWebhookRequest {const ReposUpdateWebhookRequest({this.config, this.events, this.addEvents, this.removeEvents, this.active, });
 
-factory ReposUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateWebhookRequest(
+factory ReposUpdateWebhookRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateWebhookRequest(
   config: json['config'] != null ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   addEvents: (json['add_events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   removeEvents: (json['remove_events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   active: json['active'] as bool?,
-); }
+);}
 
 final WebhookConfig? config;
 
@@ -25,29 +25,29 @@ final List<String>? removeEvents;
 final bool? active;
 
 /// The value with the schema default applied when absent.
-bool get activeOrDefault { return active ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get activeOrDefault {return active ?? true;}
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   'events': ?events,
   'add_events': ?addEvents,
   'remove_events': ?removeEvents,
   'active': ?active,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'events', 'add_events', 'remove_events', 'active'}.contains(key)); } 
-ReposUpdateWebhookRequest copyWith({WebhookConfig? Function()? config, List<String>? Function()? events, List<String>? Function()? addEvents, List<String>? Function()? removeEvents, bool? Function()? active, }) { return ReposUpdateWebhookRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'config', 'events', 'add_events', 'remove_events', 'active'}.contains(key));}
+ReposUpdateWebhookRequest copyWith({WebhookConfig? Function()? config, List<String>? Function()? events, List<String>? Function()? addEvents, List<String>? Function()? removeEvents, bool? Function()? active, }) {return ReposUpdateWebhookRequest(
   config: config != null ? config() : this.config,
   events: events != null ? events() : this.events,
   addEvents: addEvents != null ? addEvents() : this.addEvents,
   removeEvents: removeEvents != null ? removeEvents() : this.removeEvents,
   active: active != null ? active() : this.active,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposUpdateWebhookRequest &&
           config == other.config &&
           listEquals(events, other.events) &&
           listEquals(addEvents, other.addEvents) &&
           listEquals(removeEvents, other.removeEvents) &&
-          active == other.active; } 
-@override int get hashCode { return Object.hash(config, Object.hashAll(events ?? const []), Object.hashAll(addEvents ?? const []), Object.hashAll(removeEvents ?? const []), active); } 
-@override String toString() { return 'ReposUpdateWebhookRequest(config: $config, events: $events, addEvents: $addEvents, removeEvents: $removeEvents, active: $active)'; } 
- }
+          active == other.active;}
+@override int get hashCode {return Object.hash(config, Object.hashAll(events ?? const []), Object.hashAll(addEvents ?? const []), Object.hashAll(removeEvents ?? const []), active);}
+@override String toString() {return 'ReposUpdateWebhookRequest(config: $config, events: $events, addEvents: $addEvents, removeEvents: $removeEvents, active: $active)';}
+}

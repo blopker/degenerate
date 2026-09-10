@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of noise re
 /// 
 @immutable final class NoiseReductionType {const NoiseReductionType._(this.value);
 
-factory NoiseReductionType.fromJson(String json) { return switch (json) {
+factory NoiseReductionType.fromJson(String json) {return switch (json) {
   'near_field' => nearField,
   'far_field' => farField,
   _ => NoiseReductionType._(json),
-}; }
+};}
 
 static const NoiseReductionType nearField = NoiseReductionType._('near_field');
 
@@ -18,11 +18,11 @@ static const List<NoiseReductionType> values = [nearField, farField];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NoiseReductionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NoiseReductionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is NoiseReductionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'NoiseReductionType($value)';}
+}

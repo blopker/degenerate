@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_r2_table_public_file_naming.dart';import 'cloudflare_pipelines_r2_table_public_partitioning.dart';import 'cloudflare_pipelines_r2_table_public_rolling_policy.dart';/// R2 Sink public configuration.
 @immutable final class CloudflarePipelinesR2TablePublic {const CloudflarePipelinesR2TablePublic({required this.accountId, required this.bucket, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
 
-factory CloudflarePipelinesR2TablePublic.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TablePublic(
+factory CloudflarePipelinesR2TablePublic.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesR2TablePublic(
   accountId: json['account_id'] as String,
   bucket: json['bucket'] as String,
   fileNaming: json['file_naming'] != null ? CloudflarePipelinesR2TablePublicFileNaming.fromJson(json['file_naming'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory CloudflarePipelinesR2TablePublic.fromJson(Map<String, dynamic> json) { r
   partitioning: json['partitioning'] != null ? CloudflarePipelinesR2TablePublicPartitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
   rollingPolicy: json['rolling_policy'] != null ? CloudflarePipelinesR2TablePublicRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Cloudflare Account ID for the bucket
 final String accountId;
@@ -34,7 +34,7 @@ final String? path;
 /// Rolling policy for file sinks (when & why to close a file and open a new one).
 final CloudflarePipelinesR2TablePublicRollingPolicy? rollingPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId,
   'bucket': bucket,
   if (fileNaming != null) 'file_naming': fileNaming?.toJson(),
@@ -42,10 +42,10 @@ Map<String, dynamic> toJson() { return {
   if (partitioning != null) 'partitioning': partitioning?.toJson(),
   'path': ?path,
   if (rollingPolicy != null) 'rolling_policy': rollingPolicy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is String &&
-      json.containsKey('bucket') && json['bucket'] is String; } 
-CloudflarePipelinesR2TablePublic copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TablePublicFileNaming? Function()? fileNaming, String? Function()? jurisdiction, CloudflarePipelinesR2TablePublicPartitioning? Function()? partitioning, String? Function()? path, CloudflarePipelinesR2TablePublicRollingPolicy? Function()? rollingPolicy, }) { return CloudflarePipelinesR2TablePublic(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') && json['account_id'] is String &&
+      json.containsKey('bucket') && json['bucket'] is String;}
+CloudflarePipelinesR2TablePublic copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TablePublicFileNaming? Function()? fileNaming, String? Function()? jurisdiction, CloudflarePipelinesR2TablePublicPartitioning? Function()? partitioning, String? Function()? path, CloudflarePipelinesR2TablePublicRollingPolicy? Function()? rollingPolicy, }) {return CloudflarePipelinesR2TablePublic(
   accountId: accountId ?? this.accountId,
   bucket: bucket ?? this.bucket,
   fileNaming: fileNaming != null ? fileNaming() : this.fileNaming,
@@ -53,8 +53,8 @@ CloudflarePipelinesR2TablePublic copyWith({String? accountId, String? bucket, Cl
   partitioning: partitioning != null ? partitioning() : this.partitioning,
   path: path != null ? path() : this.path,
   rollingPolicy: rollingPolicy != null ? rollingPolicy() : this.rollingPolicy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CloudflarePipelinesR2TablePublic &&
           accountId == other.accountId &&
           bucket == other.bucket &&
@@ -62,7 +62,7 @@ CloudflarePipelinesR2TablePublic copyWith({String? accountId, String? bucket, Cl
           jurisdiction == other.jurisdiction &&
           partitioning == other.partitioning &&
           path == other.path &&
-          rollingPolicy == other.rollingPolicy; } 
-@override int get hashCode { return Object.hash(accountId, bucket, fileNaming, jurisdiction, partitioning, path, rollingPolicy); } 
-@override String toString() { return 'CloudflarePipelinesR2TablePublic(accountId: $accountId, bucket: $bucket, fileNaming: $fileNaming, jurisdiction: $jurisdiction, partitioning: $partitioning, path: $path, rollingPolicy: $rollingPolicy)'; } 
- }
+          rollingPolicy == other.rollingPolicy;}
+@override int get hashCode {return Object.hash(accountId, bucket, fileNaming, jurisdiction, partitioning, path, rollingPolicy);}
+@override String toString() {return 'CloudflarePipelinesR2TablePublic(accountId: $accountId, bucket: $bucket, fileNaming: $fileNaming, jurisdiction: $jurisdiction, partitioning: $partitioning, path: $path, rollingPolicy: $rollingPolicy)';}
+}

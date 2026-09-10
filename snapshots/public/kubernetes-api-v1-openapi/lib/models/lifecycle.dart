@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lifecycle_handler.dart';/// Lifecycle describes actions that the management system should take in response to container lifecycle events. For the PostStart and PreStop lifecycle handlers, management of the container blocks until the action is complete, unless the container process fails, in which case the handler is aborted.
 @immutable final class Lifecycle {const Lifecycle({this.postStart, this.preStop, this.stopSignal, });
 
-factory Lifecycle.fromJson(Map<String, dynamic> json) { return Lifecycle(
+factory Lifecycle.fromJson(Map<String, dynamic> json) {return Lifecycle(
   postStart: json['postStart'] != null ? LifecycleHandler.fromJson(json['postStart'] as Map<String, dynamic>) : null,
   preStop: json['preStop'] != null ? LifecycleHandler.fromJson(json['preStop'] as Map<String, dynamic>) : null,
   stopSignal: json['stopSignal'] as String?,
-); }
+);}
 
 /// PostStart is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks
 final LifecycleHandler? postStart;
@@ -18,22 +18,22 @@ final LifecycleHandler? preStop;
 /// StopSignal defines which signal will be sent to a container when it is being stopped. If not specified, the default is defined by the container runtime in use. StopSignal can only be set for Pods with a non-empty .spec.os.name
 final String? stopSignal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (postStart != null) 'postStart': postStart?.toJson(),
   if (preStop != null) 'preStop': preStop?.toJson(),
   'stopSignal': ?stopSignal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'postStart', 'preStop', 'stopSignal'}.contains(key)); } 
-Lifecycle copyWith({LifecycleHandler? Function()? postStart, LifecycleHandler? Function()? preStop, String? Function()? stopSignal, }) { return Lifecycle(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'postStart', 'preStop', 'stopSignal'}.contains(key));}
+Lifecycle copyWith({LifecycleHandler? Function()? postStart, LifecycleHandler? Function()? preStop, String? Function()? stopSignal, }) {return Lifecycle(
   postStart: postStart != null ? postStart() : this.postStart,
   preStop: preStop != null ? preStop() : this.preStop,
   stopSignal: stopSignal != null ? stopSignal() : this.stopSignal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Lifecycle &&
           postStart == other.postStart &&
           preStop == other.preStop &&
-          stopSignal == other.stopSignal; } 
-@override int get hashCode { return Object.hash(postStart, preStop, stopSignal); } 
-@override String toString() { return 'Lifecycle(postStart: $postStart, preStop: $preStop, stopSignal: $stopSignal)'; } 
- }
+          stopSignal == other.stopSignal;}
+@override int get hashCode {return Object.hash(postStart, preStop, stopSignal);}
+@override String toString() {return 'Lifecycle(postStart: $postStart, preStop: $preStop, stopSignal: $stopSignal)';}
+}

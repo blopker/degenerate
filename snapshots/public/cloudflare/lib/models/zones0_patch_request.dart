@@ -7,13 +7,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones0_patch
 /// 
 @immutable final class Zones0PatchRequestType {const Zones0PatchRequestType._(this.value);
 
-factory Zones0PatchRequestType.fromJson(String json) { return switch (json) {
+factory Zones0PatchRequestType.fromJson(String json) {return switch (json) {
   'full' => full,
   'partial' => partial,
   'secondary' => secondary,
   'internal' => internal,
   _ => Zones0PatchRequestType._(json),
-}; }
+};}
 
 static const Zones0PatchRequestType full = Zones0PatchRequestType._('full');
 
@@ -27,22 +27,22 @@ static const List<Zones0PatchRequestType> values = [full, partial, secondary, in
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Zones0PatchRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Zones0PatchRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Zones0PatchRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Zones0PatchRequestType($value)';}
+}
 @immutable final class Zones0PatchRequest {const Zones0PatchRequest({this.paused, this.plan, this.type, this.vanityNameServers, });
 
-factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) { return Zones0PatchRequest(
+factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) {return Zones0PatchRequest(
   paused: json['paused'] != null ? ZonesPaused.fromJson(json['paused'] as bool) : null,
   plan: json['plan'] != null ? Zones0PatchRequestPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? Zones0PatchRequestType.fromJson(json['type'] as String) : null,
   vanityNameServers: (json['vanity_name_servers'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Indicates whether the zone is only using Cloudflare DNS services. A
 /// true value means the zone will not receive security or performance
@@ -68,25 +68,25 @@ final Zones0PatchRequestType? type;
 /// available for Business and Enterprise plans.
 final List<String>? vanityNameServers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (paused != null) 'paused': paused?.toJson(),
   if (plan != null) 'plan': plan?.toJson(),
   if (type != null) 'type': type?.toJson(),
   'vanity_name_servers': ?vanityNameServers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'paused', 'plan', 'type', 'vanity_name_servers'}.contains(key)); } 
-Zones0PatchRequest copyWith({ZonesPaused? Function()? paused, Zones0PatchRequestPlan? Function()? plan, Zones0PatchRequestType? Function()? type, List<String>? Function()? vanityNameServers, }) { return Zones0PatchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'paused', 'plan', 'type', 'vanity_name_servers'}.contains(key));}
+Zones0PatchRequest copyWith({ZonesPaused? Function()? paused, Zones0PatchRequestPlan? Function()? plan, Zones0PatchRequestType? Function()? type, List<String>? Function()? vanityNameServers, }) {return Zones0PatchRequest(
   paused: paused != null ? paused() : this.paused,
   plan: plan != null ? plan() : this.plan,
   type: type != null ? type() : this.type,
   vanityNameServers: vanityNameServers != null ? vanityNameServers() : this.vanityNameServers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Zones0PatchRequest &&
           paused == other.paused &&
           plan == other.plan &&
           type == other.type &&
-          listEquals(vanityNameServers, other.vanityNameServers); } 
-@override int get hashCode { return Object.hash(paused, plan, type, Object.hashAll(vanityNameServers ?? const [])); } 
-@override String toString() { return 'Zones0PatchRequest(paused: $paused, plan: $plan, type: $type, vanityNameServers: $vanityNameServers)'; } 
- }
+          listEquals(vanityNameServers, other.vanityNameServers);}
+@override int get hashCode {return Object.hash(paused, plan, type, Object.hashAll(vanityNameServers ?? const []));}
+@override String toString() {return 'Zones0PatchRequest(paused: $paused, plan: $plan, type: $type, vanityNameServers: $vanityNameServers)';}
+}

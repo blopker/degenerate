@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `audio.voice`.
 @immutable final class VoiceResourceObject {const VoiceResourceObject._(this.value);
 
-factory VoiceResourceObject.fromJson(String json) { return switch (json) {
+factory VoiceResourceObject.fromJson(String json) {return switch (json) {
   'audio.voice' => audioVoice,
   _ => VoiceResourceObject._(json),
-}; }
+};}
 
 static const VoiceResourceObject audioVoice = VoiceResourceObject._('audio.voice');
 
@@ -14,23 +14,23 @@ static const List<VoiceResourceObject> values = [audioVoice];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VoiceResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VoiceResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VoiceResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VoiceResourceObject($value)';}
+}
 /// A custom voice that can be used for audio output.
 @immutable final class VoiceResource {const VoiceResource({required this.object, required this.id, required this.name, required this.createdAt, });
 
-factory VoiceResource.fromJson(Map<String, dynamic> json) { return VoiceResource(
+factory VoiceResource.fromJson(Map<String, dynamic> json) {return VoiceResource(
   object: VoiceResourceObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
-); }
+);}
 
 /// The object type, which is always `audio.voice`.
 final VoiceResourceObject object;
@@ -44,28 +44,28 @@ final String name;
 /// The Unix timestamp (in seconds) for when the voice was created.
 final int createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'name': name,
   'created_at': createdAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('created_at') && json['created_at'] is num; } 
-VoiceResource copyWith({VoiceResourceObject? object, String? id, String? name, int? createdAt, }) { return VoiceResource(
+      json.containsKey('created_at') && json['created_at'] is num;}
+VoiceResource copyWith({VoiceResourceObject? object, String? id, String? name, int? createdAt, }) {return VoiceResource(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VoiceResource &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(object, id, name, createdAt); } 
-@override String toString() { return 'VoiceResource(object: $object, id: $id, name: $name, createdAt: $createdAt)'; } 
- }
+          createdAt == other.createdAt;}
+@override int get hashCode {return Object.hash(object, id, name, createdAt);}
+@override String toString() {return 'VoiceResource(object: $object, id: $id, name: $name, createdAt: $createdAt)';}
+}

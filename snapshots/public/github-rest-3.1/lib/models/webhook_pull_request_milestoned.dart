@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'milestone.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_number.dart';import 'webhooks_pull_request5.dart';@immutable final class WebhookPullRequestMilestonedAction {const WebhookPullRequestMilestonedAction._(this.value);
 
-factory WebhookPullRequestMilestonedAction.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestMilestonedAction.fromJson(String json) {return switch (json) {
   'milestoned' => milestoned,
   _ => WebhookPullRequestMilestonedAction._(json),
-}; }
+};}
 
 static const WebhookPullRequestMilestonedAction milestoned = WebhookPullRequestMilestonedAction._('milestoned');
 
@@ -13,17 +13,17 @@ static const List<WebhookPullRequestMilestonedAction> values = [milestoned];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestMilestonedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestMilestonedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestMilestonedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestMilestonedAction($value)';}
+}
 @immutable final class WebhookPullRequestMilestoned {const WebhookPullRequestMilestoned({required this.action, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.milestone, this.organization, this.sender, });
 
-factory WebhookPullRequestMilestoned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestMilestoned(
+factory WebhookPullRequestMilestoned.fromJson(Map<String, dynamic> json) {return WebhookPullRequestMilestoned(
   action: WebhookPullRequestMilestonedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   milestone: json['milestone'] != null ? Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookPullRequestMilestoned.fromJson(Map<String, dynamic> json) { retur
   pullRequest: WebhooksPullRequest5.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookPullRequestMilestonedAction action;
 
@@ -51,7 +51,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (milestone != null) 'milestone': milestone?.toJson(),
@@ -60,12 +60,12 @@ Map<String, dynamic> toJson() { return {
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
-      json.containsKey('repository'); } 
-WebhookPullRequestMilestoned copyWith({WebhookPullRequestMilestonedAction? action, EnterpriseWebhooks? Function()? enterprise, Milestone? Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookPullRequestMilestoned(
+      json.containsKey('repository');}
+WebhookPullRequestMilestoned copyWith({WebhookPullRequestMilestonedAction? action, EnterpriseWebhooks? Function()? enterprise, Milestone? Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookPullRequestMilestoned(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   milestone: milestone != null ? milestone() : this.milestone,
@@ -74,8 +74,8 @@ WebhookPullRequestMilestoned copyWith({WebhookPullRequestMilestonedAction? actio
   pullRequest: pullRequest ?? this.pullRequest,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestMilestoned &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -84,7 +84,7 @@ WebhookPullRequestMilestoned copyWith({WebhookPullRequestMilestonedAction? actio
           organization == other.organization &&
           pullRequest == other.pullRequest &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, milestone, number, organization, pullRequest, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestMilestoned(action: $action, enterprise: $enterprise, milestone: $milestone, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, milestone, number, organization, pullRequest, repository, sender);}
+@override String toString() {return 'WebhookPullRequestMilestoned(action: $action, enterprise: $enterprise, milestone: $milestone, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';}
+}

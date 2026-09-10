@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerPort represents a network port in a single container.
 @immutable final class ContainerPort {const ContainerPort({required this.containerPort, this.hostIp, this.hostPort, this.name, this.protocol, });
 
-factory ContainerPort.fromJson(Map<String, dynamic> json) { return ContainerPort(
+factory ContainerPort.fromJson(Map<String, dynamic> json) {return ContainerPort(
   containerPort: (json['containerPort'] as num).toInt(),
   hostIp: json['hostIP'] as String?,
   hostPort: json['hostPort'] != null ? (json['hostPort'] as num).toInt() : null,
   name: json['name'] as String?,
   protocol: json['protocol'] as String?,
-); }
+);}
 
 /// Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
 final int containerPort;
@@ -27,29 +27,29 @@ final String? name;
 final String? protocol;
 
 /// The value with the schema default applied when absent.
-String get protocolOrDefault { return protocol ?? 'TCP'; } 
-Map<String, dynamic> toJson() { return {
+String get protocolOrDefault {return protocol ?? 'TCP';}
+Map<String, dynamic> toJson() {return {
   'containerPort': containerPort,
   'hostIP': ?hostIp,
   'hostPort': ?hostPort,
   'name': ?name,
   'protocol': ?protocol,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('containerPort') && json['containerPort'] is num; } 
-ContainerPort copyWith({int? containerPort, String? Function()? hostIp, int? Function()? hostPort, String? Function()? name, String? Function()? protocol, }) { return ContainerPort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('containerPort') && json['containerPort'] is num;}
+ContainerPort copyWith({int? containerPort, String? Function()? hostIp, int? Function()? hostPort, String? Function()? name, String? Function()? protocol, }) {return ContainerPort(
   containerPort: containerPort ?? this.containerPort,
   hostIp: hostIp != null ? hostIp() : this.hostIp,
   hostPort: hostPort != null ? hostPort() : this.hostPort,
   name: name != null ? name() : this.name,
   protocol: protocol != null ? protocol() : this.protocol,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerPort &&
           containerPort == other.containerPort &&
           hostIp == other.hostIp &&
           hostPort == other.hostPort &&
           name == other.name &&
-          protocol == other.protocol; } 
-@override int get hashCode { return Object.hash(containerPort, hostIp, hostPort, name, protocol); } 
-@override String toString() { return 'ContainerPort(containerPort: $containerPort, hostIp: $hostIp, hostPort: $hostPort, name: $name, protocol: $protocol)'; } 
- }
+          protocol == other.protocol;}
+@override int get hashCode {return Object.hash(containerPort, hostIp, hostPort, name, protocol);}
+@override String toString() {return 'ContainerPort(containerPort: $containerPort, hostIp: $hostIp, hostPort: $hostPort, name: $name, protocol: $protocol)';}
+}

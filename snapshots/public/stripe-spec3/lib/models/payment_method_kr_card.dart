@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The local credit or debit card brand.
 @immutable final class PaymentMethodKrCardBrand {const PaymentMethodKrCardBrand._(this.value);
 
-factory PaymentMethodKrCardBrand.fromJson(String json) { return switch (json) {
+factory PaymentMethodKrCardBrand.fromJson(String json) {return switch (json) {
   'bc' => bc,
   'citi' => citi,
   'hana' => hana,
@@ -27,7 +27,7 @@ factory PaymentMethodKrCardBrand.fromJson(String json) { return switch (json) {
   'tossbank' => tossbank,
   'woori' => woori,
   _ => PaymentMethodKrCardBrand._(json),
-}; }
+};}
 
 static const PaymentMethodKrCardBrand bc = PaymentMethodKrCardBrand._('bc');
 
@@ -77,21 +77,21 @@ static const List<PaymentMethodKrCardBrand> values = [bc, citi, hana, hyundai, j
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodKrCardBrand && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodKrCardBrand($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodKrCardBrand && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodKrCardBrand($value)';}
+}
 /// 
 @immutable final class PaymentMethodKrCard {const PaymentMethodKrCard({this.brand = const Omittable.absent(), this.last4 = const Omittable.absent(), });
 
-factory PaymentMethodKrCard.fromJson(Map<String, dynamic> json) { return PaymentMethodKrCard(
+factory PaymentMethodKrCard.fromJson(Map<String, dynamic> json) {return PaymentMethodKrCard(
   brand: json.containsKey('brand') ? Omittable(json['brand'] != null ? PaymentMethodKrCardBrand.fromJson(json['brand'] as String) : null) : const Omittable.absent(),
   last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The local credit or debit card brand.
 final Omittable<PaymentMethodKrCardBrand?> brand;
@@ -99,19 +99,19 @@ final Omittable<PaymentMethodKrCardBrand?> brand;
 /// The last four digits of the card. This may not be present for American Express cards.
 final Omittable<String?> last4;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brand.isPresent) 'brand': brand.value?.toJson(),
   if (last4.isPresent) 'last4': last4.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'last4'}.contains(key)); } 
-PaymentMethodKrCard copyWith({Omittable<PaymentMethodKrCardBrand?>? brand, Omittable<String?>? last4, }) { return PaymentMethodKrCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'brand', 'last4'}.contains(key));}
+PaymentMethodKrCard copyWith({Omittable<PaymentMethodKrCardBrand?>? brand, Omittable<String?>? last4, }) {return PaymentMethodKrCard(
   brand: brand ?? this.brand,
   last4: last4 ?? this.last4,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodKrCard &&
           brand == other.brand &&
-          last4 == other.last4; } 
-@override int get hashCode { return Object.hash(brand, last4); } 
-@override String toString() { return 'PaymentMethodKrCard(brand: $brand, last4: $last4)'; } 
- }
+          last4 == other.last4;}
+@override int get hashCode {return Object.hash(brand, last4);}
+@override String toString() {return 'PaymentMethodKrCard(brand: $brand, last4: $last4)';}
+}

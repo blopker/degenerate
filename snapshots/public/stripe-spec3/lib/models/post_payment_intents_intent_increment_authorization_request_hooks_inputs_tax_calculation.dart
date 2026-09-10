@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2 {const PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2._(this.value);
 
-factory PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2 $empty = PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInpu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculation {

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval {const PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval._(this.value);
 
-factory PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval day = PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval._('day');
 
@@ -22,38 +22,38 @@ static const List<PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval($value)';}
+}
 @immutable final class PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring {const PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring({required this.interval, this.intervalCount, });
 
-factory PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring(
+factory PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring(
   interval: PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-); }
+);}
 
 final PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval interval;
 
 final int? intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring copyWith({PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) { return PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring copyWith({PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) {return PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestPhasesItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)';}
+}

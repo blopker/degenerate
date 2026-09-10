@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksUpdateRequestVariant2 {const ChecksUpdateRequestVariant2({this.status = const Omittable.absent(), this.additionalProperties = const {}, });
 
-factory ChecksUpdateRequestVariant2.fromJson(Map<String, dynamic> json) { return ChecksUpdateRequestVariant2(
+factory ChecksUpdateRequestVariant2.fromJson(Map<String, dynamic> json) {return ChecksUpdateRequestVariant2(
   status: json.containsKey('status') ? Omittable(json['status']) : const Omittable.absent(),
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'status'}.contains(e.key))),
-); }
+);}
 
 final Omittable<dynamic> status;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status.isPresent) 'status': status.value,
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-ChecksUpdateRequestVariant2 copyWith({Omittable<dynamic>? status, Map<String, dynamic>? additionalProperties, }) { return ChecksUpdateRequestVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+ChecksUpdateRequestVariant2 copyWith({Omittable<dynamic>? status, Map<String, dynamic>? additionalProperties, }) {return ChecksUpdateRequestVariant2(
   status: status ?? this.status,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChecksUpdateRequestVariant2 &&
           status == other.status &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(status, mapHash(additionalProperties)); } 
-@override String toString() { return 'ChecksUpdateRequestVariant2(status: $status, additionalProperties: $additionalProperties)'; } 
- }
+          mapEquals(additionalProperties, other.additionalProperties);}
+@override int get hashCode {return Object.hash(status, mapHash(additionalProperties));}
+@override String toString() {return 'ChecksUpdateRequestVariant2(status: $status, additionalProperties: $additionalProperties)';}
+}

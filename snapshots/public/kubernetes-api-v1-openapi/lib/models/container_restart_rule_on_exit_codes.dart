@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerRestartRuleOnExitCodes describes the condition for handling an exited container based on its exit codes.
 @immutable final class ContainerRestartRuleOnExitCodes {const ContainerRestartRuleOnExitCodes({required this.$operator, this.values, });
 
-factory ContainerRestartRuleOnExitCodes.fromJson(Map<String, dynamic> json) { return ContainerRestartRuleOnExitCodes(
+factory ContainerRestartRuleOnExitCodes.fromJson(Map<String, dynamic> json) {return ContainerRestartRuleOnExitCodes(
   $operator: json['operator'] as String,
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// Represents the relationship between the container exit code(s) and the specified values. Possible values are: - In: the requirement is satisfied if the container exit code is in the
 ///   set of specified values.
@@ -17,19 +17,19 @@ final String $operator;
 /// Specifies the set of values to check for container exit codes. At most 255 elements are allowed.
 final List<int>? values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'operator': $operator,
   'values': ?values,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') && json['operator'] is String; } 
-ContainerRestartRuleOnExitCodes copyWith({String? $operator, List<int>? Function()? values, }) { return ContainerRestartRuleOnExitCodes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operator') && json['operator'] is String;}
+ContainerRestartRuleOnExitCodes copyWith({String? $operator, List<int>? Function()? values, }) {return ContainerRestartRuleOnExitCodes(
   $operator: $operator ?? this.$operator,
   values: values != null ? values() : this.values,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerRestartRuleOnExitCodes &&
           $operator == other.$operator &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash($operator, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'ContainerRestartRuleOnExitCodes(\$operator: ${$operator}, values: $values)'; } 
- }
+          listEquals(values, other.values);}
+@override int get hashCode {return Object.hash($operator, Object.hashAll(values ?? const []));}
+@override String toString() {return 'ContainerRestartRuleOnExitCodes(\$operator: ${$operator}, values: $values)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_response_result_annotations.dart';@immutable final class RadarGetAnnotationsResponseResult {const RadarGetAnnotationsResponseResult({required this.annotations});
 
-factory RadarGetAnnotationsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResult(
+factory RadarGetAnnotationsResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsResponseResult(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetAnnotationsResponseResultAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<RadarGetAnnotationsResponseResultAnnotations> annotations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'annotations': annotations.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations'); } 
-RadarGetAnnotationsResponseResult copyWith({List<RadarGetAnnotationsResponseResultAnnotations>? annotations}) { return RadarGetAnnotationsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('annotations');}
+RadarGetAnnotationsResponseResult copyWith({List<RadarGetAnnotationsResponseResultAnnotations>? annotations}) {return RadarGetAnnotationsResponseResult(
   annotations: annotations ?? this.annotations,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAnnotationsResponseResult &&
-          listEquals(annotations, other.annotations); } 
-@override int get hashCode { return Object.hashAll(annotations).hashCode; } 
-@override String toString() { return 'RadarGetAnnotationsResponseResult(annotations: $annotations)'; } 
- }
+          listEquals(annotations, other.annotations);}
+@override int get hashCode {return Object.hashAll(annotations).hashCode;}
+@override String toString() {return 'RadarGetAnnotationsResponseResult(annotations: $annotations)';}
+}

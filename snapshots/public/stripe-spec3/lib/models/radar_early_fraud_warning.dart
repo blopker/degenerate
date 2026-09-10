@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_early_fraud_warning_charge.dart';import 'radar_early_fraud_warning_payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject._(this.value);
 
-factory RadarEarlyFraudWarningObject.fromJson(String json) { return switch (json) {
+factory RadarEarlyFraudWarningObject.fromJson(String json) {return switch (json) {
   'radar.early_fraud_warning' => radarEarlyFraudWarning,
   _ => RadarEarlyFraudWarningObject._(json),
-}; }
+};}
 
 static const RadarEarlyFraudWarningObject radarEarlyFraudWarning = RadarEarlyFraudWarningObject._('radar.early_fraud_warning');
 
@@ -14,21 +14,21 @@ static const List<RadarEarlyFraudWarningObject> values = [radarEarlyFraudWarning
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarEarlyFraudWarningObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarEarlyFraudWarningObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarEarlyFraudWarningObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarEarlyFraudWarningObject($value)';}
+}
 /// An early fraud warning indicates that the card issuer has notified us that a
 /// charge may be fraudulent.
 /// 
 /// Related guide: [Early fraud warnings](https://docs.stripe.com/disputes/measuring#early-fraud-warnings)
 @immutable final class RadarEarlyFraudWarning {const RadarEarlyFraudWarning({required this.actionable, required this.charge, required this.created, required this.fraudType, required this.id, required this.livemode, required this.object, this.paymentIntent, });
 
-factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return RadarEarlyFraudWarning(
+factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) {return RadarEarlyFraudWarning(
   actionable: json['actionable'] as bool,
   charge: RadarEarlyFraudWarningCharge.fromJson(json['charge']),
   created: (json['created'] as num).toInt(),
@@ -37,7 +37,7 @@ factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return Rada
   livemode: json['livemode'] as bool,
   object: RadarEarlyFraudWarningObject.fromJson(json['object'] as String),
   paymentIntent: json['payment_intent'] != null ? RadarEarlyFraudWarningPaymentIntent.fromJson(json['payment_intent']) : null,
-); }
+);}
 
 /// An EFW is actionable if it has not received a dispute and has not been fully refunded. You may wish to proactively refund a charge that receives an EFW, in order to avoid receiving a dispute later.
 final bool actionable;
@@ -63,7 +63,7 @@ final RadarEarlyFraudWarningObject object;
 /// ID of the Payment Intent this early fraud warning is for, optionally expanded.
 final RadarEarlyFraudWarningPaymentIntent? paymentIntent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actionable': actionable,
   'charge': charge.toJson(),
   'created': created,
@@ -72,15 +72,15 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'object': object.toJson(),
   if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actionable') && json['actionable'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actionable') && json['actionable'] is bool &&
       json.containsKey('charge') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('fraud_type') && json['fraud_type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
-RadarEarlyFraudWarning copyWith({bool? actionable, RadarEarlyFraudWarningCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, RadarEarlyFraudWarningPaymentIntent? Function()? paymentIntent, }) { return RadarEarlyFraudWarning(
+      json.containsKey('object');}
+RadarEarlyFraudWarning copyWith({bool? actionable, RadarEarlyFraudWarningCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, RadarEarlyFraudWarningPaymentIntent? Function()? paymentIntent, }) {return RadarEarlyFraudWarning(
   actionable: actionable ?? this.actionable,
   charge: charge ?? this.charge,
   created: created ?? this.created,
@@ -89,8 +89,8 @@ RadarEarlyFraudWarning copyWith({bool? actionable, RadarEarlyFraudWarningCharge?
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarEarlyFraudWarning &&
           actionable == other.actionable &&
           charge == other.charge &&
@@ -99,7 +99,7 @@ RadarEarlyFraudWarning copyWith({bool? actionable, RadarEarlyFraudWarningCharge?
           id == other.id &&
           livemode == other.livemode &&
           object == other.object &&
-          paymentIntent == other.paymentIntent; } 
-@override int get hashCode { return Object.hash(actionable, charge, created, fraudType, id, livemode, object, paymentIntent); } 
-@override String toString() { return 'RadarEarlyFraudWarning(actionable: $actionable, charge: $charge, created: $created, fraudType: $fraudType, id: $id, livemode: $livemode, object: $object, paymentIntent: $paymentIntent)'; } 
- }
+          paymentIntent == other.paymentIntent;}
+@override int get hashCode {return Object.hash(actionable, charge, created, fraudType, id, livemode, object, paymentIntent);}
+@override String toString() {return 'RadarEarlyFraudWarning(actionable: $actionable, charge: $charge, created: $created, fraudType: $fraudType, id: $id, livemode: $livemode, object: $object, paymentIntent: $paymentIntent)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operator to use for matching.
 @immutable final class RepositoryRuleBranchNamePatternParametersOperator {const RepositoryRuleBranchNamePatternParametersOperator._(this.value);
 
-factory RepositoryRuleBranchNamePatternParametersOperator.fromJson(String json) { return switch (json) {
+factory RepositoryRuleBranchNamePatternParametersOperator.fromJson(String json) {return switch (json) {
   'starts_with' => startsWith,
   'ends_with' => endsWith,
   'contains' => contains,
   'regex' => regex,
   _ => RepositoryRuleBranchNamePatternParametersOperator._(json),
-}; }
+};}
 
 static const RepositoryRuleBranchNamePatternParametersOperator startsWith = RepositoryRuleBranchNamePatternParametersOperator._('starts_with');
 
@@ -23,22 +23,22 @@ static const List<RepositoryRuleBranchNamePatternParametersOperator> values = [s
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleBranchNamePatternParametersOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleBranchNamePatternParametersOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRuleBranchNamePatternParametersOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRuleBranchNamePatternParametersOperator($value)';}
+}
 @immutable final class RepositoryRuleBranchNamePatternParameters {const RepositoryRuleBranchNamePatternParameters({required this.$operator, required this.pattern, this.name, this.negate, });
 
-factory RepositoryRuleBranchNamePatternParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleBranchNamePatternParameters(
+factory RepositoryRuleBranchNamePatternParameters.fromJson(Map<String, dynamic> json) {return RepositoryRuleBranchNamePatternParameters(
   name: json['name'] as String?,
   negate: json['negate'] as bool?,
   $operator: RepositoryRuleBranchNamePatternParametersOperator.fromJson(json['operator'] as String),
   pattern: json['pattern'] as String,
-); }
+);}
 
 /// How this rule appears when configuring it.
 final String? name;
@@ -52,26 +52,26 @@ final RepositoryRuleBranchNamePatternParametersOperator $operator;
 /// The pattern to match with.
 final String pattern;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'negate': ?negate,
   'operator': $operator.toJson(),
   'pattern': pattern,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') &&
-      json.containsKey('pattern') && json['pattern'] is String; } 
-RepositoryRuleBranchNamePatternParameters copyWith({String? Function()? name, bool? Function()? negate, RepositoryRuleBranchNamePatternParametersOperator? $operator, String? pattern, }) { return RepositoryRuleBranchNamePatternParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operator') &&
+      json.containsKey('pattern') && json['pattern'] is String;}
+RepositoryRuleBranchNamePatternParameters copyWith({String? Function()? name, bool? Function()? negate, RepositoryRuleBranchNamePatternParametersOperator? $operator, String? pattern, }) {return RepositoryRuleBranchNamePatternParameters(
   name: name != null ? name() : this.name,
   negate: negate != null ? negate() : this.negate,
   $operator: $operator ?? this.$operator,
   pattern: pattern ?? this.pattern,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRuleBranchNamePatternParameters &&
           name == other.name &&
           negate == other.negate &&
           $operator == other.$operator &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(name, negate, $operator, pattern); } 
-@override String toString() { return 'RepositoryRuleBranchNamePatternParameters(name: $name, negate: $negate, \$operator: ${$operator}, pattern: $pattern)'; } 
- }
+          pattern == other.pattern;}
+@override int get hashCode {return Object.hash(name, negate, $operator, pattern);}
+@override String toString() {return 'RepositoryRuleBranchNamePatternParameters(name: $name, negate: $negate, \$operator: ${$operator}, pattern: $pattern)';}
+}

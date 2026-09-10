@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_payload.dart';import 'integration.dart';import 'simple_user.dart';/// A request for a specific ref(branch,sha,tag) to be deployed
 @immutable final class Deployment {const Deployment({required this.url, required this.id, required this.nodeId, required this.sha, required this.ref, required this.task, required this.payload, required this.environment, required this.description, required this.creator, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.originalEnvironment, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp = const Omittable.absent(), });
 
-factory Deployment.fromJson(Map<String, dynamic> json) { return Deployment(
+factory Deployment.fromJson(Map<String, dynamic> json) {return Deployment(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -22,7 +22,7 @@ factory Deployment.fromJson(Map<String, dynamic> json) { return Deployment(
   transientEnvironment: json['transient_environment'] as bool?,
   productionEnvironment: json['production_environment'] as bool?,
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final Uri url;
 
@@ -66,7 +66,7 @@ final bool? productionEnvironment;
 
 final Omittable<Integration?> performedViaGithubApp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'node_id': nodeId,
@@ -85,8 +85,8 @@ Map<String, dynamic> toJson() { return {
   'transient_environment': ?transientEnvironment,
   'production_environment': ?productionEnvironment,
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
@@ -99,8 +99,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('statuses_url') && json['statuses_url'] is String &&
-      json.containsKey('repository_url') && json['repository_url'] is String; } 
-Deployment copyWith({Uri? url, int? id, String? nodeId, String? sha, String? ref, String? task, DeploymentPayload? payload, String? Function()? originalEnvironment, String? environment, String? Function()? description, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, Uri? statusesUrl, Uri? repositoryUrl, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, Omittable<Integration?>? performedViaGithubApp, }) { return Deployment(
+      json.containsKey('repository_url') && json['repository_url'] is String;}
+Deployment copyWith({Uri? url, int? id, String? nodeId, String? sha, String? ref, String? task, DeploymentPayload? payload, String? Function()? originalEnvironment, String? environment, String? Function()? description, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, Uri? statusesUrl, Uri? repositoryUrl, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, Omittable<Integration?>? performedViaGithubApp, }) {return Deployment(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -119,8 +119,8 @@ Deployment copyWith({Uri? url, int? id, String? nodeId, String? sha, String? ref
   transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Deployment &&
           url == other.url &&
           id == other.id &&
@@ -139,7 +139,7 @@ Deployment copyWith({Uri? url, int? id, String? nodeId, String? sha, String? ref
           repositoryUrl == other.repositoryUrl &&
           transientEnvironment == other.transientEnvironment &&
           productionEnvironment == other.productionEnvironment &&
-          performedViaGithubApp == other.performedViaGithubApp; } 
-@override int get hashCode { return Object.hash(url, id, nodeId, sha, ref, task, payload, originalEnvironment, environment, description, creator, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp); } 
-@override String toString() { return 'Deployment(url: $url, id: $id, nodeId: $nodeId, sha: $sha, ref: $ref, task: $task, payload: $payload, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)'; } 
- }
+          performedViaGithubApp == other.performedViaGithubApp;}
+@override int get hashCode {return Object.hash(url, id, nodeId, sha, ref, task, payload, originalEnvironment, environment, description, creator, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp);}
+@override String toString() {return 'Deployment(url: $url, id: $id, nodeId: $nodeId, sha: $sha, ref: $ref, task: $task, payload: $payload, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)';}
+}

@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretKeyParam3CustomerAcceptanceOffline {const SecretKeyParam3CustomerAcceptanceOffline();
 
-factory SecretKeyParam3CustomerAcceptanceOffline.fromJson(Map<String, dynamic> _) { return const SecretKeyParam3CustomerAcceptanceOffline(); }
+factory SecretKeyParam3CustomerAcceptanceOffline.fromJson(Map<String, dynamic> _) {return const SecretKeyParam3CustomerAcceptanceOffline();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-SecretKeyParam3CustomerAcceptanceOffline copyWith() { return const SecretKeyParam3CustomerAcceptanceOffline(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+SecretKeyParam3CustomerAcceptanceOffline copyWith() {return const SecretKeyParam3CustomerAcceptanceOffline(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is SecretKeyParam3CustomerAcceptanceOffline; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'SecretKeyParam3CustomerAcceptanceOffline()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is SecretKeyParam3CustomerAcceptanceOffline;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'SecretKeyParam3CustomerAcceptanceOffline()';}
+}

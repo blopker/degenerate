@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_page_build_build_error.dart';import 'webhook_page_build_build_pusher.dart';/// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
 @immutable final class WebhookPageBuildBuild {const WebhookPageBuildBuild({required this.commit, required this.createdAt, required this.duration, required this.error, required this.pusher, required this.status, required this.updatedAt, required this.url, });
 
-factory WebhookPageBuildBuild.fromJson(Map<String, dynamic> json) { return WebhookPageBuildBuild(
+factory WebhookPageBuildBuild.fromJson(Map<String, dynamic> json) {return WebhookPageBuildBuild(
   commit: json['commit'] as String?,
   createdAt: json['created_at'] as String,
   duration: (json['duration'] as num).toInt(),
@@ -12,7 +12,7 @@ factory WebhookPageBuildBuild.fromJson(Map<String, dynamic> json) { return Webho
   status: json['status'] as String,
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String? commit;
 
@@ -30,7 +30,7 @@ final String updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'commit': commit,
   'created_at': createdAt,
   'duration': duration,
@@ -39,16 +39,16 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'updated_at': updatedAt,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit') && (json['commit'] == null || json['commit'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('commit') && (json['commit'] == null || json['commit'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('error') &&
       json.containsKey('pusher') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookPageBuildBuild copyWith({String? Function()? commit, String? createdAt, int? duration, WebhookPageBuildBuildError? error, WebhookPageBuildBuildPusher? Function()? pusher, String? status, String? updatedAt, Uri? url, }) { return WebhookPageBuildBuild(
+      json.containsKey('url') && json['url'] is String;}
+WebhookPageBuildBuild copyWith({String? Function()? commit, String? createdAt, int? duration, WebhookPageBuildBuildError? error, WebhookPageBuildBuildPusher? Function()? pusher, String? status, String? updatedAt, Uri? url, }) {return WebhookPageBuildBuild(
   commit: commit != null ? commit() : this.commit,
   createdAt: createdAt ?? this.createdAt,
   duration: duration ?? this.duration,
@@ -57,8 +57,8 @@ WebhookPageBuildBuild copyWith({String? Function()? commit, String? createdAt, i
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPageBuildBuild &&
           commit == other.commit &&
           createdAt == other.createdAt &&
@@ -67,7 +67,7 @@ WebhookPageBuildBuild copyWith({String? Function()? commit, String? createdAt, i
           pusher == other.pusher &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(commit, createdAt, duration, error, pusher, status, updatedAt, url); } 
-@override String toString() { return 'WebhookPageBuildBuild(commit: $commit, createdAt: $createdAt, duration: $duration, error: $error, pusher: $pusher, status: $status, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(commit, createdAt, duration, error, pusher, status, updatedAt, url);}
+@override String toString() {return 'WebhookPageBuildBuild(commit: $commit, createdAt: $createdAt, duration: $duration, error: $error, pusher: $pusher, status: $status, updatedAt: $updatedAt, url: $url)';}
+}

@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How to use the host in the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyHost {const RulesetsSetCacheSettingsCustomCacheKeyHost({this.resolved});
 
-factory RulesetsSetCacheSettingsCustomCacheKeyHost.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyHost(
+factory RulesetsSetCacheSettingsCustomCacheKeyHost.fromJson(Map<String, dynamic> json) {return RulesetsSetCacheSettingsCustomCacheKeyHost(
   resolved: json['resolved'] as bool?,
-); }
+);}
 
 /// Whether to use the resolved host in the cache key.
 final bool? resolved;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resolved': ?resolved,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resolved'}.contains(key)); } 
-RulesetsSetCacheSettingsCustomCacheKeyHost copyWith({bool? Function()? resolved}) { return RulesetsSetCacheSettingsCustomCacheKeyHost(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'resolved'}.contains(key));}
+RulesetsSetCacheSettingsCustomCacheKeyHost copyWith({bool? Function()? resolved}) {return RulesetsSetCacheSettingsCustomCacheKeyHost(
   resolved: resolved != null ? resolved() : this.resolved,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsSetCacheSettingsCustomCacheKeyHost &&
-          resolved == other.resolved; } 
-@override int get hashCode { return resolved.hashCode; } 
-@override String toString() { return 'RulesetsSetCacheSettingsCustomCacheKeyHost(resolved: $resolved)'; } 
- }
+          resolved == other.resolved;}
+@override int get hashCode {return resolved.hashCode;}
+@override String toString() {return 'RulesetsSetCacheSettingsCustomCacheKeyHost(resolved: $resolved)';}
+}

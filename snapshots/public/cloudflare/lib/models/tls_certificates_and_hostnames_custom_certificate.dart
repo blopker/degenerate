@@ -31,14 +31,14 @@ String toJson() => value;
 /// Status of the zone's custom SSL.
 @immutable final class TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus._(this.value);
 
-factory TlsCertificatesAndHostnamesStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'expired' => expired,
   'deleted' => deleted,
   'pending' => pending,
   'initializing' => initializing,
   _ => TlsCertificatesAndHostnamesStatus._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesStatus active = TlsCertificatesAndHostnamesStatus._('active');
 
@@ -54,17 +54,17 @@ static const List<TlsCertificatesAndHostnamesStatus> values = [active, expired, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesStatus($value)';}
+}
 @immutable final class TlsCertificatesAndHostnamesCustomCertificate {const TlsCertificatesAndHostnamesCustomCertificate({required this.id, required this.zoneId, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.hosts, this.issuer, this.keylessServer, this.modifiedOn, this.policyRestrictions, this.priority, this.signature, this.status, this.uploadedOn, });
 
-factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomCertificate(
+factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCustomCertificate(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,
   expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesExpiresOn.fromJson(json['expires_on'] as String) : null,
   geoRestrictions: json['geo_restrictions'] != null ? TlsCertificatesAndHostnamesGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
@@ -79,7 +79,7 @@ factory TlsCertificatesAndHostnamesCustomCertificate.fromJson(Map<String, dynami
   status: json['status'] != null ? TlsCertificatesAndHostnamesStatus.fromJson(json['status'] as String) : null,
   uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesUploadedOn.fromJson(json['uploaded_on'] as String) : null,
   zoneId: TlsCertificatesAndHostnamesIdentifier.fromJson(json['zone_id'] as String),
-); }
+);}
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
@@ -110,7 +110,7 @@ final TlsCertificatesAndHostnamesUploadedOn? uploadedOn;
 
 final TlsCertificatesAndHostnamesIdentifier zoneId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
   if (geoRestrictions != null) 'geo_restrictions': geoRestrictions?.toJson(),
@@ -125,10 +125,10 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
   'zone_id': zoneId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('zone_id'); } 
-TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesGeoRestrictions? Function()? geoRestrictions, List<String>? Function()? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesIssuer? Function()? issuer, TlsCertificatesAndHostnamesBase? Function()? keylessServer, TlsCertificatesAndHostnamesModifiedOn? Function()? modifiedOn, TlsCertificatesAndHostnamesPolicyRestrictions? Function()? policyRestrictions, TlsCertificatesAndHostnamesPriority? Function()? priority, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesStatus? Function()? status, TlsCertificatesAndHostnamesUploadedOn? Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier? zoneId, }) { return TlsCertificatesAndHostnamesCustomCertificate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('zone_id');}
+TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesGeoRestrictions? Function()? geoRestrictions, List<String>? Function()? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesIssuer? Function()? issuer, TlsCertificatesAndHostnamesBase? Function()? keylessServer, TlsCertificatesAndHostnamesModifiedOn? Function()? modifiedOn, TlsCertificatesAndHostnamesPolicyRestrictions? Function()? policyRestrictions, TlsCertificatesAndHostnamesPriority? Function()? priority, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesStatus? Function()? status, TlsCertificatesAndHostnamesUploadedOn? Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier? zoneId, }) {return TlsCertificatesAndHostnamesCustomCertificate(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   geoRestrictions: geoRestrictions != null ? geoRestrictions() : this.geoRestrictions,
@@ -143,8 +143,8 @@ TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnam
   status: status != null ? status() : this.status,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
   zoneId: zoneId ?? this.zoneId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomCertificate &&
           bundleMethod == other.bundleMethod &&
           expiresOn == other.expiresOn &&
@@ -159,7 +159,7 @@ TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnam
           signature == other.signature &&
           status == other.status &&
           uploadedOn == other.uploadedOn &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts ?? const []), id, issuer, keylessServer, modifiedOn, policyRestrictions, priority, signature, status, uploadedOn, zoneId); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, keylessServer: $keylessServer, modifiedOn: $modifiedOn, policyRestrictions: $policyRestrictions, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)'; } 
- }
+          zoneId == other.zoneId;}
+@override int get hashCode {return Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts ?? const []), id, issuer, keylessServer, modifiedOn, policyRestrictions, priority, signature, status, uploadedOn, zoneId);}
+@override String toString() {return 'TlsCertificatesAndHostnamesCustomCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, keylessServer: $keylessServer, modifiedOn: $modifiedOn, policyRestrictions: $policyRestrictions, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)';}
+}

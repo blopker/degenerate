@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode._(this.value);
 
-factory ListsItemRedirectStatusCode.fromJson(int json) { return switch (json) {
+factory ListsItemRedirectStatusCode.fromJson(int json) {return switch (json) {
   301 => $301,
   302 => $302,
   307 => $307,
   308 => $308,
   _ => ListsItemRedirectStatusCode._(json),
-}; }
+};}
 
 static const ListsItemRedirectStatusCode $301 = ListsItemRedirectStatusCode._(301);
 
@@ -22,18 +22,18 @@ static const List<ListsItemRedirectStatusCode> values = [$301, $302, $307, $308]
 
 final int value;
 
-int toJson() { return value; } 
+int toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListsItemRedirectStatusCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListsItemRedirectStatusCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListsItemRedirectStatusCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListsItemRedirectStatusCode($value)';}
+}
 /// The definition of the redirect.
 @immutable final class ListsItemRedirect {const ListsItemRedirect({required this.sourceUrl, required this.targetUrl, this.includeSubdomains, this.preservePathSuffix, this.preserveQueryString, this.statusCode, this.subpathMatching, });
 
-factory ListsItemRedirect.fromJson(Map<String, dynamic> json) { return ListsItemRedirect(
+factory ListsItemRedirect.fromJson(Map<String, dynamic> json) {return ListsItemRedirect(
   includeSubdomains: json['include_subdomains'] as bool?,
   preservePathSuffix: json['preserve_path_suffix'] as bool?,
   preserveQueryString: json['preserve_query_string'] as bool?,
@@ -41,7 +41,7 @@ factory ListsItemRedirect.fromJson(Map<String, dynamic> json) { return ListsItem
   statusCode: json['status_code'] != null ? ListsItemRedirectStatusCode.fromJson((json['status_code'] as num).toInt()) : null,
   subpathMatching: json['subpath_matching'] as bool?,
   targetUrl: json['target_url'] as String,
-); }
+);}
 
 final bool? includeSubdomains;
 
@@ -58,16 +58,16 @@ final bool? subpathMatching;
 final String targetUrl;
 
 /// The value with the schema default applied when absent.
-bool get includeSubdomainsOrDefault { return includeSubdomains ?? false; } 
+bool get includeSubdomainsOrDefault {return includeSubdomains ?? false;}
 /// The value with the schema default applied when absent.
-bool get preservePathSuffixOrDefault { return preservePathSuffix ?? false; } 
+bool get preservePathSuffixOrDefault {return preservePathSuffix ?? false;}
 /// The value with the schema default applied when absent.
-bool get preserveQueryStringOrDefault { return preserveQueryString ?? false; } 
+bool get preserveQueryStringOrDefault {return preserveQueryString ?? false;}
 /// The value with the schema default applied when absent.
-ListsItemRedirectStatusCode get statusCodeOrDefault { return statusCode ?? ListsItemRedirectStatusCode.fromJson(301); } 
+ListsItemRedirectStatusCode get statusCodeOrDefault {return statusCode ?? ListsItemRedirectStatusCode.fromJson(301);}
 /// The value with the schema default applied when absent.
-bool get subpathMatchingOrDefault { return subpathMatching ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get subpathMatchingOrDefault {return subpathMatching ?? false;}
+Map<String, dynamic> toJson() {return {
   'include_subdomains': ?includeSubdomains,
   'preserve_path_suffix': ?preservePathSuffix,
   'preserve_query_string': ?preserveQueryString,
@@ -75,10 +75,10 @@ Map<String, dynamic> toJson() { return {
   if (statusCode != null) 'status_code': statusCode?.toJson(),
   'subpath_matching': ?subpathMatching,
   'target_url': targetUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('source_url') && json['source_url'] is String &&
-      json.containsKey('target_url') && json['target_url'] is String; } 
-ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function()? preservePathSuffix, bool? Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode? Function()? statusCode, bool? Function()? subpathMatching, String? targetUrl, }) { return ListsItemRedirect(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('source_url') && json['source_url'] is String &&
+      json.containsKey('target_url') && json['target_url'] is String;}
+ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function()? preservePathSuffix, bool? Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode? Function()? statusCode, bool? Function()? subpathMatching, String? targetUrl, }) {return ListsItemRedirect(
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
   preservePathSuffix: preservePathSuffix != null ? preservePathSuffix() : this.preservePathSuffix,
   preserveQueryString: preserveQueryString != null ? preserveQueryString() : this.preserveQueryString,
@@ -86,8 +86,8 @@ ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   subpathMatching: subpathMatching != null ? subpathMatching() : this.subpathMatching,
   targetUrl: targetUrl ?? this.targetUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListsItemRedirect &&
           includeSubdomains == other.includeSubdomains &&
           preservePathSuffix == other.preservePathSuffix &&
@@ -95,7 +95,7 @@ ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function(
           sourceUrl == other.sourceUrl &&
           statusCode == other.statusCode &&
           subpathMatching == other.subpathMatching &&
-          targetUrl == other.targetUrl; } 
-@override int get hashCode { return Object.hash(includeSubdomains, preservePathSuffix, preserveQueryString, sourceUrl, statusCode, subpathMatching, targetUrl); } 
-@override String toString() { return 'ListsItemRedirect(includeSubdomains: $includeSubdomains, preservePathSuffix: $preservePathSuffix, preserveQueryString: $preserveQueryString, sourceUrl: $sourceUrl, statusCode: $statusCode, subpathMatching: $subpathMatching, targetUrl: $targetUrl)'; } 
- }
+          targetUrl == other.targetUrl;}
+@override int get hashCode {return Object.hash(includeSubdomains, preservePathSuffix, preserveQueryString, sourceUrl, statusCode, subpathMatching, targetUrl);}
+@override String toString() {return 'ListsItemRedirect(includeSubdomains: $includeSubdomains, preservePathSuffix: $preservePathSuffix, preserveQueryString: $preserveQueryString, sourceUrl: $sourceUrl, statusCode: $statusCode, subpathMatching: $subpathMatching, targetUrl: $targetUrl)';}
+}

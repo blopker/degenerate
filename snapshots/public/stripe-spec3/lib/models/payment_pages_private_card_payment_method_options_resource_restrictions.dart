@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked {const PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked._(this.value);
 
-factory PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked.fromJson(String json) { return switch (json) {
+factory PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked.fromJson(String json) {return switch (json) {
   'american_express' => americanExpress,
   'discover_global_network' => discoverGlobalNetwork,
   'mastercard' => mastercard,
   'visa' => visa,
   _ => PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked._(json),
-}; }
+};}
 
 static const PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked americanExpress = PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked._('american_express');
 
@@ -22,34 +22,34 @@ static const List<PaymentPagesPrivateCardPaymentMethodOptionsResourceRestriction
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked($value)';}
+}
 /// 
 @immutable final class PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions {const PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions({this.brandsBlocked});
 
-factory PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions.fromJson(Map<String, dynamic> json) { return PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(
+factory PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions.fromJson(Map<String, dynamic> json) {return PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(
   brandsBlocked: (json['brands_blocked'] as List<dynamic>?)?.map((e) => PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Specify the card brands to block in the Checkout Session. If a customer enters or selects a card belonging to a blocked brand, they can't complete the Session.
 final List<PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked>? brandsBlocked;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brandsBlocked != null) 'brands_blocked': brandsBlocked?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brands_blocked'}.contains(key)); } 
-PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions copyWith({List<PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked>? Function()? brandsBlocked}) { return PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'brands_blocked'}.contains(key));}
+PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions copyWith({List<PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked>? Function()? brandsBlocked}) {return PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(
   brandsBlocked: brandsBlocked != null ? brandsBlocked() : this.brandsBlocked,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions &&
-          listEquals(brandsBlocked, other.brandsBlocked); } 
-@override int get hashCode { return Object.hashAll(brandsBlocked ?? const []).hashCode; } 
-@override String toString() { return 'PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(brandsBlocked: $brandsBlocked)'; } 
- }
+          listEquals(brandsBlocked, other.brandsBlocked);}
+@override int get hashCode {return Object.hashAll(brandsBlocked ?? const []).hashCode;}
+@override String toString() {return 'PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(brandsBlocked: $brandsBlocked)';}
+}

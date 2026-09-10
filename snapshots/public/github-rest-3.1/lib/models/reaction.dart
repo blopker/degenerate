@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The reaction to use
 @immutable final class ReactionContent {const ReactionContent._(this.value);
 
-factory ReactionContent.fromJson(String json) { return switch (json) {
+factory ReactionContent.fromJson(String json) {return switch (json) {
   '+1' => plus1,
   '-1' => minus1,
   'laugh' => laugh,
@@ -13,7 +13,7 @@ factory ReactionContent.fromJson(String json) { return switch (json) {
   'rocket' => rocket,
   'eyes' => eyes,
   _ => ReactionContent._(json),
-}; }
+};}
 
 static const ReactionContent plus1 = ReactionContent._('+1');
 
@@ -35,24 +35,24 @@ static const List<ReactionContent> values = [plus1, minus1, laugh, confused, hea
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReactionContent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReactionContent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReactionContent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReactionContent($value)';}
+}
 /// Reactions to conversations provide a way to help people express their feelings more simply and effectively.
 @immutable final class Reaction {const Reaction({required this.id, required this.nodeId, required this.user, required this.content, required this.createdAt, });
 
-factory Reaction.fromJson(Map<String, dynamic> json) { return Reaction(
+factory Reaction.fromJson(Map<String, dynamic> json) {return Reaction(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   content: ReactionContent.fromJson(json['content'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
-); }
+);}
 
 final int id;
 
@@ -65,32 +65,32 @@ final ReactionContent content;
 
 final DateTime createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'user': user?.toJson(),
   'content': content.toJson(),
   'created_at': createdAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('user') &&
       json.containsKey('content') &&
-      json.containsKey('created_at') && json['created_at'] is String; } 
-Reaction copyWith({int? id, String? nodeId, SimpleUser? Function()? user, ReactionContent? content, DateTime? createdAt, }) { return Reaction(
+      json.containsKey('created_at') && json['created_at'] is String;}
+Reaction copyWith({int? id, String? nodeId, SimpleUser? Function()? user, ReactionContent? content, DateTime? createdAt, }) {return Reaction(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   user: user != null ? user() : this.user,
   content: content ?? this.content,
   createdAt: createdAt ?? this.createdAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Reaction &&
           id == other.id &&
           nodeId == other.nodeId &&
           user == other.user &&
           content == other.content &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, user, content, createdAt); } 
-@override String toString() { return 'Reaction(id: $id, nodeId: $nodeId, user: $user, content: $content, createdAt: $createdAt)'; } 
- }
+          createdAt == other.createdAt;}
+@override int get hashCode {return Object.hash(id, nodeId, user, content, createdAt);}
+@override String toString() {return 'Reaction(id: $id, nodeId: $nodeId, user: $user, content: $content, createdAt: $createdAt)';}
+}

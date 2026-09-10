@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_from_quote_quote.dart';/// 
 @immutable final class QuotesResourceFromQuote {const QuotesResourceFromQuote({required this.isRevision, required this.quote, });
 
-factory QuotesResourceFromQuote.fromJson(Map<String, dynamic> json) { return QuotesResourceFromQuote(
+factory QuotesResourceFromQuote.fromJson(Map<String, dynamic> json) {return QuotesResourceFromQuote(
   isRevision: json['is_revision'] as bool,
   quote: QuotesResourceFromQuoteQuote.fromJson(json['quote']),
-); }
+);}
 
 /// Whether this quote is a revision of a different quote.
 final bool isRevision;
@@ -14,20 +14,20 @@ final bool isRevision;
 /// The quote that was cloned.
 final QuotesResourceFromQuoteQuote quote;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'is_revision': isRevision,
   'quote': quote.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_revision') && json['is_revision'] is bool &&
-      json.containsKey('quote'); } 
-QuotesResourceFromQuote copyWith({bool? isRevision, QuotesResourceFromQuoteQuote? quote, }) { return QuotesResourceFromQuote(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_revision') && json['is_revision'] is bool &&
+      json.containsKey('quote');}
+QuotesResourceFromQuote copyWith({bool? isRevision, QuotesResourceFromQuoteQuote? quote, }) {return QuotesResourceFromQuote(
   isRevision: isRevision ?? this.isRevision,
   quote: quote ?? this.quote,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is QuotesResourceFromQuote &&
           isRevision == other.isRevision &&
-          quote == other.quote; } 
-@override int get hashCode { return Object.hash(isRevision, quote); } 
-@override String toString() { return 'QuotesResourceFromQuote(isRevision: $isRevision, quote: $quote)'; } 
- }
+          quote == other.quote;}
+@override int get hashCode {return Object.hash(isRevision, quote);}
+@override String toString() {return 'QuotesResourceFromQuote(isRevision: $isRevision, quote: $quote)';}
+}

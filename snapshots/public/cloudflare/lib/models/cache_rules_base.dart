@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CacheRulesBase {const CacheRulesBase({required this.id, this.modifiedOn = const Omittable.absent(), });
 
-factory CacheRulesBase.fromJson(Map<String, dynamic> json) { return CacheRulesBase(
+factory CacheRulesBase.fromJson(Map<String, dynamic> json) {return CacheRulesBase(
   id: json['id'] as String,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Identifier of the zone setting.
 final String id;
@@ -13,19 +13,19 @@ final String id;
 /// Last time this setting was modified.
 final Omittable<DateTime?> modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-CacheRulesBase copyWith({String? id, Omittable<DateTime?>? modifiedOn, }) { return CacheRulesBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+CacheRulesBase copyWith({String? id, Omittable<DateTime?>? modifiedOn, }) {return CacheRulesBase(
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CacheRulesBase &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(id, modifiedOn); } 
-@override String toString() { return 'CacheRulesBase(id: $id, modifiedOn: $modifiedOn)'; } 
- }
+          modifiedOn == other.modifiedOn;}
+@override int get hashCode {return Object.hash(id, modifiedOn);}
+@override String toString() {return 'CacheRulesBase(id: $id, modifiedOn: $modifiedOn)';}
+}

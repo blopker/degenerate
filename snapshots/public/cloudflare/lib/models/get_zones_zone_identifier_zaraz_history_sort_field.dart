@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetZonesZoneIdentifierZarazHistorySortField {const GetZonesZoneIdentifierZarazHistorySortField._(this.value);
 
-factory GetZonesZoneIdentifierZarazHistorySortField.fromJson(String json) { return switch (json) {
+factory GetZonesZoneIdentifierZarazHistorySortField.fromJson(String json) {return switch (json) {
   'id' => id,
   'user_id' => userId,
   'description' => description,
   'created_at' => createdAt,
   'updated_at' => updatedAt,
   _ => GetZonesZoneIdentifierZarazHistorySortField._(json),
-}; }
+};}
 
 static const GetZonesZoneIdentifierZarazHistorySortField id = GetZonesZoneIdentifierZarazHistorySortField._('id');
 
@@ -25,11 +25,11 @@ static const List<GetZonesZoneIdentifierZarazHistorySortField> values = [id, use
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetZonesZoneIdentifierZarazHistorySortField && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetZonesZoneIdentifierZarazHistorySortField($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetZonesZoneIdentifierZarazHistorySortField && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetZonesZoneIdentifierZarazHistorySortField($value)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType._(this.value);
 
-factory GetTerminalReadersDeviceType.fromJson(String json) { return switch (json) {
+factory GetTerminalReadersDeviceType.fromJson(String json) {return switch (json) {
   'bbpos_chipper2x' => bbposChipper2x,
   'bbpos_wisepad3' => bbposWisepad3,
   'bbpos_wisepos_e' => bbposWiseposE,
@@ -15,7 +15,7 @@ factory GetTerminalReadersDeviceType.fromJson(String json) { return switch (json
   'stripe_s710' => stripeS710,
   'verifone_P400' => verifoneP400,
   _ => GetTerminalReadersDeviceType._(json),
-}; }
+};}
 
 static const GetTerminalReadersDeviceType bbposChipper2x = GetTerminalReadersDeviceType._('bbpos_chipper2x');
 
@@ -43,11 +43,11 @@ static const List<GetTerminalReadersDeviceType> values = [bbposChipper2x, bbposW
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTerminalReadersDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTerminalReadersDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTerminalReadersDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTerminalReadersDeviceType($value)';}
+}

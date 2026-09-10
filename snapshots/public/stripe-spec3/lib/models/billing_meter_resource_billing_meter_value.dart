@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class BillingMeterResourceBillingMeterValue {const BillingMeterResourceBillingMeterValue({required this.eventPayloadKey});
 
-factory BillingMeterResourceBillingMeterValue.fromJson(Map<String, dynamic> json) { return BillingMeterResourceBillingMeterValue(
+factory BillingMeterResourceBillingMeterValue.fromJson(Map<String, dynamic> json) {return BillingMeterResourceBillingMeterValue(
   eventPayloadKey: json['event_payload_key'] as String,
-); }
+);}
 
 /// The key in the meter event payload to use as the value for this meter.
 final String eventPayloadKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_payload_key': eventPayloadKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_payload_key') && json['event_payload_key'] is String; } 
-BillingMeterResourceBillingMeterValue copyWith({String? eventPayloadKey}) { return BillingMeterResourceBillingMeterValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_payload_key') && json['event_payload_key'] is String;}
+BillingMeterResourceBillingMeterValue copyWith({String? eventPayloadKey}) {return BillingMeterResourceBillingMeterValue(
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingMeterResourceBillingMeterValue &&
-          eventPayloadKey == other.eventPayloadKey; } 
-@override int get hashCode { return eventPayloadKey.hashCode; } 
-@override String toString() { return 'BillingMeterResourceBillingMeterValue(eventPayloadKey: $eventPayloadKey)'; } 
- }
+          eventPayloadKey == other.eventPayloadKey;}
+@override int get hashCode {return eventPayloadKey.hashCode;}
+@override String toString() {return 'BillingMeterResourceBillingMeterValue(eventPayloadKey: $eventPayloadKey)';}
+}

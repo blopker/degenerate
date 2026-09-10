@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_features_subscription_cancel_cancellation_reason.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode.fromJson(String json) {return switch (json) {
   'at_period_end' => atPeriodEnd,
   'immediately' => immediately,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode atPeriodEnd = PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode._('at_period_end');
 
@@ -16,22 +16,22 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesSub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode($value)';}
+}
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior._(this.value);
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior._(json),
-}; }
+};}
 
 static const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior alwaysInvoice = PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior._('always_invoice');
 
@@ -43,22 +43,22 @@ static const List<PostBillingPortalConfigurationsConfigurationRequestFeaturesSub
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior($value)';}
+}
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel({this.cancellationReason, this.enabled, this.mode, this.prorationBehavior, });
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(
   cancellationReason: json['cancellation_reason'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool?,
   mode: json['mode'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode.fromJson(json['mode'] as String) : null,
   prorationBehavior: json['proration_behavior'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-); }
+);}
 
 final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason? cancellationReason;
 
@@ -68,25 +68,25 @@ final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCan
 
 final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior? prorationBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
   'enabled': ?enabled,
   if (mode != null) 'mode': mode?.toJson(),
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_reason', 'enabled', 'mode', 'proration_behavior'}.contains(key)); } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason? Function()? cancellationReason, bool? Function()? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode? Function()? mode, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior? Function()? prorationBehavior, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cancellation_reason', 'enabled', 'mode', 'proration_behavior'}.contains(key));}
+PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason? Function()? cancellationReason, bool? Function()? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelMode? Function()? mode, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelProrationBehavior? Function()? prorationBehavior, }) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   enabled: enabled != null ? enabled() : this.enabled,
   mode: mode != null ? mode() : this.mode,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel &&
           cancellationReason == other.cancellationReason &&
           enabled == other.enabled &&
           mode == other.mode &&
-          prorationBehavior == other.prorationBehavior; } 
-@override int get hashCode { return Object.hash(cancellationReason, enabled, mode, prorationBehavior); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(cancellationReason: $cancellationReason, enabled: $enabled, mode: $mode, prorationBehavior: $prorationBehavior)'; } 
- }
+          prorationBehavior == other.prorationBehavior;}
+@override int get hashCode {return Object.hash(cancellationReason, enabled, mode, prorationBehavior);}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(cancellationReason: $cancellationReason, enabled: $enabled, mode: $mode, prorationBehavior: $prorationBehavior)';}
+}

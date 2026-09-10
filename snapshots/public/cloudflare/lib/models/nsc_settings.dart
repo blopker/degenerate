@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscSettings {const NscSettings({required this.defaultAsn});
 
-factory NscSettings.fromJson(Map<String, dynamic> json) { return NscSettings(
+factory NscSettings.fromJson(Map<String, dynamic> json) {return NscSettings(
   defaultAsn: (json['default_asn'] as num).toInt(),
-); }
+);}
 
 final int defaultAsn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default_asn': defaultAsn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_asn') && json['default_asn'] is num; } 
-NscSettings copyWith({int? defaultAsn}) { return NscSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_asn') && json['default_asn'] is num;}
+NscSettings copyWith({int? defaultAsn}) {return NscSettings(
   defaultAsn: defaultAsn ?? this.defaultAsn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscSettings &&
-          defaultAsn == other.defaultAsn; } 
-@override int get hashCode { return defaultAsn.hashCode; } 
-@override String toString() { return 'NscSettings(defaultAsn: $defaultAsn)'; } 
- }
+          defaultAsn == other.defaultAsn;}
+@override int get hashCode {return defaultAsn.hashCode;}
+@override String toString() {return 'NscSettings(defaultAsn: $defaultAsn)';}
+}

@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits {const RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits(
+factory RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetEmailSecurityTopTldsBySpamResponseResultMetaUnits(name: $name, value: $value)';}
+}

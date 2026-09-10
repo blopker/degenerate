@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosTcpFlowProtectionRule {const DosTcpFlowProtectionRule({required this.burstSensitivity, required this.createdOn, required this.id, required this.mode, required this.modifiedOn, required this.name, required this.rateSensitivity, required this.scope, });
 
-factory DosTcpFlowProtectionRule.fromJson(Map<String, dynamic> json) { return DosTcpFlowProtectionRule(
+factory DosTcpFlowProtectionRule.fromJson(Map<String, dynamic> json) {return DosTcpFlowProtectionRule(
   burstSensitivity: json['burst_sensitivity'] as String,
   createdOn: DateTime.parse(json['created_on'] as String),
   id: json['id'] as String,
@@ -11,7 +11,7 @@ factory DosTcpFlowProtectionRule.fromJson(Map<String, dynamic> json) { return Do
   name: json['name'] as String,
   rateSensitivity: json['rate_sensitivity'] as String,
   scope: json['scope'] as String,
-); }
+);}
 
 /// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 final String burstSensitivity;
@@ -37,7 +37,7 @@ final String rateSensitivity;
 /// The scope for the TCP Flow Protection rule. Must be one of 'global', 'region', or 'datacenter'.
 final String scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'burst_sensitivity': burstSensitivity,
   'created_on': createdOn.toIso8601String(),
   'id': id,
@@ -46,16 +46,16 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'rate_sensitivity': rateSensitivity,
   'scope': scope,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('burst_sensitivity') && json['burst_sensitivity'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('burst_sensitivity') && json['burst_sensitivity'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('mode') && json['mode'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('rate_sensitivity') && json['rate_sensitivity'] is String &&
-      json.containsKey('scope') && json['scope'] is String; } 
-DosTcpFlowProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, String? id, String? mode, DateTime? modifiedOn, String? name, String? rateSensitivity, String? scope, }) { return DosTcpFlowProtectionRule(
+      json.containsKey('scope') && json['scope'] is String;}
+DosTcpFlowProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, String? id, String? mode, DateTime? modifiedOn, String? name, String? rateSensitivity, String? scope, }) {return DosTcpFlowProtectionRule(
   burstSensitivity: burstSensitivity ?? this.burstSensitivity,
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
@@ -64,8 +64,8 @@ DosTcpFlowProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn
   name: name ?? this.name,
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DosTcpFlowProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
           createdOn == other.createdOn &&
@@ -74,7 +74,7 @@ DosTcpFlowProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           rateSensitivity == other.rateSensitivity &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(burstSensitivity, createdOn, id, mode, modifiedOn, name, rateSensitivity, scope); } 
-@override String toString() { return 'DosTcpFlowProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)'; } 
- }
+          scope == other.scope;}
+@override int get hashCode {return Object.hash(burstSensitivity, createdOn, id, mode, modifiedOn, name, rateSensitivity, scope);}
+@override String toString() {return 'DosTcpFlowProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)';}
+}

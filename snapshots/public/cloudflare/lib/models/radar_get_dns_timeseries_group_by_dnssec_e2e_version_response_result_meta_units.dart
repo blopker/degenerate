@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits(
+factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMetaUnits(name: $name, value: $value)';}
+}

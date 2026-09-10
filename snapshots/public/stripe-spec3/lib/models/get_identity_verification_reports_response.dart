@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'identity_verification_report.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetIdentityVerificationReportsResponseObject {const GetIdentityVerificationReportsResponseObject._(this.value);
 
-factory GetIdentityVerificationReportsResponseObject.fromJson(String json) { return switch (json) {
+factory GetIdentityVerificationReportsResponseObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => GetIdentityVerificationReportsResponseObject._(json),
-}; }
+};}
 
 static const GetIdentityVerificationReportsResponseObject list = GetIdentityVerificationReportsResponseObject._('list');
 
@@ -14,23 +14,23 @@ static const List<GetIdentityVerificationReportsResponseObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetIdentityVerificationReportsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetIdentityVerificationReportsResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetIdentityVerificationReportsResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetIdentityVerificationReportsResponseObject($value)';}
+}
 /// 
 @immutable final class GetIdentityVerificationReportsResponse {const GetIdentityVerificationReportsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetIdentityVerificationReportsResponse.fromJson(Map<String, dynamic> json) { return GetIdentityVerificationReportsResponse(
+factory GetIdentityVerificationReportsResponse.fromJson(Map<String, dynamic> json) {return GetIdentityVerificationReportsResponse(
   data: (json['data'] as List<dynamic>).map((e) => IdentityVerificationReport.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetIdentityVerificationReportsResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 final List<IdentityVerificationReport> data;
 
@@ -43,28 +43,28 @@ final GetIdentityVerificationReportsResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetIdentityVerificationReportsResponse copyWith({List<IdentityVerificationReport>? data, bool? hasMore, GetIdentityVerificationReportsResponseObject? object, String? url, }) { return GetIdentityVerificationReportsResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetIdentityVerificationReportsResponse copyWith({List<IdentityVerificationReport>? data, bool? hasMore, GetIdentityVerificationReportsResponseObject? object, String? url, }) {return GetIdentityVerificationReportsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetIdentityVerificationReportsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetIdentityVerificationReportsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'GetIdentityVerificationReportsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTagTagger {const GitTagTagger({required this.date, required this.email, required this.name, });
 
-factory GitTagTagger.fromJson(Map<String, dynamic> json) { return GitTagTagger(
+factory GitTagTagger.fromJson(Map<String, dynamic> json) {return GitTagTagger(
   date: json['date'] as String,
   email: json['email'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String date;
 
@@ -14,24 +14,24 @@ final String email;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'date': date,
   'email': email,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('date') && json['date'] is String &&
       json.containsKey('email') && json['email'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-GitTagTagger copyWith({String? date, String? email, String? name, }) { return GitTagTagger(
+      json.containsKey('name') && json['name'] is String;}
+GitTagTagger copyWith({String? date, String? email, String? name, }) {return GitTagTagger(
   date: date ?? this.date,
   email: email ?? this.email,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitTagTagger &&
           date == other.date &&
           email == other.email &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(date, email, name); } 
-@override String toString() { return 'GitTagTagger(date: $date, email: $email, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(date, email, name);}
+@override String toString() {return 'GitTagTagger(date: $date, email: $email, name: $name)';}
+}

@@ -13,7 +13,7 @@ final class OrdersApi with ApiExecutor {const OrdersApi(this.apiConfig);
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-01
 ///
 /// `GET /admin/api/2020-01/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -45,17 +45,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of checkouts from the past 90 days
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-04
 ///
 /// `GET /admin/api/2020-04/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -87,17 +84,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of checkouts from the past 90 days
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-07
 ///
 /// `GET /admin/api/2020-07/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202007GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -129,17 +123,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of checkouts from the past 90 days
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2020-10
 ///
 /// `GET /admin/api/2020-10/checkouts/count.json`
-Future<ApiResult<void, Never>> getCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -171,17 +162,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of checkouts from the past 90 days
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-2021-01
 ///
 /// `GET /admin/api/2021-01/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecated202101GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -213,17 +201,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of checkouts from the past 90 days
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/abandoned-checkouts#count-unstable
 ///
 /// `GET /admin/api/unstable/checkouts/count.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetCheckoutsCount({dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sinceId != null) {
   queryParameters['since_id'] = sinceId.toString();
@@ -255,17 +240,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of orders. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrders({dynamic ids, dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic processedAtMin, dynamic processedAtMax, dynamic attributionAppId, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrders({dynamic ids, dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic processedAtMin, dynamic processedAtMax, dynamic attributionAppId, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -321,11 +303,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order. By default, product inventory is not claimed.
 ///           When you create an order, you can include the following option parameters in the body of the request:
 /// 
@@ -354,7 +333,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrders({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrders({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -365,17 +344,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderId({required String orderId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderId({required String orderId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -392,17 +368,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderId({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderId({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -413,17 +386,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order. Orders that interact with an online gateway can't be deleted.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderId({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderId({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -432,17 +402,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an order count
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#count-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/count.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersCount({dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersCount({dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) {
   queryParameters['created_at_min'] = createdAtMin.toString();
@@ -477,17 +444,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Closes an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#close-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdClose({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdClose({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -498,17 +462,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Re-opens a closed order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#open-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdOpen({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdOpen({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -519,11 +480,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -532,7 +490,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#cancel-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdCancel({required String orderId, dynamic amount, dynamic currency, dynamic restockDeprecated, dynamic reason, dynamic email, dynamic refund, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdCancel({required String orderId, dynamic amount, dynamic currency, dynamic restockDeprecated, dynamic reason, dynamic email, dynamic refund, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -566,17 +524,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of orders. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrders({dynamic ids, dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic processedAtMin, dynamic processedAtMax, dynamic attributionAppId, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrders({dynamic ids, dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic processedAtMin, dynamic processedAtMax, dynamic attributionAppId, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -632,11 +587,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order. By default, product inventory is not claimed.
 ///           When you create an order, you can include the following option parameters in the body of the request:
 /// 
@@ -665,7 +617,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrders({dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrders({dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -676,17 +628,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderId({required String orderId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderId({required String orderId, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -703,17 +652,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderId({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderId({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -724,17 +670,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order. Orders that interact with an online gateway can't be deleted.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/orders/{order_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderId({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderId({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -743,17 +686,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an order count
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#count-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/count.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersCount({dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersCount({dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (createdAtMin != null) {
   queryParameters['created_at_min'] = createdAtMin.toString();
@@ -788,17 +728,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Closes an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#close-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/close.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdClose({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdClose({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -809,17 +746,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Re-opens a closed order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#open-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/open.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdOpen({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdOpen({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -830,11 +764,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -843,7 +774,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#cancel-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/cancel.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdCancel({required String orderId, dynamic amount, dynamic currency, dynamic restockDeprecated, dynamic reason, dynamic email, dynamic refund, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdCancel({required String orderId, dynamic amount, dynamic currency, dynamic restockDeprecated, dynamic reason, dynamic email, dynamic refund, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -877,17 +808,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of orders. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrders({dynamic ids, dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic processedAtMin, dynamic processedAtMax, dynamic attributionAppId, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrders({dynamic ids, dynamic limit, dynamic sinceId, dynamic createdAtMin, dynamic createdAtMax, dynamic updatedAtMin, dynamic updatedAtMax, dynamic processedAtMin, dynamic processedAtMax, dynamic attributionAppId, dynamic status, dynamic financialStatus, dynamic fulfillmentStatus, dynamic fields, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ids != null) {
   queryParameters['ids'] = ids.toString();
@@ -943,17 +871,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all order risks for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -962,17 +887,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order risk for an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -983,17 +905,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single order risk by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1002,11 +921,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order risk
 /// 
 /// 
@@ -1016,7 +932,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-01
 ///
 /// `PUT /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1027,11 +943,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order risk for an order
 /// 
 /// 
@@ -1041,7 +954,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-01
 ///
 /// `DELETE /admin/api/2020-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202001DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1050,17 +963,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all order risks for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1069,17 +979,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order risk for an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1090,17 +997,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single order risk by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1109,11 +1013,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order risk
 /// 
 /// 
@@ -1123,7 +1024,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-04
 ///
 /// `PUT /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1134,11 +1035,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order risk for an order
 /// 
 /// 
@@ -1148,7 +1046,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-04
 ///
 /// `DELETE /admin/api/2020-04/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202004DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1157,17 +1055,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all order risks for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1176,17 +1071,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order risk for an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1197,17 +1089,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single order risk by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1216,11 +1105,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order risk
 /// 
 /// 
@@ -1230,7 +1116,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-07
 ///
 /// `PUT /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202007UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1241,11 +1127,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order risk for an order
 /// 
 /// 
@@ -1255,7 +1138,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-07
 ///
 /// `DELETE /admin/api/2020-07/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202007DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202007DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1264,17 +1147,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all order risks for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1283,17 +1163,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order risk for an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1304,17 +1181,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single order risk by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1323,11 +1197,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order risk
 /// 
 /// 
@@ -1337,7 +1208,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2020-10
 ///
 /// `PUT /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> updateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1348,11 +1219,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order risk for an order
 /// 
 /// 
@@ -1362,7 +1230,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2020-10
 ///
 /// `DELETE /admin/api/2020-10/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1371,17 +1239,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all order risks for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1390,17 +1255,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order risk for an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1411,17 +1273,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single order risk by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1430,11 +1289,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order risk
 /// 
 /// 
@@ -1444,7 +1300,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-2021-01
 ///
 /// `PUT /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202101UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101UpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1455,11 +1311,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order risk for an order
 /// 
 /// 
@@ -1469,7 +1322,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-2021-01
 ///
 /// `DELETE /admin/api/2021-01/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecated202101DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecated202101DeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1478,17 +1331,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all order risks for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisks({required String orderId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1497,17 +1347,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an order risk for an order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/risks.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRisks({required String orderId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1518,17 +1365,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single order risk by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1537,11 +1381,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an order risk
 /// 
 /// 
@@ -1551,7 +1392,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#update-unstable
 ///
 /// `PUT /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableUpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableUpdateOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1562,11 +1403,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an order risk for an order
 /// 
 /// 
@@ -1576,7 +1414,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/order-risk#destroy-unstable
 ///
 /// `DELETE /admin/api/unstable/orders/{order_id}/risks/{risk_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableDeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedUnstableDeleteOrdersParamOrderIdRisksParamRiskId({required String orderId, required String riskId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1585,17 +1423,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of refunds for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1618,11 +1453,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///             For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -1635,7 +1467,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (restockDeprecated != null) {
   queryParameters['restock deprecated'] = restockDeprecated.toString();
@@ -1675,17 +1507,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific refund.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-01
 ///
 /// `GET /admin/api/2020-01/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1705,11 +1534,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///           For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -1724,7 +1550,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-01
 ///
 /// `POST /admin/api/2020-01/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202001CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (shipping != null) {
   queryParameters['shipping'] = shipping.toString();
@@ -1749,17 +1575,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of refunds for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1782,11 +1605,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///             For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -1799,7 +1619,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (restockDeprecated != null) {
   queryParameters['restock deprecated'] = restockDeprecated.toString();
@@ -1839,17 +1659,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific refund.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-04
 ///
 /// `GET /admin/api/2020-04/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -1869,11 +1686,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///           For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -1888,7 +1702,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-04
 ///
 /// `POST /admin/api/2020-04/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202004CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (shipping != null) {
   queryParameters['shipping'] = shipping.toString();
@@ -1913,17 +1727,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of refunds for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -1946,11 +1757,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///             For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -1963,7 +1771,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (restockDeprecated != null) {
   queryParameters['restock deprecated'] = restockDeprecated.toString();
@@ -2003,17 +1811,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific refund.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-07
 ///
 /// `GET /admin/api/2020-07/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2033,11 +1838,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///           For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -2052,7 +1854,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-07
 ///
 /// `POST /admin/api/2020-07/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202007CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (shipping != null) {
   queryParameters['shipping'] = shipping.toString();
@@ -2077,17 +1879,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of refunds for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2110,11 +1909,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///             For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -2127,7 +1923,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (restockDeprecated != null) {
   queryParameters['restock deprecated'] = restockDeprecated.toString();
@@ -2167,17 +1963,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific refund.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2020-10
 ///
 /// `GET /admin/api/2020-10/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> getOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2197,11 +1990,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///           For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -2216,7 +2006,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-10
 ///
 /// `POST /admin/api/2020-10/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> createOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> createOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (shipping != null) {
   queryParameters['shipping'] = shipping.toString();
@@ -2241,17 +2031,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of refunds for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2274,11 +2061,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///             For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -2291,7 +2075,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (restockDeprecated != null) {
   queryParameters['restock deprecated'] = restockDeprecated.toString();
@@ -2331,17 +2115,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific refund.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-2021-01
 ///
 /// `GET /admin/api/2021-01/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101GetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2361,11 +2142,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///           For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -2380,7 +2158,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2021-01
 ///
 /// `POST /admin/api/2021-01/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecated202101CreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (shipping != null) {
   queryParameters['shipping'] = shipping.toString();
@@ -2405,17 +2183,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of refunds for an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#index-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefunds({required String orderId, dynamic limit, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -2438,11 +2213,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///             For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -2455,7 +2227,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#create-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/refunds.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefunds({required String orderId, dynamic restockDeprecated, dynamic notify, dynamic note, dynamic discrepancyReason, dynamic shipping, dynamic refundLineItems, dynamic transactions, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (restockDeprecated != null) {
   queryParameters['restock deprecated'] = restockDeprecated.toString();
@@ -2495,17 +2267,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific refund.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#show-unstable
 ///
 /// `GET /admin/api/unstable/orders/{order_id}/refunds/{refund_id}.json`
-Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableGetOrdersParamOrderIdRefundsParamRefundId({required String orderId, required String refundId, dynamic fields, dynamic inShopCurrency, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
@@ -2525,11 +2294,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///           For multi-currency orders, the currency property is required whenever the amount property is provided. For more information, see Migrating to support multiple currencies.
 /// 
@@ -2544,7 +2310,7 @@ return await execute(
 /// https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-unstable
 ///
 /// `POST /admin/api/unstable/orders/{order_id}/refunds/calculate.json`
-Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> deprecatedUnstableCreateOrdersParamOrderIdRefundsCalculate({required String orderId, dynamic shipping, dynamic refundLineItems, dynamic currency, dynamic body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (shipping != null) {
   queryParameters['shipping'] = shipping.toString();
@@ -2569,9 +2335,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
- }
+
+return   await execute(request, onSuccess: (_) {}, );}
+}

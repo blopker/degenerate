@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A CWE weakness assigned to the advisory.
 @immutable final class DependabotAlertSecurityAdvisoryCwes {const DependabotAlertSecurityAdvisoryCwes({required this.cweId, required this.name, });
 
-factory DependabotAlertSecurityAdvisoryCwes.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryCwes(
+factory DependabotAlertSecurityAdvisoryCwes.fromJson(Map<String, dynamic> json) {return DependabotAlertSecurityAdvisoryCwes(
   cweId: json['cwe_id'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// The unique CWE ID.
 final String cweId;
@@ -14,20 +14,20 @@ final String cweId;
 /// The short, plain text name of the CWE.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cwe_id': cweId,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cwe_id') && json['cwe_id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-DependabotAlertSecurityAdvisoryCwes copyWith({String? cweId, String? name, }) { return DependabotAlertSecurityAdvisoryCwes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cwe_id') && json['cwe_id'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+DependabotAlertSecurityAdvisoryCwes copyWith({String? cweId, String? name, }) {return DependabotAlertSecurityAdvisoryCwes(
   cweId: cweId ?? this.cweId,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlertSecurityAdvisoryCwes &&
           cweId == other.cweId &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(cweId, name); } 
-@override String toString() { return 'DependabotAlertSecurityAdvisoryCwes(cweId: $cweId, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(cweId, name);}
+@override String toString() {return 'DependabotAlertSecurityAdvisoryCwes(cweId: $cweId, name: $name)';}
+}

@@ -11,7 +11,7 @@ final class Api20100401AvailablePhoneNumberCountryApi with ApiExecutor {const Ap
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers.json`
-Future<ApiResult<ListAvailablePhoneNumberCountryResponse, Never>> listAvailablePhoneNumberCountry({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAvailablePhoneNumberCountryResponse, Never>> listAvailablePhoneNumberCountry({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -34,18 +34,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListAvailablePhoneNumberCountryResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListAvailablePhoneNumberCountryResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}.json`
-Future<ApiResult<AccountAvailablePhoneNumberCountry, Never>> fetchAvailablePhoneNumberCountry({required String accountSid, required String countryCode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountAvailablePhoneNumberCountry, Never>> fetchAvailablePhoneNumberCountry({required String accountSid, required String countryCode, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,12 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountAvailablePhoneNumberCountry.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountAvailablePhoneNumberCountry.fromJson(json as Map<String, dynamic>);}, );}
+}

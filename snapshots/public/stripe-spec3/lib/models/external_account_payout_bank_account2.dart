@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account2_documents.dart';@immutable final class ExternalAccountPayoutBankAccount2AccountHolderType {const ExternalAccountPayoutBankAccount2AccountHolderType._(this.value);
 
-factory ExternalAccountPayoutBankAccount2AccountHolderType.fromJson(String json) { return switch (json) {
+factory ExternalAccountPayoutBankAccount2AccountHolderType.fromJson(String json) {return switch (json) {
   'company' => company,
   'individual' => individual,
   _ => ExternalAccountPayoutBankAccount2AccountHolderType._(json),
-}; }
+};}
 
 static const ExternalAccountPayoutBankAccount2AccountHolderType company = ExternalAccountPayoutBankAccount2AccountHolderType._('company');
 
@@ -16,23 +16,23 @@ static const List<ExternalAccountPayoutBankAccount2AccountHolderType> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ExternalAccountPayoutBankAccount2AccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ExternalAccountPayoutBankAccount2AccountHolderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ExternalAccountPayoutBankAccount2AccountHolderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ExternalAccountPayoutBankAccount2AccountHolderType($value)';}
+}
 @immutable final class ExternalAccountPayoutBankAccount2AccountType {const ExternalAccountPayoutBankAccount2AccountType._(this.value);
 
-factory ExternalAccountPayoutBankAccount2AccountType.fromJson(String json) { return switch (json) {
+factory ExternalAccountPayoutBankAccount2AccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'futsu' => futsu,
   'savings' => savings,
   'toza' => toza,
   _ => ExternalAccountPayoutBankAccount2AccountType._(json),
-}; }
+};}
 
 static const ExternalAccountPayoutBankAccount2AccountType checking = ExternalAccountPayoutBankAccount2AccountType._('checking');
 
@@ -46,20 +46,20 @@ static const List<ExternalAccountPayoutBankAccount2AccountType> values = [checki
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ExternalAccountPayoutBankAccount2AccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ExternalAccountPayoutBankAccount2AccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ExternalAccountPayoutBankAccount2AccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ExternalAccountPayoutBankAccount2AccountType($value)';}
+}
 @immutable final class ExternalAccountPayoutBankAccount2Object {const ExternalAccountPayoutBankAccount2Object._(this.value);
 
-factory ExternalAccountPayoutBankAccount2Object.fromJson(String json) { return switch (json) {
+factory ExternalAccountPayoutBankAccount2Object.fromJson(String json) {return switch (json) {
   'bank_account' => bankAccount,
   _ => ExternalAccountPayoutBankAccount2Object._(json),
-}; }
+};}
 
 static const ExternalAccountPayoutBankAccount2Object bankAccount = ExternalAccountPayoutBankAccount2Object._('bank_account');
 
@@ -67,17 +67,17 @@ static const List<ExternalAccountPayoutBankAccount2Object> values = [bankAccount
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ExternalAccountPayoutBankAccount2Object && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ExternalAccountPayoutBankAccount2Object($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ExternalAccountPayoutBankAccount2Object && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ExternalAccountPayoutBankAccount2Object($value)';}
+}
 @immutable final class ExternalAccountPayoutBankAccount2 {const ExternalAccountPayoutBankAccount2({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.accountType, this.currency, this.documents, this.object, this.routingNumber, });
 
-factory ExternalAccountPayoutBankAccount2.fromJson(Map<String, dynamic> json) { return ExternalAccountPayoutBankAccount2(
+factory ExternalAccountPayoutBankAccount2.fromJson(Map<String, dynamic> json) {return ExternalAccountPayoutBankAccount2(
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] != null ? ExternalAccountPayoutBankAccount2AccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String,
@@ -87,7 +87,7 @@ factory ExternalAccountPayoutBankAccount2.fromJson(Map<String, dynamic> json) { 
   documents: json['documents'] != null ? ExternalAccountPayoutBankAccount2Documents.fromJson(json['documents'] as Map<String, dynamic>) : null,
   object: json['object'] != null ? ExternalAccountPayoutBankAccount2Object.fromJson(json['object'] as String) : null,
   routingNumber: json['routing_number'] as String?,
-); }
+);}
 
 final String? accountHolderName;
 
@@ -107,7 +107,7 @@ final ExternalAccountPayoutBankAccount2Object? object;
 
 final String? routingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder_name': ?accountHolderName,
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
   'account_number': accountNumber,
@@ -117,10 +117,10 @@ Map<String, dynamic> toJson() { return {
   if (documents != null) 'documents': documents?.toJson(),
   if (object != null) 'object': object?.toJson(),
   'routing_number': ?routingNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
-      json.containsKey('country') && json['country'] is String; } 
-ExternalAccountPayoutBankAccount2 copyWith({String? Function()? accountHolderName, ExternalAccountPayoutBankAccount2AccountHolderType? Function()? accountHolderType, String? accountNumber, ExternalAccountPayoutBankAccount2AccountType? Function()? accountType, String? country, String? Function()? currency, ExternalAccountPayoutBankAccount2Documents? Function()? documents, ExternalAccountPayoutBankAccount2Object? Function()? object, String? Function()? routingNumber, }) { return ExternalAccountPayoutBankAccount2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_number') && json['account_number'] is String &&
+      json.containsKey('country') && json['country'] is String;}
+ExternalAccountPayoutBankAccount2 copyWith({String? Function()? accountHolderName, ExternalAccountPayoutBankAccount2AccountHolderType? Function()? accountHolderType, String? accountNumber, ExternalAccountPayoutBankAccount2AccountType? Function()? accountType, String? country, String? Function()? currency, ExternalAccountPayoutBankAccount2Documents? Function()? documents, ExternalAccountPayoutBankAccount2Object? Function()? object, String? Function()? routingNumber, }) {return ExternalAccountPayoutBankAccount2(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,
@@ -130,8 +130,8 @@ ExternalAccountPayoutBankAccount2 copyWith({String? Function()? accountHolderNam
   documents: documents != null ? documents() : this.documents,
   object: object != null ? object() : this.object,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ExternalAccountPayoutBankAccount2 &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
@@ -141,7 +141,7 @@ ExternalAccountPayoutBankAccount2 copyWith({String? Function()? accountHolderNam
           currency == other.currency &&
           documents == other.documents &&
           object == other.object &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, documents, object, routingNumber); } 
-@override String toString() { return 'ExternalAccountPayoutBankAccount2(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, documents: $documents, object: $object, routingNumber: $routingNumber)'; } 
- }
+          routingNumber == other.routingNumber;}
+@override int get hashCode {return Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, documents, object, routingNumber);}
+@override String toString() {return 'ExternalAccountPayoutBankAccount2(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, documents: $documents, object: $object, routingNumber: $routingNumber)';}
+}

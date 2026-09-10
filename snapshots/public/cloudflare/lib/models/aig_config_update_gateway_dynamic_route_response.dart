@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response_route.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponse {const AigConfigUpdateGatewayDynamicRouteResponse({required this.route, required this.success, });
 
-factory AigConfigUpdateGatewayDynamicRouteResponse.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponse(
+factory AigConfigUpdateGatewayDynamicRouteResponse.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayDynamicRouteResponse(
   route: AigConfigUpdateGatewayDynamicRouteResponseRoute.fromJson(json['route'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AigConfigUpdateGatewayDynamicRouteResponseRoute route;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'route': route.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('route') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigUpdateGatewayDynamicRouteResponse copyWith({AigConfigUpdateGatewayDynamicRouteResponseRoute? route, bool? success, }) { return AigConfigUpdateGatewayDynamicRouteResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('route') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigUpdateGatewayDynamicRouteResponse copyWith({AigConfigUpdateGatewayDynamicRouteResponseRoute? route, bool? success, }) {return AigConfigUpdateGatewayDynamicRouteResponse(
   route: route ?? this.route,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayDynamicRouteResponse &&
           route == other.route &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(route, success); } 
-@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponse(route: $route, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(route, success);}
+@override String toString() {return 'AigConfigUpdateGatewayDynamicRouteResponse(route: $route, success: $success)';}
+}

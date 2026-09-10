@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_links.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FileObject {const FileObject._(this.value);
 
-factory FileObject.fromJson(String json) { return switch (json) {
+factory FileObject.fromJson(String json) {return switch (json) {
   'file' => file,
   _ => FileObject._(json),
-}; }
+};}
 
 static const FileObject file = FileObject._('file');
 
@@ -14,18 +14,18 @@ static const List<FileObject> values = [file];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FileObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FileObject($value)';}
+}
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 @immutable final class FilePurpose {const FilePurpose._(this.value);
 
-factory FilePurpose.fromJson(String json) { return switch (json) {
+factory FilePurpose.fromJson(String json) {return switch (json) {
   'account_requirement' => accountRequirement,
   'additional_verification' => additionalVerification,
   'business_icon' => businessIcon,
@@ -48,7 +48,7 @@ factory FilePurpose.fromJson(String json) { return switch (json) {
   'terminal_wifi_certificate' => terminalWifiCertificate,
   'terminal_wifi_private_key' => terminalWifiPrivateKey,
   _ => FilePurpose._(json),
-}; }
+};}
 
 static const FilePurpose accountRequirement = FilePurpose._('account_requirement');
 
@@ -96,14 +96,14 @@ static const List<FilePurpose> values = [accountRequirement, additionalVerificat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FilePurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FilePurpose($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FilePurpose && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FilePurpose($value)';}
+}
 /// This object represents files hosted on Stripe's servers. You can upload
 /// files with the [create file](https://api.stripe.com#create_file) request
 /// (for example, when uploading dispute evidence). Stripe also
@@ -113,7 +113,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [File upload guide](https://docs.stripe.com/file-upload)
 @immutable final class File {const File({required this.created, required this.id, required this.object, required this.purpose, required this.size, this.expiresAt = const Omittable.absent(), this.filename = const Omittable.absent(), this.links = const Omittable.absent(), this.title = const Omittable.absent(), this.type = const Omittable.absent(), this.url = const Omittable.absent(), });
 
-factory File.fromJson(Map<String, dynamic> json) { return File(
+factory File.fromJson(Map<String, dynamic> json) {return File(
   created: (json['created'] as num).toInt(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   filename: json.containsKey('filename') ? Omittable(json['filename'] as String?) : const Omittable.absent(),
@@ -125,7 +125,7 @@ factory File.fromJson(Map<String, dynamic> json) { return File(
   title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
   type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -160,7 +160,7 @@ final Omittable<String?> type;
 /// Use your live secret API key to download the file from this URL.
 final Omittable<String?> url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (filename.isPresent) 'filename': filename.value,
@@ -172,13 +172,13 @@ Map<String, dynamic> toJson() { return {
   if (title.isPresent) 'title': title.value,
   if (type.isPresent) 'type': type.value,
   if (url.isPresent) 'url': url.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('purpose') &&
-      json.containsKey('size') && json['size'] is num; } 
-File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? filename, String? id, Omittable<FileLinks?>? links, FileObject? object, FilePurpose? purpose, int? size, Omittable<String?>? title, Omittable<String?>? type, Omittable<String?>? url, }) { return File(
+      json.containsKey('size') && json['size'] is num;}
+File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? filename, String? id, Omittable<FileLinks?>? links, FileObject? object, FilePurpose? purpose, int? size, Omittable<String?>? title, Omittable<String?>? type, Omittable<String?>? url, }) {return File(
   created: created ?? this.created,
   expiresAt: expiresAt ?? this.expiresAt,
   filename: filename ?? this.filename,
@@ -190,8 +190,8 @@ File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? fil
   title: title ?? this.title,
   type: type ?? this.type,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is File &&
           created == other.created &&
           expiresAt == other.expiresAt &&
@@ -203,7 +203,7 @@ File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? fil
           size == other.size &&
           title == other.title &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(created, expiresAt, filename, id, links, object, purpose, size, title, type, url); } 
-@override String toString() { return 'File(created: $created, expiresAt: $expiresAt, filename: $filename, id: $id, links: $links, object: $object, purpose: $purpose, size: $size, title: $title, type: $type, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(created, expiresAt, filename, id, links, object, purpose, size, title, type, url);}
+@override String toString() {return 'File(created: $created, expiresAt: $expiresAt, filename: $filename, id: $id, links: $links, object: $object, purpose: $purpose, size: $size, title: $title, type: $type, url: $url)';}
+}

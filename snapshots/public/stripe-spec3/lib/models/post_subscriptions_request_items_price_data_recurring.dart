@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestItemsPriceDataRecurringInterval {const PostSubscriptionsRequestItemsPriceDataRecurringInterval._(this.value);
 
-factory PostSubscriptionsRequestItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestItemsPriceDataRecurringInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostSubscriptionsRequestItemsPriceDataRecurringInterval._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestItemsPriceDataRecurringInterval day = PostSubscriptionsRequestItemsPriceDataRecurringInterval._('day');
 
@@ -22,38 +22,38 @@ static const List<PostSubscriptionsRequestItemsPriceDataRecurringInterval> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestItemsPriceDataRecurringInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestItemsPriceDataRecurringInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestItemsPriceDataRecurringInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestItemsPriceDataRecurringInterval($value)';}
+}
 @immutable final class PostSubscriptionsRequestItemsPriceDataRecurring {const PostSubscriptionsRequestItemsPriceDataRecurring({required this.interval, this.intervalCount, });
 
-factory PostSubscriptionsRequestItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestItemsPriceDataRecurring(
+factory PostSubscriptionsRequestItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) {return PostSubscriptionsRequestItemsPriceDataRecurring(
   interval: PostSubscriptionsRequestItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-); }
+);}
 
 final PostSubscriptionsRequestItemsPriceDataRecurringInterval interval;
 
 final int? intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostSubscriptionsRequestItemsPriceDataRecurring copyWith({PostSubscriptionsRequestItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) { return PostSubscriptionsRequestItemsPriceDataRecurring(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PostSubscriptionsRequestItemsPriceDataRecurring copyWith({PostSubscriptionsRequestItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) {return PostSubscriptionsRequestItemsPriceDataRecurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionsRequestItemsPriceDataRecurring &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PostSubscriptionsRequestItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'PostSubscriptionsRequestItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)';}
+}

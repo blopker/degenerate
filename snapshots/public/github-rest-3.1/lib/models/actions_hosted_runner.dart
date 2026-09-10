@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_machine_spec.dart';import 'actions_hosted_runner_pool_image.dart';import 'public_ip.dart';/// The status of the runner.
 @immutable final class ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus._(this.value);
 
-factory ActionsHostedRunnerStatus.fromJson(String json) { return switch (json) {
+factory ActionsHostedRunnerStatus.fromJson(String json) {return switch (json) {
   'Ready' => ready,
   'Provisioning' => provisioning,
   'Shutdown' => shutdown,
   'Deleting' => deleting,
   'Stuck' => stuck,
   _ => ActionsHostedRunnerStatus._(json),
-}; }
+};}
 
 static const ActionsHostedRunnerStatus ready = ActionsHostedRunnerStatus._('Ready');
 
@@ -26,18 +26,18 @@ static const List<ActionsHostedRunnerStatus> values = [ready, provisioning, shut
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActionsHostedRunnerStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActionsHostedRunnerStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ActionsHostedRunnerStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ActionsHostedRunnerStatus($value)';}
+}
 /// A Github-hosted hosted runner.
 @immutable final class ActionsHostedRunner {const ActionsHostedRunner({required this.id, required this.name, required this.imageDetails, required this.machineSizeDetails, required this.status, required this.platform, required this.publicIpEnabled, this.runnerGroupId, this.maximumRunners, this.publicIps, this.lastActiveOn = const Omittable.absent(), this.imageGen, });
 
-factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return ActionsHostedRunner(
+factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) {return ActionsHostedRunner(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   runnerGroupId: json['runner_group_id'] != null ? (json['runner_group_id'] as num).toInt() : null,
@@ -50,7 +50,7 @@ factory ActionsHostedRunner.fromJson(Map<String, dynamic> json) { return Actions
   publicIps: (json['public_ips'] as List<dynamic>?)?.map((e) => PublicIp.fromJson(e as Map<String, dynamic>)).toList(),
   lastActiveOn: json.containsKey('last_active_on') ? Omittable(json['last_active_on'] != null ? DateTime.parse(json['last_active_on'] as String) : null) : const Omittable.absent(),
   imageGen: json['image_gen'] as bool?,
-); }
+);}
 
 /// The unique identifier of the hosted runner.
 final int id;
@@ -87,8 +87,8 @@ final Omittable<DateTime?> lastActiveOn;
 final bool? imageGen;
 
 /// The value with the schema default applied when absent.
-int get maximumRunnersOrDefault { return maximumRunners ?? 10; } 
-Map<String, dynamic> toJson() { return {
+int get maximumRunnersOrDefault {return maximumRunners ?? 10;}
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'runner_group_id': ?runnerGroupId,
@@ -101,15 +101,15 @@ Map<String, dynamic> toJson() { return {
   if (publicIps != null) 'public_ips': publicIps?.map((e) => e.toJson()).toList(),
   if (lastActiveOn.isPresent) 'last_active_on': lastActiveOn.value?.toIso8601String(),
   'image_gen': ?imageGen,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('image_details') &&
       json.containsKey('machine_size_details') &&
       json.containsKey('status') &&
       json.containsKey('platform') && json['platform'] is String &&
-      json.containsKey('public_ip_enabled') && json['public_ip_enabled'] is bool; } 
-ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int? Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp>? Function()? publicIps, Omittable<DateTime?>? lastActiveOn, bool? Function()? imageGen, }) { return ActionsHostedRunner(
+      json.containsKey('public_ip_enabled') && json['public_ip_enabled'] is bool;}
+ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int? Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp>? Function()? publicIps, Omittable<DateTime?>? lastActiveOn, bool? Function()? imageGen, }) {return ActionsHostedRunner(
   id: id ?? this.id,
   name: name ?? this.name,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,
@@ -122,8 +122,8 @@ ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGrou
   publicIps: publicIps != null ? publicIps() : this.publicIps,
   lastActiveOn: lastActiveOn ?? this.lastActiveOn,
   imageGen: imageGen != null ? imageGen() : this.imageGen,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsHostedRunner &&
           id == other.id &&
           name == other.name &&
@@ -136,7 +136,7 @@ ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGrou
           publicIpEnabled == other.publicIpEnabled &&
           listEquals(publicIps, other.publicIps) &&
           lastActiveOn == other.lastActiveOn &&
-          imageGen == other.imageGen; } 
-@override int get hashCode { return Object.hash(id, name, runnerGroupId, imageDetails, machineSizeDetails, status, platform, maximumRunners, publicIpEnabled, Object.hashAll(publicIps ?? const []), lastActiveOn, imageGen); } 
-@override String toString() { return 'ActionsHostedRunner(id: $id, name: $name, runnerGroupId: $runnerGroupId, imageDetails: $imageDetails, machineSizeDetails: $machineSizeDetails, status: $status, platform: $platform, maximumRunners: $maximumRunners, publicIpEnabled: $publicIpEnabled, publicIps: $publicIps, lastActiveOn: $lastActiveOn, imageGen: $imageGen)'; } 
- }
+          imageGen == other.imageGen;}
+@override int get hashCode {return Object.hash(id, name, runnerGroupId, imageDetails, machineSizeDetails, status, platform, maximumRunners, publicIpEnabled, Object.hashAll(publicIps ?? const []), lastActiveOn, imageGen);}
+@override String toString() {return 'ActionsHostedRunner(id: $id, name: $name, runnerGroupId: $runnerGroupId, imageDetails: $imageDetails, machineSizeDetails: $machineSizeDetails, status: $status, platform: $platform, maximumRunners: $maximumRunners, publicIpEnabled: $publicIpEnabled, publicIps: $publicIps, lastActiveOn: $lastActiveOn, imageGen: $imageGen)';}
+}

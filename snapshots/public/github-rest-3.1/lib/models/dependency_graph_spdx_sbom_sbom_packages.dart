@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_spdx_sbom_sbom_packages_external_refs.dart';@immutable final class DependencyGraphSpdxSbomSbomPackages {const DependencyGraphSpdxSbomSbomPackages({this.spdxid, this.name, this.versionInfo, this.downloadLocation, this.filesAnalyzed, this.licenseConcluded, this.licenseDeclared, this.supplier, this.copyrightText, this.externalRefs, });
 
-factory DependencyGraphSpdxSbomSbomPackages.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbomSbomPackages(
+factory DependencyGraphSpdxSbomSbomPackages.fromJson(Map<String, dynamic> json) {return DependencyGraphSpdxSbomSbomPackages(
   spdxid: json['SPDXID'] as String?,
   name: json['name'] as String?,
   versionInfo: json['versionInfo'] as String?,
@@ -13,7 +13,7 @@ factory DependencyGraphSpdxSbomSbomPackages.fromJson(Map<String, dynamic> json) 
   supplier: json['supplier'] as String?,
   copyrightText: json['copyrightText'] as String?,
   externalRefs: (json['externalRefs'] as List<dynamic>?)?.map((e) => DependencyGraphSpdxSbomSbomPackagesExternalRefs.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// A unique SPDX identifier for the package.
 final String? spdxid;
@@ -48,7 +48,7 @@ final String? copyrightText;
 
 final List<DependencyGraphSpdxSbomSbomPackagesExternalRefs>? externalRefs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'SPDXID': ?spdxid,
   'name': ?name,
   'versionInfo': ?versionInfo,
@@ -59,9 +59,9 @@ Map<String, dynamic> toJson() { return {
   'supplier': ?supplier,
   'copyrightText': ?copyrightText,
   if (externalRefs != null) 'externalRefs': externalRefs?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'SPDXID', 'name', 'versionInfo', 'downloadLocation', 'filesAnalyzed', 'licenseConcluded', 'licenseDeclared', 'supplier', 'copyrightText', 'externalRefs'}.contains(key)); } 
-DependencyGraphSpdxSbomSbomPackages copyWith({String? Function()? spdxid, String? Function()? name, String? Function()? versionInfo, String? Function()? downloadLocation, bool? Function()? filesAnalyzed, String? Function()? licenseConcluded, String? Function()? licenseDeclared, String? Function()? supplier, String? Function()? copyrightText, List<DependencyGraphSpdxSbomSbomPackagesExternalRefs>? Function()? externalRefs, }) { return DependencyGraphSpdxSbomSbomPackages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'SPDXID', 'name', 'versionInfo', 'downloadLocation', 'filesAnalyzed', 'licenseConcluded', 'licenseDeclared', 'supplier', 'copyrightText', 'externalRefs'}.contains(key));}
+DependencyGraphSpdxSbomSbomPackages copyWith({String? Function()? spdxid, String? Function()? name, String? Function()? versionInfo, String? Function()? downloadLocation, bool? Function()? filesAnalyzed, String? Function()? licenseConcluded, String? Function()? licenseDeclared, String? Function()? supplier, String? Function()? copyrightText, List<DependencyGraphSpdxSbomSbomPackagesExternalRefs>? Function()? externalRefs, }) {return DependencyGraphSpdxSbomSbomPackages(
   spdxid: spdxid != null ? spdxid() : this.spdxid,
   name: name != null ? name() : this.name,
   versionInfo: versionInfo != null ? versionInfo() : this.versionInfo,
@@ -72,8 +72,8 @@ DependencyGraphSpdxSbomSbomPackages copyWith({String? Function()? spdxid, String
   supplier: supplier != null ? supplier() : this.supplier,
   copyrightText: copyrightText != null ? copyrightText() : this.copyrightText,
   externalRefs: externalRefs != null ? externalRefs() : this.externalRefs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependencyGraphSpdxSbomSbomPackages &&
           spdxid == other.spdxid &&
           name == other.name &&
@@ -84,7 +84,7 @@ DependencyGraphSpdxSbomSbomPackages copyWith({String? Function()? spdxid, String
           licenseDeclared == other.licenseDeclared &&
           supplier == other.supplier &&
           copyrightText == other.copyrightText &&
-          listEquals(externalRefs, other.externalRefs); } 
-@override int get hashCode { return Object.hash(spdxid, name, versionInfo, downloadLocation, filesAnalyzed, licenseConcluded, licenseDeclared, supplier, copyrightText, Object.hashAll(externalRefs ?? const [])); } 
-@override String toString() { return 'DependencyGraphSpdxSbomSbomPackages(spdxid: $spdxid, name: $name, versionInfo: $versionInfo, downloadLocation: $downloadLocation, filesAnalyzed: $filesAnalyzed, licenseConcluded: $licenseConcluded, licenseDeclared: $licenseDeclared, supplier: $supplier, copyrightText: $copyrightText, externalRefs: $externalRefs)'; } 
- }
+          listEquals(externalRefs, other.externalRefs);}
+@override int get hashCode {return Object.hash(spdxid, name, versionInfo, downloadLocation, filesAnalyzed, licenseConcluded, licenseDeclared, supplier, copyrightText, Object.hashAll(externalRefs ?? const []));}
+@override String toString() {return 'DependencyGraphSpdxSbomSbomPackages(spdxid: $spdxid, name: $name, versionInfo: $versionInfo, downloadLocation: $downloadLocation, filesAnalyzed: $filesAnalyzed, licenseConcluded: $licenseConcluded, licenseDeclared: $licenseDeclared, supplier: $supplier, copyrightText: $copyrightText, externalRefs: $externalRefs)';}
+}

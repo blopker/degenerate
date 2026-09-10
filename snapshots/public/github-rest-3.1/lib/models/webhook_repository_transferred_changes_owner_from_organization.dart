@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryTransferredChangesOwnerFromOrganization {const WebhookRepositoryTransferredChangesOwnerFromOrganization({required this.avatarUrl, required this.description, required this.eventsUrl, required this.hooksUrl, required this.id, required this.issuesUrl, required this.login, required this.membersUrl, required this.nodeId, required this.publicMembersUrl, required this.reposUrl, required this.url, this.htmlUrl, });
 
-factory WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(Map<String, dynamic> json) { return WebhookRepositoryTransferredChangesOwnerFromOrganization(
+factory WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(Map<String, dynamic> json) {return WebhookRepositoryTransferredChangesOwnerFromOrganization(
   avatarUrl: Uri.parse(json['avatar_url'] as String),
   description: json['description'] as String?,
   eventsUrl: Uri.parse(json['events_url'] as String),
@@ -16,7 +16,7 @@ factory WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(Map<St
   publicMembersUrl: json['public_members_url'] as String,
   reposUrl: Uri.parse(json['repos_url'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri avatarUrl;
 
@@ -44,7 +44,7 @@ final Uri reposUrl;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avatar_url': avatarUrl.toString(),
   'description': description,
   'events_url': eventsUrl.toString(),
@@ -58,8 +58,8 @@ Map<String, dynamic> toJson() { return {
   'public_members_url': publicMembersUrl,
   'repos_url': reposUrl.toString(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_url') && json['avatar_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('avatar_url') && json['avatar_url'] is String &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('hooks_url') && json['hooks_url'] is String &&
@@ -70,8 +70,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avata
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('repos_url') && json['repos_url'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookRepositoryTransferredChangesOwnerFromOrganization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eventsUrl, Uri? hooksUrl, Uri? Function()? htmlUrl, int? id, Uri? issuesUrl, String? login, String? membersUrl, String? nodeId, String? publicMembersUrl, Uri? reposUrl, Uri? url, }) { return WebhookRepositoryTransferredChangesOwnerFromOrganization(
+      json.containsKey('url') && json['url'] is String;}
+WebhookRepositoryTransferredChangesOwnerFromOrganization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eventsUrl, Uri? hooksUrl, Uri? Function()? htmlUrl, int? id, Uri? issuesUrl, String? login, String? membersUrl, String? nodeId, String? publicMembersUrl, Uri? reposUrl, Uri? url, }) {return WebhookRepositoryTransferredChangesOwnerFromOrganization(
   avatarUrl: avatarUrl ?? this.avatarUrl,
   description: description != null ? description() : this.description,
   eventsUrl: eventsUrl ?? this.eventsUrl,
@@ -85,8 +85,8 @@ WebhookRepositoryTransferredChangesOwnerFromOrganization copyWith({Uri? avatarUr
   publicMembersUrl: publicMembersUrl ?? this.publicMembersUrl,
   reposUrl: reposUrl ?? this.reposUrl,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryTransferredChangesOwnerFromOrganization &&
           avatarUrl == other.avatarUrl &&
           description == other.description &&
@@ -100,7 +100,7 @@ WebhookRepositoryTransferredChangesOwnerFromOrganization copyWith({Uri? avatarUr
           nodeId == other.nodeId &&
           publicMembersUrl == other.publicMembersUrl &&
           reposUrl == other.reposUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(avatarUrl, description, eventsUrl, hooksUrl, htmlUrl, id, issuesUrl, login, membersUrl, nodeId, publicMembersUrl, reposUrl, url); } 
-@override String toString() { return 'WebhookRepositoryTransferredChangesOwnerFromOrganization(avatarUrl: $avatarUrl, description: $description, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issuesUrl: $issuesUrl, login: $login, membersUrl: $membersUrl, nodeId: $nodeId, publicMembersUrl: $publicMembersUrl, reposUrl: $reposUrl, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(avatarUrl, description, eventsUrl, hooksUrl, htmlUrl, id, issuesUrl, login, membersUrl, nodeId, publicMembersUrl, reposUrl, url);}
+@override String toString() {return 'WebhookRepositoryTransferredChangesOwnerFromOrganization(avatarUrl: $avatarUrl, description: $description, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issuesUrl: $issuesUrl, login: $login, membersUrl: $membersUrl, nodeId: $nodeId, publicMembersUrl: $publicMembersUrl, reposUrl: $reposUrl, url: $url)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';@immutable final class SimpleCheckSuiteConclusion {const SimpleCheckSuiteConclusion._(this.value);
 
-factory SimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
+factory SimpleCheckSuiteConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'neutral' => neutral,
@@ -14,7 +14,7 @@ factory SimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) 
   'startup_failure' => startupFailure,
   'null' => $null,
   _ => SimpleCheckSuiteConclusion._(json),
-}; }
+};}
 
 static const SimpleCheckSuiteConclusion success = SimpleCheckSuiteConclusion._('success');
 
@@ -40,24 +40,24 @@ static const List<SimpleCheckSuiteConclusion> values = [success, failure, neutra
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SimpleCheckSuiteConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SimpleCheckSuiteConclusion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SimpleCheckSuiteConclusion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SimpleCheckSuiteConclusion($value)';}
+}
 @immutable final class SimpleCheckSuiteStatus {const SimpleCheckSuiteStatus._(this.value);
 
-factory SimpleCheckSuiteStatus.fromJson(String json) { return switch (json) {
+factory SimpleCheckSuiteStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   'pending' => pending,
   'waiting' => waiting,
   _ => SimpleCheckSuiteStatus._(json),
-}; }
+};}
 
 static const SimpleCheckSuiteStatus queued = SimpleCheckSuiteStatus._('queued');
 
@@ -73,18 +73,18 @@ static const List<SimpleCheckSuiteStatus> values = [queued, inProgress, complete
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SimpleCheckSuiteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SimpleCheckSuiteStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SimpleCheckSuiteStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SimpleCheckSuiteStatus($value)';}
+}
 /// A suite of checks performed on the code of a given code change
 @immutable final class SimpleCheckSuite {const SimpleCheckSuite({this.after = const Omittable.absent(), this.app = const Omittable.absent(), this.before = const Omittable.absent(), this.conclusion = const Omittable.absent(), this.createdAt, this.headBranch = const Omittable.absent(), this.headSha, this.id, this.nodeId, this.pullRequests, this.repository, this.status, this.updatedAt, this.url, });
 
-factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleCheckSuite(
+factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) {return SimpleCheckSuite(
   after: json.containsKey('after') ? Omittable(json['after'] as String?) : const Omittable.absent(),
   app: json.containsKey('app') ? Omittable(json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   before: json.containsKey('before') ? Omittable(json['before'] as String?) : const Omittable.absent(),
@@ -99,7 +99,7 @@ factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleChec
   status: json['status'] != null ? SimpleCheckSuiteStatus.fromJson(json['status'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   url: json['url'] as String?,
-); }
+);}
 
 final Omittable<String?> after;
 
@@ -130,7 +130,7 @@ final DateTime? updatedAt;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (after.isPresent) 'after': after.value,
   if (app.isPresent) 'app': app.value?.toJson(),
   if (before.isPresent) 'before': before.value,
@@ -145,9 +145,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after', 'app', 'before', 'conclusion', 'created_at', 'head_branch', 'head_sha', 'id', 'node_id', 'pull_requests', 'repository', 'status', 'updated_at', 'url'}.contains(key)); } 
-SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? app, Omittable<String?>? before, Omittable<SimpleCheckSuiteConclusion?>? conclusion, DateTime? Function()? createdAt, Omittable<String?>? headBranch, String? Function()? headSha, int? Function()? id, String? Function()? nodeId, List<PullRequestMinimal>? Function()? pullRequests, MinimalRepository? Function()? repository, SimpleCheckSuiteStatus? Function()? status, DateTime? Function()? updatedAt, String? Function()? url, }) { return SimpleCheckSuite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'after', 'app', 'before', 'conclusion', 'created_at', 'head_branch', 'head_sha', 'id', 'node_id', 'pull_requests', 'repository', 'status', 'updated_at', 'url'}.contains(key));}
+SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? app, Omittable<String?>? before, Omittable<SimpleCheckSuiteConclusion?>? conclusion, DateTime? Function()? createdAt, Omittable<String?>? headBranch, String? Function()? headSha, int? Function()? id, String? Function()? nodeId, List<PullRequestMinimal>? Function()? pullRequests, MinimalRepository? Function()? repository, SimpleCheckSuiteStatus? Function()? status, DateTime? Function()? updatedAt, String? Function()? url, }) {return SimpleCheckSuite(
   after: after ?? this.after,
   app: app ?? this.app,
   before: before ?? this.before,
@@ -162,8 +162,8 @@ SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? a
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SimpleCheckSuite &&
           after == other.after &&
           app == other.app &&
@@ -178,7 +178,7 @@ SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? a
           repository == other.repository &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(after, app, before, conclusion, createdAt, headBranch, headSha, id, nodeId, Object.hashAll(pullRequests ?? const []), repository, status, updatedAt, url); } 
-@override String toString() { return 'SimpleCheckSuite(after: $after, app: $app, before: $before, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headSha: $headSha, id: $id, nodeId: $nodeId, pullRequests: $pullRequests, repository: $repository, status: $status, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(after, app, before, conclusion, createdAt, headBranch, headSha, id, nodeId, Object.hashAll(pullRequests ?? const []), repository, status, updatedAt, url);}
+@override String toString() {return 'SimpleCheckSuite(after: $after, app: $app, before: $before, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headSha: $headSha, id: $id, nodeId: $nodeId, pullRequests: $pullRequests, repository: $repository, status: $status, updatedAt: $updatedAt, url: $url)';}
+}

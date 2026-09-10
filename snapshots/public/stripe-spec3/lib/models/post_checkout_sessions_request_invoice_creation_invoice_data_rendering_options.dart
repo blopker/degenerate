@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_rendering_options_param.dart';@immutable final class PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 {const PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2._(this.value);
 
-factory PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 $empty = PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRendering
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2($value)';}
+}
 
 @immutable
 final class PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions {

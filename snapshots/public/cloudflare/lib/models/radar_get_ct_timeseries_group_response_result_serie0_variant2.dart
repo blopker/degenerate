@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant2 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant2({required this.rfc6962, required this.$static, });
 
-factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant2.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant2(
+factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant2.fromJson(Map<String, dynamic> json) {return RadarGetCtTimeseriesGroupResponseResultSerie0Variant2(
   rfc6962: (json['rfc6962'] as List<dynamic>).map((e) => e as String).toList(),
   $static: (json['static'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> rfc6962;
 
 final List<String> $static;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'rfc6962': rfc6962,
   'static': $static,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('rfc6962') &&
-      json.containsKey('static'); } 
-RadarGetCtTimeseriesGroupResponseResultSerie0Variant2 copyWith({List<String>? rfc6962, List<String>? $static, }) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('rfc6962') &&
+      json.containsKey('static');}
+RadarGetCtTimeseriesGroupResponseResultSerie0Variant2 copyWith({List<String>? rfc6962, List<String>? $static, }) {return RadarGetCtTimeseriesGroupResponseResultSerie0Variant2(
   rfc6962: rfc6962 ?? this.rfc6962,
   $static: $static ?? this.$static,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCtTimeseriesGroupResponseResultSerie0Variant2 &&
           listEquals(rfc6962, other.rfc6962) &&
-          listEquals($static, other.$static); } 
-@override int get hashCode { return Object.hash(Object.hashAll(rfc6962), Object.hashAll($static)); } 
-@override String toString() { return 'RadarGetCtTimeseriesGroupResponseResultSerie0Variant2(rfc6962: $rfc6962, \$static: ${$static})'; } 
- }
+          listEquals($static, other.$static);}
+@override int get hashCode {return Object.hash(Object.hashAll(rfc6962), Object.hashAll($static));}
+@override String toString() {return 'RadarGetCtTimeseriesGroupResponseResultSerie0Variant2(rfc6962: $rfc6962, \$static: ${$static})';}
+}

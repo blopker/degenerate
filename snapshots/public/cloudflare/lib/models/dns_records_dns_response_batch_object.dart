@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseBatchObject {const DnsRecordsDnsResponseBatchObject({this.deletes, this.patches, this.posts, this.puts, });
 
-factory DnsRecordsDnsResponseBatchObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseBatchObject(
+factory DnsRecordsDnsResponseBatchObject.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsResponseBatchObject(
   deletes: (json['deletes'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   patches: (json['patches'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   posts: (json['posts'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   puts: (json['puts'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 final List<Map<String,dynamic>>? deletes;
 
@@ -17,25 +17,25 @@ final List<Map<String,dynamic>>? posts;
 
 final List<Map<String,dynamic>>? puts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (deletes != null) 'deletes': deletes?.map((e) => e).toList(),
   if (patches != null) 'patches': patches?.map((e) => e).toList(),
   if (posts != null) 'posts': posts?.map((e) => e).toList(),
   if (puts != null) 'puts': puts?.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deletes', 'patches', 'posts', 'puts'}.contains(key)); } 
-DnsRecordsDnsResponseBatchObject copyWith({List<Map<String, dynamic>>? Function()? deletes, List<Map<String, dynamic>>? Function()? patches, List<Map<String, dynamic>>? Function()? posts, List<Map<String, dynamic>>? Function()? puts, }) { return DnsRecordsDnsResponseBatchObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'deletes', 'patches', 'posts', 'puts'}.contains(key));}
+DnsRecordsDnsResponseBatchObject copyWith({List<Map<String, dynamic>>? Function()? deletes, List<Map<String, dynamic>>? Function()? patches, List<Map<String, dynamic>>? Function()? posts, List<Map<String, dynamic>>? Function()? puts, }) {return DnsRecordsDnsResponseBatchObject(
   deletes: deletes != null ? deletes() : this.deletes,
   patches: patches != null ? patches() : this.patches,
   posts: posts != null ? posts() : this.posts,
   puts: puts != null ? puts() : this.puts,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsDnsResponseBatchObject &&
           listEquals(deletes, other.deletes) &&
           listEquals(patches, other.patches) &&
           listEquals(posts, other.posts) &&
-          listEquals(puts, other.puts); } 
-@override int get hashCode { return Object.hash(Object.hashAll(deletes ?? const []), Object.hashAll(patches ?? const []), Object.hashAll(posts ?? const []), Object.hashAll(puts ?? const [])); } 
-@override String toString() { return 'DnsRecordsDnsResponseBatchObject(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)'; } 
- }
+          listEquals(puts, other.puts);}
+@override int get hashCode {return Object.hash(Object.hashAll(deletes ?? const []), Object.hashAll(patches ?? const []), Object.hashAll(posts ?? const []), Object.hashAll(puts ?? const []));}
+@override String toString() {return 'DnsRecordsDnsResponseBatchObject(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)';}
+}

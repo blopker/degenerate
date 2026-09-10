@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringWarpConfigDetails {const DigitalExperienceMonitoringWarpConfigDetails({this.accountName, this.accountTag, this.configName, });
 
-factory DigitalExperienceMonitoringWarpConfigDetails.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpConfigDetails(
+factory DigitalExperienceMonitoringWarpConfigDetails.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringWarpConfigDetails(
   accountName: json['account_name'] as String?,
   accountTag: json['account_tag'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['account_tag'] as String) : null,
   configName: json['config_name'] as String?,
-); }
+);}
 
 /// The account name.
 final String? accountName;
@@ -17,22 +17,22 @@ final DigitalExperienceMonitoringUuid? accountTag;
 /// The name of the WARP configuration.
 final String? configName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_name': ?accountName,
   if (accountTag != null) 'account_tag': accountTag?.toJson(),
   'config_name': ?configName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_name', 'account_tag', 'config_name'}.contains(key)); } 
-DigitalExperienceMonitoringWarpConfigDetails copyWith({String? Function()? accountName, DigitalExperienceMonitoringUuid? Function()? accountTag, String? Function()? configName, }) { return DigitalExperienceMonitoringWarpConfigDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_name', 'account_tag', 'config_name'}.contains(key));}
+DigitalExperienceMonitoringWarpConfigDetails copyWith({String? Function()? accountName, DigitalExperienceMonitoringUuid? Function()? accountTag, String? Function()? configName, }) {return DigitalExperienceMonitoringWarpConfigDetails(
   accountName: accountName != null ? accountName() : this.accountName,
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   configName: configName != null ? configName() : this.configName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringWarpConfigDetails &&
           accountName == other.accountName &&
           accountTag == other.accountTag &&
-          configName == other.configName; } 
-@override int get hashCode { return Object.hash(accountName, accountTag, configName); } 
-@override String toString() { return 'DigitalExperienceMonitoringWarpConfigDetails(accountName: $accountName, accountTag: $accountTag, configName: $configName)'; } 
- }
+          configName == other.configName;}
+@override int get hashCode {return Object.hash(accountName, accountTag, configName);}
+@override String toString() {return 'DigitalExperienceMonitoringWarpConfigDetails(accountName: $accountName, accountTag: $accountTag, configName: $configName)';}
+}

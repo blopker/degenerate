@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fetch_gateways_response_result_servers.dart';@immutable final class FetchGatewaysResponseResult {const FetchGatewaysResponseResult({required this.hostname, required this.id, required this.name, required this.servers, this.createdAt, this.createdBy, this.description, this.modifiedAt, this.modifiedBy, this.secureWebGateway, });
 
-factory FetchGatewaysResponseResult.fromJson(Map<String, dynamic> json) { return FetchGatewaysResponseResult(
+factory FetchGatewaysResponseResult.fromJson(Map<String, dynamic> json) {return FetchGatewaysResponseResult(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
   description: json['description'] as String?,
@@ -13,7 +13,7 @@ factory FetchGatewaysResponseResult.fromJson(Map<String, dynamic> json) { return
   name: json['name'] as String,
   secureWebGateway: json['secure_web_gateway'] as bool?,
   servers: (json['servers'] as List<dynamic>).map((e) => FetchGatewaysResponseResultServers.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -37,7 +37,7 @@ final bool? secureWebGateway;
 
 final List<FetchGatewaysResponseResultServers> servers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
   'description': ?description,
@@ -48,12 +48,12 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'secure_web_gateway': ?secureWebGateway,
   'servers': servers.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('servers'); } 
-FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, List<FetchGatewaysResponseResultServers>? servers, }) { return FetchGatewaysResponseResult(
+      json.containsKey('servers');}
+FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, List<FetchGatewaysResponseResultServers>? servers, }) {return FetchGatewaysResponseResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   description: description != null ? description() : this.description,
@@ -64,8 +64,8 @@ FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? F
   name: name ?? this.name,
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
   servers: servers ?? this.servers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FetchGatewaysResponseResult &&
           createdAt == other.createdAt &&
           createdBy == other.createdBy &&
@@ -76,7 +76,7 @@ FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? F
           modifiedBy == other.modifiedBy &&
           name == other.name &&
           secureWebGateway == other.secureWebGateway &&
-          listEquals(servers, other.servers); } 
-@override int get hashCode { return Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway, Object.hashAll(servers)); } 
-@override String toString() { return 'FetchGatewaysResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)'; } 
- }
+          listEquals(servers, other.servers);}
+@override int get hashCode {return Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway, Object.hashAll(servers));}
+@override String toString() {return 'FetchGatewaysResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)';}
+}

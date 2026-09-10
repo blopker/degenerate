@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'component_status.dart';import 'list_meta.dart';/// Status of all the conditions for the component as a list of ComponentStatus objects. Deprecated: This API is deprecated in v1.19+
 @immutable final class ComponentStatusList {const ComponentStatusList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
-factory ComponentStatusList.fromJson(Map<String, dynamic> json) { return ComponentStatusList(
+factory ComponentStatusList.fromJson(Map<String, dynamic> json) {return ComponentStatusList(
   apiVersion: json['apiVersion'] as String?,
   items: (json['items'] as List<dynamic>).map((e) => ComponentStatus.fromJson(e as Map<String, dynamic>)).toList(),
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ListMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -22,25 +22,25 @@ final String? kind;
 /// Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 final ListMeta? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'items': items.map((e) => e.toJson()).toList(),
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-ComponentStatusList copyWith({String? Function()? apiVersion, List<ComponentStatus>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return ComponentStatusList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items');}
+ComponentStatusList copyWith({String? Function()? apiVersion, List<ComponentStatus>? items, String? Function()? kind, ListMeta? Function()? metadata, }) {return ComponentStatusList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ComponentStatusList &&
           apiVersion == other.apiVersion &&
           listEquals(items, other.items) &&
           kind == other.kind &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(apiVersion, Object.hashAll(items), kind, metadata); } 
-@override String toString() { return 'ComponentStatusList(apiVersion: $apiVersion, items: $items, kind: $kind, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(apiVersion, Object.hashAll(items), kind, metadata);}
+@override String toString() {return 'ComponentStatusList(apiVersion: $apiVersion, items: $items, kind: $kind, metadata: $metadata)';}
+}

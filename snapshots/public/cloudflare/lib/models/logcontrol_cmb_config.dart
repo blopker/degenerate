@@ -16,29 +16,29 @@ String toJson() => value;
 }
 @immutable final class LogcontrolCmbConfig {const LogcontrolCmbConfig({this.allowOutOfRegionAccess, this.regions, });
 
-factory LogcontrolCmbConfig.fromJson(Map<String, dynamic> json) { return LogcontrolCmbConfig(
+factory LogcontrolCmbConfig.fromJson(Map<String, dynamic> json) {return LogcontrolCmbConfig(
   allowOutOfRegionAccess: json['allow_out_of_region_access'] != null ? LogcontrolAllowOutOfRegionAccess.fromJson(json['allow_out_of_region_access'] as bool) : null,
   regions: json['regions'] != null ? LogcontrolRegions.fromJson(json['regions'] as String) : null,
-); }
+);}
 
 /// Allow out of region access
 final LogcontrolAllowOutOfRegionAccess? allowOutOfRegionAccess;
 
 final LogcontrolRegions? regions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowOutOfRegionAccess != null) 'allow_out_of_region_access': allowOutOfRegionAccess?.toJson(),
   if (regions != null) 'regions': regions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_out_of_region_access', 'regions'}.contains(key)); } 
-LogcontrolCmbConfig copyWith({LogcontrolAllowOutOfRegionAccess? Function()? allowOutOfRegionAccess, LogcontrolRegions? Function()? regions, }) { return LogcontrolCmbConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_out_of_region_access', 'regions'}.contains(key));}
+LogcontrolCmbConfig copyWith({LogcontrolAllowOutOfRegionAccess? Function()? allowOutOfRegionAccess, LogcontrolRegions? Function()? regions, }) {return LogcontrolCmbConfig(
   allowOutOfRegionAccess: allowOutOfRegionAccess != null ? allowOutOfRegionAccess() : this.allowOutOfRegionAccess,
   regions: regions != null ? regions() : this.regions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LogcontrolCmbConfig &&
           allowOutOfRegionAccess == other.allowOutOfRegionAccess &&
-          regions == other.regions; } 
-@override int get hashCode { return Object.hash(allowOutOfRegionAccess, regions); } 
-@override String toString() { return 'LogcontrolCmbConfig(allowOutOfRegionAccess: $allowOutOfRegionAccess, regions: $regions)'; } 
- }
+          regions == other.regions;}
+@override int get hashCode {return Object.hash(allowOutOfRegionAccess, regions);}
+@override String toString() {return 'LogcontrolCmbConfig(allowOutOfRegionAccess: $allowOutOfRegionAccess, regions: $regions)';}
+}

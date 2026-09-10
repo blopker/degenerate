@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Interface Address
 @immutable final class MconnSnapshotInterfaceAddress {const MconnSnapshotInterfaceAddress({required this.interfaceName, required this.ipAddress, this.connectorId, });
 
-factory MconnSnapshotInterfaceAddress.fromJson(Map<String, dynamic> json) { return MconnSnapshotInterfaceAddress(
+factory MconnSnapshotInterfaceAddress.fromJson(Map<String, dynamic> json) {return MconnSnapshotInterfaceAddress(
   connectorId: json['connector_id'] as String?,
   interfaceName: json['interface_name'] as String,
   ipAddress: json['ip_address'] as String,
-); }
+);}
 
 /// Connector identifier
 final String? connectorId;
@@ -18,23 +18,23 @@ final String interfaceName;
 /// IP address of the network interface
 final String ipAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector_id': ?connectorId,
   'interface_name': interfaceName,
   'ip_address': ipAddress,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interface_name') && json['interface_name'] is String &&
-      json.containsKey('ip_address') && json['ip_address'] is String; } 
-MconnSnapshotInterfaceAddress copyWith({String? Function()? connectorId, String? interfaceName, String? ipAddress, }) { return MconnSnapshotInterfaceAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interface_name') && json['interface_name'] is String &&
+      json.containsKey('ip_address') && json['ip_address'] is String;}
+MconnSnapshotInterfaceAddress copyWith({String? Function()? connectorId, String? interfaceName, String? ipAddress, }) {return MconnSnapshotInterfaceAddress(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   interfaceName: interfaceName ?? this.interfaceName,
   ipAddress: ipAddress ?? this.ipAddress,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnSnapshotInterfaceAddress &&
           connectorId == other.connectorId &&
           interfaceName == other.interfaceName &&
-          ipAddress == other.ipAddress; } 
-@override int get hashCode { return Object.hash(connectorId, interfaceName, ipAddress); } 
-@override String toString() { return 'MconnSnapshotInterfaceAddress(connectorId: $connectorId, interfaceName: $interfaceName, ipAddress: $ipAddress)'; } 
- }
+          ipAddress == other.ipAddress;}
+@override int get hashCode {return Object.hash(connectorId, interfaceName, ipAddress);}
+@override String toString() {return 'MconnSnapshotInterfaceAddress(connectorId: $connectorId, interfaceName: $interfaceName, ipAddress: $ipAddress)';}
+}

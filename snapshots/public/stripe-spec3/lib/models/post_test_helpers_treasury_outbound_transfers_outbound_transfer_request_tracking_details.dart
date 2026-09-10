@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_request_tracking_details_ach.dart';import 'post_test_helpers_treasury_outbound_transfers_outbound_transfer_request_tracking_details_us_domestic_wire.dart';@immutable final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType._(this.value);
 
-factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
   _ => PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType._(json),
-}; }
+};}
 
 static const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType ach = PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType._('ach');
 
@@ -16,22 +16,22 @@ static const List<PostTestHelpersTreasuryOutboundTransfersOutboundTransferReques
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType($value)';}
+}
 /// Details about network-specific tracking information.
 @immutable final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
-factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(
+factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails.fromJson(Map<String, dynamic> json) {return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(
   ach: json['ach'] != null ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>) : null,
   type: PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType.fromJson(json['type'] as String),
   usDomesticWire: json['us_domestic_wire'] != null ? PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsUsDomesticWire.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch? ach;
 
@@ -39,22 +39,22 @@ final PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDet
 
 final PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsUsDomesticWire? usDomesticWire;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ach != null) 'ach': ach?.toJson(),
   'type': type.toJson(),
   if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails copyWith({PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch? Function()? ach, PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType? type, PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsUsDomesticWire? Function()? usDomesticWire, }) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails copyWith({PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsAch? Function()? ach, PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsType? type, PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetailsUsDomesticWire? Function()? usDomesticWire, }) {return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(
   ach: ach != null ? ach() : this.ach,
   type: type ?? this.type,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails &&
           ach == other.ach &&
           type == other.type &&
-          usDomesticWire == other.usDomesticWire; } 
-@override int get hashCode { return Object.hash(ach, type, usDomesticWire); } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)'; } 
- }
+          usDomesticWire == other.usDomesticWire;}
+@override int get hashCode {return Object.hash(ach, type, usDomesticWire);}
+@override String toString() {return 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequestTrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)';}
+}

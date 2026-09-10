@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestCustomFieldsDropdownOptions {const PostCheckoutSessionsRequestCustomFieldsDropdownOptions({required this.label, required this.value, });
 
-factory PostCheckoutSessionsRequestCustomFieldsDropdownOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFieldsDropdownOptions(
+factory PostCheckoutSessionsRequestCustomFieldsDropdownOptions.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestCustomFieldsDropdownOptions(
   label: json['label'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String label;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'label': label,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PostCheckoutSessionsRequestCustomFieldsDropdownOptions copyWith({String? label, String? value, }) { return PostCheckoutSessionsRequestCustomFieldsDropdownOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && json['label'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+PostCheckoutSessionsRequestCustomFieldsDropdownOptions copyWith({String? label, String? value, }) {return PostCheckoutSessionsRequestCustomFieldsDropdownOptions(
   label: label ?? this.label,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestCustomFieldsDropdownOptions &&
           label == other.label &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(label, value); } 
-@override String toString() { return 'PostCheckoutSessionsRequestCustomFieldsDropdownOptions(label: $label, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(label, value);}
+@override String toString() {return 'PostCheckoutSessionsRequestCustomFieldsDropdownOptions(label: $label, value: $value)';}
+}

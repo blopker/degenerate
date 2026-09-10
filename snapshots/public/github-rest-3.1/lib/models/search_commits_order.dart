@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchCommitsOrder {const SearchCommitsOrder._(this.value);
 
-factory SearchCommitsOrder.fromJson(String json) { return switch (json) {
+factory SearchCommitsOrder.fromJson(String json) {return switch (json) {
   'desc' => desc,
   'asc' => asc,
   _ => SearchCommitsOrder._(json),
-}; }
+};}
 
 static const SearchCommitsOrder desc = SearchCommitsOrder._('desc');
 
@@ -16,11 +16,11 @@ static const List<SearchCommitsOrder> values = [desc, asc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SearchCommitsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SearchCommitsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SearchCommitsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SearchCommitsOrder($value)';}
+}

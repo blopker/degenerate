@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the command
 @immutable final class DigitalExperienceMonitoringPostCommandsResponseCommandsStatus {const DigitalExperienceMonitoringPostCommandsResponseCommandsStatus._(this.value);
 
-factory DigitalExperienceMonitoringPostCommandsResponseCommandsStatus.fromJson(String json) { return switch (json) {
+factory DigitalExperienceMonitoringPostCommandsResponseCommandsStatus.fromJson(String json) {return switch (json) {
   'PENDING_EXEC' => pendingExec,
   'PENDING_UPLOAD' => pendingUpload,
   'SUCCESS' => success,
   'FAILED' => failed,
   _ => DigitalExperienceMonitoringPostCommandsResponseCommandsStatus._(json),
-}; }
+};}
 
 static const DigitalExperienceMonitoringPostCommandsResponseCommandsStatus pendingExec = DigitalExperienceMonitoringPostCommandsResponseCommandsStatus._('PENDING_EXEC');
 
@@ -23,24 +23,24 @@ static const List<DigitalExperienceMonitoringPostCommandsResponseCommandsStatus>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DigitalExperienceMonitoringPostCommandsResponseCommandsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringPostCommandsResponseCommandsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DigitalExperienceMonitoringPostCommandsResponseCommandsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DigitalExperienceMonitoringPostCommandsResponseCommandsStatus($value)';}
+}
 @immutable final class DigitalExperienceMonitoringPostCommandsResponseCommands {const DigitalExperienceMonitoringPostCommandsResponseCommands({this.args, this.deviceId, this.id, this.registrationId, this.status, this.type, });
 
-factory DigitalExperienceMonitoringPostCommandsResponseCommands.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringPostCommandsResponseCommands(
+factory DigitalExperienceMonitoringPostCommandsResponseCommands.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringPostCommandsResponseCommands(
   args: (json['args'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   deviceId: json['device_id'] as String?,
   id: json['id'] as String?,
   registrationId: json['registration_id'] as String?,
   status: json['status'] != null ? DigitalExperienceMonitoringPostCommandsResponseCommandsStatus.fromJson(json['status'] as String) : null,
   type: json['type'] as String?,
-); }
+);}
 
 /// Command arguments
 final Map<String,String>? args;
@@ -60,31 +60,31 @@ final DigitalExperienceMonitoringPostCommandsResponseCommandsStatus? status;
 /// Type of the command (e.g., "pcap" or "warp-diag")
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'args': ?args,
   'device_id': ?deviceId,
   'id': ?id,
   'registration_id': ?registrationId,
   if (status != null) 'status': status?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'args', 'device_id', 'id', 'registration_id', 'status', 'type'}.contains(key)); } 
-DigitalExperienceMonitoringPostCommandsResponseCommands copyWith({Map<String, String>? Function()? args, String? Function()? deviceId, String? Function()? id, String? Function()? registrationId, DigitalExperienceMonitoringPostCommandsResponseCommandsStatus? Function()? status, String? Function()? type, }) { return DigitalExperienceMonitoringPostCommandsResponseCommands(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'args', 'device_id', 'id', 'registration_id', 'status', 'type'}.contains(key));}
+DigitalExperienceMonitoringPostCommandsResponseCommands copyWith({Map<String, String>? Function()? args, String? Function()? deviceId, String? Function()? id, String? Function()? registrationId, DigitalExperienceMonitoringPostCommandsResponseCommandsStatus? Function()? status, String? Function()? type, }) {return DigitalExperienceMonitoringPostCommandsResponseCommands(
   args: args != null ? args() : this.args,
   deviceId: deviceId != null ? deviceId() : this.deviceId,
   id: id != null ? id() : this.id,
   registrationId: registrationId != null ? registrationId() : this.registrationId,
   status: status != null ? status() : this.status,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringPostCommandsResponseCommands &&
           args == other.args &&
           deviceId == other.deviceId &&
           id == other.id &&
           registrationId == other.registrationId &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(args, deviceId, id, registrationId, status, type); } 
-@override String toString() { return 'DigitalExperienceMonitoringPostCommandsResponseCommands(args: $args, deviceId: $deviceId, id: $id, registrationId: $registrationId, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(args, deviceId, id, registrationId, status, type);}
+@override String toString() {return 'DigitalExperienceMonitoringPostCommandsResponseCommands(args: $args, deviceId: $deviceId, id: $id, registrationId: $registrationId, status: $status, type: $type)';}
+}

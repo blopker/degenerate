@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Comments provide a way for people to collaborate on an issue.
 @immutable final class IssueComment {const IssueComment({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, this.body, this.bodyText, this.bodyHtml, this.authorAssociation, this.performedViaGithubApp = const Omittable.absent(), this.reactions, this.pin = const Omittable.absent(), });
 
-factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
+factory IssueComment.fromJson(Map<String, dynamic> json) {return IssueComment(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -19,7 +19,7 @@ factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   pin: json.containsKey('pin') ? Omittable(json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Unique identifier of the issue comment
 final int id;
@@ -55,7 +55,7 @@ final ReactionRollup? reactions;
 
 final Omittable<PinnedIssueComment?> pin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -71,16 +71,16 @@ Map<String, dynamic> toJson() { return {
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
   if (pin.isPresent) 'pin': pin.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('user') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('issue_url') && json['issue_url'] is String; } 
-IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? Function()? authorAssociation, Omittable<Integration?>? performedViaGithubApp, ReactionRollup? Function()? reactions, Omittable<PinnedIssueComment?>? pin, }) { return IssueComment(
+      json.containsKey('issue_url') && json['issue_url'] is String;}
+IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? Function()? authorAssociation, Omittable<Integration?>? performedViaGithubApp, ReactionRollup? Function()? reactions, Omittable<PinnedIssueComment?>? pin, }) {return IssueComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -96,8 +96,8 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? bo
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   reactions: reactions != null ? reactions() : this.reactions,
   pin: pin ?? this.pin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssueComment &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -113,7 +113,7 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? bo
           authorAssociation == other.authorAssociation &&
           performedViaGithubApp == other.performedViaGithubApp &&
           reactions == other.reactions &&
-          pin == other.pin; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin); } 
-@override String toString() { return 'IssueComment(id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)'; } 
- }
+          pin == other.pin;}
+@override int get hashCode {return Object.hash(id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin);}
+@override String toString() {return 'IssueComment(id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)';}
+}

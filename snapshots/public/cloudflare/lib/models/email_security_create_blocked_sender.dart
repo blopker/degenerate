@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({required this.isRegex, required this.pattern, required this.patternType, this.comments = const Omittable.absent(), });
 
-factory EmailSecurityCreateBlockedSender.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSender(
+factory EmailSecurityCreateBlockedSender.fromJson(Map<String, dynamic> json) {return EmailSecurityCreateBlockedSender(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -17,27 +17,27 @@ final String pattern;
 
 final EmailSecurityPatternType? patternType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
   'pattern_type': patternType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
-      json.containsKey('pattern_type'); } 
-EmailSecurityCreateBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityCreateBlockedSender(
+      json.containsKey('pattern_type');}
+EmailSecurityCreateBlockedSender copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, }) {return EmailSecurityCreateBlockedSender(
   comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityCreateBlockedSender &&
           comments == other.comments &&
           isRegex == other.isRegex &&
           pattern == other.pattern &&
-          patternType == other.patternType; } 
-@override int get hashCode { return Object.hash(comments, isRegex, pattern, patternType); } 
-@override String toString() { return 'EmailSecurityCreateBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType)'; } 
- }
+          patternType == other.patternType;}
+@override int get hashCode {return Object.hash(comments, isRegex, pattern, patternType);}
+@override String toString() {return 'EmailSecurityCreateBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType)';}
+}

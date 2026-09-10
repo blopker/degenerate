@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcmu`.
 @immutable final class PcmuAudioFormatType {const PcmuAudioFormatType._(this.value);
 
-factory PcmuAudioFormatType.fromJson(String json) { return switch (json) {
+factory PcmuAudioFormatType.fromJson(String json) {return switch (json) {
   'audio/pcmu' => audioPcmu,
   _ => PcmuAudioFormatType._(json),
-}; }
+};}
 
 static const PcmuAudioFormatType audioPcmu = PcmuAudioFormatType._('audio/pcmu');
 
@@ -14,34 +14,34 @@ static const List<PcmuAudioFormatType> values = [audioPcmu];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PcmuAudioFormatType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PcmuAudioFormatType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PcmuAudioFormatType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PcmuAudioFormatType($value)';}
+}
 /// The G.711 μ-law format.
 @immutable final class PcmuAudioFormat {const PcmuAudioFormat({this.type});
 
-factory PcmuAudioFormat.fromJson(Map<String, dynamic> json) { return PcmuAudioFormat(
+factory PcmuAudioFormat.fromJson(Map<String, dynamic> json) {return PcmuAudioFormat(
   type: json['type'] != null ? PcmuAudioFormatType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The audio format. Always `audio/pcmu`.
 final PcmuAudioFormatType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-PcmuAudioFormat copyWith({PcmuAudioFormatType? Function()? type}) { return PcmuAudioFormat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type'}.contains(key));}
+PcmuAudioFormat copyWith({PcmuAudioFormatType? Function()? type}) {return PcmuAudioFormat(
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PcmuAudioFormat &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PcmuAudioFormat(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'PcmuAudioFormat(type: $type)';}
+}

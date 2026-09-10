@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC subject customization for a repository
 @immutable final class ActionsSetCustomOidcSubClaimForRepoRequest {const ActionsSetCustomOidcSubClaimForRepoRequest({required this.useDefault, this.includeClaimKeys, });
 
-factory ActionsSetCustomOidcSubClaimForRepoRequest.fromJson(Map<String, dynamic> json) { return ActionsSetCustomOidcSubClaimForRepoRequest(
+factory ActionsSetCustomOidcSubClaimForRepoRequest.fromJson(Map<String, dynamic> json) {return ActionsSetCustomOidcSubClaimForRepoRequest(
   useDefault: json['use_default'] as bool,
   includeClaimKeys: (json['include_claim_keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
 final bool useDefault;
@@ -14,19 +14,19 @@ final bool useDefault;
 /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
 final List<String>? includeClaimKeys;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'use_default': useDefault,
   'include_claim_keys': ?includeClaimKeys,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('use_default') && json['use_default'] is bool; } 
-ActionsSetCustomOidcSubClaimForRepoRequest copyWith({bool? useDefault, List<String>? Function()? includeClaimKeys, }) { return ActionsSetCustomOidcSubClaimForRepoRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('use_default') && json['use_default'] is bool;}
+ActionsSetCustomOidcSubClaimForRepoRequest copyWith({bool? useDefault, List<String>? Function()? includeClaimKeys, }) {return ActionsSetCustomOidcSubClaimForRepoRequest(
   useDefault: useDefault ?? this.useDefault,
   includeClaimKeys: includeClaimKeys != null ? includeClaimKeys() : this.includeClaimKeys,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsSetCustomOidcSubClaimForRepoRequest &&
           useDefault == other.useDefault &&
-          listEquals(includeClaimKeys, other.includeClaimKeys); } 
-@override int get hashCode { return Object.hash(useDefault, Object.hashAll(includeClaimKeys ?? const [])); } 
-@override String toString() { return 'ActionsSetCustomOidcSubClaimForRepoRequest(useDefault: $useDefault, includeClaimKeys: $includeClaimKeys)'; } 
- }
+          listEquals(includeClaimKeys, other.includeClaimKeys);}
+@override int get hashCode {return Object.hash(useDefault, Object.hashAll(includeClaimKeys ?? const []));}
+@override String toString() {return 'ActionsSetCustomOidcSubClaimForRepoRequest(useDefault: $useDefault, includeClaimKeys: $includeClaimKeys)';}
+}

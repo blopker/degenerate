@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apple_pay_domain.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetApplePayDomainsResponseObject {const GetApplePayDomainsResponseObject._(this.value);
 
-factory GetApplePayDomainsResponseObject.fromJson(String json) { return switch (json) {
+factory GetApplePayDomainsResponseObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => GetApplePayDomainsResponseObject._(json),
-}; }
+};}
 
 static const GetApplePayDomainsResponseObject list = GetApplePayDomainsResponseObject._('list');
 
@@ -14,23 +14,23 @@ static const List<GetApplePayDomainsResponseObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetApplePayDomainsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetApplePayDomainsResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetApplePayDomainsResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetApplePayDomainsResponseObject($value)';}
+}
 /// 
 @immutable final class GetApplePayDomainsResponse {const GetApplePayDomainsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetApplePayDomainsResponse.fromJson(Map<String, dynamic> json) { return GetApplePayDomainsResponse(
+factory GetApplePayDomainsResponse.fromJson(Map<String, dynamic> json) {return GetApplePayDomainsResponse(
   data: (json['data'] as List<dynamic>).map((e) => ApplePayDomain.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetApplePayDomainsResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 final List<ApplePayDomain> data;
 
@@ -43,28 +43,28 @@ final GetApplePayDomainsResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetApplePayDomainsResponse copyWith({List<ApplePayDomain>? data, bool? hasMore, GetApplePayDomainsResponseObject? object, String? url, }) { return GetApplePayDomainsResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetApplePayDomainsResponse copyWith({List<ApplePayDomain>? data, bool? hasMore, GetApplePayDomainsResponseObject? object, String? url, }) {return GetApplePayDomainsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetApplePayDomainsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetApplePayDomainsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'GetApplePayDomainsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

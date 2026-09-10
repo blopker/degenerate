@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewEmailType {const GetCreditNotesPreviewEmailType._(this.value);
 
-factory GetCreditNotesPreviewEmailType.fromJson(String json) { return switch (json) {
+factory GetCreditNotesPreviewEmailType.fromJson(String json) {return switch (json) {
   'credit_note' => creditNote,
   'none' => none,
   _ => GetCreditNotesPreviewEmailType._(json),
-}; }
+};}
 
 static const GetCreditNotesPreviewEmailType creditNote = GetCreditNotesPreviewEmailType._('credit_note');
 
@@ -16,11 +16,11 @@ static const List<GetCreditNotesPreviewEmailType> values = [creditNote, none];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewEmailType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewEmailType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetCreditNotesPreviewEmailType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetCreditNotesPreviewEmailType($value)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByHttpProtocolDeviceType {const RadarGetHttpTopLocationsByHttpProtocolDeviceType._(this.value);
 
-factory RadarGetHttpTopLocationsByHttpProtocolDeviceType.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByHttpProtocolDeviceType.fromJson(String json) {return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
   _ => RadarGetHttpTopLocationsByHttpProtocolDeviceType._(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByHttpProtocolDeviceType desktop = RadarGetHttpTopLocationsByHttpProtocolDeviceType._('DESKTOP');
 
@@ -19,11 +19,11 @@ static const List<RadarGetHttpTopLocationsByHttpProtocolDeviceType> values = [de
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopLocationsByHttpProtocolDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopLocationsByHttpProtocolDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopLocationsByHttpProtocolDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopLocationsByHttpProtocolDeviceType($value)';}
+}

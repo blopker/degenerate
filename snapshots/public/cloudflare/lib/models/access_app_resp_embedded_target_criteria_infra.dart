@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_target_criteria_infra_app.dart';/// Contains the targets secured by the application.
 @immutable final class AccessAppRespEmbeddedTargetCriteriaInfra {const AccessAppRespEmbeddedTargetCriteriaInfra({this.targetCriteria});
 
-factory AccessAppRespEmbeddedTargetCriteriaInfra.fromJson(Map<String, dynamic> json) { return AccessAppRespEmbeddedTargetCriteriaInfra(
+factory AccessAppRespEmbeddedTargetCriteriaInfra.fromJson(Map<String, dynamic> json) {return AccessAppRespEmbeddedTargetCriteriaInfra(
   targetCriteria: (json['target_criteria'] as List<dynamic>?)?.map((e) => AccessTargetCriteriaInfraApp.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<AccessTargetCriteriaInfraApp>? targetCriteria;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (targetCriteria != null) 'target_criteria': targetCriteria?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target_criteria'}.contains(key)); } 
-AccessAppRespEmbeddedTargetCriteriaInfra copyWith({List<AccessTargetCriteriaInfraApp>? Function()? targetCriteria}) { return AccessAppRespEmbeddedTargetCriteriaInfra(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'target_criteria'}.contains(key));}
+AccessAppRespEmbeddedTargetCriteriaInfra copyWith({List<AccessTargetCriteriaInfraApp>? Function()? targetCriteria}) {return AccessAppRespEmbeddedTargetCriteriaInfra(
   targetCriteria: targetCriteria != null ? targetCriteria() : this.targetCriteria,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessAppRespEmbeddedTargetCriteriaInfra &&
-          listEquals(targetCriteria, other.targetCriteria); } 
-@override int get hashCode { return Object.hashAll(targetCriteria ?? const []).hashCode; } 
-@override String toString() { return 'AccessAppRespEmbeddedTargetCriteriaInfra(targetCriteria: $targetCriteria)'; } 
- }
+          listEquals(targetCriteria, other.targetCriteria);}
+@override int get hashCode {return Object.hashAll(targetCriteria ?? const []).hashCode;}
+@override String toString() {return 'AccessAppRespEmbeddedTargetCriteriaInfra(targetCriteria: $targetCriteria)';}
+}

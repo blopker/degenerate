@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitWebhookEvents {const RealtimekitWebhookEvents._(this.value);
 
-factory RealtimekitWebhookEvents.fromJson(String json) { return switch (json) {
+factory RealtimekitWebhookEvents.fromJson(String json) {return switch (json) {
   'meeting.started' => meetingStarted,
   'meeting.ended' => meetingEnded,
   'meeting.participantJoined' => meetingParticipantJoined,
@@ -13,7 +13,7 @@ factory RealtimekitWebhookEvents.fromJson(String json) { return switch (json) {
   'meeting.transcript' => meetingTranscript,
   'meeting.summary' => meetingSummary,
   _ => RealtimekitWebhookEvents._(json),
-}; }
+};}
 
 static const RealtimekitWebhookEvents meetingStarted = RealtimekitWebhookEvents._('meeting.started');
 
@@ -37,17 +37,17 @@ static const List<RealtimekitWebhookEvents> values = [meetingStarted, meetingEnd
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitWebhookEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitWebhookEvents($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitWebhookEvents && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitWebhookEvents($value)';}
+}
 @immutable final class RealtimekitWebhook {const RealtimekitWebhook({required this.createdAt, required this.enabled, required this.events, required this.id, required this.name, required this.updatedAt, required this.url, });
 
-factory RealtimekitWebhook.fromJson(Map<String, dynamic> json) { return RealtimekitWebhook(
+factory RealtimekitWebhook.fromJson(Map<String, dynamic> json) {return RealtimekitWebhook(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   events: (json['events'] as List<dynamic>).map((e) => RealtimekitWebhookEvents.fromJson(e as String)).toList(),
@@ -55,7 +55,7 @@ factory RealtimekitWebhook.fromJson(Map<String, dynamic> json) { return Realtime
   name: json['name'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// Timestamp when this webhook was created
 final DateTime createdAt;
@@ -78,7 +78,7 @@ final DateTime updatedAt;
 /// URL the webhook will send events to
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
   'events': events.map((e) => e.toJson()).toList(),
@@ -86,15 +86,15 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('events') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RealtimekitWebhook copyWith({DateTime? createdAt, bool? enabled, List<RealtimekitWebhookEvents>? events, String? id, String? name, DateTime? updatedAt, Uri? url, }) { return RealtimekitWebhook(
+      json.containsKey('url') && json['url'] is String;}
+RealtimekitWebhook copyWith({DateTime? createdAt, bool? enabled, List<RealtimekitWebhookEvents>? events, String? id, String? name, DateTime? updatedAt, Uri? url, }) {return RealtimekitWebhook(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   events: events ?? this.events,
@@ -102,8 +102,8 @@ RealtimekitWebhook copyWith({DateTime? createdAt, bool? enabled, List<Realtimeki
   name: name ?? this.name,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitWebhook &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
@@ -111,7 +111,7 @@ RealtimekitWebhook copyWith({DateTime? createdAt, bool? enabled, List<Realtimeki
           id == other.id &&
           name == other.name &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, Object.hashAll(events), id, name, updatedAt, url); } 
-@override String toString() { return 'RealtimekitWebhook(createdAt: $createdAt, enabled: $enabled, events: $events, id: $id, name: $name, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(createdAt, enabled, Object.hashAll(events), id, name, updatedAt, url);}
+@override String toString() {return 'RealtimekitWebhook(createdAt: $createdAt, enabled: $enabled, events: $events, id: $id, name: $name, updatedAt: $updatedAt, url: $url)';}
+}

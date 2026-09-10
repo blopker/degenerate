@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_release_edited_changes_body.dart';import 'webhook_release_edited_changes_make_latest.dart';import 'webhook_release_edited_changes_name.dart';import 'webhook_release_edited_changes_tag_name.dart';@immutable final class WebhookReleaseEditedChanges {const WebhookReleaseEditedChanges({this.body, this.name, this.tagName, this.makeLatest, });
 
-factory WebhookReleaseEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookReleaseEditedChanges(
+factory WebhookReleaseEditedChanges.fromJson(Map<String, dynamic> json) {return WebhookReleaseEditedChanges(
   body: json['body'] != null ? WebhookReleaseEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? WebhookReleaseEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,
   tagName: json['tag_name'] != null ? WebhookReleaseEditedChangesTagName.fromJson(json['tag_name'] as Map<String, dynamic>) : null,
   makeLatest: json['make_latest'] != null ? WebhookReleaseEditedChangesMakeLatest.fromJson(json['make_latest'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookReleaseEditedChangesBody? body;
 
@@ -17,25 +17,25 @@ final WebhookReleaseEditedChangesTagName? tagName;
 
 final WebhookReleaseEditedChangesMakeLatest? makeLatest;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (body != null) 'body': body?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (tagName != null) 'tag_name': tagName?.toJson(),
   if (makeLatest != null) 'make_latest': makeLatest?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'name', 'tag_name', 'make_latest'}.contains(key)); } 
-WebhookReleaseEditedChanges copyWith({WebhookReleaseEditedChangesBody? Function()? body, WebhookReleaseEditedChangesName? Function()? name, WebhookReleaseEditedChangesTagName? Function()? tagName, WebhookReleaseEditedChangesMakeLatest? Function()? makeLatest, }) { return WebhookReleaseEditedChanges(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'body', 'name', 'tag_name', 'make_latest'}.contains(key));}
+WebhookReleaseEditedChanges copyWith({WebhookReleaseEditedChangesBody? Function()? body, WebhookReleaseEditedChangesName? Function()? name, WebhookReleaseEditedChangesTagName? Function()? tagName, WebhookReleaseEditedChangesMakeLatest? Function()? makeLatest, }) {return WebhookReleaseEditedChanges(
   body: body != null ? body() : this.body,
   name: name != null ? name() : this.name,
   tagName: tagName != null ? tagName() : this.tagName,
   makeLatest: makeLatest != null ? makeLatest() : this.makeLatest,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookReleaseEditedChanges &&
           body == other.body &&
           name == other.name &&
           tagName == other.tagName &&
-          makeLatest == other.makeLatest; } 
-@override int get hashCode { return Object.hash(body, name, tagName, makeLatest); } 
-@override String toString() { return 'WebhookReleaseEditedChanges(body: $body, name: $name, tagName: $tagName, makeLatest: $makeLatest)'; } 
- }
+          makeLatest == other.makeLatest;}
+@override int get hashCode {return Object.hash(body, name, tagName, makeLatest);}
+@override String toString() {return 'WebhookReleaseEditedChanges(body: $body, name: $name, tagName: $tagName, makeLatest: $makeLatest)';}
+}

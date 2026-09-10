@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSchedule {const WorkersSchedule({required this.cron, this.createdOn, this.modifiedOn, });
 
-factory WorkersSchedule.fromJson(Map<String, dynamic> json) { return WorkersSchedule(
+factory WorkersSchedule.fromJson(Map<String, dynamic> json) {return WorkersSchedule(
   createdOn: json['created_on'] as String?,
   cron: json['cron'] as String,
   modifiedOn: json['modified_on'] as String?,
-); }
+);}
 
 final String? createdOn;
 
@@ -14,22 +14,22 @@ final String cron;
 
 final String? modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': ?createdOn,
   'cron': cron,
   'modified_on': ?modifiedOn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cron') && json['cron'] is String; } 
-WorkersSchedule copyWith({String? Function()? createdOn, String? cron, String? Function()? modifiedOn, }) { return WorkersSchedule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cron') && json['cron'] is String;}
+WorkersSchedule copyWith({String? Function()? createdOn, String? cron, String? Function()? modifiedOn, }) {return WorkersSchedule(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   cron: cron ?? this.cron,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersSchedule &&
           createdOn == other.createdOn &&
           cron == other.cron &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(createdOn, cron, modifiedOn); } 
-@override String toString() { return 'WorkersSchedule(createdOn: $createdOn, cron: $cron, modifiedOn: $modifiedOn)'; } 
- }
+          modifiedOn == other.modifiedOn;}
+@override int get hashCode {return Object.hash(createdOn, cron, modifiedOn);}
+@override String toString() {return 'WorkersSchedule(createdOn: $createdOn, cron: $cron, modifiedOn: $modifiedOn)';}
+}

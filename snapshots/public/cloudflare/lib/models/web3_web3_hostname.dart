@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_description.dart';import 'web3_dnslink.dart';import 'web3_identifier.dart';import 'web3_name.dart';import 'web3_target.dart';import 'web3_timestamp.dart';/// Specifies the status of the hostname's activation.
 @immutable final class Web3Status {const Web3Status._(this.value);
 
-factory Web3Status.fromJson(String json) { return switch (json) {
+factory Web3Status.fromJson(String json) {return switch (json) {
   'active' => active,
   'pending' => pending,
   'deleting' => deleting,
   'error' => error,
   _ => Web3Status._(json),
-}; }
+};}
 
 static const Web3Status active = Web3Status._('active');
 
@@ -23,17 +23,17 @@ static const List<Web3Status> values = [active, pending, deleting, error];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Web3Status && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Web3Status($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Web3Status && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Web3Status($value)';}
+}
 @immutable final class Web3Web3Hostname {const Web3Web3Hostname({this.createdOn, this.description, this.dnslink, this.id, this.modifiedOn, this.name, this.status, this.target, });
 
-factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) { return Web3Web3Hostname(
+factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) {return Web3Web3Hostname(
   createdOn: json['created_on'] != null ? Web3Timestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? Web3Description.fromJson(json['description'] as String) : null,
   dnslink: json['dnslink'] != null ? Web3Dnslink.fromJson(json['dnslink'] as String) : null,
@@ -42,7 +42,7 @@ factory Web3Web3Hostname.fromJson(Map<String, dynamic> json) { return Web3Web3Ho
   name: json['name'] != null ? Web3Name.fromJson(json['name'] as String) : null,
   status: json['status'] != null ? Web3Status.fromJson(json['status'] as String) : null,
   target: json['target'] != null ? Web3Target.fromJson(json['target'] as String) : null,
-); }
+);}
 
 final Web3Timestamp? createdOn;
 
@@ -66,7 +66,7 @@ final Web3Status? status;
 /// Specify the target gateway of the hostname.
 final Web3Target? target;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (dnslink != null) 'dnslink': dnslink?.toJson(),
@@ -75,9 +75,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (target != null) 'target': target?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'dnslink', 'id', 'modified_on', 'name', 'status', 'target'}.contains(key)); } 
-Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description? Function()? description, Web3Dnslink? Function()? dnslink, Web3Identifier? Function()? id, Web3Timestamp? Function()? modifiedOn, Web3Name? Function()? name, Web3Status? Function()? status, Web3Target? Function()? target, }) { return Web3Web3Hostname(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'description', 'dnslink', 'id', 'modified_on', 'name', 'status', 'target'}.contains(key));}
+Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description? Function()? description, Web3Dnslink? Function()? dnslink, Web3Identifier? Function()? id, Web3Timestamp? Function()? modifiedOn, Web3Name? Function()? name, Web3Status? Function()? status, Web3Target? Function()? target, }) {return Web3Web3Hostname(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   dnslink: dnslink != null ? dnslink() : this.dnslink,
@@ -86,8 +86,8 @@ Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description
   name: name != null ? name() : this.name,
   status: status != null ? status() : this.status,
   target: target != null ? target() : this.target,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Web3Web3Hostname &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -96,7 +96,7 @@ Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           status == other.status &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(createdOn, description, dnslink, id, modifiedOn, name, status, target); } 
-@override String toString() { return 'Web3Web3Hostname(createdOn: $createdOn, description: $description, dnslink: $dnslink, id: $id, modifiedOn: $modifiedOn, name: $name, status: $status, target: $target)'; } 
- }
+          target == other.target;}
+@override int get hashCode {return Object.hash(createdOn, description, dnslink, id, modifiedOn, name, status, target);}
+@override String toString() {return 'Web3Web3Hostname(createdOn: $createdOn, description: $description, dnslink: $dnslink, id: $id, modifiedOn: $modifiedOn, name: $name, status: $status, target: $target)';}
+}

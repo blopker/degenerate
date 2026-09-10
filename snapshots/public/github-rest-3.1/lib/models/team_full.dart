@@ -10,11 +10,11 @@ String toJson() => value;
 /// The level of privacy this team should have
 @immutable final class TeamFullPrivacy {const TeamFullPrivacy._(this.value);
 
-factory TeamFullPrivacy.fromJson(String json) { return switch (json) {
+factory TeamFullPrivacy.fromJson(String json) {return switch (json) {
   'closed' => closed,
   'secret' => secret,
   _ => TeamFullPrivacy._(json),
-}; }
+};}
 
 static const TeamFullPrivacy closed = TeamFullPrivacy._('closed');
 
@@ -24,22 +24,22 @@ static const List<TeamFullPrivacy> values = [closed, secret];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamFullPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamFullPrivacy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamFullPrivacy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamFullPrivacy($value)';}
+}
 /// The notification setting the team has set
 @immutable final class TeamFullNotificationSetting {const TeamFullNotificationSetting._(this.value);
 
-factory TeamFullNotificationSetting.fromJson(String json) { return switch (json) {
+factory TeamFullNotificationSetting.fromJson(String json) {return switch (json) {
   'notifications_enabled' => notificationsEnabled,
   'notifications_disabled' => notificationsDisabled,
   _ => TeamFullNotificationSetting._(json),
-}; }
+};}
 
 static const TeamFullNotificationSetting notificationsEnabled = TeamFullNotificationSetting._('notifications_enabled');
 
@@ -49,22 +49,22 @@ static const List<TeamFullNotificationSetting> values = [notificationsEnabled, n
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamFullNotificationSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamFullNotificationSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamFullNotificationSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamFullNotificationSetting($value)';}
+}
 /// The ownership type of the team
 @immutable final class TeamFullType {const TeamFullType._(this.value);
 
-factory TeamFullType.fromJson(String json) { return switch (json) {
+factory TeamFullType.fromJson(String json) {return switch (json) {
   'enterprise' => enterprise,
   'organization' => organization,
   _ => TeamFullType._(json),
-}; }
+};}
 
 static const TeamFullType enterprise = TeamFullType._('enterprise');
 
@@ -74,18 +74,18 @@ static const List<TeamFullType> values = [enterprise, organization];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamFullType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamFullType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamFullType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamFullType($value)';}
+}
 /// Groups of organization members that gives permissions on specified repositories.
 @immutable final class TeamFull {const TeamFull({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.name, required this.slug, required this.description, required this.permission, required this.membersUrl, required this.repositoriesUrl, required this.membersCount, required this.reposCount, required this.createdAt, required this.updatedAt, required this.organization, required this.type, this.privacy, this.notificationSetting, this.parent = const Omittable.absent(), this.ldapDn, this.organizationId, this.enterpriseId, });
 
-factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
+factory TeamFull.fromJson(Map<String, dynamic> json) {return TeamFull(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -108,7 +108,7 @@ factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
   type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 /// Unique identifier of the team
 final int id;
@@ -164,7 +164,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -187,8 +187,8 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -203,8 +203,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('organization') &&
-      json.containsKey('type'); } 
-TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name, String? slug, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, String? permission, String? membersUrl, Uri? repositoriesUrl, Omittable<TeamSimple?>? parent, int? membersCount, int? reposCount, DateTime? createdAt, DateTime? updatedAt, TeamOrganization? organization, LdapDn? Function()? ldapDn, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamFull(
+      json.containsKey('type');}
+TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name, String? slug, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, String? permission, String? membersUrl, Uri? repositoriesUrl, Omittable<TeamSimple?>? parent, int? membersCount, int? reposCount, DateTime? createdAt, DateTime? updatedAt, TeamOrganization? organization, LdapDn? Function()? ldapDn, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return TeamFull(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -227,8 +227,8 @@ TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name
   type: type ?? this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamFull &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -251,7 +251,7 @@ TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name
           ldapDn == other.ldapDn &&
           type == other.type &&
           organizationId == other.organizationId &&
-          enterpriseId == other.enterpriseId; } 
-@override int get hashCode { return Object.hashAll([id, nodeId, url, htmlUrl, name, slug, description, privacy, notificationSetting, permission, membersUrl, repositoriesUrl, parent, membersCount, reposCount, createdAt, updatedAt, organization, ldapDn, type, organizationId, enterpriseId]); } 
-@override String toString() { return 'TeamFull(id: $id, nodeId: $nodeId, url: $url, htmlUrl: $htmlUrl, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, membersCount: $membersCount, reposCount: $reposCount, createdAt: $createdAt, updatedAt: $updatedAt, organization: $organization, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)'; } 
- }
+          enterpriseId == other.enterpriseId;}
+@override int get hashCode {return Object.hashAll([id, nodeId, url, htmlUrl, name, slug, description, privacy, notificationSetting, permission, membersUrl, repositoriesUrl, parent, membersCount, reposCount, createdAt, updatedAt, organization, ldapDn, type, organizationId, enterpriseId]);}
+@override String toString() {return 'TeamFull(id: $id, nodeId: $nodeId, url: $url, htmlUrl: $htmlUrl, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, membersCount: $membersCount, reposCount: $reposCount, createdAt: $createdAt, updatedAt: $updatedAt, organization: $organization, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';}
+}

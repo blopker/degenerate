@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team10.dart';import 'user9.dart';import 'webhook_pull_request_review_comment_created_pull_request_assignee.dart';import 'webhook_pull_request_review_comment_created_pull_request_assignees.dart';import 'webhook_pull_request_review_comment_created_pull_request_auto_merge.dart';import 'webhook_pull_request_review_comment_created_pull_request_base.dart';import 'webhook_pull_request_review_comment_created_pull_request_head.dart';import 'webhook_pull_request_review_comment_created_pull_request_labels.dart';import 'webhook_pull_request_review_comment_created_pull_request_links.dart';import 'webhook_pull_request_review_comment_created_pull_request_milestone.dart';import 'webhook_pull_request_review_comment_created_pull_request_requested_reviewers.dart';import 'webhook_pull_request_review_comment_created_pull_request_requested_teams.dart';import 'webhook_pull_request_review_comment_created_pull_request_user.dart';@immutable final class WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason {const WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(this.value);
 
-factory WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason.fromJson(String json) {return switch (json) {
   'resolved' => resolved,
   'off-topic' => offTopic,
   'too heated' => tooHeated,
   'spam' => spam,
   'null' => $null,
   _ => WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason resolved = WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._('resolved');
 
@@ -25,18 +25,18 @@ static const List<WebhookPullRequestReviewCommentCreatedPullRequestActiveLockRea
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason($value)';}
+}
 /// How the author is associated with the repository.
 @immutable final class WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation {const WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(this.value);
 
-factory WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -46,7 +46,7 @@ factory WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJ
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation collaborator = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('COLLABORATOR');
 
@@ -68,21 +68,21 @@ static const List<WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssocia
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation($value)';}
+}
 @immutable final class WebhookPullRequestReviewCommentCreatedPullRequestState {const WebhookPullRequestReviewCommentCreatedPullRequestState._(this.value);
 
-factory WebhookPullRequestReviewCommentCreatedPullRequestState.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewCommentCreatedPullRequestState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => WebhookPullRequestReviewCommentCreatedPullRequestState._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewCommentCreatedPullRequestState open = WebhookPullRequestReviewCommentCreatedPullRequestState._('open');
 
@@ -92,17 +92,17 @@ static const List<WebhookPullRequestReviewCommentCreatedPullRequestState> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewCommentCreatedPullRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequestState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewCommentCreatedPullRequestState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedPullRequestState($value)';}
+}
 @immutable final class WebhookPullRequestReviewCommentCreatedPullRequest {const WebhookPullRequestReviewCommentCreatedPullRequest({required this.createdAt, required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.url, required this.base, required this.body, required this.closedAt, required this.commentsUrl, required this.commitsUrl, required this.links, required this.diffUrl, required this.updatedAt, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.mergeCommitSha, required this.mergedAt, required this.milestone, required this.user, required this.number, required this.patchUrl, required this.requestedReviewers, required this.requestedTeams, required this.reviewCommentUrl, required this.reviewCommentsUrl, required this.state, required this.statusesUrl, required this.title, required this.nodeId, this.autoMerge = const Omittable.absent(), this.draft, });
 
-factory WebhookPullRequestReviewCommentCreatedPullRequest.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentCreatedPullRequest(
+factory WebhookPullRequestReviewCommentCreatedPullRequest.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewCommentCreatedPullRequest(
   links: WebhookPullRequestReviewCommentCreatedPullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
   activeLockReason: json['active_lock_reason'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   assignee: json['assignee'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
@@ -139,7 +139,7 @@ factory WebhookPullRequestReviewCommentCreatedPullRequest.fromJson(Map<String, d
   updatedAt: json['updated_at'] as String,
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookPullRequestReviewCommentCreatedPullRequestLinks links;
 
@@ -216,7 +216,7 @@ final Uri url;
 
 final WebhookPullRequestReviewCommentCreatedPullRequestUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'active_lock_reason': activeLockReason?.toJson(),
   'assignee': assignee?.toJson(),
@@ -253,8 +253,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt,
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&
       json.containsKey('assignee') &&
       json.containsKey('assignees') &&
@@ -287,8 +287,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestReviewCommentCreatedPullRequest copyWith({WebhookPullRequestReviewCommentCreatedPullRequestLinks? links, WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason? Function()? activeLockReason, WebhookPullRequestReviewCommentCreatedPullRequestAssignee? Function()? assignee, List<WebhookPullRequestReviewCommentCreatedPullRequestAssignees?>? assignees, WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation? authorAssociation, Omittable<WebhookPullRequestReviewCommentCreatedPullRequestAutoMerge?>? autoMerge, WebhookPullRequestReviewCommentCreatedPullRequestBase? base, String? Function()? body, String? Function()? closedAt, Uri? commentsUrl, Uri? commitsUrl, String? createdAt, Uri? diffUrl, bool? Function()? draft, WebhookPullRequestReviewCommentCreatedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhookPullRequestReviewCommentCreatedPullRequestLabels>? labels, bool? locked, String? Function()? mergeCommitSha, String? Function()? mergedAt, WebhookPullRequestReviewCommentCreatedPullRequestMilestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, List<WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewers>? requestedReviewers, List<WebhookPullRequestReviewCommentCreatedPullRequestRequestedTeams>? requestedTeams, String? reviewCommentUrl, Uri? reviewCommentsUrl, WebhookPullRequestReviewCommentCreatedPullRequestState? state, Uri? statusesUrl, String? title, String? updatedAt, Uri? url, WebhookPullRequestReviewCommentCreatedPullRequestUser? Function()? user, }) { return WebhookPullRequestReviewCommentCreatedPullRequest(
+      json.containsKey('user');}
+WebhookPullRequestReviewCommentCreatedPullRequest copyWith({WebhookPullRequestReviewCommentCreatedPullRequestLinks? links, WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason? Function()? activeLockReason, WebhookPullRequestReviewCommentCreatedPullRequestAssignee? Function()? assignee, List<WebhookPullRequestReviewCommentCreatedPullRequestAssignees?>? assignees, WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation? authorAssociation, Omittable<WebhookPullRequestReviewCommentCreatedPullRequestAutoMerge?>? autoMerge, WebhookPullRequestReviewCommentCreatedPullRequestBase? base, String? Function()? body, String? Function()? closedAt, Uri? commentsUrl, Uri? commitsUrl, String? createdAt, Uri? diffUrl, bool? Function()? draft, WebhookPullRequestReviewCommentCreatedPullRequestHead? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhookPullRequestReviewCommentCreatedPullRequestLabels>? labels, bool? locked, String? Function()? mergeCommitSha, String? Function()? mergedAt, WebhookPullRequestReviewCommentCreatedPullRequestMilestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, List<WebhookPullRequestReviewCommentCreatedPullRequestRequestedReviewers>? requestedReviewers, List<WebhookPullRequestReviewCommentCreatedPullRequestRequestedTeams>? requestedTeams, String? reviewCommentUrl, Uri? reviewCommentsUrl, WebhookPullRequestReviewCommentCreatedPullRequestState? state, Uri? statusesUrl, String? title, String? updatedAt, Uri? url, WebhookPullRequestReviewCommentCreatedPullRequestUser? Function()? user, }) {return WebhookPullRequestReviewCommentCreatedPullRequest(
   links: links ?? this.links,
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,
@@ -325,8 +325,8 @@ WebhookPullRequestReviewCommentCreatedPullRequest copyWith({WebhookPullRequestRe
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewCommentCreatedPullRequest &&
           links == other.links &&
           activeLockReason == other.activeLockReason &&
@@ -363,7 +363,7 @@ WebhookPullRequestReviewCommentCreatedPullRequest copyWith({WebhookPullRequestRe
           title == other.title &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([links, activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, closedAt, commentsUrl, commitsUrl, createdAt, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, mergeCommitSha, mergedAt, milestone, nodeId, number, patchUrl, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]); } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequest(links: $links, activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, closedAt: $closedAt, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, createdAt: $createdAt, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, mergeCommitSha: $mergeCommitSha, mergedAt: $mergedAt, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hashAll([links, activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, closedAt, commentsUrl, commitsUrl, createdAt, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, mergeCommitSha, mergedAt, milestone, nodeId, number, patchUrl, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]);}
+@override String toString() {return 'WebhookPullRequestReviewCommentCreatedPullRequest(links: $links, activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, closedAt: $closedAt, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, createdAt: $createdAt, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, mergeCommitSha: $mergeCommitSha, mergedAt: $mergedAt, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)';}
+}

@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingThresholdsParam4 {const BillingThresholdsParam4({this.amountGte, this.resetBillingCycleAnchor, });
 
-factory BillingThresholdsParam4.fromJson(Map<String, dynamic> json) { return BillingThresholdsParam4(
+factory BillingThresholdsParam4.fromJson(Map<String, dynamic> json) {return BillingThresholdsParam4(
   amountGte: json['amount_gte'] != null ? (json['amount_gte'] as num).toInt() : null,
   resetBillingCycleAnchor: json['reset_billing_cycle_anchor'] as bool?,
-); }
+);}
 
 final int? amountGte;
 
 final bool? resetBillingCycleAnchor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_gte': ?amountGte,
   'reset_billing_cycle_anchor': ?resetBillingCycleAnchor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_gte', 'reset_billing_cycle_anchor'}.contains(key)); } 
-BillingThresholdsParam4 copyWith({int? Function()? amountGte, bool? Function()? resetBillingCycleAnchor, }) { return BillingThresholdsParam4(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_gte', 'reset_billing_cycle_anchor'}.contains(key));}
+BillingThresholdsParam4 copyWith({int? Function()? amountGte, bool? Function()? resetBillingCycleAnchor, }) {return BillingThresholdsParam4(
   amountGte: amountGte != null ? amountGte() : this.amountGte,
   resetBillingCycleAnchor: resetBillingCycleAnchor != null ? resetBillingCycleAnchor() : this.resetBillingCycleAnchor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingThresholdsParam4 &&
           amountGte == other.amountGte &&
-          resetBillingCycleAnchor == other.resetBillingCycleAnchor; } 
-@override int get hashCode { return Object.hash(amountGte, resetBillingCycleAnchor); } 
-@override String toString() { return 'BillingThresholdsParam4(amountGte: $amountGte, resetBillingCycleAnchor: $resetBillingCycleAnchor)'; } 
- }
+          resetBillingCycleAnchor == other.resetBillingCycleAnchor;}
+@override int get hashCode {return Object.hash(amountGte, resetBillingCycleAnchor);}
+@override String toString() {return 'BillingThresholdsParam4(amountGte: $amountGte, resetBillingCycleAnchor: $resetBillingCycleAnchor)';}
+}

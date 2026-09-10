@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Search for a specific substring in the event.
 @immutable final class TelemetryValuesListRequestNeedle {const TelemetryValuesListRequestNeedle({required this.value, this.isRegex, this.matchCase, });
 
-factory TelemetryValuesListRequestNeedle.fromJson(Map<String, dynamic> json) { return TelemetryValuesListRequestNeedle(
+factory TelemetryValuesListRequestNeedle.fromJson(Map<String, dynamic> json) {return TelemetryValuesListRequestNeedle(
   isRegex: json['isRegex'] as bool?,
   matchCase: json['matchCase'] as bool?,
   value: json['value'],
-); }
+);}
 
 final bool? isRegex;
 
@@ -16,22 +16,22 @@ final bool? matchCase;
 /// One of: String, double, bool
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'isRegex': ?isRegex,
   'matchCase': ?matchCase,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-TelemetryValuesListRequestNeedle copyWith({bool? Function()? isRegex, bool? Function()? matchCase, dynamic value, }) { return TelemetryValuesListRequestNeedle(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+TelemetryValuesListRequestNeedle copyWith({bool? Function()? isRegex, bool? Function()? matchCase, dynamic value, }) {return TelemetryValuesListRequestNeedle(
   isRegex: isRegex != null ? isRegex() : this.isRegex,
   matchCase: matchCase != null ? matchCase() : this.matchCase,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TelemetryValuesListRequestNeedle &&
           isRegex == other.isRegex &&
           matchCase == other.matchCase &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(isRegex, matchCase, value); } 
-@override String toString() { return 'TelemetryValuesListRequestNeedle(isRegex: $isRegex, matchCase: $matchCase, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(isRegex, matchCase, value);}
+@override String toString() {return 'TelemetryValuesListRequestNeedle(isRegex: $isRegex, matchCase: $matchCase, value: $value)';}
+}

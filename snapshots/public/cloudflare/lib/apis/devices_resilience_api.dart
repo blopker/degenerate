@@ -13,7 +13,7 @@ final class DevicesResilienceApi with ApiExecutor {const DevicesResilienceApi(th
 /// Fetch the Global WARP override state.
 ///
 /// `GET /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<TeamsDevicesGlobalWarpOverride, ResponseCommonFailure70>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesGlobalWarpOverride, ResponseCommonFailure70>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,30 +22,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return TeamsDevicesGlobalWarpOverride.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  TeamsDevicesGlobalWarpOverride.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure70.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure70.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set Global WARP override state
 ///
 /// Sets the Global WARP override state.
 ///
 /// `POST /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<TeamsDevicesGlobalWarpOverride, ResponseCommonFailure70>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesGlobalWarpOverride, ResponseCommonFailure70>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,22 +45,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return TeamsDevicesGlobalWarpOverride.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  TeamsDevicesGlobalWarpOverride.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure70.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure70.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

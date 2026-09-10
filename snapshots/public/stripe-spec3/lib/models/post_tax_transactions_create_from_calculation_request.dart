@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxTransactionsCreateFromCalculationRequest {const PostTaxTransactionsCreateFromCalculationRequest({required this.calculation, required this.reference, this.expand, this.metadata, this.postedAt, });
 
-factory PostTaxTransactionsCreateFromCalculationRequest.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateFromCalculationRequest(
+factory PostTaxTransactionsCreateFromCalculationRequest.fromJson(Map<String, dynamic> json) {return PostTaxTransactionsCreateFromCalculationRequest(
   calculation: json['calculation'] as String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   postedAt: json['posted_at'] != null ? (json['posted_at'] as num).toInt() : null,
   reference: json['reference'] as String,
-); }
+);}
 
 /// Tax Calculation ID to be used as input when creating the transaction.
 final String calculation;
@@ -25,29 +25,29 @@ final int? postedAt;
 /// A custom order or sale identifier, such as 'myOrder_123'. Must be unique across all transactions, including reversals.
 final String reference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'calculation': calculation,
   'expand': ?expand,
   'metadata': ?metadata,
   'posted_at': ?postedAt,
   'reference': reference,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation') && json['calculation'] is String &&
-      json.containsKey('reference') && json['reference'] is String; } 
-PostTaxTransactionsCreateFromCalculationRequest copyWith({String? calculation, List<String>? Function()? expand, Map<String, String>? Function()? metadata, int? Function()? postedAt, String? reference, }) { return PostTaxTransactionsCreateFromCalculationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('calculation') && json['calculation'] is String &&
+      json.containsKey('reference') && json['reference'] is String;}
+PostTaxTransactionsCreateFromCalculationRequest copyWith({String? calculation, List<String>? Function()? expand, Map<String, String>? Function()? metadata, int? Function()? postedAt, String? reference, }) {return PostTaxTransactionsCreateFromCalculationRequest(
   calculation: calculation ?? this.calculation,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   postedAt: postedAt != null ? postedAt() : this.postedAt,
   reference: reference ?? this.reference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxTransactionsCreateFromCalculationRequest &&
           calculation == other.calculation &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           postedAt == other.postedAt &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(calculation, Object.hashAll(expand ?? const []), metadata, postedAt, reference); } 
-@override String toString() { return 'PostTaxTransactionsCreateFromCalculationRequest(calculation: $calculation, expand: $expand, metadata: $metadata, postedAt: $postedAt, reference: $reference)'; } 
- }
+          reference == other.reference;}
+@override int get hashCode {return Object.hash(calculation, Object.hashAll(expand ?? const []), metadata, postedAt, reference);}
+@override String toString() {return 'PostTaxTransactionsCreateFromCalculationRequest(calculation: $calculation, expand: $expand, metadata: $metadata, postedAt: $postedAt, reference: $reference)';}
+}

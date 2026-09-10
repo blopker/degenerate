@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestApplicationFeePercentVariant2 {const PostSubscriptionsRequestApplicationFeePercentVariant2._(this.value);
 
-factory PostSubscriptionsRequestApplicationFeePercentVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestApplicationFeePercentVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsRequestApplicationFeePercentVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestApplicationFeePercentVariant2 $empty = PostSubscriptionsRequestApplicationFeePercentVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsRequestApplicationFeePercentVariant2> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestApplicationFeePercentVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestApplicationFeePercentVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestApplicationFeePercentVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestApplicationFeePercentVariant2($value)';}
+}
 /// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account. The request must be made by a platform account on a connected account in order to set an application fee percentage. For more information, see the application fees [documentation](https://stripe.com/docs/connect/subscriptions#collecting-fees-on-subscriptions).
 @immutable
 final class PostSubscriptionsRequestApplicationFeePercent {

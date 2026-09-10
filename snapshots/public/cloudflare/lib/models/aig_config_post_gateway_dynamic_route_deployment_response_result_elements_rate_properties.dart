@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType._(this.value);
 
-factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType.fromJson(String json) { return switch (json) {
+factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType.fromJson(String json) {return switch (json) {
   'count' => count,
   'cost' => cost,
   _ => AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType._(json),
-}; }
+};}
 
 static const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType count = AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType._('count');
 
@@ -16,22 +16,22 @@ static const List<AigConfigPostGatewayDynamicRouteDeploymentResponseResultElemen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType($value)';}
+}
 @immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties({required this.key, required this.limit, required this.limitType, required this.window, });
 
-factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties(
+factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties(
   key: json['key'] as String,
   limit: (json['limit'] as num).toDouble(),
   limitType: AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType.fromJson(json['limitType'] as String),
   window: (json['window'] as num).toDouble(),
-); }
+);}
 
 final String key;
 
@@ -41,28 +41,28 @@ final AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProper
 
 final double window;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'limit': limit,
   'limitType': limitType.toJson(),
   'window': window,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('limit') && json['limit'] is num &&
       json.containsKey('limitType') &&
-      json.containsKey('window') && json['window'] is num; } 
-AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties copyWith({String? key, double? limit, AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType? limitType, double? window, }) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties(
+      json.containsKey('window') && json['window'] is num;}
+AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties copyWith({String? key, double? limit, AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRatePropertiesLimitType? limitType, double? window, }) {return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties(
   key: key ?? this.key,
   limit: limit ?? this.limit,
   limitType: limitType ?? this.limitType,
   window: window ?? this.window,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties &&
           key == other.key &&
           limit == other.limit &&
           limitType == other.limitType &&
-          window == other.window; } 
-@override int get hashCode { return Object.hash(key, limit, limitType, window); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties(key: $key, limit: $limit, limitType: $limitType, window: $window)'; } 
- }
+          window == other.window;}
+@override int get hashCode {return Object.hash(key, limit, limitType, window);}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsRateProperties(key: $key, limit: $limit, limitType: $limitType, window: $window)';}
+}

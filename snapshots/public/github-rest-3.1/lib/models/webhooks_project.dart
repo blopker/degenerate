@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_project_creator.dart';/// State of the project; either 'open' or 'closed'
 @immutable final class WebhooksProjectState {const WebhooksProjectState._(this.value);
 
-factory WebhooksProjectState.fromJson(String json) { return switch (json) {
+factory WebhooksProjectState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   _ => WebhooksProjectState._(json),
-}; }
+};}
 
 static const WebhooksProjectState open = WebhooksProjectState._('open');
 
@@ -17,17 +17,17 @@ static const List<WebhooksProjectState> values = [open, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksProjectState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksProjectState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksProjectState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksProjectState($value)';}
+}
 @immutable final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
 
-factory WebhooksProject.fromJson(Map<String, dynamic> json) { return WebhooksProject(
+factory WebhooksProject.fromJson(Map<String, dynamic> json) {return WebhooksProject(
   body: json['body'] as String?,
   columnsUrl: Uri.parse(json['columns_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -41,7 +41,7 @@ factory WebhooksProject.fromJson(Map<String, dynamic> json) { return WebhooksPro
   state: WebhooksProjectState.fromJson(json['state'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// Body of the project
 final String? body;
@@ -72,7 +72,7 @@ final DateTime updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
   'columns_url': columnsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
@@ -86,8 +86,8 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('columns_url') && json['columns_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&
@@ -99,8 +99,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('body'
       json.containsKey('owner_url') && json['owner_url'] is String &&
       json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? createdAt, WebhooksProjectCreator? Function()? creator, Uri? htmlUrl, int? id, String? name, String? nodeId, int? number, Uri? ownerUrl, WebhooksProjectState? state, DateTime? updatedAt, Uri? url, }) { return WebhooksProject(
+      json.containsKey('url') && json['url'] is String;}
+WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? createdAt, WebhooksProjectCreator? Function()? creator, Uri? htmlUrl, int? id, String? name, String? nodeId, int? number, Uri? ownerUrl, WebhooksProjectState? state, DateTime? updatedAt, Uri? url, }) {return WebhooksProject(
   body: body != null ? body() : this.body,
   columnsUrl: columnsUrl ?? this.columnsUrl,
   createdAt: createdAt ?? this.createdAt,
@@ -114,8 +114,8 @@ WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? c
   state: state ?? this.state,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksProject &&
           body == other.body &&
           columnsUrl == other.columnsUrl &&
@@ -129,7 +129,7 @@ WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? c
           ownerUrl == other.ownerUrl &&
           state == other.state &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(body, columnsUrl, createdAt, creator, htmlUrl, id, name, nodeId, number, ownerUrl, state, updatedAt, url); } 
-@override String toString() { return 'WebhooksProject(body: $body, columnsUrl: $columnsUrl, createdAt: $createdAt, creator: $creator, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, number: $number, ownerUrl: $ownerUrl, state: $state, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(body, columnsUrl, createdAt, creator, htmlUrl, id, name, nodeId, number, ownerUrl, state, updatedAt, url);}
+@override String toString() {return 'WebhooksProject(body: $body, columnsUrl: $columnsUrl, createdAt: $createdAt, creator: $creator, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, number: $number, ownerUrl: $ownerUrl, state: $state, updatedAt: $updatedAt, url: $url)';}
+}

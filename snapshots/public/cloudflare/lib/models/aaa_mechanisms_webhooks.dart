@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_uuid.dart';@immutable final class AaaMechanismsWebhooks {const AaaMechanismsWebhooks({this.id});
 
-factory AaaMechanismsWebhooks.fromJson(Map<String, dynamic> json) { return AaaMechanismsWebhooks(
+factory AaaMechanismsWebhooks.fromJson(Map<String, dynamic> json) {return AaaMechanismsWebhooks(
   id: json['id'] != null ? AaaUuid.fromJson(json['id'] as String) : null,
-); }
+);}
 
 final AaaUuid? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-AaaMechanismsWebhooks copyWith({AaaUuid? Function()? id}) { return AaaMechanismsWebhooks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+AaaMechanismsWebhooks copyWith({AaaUuid? Function()? id}) {return AaaMechanismsWebhooks(
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaMechanismsWebhooks &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'AaaMechanismsWebhooks(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'AaaMechanismsWebhooks(id: $id)';}
+}

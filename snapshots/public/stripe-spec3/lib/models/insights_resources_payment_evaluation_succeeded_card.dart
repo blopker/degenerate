@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the address line 1 check.
 @immutable final class InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check {const InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check._(this.value);
 
-factory InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check fail = InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check._('fail');
 
@@ -23,24 +23,24 @@ static const List<InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Che
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check($value)';}
+}
 /// Indicates whether the cardholder provided a postal code and if it matched the cardholder’s billing address.
 @immutable final class InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck {const InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck._(this.value);
 
-factory InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck fail = InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck._('fail');
 
@@ -54,24 +54,24 @@ static const List<InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck($value)';}
+}
 /// Result of the CVC check.
 @immutable final class InsightsResourcesPaymentEvaluationSucceededCardCvcCheck {const InsightsResourcesPaymentEvaluationSucceededCardCvcCheck._(this.value);
 
-factory InsightsResourcesPaymentEvaluationSucceededCardCvcCheck.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationSucceededCardCvcCheck.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => InsightsResourcesPaymentEvaluationSucceededCardCvcCheck._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationSucceededCardCvcCheck fail = InsightsResourcesPaymentEvaluationSucceededCardCvcCheck._('fail');
 
@@ -85,22 +85,22 @@ static const List<InsightsResourcesPaymentEvaluationSucceededCardCvcCheck> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationSucceededCardCvcCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationSucceededCardCvcCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationSucceededCardCvcCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationSucceededCardCvcCheck($value)';}
+}
 /// Details of an succeeded card outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationSucceededCard {const InsightsResourcesPaymentEvaluationSucceededCard({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, });
 
-factory InsightsResourcesPaymentEvaluationSucceededCard.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationSucceededCard(
+factory InsightsResourcesPaymentEvaluationSucceededCard.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationSucceededCard(
   addressLine1Check: InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check.fromJson(json['address_line1_check'] as String),
   addressPostalCodeCheck: InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String),
   cvcCheck: InsightsResourcesPaymentEvaluationSucceededCardCvcCheck.fromJson(json['cvc_check'] as String),
-); }
+);}
 
 /// Result of the address line 1 check.
 final InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check addressLine1Check;
@@ -111,24 +111,24 @@ final InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck addr
 /// Result of the CVC check.
 final InsightsResourcesPaymentEvaluationSucceededCardCvcCheck cvcCheck;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address_line1_check': addressLine1Check.toJson(),
   'address_postal_code_check': addressPostalCodeCheck.toJson(),
   'cvc_check': cvcCheck.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address_line1_check') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address_line1_check') &&
       json.containsKey('address_postal_code_check') &&
-      json.containsKey('cvc_check'); } 
-InsightsResourcesPaymentEvaluationSucceededCard copyWith({InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check? addressLine1Check, InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck? addressPostalCodeCheck, InsightsResourcesPaymentEvaluationSucceededCardCvcCheck? cvcCheck, }) { return InsightsResourcesPaymentEvaluationSucceededCard(
+      json.containsKey('cvc_check');}
+InsightsResourcesPaymentEvaluationSucceededCard copyWith({InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check? addressLine1Check, InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck? addressPostalCodeCheck, InsightsResourcesPaymentEvaluationSucceededCardCvcCheck? cvcCheck, }) {return InsightsResourcesPaymentEvaluationSucceededCard(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
   cvcCheck: cvcCheck ?? this.cvcCheck,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationSucceededCard &&
           addressLine1Check == other.addressLine1Check &&
           addressPostalCodeCheck == other.addressPostalCodeCheck &&
-          cvcCheck == other.cvcCheck; } 
-@override int get hashCode { return Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationSucceededCard(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck)'; } 
- }
+          cvcCheck == other.cvcCheck;}
+@override int get hashCode {return Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck);}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationSucceededCard(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck)';}
+}

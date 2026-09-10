@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListDatasetResponseResultFiltersKey {const AigConfigListDatasetResponseResultFiltersKey._(this.value);
 
-factory AigConfigListDatasetResponseResultFiltersKey.fromJson(String json) { return switch (json) {
+factory AigConfigListDatasetResponseResultFiltersKey.fromJson(String json) {return switch (json) {
   'created_at' => createdAt,
   'request_content_type' => requestContentType,
   'response_content_type' => responseContentType,
@@ -17,7 +17,7 @@ factory AigConfigListDatasetResponseResultFiltersKey.fromJson(String json) { ret
   'duration' => duration,
   'feedback' => feedback,
   _ => AigConfigListDatasetResponseResultFiltersKey._(json),
-}; }
+};}
 
 static const AigConfigListDatasetResponseResultFiltersKey createdAt = AigConfigListDatasetResponseResultFiltersKey._('created_at');
 
@@ -49,23 +49,23 @@ static const List<AigConfigListDatasetResponseResultFiltersKey> values = [create
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigListDatasetResponseResultFiltersKey && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigListDatasetResponseResultFiltersKey($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigListDatasetResponseResultFiltersKey && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigListDatasetResponseResultFiltersKey($value)';}
+}
 @immutable final class AigConfigListDatasetResponseResultFiltersOperator {const AigConfigListDatasetResponseResultFiltersOperator._(this.value);
 
-factory AigConfigListDatasetResponseResultFiltersOperator.fromJson(String json) { return switch (json) {
+factory AigConfigListDatasetResponseResultFiltersOperator.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'contains' => contains,
   'lt' => lt,
   'gt' => gt,
   _ => AigConfigListDatasetResponseResultFiltersOperator._(json),
-}; }
+};}
 
 static const AigConfigListDatasetResponseResultFiltersOperator eq = AigConfigListDatasetResponseResultFiltersOperator._('eq');
 
@@ -79,21 +79,21 @@ static const List<AigConfigListDatasetResponseResultFiltersOperator> values = [e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigListDatasetResponseResultFiltersOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigListDatasetResponseResultFiltersOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigListDatasetResponseResultFiltersOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigListDatasetResponseResultFiltersOperator($value)';}
+}
 @immutable final class AigConfigListDatasetResponseResultFilters {const AigConfigListDatasetResponseResultFilters({required this.key, required this.$operator, required this.value, });
 
-factory AigConfigListDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) { return AigConfigListDatasetResponseResultFilters(
+factory AigConfigListDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) {return AigConfigListDatasetResponseResultFilters(
   key: AigConfigListDatasetResponseResultFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigListDatasetResponseResultFiltersOperator.fromJson(json['operator'] as String),
   value: (json['value'] as List<dynamic>).map((e) => e).toList(),
-); }
+);}
 
 final AigConfigListDatasetResponseResultFiltersKey key;
 
@@ -101,24 +101,24 @@ final AigConfigListDatasetResponseResultFiltersOperator $operator;
 
 final List<dynamic> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key.toJson(),
   'operator': $operator.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') &&
       json.containsKey('operator') &&
-      json.containsKey('value'); } 
-AigConfigListDatasetResponseResultFilters copyWith({AigConfigListDatasetResponseResultFiltersKey? key, AigConfigListDatasetResponseResultFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigListDatasetResponseResultFilters(
+      json.containsKey('value');}
+AigConfigListDatasetResponseResultFilters copyWith({AigConfigListDatasetResponseResultFiltersKey? key, AigConfigListDatasetResponseResultFiltersOperator? $operator, List<dynamic>? value, }) {return AigConfigListDatasetResponseResultFilters(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigListDatasetResponseResultFilters &&
           key == other.key &&
           $operator == other.$operator &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
-@override String toString() { return 'AigConfigListDatasetResponseResultFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
- }
+          listEquals(value, other.value);}
+@override int get hashCode {return Object.hash(key, $operator, Object.hashAll(value));}
+@override String toString() {return 'AigConfigListDatasetResponseResultFilters(key: $key, \$operator: ${$operator}, value: $value)';}
+}

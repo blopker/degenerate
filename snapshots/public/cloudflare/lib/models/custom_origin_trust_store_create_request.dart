@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_certificate.dart';@immutable final class CustomOriginTrustStoreCreateRequest {const CustomOriginTrustStoreCreateRequest({required this.certificate});
 
-factory CustomOriginTrustStoreCreateRequest.fromJson(Map<String, dynamic> json) { return CustomOriginTrustStoreCreateRequest(
+factory CustomOriginTrustStoreCreateRequest.fromJson(Map<String, dynamic> json) {return CustomOriginTrustStoreCreateRequest(
   certificate: TlsCertificatesAndHostnamesComponentsSchemasCertificate.fromJson(json['certificate'] as String),
-); }
+);}
 
 /// The zone's SSL certificate or certificate and the intermediate(s).
 final TlsCertificatesAndHostnamesComponentsSchemasCertificate certificate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificate': certificate.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate'); } 
-CustomOriginTrustStoreCreateRequest copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificate? certificate}) { return CustomOriginTrustStoreCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate');}
+CustomOriginTrustStoreCreateRequest copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificate? certificate}) {return CustomOriginTrustStoreCreateRequest(
   certificate: certificate ?? this.certificate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomOriginTrustStoreCreateRequest &&
-          certificate == other.certificate; } 
-@override int get hashCode { return certificate.hashCode; } 
-@override String toString() { return 'CustomOriginTrustStoreCreateRequest(certificate: $certificate)'; } 
- }
+          certificate == other.certificate;}
+@override int get hashCode {return certificate.hashCode;}
+@override String toString() {return 'CustomOriginTrustStoreCreateRequest(certificate: $certificate)';}
+}

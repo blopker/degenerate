@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_accountholder_account.dart';import 'bank_connections_resource_accountholder_customer.dart';/// Type of account holder that this account belongs to.
 @immutable final class BankConnectionsResourceAccountholderType {const BankConnectionsResourceAccountholderType._(this.value);
 
-factory BankConnectionsResourceAccountholderType.fromJson(String json) { return switch (json) {
+factory BankConnectionsResourceAccountholderType.fromJson(String json) {return switch (json) {
   'account' => account,
   'customer' => customer,
   _ => BankConnectionsResourceAccountholderType._(json),
-}; }
+};}
 
 static const BankConnectionsResourceAccountholderType account = BankConnectionsResourceAccountholderType._('account');
 
@@ -17,23 +17,23 @@ static const List<BankConnectionsResourceAccountholderType> values = [account, c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceAccountholderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceAccountholderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankConnectionsResourceAccountholderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankConnectionsResourceAccountholderType($value)';}
+}
 /// 
 @immutable final class BankConnectionsResourceAccountholder {const BankConnectionsResourceAccountholder({required this.type, this.account, this.customer, this.customerAccount, });
 
-factory BankConnectionsResourceAccountholder.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceAccountholder(
+factory BankConnectionsResourceAccountholder.fromJson(Map<String, dynamic> json) {return BankConnectionsResourceAccountholder(
   account: json['account'] != null ? BankConnectionsResourceAccountholderAccount.fromJson(json['account']) : null,
   customer: json['customer'] != null ? BankConnectionsResourceAccountholderCustomer.fromJson(json['customer']) : null,
   customerAccount: json['customer_account'] as String?,
   type: BankConnectionsResourceAccountholderType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The ID of the Stripe account that this account belongs to. Only available when `account_holder.type` is `account`.
 final BankConnectionsResourceAccountholderAccount? account;
@@ -46,25 +46,25 @@ final String? customerAccount;
 /// Type of account holder that this account belongs to.
 final BankConnectionsResourceAccountholderType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account != null) 'account': account?.toJson(),
   if (customer != null) 'customer': customer?.toJson(),
   'customer_account': ?customerAccount,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-BankConnectionsResourceAccountholder copyWith({BankConnectionsResourceAccountholderAccount? Function()? account, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, BankConnectionsResourceAccountholderType? type, }) { return BankConnectionsResourceAccountholder(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+BankConnectionsResourceAccountholder copyWith({BankConnectionsResourceAccountholderAccount? Function()? account, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, BankConnectionsResourceAccountholderType? type, }) {return BankConnectionsResourceAccountholder(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BankConnectionsResourceAccountholder &&
           account == other.account &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, customer, customerAccount, type); } 
-@override String toString() { return 'BankConnectionsResourceAccountholder(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, customer, customerAccount, type);}
+@override String toString() {return 'BankConnectionsResourceAccountholder(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)';}
+}

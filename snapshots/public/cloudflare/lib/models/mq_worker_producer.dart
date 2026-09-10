@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqWorkerProducerType {const MqWorkerProducerType._(this.value);
 
-factory MqWorkerProducerType.fromJson(String json) { return switch (json) {
+factory MqWorkerProducerType.fromJson(String json) {return switch (json) {
   'worker' => worker,
   _ => MqWorkerProducerType._(json),
-}; }
+};}
 
 static const MqWorkerProducerType worker = MqWorkerProducerType._('worker');
 
@@ -13,38 +13,38 @@ static const List<MqWorkerProducerType> values = [worker];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqWorkerProducerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqWorkerProducerType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MqWorkerProducerType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MqWorkerProducerType($value)';}
+}
 @immutable final class MqWorkerProducer {const MqWorkerProducer({this.script, this.type, });
 
-factory MqWorkerProducer.fromJson(Map<String, dynamic> json) { return MqWorkerProducer(
+factory MqWorkerProducer.fromJson(Map<String, dynamic> json) {return MqWorkerProducer(
   script: json['script'] as String?,
   type: json['type'] != null ? MqWorkerProducerType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final String? script;
 
 final MqWorkerProducerType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'script': ?script,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'script', 'type'}.contains(key)); } 
-MqWorkerProducer copyWith({String? Function()? script, MqWorkerProducerType? Function()? type, }) { return MqWorkerProducer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'script', 'type'}.contains(key));}
+MqWorkerProducer copyWith({String? Function()? script, MqWorkerProducerType? Function()? type, }) {return MqWorkerProducer(
   script: script != null ? script() : this.script,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MqWorkerProducer &&
           script == other.script &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(script, type); } 
-@override String toString() { return 'MqWorkerProducer(script: $script, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(script, type);}
+@override String toString() {return 'MqWorkerProducer(script: $script, type: $type)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_locations_request_address.dart';import 'post_terminal_locations_request_address_kana.dart';import 'post_terminal_locations_request_address_kanji.dart';import 'post_terminal_locations_request_metadata.dart';@immutable final class PostTerminalLocationsRequest {const PostTerminalLocationsRequest({this.address, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayName, this.displayNameKana, this.displayNameKanji, this.expand, this.metadata, this.phone, });
 
-factory PostTerminalLocationsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsRequest(
+factory PostTerminalLocationsRequest.fromJson(Map<String, dynamic> json) {return PostTerminalLocationsRequest(
   address: json['address'] != null ? PostTerminalLocationsRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? PostTerminalLocationsRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? PostTerminalLocationsRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory PostTerminalLocationsRequest.fromJson(Map<String, dynamic> json) { retur
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostTerminalLocationsRequestMetadata.fromJson(json['metadata']) : null,
   phone: json['phone'] as String?,
-); }
+);}
 
 /// The full address of the location.
 final PostTerminalLocationsRequestAddress? address;
@@ -45,7 +45,7 @@ final PostTerminalLocationsRequestMetadata? metadata;
 /// The phone number for the location.
 final String? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -56,9 +56,9 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'configuration_overrides', 'display_name', 'display_name_kana', 'display_name_kanji', 'expand', 'metadata', 'phone'}.contains(key)); } 
-PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress? Function()? address, PostTerminalLocationsRequestAddressKana? Function()? addressKana, PostTerminalLocationsRequestAddressKanji? Function()? addressKanji, String? Function()? configurationOverrides, String? Function()? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, List<String>? Function()? expand, PostTerminalLocationsRequestMetadata? Function()? metadata, String? Function()? phone, }) { return PostTerminalLocationsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'configuration_overrides', 'display_name', 'display_name_kana', 'display_name_kanji', 'expand', 'metadata', 'phone'}.contains(key));}
+PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress? Function()? address, PostTerminalLocationsRequestAddressKana? Function()? addressKana, PostTerminalLocationsRequestAddressKanji? Function()? addressKanji, String? Function()? configurationOverrides, String? Function()? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, List<String>? Function()? expand, PostTerminalLocationsRequestMetadata? Function()? metadata, String? Function()? phone, }) {return PostTerminalLocationsRequest(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -69,8 +69,8 @@ PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress? Func
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   phone: phone != null ? phone() : this.phone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalLocationsRequest &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -81,7 +81,7 @@ PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress? Func
           displayNameKanji == other.displayNameKanji &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, Object.hashAll(expand ?? const []), metadata, phone); } 
-@override String toString() { return 'PostTerminalLocationsRequest(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, expand: $expand, metadata: $metadata, phone: $phone)'; } 
- }
+          phone == other.phone;}
+@override int get hashCode {return Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, Object.hashAll(expand ?? const []), metadata, phone);}
+@override String toString() {return 'PostTerminalLocationsRequest(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, expand: $expand, metadata: $metadata, phone: $phone)';}
+}

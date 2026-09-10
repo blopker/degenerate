@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_object.dart';@immutable final class MessageStreamEventThreadMessageCreatedEvent {const MessageStreamEventThreadMessageCreatedEvent._(this.value);
 
-factory MessageStreamEventThreadMessageCreatedEvent.fromJson(String json) { return switch (json) {
+factory MessageStreamEventThreadMessageCreatedEvent.fromJson(String json) {return switch (json) {
   'thread.message.created' => threadMessageCreated,
   _ => MessageStreamEventThreadMessageCreatedEvent._(json),
-}; }
+};}
 
 static const MessageStreamEventThreadMessageCreatedEvent threadMessageCreated = MessageStreamEventThreadMessageCreatedEvent._('thread.message.created');
 
@@ -13,40 +13,40 @@ static const List<MessageStreamEventThreadMessageCreatedEvent> values = [threadM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageStreamEventThreadMessageCreatedEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageStreamEventThreadMessageCreatedEvent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageStreamEventThreadMessageCreatedEvent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageStreamEventThreadMessageCreatedEvent($value)';}
+}
 /// Occurs when a [message](/docs/api-reference/messages/object) is created.
 @immutable final class MessageStreamEventThreadMessageCreated {const MessageStreamEventThreadMessageCreated({required this.event, required this.data, });
 
-factory MessageStreamEventThreadMessageCreated.fromJson(Map<String, dynamic> json) { return MessageStreamEventThreadMessageCreated(
+factory MessageStreamEventThreadMessageCreated.fromJson(Map<String, dynamic> json) {return MessageStreamEventThreadMessageCreated(
   event: MessageStreamEventThreadMessageCreatedEvent.fromJson(json['event'] as String),
   data: MessageObject.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 final MessageStreamEventThreadMessageCreatedEvent event;
 
 final MessageObject data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('data'); } 
-MessageStreamEventThreadMessageCreated copyWith({MessageStreamEventThreadMessageCreatedEvent? event, MessageObject? data, }) { return MessageStreamEventThreadMessageCreated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') &&
+      json.containsKey('data');}
+MessageStreamEventThreadMessageCreated copyWith({MessageStreamEventThreadMessageCreatedEvent? event, MessageObject? data, }) {return MessageStreamEventThreadMessageCreated(
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageStreamEventThreadMessageCreated &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'MessageStreamEventThreadMessageCreated(event: $event, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(event, data);}
+@override String toString() {return 'MessageStreamEventThreadMessageCreated(event: $event, data: $data)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_markdown_request_variant1_add_script_tag.dart';import 'brapi_post_markdown_request_variant1_add_style_tag.dart';import 'brapi_post_markdown_request_variant1_authenticate.dart';import 'brapi_post_markdown_request_variant1_cookies.dart';import 'brapi_post_markdown_request_variant1_goto_options.dart';import 'brapi_post_markdown_request_variant1_viewport.dart';import 'brapi_post_markdown_request_variant1_wait_for_selector.dart';@immutable final class BrapiPostMarkdownRequestVariant1AllowResourceTypes {const BrapiPostMarkdownRequestVariant1AllowResourceTypes._(this.value);
 
-factory BrapiPostMarkdownRequestVariant1AllowResourceTypes.fromJson(String json) { return switch (json) {
+factory BrapiPostMarkdownRequestVariant1AllowResourceTypes.fromJson(String json) {return switch (json) {
   'document' => document,
   'stylesheet' => stylesheet,
   'image' => image,
@@ -22,7 +22,7 @@ factory BrapiPostMarkdownRequestVariant1AllowResourceTypes.fromJson(String json)
   'preflight' => preflight,
   'other' => $other,
   _ => BrapiPostMarkdownRequestVariant1AllowResourceTypes._(json),
-}; }
+};}
 
 static const BrapiPostMarkdownRequestVariant1AllowResourceTypes document = BrapiPostMarkdownRequestVariant1AllowResourceTypes._('document');
 
@@ -64,17 +64,17 @@ static const List<BrapiPostMarkdownRequestVariant1AllowResourceTypes> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostMarkdownRequestVariant1AllowResourceTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1AllowResourceTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostMarkdownRequestVariant1AllowResourceTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1AllowResourceTypes($value)';}
+}
 @immutable final class BrapiPostMarkdownRequestVariant1RejectResourceTypes {const BrapiPostMarkdownRequestVariant1RejectResourceTypes._(this.value);
 
-factory BrapiPostMarkdownRequestVariant1RejectResourceTypes.fromJson(String json) { return switch (json) {
+factory BrapiPostMarkdownRequestVariant1RejectResourceTypes.fromJson(String json) {return switch (json) {
   'document' => document,
   'stylesheet' => stylesheet,
   'image' => image,
@@ -94,7 +94,7 @@ factory BrapiPostMarkdownRequestVariant1RejectResourceTypes.fromJson(String json
   'preflight' => preflight,
   'other' => $other,
   _ => BrapiPostMarkdownRequestVariant1RejectResourceTypes._(json),
-}; }
+};}
 
 static const BrapiPostMarkdownRequestVariant1RejectResourceTypes document = BrapiPostMarkdownRequestVariant1RejectResourceTypes._('document');
 
@@ -136,17 +136,17 @@ static const List<BrapiPostMarkdownRequestVariant1RejectResourceTypes> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrapiPostMarkdownRequestVariant1RejectResourceTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1RejectResourceTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BrapiPostMarkdownRequestVariant1RejectResourceTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1RejectResourceTypes($value)';}
+}
 @immutable final class BrapiPostMarkdownRequestVariant1 {const BrapiPostMarkdownRequestVariant1({required this.url, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent, this.viewport, this.waitForSelector, this.waitForTimeout, });
 
-factory BrapiPostMarkdownRequestVariant1.fromJson(Map<String, dynamic> json) { return BrapiPostMarkdownRequestVariant1(
+factory BrapiPostMarkdownRequestVariant1.fromJson(Map<String, dynamic> json) {return BrapiPostMarkdownRequestVariant1(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,
   addScriptTag: (json['addScriptTag'] as List<dynamic>?)?.map((e) => BrapiPostMarkdownRequestVariant1AddScriptTag.fromJson(e as Map<String, dynamic>)).toList(),
   addStyleTag: (json['addStyleTag'] as List<dynamic>?)?.map((e) => BrapiPostMarkdownRequestVariant1AddStyleTag.fromJson(e as Map<String, dynamic>)).toList(),
@@ -166,7 +166,7 @@ factory BrapiPostMarkdownRequestVariant1.fromJson(Map<String, dynamic> json) { r
   viewport: json['viewport'] != null ? BrapiPostMarkdownRequestVariant1Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
   waitForSelector: json['waitForSelector'] != null ? BrapiPostMarkdownRequestVariant1WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
-); }
+);}
 
 /// The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.
 final double? actionTimeout;
@@ -222,8 +222,8 @@ final BrapiPostMarkdownRequestVariant1WaitForSelector? waitForSelector;
 final double? waitForTimeout;
 
 /// The value with the schema default applied when absent.
-String get userAgentOrDefault { return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'; } 
-Map<String, dynamic> toJson() { return {
+String get userAgentOrDefault {return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36';}
+Map<String, dynamic> toJson() {return {
   'actionTimeout': ?actionTimeout,
   if (addScriptTag != null) 'addScriptTag': addScriptTag?.map((e) => e.toJson()).toList(),
   if (addStyleTag != null) 'addStyleTag': addStyleTag?.map((e) => e.toJson()).toList(),
@@ -243,9 +243,9 @@ Map<String, dynamic> toJson() { return {
   if (viewport != null) 'viewport': viewport?.toJson(),
   if (waitForSelector != null) 'waitForSelector': waitForSelector?.toJson(),
   'waitForTimeout': ?waitForTimeout,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-BrapiPostMarkdownRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostMarkdownRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostMarkdownRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostMarkdownRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostMarkdownRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostMarkdownRequestVariant1Cookies>? Function()? cookies, String? Function()? emulateMediaType, BrapiPostMarkdownRequestVariant1GotoOptions? Function()? gotoOptions, List<String>? Function()? rejectRequestPattern, List<BrapiPostMarkdownRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, Uri? url, String? Function()? userAgent, BrapiPostMarkdownRequestVariant1Viewport? Function()? viewport, BrapiPostMarkdownRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostMarkdownRequestVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+BrapiPostMarkdownRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostMarkdownRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostMarkdownRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostMarkdownRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostMarkdownRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostMarkdownRequestVariant1Cookies>? Function()? cookies, String? Function()? emulateMediaType, BrapiPostMarkdownRequestVariant1GotoOptions? Function()? gotoOptions, List<String>? Function()? rejectRequestPattern, List<BrapiPostMarkdownRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, Uri? url, String? Function()? userAgent, BrapiPostMarkdownRequestVariant1Viewport? Function()? viewport, BrapiPostMarkdownRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) {return BrapiPostMarkdownRequestVariant1(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,
   addStyleTag: addStyleTag != null ? addStyleTag() : this.addStyleTag,
@@ -265,8 +265,8 @@ BrapiPostMarkdownRequestVariant1 copyWith({double? Function()? actionTimeout, Li
   viewport: viewport != null ? viewport() : this.viewport,
   waitForSelector: waitForSelector != null ? waitForSelector() : this.waitForSelector,
   waitForTimeout: waitForTimeout != null ? waitForTimeout() : this.waitForTimeout,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrapiPostMarkdownRequestVariant1 &&
           actionTimeout == other.actionTimeout &&
           listEquals(addScriptTag, other.addScriptTag) &&
@@ -286,7 +286,7 @@ BrapiPostMarkdownRequestVariant1 copyWith({double? Function()? actionTimeout, Li
           userAgent == other.userAgent &&
           viewport == other.viewport &&
           waitForSelector == other.waitForSelector &&
-          waitForTimeout == other.waitForTimeout; } 
-@override int get hashCode { return Object.hash(actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), emulateMediaType, gotoOptions, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), setExtraHttpHeaders, setJavaScriptEnabled, url, userAgent, viewport, waitForSelector, waitForTimeout); } 
-@override String toString() { return 'BrapiPostMarkdownRequestVariant1(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, url: $url, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)'; } 
- }
+          waitForTimeout == other.waitForTimeout;}
+@override int get hashCode {return Object.hash(actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), emulateMediaType, gotoOptions, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), setExtraHttpHeaders, setJavaScriptEnabled, url, userAgent, viewport, waitForSelector, waitForTimeout);}
+@override String toString() {return 'BrapiPostMarkdownRequestVariant1(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, url: $url, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)';}
+}

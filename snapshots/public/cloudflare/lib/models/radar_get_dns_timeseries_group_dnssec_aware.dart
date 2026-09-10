@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupDnssecAware {const RadarGetDnsTimeseriesGroupDnssecAware._(this.value);
 
-factory RadarGetDnsTimeseriesGroupDnssecAware.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTimeseriesGroupDnssecAware.fromJson(String json) {return switch (json) {
   'SUPPORTED' => supported,
   'NOT_SUPPORTED' => notSupported,
   _ => RadarGetDnsTimeseriesGroupDnssecAware._(json),
-}; }
+};}
 
 static const RadarGetDnsTimeseriesGroupDnssecAware supported = RadarGetDnsTimeseriesGroupDnssecAware._('SUPPORTED');
 
@@ -16,11 +16,11 @@ static const List<RadarGetDnsTimeseriesGroupDnssecAware> values = [supported, no
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupDnssecAware && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupDnssecAware($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupDnssecAware && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupDnssecAware($value)';}
+}

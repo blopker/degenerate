@@ -11,7 +11,7 @@ final class Api20100401RecordingTranscriptionApi with ApiExecutor {const Api2010
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<AccountRecordingRecordingTranscription, Never>> fetchRecordingTranscription({required String accountSid, required String recordingSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountRecordingRecordingTranscription, Never>> fetchRecordingTranscription({required String accountSid, required String recordingSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,18 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountRecordingRecordingTranscription.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountRecordingRecordingTranscription.fromJson(json as Map<String, dynamic>);}, );}
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions/{Sid}.json`
-Future<ApiResult<void, Never>> deleteRecordingTranscription({required String accountSid, required String recordingSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteRecordingTranscription({required String accountSid, required String recordingSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -40,15 +35,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions.json`
-Future<ApiResult<ListRecordingTranscriptionResponse, Never>> listRecordingTranscription({required String accountSid, required String recordingSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListRecordingTranscriptionResponse, Never>> listRecordingTranscription({required String accountSid, required String recordingSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -71,12 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListRecordingTranscriptionResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListRecordingTranscriptionResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

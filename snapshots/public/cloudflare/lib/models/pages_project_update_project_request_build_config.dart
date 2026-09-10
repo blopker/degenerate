@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configs for the project build process.
 @immutable final class PagesProjectUpdateProjectRequestBuildConfig {const PagesProjectUpdateProjectRequestBuildConfig({this.buildCaching, this.buildCommand, this.destinationDir, this.rootDir, this.webAnalyticsTag = const Omittable.absent(), this.webAnalyticsToken = const Omittable.absent(), });
 
-factory PagesProjectUpdateProjectRequestBuildConfig.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequestBuildConfig(
+factory PagesProjectUpdateProjectRequestBuildConfig.fromJson(Map<String, dynamic> json) {return PagesProjectUpdateProjectRequestBuildConfig(
   buildCaching: json['build_caching'] as bool?,
   buildCommand: json['build_command'] as String?,
   destinationDir: json['destination_dir'] as String?,
   rootDir: json['root_dir'] as String?,
   webAnalyticsTag: json.containsKey('web_analytics_tag') ? Omittable(json['web_analytics_tag'] as String?) : const Omittable.absent(),
   webAnalyticsToken: json.containsKey('web_analytics_token') ? Omittable(json['web_analytics_token'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Enable build caching for the project.
 final bool? buildCaching;
@@ -30,31 +30,31 @@ final Omittable<String?> webAnalyticsTag;
 /// The auth token for analytics.
 final Omittable<String?> webAnalyticsToken;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'build_caching': ?buildCaching,
   'build_command': ?buildCommand,
   'destination_dir': ?destinationDir,
   'root_dir': ?rootDir,
   if (webAnalyticsTag.isPresent) 'web_analytics_tag': webAnalyticsTag.value,
   if (webAnalyticsToken.isPresent) 'web_analytics_token': webAnalyticsToken.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_caching', 'build_command', 'destination_dir', 'root_dir', 'web_analytics_tag', 'web_analytics_token'}.contains(key)); } 
-PagesProjectUpdateProjectRequestBuildConfig copyWith({bool? Function()? buildCaching, String? Function()? buildCommand, String? Function()? destinationDir, String? Function()? rootDir, Omittable<String?>? webAnalyticsTag, Omittable<String?>? webAnalyticsToken, }) { return PagesProjectUpdateProjectRequestBuildConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'build_caching', 'build_command', 'destination_dir', 'root_dir', 'web_analytics_tag', 'web_analytics_token'}.contains(key));}
+PagesProjectUpdateProjectRequestBuildConfig copyWith({bool? Function()? buildCaching, String? Function()? buildCommand, String? Function()? destinationDir, String? Function()? rootDir, Omittable<String?>? webAnalyticsTag, Omittable<String?>? webAnalyticsToken, }) {return PagesProjectUpdateProjectRequestBuildConfig(
   buildCaching: buildCaching != null ? buildCaching() : this.buildCaching,
   buildCommand: buildCommand != null ? buildCommand() : this.buildCommand,
   destinationDir: destinationDir != null ? destinationDir() : this.destinationDir,
   rootDir: rootDir != null ? rootDir() : this.rootDir,
   webAnalyticsTag: webAnalyticsTag ?? this.webAnalyticsTag,
   webAnalyticsToken: webAnalyticsToken ?? this.webAnalyticsToken,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesProjectUpdateProjectRequestBuildConfig &&
           buildCaching == other.buildCaching &&
           buildCommand == other.buildCommand &&
           destinationDir == other.destinationDir &&
           rootDir == other.rootDir &&
           webAnalyticsTag == other.webAnalyticsTag &&
-          webAnalyticsToken == other.webAnalyticsToken; } 
-@override int get hashCode { return Object.hash(buildCaching, buildCommand, destinationDir, rootDir, webAnalyticsTag, webAnalyticsToken); } 
-@override String toString() { return 'PagesProjectUpdateProjectRequestBuildConfig(buildCaching: $buildCaching, buildCommand: $buildCommand, destinationDir: $destinationDir, rootDir: $rootDir, webAnalyticsTag: $webAnalyticsTag, webAnalyticsToken: $webAnalyticsToken)'; } 
- }
+          webAnalyticsToken == other.webAnalyticsToken;}
+@override int get hashCode {return Object.hash(buildCaching, buildCommand, destinationDir, rootDir, webAnalyticsTag, webAnalyticsToken);}
+@override String toString() {return 'PagesProjectUpdateProjectRequestBuildConfig(buildCaching: $buildCaching, buildCommand: $buildCommand, destinationDir: $destinationDir, rootDir: $rootDir, webAnalyticsTag: $webAnalyticsTag, webAnalyticsToken: $webAnalyticsToken)';}
+}

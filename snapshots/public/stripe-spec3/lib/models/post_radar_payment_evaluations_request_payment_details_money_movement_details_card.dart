@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence._(this.value);
 
-factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence.fromJson(String json) { return switch (json) {
+factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence._(json),
-}; }
+};}
 
 static const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence offSession = PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence._('off_session');
 
@@ -16,23 +16,23 @@ static const List<PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementD
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence($value)';}
+}
 @immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType._(this.value);
 
-factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType.fromJson(String json) { return switch (json) {
+factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType.fromJson(String json) {return switch (json) {
   'one_off' => oneOff,
   'recurring' => recurring,
   'setup_one_off' => setupOneOff,
   'setup_recurring' => setupRecurring,
   _ => PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType._(json),
-}; }
+};}
 
 static const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType oneOff = PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType._('one_off');
 
@@ -46,38 +46,38 @@ static const List<PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementD
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType($value)';}
+}
 @immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard({this.customerPresence, this.paymentType, });
 
-factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(
+factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard.fromJson(Map<String, dynamic> json) {return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(
   customerPresence: json['customer_presence'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence.fromJson(json['customer_presence'] as String) : null,
   paymentType: json['payment_type'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType.fromJson(json['payment_type'] as String) : null,
-); }
+);}
 
 final PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence? customerPresence;
 
 final PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType? paymentType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customerPresence != null) 'customer_presence': customerPresence?.toJson(),
   if (paymentType != null) 'payment_type': paymentType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_presence', 'payment_type'}.contains(key)); } 
-PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence? Function()? customerPresence, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType? Function()? paymentType, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer_presence', 'payment_type'}.contains(key));}
+PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence? Function()? customerPresence, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType? Function()? paymentType, }) {return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(
   customerPresence: customerPresence != null ? customerPresence() : this.customerPresence,
   paymentType: paymentType != null ? paymentType() : this.paymentType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard &&
           customerPresence == other.customerPresence &&
-          paymentType == other.paymentType; } 
-@override int get hashCode { return Object.hash(customerPresence, paymentType); } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(customerPresence: $customerPresence, paymentType: $paymentType)'; } 
- }
+          paymentType == other.paymentType;}
+@override int get hashCode {return Object.hash(customerPresence, paymentType);}
+@override String toString() {return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(customerPresence: $customerPresence, paymentType: $paymentType)';}
+}

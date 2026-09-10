@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_build_config.dart';import 'pages_deployment.dart';import 'pages_project_deployment_configs.dart';import 'pages_project_name.dart';import 'pages_source.dart';@immutable final class PagesProject {const PagesProject({required this.canonicalDeployment, required this.createdOn, required this.deploymentConfigs, required this.framework, required this.frameworkVersion, required this.id, required this.latestDeployment, required this.name, required this.previewScriptName, required this.productionBranch, required this.productionScriptName, required this.usesFunctions, this.buildConfig, this.domains, this.source, this.subdomain, });
 
-factory PagesProject.fromJson(Map<String, dynamic> json) { return PagesProject(
+factory PagesProject.fromJson(Map<String, dynamic> json) {return PagesProject(
   buildConfig: json['build_config'] != null ? PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
   canonicalDeployment: json['canonical_deployment'] != null ? PagesDeployment.fromJson(json['canonical_deployment'] as Map<String, dynamic>) : null,
   createdOn: DateTime.parse(json['created_on'] as String),
@@ -19,7 +19,7 @@ factory PagesProject.fromJson(Map<String, dynamic> json) { return PagesProject(
   source: json['source'] != null ? PagesSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   subdomain: json['subdomain'] as String?,
   usesFunctions: json['uses_functions'] as bool?,
-); }
+);}
 
 final PagesBuildConfig? buildConfig;
 
@@ -66,7 +66,7 @@ final String? subdomain;
 /// Whether the project uses functions.
 final bool? usesFunctions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buildConfig != null) 'build_config': buildConfig?.toJson(),
   'canonical_deployment': canonicalDeployment?.toJson(),
   'created_on': createdOn.toIso8601String(),
@@ -83,8 +83,8 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
   'subdomain': ?subdomain,
   'uses_functions': usesFunctions,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('canonical_deployment') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('canonical_deployment') &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('deployment_configs') &&
       json.containsKey('framework') && json['framework'] is String &&
@@ -95,8 +95,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('canon
       json.containsKey('preview_script_name') && json['preview_script_name'] is String &&
       json.containsKey('production_branch') && json['production_branch'] is String &&
       json.containsKey('production_script_name') && json['production_script_name'] is String &&
-      json.containsKey('uses_functions') && (json['uses_functions'] == null || json['uses_functions'] is bool); } 
-PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeployment? Function()? canonicalDeployment, DateTime? createdOn, PagesProjectDeploymentConfigs? deploymentConfigs, List<String>? Function()? domains, String? framework, String? frameworkVersion, String? id, PagesDeployment? Function()? latestDeployment, PagesProjectName? name, String? previewScriptName, String? productionBranch, String? productionScriptName, PagesSource? Function()? source, String? Function()? subdomain, bool? Function()? usesFunctions, }) { return PagesProject(
+      json.containsKey('uses_functions') && (json['uses_functions'] == null || json['uses_functions'] is bool);}
+PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeployment? Function()? canonicalDeployment, DateTime? createdOn, PagesProjectDeploymentConfigs? deploymentConfigs, List<String>? Function()? domains, String? framework, String? frameworkVersion, String? id, PagesDeployment? Function()? latestDeployment, PagesProjectName? name, String? previewScriptName, String? productionBranch, String? productionScriptName, PagesSource? Function()? source, String? Function()? subdomain, bool? Function()? usesFunctions, }) {return PagesProject(
   buildConfig: buildConfig != null ? buildConfig() : this.buildConfig,
   canonicalDeployment: canonicalDeployment != null ? canonicalDeployment() : this.canonicalDeployment,
   createdOn: createdOn ?? this.createdOn,
@@ -113,8 +113,8 @@ PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeploymen
   source: source != null ? source() : this.source,
   subdomain: subdomain != null ? subdomain() : this.subdomain,
   usesFunctions: usesFunctions != null ? usesFunctions() : this.usesFunctions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesProject &&
           buildConfig == other.buildConfig &&
           canonicalDeployment == other.canonicalDeployment &&
@@ -131,7 +131,7 @@ PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeploymen
           productionScriptName == other.productionScriptName &&
           source == other.source &&
           subdomain == other.subdomain &&
-          usesFunctions == other.usesFunctions; } 
-@override int get hashCode { return Object.hash(buildConfig, canonicalDeployment, createdOn, deploymentConfigs, Object.hashAll(domains ?? const []), framework, frameworkVersion, id, latestDeployment, name, previewScriptName, productionBranch, productionScriptName, source, subdomain, usesFunctions); } 
-@override String toString() { return 'PagesProject(buildConfig: $buildConfig, canonicalDeployment: $canonicalDeployment, createdOn: $createdOn, deploymentConfigs: $deploymentConfigs, domains: $domains, framework: $framework, frameworkVersion: $frameworkVersion, id: $id, latestDeployment: $latestDeployment, name: $name, previewScriptName: $previewScriptName, productionBranch: $productionBranch, productionScriptName: $productionScriptName, source: $source, subdomain: $subdomain, usesFunctions: $usesFunctions)'; } 
- }
+          usesFunctions == other.usesFunctions;}
+@override int get hashCode {return Object.hash(buildConfig, canonicalDeployment, createdOn, deploymentConfigs, Object.hashAll(domains ?? const []), framework, frameworkVersion, id, latestDeployment, name, previewScriptName, productionBranch, productionScriptName, source, subdomain, usesFunctions);}
+@override String toString() {return 'PagesProject(buildConfig: $buildConfig, canonicalDeployment: $canonicalDeployment, createdOn: $createdOn, deploymentConfigs: $deploymentConfigs, domains: $domains, framework: $framework, frameworkVersion: $frameworkVersion, id: $id, latestDeployment: $latestDeployment, name: $name, previewScriptName: $previewScriptName, productionBranch: $productionBranch, productionScriptName: $productionScriptName, source: $source, subdomain: $subdomain, usesFunctions: $usesFunctions)';}
+}

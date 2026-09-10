@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics at the step number during the fine-tuning job.
 @immutable final class FineTuningJobCheckpointMetrics {const FineTuningJobCheckpointMetrics({this.step, this.trainLoss, this.trainMeanTokenAccuracy, this.validLoss, this.validMeanTokenAccuracy, this.fullValidLoss, this.fullValidMeanTokenAccuracy, });
 
-factory FineTuningJobCheckpointMetrics.fromJson(Map<String, dynamic> json) { return FineTuningJobCheckpointMetrics(
+factory FineTuningJobCheckpointMetrics.fromJson(Map<String, dynamic> json) {return FineTuningJobCheckpointMetrics(
   step: json['step'] != null ? (json['step'] as num).toDouble() : null,
   trainLoss: json['train_loss'] != null ? (json['train_loss'] as num).toDouble() : null,
   trainMeanTokenAccuracy: json['train_mean_token_accuracy'] != null ? (json['train_mean_token_accuracy'] as num).toDouble() : null,
@@ -11,7 +11,7 @@ factory FineTuningJobCheckpointMetrics.fromJson(Map<String, dynamic> json) { ret
   validMeanTokenAccuracy: json['valid_mean_token_accuracy'] != null ? (json['valid_mean_token_accuracy'] as num).toDouble() : null,
   fullValidLoss: json['full_valid_loss'] != null ? (json['full_valid_loss'] as num).toDouble() : null,
   fullValidMeanTokenAccuracy: json['full_valid_mean_token_accuracy'] != null ? (json['full_valid_mean_token_accuracy'] as num).toDouble() : null,
-); }
+);}
 
 final double? step;
 
@@ -27,7 +27,7 @@ final double? fullValidLoss;
 
 final double? fullValidMeanTokenAccuracy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'step': ?step,
   'train_loss': ?trainLoss,
   'train_mean_token_accuracy': ?trainMeanTokenAccuracy,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   'valid_mean_token_accuracy': ?validMeanTokenAccuracy,
   'full_valid_loss': ?fullValidLoss,
   'full_valid_mean_token_accuracy': ?fullValidMeanTokenAccuracy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'step', 'train_loss', 'train_mean_token_accuracy', 'valid_loss', 'valid_mean_token_accuracy', 'full_valid_loss', 'full_valid_mean_token_accuracy'}.contains(key)); } 
-FineTuningJobCheckpointMetrics copyWith({double? Function()? step, double? Function()? trainLoss, double? Function()? trainMeanTokenAccuracy, double? Function()? validLoss, double? Function()? validMeanTokenAccuracy, double? Function()? fullValidLoss, double? Function()? fullValidMeanTokenAccuracy, }) { return FineTuningJobCheckpointMetrics(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'step', 'train_loss', 'train_mean_token_accuracy', 'valid_loss', 'valid_mean_token_accuracy', 'full_valid_loss', 'full_valid_mean_token_accuracy'}.contains(key));}
+FineTuningJobCheckpointMetrics copyWith({double? Function()? step, double? Function()? trainLoss, double? Function()? trainMeanTokenAccuracy, double? Function()? validLoss, double? Function()? validMeanTokenAccuracy, double? Function()? fullValidLoss, double? Function()? fullValidMeanTokenAccuracy, }) {return FineTuningJobCheckpointMetrics(
   step: step != null ? step() : this.step,
   trainLoss: trainLoss != null ? trainLoss() : this.trainLoss,
   trainMeanTokenAccuracy: trainMeanTokenAccuracy != null ? trainMeanTokenAccuracy() : this.trainMeanTokenAccuracy,
@@ -45,8 +45,8 @@ FineTuningJobCheckpointMetrics copyWith({double? Function()? step, double? Funct
   validMeanTokenAccuracy: validMeanTokenAccuracy != null ? validMeanTokenAccuracy() : this.validMeanTokenAccuracy,
   fullValidLoss: fullValidLoss != null ? fullValidLoss() : this.fullValidLoss,
   fullValidMeanTokenAccuracy: fullValidMeanTokenAccuracy != null ? fullValidMeanTokenAccuracy() : this.fullValidMeanTokenAccuracy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FineTuningJobCheckpointMetrics &&
           step == other.step &&
           trainLoss == other.trainLoss &&
@@ -54,7 +54,7 @@ FineTuningJobCheckpointMetrics copyWith({double? Function()? step, double? Funct
           validLoss == other.validLoss &&
           validMeanTokenAccuracy == other.validMeanTokenAccuracy &&
           fullValidLoss == other.fullValidLoss &&
-          fullValidMeanTokenAccuracy == other.fullValidMeanTokenAccuracy; } 
-@override int get hashCode { return Object.hash(step, trainLoss, trainMeanTokenAccuracy, validLoss, validMeanTokenAccuracy, fullValidLoss, fullValidMeanTokenAccuracy); } 
-@override String toString() { return 'FineTuningJobCheckpointMetrics(step: $step, trainLoss: $trainLoss, trainMeanTokenAccuracy: $trainMeanTokenAccuracy, validLoss: $validLoss, validMeanTokenAccuracy: $validMeanTokenAccuracy, fullValidLoss: $fullValidLoss, fullValidMeanTokenAccuracy: $fullValidMeanTokenAccuracy)'; } 
- }
+          fullValidMeanTokenAccuracy == other.fullValidMeanTokenAccuracy;}
+@override int get hashCode {return Object.hash(step, trainLoss, trainMeanTokenAccuracy, validLoss, validMeanTokenAccuracy, fullValidLoss, fullValidMeanTokenAccuracy);}
+@override String toString() {return 'FineTuningJobCheckpointMetrics(step: $step, trainLoss: $trainLoss, trainMeanTokenAccuracy: $trainMeanTokenAccuracy, validLoss: $validLoss, validMeanTokenAccuracy: $validMeanTokenAccuracy, fullValidLoss: $fullValidLoss, fullValidMeanTokenAccuracy: $fullValidMeanTokenAccuracy)';}
+}

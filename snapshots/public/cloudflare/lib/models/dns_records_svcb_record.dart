@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_svcb_record_data.dart';import 'dns_records_ttl.dart';/// Record type.
 @immutable final class DnsRecordsSvcbRecordType {const DnsRecordsSvcbRecordType._(this.value);
 
-factory DnsRecordsSvcbRecordType.fromJson(String json) { return switch (json) {
+factory DnsRecordsSvcbRecordType.fromJson(String json) {return switch (json) {
   'SVCB' => svcb,
   _ => DnsRecordsSvcbRecordType._(json),
-}; }
+};}
 
 static const DnsRecordsSvcbRecordType svcb = DnsRecordsSvcbRecordType._('SVCB');
 
@@ -14,17 +14,17 @@ static const List<DnsRecordsSvcbRecordType> values = [svcb];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsSvcbRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsRecordsSvcbRecordType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DnsRecordsSvcbRecordType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DnsRecordsSvcbRecordType($value)';}
+}
 @immutable final class DnsRecordsSvcbRecord {const DnsRecordsSvcbRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
-factory DnsRecordsSvcbRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsSvcbRecord(
+factory DnsRecordsSvcbRecord.fromJson(Map<String, dynamic> json) {return DnsRecordsSvcbRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
   name: json['name'] != null ? DnsRecordsName.fromJson(json['name'] as String) : null,
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
@@ -34,7 +34,7 @@ factory DnsRecordsSvcbRecord.fromJson(Map<String, dynamic> json) { return DnsRec
   content: json['content'] as String?,
   data: json['data'] != null ? DnsRecordsSvcbRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? DnsRecordsSvcbRecordType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final DnsRecordsComment? comment;
 
@@ -57,7 +57,7 @@ final DnsRecordsSvcbRecordData? data;
 /// Record type.
 final DnsRecordsSvcbRecordType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (proxied != null) 'proxied': proxied?.toJson(),
@@ -67,9 +67,9 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
   if (data != null) 'data': data?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'type'}.contains(key)); } 
-DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsSvcbRecordData? Function()? data, DnsRecordsSvcbRecordType? Function()? type, }) { return DnsRecordsSvcbRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'type'}.contains(key));}
+DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsSvcbRecordData? Function()? data, DnsRecordsSvcbRecordType? Function()? type, }) {return DnsRecordsSvcbRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,
@@ -79,8 +79,8 @@ DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecord
   content: content != null ? content() : this.content,
   data: data != null ? data() : this.data,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsRecordsSvcbRecord &&
           comment == other.comment &&
           name == other.name &&
@@ -90,7 +90,7 @@ DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecord
           ttl == other.ttl &&
           content == other.content &&
           data == other.data &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, type); } 
-@override String toString() { return 'DnsRecordsSvcbRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, type);}
+@override String toString() {return 'DnsRecordsSvcbRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, type: $type)';}
+}

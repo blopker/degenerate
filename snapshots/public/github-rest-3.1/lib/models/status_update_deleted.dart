@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'status_update.dart';@immutable final class StatusUpdateDeletedAction {const StatusUpdateDeletedAction._(this.value);
 
-factory StatusUpdateDeletedAction.fromJson(String json) { return switch (json) {
+factory StatusUpdateDeletedAction.fromJson(String json) {return switch (json) {
   'deleted' => deleted,
   _ => StatusUpdateDeletedAction._(json),
-}; }
+};}
 
 static const StatusUpdateDeletedAction deleted = StatusUpdateDeletedAction._('deleted');
 
@@ -13,23 +13,23 @@ static const List<StatusUpdateDeletedAction> values = [deleted];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusUpdateDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusUpdateDeletedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is StatusUpdateDeletedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'StatusUpdateDeletedAction($value)';}
+}
 @immutable final class StatusUpdateDeleted {const StatusUpdateDeleted({required this.action, required this.organization, required this.projectsV2StatusUpdate, required this.sender, this.installation, });
 
-factory StatusUpdateDeleted.fromJson(Map<String, dynamic> json) { return StatusUpdateDeleted(
+factory StatusUpdateDeleted.fromJson(Map<String, dynamic> json) {return StatusUpdateDeleted(
   action: StatusUpdateDeletedAction.fromJson(json['action'] as String),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2StatusUpdate: StatusUpdate.fromJson(json['projects_v2_status_update'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final StatusUpdateDeletedAction action;
 
@@ -41,31 +41,31 @@ final StatusUpdate projectsV2StatusUpdate;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'organization': organization.toJson(),
   'projects_v2_status_update': projectsV2StatusUpdate.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('projects_v2_status_update') &&
-      json.containsKey('sender'); } 
-StatusUpdateDeleted copyWith({StatusUpdateDeletedAction? action, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, StatusUpdate? projectsV2StatusUpdate, SimpleUser? sender, }) { return StatusUpdateDeleted(
+      json.containsKey('sender');}
+StatusUpdateDeleted copyWith({StatusUpdateDeletedAction? action, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, StatusUpdate? projectsV2StatusUpdate, SimpleUser? sender, }) {return StatusUpdateDeleted(
   action: action ?? this.action,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,
   projectsV2StatusUpdate: projectsV2StatusUpdate ?? this.projectsV2StatusUpdate,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StatusUpdateDeleted &&
           action == other.action &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2StatusUpdate == other.projectsV2StatusUpdate &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, installation, organization, projectsV2StatusUpdate, sender); } 
-@override String toString() { return 'StatusUpdateDeleted(action: $action, installation: $installation, organization: $organization, projectsV2StatusUpdate: $projectsV2StatusUpdate, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, installation, organization, projectsV2StatusUpdate, sender);}
+@override String toString() {return 'StatusUpdateDeleted(action: $action, installation: $installation, organization: $organization, projectsV2StatusUpdate: $projectsV2StatusUpdate, sender: $sender)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecAwarenessResponseCode {const RadarGetDnsSummaryByDnssecAwarenessResponseCode._(this.value);
 
-factory RadarGetDnsSummaryByDnssecAwarenessResponseCode.fromJson(String json) { return switch (json) {
+factory RadarGetDnsSummaryByDnssecAwarenessResponseCode.fromJson(String json) {return switch (json) {
   'NOERROR' => noerror,
   'FORMERR' => formerr,
   'SERVFAIL' => servfail,
@@ -23,7 +23,7 @@ factory RadarGetDnsSummaryByDnssecAwarenessResponseCode.fromJson(String json) { 
   'BADTRUNC' => badtrunc,
   'BADCOOKIE' => badcookie,
   _ => RadarGetDnsSummaryByDnssecAwarenessResponseCode._(json),
-}; }
+};}
 
 static const RadarGetDnsSummaryByDnssecAwarenessResponseCode noerror = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('NOERROR');
 
@@ -67,11 +67,11 @@ static const List<RadarGetDnsSummaryByDnssecAwarenessResponseCode> values = [noe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsSummaryByDnssecAwarenessResponseCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsSummaryByDnssecAwarenessResponseCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsSummaryByDnssecAwarenessResponseCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsSummaryByDnssecAwarenessResponseCode($value)';}
+}

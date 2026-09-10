@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_po
 /// To add an ephemeral container, use the ephemeralcontainers subresource of an existing Pod. Ephemeral containers may not be removed or restarted.
 @immutable final class EphemeralContainer {const EphemeralContainer({required this.name, this.args, this.command, this.env, this.envFrom, this.image, this.imagePullPolicy, this.lifecycle, this.livenessProbe, this.ports, this.readinessProbe, this.resizePolicy, this.resources, this.restartPolicy, this.restartPolicyRules, this.securityContext, this.startupProbe, this.stdin, this.stdinOnce, this.targetContainerName, this.terminationMessagePath, this.terminationMessagePolicy, this.tty, this.volumeDevices, this.volumeMounts, this.workingDir, });
 
-factory EphemeralContainer.fromJson(Map<String, dynamic> json) { return EphemeralContainer(
+factory EphemeralContainer.fromJson(Map<String, dynamic> json) {return EphemeralContainer(
   args: (json['args'] as List<dynamic>?)?.map((e) => e as String).toList(),
   command: (json['command'] as List<dynamic>?)?.map((e) => e as String).toList(),
   env: (json['env'] as List<dynamic>?)?.map((e) => EnvVar.fromJson(e as Map<String, dynamic>)).toList(),
@@ -32,7 +32,7 @@ factory EphemeralContainer.fromJson(Map<String, dynamic> json) { return Ephemera
   volumeDevices: (json['volumeDevices'] as List<dynamic>?)?.map((e) => VolumeDevice.fromJson(e as Map<String, dynamic>)).toList(),
   volumeMounts: (json['volumeMounts'] as List<dynamic>?)?.map((e) => VolumeMount.fromJson(e as Map<String, dynamic>)).toList(),
   workingDir: json['workingDir'] as String?,
-); }
+);}
 
 /// Arguments to the entrypoint. The image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. "$$(VAR_NAME)" will produce the string literal "$(VAR_NAME)". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
 final List<String>? args;
@@ -114,7 +114,7 @@ final List<VolumeMount>? volumeMounts;
 /// Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
 final String? workingDir;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'args': ?args,
   'command': ?command,
   if (env != null) 'env': env?.map((e) => e.toJson()).toList(),
@@ -141,9 +141,9 @@ Map<String, dynamic> toJson() { return {
   if (volumeDevices != null) 'volumeDevices': volumeDevices?.map((e) => e.toJson()).toList(),
   if (volumeMounts != null) 'volumeMounts': volumeMounts?.map((e) => e.toJson()).toList(),
   'workingDir': ?workingDir,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-EphemeralContainer copyWith({List<String>? Function()? args, List<String>? Function()? command, List<EnvVar>? Function()? env, List<EnvFromSource>? Function()? envFrom, String? Function()? image, String? Function()? imagePullPolicy, Lifecycle? Function()? lifecycle, Probe? Function()? livenessProbe, String? name, List<ContainerPort>? Function()? ports, Probe? Function()? readinessProbe, List<ContainerResizePolicy>? Function()? resizePolicy, ResourceRequirements? Function()? resources, String? Function()? restartPolicy, List<ContainerRestartRule>? Function()? restartPolicyRules, SecurityContext? Function()? securityContext, Probe? Function()? startupProbe, bool? Function()? stdin, bool? Function()? stdinOnce, String? Function()? targetContainerName, String? Function()? terminationMessagePath, String? Function()? terminationMessagePolicy, bool? Function()? tty, List<VolumeDevice>? Function()? volumeDevices, List<VolumeMount>? Function()? volumeMounts, String? Function()? workingDir, }) { return EphemeralContainer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+EphemeralContainer copyWith({List<String>? Function()? args, List<String>? Function()? command, List<EnvVar>? Function()? env, List<EnvFromSource>? Function()? envFrom, String? Function()? image, String? Function()? imagePullPolicy, Lifecycle? Function()? lifecycle, Probe? Function()? livenessProbe, String? name, List<ContainerPort>? Function()? ports, Probe? Function()? readinessProbe, List<ContainerResizePolicy>? Function()? resizePolicy, ResourceRequirements? Function()? resources, String? Function()? restartPolicy, List<ContainerRestartRule>? Function()? restartPolicyRules, SecurityContext? Function()? securityContext, Probe? Function()? startupProbe, bool? Function()? stdin, bool? Function()? stdinOnce, String? Function()? targetContainerName, String? Function()? terminationMessagePath, String? Function()? terminationMessagePolicy, bool? Function()? tty, List<VolumeDevice>? Function()? volumeDevices, List<VolumeMount>? Function()? volumeMounts, String? Function()? workingDir, }) {return EphemeralContainer(
   args: args != null ? args() : this.args,
   command: command != null ? command() : this.command,
   env: env != null ? env() : this.env,
@@ -170,8 +170,8 @@ EphemeralContainer copyWith({List<String>? Function()? args, List<String>? Funct
   volumeDevices: volumeDevices != null ? volumeDevices() : this.volumeDevices,
   volumeMounts: volumeMounts != null ? volumeMounts() : this.volumeMounts,
   workingDir: workingDir != null ? workingDir() : this.workingDir,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EphemeralContainer &&
           listEquals(args, other.args) &&
           listEquals(command, other.command) &&
@@ -198,7 +198,7 @@ EphemeralContainer copyWith({List<String>? Function()? args, List<String>? Funct
           tty == other.tty &&
           listEquals(volumeDevices, other.volumeDevices) &&
           listEquals(volumeMounts, other.volumeMounts) &&
-          workingDir == other.workingDir; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(args ?? const []), Object.hashAll(command ?? const []), Object.hashAll(env ?? const []), Object.hashAll(envFrom ?? const []), image, imagePullPolicy, lifecycle, livenessProbe, name, Object.hashAll(ports ?? const []), readinessProbe, Object.hashAll(resizePolicy ?? const []), resources, restartPolicy, Object.hashAll(restartPolicyRules ?? const []), securityContext, startupProbe, stdin, stdinOnce, targetContainerName, terminationMessagePath, terminationMessagePolicy, tty, Object.hashAll(volumeDevices ?? const []), Object.hashAll(volumeMounts ?? const []), workingDir]); } 
-@override String toString() { return 'EphemeralContainer(args: $args, command: $command, env: $env, envFrom: $envFrom, image: $image, imagePullPolicy: $imagePullPolicy, lifecycle: $lifecycle, livenessProbe: $livenessProbe, name: $name, ports: $ports, readinessProbe: $readinessProbe, resizePolicy: $resizePolicy, resources: $resources, restartPolicy: $restartPolicy, restartPolicyRules: $restartPolicyRules, securityContext: $securityContext, startupProbe: $startupProbe, stdin: $stdin, stdinOnce: $stdinOnce, targetContainerName: $targetContainerName, terminationMessagePath: $terminationMessagePath, terminationMessagePolicy: $terminationMessagePolicy, tty: $tty, volumeDevices: $volumeDevices, volumeMounts: $volumeMounts, workingDir: $workingDir)'; } 
- }
+          workingDir == other.workingDir;}
+@override int get hashCode {return Object.hashAll([Object.hashAll(args ?? const []), Object.hashAll(command ?? const []), Object.hashAll(env ?? const []), Object.hashAll(envFrom ?? const []), image, imagePullPolicy, lifecycle, livenessProbe, name, Object.hashAll(ports ?? const []), readinessProbe, Object.hashAll(resizePolicy ?? const []), resources, restartPolicy, Object.hashAll(restartPolicyRules ?? const []), securityContext, startupProbe, stdin, stdinOnce, targetContainerName, terminationMessagePath, terminationMessagePolicy, tty, Object.hashAll(volumeDevices ?? const []), Object.hashAll(volumeMounts ?? const []), workingDir]);}
+@override String toString() {return 'EphemeralContainer(args: $args, command: $command, env: $env, envFrom: $envFrom, image: $image, imagePullPolicy: $imagePullPolicy, lifecycle: $lifecycle, livenessProbe: $livenessProbe, name: $name, ports: $ports, readinessProbe: $readinessProbe, resizePolicy: $resizePolicy, resources: $resources, restartPolicy: $restartPolicy, restartPolicyRules: $restartPolicyRules, securityContext: $securityContext, startupProbe: $startupProbe, stdin: $stdin, stdinOnce: $stdinOnce, targetContainerName: $targetContainerName, terminationMessagePath: $terminationMessagePath, terminationMessagePolicy: $terminationMessagePolicy, tty: $tty, volumeDevices: $volumeDevices, volumeMounts: $volumeMounts, workingDir: $workingDir)';}
+}

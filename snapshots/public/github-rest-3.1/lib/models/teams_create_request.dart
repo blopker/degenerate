@@ -10,11 +10,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of pri
 /// Default for child team: `closed`
 @immutable final class TeamsCreateRequestPrivacy {const TeamsCreateRequestPrivacy._(this.value);
 
-factory TeamsCreateRequestPrivacy.fromJson(String json) { return switch (json) {
+factory TeamsCreateRequestPrivacy.fromJson(String json) {return switch (json) {
   'secret' => secret,
   'closed' => closed,
   _ => TeamsCreateRequestPrivacy._(json),
-}; }
+};}
 
 static const TeamsCreateRequestPrivacy secret = TeamsCreateRequestPrivacy._('secret');
 
@@ -24,25 +24,25 @@ static const List<TeamsCreateRequestPrivacy> values = [secret, closed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsCreateRequestPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsCreateRequestPrivacy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsCreateRequestPrivacy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsCreateRequestPrivacy($value)';}
+}
 /// The notification setting the team has chosen. The options are:
 ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.
 ///  * `notifications_disabled` - no one receives notifications.
 /// Default: `notifications_enabled`
 @immutable final class TeamsCreateRequestNotificationSetting {const TeamsCreateRequestNotificationSetting._(this.value);
 
-factory TeamsCreateRequestNotificationSetting.fromJson(String json) { return switch (json) {
+factory TeamsCreateRequestNotificationSetting.fromJson(String json) {return switch (json) {
   'notifications_enabled' => notificationsEnabled,
   'notifications_disabled' => notificationsDisabled,
   _ => TeamsCreateRequestNotificationSetting._(json),
-}; }
+};}
 
 static const TeamsCreateRequestNotificationSetting notificationsEnabled = TeamsCreateRequestNotificationSetting._('notifications_enabled');
 
@@ -52,22 +52,22 @@ static const List<TeamsCreateRequestNotificationSetting> values = [notifications
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsCreateRequestNotificationSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsCreateRequestNotificationSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsCreateRequestNotificationSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsCreateRequestNotificationSetting($value)';}
+}
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 @immutable final class TeamsCreateRequestPermission {const TeamsCreateRequestPermission._(this.value);
 
-factory TeamsCreateRequestPermission.fromJson(String json) { return switch (json) {
+factory TeamsCreateRequestPermission.fromJson(String json) {return switch (json) {
   'pull' => pull,
   'push' => push,
   _ => TeamsCreateRequestPermission._(json),
-}; }
+};}
 
 static const TeamsCreateRequestPermission pull = TeamsCreateRequestPermission._('pull');
 
@@ -77,17 +77,17 @@ static const List<TeamsCreateRequestPermission> values = [pull, push];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsCreateRequestPermission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsCreateRequestPermission($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsCreateRequestPermission && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsCreateRequestPermission($value)';}
+}
 @immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission, this.parentTeamId, });
 
-factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) { return TeamsCreateRequest(
+factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) {return TeamsCreateRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   maintainers: (json['maintainers'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -96,7 +96,7 @@ factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) { return TeamsCre
   notificationSetting: json['notification_setting'] != null ? TeamsCreateRequestNotificationSetting.fromJson(json['notification_setting'] as String) : null,
   permission: json['permission'] != null ? TeamsCreateRequestPermission.fromJson(json['permission'] as String) : null,
   parentTeamId: json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null,
-); }
+);}
 
 /// The name of the team.
 final String name;
@@ -133,8 +133,8 @@ final TeamsCreateRequestPermission? permission;
 final int? parentTeamId;
 
 /// The value with the schema default applied when absent.
-TeamsCreateRequestPermission get permissionOrDefault { return permission ?? TeamsCreateRequestPermission.fromJson('pull'); } 
-Map<String, dynamic> toJson() { return {
+TeamsCreateRequestPermission get permissionOrDefault {return permission ?? TeamsCreateRequestPermission.fromJson('pull');}
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   'maintainers': ?maintainers,
@@ -143,9 +143,9 @@ Map<String, dynamic> toJson() { return {
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
   if (permission != null) 'permission': permission?.toJson(),
   'parent_team_id': ?parentTeamId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-TeamsCreateRequest copyWith({String? name, String? Function()? description, List<String>? Function()? maintainers, List<String>? Function()? repoNames, TeamsCreateRequestPrivacy? Function()? privacy, TeamsCreateRequestNotificationSetting? Function()? notificationSetting, TeamsCreateRequestPermission? Function()? permission, int? Function()? parentTeamId, }) { return TeamsCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+TeamsCreateRequest copyWith({String? name, String? Function()? description, List<String>? Function()? maintainers, List<String>? Function()? repoNames, TeamsCreateRequestPrivacy? Function()? privacy, TeamsCreateRequestNotificationSetting? Function()? notificationSetting, TeamsCreateRequestPermission? Function()? permission, int? Function()? parentTeamId, }) {return TeamsCreateRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   maintainers: maintainers != null ? maintainers() : this.maintainers,
@@ -154,8 +154,8 @@ TeamsCreateRequest copyWith({String? name, String? Function()? description, List
   notificationSetting: notificationSetting != null ? notificationSetting() : this.notificationSetting,
   permission: permission != null ? permission() : this.permission,
   parentTeamId: parentTeamId != null ? parentTeamId() : this.parentTeamId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsCreateRequest &&
           name == other.name &&
           description == other.description &&
@@ -164,7 +164,7 @@ TeamsCreateRequest copyWith({String? name, String? Function()? description, List
           privacy == other.privacy &&
           notificationSetting == other.notificationSetting &&
           permission == other.permission &&
-          parentTeamId == other.parentTeamId; } 
-@override int get hashCode { return Object.hash(name, description, Object.hashAll(maintainers ?? const []), Object.hashAll(repoNames ?? const []), privacy, notificationSetting, permission, parentTeamId); } 
-@override String toString() { return 'TeamsCreateRequest(name: $name, description: $description, maintainers: $maintainers, repoNames: $repoNames, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)'; } 
- }
+          parentTeamId == other.parentTeamId;}
+@override int get hashCode {return Object.hash(name, description, Object.hashAll(maintainers ?? const []), Object.hashAll(repoNames ?? const []), privacy, notificationSetting, permission, parentTeamId);}
+@override String toString() {return 'TeamsCreateRequest(name: $name, description: $description, maintainers: $maintainers, repoNames: $repoNames, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)';}
+}

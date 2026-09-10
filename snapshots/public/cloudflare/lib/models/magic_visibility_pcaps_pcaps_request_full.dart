@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_byte_limit.dart';import 'magic_visibility_pcaps_pcaps_colo_name.dart';import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_packet_limit.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_full.dart';import 'magic_visibility_pcaps_pcaps_type.dart';@immutable final class MagicVisibilityPcapsPcapsRequestFull {const MagicVisibilityPcapsPcapsRequestFull({required this.coloName, required this.destinationConf, required this.system, required this.timeLimit, required this.type, this.byteLimit, this.filterV1, this.packetLimit, });
 
-factory MagicVisibilityPcapsPcapsRequestFull.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsRequestFull(
+factory MagicVisibilityPcapsPcapsRequestFull.fromJson(Map<String, dynamic> json) {return MagicVisibilityPcapsPcapsRequestFull(
   byteLimit: json['byte_limit'] != null ? MagicVisibilityPcapsPcapsByteLimit.fromJson(json['byte_limit'] as num) : null,
   coloName: MagicVisibilityPcapsPcapsColoName.fromJson(json['colo_name'] as String),
   destinationConf: MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String),
@@ -11,7 +11,7 @@ factory MagicVisibilityPcapsPcapsRequestFull.fromJson(Map<String, dynamic> json)
   system: MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String),
   timeLimit: MagicVisibilityPcapsPcapsTimeLimitFull.fromJson(json['time_limit'] as num),
   type: MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The maximum number of bytes to capture. This field only applies to `full` packet captures.
 final MagicVisibilityPcapsPcapsByteLimit? byteLimit;
@@ -33,7 +33,7 @@ final MagicVisibilityPcapsPcapsTimeLimitFull timeLimit;
 
 final MagicVisibilityPcapsPcapsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (byteLimit != null) 'byte_limit': byteLimit?.toJson(),
   'colo_name': coloName.toJson(),
   'destination_conf': destinationConf.toJson(),
@@ -42,13 +42,13 @@ Map<String, dynamic> toJson() { return {
   'system': system.toJson(),
   'time_limit': timeLimit.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('colo_name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('colo_name') &&
       json.containsKey('destination_conf') &&
       json.containsKey('system') &&
       json.containsKey('time_limit') &&
-      json.containsKey('type'); } 
-MagicVisibilityPcapsPcapsRequestFull copyWith({MagicVisibilityPcapsPcapsByteLimit? Function()? byteLimit, MagicVisibilityPcapsPcapsColoName? coloName, MagicVisibilityPcapsPcapsDestinationConf? destinationConf, MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsPacketLimit? Function()? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitFull? timeLimit, MagicVisibilityPcapsPcapsType? type, }) { return MagicVisibilityPcapsPcapsRequestFull(
+      json.containsKey('type');}
+MagicVisibilityPcapsPcapsRequestFull copyWith({MagicVisibilityPcapsPcapsByteLimit? Function()? byteLimit, MagicVisibilityPcapsPcapsColoName? coloName, MagicVisibilityPcapsPcapsDestinationConf? destinationConf, MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsPacketLimit? Function()? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitFull? timeLimit, MagicVisibilityPcapsPcapsType? type, }) {return MagicVisibilityPcapsPcapsRequestFull(
   byteLimit: byteLimit != null ? byteLimit() : this.byteLimit,
   coloName: coloName ?? this.coloName,
   destinationConf: destinationConf ?? this.destinationConf,
@@ -57,8 +57,8 @@ MagicVisibilityPcapsPcapsRequestFull copyWith({MagicVisibilityPcapsPcapsByteLimi
   system: system ?? this.system,
   timeLimit: timeLimit ?? this.timeLimit,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicVisibilityPcapsPcapsRequestFull &&
           byteLimit == other.byteLimit &&
           coloName == other.coloName &&
@@ -67,7 +67,7 @@ MagicVisibilityPcapsPcapsRequestFull copyWith({MagicVisibilityPcapsPcapsByteLimi
           packetLimit == other.packetLimit &&
           system == other.system &&
           timeLimit == other.timeLimit &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(byteLimit, coloName, destinationConf, filterV1, packetLimit, system, timeLimit, type); } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsRequestFull(byteLimit: $byteLimit, coloName: $coloName, destinationConf: $destinationConf, filterV1: $filterV1, packetLimit: $packetLimit, system: $system, timeLimit: $timeLimit, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(byteLimit, coloName, destinationConf, filterV1, packetLimit, system, timeLimit, type);}
+@override String toString() {return 'MagicVisibilityPcapsPcapsRequestFull(byteLimit: $byteLimit, coloName: $coloName, destinationConf: $destinationConf, filterV1: $filterV1, packetLimit: $packetLimit, system: $system, timeLimit: $timeLimit, type: $type)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'attachment.dart';import 'inference_options.dart';import 'user_message_item_content.dart';/// Type discriminator that is always `chatkit.thread_item`.
 @immutable final class UserMessageItemObject {const UserMessageItemObject._(this.value);
 
-factory UserMessageItemObject.fromJson(String json) { return switch (json) {
+factory UserMessageItemObject.fromJson(String json) {return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
   _ => UserMessageItemObject._(json),
-}; }
+};}
 
 static const UserMessageItemObject chatkitThreadItem = UserMessageItemObject._('chatkit.thread_item');
 
@@ -14,18 +14,18 @@ static const List<UserMessageItemObject> values = [chatkitThreadItem];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserMessageItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserMessageItemObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UserMessageItemObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UserMessageItemObject($value)';}
+}
 /// User-authored messages within a thread.
 @immutable final class UserMessageItem {const UserMessageItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.content, required this.attachments, required this.inferenceOptions, });
 
-factory UserMessageItem.fromJson(Map<String, dynamic> json) { return UserMessageItem(
+factory UserMessageItem.fromJson(Map<String, dynamic> json) {return UserMessageItem(
   id: json['id'] as String,
   object: UserMessageItemObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -34,7 +34,7 @@ factory UserMessageItem.fromJson(Map<String, dynamic> json) { return UserMessage
   content: (json['content'] as List<dynamic>).map((e) => UserMessageItemContent.fromJson(e as Map<String, dynamic>)).toList(),
   attachments: (json['attachments'] as List<dynamic>).map((e) => Attachment.fromJson(e as Map<String, dynamic>)).toList(),
   inferenceOptions: json['inference_options'] != null ? InferenceOptions.fromJson(json['inference_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Identifier of the thread item.
 final String id;
@@ -59,7 +59,7 @@ final List<Attachment> attachments;
 /// Inference overrides applied to the message. Defaults to null when unset.
 final InferenceOptions? inferenceOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -68,16 +68,16 @@ Map<String, dynamic> toJson() { return {
   'content': content.map((e) => e.toJson()).toList(),
   'attachments': attachments.map((e) => e.toJson()).toList(),
   'inference_options': inferenceOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('content') &&
       json.containsKey('attachments') &&
-      json.containsKey('inference_options'); } 
-UserMessageItem copyWith({String? id, UserMessageItemObject? object, int? createdAt, String? threadId, String? type, List<UserMessageItemContent>? content, List<Attachment>? attachments, InferenceOptions? Function()? inferenceOptions, }) { return UserMessageItem(
+      json.containsKey('inference_options');}
+UserMessageItem copyWith({String? id, UserMessageItemObject? object, int? createdAt, String? threadId, String? type, List<UserMessageItemContent>? content, List<Attachment>? attachments, InferenceOptions? Function()? inferenceOptions, }) {return UserMessageItem(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -86,8 +86,8 @@ UserMessageItem copyWith({String? id, UserMessageItemObject? object, int? create
   content: content ?? this.content,
   attachments: attachments ?? this.attachments,
   inferenceOptions: inferenceOptions != null ? inferenceOptions() : this.inferenceOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UserMessageItem &&
           id == other.id &&
           object == other.object &&
@@ -96,7 +96,7 @@ UserMessageItem copyWith({String? id, UserMessageItemObject? object, int? create
           type == other.type &&
           listEquals(content, other.content) &&
           listEquals(attachments, other.attachments) &&
-          inferenceOptions == other.inferenceOptions; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, Object.hashAll(content), Object.hashAll(attachments), inferenceOptions); } 
-@override String toString() { return 'UserMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, content: $content, attachments: $attachments, inferenceOptions: $inferenceOptions)'; } 
- }
+          inferenceOptions == other.inferenceOptions;}
+@override int get hashCode {return Object.hash(id, object, createdAt, threadId, type, Object.hashAll(content), Object.hashAll(attachments), inferenceOptions);}
+@override String toString() {return 'UserMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, content: $content, attachments: $attachments, inferenceOptions: $inferenceOptions)';}
+}

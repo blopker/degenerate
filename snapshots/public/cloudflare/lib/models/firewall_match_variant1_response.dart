@@ -10,22 +10,22 @@ bool toJson() => value;
 }
 @immutable final class FirewallMatchVariant1Response {const FirewallMatchVariant1Response({this.originTraffic});
 
-factory FirewallMatchVariant1Response.fromJson(Map<String, dynamic> json) { return FirewallMatchVariant1Response(
+factory FirewallMatchVariant1Response.fromJson(Map<String, dynamic> json) {return FirewallMatchVariant1Response(
   originTraffic: json['origin_traffic'] != null ? FirewallOriginTraffic.fromJson(json['origin_traffic'] as bool) : null,
-); }
+);}
 
 final FirewallOriginTraffic? originTraffic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (originTraffic != null) 'origin_traffic': originTraffic?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origin_traffic'}.contains(key)); } 
-FirewallMatchVariant1Response copyWith({FirewallOriginTraffic? Function()? originTraffic}) { return FirewallMatchVariant1Response(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'origin_traffic'}.contains(key));}
+FirewallMatchVariant1Response copyWith({FirewallOriginTraffic? Function()? originTraffic}) {return FirewallMatchVariant1Response(
   originTraffic: originTraffic != null ? originTraffic() : this.originTraffic,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallMatchVariant1Response &&
-          originTraffic == other.originTraffic; } 
-@override int get hashCode { return originTraffic.hashCode; } 
-@override String toString() { return 'FirewallMatchVariant1Response(originTraffic: $originTraffic)'; } 
- }
+          originTraffic == other.originTraffic;}
+@override int get hashCode {return originTraffic.hashCode;}
+@override String toString() {return 'FirewallMatchVariant1Response(originTraffic: $originTraffic)';}
+}

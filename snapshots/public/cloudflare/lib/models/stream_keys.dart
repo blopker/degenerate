@@ -16,12 +16,12 @@ String toJson() => value;
 }
 @immutable final class StreamKeys {const StreamKeys({this.created, this.id, this.jwk, this.pem, });
 
-factory StreamKeys.fromJson(Map<String, dynamic> json) { return StreamKeys(
+factory StreamKeys.fromJson(Map<String, dynamic> json) {return StreamKeys(
   created: json['created'] != null ? StreamSigningKeyCreated.fromJson(json['created'] as String) : null,
   id: json['id'] != null ? StreamSchemasIdentifier.fromJson(json['id'] as String) : null,
   jwk: json['jwk'] != null ? StreamJwk.fromJson(json['jwk'] as String) : null,
   pem: json['pem'] != null ? StreamPem.fromJson(json['pem'] as String) : null,
-); }
+);}
 
 final StreamSigningKeyCreated? created;
 
@@ -32,25 +32,25 @@ final StreamJwk? jwk;
 
 final StreamPem? pem;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (jwk != null) 'jwk': jwk?.toJson(),
   if (pem != null) 'pem': pem?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'id', 'jwk', 'pem'}.contains(key)); } 
-StreamKeys copyWith({StreamSigningKeyCreated? Function()? created, StreamSchemasIdentifier? Function()? id, StreamJwk? Function()? jwk, StreamPem? Function()? pem, }) { return StreamKeys(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'id', 'jwk', 'pem'}.contains(key));}
+StreamKeys copyWith({StreamSigningKeyCreated? Function()? created, StreamSchemasIdentifier? Function()? id, StreamJwk? Function()? jwk, StreamPem? Function()? pem, }) {return StreamKeys(
   created: created != null ? created() : this.created,
   id: id != null ? id() : this.id,
   jwk: jwk != null ? jwk() : this.jwk,
   pem: pem != null ? pem() : this.pem,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamKeys &&
           created == other.created &&
           id == other.id &&
           jwk == other.jwk &&
-          pem == other.pem; } 
-@override int get hashCode { return Object.hash(created, id, jwk, pem); } 
-@override String toString() { return 'StreamKeys(created: $created, id: $id, jwk: $jwk, pem: $pem)'; } 
- }
+          pem == other.pem;}
+@override int get hashCode {return Object.hash(created, id, jwk, pem);}
+@override String toString() {return 'StreamKeys(created: $created, id: $id, jwk: $jwk, pem: $pem)';}
+}

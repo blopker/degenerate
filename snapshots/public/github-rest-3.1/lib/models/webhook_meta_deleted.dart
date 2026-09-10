@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_meta_deleted_hook.dart';@immutable final class WebhookMetaDeletedAction {const WebhookMetaDeletedAction._(this.value);
 
-factory WebhookMetaDeletedAction.fromJson(String json) { return switch (json) {
+factory WebhookMetaDeletedAction.fromJson(String json) {return switch (json) {
   'deleted' => deleted,
   _ => WebhookMetaDeletedAction._(json),
-}; }
+};}
 
 static const WebhookMetaDeletedAction deleted = WebhookMetaDeletedAction._('deleted');
 
@@ -13,17 +13,17 @@ static const List<WebhookMetaDeletedAction> values = [deleted];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMetaDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMetaDeletedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMetaDeletedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMetaDeletedAction($value)';}
+}
 @immutable final class WebhookMetaDeleted {const WebhookMetaDeleted({required this.action, required this.hook, required this.hookId, this.enterprise, this.installation, this.organization, this.repository = const Omittable.absent(), this.sender, });
 
-factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) { return WebhookMetaDeleted(
+factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) {return WebhookMetaDeleted(
   action: WebhookMetaDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   hook: WebhookMetaDeletedHook.fromJson(json['hook'] as Map<String, dynamic>),
@@ -32,7 +32,7 @@ factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) { return WebhookM
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookMetaDeletedAction action;
 
@@ -52,7 +52,7 @@ final Omittable<RepositoryWebhooks?> repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'hook': hook.toJson(),
@@ -61,11 +61,11 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (repository.isPresent) 'repository': repository.value?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('hook') &&
-      json.containsKey('hook_id') && json['hook_id'] is num; } 
-WebhookMetaDeleted copyWith({WebhookMetaDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, Omittable<RepositoryWebhooks?>? repository, SimpleUser? Function()? sender, }) { return WebhookMetaDeleted(
+      json.containsKey('hook_id') && json['hook_id'] is num;}
+WebhookMetaDeleted copyWith({WebhookMetaDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, Omittable<RepositoryWebhooks?>? repository, SimpleUser? Function()? sender, }) {return WebhookMetaDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   hook: hook ?? this.hook,
@@ -74,8 +74,8 @@ WebhookMetaDeleted copyWith({WebhookMetaDeletedAction? action, EnterpriseWebhook
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMetaDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -84,7 +84,7 @@ WebhookMetaDeleted copyWith({WebhookMetaDeletedAction? action, EnterpriseWebhook
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, hook, hookId, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookMetaDeleted(action: $action, enterprise: $enterprise, hook: $hook, hookId: $hookId, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, hook, hookId, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookMetaDeleted(action: $action, enterprise: $enterprise, hook: $hook, hookId: $hookId, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

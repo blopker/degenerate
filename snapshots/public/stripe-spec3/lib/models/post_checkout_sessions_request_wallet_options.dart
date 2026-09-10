@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_wallet_options_link.dart';/// Wallet-specific configuration.
 @immutable final class PostCheckoutSessionsRequestWalletOptions {const PostCheckoutSessionsRequestWalletOptions({this.link});
 
-factory PostCheckoutSessionsRequestWalletOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestWalletOptions(
+factory PostCheckoutSessionsRequestWalletOptions.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestWalletOptions(
   link: json['link'] != null ? PostCheckoutSessionsRequestWalletOptionsLink.fromJson(json['link'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestWalletOptionsLink? link;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (link != null) 'link': link?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'link'}.contains(key)); } 
-PostCheckoutSessionsRequestWalletOptions copyWith({PostCheckoutSessionsRequestWalletOptionsLink? Function()? link}) { return PostCheckoutSessionsRequestWalletOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'link'}.contains(key));}
+PostCheckoutSessionsRequestWalletOptions copyWith({PostCheckoutSessionsRequestWalletOptionsLink? Function()? link}) {return PostCheckoutSessionsRequestWalletOptions(
   link: link != null ? link() : this.link,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestWalletOptions &&
-          link == other.link; } 
-@override int get hashCode { return link.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestWalletOptions(link: $link)'; } 
- }
+          link == other.link;}
+@override int get hashCode {return link.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestWalletOptions(link: $link)';}
+}

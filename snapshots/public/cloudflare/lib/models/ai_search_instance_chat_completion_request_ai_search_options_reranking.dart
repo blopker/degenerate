@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel._(this.value);
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel.fromJson(String json) { return switch (json) {
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel.fromJson(String json) {return switch (json) {
   '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
   '' => $empty,
   _ => AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel._(json),
-}; }
+};}
 
 static const AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel cfBaaiBgeRerankerBase = AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel._('@cf/baai/bge-reranker-base');
 
@@ -16,21 +16,21 @@ static const List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingM
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel($value)';}
+}
 @immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking {const AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking({this.enabled, this.matchThreshold, this.model, });
 
-factory AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
+factory AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking.fromJson(Map<String, dynamic> json) {return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
   enabled: json['enabled'] as bool?,
   matchThreshold: json['match_threshold'] != null ? (json['match_threshold'] as num).toDouble() : null,
   model: json['model'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel.fromJson(json['model'] as String) : null,
-); }
+);}
 
 final bool? enabled;
 
@@ -39,23 +39,23 @@ final double? matchThreshold;
 final AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel? model;
 
 /// The value with the schema default applied when absent.
-double get matchThresholdOrDefault { return matchThreshold ?? 0.4; } 
-Map<String, dynamic> toJson() { return {
+double get matchThresholdOrDefault {return matchThreshold ?? 0.4;}
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'match_threshold': ?matchThreshold,
   if (model != null) 'model': model?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'match_threshold', 'model'}.contains(key)); } 
-AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking copyWith({bool? Function()? enabled, double? Function()? matchThreshold, AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel? Function()? model, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'match_threshold', 'model'}.contains(key));}
+AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking copyWith({bool? Function()? enabled, double? Function()? matchThreshold, AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel? Function()? model, }) {return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,
   model: model != null ? model() : this.model,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking &&
           enabled == other.enabled &&
           matchThreshold == other.matchThreshold &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(enabled, matchThreshold, model); } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(enabled: $enabled, matchThreshold: $matchThreshold, model: $model)'; } 
- }
+          model == other.model;}
+@override int get hashCode {return Object.hash(enabled, matchThreshold, model);}
+@override String toString() {return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(enabled: $enabled, matchThreshold: $matchThreshold, model: $model)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_network_token_address.dart';/// The method used for tokenizing a card.
 @immutable final class IssuingNetworkTokenWalletProviderCardNumberSource {const IssuingNetworkTokenWalletProviderCardNumberSource._(this.value);
 
-factory IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(String json) { return switch (json) {
+factory IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(String json) {return switch (json) {
   'app' => app,
   'manual' => manual,
   'on_file' => onFile,
   'other' => $other,
   _ => IssuingNetworkTokenWalletProviderCardNumberSource._(json),
-}; }
+};}
 
 static const IssuingNetworkTokenWalletProviderCardNumberSource app = IssuingNetworkTokenWalletProviderCardNumberSource._('app');
 
@@ -23,17 +23,17 @@ static const List<IssuingNetworkTokenWalletProviderCardNumberSource> values = [a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingNetworkTokenWalletProviderCardNumberSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingNetworkTokenWalletProviderCardNumberSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingNetworkTokenWalletProviderCardNumberSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingNetworkTokenWalletProviderCardNumberSource($value)';}
+}
 @immutable final class IssuingNetworkTokenWalletProviderReasonCodes {const IssuingNetworkTokenWalletProviderReasonCodes._(this.value);
 
-factory IssuingNetworkTokenWalletProviderReasonCodes.fromJson(String json) { return switch (json) {
+factory IssuingNetworkTokenWalletProviderReasonCodes.fromJson(String json) {return switch (json) {
   'account_card_too_new' => accountCardTooNew,
   'account_recently_changed' => accountRecentlyChanged,
   'account_too_new' => accountTooNew,
@@ -63,7 +63,7 @@ factory IssuingNetworkTokenWalletProviderReasonCodes.fromJson(String json) { ret
   'too_many_recent_attempts' => tooManyRecentAttempts,
   'too_many_recent_tokens' => tooManyRecentTokens,
   _ => IssuingNetworkTokenWalletProviderReasonCodes._(json),
-}; }
+};}
 
 static const IssuingNetworkTokenWalletProviderReasonCodes accountCardTooNew = IssuingNetworkTokenWalletProviderReasonCodes._('account_card_too_new');
 
@@ -125,23 +125,23 @@ static const List<IssuingNetworkTokenWalletProviderReasonCodes> values = [accoun
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingNetworkTokenWalletProviderReasonCodes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingNetworkTokenWalletProviderReasonCodes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingNetworkTokenWalletProviderReasonCodes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingNetworkTokenWalletProviderReasonCodes($value)';}
+}
 /// The recommendation on responding to the tokenization request.
 @immutable final class IssuingNetworkTokenWalletProviderSuggestedDecision {const IssuingNetworkTokenWalletProviderSuggestedDecision._(this.value);
 
-factory IssuingNetworkTokenWalletProviderSuggestedDecision.fromJson(String json) { return switch (json) {
+factory IssuingNetworkTokenWalletProviderSuggestedDecision.fromJson(String json) {return switch (json) {
   'approve' => approve,
   'decline' => decline,
   'require_auth' => requireAuth,
   _ => IssuingNetworkTokenWalletProviderSuggestedDecision._(json),
-}; }
+};}
 
 static const IssuingNetworkTokenWalletProviderSuggestedDecision approve = IssuingNetworkTokenWalletProviderSuggestedDecision._('approve');
 
@@ -153,18 +153,18 @@ static const List<IssuingNetworkTokenWalletProviderSuggestedDecision> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingNetworkTokenWalletProviderSuggestedDecision && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingNetworkTokenWalletProviderSuggestedDecision($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingNetworkTokenWalletProviderSuggestedDecision && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingNetworkTokenWalletProviderSuggestedDecision($value)';}
+}
 /// 
 @immutable final class IssuingNetworkTokenWalletProvider {const IssuingNetworkTokenWalletProvider({this.accountId, this.accountTrustScore, this.cardNumberSource, this.cardholderAddress, this.cardholderName, this.deviceTrustScore, this.hashedAccountEmailAddress, this.reasonCodes, this.suggestedDecision, this.suggestedDecisionVersion, });
 
-factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenWalletProvider(
+factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenWalletProvider(
   accountId: json['account_id'] as String?,
   accountTrustScore: json['account_trust_score'] != null ? (json['account_trust_score'] as num).toInt() : null,
   cardNumberSource: json['card_number_source'] != null ? IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(json['card_number_source'] as String) : null,
@@ -175,7 +175,7 @@ factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) { 
   reasonCodes: (json['reason_codes'] as List<dynamic>?)?.map((e) => IssuingNetworkTokenWalletProviderReasonCodes.fromJson(e as String)).toList(),
   suggestedDecision: json['suggested_decision'] != null ? IssuingNetworkTokenWalletProviderSuggestedDecision.fromJson(json['suggested_decision'] as String) : null,
   suggestedDecisionVersion: json['suggested_decision_version'] as String?,
-); }
+);}
 
 /// The wallet provider-given account ID of the digital wallet the token belongs to.
 final String? accountId;
@@ -206,7 +206,7 @@ final IssuingNetworkTokenWalletProviderSuggestedDecision? suggestedDecision;
 /// The version of the standard for mapping reason codes followed by the wallet provider.
 final String? suggestedDecisionVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': ?accountId,
   'account_trust_score': ?accountTrustScore,
   if (cardNumberSource != null) 'card_number_source': cardNumberSource?.toJson(),
@@ -217,9 +217,9 @@ Map<String, dynamic> toJson() { return {
   if (reasonCodes != null) 'reason_codes': reasonCodes?.map((e) => e.toJson()).toList(),
   if (suggestedDecision != null) 'suggested_decision': suggestedDecision?.toJson(),
   'suggested_decision_version': ?suggestedDecisionVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'account_trust_score', 'card_number_source', 'cardholder_address', 'cardholder_name', 'device_trust_score', 'hashed_account_email_address', 'reason_codes', 'suggested_decision', 'suggested_decision_version'}.contains(key)); } 
-IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? Function()? accountTrustScore, IssuingNetworkTokenWalletProviderCardNumberSource? Function()? cardNumberSource, IssuingNetworkTokenAddress? Function()? cardholderAddress, String? Function()? cardholderName, int? Function()? deviceTrustScore, String? Function()? hashedAccountEmailAddress, List<IssuingNetworkTokenWalletProviderReasonCodes>? Function()? reasonCodes, IssuingNetworkTokenWalletProviderSuggestedDecision? Function()? suggestedDecision, String? Function()? suggestedDecisionVersion, }) { return IssuingNetworkTokenWalletProvider(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_id', 'account_trust_score', 'card_number_source', 'cardholder_address', 'cardholder_name', 'device_trust_score', 'hashed_account_email_address', 'reason_codes', 'suggested_decision', 'suggested_decision_version'}.contains(key));}
+IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? Function()? accountTrustScore, IssuingNetworkTokenWalletProviderCardNumberSource? Function()? cardNumberSource, IssuingNetworkTokenAddress? Function()? cardholderAddress, String? Function()? cardholderName, int? Function()? deviceTrustScore, String? Function()? hashedAccountEmailAddress, List<IssuingNetworkTokenWalletProviderReasonCodes>? Function()? reasonCodes, IssuingNetworkTokenWalletProviderSuggestedDecision? Function()? suggestedDecision, String? Function()? suggestedDecisionVersion, }) {return IssuingNetworkTokenWalletProvider(
   accountId: accountId != null ? accountId() : this.accountId,
   accountTrustScore: accountTrustScore != null ? accountTrustScore() : this.accountTrustScore,
   cardNumberSource: cardNumberSource != null ? cardNumberSource() : this.cardNumberSource,
@@ -230,8 +230,8 @@ IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? 
   reasonCodes: reasonCodes != null ? reasonCodes() : this.reasonCodes,
   suggestedDecision: suggestedDecision != null ? suggestedDecision() : this.suggestedDecision,
   suggestedDecisionVersion: suggestedDecisionVersion != null ? suggestedDecisionVersion() : this.suggestedDecisionVersion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingNetworkTokenWalletProvider &&
           accountId == other.accountId &&
           accountTrustScore == other.accountTrustScore &&
@@ -242,7 +242,7 @@ IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? 
           hashedAccountEmailAddress == other.hashedAccountEmailAddress &&
           listEquals(reasonCodes, other.reasonCodes) &&
           suggestedDecision == other.suggestedDecision &&
-          suggestedDecisionVersion == other.suggestedDecisionVersion; } 
-@override int get hashCode { return Object.hash(accountId, accountTrustScore, cardNumberSource, cardholderAddress, cardholderName, deviceTrustScore, hashedAccountEmailAddress, Object.hashAll(reasonCodes ?? const []), suggestedDecision, suggestedDecisionVersion); } 
-@override String toString() { return 'IssuingNetworkTokenWalletProvider(accountId: $accountId, accountTrustScore: $accountTrustScore, cardNumberSource: $cardNumberSource, cardholderAddress: $cardholderAddress, cardholderName: $cardholderName, deviceTrustScore: $deviceTrustScore, hashedAccountEmailAddress: $hashedAccountEmailAddress, reasonCodes: $reasonCodes, suggestedDecision: $suggestedDecision, suggestedDecisionVersion: $suggestedDecisionVersion)'; } 
- }
+          suggestedDecisionVersion == other.suggestedDecisionVersion;}
+@override int get hashCode {return Object.hash(accountId, accountTrustScore, cardNumberSource, cardholderAddress, cardholderName, deviceTrustScore, hashedAccountEmailAddress, Object.hashAll(reasonCodes ?? const []), suggestedDecision, suggestedDecisionVersion);}
+@override String toString() {return 'IssuingNetworkTokenWalletProvider(accountId: $accountId, accountTrustScore: $accountTrustScore, cardNumberSource: $cardNumberSource, cardholderAddress: $cardholderAddress, cardholderName: $cardholderName, deviceTrustScore: $deviceTrustScore, hashedAccountEmailAddress: $hashedAccountEmailAddress, reasonCodes: $reasonCodes, suggestedDecision: $suggestedDecision, suggestedDecisionVersion: $suggestedDecisionVersion)';}
+}

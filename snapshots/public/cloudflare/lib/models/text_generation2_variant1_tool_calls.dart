@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextGeneration2Variant1ToolCalls {const TextGeneration2Variant1ToolCalls({this.arguments, this.name, });
 
-factory TextGeneration2Variant1ToolCalls.fromJson(Map<String, dynamic> json) { return TextGeneration2Variant1ToolCalls(
+factory TextGeneration2Variant1ToolCalls.fromJson(Map<String, dynamic> json) {return TextGeneration2Variant1ToolCalls(
   arguments: json['arguments'] as Map<String, dynamic>?,
   name: json['name'] as String?,
-); }
+);}
 
 /// The arguments passed to be passed to the tool call request
 final Map<String,dynamic>? arguments;
@@ -13,19 +13,19 @@ final Map<String,dynamic>? arguments;
 /// The name of the tool to be called
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'arguments': ?arguments,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arguments', 'name'}.contains(key)); } 
-TextGeneration2Variant1ToolCalls copyWith({Map<String, dynamic>? Function()? arguments, String? Function()? name, }) { return TextGeneration2Variant1ToolCalls(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'arguments', 'name'}.contains(key));}
+TextGeneration2Variant1ToolCalls copyWith({Map<String, dynamic>? Function()? arguments, String? Function()? name, }) {return TextGeneration2Variant1ToolCalls(
   arguments: arguments != null ? arguments() : this.arguments,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TextGeneration2Variant1ToolCalls &&
           arguments == other.arguments &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(arguments, name); } 
-@override String toString() { return 'TextGeneration2Variant1ToolCalls(arguments: $arguments, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(arguments, name);}
+@override String toString() {return 'TextGeneration2Variant1ToolCalls(arguments: $arguments, name: $name)';}
+}

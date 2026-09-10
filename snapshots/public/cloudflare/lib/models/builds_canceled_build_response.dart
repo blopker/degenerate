@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_outcome.dart';import 'builds_build_uuid.dart';import 'builds_stopped_on.dart';@immutable final class BuildsCanceledBuildResponse {const BuildsCanceledBuildResponse({this.buildOutcome, this.buildUuid, this.stoppedOn = const Omittable.absent(), });
 
-factory BuildsCanceledBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsCanceledBuildResponse(
+factory BuildsCanceledBuildResponse.fromJson(Map<String, dynamic> json) {return BuildsCanceledBuildResponse(
   buildOutcome: json['build_outcome'] != null ? BuildsBuildOutcome.fromJson(json['build_outcome'] as String) : null,
   buildUuid: json['build_uuid'] != null ? BuildsBuildUuid.fromJson(json['build_uuid'] as String) : null,
   stoppedOn: json.containsKey('stopped_on') ? Omittable(json['stopped_on'] != null ? BuildsStoppedOn.fromJson(json['stopped_on'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final BuildsBuildOutcome? buildOutcome;
 
@@ -14,22 +14,22 @@ final BuildsBuildUuid? buildUuid;
 
 final Omittable<BuildsStoppedOn?> stoppedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buildOutcome != null) 'build_outcome': buildOutcome?.toJson(),
   if (buildUuid != null) 'build_uuid': buildUuid?.toJson(),
   if (stoppedOn.isPresent) 'stopped_on': stoppedOn.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_outcome', 'build_uuid', 'stopped_on'}.contains(key)); } 
-BuildsCanceledBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, BuildsBuildUuid? Function()? buildUuid, Omittable<BuildsStoppedOn?>? stoppedOn, }) { return BuildsCanceledBuildResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'build_outcome', 'build_uuid', 'stopped_on'}.contains(key));}
+BuildsCanceledBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, BuildsBuildUuid? Function()? buildUuid, Omittable<BuildsStoppedOn?>? stoppedOn, }) {return BuildsCanceledBuildResponse(
   buildOutcome: buildOutcome != null ? buildOutcome() : this.buildOutcome,
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,
   stoppedOn: stoppedOn ?? this.stoppedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BuildsCanceledBuildResponse &&
           buildOutcome == other.buildOutcome &&
           buildUuid == other.buildUuid &&
-          stoppedOn == other.stoppedOn; } 
-@override int get hashCode { return Object.hash(buildOutcome, buildUuid, stoppedOn); } 
-@override String toString() { return 'BuildsCanceledBuildResponse(buildOutcome: $buildOutcome, buildUuid: $buildUuid, stoppedOn: $stoppedOn)'; } 
- }
+          stoppedOn == other.stoppedOn;}
+@override int get hashCode {return Object.hash(buildOutcome, buildUuid, stoppedOn);}
+@override String toString() {return 'BuildsCanceledBuildResponse(buildOutcome: $buildOutcome, buildUuid: $buildUuid, stoppedOn: $stoppedOn)';}
+}

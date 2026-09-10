@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Protect from web
 /// 
 @immutable final class ZonesCacheDeceptionArmorId {const ZonesCacheDeceptionArmorId._(this.value);
 
-factory ZonesCacheDeceptionArmorId.fromJson(String json) { return switch (json) {
+factory ZonesCacheDeceptionArmorId.fromJson(String json) {return switch (json) {
   'cache_deception_armor' => cacheDeceptionArmor,
   _ => ZonesCacheDeceptionArmorId._(json),
-}; }
+};}
 
 static const ZonesCacheDeceptionArmorId cacheDeceptionArmor = ZonesCacheDeceptionArmorId._('cache_deception_armor');
 
@@ -17,23 +17,23 @@ static const List<ZonesCacheDeceptionArmorId> values = [cacheDeceptionArmor];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheDeceptionArmorId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheDeceptionArmorId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheDeceptionArmorId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheDeceptionArmorId($value)';}
+}
 /// The status of Cache Deception Armor.
 /// 
 @immutable final class ZonesCacheDeceptionArmorValue {const ZonesCacheDeceptionArmorValue._(this.value);
 
-factory ZonesCacheDeceptionArmorValue.fromJson(String json) { return switch (json) {
+factory ZonesCacheDeceptionArmorValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => ZonesCacheDeceptionArmorValue._(json),
-}; }
+};}
 
 static const ZonesCacheDeceptionArmorValue $on = ZonesCacheDeceptionArmorValue._('on');
 
@@ -43,20 +43,20 @@ static const List<ZonesCacheDeceptionArmorValue> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheDeceptionArmorValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheDeceptionArmorValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesCacheDeceptionArmorValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesCacheDeceptionArmorValue($value)';}
+}
 @immutable final class ZonesCacheDeceptionArmor {const ZonesCacheDeceptionArmor({this.id, this.value, });
 
-factory ZonesCacheDeceptionArmor.fromJson(Map<String, dynamic> json) { return ZonesCacheDeceptionArmor(
+factory ZonesCacheDeceptionArmor.fromJson(Map<String, dynamic> json) {return ZonesCacheDeceptionArmor(
   id: json['id'] != null ? ZonesCacheDeceptionArmorId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? ZonesCacheDeceptionArmorValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Protect from web cache deception attacks while still allowing static
 /// assets to be cached. This setting verifies that the URL's extension
@@ -68,19 +68,19 @@ final ZonesCacheDeceptionArmorId? id;
 /// 
 final ZonesCacheDeceptionArmorValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheDeceptionArmor copyWith({ZonesCacheDeceptionArmorId? Function()? id, ZonesCacheDeceptionArmorValue? Function()? value, }) { return ZonesCacheDeceptionArmor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesCacheDeceptionArmor copyWith({ZonesCacheDeceptionArmorId? Function()? id, ZonesCacheDeceptionArmorValue? Function()? value, }) {return ZonesCacheDeceptionArmor(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheDeceptionArmor &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesCacheDeceptionArmor(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ZonesCacheDeceptionArmor(id: $id, value: $value)';}
+}

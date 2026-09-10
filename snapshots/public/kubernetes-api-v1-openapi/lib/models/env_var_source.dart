@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'config_map_key_selector.dart';import 'file_key_selector.dart';import 'object_field_selector.dart';import 'resource_field_selector.dart';import 'secret_key_selector.dart';/// EnvVarSource represents a source for the value of an EnvVar.
 @immutable final class EnvVarSource {const EnvVarSource({this.configMapKeyRef, this.fieldRef, this.fileKeyRef, this.resourceFieldRef, this.secretKeyRef, });
 
-factory EnvVarSource.fromJson(Map<String, dynamic> json) { return EnvVarSource(
+factory EnvVarSource.fromJson(Map<String, dynamic> json) {return EnvVarSource(
   configMapKeyRef: json['configMapKeyRef'] != null ? ConfigMapKeySelector.fromJson(json['configMapKeyRef'] as Map<String, dynamic>) : null,
   fieldRef: json['fieldRef'] != null ? ObjectFieldSelector.fromJson(json['fieldRef'] as Map<String, dynamic>) : null,
   fileKeyRef: json['fileKeyRef'] != null ? FileKeySelector.fromJson(json['fileKeyRef'] as Map<String, dynamic>) : null,
   resourceFieldRef: json['resourceFieldRef'] != null ? ResourceFieldSelector.fromJson(json['resourceFieldRef'] as Map<String, dynamic>) : null,
   secretKeyRef: json['secretKeyRef'] != null ? SecretKeySelector.fromJson(json['secretKeyRef'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Selects a key of a ConfigMap.
 final ConfigMapKeySelector? configMapKeyRef;
@@ -26,28 +26,28 @@ final ResourceFieldSelector? resourceFieldRef;
 /// Selects a key of a secret in the pod's namespace
 final SecretKeySelector? secretKeyRef;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (configMapKeyRef != null) 'configMapKeyRef': configMapKeyRef?.toJson(),
   if (fieldRef != null) 'fieldRef': fieldRef?.toJson(),
   if (fileKeyRef != null) 'fileKeyRef': fileKeyRef?.toJson(),
   if (resourceFieldRef != null) 'resourceFieldRef': resourceFieldRef?.toJson(),
   if (secretKeyRef != null) 'secretKeyRef': secretKeyRef?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configMapKeyRef', 'fieldRef', 'fileKeyRef', 'resourceFieldRef', 'secretKeyRef'}.contains(key)); } 
-EnvVarSource copyWith({ConfigMapKeySelector? Function()? configMapKeyRef, ObjectFieldSelector? Function()? fieldRef, FileKeySelector? Function()? fileKeyRef, ResourceFieldSelector? Function()? resourceFieldRef, SecretKeySelector? Function()? secretKeyRef, }) { return EnvVarSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'configMapKeyRef', 'fieldRef', 'fileKeyRef', 'resourceFieldRef', 'secretKeyRef'}.contains(key));}
+EnvVarSource copyWith({ConfigMapKeySelector? Function()? configMapKeyRef, ObjectFieldSelector? Function()? fieldRef, FileKeySelector? Function()? fileKeyRef, ResourceFieldSelector? Function()? resourceFieldRef, SecretKeySelector? Function()? secretKeyRef, }) {return EnvVarSource(
   configMapKeyRef: configMapKeyRef != null ? configMapKeyRef() : this.configMapKeyRef,
   fieldRef: fieldRef != null ? fieldRef() : this.fieldRef,
   fileKeyRef: fileKeyRef != null ? fileKeyRef() : this.fileKeyRef,
   resourceFieldRef: resourceFieldRef != null ? resourceFieldRef() : this.resourceFieldRef,
   secretKeyRef: secretKeyRef != null ? secretKeyRef() : this.secretKeyRef,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnvVarSource &&
           configMapKeyRef == other.configMapKeyRef &&
           fieldRef == other.fieldRef &&
           fileKeyRef == other.fileKeyRef &&
           resourceFieldRef == other.resourceFieldRef &&
-          secretKeyRef == other.secretKeyRef; } 
-@override int get hashCode { return Object.hash(configMapKeyRef, fieldRef, fileKeyRef, resourceFieldRef, secretKeyRef); } 
-@override String toString() { return 'EnvVarSource(configMapKeyRef: $configMapKeyRef, fieldRef: $fieldRef, fileKeyRef: $fileKeyRef, resourceFieldRef: $resourceFieldRef, secretKeyRef: $secretKeyRef)'; } 
- }
+          secretKeyRef == other.secretKeyRef;}
+@override int get hashCode {return Object.hash(configMapKeyRef, fieldRef, fileKeyRef, resourceFieldRef, secretKeyRef);}
+@override String toString() {return 'EnvVarSource(configMapKeyRef: $configMapKeyRef, fieldRef: $fieldRef, fileKeyRef: $fileKeyRef, resourceFieldRef: $resourceFieldRef, secretKeyRef: $secretKeyRef)';}
+}

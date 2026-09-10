@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewLinesRequest {const GetCreditNotesPreviewLinesRequest();
 
-factory GetCreditNotesPreviewLinesRequest.fromJson(Map<String, dynamic> _) { return const GetCreditNotesPreviewLinesRequest(); }
+factory GetCreditNotesPreviewLinesRequest.fromJson(Map<String, dynamic> _) {return const GetCreditNotesPreviewLinesRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCreditNotesPreviewLinesRequest copyWith() { return const GetCreditNotesPreviewLinesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetCreditNotesPreviewLinesRequest copyWith() {return const GetCreditNotesPreviewLinesRequest(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetCreditNotesPreviewLinesRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewLinesRequest()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is GetCreditNotesPreviewLinesRequest;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'GetCreditNotesPreviewLinesRequest()';}
+}

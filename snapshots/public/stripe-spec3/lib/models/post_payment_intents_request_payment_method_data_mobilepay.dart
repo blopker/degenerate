@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataMobilepay {const PostPaymentIntentsRequestPaymentMethodDataMobilepay();
 
-factory PostPaymentIntentsRequestPaymentMethodDataMobilepay.fromJson(Map<String, dynamic> _) { return const PostPaymentIntentsRequestPaymentMethodDataMobilepay(); }
+factory PostPaymentIntentsRequestPaymentMethodDataMobilepay.fromJson(Map<String, dynamic> _) {return const PostPaymentIntentsRequestPaymentMethodDataMobilepay();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentIntentsRequestPaymentMethodDataMobilepay copyWith() { return const PostPaymentIntentsRequestPaymentMethodDataMobilepay(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostPaymentIntentsRequestPaymentMethodDataMobilepay copyWith() {return const PostPaymentIntentsRequestPaymentMethodDataMobilepay(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsRequestPaymentMethodDataMobilepay; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodDataMobilepay()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostPaymentIntentsRequestPaymentMethodDataMobilepay;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostPaymentIntentsRequestPaymentMethodDataMobilepay()';}
+}

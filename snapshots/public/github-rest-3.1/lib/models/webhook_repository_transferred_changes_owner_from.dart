@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_repository_transferred_changes_owner_from_organization.dart';import 'webhook_repository_transferred_changes_owner_from_user.dart';@immutable final class WebhookRepositoryTransferredChangesOwnerFrom {const WebhookRepositoryTransferredChangesOwnerFrom({this.organization, this.user = const Omittable.absent(), });
 
-factory WebhookRepositoryTransferredChangesOwnerFrom.fromJson(Map<String, dynamic> json) { return WebhookRepositoryTransferredChangesOwnerFrom(
+factory WebhookRepositoryTransferredChangesOwnerFrom.fromJson(Map<String, dynamic> json) {return WebhookRepositoryTransferredChangesOwnerFrom(
   organization: json['organization'] != null ? WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(json['organization'] as Map<String, dynamic>) : null,
   user: json.containsKey('user') ? Omittable(json['user'] != null ? WebhookRepositoryTransferredChangesOwnerFromUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final WebhookRepositoryTransferredChangesOwnerFromOrganization? organization;
 
 final Omittable<WebhookRepositoryTransferredChangesOwnerFromUser?> user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (organization != null) 'organization': organization?.toJson(),
   if (user.isPresent) 'user': user.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'user'}.contains(key)); } 
-WebhookRepositoryTransferredChangesOwnerFrom copyWith({WebhookRepositoryTransferredChangesOwnerFromOrganization? Function()? organization, Omittable<WebhookRepositoryTransferredChangesOwnerFromUser?>? user, }) { return WebhookRepositoryTransferredChangesOwnerFrom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'organization', 'user'}.contains(key));}
+WebhookRepositoryTransferredChangesOwnerFrom copyWith({WebhookRepositoryTransferredChangesOwnerFromOrganization? Function()? organization, Omittable<WebhookRepositoryTransferredChangesOwnerFromUser?>? user, }) {return WebhookRepositoryTransferredChangesOwnerFrom(
   organization: organization != null ? organization() : this.organization,
   user: user ?? this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryTransferredChangesOwnerFrom &&
           organization == other.organization &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(organization, user); } 
-@override String toString() { return 'WebhookRepositoryTransferredChangesOwnerFrom(organization: $organization, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(organization, user);}
+@override String toString() {return 'WebhookRepositoryTransferredChangesOwnerFrom(organization: $organization, user: $user)';}
+}

@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_card_three_d_secure_network_options_cartes_bancaires.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions {const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions({this.cartesBancaires});
 
-factory PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(
   cartesBancaires: json['cartes_bancaires'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires? cartesBancaires;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cartesBancaires != null) 'cartes_bancaires': cartesBancaires?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cartes_bancaires'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires? Function()? cartesBancaires}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cartes_bancaires'}.contains(key));}
+PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires? Function()? cartesBancaires}) {return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(
   cartesBancaires: cartesBancaires != null ? cartesBancaires() : this.cartesBancaires,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions &&
-          cartesBancaires == other.cartesBancaires; } 
-@override int get hashCode { return cartesBancaires.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(cartesBancaires: $cartesBancaires)'; } 
- }
+          cartesBancaires == other.cartesBancaires;}
+@override int get hashCode {return cartesBancaires.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(cartesBancaires: $cartesBancaires)';}
+}

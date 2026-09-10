@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_promotion_code_request_metadata.dart';import 'post_promotion_codes_promotion_code_request_restrictions.dart';@immutable final class PostPromotionCodesPromotionCodeRequest {const PostPromotionCodesPromotionCodeRequest({this.active, this.expand, this.metadata, this.restrictions, });
 
-factory PostPromotionCodesPromotionCodeRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequest(
+factory PostPromotionCodesPromotionCodeRequest.fromJson(Map<String, dynamic> json) {return PostPromotionCodesPromotionCodeRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? PostPromotionCodesPromotionCodeRequestMetadata.fromJson(json['metadata']) : null,
   restrictions: json['restrictions'] != null ? PostPromotionCodesPromotionCodeRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Whether the promotion code is currently active. A promotion code can only be reactivated when the coupon is still valid and the promotion code is otherwise redeemable.
 final bool? active;
@@ -21,25 +21,25 @@ final PostPromotionCodesPromotionCodeRequestMetadata? metadata;
 /// Settings that restrict the redemption of the promotion code.
 final PostPromotionCodesPromotionCodeRequestRestrictions? restrictions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (restrictions != null) 'restrictions': restrictions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'restrictions'}.contains(key)); } 
-PostPromotionCodesPromotionCodeRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostPromotionCodesPromotionCodeRequestMetadata? Function()? metadata, PostPromotionCodesPromotionCodeRequestRestrictions? Function()? restrictions, }) { return PostPromotionCodesPromotionCodeRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'expand', 'metadata', 'restrictions'}.contains(key));}
+PostPromotionCodesPromotionCodeRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostPromotionCodesPromotionCodeRequestMetadata? Function()? metadata, PostPromotionCodesPromotionCodeRequestRestrictions? Function()? restrictions, }) {return PostPromotionCodesPromotionCodeRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   restrictions: restrictions != null ? restrictions() : this.restrictions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPromotionCodesPromotionCodeRequest &&
           active == other.active &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          restrictions == other.restrictions; } 
-@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), metadata, restrictions); } 
-@override String toString() { return 'PostPromotionCodesPromotionCodeRequest(active: $active, expand: $expand, metadata: $metadata, restrictions: $restrictions)'; } 
- }
+          restrictions == other.restrictions;}
+@override int get hashCode {return Object.hash(active, Object.hashAll(expand ?? const []), metadata, restrictions);}
+@override String toString() {return 'PostPromotionCodesPromotionCodeRequest(active: $active, expand: $expand, metadata: $metadata, restrictions: $restrictions)';}
+}

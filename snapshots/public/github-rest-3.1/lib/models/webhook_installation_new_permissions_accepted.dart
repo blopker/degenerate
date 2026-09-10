@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_repositories2.dart';@immutable final class WebhookInstallationNewPermissionsAcceptedAction {const WebhookInstallationNewPermissionsAcceptedAction._(this.value);
 
-factory WebhookInstallationNewPermissionsAcceptedAction.fromJson(String json) { return switch (json) {
+factory WebhookInstallationNewPermissionsAcceptedAction.fromJson(String json) {return switch (json) {
   'new_permissions_accepted' => newPermissionsAccepted,
   _ => WebhookInstallationNewPermissionsAcceptedAction._(json),
-}; }
+};}
 
 static const WebhookInstallationNewPermissionsAcceptedAction newPermissionsAccepted = WebhookInstallationNewPermissionsAcceptedAction._('new_permissions_accepted');
 
@@ -13,17 +13,17 @@ static const List<WebhookInstallationNewPermissionsAcceptedAction> values = [new
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookInstallationNewPermissionsAcceptedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookInstallationNewPermissionsAcceptedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookInstallationNewPermissionsAcceptedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookInstallationNewPermissionsAcceptedAction($value)';}
+}
 @immutable final class WebhookInstallationNewPermissionsAccepted {const WebhookInstallationNewPermissionsAccepted({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester = const Omittable.absent(), });
 
-factory WebhookInstallationNewPermissionsAccepted.fromJson(Map<String, dynamic> json) { return WebhookInstallationNewPermissionsAccepted(
+factory WebhookInstallationNewPermissionsAccepted.fromJson(Map<String, dynamic> json) {return WebhookInstallationNewPermissionsAccepted(
   action: WebhookInstallationNewPermissionsAcceptedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
@@ -32,7 +32,7 @@ factory WebhookInstallationNewPermissionsAccepted.fromJson(Map<String, dynamic> 
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   requester: json.containsKey('requester') ? Omittable(json['requester']) : const Omittable.absent(),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookInstallationNewPermissionsAcceptedAction action;
 
@@ -51,7 +51,7 @@ final Omittable<dynamic> requester;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'installation': installation.toJson(),
@@ -60,11 +60,11 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (requester.isPresent) 'requester': requester.value,
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('installation') &&
-      json.containsKey('sender'); } 
-WebhookInstallationNewPermissionsAccepted copyWith({WebhookInstallationNewPermissionsAcceptedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, Omittable<dynamic>? requester, SimpleUser? sender, }) { return WebhookInstallationNewPermissionsAccepted(
+      json.containsKey('sender');}
+WebhookInstallationNewPermissionsAccepted copyWith({WebhookInstallationNewPermissionsAcceptedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, Omittable<dynamic>? requester, SimpleUser? sender, }) {return WebhookInstallationNewPermissionsAccepted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,
@@ -73,8 +73,8 @@ WebhookInstallationNewPermissionsAccepted copyWith({WebhookInstallationNewPermis
   repository: repository != null ? repository() : this.repository,
   requester: requester ?? this.requester,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookInstallationNewPermissionsAccepted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -83,7 +83,7 @@ WebhookInstallationNewPermissionsAccepted copyWith({WebhookInstallationNewPermis
           listEquals(repositories, other.repositories) &&
           repository == other.repository &&
           requester == other.requester &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositories ?? const []), repository, requester, sender); } 
-@override String toString() { return 'WebhookInstallationNewPermissionsAccepted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositories ?? const []), repository, requester, sender);}
+@override String toString() {return 'WebhookInstallationNewPermissionsAccepted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)';}
+}

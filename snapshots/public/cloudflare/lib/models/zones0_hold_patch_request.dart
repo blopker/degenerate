@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter, this.includeSubdomains, });
 
-factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) { return Zones0HoldPatchRequest(
+factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) {return Zones0HoldPatchRequest(
   holdAfter: json['hold_after'] as String?,
   includeSubdomains: json['include_subdomains'] as bool?,
-); }
+);}
 
 /// If `hold_after` is provided and future-dated, the hold will be temporarily disabled,
 /// then automatically re-enabled by the system at the time specified
@@ -21,22 +21,22 @@ final String? holdAfter;
 final bool? includeSubdomains;
 
 /// The value with the schema default applied when absent.
-String get holdAfterOrDefault { return holdAfter ?? ''; } 
+String get holdAfterOrDefault {return holdAfter ?? '';}
 /// The value with the schema default applied when absent.
-bool get includeSubdomainsOrDefault { return includeSubdomains ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get includeSubdomainsOrDefault {return includeSubdomains ?? false;}
+Map<String, dynamic> toJson() {return {
   'hold_after': ?holdAfter,
   'include_subdomains': ?includeSubdomains,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hold_after', 'include_subdomains'}.contains(key)); } 
-Zones0HoldPatchRequest copyWith({String? Function()? holdAfter, bool? Function()? includeSubdomains, }) { return Zones0HoldPatchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hold_after', 'include_subdomains'}.contains(key));}
+Zones0HoldPatchRequest copyWith({String? Function()? holdAfter, bool? Function()? includeSubdomains, }) {return Zones0HoldPatchRequest(
   holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Zones0HoldPatchRequest &&
           holdAfter == other.holdAfter &&
-          includeSubdomains == other.includeSubdomains; } 
-@override int get hashCode { return Object.hash(holdAfter, includeSubdomains); } 
-@override String toString() { return 'Zones0HoldPatchRequest(holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)'; } 
- }
+          includeSubdomains == other.includeSubdomains;}
+@override int get hashCode {return Object.hash(holdAfter, includeSubdomains);}
+@override String toString() {return 'Zones0HoldPatchRequest(holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)';}
+}

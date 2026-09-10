@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateDatasetRequestFiltersKey {const AigConfigUpdateDatasetRequestFiltersKey._(this.value);
 
-factory AigConfigUpdateDatasetRequestFiltersKey.fromJson(String json) { return switch (json) {
+factory AigConfigUpdateDatasetRequestFiltersKey.fromJson(String json) {return switch (json) {
   'created_at' => createdAt,
   'request_content_type' => requestContentType,
   'response_content_type' => responseContentType,
@@ -17,7 +17,7 @@ factory AigConfigUpdateDatasetRequestFiltersKey.fromJson(String json) { return s
   'duration' => duration,
   'feedback' => feedback,
   _ => AigConfigUpdateDatasetRequestFiltersKey._(json),
-}; }
+};}
 
 static const AigConfigUpdateDatasetRequestFiltersKey createdAt = AigConfigUpdateDatasetRequestFiltersKey._('created_at');
 
@@ -49,23 +49,23 @@ static const List<AigConfigUpdateDatasetRequestFiltersKey> values = [createdAt, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigUpdateDatasetRequestFiltersKey && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigUpdateDatasetRequestFiltersKey($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigUpdateDatasetRequestFiltersKey && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigUpdateDatasetRequestFiltersKey($value)';}
+}
 @immutable final class AigConfigUpdateDatasetRequestFiltersOperator {const AigConfigUpdateDatasetRequestFiltersOperator._(this.value);
 
-factory AigConfigUpdateDatasetRequestFiltersOperator.fromJson(String json) { return switch (json) {
+factory AigConfigUpdateDatasetRequestFiltersOperator.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'contains' => contains,
   'lt' => lt,
   'gt' => gt,
   _ => AigConfigUpdateDatasetRequestFiltersOperator._(json),
-}; }
+};}
 
 static const AigConfigUpdateDatasetRequestFiltersOperator eq = AigConfigUpdateDatasetRequestFiltersOperator._('eq');
 
@@ -79,21 +79,21 @@ static const List<AigConfigUpdateDatasetRequestFiltersOperator> values = [eq, co
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigUpdateDatasetRequestFiltersOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigUpdateDatasetRequestFiltersOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigUpdateDatasetRequestFiltersOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigUpdateDatasetRequestFiltersOperator($value)';}
+}
 @immutable final class AigConfigUpdateDatasetRequestFilters {const AigConfigUpdateDatasetRequestFilters({required this.key, required this.$operator, required this.value, });
 
-factory AigConfigUpdateDatasetRequestFilters.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetRequestFilters(
+factory AigConfigUpdateDatasetRequestFilters.fromJson(Map<String, dynamic> json) {return AigConfigUpdateDatasetRequestFilters(
   key: AigConfigUpdateDatasetRequestFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigUpdateDatasetRequestFiltersOperator.fromJson(json['operator'] as String),
   value: (json['value'] as List<dynamic>).map((e) => e).toList(),
-); }
+);}
 
 final AigConfigUpdateDatasetRequestFiltersKey key;
 
@@ -101,24 +101,24 @@ final AigConfigUpdateDatasetRequestFiltersOperator $operator;
 
 final List<dynamic> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key.toJson(),
   'operator': $operator.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') &&
       json.containsKey('operator') &&
-      json.containsKey('value'); } 
-AigConfigUpdateDatasetRequestFilters copyWith({AigConfigUpdateDatasetRequestFiltersKey? key, AigConfigUpdateDatasetRequestFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigUpdateDatasetRequestFilters(
+      json.containsKey('value');}
+AigConfigUpdateDatasetRequestFilters copyWith({AigConfigUpdateDatasetRequestFiltersKey? key, AigConfigUpdateDatasetRequestFiltersOperator? $operator, List<dynamic>? value, }) {return AigConfigUpdateDatasetRequestFilters(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateDatasetRequestFilters &&
           key == other.key &&
           $operator == other.$operator &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
-@override String toString() { return 'AigConfigUpdateDatasetRequestFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
- }
+          listEquals(value, other.value);}
+@override int get hashCode {return Object.hash(key, $operator, Object.hashAll(value));}
+@override String toString() {return 'AigConfigUpdateDatasetRequestFilters(key: $key, \$operator: ${$operator}, value: $value)';}
+}

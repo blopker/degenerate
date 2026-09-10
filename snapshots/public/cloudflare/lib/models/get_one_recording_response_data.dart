@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_start_reason.dart';import 'realtimekit_stop_reason.dart';import 'realtimekit_storage_config_response.dart';/// Current status of the recording.
 @immutable final class GetOneRecordingResponseDataStatus {const GetOneRecordingResponseDataStatus._(this.value);
 
-factory GetOneRecordingResponseDataStatus.fromJson(String json) { return switch (json) {
+factory GetOneRecordingResponseDataStatus.fromJson(String json) {return switch (json) {
   'INVOKED' => invoked,
   'RECORDING' => recording,
   'UPLOADING' => uploading,
@@ -11,7 +11,7 @@ factory GetOneRecordingResponseDataStatus.fromJson(String json) { return switch 
   'ERRORED' => errored,
   'PAUSED' => paused,
   _ => GetOneRecordingResponseDataStatus._(json),
-}; }
+};}
 
 static const GetOneRecordingResponseDataStatus invoked = GetOneRecordingResponseDataStatus._('INVOKED');
 
@@ -29,17 +29,17 @@ static const List<GetOneRecordingResponseDataStatus> values = [invoked, recordin
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetOneRecordingResponseDataStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetOneRecordingResponseDataStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetOneRecordingResponseDataStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetOneRecordingResponseDataStatus($value)';}
+}
 @immutable final class GetOneRecordingResponseData {const GetOneRecordingResponseData({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, this.recordingDuration, this.startReason, this.stopReason, this.storageConfig = const Omittable.absent(), });
 
-factory GetOneRecordingResponseData.fromJson(Map<String, dynamic> json) { return GetOneRecordingResponseData(
+factory GetOneRecordingResponseData.fromJson(Map<String, dynamic> json) {return GetOneRecordingResponseData(
   audioDownloadUrl: json['audio_download_url'] != null ? Uri.parse(json['audio_download_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   downloadUrlExpiry: json['download_url_expiry'] != null ? DateTime.parse(json['download_url_expiry'] as String) : null,
@@ -55,7 +55,7 @@ factory GetOneRecordingResponseData.fromJson(Map<String, dynamic> json) { return
   startReason: json['start_reason'] != null ? RealtimekitStartReason.fromJson(json['start_reason'] as Map<String, dynamic>) : null,
   stopReason: json['stop_reason'] != null ? RealtimekitStopReason.fromJson(json['stop_reason'] as Map<String, dynamic>) : null,
   storageConfig: json.containsKey('storage_config') ? Omittable(json['storage_config'] != null ? RealtimekitStorageConfigResponse.fromJson(json['storage_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// If the audio_config is passed, the URL for downloading the audio recording is returned.
 final Uri? audioDownloadUrl;
@@ -99,7 +99,7 @@ final RealtimekitStopReason? stopReason;
 
 final Omittable<RealtimekitStorageConfigResponse?> storageConfig;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audio_download_url': audioDownloadUrl?.toString(),
   'download_url': downloadUrl?.toString(),
   'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
@@ -115,8 +115,8 @@ Map<String, dynamic> toJson() { return {
   if (startReason != null) 'start_reason': startReason?.toJson(),
   if (stopReason != null) 'stop_reason': stopReason?.toJson(),
   if (storageConfig.isPresent) 'storage_config': storageConfig.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && (json['audio_download_url'] == null || json['audio_download_url'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('audio_download_url') && (json['audio_download_url'] == null || json['audio_download_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
       json.containsKey('download_url_expiry') && (json['download_url_expiry'] == null || json['download_url_expiry'] is String) &&
       json.containsKey('file_size') && (json['file_size'] == null || json['file_size'] is num) &&
@@ -126,8 +126,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio
       json.containsKey('session_id') && (json['session_id'] == null || json['session_id'] is String) &&
       json.containsKey('started_time') && (json['started_time'] == null || json['started_time'] is String) &&
       json.containsKey('status') &&
-      json.containsKey('stopped_time') && (json['stopped_time'] == null || json['stopped_time'] is String); } 
-GetOneRecordingResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, GetOneRecordingResponseDataStatus? status, DateTime? Function()? stoppedTime, RealtimekitStartReason? Function()? startReason, RealtimekitStopReason? Function()? stopReason, Omittable<RealtimekitStorageConfigResponse?>? storageConfig, }) { return GetOneRecordingResponseData(
+      json.containsKey('stopped_time') && (json['stopped_time'] == null || json['stopped_time'] is String);}
+GetOneRecordingResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, GetOneRecordingResponseDataStatus? status, DateTime? Function()? stoppedTime, RealtimekitStartReason? Function()? startReason, RealtimekitStopReason? Function()? stopReason, Omittable<RealtimekitStorageConfigResponse?>? storageConfig, }) {return GetOneRecordingResponseData(
   audioDownloadUrl: audioDownloadUrl != null ? audioDownloadUrl() : this.audioDownloadUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   downloadUrlExpiry: downloadUrlExpiry != null ? downloadUrlExpiry() : this.downloadUrlExpiry,
@@ -143,8 +143,8 @@ GetOneRecordingResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Fu
   startReason: startReason != null ? startReason() : this.startReason,
   stopReason: stopReason != null ? stopReason() : this.stopReason,
   storageConfig: storageConfig ?? this.storageConfig,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetOneRecordingResponseData &&
           audioDownloadUrl == other.audioDownloadUrl &&
           downloadUrl == other.downloadUrl &&
@@ -160,7 +160,7 @@ GetOneRecordingResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Fu
           stoppedTime == other.stoppedTime &&
           startReason == other.startReason &&
           stopReason == other.stopReason &&
-          storageConfig == other.storageConfig; } 
-@override int get hashCode { return Object.hash(audioDownloadUrl, downloadUrl, downloadUrlExpiry, fileSize, id, invokedTime, outputFileName, recordingDuration, sessionId, startedTime, status, stoppedTime, startReason, stopReason, storageConfig); } 
-@override String toString() { return 'GetOneRecordingResponseData(audioDownloadUrl: $audioDownloadUrl, downloadUrl: $downloadUrl, downloadUrlExpiry: $downloadUrlExpiry, fileSize: $fileSize, id: $id, invokedTime: $invokedTime, outputFileName: $outputFileName, recordingDuration: $recordingDuration, sessionId: $sessionId, startedTime: $startedTime, status: $status, stoppedTime: $stoppedTime, startReason: $startReason, stopReason: $stopReason, storageConfig: $storageConfig)'; } 
- }
+          storageConfig == other.storageConfig;}
+@override int get hashCode {return Object.hash(audioDownloadUrl, downloadUrl, downloadUrlExpiry, fileSize, id, invokedTime, outputFileName, recordingDuration, sessionId, startedTime, status, stoppedTime, startReason, stopReason, storageConfig);}
+@override String toString() {return 'GetOneRecordingResponseData(audioDownloadUrl: $audioDownloadUrl, downloadUrl: $downloadUrl, downloadUrlExpiry: $downloadUrlExpiry, fileSize: $fileSize, id: $id, invokedTime: $invokedTime, outputFileName: $outputFileName, recordingDuration: $recordingDuration, sessionId: $sessionId, startedTime: $startedTime, status: $status, stoppedTime: $stoppedTime, startReason: $startReason, stopReason: $stopReason, storageConfig: $storageConfig)';}
+}

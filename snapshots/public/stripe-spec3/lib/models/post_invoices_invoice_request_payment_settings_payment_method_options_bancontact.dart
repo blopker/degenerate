@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param24.dart';@immutable final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 {const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2._(this.value);
 
-factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 $empty = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsB
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2($value)';}
+}
 
 @immutable
 final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsBancontact {

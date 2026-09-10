@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnCostDiff {const McnCostDiff({required this.currency, required this.currentMonthlyCost, required this.diff, required this.proposedMonthlyCost, });
 
-factory McnCostDiff.fromJson(Map<String, dynamic> json) { return McnCostDiff(
+factory McnCostDiff.fromJson(Map<String, dynamic> json) {return McnCostDiff(
   currency: json['currency'] as String,
   currentMonthlyCost: (json['current_monthly_cost'] as num).toDouble(),
   diff: (json['diff'] as num).toDouble(),
   proposedMonthlyCost: (json['proposed_monthly_cost'] as num).toDouble(),
-); }
+);}
 
 final String currency;
 
@@ -17,28 +17,28 @@ final double diff;
 
 final double proposedMonthlyCost;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'currency': currency,
   'current_monthly_cost': currentMonthlyCost,
   'diff': diff,
   'proposed_monthly_cost': proposedMonthlyCost,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('current_monthly_cost') && json['current_monthly_cost'] is num &&
       json.containsKey('diff') && json['diff'] is num &&
-      json.containsKey('proposed_monthly_cost') && json['proposed_monthly_cost'] is num; } 
-McnCostDiff copyWith({String? currency, double? currentMonthlyCost, double? diff, double? proposedMonthlyCost, }) { return McnCostDiff(
+      json.containsKey('proposed_monthly_cost') && json['proposed_monthly_cost'] is num;}
+McnCostDiff copyWith({String? currency, double? currentMonthlyCost, double? diff, double? proposedMonthlyCost, }) {return McnCostDiff(
   currency: currency ?? this.currency,
   currentMonthlyCost: currentMonthlyCost ?? this.currentMonthlyCost,
   diff: diff ?? this.diff,
   proposedMonthlyCost: proposedMonthlyCost ?? this.proposedMonthlyCost,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is McnCostDiff &&
           currency == other.currency &&
           currentMonthlyCost == other.currentMonthlyCost &&
           diff == other.diff &&
-          proposedMonthlyCost == other.proposedMonthlyCost; } 
-@override int get hashCode { return Object.hash(currency, currentMonthlyCost, diff, proposedMonthlyCost); } 
-@override String toString() { return 'McnCostDiff(currency: $currency, currentMonthlyCost: $currentMonthlyCost, diff: $diff, proposedMonthlyCost: $proposedMonthlyCost)'; } 
- }
+          proposedMonthlyCost == other.proposedMonthlyCost;}
+@override int get hashCode {return Object.hash(currency, currentMonthlyCost, diff, proposedMonthlyCost);}
+@override String toString() {return 'McnCostDiff(currency: $currency, currentMonthlyCost: $currentMonthlyCost, diff: $diff, proposedMonthlyCost: $proposedMonthlyCost)';}
+}

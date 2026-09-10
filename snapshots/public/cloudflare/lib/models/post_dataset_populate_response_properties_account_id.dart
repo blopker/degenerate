@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetPopulateResponsePropertiesAccountId {const PostDatasetPopulateResponsePropertiesAccountId({required this.type});
 
-factory PostDatasetPopulateResponsePropertiesAccountId.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesAccountId(
+factory PostDatasetPopulateResponsePropertiesAccountId.fromJson(Map<String, dynamic> json) {return PostDatasetPopulateResponsePropertiesAccountId(
   type: json['type'] as String,
-); }
+);}
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-PostDatasetPopulateResponsePropertiesAccountId copyWith({String? type}) { return PostDatasetPopulateResponsePropertiesAccountId(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+PostDatasetPopulateResponsePropertiesAccountId copyWith({String? type}) {return PostDatasetPopulateResponsePropertiesAccountId(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostDatasetPopulateResponsePropertiesAccountId &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PostDatasetPopulateResponsePropertiesAccountId(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'PostDatasetPopulateResponsePropertiesAccountId(type: $type)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_name.dart';import 'aaa_components_schemas_type.dart';import 'aaa_created_at.dart';import 'aaa_last_failure.dart';import 'aaa_last_success.dart';import 'aaa_secret.dart';import 'aaa_url.dart';import 'aaa_webhook_id.dart';@immutable final class AaaWebhooks {const AaaWebhooks({this.createdAt, this.id, this.lastFailure, this.lastSuccess, this.name, this.secret, this.type, this.url, });
 
-factory AaaWebhooks.fromJson(Map<String, dynamic> json) { return AaaWebhooks(
+factory AaaWebhooks.fromJson(Map<String, dynamic> json) {return AaaWebhooks(
   createdAt: json['created_at'] != null ? AaaCreatedAt.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AaaWebhookId.fromJson(json['id'] as String) : null,
   lastFailure: json['last_failure'] != null ? AaaLastFailure.fromJson(json['last_failure'] as String) : null,
@@ -11,7 +11,7 @@ factory AaaWebhooks.fromJson(Map<String, dynamic> json) { return AaaWebhooks(
   secret: json['secret'] != null ? AaaSecret.fromJson(json['secret'] as String) : null,
   type: json['type'] != null ? AaaComponentsSchemasType.fromJson(json['type'] as String) : null,
   url: json['url'] != null ? AaaUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 /// Timestamp of when the webhook destination was created.
 final AaaCreatedAt? createdAt;
@@ -37,7 +37,7 @@ final AaaComponentsSchemasType? type;
 /// The POST endpoint to call when dispatching a notification.
 final AaaUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (lastFailure != null) 'last_failure': lastFailure?.toJson(),
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   if (secret != null) 'secret': secret?.toJson(),
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'id', 'last_failure', 'last_success', 'name', 'secret', 'type', 'url'}.contains(key)); } 
-AaaWebhooks copyWith({AaaCreatedAt? Function()? createdAt, AaaWebhookId? Function()? id, AaaLastFailure? Function()? lastFailure, AaaLastSuccess? Function()? lastSuccess, AaaComponentsSchemasName? Function()? name, AaaSecret? Function()? secret, AaaComponentsSchemasType? Function()? type, AaaUrl? Function()? url, }) { return AaaWebhooks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'id', 'last_failure', 'last_success', 'name', 'secret', 'type', 'url'}.contains(key));}
+AaaWebhooks copyWith({AaaCreatedAt? Function()? createdAt, AaaWebhookId? Function()? id, AaaLastFailure? Function()? lastFailure, AaaLastSuccess? Function()? lastSuccess, AaaComponentsSchemasName? Function()? name, AaaSecret? Function()? secret, AaaComponentsSchemasType? Function()? type, AaaUrl? Function()? url, }) {return AaaWebhooks(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   lastFailure: lastFailure != null ? lastFailure() : this.lastFailure,
@@ -57,8 +57,8 @@ AaaWebhooks copyWith({AaaCreatedAt? Function()? createdAt, AaaWebhookId? Functio
   secret: secret != null ? secret() : this.secret,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AaaWebhooks &&
           createdAt == other.createdAt &&
           id == other.id &&
@@ -67,7 +67,7 @@ AaaWebhooks copyWith({AaaCreatedAt? Function()? createdAt, AaaWebhookId? Functio
           name == other.name &&
           secret == other.secret &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, id, lastFailure, lastSuccess, name, secret, type, url); } 
-@override String toString() { return 'AaaWebhooks(createdAt: $createdAt, id: $id, lastFailure: $lastFailure, lastSuccess: $lastSuccess, name: $name, secret: $secret, type: $type, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(createdAt, id, lastFailure, lastSuccess, name, secret, type, url);}
+@override String toString() {return 'AaaWebhooks(createdAt: $createdAt, id: $id, lastFailure: $lastFailure, lastSuccess: $lastSuccess, name: $name, secret: $secret, type: $type, url: $url)';}
+}

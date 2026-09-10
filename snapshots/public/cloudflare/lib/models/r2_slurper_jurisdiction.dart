@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperJurisdiction {const R2SlurperJurisdiction._(this.value);
 
-factory R2SlurperJurisdiction.fromJson(String json) { return switch (json) {
+factory R2SlurperJurisdiction.fromJson(String json) {return switch (json) {
   'default' => $default,
   'eu' => eu,
   'fedramp' => fedramp,
   _ => R2SlurperJurisdiction._(json),
-}; }
+};}
 
 static const R2SlurperJurisdiction $default = R2SlurperJurisdiction._('default');
 
@@ -19,11 +19,11 @@ static const List<R2SlurperJurisdiction> values = [$default, eu, fedramp];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperJurisdiction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperJurisdiction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2SlurperJurisdiction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2SlurperJurisdiction($value)';}
+}

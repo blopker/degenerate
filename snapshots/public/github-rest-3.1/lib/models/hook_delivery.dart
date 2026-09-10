@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hook_delivery_request.dart';import 'hook_delivery_response.dart';/// Delivery made by a webhook.
 @immutable final class HookDelivery {const HookDelivery({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, required this.request, required this.response, this.throttledAt = const Omittable.absent(), this.url, });
 
-factory HookDelivery.fromJson(Map<String, dynamic> json) { return HookDelivery(
+factory HookDelivery.fromJson(Map<String, dynamic> json) {return HookDelivery(
   id: (json['id'] as num).toInt(),
   guid: json['guid'] as String,
   deliveredAt: DateTime.parse(json['delivered_at'] as String),
@@ -19,7 +19,7 @@ factory HookDelivery.fromJson(Map<String, dynamic> json) { return HookDelivery(
   url: json['url'] as String?,
   request: HookDeliveryRequest.fromJson(json['request'] as Map<String, dynamic>),
   response: HookDeliveryResponse.fromJson(json['response'] as Map<String, dynamic>),
-); }
+);}
 
 /// Unique identifier of the delivery.
 final int id;
@@ -64,7 +64,7 @@ final HookDeliveryRequest request;
 
 final HookDeliveryResponse response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'guid': guid,
   'delivered_at': deliveredAt.toIso8601String(),
@@ -80,8 +80,8 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
   'request': request.toJson(),
   'response': response.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('guid') && json['guid'] is String &&
       json.containsKey('delivered_at') && json['delivered_at'] is String &&
       json.containsKey('redelivery') && json['redelivery'] is bool &&
@@ -93,8 +93,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('installation_id') && (json['installation_id'] == null || json['installation_id'] is num) &&
       json.containsKey('repository_id') && (json['repository_id'] == null || json['repository_id'] is num) &&
       json.containsKey('request') &&
-      json.containsKey('response'); } 
-HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redelivery, double? duration, String? status, int? statusCode, String? event, String? Function()? action, int? Function()? installationId, int? Function()? repositoryId, Omittable<DateTime?>? throttledAt, String? Function()? url, HookDeliveryRequest? request, HookDeliveryResponse? response, }) { return HookDelivery(
+      json.containsKey('response');}
+HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redelivery, double? duration, String? status, int? statusCode, String? event, String? Function()? action, int? Function()? installationId, int? Function()? repositoryId, Omittable<DateTime?>? throttledAt, String? Function()? url, HookDeliveryRequest? request, HookDeliveryResponse? response, }) {return HookDelivery(
   id: id ?? this.id,
   guid: guid ?? this.guid,
   deliveredAt: deliveredAt ?? this.deliveredAt,
@@ -110,8 +110,8 @@ HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redel
   url: url != null ? url() : this.url,
   request: request ?? this.request,
   response: response ?? this.response,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is HookDelivery &&
           id == other.id &&
           guid == other.guid &&
@@ -127,7 +127,7 @@ HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redel
           throttledAt == other.throttledAt &&
           url == other.url &&
           request == other.request &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(id, guid, deliveredAt, redelivery, duration, status, statusCode, event, action, installationId, repositoryId, throttledAt, url, request, response); } 
-@override String toString() { return 'HookDelivery(id: $id, guid: $guid, deliveredAt: $deliveredAt, redelivery: $redelivery, duration: $duration, status: $status, statusCode: $statusCode, event: $event, action: $action, installationId: $installationId, repositoryId: $repositoryId, throttledAt: $throttledAt, url: $url, request: $request, response: $response)'; } 
- }
+          response == other.response;}
+@override int get hashCode {return Object.hash(id, guid, deliveredAt, redelivery, duration, status, statusCode, event, action, installationId, repositoryId, throttledAt, url, request, response);}
+@override String toString() {return 'HookDelivery(id: $id, guid: $guid, deliveredAt: $deliveredAt, redelivery: $redelivery, duration: $duration, status: $status, statusCode: $statusCode, event: $event, action: $action, installationId: $installationId, repositoryId: $repositoryId, throttledAt: $throttledAt, url: $url, request: $request, response: $response)';}
+}

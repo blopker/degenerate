@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingMetersRequestCustomerMappingType {const PostBillingMetersRequestCustomerMappingType._(this.value);
 
-factory PostBillingMetersRequestCustomerMappingType.fromJson(String json) { return switch (json) {
+factory PostBillingMetersRequestCustomerMappingType.fromJson(String json) {return switch (json) {
   'by_id' => byId,
   _ => PostBillingMetersRequestCustomerMappingType._(json),
-}; }
+};}
 
 static const PostBillingMetersRequestCustomerMappingType byId = PostBillingMetersRequestCustomerMappingType._('by_id');
 
@@ -13,40 +13,40 @@ static const List<PostBillingMetersRequestCustomerMappingType> values = [byId];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingMetersRequestCustomerMappingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingMetersRequestCustomerMappingType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostBillingMetersRequestCustomerMappingType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostBillingMetersRequestCustomerMappingType($value)';}
+}
 /// Fields that specify how to map a meter event to a customer.
 @immutable final class PostBillingMetersRequestCustomerMapping {const PostBillingMetersRequestCustomerMapping({required this.eventPayloadKey, required this.type, });
 
-factory PostBillingMetersRequestCustomerMapping.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequestCustomerMapping(
+factory PostBillingMetersRequestCustomerMapping.fromJson(Map<String, dynamic> json) {return PostBillingMetersRequestCustomerMapping(
   eventPayloadKey: json['event_payload_key'] as String,
   type: PostBillingMetersRequestCustomerMappingType.fromJson(json['type'] as String),
-); }
+);}
 
 final String eventPayloadKey;
 
 final PostBillingMetersRequestCustomerMappingType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_payload_key': eventPayloadKey,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_payload_key') && json['event_payload_key'] is String &&
-      json.containsKey('type'); } 
-PostBillingMetersRequestCustomerMapping copyWith({String? eventPayloadKey, PostBillingMetersRequestCustomerMappingType? type, }) { return PostBillingMetersRequestCustomerMapping(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_payload_key') && json['event_payload_key'] is String &&
+      json.containsKey('type');}
+PostBillingMetersRequestCustomerMapping copyWith({String? eventPayloadKey, PostBillingMetersRequestCustomerMappingType? type, }) {return PostBillingMetersRequestCustomerMapping(
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingMetersRequestCustomerMapping &&
           eventPayloadKey == other.eventPayloadKey &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eventPayloadKey, type); } 
-@override String toString() { return 'PostBillingMetersRequestCustomerMapping(eventPayloadKey: $eventPayloadKey, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(eventPayloadKey, type);}
+@override String toString() {return 'PostBillingMetersRequestCustomerMapping(eventPayloadKey: $eventPayloadKey, type: $type)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
 @immutable final class ReposCreateDeploymentStatusRequestState {const ReposCreateDeploymentStatusRequestState._(this.value);
 
-factory ReposCreateDeploymentStatusRequestState.fromJson(String json) { return switch (json) {
+factory ReposCreateDeploymentStatusRequestState.fromJson(String json) {return switch (json) {
   'error' => error,
   'failure' => failure,
   'inactive' => inactive,
@@ -12,7 +12,7 @@ factory ReposCreateDeploymentStatusRequestState.fromJson(String json) { return s
   'pending' => pending,
   'success' => success,
   _ => ReposCreateDeploymentStatusRequestState._(json),
-}; }
+};}
 
 static const ReposCreateDeploymentStatusRequestState error = ReposCreateDeploymentStatusRequestState._('error');
 
@@ -32,17 +32,17 @@ static const List<ReposCreateDeploymentStatusRequestState> values = [error, fail
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateDeploymentStatusRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateDeploymentStatusRequestState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateDeploymentStatusRequestState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateDeploymentStatusRequestState($value)';}
+}
 @immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl, this.logUrl, this.description, this.environment, this.environmentUrl, this.autoInactive, });
 
-factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentStatusRequest(
+factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) {return ReposCreateDeploymentStatusRequest(
   state: ReposCreateDeploymentStatusRequestState.fromJson(json['state'] as String),
   targetUrl: json['target_url'] as String?,
   logUrl: json['log_url'] as String?,
@@ -50,7 +50,7 @@ factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) {
   environment: json['environment'] as String?,
   environmentUrl: json['environment_url'] as String?,
   autoInactive: json['auto_inactive'] as bool?,
-); }
+);}
 
 /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
 final ReposCreateDeploymentStatusRequestState state;
@@ -77,14 +77,14 @@ final String? environmentUrl;
 final bool? autoInactive;
 
 /// The value with the schema default applied when absent.
-String get targetUrlOrDefault { return targetUrl ?? ''; } 
+String get targetUrlOrDefault {return targetUrl ?? '';}
 /// The value with the schema default applied when absent.
-String get logUrlOrDefault { return logUrl ?? ''; } 
+String get logUrlOrDefault {return logUrl ?? '';}
 /// The value with the schema default applied when absent.
-String get descriptionOrDefault { return description ?? ''; } 
+String get descriptionOrDefault {return description ?? '';}
 /// The value with the schema default applied when absent.
-String get environmentUrlOrDefault { return environmentUrl ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get environmentUrlOrDefault {return environmentUrl ?? '';}
+Map<String, dynamic> toJson() {return {
   'state': state.toJson(),
   'target_url': ?targetUrl,
   'log_url': ?logUrl,
@@ -92,9 +92,9 @@ Map<String, dynamic> toJson() { return {
   'environment': ?environment,
   'environment_url': ?environmentUrl,
   'auto_inactive': ?autoInactive,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestState? state, String? Function()? targetUrl, String? Function()? logUrl, String? Function()? description, String? Function()? environment, String? Function()? environmentUrl, bool? Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state');}
+ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestState? state, String? Function()? targetUrl, String? Function()? logUrl, String? Function()? description, String? Function()? environment, String? Function()? environmentUrl, bool? Function()? autoInactive, }) {return ReposCreateDeploymentStatusRequest(
   state: state ?? this.state,
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
   logUrl: logUrl != null ? logUrl() : this.logUrl,
@@ -102,8 +102,8 @@ ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestS
   environment: environment != null ? environment() : this.environment,
   environmentUrl: environmentUrl != null ? environmentUrl() : this.environmentUrl,
   autoInactive: autoInactive != null ? autoInactive() : this.autoInactive,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateDeploymentStatusRequest &&
           state == other.state &&
           targetUrl == other.targetUrl &&
@@ -111,7 +111,7 @@ ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestS
           description == other.description &&
           environment == other.environment &&
           environmentUrl == other.environmentUrl &&
-          autoInactive == other.autoInactive; } 
-@override int get hashCode { return Object.hash(state, targetUrl, logUrl, description, environment, environmentUrl, autoInactive); } 
-@override String toString() { return 'ReposCreateDeploymentStatusRequest(state: $state, targetUrl: $targetUrl, logUrl: $logUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, autoInactive: $autoInactive)'; } 
- }
+          autoInactive == other.autoInactive;}
+@override int get hashCode {return Object.hash(state, targetUrl, logUrl, description, environment, environmentUrl, autoInactive);}
+@override String toString() {return 'ReposCreateDeploymentStatusRequest(state: $state, targetUrl: $targetUrl, logUrl: $logUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, autoInactive: $autoInactive)';}
+}

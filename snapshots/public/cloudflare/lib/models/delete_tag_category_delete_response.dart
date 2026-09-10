@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTagCategoryDeleteResponse {const DeleteTagCategoryDeleteResponse({required this.uuid});
 
-factory DeleteTagCategoryDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteTagCategoryDeleteResponse(
+factory DeleteTagCategoryDeleteResponse.fromJson(Map<String, dynamic> json) {return DeleteTagCategoryDeleteResponse(
   uuid: json['uuid'] as String,
-); }
+);}
 
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('uuid') && json['uuid'] is String; } 
-DeleteTagCategoryDeleteResponse copyWith({String? uuid}) { return DeleteTagCategoryDeleteResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('uuid') && json['uuid'] is String;}
+DeleteTagCategoryDeleteResponse copyWith({String? uuid}) {return DeleteTagCategoryDeleteResponse(
   uuid: uuid ?? this.uuid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeleteTagCategoryDeleteResponse &&
-          uuid == other.uuid; } 
-@override int get hashCode { return uuid.hashCode; } 
-@override String toString() { return 'DeleteTagCategoryDeleteResponse(uuid: $uuid)'; } 
- }
+          uuid == other.uuid;}
+@override int get hashCode {return uuid.hashCode;}
+@override String toString() {return 'DeleteTagCategoryDeleteResponse(uuid: $uuid)';}
+}

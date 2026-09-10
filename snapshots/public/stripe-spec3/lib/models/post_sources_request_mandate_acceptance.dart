@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate_acceptance_offline.dart';import 'post_sources_request_mandate_acceptance_online.dart';@immutable final class PostSourcesRequestMandateAcceptanceStatus {const PostSourcesRequestMandateAcceptanceStatus._(this.value);
 
-factory PostSourcesRequestMandateAcceptanceStatus.fromJson(String json) { return switch (json) {
+factory PostSourcesRequestMandateAcceptanceStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'refused' => refused,
   'revoked' => revoked,
   _ => PostSourcesRequestMandateAcceptanceStatus._(json),
-}; }
+};}
 
 static const PostSourcesRequestMandateAcceptanceStatus accepted = PostSourcesRequestMandateAcceptanceStatus._('accepted');
 
@@ -22,21 +22,21 @@ static const List<PostSourcesRequestMandateAcceptanceStatus> values = [accepted,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestMandateAcceptanceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestMandateAcceptanceStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesRequestMandateAcceptanceStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesRequestMandateAcceptanceStatus($value)';}
+}
 @immutable final class PostSourcesRequestMandateAcceptanceType {const PostSourcesRequestMandateAcceptanceType._(this.value);
 
-factory PostSourcesRequestMandateAcceptanceType.fromJson(String json) { return switch (json) {
+factory PostSourcesRequestMandateAcceptanceType.fromJson(String json) {return switch (json) {
   'offline' => offline,
   'online' => online,
   _ => PostSourcesRequestMandateAcceptanceType._(json),
-}; }
+};}
 
 static const PostSourcesRequestMandateAcceptanceType offline = PostSourcesRequestMandateAcceptanceType._('offline');
 
@@ -46,17 +46,17 @@ static const List<PostSourcesRequestMandateAcceptanceType> values = [offline, on
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestMandateAcceptanceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestMandateAcceptanceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSourcesRequestMandateAcceptanceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSourcesRequestMandateAcceptanceType($value)';}
+}
 @immutable final class PostSourcesRequestMandateAcceptance {const PostSourcesRequestMandateAcceptance({required this.status, this.date, this.ip, this.offline, this.online, this.type, this.userAgent, });
 
-factory PostSourcesRequestMandateAcceptance.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandateAcceptance(
+factory PostSourcesRequestMandateAcceptance.fromJson(Map<String, dynamic> json) {return PostSourcesRequestMandateAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
   offline: json['offline'] != null ? PostSourcesRequestMandateAcceptanceOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
@@ -64,7 +64,7 @@ factory PostSourcesRequestMandateAcceptance.fromJson(Map<String, dynamic> json) 
   status: PostSourcesRequestMandateAcceptanceStatus.fromJson(json['status'] as String),
   type: json['type'] != null ? PostSourcesRequestMandateAcceptanceType.fromJson(json['type'] as String) : null,
   userAgent: json['user_agent'] as String?,
-); }
+);}
 
 final int? date;
 
@@ -80,7 +80,7 @@ final PostSourcesRequestMandateAcceptanceType? type;
 
 final String? userAgent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'date': ?date,
   'ip': ?ip,
   if (offline != null) 'offline': offline?.toJson(),
@@ -88,9 +88,9 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   if (type != null) 'type': type?.toJson(),
   'user_agent': ?userAgent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PostSourcesRequestMandateAcceptance copyWith({int? Function()? date, String? Function()? ip, PostSourcesRequestMandateAcceptanceOffline? Function()? offline, PostSourcesRequestMandateAcceptanceOnline? Function()? online, PostSourcesRequestMandateAcceptanceStatus? status, PostSourcesRequestMandateAcceptanceType? Function()? type, String? Function()? userAgent, }) { return PostSourcesRequestMandateAcceptance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+PostSourcesRequestMandateAcceptance copyWith({int? Function()? date, String? Function()? ip, PostSourcesRequestMandateAcceptanceOffline? Function()? offline, PostSourcesRequestMandateAcceptanceOnline? Function()? online, PostSourcesRequestMandateAcceptanceStatus? status, PostSourcesRequestMandateAcceptanceType? Function()? type, String? Function()? userAgent, }) {return PostSourcesRequestMandateAcceptance(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,
   offline: offline != null ? offline() : this.offline,
@@ -98,8 +98,8 @@ PostSourcesRequestMandateAcceptance copyWith({int? Function()? date, String? Fun
   status: status ?? this.status,
   type: type != null ? type() : this.type,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSourcesRequestMandateAcceptance &&
           date == other.date &&
           ip == other.ip &&
@@ -107,7 +107,7 @@ PostSourcesRequestMandateAcceptance copyWith({int? Function()? date, String? Fun
           online == other.online &&
           status == other.status &&
           type == other.type &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(date, ip, offline, online, status, type, userAgent); } 
-@override String toString() { return 'PostSourcesRequestMandateAcceptance(date: $date, ip: $ip, offline: $offline, online: $online, status: $status, type: $type, userAgent: $userAgent)'; } 
- }
+          userAgent == other.userAgent;}
+@override int get hashCode {return Object.hash(date, ip, offline, online, status, type, userAgent);}
+@override String toString() {return 'PostSourcesRequestMandateAcceptance(date: $date, ip: $ip, offline: $offline, online: $online, status: $status, type: $type, userAgent: $userAgent)';}
+}

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the 
 /// 
 @immutable final class TranscriptionDiarizedSegmentType {const TranscriptionDiarizedSegmentType._(this.value);
 
-factory TranscriptionDiarizedSegmentType.fromJson(String json) { return switch (json) {
+factory TranscriptionDiarizedSegmentType.fromJson(String json) {return switch (json) {
   'transcript.text.segment' => transcriptTextSegment,
   _ => TranscriptionDiarizedSegmentType._(json),
-}; }
+};}
 
 static const TranscriptionDiarizedSegmentType transcriptTextSegment = TranscriptionDiarizedSegmentType._('transcript.text.segment');
 
@@ -15,25 +15,25 @@ static const List<TranscriptionDiarizedSegmentType> values = [transcriptTextSegm
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptionDiarizedSegmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TranscriptionDiarizedSegmentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TranscriptionDiarizedSegmentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TranscriptionDiarizedSegmentType($value)';}
+}
 /// A segment of diarized transcript text with speaker metadata.
 @immutable final class TranscriptionDiarizedSegment {const TranscriptionDiarizedSegment({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
 
-factory TranscriptionDiarizedSegment.fromJson(Map<String, dynamic> json) { return TranscriptionDiarizedSegment(
+factory TranscriptionDiarizedSegment.fromJson(Map<String, dynamic> json) {return TranscriptionDiarizedSegment(
   type: TranscriptionDiarizedSegmentType.fromJson(json['type'] as String),
   id: json['id'] as String,
   start: (json['start'] as num).toDouble(),
   end: (json['end'] as num).toDouble(),
   text: json['text'] as String,
   speaker: json['speaker'] as String,
-); }
+);}
 
 /// The type of the segment. Always `transcript.text.segment`.
 /// 
@@ -55,36 +55,36 @@ final String text;
 /// 
 final String speaker;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'id': id,
   'start': start,
   'end': end,
   'text': text,
   'speaker': speaker,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('start') && json['start'] is num &&
       json.containsKey('end') && json['end'] is num &&
       json.containsKey('text') && json['text'] is String &&
-      json.containsKey('speaker') && json['speaker'] is String; } 
-TranscriptionDiarizedSegment copyWith({TranscriptionDiarizedSegmentType? type, String? id, double? start, double? end, String? text, String? speaker, }) { return TranscriptionDiarizedSegment(
+      json.containsKey('speaker') && json['speaker'] is String;}
+TranscriptionDiarizedSegment copyWith({TranscriptionDiarizedSegmentType? type, String? id, double? start, double? end, String? text, String? speaker, }) {return TranscriptionDiarizedSegment(
   type: type ?? this.type,
   id: id ?? this.id,
   start: start ?? this.start,
   end: end ?? this.end,
   text: text ?? this.text,
   speaker: speaker ?? this.speaker,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TranscriptionDiarizedSegment &&
           type == other.type &&
           id == other.id &&
           start == other.start &&
           end == other.end &&
           text == other.text &&
-          speaker == other.speaker; } 
-@override int get hashCode { return Object.hash(type, id, start, end, text, speaker); } 
-@override String toString() { return 'TranscriptionDiarizedSegment(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)'; } 
- }
+          speaker == other.speaker;}
+@override int get hashCode {return Object.hash(type, id, start, end, text, speaker);}
+@override String toString() {return 'TranscriptionDiarizedSegment(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)';}
+}

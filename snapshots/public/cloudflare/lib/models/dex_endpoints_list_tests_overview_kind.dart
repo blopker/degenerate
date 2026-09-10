@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsListTestsOverviewKind {const DexEndpointsListTestsOverviewKind._(this.value);
 
-factory DexEndpointsListTestsOverviewKind.fromJson(String json) { return switch (json) {
+factory DexEndpointsListTestsOverviewKind.fromJson(String json) {return switch (json) {
   'http' => http,
   'traceroute' => traceroute,
   _ => DexEndpointsListTestsOverviewKind._(json),
-}; }
+};}
 
 static const DexEndpointsListTestsOverviewKind http = DexEndpointsListTestsOverviewKind._('http');
 
@@ -16,11 +16,11 @@ static const List<DexEndpointsListTestsOverviewKind> values = [http, traceroute]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DexEndpointsListTestsOverviewKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DexEndpointsListTestsOverviewKind($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DexEndpointsListTestsOverviewKind && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DexEndpointsListTestsOverviewKind($value)';}
+}

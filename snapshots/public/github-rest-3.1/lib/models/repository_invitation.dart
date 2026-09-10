@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'simple_user.dart';/// The permission associated with the invitation.
 @immutable final class RepositoryInvitationPermissions {const RepositoryInvitationPermissions._(this.value);
 
-factory RepositoryInvitationPermissions.fromJson(String json) { return switch (json) {
+factory RepositoryInvitationPermissions.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   'triage' => triage,
   'maintain' => maintain,
   _ => RepositoryInvitationPermissions._(json),
-}; }
+};}
 
 static const RepositoryInvitationPermissions read = RepositoryInvitationPermissions._('read');
 
@@ -26,18 +26,18 @@ static const List<RepositoryInvitationPermissions> values = [read, write, admin,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryInvitationPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryInvitationPermissions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryInvitationPermissions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryInvitationPermissions($value)';}
+}
 /// Repository invitations let you manage who you collaborate with.
 @immutable final class RepositoryInvitation {const RepositoryInvitation({required this.id, required this.repository, required this.invitee, required this.inviter, required this.permissions, required this.createdAt, required this.url, required this.htmlUrl, required this.nodeId, this.expired, });
 
-factory RepositoryInvitation.fromJson(Map<String, dynamic> json) { return RepositoryInvitation(
+factory RepositoryInvitation.fromJson(Map<String, dynamic> json) {return RepositoryInvitation(
   id: (json['id'] as num).toInt(),
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
   invitee: json['invitee'] != null ? SimpleUser.fromJson(json['invitee'] as Map<String, dynamic>) : null,
@@ -48,7 +48,7 @@ factory RepositoryInvitation.fromJson(Map<String, dynamic> json) { return Reposi
   url: json['url'] as String,
   htmlUrl: json['html_url'] as String,
   nodeId: json['node_id'] as String,
-); }
+);}
 
 /// Unique identifier of the repository invitation.
 final int id;
@@ -74,7 +74,7 @@ final String htmlUrl;
 
 final String nodeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'repository': repository.toJson(),
   'invitee': invitee?.toJson(),
@@ -85,8 +85,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'html_url': htmlUrl,
   'node_id': nodeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('repository') &&
       json.containsKey('invitee') &&
       json.containsKey('inviter') &&
@@ -94,8 +94,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, RepositoryInvitationPermissions? permissions, DateTime? createdAt, bool? Function()? expired, String? url, String? htmlUrl, String? nodeId, }) { return RepositoryInvitation(
+      json.containsKey('node_id') && json['node_id'] is String;}
+RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, RepositoryInvitationPermissions? permissions, DateTime? createdAt, bool? Function()? expired, String? url, String? htmlUrl, String? nodeId, }) {return RepositoryInvitation(
   id: id ?? this.id,
   repository: repository ?? this.repository,
   invitee: invitee != null ? invitee() : this.invitee,
@@ -106,8 +106,8 @@ RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUse
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   nodeId: nodeId ?? this.nodeId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryInvitation &&
           id == other.id &&
           repository == other.repository &&
@@ -118,7 +118,7 @@ RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUse
           expired == other.expired &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(id, repository, invitee, inviter, permissions, createdAt, expired, url, htmlUrl, nodeId); } 
-@override String toString() { return 'RepositoryInvitation(id: $id, repository: $repository, invitee: $invitee, inviter: $inviter, permissions: $permissions, createdAt: $createdAt, expired: $expired, url: $url, htmlUrl: $htmlUrl, nodeId: $nodeId)'; } 
- }
+          nodeId == other.nodeId;}
+@override int get hashCode {return Object.hash(id, repository, invitee, inviter, permissions, createdAt, expired, url, htmlUrl, nodeId);}
+@override String toString() {return 'RepositoryInvitation(id: $id, repository: $repository, invitee: $invitee, inviter: $inviter, permissions: $permissions, createdAt: $createdAt, expired: $expired, url: $url, htmlUrl: $htmlUrl, nodeId: $nodeId)';}
+}

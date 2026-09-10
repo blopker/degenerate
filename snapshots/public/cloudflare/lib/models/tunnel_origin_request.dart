@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_origin_request_access.dart';/// Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
 @immutable final class TunnelOriginRequest {const TunnelOriginRequest({this.access, this.caPool, this.connectTimeout, this.disableChunkedEncoding, this.http2Origin, this.httpHostHeader, this.keepAliveConnections, this.keepAliveTimeout, this.matchSnItoHost, this.noHappyEyeballs, this.noTlsVerify, this.originServerName, this.proxyType, this.tcpKeepAlive, this.tlsTimeout, });
 
-factory TunnelOriginRequest.fromJson(Map<String, dynamic> json) { return TunnelOriginRequest(
+factory TunnelOriginRequest.fromJson(Map<String, dynamic> json) {return TunnelOriginRequest(
   access: json['access'] != null ? TunnelOriginRequestAccess.fromJson(json['access'] as Map<String, dynamic>) : null,
   caPool: json['caPool'] as String?,
   connectTimeout: json['connectTimeout'] != null ? (json['connectTimeout'] as num).toInt() : null,
@@ -19,7 +19,7 @@ factory TunnelOriginRequest.fromJson(Map<String, dynamic> json) { return TunnelO
   proxyType: json['proxyType'] as String?,
   tcpKeepAlive: json['tcpKeepAlive'] != null ? (json['tcpKeepAlive'] as num).toInt() : null,
   tlsTimeout: json['tlsTimeout'] != null ? (json['tlsTimeout'] as num).toInt() : null,
-); }
+);}
 
 /// For all L7 requests to this hostname, cloudflared will validate each request's Cf-Access-Jwt-Assertion request header.
 final TunnelOriginRequestAccess? access;
@@ -67,7 +67,7 @@ final int? tcpKeepAlive;
 /// Timeout for completing a TLS handshake to your origin server, if you have chosen to connect Tunnel to an HTTPS server.
 final int? tlsTimeout;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (access != null) 'access': access?.toJson(),
   'caPool': ?caPool,
   'connectTimeout': ?connectTimeout,
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   'proxyType': ?proxyType,
   'tcpKeepAlive': ?tcpKeepAlive,
   'tlsTimeout': ?tlsTimeout,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access', 'caPool', 'connectTimeout', 'disableChunkedEncoding', 'http2Origin', 'httpHostHeader', 'keepAliveConnections', 'keepAliveTimeout', 'matchSNItoHost', 'noHappyEyeballs', 'noTLSVerify', 'originServerName', 'proxyType', 'tcpKeepAlive', 'tlsTimeout'}.contains(key)); } 
-TunnelOriginRequest copyWith({TunnelOriginRequestAccess? Function()? access, String? Function()? caPool, int? Function()? connectTimeout, bool? Function()? disableChunkedEncoding, bool? Function()? http2Origin, String? Function()? httpHostHeader, int? Function()? keepAliveConnections, int? Function()? keepAliveTimeout, bool? Function()? matchSnItoHost, bool? Function()? noHappyEyeballs, bool? Function()? noTlsVerify, String? Function()? originServerName, String? Function()? proxyType, int? Function()? tcpKeepAlive, int? Function()? tlsTimeout, }) { return TunnelOriginRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'access', 'caPool', 'connectTimeout', 'disableChunkedEncoding', 'http2Origin', 'httpHostHeader', 'keepAliveConnections', 'keepAliveTimeout', 'matchSNItoHost', 'noHappyEyeballs', 'noTLSVerify', 'originServerName', 'proxyType', 'tcpKeepAlive', 'tlsTimeout'}.contains(key));}
+TunnelOriginRequest copyWith({TunnelOriginRequestAccess? Function()? access, String? Function()? caPool, int? Function()? connectTimeout, bool? Function()? disableChunkedEncoding, bool? Function()? http2Origin, String? Function()? httpHostHeader, int? Function()? keepAliveConnections, int? Function()? keepAliveTimeout, bool? Function()? matchSnItoHost, bool? Function()? noHappyEyeballs, bool? Function()? noTlsVerify, String? Function()? originServerName, String? Function()? proxyType, int? Function()? tcpKeepAlive, int? Function()? tlsTimeout, }) {return TunnelOriginRequest(
   access: access != null ? access() : this.access,
   caPool: caPool != null ? caPool() : this.caPool,
   connectTimeout: connectTimeout != null ? connectTimeout() : this.connectTimeout,
@@ -101,8 +101,8 @@ TunnelOriginRequest copyWith({TunnelOriginRequestAccess? Function()? access, Str
   proxyType: proxyType != null ? proxyType() : this.proxyType,
   tcpKeepAlive: tcpKeepAlive != null ? tcpKeepAlive() : this.tcpKeepAlive,
   tlsTimeout: tlsTimeout != null ? tlsTimeout() : this.tlsTimeout,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TunnelOriginRequest &&
           access == other.access &&
           caPool == other.caPool &&
@@ -118,7 +118,7 @@ TunnelOriginRequest copyWith({TunnelOriginRequestAccess? Function()? access, Str
           originServerName == other.originServerName &&
           proxyType == other.proxyType &&
           tcpKeepAlive == other.tcpKeepAlive &&
-          tlsTimeout == other.tlsTimeout; } 
-@override int get hashCode { return Object.hash(access, caPool, connectTimeout, disableChunkedEncoding, http2Origin, httpHostHeader, keepAliveConnections, keepAliveTimeout, matchSnItoHost, noHappyEyeballs, noTlsVerify, originServerName, proxyType, tcpKeepAlive, tlsTimeout); } 
-@override String toString() { return 'TunnelOriginRequest(access: $access, caPool: $caPool, connectTimeout: $connectTimeout, disableChunkedEncoding: $disableChunkedEncoding, http2Origin: $http2Origin, httpHostHeader: $httpHostHeader, keepAliveConnections: $keepAliveConnections, keepAliveTimeout: $keepAliveTimeout, matchSnItoHost: $matchSnItoHost, noHappyEyeballs: $noHappyEyeballs, noTlsVerify: $noTlsVerify, originServerName: $originServerName, proxyType: $proxyType, tcpKeepAlive: $tcpKeepAlive, tlsTimeout: $tlsTimeout)'; } 
- }
+          tlsTimeout == other.tlsTimeout;}
+@override int get hashCode {return Object.hash(access, caPool, connectTimeout, disableChunkedEncoding, http2Origin, httpHostHeader, keepAliveConnections, keepAliveTimeout, matchSnItoHost, noHappyEyeballs, noTlsVerify, originServerName, proxyType, tcpKeepAlive, tlsTimeout);}
+@override String toString() {return 'TunnelOriginRequest(access: $access, caPool: $caPool, connectTimeout: $connectTimeout, disableChunkedEncoding: $disableChunkedEncoding, http2Origin: $http2Origin, httpHostHeader: $httpHostHeader, keepAliveConnections: $keepAliveConnections, keepAliveTimeout: $keepAliveTimeout, matchSnItoHost: $matchSnItoHost, noHappyEyeballs: $noHappyEyeballs, noTlsVerify: $noTlsVerify, originServerName: $originServerName, proxyType: $proxyType, tcpKeepAlive: $tcpKeepAlive, tlsTimeout: $tlsTimeout)';}
+}

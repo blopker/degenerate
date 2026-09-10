@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewDocumentFingerprint {const DlpNewDocumentFingerprint({required this.matchPercent, required this.name, this.description, });
 
-factory DlpNewDocumentFingerprint.fromJson(Map<String, dynamic> json) { return DlpNewDocumentFingerprint(
+factory DlpNewDocumentFingerprint.fromJson(Map<String, dynamic> json) {return DlpNewDocumentFingerprint(
   description: json['description'] as String?,
   matchPercent: (json['match_percent'] as num).toInt(),
   name: json['name'] as String,
-); }
+);}
 
 final String? description;
 
@@ -15,24 +15,24 @@ final int matchPercent;
 final String name;
 
 /// The value with the schema default applied when absent.
-String get descriptionOrDefault { return description ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get descriptionOrDefault {return description ?? '';}
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'match_percent': matchPercent,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('match_percent') && json['match_percent'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-DlpNewDocumentFingerprint copyWith({String? Function()? description, int? matchPercent, String? name, }) { return DlpNewDocumentFingerprint(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('match_percent') && json['match_percent'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+DlpNewDocumentFingerprint copyWith({String? Function()? description, int? matchPercent, String? name, }) {return DlpNewDocumentFingerprint(
   description: description != null ? description() : this.description,
   matchPercent: matchPercent ?? this.matchPercent,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpNewDocumentFingerprint &&
           description == other.description &&
           matchPercent == other.matchPercent &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, matchPercent, name); } 
-@override String toString() { return 'DlpNewDocumentFingerprint(description: $description, matchPercent: $matchPercent, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(description, matchPercent, name);}
+@override String toString() {return 'DlpNewDocumentFingerprint(description: $description, matchPercent: $matchPercent, name: $name)';}
+}

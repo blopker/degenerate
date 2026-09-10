@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank. Should be one of `arzte_und_apotheker_bank`, `austrian_anadi_bank_ag`, `bank_austria`, `bankhaus_carl_spangler`, `bankhaus_schelhammer_und_schattera_ag`, `bawag_psk_ag`, `bks_bank_ag`, `brull_kallmus_bank_ag`, `btv_vier_lander_bank`, `capital_bank_grawe_gruppe_ag`, `deutsche_bank_ag`, `dolomitenbank`, `easybank_ag`, `erste_bank_und_sparkassen`, `hypo_alpeadriabank_international_ag`, `hypo_noe_lb_fur_niederosterreich_u_wien`, `hypo_oberosterreich_salzburg_steiermark`, `hypo_tirol_bank_ag`, `hypo_vorarlberg_bank_ag`, `hypo_bank_burgenland_aktiengesellschaft`, `marchfelder_bank`, `oberbank_ag`, `raiffeisen_bankengruppe_osterreich`, `schoellerbank_ag`, `sparda_bank_wien`, `volksbank_gruppe`, `volkskreditbank_ag`, or `vr_bank_braunau`.
 @immutable final class PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank._(this.value);
 
-factory PaymentMethodDetailsEpsBank.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsEpsBank.fromJson(String json) {return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
   'austrian_anadi_bank_ag' => austrianAnadiBankAg,
   'bank_austria' => bankAustria,
@@ -33,7 +33,7 @@ factory PaymentMethodDetailsEpsBank.fromJson(String json) { return switch (json)
   'volkskreditbank_ag' => volkskreditbankAg,
   'vr_bank_braunau' => vrBankBraunau,
   _ => PaymentMethodDetailsEpsBank._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsEpsBank arzteUndApothekerBank = PaymentMethodDetailsEpsBank._('arzte_und_apotheker_bank');
 
@@ -95,21 +95,21 @@ static const List<PaymentMethodDetailsEpsBank> values = [arzteUndApothekerBank, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsEpsBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsEpsBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsEpsBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsEpsBank($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsEps {const PaymentMethodDetailsEps({this.bank = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
-factory PaymentMethodDetailsEps.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsEps(
+factory PaymentMethodDetailsEps.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsEps(
   bank: json.containsKey('bank') ? Omittable(json['bank'] != null ? PaymentMethodDetailsEpsBank.fromJson(json['bank'] as String) : null) : const Omittable.absent(),
   verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's bank. Should be one of `arzte_und_apotheker_bank`, `austrian_anadi_bank_ag`, `bank_austria`, `bankhaus_carl_spangler`, `bankhaus_schelhammer_und_schattera_ag`, `bawag_psk_ag`, `bks_bank_ag`, `brull_kallmus_bank_ag`, `btv_vier_lander_bank`, `capital_bank_grawe_gruppe_ag`, `deutsche_bank_ag`, `dolomitenbank`, `easybank_ag`, `erste_bank_und_sparkassen`, `hypo_alpeadriabank_international_ag`, `hypo_noe_lb_fur_niederosterreich_u_wien`, `hypo_oberosterreich_salzburg_steiermark`, `hypo_tirol_bank_ag`, `hypo_vorarlberg_bank_ag`, `hypo_bank_burgenland_aktiengesellschaft`, `marchfelder_bank`, `oberbank_ag`, `raiffeisen_bankengruppe_osterreich`, `schoellerbank_ag`, `sparda_bank_wien`, `volksbank_gruppe`, `volkskreditbank_ag`, or `vr_bank_braunau`.
 final Omittable<PaymentMethodDetailsEpsBank?> bank;
@@ -119,19 +119,19 @@ final Omittable<PaymentMethodDetailsEpsBank?> bank;
 /// EPS rarely provides this information so the attribute is usually empty.
 final Omittable<String?> verifiedName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank.isPresent) 'bank': bank.value?.toJson(),
   if (verifiedName.isPresent) 'verified_name': verifiedName.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'verified_name'}.contains(key)); } 
-PaymentMethodDetailsEps copyWith({Omittable<PaymentMethodDetailsEpsBank?>? bank, Omittable<String?>? verifiedName, }) { return PaymentMethodDetailsEps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank', 'verified_name'}.contains(key));}
+PaymentMethodDetailsEps copyWith({Omittable<PaymentMethodDetailsEpsBank?>? bank, Omittable<String?>? verifiedName, }) {return PaymentMethodDetailsEps(
   bank: bank ?? this.bank,
   verifiedName: verifiedName ?? this.verifiedName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsEps &&
           bank == other.bank &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bank, verifiedName); } 
-@override String toString() { return 'PaymentMethodDetailsEps(bank: $bank, verifiedName: $verifiedName)'; } 
- }
+          verifiedName == other.verifiedName;}
+@override int get hashCode {return Object.hash(bank, verifiedName);}
+@override String toString() {return 'PaymentMethodDetailsEps(bank: $bank, verifiedName: $verifiedName)';}
+}

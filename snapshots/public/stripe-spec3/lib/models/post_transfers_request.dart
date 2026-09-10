@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source balance to use for this transfer. One of `bank_account`, `card`, or `fpx`. For most users, this will default to `card`.
 @immutable final class PostTransfersRequestSourceType {const PostTransfersRequestSourceType._(this.value);
 
-factory PostTransfersRequestSourceType.fromJson(String json) { return switch (json) {
+factory PostTransfersRequestSourceType.fromJson(String json) {return switch (json) {
   'bank_account' => bankAccount,
   'card' => card,
   'fpx' => fpx,
   _ => PostTransfersRequestSourceType._(json),
-}; }
+};}
 
 static const PostTransfersRequestSourceType bankAccount = PostTransfersRequestSourceType._('bank_account');
 
@@ -20,17 +20,17 @@ static const List<PostTransfersRequestSourceType> values = [bankAccount, card, f
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTransfersRequestSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTransfersRequestSourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTransfersRequestSourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTransfersRequestSourceType($value)';}
+}
 @immutable final class PostTransfersRequest {const PostTransfersRequest({required this.currency, required this.destination, this.amount, this.description, this.expand, this.metadata, this.sourceTransaction, this.sourceType, this.transferGroup, });
 
-factory PostTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTransfersRequest(
+factory PostTransfersRequest.fromJson(Map<String, dynamic> json) {return PostTransfersRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -40,7 +40,7 @@ factory PostTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTr
   sourceTransaction: json['source_transaction'] as String?,
   sourceType: json['source_type'] != null ? PostTransfersRequestSourceType.fromJson(json['source_type'] as String) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// A positive integer in cents (or local equivalent) representing how much to transfer.
 final int? amount;
@@ -69,7 +69,7 @@ final PostTransfersRequestSourceType? sourceType;
 /// A string that identifies this transaction as part of a group. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'currency': currency,
   'description': ?description,
@@ -79,10 +79,10 @@ Map<String, dynamic> toJson() { return {
   'source_transaction': ?sourceTransaction,
   if (sourceType != null) 'source_type': sourceType?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('destination') && json['destination'] is String; } 
-PostTransfersRequest copyWith({int? Function()? amount, String? currency, String? Function()? description, String? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? sourceTransaction, PostTransfersRequestSourceType? Function()? sourceType, String? Function()? transferGroup, }) { return PostTransfersRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('destination') && json['destination'] is String;}
+PostTransfersRequest copyWith({int? Function()? amount, String? currency, String? Function()? description, String? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? sourceTransaction, PostTransfersRequestSourceType? Function()? sourceType, String? Function()? transferGroup, }) {return PostTransfersRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -92,8 +92,8 @@ PostTransfersRequest copyWith({int? Function()? amount, String? currency, String
   sourceTransaction: sourceTransaction != null ? sourceTransaction() : this.sourceTransaction,
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTransfersRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -103,7 +103,7 @@ PostTransfersRequest copyWith({int? Function()? amount, String? currency, String
           metadata == other.metadata &&
           sourceTransaction == other.sourceTransaction &&
           sourceType == other.sourceType &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, sourceTransaction, sourceType, transferGroup); } 
-@override String toString() { return 'PostTransfersRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)'; } 
- }
+          transferGroup == other.transferGroup;}
+@override int get hashCode {return Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, sourceTransaction, sourceType, transferGroup);}
+@override String toString() {return 'PostTransfersRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)';}
+}

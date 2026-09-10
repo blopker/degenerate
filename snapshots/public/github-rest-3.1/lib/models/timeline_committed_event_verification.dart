@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TimelineCommittedEventVerification {const TimelineCommittedEventVerification({required this.verified, required this.reason, required this.signature, required this.payload, required this.verifiedAt, });
 
-factory TimelineCommittedEventVerification.fromJson(Map<String, dynamic> json) { return TimelineCommittedEventVerification(
+factory TimelineCommittedEventVerification.fromJson(Map<String, dynamic> json) {return TimelineCommittedEventVerification(
   verified: json['verified'] as bool,
   reason: json['reason'] as String,
   signature: json['signature'] as String?,
   payload: json['payload'] as String?,
   verifiedAt: json['verified_at'] as String?,
-); }
+);}
 
 final bool verified;
 
@@ -20,32 +20,32 @@ final String? payload;
 
 final String? verifiedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'verified': verified,
   'reason': reason,
   'signature': signature,
   'payload': payload,
   'verified_at': verifiedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('verified') && json['verified'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('verified') && json['verified'] is bool &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('signature') && (json['signature'] == null || json['signature'] is String) &&
       json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
-      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String); } 
-TimelineCommittedEventVerification copyWith({bool? verified, String? reason, String? Function()? signature, String? Function()? payload, String? Function()? verifiedAt, }) { return TimelineCommittedEventVerification(
+      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String);}
+TimelineCommittedEventVerification copyWith({bool? verified, String? reason, String? Function()? signature, String? Function()? payload, String? Function()? verifiedAt, }) {return TimelineCommittedEventVerification(
   verified: verified ?? this.verified,
   reason: reason ?? this.reason,
   signature: signature != null ? signature() : this.signature,
   payload: payload != null ? payload() : this.payload,
   verifiedAt: verifiedAt != null ? verifiedAt() : this.verifiedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TimelineCommittedEventVerification &&
           verified == other.verified &&
           reason == other.reason &&
           signature == other.signature &&
           payload == other.payload &&
-          verifiedAt == other.verifiedAt; } 
-@override int get hashCode { return Object.hash(verified, reason, signature, payload, verifiedAt); } 
-@override String toString() { return 'TimelineCommittedEventVerification(verified: $verified, reason: $reason, signature: $signature, payload: $payload, verifiedAt: $verifiedAt)'; } 
- }
+          verifiedAt == other.verifiedAt;}
+@override int get hashCode {return Object.hash(verified, reason, signature, payload, verifiedAt);}
+@override String toString() {return 'TimelineCommittedEventVerification(verified: $verified, reason: $reason, signature: $signature, payload: $payload, verifiedAt: $verifiedAt)';}
+}

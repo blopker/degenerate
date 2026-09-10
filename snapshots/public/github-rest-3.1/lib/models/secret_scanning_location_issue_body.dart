@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents an 'issue_body' secret scanning location type. This location type shows that a secret was detected in the body of an issue.
 @immutable final class SecretScanningLocationIssueBody {const SecretScanningLocationIssueBody({required this.issueBodyUrl});
 
-factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) { return SecretScanningLocationIssueBody(
+factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) {return SecretScanningLocationIssueBody(
   issueBodyUrl: Uri.parse(json['issue_body_url'] as String),
-); }
+);}
 
 /// The API URL to get the issue where the secret was detected.
 final Uri issueBodyUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'issue_body_url': issueBodyUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue_body_url') && json['issue_body_url'] is String; } 
-SecretScanningLocationIssueBody copyWith({Uri? issueBodyUrl}) { return SecretScanningLocationIssueBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('issue_body_url') && json['issue_body_url'] is String;}
+SecretScanningLocationIssueBody copyWith({Uri? issueBodyUrl}) {return SecretScanningLocationIssueBody(
   issueBodyUrl: issueBodyUrl ?? this.issueBodyUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretScanningLocationIssueBody &&
-          issueBodyUrl == other.issueBodyUrl; } 
-@override int get hashCode { return issueBodyUrl.hashCode; } 
-@override String toString() { return 'SecretScanningLocationIssueBody(issueBodyUrl: $issueBodyUrl)'; } 
- }
+          issueBodyUrl == other.issueBodyUrl;}
+@override int get hashCode {return issueBodyUrl.hashCode;}
+@override String toString() {return 'SecretScanningLocationIssueBody(issueBodyUrl: $issueBodyUrl)';}
+}

@@ -2,9 +2,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discovery_state_patch.dart';@immutable final class PatchDiscoveredOperationRequest {const PatchDiscoveredOperationRequest({this.state});
 
-factory PatchDiscoveredOperationRequest.fromJson(Map<String, dynamic> json) { return PatchDiscoveredOperationRequest(
+factory PatchDiscoveredOperationRequest.fromJson(Map<String, dynamic> json) {return PatchDiscoveredOperationRequest(
   state: json['state'] != null ? DiscoveryStatePatch.fromJson(json['state'] as String) : null,
-); }
+);}
 
 /// Mark state of operation in API Discovery
 ///   * `review` - Mark operation as for review
@@ -12,16 +12,16 @@ factory PatchDiscoveredOperationRequest.fromJson(Map<String, dynamic> json) { re
 /// 
 final DiscoveryStatePatch? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (state != null) 'state': state?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state'}.contains(key)); } 
-PatchDiscoveredOperationRequest copyWith({DiscoveryStatePatch? Function()? state}) { return PatchDiscoveredOperationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'state'}.contains(key));}
+PatchDiscoveredOperationRequest copyWith({DiscoveryStatePatch? Function()? state}) {return PatchDiscoveredOperationRequest(
   state: state != null ? state() : this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchDiscoveredOperationRequest &&
-          state == other.state; } 
-@override int get hashCode { return state.hashCode; } 
-@override String toString() { return 'PatchDiscoveredOperationRequest(state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return state.hashCode;}
+@override String toString() {return 'PatchDiscoveredOperationRequest(state: $state)';}
+}

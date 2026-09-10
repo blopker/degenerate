@@ -15,7 +15,7 @@ final class MaintenanceConfigurationApi with ApiExecutor {const MaintenanceConfi
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs`
-Future<ApiResult<R2DataCatalogCatalogMaintenanceConfigResponse?, ResponseCommonFailure55>> getMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogMaintenanceConfigResponse?, ResponseCommonFailure55>> getMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -24,24 +24,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogCatalogMaintenanceConfigResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogCatalogMaintenanceConfigResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update catalog maintenance configuration
 ///
 /// Update the maintenance configuration for a catalog. This allows you to
@@ -49,7 +38,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs`
-Future<ApiResult<R2DataCatalogCatalogMaintenanceConfig?, ResponseCommonFailure55>> updateMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogMaintenanceUpdateParams body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogMaintenanceConfig?, ResponseCommonFailure55>> updateMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogMaintenanceUpdateParams body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,22 +49,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogCatalogMaintenanceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogCatalogMaintenanceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

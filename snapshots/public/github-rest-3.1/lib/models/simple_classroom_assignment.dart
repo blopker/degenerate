@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_classroom.dart';/// Whether it's a Group Assignment or Individual Assignment.
 @immutable final class SimpleClassroomAssignmentType {const SimpleClassroomAssignmentType._(this.value);
 
-factory SimpleClassroomAssignmentType.fromJson(String json) { return switch (json) {
+factory SimpleClassroomAssignmentType.fromJson(String json) {return switch (json) {
   'individual' => individual,
   'group' => group,
   _ => SimpleClassroomAssignmentType._(json),
-}; }
+};}
 
 static const SimpleClassroomAssignmentType individual = SimpleClassroomAssignmentType._('individual');
 
@@ -17,18 +17,18 @@ static const List<SimpleClassroomAssignmentType> values = [individual, group];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SimpleClassroomAssignmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SimpleClassroomAssignmentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SimpleClassroomAssignmentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SimpleClassroomAssignmentType($value)';}
+}
 /// A GitHub Classroom assignment
 @immutable final class SimpleClassroomAssignment {const SimpleClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.classroom, this.maxTeams = const Omittable.absent(), this.maxMembers = const Omittable.absent(), });
 
-factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) { return SimpleClassroomAssignment(
+factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) {return SimpleClassroomAssignment(
   id: (json['id'] as num).toInt(),
   publicRepo: json['public_repo'] as bool,
   title: json['title'] as String,
@@ -47,7 +47,7 @@ factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) { return S
   language: json['language'] as String,
   deadline: json['deadline'] != null ? DateTime.parse(json['deadline'] as String) : null,
   classroom: SimpleClassroom.fromJson(json['classroom'] as Map<String, dynamic>),
-); }
+);}
 
 /// Unique identifier of the repository.
 final int id;
@@ -102,7 +102,7 @@ final DateTime? deadline;
 
 final SimpleClassroom classroom;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'public_repo': publicRepo,
   'title': title,
@@ -121,8 +121,8 @@ Map<String, dynamic> toJson() { return {
   'language': language,
   'deadline': deadline?.toIso8601String(),
   'classroom': classroom.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('public_repo') && json['public_repo'] is bool &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('type') &&
@@ -137,8 +137,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('passing') && json['passing'] is num &&
       json.containsKey('language') && json['language'] is String &&
       json.containsKey('deadline') && (json['deadline'] == null || json['deadline'] is String) &&
-      json.containsKey('classroom'); } 
-SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, SimpleClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, Omittable<int?>? maxTeams, Omittable<int?>? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroom? classroom, }) { return SimpleClassroomAssignment(
+      json.containsKey('classroom');}
+SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, SimpleClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, Omittable<int?>? maxTeams, Omittable<int?>? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroom? classroom, }) {return SimpleClassroomAssignment(
   id: id ?? this.id,
   publicRepo: publicRepo ?? this.publicRepo,
   title: title ?? this.title,
@@ -157,8 +157,8 @@ SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Si
   language: language ?? this.language,
   deadline: deadline != null ? deadline() : this.deadline,
   classroom: classroom ?? this.classroom,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SimpleClassroomAssignment &&
           id == other.id &&
           publicRepo == other.publicRepo &&
@@ -177,7 +177,7 @@ SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Si
           passing == other.passing &&
           language == other.language &&
           deadline == other.deadline &&
-          classroom == other.classroom; } 
-@override int get hashCode { return Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, classroom); } 
-@override String toString() { return 'SimpleClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, classroom: $classroom)'; } 
- }
+          classroom == other.classroom;}
+@override int get hashCode {return Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, classroom);}
+@override String toString() {return 'SimpleClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, classroom: $classroom)';}
+}

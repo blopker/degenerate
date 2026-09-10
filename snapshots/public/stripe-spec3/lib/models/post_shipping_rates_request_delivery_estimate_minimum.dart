@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostShippingRatesRequestDeliveryEstimateMinimumUnit {const PostShippingRatesRequestDeliveryEstimateMinimumUnit._(this.value);
 
-factory PostShippingRatesRequestDeliveryEstimateMinimumUnit.fromJson(String json) { return switch (json) {
+factory PostShippingRatesRequestDeliveryEstimateMinimumUnit.fromJson(String json) {return switch (json) {
   'business_day' => businessDay,
   'day' => day,
   'hour' => hour,
   'month' => month,
   'week' => week,
   _ => PostShippingRatesRequestDeliveryEstimateMinimumUnit._(json),
-}; }
+};}
 
 static const PostShippingRatesRequestDeliveryEstimateMinimumUnit businessDay = PostShippingRatesRequestDeliveryEstimateMinimumUnit._('business_day');
 
@@ -25,39 +25,39 @@ static const List<PostShippingRatesRequestDeliveryEstimateMinimumUnit> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostShippingRatesRequestDeliveryEstimateMinimumUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostShippingRatesRequestDeliveryEstimateMinimumUnit($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostShippingRatesRequestDeliveryEstimateMinimumUnit && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostShippingRatesRequestDeliveryEstimateMinimumUnit($value)';}
+}
 @immutable final class PostShippingRatesRequestDeliveryEstimateMinimum {const PostShippingRatesRequestDeliveryEstimateMinimum({required this.unit, required this.value, });
 
-factory PostShippingRatesRequestDeliveryEstimateMinimum.fromJson(Map<String, dynamic> json) { return PostShippingRatesRequestDeliveryEstimateMinimum(
+factory PostShippingRatesRequestDeliveryEstimateMinimum.fromJson(Map<String, dynamic> json) {return PostShippingRatesRequestDeliveryEstimateMinimum(
   unit: PostShippingRatesRequestDeliveryEstimateMinimumUnit.fromJson(json['unit'] as String),
   value: (json['value'] as num).toInt(),
-); }
+);}
 
 final PostShippingRatesRequestDeliveryEstimateMinimumUnit unit;
 
 final int value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'unit': unit.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
-      json.containsKey('value') && json['value'] is num; } 
-PostShippingRatesRequestDeliveryEstimateMinimum copyWith({PostShippingRatesRequestDeliveryEstimateMinimumUnit? unit, int? value, }) { return PostShippingRatesRequestDeliveryEstimateMinimum(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('unit') &&
+      json.containsKey('value') && json['value'] is num;}
+PostShippingRatesRequestDeliveryEstimateMinimum copyWith({PostShippingRatesRequestDeliveryEstimateMinimumUnit? unit, int? value, }) {return PostShippingRatesRequestDeliveryEstimateMinimum(
   unit: unit ?? this.unit,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostShippingRatesRequestDeliveryEstimateMinimum &&
           unit == other.unit &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(unit, value); } 
-@override String toString() { return 'PostShippingRatesRequestDeliveryEstimateMinimum(unit: $unit, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(unit, value);}
+@override String toString() {return 'PostShippingRatesRequestDeliveryEstimateMinimum(unit: $unit, value: $value)';}
+}

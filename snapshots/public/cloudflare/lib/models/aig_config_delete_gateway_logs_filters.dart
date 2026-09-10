@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey._(this.value);
 
-factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) { return switch (json) {
+factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) {return switch (json) {
   'id' => id,
   'created_at' => createdAt,
   'request_content_type' => requestContentType,
@@ -29,7 +29,7 @@ factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) { return swit
   'compatibilityMode' => compatibilityMode,
   'dlp_action' => dlpAction,
   _ => AigConfigDeleteGatewayLogsFiltersKey._(json),
-}; }
+};}
 
 static const AigConfigDeleteGatewayLogsFiltersKey id = AigConfigDeleteGatewayLogsFiltersKey._('id');
 
@@ -85,24 +85,24 @@ static const List<AigConfigDeleteGatewayLogsFiltersKey> values = [id, createdAt,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigDeleteGatewayLogsFiltersKey && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigDeleteGatewayLogsFiltersKey($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigDeleteGatewayLogsFiltersKey && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigDeleteGatewayLogsFiltersKey($value)';}
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersOperator {const AigConfigDeleteGatewayLogsFiltersOperator._(this.value);
 
-factory AigConfigDeleteGatewayLogsFiltersOperator.fromJson(String json) { return switch (json) {
+factory AigConfigDeleteGatewayLogsFiltersOperator.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'neq' => neq,
   'contains' => contains,
   'lt' => lt,
   'gt' => gt,
   _ => AigConfigDeleteGatewayLogsFiltersOperator._(json),
-}; }
+};}
 
 static const AigConfigDeleteGatewayLogsFiltersOperator eq = AigConfigDeleteGatewayLogsFiltersOperator._('eq');
 
@@ -118,21 +118,21 @@ static const List<AigConfigDeleteGatewayLogsFiltersOperator> values = [eq, neq, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigDeleteGatewayLogsFiltersOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigDeleteGatewayLogsFiltersOperator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigDeleteGatewayLogsFiltersOperator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigDeleteGatewayLogsFiltersOperator($value)';}
+}
 @immutable final class AigConfigDeleteGatewayLogsFilters {const AigConfigDeleteGatewayLogsFilters({required this.key, required this.$operator, required this.value, });
 
-factory AigConfigDeleteGatewayLogsFilters.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayLogsFilters(
+factory AigConfigDeleteGatewayLogsFilters.fromJson(Map<String, dynamic> json) {return AigConfigDeleteGatewayLogsFilters(
   key: AigConfigDeleteGatewayLogsFiltersKey.fromJson(json['key'] as String),
   $operator: AigConfigDeleteGatewayLogsFiltersOperator.fromJson(json['operator'] as String),
   value: (json['value'] as List<dynamic>).map((e) => e).toList(),
-); }
+);}
 
 final AigConfigDeleteGatewayLogsFiltersKey key;
 
@@ -140,24 +140,24 @@ final AigConfigDeleteGatewayLogsFiltersOperator $operator;
 
 final List<dynamic> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key.toJson(),
   'operator': $operator.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') &&
       json.containsKey('operator') &&
-      json.containsKey('value'); } 
-AigConfigDeleteGatewayLogsFilters copyWith({AigConfigDeleteGatewayLogsFiltersKey? key, AigConfigDeleteGatewayLogsFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigDeleteGatewayLogsFilters(
+      json.containsKey('value');}
+AigConfigDeleteGatewayLogsFilters copyWith({AigConfigDeleteGatewayLogsFiltersKey? key, AigConfigDeleteGatewayLogsFiltersOperator? $operator, List<dynamic>? value, }) {return AigConfigDeleteGatewayLogsFilters(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigDeleteGatewayLogsFilters &&
           key == other.key &&
           $operator == other.$operator &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
-@override String toString() { return 'AigConfigDeleteGatewayLogsFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
- }
+          listEquals(value, other.value);}
+@override int get hashCode {return Object.hash(key, $operator, Object.hashAll(value));}
+@override String toString() {return 'AigConfigDeleteGatewayLogsFilters(key: $key, \$operator: ${$operator}, value: $value)';}
+}

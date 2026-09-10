@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0 {const RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0({required this.clientAsn, required this.clientAsName, required this.value, });
 
-factory RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0(
+factory RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0(
   clientAsn: (json['clientASN'] as num).toInt(),
   clientAsName: json['clientASName'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final int clientAsn;
 
@@ -15,24 +15,24 @@ final String clientAsName;
 /// A numeric string.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'clientASN': clientAsn,
   'clientASName': clientAsName,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientASN') && json['clientASN'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('clientASN') && json['clientASN'] is num &&
       json.containsKey('clientASName') && json['clientASName'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0 copyWith({int? clientAsn, String? clientAsName, String? value, }) { return RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0(
+      json.containsKey('value') && json['value'] is String;}
+RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0 copyWith({int? clientAsn, String? clientAsName, String? value, }) {return RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0(
   clientAsn: clientAsn ?? this.clientAsn,
   clientAsName: clientAsName ?? this.clientAsName,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0 &&
           clientAsn == other.clientAsn &&
           clientAsName == other.clientAsName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(clientAsn, clientAsName, value); } 
-@override String toString() { return 'RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0(clientAsn: $clientAsn, clientAsName: $clientAsName, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(clientAsn, clientAsName, value);}
+@override String toString() {return 'RadarGetHttpTopAsesByBrowserFamilyResponseResultTop0(clientAsn: $clientAsn, clientAsName: $clientAsName, value: $value)';}
+}

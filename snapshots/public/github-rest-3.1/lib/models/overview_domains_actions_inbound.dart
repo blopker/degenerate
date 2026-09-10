@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OverviewDomainsActionsInbound {const OverviewDomainsActionsInbound({this.fullDomains, this.wildcardDomains, });
 
-factory OverviewDomainsActionsInbound.fromJson(Map<String, dynamic> json) { return OverviewDomainsActionsInbound(
+factory OverviewDomainsActionsInbound.fromJson(Map<String, dynamic> json) {return OverviewDomainsActionsInbound(
   fullDomains: (json['full_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
   wildcardDomains: (json['wildcard_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? fullDomains;
 
 final List<String>? wildcardDomains;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'full_domains': ?fullDomains,
   'wildcard_domains': ?wildcardDomains,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'full_domains', 'wildcard_domains'}.contains(key)); } 
-OverviewDomainsActionsInbound copyWith({List<String>? Function()? fullDomains, List<String>? Function()? wildcardDomains, }) { return OverviewDomainsActionsInbound(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'full_domains', 'wildcard_domains'}.contains(key));}
+OverviewDomainsActionsInbound copyWith({List<String>? Function()? fullDomains, List<String>? Function()? wildcardDomains, }) {return OverviewDomainsActionsInbound(
   fullDomains: fullDomains != null ? fullDomains() : this.fullDomains,
   wildcardDomains: wildcardDomains != null ? wildcardDomains() : this.wildcardDomains,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OverviewDomainsActionsInbound &&
           listEquals(fullDomains, other.fullDomains) &&
-          listEquals(wildcardDomains, other.wildcardDomains); } 
-@override int get hashCode { return Object.hash(Object.hashAll(fullDomains ?? const []), Object.hashAll(wildcardDomains ?? const [])); } 
-@override String toString() { return 'OverviewDomainsActionsInbound(fullDomains: $fullDomains, wildcardDomains: $wildcardDomains)'; } 
- }
+          listEquals(wildcardDomains, other.wildcardDomains);}
+@override int get hashCode {return Object.hash(Object.hashAll(fullDomains ?? const []), Object.hashAll(wildcardDomains ?? const []));}
+@override String toString() {return 'OverviewDomainsActionsInbound(fullDomains: $fullDomains, wildcardDomains: $wildcardDomains)';}
+}

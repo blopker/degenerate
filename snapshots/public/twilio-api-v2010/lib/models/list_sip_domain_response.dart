@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_domain.dart';@immutable final class ListSipDomainResponse {const ListSipDomainResponse({this.domains, this.end, this.firstPageUri, this.nextPageUri = const Omittable.absent(), this.page, this.pageSize, this.previousPageUri = const Omittable.absent(), this.start, this.uri, });
 
-factory ListSipDomainResponse.fromJson(Map<String, dynamic> json) { return ListSipDomainResponse(
+factory ListSipDomainResponse.fromJson(Map<String, dynamic> json) {return ListSipDomainResponse(
   domains: (json['domains'] as List<dynamic>?)?.map((e) => AccountSipSipDomain.fromJson(e as Map<String, dynamic>)).toList(),
   end: json['end'] != null ? (json['end'] as num).toInt() : null,
   firstPageUri: json['first_page_uri'] != null ? Uri.parse(json['first_page_uri'] as String) : null,
@@ -12,7 +12,7 @@ factory ListSipDomainResponse.fromJson(Map<String, dynamic> json) { return ListS
   previousPageUri: json.containsKey('previous_page_uri') ? Omittable(json['previous_page_uri'] != null ? Uri.parse(json['previous_page_uri'] as String) : null) : const Omittable.absent(),
   start: json['start'] != null ? (json['start'] as num).toInt() : null,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
-); }
+);}
 
 final List<AccountSipSipDomain>? domains;
 
@@ -32,7 +32,7 @@ final int? start;
 
 final Uri? uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (domains != null) 'domains': domains?.map((e) => e.toJson()).toList(),
   'end': ?end,
   if (firstPageUri != null) 'first_page_uri': firstPageUri?.toString(),
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (previousPageUri.isPresent) 'previous_page_uri': previousPageUri.value?.toString(),
   'start': ?start,
   if (uri != null) 'uri': uri?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'domains', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
-ListSipDomainResponse copyWith({List<AccountSipSipDomain>? Function()? domains, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) { return ListSipDomainResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'domains', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key));}
+ListSipDomainResponse copyWith({List<AccountSipSipDomain>? Function()? domains, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) {return ListSipDomainResponse(
   domains: domains != null ? domains() : this.domains,
   end: end != null ? end() : this.end,
   firstPageUri: firstPageUri != null ? firstPageUri() : this.firstPageUri,
@@ -54,8 +54,8 @@ ListSipDomainResponse copyWith({List<AccountSipSipDomain>? Function()? domains, 
   previousPageUri: previousPageUri ?? this.previousPageUri,
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListSipDomainResponse &&
           listEquals(domains, other.domains) &&
           end == other.end &&
@@ -65,7 +65,7 @@ ListSipDomainResponse copyWith({List<AccountSipSipDomain>? Function()? domains, 
           pageSize == other.pageSize &&
           previousPageUri == other.previousPageUri &&
           start == other.start &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(domains ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri); } 
-@override String toString() { return 'ListSipDomainResponse(domains: $domains, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)'; } 
- }
+          uri == other.uri;}
+@override int get hashCode {return Object.hash(Object.hashAll(domains ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);}
+@override String toString() {return 'ListSipDomainResponse(domains: $domains, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';}
+}

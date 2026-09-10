@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the message is incomplete.
 @immutable final class MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason._(this.value);
 
-factory MessageObjectIncompleteDetailsReason.fromJson(String json) { return switch (json) {
+factory MessageObjectIncompleteDetailsReason.fromJson(String json) {return switch (json) {
   'content_filter' => contentFilter,
   'max_tokens' => maxTokens,
   'run_cancelled' => runCancelled,
   'run_expired' => runExpired,
   'run_failed' => runFailed,
   _ => MessageObjectIncompleteDetailsReason._(json),
-}; }
+};}
 
 static const MessageObjectIncompleteDetailsReason contentFilter = MessageObjectIncompleteDetailsReason._('content_filter');
 
@@ -26,34 +26,34 @@ static const List<MessageObjectIncompleteDetailsReason> values = [contentFilter,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageObjectIncompleteDetailsReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageObjectIncompleteDetailsReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageObjectIncompleteDetailsReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageObjectIncompleteDetailsReason($value)';}
+}
 /// On an incomplete message, details about why the message is incomplete.
 @immutable final class MessageObjectIncompleteDetails {const MessageObjectIncompleteDetails({required this.reason});
 
-factory MessageObjectIncompleteDetails.fromJson(Map<String, dynamic> json) { return MessageObjectIncompleteDetails(
+factory MessageObjectIncompleteDetails.fromJson(Map<String, dynamic> json) {return MessageObjectIncompleteDetails(
   reason: MessageObjectIncompleteDetailsReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// The reason the message is incomplete.
 final MessageObjectIncompleteDetailsReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason'); } 
-MessageObjectIncompleteDetails copyWith({MessageObjectIncompleteDetailsReason? reason}) { return MessageObjectIncompleteDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reason');}
+MessageObjectIncompleteDetails copyWith({MessageObjectIncompleteDetailsReason? reason}) {return MessageObjectIncompleteDetails(
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MessageObjectIncompleteDetails &&
-          reason == other.reason; } 
-@override int get hashCode { return reason.hashCode; } 
-@override String toString() { return 'MessageObjectIncompleteDetails(reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return reason.hashCode;}
+@override String toString() {return 'MessageObjectIncompleteDetails(reason: $reason)';}
+}

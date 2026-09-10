@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel {const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel._(this.value);
 
-factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel.fromJson(String json) {return switch (json) {
   'city' => city,
   'country' => country,
   'county' => county,
@@ -10,7 +10,7 @@ factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJ
   'multiple' => multiple,
   'state' => state,
   _ => PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel city = PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel._('city');
 
@@ -28,17 +28,17 @@ static const List<PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1Ta
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel($value)';}
+}
 @immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType {const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType._(this.value);
 
-factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType.fromJson(String json) {return switch (json) {
   'amusement_tax' => amusementTax,
   'communications_tax' => communicationsTax,
   'gst' => gst,
@@ -54,7 +54,7 @@ factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataT
   'service_tax' => serviceTax,
   'vat' => vat,
   _ => PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType amusementTax = PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType._('amusement_tax');
 
@@ -88,17 +88,17 @@ static const List<PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1Ta
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType($value)';}
+}
 @immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData {const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData({required this.displayName, required this.inclusive, required this.percentage, this.country, this.description, this.jurisdiction, this.jurisdictionLevel, this.state, this.taxType, });
 
-factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData(
+factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData(
   country: json['country'] as String?,
   description: json['description'] as String?,
   displayName: json['display_name'] as String,
@@ -108,7 +108,7 @@ factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData.
   percentage: (json['percentage'] as num).toDouble(),
   state: json['state'] as String?,
   taxType: json['tax_type'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType.fromJson(json['tax_type'] as String) : null,
-); }
+);}
 
 final String? country;
 
@@ -128,7 +128,7 @@ final String? state;
 
 final PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType? taxType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': ?country,
   'description': ?description,
   'display_name': displayName,
@@ -138,11 +138,11 @@ Map<String, dynamic> toJson() { return {
   'percentage': percentage,
   'state': ?state,
   if (taxType != null) 'tax_type': taxType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('inclusive') && json['inclusive'] is bool &&
-      json.containsKey('percentage') && json['percentage'] is num; } 
-PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData copyWith({String? Function()? country, String? Function()? description, String? displayName, bool? inclusive, String? Function()? jurisdiction, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel? Function()? jurisdictionLevel, double? percentage, String? Function()? state, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType? Function()? taxType, }) { return PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData(
+      json.containsKey('percentage') && json['percentage'] is num;}
+PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData copyWith({String? Function()? country, String? Function()? description, String? displayName, bool? inclusive, String? Function()? jurisdiction, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataJurisdictionLevel? Function()? jurisdictionLevel, double? percentage, String? Function()? state, PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateDataTaxType? Function()? taxType, }) {return PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData(
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
   displayName: displayName ?? this.displayName,
@@ -152,8 +152,8 @@ PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData copyWith
   percentage: percentage ?? this.percentage,
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData &&
           country == other.country &&
           description == other.description &&
@@ -163,7 +163,7 @@ PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData copyWith
           jurisdictionLevel == other.jurisdictionLevel &&
           percentage == other.percentage &&
           state == other.state &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(country, description, displayName, inclusive, jurisdiction, jurisdictionLevel, percentage, state, taxType); } 
-@override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData(country: $country, description: $description, displayName: $displayName, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, percentage: $percentage, state: $state, taxType: $taxType)'; } 
- }
+          taxType == other.taxType;}
+@override int get hashCode {return Object.hash(country, description, displayName, inclusive, jurisdiction, jurisdictionLevel, percentage, state, taxType);}
+@override String toString() {return 'PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxRateData(country: $country, description: $description, displayName: $displayName, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, percentage: $percentage, state: $state, taxType: $taxType)';}
+}

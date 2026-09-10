@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_recurring.dart';import 'quotes_resource_upfront.dart';/// 
 @immutable final class QuotesResourceComputed {const QuotesResourceComputed({required this.upfront, this.recurring = const Omittable.absent(), });
 
-factory QuotesResourceComputed.fromJson(Map<String, dynamic> json) { return QuotesResourceComputed(
+factory QuotesResourceComputed.fromJson(Map<String, dynamic> json) {return QuotesResourceComputed(
   recurring: json.containsKey('recurring') ? Omittable(json['recurring'] != null ? QuotesResourceRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   upfront: QuotesResourceUpfront.fromJson(json['upfront'] as Map<String, dynamic>),
-); }
+);}
 
 /// The definitive totals and line items the customer will be charged on a recurring basis. Takes into account the line items with recurring prices and discounts with `duration=forever` coupons only. Defaults to `null` if no inputted line items with recurring prices.
 final Omittable<QuotesResourceRecurring?> recurring;
 
 final QuotesResourceUpfront upfront;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (recurring.isPresent) 'recurring': recurring.value?.toJson(),
   'upfront': upfront.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('upfront'); } 
-QuotesResourceComputed copyWith({Omittable<QuotesResourceRecurring?>? recurring, QuotesResourceUpfront? upfront, }) { return QuotesResourceComputed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('upfront');}
+QuotesResourceComputed copyWith({Omittable<QuotesResourceRecurring?>? recurring, QuotesResourceUpfront? upfront, }) {return QuotesResourceComputed(
   recurring: recurring ?? this.recurring,
   upfront: upfront ?? this.upfront,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is QuotesResourceComputed &&
           recurring == other.recurring &&
-          upfront == other.upfront; } 
-@override int get hashCode { return Object.hash(recurring, upfront); } 
-@override String toString() { return 'QuotesResourceComputed(recurring: $recurring, upfront: $upfront)'; } 
- }
+          upfront == other.upfront;}
+@override int get hashCode {return Object.hash(recurring, upfront);}
+@override String toString() {return 'QuotesResourceComputed(recurring: $recurring, upfront: $upfront)';}
+}

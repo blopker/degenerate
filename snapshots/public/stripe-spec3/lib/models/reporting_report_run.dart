@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'financial_reporting_finance_report_run_run_parameters.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ReportingReportRunObject {const ReportingReportRunObject._(this.value);
 
-factory ReportingReportRunObject.fromJson(String json) { return switch (json) {
+factory ReportingReportRunObject.fromJson(String json) {return switch (json) {
   'reporting.report_run' => reportingReportRun,
   _ => ReportingReportRunObject._(json),
-}; }
+};}
 
 static const ReportingReportRunObject reportingReportRun = ReportingReportRunObject._('reporting.report_run');
 
@@ -14,14 +14,14 @@ static const List<ReportingReportRunObject> values = [reportingReportRun];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReportingReportRunObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReportingReportRunObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReportingReportRunObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReportingReportRunObject($value)';}
+}
 /// The Report Run object represents an instance of a report type generated with
 /// specific run parameters. Once the object is created, Stripe begins processing the report.
 /// When the report has finished running, it will give you a reference to a file
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// data), and will error when queried without a [live-mode API key](https://docs.stripe.com/keys#test-live-modes).
 @immutable final class ReportingReportRun {const ReportingReportRun({required this.created, required this.id, required this.livemode, required this.object, required this.parameters, required this.reportType, required this.status, this.error = const Omittable.absent(), this.result = const Omittable.absent(), this.succeededAt = const Omittable.absent(), });
 
-factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return ReportingReportRun(
+factory ReportingReportRun.fromJson(Map<String, dynamic> json) {return ReportingReportRun(
   created: (json['created'] as num).toInt(),
   error: json.containsKey('error') ? Omittable(json['error'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
@@ -43,7 +43,7 @@ factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return Reportin
   result: json.containsKey('result') ? Omittable(json['result'] != null ? File.fromJson(json['result'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: json['status'] as String,
   succeededAt: json.containsKey('succeeded_at') ? Omittable(json['succeeded_at'] != null ? (json['succeeded_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -79,7 +79,7 @@ final String status;
 ///  `status=succeeded`). Measured in seconds since the Unix epoch.
 final Omittable<int?> succeededAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   if (error.isPresent) 'error': error.value,
   'id': id,
@@ -90,15 +90,15 @@ Map<String, dynamic> toJson() { return {
   if (result.isPresent) 'result': result.value?.toJson(),
   'status': status,
   if (succeededAt.isPresent) 'succeeded_at': succeededAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('parameters') &&
       json.containsKey('report_type') && json['report_type'] is String &&
-      json.containsKey('status') && json['status'] is String; } 
-ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, Omittable<File?>? result, String? status, Omittable<int?>? succeededAt, }) { return ReportingReportRun(
+      json.containsKey('status') && json['status'] is String;}
+ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, Omittable<File?>? result, String? status, Omittable<int?>? succeededAt, }) {return ReportingReportRun(
   created: created ?? this.created,
   error: error ?? this.error,
   id: id ?? this.id,
@@ -109,8 +109,8 @@ ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id
   result: result ?? this.result,
   status: status ?? this.status,
   succeededAt: succeededAt ?? this.succeededAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReportingReportRun &&
           created == other.created &&
           error == other.error &&
@@ -121,7 +121,7 @@ ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id
           reportType == other.reportType &&
           result == other.result &&
           status == other.status &&
-          succeededAt == other.succeededAt; } 
-@override int get hashCode { return Object.hash(created, error, id, livemode, object, parameters, reportType, result, status, succeededAt); } 
-@override String toString() { return 'ReportingReportRun(created: $created, error: $error, id: $id, livemode: $livemode, object: $object, parameters: $parameters, reportType: $reportType, result: $result, status: $status, succeededAt: $succeededAt)'; } 
- }
+          succeededAt == other.succeededAt;}
+@override int get hashCode {return Object.hash(created, error, id, livemode, object, parameters, reportType, result, status, succeededAt);}
+@override String toString() {return 'ReportingReportRun(created: $created, error: $error, id: $id, livemode: $livemode, object: $object, parameters: $parameters, reportType: $reportType, result: $result, status: $status, succeededAt: $succeededAt)';}
+}

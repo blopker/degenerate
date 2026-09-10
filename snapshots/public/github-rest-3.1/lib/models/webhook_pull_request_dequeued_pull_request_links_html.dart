@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestDequeuedPullRequestLinksHtml {const WebhookPullRequestDequeuedPullRequestLinksHtml({required this.href});
 
-factory WebhookPullRequestDequeuedPullRequestLinksHtml.fromJson(Map<String, dynamic> json) { return WebhookPullRequestDequeuedPullRequestLinksHtml(
+factory WebhookPullRequestDequeuedPullRequestLinksHtml.fromJson(Map<String, dynamic> json) {return WebhookPullRequestDequeuedPullRequestLinksHtml(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-WebhookPullRequestDequeuedPullRequestLinksHtml copyWith({String? href}) { return WebhookPullRequestDequeuedPullRequestLinksHtml(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+WebhookPullRequestDequeuedPullRequestLinksHtml copyWith({String? href}) {return WebhookPullRequestDequeuedPullRequestLinksHtml(
   href: href ?? this.href,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestDequeuedPullRequestLinksHtml &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'WebhookPullRequestDequeuedPullRequestLinksHtml(href: $href)'; } 
- }
+          href == other.href;}
+@override int get hashCode {return href.hashCode;}
+@override String toString() {return 'WebhookPullRequestDequeuedPullRequestLinksHtml(href: $href)';}
+}

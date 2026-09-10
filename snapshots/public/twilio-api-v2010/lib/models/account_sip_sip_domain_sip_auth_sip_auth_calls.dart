@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipAuthSipAuthCalls {const AccountSipSipDomainSipAuthSipAuthCalls();
 
-factory AccountSipSipDomainSipAuthSipAuthCalls.fromJson(Map<String, dynamic> _) { return const AccountSipSipDomainSipAuthSipAuthCalls(); }
+factory AccountSipSipDomainSipAuthSipAuthCalls.fromJson(Map<String, dynamic> _) {return const AccountSipSipDomainSipAuthSipAuthCalls();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountSipSipDomainSipAuthSipAuthCalls copyWith() { return const AccountSipSipDomainSipAuthSipAuthCalls(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+AccountSipSipDomainSipAuthSipAuthCalls copyWith() {return const AccountSipSipDomainSipAuthSipAuthCalls(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is AccountSipSipDomainSipAuthSipAuthCalls; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'AccountSipSipDomainSipAuthSipAuthCalls()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is AccountSipSipDomainSipAuthSipAuthCalls;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'AccountSipSipDomainSipAuthSipAuthCalls()';}
+}

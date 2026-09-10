@@ -11,7 +11,7 @@ final class Api20100401AddOnResultApi with ApiExecutor {const Api20100401AddOnRe
 /// Fetch an instance of an AddOnResult
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{Sid}.json`
-Future<ApiResult<AccountRecordingRecordingAddOnResult, Never>> fetchRecordingAddOnResult({required String accountSid, required String referenceSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountRecordingRecordingAddOnResult, Never>> fetchRecordingAddOnResult({required String accountSid, required String referenceSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,18 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountRecordingRecordingAddOnResult.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountRecordingRecordingAddOnResult.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a result and purge all associated Payloads
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{Sid}.json`
-Future<ApiResult<void, Never>> deleteRecordingAddOnResult({required String accountSid, required String referenceSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteRecordingAddOnResult({required String accountSid, required String referenceSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -40,15 +35,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of results belonging to the recording
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults.json`
-Future<ApiResult<ListRecordingAddOnResultResponse, Never>> listRecordingAddOnResult({required String accountSid, required String referenceSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListRecordingAddOnResultResponse, Never>> listRecordingAddOnResult({required String accountSid, required String referenceSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -71,12 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListRecordingAddOnResultResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListRecordingAddOnResultResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

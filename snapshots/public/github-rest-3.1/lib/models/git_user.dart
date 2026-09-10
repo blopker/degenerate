@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
 @immutable final class GitUser {const GitUser({this.name, this.email, this.date, });
 
-factory GitUser.fromJson(Map<String, dynamic> json) { return GitUser(
+factory GitUser.fromJson(Map<String, dynamic> json) {return GitUser(
   name: json['name'] as String?,
   email: json['email'] as String?,
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-); }
+);}
 
 final String? name;
 
@@ -15,22 +15,22 @@ final String? email;
 
 final DateTime? date;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'email': ?email,
   if (date != null) 'date': date?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'email', 'date'}.contains(key)); } 
-GitUser copyWith({String? Function()? name, String? Function()? email, DateTime? Function()? date, }) { return GitUser(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'email', 'date'}.contains(key));}
+GitUser copyWith({String? Function()? name, String? Function()? email, DateTime? Function()? date, }) {return GitUser(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
   date: date != null ? date() : this.date,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitUser &&
           name == other.name &&
           email == other.email &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(name, email, date); } 
-@override String toString() { return 'GitUser(name: $name, email: $email, date: $date)'; } 
- }
+          date == other.date;}
+@override int get hashCode {return Object.hash(name, email, date);}
+@override String toString() {return 'GitUser(name: $name, email: $email, date: $date)';}
+}

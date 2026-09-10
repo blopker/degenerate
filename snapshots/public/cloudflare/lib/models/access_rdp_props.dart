@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_cors_headers.dart';import 'access_custom_deny_message.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_destinations2.dart';import 'access_domain.dart';import 'access_enable_binding_cookie.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_mfa_config.dart';import 'access_oauth_configuration.dart';import 'access_options_preflight_bypass.dart';import 'access_path_cookie_attribute.dart';import 'access_read_service_tokens_from_header.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_allow_authenticate_via_warp.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_scim_config.dart';import 'access_service_auth401_redirect.dart';import 'access_skip_interstitial.dart';import 'access_target_criteria_self_hosted_app.dart';import 'access_type.dart';import 'access_use_clientless_isolation_app_launcher_url.dart';import 'private_destination.dart';import 'public_destination.dart';import 'via_mcp_server_portal_destination.dart';/// Contains the targets secured by the application.
 @immutable final class AccessRdpProps {const AccessRdpProps({required this.targetCriteria, required this.domain, required this.type, this.allowAuthenticateViaWarp, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.mfaConfig, this.name, this.oauthConfiguration, this.optionsPreflightBypass, this.pathCookieAttribute, this.readServiceTokensFromHeader, this.sameSiteCookieAttribute, this.scimConfig, this.selfHostedDomains, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.tags, this.useClientlessIsolationAppLauncherUrl, });
 
-factory AccessRdpProps.fromJson(Map<String, dynamic> json) { return AccessRdpProps(
+factory AccessRdpProps.fromJson(Map<String, dynamic> json) {return AccessRdpProps(
   targetCriteria: (json['target_criteria'] as List<dynamic>).map((e) => AccessTargetCriteriaSelfHostedApp.fromJson(e as Map<String, dynamic>)).toList(),
   allowAuthenticateViaWarp: json['allow_authenticate_via_warp'] != null ? AccessSchemasAllowAuthenticateViaWarp.fromJson(json['allow_authenticate_via_warp'] as bool) : null,
   allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,
@@ -35,7 +35,7 @@ factory AccessRdpProps.fromJson(Map<String, dynamic> json) { return AccessRdpPro
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: AccessType.fromJson(json['type'] as String),
   useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
-); }
+);}
 
 final List<AccessTargetCriteriaSelfHostedApp> targetCriteria;
 
@@ -114,7 +114,7 @@ final AccessType type;
 
 final AccessUseClientlessIsolationAppLauncherUrl? useClientlessIsolationAppLauncherUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'target_criteria': targetCriteria.map((e) => e.toJson()).toList(),
   if (allowAuthenticateViaWarp != null) 'allow_authenticate_via_warp': allowAuthenticateViaWarp?.toJson(),
   if (allowIframe != null) 'allow_iframe': allowIframe?.toJson(),
@@ -146,11 +146,11 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   'type': type.toJson(),
   if (useClientlessIsolationAppLauncherUrl != null) 'use_clientless_isolation_app_launcher_url': useClientlessIsolationAppLauncherUrl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_criteria') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_criteria') &&
       json.containsKey('domain') &&
-      json.containsKey('type'); } 
-AccessRdpProps copyWith({List<AccessTargetCriteriaSelfHostedApp>? targetCriteria, AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessMfaConfig? Function()? mfaConfig, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessPathCookieAttribute? Function()? pathCookieAttribute, AccessReadServiceTokensFromHeader? Function()? readServiceTokensFromHeader, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, List<String>? Function()? selfHostedDomains, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, List<String>? Function()? tags, AccessType? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) { return AccessRdpProps(
+      json.containsKey('type');}
+AccessRdpProps copyWith({List<AccessTargetCriteriaSelfHostedApp>? targetCriteria, AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessMfaConfig? Function()? mfaConfig, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessPathCookieAttribute? Function()? pathCookieAttribute, AccessReadServiceTokensFromHeader? Function()? readServiceTokensFromHeader, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, List<String>? Function()? selfHostedDomains, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, List<String>? Function()? tags, AccessType? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) {return AccessRdpProps(
   targetCriteria: targetCriteria ?? this.targetCriteria,
   allowAuthenticateViaWarp: allowAuthenticateViaWarp != null ? allowAuthenticateViaWarp() : this.allowAuthenticateViaWarp,
   allowIframe: allowIframe != null ? allowIframe() : this.allowIframe,
@@ -182,8 +182,8 @@ AccessRdpProps copyWith({List<AccessTargetCriteriaSelfHostedApp>? targetCriteria
   tags: tags != null ? tags() : this.tags,
   type: type ?? this.type,
   useClientlessIsolationAppLauncherUrl: useClientlessIsolationAppLauncherUrl != null ? useClientlessIsolationAppLauncherUrl() : this.useClientlessIsolationAppLauncherUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessRdpProps &&
           listEquals(targetCriteria, other.targetCriteria) &&
           allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
@@ -215,7 +215,7 @@ AccessRdpProps copyWith({List<AccessTargetCriteriaSelfHostedApp>? targetCriteria
           skipInterstitial == other.skipInterstitial &&
           listEquals(tags, other.tags) &&
           type == other.type &&
-          useClientlessIsolationAppLauncherUrl == other.useClientlessIsolationAppLauncherUrl; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(targetCriteria), allowAuthenticateViaWarp, allowIframe, Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, corsHeaders, customDenyMessage, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), Object.hashAll(destinations ?? const []), domain, enableBindingCookie, httpOnlyCookieAttribute, logoUrl, mfaConfig, name, oauthConfiguration, optionsPreflightBypass, pathCookieAttribute, readServiceTokensFromHeader, sameSiteCookieAttribute, scimConfig, Object.hashAll(selfHostedDomains ?? const []), serviceAuth401Redirect, sessionDuration, skipInterstitial, Object.hashAll(tags ?? const []), type, useClientlessIsolationAppLauncherUrl]); } 
-@override String toString() { return 'AccessRdpProps(targetCriteria: $targetCriteria, allowAuthenticateViaWarp: $allowAuthenticateViaWarp, allowIframe: $allowIframe, allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, corsHeaders: $corsHeaders, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, destinations: $destinations, domain: $domain, enableBindingCookie: $enableBindingCookie, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, mfaConfig: $mfaConfig, name: $name, oauthConfiguration: $oauthConfiguration, optionsPreflightBypass: $optionsPreflightBypass, pathCookieAttribute: $pathCookieAttribute, readServiceTokensFromHeader: $readServiceTokensFromHeader, sameSiteCookieAttribute: $sameSiteCookieAttribute, scimConfig: $scimConfig, selfHostedDomains: $selfHostedDomains, serviceAuth401Redirect: $serviceAuth401Redirect, sessionDuration: $sessionDuration, skipInterstitial: $skipInterstitial, tags: $tags, type: $type, useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl)'; } 
- }
+          useClientlessIsolationAppLauncherUrl == other.useClientlessIsolationAppLauncherUrl;}
+@override int get hashCode {return Object.hashAll([Object.hashAll(targetCriteria), allowAuthenticateViaWarp, allowIframe, Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, corsHeaders, customDenyMessage, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), Object.hashAll(destinations ?? const []), domain, enableBindingCookie, httpOnlyCookieAttribute, logoUrl, mfaConfig, name, oauthConfiguration, optionsPreflightBypass, pathCookieAttribute, readServiceTokensFromHeader, sameSiteCookieAttribute, scimConfig, Object.hashAll(selfHostedDomains ?? const []), serviceAuth401Redirect, sessionDuration, skipInterstitial, Object.hashAll(tags ?? const []), type, useClientlessIsolationAppLauncherUrl]);}
+@override String toString() {return 'AccessRdpProps(targetCriteria: $targetCriteria, allowAuthenticateViaWarp: $allowAuthenticateViaWarp, allowIframe: $allowIframe, allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, corsHeaders: $corsHeaders, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, destinations: $destinations, domain: $domain, enableBindingCookie: $enableBindingCookie, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, mfaConfig: $mfaConfig, name: $name, oauthConfiguration: $oauthConfiguration, optionsPreflightBypass: $optionsPreflightBypass, pathCookieAttribute: $pathCookieAttribute, readServiceTokensFromHeader: $readServiceTokensFromHeader, sameSiteCookieAttribute: $sameSiteCookieAttribute, scimConfig: $scimConfig, selfHostedDomains: $selfHostedDomains, serviceAuth401Redirect: $serviceAuth401Redirect, sessionDuration: $sessionDuration, skipInterstitial: $skipInterstitial, tags: $tags, type: $type, useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl)';}
+}

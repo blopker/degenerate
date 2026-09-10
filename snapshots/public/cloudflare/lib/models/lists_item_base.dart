@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_created_on.dart';import 'lists_item_comment.dart';import 'lists_item_id.dart';import 'lists_modified_on.dart';@immutable final class ListsItemBase {const ListsItemBase({required this.createdOn, required this.id, required this.modifiedOn, this.comment, });
 
-factory ListsItemBase.fromJson(Map<String, dynamic> json) { return ListsItemBase(
+factory ListsItemBase.fromJson(Map<String, dynamic> json) {return ListsItemBase(
   comment: json['comment'] != null ? ListsItemComment.fromJson(json['comment'] as String) : null,
   createdOn: ListsCreatedOn.fromJson(json['created_on'] as String),
   id: ListsItemId.fromJson(json['id'] as String),
   modifiedOn: ListsModifiedOn.fromJson(json['modified_on'] as String),
-); }
+);}
 
 final ListsItemComment? comment;
 
@@ -18,27 +18,27 @@ final ListsItemId id;
 
 final ListsModifiedOn modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   'created_on': createdOn.toJson(),
   'id': id.toJson(),
   'modified_on': modifiedOn.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') &&
       json.containsKey('id') &&
-      json.containsKey('modified_on'); } 
-ListsItemBase copyWith({ListsItemComment? Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsItemBase(
+      json.containsKey('modified_on');}
+ListsItemBase copyWith({ListsItemComment? Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) {return ListsItemBase(
   comment: comment != null ? comment() : this.comment,
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListsItemBase &&
           comment == other.comment &&
           createdOn == other.createdOn &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(comment, createdOn, id, modifiedOn); } 
-@override String toString() { return 'ListsItemBase(comment: $comment, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)'; } 
- }
+          modifiedOn == other.modifiedOn;}
+@override int get hashCode {return Object.hash(comment, createdOn, id, modifiedOn);}
+@override String toString() {return 'ListsItemBase(comment: $comment, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)';}
+}

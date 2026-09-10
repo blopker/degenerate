@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'refund.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class ChargeRefundsObject {const ChargeRefundsObject._(this.value);
 
-factory ChargeRefundsObject.fromJson(String json) { return switch (json) {
+factory ChargeRefundsObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => ChargeRefundsObject._(json),
-}; }
+};}
 
 static const ChargeRefundsObject list = ChargeRefundsObject._('list');
 
@@ -14,23 +14,23 @@ static const List<ChargeRefundsObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChargeRefundsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChargeRefundsObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChargeRefundsObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChargeRefundsObject($value)';}
+}
 /// A list of refunds that have been applied to the charge.
 @immutable final class ChargeRefunds {const ChargeRefunds({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory ChargeRefunds.fromJson(Map<String, dynamic> json) { return ChargeRefunds(
+factory ChargeRefunds.fromJson(Map<String, dynamic> json) {return ChargeRefunds(
   data: (json['data'] as List<dynamic>).map((e) => Refund.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: ChargeRefundsObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<Refund> data;
@@ -44,28 +44,28 @@ final ChargeRefundsObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-ChargeRefunds copyWith({List<Refund>? data, bool? hasMore, ChargeRefundsObject? object, String? url, }) { return ChargeRefunds(
+      json.containsKey('url') && json['url'] is String;}
+ChargeRefunds copyWith({List<Refund>? data, bool? hasMore, ChargeRefundsObject? object, String? url, }) {return ChargeRefunds(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChargeRefunds &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'ChargeRefunds(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'ChargeRefunds(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

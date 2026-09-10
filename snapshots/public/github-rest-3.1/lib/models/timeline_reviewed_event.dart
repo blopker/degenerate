@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'simple_user.dart';import 'timeline_reviewed_event_links.dart';/// Timeline Reviewed Event
 @immutable final class TimelineReviewedEvent {const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.updatedAt = const Omittable.absent(), this.bodyHtml, this.bodyText, });
 
-factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return TimelineReviewedEvent(
+factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) {return TimelineReviewedEvent(
   event: json['event'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -19,7 +19,7 @@ factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return Timel
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-); }
+);}
 
 final String event;
 
@@ -55,7 +55,7 @@ final String? bodyText;
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event,
   'id': id,
   'node_id': nodeId,
@@ -71,8 +71,8 @@ Map<String, dynamic> toJson() { return {
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
   'author_association': authorAssociation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') && json['event'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('user') &&
@@ -82,8 +82,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('_links') &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('author_association'); } 
-TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, TimelineReviewedEventLinks? links, DateTime? Function()? submittedAt, Omittable<DateTime?>? updatedAt, String? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
+      json.containsKey('author_association');}
+TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, TimelineReviewedEventLinks? links, DateTime? Function()? submittedAt, Omittable<DateTime?>? updatedAt, String? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) {return TimelineReviewedEvent(
   event: event ?? this.event,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -99,8 +99,8 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TimelineReviewedEvent &&
           event == other.event &&
           id == other.id &&
@@ -116,7 +116,7 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
           commitId == other.commitId &&
           bodyHtml == other.bodyHtml &&
           bodyText == other.bodyText &&
-          authorAssociation == other.authorAssociation; } 
-@override int get hashCode { return Object.hash(event, id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, updatedAt, commitId, bodyHtml, bodyText, authorAssociation); } 
-@override String toString() { return 'TimelineReviewedEvent(event: $event, id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, updatedAt: $updatedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)'; } 
- }
+          authorAssociation == other.authorAssociation;}
+@override int get hashCode {return Object.hash(event, id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, updatedAt, commitId, bodyHtml, bodyText, authorAssociation);}
+@override String toString() {return 'TimelineReviewedEvent(event: $event, id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, updatedAt: $updatedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)';}
+}

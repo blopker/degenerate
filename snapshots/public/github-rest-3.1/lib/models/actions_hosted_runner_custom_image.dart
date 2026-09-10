@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of a custom runner image
 @immutable final class ActionsHostedRunnerCustomImage {const ActionsHostedRunnerCustomImage({required this.id, required this.platform, required this.totalVersionsSize, required this.name, required this.source, required this.versionsCount, required this.latestVersion, required this.state, });
 
-factory ActionsHostedRunnerCustomImage.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerCustomImage(
+factory ActionsHostedRunnerCustomImage.fromJson(Map<String, dynamic> json) {return ActionsHostedRunnerCustomImage(
   id: (json['id'] as num).toInt(),
   platform: json['platform'] as String,
   totalVersionsSize: (json['total_versions_size'] as num).toInt(),
@@ -12,7 +12,7 @@ factory ActionsHostedRunnerCustomImage.fromJson(Map<String, dynamic> json) { ret
   versionsCount: (json['versions_count'] as num).toInt(),
   latestVersion: json['latest_version'] as String,
   state: json['state'] as String,
-); }
+);}
 
 /// The ID of the image. Use this ID for the `image` parameter when creating a new larger runner.
 final int id;
@@ -38,7 +38,7 @@ final String latestVersion;
 /// The number of image versions associated with the image.
 final String state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'platform': platform,
   'total_versions_size': totalVersionsSize,
@@ -47,16 +47,16 @@ Map<String, dynamic> toJson() { return {
   'versions_count': versionsCount,
   'latest_version': latestVersion,
   'state': state,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('platform') && json['platform'] is String &&
       json.containsKey('total_versions_size') && json['total_versions_size'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('versions_count') && json['versions_count'] is num &&
       json.containsKey('latest_version') && json['latest_version'] is String &&
-      json.containsKey('state') && json['state'] is String; } 
-ActionsHostedRunnerCustomImage copyWith({int? id, String? platform, int? totalVersionsSize, String? name, String? source, int? versionsCount, String? latestVersion, String? state, }) { return ActionsHostedRunnerCustomImage(
+      json.containsKey('state') && json['state'] is String;}
+ActionsHostedRunnerCustomImage copyWith({int? id, String? platform, int? totalVersionsSize, String? name, String? source, int? versionsCount, String? latestVersion, String? state, }) {return ActionsHostedRunnerCustomImage(
   id: id ?? this.id,
   platform: platform ?? this.platform,
   totalVersionsSize: totalVersionsSize ?? this.totalVersionsSize,
@@ -65,8 +65,8 @@ ActionsHostedRunnerCustomImage copyWith({int? id, String? platform, int? totalVe
   versionsCount: versionsCount ?? this.versionsCount,
   latestVersion: latestVersion ?? this.latestVersion,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsHostedRunnerCustomImage &&
           id == other.id &&
           platform == other.platform &&
@@ -75,7 +75,7 @@ ActionsHostedRunnerCustomImage copyWith({int? id, String? platform, int? totalVe
           source == other.source &&
           versionsCount == other.versionsCount &&
           latestVersion == other.latestVersion &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(id, platform, totalVersionsSize, name, source, versionsCount, latestVersion, state); } 
-@override String toString() { return 'ActionsHostedRunnerCustomImage(id: $id, platform: $platform, totalVersionsSize: $totalVersionsSize, name: $name, source: $source, versionsCount: $versionsCount, latestVersion: $latestVersion, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(id, platform, totalVersionsSize, name, source, versionsCount, latestVersion, state);}
+@override String toString() {return 'ActionsHostedRunnerCustomImage(id: $id, platform: $platform, totalVersionsSize: $totalVersionsSize, name: $name, source: $source, versionsCount: $versionsCount, latestVersion: $latestVersion, state: $state)';}
+}

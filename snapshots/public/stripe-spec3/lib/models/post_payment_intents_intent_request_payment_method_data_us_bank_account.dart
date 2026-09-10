@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(String json) {return switch (json) {
   'company' => company,
   'individual' => individual,
   _ => PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType company = PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType._('company');
 
@@ -16,21 +16,21 @@ static const List<PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType($value)';}
+}
 @immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType._(this.value);
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'savings' => savings,
   _ => PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType checking = PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType._('checking');
 
@@ -40,23 +40,23 @@ static const List<PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType($value)';}
+}
 @immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount(
+factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String?,
   accountType: json['account_type'] != null ? PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
   financialConnectionsAccount: json['financial_connections_account'] as String?,
   routingNumber: json['routing_number'] as String?,
-); }
+);}
 
 final PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType? accountHolderType;
 
@@ -68,28 +68,28 @@ final String? financialConnectionsAccount;
 
 final String? routingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
   'account_number': ?accountNumber,
   if (accountType != null) 'account_type': accountType?.toJson(),
   'financial_connections_account': ?financialConnectionsAccount,
   'routing_number': ?routingNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_number', 'account_type', 'financial_connections_account', 'routing_number'}.contains(key)); } 
-PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? accountNumber, PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType? Function()? accountType, String? Function()? financialConnectionsAccount, String? Function()? routingNumber, }) { return PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_holder_type', 'account_number', 'account_type', 'financial_connections_account', 'routing_number'}.contains(key));}
+PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? accountNumber, PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType? Function()? accountType, String? Function()? financialConnectionsAccount, String? Function()? routingNumber, }) {return PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   accountType: accountType != null ? accountType() : this.accountType,
   financialConnectionsAccount: financialConnectionsAccount != null ? financialConnectionsAccount() : this.financialConnectionsAccount,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount &&
           accountHolderType == other.accountHolderType &&
           accountNumber == other.accountNumber &&
           accountType == other.accountType &&
           financialConnectionsAccount == other.financialConnectionsAccount &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderType, accountNumber, accountType, financialConnectionsAccount, routingNumber); } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount(accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, financialConnectionsAccount: $financialConnectionsAccount, routingNumber: $routingNumber)'; } 
- }
+          routingNumber == other.routingNumber;}
+@override int get hashCode {return Object.hash(accountHolderType, accountNumber, accountType, financialConnectionsAccount, routingNumber);}
+@override String toString() {return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount(accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, financialConnectionsAccount: $financialConnectionsAccount, routingNumber: $routingNumber)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByBrowserFamilyOs {const RadarGetHttpTopLocationsByBrowserFamilyOs._(this.value);
 
-factory RadarGetHttpTopLocationsByBrowserFamilyOs.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByBrowserFamilyOs.fromJson(String json) {return switch (json) {
   'WINDOWS' => windows,
   'MACOSX' => macosx,
   'IOS' => ios,
@@ -11,7 +11,7 @@ factory RadarGetHttpTopLocationsByBrowserFamilyOs.fromJson(String json) { return
   'LINUX' => linux,
   'SMART_TV' => smartTv,
   _ => RadarGetHttpTopLocationsByBrowserFamilyOs._(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByBrowserFamilyOs windows = RadarGetHttpTopLocationsByBrowserFamilyOs._('WINDOWS');
 
@@ -31,11 +31,11 @@ static const List<RadarGetHttpTopLocationsByBrowserFamilyOs> values = [windows, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopLocationsByBrowserFamilyOs && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopLocationsByBrowserFamilyOs($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopLocationsByBrowserFamilyOs && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopLocationsByBrowserFamilyOs($value)';}
+}

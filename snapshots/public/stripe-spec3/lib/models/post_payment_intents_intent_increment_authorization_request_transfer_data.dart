@@ -4,22 +4,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The parameters u
 /// Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
 @immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData {const PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData({this.amount});
 
-factory PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData(
+factory PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-); }
+);}
 
 final int? amount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount'}.contains(key)); } 
-PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData copyWith({int? Function()? amount}) { return PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount'}.contains(key));}
+PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData copyWith({int? Function()? amount}) {return PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData(
   amount: amount != null ? amount() : this.amount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData &&
-          amount == other.amount; } 
-@override int get hashCode { return amount.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData(amount: $amount)'; } 
- }
+          amount == other.amount;}
+@override int get hashCode {return amount.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentIncrementAuthorizationRequestTransferData(amount: $amount)';}
+}

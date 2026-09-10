@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryResultsTraces {const WorkersObservabilityQueryResultsTraces({required this.rootSpanName, required this.rootTransactionName, required this.service, required this.spans, required this.traceDurationMs, required this.traceEndMs, required this.traceId, required this.traceStartMs, this.errors, });
 
-factory WorkersObservabilityQueryResultsTraces.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsTraces(
+factory WorkersObservabilityQueryResultsTraces.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryResultsTraces(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => e as String).toList(),
   rootSpanName: json['rootSpanName'] as String,
   rootTransactionName: json['rootTransactionName'] as String,
@@ -12,7 +12,7 @@ factory WorkersObservabilityQueryResultsTraces.fromJson(Map<String, dynamic> jso
   traceEndMs: (json['traceEndMs'] as num).toDouble(),
   traceId: json['traceId'] as String,
   traceStartMs: (json['traceStartMs'] as num).toDouble(),
-); }
+);}
 
 final List<String>? errors;
 
@@ -32,7 +32,7 @@ final String traceId;
 
 final double traceStartMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': ?errors,
   'rootSpanName': rootSpanName,
   'rootTransactionName': rootTransactionName,
@@ -42,16 +42,16 @@ Map<String, dynamic> toJson() { return {
   'traceEndMs': traceEndMs,
   'traceId': traceId,
   'traceStartMs': traceStartMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('rootSpanName') && json['rootSpanName'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('rootSpanName') && json['rootSpanName'] is String &&
       json.containsKey('rootTransactionName') && json['rootTransactionName'] is String &&
       json.containsKey('service') &&
       json.containsKey('spans') && json['spans'] is num &&
       json.containsKey('traceDurationMs') && json['traceDurationMs'] is num &&
       json.containsKey('traceEndMs') && json['traceEndMs'] is num &&
       json.containsKey('traceId') && json['traceId'] is String &&
-      json.containsKey('traceStartMs') && json['traceStartMs'] is num; } 
-WorkersObservabilityQueryResultsTraces copyWith({List<String>? Function()? errors, String? rootSpanName, String? rootTransactionName, List<String>? service, double? spans, double? traceDurationMs, double? traceEndMs, String? traceId, double? traceStartMs, }) { return WorkersObservabilityQueryResultsTraces(
+      json.containsKey('traceStartMs') && json['traceStartMs'] is num;}
+WorkersObservabilityQueryResultsTraces copyWith({List<String>? Function()? errors, String? rootSpanName, String? rootTransactionName, List<String>? service, double? spans, double? traceDurationMs, double? traceEndMs, String? traceId, double? traceStartMs, }) {return WorkersObservabilityQueryResultsTraces(
   errors: errors != null ? errors() : this.errors,
   rootSpanName: rootSpanName ?? this.rootSpanName,
   rootTransactionName: rootTransactionName ?? this.rootTransactionName,
@@ -61,8 +61,8 @@ WorkersObservabilityQueryResultsTraces copyWith({List<String>? Function()? error
   traceEndMs: traceEndMs ?? this.traceEndMs,
   traceId: traceId ?? this.traceId,
   traceStartMs: traceStartMs ?? this.traceStartMs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryResultsTraces &&
           listEquals(errors, other.errors) &&
           rootSpanName == other.rootSpanName &&
@@ -72,7 +72,7 @@ WorkersObservabilityQueryResultsTraces copyWith({List<String>? Function()? error
           traceDurationMs == other.traceDurationMs &&
           traceEndMs == other.traceEndMs &&
           traceId == other.traceId &&
-          traceStartMs == other.traceStartMs; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), rootSpanName, rootTransactionName, Object.hashAll(service), spans, traceDurationMs, traceEndMs, traceId, traceStartMs); } 
-@override String toString() { return 'WorkersObservabilityQueryResultsTraces(errors: $errors, rootSpanName: $rootSpanName, rootTransactionName: $rootTransactionName, service: $service, spans: $spans, traceDurationMs: $traceDurationMs, traceEndMs: $traceEndMs, traceId: $traceId, traceStartMs: $traceStartMs)'; } 
- }
+          traceStartMs == other.traceStartMs;}
+@override int get hashCode {return Object.hash(Object.hashAll(errors ?? const []), rootSpanName, rootTransactionName, Object.hashAll(service), spans, traceDurationMs, traceEndMs, traceId, traceStartMs);}
+@override String toString() {return 'WorkersObservabilityQueryResultsTraces(errors: $errors, rootSpanName: $rootSpanName, rootTransactionName: $rootTransactionName, service: $service, spans: $spans, traceDurationMs: $traceDurationMs, traceEndMs: $traceEndMs, traceId: $traceId, traceStartMs: $traceStartMs)';}
+}

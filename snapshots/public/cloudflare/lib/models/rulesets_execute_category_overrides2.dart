@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_execute_sensitivity_level.dart';import 'rulesets_rule_action.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';/// A category-level override.
 @immutable final class RulesetsExecuteCategoryOverrides2 {const RulesetsExecuteCategoryOverrides2({required this.category, this.action, this.enabled, this.sensitivityLevel, });
 
-factory RulesetsExecuteCategoryOverrides2.fromJson(Map<String, dynamic> json) { return RulesetsExecuteCategoryOverrides2(
+factory RulesetsExecuteCategoryOverrides2.fromJson(Map<String, dynamic> json) {return RulesetsExecuteCategoryOverrides2(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
   category: RulesetsRuleCategory.fromJson(json['category'] as String),
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
   sensitivityLevel: json['sensitivity_level'] != null ? RulesetsExecuteSensitivityLevel.fromJson(json['sensitivity_level'] as String) : null,
-); }
+);}
 
 /// The action to override rules in the category with.
 final RulesetsRuleAction? action;
@@ -22,25 +22,25 @@ final RulesetsRuleEnabled? enabled;
 /// The sensitivity level to use for rules in the category. This option is only applicable for DDoS phases.
 final RulesetsExecuteSensitivityLevel? sensitivityLevel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'category': category.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (sensitivityLevel != null) 'sensitivity_level': sensitivityLevel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('category'); } 
-RulesetsExecuteCategoryOverrides2 copyWith({RulesetsRuleAction? Function()? action, RulesetsRuleCategory? category, RulesetsRuleEnabled? Function()? enabled, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) { return RulesetsExecuteCategoryOverrides2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('category');}
+RulesetsExecuteCategoryOverrides2 copyWith({RulesetsRuleAction? Function()? action, RulesetsRuleCategory? category, RulesetsRuleEnabled? Function()? enabled, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) {return RulesetsExecuteCategoryOverrides2(
   action: action != null ? action() : this.action,
   category: category ?? this.category,
   enabled: enabled != null ? enabled() : this.enabled,
   sensitivityLevel: sensitivityLevel != null ? sensitivityLevel() : this.sensitivityLevel,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsExecuteCategoryOverrides2 &&
           action == other.action &&
           category == other.category &&
           enabled == other.enabled &&
-          sensitivityLevel == other.sensitivityLevel; } 
-@override int get hashCode { return Object.hash(action, category, enabled, sensitivityLevel); } 
-@override String toString() { return 'RulesetsExecuteCategoryOverrides2(action: $action, category: $category, enabled: $enabled, sensitivityLevel: $sensitivityLevel)'; } 
- }
+          sensitivityLevel == other.sensitivityLevel;}
+@override int get hashCode {return Object.hash(action, category, enabled, sensitivityLevel);}
+@override String toString() {return 'RulesetsExecuteCategoryOverrides2(action: $action, category: $category, enabled: $enabled, sensitivityLevel: $sensitivityLevel)';}
+}

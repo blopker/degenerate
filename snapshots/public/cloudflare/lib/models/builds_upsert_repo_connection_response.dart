@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_created_on.dart';import 'builds_deleted_on.dart';import 'builds_modified_on.dart';import 'builds_provider_account_id.dart';import 'builds_provider_account_name.dart';import 'builds_repo_connection_uuid.dart';import 'builds_repo_id.dart';import 'builds_repo_name.dart';import 'builds_scm_provider_type.dart';@immutable final class BuildsUpsertRepoConnectionResponse {const BuildsUpsertRepoConnectionResponse({this.createdOn, this.deletedOn = const Omittable.absent(), this.modifiedOn, this.providerAccountId, this.providerAccountName, this.providerType, this.repoConnectionUuid, this.repoId, this.repoName, });
 
-factory BuildsUpsertRepoConnectionResponse.fromJson(Map<String, dynamic> json) { return BuildsUpsertRepoConnectionResponse(
+factory BuildsUpsertRepoConnectionResponse.fromJson(Map<String, dynamic> json) {return BuildsUpsertRepoConnectionResponse(
   createdOn: json['created_on'] != null ? BuildsCreatedOn.fromJson(json['created_on'] as String) : null,
   deletedOn: json.containsKey('deleted_on') ? Omittable(json['deleted_on'] != null ? BuildsDeletedOn.fromJson(json['deleted_on'] as String) : null) : const Omittable.absent(),
   modifiedOn: json['modified_on'] != null ? BuildsModifiedOn.fromJson(json['modified_on'] as String) : null,
@@ -12,7 +12,7 @@ factory BuildsUpsertRepoConnectionResponse.fromJson(Map<String, dynamic> json) {
   repoConnectionUuid: json['repo_connection_uuid'] != null ? BuildsRepoConnectionUuid.fromJson(json['repo_connection_uuid'] as String) : null,
   repoId: json['repo_id'] != null ? BuildsRepoId.fromJson(json['repo_id'] as String) : null,
   repoName: json['repo_name'] != null ? BuildsRepoName.fromJson(json['repo_name'] as String) : null,
-); }
+);}
 
 final BuildsCreatedOn? createdOn;
 
@@ -32,7 +32,7 @@ final BuildsRepoId? repoId;
 
 final BuildsRepoName? repoName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (deletedOn.isPresent) 'deleted_on': deletedOn.value?.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (repoConnectionUuid != null) 'repo_connection_uuid': repoConnectionUuid?.toJson(),
   if (repoId != null) 'repo_id': repoId?.toJson(),
   if (repoName != null) 'repo_name': repoName?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'deleted_on', 'modified_on', 'provider_account_id', 'provider_account_name', 'provider_type', 'repo_connection_uuid', 'repo_id', 'repo_name'}.contains(key)); } 
-BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? createdOn, Omittable<BuildsDeletedOn?>? deletedOn, BuildsModifiedOn? Function()? modifiedOn, BuildsProviderAccountId? Function()? providerAccountId, BuildsProviderAccountName? Function()? providerAccountName, BuildsScmProviderType? Function()? providerType, BuildsRepoConnectionUuid? Function()? repoConnectionUuid, BuildsRepoId? Function()? repoId, BuildsRepoName? Function()? repoName, }) { return BuildsUpsertRepoConnectionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'deleted_on', 'modified_on', 'provider_account_id', 'provider_account_name', 'provider_type', 'repo_connection_uuid', 'repo_id', 'repo_name'}.contains(key));}
+BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? createdOn, Omittable<BuildsDeletedOn?>? deletedOn, BuildsModifiedOn? Function()? modifiedOn, BuildsProviderAccountId? Function()? providerAccountId, BuildsProviderAccountName? Function()? providerAccountName, BuildsScmProviderType? Function()? providerType, BuildsRepoConnectionUuid? Function()? repoConnectionUuid, BuildsRepoId? Function()? repoId, BuildsRepoName? Function()? repoName, }) {return BuildsUpsertRepoConnectionResponse(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   deletedOn: deletedOn ?? this.deletedOn,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
@@ -54,8 +54,8 @@ BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? create
   repoConnectionUuid: repoConnectionUuid != null ? repoConnectionUuid() : this.repoConnectionUuid,
   repoId: repoId != null ? repoId() : this.repoId,
   repoName: repoName != null ? repoName() : this.repoName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BuildsUpsertRepoConnectionResponse &&
           createdOn == other.createdOn &&
           deletedOn == other.deletedOn &&
@@ -65,7 +65,7 @@ BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? create
           providerType == other.providerType &&
           repoConnectionUuid == other.repoConnectionUuid &&
           repoId == other.repoId &&
-          repoName == other.repoName; } 
-@override int get hashCode { return Object.hash(createdOn, deletedOn, modifiedOn, providerAccountId, providerAccountName, providerType, repoConnectionUuid, repoId, repoName); } 
-@override String toString() { return 'BuildsUpsertRepoConnectionResponse(createdOn: $createdOn, deletedOn: $deletedOn, modifiedOn: $modifiedOn, providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoConnectionUuid: $repoConnectionUuid, repoId: $repoId, repoName: $repoName)'; } 
- }
+          repoName == other.repoName;}
+@override int get hashCode {return Object.hash(createdOn, deletedOn, modifiedOn, providerAccountId, providerAccountName, providerType, repoConnectionUuid, repoId, repoName);}
+@override String toString() {return 'BuildsUpsertRepoConnectionResponse(createdOn: $createdOn, deletedOn: $deletedOn, modifiedOn: $modifiedOn, providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoConnectionUuid: $repoConnectionUuid, repoId: $repoId, repoName: $repoName)';}
+}

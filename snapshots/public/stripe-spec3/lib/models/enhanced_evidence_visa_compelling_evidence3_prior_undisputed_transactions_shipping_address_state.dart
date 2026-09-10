@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2 {const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2._(this.value);
 
-factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2.fromJson(String json) { return switch (json) {
+factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2._(json),
-}; }
+};}
 
 static const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2 $empty = EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransact
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2($value)';}
+}
 
 @immutable
 final class EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState {

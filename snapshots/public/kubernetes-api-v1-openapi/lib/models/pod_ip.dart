@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodIP represents a single IP address allocated to the pod.
 @immutable final class PodIp {const PodIp({required this.ip});
 
-factory PodIp.fromJson(Map<String, dynamic> json) { return PodIp(
+factory PodIp.fromJson(Map<String, dynamic> json) {return PodIp(
   ip: json['ip'] as String,
-); }
+);}
 
 /// IP is the IP address assigned to the pod
 final String ip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip': ip,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-PodIp copyWith({String? ip}) { return PodIp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip') && json['ip'] is String;}
+PodIp copyWith({String? ip}) {return PodIp(
   ip: ip ?? this.ip,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PodIp &&
-          ip == other.ip; } 
-@override int get hashCode { return ip.hashCode; } 
-@override String toString() { return 'PodIp(ip: $ip)'; } 
- }
+          ip == other.ip;}
+@override int get hashCode {return ip.hashCode;}
+@override String toString() {return 'PodIp(ip: $ip)';}
+}

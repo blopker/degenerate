@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreateEventRelationshipResponseErrors {const PostCreateEventRelationshipResponseErrors({required this.childId, required this.error, this.errorType, });
 
-factory PostCreateEventRelationshipResponseErrors.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponseErrors(
+factory PostCreateEventRelationshipResponseErrors.fromJson(Map<String, dynamic> json) {return PostCreateEventRelationshipResponseErrors(
   childId: json['childId'] as String,
   error: json['error'] as String,
   errorType: json['errorType'] as String?,
-); }
+);}
 
 /// UUID of the child event that failed to create a relationship
 final String childId;
@@ -17,23 +17,23 @@ final String error;
 /// Type/category of the error that occurred
 final String? errorType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'childId': childId,
   'error': error,
   'errorType': ?errorType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('childId') && json['childId'] is String &&
-      json.containsKey('error') && json['error'] is String; } 
-PostCreateEventRelationshipResponseErrors copyWith({String? childId, String? error, String? Function()? errorType, }) { return PostCreateEventRelationshipResponseErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('childId') && json['childId'] is String &&
+      json.containsKey('error') && json['error'] is String;}
+PostCreateEventRelationshipResponseErrors copyWith({String? childId, String? error, String? Function()? errorType, }) {return PostCreateEventRelationshipResponseErrors(
   childId: childId ?? this.childId,
   error: error ?? this.error,
   errorType: errorType != null ? errorType() : this.errorType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCreateEventRelationshipResponseErrors &&
           childId == other.childId &&
           error == other.error &&
-          errorType == other.errorType; } 
-@override int get hashCode { return Object.hash(childId, error, errorType); } 
-@override String toString() { return 'PostCreateEventRelationshipResponseErrors(childId: $childId, error: $error, errorType: $errorType)'; } 
- }
+          errorType == other.errorType;}
+@override int get hashCode {return Object.hash(childId, error, errorType);}
+@override String toString() {return 'PostCreateEventRelationshipResponseErrors(childId: $childId, error: $error, errorType: $errorType)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetBgpRpkiAspaChangesFormat {const RadarGetBgpRpkiAspaChangesFormat._(this.value);
 
-factory RadarGetBgpRpkiAspaChangesFormat.fromJson(String json) { return switch (json) {
+factory RadarGetBgpRpkiAspaChangesFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpRpkiAspaChangesFormat._(json),
-}; }
+};}
 
 static const RadarGetBgpRpkiAspaChangesFormat $json = RadarGetBgpRpkiAspaChangesFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetBgpRpkiAspaChangesFormat> values = [$json, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBgpRpkiAspaChangesFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBgpRpkiAspaChangesFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetBgpRpkiAspaChangesFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetBgpRpkiAspaChangesFormat($value)';}
+}

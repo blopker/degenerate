@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRiskLevel {const DlpRiskLevel._(this.value);
 
-factory DlpRiskLevel.fromJson(String json) { return switch (json) {
+factory DlpRiskLevel.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => DlpRiskLevel._(json),
-}; }
+};}
 
 static const DlpRiskLevel low = DlpRiskLevel._('low');
 
@@ -19,11 +19,11 @@ static const List<DlpRiskLevel> values = [low, medium, high];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpRiskLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpRiskLevel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DlpRiskLevel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DlpRiskLevel($value)';}
+}

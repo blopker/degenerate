@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the list type.
 @immutable final class ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType._(this.value);
 
-factory ZeroTrustGatewaySchemasType.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewaySchemasType.fromJson(String json) {return switch (json) {
   'SERIAL' => serial,
   'URL' => url,
   'DOMAIN' => domain,
@@ -13,7 +13,7 @@ factory ZeroTrustGatewaySchemasType.fromJson(String json) { return switch (json)
   'LOCATION' => location,
   'DEVICE' => device,
   _ => ZeroTrustGatewaySchemasType._(json),
-}; }
+};}
 
 static const ZeroTrustGatewaySchemasType serial = ZeroTrustGatewaySchemasType._('SERIAL');
 
@@ -35,11 +35,11 @@ static const List<ZeroTrustGatewaySchemasType> values = [serial, url, domain, em
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewaySchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewaySchemasType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZeroTrustGatewaySchemasType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZeroTrustGatewaySchemasType($value)';}
+}

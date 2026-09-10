@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_controller_fees.dart';import 'post_accounts_request_controller_losses.dart';import 'post_accounts_request_controller_stripe_dashboard.dart';@immutable final class PostAccountsRequestControllerRequirementCollection {const PostAccountsRequestControllerRequirementCollection._(this.value);
 
-factory PostAccountsRequestControllerRequirementCollection.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestControllerRequirementCollection.fromJson(String json) {return switch (json) {
   'application' => application,
   'stripe' => stripe,
   _ => PostAccountsRequestControllerRequirementCollection._(json),
-}; }
+};}
 
 static const PostAccountsRequestControllerRequirementCollection application = PostAccountsRequestControllerRequirementCollection._('application');
 
@@ -16,23 +16,23 @@ static const List<PostAccountsRequestControllerRequirementCollection> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestControllerRequirementCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestControllerRequirementCollection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsRequestControllerRequirementCollection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsRequestControllerRequirementCollection($value)';}
+}
 /// A hash of configuration describing the account controller's attributes.
 @immutable final class PostAccountsRequestController {const PostAccountsRequestController({this.fees, this.losses, this.requirementCollection, this.stripeDashboard, });
 
-factory PostAccountsRequestController.fromJson(Map<String, dynamic> json) { return PostAccountsRequestController(
+factory PostAccountsRequestController.fromJson(Map<String, dynamic> json) {return PostAccountsRequestController(
   fees: json['fees'] != null ? PostAccountsRequestControllerFees.fromJson(json['fees'] as Map<String, dynamic>) : null,
   losses: json['losses'] != null ? PostAccountsRequestControllerLosses.fromJson(json['losses'] as Map<String, dynamic>) : null,
   requirementCollection: json['requirement_collection'] != null ? PostAccountsRequestControllerRequirementCollection.fromJson(json['requirement_collection'] as String) : null,
   stripeDashboard: json['stripe_dashboard'] != null ? PostAccountsRequestControllerStripeDashboard.fromJson(json['stripe_dashboard'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsRequestControllerFees? fees;
 
@@ -42,25 +42,25 @@ final PostAccountsRequestControllerRequirementCollection? requirementCollection;
 
 final PostAccountsRequestControllerStripeDashboard? stripeDashboard;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fees != null) 'fees': fees?.toJson(),
   if (losses != null) 'losses': losses?.toJson(),
   if (requirementCollection != null) 'requirement_collection': requirementCollection?.toJson(),
   if (stripeDashboard != null) 'stripe_dashboard': stripeDashboard?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fees', 'losses', 'requirement_collection', 'stripe_dashboard'}.contains(key)); } 
-PostAccountsRequestController copyWith({PostAccountsRequestControllerFees? Function()? fees, PostAccountsRequestControllerLosses? Function()? losses, PostAccountsRequestControllerRequirementCollection? Function()? requirementCollection, PostAccountsRequestControllerStripeDashboard? Function()? stripeDashboard, }) { return PostAccountsRequestController(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fees', 'losses', 'requirement_collection', 'stripe_dashboard'}.contains(key));}
+PostAccountsRequestController copyWith({PostAccountsRequestControllerFees? Function()? fees, PostAccountsRequestControllerLosses? Function()? losses, PostAccountsRequestControllerRequirementCollection? Function()? requirementCollection, PostAccountsRequestControllerStripeDashboard? Function()? stripeDashboard, }) {return PostAccountsRequestController(
   fees: fees != null ? fees() : this.fees,
   losses: losses != null ? losses() : this.losses,
   requirementCollection: requirementCollection != null ? requirementCollection() : this.requirementCollection,
   stripeDashboard: stripeDashboard != null ? stripeDashboard() : this.stripeDashboard,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestController &&
           fees == other.fees &&
           losses == other.losses &&
           requirementCollection == other.requirementCollection &&
-          stripeDashboard == other.stripeDashboard; } 
-@override int get hashCode { return Object.hash(fees, losses, requirementCollection, stripeDashboard); } 
-@override String toString() { return 'PostAccountsRequestController(fees: $fees, losses: $losses, requirementCollection: $requirementCollection, stripeDashboard: $stripeDashboard)'; } 
- }
+          stripeDashboard == other.stripeDashboard;}
+@override int get hashCode {return Object.hash(fees, losses, requirementCollection, stripeDashboard);}
+@override String toString() {return 'PostAccountsRequestController(fees: $fees, losses: $losses, requirementCollection: $requirementCollection, stripeDashboard: $stripeDashboard)';}
+}

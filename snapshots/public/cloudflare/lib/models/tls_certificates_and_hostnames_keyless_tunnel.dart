@@ -17,30 +17,30 @@ String toJson() => value;
 /// Configuration for using Keyless SSL through a Cloudflare Tunnel
 @immutable final class TlsCertificatesAndHostnamesKeylessTunnel {const TlsCertificatesAndHostnamesKeylessTunnel({required this.privateIp, required this.vnetId, });
 
-factory TlsCertificatesAndHostnamesKeylessTunnel.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesKeylessTunnel(
+factory TlsCertificatesAndHostnamesKeylessTunnel.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesKeylessTunnel(
   privateIp: TlsCertificatesAndHostnamesKeylessPrivateIp.fromJson(json['private_ip'] as String),
   vnetId: TlsCertificatesAndHostnamesKeylessVnetId.fromJson(json['vnet_id'] as String),
-); }
+);}
 
 /// Private IP of the Key Server Host
 final TlsCertificatesAndHostnamesKeylessPrivateIp privateIp;
 
 final TlsCertificatesAndHostnamesKeylessVnetId vnetId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'private_ip': privateIp.toJson(),
   'vnet_id': vnetId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('private_ip') &&
-      json.containsKey('vnet_id'); } 
-TlsCertificatesAndHostnamesKeylessTunnel copyWith({TlsCertificatesAndHostnamesKeylessPrivateIp? privateIp, TlsCertificatesAndHostnamesKeylessVnetId? vnetId, }) { return TlsCertificatesAndHostnamesKeylessTunnel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('private_ip') &&
+      json.containsKey('vnet_id');}
+TlsCertificatesAndHostnamesKeylessTunnel copyWith({TlsCertificatesAndHostnamesKeylessPrivateIp? privateIp, TlsCertificatesAndHostnamesKeylessVnetId? vnetId, }) {return TlsCertificatesAndHostnamesKeylessTunnel(
   privateIp: privateIp ?? this.privateIp,
   vnetId: vnetId ?? this.vnetId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesKeylessTunnel &&
           privateIp == other.privateIp &&
-          vnetId == other.vnetId; } 
-@override int get hashCode { return Object.hash(privateIp, vnetId); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesKeylessTunnel(privateIp: $privateIp, vnetId: $vnetId)'; } 
- }
+          vnetId == other.vnetId;}
+@override int get hashCode {return Object.hash(privateIp, vnetId);}
+@override String toString() {return 'TlsCertificatesAndHostnamesKeylessTunnel(privateIp: $privateIp, vnetId: $vnetId)';}
+}

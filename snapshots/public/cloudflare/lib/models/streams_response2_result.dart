@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'streams_response2_result_http.dart';import 'streams_response2_result_worker_binding.dart';@immutable final class StreamsResponse2Result {const StreamsResponse2Result({required this.createdAt, required this.http, required this.id, required this.modifiedAt, required this.name, required this.version, required this.workerBinding, this.endpoint, this.format, this.schema, });
 
-factory StreamsResponse2Result.fromJson(Map<String, dynamic> json) { return StreamsResponse2Result(
+factory StreamsResponse2Result.fromJson(Map<String, dynamic> json) {return StreamsResponse2Result(
   createdAt: DateTime.parse(json['created_at'] as String),
   endpoint: json['endpoint'] != null ? Uri.parse(json['endpoint'] as String) : null,
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory StreamsResponse2Result.fromJson(Map<String, dynamic> json) { return Stre
   schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   version: (json['version'] as num).toInt(),
   workerBinding: StreamsResponse2ResultWorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -39,7 +39,7 @@ final int version;
 
 final StreamsResponse2ResultWorkerBinding workerBinding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   if (endpoint != null) 'endpoint': endpoint?.toString(),
   if (format != null) 'format': format?.toJson(),
@@ -50,15 +50,15 @@ Map<String, dynamic> toJson() { return {
   if (schema != null) 'schema': schema?.toJson(),
   'version': version,
   'worker_binding': workerBinding.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('http') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') && json['version'] is num &&
-      json.containsKey('worker_binding'); } 
-StreamsResponse2Result copyWith({DateTime? createdAt, Uri? Function()? endpoint, CloudflarePipelinesFormat? Function()? format, StreamsResponse2ResultHttp? http, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, int? version, StreamsResponse2ResultWorkerBinding? workerBinding, }) { return StreamsResponse2Result(
+      json.containsKey('worker_binding');}
+StreamsResponse2Result copyWith({DateTime? createdAt, Uri? Function()? endpoint, CloudflarePipelinesFormat? Function()? format, StreamsResponse2ResultHttp? http, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, int? version, StreamsResponse2ResultWorkerBinding? workerBinding, }) {return StreamsResponse2Result(
   createdAt: createdAt ?? this.createdAt,
   endpoint: endpoint != null ? endpoint() : this.endpoint,
   format: format != null ? format() : this.format,
@@ -69,8 +69,8 @@ StreamsResponse2Result copyWith({DateTime? createdAt, Uri? Function()? endpoint,
   schema: schema != null ? schema() : this.schema,
   version: version ?? this.version,
   workerBinding: workerBinding ?? this.workerBinding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamsResponse2Result &&
           createdAt == other.createdAt &&
           endpoint == other.endpoint &&
@@ -81,7 +81,7 @@ StreamsResponse2Result copyWith({DateTime? createdAt, Uri? Function()? endpoint,
           name == other.name &&
           schema == other.schema &&
           version == other.version &&
-          workerBinding == other.workerBinding; } 
-@override int get hashCode { return Object.hash(createdAt, endpoint, format, http, id, modifiedAt, name, schema, version, workerBinding); } 
-@override String toString() { return 'StreamsResponse2Result(createdAt: $createdAt, endpoint: $endpoint, format: $format, http: $http, id: $id, modifiedAt: $modifiedAt, name: $name, schema: $schema, version: $version, workerBinding: $workerBinding)'; } 
- }
+          workerBinding == other.workerBinding;}
+@override int get hashCode {return Object.hash(createdAt, endpoint, format, http, id, modifiedAt, name, schema, version, workerBinding);}
+@override String toString() {return 'StreamsResponse2Result(createdAt: $createdAt, endpoint: $endpoint, format: $format, http: $http, id: $id, modifiedAt: $modifiedAt, name: $name, schema: $schema, version: $version, workerBinding: $workerBinding)';}
+}

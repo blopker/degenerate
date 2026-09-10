@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'beneficiary_params_public_name.dart';@immutable final class BeneficiaryParams {const BeneficiaryParams({required this.publicName});
 
-factory BeneficiaryParams.fromJson(Map<String, dynamic> json) { return BeneficiaryParams(
+factory BeneficiaryParams.fromJson(Map<String, dynamic> json) {return BeneficiaryParams(
   publicName: BeneficiaryParamsPublicName.fromJson(json['public_name']),
-); }
+);}
 
 final BeneficiaryParamsPublicName publicName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'public_name': publicName.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('public_name'); } 
-BeneficiaryParams copyWith({BeneficiaryParamsPublicName? publicName}) { return BeneficiaryParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('public_name');}
+BeneficiaryParams copyWith({BeneficiaryParamsPublicName? publicName}) {return BeneficiaryParams(
   publicName: publicName ?? this.publicName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BeneficiaryParams &&
-          publicName == other.publicName; } 
-@override int get hashCode { return publicName.hashCode; } 
-@override String toString() { return 'BeneficiaryParams(publicName: $publicName)'; } 
- }
+          publicName == other.publicName;}
+@override int get hashCode {return publicName.hashCode;}
+@override String toString() {return 'BeneficiaryParams(publicName: $publicName)';}
+}

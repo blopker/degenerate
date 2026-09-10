@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_action.dart';import 'function_shell_call_environment.dart';@immutable final class LocalShellCallStatus {const LocalShellCallStatus._(this.value);
 
-factory LocalShellCallStatus.fromJson(String json) { return switch (json) {
+factory LocalShellCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => LocalShellCallStatus._(json),
-}; }
+};}
 
 static const LocalShellCallStatus inProgress = LocalShellCallStatus._('in_progress');
 
@@ -19,18 +19,18 @@ static const List<LocalShellCallStatus> values = [inProgress, completed, incompl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalShellCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalShellCallStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LocalShellCallStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LocalShellCallStatus($value)';}
+}
 /// A tool call that executes one or more shell commands in a managed environment.
 @immutable final class FunctionShellCall {const FunctionShellCall({required this.type, required this.id, required this.callId, required this.action, required this.status, required this.environment, this.createdBy, });
 
-factory FunctionShellCall.fromJson(Map<String, dynamic> json) { return FunctionShellCall(
+factory FunctionShellCall.fromJson(Map<String, dynamic> json) {return FunctionShellCall(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
@@ -38,7 +38,7 @@ factory FunctionShellCall.fromJson(Map<String, dynamic> json) { return FunctionS
   status: LocalShellCallStatus.fromJson(json['status'] as String),
   environment: json['environment'] != null ? FunctionShellCallEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null,
   createdBy: json['created_by'] as String?,
-); }
+);}
 
 /// The type of the item. Always `shell_call`.
 final String type;
@@ -60,7 +60,7 @@ final FunctionShellCallEnvironment? environment;
 /// The ID of the entity that created this tool call.
 final String? createdBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
@@ -68,14 +68,14 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'environment': environment?.toJson(),
   'created_by': ?createdBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('action') &&
       json.containsKey('status') &&
-      json.containsKey('environment'); } 
-FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return FunctionShellCall(
+      json.containsKey('environment');}
+FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) {return FunctionShellCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
@@ -83,8 +83,8 @@ FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionSh
   status: status ?? this.status,
   environment: environment != null ? environment() : this.environment,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FunctionShellCall &&
           type == other.type &&
           id == other.id &&
@@ -92,7 +92,7 @@ FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionSh
           action == other.action &&
           status == other.status &&
           environment == other.environment &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, action, status, environment, createdBy); } 
-@override String toString() { return 'FunctionShellCall(type: $type, id: $id, callId: $callId, action: $action, status: $status, environment: $environment, createdBy: $createdBy)'; } 
- }
+          createdBy == other.createdBy;}
+@override int get hashCode {return Object.hash(type, id, callId, action, status, environment, createdBy);}
+@override String toString() {return 'FunctionShellCall(type: $type, id: $id, callId: $callId, action: $action, status: $status, environment: $environment, createdBy: $createdBy)';}
+}

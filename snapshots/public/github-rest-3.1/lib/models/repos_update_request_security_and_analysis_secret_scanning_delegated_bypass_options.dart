@@ -5,24 +5,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update
 /// You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
 @immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions({this.reviewers});
 
-factory ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+factory ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) {return ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions(
   reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The bypass reviewers for secret scanning delegated bypass.
 /// If you omit this field, the existing set of reviewers is unchanged.
 final List<ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers>? reviewers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (reviewers != null) 'reviewers': reviewers?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewers'}.contains(key)); } 
-ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions copyWith({List<ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers>? Function()? reviewers}) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reviewers'}.contains(key));}
+ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions copyWith({List<ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers>? Function()? reviewers}) {return ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions(
   reviewers: reviewers != null ? reviewers() : this.reviewers,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions &&
-          listEquals(reviewers, other.reviewers); } 
-@override int get hashCode { return Object.hashAll(reviewers ?? const []).hashCode; } 
-@override String toString() { return 'ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions(reviewers: $reviewers)'; } 
- }
+          listEquals(reviewers, other.reviewers);}
+@override int get hashCode {return Object.hashAll(reviewers ?? const []).hashCode;}
+@override String toString() {return 'ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions(reviewers: $reviewers)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'protected_branch_required_pull_request_reviews_bypass_pull_request_allowances.dart';import 'protected_branch_required_pull_request_reviews_dismissal_restrictions.dart';@immutable final class ProtectedBranchRequiredPullRequestReviews {const ProtectedBranchRequiredPullRequestReviews({required this.url, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval, this.dismissalRestrictions, this.bypassPullRequestAllowances, });
 
-factory ProtectedBranchRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredPullRequestReviews(
+factory ProtectedBranchRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) {return ProtectedBranchRequiredPullRequestReviews(
   url: Uri.parse(json['url'] as String),
   dismissStaleReviews: json['dismiss_stale_reviews'] as bool?,
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool?,
@@ -10,7 +10,7 @@ factory ProtectedBranchRequiredPullRequestReviews.fromJson(Map<String, dynamic> 
   requireLastPushApproval: json['require_last_push_approval'] as bool?,
   dismissalRestrictions: json['dismissal_restrictions'] != null ? ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,
   bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri url;
 
@@ -28,8 +28,8 @@ final ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? dismissalR
 final ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? bypassPullRequestAllowances;
 
 /// The value with the schema default applied when absent.
-bool get requireLastPushApprovalOrDefault { return requireLastPushApproval ?? false; } 
-Map<String, dynamic> toJson() { return {
+bool get requireLastPushApprovalOrDefault {return requireLastPushApproval ?? false;}
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'dismiss_stale_reviews': ?dismissStaleReviews,
   'require_code_owner_reviews': ?requireCodeOwnerReviews,
@@ -37,9 +37,9 @@ Map<String, dynamic> toJson() { return {
   'require_last_push_approval': ?requireLastPushApproval,
   if (dismissalRestrictions != null) 'dismissal_restrictions': dismissalRestrictions?.toJson(),
   if (bypassPullRequestAllowances != null) 'bypass_pull_request_allowances': bypassPullRequestAllowances?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? dismissStaleReviews, bool? Function()? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool? Function()? requireLastPushApproval, ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, }) { return ProtectedBranchRequiredPullRequestReviews(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
+ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? dismissStaleReviews, bool? Function()? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool? Function()? requireLastPushApproval, ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, }) {return ProtectedBranchRequiredPullRequestReviews(
   url: url ?? this.url,
   dismissStaleReviews: dismissStaleReviews != null ? dismissStaleReviews() : this.dismissStaleReviews,
   requireCodeOwnerReviews: requireCodeOwnerReviews != null ? requireCodeOwnerReviews() : this.requireCodeOwnerReviews,
@@ -47,8 +47,8 @@ ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? 
   requireLastPushApproval: requireLastPushApproval != null ? requireLastPushApproval() : this.requireLastPushApproval,
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,
   bypassPullRequestAllowances: bypassPullRequestAllowances != null ? bypassPullRequestAllowances() : this.bypassPullRequestAllowances,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ProtectedBranchRequiredPullRequestReviews &&
           url == other.url &&
           dismissStaleReviews == other.dismissStaleReviews &&
@@ -56,7 +56,7 @@ ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? 
           requiredApprovingReviewCount == other.requiredApprovingReviewCount &&
           requireLastPushApproval == other.requireLastPushApproval &&
           dismissalRestrictions == other.dismissalRestrictions &&
-          bypassPullRequestAllowances == other.bypassPullRequestAllowances; } 
-@override int get hashCode { return Object.hash(url, dismissStaleReviews, requireCodeOwnerReviews, requiredApprovingReviewCount, requireLastPushApproval, dismissalRestrictions, bypassPullRequestAllowances); } 
-@override String toString() { return 'ProtectedBranchRequiredPullRequestReviews(url: $url, dismissStaleReviews: $dismissStaleReviews, requireCodeOwnerReviews: $requireCodeOwnerReviews, requiredApprovingReviewCount: $requiredApprovingReviewCount, requireLastPushApproval: $requireLastPushApproval, dismissalRestrictions: $dismissalRestrictions, bypassPullRequestAllowances: $bypassPullRequestAllowances)'; } 
- }
+          bypassPullRequestAllowances == other.bypassPullRequestAllowances;}
+@override int get hashCode {return Object.hash(url, dismissStaleReviews, requireCodeOwnerReviews, requiredApprovingReviewCount, requireLastPushApproval, dismissalRestrictions, bypassPullRequestAllowances);}
+@override String toString() {return 'ProtectedBranchRequiredPullRequestReviews(url: $url, dismissStaleReviews: $dismissStaleReviews, requireCodeOwnerReviews: $requireCodeOwnerReviews, requiredApprovingReviewCount: $requiredApprovingReviewCount, requireLastPushApproval: $requireLastPushApproval, dismissalRestrictions: $dismissalRestrictions, bypassPullRequestAllowances: $bypassPullRequestAllowances)';}
+}

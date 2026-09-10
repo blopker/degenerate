@@ -93,7 +93,7 @@ String toJson() => value;
 }
 @immutable final class ContactProperties {const ContactProperties({required this.address, required this.city, required this.country, required this.firstName, required this.lastName, required this.organization, required this.phone, required this.state, required this.zip, this.address2, this.email, this.fax, this.id, });
 
-factory ContactProperties.fromJson(Map<String, dynamic> json) { return ContactProperties(
+factory ContactProperties.fromJson(Map<String, dynamic> json) {return ContactProperties(
   address: Address.fromJson(json['address'] as String),
   address2: json['address2'] != null ? Address2.fromJson(json['address2'] as String) : null,
   city: City.fromJson(json['city'] as String),
@@ -107,7 +107,7 @@ factory ContactProperties.fromJson(Map<String, dynamic> json) { return ContactPr
   phone: json['phone'] != null ? Telephone.fromJson(json['phone'] as String) : null,
   state: State2.fromJson(json['state'] as String),
   zip: json['zip'] != null ? Zipcode.fromJson(json['zip'] as String) : null,
-); }
+);}
 
 /// Address.
 final Address address;
@@ -139,7 +139,7 @@ final State2 state;
 
 final Zipcode? zip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (address2 != null) 'address2': address2?.toJson(),
   'city': city.toJson(),
@@ -153,8 +153,8 @@ Map<String, dynamic> toJson() { return {
   'phone': phone?.toJson(),
   'state': state.toJson(),
   'zip': zip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
       json.containsKey('city') &&
       json.containsKey('country') &&
       json.containsKey('first_name') &&
@@ -162,8 +162,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('organization') &&
       json.containsKey('phone') &&
       json.containsKey('state') &&
-      json.containsKey('zip'); } 
-ContactProperties copyWith({Address? address, Address2? Function()? address2, City? city, Country? Function()? country, Email? Function()? email, Fax? Function()? fax, FirstName? Function()? firstName, ContactIdentifier? Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) { return ContactProperties(
+      json.containsKey('zip');}
+ContactProperties copyWith({Address? address, Address2? Function()? address2, City? city, Country? Function()? country, Email? Function()? email, Fax? Function()? fax, FirstName? Function()? firstName, ContactIdentifier? Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) {return ContactProperties(
   address: address ?? this.address,
   address2: address2 != null ? address2() : this.address2,
   city: city ?? this.city,
@@ -177,8 +177,8 @@ ContactProperties copyWith({Address? address, Address2? Function()? address2, Ci
   phone: phone != null ? phone() : this.phone,
   state: state ?? this.state,
   zip: zip != null ? zip() : this.zip,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContactProperties &&
           address == other.address &&
           address2 == other.address2 &&
@@ -192,7 +192,7 @@ ContactProperties copyWith({Address? address, Address2? Function()? address2, Ci
           organization == other.organization &&
           phone == other.phone &&
           state == other.state &&
-          zip == other.zip; } 
-@override int get hashCode { return Object.hash(address, address2, city, country, email, fax, firstName, id, lastName, organization, phone, state, zip); } 
-@override String toString() { return 'ContactProperties(address: $address, address2: $address2, city: $city, country: $country, email: $email, fax: $fax, firstName: $firstName, id: $id, lastName: $lastName, organization: $organization, phone: $phone, state: $state, zip: $zip)'; } 
- }
+          zip == other.zip;}
+@override int get hashCode {return Object.hash(address, address2, city, country, email, fax, firstName, id, lastName, organization, phone, state, zip);}
+@override String toString() {return 'ContactProperties(address: $address, address2: $address2, city: $city, country: $country, email: $email, fax: $fax, firstName: $firstName, id: $id, lastName: $lastName, organization: $organization, phone: $phone, state: $state, zip: $zip)';}
+}

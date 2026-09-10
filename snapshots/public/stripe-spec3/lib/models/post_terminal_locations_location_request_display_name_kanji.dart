@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2 {const PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2._(this.value);
 
-factory PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2.fromJson(String json) { return switch (json) {
+factory PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2._(json),
-}; }
+};}
 
 static const PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2 $empty = PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2($value)';}
+}
 /// The Kanji variation of the name for the location (Japan only).
 @immutable
 final class PostTerminalLocationsLocationRequestDisplayNameKanji {

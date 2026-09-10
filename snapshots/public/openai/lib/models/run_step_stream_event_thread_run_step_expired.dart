@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class RunStepStreamEventThreadRunStepExpiredEvent {const RunStepStreamEventThreadRunStepExpiredEvent._(this.value);
 
-factory RunStepStreamEventThreadRunStepExpiredEvent.fromJson(String json) { return switch (json) {
+factory RunStepStreamEventThreadRunStepExpiredEvent.fromJson(String json) {return switch (json) {
   'thread.run.step.expired' => threadRunStepExpired,
   _ => RunStepStreamEventThreadRunStepExpiredEvent._(json),
-}; }
+};}
 
 static const RunStepStreamEventThreadRunStepExpiredEvent threadRunStepExpired = RunStepStreamEventThreadRunStepExpiredEvent._('thread.run.step.expired');
 
@@ -13,40 +13,40 @@ static const List<RunStepStreamEventThreadRunStepExpiredEvent> values = [threadR
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepStreamEventThreadRunStepExpiredEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepStreamEventThreadRunStepExpiredEvent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepStreamEventThreadRunStepExpiredEvent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepStreamEventThreadRunStepExpiredEvent($value)';}
+}
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
 @immutable final class RunStepStreamEventThreadRunStepExpired {const RunStepStreamEventThreadRunStepExpired({required this.event, required this.data, });
 
-factory RunStepStreamEventThreadRunStepExpired.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepExpired(
+factory RunStepStreamEventThreadRunStepExpired.fromJson(Map<String, dynamic> json) {return RunStepStreamEventThreadRunStepExpired(
   event: RunStepStreamEventThreadRunStepExpiredEvent.fromJson(json['event'] as String),
   data: RunStepObject.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 final RunStepStreamEventThreadRunStepExpiredEvent event;
 
 final RunStepObject data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('data'); } 
-RunStepStreamEventThreadRunStepExpired copyWith({RunStepStreamEventThreadRunStepExpiredEvent? event, RunStepObject? data, }) { return RunStepStreamEventThreadRunStepExpired(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') &&
+      json.containsKey('data');}
+RunStepStreamEventThreadRunStepExpired copyWith({RunStepStreamEventThreadRunStepExpiredEvent? event, RunStepObject? data, }) {return RunStepStreamEventThreadRunStepExpired(
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepStreamEventThreadRunStepExpired &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'RunStepStreamEventThreadRunStepExpired(event: $event, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(event, data);}
+@override String toString() {return 'RunStepStreamEventThreadRunStepExpired(event: $event, data: $data)';}
+}

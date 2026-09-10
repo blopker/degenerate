@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'networks.dart';import 'payment_method_card_checks.dart';import 'payment_method_card_generated_card.dart';import 'payment_method_card_wallet.dart';import 'three_d_secure_usage.dart';/// Status of a card based on the card issuer.
 @immutable final class PaymentMethodCardRegulatedStatus {const PaymentMethodCardRegulatedStatus._(this.value);
 
-factory PaymentMethodCardRegulatedStatus.fromJson(String json) { return switch (json) {
+factory PaymentMethodCardRegulatedStatus.fromJson(String json) {return switch (json) {
   'regulated' => regulated,
   'unregulated' => unregulated,
   _ => PaymentMethodCardRegulatedStatus._(json),
-}; }
+};}
 
 static const PaymentMethodCardRegulatedStatus regulated = PaymentMethodCardRegulatedStatus._('regulated');
 
@@ -17,18 +17,18 @@ static const List<PaymentMethodCardRegulatedStatus> values = [regulated, unregul
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodCardRegulatedStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodCardRegulatedStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodCardRegulatedStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodCardRegulatedStatus($value)';}
+}
 /// 
 @immutable final class PaymentMethodCard {const PaymentMethodCard({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.displayBrand = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.generatedFrom = const Omittable.absent(), this.networks = const Omittable.absent(), this.regulatedStatus = const Omittable.absent(), this.threeDSecureUsage = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory PaymentMethodCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCard(
+factory PaymentMethodCard.fromJson(Map<String, dynamic> json) {return PaymentMethodCard(
   brand: json['brand'] as String,
   checks: json.containsKey('checks') ? Omittable(json['checks'] != null ? PaymentMethodCardChecks.fromJson(json['checks'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
@@ -43,7 +43,7 @@ factory PaymentMethodCard.fromJson(Map<String, dynamic> json) { return PaymentMe
   regulatedStatus: json.containsKey('regulated_status') ? Omittable(json['regulated_status'] != null ? PaymentMethodCardRegulatedStatus.fromJson(json['regulated_status'] as String) : null) : const Omittable.absent(),
   threeDSecureUsage: json.containsKey('three_d_secure_usage') ? Omittable(json['three_d_secure_usage'] != null ? ThreeDSecureUsage.fromJson(json['three_d_secure_usage'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? PaymentMethodCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final String brand;
@@ -89,7 +89,7 @@ final Omittable<ThreeDSecureUsage?> threeDSecureUsage;
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
 final Omittable<PaymentMethodCardWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'brand': brand,
   if (checks.isPresent) 'checks': checks.value?.toJson(),
   if (country.isPresent) 'country': country.value,
@@ -104,13 +104,13 @@ Map<String, dynamic> toJson() { return {
   if (regulatedStatus.isPresent) 'regulated_status': regulatedStatus.value?.toJson(),
   if (threeDSecureUsage.isPresent) 'three_d_secure_usage': threeDSecureUsage.value?.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') && json['funding'] is String &&
-      json.containsKey('last4') && json['last4'] is String; } 
-PaymentMethodCard copyWith({String? brand, Omittable<PaymentMethodCardChecks?>? checks, Omittable<String?>? country, Omittable<String?>? displayBrand, int? expMonth, int? expYear, Omittable<String?>? fingerprint, String? funding, Omittable<PaymentMethodCardGeneratedCard?>? generatedFrom, String? last4, Omittable<Networks?>? networks, Omittable<PaymentMethodCardRegulatedStatus?>? regulatedStatus, Omittable<ThreeDSecureUsage?>? threeDSecureUsage, Omittable<PaymentMethodCardWallet?>? wallet, }) { return PaymentMethodCard(
+      json.containsKey('last4') && json['last4'] is String;}
+PaymentMethodCard copyWith({String? brand, Omittable<PaymentMethodCardChecks?>? checks, Omittable<String?>? country, Omittable<String?>? displayBrand, int? expMonth, int? expYear, Omittable<String?>? fingerprint, String? funding, Omittable<PaymentMethodCardGeneratedCard?>? generatedFrom, String? last4, Omittable<Networks?>? networks, Omittable<PaymentMethodCardRegulatedStatus?>? regulatedStatus, Omittable<ThreeDSecureUsage?>? threeDSecureUsage, Omittable<PaymentMethodCardWallet?>? wallet, }) {return PaymentMethodCard(
   brand: brand ?? this.brand,
   checks: checks ?? this.checks,
   country: country ?? this.country,
@@ -125,8 +125,8 @@ PaymentMethodCard copyWith({String? brand, Omittable<PaymentMethodCardChecks?>? 
   regulatedStatus: regulatedStatus ?? this.regulatedStatus,
   threeDSecureUsage: threeDSecureUsage ?? this.threeDSecureUsage,
   wallet: wallet ?? this.wallet,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodCard &&
           brand == other.brand &&
           checks == other.checks &&
@@ -141,7 +141,7 @@ PaymentMethodCard copyWith({String? brand, Omittable<PaymentMethodCardChecks?>? 
           networks == other.networks &&
           regulatedStatus == other.regulatedStatus &&
           threeDSecureUsage == other.threeDSecureUsage &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hash(brand, checks, country, displayBrand, expMonth, expYear, fingerprint, funding, generatedFrom, last4, networks, regulatedStatus, threeDSecureUsage, wallet); } 
-@override String toString() { return 'PaymentMethodCard(brand: $brand, checks: $checks, country: $country, displayBrand: $displayBrand, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedFrom: $generatedFrom, last4: $last4, networks: $networks, regulatedStatus: $regulatedStatus, threeDSecureUsage: $threeDSecureUsage, wallet: $wallet)'; } 
- }
+          wallet == other.wallet;}
+@override int get hashCode {return Object.hash(brand, checks, country, displayBrand, expMonth, expYear, fingerprint, funding, generatedFrom, last4, networks, regulatedStatus, threeDSecureUsage, wallet);}
+@override String toString() {return 'PaymentMethodCard(brand: $brand, checks: $checks, country: $country, displayBrand: $displayBrand, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedFrom: $generatedFrom, last4: $last4, networks: $networks, regulatedStatus: $regulatedStatus, threeDSecureUsage: $threeDSecureUsage, wallet: $wallet)';}
+}

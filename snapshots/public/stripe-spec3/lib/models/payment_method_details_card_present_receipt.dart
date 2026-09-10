@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account being debited or credited
 @immutable final class PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType._(this.value);
 
-factory PaymentMethodDetailsCardPresentReceiptAccountType.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsCardPresentReceiptAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'credit' => credit,
   'prepaid' => prepaid,
   'unknown' => unknown,
   _ => PaymentMethodDetailsCardPresentReceiptAccountType._(json),
-}; }
+};}
 
 static const PaymentMethodDetailsCardPresentReceiptAccountType checking = PaymentMethodDetailsCardPresentReceiptAccountType._('checking');
 
@@ -23,18 +23,18 @@ static const List<PaymentMethodDetailsCardPresentReceiptAccountType> values = [c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardPresentReceiptAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardPresentReceiptAccountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodDetailsCardPresentReceiptAccountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodDetailsCardPresentReceiptAccountType($value)';}
+}
 /// 
 @immutable final class PaymentMethodDetailsCardPresentReceipt {const PaymentMethodDetailsCardPresentReceipt({this.accountType, this.applicationCryptogram = const Omittable.absent(), this.applicationPreferredName = const Omittable.absent(), this.authorizationCode = const Omittable.absent(), this.authorizationResponseCode = const Omittable.absent(), this.cardholderVerificationMethod = const Omittable.absent(), this.dedicatedFileName = const Omittable.absent(), this.terminalVerificationResults = const Omittable.absent(), this.transactionStatusInformation = const Omittable.absent(), });
 
-factory PaymentMethodDetailsCardPresentReceipt.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresentReceipt(
+factory PaymentMethodDetailsCardPresentReceipt.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCardPresentReceipt(
   accountType: json['account_type'] != null ? PaymentMethodDetailsCardPresentReceiptAccountType.fromJson(json['account_type'] as String) : null,
   applicationCryptogram: json.containsKey('application_cryptogram') ? Omittable(json['application_cryptogram'] as String?) : const Omittable.absent(),
   applicationPreferredName: json.containsKey('application_preferred_name') ? Omittable(json['application_preferred_name'] as String?) : const Omittable.absent(),
@@ -44,7 +44,7 @@ factory PaymentMethodDetailsCardPresentReceipt.fromJson(Map<String, dynamic> jso
   dedicatedFileName: json.containsKey('dedicated_file_name') ? Omittable(json['dedicated_file_name'] as String?) : const Omittable.absent(),
   terminalVerificationResults: json.containsKey('terminal_verification_results') ? Omittable(json['terminal_verification_results'] as String?) : const Omittable.absent(),
   transactionStatusInformation: json.containsKey('transaction_status_information') ? Omittable(json['transaction_status_information'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of account being debited or credited
 final PaymentMethodDetailsCardPresentReceiptAccountType? accountType;
@@ -73,7 +73,7 @@ final Omittable<String?> terminalVerificationResults;
 /// An indication of which steps were completed during the card read process. Referenced from EMV Tag 9B.
 final Omittable<String?> transactionStatusInformation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountType != null) 'account_type': accountType?.toJson(),
   if (applicationCryptogram.isPresent) 'application_cryptogram': applicationCryptogram.value,
   if (applicationPreferredName.isPresent) 'application_preferred_name': applicationPreferredName.value,
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   if (dedicatedFileName.isPresent) 'dedicated_file_name': dedicatedFileName.value,
   if (terminalVerificationResults.isPresent) 'terminal_verification_results': terminalVerificationResults.value,
   if (transactionStatusInformation.isPresent) 'transaction_status_information': transactionStatusInformation.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_type', 'application_cryptogram', 'application_preferred_name', 'authorization_code', 'authorization_response_code', 'cardholder_verification_method', 'dedicated_file_name', 'terminal_verification_results', 'transaction_status_information'}.contains(key)); } 
-PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresentReceiptAccountType? Function()? accountType, Omittable<String?>? applicationCryptogram, Omittable<String?>? applicationPreferredName, Omittable<String?>? authorizationCode, Omittable<String?>? authorizationResponseCode, Omittable<String?>? cardholderVerificationMethod, Omittable<String?>? dedicatedFileName, Omittable<String?>? terminalVerificationResults, Omittable<String?>? transactionStatusInformation, }) { return PaymentMethodDetailsCardPresentReceipt(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_type', 'application_cryptogram', 'application_preferred_name', 'authorization_code', 'authorization_response_code', 'cardholder_verification_method', 'dedicated_file_name', 'terminal_verification_results', 'transaction_status_information'}.contains(key));}
+PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresentReceiptAccountType? Function()? accountType, Omittable<String?>? applicationCryptogram, Omittable<String?>? applicationPreferredName, Omittable<String?>? authorizationCode, Omittable<String?>? authorizationResponseCode, Omittable<String?>? cardholderVerificationMethod, Omittable<String?>? dedicatedFileName, Omittable<String?>? terminalVerificationResults, Omittable<String?>? transactionStatusInformation, }) {return PaymentMethodDetailsCardPresentReceipt(
   accountType: accountType != null ? accountType() : this.accountType,
   applicationCryptogram: applicationCryptogram ?? this.applicationCryptogram,
   applicationPreferredName: applicationPreferredName ?? this.applicationPreferredName,
@@ -95,8 +95,8 @@ PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresent
   dedicatedFileName: dedicatedFileName ?? this.dedicatedFileName,
   terminalVerificationResults: terminalVerificationResults ?? this.terminalVerificationResults,
   transactionStatusInformation: transactionStatusInformation ?? this.transactionStatusInformation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodDetailsCardPresentReceipt &&
           accountType == other.accountType &&
           applicationCryptogram == other.applicationCryptogram &&
@@ -106,7 +106,7 @@ PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresent
           cardholderVerificationMethod == other.cardholderVerificationMethod &&
           dedicatedFileName == other.dedicatedFileName &&
           terminalVerificationResults == other.terminalVerificationResults &&
-          transactionStatusInformation == other.transactionStatusInformation; } 
-@override int get hashCode { return Object.hash(accountType, applicationCryptogram, applicationPreferredName, authorizationCode, authorizationResponseCode, cardholderVerificationMethod, dedicatedFileName, terminalVerificationResults, transactionStatusInformation); } 
-@override String toString() { return 'PaymentMethodDetailsCardPresentReceipt(accountType: $accountType, applicationCryptogram: $applicationCryptogram, applicationPreferredName: $applicationPreferredName, authorizationCode: $authorizationCode, authorizationResponseCode: $authorizationResponseCode, cardholderVerificationMethod: $cardholderVerificationMethod, dedicatedFileName: $dedicatedFileName, terminalVerificationResults: $terminalVerificationResults, transactionStatusInformation: $transactionStatusInformation)'; } 
- }
+          transactionStatusInformation == other.transactionStatusInformation;}
+@override int get hashCode {return Object.hash(accountType, applicationCryptogram, applicationPreferredName, authorizationCode, authorizationResponseCode, cardholderVerificationMethod, dedicatedFileName, terminalVerificationResults, transactionStatusInformation);}
+@override String toString() {return 'PaymentMethodDetailsCardPresentReceipt(accountType: $accountType, applicationCryptogram: $applicationCryptogram, applicationPreferredName: $applicationPreferredName, authorizationCode: $authorizationCode, authorizationResponseCode: $authorizationResponseCode, cardholderVerificationMethod: $cardholderVerificationMethod, dedicatedFileName: $dedicatedFileName, terminalVerificationResults: $terminalVerificationResults, transactionStatusInformation: $transactionStatusInformation)';}
+}

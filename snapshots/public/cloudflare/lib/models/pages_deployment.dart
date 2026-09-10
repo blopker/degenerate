@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_build_config.dart';import 'pages_deployment_deployment_trigger.dart';import 'pages_env_vars_value.dart';import 'pages_project_name.dart';import 'pages_source.dart';import 'pages_stage.dart';/// Type of deploy.
 @immutable final class PagesDeploymentEnvironment {const PagesDeploymentEnvironment._(this.value);
 
-factory PagesDeploymentEnvironment.fromJson(String json) { return switch (json) {
+factory PagesDeploymentEnvironment.fromJson(String json) {return switch (json) {
   'preview' => preview,
   'production' => production,
   _ => PagesDeploymentEnvironment._(json),
-}; }
+};}
 
 static const PagesDeploymentEnvironment preview = PagesDeploymentEnvironment._('preview');
 
@@ -17,17 +17,17 @@ static const List<PagesDeploymentEnvironment> values = [preview, production];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDeploymentEnvironment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDeploymentEnvironment($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesDeploymentEnvironment && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesDeploymentEnvironment($value)';}
+}
 @immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions = const Omittable.absent(), });
 
-factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeployment(
+factory PagesDeployment.fromJson(Map<String, dynamic> json) {return PagesDeployment(
   aliases: (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
   buildConfig: PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>),
   createdOn: DateTime.parse(json['created_on'] as String),
@@ -45,7 +45,7 @@ factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeploy
   stages: (json['stages'] as List<dynamic>).map((e) => PagesStage.fromJson(e as Map<String, dynamic>)).toList(),
   url: json['url'] as String,
   usesFunctions: json.containsKey('uses_functions') ? Omittable(json['uses_functions'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// A list of alias URLs pointing to this deployment.
 final List<String>? aliases;
@@ -93,7 +93,7 @@ final String url;
 /// Whether the deployment uses functions.
 final Omittable<bool?> usesFunctions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aliases': aliases,
   'build_config': buildConfig.toJson(),
   'created_on': createdOn.toIso8601String(),
@@ -111,8 +111,8 @@ Map<String, dynamic> toJson() { return {
   'stages': stages.map((e) => e.toJson()).toList(),
   'url': url,
   if (usesFunctions.isPresent) 'uses_functions': usesFunctions.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('aliases') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('aliases') &&
       json.containsKey('build_config') &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('deployment_trigger') &&
@@ -127,8 +127,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('short_id') && json['short_id'] is String &&
       json.containsKey('source') &&
       json.containsKey('stages') &&
-      json.containsKey('url') && json['url'] is String; } 
-PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, PagesDeploymentDeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue?>? Function()? envVars, PagesDeploymentEnvironment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, Omittable<bool?>? usesFunctions, }) { return PagesDeployment(
+      json.containsKey('url') && json['url'] is String;}
+PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, PagesDeploymentDeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue?>? Function()? envVars, PagesDeploymentEnvironment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, Omittable<bool?>? usesFunctions, }) {return PagesDeployment(
   aliases: aliases != null ? aliases() : this.aliases,
   buildConfig: buildConfig ?? this.buildConfig,
   createdOn: createdOn ?? this.createdOn,
@@ -146,8 +146,8 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
   stages: stages ?? this.stages,
   url: url ?? this.url,
   usesFunctions: usesFunctions ?? this.usesFunctions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeployment &&
           listEquals(aliases, other.aliases) &&
           buildConfig == other.buildConfig &&
@@ -165,7 +165,7 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
           source == other.source &&
           listEquals(stages, other.stages) &&
           url == other.url &&
-          usesFunctions == other.usesFunctions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(aliases ?? const []), buildConfig, createdOn, deploymentTrigger, envVars, environment, id, isSkipped, latestStage, modifiedOn, projectId, projectName, shortId, source, Object.hashAll(stages), url, usesFunctions); } 
-@override String toString() { return 'PagesDeployment(aliases: $aliases, buildConfig: $buildConfig, createdOn: $createdOn, deploymentTrigger: $deploymentTrigger, envVars: $envVars, environment: $environment, id: $id, isSkipped: $isSkipped, latestStage: $latestStage, modifiedOn: $modifiedOn, projectId: $projectId, projectName: $projectName, shortId: $shortId, source: $source, stages: $stages, url: $url, usesFunctions: $usesFunctions)'; } 
- }
+          usesFunctions == other.usesFunctions;}
+@override int get hashCode {return Object.hash(Object.hashAll(aliases ?? const []), buildConfig, createdOn, deploymentTrigger, envVars, environment, id, isSkipped, latestStage, modifiedOn, projectId, projectName, shortId, source, Object.hashAll(stages), url, usesFunctions);}
+@override String toString() {return 'PagesDeployment(aliases: $aliases, buildConfig: $buildConfig, createdOn: $createdOn, deploymentTrigger: $deploymentTrigger, envVars: $envVars, environment: $environment, id: $id, isSkipped: $isSkipped, latestStage: $latestStage, modifiedOn: $modifiedOn, projectId: $projectId, projectName: $projectName, shortId: $shortId, source: $source, stages: $stages, url: $url, usesFunctions: $usesFunctions)';}
+}

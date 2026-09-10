@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateServersRequestAuthType {const CreateServersRequestAuthType._(this.value);
 
-factory CreateServersRequestAuthType.fromJson(String json) { return switch (json) {
+factory CreateServersRequestAuthType.fromJson(String json) {return switch (json) {
   'oauth' => oauth,
   'bearer' => bearer,
   'unauthenticated' => unauthenticated,
   _ => CreateServersRequestAuthType._(json),
-}; }
+};}
 
 static const CreateServersRequestAuthType oauth = CreateServersRequestAuthType._('oauth');
 
@@ -19,24 +19,24 @@ static const List<CreateServersRequestAuthType> values = [oauth, bearer, unauthe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateServersRequestAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateServersRequestAuthType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateServersRequestAuthType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateServersRequestAuthType($value)';}
+}
 @immutable final class CreateServersRequest {const CreateServersRequest({required this.authType, required this.hostname, required this.id, required this.name, this.authCredentials, this.description = const Omittable.absent(), });
 
-factory CreateServersRequest.fromJson(Map<String, dynamic> json) { return CreateServersRequest(
+factory CreateServersRequest.fromJson(Map<String, dynamic> json) {return CreateServersRequest(
   authCredentials: json['auth_credentials'] as String?,
   authType: CreateServersRequestAuthType.fromJson(json['auth_type'] as String),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   hostname: Uri.parse(json['hostname'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String? authCredentials;
 
@@ -51,34 +51,34 @@ final String id;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'auth_credentials': ?authCredentials,
   'auth_type': authType.toJson(),
   if (description.isPresent) 'description': description.value,
   'hostname': hostname.toString(),
   'id': id,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('auth_type') &&
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-CreateServersRequest copyWith({String? Function()? authCredentials, CreateServersRequestAuthType? authType, Omittable<String?>? description, Uri? hostname, String? id, String? name, }) { return CreateServersRequest(
+      json.containsKey('name') && json['name'] is String;}
+CreateServersRequest copyWith({String? Function()? authCredentials, CreateServersRequestAuthType? authType, Omittable<String?>? description, Uri? hostname, String? id, String? name, }) {return CreateServersRequest(
   authCredentials: authCredentials != null ? authCredentials() : this.authCredentials,
   authType: authType ?? this.authType,
   description: description ?? this.description,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateServersRequest &&
           authCredentials == other.authCredentials &&
           authType == other.authType &&
           description == other.description &&
           hostname == other.hostname &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(authCredentials, authType, description, hostname, id, name); } 
-@override String toString() { return 'CreateServersRequest(authCredentials: $authCredentials, authType: $authType, description: $description, hostname: $hostname, id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(authCredentials, authType, description, hostname, id, name);}
+@override String toString() {return 'CreateServersRequest(authCredentials: $authCredentials, authType: $authType, description: $description, hostname: $hostname, id: $id, name: $name)';}
+}

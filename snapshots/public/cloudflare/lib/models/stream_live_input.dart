@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_input_rtmps.dart';import 'stream_input_srt.dart';import 'stream_input_webrtc.dart';import 'stream_live_input_created.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_identifier.dart';import 'stream_live_input_modified.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';import 'stream_playback_rtmps.dart';import 'stream_playback_srt.dart';import 'stream_playback_webrtc.dart';/// The connection status of a live input.
 @immutable final class StreamLiveInputStatus {const StreamLiveInputStatus._(this.value);
 
-factory StreamLiveInputStatus.fromJson(String json) { return switch (json) {
+factory StreamLiveInputStatus.fromJson(String json) {return switch (json) {
   'null' => $null,
   'connected' => connected,
   'reconnected' => reconnected,
@@ -14,7 +14,7 @@ factory StreamLiveInputStatus.fromJson(String json) { return switch (json) {
   'failed_to_reconnect' => failedToReconnect,
   'new_configuration_accepted' => newConfigurationAccepted,
   _ => StreamLiveInputStatus._(json),
-}; }
+};}
 
 static const StreamLiveInputStatus $null = StreamLiveInputStatus._('null');
 
@@ -38,18 +38,18 @@ static const List<StreamLiveInputStatus> values = [$null, connected, reconnected
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamLiveInputStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamLiveInputStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is StreamLiveInputStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'StreamLiveInputStatus($value)';}
+}
 /// Details about a live input.
 @immutable final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status = const Omittable.absent(), this.uid, this.webRtc, this.webRtcPlayback, });
 
-factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveInput(
+factory StreamLiveInput.fromJson(Map<String, dynamic> json) {return StreamLiveInput(
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
@@ -64,7 +64,7 @@ factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveI
   uid: json['uid'] != null ? StreamLiveInputIdentifier.fromJson(json['uid'] as String) : null,
   webRtc: json['webRTC'] != null ? StreamInputWebrtc.fromJson(json['webRTC'] as Map<String, dynamic>) : null,
   webRtcPlayback: json['webRTCPlayback'] != null ? StreamPlaybackWebrtc.fromJson(json['webRTCPlayback'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final StreamLiveInputCreated? created;
 
@@ -94,7 +94,7 @@ final StreamInputWebrtc? webRtc;
 
 final StreamPlaybackWebrtc? webRtcPlayback;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (deleteRecordingAfterDays != null) 'deleteRecordingAfterDays': deleteRecordingAfterDays?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -109,9 +109,9 @@ Map<String, dynamic> toJson() { return {
   if (uid != null) 'uid': uid?.toJson(),
   if (webRtc != null) 'webRTC': webRtc?.toJson(),
   if (webRtcPlayback != null) 'webRTCPlayback': webRtcPlayback?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'recording', 'rtmps', 'rtmpsPlayback', 'srt', 'srtPlayback', 'status', 'uid', 'webRTC', 'webRTCPlayback'}.contains(key)); } 
-StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputRecordingSettings? Function()? recording, StreamInputRtmps? Function()? rtmps, StreamPlaybackRtmps? Function()? rtmpsPlayback, StreamInputSrt? Function()? srt, StreamPlaybackSrt? Function()? srtPlayback, Omittable<StreamLiveInputStatus?>? status, StreamLiveInputIdentifier? Function()? uid, StreamInputWebrtc? Function()? webRtc, StreamPlaybackWebrtc? Function()? webRtcPlayback, }) { return StreamLiveInput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'recording', 'rtmps', 'rtmpsPlayback', 'srt', 'srtPlayback', 'status', 'uid', 'webRTC', 'webRTCPlayback'}.contains(key));}
+StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputRecordingSettings? Function()? recording, StreamInputRtmps? Function()? rtmps, StreamPlaybackRtmps? Function()? rtmpsPlayback, StreamInputSrt? Function()? srt, StreamPlaybackSrt? Function()? srtPlayback, Omittable<StreamLiveInputStatus?>? status, StreamLiveInputIdentifier? Function()? uid, StreamInputWebrtc? Function()? webRtc, StreamPlaybackWebrtc? Function()? webRtcPlayback, }) {return StreamLiveInput(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -126,8 +126,8 @@ StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiv
   uid: uid != null ? uid() : this.uid,
   webRtc: webRtc != null ? webRtc() : this.webRtc,
   webRtcPlayback: webRtcPlayback != null ? webRtcPlayback() : this.webRtcPlayback,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamLiveInput &&
           created == other.created &&
           deleteRecordingAfterDays == other.deleteRecordingAfterDays &&
@@ -142,7 +142,7 @@ StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiv
           status == other.status &&
           uid == other.uid &&
           webRtc == other.webRtc &&
-          webRtcPlayback == other.webRtcPlayback; } 
-@override int get hashCode { return Object.hash(created, deleteRecordingAfterDays, enabled, meta, modified, recording, rtmps, rtmpsPlayback, srt, srtPlayback, status, uid, webRtc, webRtcPlayback); } 
-@override String toString() { return 'StreamLiveInput(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, recording: $recording, rtmps: $rtmps, rtmpsPlayback: $rtmpsPlayback, srt: $srt, srtPlayback: $srtPlayback, status: $status, uid: $uid, webRtc: $webRtc, webRtcPlayback: $webRtcPlayback)'; } 
- }
+          webRtcPlayback == other.webRtcPlayback;}
+@override int get hashCode {return Object.hash(created, deleteRecordingAfterDays, enabled, meta, modified, recording, rtmps, rtmpsPlayback, srt, srtPlayback, status, uid, webRtc, webRtcPlayback);}
+@override String toString() {return 'StreamLiveInput(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, recording: $recording, rtmps: $rtmps, rtmpsPlayback: $rtmpsPlayback, srt: $srt, srtPlayback: $srtPlayback, status: $status, uid: $uid, webRtc: $webRtc, webRtcPlayback: $webRtcPlayback)';}
+}

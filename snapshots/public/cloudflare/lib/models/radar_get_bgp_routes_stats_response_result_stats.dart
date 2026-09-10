@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesStatsResponseResultStats {const RadarGetBgpRoutesStatsResponseResultStats({required this.distinctOrigins, required this.distinctOriginsIpv4, required this.distinctOriginsIpv6, required this.distinctPrefixes, required this.distinctPrefixesIpv4, required this.distinctPrefixesIpv6, required this.routesInvalid, required this.routesInvalidIpv4, required this.routesInvalidIpv6, required this.routesTotal, required this.routesTotalIpv4, required this.routesTotalIpv6, required this.routesUnknown, required this.routesUnknownIpv4, required this.routesUnknownIpv6, required this.routesValid, required this.routesValidIpv4, required this.routesValidIpv6, });
 
-factory RadarGetBgpRoutesStatsResponseResultStats.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesStatsResponseResultStats(
+factory RadarGetBgpRoutesStatsResponseResultStats.fromJson(Map<String, dynamic> json) {return RadarGetBgpRoutesStatsResponseResultStats(
   distinctOrigins: (json['distinct_origins'] as num).toInt(),
   distinctOriginsIpv4: (json['distinct_origins_ipv4'] as num).toInt(),
   distinctOriginsIpv6: (json['distinct_origins_ipv6'] as num).toInt(),
@@ -21,7 +21,7 @@ factory RadarGetBgpRoutesStatsResponseResultStats.fromJson(Map<String, dynamic> 
   routesValid: (json['routes_valid'] as num).toInt(),
   routesValidIpv4: (json['routes_valid_ipv4'] as num).toInt(),
   routesValidIpv6: (json['routes_valid_ipv6'] as num).toInt(),
-); }
+);}
 
 final int distinctOrigins;
 
@@ -59,7 +59,7 @@ final int routesValidIpv4;
 
 final int routesValidIpv6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'distinct_origins': distinctOrigins,
   'distinct_origins_ipv4': distinctOriginsIpv4,
   'distinct_origins_ipv6': distinctOriginsIpv6,
@@ -78,8 +78,8 @@ Map<String, dynamic> toJson() { return {
   'routes_valid': routesValid,
   'routes_valid_ipv4': routesValidIpv4,
   'routes_valid_ipv6': routesValidIpv6,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('distinct_origins') && json['distinct_origins'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('distinct_origins') && json['distinct_origins'] is num &&
       json.containsKey('distinct_origins_ipv4') && json['distinct_origins_ipv4'] is num &&
       json.containsKey('distinct_origins_ipv6') && json['distinct_origins_ipv6'] is num &&
       json.containsKey('distinct_prefixes') && json['distinct_prefixes'] is num &&
@@ -96,8 +96,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('disti
       json.containsKey('routes_unknown_ipv6') && json['routes_unknown_ipv6'] is num &&
       json.containsKey('routes_valid') && json['routes_valid'] is num &&
       json.containsKey('routes_valid_ipv4') && json['routes_valid_ipv4'] is num &&
-      json.containsKey('routes_valid_ipv6') && json['routes_valid_ipv6'] is num; } 
-RadarGetBgpRoutesStatsResponseResultStats copyWith({int? distinctOrigins, int? distinctOriginsIpv4, int? distinctOriginsIpv6, int? distinctPrefixes, int? distinctPrefixesIpv4, int? distinctPrefixesIpv6, int? routesInvalid, int? routesInvalidIpv4, int? routesInvalidIpv6, int? routesTotal, int? routesTotalIpv4, int? routesTotalIpv6, int? routesUnknown, int? routesUnknownIpv4, int? routesUnknownIpv6, int? routesValid, int? routesValidIpv4, int? routesValidIpv6, }) { return RadarGetBgpRoutesStatsResponseResultStats(
+      json.containsKey('routes_valid_ipv6') && json['routes_valid_ipv6'] is num;}
+RadarGetBgpRoutesStatsResponseResultStats copyWith({int? distinctOrigins, int? distinctOriginsIpv4, int? distinctOriginsIpv6, int? distinctPrefixes, int? distinctPrefixesIpv4, int? distinctPrefixesIpv6, int? routesInvalid, int? routesInvalidIpv4, int? routesInvalidIpv6, int? routesTotal, int? routesTotalIpv4, int? routesTotalIpv6, int? routesUnknown, int? routesUnknownIpv4, int? routesUnknownIpv6, int? routesValid, int? routesValidIpv4, int? routesValidIpv6, }) {return RadarGetBgpRoutesStatsResponseResultStats(
   distinctOrigins: distinctOrigins ?? this.distinctOrigins,
   distinctOriginsIpv4: distinctOriginsIpv4 ?? this.distinctOriginsIpv4,
   distinctOriginsIpv6: distinctOriginsIpv6 ?? this.distinctOriginsIpv6,
@@ -116,8 +116,8 @@ RadarGetBgpRoutesStatsResponseResultStats copyWith({int? distinctOrigins, int? d
   routesValid: routesValid ?? this.routesValid,
   routesValidIpv4: routesValidIpv4 ?? this.routesValidIpv4,
   routesValidIpv6: routesValidIpv6 ?? this.routesValidIpv6,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRoutesStatsResponseResultStats &&
           distinctOrigins == other.distinctOrigins &&
           distinctOriginsIpv4 == other.distinctOriginsIpv4 &&
@@ -136,7 +136,7 @@ RadarGetBgpRoutesStatsResponseResultStats copyWith({int? distinctOrigins, int? d
           routesUnknownIpv6 == other.routesUnknownIpv6 &&
           routesValid == other.routesValid &&
           routesValidIpv4 == other.routesValidIpv4 &&
-          routesValidIpv6 == other.routesValidIpv6; } 
-@override int get hashCode { return Object.hash(distinctOrigins, distinctOriginsIpv4, distinctOriginsIpv6, distinctPrefixes, distinctPrefixesIpv4, distinctPrefixesIpv6, routesInvalid, routesInvalidIpv4, routesInvalidIpv6, routesTotal, routesTotalIpv4, routesTotalIpv6, routesUnknown, routesUnknownIpv4, routesUnknownIpv6, routesValid, routesValidIpv4, routesValidIpv6); } 
-@override String toString() { return 'RadarGetBgpRoutesStatsResponseResultStats(distinctOrigins: $distinctOrigins, distinctOriginsIpv4: $distinctOriginsIpv4, distinctOriginsIpv6: $distinctOriginsIpv6, distinctPrefixes: $distinctPrefixes, distinctPrefixesIpv4: $distinctPrefixesIpv4, distinctPrefixesIpv6: $distinctPrefixesIpv6, routesInvalid: $routesInvalid, routesInvalidIpv4: $routesInvalidIpv4, routesInvalidIpv6: $routesInvalidIpv6, routesTotal: $routesTotal, routesTotalIpv4: $routesTotalIpv4, routesTotalIpv6: $routesTotalIpv6, routesUnknown: $routesUnknown, routesUnknownIpv4: $routesUnknownIpv4, routesUnknownIpv6: $routesUnknownIpv6, routesValid: $routesValid, routesValidIpv4: $routesValidIpv4, routesValidIpv6: $routesValidIpv6)'; } 
- }
+          routesValidIpv6 == other.routesValidIpv6;}
+@override int get hashCode {return Object.hash(distinctOrigins, distinctOriginsIpv4, distinctOriginsIpv6, distinctPrefixes, distinctPrefixesIpv4, distinctPrefixesIpv6, routesInvalid, routesInvalidIpv4, routesInvalidIpv6, routesTotal, routesTotalIpv4, routesTotalIpv6, routesUnknown, routesUnknownIpv4, routesUnknownIpv6, routesValid, routesValidIpv4, routesValidIpv6);}
+@override String toString() {return 'RadarGetBgpRoutesStatsResponseResultStats(distinctOrigins: $distinctOrigins, distinctOriginsIpv4: $distinctOriginsIpv4, distinctOriginsIpv6: $distinctOriginsIpv6, distinctPrefixes: $distinctPrefixes, distinctPrefixesIpv4: $distinctPrefixesIpv4, distinctPrefixesIpv6: $distinctPrefixesIpv6, routesInvalid: $routesInvalid, routesInvalidIpv4: $routesInvalidIpv4, routesInvalidIpv6: $routesInvalidIpv6, routesTotal: $routesTotal, routesTotalIpv4: $routesTotalIpv4, routesTotalIpv6: $routesTotalIpv6, routesUnknown: $routesUnknown, routesUnknownIpv4: $routesUnknownIpv4, routesUnknownIpv6: $routesUnknownIpv6, routesValid: $routesValid, routesValidIpv4: $routesValidIpv4, routesValidIpv6: $routesValidIpv6)';}
+}

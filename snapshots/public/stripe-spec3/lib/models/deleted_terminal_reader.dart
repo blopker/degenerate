@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device type of the reader.
 @immutable final class DeletedTerminalReaderDeviceType {const DeletedTerminalReaderDeviceType._(this.value);
 
-factory DeletedTerminalReaderDeviceType.fromJson(String json) { return switch (json) {
+factory DeletedTerminalReaderDeviceType.fromJson(String json) {return switch (json) {
   'bbpos_chipper2x' => bbposChipper2x,
   'bbpos_wisepad3' => bbposWisepad3,
   'bbpos_wisepos_e' => bbposWiseposE,
@@ -16,7 +16,7 @@ factory DeletedTerminalReaderDeviceType.fromJson(String json) { return switch (j
   'stripe_s710' => stripeS710,
   'verifone_P400' => verifoneP400,
   _ => DeletedTerminalReaderDeviceType._(json),
-}; }
+};}
 
 static const DeletedTerminalReaderDeviceType bbposChipper2x = DeletedTerminalReaderDeviceType._('bbpos_chipper2x');
 
@@ -44,21 +44,21 @@ static const List<DeletedTerminalReaderDeviceType> values = [bbposChipper2x, bbp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedTerminalReaderDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedTerminalReaderDeviceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeletedTerminalReaderDeviceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeletedTerminalReaderDeviceType($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class DeletedTerminalReaderObject {const DeletedTerminalReaderObject._(this.value);
 
-factory DeletedTerminalReaderObject.fromJson(String json) { return switch (json) {
+factory DeletedTerminalReaderObject.fromJson(String json) {return switch (json) {
   'terminal.reader' => terminalReader,
   _ => DeletedTerminalReaderObject._(json),
-}; }
+};}
 
 static const DeletedTerminalReaderObject terminalReader = DeletedTerminalReaderObject._('terminal.reader');
 
@@ -66,24 +66,24 @@ static const List<DeletedTerminalReaderObject> values = [terminalReader];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedTerminalReaderObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedTerminalReaderObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeletedTerminalReaderObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeletedTerminalReaderObject($value)';}
+}
 /// 
 @immutable final class DeletedTerminalReader {const DeletedTerminalReader({required this.deleted, required this.deviceType, required this.id, required this.object, required this.serialNumber, });
 
-factory DeletedTerminalReader.fromJson(Map<String, dynamic> json) { return DeletedTerminalReader(
+factory DeletedTerminalReader.fromJson(Map<String, dynamic> json) {return DeletedTerminalReader(
   deleted: json['deleted'] as bool,
   deviceType: DeletedTerminalReaderDeviceType.fromJson(json['device_type'] as String),
   id: json['id'] as String,
   object: DeletedTerminalReaderObject.fromJson(json['object'] as String),
   serialNumber: json['serial_number'] as String,
-); }
+);}
 
 /// Always true for a deleted object
 final bool deleted;
@@ -100,32 +100,32 @@ final DeletedTerminalReaderObject object;
 /// Serial number of the reader.
 final String serialNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': deleted,
   'device_type': deviceType.toJson(),
   'id': id,
   'object': object.toJson(),
   'serial_number': serialNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('device_type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('serial_number') && json['serial_number'] is String; } 
-DeletedTerminalReader copyWith({bool? deleted, DeletedTerminalReaderDeviceType? deviceType, String? id, DeletedTerminalReaderObject? object, String? serialNumber, }) { return DeletedTerminalReader(
+      json.containsKey('serial_number') && json['serial_number'] is String;}
+DeletedTerminalReader copyWith({bool? deleted, DeletedTerminalReaderDeviceType? deviceType, String? id, DeletedTerminalReaderObject? object, String? serialNumber, }) {return DeletedTerminalReader(
   deleted: deleted ?? this.deleted,
   deviceType: deviceType ?? this.deviceType,
   id: id ?? this.id,
   object: object ?? this.object,
   serialNumber: serialNumber ?? this.serialNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeletedTerminalReader &&
           deleted == other.deleted &&
           deviceType == other.deviceType &&
           id == other.id &&
           object == other.object &&
-          serialNumber == other.serialNumber; } 
-@override int get hashCode { return Object.hash(deleted, deviceType, id, object, serialNumber); } 
-@override String toString() { return 'DeletedTerminalReader(deleted: $deleted, deviceType: $deviceType, id: $id, object: $object, serialNumber: $serialNumber)'; } 
- }
+          serialNumber == other.serialNumber;}
+@override int get hashCode {return Object.hash(deleted, deviceType, id, object, serialNumber);}
+@override String toString() {return 'DeletedTerminalReader(deleted: $deleted, deviceType: $deviceType, id: $id, object: $object, serialNumber: $serialNumber)';}
+}

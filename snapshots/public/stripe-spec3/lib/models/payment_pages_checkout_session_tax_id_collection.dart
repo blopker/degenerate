@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether a tax ID is required on the payment page
 @immutable final class PaymentPagesCheckoutSessionTaxIdCollectionRequired {const PaymentPagesCheckoutSessionTaxIdCollectionRequired._(this.value);
 
-factory PaymentPagesCheckoutSessionTaxIdCollectionRequired.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionTaxIdCollectionRequired.fromJson(String json) {return switch (json) {
   'if_supported' => ifSupported,
   'never' => never,
   _ => PaymentPagesCheckoutSessionTaxIdCollectionRequired._(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionTaxIdCollectionRequired ifSupported = PaymentPagesCheckoutSessionTaxIdCollectionRequired._('if_supported');
 
@@ -17,21 +17,21 @@ static const List<PaymentPagesCheckoutSessionTaxIdCollectionRequired> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionTaxIdCollectionRequired && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionTaxIdCollectionRequired($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionTaxIdCollectionRequired && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentPagesCheckoutSessionTaxIdCollectionRequired($value)';}
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionTaxIdCollection {const PaymentPagesCheckoutSessionTaxIdCollection({required this.enabled, required this.$required, });
 
-factory PaymentPagesCheckoutSessionTaxIdCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionTaxIdCollection(
+factory PaymentPagesCheckoutSessionTaxIdCollection.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionTaxIdCollection(
   enabled: json['enabled'] as bool,
   $required: PaymentPagesCheckoutSessionTaxIdCollectionRequired.fromJson(json['required'] as String),
-); }
+);}
 
 /// Indicates whether tax ID collection is enabled for the session
 final bool enabled;
@@ -39,20 +39,20 @@ final bool enabled;
 /// Indicates whether a tax ID is required on the payment page
 final PaymentPagesCheckoutSessionTaxIdCollectionRequired $required;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'required': $required.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('required'); } 
-PaymentPagesCheckoutSessionTaxIdCollection copyWith({bool? enabled, PaymentPagesCheckoutSessionTaxIdCollectionRequired? $required, }) { return PaymentPagesCheckoutSessionTaxIdCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('required');}
+PaymentPagesCheckoutSessionTaxIdCollection copyWith({bool? enabled, PaymentPagesCheckoutSessionTaxIdCollectionRequired? $required, }) {return PaymentPagesCheckoutSessionTaxIdCollection(
   enabled: enabled ?? this.enabled,
   $required: $required ?? this.$required,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionTaxIdCollection &&
           enabled == other.enabled &&
-          $required == other.$required; } 
-@override int get hashCode { return Object.hash(enabled, $required); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionTaxIdCollection(enabled: $enabled, \$required: ${$required})'; } 
- }
+          $required == other.$required;}
+@override int get hashCode {return Object.hash(enabled, $required);}
+@override String toString() {return 'PaymentPagesCheckoutSessionTaxIdCollection(enabled: $enabled, \$required: ${$required})';}
+}

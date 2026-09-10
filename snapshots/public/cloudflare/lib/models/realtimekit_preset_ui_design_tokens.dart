@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_ui_design_tokens_colors.dart';@immutable final class RealtimekitPresetUiDesignTokensBorderRadius {const RealtimekitPresetUiDesignTokensBorderRadius._(this.value);
 
-factory RealtimekitPresetUiDesignTokensBorderRadius.fromJson(String json) { return switch (json) {
+factory RealtimekitPresetUiDesignTokensBorderRadius.fromJson(String json) {return switch (json) {
   'rounded' => rounded,
   _ => RealtimekitPresetUiDesignTokensBorderRadius._(json),
-}; }
+};}
 
 static const RealtimekitPresetUiDesignTokensBorderRadius rounded = RealtimekitPresetUiDesignTokensBorderRadius._('rounded');
 
@@ -13,20 +13,20 @@ static const List<RealtimekitPresetUiDesignTokensBorderRadius> values = [rounded
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitPresetUiDesignTokensBorderRadius && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitPresetUiDesignTokensBorderRadius($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitPresetUiDesignTokensBorderRadius && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitPresetUiDesignTokensBorderRadius($value)';}
+}
 @immutable final class RealtimekitPresetUiDesignTokensBorderWidth {const RealtimekitPresetUiDesignTokensBorderWidth._(this.value);
 
-factory RealtimekitPresetUiDesignTokensBorderWidth.fromJson(String json) { return switch (json) {
+factory RealtimekitPresetUiDesignTokensBorderWidth.fromJson(String json) {return switch (json) {
   'thin' => thin,
   _ => RealtimekitPresetUiDesignTokensBorderWidth._(json),
-}; }
+};}
 
 static const RealtimekitPresetUiDesignTokensBorderWidth thin = RealtimekitPresetUiDesignTokensBorderWidth._('thin');
 
@@ -34,20 +34,20 @@ static const List<RealtimekitPresetUiDesignTokensBorderWidth> values = [thin];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitPresetUiDesignTokensBorderWidth && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitPresetUiDesignTokensBorderWidth($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitPresetUiDesignTokensBorderWidth && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitPresetUiDesignTokensBorderWidth($value)';}
+}
 @immutable final class RealtimekitPresetUiDesignTokensTheme {const RealtimekitPresetUiDesignTokensTheme._(this.value);
 
-factory RealtimekitPresetUiDesignTokensTheme.fromJson(String json) { return switch (json) {
+factory RealtimekitPresetUiDesignTokensTheme.fromJson(String json) {return switch (json) {
   'dark' => dark,
   _ => RealtimekitPresetUiDesignTokensTheme._(json),
-}; }
+};}
 
 static const RealtimekitPresetUiDesignTokensTheme dark = RealtimekitPresetUiDesignTokensTheme._('dark');
 
@@ -55,24 +55,24 @@ static const List<RealtimekitPresetUiDesignTokensTheme> values = [dark];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitPresetUiDesignTokensTheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitPresetUiDesignTokensTheme($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitPresetUiDesignTokensTheme && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitPresetUiDesignTokensTheme($value)';}
+}
 @immutable final class RealtimekitPresetUiDesignTokens {const RealtimekitPresetUiDesignTokens({required this.borderRadius, required this.borderWidth, required this.colors, required this.logo, required this.spacingBase, required this.theme, });
 
-factory RealtimekitPresetUiDesignTokens.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUiDesignTokens(
+factory RealtimekitPresetUiDesignTokens.fromJson(Map<String, dynamic> json) {return RealtimekitPresetUiDesignTokens(
   borderRadius: RealtimekitPresetUiDesignTokensBorderRadius.fromJson(json['border_radius'] as String),
   borderWidth: RealtimekitPresetUiDesignTokensBorderWidth.fromJson(json['border_width'] as String),
   colors: RealtimekitPresetUiDesignTokensColors.fromJson(json['colors'] as Map<String, dynamic>),
   logo: json['logo'] as String,
   spacingBase: (json['spacing_base'] as num).toDouble(),
   theme: RealtimekitPresetUiDesignTokensTheme.fromJson(json['theme'] as String),
-); }
+);}
 
 final RealtimekitPresetUiDesignTokensBorderRadius borderRadius;
 
@@ -86,36 +86,36 @@ final double spacingBase;
 
 final RealtimekitPresetUiDesignTokensTheme theme;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'border_radius': borderRadius.toJson(),
   'border_width': borderWidth.toJson(),
   'colors': colors.toJson(),
   'logo': logo,
   'spacing_base': spacingBase,
   'theme': theme.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('border_radius') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('border_radius') &&
       json.containsKey('border_width') &&
       json.containsKey('colors') &&
       json.containsKey('logo') && json['logo'] is String &&
       json.containsKey('spacing_base') && json['spacing_base'] is num &&
-      json.containsKey('theme'); } 
-RealtimekitPresetUiDesignTokens copyWith({RealtimekitPresetUiDesignTokensBorderRadius? borderRadius, RealtimekitPresetUiDesignTokensBorderWidth? borderWidth, RealtimekitPresetUiDesignTokensColors? colors, String? logo, double? spacingBase, RealtimekitPresetUiDesignTokensTheme? theme, }) { return RealtimekitPresetUiDesignTokens(
+      json.containsKey('theme');}
+RealtimekitPresetUiDesignTokens copyWith({RealtimekitPresetUiDesignTokensBorderRadius? borderRadius, RealtimekitPresetUiDesignTokensBorderWidth? borderWidth, RealtimekitPresetUiDesignTokensColors? colors, String? logo, double? spacingBase, RealtimekitPresetUiDesignTokensTheme? theme, }) {return RealtimekitPresetUiDesignTokens(
   borderRadius: borderRadius ?? this.borderRadius,
   borderWidth: borderWidth ?? this.borderWidth,
   colors: colors ?? this.colors,
   logo: logo ?? this.logo,
   spacingBase: spacingBase ?? this.spacingBase,
   theme: theme ?? this.theme,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitPresetUiDesignTokens &&
           borderRadius == other.borderRadius &&
           borderWidth == other.borderWidth &&
           colors == other.colors &&
           logo == other.logo &&
           spacingBase == other.spacingBase &&
-          theme == other.theme; } 
-@override int get hashCode { return Object.hash(borderRadius, borderWidth, colors, logo, spacingBase, theme); } 
-@override String toString() { return 'RealtimekitPresetUiDesignTokens(borderRadius: $borderRadius, borderWidth: $borderWidth, colors: $colors, logo: $logo, spacingBase: $spacingBase, theme: $theme)'; } 
- }
+          theme == other.theme;}
+@override int get hashCode {return Object.hash(borderRadius, borderWidth, colors, logo, spacingBase, theme);}
+@override String toString() {return 'RealtimekitPresetUiDesignTokens(borderRadius: $borderRadius, borderWidth: $borderWidth, colors: $colors, logo: $logo, spacingBase: $spacingBase, theme: $theme)';}
+}

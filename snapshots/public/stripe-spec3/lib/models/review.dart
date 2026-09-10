@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_review_resource_location.dart';import 'radar_review_resource_session.dart';import 'review_charge.dart';import 'review_payment_intent.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 @immutable final class ReviewClosedReason {const ReviewClosedReason._(this.value);
 
-factory ReviewClosedReason.fromJson(String json) { return switch (json) {
+factory ReviewClosedReason.fromJson(String json) {return switch (json) {
   'acknowledged' => acknowledged,
   'approved' => approved,
   'canceled' => canceled,
@@ -13,7 +13,7 @@ factory ReviewClosedReason.fromJson(String json) { return switch (json) {
   'refunded' => refunded,
   'refunded_as_fraud' => refundedAsFraud,
   _ => ReviewClosedReason._(json),
-}; }
+};}
 
 static const ReviewClosedReason acknowledged = ReviewClosedReason._('acknowledged');
 
@@ -35,21 +35,21 @@ static const List<ReviewClosedReason> values = [acknowledged, approved, canceled
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewClosedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewClosedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReviewClosedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReviewClosedReason($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ReviewObject {const ReviewObject._(this.value);
 
-factory ReviewObject.fromJson(String json) { return switch (json) {
+factory ReviewObject.fromJson(String json) {return switch (json) {
   'review' => review,
   _ => ReviewObject._(json),
-}; }
+};}
 
 static const ReviewObject review = ReviewObject._('review');
 
@@ -57,22 +57,22 @@ static const List<ReviewObject> values = [review];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReviewObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReviewObject($value)';}
+}
 /// The reason the review was opened. One of `rule` or `manual`.
 @immutable final class ReviewOpenedReason {const ReviewOpenedReason._(this.value);
 
-factory ReviewOpenedReason.fromJson(String json) { return switch (json) {
+factory ReviewOpenedReason.fromJson(String json) {return switch (json) {
   'manual' => manual,
   'rule' => rule,
   _ => ReviewOpenedReason._(json),
-}; }
+};}
 
 static const ReviewOpenedReason manual = ReviewOpenedReason._('manual');
 
@@ -82,21 +82,21 @@ static const List<ReviewOpenedReason> values = [manual, rule];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewOpenedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewOpenedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReviewOpenedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReviewOpenedReason($value)';}
+}
 /// Reviews can be used to supplement automated fraud detection with human expertise.
 /// 
 /// Learn more about [Radar](/radar) and reviewing payments
 /// [here](https://docs.stripe.com/radar/reviews).
 @immutable final class Review {const Review({required this.created, required this.id, required this.livemode, required this.object, required this.open, required this.openedReason, required this.reason, this.billingZip = const Omittable.absent(), this.charge = const Omittable.absent(), this.closedReason = const Omittable.absent(), this.ipAddress = const Omittable.absent(), this.ipAddressLocation = const Omittable.absent(), this.paymentIntent, this.session = const Omittable.absent(), });
 
-factory Review.fromJson(Map<String, dynamic> json) { return Review(
+factory Review.fromJson(Map<String, dynamic> json) {return Review(
   billingZip: json.containsKey('billing_zip') ? Omittable(json['billing_zip'] as String?) : const Omittable.absent(),
   charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? ReviewCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
   closedReason: json.containsKey('closed_reason') ? Omittable(json['closed_reason'] != null ? ReviewClosedReason.fromJson(json['closed_reason'] as String) : null) : const Omittable.absent(),
@@ -111,7 +111,7 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
   paymentIntent: json['payment_intent'] != null ? ReviewPaymentIntent.fromJson(json['payment_intent']) : null,
   reason: json['reason'] as String,
   session: json.containsKey('session') ? Omittable(json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The ZIP or postal code of the card used, if applicable.
 final Omittable<String?> billingZip;
@@ -155,7 +155,7 @@ final String reason;
 /// Information related to the browsing session of the user who initiated the payment.
 final Omittable<RadarReviewResourceSession?> session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingZip.isPresent) 'billing_zip': billingZip.value,
   if (charge.isPresent) 'charge': charge.value?.toJson(),
   if (closedReason.isPresent) 'closed_reason': closedReason.value?.toJson(),
@@ -170,15 +170,15 @@ Map<String, dynamic> toJson() { return {
   if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
   'reason': reason,
   if (session.isPresent) 'session': session.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('open') && json['open'] is bool &&
       json.containsKey('opened_reason') &&
-      json.containsKey('reason') && json['reason'] is String; } 
-Review copyWith({Omittable<String?>? billingZip, Omittable<ReviewCharge?>? charge, Omittable<ReviewClosedReason?>? closedReason, int? created, String? id, Omittable<String?>? ipAddress, Omittable<RadarReviewResourceLocation?>? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, ReviewOpenedReason? openedReason, ReviewPaymentIntent? Function()? paymentIntent, String? reason, Omittable<RadarReviewResourceSession?>? session, }) { return Review(
+      json.containsKey('reason') && json['reason'] is String;}
+Review copyWith({Omittable<String?>? billingZip, Omittable<ReviewCharge?>? charge, Omittable<ReviewClosedReason?>? closedReason, int? created, String? id, Omittable<String?>? ipAddress, Omittable<RadarReviewResourceLocation?>? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, ReviewOpenedReason? openedReason, ReviewPaymentIntent? Function()? paymentIntent, String? reason, Omittable<RadarReviewResourceSession?>? session, }) {return Review(
   billingZip: billingZip ?? this.billingZip,
   charge: charge ?? this.charge,
   closedReason: closedReason ?? this.closedReason,
@@ -193,8 +193,8 @@ Review copyWith({Omittable<String?>? billingZip, Omittable<ReviewCharge?>? charg
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   reason: reason ?? this.reason,
   session: session ?? this.session,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Review &&
           billingZip == other.billingZip &&
           charge == other.charge &&
@@ -209,7 +209,7 @@ Review copyWith({Omittable<String?>? billingZip, Omittable<ReviewCharge?>? charg
           openedReason == other.openedReason &&
           paymentIntent == other.paymentIntent &&
           reason == other.reason &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(billingZip, charge, closedReason, created, id, ipAddress, ipAddressLocation, livemode, object, open, openedReason, paymentIntent, reason, session); } 
-@override String toString() { return 'Review(billingZip: $billingZip, charge: $charge, closedReason: $closedReason, created: $created, id: $id, ipAddress: $ipAddress, ipAddressLocation: $ipAddressLocation, livemode: $livemode, object: $object, open: $open, openedReason: $openedReason, paymentIntent: $paymentIntent, reason: $reason, session: $session)'; } 
- }
+          session == other.session;}
+@override int get hashCode {return Object.hash(billingZip, charge, closedReason, created, id, ipAddress, ipAddressLocation, livemode, object, open, openedReason, paymentIntent, reason, session);}
+@override String toString() {return 'Review(billingZip: $billingZip, charge: $charge, closedReason: $closedReason, created: $created, id: $id, ipAddress: $ipAddress, ipAddressLocation: $ipAddressLocation, livemode: $livemode, object: $object, open: $open, openedReason: $openedReason, paymentIntent: $paymentIntent, reason: $reason, session: $session)';}
+}

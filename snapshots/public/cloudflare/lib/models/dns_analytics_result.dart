@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_data2.dart';import 'dns_analytics_query.dart';@immutable final class DnsAnalyticsResult {const DnsAnalyticsResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, });
 
-factory DnsAnalyticsResult.fromJson(Map<String, dynamic> json) { return DnsAnalyticsResult(
+factory DnsAnalyticsResult.fromJson(Map<String, dynamic> json) {return DnsAnalyticsResult(
   data: (json['data'] as List<dynamic>).map((e) => DnsAnalyticsData2.fromJson(e as Map<String, dynamic>)).toList(),
   dataLag: (json['data_lag'] as num).toDouble(),
   max: json['max'] as Map<String, dynamic>,
@@ -10,7 +10,7 @@ factory DnsAnalyticsResult.fromJson(Map<String, dynamic> json) { return DnsAnaly
   query: DnsAnalyticsQuery.fromJson(json['query'] as Map<String, dynamic>),
   rows: (json['rows'] as num).toDouble(),
   totals: json['totals'] as Map<String, dynamic>,
-); }
+);}
 
 /// Array with one row per combination of dimension values.
 final List<DnsAnalyticsData2> data;
@@ -32,7 +32,7 @@ final double rows;
 /// Total results for metrics across all data (object mapping metric names to values).
 final Map<String,dynamic> totals;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'data_lag': dataLag,
   'max': max,
@@ -40,15 +40,15 @@ Map<String, dynamic> toJson() { return {
   'query': query.toJson(),
   'rows': rows,
   'totals': totals,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('data_lag') && json['data_lag'] is num &&
       json.containsKey('max') &&
       json.containsKey('min') &&
       json.containsKey('query') &&
       json.containsKey('rows') && json['rows'] is num &&
-      json.containsKey('totals'); } 
-DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map<String,dynamic>? max, Map<String,dynamic>? min, DnsAnalyticsQuery? query, double? rows, Map<String,dynamic>? totals, }) { return DnsAnalyticsResult(
+      json.containsKey('totals');}
+DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map<String,dynamic>? max, Map<String,dynamic>? min, DnsAnalyticsQuery? query, double? rows, Map<String,dynamic>? totals, }) {return DnsAnalyticsResult(
   data: data ?? this.data,
   dataLag: dataLag ?? this.dataLag,
   max: max ?? this.max,
@@ -56,8 +56,8 @@ DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map
   query: query ?? this.query,
   rows: rows ?? this.rows,
   totals: totals ?? this.totals,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsAnalyticsResult &&
           listEquals(data, other.data) &&
           dataLag == other.dataLag &&
@@ -65,7 +65,7 @@ DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map
           min == other.min &&
           query == other.query &&
           rows == other.rows &&
-          totals == other.totals; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, totals); } 
-@override String toString() { return 'DnsAnalyticsResult(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, totals: $totals)'; } 
- }
+          totals == other.totals;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, totals);}
+@override String toString() {return 'DnsAnalyticsResult(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, totals: $totals)';}
+}

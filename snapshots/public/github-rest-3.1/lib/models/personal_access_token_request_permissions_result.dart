@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
 @immutable final class PersonalAccessTokenRequestPermissionsResult {const PersonalAccessTokenRequestPermissionsResult({this.organization, this.repository, this.other, });
 
-factory PersonalAccessTokenRequestPermissionsResult.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequestPermissionsResult(
+factory PersonalAccessTokenRequestPermissionsResult.fromJson(Map<String, dynamic> json) {return PersonalAccessTokenRequestPermissionsResult(
   organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   repository: (json['repository'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   other: (json['other'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 final Map<String,String>? organization;
 
@@ -15,22 +15,22 @@ final Map<String,String>? repository;
 
 final Map<String,String>? other;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'organization': ?organization,
   'repository': ?repository,
   'other': ?other,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key)); } 
-PersonalAccessTokenRequestPermissionsResult copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) { return PersonalAccessTokenRequestPermissionsResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key));}
+PersonalAccessTokenRequestPermissionsResult copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) {return PersonalAccessTokenRequestPermissionsResult(
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   other: other != null ? other() : this.other,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersonalAccessTokenRequestPermissionsResult &&
           organization == other.organization &&
           repository == other.repository &&
-          this.other == other.other; } 
-@override int get hashCode { return Object.hash(organization, repository, other); } 
-@override String toString() { return 'PersonalAccessTokenRequestPermissionsResult(organization: $organization, repository: $repository, other: $other)'; } 
- }
+          this.other == other.other;}
+@override int get hashCode {return Object.hash(organization, repository, other);}
+@override String toString() {return 'PersonalAccessTokenRequestPermissionsResult(organization: $organization, repository: $repository, other: $other)';}
+}

@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_minimal_base.dart';import 'pull_request_minimal_head.dart';@immutable final class PullRequestMinimal {const PullRequestMinimal({required this.id, required this.number, required this.url, required this.head, required this.base, });
 
-factory PullRequestMinimal.fromJson(Map<String, dynamic> json) { return PullRequestMinimal(
+factory PullRequestMinimal.fromJson(Map<String, dynamic> json) {return PullRequestMinimal(
   id: (json['id'] as num).toInt(),
   number: (json['number'] as num).toInt(),
   url: json['url'] as String,
   head: PullRequestMinimalHead.fromJson(json['head'] as Map<String, dynamic>),
   base: PullRequestMinimalBase.fromJson(json['base'] as Map<String, dynamic>),
-); }
+);}
 
 final int id;
 
@@ -20,32 +20,32 @@ final PullRequestMinimalHead head;
 
 final PullRequestMinimalBase base;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'number': number,
   'url': url,
   'head': head.toJson(),
   'base': base.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('head') &&
-      json.containsKey('base'); } 
-PullRequestMinimal copyWith({int? id, int? number, String? url, PullRequestMinimalHead? head, PullRequestMinimalBase? base, }) { return PullRequestMinimal(
+      json.containsKey('base');}
+PullRequestMinimal copyWith({int? id, int? number, String? url, PullRequestMinimalHead? head, PullRequestMinimalBase? base, }) {return PullRequestMinimal(
   id: id ?? this.id,
   number: number ?? this.number,
   url: url ?? this.url,
   head: head ?? this.head,
   base: base ?? this.base,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullRequestMinimal &&
           id == other.id &&
           number == other.number &&
           url == other.url &&
           head == other.head &&
-          base == other.base; } 
-@override int get hashCode { return Object.hash(id, number, url, head, base); } 
-@override String toString() { return 'PullRequestMinimal(id: $id, number: $number, url: $url, head: $head, base: $base)'; } 
- }
+          base == other.base;}
+@override int get hashCode {return Object.hash(id, number, url, head, base);}
+@override String toString() {return 'PullRequestMinimal(id: $id, number: $number, url: $url, head: $head, base: $base)';}
+}

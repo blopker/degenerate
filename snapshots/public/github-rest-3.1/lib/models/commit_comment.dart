@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Commit Comment
 @immutable final class CommitComment {const CommitComment({required this.htmlUrl, required this.url, required this.id, required this.nodeId, required this.body, required this.path, required this.position, required this.line, required this.commitId, required this.user, required this.createdAt, required this.updatedAt, required this.authorAssociation, this.reactions, });
 
-factory CommitComment.fromJson(Map<String, dynamic> json) { return CommitComment(
+factory CommitComment.fromJson(Map<String, dynamic> json) {return CommitComment(
   htmlUrl: Uri.parse(json['html_url'] as String),
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
@@ -18,7 +18,7 @@ factory CommitComment.fromJson(Map<String, dynamic> json) { return CommitComment
   updatedAt: DateTime.parse(json['updated_at'] as String),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri htmlUrl;
 
@@ -49,7 +49,7 @@ final AuthorAssociation authorAssociation;
 
 final ReactionRollup? reactions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'html_url': htmlUrl.toString(),
   'url': url.toString(),
   'id': id,
@@ -64,8 +64,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'author_association': authorAssociation.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_url') && json['html_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -77,8 +77,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_
       json.containsKey('user') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('author_association'); } 
-CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String? body, String? Function()? path, int? Function()? position, int? Function()? line, String? commitId, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, ReactionRollup? Function()? reactions, }) { return CommitComment(
+      json.containsKey('author_association');}
+CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String? body, String? Function()? path, int? Function()? position, int? Function()? line, String? commitId, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, ReactionRollup? Function()? reactions, }) {return CommitComment(
   htmlUrl: htmlUrl ?? this.htmlUrl,
   url: url ?? this.url,
   id: id ?? this.id,
@@ -93,8 +93,8 @@ CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String?
   updatedAt: updatedAt ?? this.updatedAt,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   reactions: reactions != null ? reactions() : this.reactions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CommitComment &&
           htmlUrl == other.htmlUrl &&
           url == other.url &&
@@ -109,7 +109,7 @@ CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String?
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           authorAssociation == other.authorAssociation &&
-          reactions == other.reactions; } 
-@override int get hashCode { return Object.hash(htmlUrl, url, id, nodeId, body, path, position, line, commitId, user, createdAt, updatedAt, authorAssociation, reactions); } 
-@override String toString() { return 'CommitComment(htmlUrl: $htmlUrl, url: $url, id: $id, nodeId: $nodeId, body: $body, path: $path, position: $position, line: $line, commitId: $commitId, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation, reactions: $reactions)'; } 
- }
+          reactions == other.reactions;}
+@override int get hashCode {return Object.hash(htmlUrl, url, id, nodeId, body, path, position, line, commitId, user, createdAt, updatedAt, authorAssociation, reactions);}
+@override String toString() {return 'CommitComment(htmlUrl: $htmlUrl, url: $url, id: $id, nodeId: $nodeId, body: $body, path: $path, position: $position, line: $line, commitId: $commitId, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation, reactions: $reactions)';}
+}

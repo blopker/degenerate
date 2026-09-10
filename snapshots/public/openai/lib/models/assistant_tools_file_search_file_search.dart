@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_search_ranking_options.dart';/// Overrides for the file search tool.
 @immutable final class AssistantToolsFileSearchFileSearch {const AssistantToolsFileSearchFileSearch({this.maxNumResults, this.rankingOptions, });
 
-factory AssistantToolsFileSearchFileSearch.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearchFileSearch(
+factory AssistantToolsFileSearchFileSearch.fromJson(Map<String, dynamic> json) {return AssistantToolsFileSearchFileSearch(
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   rankingOptions: json['ranking_options'] != null ? FileSearchRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.
 /// 
@@ -16,19 +16,19 @@ final int? maxNumResults;
 
 final FileSearchRankingOptions? rankingOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'max_num_results': ?maxNumResults,
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_num_results', 'ranking_options'}.contains(key)); } 
-AssistantToolsFileSearchFileSearch copyWith({int? Function()? maxNumResults, FileSearchRankingOptions? Function()? rankingOptions, }) { return AssistantToolsFileSearchFileSearch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'max_num_results', 'ranking_options'}.contains(key));}
+AssistantToolsFileSearchFileSearch copyWith({int? Function()? maxNumResults, FileSearchRankingOptions? Function()? rankingOptions, }) {return AssistantToolsFileSearchFileSearch(
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AssistantToolsFileSearchFileSearch &&
           maxNumResults == other.maxNumResults &&
-          rankingOptions == other.rankingOptions; } 
-@override int get hashCode { return Object.hash(maxNumResults, rankingOptions); } 
-@override String toString() { return 'AssistantToolsFileSearchFileSearch(maxNumResults: $maxNumResults, rankingOptions: $rankingOptions)'; } 
- }
+          rankingOptions == other.rankingOptions;}
+@override int get hashCode {return Object.hash(maxNumResults, rankingOptions);}
+@override String toString() {return 'AssistantToolsFileSearchFileSearch(maxNumResults: $maxNumResults, rankingOptions: $rankingOptions)';}
+}

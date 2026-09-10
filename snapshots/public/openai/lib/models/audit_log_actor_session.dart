@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_actor_user.dart';/// The session in which the audit logged action was performed.
 @immutable final class AuditLogActorSession {const AuditLogActorSession({this.user, this.ipAddress, });
 
-factory AuditLogActorSession.fromJson(Map<String, dynamic> json) { return AuditLogActorSession(
+factory AuditLogActorSession.fromJson(Map<String, dynamic> json) {return AuditLogActorSession(
   user: json['user'] != null ? AuditLogActorUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   ipAddress: json['ip_address'] as String?,
-); }
+);}
 
 final AuditLogActorUser? user;
 
 /// The IP address from which the action was performed.
 final String? ipAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (user != null) 'user': user?.toJson(),
   'ip_address': ?ipAddress,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user', 'ip_address'}.contains(key)); } 
-AuditLogActorSession copyWith({AuditLogActorUser? Function()? user, String? Function()? ipAddress, }) { return AuditLogActorSession(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'user', 'ip_address'}.contains(key));}
+AuditLogActorSession copyWith({AuditLogActorUser? Function()? user, String? Function()? ipAddress, }) {return AuditLogActorSession(
   user: user != null ? user() : this.user,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AuditLogActorSession &&
           user == other.user &&
-          ipAddress == other.ipAddress; } 
-@override int get hashCode { return Object.hash(user, ipAddress); } 
-@override String toString() { return 'AuditLogActorSession(user: $user, ipAddress: $ipAddress)'; } 
- }
+          ipAddress == other.ipAddress;}
+@override int get hashCode {return Object.hash(user, ipAddress);}
+@override String toString() {return 'AuditLogActorSession(user: $user, ipAddress: $ipAddress)';}
+}

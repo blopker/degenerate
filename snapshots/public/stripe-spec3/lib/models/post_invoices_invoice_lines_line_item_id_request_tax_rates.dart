@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2 {const PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2._(this.value);
 
-factory PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2 $empty = PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2($value)';}
+}
 /// The tax rates which apply to the line item. When set, the `default_tax_rates` on the invoice do not apply to this line item. Pass an empty string to remove previously-defined tax rates.
 @immutable
 final class PostInvoicesInvoiceLinesLineItemIdRequestTaxRates {

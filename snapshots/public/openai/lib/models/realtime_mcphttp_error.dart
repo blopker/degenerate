@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType._(this.value);
 
-factory RealtimeMcphttpErrorType.fromJson(String json) { return switch (json) {
+factory RealtimeMcphttpErrorType.fromJson(String json) {return switch (json) {
   'http_error' => httpError,
   _ => RealtimeMcphttpErrorType._(json),
-}; }
+};}
 
 static const RealtimeMcphttpErrorType httpError = RealtimeMcphttpErrorType._('http_error');
 
@@ -13,21 +13,21 @@ static const List<RealtimeMcphttpErrorType> values = [httpError];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeMcphttpErrorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeMcphttpErrorType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeMcphttpErrorType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeMcphttpErrorType($value)';}
+}
 @immutable final class RealtimeMcphttpError {const RealtimeMcphttpError({required this.type, required this.code, required this.message, });
 
-factory RealtimeMcphttpError.fromJson(Map<String, dynamic> json) { return RealtimeMcphttpError(
+factory RealtimeMcphttpError.fromJson(Map<String, dynamic> json) {return RealtimeMcphttpError(
   type: RealtimeMcphttpErrorType.fromJson(json['type'] as String),
   code: (json['code'] as num).toInt(),
   message: json['message'] as String,
-); }
+);}
 
 final RealtimeMcphttpErrorType type;
 
@@ -35,24 +35,24 @@ final int code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-RealtimeMcphttpError copyWith({RealtimeMcphttpErrorType? type, int? code, String? message, }) { return RealtimeMcphttpError(
+      json.containsKey('message') && json['message'] is String;}
+RealtimeMcphttpError copyWith({RealtimeMcphttpErrorType? type, int? code, String? message, }) {return RealtimeMcphttpError(
   type: type ?? this.type,
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeMcphttpError &&
           type == other.type &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(type, code, message); } 
-@override String toString() { return 'RealtimeMcphttpError(type: $type, code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(type, code, message);}
+@override String toString() {return 'RealtimeMcphttpError(type: $type, code: $code, message: $message)';}
+}

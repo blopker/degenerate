@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_row_version.dart';/// Push protection setting to set for the pattern.
 @immutable final class SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting {const SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting._(this.value);
 
-factory SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting.fromJson(String json) { return switch (json) {
+factory SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting._(json),
-}; }
+};}
 
 static const SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting disabled = SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting._('disabled');
 
@@ -17,21 +17,21 @@ static const List<SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSetti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting($value)';}
+}
 @immutable final class SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings {const SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings({this.tokenType, this.customPatternVersion = const Omittable.absent(), this.pushProtectionSetting, });
 
-factory SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings.fromJson(Map<String, dynamic> json) { return SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings(
+factory SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings.fromJson(Map<String, dynamic> json) {return SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings(
   tokenType: json['token_type'] as String?,
   customPatternVersion: json.containsKey('custom_pattern_version') ? Omittable(json['custom_pattern_version'] != null ? SecretScanningRowVersion.fromJson(json['custom_pattern_version'] as String) : null) : const Omittable.absent(),
   pushProtectionSetting: json['push_protection_setting'] != null ? SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting.fromJson(json['push_protection_setting'] as String) : null,
-); }
+);}
 
 /// The ID of the pattern to configure.
 final String? tokenType;
@@ -42,22 +42,22 @@ final Omittable<SecretScanningRowVersion?> customPatternVersion;
 /// Push protection setting to set for the pattern.
 final SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting? pushProtectionSetting;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token_type': ?tokenType,
   if (customPatternVersion.isPresent) 'custom_pattern_version': customPatternVersion.value?.toJson(),
   if (pushProtectionSetting != null) 'push_protection_setting': pushProtectionSetting?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'push_protection_setting'}.contains(key)); } 
-SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings copyWith({String? Function()? tokenType, Omittable<SecretScanningRowVersion?>? customPatternVersion, SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting? Function()? pushProtectionSetting, }) { return SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'push_protection_setting'}.contains(key));}
+SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings copyWith({String? Function()? tokenType, Omittable<SecretScanningRowVersion?>? customPatternVersion, SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettingsPushProtectionSetting? Function()? pushProtectionSetting, }) {return SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   customPatternVersion: customPatternVersion ?? this.customPatternVersion,
   pushProtectionSetting: pushProtectionSetting != null ? pushProtectionSetting() : this.pushProtectionSetting,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings &&
           tokenType == other.tokenType &&
           customPatternVersion == other.customPatternVersion &&
-          pushProtectionSetting == other.pushProtectionSetting; } 
-@override int get hashCode { return Object.hash(tokenType, customPatternVersion, pushProtectionSetting); } 
-@override String toString() { return 'SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings(tokenType: $tokenType, customPatternVersion: $customPatternVersion, pushProtectionSetting: $pushProtectionSetting)'; } 
- }
+          pushProtectionSetting == other.pushProtectionSetting;}
+@override int get hashCode {return Object.hash(tokenType, customPatternVersion, pushProtectionSetting);}
+@override String toString() {return 'SecretScanningUpdateOrgPatternConfigsRequestCustomPatternSettings(tokenType: $tokenType, customPatternVersion: $customPatternVersion, pushProtectionSetting: $pushProtectionSetting)';}
+}

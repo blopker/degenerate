@@ -11,7 +11,7 @@ final class Api20100401PayloadApi with ApiExecutor {const Api20100401PayloadApi(
 /// Fetch an instance of a result payload
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json`
-Future<ApiResult<AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload, Never>> fetchRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload, Never>> fetchRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,18 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a payload from the result along with all associated Data
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads/{Sid}.json`
-Future<ApiResult<void, Never>> deleteRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -40,15 +35,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of payloads belonging to the AddOnResult
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{AddOnResultSid}/Payloads.json`
-Future<ApiResult<ListRecordingAddOnResultPayloadResponse, Never>> listRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListRecordingAddOnResultPayloadResponse, Never>> listRecordingAddOnResultPayload({required String accountSid, required String referenceSid, required String addOnResultSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -71,12 +63,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListRecordingAddOnResultPayloadResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListRecordingAddOnResultPayloadResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

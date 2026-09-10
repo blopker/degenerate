@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of mobile wallet, one of `apple_pay`, `google_pay`, `samsung_pay`, or `unknown`.
 @immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._(this.value);
 
-factory PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType.fromJson(String json) { return switch (json) {
+factory PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType.fromJson(String json) {return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
   'unknown' => unknown,
   _ => PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._(json),
-}; }
+};}
 
 static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType applePay = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._('apple_pay');
 
@@ -23,34 +23,34 @@ static const List<PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)';}
+}
 /// 
 @immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet({required this.type});
 
-factory PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(
+factory PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(Map<String, dynamic> json) {return PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(
   type: PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The type of mobile wallet, one of `apple_pay`, `google_pay`, `samsung_pay`, or `unknown`.
 final PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet copyWith({PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType? type}) { return PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet copyWith({PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType? type}) {return PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(type: $type)';}
+}

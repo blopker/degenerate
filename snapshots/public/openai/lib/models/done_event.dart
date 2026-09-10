@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DoneEventEvent {const DoneEventEvent._(this.value);
 
-factory DoneEventEvent.fromJson(String json) { return switch (json) {
+factory DoneEventEvent.fromJson(String json) {return switch (json) {
   'done' => done,
   _ => DoneEventEvent._(json),
-}; }
+};}
 
 static const DoneEventEvent done = DoneEventEvent._('done');
 
@@ -13,20 +13,20 @@ static const List<DoneEventEvent> values = [done];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DoneEventEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DoneEventEvent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DoneEventEvent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DoneEventEvent($value)';}
+}
 @immutable final class DoneEventData {const DoneEventData._(this.value);
 
-factory DoneEventData.fromJson(String json) { return switch (json) {
+factory DoneEventData.fromJson(String json) {return switch (json) {
   '[DONE]' => done,
   _ => DoneEventData._(json),
-}; }
+};}
 
 static const DoneEventData done = DoneEventData._('[DONE]');
 
@@ -34,40 +34,40 @@ static const List<DoneEventData> values = [done];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DoneEventData && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DoneEventData($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DoneEventData && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DoneEventData($value)';}
+}
 /// Occurs when a stream ends.
 @immutable final class DoneEvent {const DoneEvent({required this.event, required this.data, });
 
-factory DoneEvent.fromJson(Map<String, dynamic> json) { return DoneEvent(
+factory DoneEvent.fromJson(Map<String, dynamic> json) {return DoneEvent(
   event: DoneEventEvent.fromJson(json['event'] as String),
   data: DoneEventData.fromJson(json['data'] as String),
-); }
+);}
 
 final DoneEventEvent event;
 
 final DoneEventData data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('data'); } 
-DoneEvent copyWith({DoneEventEvent? event, DoneEventData? data, }) { return DoneEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') &&
+      json.containsKey('data');}
+DoneEvent copyWith({DoneEventEvent? event, DoneEventData? data, }) {return DoneEvent(
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DoneEvent &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'DoneEvent(event: $event, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(event, data);}
+@override String toString() {return 'DoneEvent(event: $event, data: $data)';}
+}

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity_list_public_events_response503.dart';import '../models/activity_list_repos_starred_by_authenticated_user_direction.dart';import '../models/activity_list_repos_starred_by_authenticated_user_sort.dart';import '../models/activity_list_repos_starred_by_user_direction.dart';import '../models/activity_list_repos_starred_by_user_response.dart';import '../models/activity_list_repos_starred_by_user_sort.dart';import '../models/activity_list_stargazers_for_repo_response.dart';import '../models/activity_mark_notifications_as_read_request.dart';import '../models/activity_mark_notifications_as_read_response202.dart';import '../models/activity_mark_repo_notifications_as_read_request.dart';import '../models/activity_mark_repo_notifications_as_read_response202.dart';import '../models/activity_set_repo_subscription_request.dart';import '../models/activity_set_thread_subscription_request.dart';import '../models/basic_error.dart';import '../models/event.dart';import '../models/feed.dart';import '../models/minimal_repository.dart';import '../models/repository.dart';import '../models/repository_subscription.dart';import '../models/simple_user.dart';import '../models/starred_repository.dart';import '../models/thread.dart';import '../models/thread_subscription.dart';import '../models/validation_error.dart';/// ActivityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity_check_repo_is_starred_by_authenticated_user_error.dart';import '../models/activity_delete_thread_subscription_error.dart';import '../models/activity_get_repo_subscription_error.dart';import '../models/activity_get_thread_error.dart';import '../models/activity_get_thread_subscription_for_authenticated_user_error.dart';import '../models/activity_list_notifications_for_authenticated_user_error.dart';import '../models/activity_list_public_events_error.dart';import '../models/activity_list_public_events_for_repo_network_error.dart';import '../models/activity_list_repos_starred_by_authenticated_user_direction.dart';import '../models/activity_list_repos_starred_by_authenticated_user_error.dart';import '../models/activity_list_repos_starred_by_authenticated_user_sort.dart';import '../models/activity_list_repos_starred_by_authenticated_user_success.dart';import '../models/activity_list_repos_starred_by_user_direction.dart';import '../models/activity_list_repos_starred_by_user_response.dart';import '../models/activity_list_repos_starred_by_user_sort.dart';import '../models/activity_list_stargazers_for_repo_response.dart';import '../models/activity_list_watched_repos_for_authenticated_user_error.dart';import '../models/activity_mark_notifications_as_read_error.dart';import '../models/activity_mark_notifications_as_read_request.dart';import '../models/activity_mark_notifications_as_read_success.dart';import '../models/activity_mark_repo_notifications_as_read_request.dart';import '../models/activity_mark_repo_notifications_as_read_success.dart';import '../models/activity_mark_thread_as_read_error.dart';import '../models/activity_set_repo_subscription_request.dart';import '../models/activity_set_thread_subscription_error.dart';import '../models/activity_set_thread_subscription_request.dart';import '../models/activity_star_repo_for_authenticated_user_error.dart';import '../models/activity_unstar_repo_for_authenticated_user_error.dart';import '../models/event.dart';import '../models/feed.dart';import '../models/minimal_repository.dart';import '../models/repository_subscription.dart';import '../models/simple_user.dart';import '../models/thread.dart';import '../models/thread_subscription.dart';import '../models/validation_error.dart';/// ActivityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ActivityApi with ApiExecutor {const ActivityApi(this.apiConfig);
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /events`
-Future<ApiResult<List<Event>, OneOf2<BasicError, ActivityListPublicEventsResponse503>>> activityListPublicEvents({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, ActivityListPublicEventsError>> activityListPublicEvents({int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -34,29 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ActivityListPublicEventsResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ActivityListPublicEventsResponse503>.b(ActivityListPublicEventsResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListPublicEventsError.parse, );}
 /// Get feeds
 ///
 /// Lists the feeds available to the authenticated user. The response provides a URL for each feed. You can then get a specific feed by sending a request to one of the feed URLs.
@@ -75,7 +55,7 @@ return null;
 /// > Private feeds are only returned when [authenticating via Basic Auth](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) since current feed URIs use the older, non revocable auth tokens.
 ///
 /// `GET /feeds`
-Future<ApiResult<Feed, Never>> activityGetFeeds({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Feed, Never>> activityGetFeeds({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -84,21 +64,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Feed.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Feed.fromJson(json as Map<String, dynamic>);}, );}
 /// List public events for a network of repositories
 ///
 /// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /networks/{owner}/{repo}/events`
-Future<ApiResult<List<Event>, BasicError>> activityListPublicEventsForRepoNetwork({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, ActivityListPublicEventsForRepoNetworkError>> activityListPublicEventsForRepoNetwork({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -118,32 +93,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-case 304:
-return null;
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListPublicEventsForRepoNetworkError.parse, );}
 /// List notifications for the authenticated user
 ///
 /// List all notifications for the current user, sorted by most recently updated.
 ///
 /// `GET /notifications`
-Future<ApiResult<List<Thread>, OneOf2<BasicError, ValidationError>>> activityListNotificationsForAuthenticatedUser({bool? all, bool? participating, DateTime? since, DateTime? before, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Thread>, ActivityListNotificationsForAuthenticatedUserError>> activityListNotificationsForAuthenticatedUser({bool? all, bool? participating, DateTime? since, DateTime? before, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (all != null) {
   queryParameters['all'] = all.toString();
@@ -175,35 +133,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListNotificationsForAuthenticatedUserError.parse, );}
 /// Mark notifications as read
 ///
 /// Marks all notifications as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /notifications`
-Future<ApiResult<ActivityMarkNotificationsAsReadResponse202?, BasicError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActivityMarkNotificationsAsReadSuccess, ActivityMarkNotificationsAsReadError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -214,41 +152,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 202:
-final json = jsonDecode(response.body);
-return ActivityMarkNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
-case 205:
-return null;
-default:
-final json = jsonDecode(response.body);
-return ActivityMarkNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
-}
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return   await execute(request, onSuccess: ActivityMarkNotificationsAsReadSuccess.parse, onError: ActivityMarkNotificationsAsReadError.parse, );}
 /// Get a thread
 ///
 /// Gets information about a notification thread.
 ///
 /// `GET /notifications/threads/{thread_id}`
-Future<ApiResult<Thread, BasicError>> activityGetThread({required int threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Thread, ActivityGetThreadError>> activityGetThread({required int threadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -257,32 +168,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Thread.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Thread.fromJson(json as Map<String, dynamic>);}, onError: ActivityGetThreadError.parse, );}
 /// Mark a thread as read
 ///
 /// Marks a thread as "read." Marking a thread as "read" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.
 ///
 /// `PATCH /notifications/threads/{thread_id}`
-Future<ApiResult<void, BasicError>> activityMarkThreadAsRead({required int threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityMarkThreadAsReadError>> activityMarkThreadAsRead({required int threadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -291,29 +185,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (_) {}, onError: ActivityMarkThreadAsReadError.parse, );}
 /// Mark a thread as done
 ///
 /// Marks a thread as "done." Marking a thread as "done" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.
 ///
 /// `DELETE /notifications/threads/{thread_id}`
-Future<ApiResult<void, Never>> activityMarkThreadAsDone({required int threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> activityMarkThreadAsDone({required int threadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -322,11 +201,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a thread subscription for the authenticated user
 ///
 /// This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/rest/activity/watching#get-a-repository-subscription).
@@ -334,7 +210,7 @@ return await execute(
 /// Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
 ///
 /// `GET /notifications/threads/{thread_id}/subscription`
-Future<ApiResult<ThreadSubscription, BasicError>> activityGetThreadSubscriptionForAuthenticatedUser({required int threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ThreadSubscription, ActivityGetThreadSubscriptionForAuthenticatedUserError>> activityGetThreadSubscriptionForAuthenticatedUser({required int threadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -343,26 +219,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadSubscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadSubscription.fromJson(json as Map<String, dynamic>);}, onError: ActivityGetThreadSubscriptionForAuthenticatedUserError.parse, );}
 /// Set a thread subscription
 ///
 /// If you are watching a repository, you receive notifications for all threads by default. Use this endpoint to ignore future notifications for threads until you comment on the thread or get an **@mention**.
@@ -372,7 +231,7 @@ return null;
 /// Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/rest/activity/notifications#delete-a-thread-subscription) endpoint.
 ///
 /// `PUT /notifications/threads/{thread_id}/subscription`
-Future<ApiResult<ThreadSubscription, BasicError>> activitySetThreadSubscription({required int threadId, ActivitySetThreadSubscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ThreadSubscription, ActivitySetThreadSubscriptionError>> activitySetThreadSubscription({required int threadId, ActivitySetThreadSubscriptionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -383,32 +242,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadSubscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadSubscription.fromJson(json as Map<String, dynamic>);}, onError: ActivitySetThreadSubscriptionError.parse, );}
 /// Delete a thread subscription
 ///
 /// Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://docs.github.com/rest/activity/notifications#set-a-thread-subscription) endpoint and set `ignore` to `true`.
 ///
 /// `DELETE /notifications/threads/{thread_id}/subscription`
-Future<ApiResult<void, BasicError>> activityDeleteThreadSubscription({required int threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityDeleteThreadSubscriptionError>> activityDeleteThreadSubscription({required int threadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -417,30 +259,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (_) {}, onError: ActivityDeleteThreadSubscriptionError.parse, );}
 /// List public organization events
 ///
 /// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /orgs/{org}/events`
-Future<ApiResult<List<Event>, Never>> activityListPublicOrgEvents({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, Never>> activityListPublicOrgEvents({required String org, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -460,21 +287,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List repository events
 ///
 /// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /repos/{owner}/{repo}/events`
-Future<ApiResult<List<Event>, Never>> activityListRepoEvents({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, Never>> activityListRepoEvents({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -494,20 +316,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List repository notifications for the authenticated user
 ///
 /// Lists all notifications for the current user in the specified repository.
 ///
 /// `GET /repos/{owner}/{repo}/notifications`
-Future<ApiResult<List<Thread>, Never>> activityListRepoNotificationsForAuthenticatedUser({required String owner, required String repo, bool? all, bool? participating, DateTime? since, DateTime? before, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Thread>, Never>> activityListRepoNotificationsForAuthenticatedUser({required String owner, required String repo, bool? all, bool? participating, DateTime? since, DateTime? before, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (all != null) {
   queryParameters['all'] = all.toString();
@@ -539,20 +356,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Mark repository notifications as read
 ///
 /// Marks all notifications in a repository as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /repos/{owner}/{repo}/notifications`
-Future<ApiResult<ActivityMarkRepoNotificationsAsReadResponse202?, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActivityMarkRepoNotificationsAsReadSuccess, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -563,23 +375,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 202:
-final json = jsonDecode(response.body);
-return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
-case 205:
-return null;
-default:
-final json = jsonDecode(response.body);
-return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: ActivityMarkRepoNotificationsAsReadSuccess.parse, );}
 /// List stargazers
 ///
 /// Lists the people that have starred the repository.
@@ -589,7 +386,7 @@ return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(json as Map<Strin
 /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// `GET /repos/{owner}/{repo}/stargazers`
-Future<ApiResult<ActivityListStargazersForRepoResponse, ValidationError>> activityListStargazersForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ActivityListStargazersForRepoResponse, ValidationError>> activityListStargazersForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -609,30 +406,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActivityListStargazersForRepoResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActivityListStargazersForRepoResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List watchers
 ///
 /// Lists the people watching the specified repository.
 ///
 /// `GET /repos/{owner}/{repo}/subscribers`
-Future<ApiResult<List<SimpleUser>, Never>> activityListWatchersForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, Never>> activityListWatchersForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -652,20 +438,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a repository subscription
 ///
 /// Gets information about whether the authenticated user is subscribed to the repository.
 ///
 /// `GET /repos/{owner}/{repo}/subscription`
-Future<ApiResult<RepositorySubscription, BasicError>> activityGetRepoSubscription({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositorySubscription, ActivityGetRepoSubscriptionError>> activityGetRepoSubscription({required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -674,32 +455,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositorySubscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-case 404:
-return null;
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositorySubscription.fromJson(json as Map<String, dynamic>);}, onError: ActivityGetRepoSubscriptionError.parse, );}
 /// Set a repository subscription
 ///
 /// If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://docs.github.com/rest/activity/watching#delete-a-repository-subscription) completely.
 ///
 /// `PUT /repos/{owner}/{repo}/subscription`
-Future<ApiResult<RepositorySubscription, Never>> activitySetRepoSubscription({required String owner, required String repo, ActivitySetRepoSubscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RepositorySubscription, Never>> activitySetRepoSubscription({required String owner, required String repo, ActivitySetRepoSubscriptionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -710,20 +474,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositorySubscription.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositorySubscription.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a repository subscription
 ///
 /// This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://docs.github.com/rest/activity/watching#set-a-repository-subscription).
 ///
 /// `DELETE /repos/{owner}/{repo}/subscription`
-Future<ApiResult<void, Never>> activityDeleteRepoSubscription({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> activityDeleteRepoSubscription({required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -732,11 +491,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List repositories starred by the authenticated user
 ///
 /// Lists repositories the authenticated user has starred.
@@ -746,7 +502,7 @@ return await execute(
 /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// `GET /user/starred`
-Future<ApiResult<OneOf2<List<Repository>, List<StarredRepository>>, BasicError>> activityListReposStarredByAuthenticatedUser({ActivityListReposStarredByAuthenticatedUserSort? sort, ActivityListReposStarredByAuthenticatedUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ActivityListReposStarredByAuthenticatedUserSuccess, ActivityListReposStarredByAuthenticatedUserError>> activityListReposStarredByAuthenticatedUser({ActivityListReposStarredByAuthenticatedUserSort? sort, ActivityListReposStarredByAuthenticatedUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -772,42 +528,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<List<Repository>, List<StarredRepository>>.a((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList());
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.github.v3.star+json')) {
-final json = jsonDecode(response.body);
-return OneOf2<List<Repository>, List<StarredRepository>>.b((json as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList());
-}
-final json = jsonDecode(response.body);
-return OneOf2<List<Repository>, List<StarredRepository>>.a((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList());
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return   await execute(request, onSuccess: ActivityListReposStarredByAuthenticatedUserSuccess.parse, onError: ActivityListReposStarredByAuthenticatedUserError.parse, );}
 /// Check if a repository is starred by the authenticated user
 ///
 /// Whether the authenticated user has starred the repository.
 ///
 /// `GET /user/starred/{owner}/{repo}`
-Future<ApiResult<void, BasicError>> activityCheckRepoIsStarredByAuthenticatedUser({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> activityCheckRepoIsStarredByAuthenticatedUser({required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -816,29 +544,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (_) {}, onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.parse, );}
 /// Star a repository for the authenticated user
 ///
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /user/starred/{owner}/{repo}`
-Future<ApiResult<void, BasicError>> activityStarRepoForAuthenticatedUser({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityStarRepoForAuthenticatedUserError>> activityStarRepoForAuthenticatedUser({required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -847,29 +560,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (_) {}, onError: ActivityStarRepoForAuthenticatedUserError.parse, );}
 /// Unstar a repository for the authenticated user
 ///
 /// Unstar a repository that the authenticated user has previously starred.
 ///
 /// `DELETE /user/starred/{owner}/{repo}`
-Future<ApiResult<void, BasicError>> activityUnstarRepoForAuthenticatedUser({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityUnstarRepoForAuthenticatedUserError>> activityUnstarRepoForAuthenticatedUser({required String owner, required String repo, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -878,29 +576,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (_) {}, onError: ActivityUnstarRepoForAuthenticatedUserError.parse, );}
 /// List repositories watched by the authenticated user
 ///
 /// Lists repositories the authenticated user is watching.
 ///
 /// `GET /user/subscriptions`
-Future<ApiResult<List<MinimalRepository>, BasicError>> activityListWatchedReposForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, ActivityListWatchedReposForAuthenticatedUserError>> activityListWatchedReposForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -920,26 +603,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListWatchedReposForAuthenticatedUserError.parse, );}
 /// List events for the authenticated user
 ///
 /// If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: "Events" user permissions (read).
@@ -948,7 +614,7 @@ return null;
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events`
-Future<ApiResult<List<Event>, Never>> activityListEventsForAuthenticatedUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, Never>> activityListEventsForAuthenticatedUser({required String username, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -968,14 +634,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List organization events for the authenticated user
 ///
 /// This is the user's organization dashboard. You must be authenticated as the user to view this.
@@ -984,7 +645,7 @@ return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynami
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events/orgs/{org}`
-Future<ApiResult<List<Event>, Never>> activityListOrgEventsForAuthenticatedUser({required String username, required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, Never>> activityListOrgEventsForAuthenticatedUser({required String username, required String org, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1004,21 +665,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List public events for a user
 ///
 /// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/events/public`
-Future<ApiResult<List<Event>, Never>> activityListPublicEventsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, Never>> activityListPublicEventsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1038,14 +694,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List events received by the authenticated user
 ///
 /// These are events that you've received by watching repositories and following users. If you are authenticated as the
@@ -1055,7 +706,7 @@ return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynami
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/received_events`
-Future<ApiResult<List<Event>, Never>> activityListReceivedEventsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, Never>> activityListReceivedEventsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1075,21 +726,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List public events received by a user
 ///
 /// > `[!NOTE]`
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /users/{username}/received_events/public`
-Future<ApiResult<List<Event>, Never>> activityListReceivedPublicEventsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, Never>> activityListReceivedPublicEventsForUser({required String username, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1109,14 +755,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List repositories starred by a user
 ///
 /// Lists repositories a user has starred.
@@ -1126,7 +767,7 @@ return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynami
 /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// `GET /users/{username}/starred`
-Future<ApiResult<ActivityListReposStarredByUserResponse, Never>> activityListReposStarredByUser({required String username, ActivityListReposStarredByUserSort? sort, ActivityListReposStarredByUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ActivityListReposStarredByUserResponse, Never>> activityListReposStarredByUser({required String username, ActivityListReposStarredByUserSort? sort, ActivityListReposStarredByUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -1152,20 +793,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActivityListReposStarredByUserResponse.fromJson(json);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActivityListReposStarredByUserResponse.fromJson(json);}, );}
 /// List repositories watched by a user
 ///
 /// Lists repositories a user is watching.
 ///
 /// `GET /users/{username}/subscriptions`
-Future<ApiResult<List<MinimalRepository>, Never>> activityListReposWatchedByUser({required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, Never>> activityListReposWatchedByUser({required String username, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1185,12 +821,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, );}
+}

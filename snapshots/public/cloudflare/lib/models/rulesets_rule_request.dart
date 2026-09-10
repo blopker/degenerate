@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_action.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';@immutable final class RulesetsRuleRequest {const RulesetsRuleRequest({this.action, this.actionParameters, this.description, this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
-factory RulesetsRuleRequest.fromJson(Map<String, dynamic> json) { return RulesetsRuleRequest(
+factory RulesetsRuleRequest.fromJson(Map<String, dynamic> json) {return RulesetsRuleRequest(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
   actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   description: json['description'] as String?,
@@ -13,7 +13,7 @@ factory RulesetsRuleRequest.fromJson(Map<String, dynamic> json) { return Ruleset
   logging: json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null,
   ratelimit: json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String?,
-); }
+);}
 
 /// The action to perform when the rule matches.
 final RulesetsRuleAction? action;
@@ -43,10 +43,10 @@ final RulesetsRuleRatelimit? ratelimit;
 final String? ref;
 
 /// The value with the schema default applied when absent.
-Map<String,dynamic> get actionParametersOrDefault { return actionParameters ?? const {}; } 
+Map<String,dynamic> get actionParametersOrDefault {return actionParameters ?? const {};}
 /// The value with the schema default applied when absent.
-String get descriptionOrDefault { return description ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get descriptionOrDefault {return description ?? '';}
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'action_parameters': ?actionParameters,
   'description': ?description,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   if (logging != null) 'logging': logging?.toJson(),
   if (ratelimit != null) 'ratelimit': ratelimit?.toJson(),
   'ref': ?ref,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key)); } 
-RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key));}
+RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRuleRequest(
   action: action != null ? action() : this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   description: description != null ? description() : this.description,
@@ -70,8 +70,8 @@ RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String
   logging: logging != null ? logging() : this.logging,
   ratelimit: ratelimit != null ? ratelimit() : this.ratelimit,
   ref: ref != null ? ref() : this.ref,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RulesetsRuleRequest &&
           action == other.action &&
           actionParameters == other.actionParameters &&
@@ -82,7 +82,7 @@ RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String
           id == other.id &&
           logging == other.logging &&
           ratelimit == other.ratelimit &&
-          ref == other.ref; } 
-@override int get hashCode { return Object.hash(action, actionParameters, description, enabled, exposedCredentialCheck, expression, id, logging, ratelimit, ref); } 
-@override String toString() { return 'RulesetsRuleRequest(action: $action, actionParameters: $actionParameters, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, logging: $logging, ratelimit: $ratelimit, ref: $ref)'; } 
- }
+          ref == other.ref;}
+@override int get hashCode {return Object.hash(action, actionParameters, description, enabled, exposedCredentialCheck, expression, id, logging, ratelimit, ref);}
+@override String toString() {return 'RulesetsRuleRequest(action: $action, actionParameters: $actionParameters, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, logging: $logging, ratelimit: $ratelimit, ref: $ref)';}
+}

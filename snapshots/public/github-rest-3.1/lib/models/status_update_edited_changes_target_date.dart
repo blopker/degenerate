@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StatusUpdateEditedChangesTargetDate {const StatusUpdateEditedChangesTargetDate({this.from = const Omittable.absent(), this.to = const Omittable.absent(), });
 
-factory StatusUpdateEditedChangesTargetDate.fromJson(Map<String, dynamic> json) { return StatusUpdateEditedChangesTargetDate(
+factory StatusUpdateEditedChangesTargetDate.fromJson(Map<String, dynamic> json) {return StatusUpdateEditedChangesTargetDate(
   from: json.containsKey('from') ? Omittable(json['from'] as String?) : const Omittable.absent(),
   to: json.containsKey('to') ? Omittable(json['to'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<String?> from;
 
 final Omittable<String?> to;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (from.isPresent) 'from': from.value,
   if (to.isPresent) 'to': to.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-StatusUpdateEditedChangesTargetDate copyWith({Omittable<String?>? from, Omittable<String?>? to, }) { return StatusUpdateEditedChangesTargetDate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'from', 'to'}.contains(key));}
+StatusUpdateEditedChangesTargetDate copyWith({Omittable<String?>? from, Omittable<String?>? to, }) {return StatusUpdateEditedChangesTargetDate(
   from: from ?? this.from,
   to: to ?? this.to,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StatusUpdateEditedChangesTargetDate &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'StatusUpdateEditedChangesTargetDate(from: $from, to: $to)'; } 
- }
+          to == other.to;}
+@override int get hashCode {return Object.hash(from, to);}
+@override String toString() {return 'StatusUpdateEditedChangesTargetDate(from: $from, to: $to)';}
+}

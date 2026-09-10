@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessMessages2Source {const AccessMessages2Source({this.pointer});
 
-factory AccessMessages2Source.fromJson(Map<String, dynamic> json) { return AccessMessages2Source(
+factory AccessMessages2Source.fromJson(Map<String, dynamic> json) {return AccessMessages2Source(
   pointer: json['pointer'] as String?,
-); }
+);}
 
 final String? pointer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pointer': ?pointer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pointer'}.contains(key)); } 
-AccessMessages2Source copyWith({String? Function()? pointer}) { return AccessMessages2Source(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'pointer'}.contains(key));}
+AccessMessages2Source copyWith({String? Function()? pointer}) {return AccessMessages2Source(
   pointer: pointer != null ? pointer() : this.pointer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessMessages2Source &&
-          pointer == other.pointer; } 
-@override int get hashCode { return pointer.hashCode; } 
-@override String toString() { return 'AccessMessages2Source(pointer: $pointer)'; } 
- }
+          pointer == other.pointer;}
+@override int get hashCode {return pointer.hashCode;}
+@override String toString() {return 'AccessMessages2Source(pointer: $pointer)';}
+}

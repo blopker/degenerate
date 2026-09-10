@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'context_mana
 /// 
 @immutable final class CreateResponsePromptCacheRetention {const CreateResponsePromptCacheRetention._(this.value);
 
-factory CreateResponsePromptCacheRetention.fromJson(String json) { return switch (json) {
+factory CreateResponsePromptCacheRetention.fromJson(String json) {return switch (json) {
   'in-memory' => inMemory,
   '24h' => $24h,
   _ => CreateResponsePromptCacheRetention._(json),
-}; }
+};}
 
 static const CreateResponsePromptCacheRetention inMemory = CreateResponsePromptCacheRetention._('in-memory');
 
@@ -18,14 +18,14 @@ static const List<CreateResponsePromptCacheRetention> values = [inMemory, $24h];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateResponsePromptCacheRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateResponsePromptCacheRetention($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateResponsePromptCacheRetention && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateResponsePromptCacheRetention($value)';}
+}
 /// The truncation strategy to use for the model response.
 /// - `auto`: If the input to this Response exceeds
 ///   the model's context window size, the model will truncate the
@@ -35,11 +35,11 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class CreateResponseTruncation {const CreateResponseTruncation._(this.value);
 
-factory CreateResponseTruncation.fromJson(String json) { return switch (json) {
+factory CreateResponseTruncation.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'disabled' => disabled,
   _ => CreateResponseTruncation._(json),
-}; }
+};}
 
 static const CreateResponseTruncation auto = CreateResponseTruncation._('auto');
 
@@ -49,17 +49,17 @@ static const List<CreateResponseTruncation> values = [auto, disabled];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateResponseTruncation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateResponseTruncation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateResponseTruncation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateResponseTruncation($value)';}
+}
 @immutable final class CreateResponse {const CreateResponse({this.metadata = const Omittable.absent(), this.topLogprobs, this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), this.previousResponseId = const Omittable.absent(), this.model, this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.tools, this.toolChoice, this.prompt = const Omittable.absent(), this.truncation = const Omittable.absent(), this.input, this.include = const Omittable.absent(), this.parallelToolCalls = const Omittable.absent(), this.store = const Omittable.absent(), this.instructions = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions = const Omittable.absent(), this.conversation = const Omittable.absent(), this.contextManagement = const Omittable.absent(), });
 
-factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateResponse(
+factory CreateResponse.fromJson(Map<String, dynamic> json) {return CreateResponse(
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -89,7 +89,7 @@ factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateRespon
   streamOptions: json.containsKey('stream_options') ? Omittable(json['stream_options'] != null ? ResponseStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   conversation: json.containsKey('conversation') ? Omittable(json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationParam2.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   contextManagement: json.containsKey('context_management') ? Omittable((json['context_management'] as List<dynamic>?)?.map((e) => ContextManagementParam.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<Map<String,String>?> metadata;
 
@@ -222,7 +222,7 @@ final Omittable<ConversationParam?> conversation;
 /// 
 final Omittable<List<ContextManagementParam>?> contextManagement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadata.isPresent) 'metadata': metadata.value,
   'top_logprobs': ?topLogprobs,
   if (temperature.isPresent) 'temperature': temperature.value,
@@ -252,9 +252,9 @@ Map<String, dynamic> toJson() { return {
   if (streamOptions.isPresent) 'stream_options': streamOptions.value?.toJson(),
   if (conversation.isPresent) 'conversation': conversation.value?.toJson(),
   if (contextManagement.isPresent) 'context_management': contextManagement.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention', 'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation', 'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
-CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function()? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<CreateResponsePromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? Function()? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Omittable<Prompt?>? prompt, Omittable<CreateResponseTruncation?>? truncation, InputParam? Function()? input, Omittable<List<IncludeEnum>?>? include, Omittable<bool?>? parallelToolCalls, Omittable<bool?>? store, Omittable<String?>? instructions, Omittable<bool?>? stream, Omittable<ResponseStreamOptions?>? streamOptions, Omittable<ConversationParam?>? conversation, Omittable<List<ContextManagementParam>?>? contextManagement, }) { return CreateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention', 'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation', 'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key));}
+CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function()? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<CreateResponsePromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? Function()? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Omittable<Prompt?>? prompt, Omittable<CreateResponseTruncation?>? truncation, InputParam? Function()? input, Omittable<List<IncludeEnum>?>? include, Omittable<bool?>? parallelToolCalls, Omittable<bool?>? store, Omittable<String?>? instructions, Omittable<bool?>? stream, Omittable<ResponseStreamOptions?>? streamOptions, Omittable<ConversationParam?>? conversation, Omittable<List<ContextManagementParam>?>? contextManagement, }) {return CreateResponse(
   metadata: metadata ?? this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
   temperature: temperature ?? this.temperature,
@@ -284,8 +284,8 @@ CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function
   streamOptions: streamOptions ?? this.streamOptions,
   conversation: conversation ?? this.conversation,
   contextManagement: contextManagement ?? this.contextManagement,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateResponse &&
           metadata == other.metadata &&
           topLogprobs == other.topLogprobs &&
@@ -317,7 +317,7 @@ CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function
           streamOptions == other.streamOptions &&
           conversation == other.conversation &&
           contextManagement.isPresent == other.contextManagement.isPresent &&
-          listEquals(contextManagement.value, other.contextManagement.value); } 
-@override int get hashCode { return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation, input, Object.hashAll(include.value ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement.value ?? const [])]); } 
-@override String toString() { return 'CreateResponse(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation, input: $input, include: $include, parallelToolCalls: $parallelToolCalls, store: $store, instructions: $instructions, stream: $stream, streamOptions: $streamOptions, conversation: $conversation, contextManagement: $contextManagement)'; } 
- }
+          listEquals(contextManagement.value, other.contextManagement.value);}
+@override int get hashCode {return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation, input, Object.hashAll(include.value ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement.value ?? const [])]);}
+@override String toString() {return 'CreateResponse(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation, input: $input, include: $include, parallelToolCalls: $parallelToolCalls, store: $store, instructions: $instructions, stream: $stream, streamOptions: $streamOptions, conversation: $conversation, contextManagement: $contextManagement)';}
+}

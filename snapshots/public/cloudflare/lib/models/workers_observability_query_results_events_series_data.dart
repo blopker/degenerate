@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_events_series_data_aggregates.dart';@immutable final class WorkersObservabilityQueryResultsEventsSeriesData {const WorkersObservabilityQueryResultsEventsSeriesData({required this.aggregates, required this.count, required this.interval, required this.sampleInterval, this.errors, this.groups, });
 
-factory WorkersObservabilityQueryResultsEventsSeriesData.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsEventsSeriesData(
+factory WorkersObservabilityQueryResultsEventsSeriesData.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryResultsEventsSeriesData(
   aggregates: WorkersObservabilityQueryResultsEventsSeriesDataAggregates.fromJson(json['aggregates'] as Map<String, dynamic>),
   count: (json['count'] as num).toDouble(),
   errors: json['errors'] != null ? (json['errors'] as num).toDouble() : null,
   groups: json['groups'] as Map<String, dynamic>?,
   interval: (json['interval'] as num).toDouble(),
   sampleInterval: (json['sampleInterval'] as num).toDouble(),
-); }
+);}
 
 final WorkersObservabilityQueryResultsEventsSeriesDataAggregates aggregates;
 
@@ -24,34 +24,34 @@ final double interval;
 
 final double sampleInterval;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aggregates': aggregates.toJson(),
   'count': count,
   'errors': ?errors,
   'groups': ?groups,
   'interval': interval,
   'sampleInterval': sampleInterval,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggregates') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('aggregates') &&
       json.containsKey('count') && json['count'] is num &&
       json.containsKey('interval') && json['interval'] is num &&
-      json.containsKey('sampleInterval') && json['sampleInterval'] is num; } 
-WorkersObservabilityQueryResultsEventsSeriesData copyWith({WorkersObservabilityQueryResultsEventsSeriesDataAggregates? aggregates, double? count, double? Function()? errors, Map<String, dynamic>? Function()? groups, double? interval, double? sampleInterval, }) { return WorkersObservabilityQueryResultsEventsSeriesData(
+      json.containsKey('sampleInterval') && json['sampleInterval'] is num;}
+WorkersObservabilityQueryResultsEventsSeriesData copyWith({WorkersObservabilityQueryResultsEventsSeriesDataAggregates? aggregates, double? count, double? Function()? errors, Map<String, dynamic>? Function()? groups, double? interval, double? sampleInterval, }) {return WorkersObservabilityQueryResultsEventsSeriesData(
   aggregates: aggregates ?? this.aggregates,
   count: count ?? this.count,
   errors: errors != null ? errors() : this.errors,
   groups: groups != null ? groups() : this.groups,
   interval: interval ?? this.interval,
   sampleInterval: sampleInterval ?? this.sampleInterval,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryResultsEventsSeriesData &&
           aggregates == other.aggregates &&
           count == other.count &&
           errors == other.errors &&
           groups == other.groups &&
           interval == other.interval &&
-          sampleInterval == other.sampleInterval; } 
-@override int get hashCode { return Object.hash(aggregates, count, errors, groups, interval, sampleInterval); } 
-@override String toString() { return 'WorkersObservabilityQueryResultsEventsSeriesData(aggregates: $aggregates, count: $count, errors: $errors, groups: $groups, interval: $interval, sampleInterval: $sampleInterval)'; } 
- }
+          sampleInterval == other.sampleInterval;}
+@override int get hashCode {return Object.hash(aggregates, count, errors, groups, interval, sampleInterval);}
+@override String toString() {return 'WorkersObservabilityQueryResultsEventsSeriesData(aggregates: $aggregates, count: $count, errors: $errors, groups: $groups, interval: $interval, sampleInterval: $sampleInterval)';}
+}

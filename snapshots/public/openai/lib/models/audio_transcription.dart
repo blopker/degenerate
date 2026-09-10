@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription_model.dart';@immutable final class AudioTranscription {const AudioTranscription({this.model, this.language, this.prompt, });
 
-factory AudioTranscription.fromJson(Map<String, dynamic> json) { return AudioTranscription(
+factory AudioTranscription.fromJson(Map<String, dynamic> json) {return AudioTranscription(
   model: json['model'] != null ? AudioTranscriptionModel.fromJson(json['model']) : null,
   language: json['language'] as String?,
   prompt: json['prompt'] as String?,
-); }
+);}
 
 /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, and `gpt-4o-transcribe-diarize`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
 /// 
@@ -25,22 +25,22 @@ final String? language;
 /// 
 final String? prompt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (model != null) 'model': model?.toJson(),
   'language': ?language,
   'prompt': ?prompt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'language', 'prompt'}.contains(key)); } 
-AudioTranscription copyWith({AudioTranscriptionModel? Function()? model, String? Function()? language, String? Function()? prompt, }) { return AudioTranscription(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'model', 'language', 'prompt'}.contains(key));}
+AudioTranscription copyWith({AudioTranscriptionModel? Function()? model, String? Function()? language, String? Function()? prompt, }) {return AudioTranscription(
   model: model != null ? model() : this.model,
   language: language != null ? language() : this.language,
   prompt: prompt != null ? prompt() : this.prompt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AudioTranscription &&
           model == other.model &&
           language == other.language &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(model, language, prompt); } 
-@override String toString() { return 'AudioTranscription(model: $model, language: $language, prompt: $prompt)'; } 
- }
+          prompt == other.prompt;}
+@override int get hashCode {return Object.hash(model, language, prompt);}
+@override String toString() {return 'AudioTranscription(model: $model, language: $language, prompt: $prompt)';}
+}

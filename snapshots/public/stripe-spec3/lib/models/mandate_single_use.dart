@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class MandateSingleUse {const MandateSingleUse({required this.amount, required this.currency, });
 
-factory MandateSingleUse.fromJson(Map<String, dynamic> json) { return MandateSingleUse(
+factory MandateSingleUse.fromJson(Map<String, dynamic> json) {return MandateSingleUse(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-); }
+);}
 
 /// The amount of the payment on a single use mandate.
 final int amount;
@@ -14,20 +14,20 @@ final int amount;
 /// The currency of the payment on a single use mandate.
 final String currency;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-MandateSingleUse copyWith({int? amount, String? currency, }) { return MandateSingleUse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+MandateSingleUse copyWith({int? amount, String? currency, }) {return MandateSingleUse(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MandateSingleUse &&
           amount == other.amount &&
-          currency == other.currency; } 
-@override int get hashCode { return Object.hash(amount, currency); } 
-@override String toString() { return 'MandateSingleUse(amount: $amount, currency: $currency)'; } 
- }
+          currency == other.currency;}
+@override int get hashCode {return Object.hash(amount, currency);}
+@override String toString() {return 'MandateSingleUse(amount: $amount, currency: $currency)';}
+}

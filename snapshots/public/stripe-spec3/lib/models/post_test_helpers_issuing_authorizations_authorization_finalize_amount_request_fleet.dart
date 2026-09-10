@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_reported_breakdown.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType.fromJson(String json) {return switch (json) {
   'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
   'fuel_purchase' => fuelPurchase,
   'non_fuel_purchase' => nonFuelPurchase,
   _ => PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType fuelAndNonFuelPurchase = PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType._('fuel_and_non_fuel_purchase');
 
@@ -19,22 +19,22 @@ static const List<PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmoun
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType($value)';}
+}
 @immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType.fromJson(String json) {return switch (json) {
   'full_service' => fullService,
   'non_fuel_transaction' => nonFuelTransaction,
   'self_service' => selfService,
   _ => PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType fullService = PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType._('full_service');
 
@@ -46,23 +46,23 @@ static const List<PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmoun
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType($value)';}
+}
 /// Fleet-specific information for authorizations using Fleet cards.
 @immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
-factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet(
+factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet(
   cardholderPromptData: json['cardholder_prompt_data'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
   purchaseType: json['purchase_type'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType.fromJson(json['purchase_type'] as String) : null,
   reportedBreakdown: json['reported_breakdown'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
   serviceType: json['service_type'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType.fromJson(json['service_type'] as String) : null,
-); }
+);}
 
 final PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData? cardholderPromptData;
 
@@ -72,25 +72,25 @@ final PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFlee
 
 final PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType? serviceType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cardholderPromptData != null) 'cardholder_prompt_data': cardholderPromptData?.toJson(),
   if (purchaseType != null) 'purchase_type': purchaseType?.toJson(),
   if (reportedBreakdown != null) 'reported_breakdown': reportedBreakdown?.toJson(),
   if (serviceType != null) 'service_type': serviceType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet copyWith({PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData? Function()? cardholderPromptData, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType? Function()? purchaseType, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdown? Function()? reportedBreakdown, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType? Function()? serviceType, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key));}
+PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet copyWith({PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData? Function()? cardholderPromptData, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType? Function()? purchaseType, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetReportedBreakdown? Function()? reportedBreakdown, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType? Function()? serviceType, }) {return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet(
   cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
   purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,
   reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,
   serviceType: serviceType != null ? serviceType() : this.serviceType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet &&
           cardholderPromptData == other.cardholderPromptData &&
           purchaseType == other.purchaseType &&
           reportedBreakdown == other.reportedBreakdown &&
-          serviceType == other.serviceType; } 
-@override int get hashCode { return Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)'; } 
- }
+          serviceType == other.serviceType;}
+@override int get hashCode {return Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType);}
+@override String toString() {return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)';}
+}

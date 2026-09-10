@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization {const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization._(this.value);
 
-factory RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   _ => RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization percentage = RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization._('PERCENTAGE');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormali
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization($value)';}
+}

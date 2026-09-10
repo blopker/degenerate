@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the 
 /// 
 @immutable final class OutputAudioType {const OutputAudioType._(this.value);
 
-factory OutputAudioType.fromJson(String json) { return switch (json) {
+factory OutputAudioType.fromJson(String json) {return switch (json) {
   'output_audio' => outputAudio,
   _ => OutputAudioType._(json),
-}; }
+};}
 
 static const OutputAudioType outputAudio = OutputAudioType._('output_audio');
 
@@ -15,23 +15,23 @@ static const List<OutputAudioType> values = [outputAudio];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputAudioType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutputAudioType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OutputAudioType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OutputAudioType($value)';}
+}
 /// An audio output from the model.
 /// 
 @immutable final class OutputAudio {const OutputAudio({required this.type, required this.data, required this.transcript, });
 
-factory OutputAudio.fromJson(Map<String, dynamic> json) { return OutputAudio(
+factory OutputAudio.fromJson(Map<String, dynamic> json) {return OutputAudio(
   type: OutputAudioType.fromJson(json['type'] as String),
   data: json['data'] as String,
   transcript: json['transcript'] as String,
-); }
+);}
 
 /// The type of the output audio. Always `output_audio`.
 /// 
@@ -45,24 +45,24 @@ final String data;
 /// 
 final String transcript;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'data': data,
   'transcript': transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('data') && json['data'] is String &&
-      json.containsKey('transcript') && json['transcript'] is String; } 
-OutputAudio copyWith({OutputAudioType? type, String? data, String? transcript, }) { return OutputAudio(
+      json.containsKey('transcript') && json['transcript'] is String;}
+OutputAudio copyWith({OutputAudioType? type, String? data, String? transcript, }) {return OutputAudio(
   type: type ?? this.type,
   data: data ?? this.data,
   transcript: transcript ?? this.transcript,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OutputAudio &&
           type == other.type &&
           data == other.data &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, data, transcript); } 
-@override String toString() { return 'OutputAudio(type: $type, data: $data, transcript: $transcript)'; } 
- }
+          transcript == other.transcript;}
+@override int get hashCode {return Object.hash(type, data, transcript);}
+@override String toString() {return 'OutputAudio(type: $type, data: $data, transcript: $transcript)';}
+}

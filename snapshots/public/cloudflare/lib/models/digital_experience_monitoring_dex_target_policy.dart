@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringDexTargetPolicy {const DigitalExperienceMonitoringDexTargetPolicy({required this.id, this.$default, this.name, });
 
-factory DigitalExperienceMonitoringDexTargetPolicy.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexTargetPolicy(
+factory DigitalExperienceMonitoringDexTargetPolicy.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringDexTargetPolicy(
   $default: json['default'] as bool?,
   id: DigitalExperienceMonitoringUuid.fromJson(json['id'] as String),
   name: json['name'] as String?,
-); }
+);}
 
 /// Whether the DEX rule is the account default
 final bool? $default;
@@ -16,22 +16,22 @@ final DigitalExperienceMonitoringUuid id;
 /// The name of the DEX rule
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default': ?$default,
   'id': id.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DigitalExperienceMonitoringDexTargetPolicy copyWith({bool? Function()? $default, DigitalExperienceMonitoringUuid? id, String? Function()? name, }) { return DigitalExperienceMonitoringDexTargetPolicy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+DigitalExperienceMonitoringDexTargetPolicy copyWith({bool? Function()? $default, DigitalExperienceMonitoringUuid? id, String? Function()? name, }) {return DigitalExperienceMonitoringDexTargetPolicy(
   $default: $default != null ? $default() : this.$default,
   id: id ?? this.id,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringDexTargetPolicy &&
           $default == other.$default &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash($default, id, name); } 
-@override String toString() { return 'DigitalExperienceMonitoringDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash($default, id, name);}
+@override String toString() {return 'DigitalExperienceMonitoringDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner {const WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
-factory WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner(
+factory WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner(
   avatarUrl: json['avatar_url'] as String?,
   eventsUrl: json['events_url'] as String?,
   followersUrl: json['followers_url'] as String?,
@@ -22,7 +22,7 @@ factory WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner.fromJson(Map<
   type: json['type'] as String?,
   url: json['url'] as String?,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String? avatarUrl;
 
@@ -62,7 +62,7 @@ final String? url;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avatar_url': ?avatarUrl,
   'events_url': ?eventsUrl,
   'followers_url': ?followersUrl,
@@ -82,9 +82,9 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'url': ?url,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avatar_url', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url', 'user_view_type'}.contains(key)); } 
-WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner copyWith({String? Function()? avatarUrl, String? Function()? eventsUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, String? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? nodeId, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? type, String? Function()? url, String? Function()? userViewType, }) { return WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'avatar_url', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url', 'user_view_type'}.contains(key));}
+WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner copyWith({String? Function()? avatarUrl, String? Function()? eventsUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, String? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? nodeId, String? Function()? organizationsUrl, String? Function()? receivedEventsUrl, String? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? type, String? Function()? url, String? Function()? userViewType, }) {return WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
   followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
@@ -104,8 +104,8 @@ WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner copyWith({String? Fun
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner &&
           avatarUrl == other.avatarUrl &&
           eventsUrl == other.eventsUrl &&
@@ -125,7 +125,7 @@ WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner copyWith({String? Fun
           subscriptionsUrl == other.subscriptionsUrl &&
           type == other.type &&
           url == other.url &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType); } 
-@override String toString() { return 'WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)'; } 
- }
+          userViewType == other.userViewType;}
+@override int get hashCode {return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType);}
+@override String toString() {return 'WebhookDeploymentReviewRequestedWorkflowRunRepositoryOwner(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)';}
+}

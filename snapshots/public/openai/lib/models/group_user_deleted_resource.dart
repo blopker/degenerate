@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.user.deleted`.
 @immutable final class GroupUserDeletedResourceObject {const GroupUserDeletedResourceObject._(this.value);
 
-factory GroupUserDeletedResourceObject.fromJson(String json) { return switch (json) {
+factory GroupUserDeletedResourceObject.fromJson(String json) {return switch (json) {
   'group.user.deleted' => groupUserDeleted,
   _ => GroupUserDeletedResourceObject._(json),
-}; }
+};}
 
 static const GroupUserDeletedResourceObject groupUserDeleted = GroupUserDeletedResourceObject._('group.user.deleted');
 
@@ -14,21 +14,21 @@ static const List<GroupUserDeletedResourceObject> values = [groupUserDeleted];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupUserDeletedResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupUserDeletedResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GroupUserDeletedResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GroupUserDeletedResourceObject($value)';}
+}
 /// Confirmation payload returned after removing a user from a group.
 @immutable final class GroupUserDeletedResource {const GroupUserDeletedResource({required this.object, required this.deleted, });
 
-factory GroupUserDeletedResource.fromJson(Map<String, dynamic> json) { return GroupUserDeletedResource(
+factory GroupUserDeletedResource.fromJson(Map<String, dynamic> json) {return GroupUserDeletedResource(
   object: GroupUserDeletedResourceObject.fromJson(json['object'] as String),
   deleted: json['deleted'] as bool,
-); }
+);}
 
 /// Always `group.user.deleted`.
 final GroupUserDeletedResourceObject object;
@@ -36,20 +36,20 @@ final GroupUserDeletedResourceObject object;
 /// Whether the group membership was removed.
 final bool deleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'deleted': deleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
-      json.containsKey('deleted') && json['deleted'] is bool; } 
-GroupUserDeletedResource copyWith({GroupUserDeletedResourceObject? object, bool? deleted, }) { return GroupUserDeletedResource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
+      json.containsKey('deleted') && json['deleted'] is bool;}
+GroupUserDeletedResource copyWith({GroupUserDeletedResourceObject? object, bool? deleted, }) {return GroupUserDeletedResource(
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GroupUserDeletedResource &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(object, deleted); } 
-@override String toString() { return 'GroupUserDeletedResource(object: $object, deleted: $deleted)'; } 
- }
+          deleted == other.deleted;}
+@override int get hashCode {return Object.hash(object, deleted);}
+@override String toString() {return 'GroupUserDeletedResource(object: $object, deleted: $deleted)';}
+}

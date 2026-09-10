@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures pool 
 /// - `steering_policy="least_connections"`: Use pool weights to scale each pool's open connections.
 @immutable final class LoadBalancingRandomSteering {const LoadBalancingRandomSteering({this.defaultWeight, this.poolWeights, });
 
-factory LoadBalancingRandomSteering.fromJson(Map<String, dynamic> json) { return LoadBalancingRandomSteering(
+factory LoadBalancingRandomSteering.fromJson(Map<String, dynamic> json) {return LoadBalancingRandomSteering(
   defaultWeight: json['default_weight'] != null ? (json['default_weight'] as num).toDouble() : null,
   poolWeights: (json['pool_weights'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toDouble())),
-); }
+);}
 
 /// The default weight for pools in the load balancer that are not specified in the pool_weights map.
 final double? defaultWeight;
@@ -18,20 +18,20 @@ final double? defaultWeight;
 final Map<String,double>? poolWeights;
 
 /// The value with the schema default applied when absent.
-double get defaultWeightOrDefault { return defaultWeight ?? 1.0; } 
-Map<String, dynamic> toJson() { return {
+double get defaultWeightOrDefault {return defaultWeight ?? 1.0;}
+Map<String, dynamic> toJson() {return {
   'default_weight': ?defaultWeight,
   'pool_weights': ?poolWeights,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_weight', 'pool_weights'}.contains(key)); } 
-LoadBalancingRandomSteering copyWith({double? Function()? defaultWeight, Map<String, double>? Function()? poolWeights, }) { return LoadBalancingRandomSteering(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_weight', 'pool_weights'}.contains(key));}
+LoadBalancingRandomSteering copyWith({double? Function()? defaultWeight, Map<String, double>? Function()? poolWeights, }) {return LoadBalancingRandomSteering(
   defaultWeight: defaultWeight != null ? defaultWeight() : this.defaultWeight,
   poolWeights: poolWeights != null ? poolWeights() : this.poolWeights,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancingRandomSteering &&
           defaultWeight == other.defaultWeight &&
-          poolWeights == other.poolWeights; } 
-@override int get hashCode { return Object.hash(defaultWeight, poolWeights); } 
-@override String toString() { return 'LoadBalancingRandomSteering(defaultWeight: $defaultWeight, poolWeights: $poolWeights)'; } 
- }
+          poolWeights == other.poolWeights;}
+@override int get hashCode {return Object.hash(defaultWeight, poolWeights);}
+@override String toString() {return 'LoadBalancingRandomSteering(defaultWeight: $defaultWeight, poolWeights: $poolWeights)';}
+}

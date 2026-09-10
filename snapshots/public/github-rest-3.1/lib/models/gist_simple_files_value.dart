@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistSimpleFilesValue {const GistSimpleFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.truncated, this.content, this.encoding, });
 
-factory GistSimpleFilesValue.fromJson(Map<String, dynamic> json) { return GistSimpleFilesValue(
+factory GistSimpleFilesValue.fromJson(Map<String, dynamic> json) {return GistSimpleFilesValue(
   filename: json['filename'] as String?,
   type: json['type'] as String?,
   language: json['language'] as String?,
@@ -11,7 +11,7 @@ factory GistSimpleFilesValue.fromJson(Map<String, dynamic> json) { return GistSi
   truncated: json['truncated'] as bool?,
   content: json['content'] as String?,
   encoding: json['encoding'] as String?,
-); }
+);}
 
 final String? filename;
 
@@ -31,8 +31,8 @@ final String? content;
 final String? encoding;
 
 /// The value with the schema default applied when absent.
-String get encodingOrDefault { return encoding ?? 'utf-8'; } 
-Map<String, dynamic> toJson() { return {
+String get encodingOrDefault {return encoding ?? 'utf-8';}
+Map<String, dynamic> toJson() {return {
   'filename': ?filename,
   'type': ?type,
   'language': ?language,
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   'truncated': ?truncated,
   'content': ?content,
   'encoding': ?encoding,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size', 'truncated', 'content', 'encoding'}.contains(key)); } 
-GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, bool? Function()? truncated, String? Function()? content, String? Function()? encoding, }) { return GistSimpleFilesValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size', 'truncated', 'content', 'encoding'}.contains(key));}
+GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, bool? Function()? truncated, String? Function()? content, String? Function()? encoding, }) {return GistSimpleFilesValue(
   filename: filename != null ? filename() : this.filename,
   type: type != null ? type() : this.type,
   language: language != null ? language() : this.language,
@@ -52,8 +52,8 @@ GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()?
   truncated: truncated != null ? truncated() : this.truncated,
   content: content != null ? content() : this.content,
   encoding: encoding != null ? encoding() : this.encoding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GistSimpleFilesValue &&
           filename == other.filename &&
           type == other.type &&
@@ -62,7 +62,7 @@ GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()?
           size == other.size &&
           truncated == other.truncated &&
           content == other.content &&
-          encoding == other.encoding; } 
-@override int get hashCode { return Object.hash(filename, type, language, rawUrl, size, truncated, content, encoding); } 
-@override String toString() { return 'GistSimpleFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size, truncated: $truncated, content: $content, encoding: $encoding)'; } 
- }
+          encoding == other.encoding;}
+@override int get hashCode {return Object.hash(filename, type, language, rawUrl, size, truncated, content, encoding);}
+@override String toString() {return 'GistSimpleFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size, truncated: $truncated, content: $content, encoding: $encoding)';}
+}

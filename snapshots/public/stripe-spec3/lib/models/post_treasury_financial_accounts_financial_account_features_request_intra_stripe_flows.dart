@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents the ability for the FinancialAccount to send money to, or receive money from other FinancialAccounts (for example, via OutboundPayment).
 @immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows({required this.requested});
 
-factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows(
+factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows(
   requested: json['requested'] as bool,
-); }
+);}
 
 final bool requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool; } 
-PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows copyWith({bool? requested}) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requested') && json['requested'] is bool;}
+PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows copyWith({bool? requested}) {return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows(
   requested: requested ?? this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestIntraStripeFlows(requested: $requested)';}
+}

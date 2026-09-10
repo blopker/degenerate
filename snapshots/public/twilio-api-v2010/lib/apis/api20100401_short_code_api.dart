@@ -11,7 +11,7 @@ final class Api20100401ShortCodeApi with ApiExecutor {const Api20100401ShortCode
 /// Fetch an instance of a short code
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
-Future<ApiResult<AccountShortCode, Never>> fetchShortCode({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountShortCode, Never>> fetchShortCode({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -20,18 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountShortCode.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountShortCode.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a short code with the following parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
-Future<ApiResult<AccountShortCode, Never>> updateShortCode({required String accountSid, required String sid, UpdateShortCodeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountShortCode, Never>> updateShortCode({required String accountSid, required String sid, UpdateShortCodeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -55,18 +50,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountShortCode.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountShortCode.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve a list of short-codes belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json`
-Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (friendlyName != null) {
   queryParameters['FriendlyName'] = friendlyName;
@@ -95,12 +85,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListShortCodeResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListShortCodeResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

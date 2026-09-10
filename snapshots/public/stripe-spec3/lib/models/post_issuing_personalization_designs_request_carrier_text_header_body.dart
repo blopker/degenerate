@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2 {const PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2._(this.value);
 
-factory PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2.fromJson(String json) { return switch (json) {
+factory PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2._(json),
-}; }
+};}
 
 static const PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2 $empty = PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyV
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2($value)';}
+}
 
 @immutable
 final class PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBody {

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_created_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'secret_scanning_alert_resolution.dart';import 'secret_scanning_alert_state.dart';import 'secret_scanning_first_detected_location.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The token status as of the latest validity check.
 @immutable final class OrganizationSecretScanningAlertValidity {const OrganizationSecretScanningAlertValidity._(this.value);
 
-factory OrganizationSecretScanningAlertValidity.fromJson(String json) { return switch (json) {
+factory OrganizationSecretScanningAlertValidity.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'unknown' => unknown,
   _ => OrganizationSecretScanningAlertValidity._(json),
-}; }
+};}
 
 static const OrganizationSecretScanningAlertValidity active = OrganizationSecretScanningAlertValidity._('active');
 
@@ -20,17 +20,17 @@ static const List<OrganizationSecretScanningAlertValidity> values = [active, ina
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationSecretScanningAlertValidity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationSecretScanningAlertValidity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrganizationSecretScanningAlertValidity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrganizationSecretScanningAlertValidity($value)';}
+}
 @immutable final class OrganizationSecretScanningAlert {const OrganizationSecretScanningAlert({this.number, this.createdAt, this.updatedAt = const Omittable.absent(), this.url, this.htmlUrl, this.locationsUrl, this.state, this.resolution = const Omittable.absent(), this.resolvedAt = const Omittable.absent(), this.resolvedBy = const Omittable.absent(), this.secretType, this.secretTypeDisplayName, this.secret, this.repository, this.pushProtectionBypassed = const Omittable.absent(), this.pushProtectionBypassedBy = const Omittable.absent(), this.pushProtectionBypassedAt = const Omittable.absent(), this.pushProtectionBypassRequestReviewer = const Omittable.absent(), this.pushProtectionBypassRequestReviewerComment = const Omittable.absent(), this.pushProtectionBypassRequestComment = const Omittable.absent(), this.pushProtectionBypassRequestHtmlUrl = const Omittable.absent(), this.resolutionComment = const Omittable.absent(), this.validity, this.publiclyLeaked = const Omittable.absent(), this.multiRepo = const Omittable.absent(), this.isBase64Encoded = const Omittable.absent(), this.firstLocationDetected = const Omittable.absent(), this.hasMoreLocations, this.assignedTo = const Omittable.absent(), });
 
-factory OrganizationSecretScanningAlert.fromJson(Map<String, dynamic> json) { return OrganizationSecretScanningAlert(
+factory OrganizationSecretScanningAlert.fromJson(Map<String, dynamic> json) {return OrganizationSecretScanningAlert(
   number: json['number'] != null ? AlertNumber.fromJson(json['number'] as num) : null,
   createdAt: json['created_at'] != null ? AlertCreatedAt.fromJson(json['created_at'] as String) : null,
   updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? AlertUpdatedAt.fromJson(json['updated_at'] as String) : null) : const Omittable.absent(),
@@ -60,7 +60,7 @@ factory OrganizationSecretScanningAlert.fromJson(Map<String, dynamic> json) { re
   firstLocationDetected: json.containsKey('first_location_detected') ? Omittable(json['first_location_detected'] != null ? SecretScanningFirstDetectedLocation.fromJson(json['first_location_detected'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   hasMoreLocations: json['has_more_locations'] as bool?,
   assignedTo: json.containsKey('assigned_to') ? Omittable(json['assigned_to'] != null ? SimpleUser.fromJson(json['assigned_to'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The security alert number.
 final AlertNumber? number;
@@ -144,7 +144,7 @@ final bool? hasMoreLocations;
 
 final Omittable<SimpleUser?> assignedTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (number != null) 'number': number?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toJson(),
@@ -174,9 +174,9 @@ Map<String, dynamic> toJson() { return {
   if (firstLocationDetected.isPresent) 'first_location_detected': firstLocationDetected.value?.toJson(),
   'has_more_locations': ?hasMoreLocations,
   if (assignedTo.isPresent) 'assigned_to': assignedTo.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number', 'created_at', 'updated_at', 'url', 'html_url', 'locations_url', 'state', 'resolution', 'resolved_at', 'resolved_by', 'secret_type', 'secret_type_display_name', 'secret', 'repository', 'push_protection_bypassed', 'push_protection_bypassed_by', 'push_protection_bypassed_at', 'push_protection_bypass_request_reviewer', 'push_protection_bypass_request_reviewer_comment', 'push_protection_bypass_request_comment', 'push_protection_bypass_request_html_url', 'resolution_comment', 'validity', 'publicly_leaked', 'multi_repo', 'is_base64_encoded', 'first_location_detected', 'has_more_locations', 'assigned_to'}.contains(key)); } 
-OrganizationSecretScanningAlert copyWith({AlertNumber? Function()? number, AlertCreatedAt? Function()? createdAt, Omittable<AlertUpdatedAt?>? updatedAt, AlertUrl? Function()? url, AlertHtmlUrl? Function()? htmlUrl, Uri? Function()? locationsUrl, SecretScanningAlertState? Function()? state, Omittable<SecretScanningAlertResolution?>? resolution, Omittable<DateTime?>? resolvedAt, Omittable<SimpleUser?>? resolvedBy, String? Function()? secretType, String? Function()? secretTypeDisplayName, String? Function()? secret, SimpleRepository? Function()? repository, Omittable<bool?>? pushProtectionBypassed, Omittable<SimpleUser?>? pushProtectionBypassedBy, Omittable<DateTime?>? pushProtectionBypassedAt, Omittable<SimpleUser?>? pushProtectionBypassRequestReviewer, Omittable<String?>? pushProtectionBypassRequestReviewerComment, Omittable<String?>? pushProtectionBypassRequestComment, Omittable<Uri?>? pushProtectionBypassRequestHtmlUrl, Omittable<String?>? resolutionComment, OrganizationSecretScanningAlertValidity? Function()? validity, Omittable<bool?>? publiclyLeaked, Omittable<bool?>? multiRepo, Omittable<bool?>? isBase64Encoded, Omittable<SecretScanningFirstDetectedLocation?>? firstLocationDetected, bool? Function()? hasMoreLocations, Omittable<SimpleUser?>? assignedTo, }) { return OrganizationSecretScanningAlert(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'number', 'created_at', 'updated_at', 'url', 'html_url', 'locations_url', 'state', 'resolution', 'resolved_at', 'resolved_by', 'secret_type', 'secret_type_display_name', 'secret', 'repository', 'push_protection_bypassed', 'push_protection_bypassed_by', 'push_protection_bypassed_at', 'push_protection_bypass_request_reviewer', 'push_protection_bypass_request_reviewer_comment', 'push_protection_bypass_request_comment', 'push_protection_bypass_request_html_url', 'resolution_comment', 'validity', 'publicly_leaked', 'multi_repo', 'is_base64_encoded', 'first_location_detected', 'has_more_locations', 'assigned_to'}.contains(key));}
+OrganizationSecretScanningAlert copyWith({AlertNumber? Function()? number, AlertCreatedAt? Function()? createdAt, Omittable<AlertUpdatedAt?>? updatedAt, AlertUrl? Function()? url, AlertHtmlUrl? Function()? htmlUrl, Uri? Function()? locationsUrl, SecretScanningAlertState? Function()? state, Omittable<SecretScanningAlertResolution?>? resolution, Omittable<DateTime?>? resolvedAt, Omittable<SimpleUser?>? resolvedBy, String? Function()? secretType, String? Function()? secretTypeDisplayName, String? Function()? secret, SimpleRepository? Function()? repository, Omittable<bool?>? pushProtectionBypassed, Omittable<SimpleUser?>? pushProtectionBypassedBy, Omittable<DateTime?>? pushProtectionBypassedAt, Omittable<SimpleUser?>? pushProtectionBypassRequestReviewer, Omittable<String?>? pushProtectionBypassRequestReviewerComment, Omittable<String?>? pushProtectionBypassRequestComment, Omittable<Uri?>? pushProtectionBypassRequestHtmlUrl, Omittable<String?>? resolutionComment, OrganizationSecretScanningAlertValidity? Function()? validity, Omittable<bool?>? publiclyLeaked, Omittable<bool?>? multiRepo, Omittable<bool?>? isBase64Encoded, Omittable<SecretScanningFirstDetectedLocation?>? firstLocationDetected, bool? Function()? hasMoreLocations, Omittable<SimpleUser?>? assignedTo, }) {return OrganizationSecretScanningAlert(
   number: number != null ? number() : this.number,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
@@ -206,8 +206,8 @@ OrganizationSecretScanningAlert copyWith({AlertNumber? Function()? number, Alert
   firstLocationDetected: firstLocationDetected ?? this.firstLocationDetected,
   hasMoreLocations: hasMoreLocations != null ? hasMoreLocations() : this.hasMoreLocations,
   assignedTo: assignedTo ?? this.assignedTo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrganizationSecretScanningAlert &&
           number == other.number &&
           createdAt == other.createdAt &&
@@ -237,7 +237,7 @@ OrganizationSecretScanningAlert copyWith({AlertNumber? Function()? number, Alert
           isBase64Encoded == other.isBase64Encoded &&
           firstLocationDetected == other.firstLocationDetected &&
           hasMoreLocations == other.hasMoreLocations &&
-          assignedTo == other.assignedTo; } 
-@override int get hashCode { return Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, state, resolution, resolvedAt, resolvedBy, secretType, secretTypeDisplayName, secret, repository, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, resolutionComment, validity, publiclyLeaked, multiRepo, isBase64Encoded, firstLocationDetected, hasMoreLocations, assignedTo]); } 
-@override String toString() { return 'OrganizationSecretScanningAlert(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, state: $state, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, secret: $secret, repository: $repository, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, resolutionComment: $resolutionComment, validity: $validity, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, isBase64Encoded: $isBase64Encoded, firstLocationDetected: $firstLocationDetected, hasMoreLocations: $hasMoreLocations, assignedTo: $assignedTo)'; } 
- }
+          assignedTo == other.assignedTo;}
+@override int get hashCode {return Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, state, resolution, resolvedAt, resolvedBy, secretType, secretTypeDisplayName, secret, repository, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, resolutionComment, validity, publiclyLeaked, multiRepo, isBase64Encoded, firstLocationDetected, hasMoreLocations, assignedTo]);}
+@override String toString() {return 'OrganizationSecretScanningAlert(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, state: $state, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, secret: $secret, repository: $repository, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, resolutionComment: $resolutionComment, validity: $validity, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, isBase64Encoded: $isBase64Encoded, firstLocationDetected: $firstLocationDetected, hasMoreLocations: $hasMoreLocations, assignedTo: $assignedTo)';}
+}

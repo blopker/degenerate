@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback {const AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback({required this.elementId});
 
-factory AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback(
+factory AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback copyWith({String? elementId}) { return AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback copyWith({String? elementId}) {return AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback(
   elementId: elementId ?? this.elementId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback &&
-          elementId == other.elementId; } 
-@override int get hashCode { return elementId.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback(elementId: $elementId)'; } 
- }
+          elementId == other.elementId;}
+@override int get hashCode {return elementId.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteVersionRequestElementsRateOutputsFallback(elementId: $elementId)';}
+}

@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fork_event_forkee.dart';@immutable final class ForkEvent {const ForkEvent({required this.action, required this.forkee, });
 
-factory ForkEvent.fromJson(Map<String, dynamic> json) { return ForkEvent(
+factory ForkEvent.fromJson(Map<String, dynamic> json) {return ForkEvent(
   action: json['action'] as String,
   forkee: ForkEventForkee.fromJson(json['forkee'] as Map<String, dynamic>),
-); }
+);}
 
 final String action;
 
 final ForkEventForkee forkee;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'forkee': forkee.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
-      json.containsKey('forkee'); } 
-ForkEvent copyWith({String? action, ForkEventForkee? forkee, }) { return ForkEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
+      json.containsKey('forkee');}
+ForkEvent copyWith({String? action, ForkEventForkee? forkee, }) {return ForkEvent(
   action: action ?? this.action,
   forkee: forkee ?? this.forkee,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ForkEvent &&
           action == other.action &&
-          forkee == other.forkee; } 
-@override int get hashCode { return Object.hash(action, forkee); } 
-@override String toString() { return 'ForkEvent(action: $action, forkee: $forkee)'; } 
- }
+          forkee == other.forkee;}
+@override int get hashCode {return Object.hash(action, forkee);}
+@override String toString() {return 'ForkEvent(action: $action, forkee: $forkee)';}
+}

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/firewall_rule.dart';import '../models/firewall_rule_identifier.dart';import '../models/firewall_rule_single_id_response_result.dart';import '../models/firewall_schemas_mode.dart';import '../models/ip_access_rules_for_a_user_create_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_user_create_an_ip_access_rule_response4_xx.dart';import '../models/ip_access_rules_for_a_user_delete_an_ip_access_rule_response4_xx.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_configuration_target.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_direction.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_match.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_order.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_response4_xx.dart';import '../models/ip_access_rules_for_a_user_update_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_user_update_an_ip_access_rule_response4_xx.dart';/// IpAccessRulesForAUserApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/firewall_rule.dart';import '../models/firewall_rule_identifier.dart';import '../models/firewall_rule_single_id_response_result.dart';import '../models/firewall_schemas_mode.dart';import '../models/ip_access_rules_for_a_user_create_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_user_create_an_ip_access_rule_response4xx.dart';import '../models/ip_access_rules_for_a_user_delete_an_ip_access_rule_response4xx.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_configuration_target.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_direction.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_match.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_order.dart';import '../models/ip_access_rules_for_a_user_list_ip_access_rules_response4xx.dart';import '../models/ip_access_rules_for_a_user_update_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_user_update_an_ip_access_rule_response4xx.dart';/// IpAccessRulesForAUserApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpAccessRulesForAUserApi with ApiExecutor {const IpAccessRulesForAUs
 /// Fetches IP Access rules of the user. You can filter the results using several optional parameters.
 ///
 /// `GET /user/firewall/access_rules/rules`
-Future<ApiResult<List<FirewallRule>, IpAccessRulesForAUserListIpAccessRulesResponse4Xx>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallRule>, IpAccessRulesForAUserListIpAccessRulesResponse4xx>> ipAccessRulesForAUserListIpAccessRules({FirewallSchemasMode? mode, IpAccessRulesForAUserListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAUserListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAUserListIpAccessRulesOrder? order, IpAccessRulesForAUserListIpAccessRulesDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode.toJson();
@@ -54,24 +54,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => FirewallRule.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => FirewallRule.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAUserListIpAccessRulesResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  IpAccessRulesForAUserListIpAccessRulesResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an IP Access rule
 ///
 /// Creates a new IP Access rule for all zones owned by the current user.
@@ -79,7 +68,7 @@ return null;
 /// Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /user/firewall/access_rules/rules`
-Future<ApiResult<FirewallRule, IpAccessRulesForAUserCreateAnIpAccessRuleResponse4Xx>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAUserCreateAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserCreateAnIpAccessRule({required IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,30 +79,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return FirewallRule.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  FirewallRule.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAUserCreateAnIpAccessRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  IpAccessRulesForAUserCreateAnIpAccessRuleResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an IP Access rule
 ///
 /// Updates an IP Access rule defined at the user level. You can only update the rule action (`mode` parameter) and notes.
 ///
 /// `PATCH /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRule, IpAccessRulesForAUserUpdateAnIpAccessRuleResponse4Xx>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAUserUpdateAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required IpAccessRulesForAUserUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,24 +102,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return FirewallRule.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  FirewallRule.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAUserUpdateAnIpAccessRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  IpAccessRulesForAUserUpdateAnIpAccessRuleResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete an IP Access rule
 ///
 /// Deletes an IP Access rule at the user level.
@@ -149,7 +116,7 @@ return null;
 /// Note: Deleting a user-level rule will affect all zones owned by the user.
 ///
 /// `DELETE /user/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRuleSingleIdResponseResult, IpAccessRulesForAUserDeleteAnIpAccessRuleResponse4Xx>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRuleSingleIdResponseResult, IpAccessRulesForAUserDeleteAnIpAccessRuleResponse4xx>> ipAccessRulesForAUserDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -158,22 +125,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return FirewallRuleSingleIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  FirewallRuleSingleIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAUserDeleteAnIpAccessRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  IpAccessRulesForAUserDeleteAnIpAccessRuleResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

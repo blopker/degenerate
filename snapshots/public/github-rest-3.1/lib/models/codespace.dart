@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespace_git_status.dart';import 'codespace_machine.dart';import 'codespace_runtime_constraints.dart';import 'minimal_repository.dart';import 'simple_user.dart';/// State of this codespace.
 @immutable final class CodespaceState {const CodespaceState._(this.value);
 
-factory CodespaceState.fromJson(String json) { return switch (json) {
+factory CodespaceState.fromJson(String json) {return switch (json) {
   'Unknown' => unknown,
   'Created' => created,
   'Queued' => queued,
@@ -22,7 +22,7 @@ factory CodespaceState.fromJson(String json) { return switch (json) {
   'Updating' => updating,
   'Rebuilding' => rebuilding,
   _ => CodespaceState._(json),
-}; }
+};}
 
 static const CodespaceState unknown = CodespaceState._('Unknown');
 
@@ -62,24 +62,24 @@ static const List<CodespaceState> values = [unknown, created, queued, provisioni
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespaceState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespaceState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodespaceState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodespaceState($value)';}
+}
 /// The initally assigned location of a new codespace.
 @immutable final class CodespaceLocation {const CodespaceLocation._(this.value);
 
-factory CodespaceLocation.fromJson(String json) { return switch (json) {
+factory CodespaceLocation.fromJson(String json) {return switch (json) {
   'EastUs' => eastUs,
   'SouthEastAsia' => southEastAsia,
   'WestEurope' => westEurope,
   'WestUs2' => westUs2,
   _ => CodespaceLocation._(json),
-}; }
+};}
 
 static const CodespaceLocation eastUs = CodespaceLocation._('EastUs');
 
@@ -93,18 +93,18 @@ static const List<CodespaceLocation> values = [eastUs, southEastAsia, westEurope
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespaceLocation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespaceLocation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodespaceLocation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodespaceLocation($value)';}
+}
 /// A codespace.
 @immutable final class Codespace {const Codespace({required this.id, required this.name, required this.environmentId, required this.owner, required this.billableOwner, required this.repository, required this.machine, required this.prebuild, required this.createdAt, required this.updatedAt, required this.lastUsedAt, required this.state, required this.url, required this.gitStatus, required this.location, required this.idleTimeoutMinutes, required this.webUrl, required this.machinesUrl, required this.startUrl, required this.stopUrl, required this.pullsUrl, required this.recentFolders, this.displayName = const Omittable.absent(), this.devcontainerPath = const Omittable.absent(), this.publishUrl = const Omittable.absent(), this.runtimeConstraints, this.pendingOperation = const Omittable.absent(), this.pendingOperationDisabledReason = const Omittable.absent(), this.idleTimeoutNotice = const Omittable.absent(), this.retentionPeriodMinutes = const Omittable.absent(), this.retentionExpiresAt = const Omittable.absent(), this.lastKnownStopNotice = const Omittable.absent(), });
 
-factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
+factory Codespace.fromJson(Map<String, dynamic> json) {return Codespace(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
@@ -137,7 +137,7 @@ factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
   retentionPeriodMinutes: json.containsKey('retention_period_minutes') ? Omittable(json['retention_period_minutes'] != null ? (json['retention_period_minutes'] as num).toInt() : null) : const Omittable.absent(),
   retentionExpiresAt: json.containsKey('retention_expires_at') ? Omittable(json['retention_expires_at'] != null ? DateTime.parse(json['retention_expires_at'] as String) : null) : const Omittable.absent(),
   lastKnownStopNotice: json.containsKey('last_known_stop_notice') ? Omittable(json['last_known_stop_notice'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final int id;
 
@@ -226,7 +226,7 @@ final Omittable<DateTime?> retentionExpiresAt;
 /// The text to display to a user when a codespace has been stopped for a potentially actionable reason.
 final Omittable<String?> lastKnownStopNotice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (displayName.isPresent) 'display_name': displayName.value,
@@ -259,8 +259,8 @@ Map<String, dynamic> toJson() { return {
   if (retentionPeriodMinutes.isPresent) 'retention_period_minutes': retentionPeriodMinutes.value,
   if (retentionExpiresAt.isPresent) 'retention_expires_at': retentionExpiresAt.value?.toIso8601String(),
   if (lastKnownStopNotice.isPresent) 'last_known_stop_notice': lastKnownStopNotice.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('environment_id') && (json['environment_id'] == null || json['environment_id'] is String) &&
       json.containsKey('owner') &&
@@ -281,8 +281,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('start_url') && json['start_url'] is String &&
       json.containsKey('stop_url') && json['stop_url'] is String &&
       json.containsKey('pulls_url') && (json['pulls_url'] == null || json['pulls_url'] is String) &&
-      json.containsKey('recent_folders'); } 
-Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, MinimalRepository? repository, CodespaceMachine? Function()? machine, Omittable<String?>? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceState? state, Uri? url, CodespaceGitStatus? gitStatus, CodespaceLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Omittable<Uri?>? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, CodespaceRuntimeConstraints? Function()? runtimeConstraints, Omittable<bool?>? pendingOperation, Omittable<String?>? pendingOperationDisabledReason, Omittable<String?>? idleTimeoutNotice, Omittable<int?>? retentionPeriodMinutes, Omittable<DateTime?>? retentionExpiresAt, Omittable<String?>? lastKnownStopNotice, }) { return Codespace(
+      json.containsKey('recent_folders');}
+Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, MinimalRepository? repository, CodespaceMachine? Function()? machine, Omittable<String?>? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceState? state, Uri? url, CodespaceGitStatus? gitStatus, CodespaceLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Omittable<Uri?>? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, CodespaceRuntimeConstraints? Function()? runtimeConstraints, Omittable<bool?>? pendingOperation, Omittable<String?>? pendingOperationDisabledReason, Omittable<String?>? idleTimeoutNotice, Omittable<int?>? retentionPeriodMinutes, Omittable<DateTime?>? retentionExpiresAt, Omittable<String?>? lastKnownStopNotice, }) {return Codespace(
   id: id ?? this.id,
   name: name ?? this.name,
   displayName: displayName ?? this.displayName,
@@ -315,8 +315,8 @@ Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, Stri
   retentionPeriodMinutes: retentionPeriodMinutes ?? this.retentionPeriodMinutes,
   retentionExpiresAt: retentionExpiresAt ?? this.retentionExpiresAt,
   lastKnownStopNotice: lastKnownStopNotice ?? this.lastKnownStopNotice,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Codespace &&
           id == other.id &&
           name == other.name &&
@@ -349,7 +349,7 @@ Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, Stri
           idleTimeoutNotice == other.idleTimeoutNotice &&
           retentionPeriodMinutes == other.retentionPeriodMinutes &&
           retentionExpiresAt == other.retentionExpiresAt &&
-          lastKnownStopNotice == other.lastKnownStopNotice; } 
-@override int get hashCode { return Object.hashAll([id, name, displayName, environmentId, owner, billableOwner, repository, machine, devcontainerPath, prebuild, createdAt, updatedAt, lastUsedAt, state, url, gitStatus, location, idleTimeoutMinutes, webUrl, machinesUrl, startUrl, stopUrl, publishUrl, pullsUrl, Object.hashAll(recentFolders), runtimeConstraints, pendingOperation, pendingOperationDisabledReason, idleTimeoutNotice, retentionPeriodMinutes, retentionExpiresAt, lastKnownStopNotice]); } 
-@override String toString() { return 'Codespace(id: $id, name: $name, displayName: $displayName, environmentId: $environmentId, owner: $owner, billableOwner: $billableOwner, repository: $repository, machine: $machine, devcontainerPath: $devcontainerPath, prebuild: $prebuild, createdAt: $createdAt, updatedAt: $updatedAt, lastUsedAt: $lastUsedAt, state: $state, url: $url, gitStatus: $gitStatus, location: $location, idleTimeoutMinutes: $idleTimeoutMinutes, webUrl: $webUrl, machinesUrl: $machinesUrl, startUrl: $startUrl, stopUrl: $stopUrl, publishUrl: $publishUrl, pullsUrl: $pullsUrl, recentFolders: $recentFolders, runtimeConstraints: $runtimeConstraints, pendingOperation: $pendingOperation, pendingOperationDisabledReason: $pendingOperationDisabledReason, idleTimeoutNotice: $idleTimeoutNotice, retentionPeriodMinutes: $retentionPeriodMinutes, retentionExpiresAt: $retentionExpiresAt, lastKnownStopNotice: $lastKnownStopNotice)'; } 
- }
+          lastKnownStopNotice == other.lastKnownStopNotice;}
+@override int get hashCode {return Object.hashAll([id, name, displayName, environmentId, owner, billableOwner, repository, machine, devcontainerPath, prebuild, createdAt, updatedAt, lastUsedAt, state, url, gitStatus, location, idleTimeoutMinutes, webUrl, machinesUrl, startUrl, stopUrl, publishUrl, pullsUrl, Object.hashAll(recentFolders), runtimeConstraints, pendingOperation, pendingOperationDisabledReason, idleTimeoutNotice, retentionPeriodMinutes, retentionExpiresAt, lastKnownStopNotice]);}
+@override String toString() {return 'Codespace(id: $id, name: $name, displayName: $displayName, environmentId: $environmentId, owner: $owner, billableOwner: $billableOwner, repository: $repository, machine: $machine, devcontainerPath: $devcontainerPath, prebuild: $prebuild, createdAt: $createdAt, updatedAt: $updatedAt, lastUsedAt: $lastUsedAt, state: $state, url: $url, gitStatus: $gitStatus, location: $location, idleTimeoutMinutes: $idleTimeoutMinutes, webUrl: $webUrl, machinesUrl: $machinesUrl, startUrl: $startUrl, stopUrl: $stopUrl, publishUrl: $publishUrl, pullsUrl: $pullsUrl, recentFolders: $recentFolders, runtimeConstraints: $runtimeConstraints, pendingOperation: $pendingOperation, pendingOperationDisabledReason: $pendingOperationDisabledReason, idleTimeoutNotice: $idleTimeoutNotice, retentionPeriodMinutes: $retentionPeriodMinutes, retentionExpiresAt: $retentionExpiresAt, lastKnownStopNotice: $lastKnownStopNotice)';}
+}

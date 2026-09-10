@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesLocationsResponseResultLocations {const RadarGetEntitiesLocationsResponseResultLocations({required this.alpha2, required this.continent, required this.latitude, required this.longitude, required this.name, required this.region, required this.subregion, });
 
-factory RadarGetEntitiesLocationsResponseResultLocations.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesLocationsResponseResultLocations(
+factory RadarGetEntitiesLocationsResponseResultLocations.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesLocationsResponseResultLocations(
   alpha2: json['alpha2'] as String,
   continent: json['continent'] as String,
   latitude: json['latitude'] as String,
@@ -10,7 +10,7 @@ factory RadarGetEntitiesLocationsResponseResultLocations.fromJson(Map<String, dy
   name: json['name'] as String,
   region: json['region'] as String,
   subregion: json['subregion'] as String,
-); }
+);}
 
 final String alpha2;
 
@@ -28,7 +28,7 @@ final String region;
 
 final String subregion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alpha2': alpha2,
   'continent': continent,
   'latitude': latitude,
@@ -36,15 +36,15 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'region': region,
   'subregion': subregion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alpha2') && json['alpha2'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alpha2') && json['alpha2'] is String &&
       json.containsKey('continent') && json['continent'] is String &&
       json.containsKey('latitude') && json['latitude'] is String &&
       json.containsKey('longitude') && json['longitude'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('region') && json['region'] is String &&
-      json.containsKey('subregion') && json['subregion'] is String; } 
-RadarGetEntitiesLocationsResponseResultLocations copyWith({String? alpha2, String? continent, String? latitude, String? longitude, String? name, String? region, String? subregion, }) { return RadarGetEntitiesLocationsResponseResultLocations(
+      json.containsKey('subregion') && json['subregion'] is String;}
+RadarGetEntitiesLocationsResponseResultLocations copyWith({String? alpha2, String? continent, String? latitude, String? longitude, String? name, String? region, String? subregion, }) {return RadarGetEntitiesLocationsResponseResultLocations(
   alpha2: alpha2 ?? this.alpha2,
   continent: continent ?? this.continent,
   latitude: latitude ?? this.latitude,
@@ -52,8 +52,8 @@ RadarGetEntitiesLocationsResponseResultLocations copyWith({String? alpha2, Strin
   name: name ?? this.name,
   region: region ?? this.region,
   subregion: subregion ?? this.subregion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEntitiesLocationsResponseResultLocations &&
           alpha2 == other.alpha2 &&
           continent == other.continent &&
@@ -61,7 +61,7 @@ RadarGetEntitiesLocationsResponseResultLocations copyWith({String? alpha2, Strin
           longitude == other.longitude &&
           name == other.name &&
           region == other.region &&
-          subregion == other.subregion; } 
-@override int get hashCode { return Object.hash(alpha2, continent, latitude, longitude, name, region, subregion); } 
-@override String toString() { return 'RadarGetEntitiesLocationsResponseResultLocations(alpha2: $alpha2, continent: $continent, latitude: $latitude, longitude: $longitude, name: $name, region: $region, subregion: $subregion)'; } 
- }
+          subregion == other.subregion;}
+@override int get hashCode {return Object.hash(alpha2, continent, latitude, longitude, name, region, subregion);}
+@override String toString() {return 'RadarGetEntitiesLocationsResponseResultLocations(alpha2: $alpha2, continent: $continent, latitude: $latitude, longitude: $longitude, name: $name, region: $region, subregion: $subregion)';}
+}

@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_
 /// 
 @immutable final class CreateFineTuningJobRequestHyperparameters {const CreateFineTuningJobRequestHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
-factory CreateFineTuningJobRequestHyperparameters.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequestHyperparameters(
+factory CreateFineTuningJobRequestHyperparameters.fromJson(Map<String, dynamic> json) {return CreateFineTuningJobRequestHyperparameters(
   batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => CreateFineTuningJobRequestHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => CreateFineTuningJobRequestHyperparametersLearningRateMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
   nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => CreateFineTuningJobRequestHyperparametersNEpochsVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
-); }
+);}
 
 /// Number of examples in each batch. A larger batch size means that model parameters
 /// are updated less frequently, but with lower variance.
@@ -26,22 +26,22 @@ final CreateFineTuningJobRequestHyperparametersLearningRateMultiplier? learningR
 /// 
 final CreateFineTuningJobRequestHyperparametersNEpochs? nEpochs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
   if (learningRateMultiplier != null) 'learning_rate_multiplier': learningRateMultiplier?.toJson(),
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key)); } 
-CreateFineTuningJobRequestHyperparameters copyWith({CreateFineTuningJobRequestHyperparametersBatchSize? Function()? batchSize, CreateFineTuningJobRequestHyperparametersLearningRateMultiplier? Function()? learningRateMultiplier, CreateFineTuningJobRequestHyperparametersNEpochs? Function()? nEpochs, }) { return CreateFineTuningJobRequestHyperparameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key));}
+CreateFineTuningJobRequestHyperparameters copyWith({CreateFineTuningJobRequestHyperparametersBatchSize? Function()? batchSize, CreateFineTuningJobRequestHyperparametersLearningRateMultiplier? Function()? learningRateMultiplier, CreateFineTuningJobRequestHyperparametersNEpochs? Function()? nEpochs, }) {return CreateFineTuningJobRequestHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateFineTuningJobRequestHyperparameters &&
           batchSize == other.batchSize &&
           learningRateMultiplier == other.learningRateMultiplier &&
-          nEpochs == other.nEpochs; } 
-@override int get hashCode { return Object.hash(batchSize, learningRateMultiplier, nEpochs); } 
-@override String toString() { return 'CreateFineTuningJobRequestHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)'; } 
- }
+          nEpochs == other.nEpochs;}
+@override int get hashCode {return Object.hash(batchSize, learningRateMultiplier, nEpochs);}
+@override String toString() {return 'CreateFineTuningJobRequestHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)';}
+}

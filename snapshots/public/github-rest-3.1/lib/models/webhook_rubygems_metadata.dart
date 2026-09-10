@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_rubygems_metadata_version_info.dart';@immutable final class WebhookRubygemsMetadata {const WebhookRubygemsMetadata({this.name, this.description, this.readme, this.homepage, this.versionInfo, this.platform, this.metadata, this.repo, this.dependencies, this.commitOid, });
 
-factory WebhookRubygemsMetadata.fromJson(Map<String, dynamic> json) { return WebhookRubygemsMetadata(
+factory WebhookRubygemsMetadata.fromJson(Map<String, dynamic> json) {return WebhookRubygemsMetadata(
   name: json['name'] as String?,
   description: json['description'] as String?,
   readme: json['readme'] as String?,
@@ -13,7 +13,7 @@ factory WebhookRubygemsMetadata.fromJson(Map<String, dynamic> json) { return Web
   repo: json['repo'] as String?,
   dependencies: (json['dependencies'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
   commitOid: json['commit_oid'] as String?,
-); }
+);}
 
 final String? name;
 
@@ -35,7 +35,7 @@ final List<Map<String,String>>? dependencies;
 
 final String? commitOid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'description': ?description,
   'readme': ?readme,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'repo': ?repo,
   if (dependencies != null) 'dependencies': dependencies?.map((e) => e).toList(),
   'commit_oid': ?commitOid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'readme', 'homepage', 'version_info', 'platform', 'metadata', 'repo', 'dependencies', 'commit_oid'}.contains(key)); } 
-WebhookRubygemsMetadata copyWith({String? Function()? name, String? Function()? description, String? Function()? readme, String? Function()? homepage, WebhookRubygemsMetadataVersionInfo? Function()? versionInfo, String? Function()? platform, Map<String, String>? Function()? metadata, String? Function()? repo, List<Map<String, String>>? Function()? dependencies, String? Function()? commitOid, }) { return WebhookRubygemsMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'description', 'readme', 'homepage', 'version_info', 'platform', 'metadata', 'repo', 'dependencies', 'commit_oid'}.contains(key));}
+WebhookRubygemsMetadata copyWith({String? Function()? name, String? Function()? description, String? Function()? readme, String? Function()? homepage, WebhookRubygemsMetadataVersionInfo? Function()? versionInfo, String? Function()? platform, Map<String, String>? Function()? metadata, String? Function()? repo, List<Map<String, String>>? Function()? dependencies, String? Function()? commitOid, }) {return WebhookRubygemsMetadata(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   readme: readme != null ? readme() : this.readme,
@@ -59,8 +59,8 @@ WebhookRubygemsMetadata copyWith({String? Function()? name, String? Function()? 
   repo: repo != null ? repo() : this.repo,
   dependencies: dependencies != null ? dependencies() : this.dependencies,
   commitOid: commitOid != null ? commitOid() : this.commitOid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRubygemsMetadata &&
           name == other.name &&
           description == other.description &&
@@ -71,7 +71,7 @@ WebhookRubygemsMetadata copyWith({String? Function()? name, String? Function()? 
           metadata == other.metadata &&
           repo == other.repo &&
           listEquals(dependencies, other.dependencies) &&
-          commitOid == other.commitOid; } 
-@override int get hashCode { return Object.hash(name, description, readme, homepage, versionInfo, platform, metadata, repo, Object.hashAll(dependencies ?? const []), commitOid); } 
-@override String toString() { return 'WebhookRubygemsMetadata(name: $name, description: $description, readme: $readme, homepage: $homepage, versionInfo: $versionInfo, platform: $platform, metadata: $metadata, repo: $repo, dependencies: $dependencies, commitOid: $commitOid)'; } 
- }
+          commitOid == other.commitOid;}
+@override int get hashCode {return Object.hash(name, description, readme, homepage, versionInfo, platform, metadata, repo, Object.hashAll(dependencies ?? const []), commitOid);}
+@override String toString() {return 'WebhookRubygemsMetadata(name: $name, description: $description, readme: $readme, homepage: $homepage, versionInfo: $versionInfo, platform: $platform, metadata: $metadata, repo: $repo, dependencies: $dependencies, commitOid: $commitOid)';}
+}

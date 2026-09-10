@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_saml_request_config_header_attributes.dart';@immutable final class AccessSchemasSamlRequestConfig {const AccessSchemasSamlRequestConfig({this.attributes, this.emailAttributeName, this.headerAttributes, this.idpPublicCerts, this.issuerUrl, this.signRequest, this.ssoTargetUrl, });
 
-factory AccessSchemasSamlRequestConfig.fromJson(Map<String, dynamic> json) { return AccessSchemasSamlRequestConfig(
+factory AccessSchemasSamlRequestConfig.fromJson(Map<String, dynamic> json) {return AccessSchemasSamlRequestConfig(
   attributes: (json['attributes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   emailAttributeName: json['email_attribute_name'] as String?,
   headerAttributes: (json['header_attributes'] as List<dynamic>?)?.map((e) => AccessSchemasSamlRequestConfigHeaderAttributes.fromJson(e as Map<String, dynamic>)).toList(),
@@ -10,7 +10,7 @@ factory AccessSchemasSamlRequestConfig.fromJson(Map<String, dynamic> json) { ret
   issuerUrl: json['issuer_url'] as String?,
   signRequest: json['sign_request'] as bool?,
   ssoTargetUrl: json['sso_target_url'] as String?,
-); }
+);}
 
 /// A list of SAML attribute names that will be added to your signed JWT token and can be used in SAML policy rules.
 final List<String>? attributes;
@@ -33,7 +33,7 @@ final bool? signRequest;
 /// URL to send the SAML authentication requests to
 final String? ssoTargetUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attributes': ?attributes,
   'email_attribute_name': ?emailAttributeName,
   if (headerAttributes != null) 'header_attributes': headerAttributes?.map((e) => e.toJson()).toList(),
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   'issuer_url': ?issuerUrl,
   'sign_request': ?signRequest,
   'sso_target_url': ?ssoTargetUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attributes', 'email_attribute_name', 'header_attributes', 'idp_public_certs', 'issuer_url', 'sign_request', 'sso_target_url'}.contains(key)); } 
-AccessSchemasSamlRequestConfig copyWith({List<String>? Function()? attributes, String? Function()? emailAttributeName, List<AccessSchemasSamlRequestConfigHeaderAttributes>? Function()? headerAttributes, List<String>? Function()? idpPublicCerts, String? Function()? issuerUrl, bool? Function()? signRequest, String? Function()? ssoTargetUrl, }) { return AccessSchemasSamlRequestConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'attributes', 'email_attribute_name', 'header_attributes', 'idp_public_certs', 'issuer_url', 'sign_request', 'sso_target_url'}.contains(key));}
+AccessSchemasSamlRequestConfig copyWith({List<String>? Function()? attributes, String? Function()? emailAttributeName, List<AccessSchemasSamlRequestConfigHeaderAttributes>? Function()? headerAttributes, List<String>? Function()? idpPublicCerts, String? Function()? issuerUrl, bool? Function()? signRequest, String? Function()? ssoTargetUrl, }) {return AccessSchemasSamlRequestConfig(
   attributes: attributes != null ? attributes() : this.attributes,
   emailAttributeName: emailAttributeName != null ? emailAttributeName() : this.emailAttributeName,
   headerAttributes: headerAttributes != null ? headerAttributes() : this.headerAttributes,
@@ -51,8 +51,8 @@ AccessSchemasSamlRequestConfig copyWith({List<String>? Function()? attributes, S
   issuerUrl: issuerUrl != null ? issuerUrl() : this.issuerUrl,
   signRequest: signRequest != null ? signRequest() : this.signRequest,
   ssoTargetUrl: ssoTargetUrl != null ? ssoTargetUrl() : this.ssoTargetUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessSchemasSamlRequestConfig &&
           listEquals(attributes, other.attributes) &&
           emailAttributeName == other.emailAttributeName &&
@@ -60,7 +60,7 @@ AccessSchemasSamlRequestConfig copyWith({List<String>? Function()? attributes, S
           listEquals(idpPublicCerts, other.idpPublicCerts) &&
           issuerUrl == other.issuerUrl &&
           signRequest == other.signRequest &&
-          ssoTargetUrl == other.ssoTargetUrl; } 
-@override int get hashCode { return Object.hash(Object.hashAll(attributes ?? const []), emailAttributeName, Object.hashAll(headerAttributes ?? const []), Object.hashAll(idpPublicCerts ?? const []), issuerUrl, signRequest, ssoTargetUrl); } 
-@override String toString() { return 'AccessSchemasSamlRequestConfig(attributes: $attributes, emailAttributeName: $emailAttributeName, headerAttributes: $headerAttributes, idpPublicCerts: $idpPublicCerts, issuerUrl: $issuerUrl, signRequest: $signRequest, ssoTargetUrl: $ssoTargetUrl)'; } 
- }
+          ssoTargetUrl == other.ssoTargetUrl;}
+@override int get hashCode {return Object.hash(Object.hashAll(attributes ?? const []), emailAttributeName, Object.hashAll(headerAttributes ?? const []), Object.hashAll(idpPublicCerts ?? const []), issuerUrl, signRequest, ssoTargetUrl);}
+@override String toString() {return 'AccessSchemasSamlRequestConfig(attributes: $attributes, emailAttributeName: $emailAttributeName, headerAttributes: $headerAttributes, idpPublicCerts: $idpPublicCerts, issuerUrl: $issuerUrl, signRequest: $signRequest, ssoTargetUrl: $ssoTargetUrl)';}
+}

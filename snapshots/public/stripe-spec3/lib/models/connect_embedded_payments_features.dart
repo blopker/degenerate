@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedPaymentsFeatures {const ConnectEmbeddedPaymentsFeatures({required this.capturePayments, required this.destinationOnBehalfOfChargeManagement, required this.disputeManagement, required this.refundManagement, });
 
-factory ConnectEmbeddedPaymentsFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedPaymentsFeatures(
+factory ConnectEmbeddedPaymentsFeatures.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedPaymentsFeatures(
   capturePayments: json['capture_payments'] as bool,
   destinationOnBehalfOfChargeManagement: json['destination_on_behalf_of_charge_management'] as bool,
   disputeManagement: json['dispute_management'] as bool,
   refundManagement: json['refund_management'] as bool,
-); }
+);}
 
 /// Whether to allow capturing and cancelling payment intents. This is `true` by default.
 final bool capturePayments;
@@ -22,28 +22,28 @@ final bool disputeManagement;
 /// Whether sending refunds is enabled. This is `true` by default.
 final bool refundManagement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'capture_payments': capturePayments,
   'destination_on_behalf_of_charge_management': destinationOnBehalfOfChargeManagement,
   'dispute_management': disputeManagement,
   'refund_management': refundManagement,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('capture_payments') && json['capture_payments'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('capture_payments') && json['capture_payments'] is bool &&
       json.containsKey('destination_on_behalf_of_charge_management') && json['destination_on_behalf_of_charge_management'] is bool &&
       json.containsKey('dispute_management') && json['dispute_management'] is bool &&
-      json.containsKey('refund_management') && json['refund_management'] is bool; } 
-ConnectEmbeddedPaymentsFeatures copyWith({bool? capturePayments, bool? destinationOnBehalfOfChargeManagement, bool? disputeManagement, bool? refundManagement, }) { return ConnectEmbeddedPaymentsFeatures(
+      json.containsKey('refund_management') && json['refund_management'] is bool;}
+ConnectEmbeddedPaymentsFeatures copyWith({bool? capturePayments, bool? destinationOnBehalfOfChargeManagement, bool? disputeManagement, bool? refundManagement, }) {return ConnectEmbeddedPaymentsFeatures(
   capturePayments: capturePayments ?? this.capturePayments,
   destinationOnBehalfOfChargeManagement: destinationOnBehalfOfChargeManagement ?? this.destinationOnBehalfOfChargeManagement,
   disputeManagement: disputeManagement ?? this.disputeManagement,
   refundManagement: refundManagement ?? this.refundManagement,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConnectEmbeddedPaymentsFeatures &&
           capturePayments == other.capturePayments &&
           destinationOnBehalfOfChargeManagement == other.destinationOnBehalfOfChargeManagement &&
           disputeManagement == other.disputeManagement &&
-          refundManagement == other.refundManagement; } 
-@override int get hashCode { return Object.hash(capturePayments, destinationOnBehalfOfChargeManagement, disputeManagement, refundManagement); } 
-@override String toString() { return 'ConnectEmbeddedPaymentsFeatures(capturePayments: $capturePayments, destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)'; } 
- }
+          refundManagement == other.refundManagement;}
+@override int get hashCode {return Object.hash(capturePayments, destinationOnBehalfOfChargeManagement, disputeManagement, refundManagement);}
+@override String toString() {return 'ConnectEmbeddedPaymentsFeatures(capturePayments: $capturePayments, destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)';}
+}

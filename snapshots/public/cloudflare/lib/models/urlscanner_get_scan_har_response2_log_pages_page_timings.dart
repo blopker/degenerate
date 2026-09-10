@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanHarResponse2LogPagesPageTimings {const UrlscannerGetScanHarResponse2LogPagesPageTimings({required this.onContentLoad, required this.onLoad, });
 
-factory UrlscannerGetScanHarResponse2LogPagesPageTimings.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogPagesPageTimings(
+factory UrlscannerGetScanHarResponse2LogPagesPageTimings.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponse2LogPagesPageTimings(
   onContentLoad: (json['onContentLoad'] as num).toDouble(),
   onLoad: (json['onLoad'] as num).toDouble(),
-); }
+);}
 
 final double onContentLoad;
 
 final double onLoad;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'onContentLoad': onContentLoad,
   'onLoad': onLoad,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('onContentLoad') && json['onContentLoad'] is num &&
-      json.containsKey('onLoad') && json['onLoad'] is num; } 
-UrlscannerGetScanHarResponse2LogPagesPageTimings copyWith({double? onContentLoad, double? onLoad, }) { return UrlscannerGetScanHarResponse2LogPagesPageTimings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('onContentLoad') && json['onContentLoad'] is num &&
+      json.containsKey('onLoad') && json['onLoad'] is num;}
+UrlscannerGetScanHarResponse2LogPagesPageTimings copyWith({double? onContentLoad, double? onLoad, }) {return UrlscannerGetScanHarResponse2LogPagesPageTimings(
   onContentLoad: onContentLoad ?? this.onContentLoad,
   onLoad: onLoad ?? this.onLoad,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponse2LogPagesPageTimings &&
           onContentLoad == other.onContentLoad &&
-          onLoad == other.onLoad; } 
-@override int get hashCode { return Object.hash(onContentLoad, onLoad); } 
-@override String toString() { return 'UrlscannerGetScanHarResponse2LogPagesPageTimings(onContentLoad: $onContentLoad, onLoad: $onLoad)'; } 
- }
+          onLoad == other.onLoad;}
+@override int get hashCode {return Object.hash(onContentLoad, onLoad);}
+@override String toString() {return 'UrlscannerGetScanHarResponse2LogPagesPageTimings(onContentLoad: $onContentLoad, onLoad: $onLoad)';}
+}

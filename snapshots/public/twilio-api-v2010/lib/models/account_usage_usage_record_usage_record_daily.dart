@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountUsageUsageRecordUsageRecordDaily {const AccountUsageUsageRecordUsageRecordDaily({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.asOf = const Omittable.absent(), this.category = const Omittable.absent(), this.count = const Omittable.absent(), this.countUnit = const Omittable.absent(), this.description = const Omittable.absent(), this.endDate = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.startDate = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.uri = const Omittable.absent(), this.usage = const Omittable.absent(), this.usageUnit = const Omittable.absent(), });
 
-factory AccountUsageUsageRecordUsageRecordDaily.fromJson(Map<String, dynamic> json) { return AccountUsageUsageRecordUsageRecordDaily(
+factory AccountUsageUsageRecordUsageRecordDaily.fromJson(Map<String, dynamic> json) {return AccountUsageUsageRecordUsageRecordDaily(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   asOf: json.containsKey('as_of') ? Omittable(json['as_of'] as String?) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory AccountUsageUsageRecordUsageRecordDaily.fromJson(Map<String, dynamic> js
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   usage: json.containsKey('usage') ? Omittable(json['usage'] as String?) : const Omittable.absent(),
   usageUnit: json.containsKey('usage_unit') ? Omittable(json['usage_unit'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that accrued the usage.
 final Omittable<String?> accountSid;
@@ -65,7 +65,7 @@ final Omittable<String?> usage;
 /// The units in which `usage` is measured, such as `minutes` for calls or `messages` for SMS.
 final Omittable<String?> usageUnit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (asOf.isPresent) 'as_of': asOf.value,
@@ -81,9 +81,9 @@ Map<String, dynamic> toJson() { return {
   if (uri.isPresent) 'uri': uri.value,
   if (usage.isPresent) 'usage': usage.value,
   if (usageUnit.isPresent) 'usage_unit': usageUnit.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'as_of', 'category', 'count', 'count_unit', 'description', 'end_date', 'price', 'price_unit', 'start_date', 'subresource_uris', 'uri', 'usage', 'usage_unit'}.contains(key)); } 
-AccountUsageUsageRecordUsageRecordDaily copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? asOf, Omittable<String?>? category, Omittable<String?>? count, Omittable<String?>? countUnit, Omittable<String?>? description, Omittable<String?>? endDate, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? startDate, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<String?>? uri, Omittable<String?>? usage, Omittable<String?>? usageUnit, }) { return AccountUsageUsageRecordUsageRecordDaily(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'as_of', 'category', 'count', 'count_unit', 'description', 'end_date', 'price', 'price_unit', 'start_date', 'subresource_uris', 'uri', 'usage', 'usage_unit'}.contains(key));}
+AccountUsageUsageRecordUsageRecordDaily copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? asOf, Omittable<String?>? category, Omittable<String?>? count, Omittable<String?>? countUnit, Omittable<String?>? description, Omittable<String?>? endDate, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? startDate, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<String?>? uri, Omittable<String?>? usage, Omittable<String?>? usageUnit, }) {return AccountUsageUsageRecordUsageRecordDaily(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   asOf: asOf ?? this.asOf,
@@ -99,8 +99,8 @@ AccountUsageUsageRecordUsageRecordDaily copyWith({Omittable<String?>? accountSid
   uri: uri ?? this.uri,
   usage: usage ?? this.usage,
   usageUnit: usageUnit ?? this.usageUnit,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountUsageUsageRecordUsageRecordDaily &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -116,7 +116,7 @@ AccountUsageUsageRecordUsageRecordDaily copyWith({Omittable<String?>? accountSid
           subresourceUris == other.subresourceUris &&
           uri == other.uri &&
           usage == other.usage &&
-          usageUnit == other.usageUnit; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, asOf, category, count, countUnit, description, endDate, price, priceUnit, startDate, subresourceUris, uri, usage, usageUnit); } 
-@override String toString() { return 'AccountUsageUsageRecordUsageRecordDaily(accountSid: $accountSid, apiVersion: $apiVersion, asOf: $asOf, category: $category, count: $count, countUnit: $countUnit, description: $description, endDate: $endDate, price: $price, priceUnit: $priceUnit, startDate: $startDate, subresourceUris: $subresourceUris, uri: $uri, usage: $usage, usageUnit: $usageUnit)'; } 
- }
+          usageUnit == other.usageUnit;}
+@override int get hashCode {return Object.hash(accountSid, apiVersion, asOf, category, count, countUnit, description, endDate, price, priceUnit, startDate, subresourceUris, uri, usage, usageUnit);}
+@override String toString() {return 'AccountUsageUsageRecordUsageRecordDaily(accountSid: $accountSid, apiVersion: $apiVersion, asOf: $asOf, category: $category, count: $count, countUnit: $countUnit, description: $description, endDate: $endDate, price: $price, priceUnit: $priceUnit, startDate: $startDate, subresourceUris: $subresourceUris, uri: $uri, usage: $usage, usageUnit: $usageUnit)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2 {const PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2._(this.value);
 
-factory PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2.fromJson(String json) { return switch (json) {
+factory PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2._(json),
-}; }
+};}
 
 static const PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2 $empty = PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUser
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2($value)';}
+}
 
 @immutable
 final class PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgent {

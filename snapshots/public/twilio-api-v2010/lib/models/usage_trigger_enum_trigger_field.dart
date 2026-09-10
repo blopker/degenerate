@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field in the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource that fires the trigger.  Can be: `count`, `usage`, or `price`, as described in the [UsageRecords documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-count-price).
 @immutable final class UsageTriggerEnumTriggerField {const UsageTriggerEnumTriggerField._(this.value);
 
-factory UsageTriggerEnumTriggerField.fromJson(String json) { return switch (json) {
+factory UsageTriggerEnumTriggerField.fromJson(String json) {return switch (json) {
   'count' => count,
   'usage' => usage,
   'price' => price,
   _ => UsageTriggerEnumTriggerField._(json),
-}; }
+};}
 
 static const UsageTriggerEnumTriggerField count = UsageTriggerEnumTriggerField._('count');
 
@@ -20,11 +20,11 @@ static const List<UsageTriggerEnumTriggerField> values = [count, usage, price];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageTriggerEnumTriggerField && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageTriggerEnumTriggerField($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageTriggerEnumTriggerField && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageTriggerEnumTriggerField($value)';}
+}

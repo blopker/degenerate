@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlSource {const PayPerCrawlSource({this.parameter, this.parameterValueIndex, this.pointer, });
 
-factory PayPerCrawlSource.fromJson(Map<String, dynamic> json) { return PayPerCrawlSource(
+factory PayPerCrawlSource.fromJson(Map<String, dynamic> json) {return PayPerCrawlSource(
   parameter: json['parameter'] as String?,
   parameterValueIndex: json['parameter_value_index'] != null ? (json['parameter_value_index'] as num).toInt() : null,
   pointer: (json['pointer'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Parameter is a string indicating which URI query parameter caused the error.
 final String? parameter;
@@ -19,22 +19,22 @@ final int? parameterValueIndex;
 /// e.g. "/data" for a primary data object, or "/data/attributes/title" for a specific attribute.
 final List<String>? pointer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'parameter': ?parameter,
   'parameter_value_index': ?parameterValueIndex,
   'pointer': ?pointer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'parameter', 'parameter_value_index', 'pointer'}.contains(key)); } 
-PayPerCrawlSource copyWith({String? Function()? parameter, int? Function()? parameterValueIndex, List<String>? Function()? pointer, }) { return PayPerCrawlSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'parameter', 'parameter_value_index', 'pointer'}.contains(key));}
+PayPerCrawlSource copyWith({String? Function()? parameter, int? Function()? parameterValueIndex, List<String>? Function()? pointer, }) {return PayPerCrawlSource(
   parameter: parameter != null ? parameter() : this.parameter,
   parameterValueIndex: parameterValueIndex != null ? parameterValueIndex() : this.parameterValueIndex,
   pointer: pointer != null ? pointer() : this.pointer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PayPerCrawlSource &&
           parameter == other.parameter &&
           parameterValueIndex == other.parameterValueIndex &&
-          listEquals(pointer, other.pointer); } 
-@override int get hashCode { return Object.hash(parameter, parameterValueIndex, Object.hashAll(pointer ?? const [])); } 
-@override String toString() { return 'PayPerCrawlSource(parameter: $parameter, parameterValueIndex: $parameterValueIndex, pointer: $pointer)'; } 
- }
+          listEquals(pointer, other.pointer);}
+@override int get hashCode {return Object.hash(parameter, parameterValueIndex, Object.hashAll(pointer ?? const []));}
+@override String toString() {return 'PayPerCrawlSource(parameter: $parameter, parameterValueIndex: $parameterValueIndex, pointer: $pointer)';}
+}

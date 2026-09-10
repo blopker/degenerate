@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Notification typ
 /// 
 @immutable final class AbuseReportsTrademarkReportHostNotification {const AbuseReportsTrademarkReportHostNotification._(this.value);
 
-factory AbuseReportsTrademarkReportHostNotification.fromJson(String json) { return switch (json) {
+factory AbuseReportsTrademarkReportHostNotification.fromJson(String json) {return switch (json) {
   'send' => send,
   _ => AbuseReportsTrademarkReportHostNotification._(json),
-}; }
+};}
 
 static const AbuseReportsTrademarkReportHostNotification send = AbuseReportsTrademarkReportHostNotification._('send');
 
@@ -15,22 +15,22 @@ static const List<AbuseReportsTrademarkReportHostNotification> values = [send];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsTrademarkReportHostNotification && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsTrademarkReportHostNotification($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsTrademarkReportHostNotification && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsTrademarkReportHostNotification($value)';}
+}
 /// Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.
 /// 
 @immutable final class AbuseReportsTrademarkReportOwnerNotification {const AbuseReportsTrademarkReportOwnerNotification._(this.value);
 
-factory AbuseReportsTrademarkReportOwnerNotification.fromJson(String json) { return switch (json) {
+factory AbuseReportsTrademarkReportOwnerNotification.fromJson(String json) {return switch (json) {
   'send' => send,
   _ => AbuseReportsTrademarkReportOwnerNotification._(json),
-}; }
+};}
 
 static const AbuseReportsTrademarkReportOwnerNotification send = AbuseReportsTrademarkReportOwnerNotification._('send');
 
@@ -38,17 +38,17 @@ static const List<AbuseReportsTrademarkReportOwnerNotification> values = [send];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsTrademarkReportOwnerNotification && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsTrademarkReportOwnerNotification($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsTrademarkReportOwnerNotification && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsTrademarkReportOwnerNotification($value)';}
+}
 @immutable final class AbuseReportsTrademarkReport {const AbuseReportsTrademarkReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.hostNotification, required this.justification, required this.ownerNotification, required this.trademarkNumber, required this.trademarkOffice, required this.trademarkSymbol, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, });
 
-factory AbuseReportsTrademarkReport.fromJson(Map<String, dynamic> json) { return AbuseReportsTrademarkReport(
+factory AbuseReportsTrademarkReport.fromJson(Map<String, dynamic> json) {return AbuseReportsTrademarkReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -66,7 +66,7 @@ factory AbuseReportsTrademarkReport.fromJson(Map<String, dynamic> json) { return
   trademarkNumber: json['trademark_number'] as String,
   trademarkOffice: json['trademark_office'] as String,
   trademarkSymbol: json['trademark_symbol'] as String,
-); }
+);}
 
 final dynamic act;
 
@@ -121,7 +121,7 @@ final String trademarkOffice;
 /// Text not exceeding 1000 characters
 final String trademarkSymbol;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -139,8 +139,8 @@ Map<String, dynamic> toJson() { return {
   'trademark_number': trademarkNumber,
   'trademark_office': trademarkOffice,
   'trademark_symbol': trademarkSymbol,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -150,8 +150,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('owner_notification') &&
       json.containsKey('trademark_number') && json['trademark_number'] is String &&
       json.containsKey('trademark_office') && json['trademark_office'] is String &&
-      json.containsKey('trademark_symbol') && json['trademark_symbol'] is String; } 
-AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsTrademarkReportHostNotification? hostNotification, String? justification, AbuseReportsTrademarkReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) { return AbuseReportsTrademarkReport(
+      json.containsKey('trademark_symbol') && json['trademark_symbol'] is String;}
+AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsTrademarkReportHostNotification? hostNotification, String? justification, AbuseReportsTrademarkReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) {return AbuseReportsTrademarkReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -169,8 +169,8 @@ AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function(
   trademarkNumber: trademarkNumber ?? this.trademarkNumber,
   trademarkOffice: trademarkOffice ?? this.trademarkOffice,
   trademarkSymbol: trademarkSymbol ?? this.trademarkSymbol,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AbuseReportsTrademarkReport &&
           act == other.act &&
           comments == other.comments &&
@@ -188,7 +188,7 @@ AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function(
           ownerNotification == other.ownerNotification &&
           trademarkNumber == other.trademarkNumber &&
           trademarkOffice == other.trademarkOffice &&
-          trademarkSymbol == other.trademarkSymbol; } 
-@override int get hashCode { return Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls, hostNotification, justification, ownerNotification, trademarkNumber, trademarkOffice, trademarkSymbol); } 
-@override String toString() { return 'AbuseReportsTrademarkReport(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls, hostNotification: $hostNotification, justification: $justification, ownerNotification: $ownerNotification, trademarkNumber: $trademarkNumber, trademarkOffice: $trademarkOffice, trademarkSymbol: $trademarkSymbol)'; } 
- }
+          trademarkSymbol == other.trademarkSymbol;}
+@override int get hashCode {return Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls, hostNotification, justification, ownerNotification, trademarkNumber, trademarkOffice, trademarkSymbol);}
+@override String toString() {return 'AbuseReportsTrademarkReport(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls, hostNotification: $hostNotification, justification: $justification, ownerNotification: $ownerNotification, trademarkNumber: $trademarkNumber, trademarkOffice: $trademarkOffice, trademarkSymbol: $trademarkSymbol)';}
+}

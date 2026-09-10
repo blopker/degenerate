@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_setting_subscription_schedule_setting.dart';import 'subscription_billing_thresholds.dart';import 'subscription_schedules_resource_default_settings_automatic_tax.dart';import 'subscription_schedules_resource_default_settings_default_payment_method.dart';import 'subscription_schedules_resource_default_settings_on_behalf_of.dart';import 'subscription_transfer_data.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 @immutable final class SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor {const SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._(this.value);
 
-factory SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'phase_start' => phaseStart,
   _ => SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._(json),
-}; }
+};}
 
 static const SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor automatic = SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._('automatic');
 
@@ -17,22 +17,22 @@ static const List<SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor($value)';}
+}
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
 @immutable final class SubscriptionSchedulesResourceDefaultSettingsCollectionMethod {const SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._(this.value);
 
-factory SubscriptionSchedulesResourceDefaultSettingsCollectionMethod.fromJson(String json) { return switch (json) {
+factory SubscriptionSchedulesResourceDefaultSettingsCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._(json),
-}; }
+};}
 
 static const SubscriptionSchedulesResourceDefaultSettingsCollectionMethod chargeAutomatically = SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._('charge_automatically');
 
@@ -42,18 +42,18 @@ static const List<SubscriptionSchedulesResourceDefaultSettingsCollectionMethod> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulesResourceDefaultSettingsCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulesResourceDefaultSettingsCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionSchedulesResourceDefaultSettingsCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionSchedulesResourceDefaultSettingsCollectionMethod($value)';}
+}
 /// 
 @immutable final class SubscriptionSchedulesResourceDefaultSettings {const SubscriptionSchedulesResourceDefaultSettings({required this.billingCycleAnchor, required this.invoiceSettings, this.applicationFeePercent = const Omittable.absent(), this.automaticTax, this.billingThresholds = const Omittable.absent(), this.collectionMethod = const Omittable.absent(), this.defaultPaymentMethod = const Omittable.absent(), this.description = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.transferData = const Omittable.absent(), });
 
-factory SubscriptionSchedulesResourceDefaultSettings.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulesResourceDefaultSettings(
+factory SubscriptionSchedulesResourceDefaultSettings.fromJson(Map<String, dynamic> json) {return SubscriptionSchedulesResourceDefaultSettings(
   applicationFeePercent: json.containsKey('application_fee_percent') ? Omittable(json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null) : const Omittable.absent(),
   automaticTax: json['automatic_tax'] != null ? SubscriptionSchedulesResourceDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String),
@@ -64,7 +64,7 @@ factory SubscriptionSchedulesResourceDefaultSettings.fromJson(Map<String, dynami
   invoiceSettings: InvoiceSettingSubscriptionScheduleSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>),
   onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf.fromJson(json['on_behalf_of']) : null) : const Omittable.absent(),
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? SubscriptionTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account during this phase of the schedule.
 final Omittable<double?> applicationFeePercent;
@@ -94,7 +94,7 @@ final Omittable<SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf?> onBehal
 /// The account (if any) the associated subscription's payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the subscription's invoices.
 final Omittable<SubscriptionTransferData?> transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (applicationFeePercent.isPresent) 'application_fee_percent': applicationFeePercent.value,
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
   'billing_cycle_anchor': billingCycleAnchor.toJson(),
@@ -105,10 +105,10 @@ Map<String, dynamic> toJson() { return {
   'invoice_settings': invoiceSettings.toJson(),
   if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value?.toJson(),
   if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_cycle_anchor') &&
-      json.containsKey('invoice_settings'); } 
-SubscriptionSchedulesResourceDefaultSettings copyWith({Omittable<double?>? applicationFeePercent, SubscriptionSchedulesResourceDefaultSettingsAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? billingCycleAnchor, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<SubscriptionSchedulesResourceDefaultSettingsCollectionMethod?>? collectionMethod, Omittable<SubscriptionSchedulesResourceDefaultSettingsDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<String?>? description, InvoiceSettingSubscriptionScheduleSetting? invoiceSettings, Omittable<SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf?>? onBehalfOf, Omittable<SubscriptionTransferData?>? transferData, }) { return SubscriptionSchedulesResourceDefaultSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing_cycle_anchor') &&
+      json.containsKey('invoice_settings');}
+SubscriptionSchedulesResourceDefaultSettings copyWith({Omittable<double?>? applicationFeePercent, SubscriptionSchedulesResourceDefaultSettingsAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? billingCycleAnchor, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<SubscriptionSchedulesResourceDefaultSettingsCollectionMethod?>? collectionMethod, Omittable<SubscriptionSchedulesResourceDefaultSettingsDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<String?>? description, InvoiceSettingSubscriptionScheduleSetting? invoiceSettings, Omittable<SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf?>? onBehalfOf, Omittable<SubscriptionTransferData?>? transferData, }) {return SubscriptionSchedulesResourceDefaultSettings(
   applicationFeePercent: applicationFeePercent ?? this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   billingCycleAnchor: billingCycleAnchor ?? this.billingCycleAnchor,
@@ -119,8 +119,8 @@ SubscriptionSchedulesResourceDefaultSettings copyWith({Omittable<double?>? appli
   invoiceSettings: invoiceSettings ?? this.invoiceSettings,
   onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   transferData: transferData ?? this.transferData,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionSchedulesResourceDefaultSettings &&
           applicationFeePercent == other.applicationFeePercent &&
           automaticTax == other.automaticTax &&
@@ -131,7 +131,7 @@ SubscriptionSchedulesResourceDefaultSettings copyWith({Omittable<double?>? appli
           description == other.description &&
           invoiceSettings == other.invoiceSettings &&
           onBehalfOf == other.onBehalfOf &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hash(applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, description, invoiceSettings, onBehalfOf, transferData); } 
-@override String toString() { return 'SubscriptionSchedulesResourceDefaultSettings(applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, description: $description, invoiceSettings: $invoiceSettings, onBehalfOf: $onBehalfOf, transferData: $transferData)'; } 
- }
+          transferData == other.transferData;}
+@override int get hashCode {return Object.hash(applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, description, invoiceSettings, onBehalfOf, transferData);}
+@override String toString() {return 'SubscriptionSchedulesResourceDefaultSettings(applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, description: $description, invoiceSettings: $invoiceSettings, onBehalfOf: $onBehalfOf, transferData: $transferData)';}
+}

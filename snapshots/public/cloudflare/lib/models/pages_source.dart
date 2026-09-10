@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_source_config.dart';/// The source control management provider.
 @immutable final class PagesSourceType {const PagesSourceType._(this.value);
 
-factory PagesSourceType.fromJson(String json) { return switch (json) {
+factory PagesSourceType.fromJson(String json) {return switch (json) {
   'github' => github,
   'gitlab' => gitlab,
   _ => PagesSourceType._(json),
-}; }
+};}
 
 static const PagesSourceType github = PagesSourceType._('github');
 
@@ -17,41 +17,41 @@ static const List<PagesSourceType> values = [github, gitlab];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesSourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesSourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesSourceType($value)';}
+}
 /// Configs for the project source control.
 @immutable final class PagesSource {const PagesSource({required this.config, required this.type, });
 
-factory PagesSource.fromJson(Map<String, dynamic> json) { return PagesSource(
+factory PagesSource.fromJson(Map<String, dynamic> json) {return PagesSource(
   config: PagesSourceConfig.fromJson(json['config'] as Map<String, dynamic>),
   type: PagesSourceType.fromJson(json['type'] as String),
-); }
+);}
 
 final PagesSourceConfig config;
 
 /// The source control management provider.
 final PagesSourceType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
-      json.containsKey('type'); } 
-PagesSource copyWith({PagesSourceConfig? config, PagesSourceType? type, }) { return PagesSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
+      json.containsKey('type');}
+PagesSource copyWith({PagesSourceConfig? config, PagesSourceType? type, }) {return PagesSource(
   config: config ?? this.config,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesSource &&
           config == other.config &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, type); } 
-@override String toString() { return 'PagesSource(config: $config, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, type);}
+@override String toString() {return 'PagesSource(config: $config, type: $type)';}
+}

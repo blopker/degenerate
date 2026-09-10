@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider._(this.value);
 
-factory R2EnableSippyS3SourceProvider.fromJson(String json) { return switch (json) {
+factory R2EnableSippyS3SourceProvider.fromJson(String json) {return switch (json) {
   's3' => s3,
   _ => R2EnableSippyS3SourceProvider._(json),
-}; }
+};}
 
 static const R2EnableSippyS3SourceProvider s3 = R2EnableSippyS3SourceProvider._('s3');
 
@@ -13,23 +13,23 @@ static const List<R2EnableSippyS3SourceProvider> values = [s3];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2EnableSippyS3SourceProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2EnableSippyS3SourceProvider($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2EnableSippyS3SourceProvider && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2EnableSippyS3SourceProvider($value)';}
+}
 /// General S3-compatible provider to copy objects from.
 @immutable final class R2EnableSippyS3Source {const R2EnableSippyS3Source({this.accessKeyId, this.bucketUrl, this.provider, this.secretAccessKey, });
 
-factory R2EnableSippyS3Source.fromJson(Map<String, dynamic> json) { return R2EnableSippyS3Source(
+factory R2EnableSippyS3Source.fromJson(Map<String, dynamic> json) {return R2EnableSippyS3Source(
   accessKeyId: json['accessKeyId'] as String?,
   bucketUrl: json['bucketUrl'] as String?,
   provider: json['provider'] != null ? R2EnableSippyS3SourceProvider.fromJson(json['provider'] as String) : null,
   secretAccessKey: json['secretAccessKey'] as String?,
-); }
+);}
 
 /// Access Key ID of an IAM credential (ideally scoped to a single S3 bucket).
 final String? accessKeyId;
@@ -42,25 +42,25 @@ final R2EnableSippyS3SourceProvider? provider;
 /// Secret Access Key of an IAM credential (ideally scoped to a single S3 bucket).
 final String? secretAccessKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessKeyId': ?accessKeyId,
   'bucketUrl': ?bucketUrl,
   if (provider != null) 'provider': provider?.toJson(),
   'secretAccessKey': ?secretAccessKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'bucketUrl', 'provider', 'secretAccessKey'}.contains(key)); } 
-R2EnableSippyS3Source copyWith({String? Function()? accessKeyId, String? Function()? bucketUrl, R2EnableSippyS3SourceProvider? Function()? provider, String? Function()? secretAccessKey, }) { return R2EnableSippyS3Source(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessKeyId', 'bucketUrl', 'provider', 'secretAccessKey'}.contains(key));}
+R2EnableSippyS3Source copyWith({String? Function()? accessKeyId, String? Function()? bucketUrl, R2EnableSippyS3SourceProvider? Function()? provider, String? Function()? secretAccessKey, }) {return R2EnableSippyS3Source(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   bucketUrl: bucketUrl != null ? bucketUrl() : this.bucketUrl,
   provider: provider != null ? provider() : this.provider,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2EnableSippyS3Source &&
           accessKeyId == other.accessKeyId &&
           bucketUrl == other.bucketUrl &&
           provider == other.provider &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, bucketUrl, provider, secretAccessKey); } 
-@override String toString() { return 'R2EnableSippyS3Source(accessKeyId: $accessKeyId, bucketUrl: $bucketUrl, provider: $provider, secretAccessKey: $secretAccessKey)'; } 
- }
+          secretAccessKey == other.secretAccessKey;}
+@override int get hashCode {return Object.hash(accessKeyId, bucketUrl, provider, secretAccessKey);}
+@override String toString() {return 'R2EnableSippyS3Source(accessKeyId: $accessKeyId, bucketUrl: $bucketUrl, provider: $provider, secretAccessKey: $secretAccessKey)';}
+}

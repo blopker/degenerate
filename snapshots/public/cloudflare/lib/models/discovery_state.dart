@@ -7,12 +7,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of operati
 /// 
 @immutable final class DiscoveryState {const DiscoveryState._(this.value);
 
-factory DiscoveryState.fromJson(String json) { return switch (json) {
+factory DiscoveryState.fromJson(String json) {return switch (json) {
   'review' => review,
   'saved' => saved,
   'ignored' => ignored,
   _ => DiscoveryState._(json),
-}; }
+};}
 
 static const DiscoveryState review = DiscoveryState._('review');
 
@@ -24,11 +24,11 @@ static const List<DiscoveryState> values = [review, saved, ignored];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscoveryState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscoveryState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DiscoveryState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DiscoveryState($value)';}
+}

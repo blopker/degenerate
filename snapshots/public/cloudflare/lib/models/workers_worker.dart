@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker_observability.dart';import 'workers_worker_references.dart';import 'workers_worker_subdomain.dart';import 'workers_worker_tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.logpush, required this.name, required this.observability, required this.references, required this.subdomain, required this.tags, required this.tailConsumers, required this.updatedOn, this.deployedOn = const Omittable.absent(), });
 
-factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker(
+factory WorkersWorker.fromJson(Map<String, dynamic> json) {return WorkersWorker(
   createdOn: DateTime.parse(json['created_on'] as String),
   deployedOn: json.containsKey('deployed_on') ? Omittable(json['deployed_on'] != null ? DateTime.parse(json['deployed_on'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
@@ -14,7 +14,7 @@ factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
   tailConsumers: (json['tail_consumers'] as List<dynamic>).map((e) => WorkersWorkerTailConsumers.fromJson(e as Map<String, dynamic>)).toList(),
   updatedOn: DateTime.parse(json['updated_on'] as String),
-); }
+);}
 
 /// When the Worker was created.
 final DateTime createdOn;
@@ -49,7 +49,7 @@ final List<WorkersWorkerTailConsumers> tailConsumers;
 /// When the Worker was most recently updated.
 final DateTime updatedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toIso8601String(),
   if (deployedOn.isPresent) 'deployed_on': deployedOn.value?.toIso8601String(),
   'id': id,
@@ -61,8 +61,8 @@ Map<String, dynamic> toJson() { return {
   'tags': tags,
   'tail_consumers': tailConsumers.map((e) => e.toJson()).toList(),
   'updated_on': updatedOn.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('logpush') && json['logpush'] is bool &&
       json.containsKey('name') && json['name'] is String &&
@@ -71,8 +71,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('subdomain') &&
       json.containsKey('tags') &&
       json.containsKey('tail_consumers') &&
-      json.containsKey('updated_on') && json['updated_on'] is String; } 
-WorkersWorker copyWith({DateTime? createdOn, Omittable<DateTime?>? deployedOn, String? id, bool? logpush, String? name, WorkersWorkerObservability? observability, WorkersWorkerReferences? references, WorkersWorkerSubdomain? subdomain, List<String>? tags, List<WorkersWorkerTailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
+      json.containsKey('updated_on') && json['updated_on'] is String;}
+WorkersWorker copyWith({DateTime? createdOn, Omittable<DateTime?>? deployedOn, String? id, bool? logpush, String? name, WorkersWorkerObservability? observability, WorkersWorkerReferences? references, WorkersWorkerSubdomain? subdomain, List<String>? tags, List<WorkersWorkerTailConsumers>? tailConsumers, DateTime? updatedOn, }) {return WorkersWorker(
   createdOn: createdOn ?? this.createdOn,
   deployedOn: deployedOn ?? this.deployedOn,
   id: id ?? this.id,
@@ -84,8 +84,8 @@ WorkersWorker copyWith({DateTime? createdOn, Omittable<DateTime?>? deployedOn, S
   tags: tags ?? this.tags,
   tailConsumers: tailConsumers ?? this.tailConsumers,
   updatedOn: updatedOn ?? this.updatedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersWorker &&
           createdOn == other.createdOn &&
           deployedOn == other.deployedOn &&
@@ -97,7 +97,7 @@ WorkersWorker copyWith({DateTime? createdOn, Omittable<DateTime?>? deployedOn, S
           subdomain == other.subdomain &&
           listEquals(tags, other.tags) &&
           listEquals(tailConsumers, other.tailConsumers) &&
-          updatedOn == other.updatedOn; } 
-@override int get hashCode { return Object.hash(createdOn, deployedOn, id, logpush, name, observability, references, subdomain, Object.hashAll(tags), Object.hashAll(tailConsumers), updatedOn); } 
-@override String toString() { return 'WorkersWorker(createdOn: $createdOn, deployedOn: $deployedOn, id: $id, logpush: $logpush, name: $name, observability: $observability, references: $references, subdomain: $subdomain, tags: $tags, tailConsumers: $tailConsumers, updatedOn: $updatedOn)'; } 
- }
+          updatedOn == other.updatedOn;}
+@override int get hashCode {return Object.hash(createdOn, deployedOn, id, logpush, name, observability, references, subdomain, Object.hashAll(tags), Object.hashAll(tailConsumers), updatedOn);}
+@override String toString() {return 'WorkersWorker(createdOn: $createdOn, deployedOn: $deployedOn, id: $id, logpush: $logpush, name: $name, observability: $observability, references: $references, subdomain: $subdomain, tags: $tags, tailConsumers: $tailConsumers, updatedOn: $updatedOn)';}
+}

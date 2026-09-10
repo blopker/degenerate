@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ResourceHealth represents the health of a resource. It has the latest device health information. This is a part of KEP https://kep.k8s.io/4680.
 @immutable final class ResourceHealth {const ResourceHealth({required this.resourceId, this.health, this.message, });
 
-factory ResourceHealth.fromJson(Map<String, dynamic> json) { return ResourceHealth(
+factory ResourceHealth.fromJson(Map<String, dynamic> json) {return ResourceHealth(
   health: json['health'] as String?,
   message: json['message'] as String?,
   resourceId: json['resourceID'] as String,
-); }
+);}
 
 /// Health of the resource. can be one of:
 ///  - Healthy: operates as normal
@@ -26,22 +26,22 @@ final String? message;
 /// ResourceID is the unique identifier of the resource. See the ResourceID type for more information.
 final String resourceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'health': ?health,
   'message': ?message,
   'resourceID': resourceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('resourceID') && json['resourceID'] is String; } 
-ResourceHealth copyWith({String? Function()? health, String? Function()? message, String? resourceId, }) { return ResourceHealth(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('resourceID') && json['resourceID'] is String;}
+ResourceHealth copyWith({String? Function()? health, String? Function()? message, String? resourceId, }) {return ResourceHealth(
   health: health != null ? health() : this.health,
   message: message != null ? message() : this.message,
   resourceId: resourceId ?? this.resourceId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceHealth &&
           health == other.health &&
           message == other.message &&
-          resourceId == other.resourceId; } 
-@override int get hashCode { return Object.hash(health, message, resourceId); } 
-@override String toString() { return 'ResourceHealth(health: $health, message: $message, resourceId: $resourceId)'; } 
- }
+          resourceId == other.resourceId;}
+@override int get hashCode {return Object.hash(health, message, resourceId);}
+@override String toString() {return 'ResourceHealth(health: $health, message: $message, resourceId: $resourceId)';}
+}

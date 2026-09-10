@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0 {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0({required this.negative, required this.positive, });
 
-factory RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0(
+factory RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0(
   negative: json['NEGATIVE'] as String,
   positive: json['POSITIVE'] as String,
-); }
+);}
 
 /// A numeric string.
 final String negative;
@@ -13,20 +13,20 @@ final String negative;
 /// A numeric string.
 final String positive;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'NEGATIVE': negative,
   'POSITIVE': positive,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('NEGATIVE') && json['NEGATIVE'] is String &&
-      json.containsKey('POSITIVE') && json['POSITIVE'] is String; } 
-RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0 copyWith({String? negative, String? positive, }) { return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('NEGATIVE') && json['NEGATIVE'] is String &&
+      json.containsKey('POSITIVE') && json['POSITIVE'] is String;}
+RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0 copyWith({String? negative, String? positive, }) {return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0(
   negative: negative ?? this.negative,
   positive: positive ?? this.positive,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0 &&
           negative == other.negative &&
-          positive == other.positive; } 
-@override int get hashCode { return Object.hash(negative, positive); } 
-@override String toString() { return 'RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0(negative: $negative, positive: $positive)'; } 
- }
+          positive == other.positive;}
+@override int get hashCode {return Object.hash(negative, positive);}
+@override String toString() {return 'RadarGetDnsSummaryByMatchingAnswerStatusResponseResultSummary0(negative: $negative, positive: $positive)';}
+}

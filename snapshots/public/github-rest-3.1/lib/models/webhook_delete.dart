@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object deleted in the repository.
 @immutable final class WebhookDeleteRefType {const WebhookDeleteRefType._(this.value);
 
-factory WebhookDeleteRefType.fromJson(String json) { return switch (json) {
+factory WebhookDeleteRefType.fromJson(String json) {return switch (json) {
   'tag' => tag,
   'branch' => branch,
   _ => WebhookDeleteRefType._(json),
-}; }
+};}
 
 static const WebhookDeleteRefType tag = WebhookDeleteRefType._('tag');
 
@@ -17,17 +17,17 @@ static const List<WebhookDeleteRefType> values = [tag, branch];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeleteRefType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeleteRefType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDeleteRefType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDeleteRefType($value)';}
+}
 @immutable final class WebhookDelete {const WebhookDelete({required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDelete.fromJson(Map<String, dynamic> json) { return WebhookDelete(
+factory WebhookDelete.fromJson(Map<String, dynamic> json) {return WebhookDelete(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -36,7 +36,7 @@ factory WebhookDelete.fromJson(Map<String, dynamic> json) { return WebhookDelete
   refType: WebhookDeleteRefType.fromJson(json['ref_type'] as String),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final EnterpriseWebhooks? enterprise;
 
@@ -57,7 +57,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
@@ -66,13 +66,13 @@ Map<String, dynamic> toJson() { return {
   'ref_type': refType.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pusher_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pusher_type') &&
       json.containsKey('ref') &&
       json.containsKey('ref_type') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDelete copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookDeleteRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDelete(
+      json.containsKey('sender');}
+WebhookDelete copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookDeleteRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDelete(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
@@ -81,8 +81,8 @@ WebhookDelete copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstal
   refType: refType ?? this.refType,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDelete &&
           enterprise == other.enterprise &&
           installation == other.installation &&
@@ -91,7 +91,7 @@ WebhookDelete copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstal
           ref == other.ref &&
           refType == other.refType &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(enterprise, installation, organization, pusherType, ref, refType, repository, sender); } 
-@override String toString() { return 'WebhookDelete(enterprise: $enterprise, installation: $installation, organization: $organization, pusherType: $pusherType, ref: $ref, refType: $refType, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(enterprise, installation, organization, pusherType, ref, refType, repository, sender);}
+@override String toString() {return 'WebhookDelete(enterprise: $enterprise, installation: $installation, organization: $organization, pusherType: $pusherType, ref: $ref, refType: $refType, repository: $repository, sender: $sender)';}
+}

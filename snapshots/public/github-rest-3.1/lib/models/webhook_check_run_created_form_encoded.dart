@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The check_run.created webhook encoded with URL encoding
 @immutable final class WebhookCheckRunCreatedFormEncoded {const WebhookCheckRunCreatedFormEncoded({required this.payload});
 
-factory WebhookCheckRunCreatedFormEncoded.fromJson(Map<String, dynamic> json) { return WebhookCheckRunCreatedFormEncoded(
+factory WebhookCheckRunCreatedFormEncoded.fromJson(Map<String, dynamic> json) {return WebhookCheckRunCreatedFormEncoded(
   payload: json['payload'] as String,
-); }
+);}
 
 /// A URL-encoded string of the check_run.created JSON payload. The decoded payload is a JSON object.
 final String payload;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payload': payload,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && json['payload'] is String; } 
-WebhookCheckRunCreatedFormEncoded copyWith({String? payload}) { return WebhookCheckRunCreatedFormEncoded(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payload') && json['payload'] is String;}
+WebhookCheckRunCreatedFormEncoded copyWith({String? payload}) {return WebhookCheckRunCreatedFormEncoded(
   payload: payload ?? this.payload,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCheckRunCreatedFormEncoded &&
-          payload == other.payload; } 
-@override int get hashCode { return payload.hashCode; } 
-@override String toString() { return 'WebhookCheckRunCreatedFormEncoded(payload: $payload)'; } 
- }
+          payload == other.payload;}
+@override int get hashCode {return payload.hashCode;}
+@override String toString() {return 'WebhookCheckRunCreatedFormEncoded(payload: $payload)';}
+}

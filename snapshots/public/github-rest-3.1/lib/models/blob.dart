@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Blob
 @immutable final class Blob {const Blob({required this.content, required this.encoding, required this.url, required this.sha, required this.size, required this.nodeId, this.highlightedContent, });
 
-factory Blob.fromJson(Map<String, dynamic> json) { return Blob(
+factory Blob.fromJson(Map<String, dynamic> json) {return Blob(
   content: json['content'] as String,
   encoding: json['encoding'] as String,
   url: Uri.parse(json['url'] as String),
@@ -11,7 +11,7 @@ factory Blob.fromJson(Map<String, dynamic> json) { return Blob(
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
   nodeId: json['node_id'] as String,
   highlightedContent: json['highlighted_content'] as String?,
-); }
+);}
 
 final String content;
 
@@ -27,7 +27,7 @@ final String nodeId;
 
 final String? highlightedContent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content,
   'encoding': encoding,
   'url': url.toString(),
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   'size': size,
   'node_id': nodeId,
   'highlighted_content': ?highlightedContent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') && json['content'] is String &&
       json.containsKey('encoding') && json['encoding'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('size') && (json['size'] == null || json['size'] is num) &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Function()? size, String? nodeId, String? Function()? highlightedContent, }) { return Blob(
+      json.containsKey('node_id') && json['node_id'] is String;}
+Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Function()? size, String? nodeId, String? Function()? highlightedContent, }) {return Blob(
   content: content ?? this.content,
   encoding: encoding ?? this.encoding,
   url: url ?? this.url,
@@ -50,8 +50,8 @@ Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Fu
   size: size != null ? size() : this.size,
   nodeId: nodeId ?? this.nodeId,
   highlightedContent: highlightedContent != null ? highlightedContent() : this.highlightedContent,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Blob &&
           content == other.content &&
           encoding == other.encoding &&
@@ -59,7 +59,7 @@ Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Fu
           sha == other.sha &&
           size == other.size &&
           nodeId == other.nodeId &&
-          highlightedContent == other.highlightedContent; } 
-@override int get hashCode { return Object.hash(content, encoding, url, sha, size, nodeId, highlightedContent); } 
-@override String toString() { return 'Blob(content: $content, encoding: $encoding, url: $url, sha: $sha, size: $size, nodeId: $nodeId, highlightedContent: $highlightedContent)'; } 
- }
+          highlightedContent == other.highlightedContent;}
+@override int get hashCode {return Object.hash(content, encoding, url, sha, size, nodeId, highlightedContent);}
+@override String toString() {return 'Blob(content: $content, encoding: $encoding, url: $url, sha: $sha, size: $size, nodeId: $nodeId, highlightedContent: $highlightedContent)';}
+}

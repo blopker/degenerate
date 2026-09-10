@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The IP versions supported for inbound connections on Spectrum anycast IPs.
 @immutable final class SpectrumConfigEdgeIpsDynamicConnectivity {const SpectrumConfigEdgeIpsDynamicConnectivity._(this.value);
 
-factory SpectrumConfigEdgeIpsDynamicConnectivity.fromJson(String json) { return switch (json) {
+factory SpectrumConfigEdgeIpsDynamicConnectivity.fromJson(String json) {return switch (json) {
   'all' => all,
   'ipv4' => ipv4,
   'ipv6' => ipv6,
   _ => SpectrumConfigEdgeIpsDynamicConnectivity._(json),
-}; }
+};}
 
 static const SpectrumConfigEdgeIpsDynamicConnectivity all = SpectrumConfigEdgeIpsDynamicConnectivity._('all');
 
@@ -20,21 +20,21 @@ static const List<SpectrumConfigEdgeIpsDynamicConnectivity> values = [all, ipv4,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigEdgeIpsDynamicConnectivity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigEdgeIpsDynamicConnectivity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpectrumConfigEdgeIpsDynamicConnectivity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpectrumConfigEdgeIpsDynamicConnectivity($value)';}
+}
 /// The type of edge IP configuration specified. Dynamically allocated edge IPs use Spectrum anycast IPs in accordance with the connectivity you specify. Only valid with CNAME DNS names.
 @immutable final class SpectrumConfigEdgeIpsDynamicType {const SpectrumConfigEdgeIpsDynamicType._(this.value);
 
-factory SpectrumConfigEdgeIpsDynamicType.fromJson(String json) { return switch (json) {
+factory SpectrumConfigEdgeIpsDynamicType.fromJson(String json) {return switch (json) {
   'dynamic' => $dynamic,
   _ => SpectrumConfigEdgeIpsDynamicType._(json),
-}; }
+};}
 
 static const SpectrumConfigEdgeIpsDynamicType $dynamic = SpectrumConfigEdgeIpsDynamicType._('dynamic');
 
@@ -42,20 +42,20 @@ static const List<SpectrumConfigEdgeIpsDynamicType> values = [$dynamic];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigEdgeIpsDynamicType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigEdgeIpsDynamicType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SpectrumConfigEdgeIpsDynamicType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SpectrumConfigEdgeIpsDynamicType($value)';}
+}
 @immutable final class SpectrumConfigEdgeIpsDynamic {const SpectrumConfigEdgeIpsDynamic({this.connectivity, this.type, });
 
-factory SpectrumConfigEdgeIpsDynamic.fromJson(Map<String, dynamic> json) { return SpectrumConfigEdgeIpsDynamic(
+factory SpectrumConfigEdgeIpsDynamic.fromJson(Map<String, dynamic> json) {return SpectrumConfigEdgeIpsDynamic(
   connectivity: json['connectivity'] != null ? SpectrumConfigEdgeIpsDynamicConnectivity.fromJson(json['connectivity'] as String) : null,
   type: json['type'] != null ? SpectrumConfigEdgeIpsDynamicType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The IP versions supported for inbound connections on Spectrum anycast IPs.
 final SpectrumConfigEdgeIpsDynamicConnectivity? connectivity;
@@ -63,19 +63,19 @@ final SpectrumConfigEdgeIpsDynamicConnectivity? connectivity;
 /// The type of edge IP configuration specified. Dynamically allocated edge IPs use Spectrum anycast IPs in accordance with the connectivity you specify. Only valid with CNAME DNS names.
 final SpectrumConfigEdgeIpsDynamicType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (connectivity != null) 'connectivity': connectivity?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connectivity', 'type'}.contains(key)); } 
-SpectrumConfigEdgeIpsDynamic copyWith({SpectrumConfigEdgeIpsDynamicConnectivity? Function()? connectivity, SpectrumConfigEdgeIpsDynamicType? Function()? type, }) { return SpectrumConfigEdgeIpsDynamic(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'connectivity', 'type'}.contains(key));}
+SpectrumConfigEdgeIpsDynamic copyWith({SpectrumConfigEdgeIpsDynamicConnectivity? Function()? connectivity, SpectrumConfigEdgeIpsDynamicType? Function()? type, }) {return SpectrumConfigEdgeIpsDynamic(
   connectivity: connectivity != null ? connectivity() : this.connectivity,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SpectrumConfigEdgeIpsDynamic &&
           connectivity == other.connectivity &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(connectivity, type); } 
-@override String toString() { return 'SpectrumConfigEdgeIpsDynamic(connectivity: $connectivity, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(connectivity, type);}
+@override String toString() {return 'SpectrumConfigEdgeIpsDynamic(connectivity: $connectivity, type: $type)';}
+}

@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom {const WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._(this.value);
 
-factory WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.fromJson(String json) { return switch (json) {
+factory WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._(json),
-}; }
+};}
 
 static const WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom off = WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._('off');
 
@@ -19,32 +19,32 @@ static const List<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom($value)';}
+}
 @immutable final class WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel {const WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel({required this.from});
 
-factory WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel(
+factory WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel.fromJson(Map<String, dynamic> json) {return WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel(
   from: WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.fromJson(json['from'] as String),
-); }
+);}
 
 final WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from'); } 
-WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel copyWith({WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom? from}) { return WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from');}
+WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel copyWith({WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom? from}) {return WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel(
   from: from ?? this.from,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel &&
-          from == other.from; } 
-@override int get hashCode { return from.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel(from: $from)'; } 
- }
+          from == other.from;}
+@override int get hashCode {return from.hashCode;}
+@override String toString() {return 'WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel(from: $from)';}
+}

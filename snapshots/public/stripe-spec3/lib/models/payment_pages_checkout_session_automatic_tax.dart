@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// The status of the most recent automated tax calculation for this session.
 @immutable final class PaymentPagesCheckoutSessionAutomaticTaxStatus {const PaymentPagesCheckoutSessionAutomaticTaxStatus._(this.value);
 
-factory PaymentPagesCheckoutSessionAutomaticTaxStatus.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionAutomaticTaxStatus.fromJson(String json) {return switch (json) {
   'complete' => complete,
   'failed' => failed,
   'requires_location_inputs' => requiresLocationInputs,
   _ => PaymentPagesCheckoutSessionAutomaticTaxStatus._(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionAutomaticTaxStatus complete = PaymentPagesCheckoutSessionAutomaticTaxStatus._('complete');
 
@@ -20,23 +20,23 @@ static const List<PaymentPagesCheckoutSessionAutomaticTaxStatus> values = [compl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionAutomaticTaxStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionAutomaticTaxStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionAutomaticTaxStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentPagesCheckoutSessionAutomaticTaxStatus($value)';}
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionAutomaticTax {const PaymentPagesCheckoutSessionAutomaticTax({required this.enabled, this.liability = const Omittable.absent(), this.provider = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionAutomaticTax.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAutomaticTax(
+factory PaymentPagesCheckoutSessionAutomaticTax.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionAutomaticTax(
   enabled: json['enabled'] as bool,
   liability: json.containsKey('liability') ? Omittable(json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   provider: json.containsKey('provider') ? Omittable(json['provider'] as String?) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? PaymentPagesCheckoutSessionAutomaticTaxStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Indicates whether automatic tax is enabled for the session
 final bool enabled;
@@ -50,25 +50,25 @@ final Omittable<String?> provider;
 /// The status of the most recent automated tax calculation for this session.
 final Omittable<PaymentPagesCheckoutSessionAutomaticTaxStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (liability.isPresent) 'liability': liability.value?.toJson(),
   if (provider.isPresent) 'provider': provider.value,
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentPagesCheckoutSessionAutomaticTax copyWith({bool? enabled, Omittable<ConnectAccountReference?>? liability, Omittable<String?>? provider, Omittable<PaymentPagesCheckoutSessionAutomaticTaxStatus?>? status, }) { return PaymentPagesCheckoutSessionAutomaticTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PaymentPagesCheckoutSessionAutomaticTax copyWith({bool? enabled, Omittable<ConnectAccountReference?>? liability, Omittable<String?>? provider, Omittable<PaymentPagesCheckoutSessionAutomaticTaxStatus?>? status, }) {return PaymentPagesCheckoutSessionAutomaticTax(
   enabled: enabled ?? this.enabled,
   liability: liability ?? this.liability,
   provider: provider ?? this.provider,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentPagesCheckoutSessionAutomaticTax &&
           enabled == other.enabled &&
           liability == other.liability &&
           provider == other.provider &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(enabled, liability, provider, status); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionAutomaticTax(enabled: $enabled, liability: $liability, provider: $provider, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(enabled, liability, provider, status);}
+@override String toString() {return 'PaymentPagesCheckoutSessionAutomaticTax(enabled: $enabled, liability: $liability, provider: $provider, status: $status)';}
+}

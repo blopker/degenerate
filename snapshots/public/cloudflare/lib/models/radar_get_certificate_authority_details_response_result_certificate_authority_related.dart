@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of certificate in the trust chain.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType.fromJson(String json) {return switch (json) {
   'ROOT_CERTIFICATE' => rootCertificate,
   'INTERMEDIATE_CERTIFICATE' => intermediateCertificate,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType rootCertificate = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType._('ROOT_CERTIFICATE');
 
@@ -17,23 +17,23 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType($value)';}
+}
 /// The current revocation status of a Certificate Authority (CA) certificate.
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus._(this.value);
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus.fromJson(String json) {return switch (json) {
   'NOT_REVOKED' => notRevoked,
   'REVOKED' => revoked,
   'PARENT_CERT_REVOKED' => parentCertRevoked,
   _ => RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus._(json),
-}; }
+};}
 
 static const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus notRevoked = RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus._('NOT_REVOKED');
 
@@ -45,22 +45,22 @@ static const List<RadarGetCertificateAuthorityDetailsResponseResultCertificateAu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus($value)';}
+}
 @immutable final class RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated {const RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated({required this.certificateRecordType, required this.name, required this.revocationStatus, required this.sha256Fingerprint, });
 
-factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated.fromJson(Map<String, dynamic> json) { return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated(
+factory RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated.fromJson(Map<String, dynamic> json) {return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated(
   certificateRecordType: RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType.fromJson(json['certificateRecordType'] as String),
   name: json['name'] as String,
   revocationStatus: RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus.fromJson(json['revocationStatus'] as String),
   sha256Fingerprint: json['sha256Fingerprint'] as String,
-); }
+);}
 
 /// Specifies the type of certificate in the trust chain.
 final RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType certificateRecordType;
@@ -74,28 +74,28 @@ final RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelat
 /// The SHA-256 fingerprint of the intermediate certificate.
 final String sha256Fingerprint;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificateRecordType': certificateRecordType.toJson(),
   'name': name,
   'revocationStatus': revocationStatus.toJson(),
   'sha256Fingerprint': sha256Fingerprint,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificateRecordType') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificateRecordType') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('revocationStatus') &&
-      json.containsKey('sha256Fingerprint') && json['sha256Fingerprint'] is String; } 
-RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated copyWith({RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType? certificateRecordType, String? name, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus? revocationStatus, String? sha256Fingerprint, }) { return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated(
+      json.containsKey('sha256Fingerprint') && json['sha256Fingerprint'] is String;}
+RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated copyWith({RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedCertificateRecordType? certificateRecordType, String? name, RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelatedRevocationStatus? revocationStatus, String? sha256Fingerprint, }) {return RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated(
   certificateRecordType: certificateRecordType ?? this.certificateRecordType,
   name: name ?? this.name,
   revocationStatus: revocationStatus ?? this.revocationStatus,
   sha256Fingerprint: sha256Fingerprint ?? this.sha256Fingerprint,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated &&
           certificateRecordType == other.certificateRecordType &&
           name == other.name &&
           revocationStatus == other.revocationStatus &&
-          sha256Fingerprint == other.sha256Fingerprint; } 
-@override int get hashCode { return Object.hash(certificateRecordType, name, revocationStatus, sha256Fingerprint); } 
-@override String toString() { return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated(certificateRecordType: $certificateRecordType, name: $name, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint)'; } 
- }
+          sha256Fingerprint == other.sha256Fingerprint;}
+@override int get hashCode {return Object.hash(certificateRecordType, name, revocationStatus, sha256Fingerprint);}
+@override String toString() {return 'RadarGetCertificateAuthorityDetailsResponseResultCertificateAuthorityRelated(certificateRecordType: $certificateRecordType, name: $name, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint)';}
+}

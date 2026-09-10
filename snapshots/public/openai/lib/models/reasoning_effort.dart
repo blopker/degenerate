@@ -13,7 +13,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effor
 /// 
 @immutable final class ReasoningEffort {const ReasoningEffort._(this.value);
 
-factory ReasoningEffort.fromJson(String json) { return switch (json) {
+factory ReasoningEffort.fromJson(String json) {return switch (json) {
   'none' => none,
   'minimal' => minimal,
   'low' => low,
@@ -21,7 +21,7 @@ factory ReasoningEffort.fromJson(String json) { return switch (json) {
   'high' => high,
   'xhigh' => xhigh,
   _ => ReasoningEffort._(json),
-}; }
+};}
 
 static const ReasoningEffort none = ReasoningEffort._('none');
 
@@ -39,11 +39,11 @@ static const List<ReasoningEffort> values = [none, minimal, low, medium, high, x
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReasoningEffort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReasoningEffort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReasoningEffort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReasoningEffort($value)';}
+}

@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Retired: this fi
 /// 
 @immutable final class EnterpriseTeamsUpdateRequestSyncToOrganizations {const EnterpriseTeamsUpdateRequestSyncToOrganizations._(this.value);
 
-factory EnterpriseTeamsUpdateRequestSyncToOrganizations.fromJson(String json) { return switch (json) {
+factory EnterpriseTeamsUpdateRequestSyncToOrganizations.fromJson(String json) {return switch (json) {
   'all' => all,
   'disabled' => disabled,
   _ => EnterpriseTeamsUpdateRequestSyncToOrganizations._(json),
-}; }
+};}
 
 static const EnterpriseTeamsUpdateRequestSyncToOrganizations all = EnterpriseTeamsUpdateRequestSyncToOrganizations._('all');
 
@@ -20,14 +20,14 @@ static const List<EnterpriseTeamsUpdateRequestSyncToOrganizations> values = [all
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnterpriseTeamsUpdateRequestSyncToOrganizations && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnterpriseTeamsUpdateRequestSyncToOrganizations($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EnterpriseTeamsUpdateRequestSyncToOrganizations && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EnterpriseTeamsUpdateRequestSyncToOrganizations($value)';}
+}
 /// Specifies which organizations in the enterprise should have access to this team. Can be one of `disabled`, `selected`, or `all`.
 /// `disabled`: The team is not assigned to any organizations. This is the default when you create a new team.
 /// `selected`: The team is assigned to specific organizations. You can then use the [add organization assignments API](https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#add-organization-assignments).
@@ -35,12 +35,12 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class EnterpriseTeamsUpdateRequestOrganizationSelectionType {const EnterpriseTeamsUpdateRequestOrganizationSelectionType._(this.value);
 
-factory EnterpriseTeamsUpdateRequestOrganizationSelectionType.fromJson(String json) { return switch (json) {
+factory EnterpriseTeamsUpdateRequestOrganizationSelectionType.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'selected' => selected,
   'all' => all,
   _ => EnterpriseTeamsUpdateRequestOrganizationSelectionType._(json),
-}; }
+};}
 
 static const EnterpriseTeamsUpdateRequestOrganizationSelectionType disabled = EnterpriseTeamsUpdateRequestOrganizationSelectionType._('disabled');
 
@@ -52,23 +52,23 @@ static const List<EnterpriseTeamsUpdateRequestOrganizationSelectionType> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnterpriseTeamsUpdateRequestOrganizationSelectionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnterpriseTeamsUpdateRequestOrganizationSelectionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EnterpriseTeamsUpdateRequestOrganizationSelectionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EnterpriseTeamsUpdateRequestOrganizationSelectionType($value)';}
+}
 @immutable final class EnterpriseTeamsUpdateRequest {const EnterpriseTeamsUpdateRequest({this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.syncToOrganizations, this.organizationSelectionType, this.groupId = const Omittable.absent(), });
 
-factory EnterpriseTeamsUpdateRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamsUpdateRequest(
+factory EnterpriseTeamsUpdateRequest.fromJson(Map<String, dynamic> json) {return EnterpriseTeamsUpdateRequest(
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   syncToOrganizations: json['sync_to_organizations'] != null ? EnterpriseTeamsUpdateRequestSyncToOrganizations.fromJson(json['sync_to_organizations'] as String) : null,
   organizationSelectionType: json['organization_selection_type'] != null ? EnterpriseTeamsUpdateRequestOrganizationSelectionType.fromJson(json['organization_selection_type'] as String) : null,
   groupId: json.containsKey('group_id') ? Omittable(json['group_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A new name for the team.
 final Omittable<String?> name;
@@ -93,31 +93,31 @@ final EnterpriseTeamsUpdateRequestOrganizationSelectionType? organizationSelecti
 final Omittable<String?> groupId;
 
 /// The value with the schema default applied when absent.
-EnterpriseTeamsUpdateRequestSyncToOrganizations get syncToOrganizationsOrDefault { return syncToOrganizations ?? EnterpriseTeamsUpdateRequestSyncToOrganizations.fromJson('disabled'); } 
+EnterpriseTeamsUpdateRequestSyncToOrganizations get syncToOrganizationsOrDefault {return syncToOrganizations ?? EnterpriseTeamsUpdateRequestSyncToOrganizations.fromJson('disabled');}
 /// The value with the schema default applied when absent.
-EnterpriseTeamsUpdateRequestOrganizationSelectionType get organizationSelectionTypeOrDefault { return organizationSelectionType ?? EnterpriseTeamsUpdateRequestOrganizationSelectionType.fromJson('disabled'); } 
-Map<String, dynamic> toJson() { return {
+EnterpriseTeamsUpdateRequestOrganizationSelectionType get organizationSelectionTypeOrDefault {return organizationSelectionType ?? EnterpriseTeamsUpdateRequestOrganizationSelectionType.fromJson('disabled');}
+Map<String, dynamic> toJson() {return {
   if (name.isPresent) 'name': name.value,
   if (description.isPresent) 'description': description.value,
   if (syncToOrganizations != null) 'sync_to_organizations': syncToOrganizations?.toJson(),
   if (organizationSelectionType != null) 'organization_selection_type': organizationSelectionType?.toJson(),
   if (groupId.isPresent) 'group_id': groupId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'sync_to_organizations', 'organization_selection_type', 'group_id'}.contains(key)); } 
-EnterpriseTeamsUpdateRequest copyWith({Omittable<String?>? name, Omittable<String?>? description, EnterpriseTeamsUpdateRequestSyncToOrganizations? Function()? syncToOrganizations, EnterpriseTeamsUpdateRequestOrganizationSelectionType? Function()? organizationSelectionType, Omittable<String?>? groupId, }) { return EnterpriseTeamsUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'description', 'sync_to_organizations', 'organization_selection_type', 'group_id'}.contains(key));}
+EnterpriseTeamsUpdateRequest copyWith({Omittable<String?>? name, Omittable<String?>? description, EnterpriseTeamsUpdateRequestSyncToOrganizations? Function()? syncToOrganizations, EnterpriseTeamsUpdateRequestOrganizationSelectionType? Function()? organizationSelectionType, Omittable<String?>? groupId, }) {return EnterpriseTeamsUpdateRequest(
   name: name ?? this.name,
   description: description ?? this.description,
   syncToOrganizations: syncToOrganizations != null ? syncToOrganizations() : this.syncToOrganizations,
   organizationSelectionType: organizationSelectionType != null ? organizationSelectionType() : this.organizationSelectionType,
   groupId: groupId ?? this.groupId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnterpriseTeamsUpdateRequest &&
           name == other.name &&
           description == other.description &&
           syncToOrganizations == other.syncToOrganizations &&
           organizationSelectionType == other.organizationSelectionType &&
-          groupId == other.groupId; } 
-@override int get hashCode { return Object.hash(name, description, syncToOrganizations, organizationSelectionType, groupId); } 
-@override String toString() { return 'EnterpriseTeamsUpdateRequest(name: $name, description: $description, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId)'; } 
- }
+          groupId == other.groupId;}
+@override int get hashCode {return Object.hash(name, description, syncToOrganizations, organizationSelectionType, groupId);}
+@override String toString() {return 'EnterpriseTeamsUpdateRequest(name: $name, description: $description, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId)';}
+}

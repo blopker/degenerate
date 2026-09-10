@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_te
 /// 
 @immutable final class ReasoningItemStatus {const ReasoningItemStatus._(this.value);
 
-factory ReasoningItemStatus.fromJson(String json) { return switch (json) {
+factory ReasoningItemStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => ReasoningItemStatus._(json),
-}; }
+};}
 
 static const ReasoningItemStatus inProgress = ReasoningItemStatus._('in_progress');
 
@@ -22,14 +22,14 @@ static const List<ReasoningItemStatus> values = [inProgress, completed, incomple
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReasoningItemStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReasoningItemStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReasoningItemStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReasoningItemStatus($value)';}
+}
 /// A description of the chain of thought used by a reasoning model while generating
 /// a response. Be sure to include these items in your `input` to the Responses API
 /// for subsequent turns of a conversation if you are manually
@@ -37,14 +37,14 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class ReasoningItem {const ReasoningItem({required this.type, required this.id, required this.summary, this.encryptedContent = const Omittable.absent(), this.content, this.status, });
 
-factory ReasoningItem.fromJson(Map<String, dynamic> json) { return ReasoningItem(
+factory ReasoningItem.fromJson(Map<String, dynamic> json) {return ReasoningItem(
   type: json['type'] as String,
   id: json['id'] as String,
   encryptedContent: json.containsKey('encrypted_content') ? Omittable(json['encrypted_content'] as String?) : const Omittable.absent(),
   summary: (json['summary'] as List<dynamic>).map((e) => SummaryTextContent.fromJson(e as Map<String, dynamic>)).toList(),
   content: (json['content'] as List<dynamic>?)?.map((e) => ReasoningTextContent.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'] != null ? ReasoningItemStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The type of the object. Always `reasoning`.
 /// 
@@ -72,33 +72,33 @@ final List<ReasoningTextContent>? content;
 /// 
 final ReasoningItemStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   if (encryptedContent.isPresent) 'encrypted_content': encryptedContent.value,
   'summary': summary.map((e) => e.toJson()).toList(),
   if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('summary'); } 
-ReasoningItem copyWith({String? type, String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ReasoningItemStatus? Function()? status, }) { return ReasoningItem(
+      json.containsKey('summary');}
+ReasoningItem copyWith({String? type, String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ReasoningItemStatus? Function()? status, }) {return ReasoningItem(
   type: type ?? this.type,
   id: id ?? this.id,
   encryptedContent: encryptedContent ?? this.encryptedContent,
   summary: summary ?? this.summary,
   content: content != null ? content() : this.content,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReasoningItem &&
           type == other.type &&
           id == other.id &&
           encryptedContent == other.encryptedContent &&
           listEquals(summary, other.summary) &&
           listEquals(content, other.content) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(type, id, encryptedContent, Object.hashAll(summary), Object.hashAll(content ?? const []), status); } 
-@override String toString() { return 'ReasoningItem(type: $type, id: $id, encryptedContent: $encryptedContent, summary: $summary, content: $content, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(type, id, encryptedContent, Object.hashAll(summary), Object.hashAll(content ?? const []), status);}
+@override String toString() {return 'ReasoningItem(type: $type, id: $id, encryptedContent: $encryptedContent, summary: $summary, content: $content, status: $status)';}
+}

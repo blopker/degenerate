@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pad3.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2 {const PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2._(this.value);
 
-factory PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2.fromJson(String json) { return switch (json) {
+factory PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2._(json),
-}; }
+};}
 
 static const PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2 $empty = PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalConfigurationsConfigurationRequestBbposWisepad3Var
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2($value)';}
+}
 /// An object containing device type specific settings for BBPOS WisePad 3 readers.
 @immutable
 final class PostTerminalConfigurationsConfigurationRequestBbposWisepad3 {

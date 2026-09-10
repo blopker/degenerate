@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_response_properties_indicators.dart';import 'get_indicator_list_response_properties_pagination.dart';@immutable final class GetIndicatorListResponseProperties {const GetIndicatorListResponseProperties({required this.indicators, required this.pagination, });
 
-factory GetIndicatorListResponseProperties.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponseProperties(
+factory GetIndicatorListResponseProperties.fromJson(Map<String, dynamic> json) {return GetIndicatorListResponseProperties(
   indicators: GetIndicatorListResponsePropertiesIndicators.fromJson(json['indicators'] as Map<String, dynamic>),
   pagination: GetIndicatorListResponsePropertiesPagination.fromJson(json['pagination'] as Map<String, dynamic>),
-); }
+);}
 
 final GetIndicatorListResponsePropertiesIndicators indicators;
 
 final GetIndicatorListResponsePropertiesPagination pagination;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'indicators': indicators.toJson(),
   'pagination': pagination.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicators') &&
-      json.containsKey('pagination'); } 
-GetIndicatorListResponseProperties copyWith({GetIndicatorListResponsePropertiesIndicators? indicators, GetIndicatorListResponsePropertiesPagination? pagination, }) { return GetIndicatorListResponseProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('indicators') &&
+      json.containsKey('pagination');}
+GetIndicatorListResponseProperties copyWith({GetIndicatorListResponsePropertiesIndicators? indicators, GetIndicatorListResponsePropertiesPagination? pagination, }) {return GetIndicatorListResponseProperties(
   indicators: indicators ?? this.indicators,
   pagination: pagination ?? this.pagination,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetIndicatorListResponseProperties &&
           indicators == other.indicators &&
-          pagination == other.pagination; } 
-@override int get hashCode { return Object.hash(indicators, pagination); } 
-@override String toString() { return 'GetIndicatorListResponseProperties(indicators: $indicators, pagination: $pagination)'; } 
- }
+          pagination == other.pagination;}
+@override int get hashCode {return Object.hash(indicators, pagination);}
+@override String toString() {return 'GetIndicatorListResponseProperties(indicators: $indicators, pagination: $pagination)';}
+}

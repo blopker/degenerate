@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.user`.
 @immutable final class GroupUserAssignmentObject {const GroupUserAssignmentObject._(this.value);
 
-factory GroupUserAssignmentObject.fromJson(String json) { return switch (json) {
+factory GroupUserAssignmentObject.fromJson(String json) {return switch (json) {
   'group.user' => groupUser,
   _ => GroupUserAssignmentObject._(json),
-}; }
+};}
 
 static const GroupUserAssignmentObject groupUser = GroupUserAssignmentObject._('group.user');
 
@@ -14,22 +14,22 @@ static const List<GroupUserAssignmentObject> values = [groupUser];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupUserAssignmentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupUserAssignmentObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GroupUserAssignmentObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GroupUserAssignmentObject($value)';}
+}
 /// Confirmation payload returned after adding a user to a group.
 @immutable final class GroupUserAssignment {const GroupUserAssignment({required this.object, required this.userId, required this.groupId, });
 
-factory GroupUserAssignment.fromJson(Map<String, dynamic> json) { return GroupUserAssignment(
+factory GroupUserAssignment.fromJson(Map<String, dynamic> json) {return GroupUserAssignment(
   object: GroupUserAssignmentObject.fromJson(json['object'] as String),
   userId: json['user_id'] as String,
   groupId: json['group_id'] as String,
-); }
+);}
 
 /// Always `group.user`.
 final GroupUserAssignmentObject object;
@@ -40,24 +40,24 @@ final String userId;
 /// Identifier of the group the user was added to.
 final String groupId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'user_id': userId,
   'group_id': groupId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('user_id') && json['user_id'] is String &&
-      json.containsKey('group_id') && json['group_id'] is String; } 
-GroupUserAssignment copyWith({GroupUserAssignmentObject? object, String? userId, String? groupId, }) { return GroupUserAssignment(
+      json.containsKey('group_id') && json['group_id'] is String;}
+GroupUserAssignment copyWith({GroupUserAssignmentObject? object, String? userId, String? groupId, }) {return GroupUserAssignment(
   object: object ?? this.object,
   userId: userId ?? this.userId,
   groupId: groupId ?? this.groupId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GroupUserAssignment &&
           object == other.object &&
           userId == other.userId &&
-          groupId == other.groupId; } 
-@override int get hashCode { return Object.hash(object, userId, groupId); } 
-@override String toString() { return 'GroupUserAssignment(object: $object, userId: $userId, groupId: $groupId)'; } 
- }
+          groupId == other.groupId;}
+@override int get hashCode {return Object.hash(object, userId, groupId);}
+@override String toString() {return 'GroupUserAssignment(object: $object, userId: $userId, groupId: $groupId)';}
+}

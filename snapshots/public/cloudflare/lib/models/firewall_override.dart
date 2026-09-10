@@ -23,7 +23,7 @@ num toJson() => value;
 }
 @immutable final class FirewallOverride {const FirewallOverride({this.description = const Omittable.absent(), this.groups, this.id, this.paused, this.priority, this.rewriteAction, this.rules, this.urls, });
 
-factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOverride(
+factory FirewallOverride.fromJson(Map<String, dynamic> json) {return FirewallOverride(
   description: json.containsKey('description') ? Omittable(json['description'] != null ? FirewallComponentsSchemasDescription.fromJson(json['description'] as String) : null) : const Omittable.absent(),
   groups: json['groups'] as Map<String, dynamic>?,
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
@@ -32,7 +32,7 @@ factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOv
   rewriteAction: json['rewrite_action'] != null ? FirewallRewriteAction.fromJson(json['rewrite_action'] as Map<String, dynamic>) : null,
   rules: (json['rules'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : FirewallWafAction.fromJson(v as dynamic))),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// An informative summary of the current URI-based WAF override.
 final Omittable<FirewallComponentsSchemasDescription?> description;
@@ -52,7 +52,7 @@ final Map<String,FirewallWafAction?>? rules;
 
 final List<String>? urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value?.toJson(),
   'groups': ?groups,
   if (id != null) 'id': id?.toJson(),
@@ -61,9 +61,9 @@ Map<String, dynamic> toJson() { return {
   if (rewriteAction != null) 'rewrite_action': rewriteAction?.toJson(),
   if (rules != null) 'rules': rules?.map((k, v) => MapEntry(k, v?.toJson())),
   'urls': ?urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'groups', 'id', 'paused', 'priority', 'rewrite_action', 'rules', 'urls'}.contains(key)); } 
-FirewallOverride copyWith({Omittable<FirewallComponentsSchemasDescription?>? description, Map<String, dynamic>? Function()? groups, FirewallOverridesId? Function()? id, FirewallPaused? Function()? paused, FirewallPriority? Function()? priority, FirewallRewriteAction? Function()? rewriteAction, Map<String, FirewallWafAction?>? Function()? rules, List<String>? Function()? urls, }) { return FirewallOverride(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'groups', 'id', 'paused', 'priority', 'rewrite_action', 'rules', 'urls'}.contains(key));}
+FirewallOverride copyWith({Omittable<FirewallComponentsSchemasDescription?>? description, Map<String, dynamic>? Function()? groups, FirewallOverridesId? Function()? id, FirewallPaused? Function()? paused, FirewallPriority? Function()? priority, FirewallRewriteAction? Function()? rewriteAction, Map<String, FirewallWafAction?>? Function()? rules, List<String>? Function()? urls, }) {return FirewallOverride(
   description: description ?? this.description,
   groups: groups != null ? groups() : this.groups,
   id: id != null ? id() : this.id,
@@ -72,8 +72,8 @@ FirewallOverride copyWith({Omittable<FirewallComponentsSchemasDescription?>? des
   rewriteAction: rewriteAction != null ? rewriteAction() : this.rewriteAction,
   rules: rules != null ? rules() : this.rules,
   urls: urls != null ? urls() : this.urls,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallOverride &&
           description == other.description &&
           groups == other.groups &&
@@ -82,7 +82,7 @@ FirewallOverride copyWith({Omittable<FirewallComponentsSchemasDescription?>? des
           priority == other.priority &&
           rewriteAction == other.rewriteAction &&
           rules == other.rules &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(description, groups, id, paused, priority, rewriteAction, rules, Object.hashAll(urls ?? const [])); } 
-@override String toString() { return 'FirewallOverride(description: $description, groups: $groups, id: $id, paused: $paused, priority: $priority, rewriteAction: $rewriteAction, rules: $rules, urls: $urls)'; } 
- }
+          listEquals(urls, other.urls);}
+@override int get hashCode {return Object.hash(description, groups, id, paused, priority, rewriteAction, rules, Object.hashAll(urls ?? const []));}
+@override String toString() {return 'FirewallOverride(description: $description, groups: $groups, id: $id, paused: $paused, priority: $priority, rewriteAction: $rewriteAction, rules: $rules, urls: $urls)';}
+}

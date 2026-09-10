@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2 {const PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2 $empty = PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateV
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDateVariant2($value)';}
+}
 
 @immutable
 final class PaymentIntentPaymentMethodOptionsParam11MandateOptionsEndDate {

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// ContainerStateTerminated is a terminated state of a container.
 @immutable final class ContainerStateTerminated {const ContainerStateTerminated({required this.exitCode, this.containerId, this.finishedAt, this.message, this.reason, this.signal, this.startedAt, });
 
-factory ContainerStateTerminated.fromJson(Map<String, dynamic> json) { return ContainerStateTerminated(
+factory ContainerStateTerminated.fromJson(Map<String, dynamic> json) {return ContainerStateTerminated(
   containerId: json['containerID'] as String?,
   exitCode: (json['exitCode'] as num).toInt(),
   finishedAt: json['finishedAt'] != null ? Time.fromJson(json['finishedAt'] as String) : null,
@@ -11,7 +11,7 @@ factory ContainerStateTerminated.fromJson(Map<String, dynamic> json) { return Co
   reason: json['reason'] as String?,
   signal: json['signal'] != null ? (json['signal'] as num).toInt() : null,
   startedAt: json['startedAt'] != null ? Time.fromJson(json['startedAt'] as String) : null,
-); }
+);}
 
 /// Container's ID in the format '`<type>`://`<container_id>`'
 final String? containerId;
@@ -34,7 +34,7 @@ final int? signal;
 /// Time at which previous execution of the container started
 final Time? startedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'containerID': ?containerId,
   'exitCode': exitCode,
   if (finishedAt != null) 'finishedAt': finishedAt?.toJson(),
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
   'signal': ?signal,
   if (startedAt != null) 'startedAt': startedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exitCode') && json['exitCode'] is num; } 
-ContainerStateTerminated copyWith({String? Function()? containerId, int? exitCode, Time? Function()? finishedAt, String? Function()? message, String? Function()? reason, int? Function()? signal, Time? Function()? startedAt, }) { return ContainerStateTerminated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exitCode') && json['exitCode'] is num;}
+ContainerStateTerminated copyWith({String? Function()? containerId, int? exitCode, Time? Function()? finishedAt, String? Function()? message, String? Function()? reason, int? Function()? signal, Time? Function()? startedAt, }) {return ContainerStateTerminated(
   containerId: containerId != null ? containerId() : this.containerId,
   exitCode: exitCode ?? this.exitCode,
   finishedAt: finishedAt != null ? finishedAt() : this.finishedAt,
@@ -52,8 +52,8 @@ ContainerStateTerminated copyWith({String? Function()? containerId, int? exitCod
   reason: reason != null ? reason() : this.reason,
   signal: signal != null ? signal() : this.signal,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ContainerStateTerminated &&
           containerId == other.containerId &&
           exitCode == other.exitCode &&
@@ -61,7 +61,7 @@ ContainerStateTerminated copyWith({String? Function()? containerId, int? exitCod
           message == other.message &&
           reason == other.reason &&
           signal == other.signal &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(containerId, exitCode, finishedAt, message, reason, signal, startedAt); } 
-@override String toString() { return 'ContainerStateTerminated(containerId: $containerId, exitCode: $exitCode, finishedAt: $finishedAt, message: $message, reason: $reason, signal: $signal, startedAt: $startedAt)'; } 
- }
+          startedAt == other.startedAt;}
+@override int get hashCode {return Object.hash(containerId, exitCode, finishedAt, message, reason, signal, startedAt);}
+@override String toString() {return 'ContainerStateTerminated(containerId: $containerId, exitCode: $exitCode, finishedAt: $finishedAt, message: $message, reason: $reason, signal: $signal, startedAt: $startedAt)';}
+}

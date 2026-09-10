@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of runtime handler information.
 @immutable final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name, });
 
-factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) { return NodeRuntimeHandler(
+factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) {return NodeRuntimeHandler(
   features: json['features'] != null ? NodeRuntimeHandlerFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// Supported features.
 final NodeRuntimeHandlerFeatures? features;
@@ -15,20 +15,20 @@ final NodeRuntimeHandlerFeatures? features;
 final String? name;
 
 /// The value with the schema default applied when absent.
-String get nameOrDefault { return name ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get nameOrDefault {return name ?? '';}
+Map<String, dynamic> toJson() {return {
   if (features != null) 'features': features?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'features', 'name'}.contains(key)); } 
-NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, String? Function()? name, }) { return NodeRuntimeHandler(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'features', 'name'}.contains(key));}
+NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, String? Function()? name, }) {return NodeRuntimeHandler(
   features: features != null ? features() : this.features,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NodeRuntimeHandler &&
           features == other.features &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(features, name); } 
-@override String toString() { return 'NodeRuntimeHandler(features: $features, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(features, name);}
+@override String toString() {return 'NodeRuntimeHandler(features: $features, name: $name)';}
+}

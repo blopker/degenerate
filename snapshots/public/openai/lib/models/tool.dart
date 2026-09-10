@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_
 sealed class Tool {const Tool();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory Tool.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'function' => ToolFunction.fromJson(json),
   'file_search' => ToolFileSearch.fromJson(json),
   'computer' => ToolComputer.fromJson(json),
@@ -22,219 +22,219 @@ factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
   'web_search_preview' => ToolWebSearchPreview.fromJson(json),
   'apply_patch' => ToolApplyPatch.fromJson(json),
   _ => Tool$Unknown(json),
-}; }
+};}
 
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Tool$Unknown; } 
- }
+bool get isUnknown {return this is Tool$Unknown;}
+}
 @immutable final class ToolFunction extends Tool {const ToolFunction(this.functionTool);
 
-factory ToolFunction.fromJson(Map<String, dynamic> json) { return ToolFunction(FunctionTool.fromJson(json)); }
+factory ToolFunction.fromJson(Map<String, dynamic> json) {return ToolFunction(FunctionTool.fromJson(json));}
 
 final FunctionTool functionTool;
 
-@override String get type { return 'function'; } 
-@override Map<String, dynamic> toJson() { return {...functionTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolFunction && functionTool == other.functionTool; } 
-@override int get hashCode { return functionTool.hashCode; } 
-@override String toString() { return 'ToolFunction(functionTool: $functionTool)'; } 
- }
+@override String get type {return 'function';}
+@override Map<String, dynamic> toJson() {return {...functionTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolFunction && functionTool == other.functionTool;}
+@override int get hashCode {return functionTool.hashCode;}
+@override String toString() {return 'ToolFunction(functionTool: $functionTool)';}
+}
 @immutable final class ToolFileSearch extends Tool {const ToolFileSearch(this.fileSearchTool);
 
-factory ToolFileSearch.fromJson(Map<String, dynamic> json) { return ToolFileSearch(FileSearchTool.fromJson(json)); }
+factory ToolFileSearch.fromJson(Map<String, dynamic> json) {return ToolFileSearch(FileSearchTool.fromJson(json));}
 
 final FileSearchTool fileSearchTool;
 
-@override String get type { return 'file_search'; } 
-@override Map<String, dynamic> toJson() { return {...fileSearchTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolFileSearch && fileSearchTool == other.fileSearchTool; } 
-@override int get hashCode { return fileSearchTool.hashCode; } 
-@override String toString() { return 'ToolFileSearch(fileSearchTool: $fileSearchTool)'; } 
- }
+@override String get type {return 'file_search';}
+@override Map<String, dynamic> toJson() {return {...fileSearchTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolFileSearch && fileSearchTool == other.fileSearchTool;}
+@override int get hashCode {return fileSearchTool.hashCode;}
+@override String toString() {return 'ToolFileSearch(fileSearchTool: $fileSearchTool)';}
+}
 @immutable final class ToolComputer extends Tool {const ToolComputer(this.computerTool);
 
-factory ToolComputer.fromJson(Map<String, dynamic> json) { return ToolComputer(ComputerTool.fromJson(json)); }
+factory ToolComputer.fromJson(Map<String, dynamic> json) {return ToolComputer(ComputerTool.fromJson(json));}
 
 final ComputerTool computerTool;
 
-@override String get type { return 'computer'; } 
-@override Map<String, dynamic> toJson() { return {...computerTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolComputer && computerTool == other.computerTool; } 
-@override int get hashCode { return computerTool.hashCode; } 
-@override String toString() { return 'ToolComputer(computerTool: $computerTool)'; } 
- }
+@override String get type {return 'computer';}
+@override Map<String, dynamic> toJson() {return {...computerTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolComputer && computerTool == other.computerTool;}
+@override int get hashCode {return computerTool.hashCode;}
+@override String toString() {return 'ToolComputer(computerTool: $computerTool)';}
+}
 @immutable final class ToolComputerUsePreview extends Tool {const ToolComputerUsePreview(this.computerUsePreviewTool);
 
-factory ToolComputerUsePreview.fromJson(Map<String, dynamic> json) { return ToolComputerUsePreview(ComputerUsePreviewTool.fromJson(json)); }
+factory ToolComputerUsePreview.fromJson(Map<String, dynamic> json) {return ToolComputerUsePreview(ComputerUsePreviewTool.fromJson(json));}
 
 final ComputerUsePreviewTool computerUsePreviewTool;
 
-@override String get type { return 'computer_use_preview'; } 
-@override Map<String, dynamic> toJson() { return {...computerUsePreviewTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolComputerUsePreview && computerUsePreviewTool == other.computerUsePreviewTool; } 
-@override int get hashCode { return computerUsePreviewTool.hashCode; } 
-@override String toString() { return 'ToolComputerUsePreview(computerUsePreviewTool: $computerUsePreviewTool)'; } 
- }
+@override String get type {return 'computer_use_preview';}
+@override Map<String, dynamic> toJson() {return {...computerUsePreviewTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolComputerUsePreview && computerUsePreviewTool == other.computerUsePreviewTool;}
+@override int get hashCode {return computerUsePreviewTool.hashCode;}
+@override String toString() {return 'ToolComputerUsePreview(computerUsePreviewTool: $computerUsePreviewTool)';}
+}
 @immutable final class ToolWebSearch extends Tool {const ToolWebSearch(this.webSearchTool);
 
-factory ToolWebSearch.fromJson(Map<String, dynamic> json) { return ToolWebSearch(WebSearchTool.fromJson(json)); }
+factory ToolWebSearch.fromJson(Map<String, dynamic> json) {return ToolWebSearch(WebSearchTool.fromJson(json));}
 
 final WebSearchTool webSearchTool;
 
-@override String get type { return 'web_search'; } 
-@override Map<String, dynamic> toJson() { return {...webSearchTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolWebSearch && webSearchTool == other.webSearchTool; } 
-@override int get hashCode { return webSearchTool.hashCode; } 
-@override String toString() { return 'ToolWebSearch(webSearchTool: $webSearchTool)'; } 
- }
+@override String get type {return 'web_search';}
+@override Map<String, dynamic> toJson() {return {...webSearchTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolWebSearch && webSearchTool == other.webSearchTool;}
+@override int get hashCode {return webSearchTool.hashCode;}
+@override String toString() {return 'ToolWebSearch(webSearchTool: $webSearchTool)';}
+}
 @immutable final class ToolMcp extends Tool {const ToolMcp(this.mcpTool);
 
-factory ToolMcp.fromJson(Map<String, dynamic> json) { return ToolMcp(McpTool.fromJson(json)); }
+factory ToolMcp.fromJson(Map<String, dynamic> json) {return ToolMcp(McpTool.fromJson(json));}
 
 final McpTool mcpTool;
 
-@override String get type { return 'mcp'; } 
-@override Map<String, dynamic> toJson() { return {...mcpTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolMcp && mcpTool == other.mcpTool; } 
-@override int get hashCode { return mcpTool.hashCode; } 
-@override String toString() { return 'ToolMcp(mcpTool: $mcpTool)'; } 
- }
+@override String get type {return 'mcp';}
+@override Map<String, dynamic> toJson() {return {...mcpTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolMcp && mcpTool == other.mcpTool;}
+@override int get hashCode {return mcpTool.hashCode;}
+@override String toString() {return 'ToolMcp(mcpTool: $mcpTool)';}
+}
 @immutable final class ToolCodeInterpreter extends Tool {const ToolCodeInterpreter(this.codeInterpreterTool);
 
-factory ToolCodeInterpreter.fromJson(Map<String, dynamic> json) { return ToolCodeInterpreter(CodeInterpreterTool.fromJson(json)); }
+factory ToolCodeInterpreter.fromJson(Map<String, dynamic> json) {return ToolCodeInterpreter(CodeInterpreterTool.fromJson(json));}
 
 final CodeInterpreterTool codeInterpreterTool;
 
-@override String get type { return 'code_interpreter'; } 
-@override Map<String, dynamic> toJson() { return {...codeInterpreterTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolCodeInterpreter && codeInterpreterTool == other.codeInterpreterTool; } 
-@override int get hashCode { return codeInterpreterTool.hashCode; } 
-@override String toString() { return 'ToolCodeInterpreter(codeInterpreterTool: $codeInterpreterTool)'; } 
- }
+@override String get type {return 'code_interpreter';}
+@override Map<String, dynamic> toJson() {return {...codeInterpreterTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolCodeInterpreter && codeInterpreterTool == other.codeInterpreterTool;}
+@override int get hashCode {return codeInterpreterTool.hashCode;}
+@override String toString() {return 'ToolCodeInterpreter(codeInterpreterTool: $codeInterpreterTool)';}
+}
 @immutable final class ToolImageGeneration extends Tool {const ToolImageGeneration(this.imageGenTool);
 
-factory ToolImageGeneration.fromJson(Map<String, dynamic> json) { return ToolImageGeneration(ImageGenTool.fromJson(json)); }
+factory ToolImageGeneration.fromJson(Map<String, dynamic> json) {return ToolImageGeneration(ImageGenTool.fromJson(json));}
 
 final ImageGenTool imageGenTool;
 
-@override String get type { return 'image_generation'; } 
-@override Map<String, dynamic> toJson() { return {...imageGenTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolImageGeneration && imageGenTool == other.imageGenTool; } 
-@override int get hashCode { return imageGenTool.hashCode; } 
-@override String toString() { return 'ToolImageGeneration(imageGenTool: $imageGenTool)'; } 
- }
+@override String get type {return 'image_generation';}
+@override Map<String, dynamic> toJson() {return {...imageGenTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolImageGeneration && imageGenTool == other.imageGenTool;}
+@override int get hashCode {return imageGenTool.hashCode;}
+@override String toString() {return 'ToolImageGeneration(imageGenTool: $imageGenTool)';}
+}
 @immutable final class ToolLocalShell extends Tool {const ToolLocalShell(this.localShellToolParam);
 
-factory ToolLocalShell.fromJson(Map<String, dynamic> json) { return ToolLocalShell(LocalShellToolParam.fromJson(json)); }
+factory ToolLocalShell.fromJson(Map<String, dynamic> json) {return ToolLocalShell(LocalShellToolParam.fromJson(json));}
 
 final LocalShellToolParam localShellToolParam;
 
-@override String get type { return 'local_shell'; } 
-@override Map<String, dynamic> toJson() { return {...localShellToolParam.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolLocalShell && localShellToolParam == other.localShellToolParam; } 
-@override int get hashCode { return localShellToolParam.hashCode; } 
-@override String toString() { return 'ToolLocalShell(localShellToolParam: $localShellToolParam)'; } 
- }
+@override String get type {return 'local_shell';}
+@override Map<String, dynamic> toJson() {return {...localShellToolParam.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolLocalShell && localShellToolParam == other.localShellToolParam;}
+@override int get hashCode {return localShellToolParam.hashCode;}
+@override String toString() {return 'ToolLocalShell(localShellToolParam: $localShellToolParam)';}
+}
 @immutable final class ToolShell extends Tool {const ToolShell(this.functionShellToolParam);
 
-factory ToolShell.fromJson(Map<String, dynamic> json) { return ToolShell(FunctionShellToolParam.fromJson(json)); }
+factory ToolShell.fromJson(Map<String, dynamic> json) {return ToolShell(FunctionShellToolParam.fromJson(json));}
 
 final FunctionShellToolParam functionShellToolParam;
 
-@override String get type { return 'shell'; } 
-@override Map<String, dynamic> toJson() { return {...functionShellToolParam.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolShell && functionShellToolParam == other.functionShellToolParam; } 
-@override int get hashCode { return functionShellToolParam.hashCode; } 
-@override String toString() { return 'ToolShell(functionShellToolParam: $functionShellToolParam)'; } 
- }
+@override String get type {return 'shell';}
+@override Map<String, dynamic> toJson() {return {...functionShellToolParam.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolShell && functionShellToolParam == other.functionShellToolParam;}
+@override int get hashCode {return functionShellToolParam.hashCode;}
+@override String toString() {return 'ToolShell(functionShellToolParam: $functionShellToolParam)';}
+}
 @immutable final class ToolCustom extends Tool {const ToolCustom(this.customToolParam);
 
-factory ToolCustom.fromJson(Map<String, dynamic> json) { return ToolCustom(CustomToolParam.fromJson(json)); }
+factory ToolCustom.fromJson(Map<String, dynamic> json) {return ToolCustom(CustomToolParam.fromJson(json));}
 
 final CustomToolParam customToolParam;
 
-@override String get type { return 'custom'; } 
-@override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolCustom && customToolParam == other.customToolParam; } 
-@override int get hashCode { return customToolParam.hashCode; } 
-@override String toString() { return 'ToolCustom(customToolParam: $customToolParam)'; } 
- }
+@override String get type {return 'custom';}
+@override Map<String, dynamic> toJson() {return {...customToolParam.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolCustom && customToolParam == other.customToolParam;}
+@override int get hashCode {return customToolParam.hashCode;}
+@override String toString() {return 'ToolCustom(customToolParam: $customToolParam)';}
+}
 @immutable final class ToolNamespace extends Tool {const ToolNamespace(this.namespaceToolParam);
 
-factory ToolNamespace.fromJson(Map<String, dynamic> json) { return ToolNamespace(NamespaceToolParam.fromJson(json)); }
+factory ToolNamespace.fromJson(Map<String, dynamic> json) {return ToolNamespace(NamespaceToolParam.fromJson(json));}
 
 final NamespaceToolParam namespaceToolParam;
 
-@override String get type { return 'namespace'; } 
-@override Map<String, dynamic> toJson() { return {...namespaceToolParam.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolNamespace && namespaceToolParam == other.namespaceToolParam; } 
-@override int get hashCode { return namespaceToolParam.hashCode; } 
-@override String toString() { return 'ToolNamespace(namespaceToolParam: $namespaceToolParam)'; } 
- }
+@override String get type {return 'namespace';}
+@override Map<String, dynamic> toJson() {return {...namespaceToolParam.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolNamespace && namespaceToolParam == other.namespaceToolParam;}
+@override int get hashCode {return namespaceToolParam.hashCode;}
+@override String toString() {return 'ToolNamespace(namespaceToolParam: $namespaceToolParam)';}
+}
 @immutable final class ToolToolSearch extends Tool {const ToolToolSearch(this.toolSearchToolParam);
 
-factory ToolToolSearch.fromJson(Map<String, dynamic> json) { return ToolToolSearch(ToolSearchToolParam.fromJson(json)); }
+factory ToolToolSearch.fromJson(Map<String, dynamic> json) {return ToolToolSearch(ToolSearchToolParam.fromJson(json));}
 
 final ToolSearchToolParam toolSearchToolParam;
 
-@override String get type { return 'tool_search'; } 
-@override Map<String, dynamic> toJson() { return {...toolSearchToolParam.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolToolSearch && toolSearchToolParam == other.toolSearchToolParam; } 
-@override int get hashCode { return toolSearchToolParam.hashCode; } 
-@override String toString() { return 'ToolToolSearch(toolSearchToolParam: $toolSearchToolParam)'; } 
- }
+@override String get type {return 'tool_search';}
+@override Map<String, dynamic> toJson() {return {...toolSearchToolParam.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolToolSearch && toolSearchToolParam == other.toolSearchToolParam;}
+@override int get hashCode {return toolSearchToolParam.hashCode;}
+@override String toString() {return 'ToolToolSearch(toolSearchToolParam: $toolSearchToolParam)';}
+}
 @immutable final class ToolWebSearchPreview extends Tool {const ToolWebSearchPreview(this.webSearchPreviewTool);
 
-factory ToolWebSearchPreview.fromJson(Map<String, dynamic> json) { return ToolWebSearchPreview(WebSearchPreviewTool.fromJson(json)); }
+factory ToolWebSearchPreview.fromJson(Map<String, dynamic> json) {return ToolWebSearchPreview(WebSearchPreviewTool.fromJson(json));}
 
 final WebSearchPreviewTool webSearchPreviewTool;
 
-@override String get type { return 'web_search_preview'; } 
-@override Map<String, dynamic> toJson() { return {...webSearchPreviewTool.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolWebSearchPreview && webSearchPreviewTool == other.webSearchPreviewTool; } 
-@override int get hashCode { return webSearchPreviewTool.hashCode; } 
-@override String toString() { return 'ToolWebSearchPreview(webSearchPreviewTool: $webSearchPreviewTool)'; } 
- }
+@override String get type {return 'web_search_preview';}
+@override Map<String, dynamic> toJson() {return {...webSearchPreviewTool.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolWebSearchPreview && webSearchPreviewTool == other.webSearchPreviewTool;}
+@override int get hashCode {return webSearchPreviewTool.hashCode;}
+@override String toString() {return 'ToolWebSearchPreview(webSearchPreviewTool: $webSearchPreviewTool)';}
+}
 @immutable final class ToolApplyPatch extends Tool {const ToolApplyPatch(this.applyPatchToolParam);
 
-factory ToolApplyPatch.fromJson(Map<String, dynamic> json) { return ToolApplyPatch(ApplyPatchToolParam.fromJson(json)); }
+factory ToolApplyPatch.fromJson(Map<String, dynamic> json) {return ToolApplyPatch(ApplyPatchToolParam.fromJson(json));}
 
 final ApplyPatchToolParam applyPatchToolParam;
 
-@override String get type { return 'apply_patch'; } 
-@override Map<String, dynamic> toJson() { return {...applyPatchToolParam.toJson(), 'type': type}; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolApplyPatch && applyPatchToolParam == other.applyPatchToolParam; } 
-@override int get hashCode { return applyPatchToolParam.hashCode; } 
-@override String toString() { return 'ToolApplyPatch(applyPatchToolParam: $applyPatchToolParam)'; } 
- }
+@override String get type {return 'apply_patch';}
+@override Map<String, dynamic> toJson() {return {...applyPatchToolParam.toJson(), 'type': type};}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ToolApplyPatch && applyPatchToolParam == other.applyPatchToolParam;}
+@override int get hashCode {return applyPatchToolParam.hashCode;}
+@override String toString() {return 'ToolApplyPatch(applyPatchToolParam: $applyPatchToolParam)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class Tool$Unknown extends Tool {const Tool$Unknown(this.json);
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Tool$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'Tool.unknown($json)'; } 
- }
+@override String get type {return json['type'] as String? ?? '';}
+@override Map<String, dynamic> toJson() {return json;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Tool$Unknown && json == other.json;}
+@override int get hashCode {return json.hashCode;}
+@override String toString() {return 'Tool.unknown($json)';}
+}

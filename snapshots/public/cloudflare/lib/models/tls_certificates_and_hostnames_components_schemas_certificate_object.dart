@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_ca.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_mtls_management_components_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_schemas_certificates.dart';import 'tls_certificates_and_hostnames_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_schemas_issuer.dart';import 'tls_certificates_and_hostnames_schemas_name.dart';import 'tls_certificates_and_hostnames_schemas_serial_number.dart';import 'tls_certificates_and_hostnames_signature.dart';@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateObject {const TlsCertificatesAndHostnamesComponentsSchemasCertificateObject({this.ca, this.certificates, this.expiresOn, this.id, this.issuer, this.name, this.serialNumber, this.signature, this.uploadedOn, });
 
-factory TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
+factory TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
   ca: json['ca'] != null ? TlsCertificatesAndHostnamesCa.fromJson(json['ca'] as bool) : null,
   certificates: json['certificates'] != null ? TlsCertificatesAndHostnamesSchemasCertificates.fromJson(json['certificates'] as String) : null,
   expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesSchemasExpiresOn.fromJson(json['expires_on'] as String) : null,
@@ -12,7 +12,7 @@ factory TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(M
   serialNumber: json['serial_number'] != null ? TlsCertificatesAndHostnamesSchemasSerialNumber.fromJson(json['serial_number'] as String) : null,
   signature: json['signature'] != null ? TlsCertificatesAndHostnamesSignature.fromJson(json['signature'] as String) : null,
   uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn.fromJson(json['uploaded_on'] as String) : null,
-); }
+);}
 
 /// Indicates whether the certificate is a CA or leaf certificate.
 final TlsCertificatesAndHostnamesCa? ca;
@@ -33,7 +33,7 @@ final TlsCertificatesAndHostnamesSignature? signature;
 
 final TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? uploadedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ca != null) 'ca': ca?.toJson(),
   if (certificates != null) 'certificates': certificates?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (serialNumber != null) 'serial_number': serialNumber?.toJson(),
   if (signature != null) 'signature': signature?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ca', 'certificates', 'expires_on', 'id', 'issuer', 'name', 'serial_number', 'signature', 'uploaded_on'}.contains(key)); } 
-TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCertificatesAndHostnamesCa? Function()? ca, TlsCertificatesAndHostnamesSchemasCertificates? Function()? certificates, TlsCertificatesAndHostnamesSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasIssuer? Function()? issuer, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? Function()? uploadedOn, }) { return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ca', 'certificates', 'expires_on', 'id', 'issuer', 'name', 'serial_number', 'signature', 'uploaded_on'}.contains(key));}
+TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCertificatesAndHostnamesCa? Function()? ca, TlsCertificatesAndHostnamesSchemasCertificates? Function()? certificates, TlsCertificatesAndHostnamesSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasIssuer? Function()? issuer, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? Function()? uploadedOn, }) {return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
   ca: ca != null ? ca() : this.ca,
   certificates: certificates != null ? certificates() : this.certificates,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
@@ -55,8 +55,8 @@ TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCerti
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
   signature: signature != null ? signature() : this.signature,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesComponentsSchemasCertificateObject &&
           ca == other.ca &&
           certificates == other.certificates &&
@@ -66,7 +66,7 @@ TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCerti
           name == other.name &&
           serialNumber == other.serialNumber &&
           signature == other.signature &&
-          uploadedOn == other.uploadedOn; } 
-@override int get hashCode { return Object.hash(ca, certificates, expiresOn, id, issuer, name, serialNumber, signature, uploadedOn); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(ca: $ca, certificates: $certificates, expiresOn: $expiresOn, id: $id, issuer: $issuer, name: $name, serialNumber: $serialNumber, signature: $signature, uploadedOn: $uploadedOn)'; } 
- }
+          uploadedOn == other.uploadedOn;}
+@override int get hashCode {return Object.hash(ca, certificates, expiresOn, id, issuer, name, serialNumber, signature, uploadedOn);}
+@override String toString() {return 'TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(ca: $ca, certificates: $certificates, expiresOn: $expiresOn, id: $id, issuer: $issuer, name: $name, serialNumber: $serialNumber, signature: $signature, uploadedOn: $uploadedOn)';}
+}

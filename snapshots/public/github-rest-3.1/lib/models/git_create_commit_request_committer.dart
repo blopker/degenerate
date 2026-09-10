@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
 @immutable final class GitCreateCommitRequestCommitter {const GitCreateCommitRequestCommitter({this.name, this.email, this.date, });
 
-factory GitCreateCommitRequestCommitter.fromJson(Map<String, dynamic> json) { return GitCreateCommitRequestCommitter(
+factory GitCreateCommitRequestCommitter.fromJson(Map<String, dynamic> json) {return GitCreateCommitRequestCommitter(
   name: json['name'] as String?,
   email: json['email'] as String?,
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
-); }
+);}
 
 /// The name of the author (or committer) of the commit
 final String? name;
@@ -18,22 +18,22 @@ final String? email;
 /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 final DateTime? date;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'email': ?email,
   if (date != null) 'date': date?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'email', 'date'}.contains(key)); } 
-GitCreateCommitRequestCommitter copyWith({String? Function()? name, String? Function()? email, DateTime? Function()? date, }) { return GitCreateCommitRequestCommitter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'email', 'date'}.contains(key));}
+GitCreateCommitRequestCommitter copyWith({String? Function()? name, String? Function()? email, DateTime? Function()? date, }) {return GitCreateCommitRequestCommitter(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
   date: date != null ? date() : this.date,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GitCreateCommitRequestCommitter &&
           name == other.name &&
           email == other.email &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(name, email, date); } 
-@override String toString() { return 'GitCreateCommitRequestCommitter(name: $name, email: $email, date: $date)'; } 
- }
+          date == other.date;}
+@override int get hashCode {return Object.hash(name, email, date);}
+@override String toString() {return 'GitCreateCommitRequestCommitter(name: $name, email: $email, date: $date)';}
+}

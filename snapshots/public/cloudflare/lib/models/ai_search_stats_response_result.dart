@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchStatsResponseResult {const AiSearchStatsResponseResult({this.completed, this.error, this.fileEmbedErrors, this.indexSourceErrors, this.lastActivity, this.queued, this.running, this.skipped, });
 
-factory AiSearchStatsResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchStatsResponseResult(
+factory AiSearchStatsResponseResult.fromJson(Map<String, dynamic> json) {return AiSearchStatsResponseResult(
   completed: json['completed'] != null ? (json['completed'] as num).toInt() : null,
   error: json['error'] != null ? (json['error'] as num).toInt() : null,
   fileEmbedErrors: json['file_embed_errors'] as Map<String, dynamic>?,
@@ -11,7 +11,7 @@ factory AiSearchStatsResponseResult.fromJson(Map<String, dynamic> json) { return
   queued: json['queued'] != null ? (json['queued'] as num).toInt() : null,
   running: json['running'] != null ? (json['running'] as num).toInt() : null,
   skipped: json['skipped'] != null ? (json['skipped'] as num).toInt() : null,
-); }
+);}
 
 final int? completed;
 
@@ -29,7 +29,7 @@ final int? running;
 
 final int? skipped;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completed': ?completed,
   'error': ?error,
   'file_embed_errors': ?fileEmbedErrors,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   'queued': ?queued,
   'running': ?running,
   'skipped': ?skipped,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completed', 'error', 'file_embed_errors', 'index_source_errors', 'last_activity', 'queued', 'running', 'skipped'}.contains(key)); } 
-AiSearchStatsResponseResult copyWith({int? Function()? completed, int? Function()? error, Map<String, dynamic>? Function()? fileEmbedErrors, Map<String, dynamic>? Function()? indexSourceErrors, DateTime? Function()? lastActivity, int? Function()? queued, int? Function()? running, int? Function()? skipped, }) { return AiSearchStatsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'completed', 'error', 'file_embed_errors', 'index_source_errors', 'last_activity', 'queued', 'running', 'skipped'}.contains(key));}
+AiSearchStatsResponseResult copyWith({int? Function()? completed, int? Function()? error, Map<String, dynamic>? Function()? fileEmbedErrors, Map<String, dynamic>? Function()? indexSourceErrors, DateTime? Function()? lastActivity, int? Function()? queued, int? Function()? running, int? Function()? skipped, }) {return AiSearchStatsResponseResult(
   completed: completed != null ? completed() : this.completed,
   error: error != null ? error() : this.error,
   fileEmbedErrors: fileEmbedErrors != null ? fileEmbedErrors() : this.fileEmbedErrors,
@@ -49,8 +49,8 @@ AiSearchStatsResponseResult copyWith({int? Function()? completed, int? Function(
   queued: queued != null ? queued() : this.queued,
   running: running != null ? running() : this.running,
   skipped: skipped != null ? skipped() : this.skipped,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchStatsResponseResult &&
           completed == other.completed &&
           error == other.error &&
@@ -59,7 +59,7 @@ AiSearchStatsResponseResult copyWith({int? Function()? completed, int? Function(
           lastActivity == other.lastActivity &&
           queued == other.queued &&
           running == other.running &&
-          skipped == other.skipped; } 
-@override int get hashCode { return Object.hash(completed, error, fileEmbedErrors, indexSourceErrors, lastActivity, queued, running, skipped); } 
-@override String toString() { return 'AiSearchStatsResponseResult(completed: $completed, error: $error, fileEmbedErrors: $fileEmbedErrors, indexSourceErrors: $indexSourceErrors, lastActivity: $lastActivity, queued: $queued, running: $running, skipped: $skipped)'; } 
- }
+          skipped == other.skipped;}
+@override int get hashCode {return Object.hash(completed, error, fileEmbedErrors, indexSourceErrors, lastActivity, queued, running, skipped);}
+@override String toString() {return 'AiSearchStatsResponseResult(completed: $completed, error: $error, fileEmbedErrors: $fileEmbedErrors, indexSourceErrors: $indexSourceErrors, lastActivity: $lastActivity, queued: $queued, running: $running, skipped: $skipped)';}
+}

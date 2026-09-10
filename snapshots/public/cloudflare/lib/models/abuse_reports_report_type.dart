@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The abuse report type
 @immutable final class AbuseReportsReportType {const AbuseReportsReportType._(this.value);
 
-factory AbuseReportsReportType.fromJson(String json) { return switch (json) {
+factory AbuseReportsReportType.fromJson(String json) {return switch (json) {
   'PHISH' => phish,
   'GEN' => gen,
   'THREAT' => threat,
@@ -14,7 +14,7 @@ factory AbuseReportsReportType.fromJson(String json) { return switch (json) {
   'NCSEI' => ncsei,
   'NETWORK' => network,
   _ => AbuseReportsReportType._(json),
-}; }
+};}
 
 static const AbuseReportsReportType phish = AbuseReportsReportType._('PHISH');
 
@@ -38,11 +38,11 @@ static const List<AbuseReportsReportType> values = [phish, gen, threat, dmca, em
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsReportType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsReportType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AbuseReportsReportType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AbuseReportsReportType($value)';}
+}

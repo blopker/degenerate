@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_debit_reversal.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetTreasuryDebitReversalsResponseObject {const GetTreasuryDebitReversalsResponseObject._(this.value);
 
-factory GetTreasuryDebitReversalsResponseObject.fromJson(String json) { return switch (json) {
+factory GetTreasuryDebitReversalsResponseObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => GetTreasuryDebitReversalsResponseObject._(json),
-}; }
+};}
 
 static const GetTreasuryDebitReversalsResponseObject list = GetTreasuryDebitReversalsResponseObject._('list');
 
@@ -14,23 +14,23 @@ static const List<GetTreasuryDebitReversalsResponseObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTreasuryDebitReversalsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTreasuryDebitReversalsResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTreasuryDebitReversalsResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTreasuryDebitReversalsResponseObject($value)';}
+}
 /// 
 @immutable final class GetTreasuryDebitReversalsResponse {const GetTreasuryDebitReversalsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetTreasuryDebitReversalsResponse.fromJson(Map<String, dynamic> json) { return GetTreasuryDebitReversalsResponse(
+factory GetTreasuryDebitReversalsResponse.fromJson(Map<String, dynamic> json) {return GetTreasuryDebitReversalsResponse(
   data: (json['data'] as List<dynamic>).map((e) => TreasuryDebitReversal.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetTreasuryDebitReversalsResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<TreasuryDebitReversal> data;
@@ -44,28 +44,28 @@ final GetTreasuryDebitReversalsResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetTreasuryDebitReversalsResponse copyWith({List<TreasuryDebitReversal>? data, bool? hasMore, GetTreasuryDebitReversalsResponseObject? object, String? url, }) { return GetTreasuryDebitReversalsResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetTreasuryDebitReversalsResponse copyWith({List<TreasuryDebitReversal>? data, bool? hasMore, GetTreasuryDebitReversalsResponseObject? object, String? url, }) {return GetTreasuryDebitReversalsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetTreasuryDebitReversalsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetTreasuryDebitReversalsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'GetTreasuryDebitReversalsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// State of the release asset.
 @immutable final class ReleaseAssetState {const ReleaseAssetState._(this.value);
 
-factory ReleaseAssetState.fromJson(String json) { return switch (json) {
+factory ReleaseAssetState.fromJson(String json) {return switch (json) {
   'uploaded' => uploaded,
   'open' => open,
   _ => ReleaseAssetState._(json),
-}; }
+};}
 
 static const ReleaseAssetState uploaded = ReleaseAssetState._('uploaded');
 
@@ -17,18 +17,18 @@ static const List<ReleaseAssetState> values = [uploaded, open];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReleaseAssetState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReleaseAssetState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReleaseAssetState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReleaseAssetState($value)';}
+}
 /// Data related to a release.
 @immutable final class ReleaseAsset {const ReleaseAsset({required this.url, required this.browserDownloadUrl, required this.id, required this.nodeId, required this.name, required this.label, required this.state, required this.contentType, required this.size, required this.digest, required this.downloadCount, required this.createdAt, required this.updatedAt, required this.uploader, });
 
-factory ReleaseAsset.fromJson(Map<String, dynamic> json) { return ReleaseAsset(
+factory ReleaseAsset.fromJson(Map<String, dynamic> json) {return ReleaseAsset(
   url: Uri.parse(json['url'] as String),
   browserDownloadUrl: Uri.parse(json['browser_download_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -43,7 +43,7 @@ factory ReleaseAsset.fromJson(Map<String, dynamic> json) { return ReleaseAsset(
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   uploader: json['uploader'] != null ? SimpleUser.fromJson(json['uploader'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri url;
 
@@ -75,7 +75,7 @@ final DateTime updatedAt;
 
 final SimpleUser? uploader;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'browser_download_url': browserDownloadUrl.toString(),
   'id': id,
@@ -90,8 +90,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'uploader': uploader?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('browser_download_url') && json['browser_download_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -104,8 +104,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('download_count') && json['download_count'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('uploader'); } 
-ReleaseAsset copyWith({Uri? url, Uri? browserDownloadUrl, int? id, String? nodeId, String? name, String? Function()? label, ReleaseAssetState? state, String? contentType, int? size, String? Function()? digest, int? downloadCount, DateTime? createdAt, DateTime? updatedAt, SimpleUser? Function()? uploader, }) { return ReleaseAsset(
+      json.containsKey('uploader');}
+ReleaseAsset copyWith({Uri? url, Uri? browserDownloadUrl, int? id, String? nodeId, String? name, String? Function()? label, ReleaseAssetState? state, String? contentType, int? size, String? Function()? digest, int? downloadCount, DateTime? createdAt, DateTime? updatedAt, SimpleUser? Function()? uploader, }) {return ReleaseAsset(
   url: url ?? this.url,
   browserDownloadUrl: browserDownloadUrl ?? this.browserDownloadUrl,
   id: id ?? this.id,
@@ -120,8 +120,8 @@ ReleaseAsset copyWith({Uri? url, Uri? browserDownloadUrl, int? id, String? nodeI
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   uploader: uploader != null ? uploader() : this.uploader,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReleaseAsset &&
           url == other.url &&
           browserDownloadUrl == other.browserDownloadUrl &&
@@ -136,7 +136,7 @@ ReleaseAsset copyWith({Uri? url, Uri? browserDownloadUrl, int? id, String? nodeI
           downloadCount == other.downloadCount &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          uploader == other.uploader; } 
-@override int get hashCode { return Object.hash(url, browserDownloadUrl, id, nodeId, name, label, state, contentType, size, digest, downloadCount, createdAt, updatedAt, uploader); } 
-@override String toString() { return 'ReleaseAsset(url: $url, browserDownloadUrl: $browserDownloadUrl, id: $id, nodeId: $nodeId, name: $name, label: $label, state: $state, contentType: $contentType, size: $size, digest: $digest, downloadCount: $downloadCount, createdAt: $createdAt, updatedAt: $updatedAt, uploader: $uploader)'; } 
- }
+          uploader == other.uploader;}
+@override int get hashCode {return Object.hash(url, browserDownloadUrl, id, nodeId, name, label, state, contentType, size, digest, downloadCount, createdAt, updatedAt, uploader);}
+@override String toString() {return 'ReleaseAsset(url: $url, browserDownloadUrl: $browserDownloadUrl, id: $id, nodeId: $nodeId, name: $name, label: $label, state: $state, contentType: $contentType, size: $size, digest: $digest, downloadCount: $downloadCount, createdAt: $createdAt, updatedAt: $updatedAt, uploader: $uploader)';}
+}

@@ -13,7 +13,7 @@ final class CloudflareTunnelConfigurationApi with ApiExecutor {const CloudflareT
 /// Gets the configuration for a remotely-managed tunnel
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<TunnelConfiguration?, ResponseCommonFailure73>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelConfiguration?, ResponseCommonFailure73>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,30 +22,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure73.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure73.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Put configuration
 ///
 /// Adds or updates the configuration for a remotely-managed tunnel.
 ///
 /// `PUT /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<TunnelConfiguration?, ResponseCommonFailure73>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelConfiguration?, ResponseCommonFailure73>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,22 +45,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure73.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure73.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

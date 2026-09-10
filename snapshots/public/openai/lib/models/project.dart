@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project`
 @immutable final class ProjectObject {const ProjectObject._(this.value);
 
-factory ProjectObject.fromJson(String json) { return switch (json) {
+factory ProjectObject.fromJson(String json) {return switch (json) {
   'organization.project' => organizationProject,
   _ => ProjectObject._(json),
-}; }
+};}
 
 static const ProjectObject organizationProject = ProjectObject._('organization.project');
 
@@ -14,22 +14,22 @@ static const List<ProjectObject> values = [organizationProject];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectObject($value)';}
+}
 /// `active` or `archived`
 @immutable final class ProjectStatus {const ProjectStatus._(this.value);
 
-factory ProjectStatus.fromJson(String json) { return switch (json) {
+factory ProjectStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'archived' => archived,
   _ => ProjectStatus._(json),
-}; }
+};}
 
 static const ProjectStatus active = ProjectStatus._('active');
 
@@ -39,25 +39,25 @@ static const List<ProjectStatus> values = [active, archived];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ProjectStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ProjectStatus($value)';}
+}
 /// Represents an individual project.
 @immutable final class Project {const Project({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.archivedAt = const Omittable.absent(), });
 
-factory Project.fromJson(Map<String, dynamic> json) { return Project(
+factory Project.fromJson(Map<String, dynamic> json) {return Project(
   id: json['id'] as String,
   object: ProjectObject.fromJson(json['object'] as String),
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   archivedAt: json.containsKey('archived_at') ? Omittable(json['archived_at'] != null ? (json['archived_at'] as num).toInt() : null) : const Omittable.absent(),
   status: ProjectStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints
 final String id;
@@ -77,35 +77,35 @@ final Omittable<int?> archivedAt;
 /// `active` or `archived`
 final ProjectStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'name': name,
   'created_at': createdAt,
   if (archivedAt.isPresent) 'archived_at': archivedAt.value,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('status'); } 
-Project copyWith({String? id, ProjectObject? object, String? name, int? createdAt, Omittable<int?>? archivedAt, ProjectStatus? status, }) { return Project(
+      json.containsKey('status');}
+Project copyWith({String? id, ProjectObject? object, String? name, int? createdAt, Omittable<int?>? archivedAt, ProjectStatus? status, }) {return Project(
   id: id ?? this.id,
   object: object ?? this.object,
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   archivedAt: archivedAt ?? this.archivedAt,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Project &&
           id == other.id &&
           object == other.object &&
           name == other.name &&
           createdAt == other.createdAt &&
           archivedAt == other.archivedAt &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, object, name, createdAt, archivedAt, status); } 
-@override String toString() { return 'Project(id: $id, object: $object, name: $name, createdAt: $createdAt, archivedAt: $archivedAt, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(id, object, name, createdAt, archivedAt, status);}
+@override String toString() {return 'Project(id: $id, object: $object, name: $name, createdAt: $createdAt, archivedAt: $archivedAt, status: $status)';}
+}

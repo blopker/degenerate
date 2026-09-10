@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigAiSearchRequestFiltersVariant1Type {const AutoragConfigAiSearchRequestFiltersVariant1Type._(this.value);
 
-factory AutoragConfigAiSearchRequestFiltersVariant1Type.fromJson(String json) { return switch (json) {
+factory AutoragConfigAiSearchRequestFiltersVariant1Type.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'ne' => ne,
   'gt' => gt,
@@ -10,7 +10,7 @@ factory AutoragConfigAiSearchRequestFiltersVariant1Type.fromJson(String json) { 
   'lt' => lt,
   'lte' => lte,
   _ => AutoragConfigAiSearchRequestFiltersVariant1Type._(json),
-}; }
+};}
 
 static const AutoragConfigAiSearchRequestFiltersVariant1Type eq = AutoragConfigAiSearchRequestFiltersVariant1Type._('eq');
 
@@ -28,21 +28,21 @@ static const List<AutoragConfigAiSearchRequestFiltersVariant1Type> values = [eq,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoragConfigAiSearchRequestFiltersVariant1Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutoragConfigAiSearchRequestFiltersVariant1Type($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AutoragConfigAiSearchRequestFiltersVariant1Type && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AutoragConfigAiSearchRequestFiltersVariant1Type($value)';}
+}
 @immutable final class AutoragConfigAiSearchRequestFiltersVariant1 {const AutoragConfigAiSearchRequestFiltersVariant1({required this.key, required this.type, required this.value, });
 
-factory AutoragConfigAiSearchRequestFiltersVariant1.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequestFiltersVariant1(
+factory AutoragConfigAiSearchRequestFiltersVariant1.fromJson(Map<String, dynamic> json) {return AutoragConfigAiSearchRequestFiltersVariant1(
   key: json['key'] as String,
   type: AutoragConfigAiSearchRequestFiltersVariant1Type.fromJson(json['type'] as String),
   value: json['value'],
-); }
+);}
 
 final String key;
 
@@ -51,24 +51,24 @@ final AutoragConfigAiSearchRequestFiltersVariant1Type type;
 /// One of: String, double, bool
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('type') &&
-      json.containsKey('value'); } 
-AutoragConfigAiSearchRequestFiltersVariant1 copyWith({String? key, AutoragConfigAiSearchRequestFiltersVariant1Type? type, dynamic value, }) { return AutoragConfigAiSearchRequestFiltersVariant1(
+      json.containsKey('value');}
+AutoragConfigAiSearchRequestFiltersVariant1 copyWith({String? key, AutoragConfigAiSearchRequestFiltersVariant1Type? type, dynamic value, }) {return AutoragConfigAiSearchRequestFiltersVariant1(
   key: key ?? this.key,
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AutoragConfigAiSearchRequestFiltersVariant1 &&
           key == other.key &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, type, value); } 
-@override String toString() { return 'AutoragConfigAiSearchRequestFiltersVariant1(key: $key, type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(key, type, value);}
+@override String toString() {return 'AutoragConfigAiSearchRequestFiltersVariant1(key: $key, type: $type, value: $value)';}
+}

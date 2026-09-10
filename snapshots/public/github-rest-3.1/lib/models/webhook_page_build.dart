@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_page_build_build.dart';@immutable final class WebhookPageBuild {const WebhookPageBuild({required this.build, required this.id, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPageBuild.fromJson(Map<String, dynamic> json) { return WebhookPageBuild(
+factory WebhookPageBuild.fromJson(Map<String, dynamic> json) {return WebhookPageBuild(
   build: WebhookPageBuildBuild.fromJson(json['build'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   id: (json['id'] as num).toInt(),
@@ -10,7 +10,7 @@ factory WebhookPageBuild.fromJson(Map<String, dynamic> json) { return WebhookPag
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 /// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
 final WebhookPageBuildBuild build;
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'build': build.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'id': id,
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('build') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('build') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookPageBuild copyWith({WebhookPageBuildBuild? build, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPageBuild(
+      json.containsKey('sender');}
+WebhookPageBuild copyWith({WebhookPageBuildBuild? build, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookPageBuild(
   build: build ?? this.build,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   id: id ?? this.id,
@@ -48,8 +48,8 @@ WebhookPageBuild copyWith({WebhookPageBuildBuild? build, EnterpriseWebhooks? Fun
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPageBuild &&
           build == other.build &&
           enterprise == other.enterprise &&
@@ -57,7 +57,7 @@ WebhookPageBuild copyWith({WebhookPageBuildBuild? build, EnterpriseWebhooks? Fun
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(build, enterprise, id, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookPageBuild(build: $build, enterprise: $enterprise, id: $id, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(build, enterprise, id, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookPageBuild(build: $build, enterprise: $enterprise, id: $id, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

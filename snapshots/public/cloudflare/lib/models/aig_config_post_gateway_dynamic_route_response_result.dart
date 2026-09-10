@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_response_result_deployment.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_conditional.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_end.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_model.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_percentage.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_rate.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_start.dart';import 'aig_config_post_gateway_dynamic_route_response_result_version.dart';@immutable final class AigConfigPostGatewayDynamicRouteResponseResult {const AigConfigPostGatewayDynamicRouteResponseResult({required this.createdAt, required this.deployment, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.version, });
 
-factory AigConfigPostGatewayDynamicRouteResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponseResult(
+factory AigConfigPostGatewayDynamicRouteResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),
   deployment: AigConfigPostGatewayDynamicRouteResponseResultDeployment.fromJson(json['deployment'] as Map<String, dynamic>),
   elements: (json['elements'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => AigConfigPostGatewayDynamicRouteResponseResultElementsStart.fromJson(v as Map<String, dynamic>), fromB: (v) => AigConfigPostGatewayDynamicRouteResponseResultElementsConditional.fromJson(v as Map<String, dynamic>), fromC: (v) => AigConfigPostGatewayDynamicRouteResponseResultElementsPercentage.fromJson(v as Map<String, dynamic>), fromD: (v) => AigConfigPostGatewayDynamicRouteResponseResultElementsRate.fromJson(v as Map<String, dynamic>), fromE: (v) => AigConfigPostGatewayDynamicRouteResponseResultElementsModel.fromJson(v as Map<String, dynamic>), fromF: (v) => AigConfigPostGatewayDynamicRouteResponseResultElementsEnd.fromJson(v as Map<String, dynamic>),)).toList(),
@@ -11,7 +11,7 @@ factory AigConfigPostGatewayDynamicRouteResponseResult.fromJson(Map<String, dyna
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
   version: AigConfigPostGatewayDynamicRouteResponseResultVersion.fromJson(json['version'] as Map<String, dynamic>),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -29,7 +29,7 @@ final String name;
 
 final AigConfigPostGatewayDynamicRouteResponseResultVersion version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'deployment': deployment.toJson(),
   'elements': elements.map((e) => e.toJson()).toList(),
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
   'version': version.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('deployment') &&
       json.containsKey('elements') &&
       json.containsKey('gateway_id') && json['gateway_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version'); } 
-AigConfigPostGatewayDynamicRouteResponseResult copyWith({DateTime? createdAt, AigConfigPostGatewayDynamicRouteResponseResultDeployment? deployment, List<AigConfigPostGatewayDynamicRouteResponseResultElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, AigConfigPostGatewayDynamicRouteResponseResultVersion? version, }) { return AigConfigPostGatewayDynamicRouteResponseResult(
+      json.containsKey('version');}
+AigConfigPostGatewayDynamicRouteResponseResult copyWith({DateTime? createdAt, AigConfigPostGatewayDynamicRouteResponseResultDeployment? deployment, List<AigConfigPostGatewayDynamicRouteResponseResultElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, AigConfigPostGatewayDynamicRouteResponseResultVersion? version, }) {return AigConfigPostGatewayDynamicRouteResponseResult(
   createdAt: createdAt ?? this.createdAt,
   deployment: deployment ?? this.deployment,
   elements: elements ?? this.elements,
@@ -56,8 +56,8 @@ AigConfigPostGatewayDynamicRouteResponseResult copyWith({DateTime? createdAt, Ai
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteResponseResult &&
           createdAt == other.createdAt &&
           deployment == other.deployment &&
@@ -66,7 +66,7 @@ AigConfigPostGatewayDynamicRouteResponseResult copyWith({DateTime? createdAt, Ai
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           name == other.name &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, deployment, Object.hashAll(elements), gatewayId, id, modifiedAt, name, version); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResult(createdAt: $createdAt, deployment: $deployment, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(createdAt, deployment, Object.hashAll(elements), gatewayId, id, modifiedAt, name, version);}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteResponseResult(createdAt: $createdAt, deployment: $deployment, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version)';}
+}

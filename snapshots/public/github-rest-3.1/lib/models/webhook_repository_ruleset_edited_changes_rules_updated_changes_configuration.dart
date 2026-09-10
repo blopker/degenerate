@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration {const WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration({this.from});
 
-factory WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration(
+factory WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration.fromJson(Map<String, dynamic> json) {return WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration(
   from: json['from'] as String?,
-); }
+);}
 
 final String? from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': ?from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from'}.contains(key)); } 
-WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration copyWith({String? Function()? from}) { return WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'from'}.contains(key));}
+WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration copyWith({String? Function()? from}) {return WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration(
   from: from != null ? from() : this.from,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration &&
-          from == other.from; } 
-@override int get hashCode { return from.hashCode; } 
-@override String toString() { return 'WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration(from: $from)'; } 
- }
+          from == other.from;}
+@override int get hashCode {return from.hashCode;}
+@override String toString() {return 'WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration(from: $from)';}
+}

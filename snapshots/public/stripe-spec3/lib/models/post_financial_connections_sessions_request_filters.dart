@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories {const PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories._(this.value);
 
-factory PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
+factory PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'credit_card' => creditCard,
   'line_of_credit' => lineOfCredit,
   'mortgage' => mortgage,
   'savings' => savings,
   _ => PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories._(json),
-}; }
+};}
 
 static const PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories checking = PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories._('checking');
 
@@ -25,39 +25,39 @@ static const List<PostFinancialConnectionsSessionsRequestFiltersAccountSubcatego
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories($value)';}
+}
 /// Filters to restrict the kinds of accounts to collect.
 @immutable final class PostFinancialConnectionsSessionsRequestFilters {const PostFinancialConnectionsSessionsRequestFilters({this.accountSubcategories, this.countries, });
 
-factory PostFinancialConnectionsSessionsRequestFilters.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsSessionsRequestFilters(
+factory PostFinancialConnectionsSessionsRequestFilters.fromJson(Map<String, dynamic> json) {return PostFinancialConnectionsSessionsRequestFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories.fromJson(e as String)).toList(),
   countries: (json['countries'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories>? accountSubcategories;
 
 final List<String>? countries;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
   'countries': ?countries,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories', 'countries'}.contains(key)); } 
-PostFinancialConnectionsSessionsRequestFilters copyWith({List<PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories>? Function()? accountSubcategories, List<String>? Function()? countries, }) { return PostFinancialConnectionsSessionsRequestFilters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_subcategories', 'countries'}.contains(key));}
+PostFinancialConnectionsSessionsRequestFilters copyWith({List<PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories>? Function()? accountSubcategories, List<String>? Function()? countries, }) {return PostFinancialConnectionsSessionsRequestFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
   countries: countries != null ? countries() : this.countries,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostFinancialConnectionsSessionsRequestFilters &&
           listEquals(accountSubcategories, other.accountSubcategories) &&
-          listEquals(countries, other.countries); } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountSubcategories ?? const []), Object.hashAll(countries ?? const [])); } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequestFilters(accountSubcategories: $accountSubcategories, countries: $countries)'; } 
- }
+          listEquals(countries, other.countries);}
+@override int get hashCode {return Object.hash(Object.hashAll(accountSubcategories ?? const []), Object.hashAll(countries ?? const []));}
+@override String toString() {return 'PostFinancialConnectionsSessionsRequestFilters(accountSubcategories: $accountSubcategories, countries: $countries)';}
+}

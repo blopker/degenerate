@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._(this.value);
 
-factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode.fromJson(String json) { return switch (json) {
+factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'bank_account_restricted' => bankAccountRestricted,
@@ -14,7 +14,7 @@ factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCod
   'no_account' => noAccount,
   'other' => $other,
   _ => PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._(json),
-}; }
+};}
 
 static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode accountClosed = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('account_closed');
 
@@ -40,33 +40,33 @@ static const List<PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturned
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode($value)';}
+}
 /// Optional hash to set the return code.
 @immutable final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails({this.code});
 
-factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(
+factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails.fromJson(Map<String, dynamic> json) {return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(
   code: json['code'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode.fromJson(json['code'] as String) : null,
-); }
+);}
 
 final PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode? code;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (code != null) 'code': code?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code'}.contains(key)); } 
-PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails copyWith({PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode? Function()? code}) { return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code'}.contains(key));}
+PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails copyWith({PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode? Function()? code}) {return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(
   code: code != null ? code() : this.code,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails &&
-          code == other.code; } 
-@override int get hashCode { return code.hashCode; } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(code: $code)'; } 
- }
+          code == other.code;}
+@override int get hashCode {return code.hashCode;}
+@override String toString() {return 'PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(code: $code)';}
+}

@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityBatchBlockedSendersRequestDeletes {const EmailSecurityBatchBlockedSendersRequestDeletes({required this.id});
 
-factory EmailSecurityBatchBlockedSendersRequestDeletes.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchBlockedSendersRequestDeletes(
+factory EmailSecurityBatchBlockedSendersRequestDeletes.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchBlockedSendersRequestDeletes(
   id: (json['id'] as num).toInt(),
-); }
+);}
 
 /// The unique identifier for the allow policy.
 final int id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
-EmailSecurityBatchBlockedSendersRequestDeletes copyWith({int? id}) { return EmailSecurityBatchBlockedSendersRequestDeletes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num;}
+EmailSecurityBatchBlockedSendersRequestDeletes copyWith({int? id}) {return EmailSecurityBatchBlockedSendersRequestDeletes(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityBatchBlockedSendersRequestDeletes &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'EmailSecurityBatchBlockedSendersRequestDeletes(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'EmailSecurityBatchBlockedSendersRequestDeletes(id: $id)';}
+}

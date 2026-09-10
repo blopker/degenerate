@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response202_result_scan_task_errors.dart';@immutable final class UrlscannerGetScanHarResponse202ResultScanTask {const UrlscannerGetScanHarResponse202ResultScanTask({required this.effectiveUrl, required this.errors, required this.location, required this.region, required this.status, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
 
-factory UrlscannerGetScanHarResponse202ResultScanTask.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse202ResultScanTask(
+factory UrlscannerGetScanHarResponse202ResultScanTask.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponse202ResultScanTask(
   effectiveUrl: json['effectiveUrl'] as String,
   errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponse202ResultScanTaskErrors.fromJson(e as Map<String, dynamic>)).toList(),
   location: json['location'] as String,
@@ -13,7 +13,7 @@ factory UrlscannerGetScanHarResponse202ResultScanTask.fromJson(Map<String, dynam
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: json['visibility'] as String,
-); }
+);}
 
 final String effectiveUrl;
 
@@ -35,7 +35,7 @@ final String uuid;
 
 final String visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'effectiveUrl': effectiveUrl,
   'errors': errors.map((e) => e.toJson()).toList(),
   'location': location,
@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'uuid': uuid,
   'visibility': visibility,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('effectiveUrl') && json['effectiveUrl'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('effectiveUrl') && json['effectiveUrl'] is String &&
       json.containsKey('errors') &&
       json.containsKey('location') && json['location'] is String &&
       json.containsKey('region') && json['region'] is String &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('effec
       json.containsKey('time') && json['time'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility') && json['visibility'] is String; } 
-UrlscannerGetScanHarResponse202ResultScanTask copyWith({String? effectiveUrl, List<UrlscannerGetScanHarResponse202ResultScanTaskErrors>? errors, String? location, String? region, String? status, bool? success, String? time, String? url, String? uuid, String? visibility, }) { return UrlscannerGetScanHarResponse202ResultScanTask(
+      json.containsKey('visibility') && json['visibility'] is String;}
+UrlscannerGetScanHarResponse202ResultScanTask copyWith({String? effectiveUrl, List<UrlscannerGetScanHarResponse202ResultScanTaskErrors>? errors, String? location, String? region, String? status, bool? success, String? time, String? url, String? uuid, String? visibility, }) {return UrlscannerGetScanHarResponse202ResultScanTask(
   effectiveUrl: effectiveUrl ?? this.effectiveUrl,
   errors: errors ?? this.errors,
   location: location ?? this.location,
@@ -68,8 +68,8 @@ UrlscannerGetScanHarResponse202ResultScanTask copyWith({String? effectiveUrl, Li
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponse202ResultScanTask &&
           effectiveUrl == other.effectiveUrl &&
           listEquals(errors, other.errors) &&
@@ -80,7 +80,7 @@ UrlscannerGetScanHarResponse202ResultScanTask copyWith({String? effectiveUrl, Li
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(effectiveUrl, Object.hashAll(errors), location, region, status, success, time, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerGetScanHarResponse202ResultScanTask(effectiveUrl: $effectiveUrl, errors: $errors, location: $location, region: $region, status: $status, success: $success, time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
- }
+          visibility == other.visibility;}
+@override int get hashCode {return Object.hash(effectiveUrl, Object.hashAll(errors), location, region, status, success, time, url, uuid, visibility);}
+@override String toString() {return 'UrlscannerGetScanHarResponse202ResultScanTask(effectiveUrl: $effectiveUrl, errors: $errors, location: $location, region: $region, status: $status, success: $success, time: $time, url: $url, uuid: $uuid, visibility: $visibility)';}
+}

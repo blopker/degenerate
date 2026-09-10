@@ -16,13 +16,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when th
 /// 
 @immutable final class RealtimeServerEventInputAudioBufferTimeoutTriggered {const RealtimeServerEventInputAudioBufferTimeoutTriggered({required this.eventId, required this.type, required this.audioStartMs, required this.audioEndMs, required this.itemId, });
 
-factory RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferTimeoutTriggered(
+factory RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(Map<String, dynamic> json) {return RealtimeServerEventInputAudioBufferTimeoutTriggered(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   audioStartMs: (json['audio_start_ms'] as num).toInt(),
   audioEndMs: (json['audio_end_ms'] as num).toInt(),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -39,32 +39,32 @@ final int audioEndMs;
 /// The ID of the item associated with this segment.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'audio_start_ms': audioStartMs,
   'audio_end_ms': audioEndMs,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('audio_start_ms') && json['audio_start_ms'] is num &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventInputAudioBufferTimeoutTriggered copyWith({String? eventId, String? type, int? audioStartMs, int? audioEndMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferTimeoutTriggered(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeServerEventInputAudioBufferTimeoutTriggered copyWith({String? eventId, String? type, int? audioStartMs, int? audioEndMs, String? itemId, }) {return RealtimeServerEventInputAudioBufferTimeoutTriggered(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   audioStartMs: audioStartMs ?? this.audioStartMs,
   audioEndMs: audioEndMs ?? this.audioEndMs,
   itemId: itemId ?? this.itemId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventInputAudioBufferTimeoutTriggered &&
           eventId == other.eventId &&
           type == other.type &&
           audioStartMs == other.audioStartMs &&
           audioEndMs == other.audioEndMs &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, audioStartMs, audioEndMs, itemId); } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferTimeoutTriggered(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, audioEndMs: $audioEndMs, itemId: $itemId)'; } 
- }
+          itemId == other.itemId;}
+@override int get hashCode {return Object.hash(eventId, type, audioStartMs, audioEndMs, itemId);}
+@override String toString() {return 'RealtimeServerEventInputAudioBufferTimeoutTriggered(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, audioEndMs: $audioEndMs, itemId: $itemId)';}
+}

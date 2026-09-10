@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_project_create_project_request_source_config.dart';/// The source control management provider.
 @immutable final class PagesProjectCreateProjectRequestSourceType {const PagesProjectCreateProjectRequestSourceType._(this.value);
 
-factory PagesProjectCreateProjectRequestSourceType.fromJson(String json) { return switch (json) {
+factory PagesProjectCreateProjectRequestSourceType.fromJson(String json) {return switch (json) {
   'github' => github,
   'gitlab' => gitlab,
   _ => PagesProjectCreateProjectRequestSourceType._(json),
-}; }
+};}
 
 static const PagesProjectCreateProjectRequestSourceType github = PagesProjectCreateProjectRequestSourceType._('github');
 
@@ -17,41 +17,41 @@ static const List<PagesProjectCreateProjectRequestSourceType> values = [github, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesProjectCreateProjectRequestSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesProjectCreateProjectRequestSourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesProjectCreateProjectRequestSourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesProjectCreateProjectRequestSourceType($value)';}
+}
 /// Configs for the project source control.
 @immutable final class PagesProjectCreateProjectRequestSource {const PagesProjectCreateProjectRequestSource({required this.config, required this.type, });
 
-factory PagesProjectCreateProjectRequestSource.fromJson(Map<String, dynamic> json) { return PagesProjectCreateProjectRequestSource(
+factory PagesProjectCreateProjectRequestSource.fromJson(Map<String, dynamic> json) {return PagesProjectCreateProjectRequestSource(
   config: PagesProjectCreateProjectRequestSourceConfig.fromJson(json['config'] as Map<String, dynamic>),
   type: PagesProjectCreateProjectRequestSourceType.fromJson(json['type'] as String),
-); }
+);}
 
 final PagesProjectCreateProjectRequestSourceConfig config;
 
 /// The source control management provider.
 final PagesProjectCreateProjectRequestSourceType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
-      json.containsKey('type'); } 
-PagesProjectCreateProjectRequestSource copyWith({PagesProjectCreateProjectRequestSourceConfig? config, PagesProjectCreateProjectRequestSourceType? type, }) { return PagesProjectCreateProjectRequestSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
+      json.containsKey('type');}
+PagesProjectCreateProjectRequestSource copyWith({PagesProjectCreateProjectRequestSourceConfig? config, PagesProjectCreateProjectRequestSourceType? type, }) {return PagesProjectCreateProjectRequestSource(
   config: config ?? this.config,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesProjectCreateProjectRequestSource &&
           config == other.config &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, type); } 
-@override String toString() { return 'PagesProjectCreateProjectRequestSource(config: $config, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, type);}
+@override String toString() {return 'PagesProjectCreateProjectRequestSource(config: $config, type: $type)';}
+}

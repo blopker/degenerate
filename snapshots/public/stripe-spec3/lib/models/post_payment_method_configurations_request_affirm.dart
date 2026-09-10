@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_affirm_display_preference.dart';/// [Affirm](https://www.affirm.com/) gives your customers a way to split purchases over a series of payments. Depending on the purchase, they can pay with four interest-free payments (Split Pay) or pay over a longer term (Installments), which might include interest. Check this [page](https://docs.stripe.com/payments/affirm) for more details like country availability.
 @immutable final class PostPaymentMethodConfigurationsRequestAffirm {const PostPaymentMethodConfigurationsRequestAffirm({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsRequestAffirm.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAffirm(
+factory PostPaymentMethodConfigurationsRequestAffirm.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestAffirm(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestAffirmDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestAffirmDisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestAffirm copyWith({PostPaymentMethodConfigurationsRequestAffirmDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestAffirm(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestAffirm copyWith({PostPaymentMethodConfigurationsRequestAffirmDisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsRequestAffirm(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestAffirm &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestAffirm(displayPreference: $displayPreference)'; } 
- }
+          displayPreference == other.displayPreference;}
+@override int get hashCode {return displayPreference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestAffirm(displayPreference: $displayPreference)';}
+}

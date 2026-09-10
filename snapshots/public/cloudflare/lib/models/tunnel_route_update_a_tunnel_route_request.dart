@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_ip_network.dart';import 'tunnel_route_comment.dart';import 'tunnel_virtual_network_id_computed_optional.dart';@immutable final class TunnelRouteUpdateATunnelRouteRequest {const TunnelRouteUpdateATunnelRouteRequest({this.comment, this.network, this.virtualNetworkId, });
 
-factory TunnelRouteUpdateATunnelRouteRequest.fromJson(Map<String, dynamic> json) { return TunnelRouteUpdateATunnelRouteRequest(
+factory TunnelRouteUpdateATunnelRouteRequest.fromJson(Map<String, dynamic> json) {return TunnelRouteUpdateATunnelRouteRequest(
   comment: json['comment'] != null ? TunnelRouteComment.fromJson(json['comment'] as String) : null,
   network: json['network'] != null ? TunnelIpNetwork.fromJson(json['network'] as String) : null,
   virtualNetworkId: json['virtual_network_id'] != null ? TunnelVirtualNetworkIdComputedOptional.fromJson(json['virtual_network_id'] as String) : null,
-); }
+);}
 
 /// Optional remark describing the route.
 final TunnelRouteComment? comment;
@@ -17,22 +17,22 @@ final TunnelIpNetwork? network;
 /// UUID of the virtual network.
 final TunnelVirtualNetworkIdComputedOptional? virtualNetworkId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (network != null) 'network': network?.toJson(),
   if (virtualNetworkId != null) 'virtual_network_id': virtualNetworkId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'network', 'virtual_network_id'}.contains(key)); } 
-TunnelRouteUpdateATunnelRouteRequest copyWith({TunnelRouteComment? Function()? comment, TunnelIpNetwork? Function()? network, TunnelVirtualNetworkIdComputedOptional? Function()? virtualNetworkId, }) { return TunnelRouteUpdateATunnelRouteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'network', 'virtual_network_id'}.contains(key));}
+TunnelRouteUpdateATunnelRouteRequest copyWith({TunnelRouteComment? Function()? comment, TunnelIpNetwork? Function()? network, TunnelVirtualNetworkIdComputedOptional? Function()? virtualNetworkId, }) {return TunnelRouteUpdateATunnelRouteRequest(
   comment: comment != null ? comment() : this.comment,
   network: network != null ? network() : this.network,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TunnelRouteUpdateATunnelRouteRequest &&
           comment == other.comment &&
           network == other.network &&
-          virtualNetworkId == other.virtualNetworkId; } 
-@override int get hashCode { return Object.hash(comment, network, virtualNetworkId); } 
-@override String toString() { return 'TunnelRouteUpdateATunnelRouteRequest(comment: $comment, network: $network, virtualNetworkId: $virtualNetworkId)'; } 
- }
+          virtualNetworkId == other.virtualNetworkId;}
+@override int get hashCode {return Object.hash(comment, network, virtualNetworkId);}
+@override String toString() {return 'TunnelRouteUpdateATunnelRouteRequest(comment: $comment, network: $network, virtualNetworkId: $virtualNetworkId)';}
+}

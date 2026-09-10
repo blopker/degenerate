@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponse {const RadarGetBgpRpkiAspaChangesResponse({required this.result, required this.success, });
 
-factory RadarGetBgpRpkiAspaChangesResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponse(
+factory RadarGetBgpRpkiAspaChangesResponse.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaChangesResponse(
   result: RadarGetBgpRpkiAspaChangesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetBgpRpkiAspaChangesResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetBgpRpkiAspaChangesResponse copyWith({RadarGetBgpRpkiAspaChangesResponseResult? result, bool? success, }) { return RadarGetBgpRpkiAspaChangesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetBgpRpkiAspaChangesResponse copyWith({RadarGetBgpRpkiAspaChangesResponseResult? result, bool? success, }) {return RadarGetBgpRpkiAspaChangesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRpkiAspaChangesResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaChangesResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetBgpRpkiAspaChangesResponse(result: $result, success: $success)';}
+}

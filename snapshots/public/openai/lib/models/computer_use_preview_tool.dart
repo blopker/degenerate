@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ComputerEnvironment {const ComputerEnvironment._(this.value);
 
-factory ComputerEnvironment.fromJson(String json) { return switch (json) {
+factory ComputerEnvironment.fromJson(String json) {return switch (json) {
   'windows' => windows,
   'mac' => mac,
   'linux' => linux,
   'ubuntu' => ubuntu,
   'browser' => browser,
   _ => ComputerEnvironment._(json),
-}; }
+};}
 
 static const ComputerEnvironment windows = ComputerEnvironment._('windows');
 
@@ -25,23 +25,23 @@ static const List<ComputerEnvironment> values = [windows, mac, linux, ubuntu, br
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerEnvironment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerEnvironment($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ComputerEnvironment && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ComputerEnvironment($value)';}
+}
 /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
 @immutable final class ComputerUsePreviewTool {const ComputerUsePreviewTool({required this.type, required this.environment, required this.displayWidth, required this.displayHeight, });
 
-factory ComputerUsePreviewTool.fromJson(Map<String, dynamic> json) { return ComputerUsePreviewTool(
+factory ComputerUsePreviewTool.fromJson(Map<String, dynamic> json) {return ComputerUsePreviewTool(
   type: json['type'] as String,
   environment: ComputerEnvironment.fromJson(json['environment'] as String),
   displayWidth: (json['display_width'] as num).toInt(),
   displayHeight: (json['display_height'] as num).toInt(),
-); }
+);}
 
 /// The type of the computer use tool. Always `computer_use_preview`.
 final String type;
@@ -55,28 +55,28 @@ final int displayWidth;
 /// The height of the computer display.
 final int displayHeight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'environment': environment.toJson(),
   'display_width': displayWidth,
   'display_height': displayHeight,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('environment') &&
       json.containsKey('display_width') && json['display_width'] is num &&
-      json.containsKey('display_height') && json['display_height'] is num; } 
-ComputerUsePreviewTool copyWith({String? type, ComputerEnvironment? environment, int? displayWidth, int? displayHeight, }) { return ComputerUsePreviewTool(
+      json.containsKey('display_height') && json['display_height'] is num;}
+ComputerUsePreviewTool copyWith({String? type, ComputerEnvironment? environment, int? displayWidth, int? displayHeight, }) {return ComputerUsePreviewTool(
   type: type ?? this.type,
   environment: environment ?? this.environment,
   displayWidth: displayWidth ?? this.displayWidth,
   displayHeight: displayHeight ?? this.displayHeight,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ComputerUsePreviewTool &&
           type == other.type &&
           environment == other.environment &&
           displayWidth == other.displayWidth &&
-          displayHeight == other.displayHeight; } 
-@override int get hashCode { return Object.hash(type, environment, displayWidth, displayHeight); } 
-@override String toString() { return 'ComputerUsePreviewTool(type: $type, environment: $environment, displayWidth: $displayWidth, displayHeight: $displayHeight)'; } 
- }
+          displayHeight == other.displayHeight;}
+@override int get hashCode {return Object.hash(type, environment, displayWidth, displayHeight);}
+@override String toString() {return 'ComputerUsePreviewTool(type: $type, environment: $environment, displayWidth: $displayWidth, displayHeight: $displayHeight)';}
+}

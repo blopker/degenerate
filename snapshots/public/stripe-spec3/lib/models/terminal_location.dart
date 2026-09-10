@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_japan_address.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TerminalLocationObject {const TerminalLocationObject._(this.value);
 
-factory TerminalLocationObject.fromJson(String json) { return switch (json) {
+factory TerminalLocationObject.fromJson(String json) {return switch (json) {
   'terminal.location' => terminalLocation,
   _ => TerminalLocationObject._(json),
-}; }
+};}
 
 static const TerminalLocationObject terminalLocation = TerminalLocationObject._('terminal.location');
 
@@ -14,20 +14,20 @@ static const List<TerminalLocationObject> values = [terminalLocation];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalLocationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalLocationObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalLocationObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalLocationObject($value)';}
+}
 /// A Location represents a grouping of readers.
 /// 
 /// Related guide: [Fleet management](https://docs.stripe.com/terminal/fleet/locations)
 @immutable final class TerminalLocation {const TerminalLocation({required this.address, required this.displayName, required this.id, required this.livemode, required this.metadata, required this.object, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayNameKana, this.displayNameKanji, this.phone, });
 
-factory TerminalLocation.fromJson(Map<String, dynamic> json) { return TerminalLocation(
+factory TerminalLocation.fromJson(Map<String, dynamic> json) {return TerminalLocation(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
   addressKana: json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -40,7 +40,7 @@ factory TerminalLocation.fromJson(Map<String, dynamic> json) { return TerminalLo
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TerminalLocationObject.fromJson(json['object'] as String),
   phone: json['phone'] as String?,
-); }
+);}
 
 final Address address;
 
@@ -75,7 +75,7 @@ final TerminalLocationObject object;
 /// The phone number of the location.
 final String? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -88,14 +88,14 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'object': object.toJson(),
   'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
-      json.containsKey('object'); } 
-TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, String? Function()? configurationOverrides, String? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, TerminalLocationObject? object, String? Function()? phone, }) { return TerminalLocation(
+      json.containsKey('object');}
+TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, String? Function()? configurationOverrides, String? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, TerminalLocationObject? object, String? Function()? phone, }) {return TerminalLocation(
   address: address ?? this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -108,8 +108,8 @@ TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   phone: phone != null ? phone() : this.phone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalLocation &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -122,7 +122,7 @@ TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()
           livemode == other.livemode &&
           metadata == other.metadata &&
           object == other.object &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, id, livemode, metadata, object, phone); } 
-@override String toString() { return 'TerminalLocation(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phone: $phone)'; } 
- }
+          phone == other.phone;}
+@override int get hashCode {return Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, id, livemode, metadata, object, phone);}
+@override String toString() {return 'TerminalLocation(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phone: $phone)';}
+}

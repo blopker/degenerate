@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// New requested permissions, categorized by type of permission.
 @immutable final class PersonalAccessTokenRequestPermissionsAdded {const PersonalAccessTokenRequestPermissionsAdded({this.organization, this.repository, this.other, });
 
-factory PersonalAccessTokenRequestPermissionsAdded.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequestPermissionsAdded(
+factory PersonalAccessTokenRequestPermissionsAdded.fromJson(Map<String, dynamic> json) {return PersonalAccessTokenRequestPermissionsAdded(
   organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   repository: (json['repository'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   other: (json['other'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 final Map<String,String>? organization;
 
@@ -15,22 +15,22 @@ final Map<String,String>? repository;
 
 final Map<String,String>? other;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'organization': ?organization,
   'repository': ?repository,
   'other': ?other,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key)); } 
-PersonalAccessTokenRequestPermissionsAdded copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) { return PersonalAccessTokenRequestPermissionsAdded(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key));}
+PersonalAccessTokenRequestPermissionsAdded copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) {return PersonalAccessTokenRequestPermissionsAdded(
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   other: other != null ? other() : this.other,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersonalAccessTokenRequestPermissionsAdded &&
           organization == other.organization &&
           repository == other.repository &&
-          this.other == other.other; } 
-@override int get hashCode { return Object.hash(organization, repository, other); } 
-@override String toString() { return 'PersonalAccessTokenRequestPermissionsAdded(organization: $organization, repository: $repository, other: $other)'; } 
- }
+          this.other == other.other;}
+@override int get hashCode {return Object.hash(organization, repository, other);}
+@override String toString() {return 'PersonalAccessTokenRequestPermissionsAdded(organization: $organization, repository: $repository, other: $other)';}
+}

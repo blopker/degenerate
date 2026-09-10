@@ -4,29 +4,29 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_assis
 /// 
 @immutable final class CreateAssistantRequestToolResources {const CreateAssistantRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
-factory CreateAssistantRequestToolResources.fromJson(Map<String, dynamic> json) { return CreateAssistantRequestToolResources(
+factory CreateAssistantRequestToolResources.fromJson(Map<String, dynamic> json) {return CreateAssistantRequestToolResources(
   codeInterpreter: json['code_interpreter'] != null ? CreateAssistantRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
   fileSearch: json['file_search'],
-); }
+);}
 
 final CreateAssistantRequestToolResourcesCodeInterpreter? codeInterpreter;
 
 /// One of: dynamic, dynamic
 final dynamic fileSearch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (codeInterpreter != null) 'code_interpreter': codeInterpreter?.toJson(),
   'file_search': ?fileSearch,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key)); } 
-CreateAssistantRequestToolResources copyWith({CreateAssistantRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, dynamic Function()? fileSearch, }) { return CreateAssistantRequestToolResources(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code_interpreter', 'file_search'}.contains(key));}
+CreateAssistantRequestToolResources copyWith({CreateAssistantRequestToolResourcesCodeInterpreter? Function()? codeInterpreter, dynamic Function()? fileSearch, }) {return CreateAssistantRequestToolResources(
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateAssistantRequestToolResources &&
           codeInterpreter == other.codeInterpreter &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(codeInterpreter, fileSearch); } 
-@override String toString() { return 'CreateAssistantRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)'; } 
- }
+          fileSearch == other.fileSearch;}
+@override int get hashCode {return Object.hash(codeInterpreter, fileSearch);}
+@override String toString() {return 'CreateAssistantRequestToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)';}
+}

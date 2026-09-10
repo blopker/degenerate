@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
 @immutable final class ListMeta {const ListMeta({this.$continue, this.remainingItemCount, this.resourceVersion, this.selfLink, });
 
-factory ListMeta.fromJson(Map<String, dynamic> json) { return ListMeta(
+factory ListMeta.fromJson(Map<String, dynamic> json) {return ListMeta(
   $continue: json['continue'] as String?,
   remainingItemCount: json['remainingItemCount'] != null ? (json['remainingItemCount'] as num).toInt() : null,
   resourceVersion: json['resourceVersion'] as String?,
   selfLink: json['selfLink'] as String?,
-); }
+);}
 
 /// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
 final String? $continue;
@@ -22,25 +22,25 @@ final String? resourceVersion;
 /// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
 final String? selfLink;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'continue': ?$continue,
   'remainingItemCount': ?remainingItemCount,
   'resourceVersion': ?resourceVersion,
   'selfLink': ?selfLink,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'continue', 'remainingItemCount', 'resourceVersion', 'selfLink'}.contains(key)); } 
-ListMeta copyWith({String? Function()? $continue, int? Function()? remainingItemCount, String? Function()? resourceVersion, String? Function()? selfLink, }) { return ListMeta(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'continue', 'remainingItemCount', 'resourceVersion', 'selfLink'}.contains(key));}
+ListMeta copyWith({String? Function()? $continue, int? Function()? remainingItemCount, String? Function()? resourceVersion, String? Function()? selfLink, }) {return ListMeta(
   $continue: $continue != null ? $continue() : this.$continue,
   remainingItemCount: remainingItemCount != null ? remainingItemCount() : this.remainingItemCount,
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   selfLink: selfLink != null ? selfLink() : this.selfLink,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListMeta &&
           $continue == other.$continue &&
           remainingItemCount == other.remainingItemCount &&
           resourceVersion == other.resourceVersion &&
-          selfLink == other.selfLink; } 
-@override int get hashCode { return Object.hash($continue, remainingItemCount, resourceVersion, selfLink); } 
-@override String toString() { return 'ListMeta(\$continue: ${$continue}, remainingItemCount: $remainingItemCount, resourceVersion: $resourceVersion, selfLink: $selfLink)'; } 
- }
+          selfLink == other.selfLink;}
+@override int get hashCode {return Object.hash($continue, remainingItemCount, resourceVersion, selfLink);}
+@override String toString() {return 'ListMeta(\$continue: ${$continue}, remainingItemCount: $remainingItemCount, resourceVersion: $resourceVersion, selfLink: $selfLink)';}
+}

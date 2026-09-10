@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_stats_ip_stats_asn.dart';import 'urlscanner_get_scan_response2_stats_ip_stats_geoip.dart';@immutable final class UrlscannerGetScanResponse2StatsIpStats {const UrlscannerGetScanResponse2StatsIpStats({required this.asn, required this.countries, required this.domains, required this.encodedSize, required this.geoip, required this.index, required this.ip, required this.ipv6, required this.redirects, required this.requests, required this.size, this.count, });
 
-factory UrlscannerGetScanResponse2StatsIpStats.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2StatsIpStats(
+factory UrlscannerGetScanResponse2StatsIpStats.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2StatsIpStats(
   asn: UrlscannerGetScanResponse2StatsIpStatsAsn.fromJson(json['asn'] as Map<String, dynamic>),
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,
   countries: (json['countries'] as List<dynamic>).map((e) => e as String).toList(),
@@ -15,7 +15,7 @@ factory UrlscannerGetScanResponse2StatsIpStats.fromJson(Map<String, dynamic> jso
   redirects: (json['redirects'] as num).toDouble(),
   requests: (json['requests'] as num).toDouble(),
   size: (json['size'] as num).toDouble(),
-); }
+);}
 
 final UrlscannerGetScanResponse2StatsIpStatsAsn asn;
 
@@ -41,7 +41,7 @@ final double requests;
 
 final double size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn.toJson(),
   'count': ?count,
   'countries': countries,
@@ -54,8 +54,8 @@ Map<String, dynamic> toJson() { return {
   'redirects': redirects,
   'requests': requests,
   'size': size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') &&
       json.containsKey('countries') &&
       json.containsKey('domains') &&
       json.containsKey('encodedSize') && json['encodedSize'] is num &&
@@ -65,8 +65,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('ipv6') && json['ipv6'] is bool &&
       json.containsKey('redirects') && json['redirects'] is num &&
       json.containsKey('requests') && json['requests'] is num &&
-      json.containsKey('size') && json['size'] is num; } 
-UrlscannerGetScanResponse2StatsIpStats copyWith({UrlscannerGetScanResponse2StatsIpStatsAsn? asn, double? Function()? count, List<String>? countries, List<String>? domains, double? encodedSize, UrlscannerGetScanResponse2StatsIpStatsGeoip? geoip, double? index, String? ip, bool? ipv6, double? redirects, double? requests, double? size, }) { return UrlscannerGetScanResponse2StatsIpStats(
+      json.containsKey('size') && json['size'] is num;}
+UrlscannerGetScanResponse2StatsIpStats copyWith({UrlscannerGetScanResponse2StatsIpStatsAsn? asn, double? Function()? count, List<String>? countries, List<String>? domains, double? encodedSize, UrlscannerGetScanResponse2StatsIpStatsGeoip? geoip, double? index, String? ip, bool? ipv6, double? redirects, double? requests, double? size, }) {return UrlscannerGetScanResponse2StatsIpStats(
   asn: asn ?? this.asn,
   count: count != null ? count() : this.count,
   countries: countries ?? this.countries,
@@ -79,8 +79,8 @@ UrlscannerGetScanResponse2StatsIpStats copyWith({UrlscannerGetScanResponse2Stats
   redirects: redirects ?? this.redirects,
   requests: requests ?? this.requests,
   size: size ?? this.size,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2StatsIpStats &&
           asn == other.asn &&
           count == other.count &&
@@ -93,7 +93,7 @@ UrlscannerGetScanResponse2StatsIpStats copyWith({UrlscannerGetScanResponse2Stats
           ipv6 == other.ipv6 &&
           redirects == other.redirects &&
           requests == other.requests &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(asn, count, Object.hashAll(countries), Object.hashAll(domains), encodedSize, geoip, index, ip, ipv6, redirects, requests, size); } 
-@override String toString() { return 'UrlscannerGetScanResponse2StatsIpStats(asn: $asn, count: $count, countries: $countries, domains: $domains, encodedSize: $encodedSize, geoip: $geoip, index: $index, ip: $ip, ipv6: $ipv6, redirects: $redirects, requests: $requests, size: $size)'; } 
- }
+          size == other.size;}
+@override int get hashCode {return Object.hash(asn, count, Object.hashAll(countries), Object.hashAll(domains), encodedSize, geoip, index, ip, ipv6, redirects, requests, size);}
+@override String toString() {return 'UrlscannerGetScanResponse2StatsIpStats(asn: $asn, count: $count, countries: $countries, domains: $domains, encodedSize: $encodedSize, geoip: $geoip, index: $index, ip: $ip, ipv6: $ipv6, redirects: $redirects, requests: $requests, size: $size)';}
+}

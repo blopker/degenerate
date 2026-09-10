@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_card_mandate_options.dart';import 'post_setup_intents_request_payment_method_options_card_three_d_secure.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardNetwork {const PostSetupIntentsRequestPaymentMethodOptionsCardNetwork._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodOptionsCardNetwork.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodOptionsCardNetwork.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -17,7 +17,7 @@ factory PostSetupIntentsRequestPaymentMethodOptionsCardNetwork.fromJson(String j
   'unknown' => unknown,
   'visa' => visa,
   _ => PostSetupIntentsRequestPaymentMethodOptionsCardNetwork._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodOptionsCardNetwork amex = PostSetupIntentsRequestPaymentMethodOptionsCardNetwork._('amex');
 
@@ -49,22 +49,22 @@ static const List<PostSetupIntentsRequestPaymentMethodOptionsCardNetwork> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodOptionsCardNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardNetwork($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsCardNetwork && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsCardNetwork($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure {const PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) {return switch (json) {
   'any' => any,
   'automatic' => automatic,
   'challenge' => challenge,
   _ => PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure any = PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure._('any');
 
@@ -76,22 +76,22 @@ static const List<PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodOptionsCard {const PostSetupIntentsRequestPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, this.threeDSecure, });
 
-factory PostSetupIntentsRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsCard(
+factory PostSetupIntentsRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodOptionsCard(
   mandateOptions: json['mandate_options'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
   threeDSecure: json['three_d_secure'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions? mandateOptions;
 
@@ -101,25 +101,25 @@ final PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure? reques
 
 final PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure? threeDSecure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (network != null) 'network': network?.toJson(),
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure', 'three_d_secure'}.contains(key)); } 
-PostSetupIntentsRequestPaymentMethodOptionsCard copyWith({PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions? Function()? mandateOptions, PostSetupIntentsRequestPaymentMethodOptionsCardNetwork? Function()? network, PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure? Function()? threeDSecure, }) { return PostSetupIntentsRequestPaymentMethodOptionsCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure', 'three_d_secure'}.contains(key));}
+PostSetupIntentsRequestPaymentMethodOptionsCard copyWith({PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions? Function()? mandateOptions, PostSetupIntentsRequestPaymentMethodOptionsCardNetwork? Function()? network, PostSetupIntentsRequestPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure? Function()? threeDSecure, }) {return PostSetupIntentsRequestPaymentMethodOptionsCard(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodOptionsCard &&
           mandateOptions == other.mandateOptions &&
           network == other.network &&
           requestThreeDSecure == other.requestThreeDSecure &&
-          threeDSecure == other.threeDSecure; } 
-@override int get hashCode { return Object.hash(mandateOptions, network, requestThreeDSecure, threeDSecure); } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCard(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure, threeDSecure: $threeDSecure)'; } 
- }
+          threeDSecure == other.threeDSecure;}
+@override int get hashCode {return Object.hash(mandateOptions, network, requestThreeDSecure, threeDSecure);}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsCard(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure, threeDSecure: $threeDSecure)';}
+}

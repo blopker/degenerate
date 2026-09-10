@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// volumeDevice describes a mapping of a raw block device within a container.
 @immutable final class VolumeDevice {const VolumeDevice({required this.devicePath, required this.name, });
 
-factory VolumeDevice.fromJson(Map<String, dynamic> json) { return VolumeDevice(
+factory VolumeDevice.fromJson(Map<String, dynamic> json) {return VolumeDevice(
   devicePath: json['devicePath'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// devicePath is the path inside of the container that the device will be mapped to.
 final String devicePath;
@@ -14,20 +14,20 @@ final String devicePath;
 /// name must match the name of a persistentVolumeClaim in the pod
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'devicePath': devicePath,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('devicePath') && json['devicePath'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-VolumeDevice copyWith({String? devicePath, String? name, }) { return VolumeDevice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('devicePath') && json['devicePath'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+VolumeDevice copyWith({String? devicePath, String? name, }) {return VolumeDevice(
   devicePath: devicePath ?? this.devicePath,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VolumeDevice &&
           devicePath == other.devicePath &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(devicePath, name); } 
-@override String toString() { return 'VolumeDevice(devicePath: $devicePath, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(devicePath, name);}
+@override String toString() {return 'VolumeDevice(devicePath: $devicePath, name: $name)';}
+}

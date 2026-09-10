@@ -13,7 +13,7 @@ final class BotnetThreatFeedApi with ApiExecutor {const BotnetThreatFeedApi(this
 /// Gets all the data the botnet tracking database has for a given ASN registered to user account for given date. If no date is given, it will return results for the previous day.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/day_report`
-Future<ApiResult<BotnetThreatFeedGetDayReportResponseResult?, ResponseCommonFailure33>> botnetThreatFeedGetDayReport({required DosIdentifier accountId, required DosAsn asnId, DosTimestamp? date, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BotnetThreatFeedGetDayReportResponseResult?, ResponseCommonFailure33>> botnetThreatFeedGetDayReport({required DosIdentifier accountId, required DosAsn asnId, DosTimestamp? date, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (date != null) {
   queryParameters['date'] = date.toString();
@@ -30,30 +30,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? BotnetThreatFeedGetDayReportResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? BotnetThreatFeedGetDayReportResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get full report
 ///
 /// Gets all the data the botnet threat feed tracking database has for a given ASN registered to user account.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/full_report`
-Future<ApiResult<BotnetThreatFeedGetFullReportResponseResult?, ResponseCommonFailure33>> botnetThreatFeedGetFullReport({required DosIdentifier accountId, required DosAsn asnId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotnetThreatFeedGetFullReportResponseResult?, ResponseCommonFailure33>> botnetThreatFeedGetFullReport({required DosIdentifier accountId, required DosAsn asnId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -62,30 +51,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? BotnetThreatFeedGetFullReportResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? BotnetThreatFeedGetFullReportResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get list of ASNs
 ///
 /// Gets a list of all ASNs registered for a user for the DDoS Botnet Feed API.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/configs/asn`
-Future<ApiResult<BotnetThreatFeedListAsnResponseResult?, ResponseCommonFailure33>> botnetThreatFeedListAsn({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotnetThreatFeedListAsnResponseResult?, ResponseCommonFailure33>> botnetThreatFeedListAsn({required DosIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -94,30 +72,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? BotnetThreatFeedListAsnResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? BotnetThreatFeedListAsnResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete an ASN
 ///
 /// Delete an ASN from botnet threat feed for a given user.
 ///
 /// `DELETE /accounts/{account_id}/botnet_feed/configs/asn/{asn_id}`
-Future<ApiResult<BotnetThreatFeedDeleteAsnResponseResult?, ResponseCommonFailure33>> botnetThreatFeedDeleteAsn({required DosIdentifier accountId, required DosAsn asnId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotnetThreatFeedDeleteAsnResponseResult?, ResponseCommonFailure33>> botnetThreatFeedDeleteAsn({required DosIdentifier accountId, required DosAsn asnId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -126,22 +93,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? BotnetThreatFeedDeleteAsnResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? BotnetThreatFeedDeleteAsnResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure33.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

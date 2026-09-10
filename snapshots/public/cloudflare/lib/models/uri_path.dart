@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_uri_path.dart';/// A URI path rewrite.
 @immutable final class UriPath {const UriPath({required this.path});
 
-factory UriPath.fromJson(Map<String, dynamic> json) { return UriPath(
+factory UriPath.fromJson(Map<String, dynamic> json) {return UriPath(
   path: RulesetsRewriteUriPath.fromJson(json['path'] as Map<String, dynamic>),
-); }
+);}
 
 final RulesetsRewriteUriPath path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path'); } 
-UriPath copyWith({RulesetsRewriteUriPath? path}) { return UriPath(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path');}
+UriPath copyWith({RulesetsRewriteUriPath? path}) {return UriPath(
   path: path ?? this.path,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UriPath &&
-          path == other.path; } 
-@override int get hashCode { return path.hashCode; } 
-@override String toString() { return 'UriPath(path: $path)'; } 
- }
+          path == other.path;}
+@override int get hashCode {return path.hashCode;}
+@override String toString() {return 'UriPath(path: $path)';}
+}

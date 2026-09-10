@@ -28,7 +28,7 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesDevice {const TeamsDevicesDevice({this.account, this.created, this.deleted, this.deviceType, this.gatewayDeviceId, this.id, this.ip, this.key, this.keyType, this.lastSeen, this.macAddress, this.model, this.name, this.osVersion, this.serialNumber, this.tunnelType, this.updated, this.user, this.version, });
 
-factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevice(
+factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) {return TeamsDevicesDevice(
   account: json['account'] != null ? TeamsDevicesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   created: json['created'] != null ? TeamsDevicesCreated.fromJson(json['created'] as String) : null,
   deleted: json['deleted'] != null ? TeamsDevicesDeleted.fromJson(json['deleted'] as bool) : null,
@@ -48,7 +48,7 @@ factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) { return TeamsDev
   updated: json['updated'] != null ? TeamsDevicesUpdated.fromJson(json['updated'] as String) : null,
   user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   version: json['version'] != null ? TeamsDevicesVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 final TeamsDevicesAccount? account;
 
@@ -90,7 +90,7 @@ final TeamsDevicesUser? user;
 
 final TeamsDevicesVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account != null) 'account': account?.toJson(),
   if (created != null) 'created': created?.toJson(),
   if (deleted != null) 'deleted': deleted?.toJson(),
@@ -110,9 +110,9 @@ Map<String, dynamic> toJson() { return {
   if (updated != null) 'updated': updated?.toJson(),
   if (user != null) 'user': user?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'created', 'deleted', 'device_type', 'gateway_device_id', 'id', 'ip', 'key', 'key_type', 'last_seen', 'mac_address', 'model', 'name', 'os_version', 'serial_number', 'tunnel_type', 'updated', 'user', 'version'}.contains(key)); } 
-TeamsDevicesDevice copyWith({TeamsDevicesAccount? Function()? account, TeamsDevicesCreated? Function()? created, TeamsDevicesDeleted? Function()? deleted, TeamsDevicesDeviceType? Function()? deviceType, TeamsDevicesGatewayDeviceId? Function()? gatewayDeviceId, TeamsDevicesRegistrationId? Function()? id, TeamsDevicesIp? Function()? ip, TeamsDevicesKey? Function()? key, TeamsDevicesKeyType? Function()? keyType, TeamsDevicesLastSeen? Function()? lastSeen, TeamsDevicesMacAddress? Function()? macAddress, TeamsDevicesModel? Function()? model, TeamsDevicesSchemasName? Function()? name, TeamsDevicesOsVersion? Function()? osVersion, TeamsDevicesSerialNumber? Function()? serialNumber, TeamsDevicesTunnelType? Function()? tunnelType, TeamsDevicesUpdated? Function()? updated, TeamsDevicesUser? Function()? user, TeamsDevicesVersion? Function()? version, }) { return TeamsDevicesDevice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account', 'created', 'deleted', 'device_type', 'gateway_device_id', 'id', 'ip', 'key', 'key_type', 'last_seen', 'mac_address', 'model', 'name', 'os_version', 'serial_number', 'tunnel_type', 'updated', 'user', 'version'}.contains(key));}
+TeamsDevicesDevice copyWith({TeamsDevicesAccount? Function()? account, TeamsDevicesCreated? Function()? created, TeamsDevicesDeleted? Function()? deleted, TeamsDevicesDeviceType? Function()? deviceType, TeamsDevicesGatewayDeviceId? Function()? gatewayDeviceId, TeamsDevicesRegistrationId? Function()? id, TeamsDevicesIp? Function()? ip, TeamsDevicesKey? Function()? key, TeamsDevicesKeyType? Function()? keyType, TeamsDevicesLastSeen? Function()? lastSeen, TeamsDevicesMacAddress? Function()? macAddress, TeamsDevicesModel? Function()? model, TeamsDevicesSchemasName? Function()? name, TeamsDevicesOsVersion? Function()? osVersion, TeamsDevicesSerialNumber? Function()? serialNumber, TeamsDevicesTunnelType? Function()? tunnelType, TeamsDevicesUpdated? Function()? updated, TeamsDevicesUser? Function()? user, TeamsDevicesVersion? Function()? version, }) {return TeamsDevicesDevice(
   account: account != null ? account() : this.account,
   created: created != null ? created() : this.created,
   deleted: deleted != null ? deleted() : this.deleted,
@@ -132,8 +132,8 @@ TeamsDevicesDevice copyWith({TeamsDevicesAccount? Function()? account, TeamsDevi
   updated: updated != null ? updated() : this.updated,
   user: user != null ? user() : this.user,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesDevice &&
           account == other.account &&
           created == other.created &&
@@ -153,7 +153,7 @@ TeamsDevicesDevice copyWith({TeamsDevicesAccount? Function()? account, TeamsDevi
           tunnelType == other.tunnelType &&
           updated == other.updated &&
           user == other.user &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(account, created, deleted, deviceType, gatewayDeviceId, id, ip, key, keyType, lastSeen, macAddress, model, name, osVersion, serialNumber, tunnelType, updated, user, version); } 
-@override String toString() { return 'TeamsDevicesDevice(account: $account, created: $created, deleted: $deleted, deviceType: $deviceType, gatewayDeviceId: $gatewayDeviceId, id: $id, ip: $ip, key: $key, keyType: $keyType, lastSeen: $lastSeen, macAddress: $macAddress, model: $model, name: $name, osVersion: $osVersion, serialNumber: $serialNumber, tunnelType: $tunnelType, updated: $updated, user: $user, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(account, created, deleted, deviceType, gatewayDeviceId, id, ip, key, keyType, lastSeen, macAddress, model, name, osVersion, serialNumber, tunnelType, updated, user, version);}
+@override String toString() {return 'TeamsDevicesDevice(account: $account, created: $created, deleted: $deleted, deviceType: $deviceType, gatewayDeviceId: $gatewayDeviceId, id: $id, ip: $ip, key: $key, keyType: $keyType, lastSeen: $lastSeen, macAddress: $macAddress, model: $model, name: $name, osVersion: $osVersion, serialNumber: $serialNumber, tunnelType: $tunnelType, updated: $updated, user: $user, version: $version)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'collaborator_permissions.dart';/// Collaborator
 @immutable final class Collaborator {const Collaborator({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.roleName, this.email = const Omittable.absent(), this.name = const Omittable.absent(), this.permissions, this.userViewType, });
 
-factory Collaborator.fromJson(Map<String, dynamic> json) { return Collaborator(
+factory Collaborator.fromJson(Map<String, dynamic> json) {return Collaborator(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -27,7 +27,7 @@ factory Collaborator.fromJson(Map<String, dynamic> json) { return Collaborator(
   permissions: json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   roleName: json['role_name'] as String,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String login;
 
@@ -75,7 +75,7 @@ final String roleName;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   if (email.isPresent) 'email': email.value,
@@ -99,8 +99,8 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
   'role_name': roleName,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -118,8 +118,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool &&
-      json.containsKey('role_name') && json['role_name'] is String; } 
-Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omittable<String?>? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions? Function()? permissions, String? roleName, String? Function()? userViewType, }) { return Collaborator(
+      json.containsKey('role_name') && json['role_name'] is String;}
+Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omittable<String?>? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions? Function()? permissions, String? roleName, String? Function()? userViewType, }) {return Collaborator(
   login: login ?? this.login,
   id: id ?? this.id,
   email: email ?? this.email,
@@ -143,8 +143,8 @@ Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omitta
   permissions: permissions != null ? permissions() : this.permissions,
   roleName: roleName ?? this.roleName,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Collaborator &&
           login == other.login &&
           id == other.id &&
@@ -168,7 +168,7 @@ Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omitta
           siteAdmin == other.siteAdmin &&
           permissions == other.permissions &&
           roleName == other.roleName &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([login, id, email, name, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, permissions, roleName, userViewType]); } 
-@override String toString() { return 'Collaborator(login: $login, id: $id, email: $email, name: $name, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, permissions: $permissions, roleName: $roleName, userViewType: $userViewType)'; } 
- }
+          userViewType == other.userViewType;}
+@override int get hashCode {return Object.hashAll([login, id, email, name, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, permissions, roleName, userViewType]);}
+@override String toString() {return 'Collaborator(login: $login, id: $id, email: $email, name: $name, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, permissions: $permissions, roleName: $roleName, userViewType: $userViewType)';}
+}

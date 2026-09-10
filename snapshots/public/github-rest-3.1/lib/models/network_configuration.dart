@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service the network configuration supports.
 @immutable final class NetworkConfigurationComputeService {const NetworkConfigurationComputeService._(this.value);
 
-factory NetworkConfigurationComputeService.fromJson(String json) { return switch (json) {
+factory NetworkConfigurationComputeService.fromJson(String json) {return switch (json) {
   'none' => none,
   'actions' => actions,
   'codespaces' => codespaces,
   _ => NetworkConfigurationComputeService._(json),
-}; }
+};}
 
 static const NetworkConfigurationComputeService none = NetworkConfigurationComputeService._('none');
 
@@ -20,18 +20,18 @@ static const List<NetworkConfigurationComputeService> values = [none, actions, c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NetworkConfigurationComputeService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NetworkConfigurationComputeService($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is NetworkConfigurationComputeService && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'NetworkConfigurationComputeService($value)';}
+}
 /// A hosted compute network configuration.
 @immutable final class NetworkConfiguration {const NetworkConfiguration({required this.id, required this.name, required this.createdOn, this.computeService, this.networkSettingsIds, this.failoverNetworkSettingsIds, this.failoverNetworkEnabled, });
 
-factory NetworkConfiguration.fromJson(Map<String, dynamic> json) { return NetworkConfiguration(
+factory NetworkConfiguration.fromJson(Map<String, dynamic> json) {return NetworkConfiguration(
   id: json['id'] as String,
   name: json['name'] as String,
   computeService: json['compute_service'] != null ? NetworkConfigurationComputeService.fromJson(json['compute_service'] as String) : null,
@@ -39,7 +39,7 @@ factory NetworkConfiguration.fromJson(Map<String, dynamic> json) { return Networ
   failoverNetworkSettingsIds: (json['failover_network_settings_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   failoverNetworkEnabled: json['failover_network_enabled'] as bool?,
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
-); }
+);}
 
 /// The unique identifier of the network configuration.
 final String id;
@@ -62,7 +62,7 @@ final bool? failoverNetworkEnabled;
 /// The time at which the network configuration was created, in ISO 8601 format.
 final DateTime? createdOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (computeService != null) 'compute_service': computeService?.toJson(),
@@ -70,11 +70,11 @@ Map<String, dynamic> toJson() { return {
   'failover_network_settings_ids': ?failoverNetworkSettingsIds,
   'failover_network_enabled': ?failoverNetworkEnabled,
   'created_on': createdOn?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('created_on') && (json['created_on'] == null || json['created_on'] is String); } 
-NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationComputeService? Function()? computeService, List<String>? Function()? networkSettingsIds, List<String>? Function()? failoverNetworkSettingsIds, bool? Function()? failoverNetworkEnabled, DateTime? Function()? createdOn, }) { return NetworkConfiguration(
+      json.containsKey('created_on') && (json['created_on'] == null || json['created_on'] is String);}
+NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationComputeService? Function()? computeService, List<String>? Function()? networkSettingsIds, List<String>? Function()? failoverNetworkSettingsIds, bool? Function()? failoverNetworkEnabled, DateTime? Function()? createdOn, }) {return NetworkConfiguration(
   id: id ?? this.id,
   name: name ?? this.name,
   computeService: computeService != null ? computeService() : this.computeService,
@@ -82,8 +82,8 @@ NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationCom
   failoverNetworkSettingsIds: failoverNetworkSettingsIds != null ? failoverNetworkSettingsIds() : this.failoverNetworkSettingsIds,
   failoverNetworkEnabled: failoverNetworkEnabled != null ? failoverNetworkEnabled() : this.failoverNetworkEnabled,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NetworkConfiguration &&
           id == other.id &&
           name == other.name &&
@@ -91,7 +91,7 @@ NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationCom
           listEquals(networkSettingsIds, other.networkSettingsIds) &&
           listEquals(failoverNetworkSettingsIds, other.failoverNetworkSettingsIds) &&
           failoverNetworkEnabled == other.failoverNetworkEnabled &&
-          createdOn == other.createdOn; } 
-@override int get hashCode { return Object.hash(id, name, computeService, Object.hashAll(networkSettingsIds ?? const []), Object.hashAll(failoverNetworkSettingsIds ?? const []), failoverNetworkEnabled, createdOn); } 
-@override String toString() { return 'NetworkConfiguration(id: $id, name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds, failoverNetworkSettingsIds: $failoverNetworkSettingsIds, failoverNetworkEnabled: $failoverNetworkEnabled, createdOn: $createdOn)'; } 
- }
+          createdOn == other.createdOn;}
+@override int get hashCode {return Object.hash(id, name, computeService, Object.hashAll(networkSettingsIds ?? const []), Object.hashAll(failoverNetworkSettingsIds ?? const []), failoverNetworkEnabled, createdOn);}
+@override String toString() {return 'NetworkConfiguration(id: $id, name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds, failoverNetworkSettingsIds: $failoverNetworkSettingsIds, failoverNetworkEnabled: $failoverNetworkEnabled, createdOn: $createdOn)';}
+}

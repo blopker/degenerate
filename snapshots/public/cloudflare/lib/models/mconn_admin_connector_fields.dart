@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';@immutable final class MconnAdminConnectorFields {const MconnAdminConnectorFields({this.accountId, this.activated, this.cloudflaredTunnelId, this.cloudflaredTunnelToken, this.cohortId, this.desiredVersion, this.deviceId, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.lastHeartbeat, this.lastSeenVersion, this.lastUpdated, this.notes, this.timezone, this.upgradeAsap, });
 
-factory MconnAdminConnectorFields.fromJson(Map<String, dynamic> json) { return MconnAdminConnectorFields(
+factory MconnAdminConnectorFields.fromJson(Map<String, dynamic> json) {return MconnAdminConnectorFields(
   accountId: json['account_id'] != null ? (json['account_id'] as num).toDouble() : null,
   activated: json['activated'] as bool?,
   cloudflaredTunnelId: json['cloudflared_tunnel_id'] as String?,
@@ -20,7 +20,7 @@ factory MconnAdminConnectorFields.fromJson(Map<String, dynamic> json) { return M
   notes: json['notes'] as String?,
   timezone: json['timezone'] as String?,
   upgradeAsap: json['upgrade_asap'] as bool?,
-); }
+);}
 
 final double? accountId;
 
@@ -58,7 +58,7 @@ final String? timezone;
 
 final bool? upgradeAsap;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': ?accountId,
   'activated': ?activated,
   'cloudflared_tunnel_id': ?cloudflaredTunnelId,
@@ -76,9 +76,9 @@ Map<String, dynamic> toJson() { return {
   'notes': ?notes,
   'timezone': ?timezone,
   'upgrade_asap': ?upgradeAsap,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'activated', 'cloudflared_tunnel_id', 'cloudflared_tunnel_token', 'cohort_id', 'desired_version', 'device_id', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'last_heartbeat', 'last_seen_version', 'last_updated', 'notes', 'timezone', 'upgrade_asap'}.contains(key)); } 
-MconnAdminConnectorFields copyWith({double? Function()? accountId, bool? Function()? activated, String? Function()? cloudflaredTunnelId, String? Function()? cloudflaredTunnelToken, String? Function()? cohortId, String? Function()? desiredVersion, String? Function()? deviceId, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? Function()? lastUpdated, String? Function()? notes, String? Function()? timezone, bool? Function()? upgradeAsap, }) { return MconnAdminConnectorFields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_id', 'activated', 'cloudflared_tunnel_id', 'cloudflared_tunnel_token', 'cohort_id', 'desired_version', 'device_id', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'last_heartbeat', 'last_seen_version', 'last_updated', 'notes', 'timezone', 'upgrade_asap'}.contains(key));}
+MconnAdminConnectorFields copyWith({double? Function()? accountId, bool? Function()? activated, String? Function()? cloudflaredTunnelId, String? Function()? cloudflaredTunnelToken, String? Function()? cohortId, String? Function()? desiredVersion, String? Function()? deviceId, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? Function()? lastUpdated, String? Function()? notes, String? Function()? timezone, bool? Function()? upgradeAsap, }) {return MconnAdminConnectorFields(
   accountId: accountId != null ? accountId() : this.accountId,
   activated: activated != null ? activated() : this.activated,
   cloudflaredTunnelId: cloudflaredTunnelId != null ? cloudflaredTunnelId() : this.cloudflaredTunnelId,
@@ -96,8 +96,8 @@ MconnAdminConnectorFields copyWith({double? Function()? accountId, bool? Functio
   notes: notes != null ? notes() : this.notes,
   timezone: timezone != null ? timezone() : this.timezone,
   upgradeAsap: upgradeAsap != null ? upgradeAsap() : this.upgradeAsap,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnAdminConnectorFields &&
           accountId == other.accountId &&
           activated == other.activated &&
@@ -115,7 +115,7 @@ MconnAdminConnectorFields copyWith({double? Function()? accountId, bool? Functio
           lastUpdated == other.lastUpdated &&
           notes == other.notes &&
           timezone == other.timezone &&
-          upgradeAsap == other.upgradeAsap; } 
-@override int get hashCode { return Object.hash(accountId, activated, cloudflaredTunnelId, cloudflaredTunnelToken, cohortId, desiredVersion, deviceId, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap); } 
-@override String toString() { return 'MconnAdminConnectorFields(accountId: $accountId, activated: $activated, cloudflaredTunnelId: $cloudflaredTunnelId, cloudflaredTunnelToken: $cloudflaredTunnelToken, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)'; } 
- }
+          upgradeAsap == other.upgradeAsap;}
+@override int get hashCode {return Object.hash(accountId, activated, cloudflaredTunnelId, cloudflaredTunnelToken, cohortId, desiredVersion, deviceId, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap);}
+@override String toString() {return 'MconnAdminConnectorFields(accountId: $accountId, activated: $activated, cloudflaredTunnelId: $cloudflaredTunnelId, cloudflaredTunnelToken: $cloudflaredTunnelToken, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)';}
+}

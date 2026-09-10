@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_parameters.dart';@immutable final class WorkersObservabilityQuery {const WorkersObservabilityQuery({required this.created, required this.description, required this.environmentId, required this.generated, required this.id, required this.name, required this.parameters, required this.updated, required this.userId, required this.workspaceId, });
 
-factory WorkersObservabilityQuery.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQuery(
+factory WorkersObservabilityQuery.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQuery(
   created: json['created'] as String,
   description: json['description'] as String?,
   environmentId: json['environmentId'] as String,
@@ -13,7 +13,7 @@ factory WorkersObservabilityQuery.fromJson(Map<String, dynamic> json) { return W
   updated: json['updated'] as String,
   userId: json['userId'] as String,
   workspaceId: json['workspaceId'] as String,
-); }
+);}
 
 final String created;
 
@@ -40,7 +40,7 @@ final String userId;
 /// ID of your workspace
 final String workspaceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'description': description,
   'environmentId': environmentId,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'updated': updated,
   'userId': userId,
   'workspaceId': workspaceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is String &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('environmentId') && json['environmentId'] is String &&
       json.containsKey('generated') && (json['generated'] == null || json['generated'] is bool) &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('parameters') &&
       json.containsKey('updated') && json['updated'] is String &&
       json.containsKey('userId') && json['userId'] is String &&
-      json.containsKey('workspaceId') && json['workspaceId'] is String; } 
-WorkersObservabilityQuery copyWith({String? created, String? Function()? description, String? environmentId, bool? Function()? generated, String? id, String? Function()? name, WorkersObservabilityQueryParameters? parameters, String? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQuery(
+      json.containsKey('workspaceId') && json['workspaceId'] is String;}
+WorkersObservabilityQuery copyWith({String? created, String? Function()? description, String? environmentId, bool? Function()? generated, String? id, String? Function()? name, WorkersObservabilityQueryParameters? parameters, String? updated, String? userId, String? workspaceId, }) {return WorkersObservabilityQuery(
   created: created ?? this.created,
   description: description != null ? description() : this.description,
   environmentId: environmentId ?? this.environmentId,
@@ -73,8 +73,8 @@ WorkersObservabilityQuery copyWith({String? created, String? Function()? descrip
   updated: updated ?? this.updated,
   userId: userId ?? this.userId,
   workspaceId: workspaceId ?? this.workspaceId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQuery &&
           created == other.created &&
           description == other.description &&
@@ -85,7 +85,7 @@ WorkersObservabilityQuery copyWith({String? created, String? Function()? descrip
           parameters == other.parameters &&
           updated == other.updated &&
           userId == other.userId &&
-          workspaceId == other.workspaceId; } 
-@override int get hashCode { return Object.hash(created, description, environmentId, generated, id, name, parameters, updated, userId, workspaceId); } 
-@override String toString() { return 'WorkersObservabilityQuery(created: $created, description: $description, environmentId: $environmentId, generated: $generated, id: $id, name: $name, parameters: $parameters, updated: $updated, userId: $userId, workspaceId: $workspaceId)'; } 
- }
+          workspaceId == other.workspaceId;}
+@override int get hashCode {return Object.hash(created, description, environmentId, generated, id, name, parameters, updated, userId, workspaceId);}
+@override String toString() {return 'WorkersObservabilityQuery(created: $created, description: $description, environmentId: $environmentId, generated: $generated, id: $id, name: $name, parameters: $parameters, updated: $updated, userId: $userId, workspaceId: $workspaceId)';}
+}

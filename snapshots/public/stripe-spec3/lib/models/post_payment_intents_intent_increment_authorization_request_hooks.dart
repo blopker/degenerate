@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_increment_authorization_request_hooks_inputs.dart';/// Automations to be run during the PaymentIntent lifecycle
 @immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestHooks {const PostPaymentIntentsIntentIncrementAuthorizationRequestHooks({this.inputs});
 
-factory PostPaymentIntentsIntentIncrementAuthorizationRequestHooks.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestHooks(
+factory PostPaymentIntentsIntentIncrementAuthorizationRequestHooks.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentIncrementAuthorizationRequestHooks(
   inputs: json['inputs'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs? inputs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (inputs != null) 'inputs': inputs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inputs'}.contains(key)); } 
-PostPaymentIntentsIntentIncrementAuthorizationRequestHooks copyWith({PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs? Function()? inputs}) { return PostPaymentIntentsIntentIncrementAuthorizationRequestHooks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'inputs'}.contains(key));}
+PostPaymentIntentsIntentIncrementAuthorizationRequestHooks copyWith({PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputs? Function()? inputs}) {return PostPaymentIntentsIntentIncrementAuthorizationRequestHooks(
   inputs: inputs != null ? inputs() : this.inputs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentIncrementAuthorizationRequestHooks &&
-          inputs == other.inputs; } 
-@override int get hashCode { return inputs.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequestHooks(inputs: $inputs)'; } 
- }
+          inputs == other.inputs;}
+@override int get hashCode {return inputs.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentIncrementAuthorizationRequestHooks(inputs: $inputs)';}
+}

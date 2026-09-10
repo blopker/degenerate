@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_r2_data_catalog_table.dart';import 'cloudflare_pipelines_r2_table.dart';import 'sinks_request_config.dart';/// Specifies the type of sink.
 @immutable final class SinksRequestType {const SinksRequestType._(this.value);
 
-factory SinksRequestType.fromJson(String json) { return switch (json) {
+factory SinksRequestType.fromJson(String json) {return switch (json) {
   'r2' => r2,
   'r2_data_catalog' => r2DataCatalog,
   _ => SinksRequestType._(json),
-}; }
+};}
 
 static const SinksRequestType r2 = SinksRequestType._('r2');
 
@@ -17,23 +17,23 @@ static const List<SinksRequestType> values = [r2, r2DataCatalog];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SinksRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SinksRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SinksRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SinksRequestType($value)';}
+}
 @immutable final class SinksRequest {const SinksRequest({required this.name, required this.type, this.config, this.format, this.schema, });
 
-factory SinksRequest.fromJson(Map<String, dynamic> json) { return SinksRequest(
+factory SinksRequest.fromJson(Map<String, dynamic> json) {return SinksRequest(
   config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2Table.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2DataCatalogTable.fromJson(v as Map<String, dynamic>),) : null,
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   type: SinksRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Defines the configuration of the R2 Sink.
 final SinksRequestConfig? config;
@@ -48,29 +48,29 @@ final CloudflarePipelinesConnectionSchema? schema;
 /// Specifies the type of sink.
 final SinksRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   if (format != null) 'format': format?.toJson(),
   'name': name,
   if (schema != null) 'schema': schema?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
-SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelinesFormat? Function()? format, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) { return SinksRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type');}
+SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelinesFormat? Function()? format, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) {return SinksRequest(
   config: config != null ? config() : this.config,
   format: format != null ? format() : this.format,
   name: name ?? this.name,
   schema: schema != null ? schema() : this.schema,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SinksRequest &&
           config == other.config &&
           format == other.format &&
           name == other.name &&
           schema == other.schema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, format, name, schema, type); } 
-@override String toString() { return 'SinksRequest(config: $config, format: $format, name: $name, schema: $schema, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(config, format, name, schema, type);}
+@override String toString() {return 'SinksRequest(config: $config, format: $format, name: $name, schema: $schema, type: $type)';}
+}

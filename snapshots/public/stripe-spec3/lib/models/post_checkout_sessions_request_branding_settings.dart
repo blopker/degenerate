@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_branding_settings_background_color.dart';import 'post_checkout_sessions_request_branding_settings_button_color.dart';import 'post_checkout_sessions_request_branding_settings_icon.dart';import 'post_checkout_sessions_request_branding_settings_logo.dart';@immutable final class PostCheckoutSessionsRequestBrandingSettingsBorderStyle {const PostCheckoutSessionsRequestBrandingSettingsBorderStyle._(this.value);
 
-factory PostCheckoutSessionsRequestBrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestBrandingSettingsBorderStyle.fromJson(String json) {return switch (json) {
   '' => $empty,
   'pill' => pill,
   'rectangular' => rectangular,
   'rounded' => rounded,
   _ => PostCheckoutSessionsRequestBrandingSettingsBorderStyle._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestBrandingSettingsBorderStyle $empty = PostCheckoutSessionsRequestBrandingSettingsBorderStyle._('');
 
@@ -22,17 +22,17 @@ static const List<PostCheckoutSessionsRequestBrandingSettingsBorderStyle> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestBrandingSettingsBorderStyle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsBorderStyle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestBrandingSettingsBorderStyle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestBrandingSettingsBorderStyle($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestBrandingSettingsFontFamily {const PostCheckoutSessionsRequestBrandingSettingsFontFamily._(this.value);
 
-factory PostCheckoutSessionsRequestBrandingSettingsFontFamily.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestBrandingSettingsFontFamily.fromJson(String json) {return switch (json) {
   '' => $empty,
   'be_vietnam_pro' => beVietnamPro,
   'bitter' => bitter,
@@ -61,7 +61,7 @@ factory PostCheckoutSessionsRequestBrandingSettingsFontFamily.fromJson(String js
   'ubuntu_mono' => ubuntuMono,
   'zen_maru_gothic' => zenMaruGothic,
   _ => PostCheckoutSessionsRequestBrandingSettingsFontFamily._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestBrandingSettingsFontFamily $empty = PostCheckoutSessionsRequestBrandingSettingsFontFamily._('');
 
@@ -121,18 +121,18 @@ static const List<PostCheckoutSessionsRequestBrandingSettingsFontFamily> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestBrandingSettingsFontFamily && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsFontFamily($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestBrandingSettingsFontFamily && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestBrandingSettingsFontFamily($value)';}
+}
 /// The branding settings for the Checkout Session. This parameter is not allowed if ui_mode is `custom`.
 @immutable final class PostCheckoutSessionsRequestBrandingSettings {const PostCheckoutSessionsRequestBrandingSettings({this.backgroundColor, this.borderStyle, this.buttonColor, this.displayName, this.fontFamily, this.icon, this.logo, });
 
-factory PostCheckoutSessionsRequestBrandingSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestBrandingSettings(
+factory PostCheckoutSessionsRequestBrandingSettings.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestBrandingSettings(
   backgroundColor: json['background_color'] != null ? PostCheckoutSessionsRequestBrandingSettingsBackgroundColor.fromJson(json['background_color']) : null,
   borderStyle: json['border_style'] != null ? PostCheckoutSessionsRequestBrandingSettingsBorderStyle.fromJson(json['border_style'] as String) : null,
   buttonColor: json['button_color'] != null ? PostCheckoutSessionsRequestBrandingSettingsButtonColor.fromJson(json['button_color']) : null,
@@ -140,7 +140,7 @@ factory PostCheckoutSessionsRequestBrandingSettings.fromJson(Map<String, dynamic
   fontFamily: json['font_family'] != null ? PostCheckoutSessionsRequestBrandingSettingsFontFamily.fromJson(json['font_family'] as String) : null,
   icon: json['icon'] != null ? PostCheckoutSessionsRequestBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null,
   logo: json['logo'] != null ? PostCheckoutSessionsRequestBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestBrandingSettingsBackgroundColor? backgroundColor;
 
@@ -156,7 +156,7 @@ final PostCheckoutSessionsRequestBrandingSettingsIcon? icon;
 
 final PostCheckoutSessionsRequestBrandingSettingsLogo? logo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (backgroundColor != null) 'background_color': backgroundColor?.toJson(),
   if (borderStyle != null) 'border_style': borderStyle?.toJson(),
   if (buttonColor != null) 'button_color': buttonColor?.toJson(),
@@ -164,9 +164,9 @@ Map<String, dynamic> toJson() { return {
   if (fontFamily != null) 'font_family': fontFamily?.toJson(),
   if (icon != null) 'icon': icon?.toJson(),
   if (logo != null) 'logo': logo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'border_style', 'button_color', 'display_name', 'font_family', 'icon', 'logo'}.contains(key)); } 
-PostCheckoutSessionsRequestBrandingSettings copyWith({PostCheckoutSessionsRequestBrandingSettingsBackgroundColor? Function()? backgroundColor, PostCheckoutSessionsRequestBrandingSettingsBorderStyle? Function()? borderStyle, PostCheckoutSessionsRequestBrandingSettingsButtonColor? Function()? buttonColor, String? Function()? displayName, PostCheckoutSessionsRequestBrandingSettingsFontFamily? Function()? fontFamily, PostCheckoutSessionsRequestBrandingSettingsIcon? Function()? icon, PostCheckoutSessionsRequestBrandingSettingsLogo? Function()? logo, }) { return PostCheckoutSessionsRequestBrandingSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'background_color', 'border_style', 'button_color', 'display_name', 'font_family', 'icon', 'logo'}.contains(key));}
+PostCheckoutSessionsRequestBrandingSettings copyWith({PostCheckoutSessionsRequestBrandingSettingsBackgroundColor? Function()? backgroundColor, PostCheckoutSessionsRequestBrandingSettingsBorderStyle? Function()? borderStyle, PostCheckoutSessionsRequestBrandingSettingsButtonColor? Function()? buttonColor, String? Function()? displayName, PostCheckoutSessionsRequestBrandingSettingsFontFamily? Function()? fontFamily, PostCheckoutSessionsRequestBrandingSettingsIcon? Function()? icon, PostCheckoutSessionsRequestBrandingSettingsLogo? Function()? logo, }) {return PostCheckoutSessionsRequestBrandingSettings(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   borderStyle: borderStyle != null ? borderStyle() : this.borderStyle,
   buttonColor: buttonColor != null ? buttonColor() : this.buttonColor,
@@ -174,8 +174,8 @@ PostCheckoutSessionsRequestBrandingSettings copyWith({PostCheckoutSessionsReques
   fontFamily: fontFamily != null ? fontFamily() : this.fontFamily,
   icon: icon != null ? icon() : this.icon,
   logo: logo != null ? logo() : this.logo,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestBrandingSettings &&
           backgroundColor == other.backgroundColor &&
           borderStyle == other.borderStyle &&
@@ -183,7 +183,7 @@ PostCheckoutSessionsRequestBrandingSettings copyWith({PostCheckoutSessionsReques
           displayName == other.displayName &&
           fontFamily == other.fontFamily &&
           icon == other.icon &&
-          logo == other.logo; } 
-@override int get hashCode { return Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo); } 
-@override String toString() { return 'PostCheckoutSessionsRequestBrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)'; } 
- }
+          logo == other.logo;}
+@override int get hashCode {return Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo);}
+@override String toString() {return 'PostCheckoutSessionsRequestBrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)';}
+}

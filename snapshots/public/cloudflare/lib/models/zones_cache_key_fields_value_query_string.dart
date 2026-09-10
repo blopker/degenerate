@@ -5,28 +5,28 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_
 /// 
 @immutable final class ZonesCacheKeyFieldsValueQueryString {const ZonesCacheKeyFieldsValueQueryString({this.exclude, this.include, });
 
-factory ZonesCacheKeyFieldsValueQueryString.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueQueryString(
+factory ZonesCacheKeyFieldsValueQueryString.fromJson(Map<String, dynamic> json) {return ZonesCacheKeyFieldsValueQueryString(
   exclude: json['exclude'] != null ? OneOf2.parse(json['exclude'], fromA: (v) => ZonesCacheKeyFieldsValueQueryStringExcludeVariant1.fromJson(v as String), fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   include: json['include'] != null ? OneOf2.parse(json['include'], fromA: (v) => ZonesCacheKeyFieldsValueQueryStringIncludeVariant1.fromJson(v as String), fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
-); }
+);}
 
 final ZonesCacheKeyFieldsValueQueryStringExclude? exclude;
 
 final ZonesCacheKeyFieldsValueQueryStringInclude? include;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (exclude != null) 'exclude': exclude?.toJson(),
   if (include != null) 'include': include?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude', 'include'}.contains(key)); } 
-ZonesCacheKeyFieldsValueQueryString copyWith({ZonesCacheKeyFieldsValueQueryStringExclude? Function()? exclude, ZonesCacheKeyFieldsValueQueryStringInclude? Function()? include, }) { return ZonesCacheKeyFieldsValueQueryString(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'exclude', 'include'}.contains(key));}
+ZonesCacheKeyFieldsValueQueryString copyWith({ZonesCacheKeyFieldsValueQueryStringExclude? Function()? exclude, ZonesCacheKeyFieldsValueQueryStringInclude? Function()? include, }) {return ZonesCacheKeyFieldsValueQueryString(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheKeyFieldsValueQueryString &&
           exclude == other.exclude &&
-          include == other.include; } 
-@override int get hashCode { return Object.hash(exclude, include); } 
-@override String toString() { return 'ZonesCacheKeyFieldsValueQueryString(exclude: $exclude, include: $include)'; } 
- }
+          include == other.include;}
+@override int get hashCode {return Object.hash(exclude, include);}
+@override String toString() {return 'ZonesCacheKeyFieldsValueQueryString(exclude: $exclude, include: $include)';}
+}

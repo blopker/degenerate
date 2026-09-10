@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// GRPCAction specifies an action involving a GRPC service.
 @immutable final class GrpcAction {const GrpcAction({required this.port, this.service, });
 
-factory GrpcAction.fromJson(Map<String, dynamic> json) { return GrpcAction(
+factory GrpcAction.fromJson(Map<String, dynamic> json) {return GrpcAction(
   port: (json['port'] as num).toInt(),
   service: json['service'] as String?,
-); }
+);}
 
 /// Port number of the gRPC service. Number must be in the range 1 to 65535.
 final int port;
@@ -17,20 +17,20 @@ final int port;
 final String? service;
 
 /// The value with the schema default applied when absent.
-String get serviceOrDefault { return service ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get serviceOrDefault {return service ?? '';}
+Map<String, dynamic> toJson() {return {
   'port': port,
   'service': ?service,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
-GrpcAction copyWith({int? port, String? Function()? service, }) { return GrpcAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('port') && json['port'] is num;}
+GrpcAction copyWith({int? port, String? Function()? service, }) {return GrpcAction(
   port: port ?? this.port,
   service: service != null ? service() : this.service,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GrpcAction &&
           port == other.port &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(port, service); } 
-@override String toString() { return 'GrpcAction(port: $port, service: $service)'; } 
- }
+          service == other.service;}
+@override int get hashCode {return Object.hash(port, service);}
+@override String toString() {return 'GrpcAction(port: $port, service: $service)';}
+}

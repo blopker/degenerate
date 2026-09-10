@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_provided_details.dart';import 'gelato_related_person.dart';import 'gelato_session_last_error.dart';import 'gelato_verification_session_options.dart';import 'gelato_verified_outputs.dart';import 'identity_verification_session_last_verification_report.dart';import 'verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IdentityVerificationSessionObject {const IdentityVerificationSessionObject._(this.value);
 
-factory IdentityVerificationSessionObject.fromJson(String json) { return switch (json) {
+factory IdentityVerificationSessionObject.fromJson(String json) {return switch (json) {
   'identity.verification_session' => identityVerificationSession,
   _ => IdentityVerificationSessionObject._(json),
-}; }
+};}
 
 static const IdentityVerificationSessionObject identityVerificationSession = IdentityVerificationSessionObject._('identity.verification_session');
 
@@ -14,24 +14,24 @@ static const List<IdentityVerificationSessionObject> values = [identityVerificat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationSessionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IdentityVerificationSessionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IdentityVerificationSessionObject($value)';}
+}
 /// Status of this VerificationSession. [Learn more about the lifecycle of sessions](https://docs.stripe.com/identity/how-sessions-work).
 @immutable final class IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus._(this.value);
 
-factory IdentityVerificationSessionStatus.fromJson(String json) { return switch (json) {
+factory IdentityVerificationSessionStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'processing' => processing,
   'requires_input' => requiresInput,
   'verified' => verified,
   _ => IdentityVerificationSessionStatus._(json),
-}; }
+};}
 
 static const IdentityVerificationSessionStatus canceled = IdentityVerificationSessionStatus._('canceled');
 
@@ -45,23 +45,23 @@ static const List<IdentityVerificationSessionStatus> values = [canceled, process
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationSessionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationSessionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IdentityVerificationSessionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IdentityVerificationSessionStatus($value)';}
+}
 /// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed.
 @immutable final class IdentityVerificationSessionType {const IdentityVerificationSessionType._(this.value);
 
-factory IdentityVerificationSessionType.fromJson(String json) { return switch (json) {
+factory IdentityVerificationSessionType.fromJson(String json) {return switch (json) {
   'document' => document,
   'id_number' => idNumber,
   'verification_flow' => verificationFlow,
   _ => IdentityVerificationSessionType._(json),
-}; }
+};}
 
 static const IdentityVerificationSessionType document = IdentityVerificationSessionType._('document');
 
@@ -73,14 +73,14 @@ static const List<IdentityVerificationSessionType> values = [document, idNumber,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationSessionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationSessionType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IdentityVerificationSessionType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IdentityVerificationSessionType($value)';}
+}
 /// A VerificationSession guides you through the process of collecting and verifying the identities
 /// of your users. It contains details about the type of verification, such as what [verification
 /// check](/docs/identity/verification-checks) to perform. Only create one VerificationSession for
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [The Verification Sessions API](https://docs.stripe.com/identity/verification-sessions)
 @immutable final class IdentityVerificationSession {const IdentityVerificationSession({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.type, this.clientReferenceId = const Omittable.absent(), this.clientSecret = const Omittable.absent(), this.lastError = const Omittable.absent(), this.lastVerificationReport = const Omittable.absent(), this.options = const Omittable.absent(), this.providedDetails = const Omittable.absent(), this.redaction = const Omittable.absent(), this.relatedCustomer = const Omittable.absent(), this.relatedCustomerAccount = const Omittable.absent(), this.relatedPerson, this.url = const Omittable.absent(), this.verificationFlow, this.verifiedOutputs = const Omittable.absent(), });
 
-factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return IdentityVerificationSession(
+factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) {return IdentityVerificationSession(
   clientReferenceId: json.containsKey('client_reference_id') ? Omittable(json['client_reference_id'] as String?) : const Omittable.absent(),
   clientSecret: json.containsKey('client_secret') ? Omittable(json['client_secret'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -115,7 +115,7 @@ factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
   verificationFlow: json['verification_flow'] as String?,
   verifiedOutputs: json.containsKey('verified_outputs') ? Omittable(json['verified_outputs'] != null ? GelatoVerifiedOutputs.fromJson(json['verified_outputs'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.
 final Omittable<String?> clientReferenceId;
@@ -176,7 +176,7 @@ final String? verificationFlow;
 /// The user’s verified data.
 final Omittable<GelatoVerifiedOutputs?> verifiedOutputs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientReferenceId.isPresent) 'client_reference_id': clientReferenceId.value,
   if (clientSecret.isPresent) 'client_secret': clientSecret.value,
   'created': created,
@@ -197,15 +197,15 @@ Map<String, dynamic> toJson() { return {
   if (url.isPresent) 'url': url.value,
   'verification_flow': ?verificationFlow,
   if (verifiedOutputs.isPresent) 'verified_outputs': verifiedOutputs.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-IdentityVerificationSession copyWith({Omittable<String?>? clientReferenceId, Omittable<String?>? clientSecret, int? created, String? id, Omittable<GelatoSessionLastError?>? lastError, Omittable<IdentityVerificationSessionLastVerificationReport?>? lastVerificationReport, bool? livemode, Map<String,String>? metadata, IdentityVerificationSessionObject? object, Omittable<GelatoVerificationSessionOptions?>? options, Omittable<GelatoProvidedDetails?>? providedDetails, Omittable<VerificationSessionRedaction?>? redaction, Omittable<String?>? relatedCustomer, Omittable<String?>? relatedCustomerAccount, GelatoRelatedPerson? Function()? relatedPerson, IdentityVerificationSessionStatus? status, IdentityVerificationSessionType? type, Omittable<String?>? url, String? Function()? verificationFlow, Omittable<GelatoVerifiedOutputs?>? verifiedOutputs, }) { return IdentityVerificationSession(
+      json.containsKey('type');}
+IdentityVerificationSession copyWith({Omittable<String?>? clientReferenceId, Omittable<String?>? clientSecret, int? created, String? id, Omittable<GelatoSessionLastError?>? lastError, Omittable<IdentityVerificationSessionLastVerificationReport?>? lastVerificationReport, bool? livemode, Map<String,String>? metadata, IdentityVerificationSessionObject? object, Omittable<GelatoVerificationSessionOptions?>? options, Omittable<GelatoProvidedDetails?>? providedDetails, Omittable<VerificationSessionRedaction?>? redaction, Omittable<String?>? relatedCustomer, Omittable<String?>? relatedCustomerAccount, GelatoRelatedPerson? Function()? relatedPerson, IdentityVerificationSessionStatus? status, IdentityVerificationSessionType? type, Omittable<String?>? url, String? Function()? verificationFlow, Omittable<GelatoVerifiedOutputs?>? verifiedOutputs, }) {return IdentityVerificationSession(
   clientReferenceId: clientReferenceId ?? this.clientReferenceId,
   clientSecret: clientSecret ?? this.clientSecret,
   created: created ?? this.created,
@@ -226,8 +226,8 @@ IdentityVerificationSession copyWith({Omittable<String?>? clientReferenceId, Omi
   url: url ?? this.url,
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
   verifiedOutputs: verifiedOutputs ?? this.verifiedOutputs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IdentityVerificationSession &&
           clientReferenceId == other.clientReferenceId &&
           clientSecret == other.clientSecret &&
@@ -248,7 +248,7 @@ IdentityVerificationSession copyWith({Omittable<String?>? clientReferenceId, Omi
           type == other.type &&
           url == other.url &&
           verificationFlow == other.verificationFlow &&
-          verifiedOutputs == other.verifiedOutputs; } 
-@override int get hashCode { return Object.hash(clientReferenceId, clientSecret, created, id, lastError, lastVerificationReport, livemode, metadata, object, options, providedDetails, redaction, relatedCustomer, relatedCustomerAccount, relatedPerson, status, type, url, verificationFlow, verifiedOutputs); } 
-@override String toString() { return 'IdentityVerificationSession(clientReferenceId: $clientReferenceId, clientSecret: $clientSecret, created: $created, id: $id, lastError: $lastError, lastVerificationReport: $lastVerificationReport, livemode: $livemode, metadata: $metadata, object: $object, options: $options, providedDetails: $providedDetails, redaction: $redaction, relatedCustomer: $relatedCustomer, relatedCustomerAccount: $relatedCustomerAccount, relatedPerson: $relatedPerson, status: $status, type: $type, url: $url, verificationFlow: $verificationFlow, verifiedOutputs: $verifiedOutputs)'; } 
- }
+          verifiedOutputs == other.verifiedOutputs;}
+@override int get hashCode {return Object.hash(clientReferenceId, clientSecret, created, id, lastError, lastVerificationReport, livemode, metadata, object, options, providedDetails, redaction, relatedCustomer, relatedCustomerAccount, relatedPerson, status, type, url, verificationFlow, verifiedOutputs);}
+@override String toString() {return 'IdentityVerificationSession(clientReferenceId: $clientReferenceId, clientSecret: $clientSecret, created: $created, id: $id, lastError: $lastError, lastVerificationReport: $lastVerificationReport, livemode: $livemode, metadata: $metadata, object: $object, options: $options, providedDetails: $providedDetails, redaction: $redaction, relatedCustomer: $relatedCustomer, relatedCustomerAccount: $relatedCustomerAccount, relatedPerson: $relatedPerson, status: $status, type: $type, url: $url, verificationFlow: $verificationFlow, verifiedOutputs: $verifiedOutputs)';}
+}

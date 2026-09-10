@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventReadDeprecatedResponse404Errors {const GetEventReadDeprecatedResponse404Errors({required this.message});
 
-factory GetEventReadDeprecatedResponse404Errors.fromJson(Map<String, dynamic> json) { return GetEventReadDeprecatedResponse404Errors(
+factory GetEventReadDeprecatedResponse404Errors.fromJson(Map<String, dynamic> json) {return GetEventReadDeprecatedResponse404Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-GetEventReadDeprecatedResponse404Errors copyWith({String? message}) { return GetEventReadDeprecatedResponse404Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+GetEventReadDeprecatedResponse404Errors copyWith({String? message}) {return GetEventReadDeprecatedResponse404Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetEventReadDeprecatedResponse404Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'GetEventReadDeprecatedResponse404Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'GetEventReadDeprecatedResponse404Errors(message: $message)';}
+}

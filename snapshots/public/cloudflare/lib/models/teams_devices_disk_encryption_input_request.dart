@@ -9,29 +9,29 @@ bool toJson() => value;
 }
 @immutable final class TeamsDevicesDiskEncryptionInputRequest {const TeamsDevicesDiskEncryptionInputRequest({this.checkDisks, this.requireAll, });
 
-factory TeamsDevicesDiskEncryptionInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesDiskEncryptionInputRequest(
+factory TeamsDevicesDiskEncryptionInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesDiskEncryptionInputRequest(
   checkDisks: (json['checkDisks'] as List<dynamic>?)?.map((e) => e as String).toList(),
   requireAll: json['requireAll'] != null ? TeamsDevicesRequireAll.fromJson(json['requireAll'] as bool) : null,
-); }
+);}
 
 /// List of volume names to be checked for encryption.
 final List<String>? checkDisks;
 
 final TeamsDevicesRequireAll? requireAll;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'checkDisks': ?checkDisks,
   if (requireAll != null) 'requireAll': requireAll?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'checkDisks', 'requireAll'}.contains(key)); } 
-TeamsDevicesDiskEncryptionInputRequest copyWith({List<String>? Function()? checkDisks, TeamsDevicesRequireAll? Function()? requireAll, }) { return TeamsDevicesDiskEncryptionInputRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'checkDisks', 'requireAll'}.contains(key));}
+TeamsDevicesDiskEncryptionInputRequest copyWith({List<String>? Function()? checkDisks, TeamsDevicesRequireAll? Function()? requireAll, }) {return TeamsDevicesDiskEncryptionInputRequest(
   checkDisks: checkDisks != null ? checkDisks() : this.checkDisks,
   requireAll: requireAll != null ? requireAll() : this.requireAll,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesDiskEncryptionInputRequest &&
           listEquals(checkDisks, other.checkDisks) &&
-          requireAll == other.requireAll; } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkDisks ?? const []), requireAll); } 
-@override String toString() { return 'TeamsDevicesDiskEncryptionInputRequest(checkDisks: $checkDisks, requireAll: $requireAll)'; } 
- }
+          requireAll == other.requireAll;}
+@override int get hashCode {return Object.hash(Object.hashAll(checkDisks ?? const []), requireAll);}
+@override String toString() {return 'TeamsDevicesDiskEncryptionInputRequest(checkDisks: $checkDisks, requireAll: $requireAll)';}
+}

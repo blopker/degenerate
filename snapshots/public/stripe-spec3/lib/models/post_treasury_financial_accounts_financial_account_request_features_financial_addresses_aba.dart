@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba {const PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba({required this.requested});
 
-factory PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba(
+factory PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba(
   requested: json['requested'] as bool,
-); }
+);}
 
 final bool requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool; } 
-PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba copyWith({bool? requested}) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requested') && json['requested'] is bool;}
+PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba copyWith({bool? requested}) {return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba(
   requested: requested ?? this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba(requested: $requested)';}
+}

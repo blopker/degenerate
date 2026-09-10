@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
 @immutable final class CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope._(this.value);
 
-factory CodeSecurityAttachConfigurationRequestScope.fromJson(String json) { return switch (json) {
+factory CodeSecurityAttachConfigurationRequestScope.fromJson(String json) {return switch (json) {
   'all' => all,
   'all_without_configurations' => allWithoutConfigurations,
   'public' => public,
   'private_or_internal' => privateOrInternal,
   'selected' => selected,
   _ => CodeSecurityAttachConfigurationRequestScope._(json),
-}; }
+};}
 
 static const CodeSecurityAttachConfigurationRequestScope all = CodeSecurityAttachConfigurationRequestScope._('all');
 
@@ -26,20 +26,20 @@ static const List<CodeSecurityAttachConfigurationRequestScope> values = [all, al
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityAttachConfigurationRequestScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityAttachConfigurationRequestScope($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityAttachConfigurationRequestScope && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityAttachConfigurationRequestScope($value)';}
+}
 @immutable final class CodeSecurityAttachConfigurationRequest {const CodeSecurityAttachConfigurationRequest({required this.scope, this.selectedRepositoryIds, });
 
-factory CodeSecurityAttachConfigurationRequest.fromJson(Map<String, dynamic> json) { return CodeSecurityAttachConfigurationRequest(
+factory CodeSecurityAttachConfigurationRequest.fromJson(Map<String, dynamic> json) {return CodeSecurityAttachConfigurationRequest(
   scope: CodeSecurityAttachConfigurationRequestScope.fromJson(json['scope'] as String),
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
 final CodeSecurityAttachConfigurationRequestScope scope;
@@ -47,19 +47,19 @@ final CodeSecurityAttachConfigurationRequestScope scope;
 /// An array of repository IDs to attach the configuration to. You can only provide a list of repository ids when the `scope` is set to `selected`.
 final List<int>? selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'scope': scope.toJson(),
   'selected_repository_ids': ?selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('scope'); } 
-CodeSecurityAttachConfigurationRequest copyWith({CodeSecurityAttachConfigurationRequestScope? scope, List<int>? Function()? selectedRepositoryIds, }) { return CodeSecurityAttachConfigurationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('scope');}
+CodeSecurityAttachConfigurationRequest copyWith({CodeSecurityAttachConfigurationRequestScope? scope, List<int>? Function()? selectedRepositoryIds, }) {return CodeSecurityAttachConfigurationRequest(
   scope: scope ?? this.scope,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeSecurityAttachConfigurationRequest &&
           scope == other.scope &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(scope, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'CodeSecurityAttachConfigurationRequest(scope: $scope, selectedRepositoryIds: $selectedRepositoryIds)'; } 
- }
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);}
+@override int get hashCode {return Object.hash(scope, Object.hashAll(selectedRepositoryIds ?? const []));}
+@override String toString() {return 'CodeSecurityAttachConfigurationRequest(scope: $scope, selectedRepositoryIds: $selectedRepositoryIds)';}
+}

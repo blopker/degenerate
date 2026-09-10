@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_object_tool_resources.dart';/// The object type, which is always `thread`.
 @immutable final class ThreadObjectObject {const ThreadObjectObject._(this.value);
 
-factory ThreadObjectObject.fromJson(String json) { return switch (json) {
+factory ThreadObjectObject.fromJson(String json) {return switch (json) {
   'thread' => thread,
   _ => ThreadObjectObject._(json),
-}; }
+};}
 
 static const ThreadObjectObject thread = ThreadObjectObject._('thread');
 
@@ -14,24 +14,24 @@ static const List<ThreadObjectObject> values = [thread];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadObjectObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreadObjectObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThreadObjectObject($value)';}
+}
 /// Represents a thread that contains [messages](/docs/api-reference/messages).
 @immutable final class ThreadObject {const ThreadObject({required this.id, required this.object, required this.createdAt, required this.toolResources, required this.metadata, });
 
-factory ThreadObject.fromJson(Map<String, dynamic> json) { return ThreadObject(
+factory ThreadObject.fromJson(Map<String, dynamic> json) {return ThreadObject(
   id: json['id'] as String,
   object: ThreadObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
   toolResources: json['tool_resources'] != null ? ThreadObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -55,32 +55,32 @@ final ThreadObjectToolResources? toolResources;
 /// 
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
   'tool_resources': toolResources?.toJson(),
   'metadata': metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('tool_resources') &&
-      json.containsKey('metadata'); } 
-ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, ThreadObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, }) { return ThreadObject(
+      json.containsKey('metadata');}
+ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, ThreadObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, }) {return ThreadObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
   toolResources: toolResources != null ? toolResources() : this.toolResources,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ThreadObject &&
           id == other.id &&
           object == other.object &&
           createdAt == other.createdAt &&
           toolResources == other.toolResources &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, toolResources, metadata); } 
-@override String toString() { return 'ThreadObject(id: $id, object: $object, createdAt: $createdAt, toolResources: $toolResources, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(id, object, createdAt, toolResources, metadata);}
+@override String toString() {return 'ThreadObject(id: $id, object: $object, createdAt: $createdAt, toolResources: $toolResources, metadata: $metadata)';}
+}

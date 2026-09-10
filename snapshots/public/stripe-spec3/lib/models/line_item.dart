@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_line_item_period.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'line_item_discounts.dart';import 'line_item_subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class LineItemObject {const LineItemObject._(this.value);
 
-factory LineItemObject.fromJson(String json) { return switch (json) {
+factory LineItemObject.fromJson(String json) {return switch (json) {
   'line_item' => lineItem,
   _ => LineItemObject._(json),
-}; }
+};}
 
 static const LineItemObject lineItem = LineItemObject._('line_item');
 
@@ -14,20 +14,20 @@ static const List<LineItemObject> values = [lineItem];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LineItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LineItemObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LineItemObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LineItemObject($value)';}
+}
 /// Invoice Line Items represent the individual lines within an [invoice](https://docs.stripe.com/api/invoices) and only exist within the context of an invoice.
 /// 
 /// Each line item is backed by either an [invoice item](https://docs.stripe.com/api/invoiceitems) or a [subscription item](https://docs.stripe.com/api/subscription_items).
 @immutable final class LineItem {const LineItem({required this.amount, required this.currency, required this.discountable, required this.discounts, required this.id, required this.livemode, required this.metadata, required this.object, required this.period, required this.subtotal, this.description = const Omittable.absent(), this.discountAmounts = const Omittable.absent(), this.invoice = const Omittable.absent(), this.parent = const Omittable.absent(), this.pretaxCreditAmounts = const Omittable.absent(), this.pricing = const Omittable.absent(), this.quantity = const Omittable.absent(), this.subscription = const Omittable.absent(), this.taxes = const Omittable.absent(), });
 
-factory LineItem.fromJson(Map<String, dynamic> json) { return LineItem(
+factory LineItem.fromJson(Map<String, dynamic> json) {return LineItem(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
@@ -47,7 +47,7 @@ factory LineItem.fromJson(Map<String, dynamic> json) { return LineItem(
   subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? LineItemSubscription.fromJson(json['subscription']) : null) : const Omittable.absent(),
   subtotal: (json['subtotal'] as num).toInt(),
   taxes: json.containsKey('taxes') ? Omittable((json['taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// The amount, in cents (or local equivalent).
 final int amount;
@@ -104,7 +104,7 @@ final int subtotal;
 /// The tax information of the line item.
 final Omittable<List<BillingBillResourceInvoicingTaxesTax>?> taxes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   if (description.isPresent) 'description': description.value,
@@ -124,8 +124,8 @@ Map<String, dynamic> toJson() { return {
   if (subscription.isPresent) 'subscription': subscription.value?.toJson(),
   'subtotal': subtotal,
   if (taxes.isPresent) 'taxes': taxes.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('discountable') && json['discountable'] is bool &&
       json.containsKey('discounts') &&
@@ -134,8 +134,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('period') &&
-      json.containsKey('subtotal') && json['subtotal'] is num; } 
-LineItem copyWith({int? amount, String? currency, Omittable<String?>? description, Omittable<List<DiscountsResourceDiscountAmount>?>? discountAmounts, bool? discountable, List<LineItemDiscounts>? discounts, String? id, Omittable<String?>? invoice, bool? livemode, Map<String,String>? metadata, LineItemObject? object, Omittable<BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent?>? parent, InvoiceLineItemPeriod? period, Omittable<List<InvoicesResourcePretaxCreditAmount>?>? pretaxCreditAmounts, Omittable<BillingBillResourceInvoicingPricingPricing?>? pricing, Omittable<int?>? quantity, Omittable<LineItemSubscription?>? subscription, int? subtotal, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? taxes, }) { return LineItem(
+      json.containsKey('subtotal') && json['subtotal'] is num;}
+LineItem copyWith({int? amount, String? currency, Omittable<String?>? description, Omittable<List<DiscountsResourceDiscountAmount>?>? discountAmounts, bool? discountable, List<LineItemDiscounts>? discounts, String? id, Omittable<String?>? invoice, bool? livemode, Map<String,String>? metadata, LineItemObject? object, Omittable<BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent?>? parent, InvoiceLineItemPeriod? period, Omittable<List<InvoicesResourcePretaxCreditAmount>?>? pretaxCreditAmounts, Omittable<BillingBillResourceInvoicingPricingPricing?>? pricing, Omittable<int?>? quantity, Omittable<LineItemSubscription?>? subscription, int? subtotal, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? taxes, }) {return LineItem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description ?? this.description,
@@ -155,8 +155,8 @@ LineItem copyWith({int? amount, String? currency, Omittable<String?>? descriptio
   subscription: subscription ?? this.subscription,
   subtotal: subtotal ?? this.subtotal,
   taxes: taxes ?? this.taxes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LineItem &&
           amount == other.amount &&
           currency == other.currency &&
@@ -179,7 +179,7 @@ LineItem copyWith({int? amount, String? currency, Omittable<String?>? descriptio
           subscription == other.subscription &&
           subtotal == other.subtotal &&
           taxes.isPresent == other.taxes.isPresent &&
-          listEquals(taxes.value, other.taxes.value); } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(discountAmounts.value ?? const []), discountable, Object.hashAll(discounts), id, invoice, livemode, metadata, object, parent, period, Object.hashAll(pretaxCreditAmounts.value ?? const []), pricing, quantity, subscription, subtotal, Object.hashAll(taxes.value ?? const [])); } 
-@override String toString() { return 'LineItem(amount: $amount, currency: $currency, description: $description, discountAmounts: $discountAmounts, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, parent: $parent, period: $period, pretaxCreditAmounts: $pretaxCreditAmounts, pricing: $pricing, quantity: $quantity, subscription: $subscription, subtotal: $subtotal, taxes: $taxes)'; } 
- }
+          listEquals(taxes.value, other.taxes.value);}
+@override int get hashCode {return Object.hash(amount, currency, description, Object.hashAll(discountAmounts.value ?? const []), discountable, Object.hashAll(discounts), id, invoice, livemode, metadata, object, parent, period, Object.hashAll(pretaxCreditAmounts.value ?? const []), pricing, quantity, subscription, subtotal, Object.hashAll(taxes.value ?? const []));}
+@override String toString() {return 'LineItem(amount: $amount, currency: $currency, description: $description, discountAmounts: $discountAmounts, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, parent: $parent, period: $period, pretaxCreditAmounts: $pretaxCreditAmounts, pricing: $pricing, quantity: $quantity, subscription: $subscription, subtotal: $subtotal, taxes: $taxes)';}
+}

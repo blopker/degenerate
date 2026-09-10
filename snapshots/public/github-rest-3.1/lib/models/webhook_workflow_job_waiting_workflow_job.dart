@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_job_waiting_workflow_job_steps.dart';@immutable final class WebhookWorkflowJobWaitingWorkflowJobStatus {const WebhookWorkflowJobWaitingWorkflowJobStatus._(this.value);
 
-factory WebhookWorkflowJobWaitingWorkflowJobStatus.fromJson(String json) { return switch (json) {
+factory WebhookWorkflowJobWaitingWorkflowJobStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   'waiting' => waiting,
   _ => WebhookWorkflowJobWaitingWorkflowJobStatus._(json),
-}; }
+};}
 
 static const WebhookWorkflowJobWaitingWorkflowJobStatus queued = WebhookWorkflowJobWaitingWorkflowJobStatus._('queued');
 
@@ -22,17 +22,17 @@ static const List<WebhookWorkflowJobWaitingWorkflowJobStatus> values = [queued, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookWorkflowJobWaitingWorkflowJobStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookWorkflowJobWaitingWorkflowJobStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookWorkflowJobWaitingWorkflowJobStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookWorkflowJobWaitingWorkflowJobStatus($value)';}
+}
 @immutable final class WebhookWorkflowJobWaitingWorkflowJob {const WebhookWorkflowJobWaitingWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.headBranch, required this.workflowName, required this.status, required this.steps, required this.url, });
 
-factory WebhookWorkflowJobWaitingWorkflowJob.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobWaitingWorkflowJob(
+factory WebhookWorkflowJobWaitingWorkflowJob.fromJson(Map<String, dynamic> json) {return WebhookWorkflowJobWaitingWorkflowJob(
   checkRunUrl: Uri.parse(json['check_run_url'] as String),
   completedAt: json['completed_at'] as String?,
   conclusion: json['conclusion'] as String?,
@@ -56,7 +56,7 @@ factory WebhookWorkflowJobWaitingWorkflowJob.fromJson(Map<String, dynamic> json)
   status: WebhookWorkflowJobWaitingWorkflowJobStatus.fromJson(json['status'] as String),
   steps: (json['steps'] as List<dynamic>).map((e) => WebhookWorkflowJobWaitingWorkflowJobSteps.fromJson(e as Map<String, dynamic>)).toList(),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri checkRunUrl;
 
@@ -107,7 +107,7 @@ final List<WebhookWorkflowJobWaitingWorkflowJobSteps> steps;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'check_run_url': checkRunUrl.toString(),
   'completed_at': completedAt,
   'conclusion': conclusion,
@@ -131,8 +131,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'steps': steps.map((e) => e.toJson()).toList(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_run_url') && json['check_run_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('check_run_url') && json['check_run_url'] is String &&
       json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -154,8 +154,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('check
       json.containsKey('workflow_name') && (json['workflow_name'] == null || json['workflow_name'] is String) &&
       json.containsKey('status') &&
       json.containsKey('steps') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookWorkflowJobWaitingWorkflowJob copyWith({Uri? checkRunUrl, String? Function()? completedAt, String? Function()? conclusion, String? createdAt, String? headSha, Uri? htmlUrl, int? id, List<String>? labels, String? name, String? nodeId, int? runAttempt, double? runId, Uri? runUrl, int? Function()? runnerGroupId, String? Function()? runnerGroupName, int? Function()? runnerId, String? Function()? runnerName, DateTime? startedAt, String? Function()? headBranch, String? Function()? workflowName, WebhookWorkflowJobWaitingWorkflowJobStatus? status, List<WebhookWorkflowJobWaitingWorkflowJobSteps>? steps, Uri? url, }) { return WebhookWorkflowJobWaitingWorkflowJob(
+      json.containsKey('url') && json['url'] is String;}
+WebhookWorkflowJobWaitingWorkflowJob copyWith({Uri? checkRunUrl, String? Function()? completedAt, String? Function()? conclusion, String? createdAt, String? headSha, Uri? htmlUrl, int? id, List<String>? labels, String? name, String? nodeId, int? runAttempt, double? runId, Uri? runUrl, int? Function()? runnerGroupId, String? Function()? runnerGroupName, int? Function()? runnerId, String? Function()? runnerName, DateTime? startedAt, String? Function()? headBranch, String? Function()? workflowName, WebhookWorkflowJobWaitingWorkflowJobStatus? status, List<WebhookWorkflowJobWaitingWorkflowJobSteps>? steps, Uri? url, }) {return WebhookWorkflowJobWaitingWorkflowJob(
   checkRunUrl: checkRunUrl ?? this.checkRunUrl,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
@@ -179,8 +179,8 @@ WebhookWorkflowJobWaitingWorkflowJob copyWith({Uri? checkRunUrl, String? Functio
   status: status ?? this.status,
   steps: steps ?? this.steps,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookWorkflowJobWaitingWorkflowJob &&
           checkRunUrl == other.checkRunUrl &&
           completedAt == other.completedAt &&
@@ -204,7 +204,7 @@ WebhookWorkflowJobWaitingWorkflowJob copyWith({Uri? checkRunUrl, String? Functio
           workflowName == other.workflowName &&
           status == other.status &&
           listEquals(steps, other.steps) &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([checkRunUrl, completedAt, conclusion, createdAt, headSha, htmlUrl, id, Object.hashAll(labels), name, nodeId, runAttempt, runId, runUrl, runnerGroupId, runnerGroupName, runnerId, runnerName, startedAt, headBranch, workflowName, status, Object.hashAll(steps), url]); } 
-@override String toString() { return 'WebhookWorkflowJobWaitingWorkflowJob(checkRunUrl: $checkRunUrl, completedAt: $completedAt, conclusion: $conclusion, createdAt: $createdAt, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, labels: $labels, name: $name, nodeId: $nodeId, runAttempt: $runAttempt, runId: $runId, runUrl: $runUrl, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, runnerId: $runnerId, runnerName: $runnerName, startedAt: $startedAt, headBranch: $headBranch, workflowName: $workflowName, status: $status, steps: $steps, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hashAll([checkRunUrl, completedAt, conclusion, createdAt, headSha, htmlUrl, id, Object.hashAll(labels), name, nodeId, runAttempt, runId, runUrl, runnerGroupId, runnerGroupName, runnerId, runnerName, startedAt, headBranch, workflowName, status, Object.hashAll(steps), url]);}
+@override String toString() {return 'WebhookWorkflowJobWaitingWorkflowJob(checkRunUrl: $checkRunUrl, completedAt: $completedAt, conclusion: $conclusion, createdAt: $createdAt, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, labels: $labels, name: $name, nodeId: $nodeId, runAttempt: $runAttempt, runId: $runId, runUrl: $runUrl, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, runnerId: $runnerId, runnerName: $runnerName, startedAt: $startedAt, headBranch: $headBranch, workflowName: $workflowName, status: $status, steps: $steps, url: $url)';}
+}

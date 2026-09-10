@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemasFeature {const SchemasFeature._(this.value);
 
-factory SchemasFeature.fromJson(String json) { return switch (json) {
+factory SchemasFeature.fromJson(String json) {return switch (json) {
   'thresholds' => thresholds,
   'parameter_schemas' => parameterSchemas,
   'schema_info' => schemaInfo,
   _ => SchemasFeature._(json),
-}; }
+};}
 
 static const SchemasFeature thresholds = SchemasFeature._('thresholds');
 
@@ -19,11 +19,11 @@ static const List<SchemasFeature> values = [thresholds, parameterSchemas, schema
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SchemasFeature && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SchemasFeature($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SchemasFeature && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SchemasFeature($value)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cards_request_pin.dart';import 'post_issuing_cards_request_second_line.dart';import 'post_issuing_cards_request_shipping.dart';import 'post_issuing_cards_request_spending_controls.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
 @immutable final class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason._(this.value);
 
-factory PostIssuingCardsRequestReplacementReason.fromJson(String json) { return switch (json) {
+factory PostIssuingCardsRequestReplacementReason.fromJson(String json) {return switch (json) {
   'damaged' => damaged,
   'expired' => expired,
   'lost' => lost,
   'stolen' => stolen,
   _ => PostIssuingCardsRequestReplacementReason._(json),
-}; }
+};}
 
 static const PostIssuingCardsRequestReplacementReason damaged = PostIssuingCardsRequestReplacementReason._('damaged');
 
@@ -23,22 +23,22 @@ static const List<PostIssuingCardsRequestReplacementReason> values = [damaged, e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsRequestReplacementReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsRequestReplacementReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardsRequestReplacementReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardsRequestReplacementReason($value)';}
+}
 /// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
 @immutable final class PostIssuingCardsRequestStatus {const PostIssuingCardsRequestStatus._(this.value);
 
-factory PostIssuingCardsRequestStatus.fromJson(String json) { return switch (json) {
+factory PostIssuingCardsRequestStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   _ => PostIssuingCardsRequestStatus._(json),
-}; }
+};}
 
 static const PostIssuingCardsRequestStatus active = PostIssuingCardsRequestStatus._('active');
 
@@ -48,22 +48,22 @@ static const List<PostIssuingCardsRequestStatus> values = [active, inactive];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsRequestStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardsRequestStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardsRequestStatus($value)';}
+}
 /// The type of card to issue. Possible values are `physical` or `virtual`.
 @immutable final class PostIssuingCardsRequestType {const PostIssuingCardsRequestType._(this.value);
 
-factory PostIssuingCardsRequestType.fromJson(String json) { return switch (json) {
+factory PostIssuingCardsRequestType.fromJson(String json) {return switch (json) {
   'physical' => physical,
   'virtual' => virtual,
   _ => PostIssuingCardsRequestType._(json),
-}; }
+};}
 
 static const PostIssuingCardsRequestType physical = PostIssuingCardsRequestType._('physical');
 
@@ -73,17 +73,17 @@ static const List<PostIssuingCardsRequestType> values = [physical, virtual];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardsRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardsRequestType($value)';}
+}
 @immutable final class PostIssuingCardsRequest {const PostIssuingCardsRequest({required this.currency, required this.type, this.cardholder, this.expMonth, this.expYear, this.expand, this.financialAccount, this.metadata, this.personalizationDesign, this.pin, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.spendingControls, this.status, });
 
-factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequest(
+factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) {return PostIssuingCardsRequest(
   cardholder: json['cardholder'] as String?,
   currency: json['currency'] as String,
   expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,
@@ -100,7 +100,7 @@ factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return Pos
   spendingControls: json['spending_controls'] != null ? PostIssuingCardsRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardsRequestStatus.fromJson(json['status'] as String) : null,
   type: PostIssuingCardsRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The [Cardholder](https://docs.stripe.com/api#issuing_cardholder_object) object with which the card will be associated.
 final String? cardholder;
@@ -150,7 +150,7 @@ final PostIssuingCardsRequestStatus? status;
 /// The type of card to issue. Possible values are `physical` or `virtual`.
 final PostIssuingCardsRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cardholder': ?cardholder,
   'currency': currency,
   'exp_month': ?expMonth,
@@ -167,10 +167,10 @@ Map<String, dynamic> toJson() { return {
   if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
   if (status != null) 'status': status?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('type'); } 
-PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? currency, int? Function()? expMonth, int? Function()? expYear, List<String>? Function()? expand, String? Function()? financialAccount, Map<String, String>? Function()? metadata, String? Function()? personalizationDesign, PostIssuingCardsRequestPin? Function()? pin, String? Function()? replacementFor, PostIssuingCardsRequestReplacementReason? Function()? replacementReason, PostIssuingCardsRequestSecondLine? Function()? secondLine, PostIssuingCardsRequestShipping? Function()? shipping, PostIssuingCardsRequestSpendingControls? Function()? spendingControls, PostIssuingCardsRequestStatus? Function()? status, PostIssuingCardsRequestType? type, }) { return PostIssuingCardsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('type');}
+PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? currency, int? Function()? expMonth, int? Function()? expYear, List<String>? Function()? expand, String? Function()? financialAccount, Map<String, String>? Function()? metadata, String? Function()? personalizationDesign, PostIssuingCardsRequestPin? Function()? pin, String? Function()? replacementFor, PostIssuingCardsRequestReplacementReason? Function()? replacementReason, PostIssuingCardsRequestSecondLine? Function()? secondLine, PostIssuingCardsRequestShipping? Function()? shipping, PostIssuingCardsRequestSpendingControls? Function()? spendingControls, PostIssuingCardsRequestStatus? Function()? status, PostIssuingCardsRequestType? type, }) {return PostIssuingCardsRequest(
   cardholder: cardholder != null ? cardholder() : this.cardholder,
   currency: currency ?? this.currency,
   expMonth: expMonth != null ? expMonth() : this.expMonth,
@@ -187,8 +187,8 @@ PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? curren
   spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
   status: status != null ? status() : this.status,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingCardsRequest &&
           cardholder == other.cardholder &&
           currency == other.currency &&
@@ -205,7 +205,7 @@ PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? curren
           shipping == other.shipping &&
           spendingControls == other.spendingControls &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cardholder, currency, expMonth, expYear, Object.hashAll(expand ?? const []), financialAccount, metadata, personalizationDesign, pin, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type); } 
-@override String toString() { return 'PostIssuingCardsRequest(cardholder: $cardholder, currency: $currency, expMonth: $expMonth, expYear: $expYear, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(cardholder, currency, expMonth, expYear, Object.hashAll(expand ?? const []), financialAccount, metadata, personalizationDesign, pin, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type);}
+@override String toString() {return 'PostIssuingCardsRequest(cardholder: $cardholder, currency: $currency, expMonth: $expMonth, expYear: $expYear, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type)';}
+}

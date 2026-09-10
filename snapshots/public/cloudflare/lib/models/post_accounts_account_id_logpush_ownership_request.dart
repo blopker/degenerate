@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_destination_conf.dart';@immutable final class PostAccountsAccountIdLogpushOwnershipRequest {const PostAccountsAccountIdLogpushOwnershipRequest({required this.destinationConf});
 
-factory PostAccountsAccountIdLogpushOwnershipRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountIdLogpushOwnershipRequest(
+factory PostAccountsAccountIdLogpushOwnershipRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountIdLogpushOwnershipRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
-); }
+);}
 
 /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination_conf': destinationConf.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
-PostAccountsAccountIdLogpushOwnershipRequest copyWith({LogpushDestinationConf? destinationConf}) { return PostAccountsAccountIdLogpushOwnershipRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_conf');}
+PostAccountsAccountIdLogpushOwnershipRequest copyWith({LogpushDestinationConf? destinationConf}) {return PostAccountsAccountIdLogpushOwnershipRequest(
   destinationConf: destinationConf ?? this.destinationConf,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountIdLogpushOwnershipRequest &&
-          destinationConf == other.destinationConf; } 
-@override int get hashCode { return destinationConf.hashCode; } 
-@override String toString() { return 'PostAccountsAccountIdLogpushOwnershipRequest(destinationConf: $destinationConf)'; } 
- }
+          destinationConf == other.destinationConf;}
+@override int get hashCode {return destinationConf.hashCode;}
+@override String toString() {return 'PostAccountsAccountIdLogpushOwnershipRequest(destinationConf: $destinationConf)';}
+}

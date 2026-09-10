@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param36.dart';@immutable final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2 {const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2._(this.value);
 
-factory PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2 $empty = PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSep
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2($value)';}
+}
 
 @immutable
 final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit {

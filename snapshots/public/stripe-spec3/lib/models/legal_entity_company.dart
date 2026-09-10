@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_company_verification.dart';import 'legal_entity_directorship_declaration.dart';import 'legal_entity_japan_address.dart';import 'legal_entity_registration_date.dart';import 'legal_entity_representative_declaration.dart';import 'legal_entity_ubo_declaration.dart';/// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
 @immutable final class LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason._(this.value);
 
-factory LegalEntityCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
+factory LegalEntityCompanyOwnershipExemptionReason.fromJson(String json) {return switch (json) {
   'qualified_entity_exceeds_ownership_threshold' => qualifiedEntityExceedsOwnershipThreshold,
   'qualifies_as_financial_institution' => qualifiesAsFinancialInstitution,
   _ => LegalEntityCompanyOwnershipExemptionReason._(json),
-}; }
+};}
 
 static const LegalEntityCompanyOwnershipExemptionReason qualifiedEntityExceedsOwnershipThreshold = LegalEntityCompanyOwnershipExemptionReason._('qualified_entity_exceeds_ownership_threshold');
 
@@ -17,18 +17,18 @@ static const List<LegalEntityCompanyOwnershipExemptionReason> values = [qualifie
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LegalEntityCompanyOwnershipExemptionReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LegalEntityCompanyOwnershipExemptionReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LegalEntityCompanyOwnershipExemptionReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LegalEntityCompanyOwnershipExemptionReason($value)';}
+}
 /// The category identifying the legal structure of the company or legal entity. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`. See [Business structure](https://docs.stripe.com/connect/identity-verification#business-structure) for more details.
 @immutable final class LegalEntityCompanyStructure {const LegalEntityCompanyStructure._(this.value);
 
-factory LegalEntityCompanyStructure.fromJson(String json) { return switch (json) {
+factory LegalEntityCompanyStructure.fromJson(String json) {return switch (json) {
   'free_zone_establishment' => freeZoneEstablishment,
   'free_zone_llc' => freeZoneLlc,
   'government_instrumentality' => governmentInstrumentality,
@@ -53,7 +53,7 @@ factory LegalEntityCompanyStructure.fromJson(String json) { return switch (json)
   'unincorporated_non_profit' => unincorporatedNonProfit,
   'unincorporated_partnership' => unincorporatedPartnership,
   _ => LegalEntityCompanyStructure._(json),
-}; }
+};}
 
 static const LegalEntityCompanyStructure freeZoneEstablishment = LegalEntityCompanyStructure._('free_zone_establishment');
 
@@ -105,18 +105,18 @@ static const List<LegalEntityCompanyStructure> values = [freeZoneEstablishment, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LegalEntityCompanyStructure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LegalEntityCompanyStructure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LegalEntityCompanyStructure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LegalEntityCompanyStructure($value)';}
+}
 /// 
 @immutable final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana = const Omittable.absent(), this.addressKanji = const Omittable.absent(), this.directorsProvided, this.directorshipDeclaration = const Omittable.absent(), this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name = const Omittable.absent(), this.nameKana = const Omittable.absent(), this.nameKanji = const Omittable.absent(), this.ownersProvided, this.ownershipDeclaration = const Omittable.absent(), this.ownershipExemptionReason, this.phone = const Omittable.absent(), this.registrationDate, this.representativeDeclaration = const Omittable.absent(), this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification = const Omittable.absent(), });
 
-factory LegalEntityCompany.fromJson(Map<String, dynamic> json) { return LegalEntityCompany(
+factory LegalEntityCompany.fromJson(Map<String, dynamic> json) {return LegalEntityCompany(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json.containsKey('address_kana') ? Omittable(json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   addressKanji: json.containsKey('address_kanji') ? Omittable(json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -139,7 +139,7 @@ factory LegalEntityCompany.fromJson(Map<String, dynamic> json) { return LegalEnt
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatIdProvided: json['vat_id_provided'] as bool?,
   verification: json.containsKey('verification') ? Omittable(json['verification'] != null ? LegalEntityCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final Address? address;
 
@@ -205,7 +205,7 @@ final bool? vatIdProvided;
 /// Information on the verification state of the company.
 final Omittable<LegalEntityCompanyVerification?> verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressKana.isPresent) 'address_kana': addressKana.value?.toJson(),
   if (addressKanji.isPresent) 'address_kanji': addressKanji.value?.toJson(),
@@ -228,9 +228,9 @@ Map<String, dynamic> toJson() { return {
   'tax_id_registrar': ?taxIdRegistrar,
   'vat_id_provided': ?vatIdProvided,
   if (verification.isPresent) 'verification': verification.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'representative_declaration', 'structure', 'tax_id_provided', 'tax_id_registrar', 'vat_id_provided', 'verification'}.contains(key)); } 
-LegalEntityCompany copyWith({Address? Function()? address, Omittable<LegalEntityJapanAddress?>? addressKana, Omittable<LegalEntityJapanAddress?>? addressKanji, bool? Function()? directorsProvided, Omittable<LegalEntityDirectorshipDeclaration?>? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, Omittable<String?>? name, Omittable<String?>? nameKana, Omittable<String?>? nameKanji, bool? Function()? ownersProvided, Omittable<LegalEntityUboDeclaration?>? ownershipDeclaration, LegalEntityCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, Omittable<String?>? phone, LegalEntityRegistrationDate? Function()? registrationDate, Omittable<LegalEntityRepresentativeDeclaration?>? representativeDeclaration, LegalEntityCompanyStructure? Function()? structure, bool? Function()? taxIdProvided, String? Function()? taxIdRegistrar, bool? Function()? vatIdProvided, Omittable<LegalEntityCompanyVerification?>? verification, }) { return LegalEntityCompany(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'representative_declaration', 'structure', 'tax_id_provided', 'tax_id_registrar', 'vat_id_provided', 'verification'}.contains(key));}
+LegalEntityCompany copyWith({Address? Function()? address, Omittable<LegalEntityJapanAddress?>? addressKana, Omittable<LegalEntityJapanAddress?>? addressKanji, bool? Function()? directorsProvided, Omittable<LegalEntityDirectorshipDeclaration?>? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, Omittable<String?>? name, Omittable<String?>? nameKana, Omittable<String?>? nameKanji, bool? Function()? ownersProvided, Omittable<LegalEntityUboDeclaration?>? ownershipDeclaration, LegalEntityCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, Omittable<String?>? phone, LegalEntityRegistrationDate? Function()? registrationDate, Omittable<LegalEntityRepresentativeDeclaration?>? representativeDeclaration, LegalEntityCompanyStructure? Function()? structure, bool? Function()? taxIdProvided, String? Function()? taxIdRegistrar, bool? Function()? vatIdProvided, Omittable<LegalEntityCompanyVerification?>? verification, }) {return LegalEntityCompany(
   address: address != null ? address() : this.address,
   addressKana: addressKana ?? this.addressKana,
   addressKanji: addressKanji ?? this.addressKanji,
@@ -253,8 +253,8 @@ LegalEntityCompany copyWith({Address? Function()? address, Omittable<LegalEntity
   taxIdRegistrar: taxIdRegistrar != null ? taxIdRegistrar() : this.taxIdRegistrar,
   vatIdProvided: vatIdProvided != null ? vatIdProvided() : this.vatIdProvided,
   verification: verification ?? this.verification,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LegalEntityCompany &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -277,7 +277,7 @@ LegalEntityCompany copyWith({Address? Function()? address, Omittable<LegalEntity
           taxIdProvided == other.taxIdProvided &&
           taxIdRegistrar == other.taxIdRegistrar &&
           vatIdProvided == other.vatIdProvided &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, representativeDeclaration, structure, taxIdProvided, taxIdRegistrar, vatIdProvided, verification]); } 
-@override String toString() { return 'LegalEntityCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, representativeDeclaration: $representativeDeclaration, structure: $structure, taxIdProvided: $taxIdProvided, taxIdRegistrar: $taxIdRegistrar, vatIdProvided: $vatIdProvided, verification: $verification)'; } 
- }
+          verification == other.verification;}
+@override int get hashCode {return Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, representativeDeclaration, structure, taxIdProvided, taxIdRegistrar, vatIdProvided, verification]);}
+@override String toString() {return 'LegalEntityCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, representativeDeclaration: $representativeDeclaration, structure: $structure, taxIdProvided: $taxIdProvided, taxIdRegistrar: $taxIdRegistrar, vatIdProvided: $vatIdProvided, verification: $verification)';}
+}

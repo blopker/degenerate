@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesIpVersion {const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion._(this.value);
 
-factory RadarGetAttacksLayer7SummaryByManagedRulesIpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7SummaryByManagedRulesIpVersion.fromJson(String json) {return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
   _ => RadarGetAttacksLayer7SummaryByManagedRulesIpVersion._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion iPv4 = RadarGetAttacksLayer7SummaryByManagedRulesIpVersion._('IPv4');
 
@@ -16,11 +16,11 @@ static const List<RadarGetAttacksLayer7SummaryByManagedRulesIpVersion> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByManagedRulesIpVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7SummaryByManagedRulesIpVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryByManagedRulesIpVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7SummaryByManagedRulesIpVersion($value)';}
+}

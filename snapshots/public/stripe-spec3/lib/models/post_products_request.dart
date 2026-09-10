@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data.dart';import 'post_products_request_marketing_features.dart';import 'post_products_request_package_dimensions.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
-factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostProductsRequest(
+factory PostProductsRequest.fromJson(Map<String, dynamic> json) {return PostProductsRequest(
   active: json['active'] as bool?,
   defaultPriceData: json['default_price_data'] != null ? PostProductsRequestDefaultPriceData.fromJson(json['default_price_data'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
@@ -18,7 +18,7 @@ factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostPro
   taxCode: json['tax_code'] as String?,
   unitLabel: json['unit_label'] as String?,
   url: json['url'] as String?,
-); }
+);}
 
 /// Whether the product is currently available for purchase. Defaults to `true`.
 final bool? active;
@@ -68,7 +68,7 @@ final String? unitLabel;
 /// A URL of a publicly-accessible webpage for this product.
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (defaultPriceData != null) 'default_price_data': defaultPriceData?.toJson(),
   'description': ?description,
@@ -84,9 +84,9 @@ Map<String, dynamic> toJson() { return {
   'tax_code': ?taxCode,
   'unit_label': ?unitLabel,
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PostProductsRequest copyWith({bool? Function()? active, PostProductsRequestDefaultPriceData? Function()? defaultPriceData, String? Function()? description, List<String>? Function()? expand, String? Function()? id, List<String>? Function()? images, List<PostProductsRequestMarketingFeatures>? Function()? marketingFeatures, Map<String, String>? Function()? metadata, String? name, PostProductsRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, String? Function()? url, }) { return PostProductsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+PostProductsRequest copyWith({bool? Function()? active, PostProductsRequestDefaultPriceData? Function()? defaultPriceData, String? Function()? description, List<String>? Function()? expand, String? Function()? id, List<String>? Function()? images, List<PostProductsRequestMarketingFeatures>? Function()? marketingFeatures, Map<String, String>? Function()? metadata, String? name, PostProductsRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, String? Function()? url, }) {return PostProductsRequest(
   active: active != null ? active() : this.active,
   defaultPriceData: defaultPriceData != null ? defaultPriceData() : this.defaultPriceData,
   description: description != null ? description() : this.description,
@@ -102,8 +102,8 @@ PostProductsRequest copyWith({bool? Function()? active, PostProductsRequestDefau
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostProductsRequest &&
           active == other.active &&
           defaultPriceData == other.defaultPriceData &&
@@ -119,7 +119,7 @@ PostProductsRequest copyWith({bool? Function()? active, PostProductsRequestDefau
           statementDescriptor == other.statementDescriptor &&
           taxCode == other.taxCode &&
           unitLabel == other.unitLabel &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(active, defaultPriceData, description, Object.hashAll(expand ?? const []), id, Object.hashAll(images ?? const []), Object.hashAll(marketingFeatures ?? const []), metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url); } 
-@override String toString() { return 'PostProductsRequest(active: $active, defaultPriceData: $defaultPriceData, description: $description, expand: $expand, id: $id, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(active, defaultPriceData, description, Object.hashAll(expand ?? const []), id, Object.hashAll(images ?? const []), Object.hashAll(marketingFeatures ?? const []), metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url);}
+@override String toString() {return 'PostProductsRequest(active: $active, defaultPriceData: $defaultPriceData, description: $description, expand: $expand, id: $id, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)';}
+}

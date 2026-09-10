@@ -3,22 +3,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_settings_request_head_office_address.dart';/// The place where your business is located.
 @immutable final class PostTaxSettingsRequestHeadOffice {const PostTaxSettingsRequestHeadOffice({required this.address});
 
-factory PostTaxSettingsRequestHeadOffice.fromJson(Map<String, dynamic> json) { return PostTaxSettingsRequestHeadOffice(
+factory PostTaxSettingsRequestHeadOffice.fromJson(Map<String, dynamic> json) {return PostTaxSettingsRequestHeadOffice(
   address: PostTaxSettingsRequestHeadOfficeAddress.fromJson(json['address'] as Map<String, dynamic>),
-); }
+);}
 
 final PostTaxSettingsRequestHeadOfficeAddress address;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-PostTaxSettingsRequestHeadOffice copyWith({PostTaxSettingsRequestHeadOfficeAddress? address}) { return PostTaxSettingsRequestHeadOffice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address');}
+PostTaxSettingsRequestHeadOffice copyWith({PostTaxSettingsRequestHeadOfficeAddress? address}) {return PostTaxSettingsRequestHeadOffice(
   address: address ?? this.address,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxSettingsRequestHeadOffice &&
-          address == other.address; } 
-@override int get hashCode { return address.hashCode; } 
-@override String toString() { return 'PostTaxSettingsRequestHeadOffice(address: $address)'; } 
- }
+          address == other.address;}
+@override int get hashCode {return address.hashCode;}
+@override String toString() {return 'PostTaxSettingsRequestHeadOffice(address: $address)';}
+}

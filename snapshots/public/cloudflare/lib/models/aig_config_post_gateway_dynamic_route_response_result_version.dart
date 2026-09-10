@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteResponseResultVersionActive {const AigConfigPostGatewayDynamicRouteResponseResultVersionActive._(this.value);
 
-factory AigConfigPostGatewayDynamicRouteResponseResultVersionActive.fromJson(String json) { return switch (json) {
+factory AigConfigPostGatewayDynamicRouteResponseResultVersionActive.fromJson(String json) {return switch (json) {
   'true' => $true,
   'false' => $false,
   _ => AigConfigPostGatewayDynamicRouteResponseResultVersionActive._(json),
-}; }
+};}
 
 static const AigConfigPostGatewayDynamicRouteResponseResultVersionActive $true = AigConfigPostGatewayDynamicRouteResponseResultVersionActive._('true');
 
@@ -16,23 +16,23 @@ static const List<AigConfigPostGatewayDynamicRouteResponseResultVersionActive> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigPostGatewayDynamicRouteResponseResultVersionActive && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultVersionActive($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigPostGatewayDynamicRouteResponseResultVersionActive && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteResponseResultVersionActive($value)';}
+}
 @immutable final class AigConfigPostGatewayDynamicRouteResponseResultVersion {const AigConfigPostGatewayDynamicRouteResponseResultVersion({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment = const Omittable.absent(), });
 
-factory AigConfigPostGatewayDynamicRouteResponseResultVersion.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponseResultVersion(
+factory AigConfigPostGatewayDynamicRouteResponseResultVersion.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteResponseResultVersion(
   active: AigConfigPostGatewayDynamicRouteResponseResultVersionActive.fromJson(json['active'] as String),
   comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   data: json['data'] as String,
   versionId: json['version_id'] as String,
-); }
+);}
 
 final AigConfigPostGatewayDynamicRouteResponseResultVersionActive active;
 
@@ -44,31 +44,31 @@ final String data;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active.toJson(),
   if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'data': data,
   'version_id': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('data') && json['data'] is String &&
-      json.containsKey('version_id') && json['version_id'] is String; } 
-AigConfigPostGatewayDynamicRouteResponseResultVersion copyWith({AigConfigPostGatewayDynamicRouteResponseResultVersionActive? active, Omittable<String?>? comment, String? createdAt, String? data, String? versionId, }) { return AigConfigPostGatewayDynamicRouteResponseResultVersion(
+      json.containsKey('version_id') && json['version_id'] is String;}
+AigConfigPostGatewayDynamicRouteResponseResultVersion copyWith({AigConfigPostGatewayDynamicRouteResponseResultVersionActive? active, Omittable<String?>? comment, String? createdAt, String? data, String? versionId, }) {return AigConfigPostGatewayDynamicRouteResponseResultVersion(
   active: active ?? this.active,
   comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   data: data ?? this.data,
   versionId: versionId ?? this.versionId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteResponseResultVersion &&
           active == other.active &&
           comment == other.comment &&
           createdAt == other.createdAt &&
           data == other.data &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(active, comment, createdAt, data, versionId); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultVersion(active: $active, comment: $comment, createdAt: $createdAt, data: $data, versionId: $versionId)'; } 
- }
+          versionId == other.versionId;}
+@override int get hashCode {return Object.hash(active, comment, createdAt, data, versionId);}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteResponseResultVersion(active: $active, comment: $comment, createdAt: $createdAt, data: $data, versionId: $versionId)';}
+}

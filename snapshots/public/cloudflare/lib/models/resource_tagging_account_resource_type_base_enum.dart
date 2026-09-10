@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for base account-level resource types (those with no extra required fields).
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum._(this.value);
 
-factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
+factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) {return switch (json) {
   'access_application' => accessApplication,
   'access_group' => accessGroup,
   'account' => account,
@@ -24,7 +24,7 @@ factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { retur
   'stream_video' => streamVideo,
   'worker' => worker,
   _ => ResourceTaggingAccountResourceTypeBaseEnum._(json),
-}; }
+};}
 
 static const ResourceTaggingAccountResourceTypeBaseEnum accessApplication = ResourceTaggingAccountResourceTypeBaseEnum._('access_application');
 
@@ -68,11 +68,11 @@ static const List<ResourceTaggingAccountResourceTypeBaseEnum> values = [accessAp
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingAccountResourceTypeBaseEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingAccountResourceTypeBaseEnum($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResourceTaggingAccountResourceTypeBaseEnum && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResourceTaggingAccountResourceTypeBaseEnum($value)';}
+}

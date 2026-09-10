@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PortworxVolumeSource represents a Portworx volume resource.
 @immutable final class PortworxVolumeSource {const PortworxVolumeSource({required this.volumeId, this.fsType, this.readOnly, });
 
-factory PortworxVolumeSource.fromJson(Map<String, dynamic> json) { return PortworxVolumeSource(
+factory PortworxVolumeSource.fromJson(Map<String, dynamic> json) {return PortworxVolumeSource(
   fsType: json['fsType'] as String?,
   readOnly: json['readOnly'] as bool?,
   volumeId: json['volumeID'] as String,
-); }
+);}
 
 /// fSType represents the filesystem type to mount Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs". Implicitly inferred to be "ext4" if unspecified.
 final String? fsType;
@@ -18,22 +18,22 @@ final bool? readOnly;
 /// volumeID uniquely identifies a Portworx volume
 final String volumeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'readOnly': ?readOnly,
   'volumeID': volumeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumeID') && json['volumeID'] is String; } 
-PortworxVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, String? volumeId, }) { return PortworxVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('volumeID') && json['volumeID'] is String;}
+PortworxVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, String? volumeId, }) {return PortworxVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeId: volumeId ?? this.volumeId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PortworxVolumeSource &&
           fsType == other.fsType &&
           readOnly == other.readOnly &&
-          volumeId == other.volumeId; } 
-@override int get hashCode { return Object.hash(fsType, readOnly, volumeId); } 
-@override String toString() { return 'PortworxVolumeSource(fsType: $fsType, readOnly: $readOnly, volumeId: $volumeId)'; } 
- }
+          volumeId == other.volumeId;}
+@override int get hashCode {return Object.hash(fsType, readOnly, volumeId);}
+@override String toString() {return 'PortworxVolumeSource(fsType: $fsType, readOnly: $readOnly, volumeId: $volumeId)';}
+}

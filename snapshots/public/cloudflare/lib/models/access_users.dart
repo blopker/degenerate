@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_id.dart';import 'access_meta.dart';import 'access_users_emails.dart';@immutable final class AccessUsers {const AccessUsers({this.active, this.displayName, this.emails, this.externalId, this.id, this.meta, this.schemas, });
 
-factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
+factory AccessUsers.fromJson(Map<String, dynamic> json) {return AccessUsers(
   active: json['active'] as bool?,
   displayName: json['displayName'] as String?,
   emails: (json['emails'] as List<dynamic>?)?.map((e) => AccessUsersEmails.fromJson(e as Map<String, dynamic>)).toList(),
@@ -10,7 +10,7 @@ factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
   id: json['id'] != null ? AccessId.fromJson(json['id'] as String) : null,
   meta: json['meta'] != null ? AccessMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   schemas: (json['schemas'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Determines the status of the SCIM User resource.
 final bool? active;
@@ -31,7 +31,7 @@ final AccessMeta? meta;
 /// The list of URIs which indicate the attributes contained within a SCIM resource.
 final List<String>? schemas;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'displayName': ?displayName,
   if (emails != null) 'emails': emails?.map((e) => e.toJson()).toList(),
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (meta != null) 'meta': meta?.toJson(),
   'schemas': ?schemas,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'displayName', 'emails', 'externalId', 'id', 'meta', 'schemas'}.contains(key)); } 
-AccessUsers copyWith({bool? Function()? active, String? Function()? displayName, List<AccessUsersEmails>? Function()? emails, String? Function()? externalId, AccessId? Function()? id, AccessMeta? Function()? meta, List<String>? Function()? schemas, }) { return AccessUsers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'displayName', 'emails', 'externalId', 'id', 'meta', 'schemas'}.contains(key));}
+AccessUsers copyWith({bool? Function()? active, String? Function()? displayName, List<AccessUsersEmails>? Function()? emails, String? Function()? externalId, AccessId? Function()? id, AccessMeta? Function()? meta, List<String>? Function()? schemas, }) {return AccessUsers(
   active: active != null ? active() : this.active,
   displayName: displayName != null ? displayName() : this.displayName,
   emails: emails != null ? emails() : this.emails,
@@ -49,8 +49,8 @@ AccessUsers copyWith({bool? Function()? active, String? Function()? displayName,
   id: id != null ? id() : this.id,
   meta: meta != null ? meta() : this.meta,
   schemas: schemas != null ? schemas() : this.schemas,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessUsers &&
           active == other.active &&
           displayName == other.displayName &&
@@ -58,7 +58,7 @@ AccessUsers copyWith({bool? Function()? active, String? Function()? displayName,
           externalId == other.externalId &&
           id == other.id &&
           meta == other.meta &&
-          listEquals(schemas, other.schemas); } 
-@override int get hashCode { return Object.hash(active, displayName, Object.hashAll(emails ?? const []), externalId, id, meta, Object.hashAll(schemas ?? const [])); } 
-@override String toString() { return 'AccessUsers(active: $active, displayName: $displayName, emails: $emails, externalId: $externalId, id: $id, meta: $meta, schemas: $schemas)'; } 
- }
+          listEquals(schemas, other.schemas);}
+@override int get hashCode {return Object.hash(active, displayName, Object.hashAll(emails ?? const []), externalId, id, meta, Object.hashAll(schemas ?? const []));}
+@override String toString() {return 'AccessUsers(active: $active, displayName: $displayName, emails: $emails, externalId: $externalId, id: $id, meta: $meta, schemas: $schemas)';}
+}

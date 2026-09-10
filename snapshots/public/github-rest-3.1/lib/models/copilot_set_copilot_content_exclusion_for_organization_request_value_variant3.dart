@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3 {const CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3({required this.ifNoneMatch});
 
-factory CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3.fromJson(Map<String, dynamic> json) { return CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3(
+factory CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3.fromJson(Map<String, dynamic> json) {return CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3(
   ifNoneMatch: (json['ifNoneMatch'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> ifNoneMatch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ifNoneMatch': ifNoneMatch,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ifNoneMatch'); } 
-CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3 copyWith({List<String>? ifNoneMatch}) { return CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ifNoneMatch');}
+CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3 copyWith({List<String>? ifNoneMatch}) {return CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3(
   ifNoneMatch: ifNoneMatch ?? this.ifNoneMatch,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3 &&
-          listEquals(ifNoneMatch, other.ifNoneMatch); } 
-@override int get hashCode { return Object.hashAll(ifNoneMatch).hashCode; } 
-@override String toString() { return 'CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3(ifNoneMatch: $ifNoneMatch)'; } 
- }
+          listEquals(ifNoneMatch, other.ifNoneMatch);}
+@override int get hashCode {return Object.hashAll(ifNoneMatch).hashCode;}
+@override String toString() {return 'CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3(ifNoneMatch: $ifNoneMatch)';}
+}

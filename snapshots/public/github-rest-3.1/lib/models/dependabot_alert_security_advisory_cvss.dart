@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details for the advisory pertaining to the Common Vulnerability Scoring System.
 @immutable final class DependabotAlertSecurityAdvisoryCvss {const DependabotAlertSecurityAdvisoryCvss({required this.score, required this.vectorString, });
 
-factory DependabotAlertSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryCvss(
+factory DependabotAlertSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) {return DependabotAlertSecurityAdvisoryCvss(
   score: (json['score'] as num).toDouble(),
   vectorString: json['vector_string'] as String?,
-); }
+);}
 
 /// The overall CVSS score of the advisory.
 final double score;
@@ -14,20 +14,20 @@ final double score;
 /// The full CVSS vector string for the advisory.
 final String? vectorString;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'score': score,
   'vector_string': vectorString,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num &&
-      json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String); } 
-DependabotAlertSecurityAdvisoryCvss copyWith({double? score, String? Function()? vectorString, }) { return DependabotAlertSecurityAdvisoryCvss(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('score') && json['score'] is num &&
+      json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String);}
+DependabotAlertSecurityAdvisoryCvss copyWith({double? score, String? Function()? vectorString, }) {return DependabotAlertSecurityAdvisoryCvss(
   score: score ?? this.score,
   vectorString: vectorString != null ? vectorString() : this.vectorString,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlertSecurityAdvisoryCvss &&
           score == other.score &&
-          vectorString == other.vectorString; } 
-@override int get hashCode { return Object.hash(score, vectorString); } 
-@override String toString() { return 'DependabotAlertSecurityAdvisoryCvss(score: $score, vectorString: $vectorString)'; } 
- }
+          vectorString == other.vectorString;}
+@override int get hashCode {return Object.hash(score, vectorString);}
+@override String toString() {return 'DependabotAlertSecurityAdvisoryCvss(score: $score, vectorString: $vectorString)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonRaceDetailsRace {const PersonRaceDetailsRace._(this.value);
 
-factory PersonRaceDetailsRace.fromJson(String json) { return switch (json) {
+factory PersonRaceDetailsRace.fromJson(String json) {return switch (json) {
   'african_american' => africanAmerican,
   'american_indian_or_alaska_native' => americanIndianOrAlaskaNative,
   'asian' => asian,
@@ -28,7 +28,7 @@ factory PersonRaceDetailsRace.fromJson(String json) { return switch (json) {
   'vietnamese' => vietnamese,
   'white' => white,
   _ => PersonRaceDetailsRace._(json),
-}; }
+};}
 
 static const PersonRaceDetailsRace africanAmerican = PersonRaceDetailsRace._('african_american');
 
@@ -82,21 +82,21 @@ static const List<PersonRaceDetailsRace> values = [africanAmerican, americanIndi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PersonRaceDetailsRace && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PersonRaceDetailsRace($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PersonRaceDetailsRace && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PersonRaceDetailsRace($value)';}
+}
 /// 
 @immutable final class PersonRaceDetails {const PersonRaceDetails({this.race = const Omittable.absent(), this.raceOther = const Omittable.absent(), });
 
-factory PersonRaceDetails.fromJson(Map<String, dynamic> json) { return PersonRaceDetails(
+factory PersonRaceDetails.fromJson(Map<String, dynamic> json) {return PersonRaceDetails(
   race: json.containsKey('race') ? Omittable((json['race'] as List<dynamic>?)?.map((e) => PersonRaceDetailsRace.fromJson(e as String)).toList()) : const Omittable.absent(),
   raceOther: json.containsKey('race_other') ? Omittable(json['race_other'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The persons race.
 final Omittable<List<PersonRaceDetailsRace>?> race;
@@ -104,20 +104,20 @@ final Omittable<List<PersonRaceDetailsRace>?> race;
 /// Please specify your race, when other is selected.
 final Omittable<String?> raceOther;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (race.isPresent) 'race': race.value?.map((e) => e.toJson()).toList(),
   if (raceOther.isPresent) 'race_other': raceOther.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'race', 'race_other'}.contains(key)); } 
-PersonRaceDetails copyWith({Omittable<List<PersonRaceDetailsRace>?>? race, Omittable<String?>? raceOther, }) { return PersonRaceDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'race', 'race_other'}.contains(key));}
+PersonRaceDetails copyWith({Omittable<List<PersonRaceDetailsRace>?>? race, Omittable<String?>? raceOther, }) {return PersonRaceDetails(
   race: race ?? this.race,
   raceOther: raceOther ?? this.raceOther,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersonRaceDetails &&
           race.isPresent == other.race.isPresent &&
           listEquals(race.value, other.race.value) &&
-          raceOther == other.raceOther; } 
-@override int get hashCode { return Object.hash(Object.hashAll(race.value ?? const []), raceOther); } 
-@override String toString() { return 'PersonRaceDetails(race: $race, raceOther: $raceOther)'; } 
- }
+          raceOther == other.raceOther;}
+@override int get hashCode {return Object.hash(Object.hashAll(race.value ?? const []), raceOther);}
+@override String toString() {return 'PersonRaceDetails(race: $race, raceOther: $raceOther)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution._(this.value);
 
-factory GetTreasuryDebitReversalsResolution.fromJson(String json) { return switch (json) {
+factory GetTreasuryDebitReversalsResolution.fromJson(String json) {return switch (json) {
   'lost' => lost,
   'won' => won,
   _ => GetTreasuryDebitReversalsResolution._(json),
-}; }
+};}
 
 static const GetTreasuryDebitReversalsResolution lost = GetTreasuryDebitReversalsResolution._('lost');
 
@@ -16,11 +16,11 @@ static const List<GetTreasuryDebitReversalsResolution> values = [lost, won];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTreasuryDebitReversalsResolution && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTreasuryDebitReversalsResolution($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetTreasuryDebitReversalsResolution && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetTreasuryDebitReversalsResolution($value)';}
+}

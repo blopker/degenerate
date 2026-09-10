@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily {const RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily._(this.value);
 
-factory RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily.fromJson(String json) {return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
   _ => RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily._(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily chrome = RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily._('CHROME');
 
@@ -22,11 +22,11 @@ static const List<RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByTlsVersionBrowserFamily($value)';}
+}

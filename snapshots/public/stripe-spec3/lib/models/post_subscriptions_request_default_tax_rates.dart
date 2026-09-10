@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestDefaultTaxRatesVariant2 {const PostSubscriptionsRequestDefaultTaxRatesVariant2._(this.value);
 
-factory PostSubscriptionsRequestDefaultTaxRatesVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestDefaultTaxRatesVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsRequestDefaultTaxRatesVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestDefaultTaxRatesVariant2 $empty = PostSubscriptionsRequestDefaultTaxRatesVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsRequestDefaultTaxRatesVariant2> values = [$em
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestDefaultTaxRatesVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestDefaultTaxRatesVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestDefaultTaxRatesVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestDefaultTaxRatesVariant2($value)';}
+}
 /// The tax rates that will apply to any subscription item that does not have `tax_rates` set. Invoices created will have their `default_tax_rates` populated from the subscription.
 @immutable
 final class PostSubscriptionsRequestDefaultTaxRates {

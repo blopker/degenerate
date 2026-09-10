@@ -4,24 +4,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event data paylo
 /// 
 @immutable final class WebhookResponseCancelledData {const WebhookResponseCancelledData({required this.id});
 
-factory WebhookResponseCancelledData.fromJson(Map<String, dynamic> json) { return WebhookResponseCancelledData(
+factory WebhookResponseCancelledData.fromJson(Map<String, dynamic> json) {return WebhookResponseCancelledData(
   id: json['id'] as String,
-); }
+);}
 
 /// The unique ID of the model response.
 /// 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-WebhookResponseCancelledData copyWith({String? id}) { return WebhookResponseCancelledData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+WebhookResponseCancelledData copyWith({String? id}) {return WebhookResponseCancelledData(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookResponseCancelledData &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'WebhookResponseCancelledData(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'WebhookResponseCancelledData(id: $id)';}
+}

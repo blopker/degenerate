@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'call_recording_enum_status.dart';/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
 @immutable final class CallRecordingEnumSource {const CallRecordingEnumSource._(this.value);
 
-factory CallRecordingEnumSource.fromJson(String json) { return switch (json) {
+factory CallRecordingEnumSource.fromJson(String json) {return switch (json) {
   'DialVerb' => dialVerb,
   'Conference' => conference,
   'OutboundAPI' => outboundApi,
@@ -12,7 +12,7 @@ factory CallRecordingEnumSource.fromJson(String json) { return switch (json) {
   'StartCallRecordingAPI' => startCallRecordingApi,
   'StartConferenceRecordingAPI' => startConferenceRecordingApi,
   _ => CallRecordingEnumSource._(json),
-}; }
+};}
 
 static const CallRecordingEnumSource dialVerb = CallRecordingEnumSource._('DialVerb');
 
@@ -32,17 +32,17 @@ static const List<CallRecordingEnumSource> values = [dialVerb, conference, outbo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallRecordingEnumSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallRecordingEnumSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CallRecordingEnumSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CallRecordingEnumSource($value)';}
+}
 @immutable final class AccountCallCallRecording {const AccountCallCallRecording({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callSid = const Omittable.absent(), this.conferenceSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.startTime = const Omittable.absent(), this.duration = const Omittable.absent(), this.sid = const Omittable.absent(), this.price = const Omittable.absent(), this.uri = const Omittable.absent(), this.encryptionDetails = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.status, this.channels, this.source, this.errorCode = const Omittable.absent(), this.track = const Omittable.absent(), });
 
-factory AccountCallCallRecording.fromJson(Map<String, dynamic> json) { return AccountCallCallRecording(
+factory AccountCallCallRecording.fromJson(Map<String, dynamic> json) {return AccountCallCallRecording(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
@@ -61,7 +61,7 @@ factory AccountCallCallRecording.fromJson(Map<String, dynamic> json) { return Ac
   source: json['source'] != null ? CallRecordingEnumSource.fromJson(json['source'] as String) : null,
   errorCode: json.containsKey('error_code') ? Omittable(json['error_code'] != null ? (json['error_code'] as num).toInt() : null) : const Omittable.absent(),
   track: json.containsKey('track') ? Omittable(json['track'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording resource.
 final Omittable<String?> accountSid;
@@ -116,8 +116,8 @@ final Omittable<int?> errorCode;
 final Omittable<String?> track;
 
 /// The value with the schema default applied when absent.
-int get channelsOrDefault { return channels ?? 0; } 
-Map<String, dynamic> toJson() { return {
+int get channelsOrDefault {return channels ?? 0;}
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (callSid.isPresent) 'call_sid': callSid.value,
@@ -136,9 +136,9 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
   if (errorCode.isPresent) 'error_code': errorCode.value,
   if (track.isPresent) 'track': track.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'uri', 'encryption_details', 'price_unit', 'status', 'channels', 'source', 'error_code', 'track'}.contains(key)); } 
-AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? startTime, Omittable<String?>? duration, Omittable<String?>? sid, Omittable<double?>? price, Omittable<String?>? uri, Omittable<dynamic>? encryptionDetails, Omittable<String?>? priceUnit, CallRecordingEnumStatus? Function()? status, int? Function()? channels, CallRecordingEnumSource? Function()? source, Omittable<int?>? errorCode, Omittable<String?>? track, }) { return AccountCallCallRecording(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'uri', 'encryption_details', 'price_unit', 'status', 'channels', 'source', 'error_code', 'track'}.contains(key));}
+AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? startTime, Omittable<String?>? duration, Omittable<String?>? sid, Omittable<double?>? price, Omittable<String?>? uri, Omittable<dynamic>? encryptionDetails, Omittable<String?>? priceUnit, CallRecordingEnumStatus? Function()? status, int? Function()? channels, CallRecordingEnumSource? Function()? source, Omittable<int?>? errorCode, Omittable<String?>? track, }) {return AccountCallCallRecording(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   callSid: callSid ?? this.callSid,
@@ -157,8 +157,8 @@ AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<Str
   source: source != null ? source() : this.source,
   errorCode: errorCode ?? this.errorCode,
   track: track ?? this.track,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountCallCallRecording &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -177,7 +177,7 @@ AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<Str
           channels == other.channels &&
           source == other.source &&
           errorCode == other.errorCode &&
-          track == other.track; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, uri, encryptionDetails, priceUnit, status, channels, source, errorCode, track); } 
-@override String toString() { return 'AccountCallCallRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, uri: $uri, encryptionDetails: $encryptionDetails, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, track: $track)'; } 
- }
+          track == other.track;}
+@override int get hashCode {return Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, uri, encryptionDetails, priceUnit, status, channels, source, errorCode, track);}
+@override String toString() {return 'AccountCallCallRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, uri: $uri, encryptionDetails: $encryptionDetails, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, track: $track)';}
+}

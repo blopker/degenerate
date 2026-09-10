@@ -38,13 +38,13 @@ num toJson() => value;
 /// The status of the policy test.
 @immutable final class AccessUpdateStatus {const AccessUpdateStatus._(this.value);
 
-factory AccessUpdateStatus.fromJson(String json) { return switch (json) {
+factory AccessUpdateStatus.fromJson(String json) {return switch (json) {
   'blocked' => blocked,
   'processing' => processing,
   'exceeded time' => exceededTime,
   'complete' => complete,
   _ => AccessUpdateStatus._(json),
-}; }
+};}
 
 static const AccessUpdateStatus blocked = AccessUpdateStatus._('blocked');
 
@@ -58,14 +58,14 @@ static const List<AccessUpdateStatus> values = [blocked, processing, exceededTim
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessUpdateStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessUpdateStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessUpdateStatus($value)';}
+}
 /// The number of (processed) users approved based on policy evaluation results.
 extension type const AccessUsersApproved(int value) {
 factory AccessUsersApproved.fromJson(num json) => AccessUsersApproved(json.toInt());
@@ -89,7 +89,7 @@ num toJson() => value;
 }
 @immutable final class AccessPolicyUpdateRespResult {const AccessPolicyUpdateRespResult({this.id, this.percentApproved, this.percentBlocked, this.percentErrored, this.percentUsersProcessed, this.status, this.totalUsers, this.usersApproved, this.usersBlocked, this.usersErrored, });
 
-factory AccessPolicyUpdateRespResult.fromJson(Map<String, dynamic> json) { return AccessPolicyUpdateRespResult(
+factory AccessPolicyUpdateRespResult.fromJson(Map<String, dynamic> json) {return AccessPolicyUpdateRespResult(
   id: json['id'] != null ? AccessPolicyTestId.fromJson(json['id'] as String) : null,
   percentApproved: json['percent_approved'] != null ? AccessPercentApproved.fromJson(json['percent_approved'] as num) : null,
   percentBlocked: json['percent_blocked'] != null ? AccessPercentBlocked.fromJson(json['percent_blocked'] as num) : null,
@@ -100,7 +100,7 @@ factory AccessPolicyUpdateRespResult.fromJson(Map<String, dynamic> json) { retur
   usersApproved: json['users_approved'] != null ? AccessUsersApproved.fromJson(json['users_approved'] as num) : null,
   usersBlocked: json['users_blocked'] != null ? AccessUsersBlocked.fromJson(json['users_blocked'] as num) : null,
   usersErrored: json['users_errored'] != null ? AccessUsersErrored.fromJson(json['users_errored'] as num) : null,
-); }
+);}
 
 /// The UUID of the policy test.
 final AccessPolicyTestId? id;
@@ -127,7 +127,7 @@ final AccessUsersBlocked? usersBlocked;
 
 final AccessUsersErrored? usersErrored;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (percentApproved != null) 'percent_approved': percentApproved?.toJson(),
   if (percentBlocked != null) 'percent_blocked': percentBlocked?.toJson(),
@@ -138,9 +138,9 @@ Map<String, dynamic> toJson() { return {
   if (usersApproved != null) 'users_approved': usersApproved?.toJson(),
   if (usersBlocked != null) 'users_blocked': usersBlocked?.toJson(),
   if (usersErrored != null) 'users_errored': usersErrored?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'percent_approved', 'percent_blocked', 'percent_errored', 'percent_users_processed', 'status', 'total_users', 'users_approved', 'users_blocked', 'users_errored'}.contains(key)); } 
-AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, AccessPercentApproved? Function()? percentApproved, AccessPercentBlocked? Function()? percentBlocked, AccessPercentErrored? Function()? percentErrored, AccessPercentUsersProcessed? Function()? percentUsersProcessed, AccessUpdateStatus? Function()? status, AccessTotalUsers? Function()? totalUsers, AccessUsersApproved? Function()? usersApproved, AccessUsersBlocked? Function()? usersBlocked, AccessUsersErrored? Function()? usersErrored, }) { return AccessPolicyUpdateRespResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'percent_approved', 'percent_blocked', 'percent_errored', 'percent_users_processed', 'status', 'total_users', 'users_approved', 'users_blocked', 'users_errored'}.contains(key));}
+AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, AccessPercentApproved? Function()? percentApproved, AccessPercentBlocked? Function()? percentBlocked, AccessPercentErrored? Function()? percentErrored, AccessPercentUsersProcessed? Function()? percentUsersProcessed, AccessUpdateStatus? Function()? status, AccessTotalUsers? Function()? totalUsers, AccessUsersApproved? Function()? usersApproved, AccessUsersBlocked? Function()? usersBlocked, AccessUsersErrored? Function()? usersErrored, }) {return AccessPolicyUpdateRespResult(
   id: id != null ? id() : this.id,
   percentApproved: percentApproved != null ? percentApproved() : this.percentApproved,
   percentBlocked: percentBlocked != null ? percentBlocked() : this.percentBlocked,
@@ -151,8 +151,8 @@ AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, Acces
   usersApproved: usersApproved != null ? usersApproved() : this.usersApproved,
   usersBlocked: usersBlocked != null ? usersBlocked() : this.usersBlocked,
   usersErrored: usersErrored != null ? usersErrored() : this.usersErrored,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessPolicyUpdateRespResult &&
           id == other.id &&
           percentApproved == other.percentApproved &&
@@ -163,7 +163,7 @@ AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, Acces
           totalUsers == other.totalUsers &&
           usersApproved == other.usersApproved &&
           usersBlocked == other.usersBlocked &&
-          usersErrored == other.usersErrored; } 
-@override int get hashCode { return Object.hash(id, percentApproved, percentBlocked, percentErrored, percentUsersProcessed, status, totalUsers, usersApproved, usersBlocked, usersErrored); } 
-@override String toString() { return 'AccessPolicyUpdateRespResult(id: $id, percentApproved: $percentApproved, percentBlocked: $percentBlocked, percentErrored: $percentErrored, percentUsersProcessed: $percentUsersProcessed, status: $status, totalUsers: $totalUsers, usersApproved: $usersApproved, usersBlocked: $usersBlocked, usersErrored: $usersErrored)'; } 
- }
+          usersErrored == other.usersErrored;}
+@override int get hashCode {return Object.hash(id, percentApproved, percentBlocked, percentErrored, percentUsersProcessed, status, totalUsers, usersApproved, usersBlocked, usersErrored);}
+@override String toString() {return 'AccessPolicyUpdateRespResult(id: $id, percentApproved: $percentApproved, percentBlocked: $percentBlocked, percentErrored: $percentErrored, percentUsersProcessed: $percentUsersProcessed, status: $status, totalUsers: $totalUsers, usersApproved: $usersApproved, usersBlocked: $usersBlocked, usersErrored: $usersErrored)';}
+}

@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'users_list_a
 /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
 @immutable final class UsersListAttestationsResponseAttestationsBundle {const UsersListAttestationsResponseAttestationsBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
 
-factory UsersListAttestationsResponseAttestationsBundle.fromJson(Map<String, dynamic> json) { return UsersListAttestationsResponseAttestationsBundle(
+factory UsersListAttestationsResponseAttestationsBundle.fromJson(Map<String, dynamic> json) {return UsersListAttestationsResponseAttestationsBundle(
   mediaType: json['mediaType'] as String?,
   verificationMaterial: json['verificationMaterial'] != null ? UsersListAttestationsResponseAttestationsBundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>) : null,
   dsseEnvelope: json['dsseEnvelope'] != null ? UsersListAttestationsResponseAttestationsBundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? mediaType;
 
@@ -16,22 +16,22 @@ final UsersListAttestationsResponseAttestationsBundleVerificationMaterial? verif
 
 final UsersListAttestationsResponseAttestationsBundleDsseEnvelope? dsseEnvelope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'mediaType': ?mediaType,
   if (verificationMaterial != null) 'verificationMaterial': verificationMaterial?.toJson(),
   if (dsseEnvelope != null) 'dsseEnvelope': dsseEnvelope?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mediaType', 'verificationMaterial', 'dsseEnvelope'}.contains(key)); } 
-UsersListAttestationsResponseAttestationsBundle copyWith({String? Function()? mediaType, UsersListAttestationsResponseAttestationsBundleVerificationMaterial? Function()? verificationMaterial, UsersListAttestationsResponseAttestationsBundleDsseEnvelope? Function()? dsseEnvelope, }) { return UsersListAttestationsResponseAttestationsBundle(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mediaType', 'verificationMaterial', 'dsseEnvelope'}.contains(key));}
+UsersListAttestationsResponseAttestationsBundle copyWith({String? Function()? mediaType, UsersListAttestationsResponseAttestationsBundleVerificationMaterial? Function()? verificationMaterial, UsersListAttestationsResponseAttestationsBundleDsseEnvelope? Function()? dsseEnvelope, }) {return UsersListAttestationsResponseAttestationsBundle(
   mediaType: mediaType != null ? mediaType() : this.mediaType,
   verificationMaterial: verificationMaterial != null ? verificationMaterial() : this.verificationMaterial,
   dsseEnvelope: dsseEnvelope != null ? dsseEnvelope() : this.dsseEnvelope,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UsersListAttestationsResponseAttestationsBundle &&
           mediaType == other.mediaType &&
           verificationMaterial == other.verificationMaterial &&
-          dsseEnvelope == other.dsseEnvelope; } 
-@override int get hashCode { return Object.hash(mediaType, verificationMaterial, dsseEnvelope); } 
-@override String toString() { return 'UsersListAttestationsResponseAttestationsBundle(mediaType: $mediaType, verificationMaterial: $verificationMaterial, dsseEnvelope: $dsseEnvelope)'; } 
- }
+          dsseEnvelope == other.dsseEnvelope;}
+@override int get hashCode {return Object.hash(mediaType, verificationMaterial, dsseEnvelope);}
+@override String toString() {return 'UsersListAttestationsResponseAttestationsBundle(mediaType: $mediaType, verificationMaterial: $verificationMaterial, dsseEnvelope: $dsseEnvelope)';}
+}

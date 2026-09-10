@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'marketplace_listing_plan.dart';@immutable final class MarketplacePurchaseMarketplacePendingChange {const MarketplacePurchaseMarketplacePendingChange({this.isInstalled, this.effectiveDate, this.unitCount = const Omittable.absent(), this.id, this.plan, });
 
-factory MarketplacePurchaseMarketplacePendingChange.fromJson(Map<String, dynamic> json) { return MarketplacePurchaseMarketplacePendingChange(
+factory MarketplacePurchaseMarketplacePendingChange.fromJson(Map<String, dynamic> json) {return MarketplacePurchaseMarketplacePendingChange(
   isInstalled: json['is_installed'] as bool?,
   effectiveDate: json['effective_date'] as String?,
   unitCount: json.containsKey('unit_count') ? Omittable(json['unit_count'] != null ? (json['unit_count'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   plan: json['plan'] != null ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool? isInstalled;
 
@@ -20,28 +20,28 @@ final int? id;
 
 final MarketplaceListingPlan? plan;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'is_installed': ?isInstalled,
   'effective_date': ?effectiveDate,
   if (unitCount.isPresent) 'unit_count': unitCount.value,
   'id': ?id,
   if (plan != null) 'plan': plan?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'is_installed', 'effective_date', 'unit_count', 'id', 'plan'}.contains(key)); } 
-MarketplacePurchaseMarketplacePendingChange copyWith({bool? Function()? isInstalled, String? Function()? effectiveDate, Omittable<int?>? unitCount, int? Function()? id, MarketplaceListingPlan? Function()? plan, }) { return MarketplacePurchaseMarketplacePendingChange(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'is_installed', 'effective_date', 'unit_count', 'id', 'plan'}.contains(key));}
+MarketplacePurchaseMarketplacePendingChange copyWith({bool? Function()? isInstalled, String? Function()? effectiveDate, Omittable<int?>? unitCount, int? Function()? id, MarketplaceListingPlan? Function()? plan, }) {return MarketplacePurchaseMarketplacePendingChange(
   isInstalled: isInstalled != null ? isInstalled() : this.isInstalled,
   effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
   unitCount: unitCount ?? this.unitCount,
   id: id != null ? id() : this.id,
   plan: plan != null ? plan() : this.plan,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MarketplacePurchaseMarketplacePendingChange &&
           isInstalled == other.isInstalled &&
           effectiveDate == other.effectiveDate &&
           unitCount == other.unitCount &&
           id == other.id &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(isInstalled, effectiveDate, unitCount, id, plan); } 
-@override String toString() { return 'MarketplacePurchaseMarketplacePendingChange(isInstalled: $isInstalled, effectiveDate: $effectiveDate, unitCount: $unitCount, id: $id, plan: $plan)'; } 
- }
+          plan == other.plan;}
+@override int get hashCode {return Object.hash(isInstalled, effectiveDate, unitCount, id, plan);}
+@override String toString() {return 'MarketplacePurchaseMarketplacePendingChange(isInstalled: $isInstalled, effectiveDate: $effectiveDate, unitCount: $unitCount, id: $id, plan: $plan)';}
+}

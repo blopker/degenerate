@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ownership type of the team
 @immutable final class TeamSimpleType {const TeamSimpleType._(this.value);
 
-factory TeamSimpleType.fromJson(String json) { return switch (json) {
+factory TeamSimpleType.fromJson(String json) {return switch (json) {
   'enterprise' => enterprise,
   'organization' => organization,
   _ => TeamSimpleType._(json),
-}; }
+};}
 
 static const TeamSimpleType enterprise = TeamSimpleType._('enterprise');
 
@@ -17,18 +17,18 @@ static const List<TeamSimpleType> values = [enterprise, organization];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamSimpleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamSimpleType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamSimpleType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamSimpleType($value)';}
+}
 /// Groups of organization members that gives permissions on specified repositories.
 @immutable final class TeamSimple {const TeamSimple({required this.id, required this.nodeId, required this.url, required this.membersUrl, required this.name, required this.description, required this.permission, required this.htmlUrl, required this.repositoriesUrl, required this.slug, required this.type, this.privacy, this.notificationSetting, this.ldapDn, this.organizationId, this.enterpriseId, });
 
-factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
+factory TeamSimple.fromJson(Map<String, dynamic> json) {return TeamSimple(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -45,7 +45,7 @@ factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
   type: TeamSimpleType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 /// Unique identifier of the team
 final int id;
@@ -90,7 +90,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -107,8 +107,8 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('members_url') && json['members_url'] is String &&
@@ -118,8 +118,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('type'); } 
-TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, String? name, String? Function()? description, String? permission, String? Function()? privacy, String? Function()? notificationSetting, Uri? htmlUrl, Uri? repositoriesUrl, String? slug, String? Function()? ldapDn, TeamSimpleType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamSimple(
+      json.containsKey('type');}
+TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, String? name, String? Function()? description, String? permission, String? Function()? privacy, String? Function()? notificationSetting, Uri? htmlUrl, Uri? repositoriesUrl, String? slug, String? Function()? ldapDn, TeamSimpleType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return TeamSimple(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -136,8 +136,8 @@ TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, Stri
   type: type ?? this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamSimple &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -154,7 +154,7 @@ TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, Stri
           ldapDn == other.ldapDn &&
           type == other.type &&
           organizationId == other.organizationId &&
-          enterpriseId == other.enterpriseId; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, membersUrl, name, description, permission, privacy, notificationSetting, htmlUrl, repositoriesUrl, slug, ldapDn, type, organizationId, enterpriseId); } 
-@override String toString() { return 'TeamSimple(id: $id, nodeId: $nodeId, url: $url, membersUrl: $membersUrl, name: $name, description: $description, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, htmlUrl: $htmlUrl, repositoriesUrl: $repositoriesUrl, slug: $slug, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)'; } 
- }
+          enterpriseId == other.enterpriseId;}
+@override int get hashCode {return Object.hash(id, nodeId, url, membersUrl, name, description, permission, privacy, notificationSetting, htmlUrl, repositoriesUrl, slug, ldapDn, type, organizationId, enterpriseId);}
+@override String toString() {return 'TeamSimple(id: $id, nodeId: $nodeId, url: $url, membersUrl: $membersUrl, name: $name, description: $description, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, htmlUrl: $htmlUrl, repositoriesUrl: $repositoriesUrl, slug: $slug, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';}
+}

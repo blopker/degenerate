@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event 
 /// 
 @immutable final class RealtimeClientEventInputAudioBufferCommit {const RealtimeClientEventInputAudioBufferCommit({required this.type, this.eventId, });
 
-factory RealtimeClientEventInputAudioBufferCommit.fromJson(Map<String, dynamic> json) { return RealtimeClientEventInputAudioBufferCommit(
+factory RealtimeClientEventInputAudioBufferCommit.fromJson(Map<String, dynamic> json) {return RealtimeClientEventInputAudioBufferCommit(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -17,19 +17,19 @@ final String? eventId;
 /// The event type, must be `input_audio_buffer.commit`.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-RealtimeClientEventInputAudioBufferCommit copyWith({String? Function()? eventId, String? type, }) { return RealtimeClientEventInputAudioBufferCommit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+RealtimeClientEventInputAudioBufferCommit copyWith({String? Function()? eventId, String? type, }) {return RealtimeClientEventInputAudioBufferCommit(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeClientEventInputAudioBufferCommit &&
           eventId == other.eventId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eventId, type); } 
-@override String toString() { return 'RealtimeClientEventInputAudioBufferCommit(eventId: $eventId, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(eventId, type);}
+@override String toString() {return 'RealtimeClientEventInputAudioBufferCommit(eventId: $eventId, type: $type)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the text value of an "output_text" content part is updated.
 @immutable final class RealtimeServerEventResponseTextDelta {const RealtimeServerEventResponseTextDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
 
-factory RealtimeServerEventResponseTextDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseTextDelta(
+factory RealtimeServerEventResponseTextDelta.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseTextDelta(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
@@ -11,7 +11,7 @@ factory RealtimeServerEventResponseTextDelta.fromJson(Map<String, dynamic> json)
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   delta: json['delta'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -34,7 +34,7 @@ final int contentIndex;
 /// The text delta.
 final String delta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
@@ -42,15 +42,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'content_index': contentIndex,
   'delta': delta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('delta') && json['delta'] is String; } 
-RealtimeServerEventResponseTextDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseTextDelta(
+      json.containsKey('delta') && json['delta'] is String;}
+RealtimeServerEventResponseTextDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) {return RealtimeServerEventResponseTextDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -58,8 +58,8 @@ RealtimeServerEventResponseTextDelta copyWith({String? eventId, String? type, St
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   delta: delta ?? this.delta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventResponseTextDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -67,7 +67,7 @@ RealtimeServerEventResponseTextDelta copyWith({String? eventId, String? type, St
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta); } 
-@override String toString() { return 'RealtimeServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)'; } 
- }
+          delta == other.delta;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta);}
+@override String toString() {return 'RealtimeServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)';}
+}

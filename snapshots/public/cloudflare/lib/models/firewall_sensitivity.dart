@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The sensitivity of the WAF package.
 @immutable final class FirewallSensitivity {const FirewallSensitivity._(this.value);
 
-factory FirewallSensitivity.fromJson(String json) { return switch (json) {
+factory FirewallSensitivity.fromJson(String json) {return switch (json) {
   'high' => high,
   'medium' => medium,
   'low' => low,
   'off' => off,
   _ => FirewallSensitivity._(json),
-}; }
+};}
 
 static const FirewallSensitivity high = FirewallSensitivity._('high');
 
@@ -23,11 +23,11 @@ static const List<FirewallSensitivity> values = [high, medium, low, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallSensitivity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallSensitivity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FirewallSensitivity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FirewallSensitivity($value)';}
+}

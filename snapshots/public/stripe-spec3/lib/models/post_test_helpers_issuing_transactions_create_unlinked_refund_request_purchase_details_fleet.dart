@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details_fleet_reported_breakdown.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType._(this.value);
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType.fromJson(String json) {return switch (json) {
   'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
   'fuel_purchase' => fuelPurchase,
   'non_fuel_purchase' => nonFuelPurchase,
   _ => PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType fuelAndNonFuelPurchase = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType._('fuel_and_non_fuel_purchase');
 
@@ -19,22 +19,22 @@ static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestP
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType($value)';}
+}
 @immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType._(this.value);
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType.fromJson(String json) { return switch (json) {
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType.fromJson(String json) {return switch (json) {
   'full_service' => fullService,
   'non_fuel_transaction' => nonFuelTransaction,
   'self_service' => selfService,
   _ => PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType._(json),
-}; }
+};}
 
 static const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType fullService = PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType._('full_service');
 
@@ -46,22 +46,22 @@ static const List<PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestP
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType($value)';}
+}
 @immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
-factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet(
+factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet(
   cardholderPromptData: json['cardholder_prompt_data'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
   purchaseType: json['purchase_type'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType.fromJson(json['purchase_type'] as String) : null,
   reportedBreakdown: json['reported_breakdown'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
   serviceType: json['service_type'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType.fromJson(json['service_type'] as String) : null,
-); }
+);}
 
 final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData? cardholderPromptData;
 
@@ -71,25 +71,25 @@ final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetai
 
 final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType? serviceType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cardholderPromptData != null) 'cardholder_prompt_data': cardholderPromptData?.toJson(),
   if (purchaseType != null) 'purchase_type': purchaseType?.toJson(),
   if (reportedBreakdown != null) 'reported_breakdown': reportedBreakdown?.toJson(),
   if (serviceType != null) 'service_type': serviceType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData? Function()? cardholderPromptData, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType? Function()? purchaseType, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown? Function()? reportedBreakdown, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType? Function()? serviceType, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key));}
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData? Function()? cardholderPromptData, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetPurchaseType? Function()? purchaseType, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdown? Function()? reportedBreakdown, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetServiceType? Function()? serviceType, }) {return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet(
   cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
   purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,
   reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,
   serviceType: serviceType != null ? serviceType() : this.serviceType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet &&
           cardholderPromptData == other.cardholderPromptData &&
           purchaseType == other.purchaseType &&
           reportedBreakdown == other.reportedBreakdown &&
-          serviceType == other.serviceType; } 
-@override int get hashCode { return Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)'; } 
- }
+          serviceType == other.serviceType;}
+@override int get hashCode {return Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType);}
+@override String toString() {return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleet(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)';}
+}

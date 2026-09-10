@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_dismissed_comment.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_closed_by_user_alert_dismissal_approved_by.dart';import 'webhook_code_scanning_alert_closed_by_user_alert_dismissed_by.dart';import 'webhook_code_scanning_alert_closed_by_user_alert_most_recent_instance.dart';import 'webhook_code_scanning_alert_closed_by_user_alert_rule.dart';import 'webhook_code_scanning_alert_closed_by_user_alert_tool.dart';/// The reason for dismissing or closing the alert.
 @immutable final class WebhookCodeScanningAlertClosedByUserAlertDismissedReason {const WebhookCodeScanningAlertClosedByUserAlertDismissedReason._(this.value);
 
-factory WebhookCodeScanningAlertClosedByUserAlertDismissedReason.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertClosedByUserAlertDismissedReason.fromJson(String json) {return switch (json) {
   'false positive' => falsePositive,
   "won't fix" => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => WebhookCodeScanningAlertClosedByUserAlertDismissedReason._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertClosedByUserAlertDismissedReason falsePositive = WebhookCodeScanningAlertClosedByUserAlertDismissedReason._('false positive');
 
@@ -23,22 +23,22 @@ static const List<WebhookCodeScanningAlertClosedByUserAlertDismissedReason> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertClosedByUserAlertDismissedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAlertDismissedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertClosedByUserAlertDismissedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertClosedByUserAlertDismissedReason($value)';}
+}
 /// State of a code scanning alert.
 @immutable final class WebhookCodeScanningAlertClosedByUserAlertState {const WebhookCodeScanningAlertClosedByUserAlertState._(this.value);
 
-factory WebhookCodeScanningAlertClosedByUserAlertState.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertClosedByUserAlertState.fromJson(String json) {return switch (json) {
   'dismissed' => dismissed,
   'fixed' => fixed,
   _ => WebhookCodeScanningAlertClosedByUserAlertState._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertClosedByUserAlertState dismissed = WebhookCodeScanningAlertClosedByUserAlertState._('dismissed');
 
@@ -48,18 +48,18 @@ static const List<WebhookCodeScanningAlertClosedByUserAlertState> values = [dism
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertClosedByUserAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAlertState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertClosedByUserAlertState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertClosedByUserAlertState($value)';}
+}
 /// The code scanning alert involved in the event.
 @immutable final class WebhookCodeScanningAlertClosedByUserAlert {const WebhookCodeScanningAlertClosedByUserAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment = const Omittable.absent(), this.fixedAt = const Omittable.absent(), this.mostRecentInstance = const Omittable.absent(), this.dismissalApprovedBy = const Omittable.absent(), });
 
-factory WebhookCodeScanningAlertClosedByUserAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertClosedByUserAlert(
+factory WebhookCodeScanningAlertClosedByUserAlert.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertClosedByUserAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: DateTime.parse(json['dismissed_at'] as String),
@@ -75,7 +75,7 @@ factory WebhookCodeScanningAlertClosedByUserAlert.fromJson(Map<String, dynamic> 
   tool: WebhookCodeScanningAlertClosedByUserAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
   dismissalApprovedBy: json.containsKey('dismissal_approved_by') ? Omittable(json['dismissal_approved_by'] != null ? WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final List<SimpleUser>? assignees;
 
@@ -115,7 +115,7 @@ final Uri url;
 
 final Omittable<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?> dismissalApprovedBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
   'dismissed_at': dismissedAt.toIso8601String(),
@@ -131,8 +131,8 @@ Map<String, dynamic> toJson() { return {
   'tool': tool.toJson(),
   'url': url.toString(),
   if (dismissalApprovedBy.isPresent) 'dismissal_approved_by': dismissalApprovedBy.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('dismissed_at') && json['dismissed_at'] is String &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
@@ -141,8 +141,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('rule') &&
       json.containsKey('state') &&
       json.containsKey('tool') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? dismissedAt, WebhookCodeScanningAlertClosedByUserAlertDismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, WebhookCodeScanningAlertClosedByUserAlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertClosedByUserAlertRule? rule, WebhookCodeScanningAlertClosedByUserAlertState? state, WebhookCodeScanningAlertClosedByUserAlertTool? tool, Uri? url, Omittable<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>? dismissalApprovedBy, }) { return WebhookCodeScanningAlertClosedByUserAlert(
+      json.containsKey('url') && json['url'] is String;}
+WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? dismissedAt, WebhookCodeScanningAlertClosedByUserAlertDismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, WebhookCodeScanningAlertClosedByUserAlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertClosedByUserAlertRule? rule, WebhookCodeScanningAlertClosedByUserAlertState? state, WebhookCodeScanningAlertClosedByUserAlertTool? tool, Uri? url, Omittable<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>? dismissalApprovedBy, }) {return WebhookCodeScanningAlertClosedByUserAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt ?? this.dismissedAt,
@@ -158,8 +158,8 @@ WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser>? Function()
   tool: tool ?? this.tool,
   url: url ?? this.url,
   dismissalApprovedBy: dismissalApprovedBy ?? this.dismissalApprovedBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertClosedByUserAlert &&
           listEquals(assignees, other.assignees) &&
           createdAt == other.createdAt &&
@@ -175,7 +175,7 @@ WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser>? Function()
           state == other.state &&
           tool == other.tool &&
           url == other.url &&
-          dismissalApprovedBy == other.dismissalApprovedBy; } 
-@override int get hashCode { return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url, dismissalApprovedBy); } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url, dismissalApprovedBy: $dismissalApprovedBy)'; } 
- }
+          dismissalApprovedBy == other.dismissalApprovedBy;}
+@override int get hashCode {return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url, dismissalApprovedBy);}
+@override String toString() {return 'WebhookCodeScanningAlertClosedByUserAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url, dismissalApprovedBy: $dismissalApprovedBy)';}
+}

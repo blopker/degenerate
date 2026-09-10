@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_app_type_id.dart';import 'zero_trust_gateway_app_types_components_schemas_name.dart';import 'zero_trust_gateway_timestamp.dart';@immutable final class ZeroTrustGatewayApplicationType {const ZeroTrustGatewayApplicationType({this.createdAt, this.description, this.id, this.name, });
 
-factory ZeroTrustGatewayApplicationType.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayApplicationType(
+factory ZeroTrustGatewayApplicationType.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayApplicationType(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayTimestamp.fromJson(json['created_at'] as String) : null,
   description: json['description'] as String?,
   id: json['id'] != null ? ZeroTrustGatewayAppTypeId.fromJson(json['id'] as num) : null,
   name: json['name'] != null ? ZeroTrustGatewayAppTypesComponentsSchemasName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 final ZeroTrustGatewayTimestamp? createdAt;
 
@@ -20,25 +20,25 @@ final ZeroTrustGatewayAppTypeId? id;
 /// Specify the name of the application or application type.
 final ZeroTrustGatewayAppTypesComponentsSchemasName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   'description': ?description,
   if (id != null) 'id': id?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'description', 'id', 'name'}.contains(key)); } 
-ZeroTrustGatewayApplicationType copyWith({ZeroTrustGatewayTimestamp? Function()? createdAt, String? Function()? description, ZeroTrustGatewayAppTypeId? Function()? id, ZeroTrustGatewayAppTypesComponentsSchemasName? Function()? name, }) { return ZeroTrustGatewayApplicationType(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'description', 'id', 'name'}.contains(key));}
+ZeroTrustGatewayApplicationType copyWith({ZeroTrustGatewayTimestamp? Function()? createdAt, String? Function()? description, ZeroTrustGatewayAppTypeId? Function()? id, ZeroTrustGatewayAppTypesComponentsSchemasName? Function()? name, }) {return ZeroTrustGatewayApplicationType(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayApplicationType &&
           createdAt == other.createdAt &&
           description == other.description &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, name); } 
-@override String toString() { return 'ZeroTrustGatewayApplicationType(createdAt: $createdAt, description: $description, id: $id, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(createdAt, description, id, name);}
+@override String toString() {return 'ZeroTrustGatewayApplicationType(createdAt: $createdAt, description: $description, id: $id, name: $name)';}
+}

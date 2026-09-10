@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'webhooks_issue_comment_reactions.dart';import 'webhooks_issue_comment_user.dart';/// How the author is associated with the repository.
 @immutable final class WebhooksIssueCommentAuthorAssociation {const WebhooksIssueCommentAuthorAssociation._(this.value);
 
-factory WebhooksIssueCommentAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhooksIssueCommentAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -13,7 +13,7 @@ factory WebhooksIssueCommentAuthorAssociation.fromJson(String json) { return swi
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhooksIssueCommentAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhooksIssueCommentAuthorAssociation collaborator = WebhooksIssueCommentAuthorAssociation._('COLLABORATOR');
 
@@ -35,18 +35,18 @@ static const List<WebhooksIssueCommentAuthorAssociation> values = [collaborator,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksIssueCommentAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksIssueCommentAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhooksIssueCommentAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhooksIssueCommentAuthorAssociation($value)';}
+}
 /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
 @immutable final class WebhooksIssueComment {const WebhooksIssueComment({required this.authorAssociation, required this.body, required this.createdAt, required this.htmlUrl, required this.id, required this.issueUrl, required this.nodeId, required this.performedViaGithubApp, required this.reactions, required this.updatedAt, required this.url, required this.user, this.pin = const Omittable.absent(), });
 
-factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return WebhooksIssueComment(
+factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) {return WebhooksIssueComment(
   authorAssociation: WebhooksIssueCommentAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -60,7 +60,7 @@ factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return Webhoo
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   pin: json.containsKey('pin') ? Omittable(json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// How the author is associated with the repository.
 final WebhooksIssueCommentAuthorAssociation authorAssociation;
@@ -92,7 +92,7 @@ final WebhooksIssueCommentUser? user;
 
 final Omittable<PinnedIssueComment?> pin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author_association': authorAssociation.toJson(),
   'body': body,
   'created_at': createdAt.toIso8601String(),
@@ -106,8 +106,8 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'user': user?.toJson(),
   if (pin.isPresent) 'pin': pin.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -118,8 +118,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('reactions') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? Function()? performedViaGithubApp, WebhooksIssueCommentReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, Omittable<PinnedIssueComment?>? pin, }) { return WebhooksIssueComment(
+      json.containsKey('user');}
+WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? Function()? performedViaGithubApp, WebhooksIssueCommentReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, Omittable<PinnedIssueComment?>? pin, }) {return WebhooksIssueComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   createdAt: createdAt ?? this.createdAt,
@@ -133,8 +133,8 @@ WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAsso
   url: url ?? this.url,
   user: user != null ? user() : this.user,
   pin: pin ?? this.pin,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksIssueComment &&
           authorAssociation == other.authorAssociation &&
           body == other.body &&
@@ -148,7 +148,7 @@ WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAsso
           updatedAt == other.updatedAt &&
           url == other.url &&
           user == other.user &&
-          pin == other.pin; } 
-@override int get hashCode { return Object.hash(authorAssociation, body, createdAt, htmlUrl, id, issueUrl, nodeId, performedViaGithubApp, reactions, updatedAt, url, user, pin); } 
-@override String toString() { return 'WebhooksIssueComment(authorAssociation: $authorAssociation, body: $body, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, updatedAt: $updatedAt, url: $url, user: $user, pin: $pin)'; } 
- }
+          pin == other.pin;}
+@override int get hashCode {return Object.hash(authorAssociation, body, createdAt, htmlUrl, id, issueUrl, nodeId, performedViaGithubApp, reactions, updatedAt, url, user, pin);}
+@override String toString() {return 'WebhooksIssueComment(authorAssociation: $authorAssociation, body: $body, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, updatedAt: $updatedAt, url: $url, user: $user, pin: $pin)';}
+}

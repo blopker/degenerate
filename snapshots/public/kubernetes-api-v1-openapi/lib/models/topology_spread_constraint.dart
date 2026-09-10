@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label_selector.dart';/// TopologySpreadConstraint specifies how to spread matching pods among the given topology.
 @immutable final class TopologySpreadConstraint {const TopologySpreadConstraint({required this.maxSkew, required this.topologyKey, required this.whenUnsatisfiable, this.labelSelector, this.matchLabelKeys, this.minDomains, this.nodeAffinityPolicy, this.nodeTaintsPolicy, });
 
-factory TopologySpreadConstraint.fromJson(Map<String, dynamic> json) { return TopologySpreadConstraint(
+factory TopologySpreadConstraint.fromJson(Map<String, dynamic> json) {return TopologySpreadConstraint(
   labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,
   matchLabelKeys: (json['matchLabelKeys'] as List<dynamic>?)?.map((e) => e as String).toList(),
   maxSkew: (json['maxSkew'] as num).toInt(),
@@ -12,7 +12,7 @@ factory TopologySpreadConstraint.fromJson(Map<String, dynamic> json) { return To
   nodeTaintsPolicy: json['nodeTaintsPolicy'] as String?,
   topologyKey: json['topologyKey'] as String,
   whenUnsatisfiable: json['whenUnsatisfiable'] as String,
-); }
+);}
 
 /// LabelSelector is used to find matching pods. Pods that match this label selector are counted to determine the number of pods in their corresponding topology domain.
 final LabelSelector? labelSelector;
@@ -49,7 +49,7 @@ final String topologyKey;
 /// A constraint is considered "Unsatisfiable" for an incoming pod if and only if every possible node assignment for that pod would violate "MaxSkew" on some topology. For example, in a 3-zone cluster, MaxSkew is set to 1, and pods with the same labelSelector spread as 3/1/1: | zone1 | zone2 | zone3 | | P P P |   P   |   P   | If WhenUnsatisfiable is set to DoNotSchedule, incoming pod can only be scheduled to zone2(zone3) to become 3/2/1(3/1/2) as ActualSkew(2-1) on zone2(zone3) satisfies MaxSkew(1). In other words, the cluster can still be imbalanced, but scheduler won't make it *more* imbalanced. It's a required field.
 final String whenUnsatisfiable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (labelSelector != null) 'labelSelector': labelSelector?.toJson(),
   'matchLabelKeys': ?matchLabelKeys,
   'maxSkew': maxSkew,
@@ -58,11 +58,11 @@ Map<String, dynamic> toJson() { return {
   'nodeTaintsPolicy': ?nodeTaintsPolicy,
   'topologyKey': topologyKey,
   'whenUnsatisfiable': whenUnsatisfiable,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxSkew') && json['maxSkew'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('maxSkew') && json['maxSkew'] is num &&
       json.containsKey('topologyKey') && json['topologyKey'] is String &&
-      json.containsKey('whenUnsatisfiable') && json['whenUnsatisfiable'] is String; } 
-TopologySpreadConstraint copyWith({LabelSelector? Function()? labelSelector, List<String>? Function()? matchLabelKeys, int? maxSkew, int? Function()? minDomains, String? Function()? nodeAffinityPolicy, String? Function()? nodeTaintsPolicy, String? topologyKey, String? whenUnsatisfiable, }) { return TopologySpreadConstraint(
+      json.containsKey('whenUnsatisfiable') && json['whenUnsatisfiable'] is String;}
+TopologySpreadConstraint copyWith({LabelSelector? Function()? labelSelector, List<String>? Function()? matchLabelKeys, int? maxSkew, int? Function()? minDomains, String? Function()? nodeAffinityPolicy, String? Function()? nodeTaintsPolicy, String? topologyKey, String? whenUnsatisfiable, }) {return TopologySpreadConstraint(
   labelSelector: labelSelector != null ? labelSelector() : this.labelSelector,
   matchLabelKeys: matchLabelKeys != null ? matchLabelKeys() : this.matchLabelKeys,
   maxSkew: maxSkew ?? this.maxSkew,
@@ -71,8 +71,8 @@ TopologySpreadConstraint copyWith({LabelSelector? Function()? labelSelector, Lis
   nodeTaintsPolicy: nodeTaintsPolicy != null ? nodeTaintsPolicy() : this.nodeTaintsPolicy,
   topologyKey: topologyKey ?? this.topologyKey,
   whenUnsatisfiable: whenUnsatisfiable ?? this.whenUnsatisfiable,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TopologySpreadConstraint &&
           labelSelector == other.labelSelector &&
           listEquals(matchLabelKeys, other.matchLabelKeys) &&
@@ -81,7 +81,7 @@ TopologySpreadConstraint copyWith({LabelSelector? Function()? labelSelector, Lis
           nodeAffinityPolicy == other.nodeAffinityPolicy &&
           nodeTaintsPolicy == other.nodeTaintsPolicy &&
           topologyKey == other.topologyKey &&
-          whenUnsatisfiable == other.whenUnsatisfiable; } 
-@override int get hashCode { return Object.hash(labelSelector, Object.hashAll(matchLabelKeys ?? const []), maxSkew, minDomains, nodeAffinityPolicy, nodeTaintsPolicy, topologyKey, whenUnsatisfiable); } 
-@override String toString() { return 'TopologySpreadConstraint(labelSelector: $labelSelector, matchLabelKeys: $matchLabelKeys, maxSkew: $maxSkew, minDomains: $minDomains, nodeAffinityPolicy: $nodeAffinityPolicy, nodeTaintsPolicy: $nodeTaintsPolicy, topologyKey: $topologyKey, whenUnsatisfiable: $whenUnsatisfiable)'; } 
- }
+          whenUnsatisfiable == other.whenUnsatisfiable;}
+@override int get hashCode {return Object.hash(labelSelector, Object.hashAll(matchLabelKeys ?? const []), maxSkew, minDomains, nodeAffinityPolicy, nodeTaintsPolicy, topologyKey, whenUnsatisfiable);}
+@override String toString() {return 'TopologySpreadConstraint(labelSelector: $labelSelector, matchLabelKeys: $matchLabelKeys, maxSkew: $maxSkew, minDomains: $minDomains, nodeAffinityPolicy: $nodeAffinityPolicy, nodeTaintsPolicy: $nodeTaintsPolicy, topologyKey: $topologyKey, whenUnsatisfiable: $whenUnsatisfiable)';}
+}

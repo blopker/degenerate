@@ -11,7 +11,7 @@ final class UsersApi with ApiExecutor {const UsersApi(this.apiConfig);
 /// Lists all of the users in the organization.
 ///
 /// `GET /organization/users`
-Future<ApiResult<UserListResponse, Never>> listUsers({int? limit, String? after, List<String>? emails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UserListResponse, Never>> listUsers({int? limit, String? after, List<String>? emails, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -36,18 +36,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a user by their identifier.
 ///
 /// `GET /organization/users/{user_id}`
-Future<ApiResult<User, Never>> retrieveUser({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<User, Never>> retrieveUser({required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -56,18 +51,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a user's role in the organization.
 ///
 /// `POST /organization/users/{user_id}`
-Future<ApiResult<User, Never>> modifyUser({required String userId, required UserRoleUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<User, Never>> modifyUser({required String userId, required UserRoleUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -78,18 +68,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a user from the organization.
 ///
 /// `DELETE /organization/users/{user_id}`
-Future<ApiResult<UserDeleteResponse, Never>> deleteUser({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UserDeleteResponse, Never>> deleteUser({required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -98,12 +83,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserDeleteResponse.fromJson(json as Map<String, dynamic>);}, );}
+}

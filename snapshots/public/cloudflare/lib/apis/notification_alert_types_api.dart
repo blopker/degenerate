@@ -13,7 +13,7 @@ final class NotificationAlertTypesApi with ApiExecutor {const NotificationAlertT
 /// Gets a list of all alert types for which an account is eligible.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/available_alerts`
-Future<ApiResult<Map<String, List<AaaAlertTypes>>?, ResponseCommonFailure2>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, List<AaaAlertTypes>>?, ResponseCommonFailure2>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,22 +22,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => AaaAlertTypes.fromJson(e as Map<String, dynamic>)).toList()));
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => AaaAlertTypes.fromJson(e as Map<String, dynamic>)).toList()));}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure2.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure2.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

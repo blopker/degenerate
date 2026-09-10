@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The billing cycle anchor that applies when the subscription is resumed. Either `now` or `unchanged`. The default is `now`. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 @immutable final class PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor {const PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor._(this.value);
 
-factory PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'now' => now,
   'unchanged' => unchanged,
   _ => PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor._(json),
-}; }
+};}
 
 static const PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor now = PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor._('now');
 
@@ -17,23 +17,23 @@ static const List<PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor($value)';}
+}
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) resulting from the `billing_cycle_anchor` being `unchanged`. When the `billing_cycle_anchor` is set to `now` (default value), no prorations are generated. If no value is passed, the default is `create_prorations`.
 @immutable final class PostSubscriptionsSubscriptionResumeRequestProrationBehavior {const PostSubscriptionsSubscriptionResumeRequestProrationBehavior._(this.value);
 
-factory PostSubscriptionsSubscriptionResumeRequestProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsSubscriptionResumeRequestProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostSubscriptionsSubscriptionResumeRequestProrationBehavior._(json),
-}; }
+};}
 
 static const PostSubscriptionsSubscriptionResumeRequestProrationBehavior alwaysInvoice = PostSubscriptionsSubscriptionResumeRequestProrationBehavior._('always_invoice');
 
@@ -45,22 +45,22 @@ static const List<PostSubscriptionsSubscriptionResumeRequestProrationBehavior> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsSubscriptionResumeRequestProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsSubscriptionResumeRequestProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionResumeRequestProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsSubscriptionResumeRequestProrationBehavior($value)';}
+}
 @immutable final class PostSubscriptionsSubscriptionResumeRequest {const PostSubscriptionsSubscriptionResumeRequest({this.billingCycleAnchor, this.expand, this.prorationBehavior, this.prorationDate, });
 
-factory PostSubscriptionsSubscriptionResumeRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionResumeRequest(
+factory PostSubscriptionsSubscriptionResumeRequest.fromJson(Map<String, dynamic> json) {return PostSubscriptionsSubscriptionResumeRequest(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionsSubscriptionResumeRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   prorationDate: json['proration_date'] != null ? (json['proration_date'] as num).toInt() : null,
-); }
+);}
 
 /// The billing cycle anchor that applies when the subscription is resumed. Either `now` or `unchanged`. The default is `now`. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 final PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor? billingCycleAnchor;
@@ -74,25 +74,25 @@ final PostSubscriptionsSubscriptionResumeRequestProrationBehavior? prorationBeha
 /// If set, prorations will be calculated as though the subscription was resumed at the given time. This can be used to apply exactly the same prorations that were previewed with the [create preview](https://stripe.com/docs/api/invoices/create_preview) endpoint.
 final int? prorationDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingCycleAnchor != null) 'billing_cycle_anchor': billingCycleAnchor?.toJson(),
   'expand': ?expand,
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
   'proration_date': ?prorationDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle_anchor', 'expand', 'proration_behavior', 'proration_date'}.contains(key)); } 
-PostSubscriptionsSubscriptionResumeRequest copyWith({PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor? Function()? billingCycleAnchor, List<String>? Function()? expand, PostSubscriptionsSubscriptionResumeRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, }) { return PostSubscriptionsSubscriptionResumeRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_cycle_anchor', 'expand', 'proration_behavior', 'proration_date'}.contains(key));}
+PostSubscriptionsSubscriptionResumeRequest copyWith({PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor? Function()? billingCycleAnchor, List<String>? Function()? expand, PostSubscriptionsSubscriptionResumeRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, }) {return PostSubscriptionsSubscriptionResumeRequest(
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   expand: expand != null ? expand() : this.expand,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
   prorationDate: prorationDate != null ? prorationDate() : this.prorationDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionsSubscriptionResumeRequest &&
           billingCycleAnchor == other.billingCycleAnchor &&
           listEquals(expand, other.expand) &&
           prorationBehavior == other.prorationBehavior &&
-          prorationDate == other.prorationDate; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, Object.hashAll(expand ?? const []), prorationBehavior, prorationDate); } 
-@override String toString() { return 'PostSubscriptionsSubscriptionResumeRequest(billingCycleAnchor: $billingCycleAnchor, expand: $expand, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate)'; } 
- }
+          prorationDate == other.prorationDate;}
+@override int get hashCode {return Object.hash(billingCycleAnchor, Object.hashAll(expand ?? const []), prorationBehavior, prorationDate);}
+@override String toString() {return 'PostSubscriptionsSubscriptionResumeRequest(billingCycleAnchor: $billingCycleAnchor, expand: $expand, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate)';}
+}

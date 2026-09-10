@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesUserContentVariant2ImageUrlDetail {const Messages51MessagesUserContentVariant2ImageUrlDetail._(this.value);
 
-factory Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(String json) { return switch (json) {
+factory Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'low' => low,
   'high' => high,
   _ => Messages51MessagesUserContentVariant2ImageUrlDetail._(json),
-}; }
+};}
 
 static const Messages51MessagesUserContentVariant2ImageUrlDetail auto = Messages51MessagesUserContentVariant2ImageUrlDetail._('auto');
 
@@ -19,40 +19,40 @@ static const List<Messages51MessagesUserContentVariant2ImageUrlDetail> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Messages51MessagesUserContentVariant2ImageUrlDetail && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Messages51MessagesUserContentVariant2ImageUrlDetail($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Messages51MessagesUserContentVariant2ImageUrlDetail && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Messages51MessagesUserContentVariant2ImageUrlDetail($value)';}
+}
 @immutable final class Messages51MessagesUserContentVariant2ImageUrl {const Messages51MessagesUserContentVariant2ImageUrl({this.detail, this.url, });
 
-factory Messages51MessagesUserContentVariant2ImageUrl.fromJson(Map<String, dynamic> json) { return Messages51MessagesUserContentVariant2ImageUrl(
+factory Messages51MessagesUserContentVariant2ImageUrl.fromJson(Map<String, dynamic> json) {return Messages51MessagesUserContentVariant2ImageUrl(
   detail: json['detail'] != null ? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(json['detail'] as String) : null,
   url: json['url'] as String?,
-); }
+);}
 
 final Messages51MessagesUserContentVariant2ImageUrlDetail? detail;
 
 final String? url;
 
 /// The value with the schema default applied when absent.
-Messages51MessagesUserContentVariant2ImageUrlDetail get detailOrDefault { return detail ?? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson('auto'); } 
-Map<String, dynamic> toJson() { return {
+Messages51MessagesUserContentVariant2ImageUrlDetail get detailOrDefault {return detail ?? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson('auto');}
+Map<String, dynamic> toJson() {return {
   if (detail != null) 'detail': detail?.toJson(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'detail', 'url'}.contains(key)); } 
-Messages51MessagesUserContentVariant2ImageUrl copyWith({Messages51MessagesUserContentVariant2ImageUrlDetail? Function()? detail, String? Function()? url, }) { return Messages51MessagesUserContentVariant2ImageUrl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'detail', 'url'}.contains(key));}
+Messages51MessagesUserContentVariant2ImageUrl copyWith({Messages51MessagesUserContentVariant2ImageUrlDetail? Function()? detail, String? Function()? url, }) {return Messages51MessagesUserContentVariant2ImageUrl(
   detail: detail != null ? detail() : this.detail,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages51MessagesUserContentVariant2ImageUrl &&
           detail == other.detail &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(detail, url); } 
-@override String toString() { return 'Messages51MessagesUserContentVariant2ImageUrl(detail: $detail, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(detail, url);}
+@override String toString() {return 'Messages51MessagesUserContentVariant2ImageUrl(detail: $detail, url: $url)';}
+}

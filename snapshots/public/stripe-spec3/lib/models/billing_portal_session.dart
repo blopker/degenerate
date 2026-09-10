@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_session_configuration.dart';import 'portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 @immutable final class BillingPortalSessionLocale {const BillingPortalSessionLocale._(this.value);
 
-factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) {
+factory BillingPortalSessionLocale.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'bg' => bg,
   'cs' => cs,
@@ -52,7 +52,7 @@ factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) 
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
   _ => BillingPortalSessionLocale._(json),
-}; }
+};}
 
 static const BillingPortalSessionLocale auto = BillingPortalSessionLocale._('auto');
 
@@ -152,21 +152,21 @@ static const List<BillingPortalSessionLocale> values = [auto, bg, cs, da, de, el
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingPortalSessionLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingPortalSessionLocale($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingPortalSessionLocale && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingPortalSessionLocale($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingPortalSessionObject {const BillingPortalSessionObject._(this.value);
 
-factory BillingPortalSessionObject.fromJson(String json) { return switch (json) {
+factory BillingPortalSessionObject.fromJson(String json) {return switch (json) {
   'billing_portal.session' => billingPortalSession,
   _ => BillingPortalSessionObject._(json),
-}; }
+};}
 
 static const BillingPortalSessionObject billingPortalSession = BillingPortalSessionObject._('billing_portal.session');
 
@@ -174,14 +174,14 @@ static const List<BillingPortalSessionObject> values = [billingPortalSession];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingPortalSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingPortalSessionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingPortalSessionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingPortalSessionObject($value)';}
+}
 /// The Billing customer portal is a Stripe-hosted UI for subscription and
 /// billing management.
 /// 
@@ -198,7 +198,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Customer management](/customer-management)
 @immutable final class BillingPortalSession {const BillingPortalSession({required this.configuration, required this.created, required this.customer, required this.id, required this.livemode, required this.object, required this.url, this.customerAccount = const Omittable.absent(), this.flow = const Omittable.absent(), this.locale = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.returnUrl = const Omittable.absent(), });
 
-factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return BillingPortalSession(
+factory BillingPortalSession.fromJson(Map<String, dynamic> json) {return BillingPortalSession(
   configuration: BillingPortalSessionConfiguration.fromJson(json['configuration']),
   created: (json['created'] as num).toInt(),
   customer: json['customer'] as String,
@@ -211,7 +211,7 @@ factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return Billin
   onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] as String?) : const Omittable.absent(),
   returnUrl: json.containsKey('return_url') ? Omittable(json['return_url'] as String?) : const Omittable.absent(),
   url: json['url'] as String,
-); }
+);}
 
 /// The configuration used by this session, describing the features available.
 final BillingPortalSessionConfiguration configuration;
@@ -249,7 +249,7 @@ final Omittable<String?> returnUrl;
 /// The short-lived URL of the session that gives customers access to the customer portal.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configuration': configuration.toJson(),
   'created': created,
   'customer': customer,
@@ -262,15 +262,15 @@ Map<String, dynamic> toJson() { return {
   if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value,
   if (returnUrl.isPresent) 'return_url': returnUrl.value,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('configuration') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('customer') && json['customer'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, Omittable<String?>? customerAccount, Omittable<PortalFlowsFlow?>? flow, String? id, bool? livemode, Omittable<BillingPortalSessionLocale?>? locale, BillingPortalSessionObject? object, Omittable<String?>? onBehalfOf, Omittable<String?>? returnUrl, String? url, }) { return BillingPortalSession(
+      json.containsKey('url') && json['url'] is String;}
+BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, Omittable<String?>? customerAccount, Omittable<PortalFlowsFlow?>? flow, String? id, bool? livemode, Omittable<BillingPortalSessionLocale?>? locale, BillingPortalSessionObject? object, Omittable<String?>? onBehalfOf, Omittable<String?>? returnUrl, String? url, }) {return BillingPortalSession(
   configuration: configuration ?? this.configuration,
   created: created ?? this.created,
   customer: customer ?? this.customer,
@@ -283,8 +283,8 @@ BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration,
   onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   returnUrl: returnUrl ?? this.returnUrl,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingPortalSession &&
           configuration == other.configuration &&
           created == other.created &&
@@ -297,7 +297,7 @@ BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration,
           object == other.object &&
           onBehalfOf == other.onBehalfOf &&
           returnUrl == other.returnUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(configuration, created, customer, customerAccount, flow, id, livemode, locale, object, onBehalfOf, returnUrl, url); } 
-@override String toString() { return 'BillingPortalSession(configuration: $configuration, created: $created, customer: $customer, customerAccount: $customerAccount, flow: $flow, id: $id, livemode: $livemode, locale: $locale, object: $object, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(configuration, created, customer, customerAccount, flow, id, livemode, locale, object, onBehalfOf, returnUrl, url);}
+@override String toString() {return 'BillingPortalSession(configuration: $configuration, created: $created, customer: $customer, customerAccount: $customerAccount, flow: $flow, id: $id, livemode: $livemode, locale: $locale, object: $object, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl, url: $url)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object used to create GitHub Pages deployment
 @immutable final class ReposCreatePagesDeploymentRequest {const ReposCreatePagesDeploymentRequest({required this.pagesBuildVersion, required this.oidcToken, this.artifactId, this.artifactUrl, this.environment, });
 
-factory ReposCreatePagesDeploymentRequest.fromJson(Map<String, dynamic> json) { return ReposCreatePagesDeploymentRequest(
+factory ReposCreatePagesDeploymentRequest.fromJson(Map<String, dynamic> json) {return ReposCreatePagesDeploymentRequest(
   artifactId: json['artifact_id'] != null ? (json['artifact_id'] as num).toDouble() : null,
   artifactUrl: json['artifact_url'] as String?,
   environment: json['environment'] as String?,
   pagesBuildVersion: json['pages_build_version'] as String,
   oidcToken: json['oidc_token'] as String,
-); }
+);}
 
 /// The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
 final double? artifactId;
@@ -27,30 +27,30 @@ final String pagesBuildVersion;
 final String oidcToken;
 
 /// The value with the schema default applied when absent.
-String get environmentOrDefault { return environment ?? 'github-pages'; } 
-Map<String, dynamic> toJson() { return {
+String get environmentOrDefault {return environment ?? 'github-pages';}
+Map<String, dynamic> toJson() {return {
   'artifact_id': ?artifactId,
   'artifact_url': ?artifactUrl,
   'environment': ?environment,
   'pages_build_version': pagesBuildVersion,
   'oidc_token': oidcToken,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pages_build_version') && json['pages_build_version'] is String &&
-      json.containsKey('oidc_token') && json['oidc_token'] is String; } 
-ReposCreatePagesDeploymentRequest copyWith({double? Function()? artifactId, String? Function()? artifactUrl, String? Function()? environment, String? pagesBuildVersion, String? oidcToken, }) { return ReposCreatePagesDeploymentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pages_build_version') && json['pages_build_version'] is String &&
+      json.containsKey('oidc_token') && json['oidc_token'] is String;}
+ReposCreatePagesDeploymentRequest copyWith({double? Function()? artifactId, String? Function()? artifactUrl, String? Function()? environment, String? pagesBuildVersion, String? oidcToken, }) {return ReposCreatePagesDeploymentRequest(
   artifactId: artifactId != null ? artifactId() : this.artifactId,
   artifactUrl: artifactUrl != null ? artifactUrl() : this.artifactUrl,
   environment: environment != null ? environment() : this.environment,
   pagesBuildVersion: pagesBuildVersion ?? this.pagesBuildVersion,
   oidcToken: oidcToken ?? this.oidcToken,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreatePagesDeploymentRequest &&
           artifactId == other.artifactId &&
           artifactUrl == other.artifactUrl &&
           environment == other.environment &&
           pagesBuildVersion == other.pagesBuildVersion &&
-          oidcToken == other.oidcToken; } 
-@override int get hashCode { return Object.hash(artifactId, artifactUrl, environment, pagesBuildVersion, oidcToken); } 
-@override String toString() { return 'ReposCreatePagesDeploymentRequest(artifactId: $artifactId, artifactUrl: $artifactUrl, environment: $environment, pagesBuildVersion: $pagesBuildVersion, oidcToken: $oidcToken)'; } 
- }
+          oidcToken == other.oidcToken;}
+@override int get hashCode {return Object.hash(artifactId, artifactUrl, environment, pagesBuildVersion, oidcToken);}
+@override String toString() {return 'ReposCreatePagesDeploymentRequest(artifactId: $artifactId, artifactUrl: $artifactUrl, environment: $environment, pagesBuildVersion: $pagesBuildVersion, oidcToken: $oidcToken)';}
+}

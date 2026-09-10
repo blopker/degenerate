@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// License Simple
 @immutable final class LicenseSimple {const LicenseSimple({required this.key, required this.name, required this.url, required this.spdxId, required this.nodeId, this.htmlUrl, });
 
-factory LicenseSimple.fromJson(Map<String, dynamic> json) { return LicenseSimple(
+factory LicenseSimple.fromJson(Map<String, dynamic> json) {return LicenseSimple(
   key: json['key'] as String,
   name: json['name'] as String,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   spdxId: json['spdx_id'] as String?,
   nodeId: json['node_id'] as String,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
-); }
+);}
 
 final String key;
 
@@ -24,35 +24,35 @@ final String nodeId;
 
 final Uri? htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'name': name,
   'url': url?.toString(),
   'spdx_id': spdxId,
   'node_id': nodeId,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('url') && (json['url'] == null || json['url'] is String) &&
       json.containsKey('spdx_id') && (json['spdx_id'] == null || json['spdx_id'] is String) &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-LicenseSimple copyWith({String? key, String? name, Uri? Function()? url, String? Function()? spdxId, String? nodeId, Uri? Function()? htmlUrl, }) { return LicenseSimple(
+      json.containsKey('node_id') && json['node_id'] is String;}
+LicenseSimple copyWith({String? key, String? name, Uri? Function()? url, String? Function()? spdxId, String? nodeId, Uri? Function()? htmlUrl, }) {return LicenseSimple(
   key: key ?? this.key,
   name: name ?? this.name,
   url: url != null ? url() : this.url,
   spdxId: spdxId != null ? spdxId() : this.spdxId,
   nodeId: nodeId ?? this.nodeId,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LicenseSimple &&
           key == other.key &&
           name == other.name &&
           url == other.url &&
           spdxId == other.spdxId &&
           nodeId == other.nodeId &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(key, name, url, spdxId, nodeId, htmlUrl); } 
-@override String toString() { return 'LicenseSimple(key: $key, name: $name, url: $url, spdxId: $spdxId, nodeId: $nodeId, htmlUrl: $htmlUrl)'; } 
- }
+          htmlUrl == other.htmlUrl;}
+@override int get hashCode {return Object.hash(key, name, url, spdxId, nodeId, htmlUrl);}
+@override String toString() {return 'LicenseSimple(key: $key, name: $name, url: $url, spdxId: $spdxId, nodeId: $nodeId, htmlUrl: $htmlUrl)';}
+}

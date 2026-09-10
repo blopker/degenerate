@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListAuditLogsEffectiveAt {const ListAuditLogsEffectiveAt({this.gt, this.gte, this.lt, this.lte, });
 
-factory ListAuditLogsEffectiveAt.fromJson(Map<String, dynamic> json) { return ListAuditLogsEffectiveAt(
+factory ListAuditLogsEffectiveAt.fromJson(Map<String, dynamic> json) {return ListAuditLogsEffectiveAt(
   gt: json['gt'] != null ? (json['gt'] as num).toInt() : null,
   gte: json['gte'] != null ? (json['gte'] as num).toInt() : null,
   lt: json['lt'] != null ? (json['lt'] as num).toInt() : null,
   lte: json['lte'] != null ? (json['lte'] as num).toInt() : null,
-); }
+);}
 
 /// Return only events whose `effective_at` (Unix seconds) is greater than this value.
 final int? gt;
@@ -21,25 +21,25 @@ final int? lt;
 /// Return only events whose `effective_at` (Unix seconds) is less than or equal to this value.
 final int? lte;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'gt': ?gt,
   'gte': ?gte,
   'lt': ?lt,
   'lte': ?lte,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gt', 'gte', 'lt', 'lte'}.contains(key)); } 
-ListAuditLogsEffectiveAt copyWith({int? Function()? gt, int? Function()? gte, int? Function()? lt, int? Function()? lte, }) { return ListAuditLogsEffectiveAt(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'gt', 'gte', 'lt', 'lte'}.contains(key));}
+ListAuditLogsEffectiveAt copyWith({int? Function()? gt, int? Function()? gte, int? Function()? lt, int? Function()? lte, }) {return ListAuditLogsEffectiveAt(
   gt: gt != null ? gt() : this.gt,
   gte: gte != null ? gte() : this.gte,
   lt: lt != null ? lt() : this.lt,
   lte: lte != null ? lte() : this.lte,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListAuditLogsEffectiveAt &&
           gt == other.gt &&
           gte == other.gte &&
           lt == other.lt &&
-          lte == other.lte; } 
-@override int get hashCode { return Object.hash(gt, gte, lt, lte); } 
-@override String toString() { return 'ListAuditLogsEffectiveAt(gt: $gt, gte: $gte, lt: $lt, lte: $lte)'; } 
- }
+          lte == other.lte;}
+@override int get hashCode {return Object.hash(gt, gte, lt, lte);}
+@override String toString() {return 'ListAuditLogsEffectiveAt(gt: $gt, gte: $gte, lt: $lt, lte: $lte)';}
+}

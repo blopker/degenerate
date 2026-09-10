@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_code_output_image_object_image.dart';/// Always `image`.
 @immutable final class RunStepDetailsToolCallsCodeOutputImageObjectType {const RunStepDetailsToolCallsCodeOutputImageObjectType._(this.value);
 
-factory RunStepDetailsToolCallsCodeOutputImageObjectType.fromJson(String json) { return switch (json) {
+factory RunStepDetailsToolCallsCodeOutputImageObjectType.fromJson(String json) {return switch (json) {
   'image' => image,
   _ => RunStepDetailsToolCallsCodeOutputImageObjectType._(json),
-}; }
+};}
 
 static const RunStepDetailsToolCallsCodeOutputImageObjectType image = RunStepDetailsToolCallsCodeOutputImageObjectType._('image');
 
@@ -14,40 +14,40 @@ static const List<RunStepDetailsToolCallsCodeOutputImageObjectType> values = [im
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDetailsToolCallsCodeOutputImageObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeOutputImageObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepDetailsToolCallsCodeOutputImageObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepDetailsToolCallsCodeOutputImageObjectType($value)';}
+}
 @immutable final class RunStepDetailsToolCallsCodeOutputImageObject {const RunStepDetailsToolCallsCodeOutputImageObject({required this.type, required this.image, });
 
-factory RunStepDetailsToolCallsCodeOutputImageObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeOutputImageObject(
+factory RunStepDetailsToolCallsCodeOutputImageObject.fromJson(Map<String, dynamic> json) {return RunStepDetailsToolCallsCodeOutputImageObject(
   type: RunStepDetailsToolCallsCodeOutputImageObjectType.fromJson(json['type'] as String),
   image: RunStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(json['image'] as Map<String, dynamic>),
-); }
+);}
 
 /// Always `image`.
 final RunStepDetailsToolCallsCodeOutputImageObjectType type;
 
 final RunStepDetailsToolCallsCodeOutputImageObjectImage image;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'image': image.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('image'); } 
-RunStepDetailsToolCallsCodeOutputImageObject copyWith({RunStepDetailsToolCallsCodeOutputImageObjectType? type, RunStepDetailsToolCallsCodeOutputImageObjectImage? image, }) { return RunStepDetailsToolCallsCodeOutputImageObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('image');}
+RunStepDetailsToolCallsCodeOutputImageObject copyWith({RunStepDetailsToolCallsCodeOutputImageObjectType? type, RunStepDetailsToolCallsCodeOutputImageObjectImage? image, }) {return RunStepDetailsToolCallsCodeOutputImageObject(
   type: type ?? this.type,
   image: image ?? this.image,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepDetailsToolCallsCodeOutputImageObject &&
           type == other.type &&
-          image == other.image; } 
-@override int get hashCode { return Object.hash(type, image); } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeOutputImageObject(type: $type, image: $image)'; } 
- }
+          image == other.image;}
+@override int get hashCode {return Object.hash(type, image);}
+@override String toString() {return 'RunStepDetailsToolCallsCodeOutputImageObject(type: $type, image: $image)';}
+}

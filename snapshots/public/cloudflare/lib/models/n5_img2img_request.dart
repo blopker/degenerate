@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class $5Img2imgRequest {const $5Img2imgRequest({required this.prompt, this.guidance, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps, this.seed, this.strength, this.width, });
 
-factory $5Img2imgRequest.fromJson(Map<String, dynamic> json) { return $5Img2imgRequest(
+factory $5Img2imgRequest.fromJson(Map<String, dynamic> json) {return $5Img2imgRequest(
   guidance: json['guidance'] != null ? (json['guidance'] as num).toDouble() : null,
   height: json['height'] != null ? (json['height'] as num).toInt() : null,
   image: (json['image'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
@@ -14,7 +14,7 @@ factory $5Img2imgRequest.fromJson(Map<String, dynamic> json) { return $5Img2imgR
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   strength: json['strength'] != null ? (json['strength'] as num).toDouble() : null,
   width: json['width'] != null ? (json['width'] as num).toInt() : null,
-); }
+);}
 
 /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
 final double? guidance;
@@ -50,12 +50,12 @@ final double? strength;
 final int? width;
 
 /// The value with the schema default applied when absent.
-double get guidanceOrDefault { return guidance ?? 7.5; } 
+double get guidanceOrDefault {return guidance ?? 7.5;}
 /// The value with the schema default applied when absent.
-int get numStepsOrDefault { return numSteps ?? 20; } 
+int get numStepsOrDefault {return numSteps ?? 20;}
 /// The value with the schema default applied when absent.
-double get strengthOrDefault { return strength ?? 1.0; } 
-Map<String, dynamic> toJson() { return {
+double get strengthOrDefault {return strength ?? 1.0;}
+Map<String, dynamic> toJson() {return {
   'guidance': ?guidance,
   'height': ?height,
   'image': ?image,
@@ -67,9 +67,9 @@ Map<String, dynamic> toJson() { return {
   'seed': ?seed,
   'strength': ?strength,
   'width': ?width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-$5Img2imgRequest copyWith({double? Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int? Function()? numSteps, String? prompt, int? Function()? seed, double? Function()? strength, int? Function()? width, }) { return $5Img2imgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+$5Img2imgRequest copyWith({double? Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int? Function()? numSteps, String? prompt, int? Function()? seed, double? Function()? strength, int? Function()? width, }) {return $5Img2imgRequest(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   image: image != null ? image() : this.image,
@@ -81,8 +81,8 @@ $5Img2imgRequest copyWith({double? Function()? guidance, int? Function()? height
   seed: seed != null ? seed() : this.seed,
   strength: strength != null ? strength() : this.strength,
   width: width != null ? width() : this.width,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is $5Img2imgRequest &&
           guidance == other.guidance &&
           height == other.height &&
@@ -94,7 +94,7 @@ $5Img2imgRequest copyWith({double? Function()? guidance, int? Function()? height
           prompt == other.prompt &&
           seed == other.seed &&
           strength == other.strength &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(guidance, height, Object.hashAll(image ?? const []), imageB64, Object.hashAll(mask ?? const []), negativePrompt, numSteps, prompt, seed, strength, width); } 
-@override String toString() { return '\$5Img2imgRequest(guidance: $guidance, height: $height, image: $image, imageB64: $imageB64, mask: $mask, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, strength: $strength, width: $width)'; } 
- }
+          width == other.width;}
+@override int get hashCode {return Object.hash(guidance, height, Object.hashAll(image ?? const []), imageB64, Object.hashAll(mask ?? const []), negativePrompt, numSteps, prompt, seed, strength, width);}
+@override String toString() {return '\$5Img2imgRequest(guidance: $guidance, height: $height, image: $image, imageB64: $imageB64, mask: $mask, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, strength: $strength, width: $width)';}
+}

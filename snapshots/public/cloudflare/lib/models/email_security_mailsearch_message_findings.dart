@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';@immutable final class EmailSecurityMailsearchMessageFindings {const EmailSecurityMailsearchMessageFindings({this.attachment = const Omittable.absent(), this.detail = const Omittable.absent(), this.detection = const Omittable.absent(), this.field = const Omittable.absent(), this.name = const Omittable.absent(), this.portion = const Omittable.absent(), this.reason = const Omittable.absent(), this.score = const Omittable.absent(), this.value = const Omittable.absent(), });
 
-factory EmailSecurityMailsearchMessageFindings.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessageFindings(
+factory EmailSecurityMailsearchMessageFindings.fromJson(Map<String, dynamic> json) {return EmailSecurityMailsearchMessageFindings(
   attachment: json.containsKey('attachment') ? Omittable(json['attachment'] as String?) : const Omittable.absent(),
   detail: json.containsKey('detail') ? Omittable(json['detail'] as String?) : const Omittable.absent(),
   detection: json.containsKey('detection') ? Omittable(json['detection'] != null ? EmailSecurityDispositionLabel.fromJson(json['detection'] as String) : null) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory EmailSecurityMailsearchMessageFindings.fromJson(Map<String, dynamic> jso
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
   score: json.containsKey('score') ? Omittable(json['score'] != null ? (json['score'] as num).toDouble() : null) : const Omittable.absent(),
   value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<String?> attachment;
 
@@ -32,7 +32,7 @@ final Omittable<double?> score;
 
 final Omittable<String?> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (attachment.isPresent) 'attachment': attachment.value,
   if (detail.isPresent) 'detail': detail.value,
   if (detection.isPresent) 'detection': detection.value?.toJson(),
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (reason.isPresent) 'reason': reason.value,
   if (score.isPresent) 'score': score.value,
   if (value.isPresent) 'value': value.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attachment', 'detail', 'detection', 'field', 'name', 'portion', 'reason', 'score', 'value'}.contains(key)); } 
-EmailSecurityMailsearchMessageFindings copyWith({Omittable<String?>? attachment, Omittable<String?>? detail, Omittable<EmailSecurityDispositionLabel?>? detection, Omittable<String?>? field, Omittable<String?>? name, Omittable<String?>? portion, Omittable<String?>? reason, Omittable<double?>? score, Omittable<String?>? value, }) { return EmailSecurityMailsearchMessageFindings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'attachment', 'detail', 'detection', 'field', 'name', 'portion', 'reason', 'score', 'value'}.contains(key));}
+EmailSecurityMailsearchMessageFindings copyWith({Omittable<String?>? attachment, Omittable<String?>? detail, Omittable<EmailSecurityDispositionLabel?>? detection, Omittable<String?>? field, Omittable<String?>? name, Omittable<String?>? portion, Omittable<String?>? reason, Omittable<double?>? score, Omittable<String?>? value, }) {return EmailSecurityMailsearchMessageFindings(
   attachment: attachment ?? this.attachment,
   detail: detail ?? this.detail,
   detection: detection ?? this.detection,
@@ -54,8 +54,8 @@ EmailSecurityMailsearchMessageFindings copyWith({Omittable<String?>? attachment,
   reason: reason ?? this.reason,
   score: score ?? this.score,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EmailSecurityMailsearchMessageFindings &&
           attachment == other.attachment &&
           detail == other.detail &&
@@ -65,7 +65,7 @@ EmailSecurityMailsearchMessageFindings copyWith({Omittable<String?>? attachment,
           portion == other.portion &&
           reason == other.reason &&
           score == other.score &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(attachment, detail, detection, field, name, portion, reason, score, value); } 
-@override String toString() { return 'EmailSecurityMailsearchMessageFindings(attachment: $attachment, detail: $detail, detection: $detection, field: $field, name: $name, portion: $portion, reason: $reason, score: $score, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(attachment, detail, detection, field, name, portion, reason, score, value);}
+@override String toString() {return 'EmailSecurityMailsearchMessageFindings(attachment: $attachment, detail: $detail, detection: $detection, field: $field, name: $name, portion: $portion, reason: $reason, score: $score, value: $value)';}
+}

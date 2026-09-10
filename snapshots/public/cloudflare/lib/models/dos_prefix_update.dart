@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosPrefixUpdate {const DosPrefixUpdate({this.comment, this.excluded, });
 
-factory DosPrefixUpdate.fromJson(Map<String, dynamic> json) { return DosPrefixUpdate(
+factory DosPrefixUpdate.fromJson(Map<String, dynamic> json) {return DosPrefixUpdate(
   comment: json['comment'] as String?,
   excluded: json['excluded'] as bool?,
-); }
+);}
 
 /// A new comment for the prefix. Optional.
 final String? comment;
@@ -13,19 +13,19 @@ final String? comment;
 /// Whether to exclude the prefix from protection. Optional.
 final bool? excluded;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comment': ?comment,
   'excluded': ?excluded,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'excluded'}.contains(key)); } 
-DosPrefixUpdate copyWith({String? Function()? comment, bool? Function()? excluded, }) { return DosPrefixUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'excluded'}.contains(key));}
+DosPrefixUpdate copyWith({String? Function()? comment, bool? Function()? excluded, }) {return DosPrefixUpdate(
   comment: comment != null ? comment() : this.comment,
   excluded: excluded != null ? excluded() : this.excluded,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DosPrefixUpdate &&
           comment == other.comment &&
-          excluded == other.excluded; } 
-@override int get hashCode { return Object.hash(comment, excluded); } 
-@override String toString() { return 'DosPrefixUpdate(comment: $comment, excluded: $excluded)'; } 
- }
+          excluded == other.excluded;}
+@override int get hashCode {return Object.hash(comment, excluded);}
+@override String toString() {return 'DosPrefixUpdate(comment: $comment, excluded: $excluded)';}
+}

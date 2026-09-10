@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_log_prob.dart';/// Emitted when there is an additional text delta.
 @immutable final class ResponseTextDeltaEvent {const ResponseTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, required this.logprobs, });
 
-factory ResponseTextDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseTextDeltaEvent(
+factory ResponseTextDeltaEvent.fromJson(Map<String, dynamic> json) {return ResponseTextDeltaEvent(
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
@@ -11,7 +11,7 @@ factory ResponseTextDeltaEvent.fromJson(Map<String, dynamic> json) { return Resp
   delta: json['delta'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   logprobs: (json['logprobs'] as List<dynamic>).map((e) => ResponseLogProb.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The type of the event. Always `response.output_text.delta`.
 /// 
@@ -40,7 +40,7 @@ final int sequenceNumber;
 /// 
 final List<ResponseLogProb> logprobs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
@@ -48,15 +48,15 @@ Map<String, dynamic> toJson() { return {
   'delta': delta,
   'sequence_number': sequenceNumber,
   'logprobs': logprobs.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('delta') && json['delta'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
-      json.containsKey('logprobs'); } 
-ResponseTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseTextDeltaEvent(
+      json.containsKey('logprobs');}
+ResponseTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) {return ResponseTextDeltaEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
@@ -64,8 +64,8 @@ ResponseTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex,
   delta: delta ?? this.delta,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   logprobs: logprobs ?? this.logprobs,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseTextDeltaEvent &&
           type == other.type &&
           itemId == other.itemId &&
@@ -73,7 +73,7 @@ ResponseTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex,
           contentIndex == other.contentIndex &&
           delta == other.delta &&
           sequenceNumber == other.sequenceNumber &&
-          listEquals(logprobs, other.logprobs); } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, delta, sequenceNumber, Object.hashAll(logprobs)); } 
-@override String toString() { return 'ResponseTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta, sequenceNumber: $sequenceNumber, logprobs: $logprobs)'; } 
- }
+          listEquals(logprobs, other.logprobs);}
+@override int get hashCode {return Object.hash(type, itemId, outputIndex, contentIndex, delta, sequenceNumber, Object.hashAll(logprobs));}
+@override String toString() {return 'ResponseTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta, sequenceNumber: $sequenceNumber, logprobs: $logprobs)';}
+}

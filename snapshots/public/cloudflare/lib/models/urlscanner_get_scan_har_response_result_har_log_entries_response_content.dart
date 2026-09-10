@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent {const UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent({required this.mimeType, required this.size, this.compression, });
 
-factory UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(
+factory UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(
   compression: json['compression'] != null ? (json['compression'] as num).toInt() : null,
   mimeType: json['mimeType'] as String,
   size: (json['size'] as num).toDouble(),
-); }
+);}
 
 final int? compression;
 
@@ -14,23 +14,23 @@ final String mimeType;
 
 final double size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'compression': ?compression,
   'mimeType': mimeType,
   'size': size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mimeType') && json['mimeType'] is String &&
-      json.containsKey('size') && json['size'] is num; } 
-UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent copyWith({int? Function()? compression, String? mimeType, double? size, }) { return UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mimeType') && json['mimeType'] is String &&
+      json.containsKey('size') && json['size'] is num;}
+UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent copyWith({int? Function()? compression, String? mimeType, double? size, }) {return UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(
   compression: compression != null ? compression() : this.compression,
   mimeType: mimeType ?? this.mimeType,
   size: size ?? this.size,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent &&
           compression == other.compression &&
           mimeType == other.mimeType &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(compression, mimeType, size); } 
-@override String toString() { return 'UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(compression: $compression, mimeType: $mimeType, size: $size)'; } 
- }
+          size == other.size;}
+@override int get hashCode {return Object.hash(compression, mimeType, size);}
+@override String toString() {return 'UrlscannerGetScanHarResponseResultHarLogEntriesResponseContent(compression: $compression, mimeType: $mimeType, size: $size)';}
+}

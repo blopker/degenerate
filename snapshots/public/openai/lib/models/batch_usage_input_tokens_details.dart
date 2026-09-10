@@ -3,25 +3,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A detailed breakdown of the input tokens.
 @immutable final class BatchUsageInputTokensDetails {const BatchUsageInputTokensDetails({required this.cachedTokens});
 
-factory BatchUsageInputTokensDetails.fromJson(Map<String, dynamic> json) { return BatchUsageInputTokensDetails(
+factory BatchUsageInputTokensDetails.fromJson(Map<String, dynamic> json) {return BatchUsageInputTokensDetails(
   cachedTokens: (json['cached_tokens'] as num).toInt(),
-); }
+);}
 
 /// The number of tokens that were retrieved from the cache. [More on
 /// prompt caching](/docs/guides/prompt-caching).
 /// 
 final int cachedTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cached_tokens': cachedTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cached_tokens') && json['cached_tokens'] is num; } 
-BatchUsageInputTokensDetails copyWith({int? cachedTokens}) { return BatchUsageInputTokensDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cached_tokens') && json['cached_tokens'] is num;}
+BatchUsageInputTokensDetails copyWith({int? cachedTokens}) {return BatchUsageInputTokensDetails(
   cachedTokens: cachedTokens ?? this.cachedTokens,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BatchUsageInputTokensDetails &&
-          cachedTokens == other.cachedTokens; } 
-@override int get hashCode { return cachedTokens.hashCode; } 
-@override String toString() { return 'BatchUsageInputTokensDetails(cachedTokens: $cachedTokens)'; } 
- }
+          cachedTokens == other.cachedTokens;}
+@override int get hashCode {return cachedTokens.hashCode;}
+@override String toString() {return 'BatchUsageInputTokensDetails(cachedTokens: $cachedTokens)';}
+}

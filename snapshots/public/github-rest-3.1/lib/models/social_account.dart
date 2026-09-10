@@ -3,29 +3,29 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Social media account
 @immutable final class SocialAccount {const SocialAccount({required this.provider, required this.url, });
 
-factory SocialAccount.fromJson(Map<String, dynamic> json) { return SocialAccount(
+factory SocialAccount.fromJson(Map<String, dynamic> json) {return SocialAccount(
   provider: json['provider'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final String provider;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'provider': provider,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('provider') && json['provider'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-SocialAccount copyWith({String? provider, String? url, }) { return SocialAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('provider') && json['provider'] is String &&
+      json.containsKey('url') && json['url'] is String;}
+SocialAccount copyWith({String? provider, String? url, }) {return SocialAccount(
   provider: provider ?? this.provider,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SocialAccount &&
           provider == other.provider &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(provider, url); } 
-@override String toString() { return 'SocialAccount(provider: $provider, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(provider, url);}
+@override String toString() {return 'SocialAccount(provider: $provider, url: $url)';}
+}

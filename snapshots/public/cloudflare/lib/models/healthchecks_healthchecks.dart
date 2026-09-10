@@ -10,13 +10,13 @@ String toJson() => value;
 /// The current status of the origin server according to the health check.
 @immutable final class HealthchecksStatus {const HealthchecksStatus._(this.value);
 
-factory HealthchecksStatus.fromJson(String json) { return switch (json) {
+factory HealthchecksStatus.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'healthy' => healthy,
   'unhealthy' => unhealthy,
   'suspended' => suspended,
   _ => HealthchecksStatus._(json),
-}; }
+};}
 
 static const HealthchecksStatus unknown = HealthchecksStatus._('unknown');
 
@@ -30,14 +30,14 @@ static const List<HealthchecksStatus> values = [unknown, healthy, unhealthy, sus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HealthchecksStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HealthchecksStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is HealthchecksStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'HealthchecksStatus($value)';}
+}
 extension type HealthchecksTimestamp(DateTime value) {
 factory HealthchecksTimestamp.fromJson(String json) => HealthchecksTimestamp(DateTime.parse(json));
 
@@ -46,7 +46,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class HealthchecksHealthchecks {const HealthchecksHealthchecks({this.address, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig = const Omittable.absent(), this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
-factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) { return HealthchecksHealthchecks(
+factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) {return HealthchecksHealthchecks(
   address: json['address'] != null ? HealthchecksAddress.fromJson(json['address'] as String) : null,
   checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => HealthchecksCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? HealthchecksConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
@@ -65,7 +65,7 @@ factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) { return He
   tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? HealthchecksTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? HealthchecksType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The hostname or IP address of the origin server to run health checks on.
 final HealthchecksAddress? address;
@@ -109,7 +109,7 @@ final HealthchecksTimeout? timeout;
 
 final HealthchecksType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
@@ -128,9 +128,9 @@ Map<String, dynamic> toJson() { return {
   if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key)); } 
-HealthchecksHealthchecks copyWith({HealthchecksAddress? Function()? address, Omittable<List<HealthchecksCheckRegions2>?>? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksTimestamp? Function()? createdOn, HealthchecksDescription? Function()? description, HealthchecksFailureReason? Function()? failureReason, Omittable<HealthchecksHttpConfig?>? httpConfig, HealthchecksIdentifier? Function()? id, HealthchecksInterval? Function()? interval, HealthchecksTimestamp? Function()? modifiedOn, HealthchecksName? Function()? name, HealthchecksRetries? Function()? retries, HealthchecksStatus? Function()? status, HealthchecksSuspended? Function()? suspended, Omittable<HealthchecksTcpConfig?>? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) { return HealthchecksHealthchecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key));}
+HealthchecksHealthchecks copyWith({HealthchecksAddress? Function()? address, Omittable<List<HealthchecksCheckRegions2>?>? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksTimestamp? Function()? createdOn, HealthchecksDescription? Function()? description, HealthchecksFailureReason? Function()? failureReason, Omittable<HealthchecksHttpConfig?>? httpConfig, HealthchecksIdentifier? Function()? id, HealthchecksInterval? Function()? interval, HealthchecksTimestamp? Function()? modifiedOn, HealthchecksName? Function()? name, HealthchecksRetries? Function()? retries, HealthchecksStatus? Function()? status, HealthchecksSuspended? Function()? suspended, Omittable<HealthchecksTcpConfig?>? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) {return HealthchecksHealthchecks(
   address: address != null ? address() : this.address,
   checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
@@ -149,8 +149,8 @@ HealthchecksHealthchecks copyWith({HealthchecksAddress? Function()? address, Omi
   tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is HealthchecksHealthchecks &&
           address == other.address &&
           checkRegions.isPresent == other.checkRegions.isPresent &&
@@ -170,7 +170,7 @@ HealthchecksHealthchecks copyWith({HealthchecksAddress? Function()? address, Omi
           suspended == other.suspended &&
           tcpConfig == other.tcpConfig &&
           timeout == other.timeout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type); } 
-@override String toString() { return 'HealthchecksHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type);}
+@override String toString() {return 'HealthchecksHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)';}
+}

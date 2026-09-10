@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
 @immutable final class TunnelStatus {const TunnelStatus._(this.value);
 
-factory TunnelStatus.fromJson(String json) { return switch (json) {
+factory TunnelStatus.fromJson(String json) {return switch (json) {
   'inactive' => inactive,
   'degraded' => degraded,
   'healthy' => healthy,
   'down' => down,
   _ => TunnelStatus._(json),
-}; }
+};}
 
 static const TunnelStatus inactive = TunnelStatus._('inactive');
 
@@ -23,11 +23,11 @@ static const List<TunnelStatus> values = [inactive, degraded, healthy, down];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TunnelStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TunnelStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TunnelStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TunnelStatus($value)';}
+}

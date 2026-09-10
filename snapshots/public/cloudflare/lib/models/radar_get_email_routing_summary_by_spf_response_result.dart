@@ -2,30 +2,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_spf_response_result_meta.dart';import 'radar_get_email_routing_summary_by_spf_response_result_summary0.dart';@immutable final class RadarGetEmailRoutingSummaryBySpfResponseResult {const RadarGetEmailRoutingSummaryBySpfResponseResult({required this.meta, required this.summary0, });
 
-factory RadarGetEmailRoutingSummaryBySpfResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryBySpfResponseResult(
+factory RadarGetEmailRoutingSummaryBySpfResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingSummaryBySpfResponseResult(
   meta: RadarGetEmailRoutingSummaryBySpfResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   summary0: RadarGetEmailRoutingSummaryBySpfResponseResultSummary0.fromJson(json['summary_0'] as Map<String, dynamic>),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetEmailRoutingSummaryBySpfResponseResultMeta meta;
 
 final RadarGetEmailRoutingSummaryBySpfResponseResultSummary0 summary0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'summary_0': summary0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('summary_0'); } 
-RadarGetEmailRoutingSummaryBySpfResponseResult copyWith({RadarGetEmailRoutingSummaryBySpfResponseResultMeta? meta, RadarGetEmailRoutingSummaryBySpfResponseResultSummary0? summary0, }) { return RadarGetEmailRoutingSummaryBySpfResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('summary_0');}
+RadarGetEmailRoutingSummaryBySpfResponseResult copyWith({RadarGetEmailRoutingSummaryBySpfResponseResultMeta? meta, RadarGetEmailRoutingSummaryBySpfResponseResultSummary0? summary0, }) {return RadarGetEmailRoutingSummaryBySpfResponseResult(
   meta: meta ?? this.meta,
   summary0: summary0 ?? this.summary0,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailRoutingSummaryBySpfResponseResult &&
           meta == other.meta &&
-          summary0 == other.summary0; } 
-@override int get hashCode { return Object.hash(meta, summary0); } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryBySpfResponseResult(meta: $meta, summary0: $summary0)'; } 
- }
+          summary0 == other.summary0;}
+@override int get hashCode {return Object.hash(meta, summary0);}
+@override String toString() {return 'RadarGetEmailRoutingSummaryBySpfResponseResult(meta: $meta, summary0: $summary0)';}
+}

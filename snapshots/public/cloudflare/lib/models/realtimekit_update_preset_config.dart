@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_update_preset_config_max_video_streams.dart';import 'realtimekit_update_preset_config_media.dart';/// Type of the meeting
 @immutable final class RealtimekitUpdatePresetConfigViewType {const RealtimekitUpdatePresetConfigViewType._(this.value);
 
-factory RealtimekitUpdatePresetConfigViewType.fromJson(String json) { return switch (json) {
+factory RealtimekitUpdatePresetConfigViewType.fromJson(String json) {return switch (json) {
   'GROUP_CALL' => groupCall,
   'WEBINAR' => webinar,
   'AUDIO_ROOM' => audioRoom,
   _ => RealtimekitUpdatePresetConfigViewType._(json),
-}; }
+};}
 
 static const RealtimekitUpdatePresetConfigViewType groupCall = RealtimekitUpdatePresetConfigViewType._('GROUP_CALL');
 
@@ -20,22 +20,22 @@ static const List<RealtimekitUpdatePresetConfigViewType> values = [groupCall, we
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitUpdatePresetConfigViewType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitUpdatePresetConfigViewType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimekitUpdatePresetConfigViewType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimekitUpdatePresetConfigViewType($value)';}
+}
 @immutable final class RealtimekitUpdatePresetConfig {const RealtimekitUpdatePresetConfig({this.maxScreenshareCount, this.maxVideoStreams, this.media, this.viewType, });
 
-factory RealtimekitUpdatePresetConfig.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfig(
+factory RealtimekitUpdatePresetConfig.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetConfig(
   maxScreenshareCount: json['max_screenshare_count'] != null ? (json['max_screenshare_count'] as num).toInt() : null,
   maxVideoStreams: json['max_video_streams'] != null ? RealtimekitUpdatePresetConfigMaxVideoStreams.fromJson(json['max_video_streams'] as Map<String, dynamic>) : null,
   media: json['media'] != null ? RealtimekitUpdatePresetConfigMedia.fromJson(json['media'] as Map<String, dynamic>) : null,
   viewType: json['view_type'] != null ? RealtimekitUpdatePresetConfigViewType.fromJson(json['view_type'] as String) : null,
-); }
+);}
 
 /// Maximum number of screen shares that can be active at a given time
 final int? maxScreenshareCount;
@@ -49,25 +49,25 @@ final RealtimekitUpdatePresetConfigMedia? media;
 /// Type of the meeting
 final RealtimekitUpdatePresetConfigViewType? viewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'max_screenshare_count': ?maxScreenshareCount,
   if (maxVideoStreams != null) 'max_video_streams': maxVideoStreams?.toJson(),
   if (media != null) 'media': media?.toJson(),
   if (viewType != null) 'view_type': viewType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_screenshare_count', 'max_video_streams', 'media', 'view_type'}.contains(key)); } 
-RealtimekitUpdatePresetConfig copyWith({int? Function()? maxScreenshareCount, RealtimekitUpdatePresetConfigMaxVideoStreams? Function()? maxVideoStreams, RealtimekitUpdatePresetConfigMedia? Function()? media, RealtimekitUpdatePresetConfigViewType? Function()? viewType, }) { return RealtimekitUpdatePresetConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'max_screenshare_count', 'max_video_streams', 'media', 'view_type'}.contains(key));}
+RealtimekitUpdatePresetConfig copyWith({int? Function()? maxScreenshareCount, RealtimekitUpdatePresetConfigMaxVideoStreams? Function()? maxVideoStreams, RealtimekitUpdatePresetConfigMedia? Function()? media, RealtimekitUpdatePresetConfigViewType? Function()? viewType, }) {return RealtimekitUpdatePresetConfig(
   maxScreenshareCount: maxScreenshareCount != null ? maxScreenshareCount() : this.maxScreenshareCount,
   maxVideoStreams: maxVideoStreams != null ? maxVideoStreams() : this.maxVideoStreams,
   media: media != null ? media() : this.media,
   viewType: viewType != null ? viewType() : this.viewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimekitUpdatePresetConfig &&
           maxScreenshareCount == other.maxScreenshareCount &&
           maxVideoStreams == other.maxVideoStreams &&
           media == other.media &&
-          viewType == other.viewType; } 
-@override int get hashCode { return Object.hash(maxScreenshareCount, maxVideoStreams, media, viewType); } 
-@override String toString() { return 'RealtimekitUpdatePresetConfig(maxScreenshareCount: $maxScreenshareCount, maxVideoStreams: $maxVideoStreams, media: $media, viewType: $viewType)'; } 
- }
+          viewType == other.viewType;}
+@override int get hashCode {return Object.hash(maxScreenshareCount, maxVideoStreams, media, viewType);}
+@override String toString() {return 'RealtimekitUpdatePresetConfig(maxScreenshareCount: $maxScreenshareCount, maxVideoStreams: $maxVideoStreams, media: $media, viewType: $viewType)';}
+}

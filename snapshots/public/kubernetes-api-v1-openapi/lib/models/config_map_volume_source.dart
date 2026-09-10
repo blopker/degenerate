@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.
 /// The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. ConfigMap volumes support ownership management and SELinux relabeling.
 @immutable final class ConfigMapVolumeSource {const ConfigMapVolumeSource({this.defaultMode, this.items, this.name, this.optional, });
 
-factory ConfigMapVolumeSource.fromJson(Map<String, dynamic> json) { return ConfigMapVolumeSource(
+factory ConfigMapVolumeSource.fromJson(Map<String, dynamic> json) {return ConfigMapVolumeSource(
   defaultMode: json['defaultMode'] != null ? (json['defaultMode'] as num).toInt() : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => KeyToPath.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] as String?,
   optional: json['optional'] as bool?,
-); }
+);}
 
 /// defaultMode is optional: mode bits used to set permissions on created files by default. Must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
 final int? defaultMode;
@@ -25,26 +25,26 @@ final String? name;
 final bool? optional;
 
 /// The value with the schema default applied when absent.
-String get nameOrDefault { return name ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get nameOrDefault {return name ?? '';}
+Map<String, dynamic> toJson() {return {
   'defaultMode': ?defaultMode,
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
   'name': ?name,
   'optional': ?optional,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultMode', 'items', 'name', 'optional'}.contains(key)); } 
-ConfigMapVolumeSource copyWith({int? Function()? defaultMode, List<KeyToPath>? Function()? items, String? Function()? name, bool? Function()? optional, }) { return ConfigMapVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'defaultMode', 'items', 'name', 'optional'}.contains(key));}
+ConfigMapVolumeSource copyWith({int? Function()? defaultMode, List<KeyToPath>? Function()? items, String? Function()? name, bool? Function()? optional, }) {return ConfigMapVolumeSource(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   items: items != null ? items() : this.items,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConfigMapVolumeSource &&
           defaultMode == other.defaultMode &&
           listEquals(items, other.items) &&
           name == other.name &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(defaultMode, Object.hashAll(items ?? const []), name, optional); } 
-@override String toString() { return 'ConfigMapVolumeSource(defaultMode: $defaultMode, items: $items, name: $name, optional: $optional)'; } 
- }
+          optional == other.optional;}
+@override int get hashCode {return Object.hash(defaultMode, Object.hashAll(items ?? const []), name, optional);}
+@override String toString() {return 'ConfigMapVolumeSource(defaultMode: $defaultMode, items: $items, name: $name, optional: $optional)';}
+}

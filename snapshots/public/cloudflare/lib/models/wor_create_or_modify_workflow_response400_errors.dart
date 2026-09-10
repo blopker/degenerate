@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorCreateOrModifyWorkflowResponse400Errors {const WorCreateOrModifyWorkflowResponse400Errors({required this.code, required this.message, });
 
-factory WorCreateOrModifyWorkflowResponse400Errors.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowResponse400Errors(
+factory WorCreateOrModifyWorkflowResponse400Errors.fromJson(Map<String, dynamic> json) {return WorCreateOrModifyWorkflowResponse400Errors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 final double code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-WorCreateOrModifyWorkflowResponse400Errors copyWith({double? code, String? message, }) { return WorCreateOrModifyWorkflowResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+WorCreateOrModifyWorkflowResponse400Errors copyWith({double? code, String? message, }) {return WorCreateOrModifyWorkflowResponse400Errors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorCreateOrModifyWorkflowResponse400Errors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'WorCreateOrModifyWorkflowResponse400Errors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'WorCreateOrModifyWorkflowResponse400Errors(code: $code, message: $message)';}
+}

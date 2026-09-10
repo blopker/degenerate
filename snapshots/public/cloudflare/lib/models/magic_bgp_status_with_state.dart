@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState._(this.value);
 
-factory MagicBgpStatusWithStateState.fromJson(String json) { return switch (json) {
+factory MagicBgpStatusWithStateState.fromJson(String json) {return switch (json) {
   'BGP_DOWN' => bgpDown,
   'BGP_UP' => bgpUp,
   'BGP_ESTABLISHING' => bgpEstablishing,
   _ => MagicBgpStatusWithStateState._(json),
-}; }
+};}
 
 static const MagicBgpStatusWithStateState bgpDown = MagicBgpStatusWithStateState._('BGP_DOWN');
 
@@ -19,17 +19,17 @@ static const List<MagicBgpStatusWithStateState> values = [bgpDown, bgpUp, bgpEst
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicBgpStatusWithStateState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicBgpStatusWithStateState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MagicBgpStatusWithStateState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MagicBgpStatusWithStateState($value)';}
+}
 @immutable final class MagicBgpStatusWithState {const MagicBgpStatusWithState({required this.state, required this.tcpEstablished, required this.updatedAt, this.bgpState, this.cfSpeakerIp, this.cfSpeakerPort, this.customerSpeakerIp, this.customerSpeakerPort, });
 
-factory MagicBgpStatusWithState.fromJson(Map<String, dynamic> json) { return MagicBgpStatusWithState(
+factory MagicBgpStatusWithState.fromJson(Map<String, dynamic> json) {return MagicBgpStatusWithState(
   bgpState: json['bgp_state'] as String?,
   cfSpeakerIp: json['cf_speaker_ip'] as String?,
   cfSpeakerPort: json['cf_speaker_port'] != null ? (json['cf_speaker_port'] as num).toInt() : null,
@@ -38,7 +38,7 @@ factory MagicBgpStatusWithState.fromJson(Map<String, dynamic> json) { return Mag
   state: MagicBgpStatusWithStateState.fromJson(json['state'] as String),
   tcpEstablished: json['tcp_established'] as bool,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final String? bgpState;
 
@@ -56,7 +56,7 @@ final bool tcpEstablished;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bgp_state': ?bgpState,
   'cf_speaker_ip': ?cfSpeakerIp,
   'cf_speaker_port': ?cfSpeakerPort,
@@ -65,11 +65,11 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'tcp_established': tcpEstablished,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state') &&
       json.containsKey('tcp_established') && json['tcp_established'] is bool &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function()? cfSpeakerIp, int? Function()? cfSpeakerPort, String? Function()? customerSpeakerIp, int? Function()? customerSpeakerPort, MagicBgpStatusWithStateState? state, bool? tcpEstablished, DateTime? updatedAt, }) { return MagicBgpStatusWithState(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function()? cfSpeakerIp, int? Function()? cfSpeakerPort, String? Function()? customerSpeakerIp, int? Function()? customerSpeakerPort, MagicBgpStatusWithStateState? state, bool? tcpEstablished, DateTime? updatedAt, }) {return MagicBgpStatusWithState(
   bgpState: bgpState != null ? bgpState() : this.bgpState,
   cfSpeakerIp: cfSpeakerIp != null ? cfSpeakerIp() : this.cfSpeakerIp,
   cfSpeakerPort: cfSpeakerPort != null ? cfSpeakerPort() : this.cfSpeakerPort,
@@ -78,8 +78,8 @@ MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function
   state: state ?? this.state,
   tcpEstablished: tcpEstablished ?? this.tcpEstablished,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicBgpStatusWithState &&
           bgpState == other.bgpState &&
           cfSpeakerIp == other.cfSpeakerIp &&
@@ -88,7 +88,7 @@ MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function
           customerSpeakerPort == other.customerSpeakerPort &&
           state == other.state &&
           tcpEstablished == other.tcpEstablished &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(bgpState, cfSpeakerIp, cfSpeakerPort, customerSpeakerIp, customerSpeakerPort, state, tcpEstablished, updatedAt); } 
-@override String toString() { return 'MagicBgpStatusWithState(bgpState: $bgpState, cfSpeakerIp: $cfSpeakerIp, cfSpeakerPort: $cfSpeakerPort, customerSpeakerIp: $customerSpeakerIp, customerSpeakerPort: $customerSpeakerPort, state: $state, tcpEstablished: $tcpEstablished, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(bgpState, cfSpeakerIp, cfSpeakerPort, customerSpeakerIp, customerSpeakerPort, state, tcpEstablished, updatedAt);}
+@override String toString() {return 'MagicBgpStatusWithState(bgpState: $bgpState, cfSpeakerIp: $cfSpeakerIp, cfSpeakerPort: $cfSpeakerPort, customerSpeakerIp: $customerSpeakerIp, customerSpeakerPort: $customerSpeakerPort, state: $state, tcpEstablished: $tcpEstablished, updatedAt: $updatedAt)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchDeleteTokensResponseResult {const AiSearchDeleteTokensResponseResult({required this.cfApiId, required this.createdAt, required this.id, required this.modifiedAt, required this.name, this.createdBy = const Omittable.absent(), this.enabled, this.legacy, this.modifiedBy = const Omittable.absent(), });
 
-factory AiSearchDeleteTokensResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchDeleteTokensResponseResult(
+factory AiSearchDeleteTokensResponseResult.fromJson(Map<String, dynamic> json) {return AiSearchDeleteTokensResponseResult(
   cfApiId: json['cf_api_id'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   createdBy: json.containsKey('created_by') ? Omittable(json['created_by'] as String?) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory AiSearchDeleteTokensResponseResult.fromJson(Map<String, dynamic> json) {
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   modifiedBy: json.containsKey('modified_by') ? Omittable(json['modified_by'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
-); }
+);}
 
 final String cfApiId;
 
@@ -33,10 +33,10 @@ final Omittable<String?> modifiedBy;
 final String name;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? true; } 
+bool get enabledOrDefault {return enabled ?? true;}
 /// The value with the schema default applied when absent.
-bool get legacyOrDefault { return legacy ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get legacyOrDefault {return legacy ?? true;}
+Map<String, dynamic> toJson() {return {
   'cf_api_id': cfApiId,
   'created_at': createdAt.toIso8601String(),
   if (createdBy.isPresent) 'created_by': createdBy.value,
@@ -46,13 +46,13 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   if (modifiedBy.isPresent) 'modified_by': modifiedBy.value,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cf_api_id') && json['cf_api_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cf_api_id') && json['cf_api_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-AiSearchDeleteTokensResponseResult copyWith({String? cfApiId, DateTime? createdAt, Omittable<String?>? createdBy, bool? Function()? enabled, String? id, bool? Function()? legacy, DateTime? modifiedAt, Omittable<String?>? modifiedBy, String? name, }) { return AiSearchDeleteTokensResponseResult(
+      json.containsKey('name') && json['name'] is String;}
+AiSearchDeleteTokensResponseResult copyWith({String? cfApiId, DateTime? createdAt, Omittable<String?>? createdBy, bool? Function()? enabled, String? id, bool? Function()? legacy, DateTime? modifiedAt, Omittable<String?>? modifiedBy, String? name, }) {return AiSearchDeleteTokensResponseResult(
   cfApiId: cfApiId ?? this.cfApiId,
   createdAt: createdAt ?? this.createdAt,
   createdBy: createdBy ?? this.createdBy,
@@ -62,8 +62,8 @@ AiSearchDeleteTokensResponseResult copyWith({String? cfApiId, DateTime? createdA
   modifiedAt: modifiedAt ?? this.modifiedAt,
   modifiedBy: modifiedBy ?? this.modifiedBy,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AiSearchDeleteTokensResponseResult &&
           cfApiId == other.cfApiId &&
           createdAt == other.createdAt &&
@@ -73,7 +73,7 @@ AiSearchDeleteTokensResponseResult copyWith({String? cfApiId, DateTime? createdA
           legacy == other.legacy &&
           modifiedAt == other.modifiedAt &&
           modifiedBy == other.modifiedBy &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(cfApiId, createdAt, createdBy, enabled, id, legacy, modifiedAt, modifiedBy, name); } 
-@override String toString() { return 'AiSearchDeleteTokensResponseResult(cfApiId: $cfApiId, createdAt: $createdAt, createdBy: $createdBy, enabled: $enabled, id: $id, legacy: $legacy, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(cfApiId, createdAt, createdBy, enabled, id, legacy, modifiedAt, modifiedBy, name);}
+@override String toString() {return 'AiSearchDeleteTokensResponseResult(cfApiId: $cfApiId, createdAt: $createdAt, createdBy: $createdBy, enabled: $enabled, id: $id, legacy: $legacy, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name)';}
+}

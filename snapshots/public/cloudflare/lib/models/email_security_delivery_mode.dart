@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode._(this.value);
 
-factory EmailSecurityDeliveryMode.fromJson(String json) { return switch (json) {
+factory EmailSecurityDeliveryMode.fromJson(String json) {return switch (json) {
   'DIRECT' => direct,
   'BCC' => bcc,
   'JOURNAL' => journal,
   'API' => api,
   'RETRO_SCAN' => retroScan,
   _ => EmailSecurityDeliveryMode._(json),
-}; }
+};}
 
 static const EmailSecurityDeliveryMode direct = EmailSecurityDeliveryMode._('DIRECT');
 
@@ -25,11 +25,11 @@ static const List<EmailSecurityDeliveryMode> values = [direct, bcc, journal, api
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDeliveryMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDeliveryMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityDeliveryMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityDeliveryMode($value)';}
+}

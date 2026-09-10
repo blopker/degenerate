@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems {const PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems({required this.amount, required this.description, required this.quantity, });
 
-factory PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems(
+factory PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems(
   amount: (json['amount'] as num).toInt(),
   description: json['description'] as String,
   quantity: (json['quantity'] as num).toInt(),
-); }
+);}
 
 final int amount;
 
@@ -14,24 +14,24 @@ final String description;
 
 final int quantity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'description': description,
   'quantity': quantity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('description') && json['description'] is String &&
-      json.containsKey('quantity') && json['quantity'] is num; } 
-PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems copyWith({int? amount, String? description, int? quantity, }) { return PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems(
+      json.containsKey('quantity') && json['quantity'] is num;}
+PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems copyWith({int? amount, String? description, int? quantity, }) {return PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems(
   amount: amount ?? this.amount,
   description: description ?? this.description,
   quantity: quantity ?? this.quantity,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems &&
           amount == other.amount &&
           description == other.description &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(amount, description, quantity); } 
-@override String toString() { return 'PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems(amount: $amount, description: $description, quantity: $quantity)'; } 
- }
+          quantity == other.quantity;}
+@override int get hashCode {return Object.hash(amount, description, quantity);}
+@override String toString() {return 'PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems(amount: $amount, description: $description, quantity: $quantity)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType {const SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType._(this.value);
 
-factory SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType.fromJson(String json) { return switch (json) {
+factory SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'maximum' => maximum,
   _ => SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType._(json),
-}; }
+};}
 
 static const SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType fixed = SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType._('fixed');
 
@@ -16,21 +16,21 @@ static const List<SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType($value)';}
+}
 @immutable final class SubscriptionPaymentMethodOptionsParam2MandateOptions {const SubscriptionPaymentMethodOptionsParam2MandateOptions({this.amount, this.amountType, this.description, });
 
-factory SubscriptionPaymentMethodOptionsParam2MandateOptions.fromJson(Map<String, dynamic> json) { return SubscriptionPaymentMethodOptionsParam2MandateOptions(
+factory SubscriptionPaymentMethodOptionsParam2MandateOptions.fromJson(Map<String, dynamic> json) {return SubscriptionPaymentMethodOptionsParam2MandateOptions(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountType: json['amount_type'] != null ? SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
   description: json['description'] as String?,
-); }
+);}
 
 final int? amount;
 
@@ -38,22 +38,22 @@ final SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType? amountType
 
 final String? description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   if (amountType != null) 'amount_type': amountType?.toJson(),
   'description': ?description,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'description'}.contains(key)); } 
-SubscriptionPaymentMethodOptionsParam2MandateOptions copyWith({int? Function()? amount, SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType? Function()? amountType, String? Function()? description, }) { return SubscriptionPaymentMethodOptionsParam2MandateOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'amount_type', 'description'}.contains(key));}
+SubscriptionPaymentMethodOptionsParam2MandateOptions copyWith({int? Function()? amount, SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType? Function()? amountType, String? Function()? description, }) {return SubscriptionPaymentMethodOptionsParam2MandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,
   description: description != null ? description() : this.description,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionPaymentMethodOptionsParam2MandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(amount, amountType, description); } 
-@override String toString() { return 'SubscriptionPaymentMethodOptionsParam2MandateOptions(amount: $amount, amountType: $amountType, description: $description)'; } 
- }
+          description == other.description;}
+@override int get hashCode {return Object.hash(amount, amountType, description);}
+@override String toString() {return 'SubscriptionPaymentMethodOptionsParam2MandateOptions(amount: $amount, amountType: $amountType, description: $description)';}
+}

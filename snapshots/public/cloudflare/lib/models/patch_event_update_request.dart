@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_event_update_request_raw.dart';@immutable final class PatchEventUpdateRequest {const PatchEventUpdateRequest({this.attacker = const Omittable.absent(), this.attackerCountry, this.category, this.createdAt, this.datasetId, this.date, this.event, this.indicator, this.indicatorType, this.insight, this.raw, this.targetCountry, this.targetIndustry, this.tlp, });
 
-factory PatchEventUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchEventUpdateRequest(
+factory PatchEventUpdateRequest.fromJson(Map<String, dynamic> json) {return PatchEventUpdateRequest(
   attacker: json.containsKey('attacker') ? Omittable(json['attacker'] as String?) : const Omittable.absent(),
   attackerCountry: json['attackerCountry'] as String?,
   category: json['category'] as String?,
@@ -17,7 +17,7 @@ factory PatchEventUpdateRequest.fromJson(Map<String, dynamic> json) { return Pat
   targetCountry: json['targetCountry'] as String?,
   targetIndustry: json['targetIndustry'] as String?,
   tlp: json['tlp'] as String?,
-); }
+);}
 
 final Omittable<String?> attacker;
 
@@ -47,7 +47,7 @@ final String? targetIndustry;
 
 final String? tlp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (attacker.isPresent) 'attacker': attacker.value,
   'attackerCountry': ?attackerCountry,
   'category': ?category,
@@ -62,9 +62,9 @@ Map<String, dynamic> toJson() { return {
   'targetCountry': ?targetCountry,
   'targetIndustry': ?targetIndustry,
   'tlp': ?tlp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attacker', 'attackerCountry', 'category', 'createdAt', 'datasetId', 'date', 'event', 'indicator', 'indicatorType', 'insight', 'raw', 'targetCountry', 'targetIndustry', 'tlp'}.contains(key)); } 
-PatchEventUpdateRequest copyWith({Omittable<String?>? attacker, String? Function()? attackerCountry, String? Function()? category, DateTime? Function()? createdAt, String? Function()? datasetId, DateTime? Function()? date, String? Function()? event, String? Function()? indicator, String? Function()? indicatorType, String? Function()? insight, PatchEventUpdateRequestRaw? Function()? raw, String? Function()? targetCountry, String? Function()? targetIndustry, String? Function()? tlp, }) { return PatchEventUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'attacker', 'attackerCountry', 'category', 'createdAt', 'datasetId', 'date', 'event', 'indicator', 'indicatorType', 'insight', 'raw', 'targetCountry', 'targetIndustry', 'tlp'}.contains(key));}
+PatchEventUpdateRequest copyWith({Omittable<String?>? attacker, String? Function()? attackerCountry, String? Function()? category, DateTime? Function()? createdAt, String? Function()? datasetId, DateTime? Function()? date, String? Function()? event, String? Function()? indicator, String? Function()? indicatorType, String? Function()? insight, PatchEventUpdateRequestRaw? Function()? raw, String? Function()? targetCountry, String? Function()? targetIndustry, String? Function()? tlp, }) {return PatchEventUpdateRequest(
   attacker: attacker ?? this.attacker,
   attackerCountry: attackerCountry != null ? attackerCountry() : this.attackerCountry,
   category: category != null ? category() : this.category,
@@ -79,8 +79,8 @@ PatchEventUpdateRequest copyWith({Omittable<String?>? attacker, String? Function
   targetCountry: targetCountry != null ? targetCountry() : this.targetCountry,
   targetIndustry: targetIndustry != null ? targetIndustry() : this.targetIndustry,
   tlp: tlp != null ? tlp() : this.tlp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PatchEventUpdateRequest &&
           attacker == other.attacker &&
           attackerCountry == other.attackerCountry &&
@@ -95,7 +95,7 @@ PatchEventUpdateRequest copyWith({Omittable<String?>? attacker, String? Function
           raw == other.raw &&
           targetCountry == other.targetCountry &&
           targetIndustry == other.targetIndustry &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(attacker, attackerCountry, category, createdAt, datasetId, date, event, indicator, indicatorType, insight, raw, targetCountry, targetIndustry, tlp); } 
-@override String toString() { return 'PatchEventUpdateRequest(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, createdAt: $createdAt, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, insight: $insight, raw: $raw, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)'; } 
- }
+          tlp == other.tlp;}
+@override int get hashCode {return Object.hash(attacker, attackerCountry, category, createdAt, datasetId, date, event, indicator, indicatorType, insight, raw, targetCountry, targetIndustry, tlp);}
+@override String toString() {return 'PatchEventUpdateRequest(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, createdAt: $createdAt, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, insight: $insight, raw: $raw, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)';}
+}

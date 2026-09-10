@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_identifier.dart';@immutable final class MagicRouteDeleteId {const MagicRouteDeleteId({required this.id});
 
-factory MagicRouteDeleteId.fromJson(Map<String, dynamic> json) { return MagicRouteDeleteId(
+factory MagicRouteDeleteId.fromJson(Map<String, dynamic> json) {return MagicRouteDeleteId(
   id: MagicIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 /// Identifier
 final MagicIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-MagicRouteDeleteId copyWith({MagicIdentifier? id}) { return MagicRouteDeleteId(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+MagicRouteDeleteId copyWith({MagicIdentifier? id}) {return MagicRouteDeleteId(
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicRouteDeleteId &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'MagicRouteDeleteId(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'MagicRouteDeleteId(id: $id)';}
+}

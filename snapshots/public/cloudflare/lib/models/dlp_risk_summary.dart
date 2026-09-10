@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_user_risk_info.dart';@immutable final class DlpRiskSummary {const DlpRiskSummary({required this.users});
 
-factory DlpRiskSummary.fromJson(Map<String, dynamic> json) { return DlpRiskSummary(
+factory DlpRiskSummary.fromJson(Map<String, dynamic> json) {return DlpRiskSummary(
   users: (json['users'] as List<dynamic>).map((e) => DlpUserRiskInfo.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<DlpUserRiskInfo> users;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'users': users.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('users'); } 
-DlpRiskSummary copyWith({List<DlpUserRiskInfo>? users}) { return DlpRiskSummary(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('users');}
+DlpRiskSummary copyWith({List<DlpUserRiskInfo>? users}) {return DlpRiskSummary(
   users: users ?? this.users,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpRiskSummary &&
-          listEquals(users, other.users); } 
-@override int get hashCode { return Object.hashAll(users).hashCode; } 
-@override String toString() { return 'DlpRiskSummary(users: $users)'; } 
- }
+          listEquals(users, other.users);}
+@override int get hashCode {return Object.hashAll(users).hashCode;}
+@override String toString() {return 'DlpRiskSummary(users: $users)';}
+}

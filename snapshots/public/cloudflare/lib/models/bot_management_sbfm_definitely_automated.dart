@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Super Bot Fight Mode (SBFM) action to take on definitely automated requests.
 @immutable final class BotManagementSbfmDefinitelyAutomated {const BotManagementSbfmDefinitelyAutomated._(this.value);
 
-factory BotManagementSbfmDefinitelyAutomated.fromJson(String json) { return switch (json) {
+factory BotManagementSbfmDefinitelyAutomated.fromJson(String json) {return switch (json) {
   'allow' => allow,
   'block' => block,
   'managed_challenge' => managedChallenge,
   _ => BotManagementSbfmDefinitelyAutomated._(json),
-}; }
+};}
 
 static const BotManagementSbfmDefinitelyAutomated allow = BotManagementSbfmDefinitelyAutomated._('allow');
 
@@ -20,11 +20,11 @@ static const List<BotManagementSbfmDefinitelyAutomated> values = [allow, block, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementSbfmDefinitelyAutomated && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementSbfmDefinitelyAutomated($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BotManagementSbfmDefinitelyAutomated && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BotManagementSbfmDefinitelyAutomated($value)';}
+}

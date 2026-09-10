@@ -14,7 +14,7 @@ final class FeedbackApi with ApiExecutor {const FeedbackApi(this.apiConfig);
 /// 
 ///
 /// `GET /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<List<BotManagementFeedbackReport>, ResponseCommonFailure12>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BotManagementFeedbackReport>, ResponseCommonFailure12>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,24 +23,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => BotManagementFeedbackReport.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => BotManagementFeedbackReport.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure12.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure12.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Submit a feedback report
 ///
 /// Submit a feedback report for the specified zone. Use `type` to indicate whether the report is a false positive (good traffic flagged as bot) or a false negative (bot traffic missed). Furthermore, you can also use `expression` as a wirefilter to identify the affected traffic sample.
@@ -49,7 +38,7 @@ return null;
 /// 
 ///
 /// `POST /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<void, ResponseCommonFailure12>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure12>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReportRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,19 +49,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure12.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure12.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

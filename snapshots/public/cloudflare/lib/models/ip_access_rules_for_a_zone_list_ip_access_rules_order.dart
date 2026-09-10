@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned rules.
 @immutable final class IpAccessRulesForAZoneListIpAccessRulesOrder {const IpAccessRulesForAZoneListIpAccessRulesOrder._(this.value);
 
-factory IpAccessRulesForAZoneListIpAccessRulesOrder.fromJson(String json) { return switch (json) {
+factory IpAccessRulesForAZoneListIpAccessRulesOrder.fromJson(String json) {return switch (json) {
   'configuration.target' => configurationTarget,
   'configuration.value' => configurationValue,
   'mode' => mode,
   _ => IpAccessRulesForAZoneListIpAccessRulesOrder._(json),
-}; }
+};}
 
 static const IpAccessRulesForAZoneListIpAccessRulesOrder configurationTarget = IpAccessRulesForAZoneListIpAccessRulesOrder._('configuration.target');
 
@@ -20,11 +20,11 @@ static const List<IpAccessRulesForAZoneListIpAccessRulesOrder> values = [configu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IpAccessRulesForAZoneListIpAccessRulesOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IpAccessRulesForAZoneListIpAccessRulesOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IpAccessRulesForAZoneListIpAccessRulesOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IpAccessRulesForAZoneListIpAccessRulesOrder($value)';}
+}

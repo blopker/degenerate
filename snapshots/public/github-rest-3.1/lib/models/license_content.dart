@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_content_links.dart';import 'license_simple.dart';/// License Content
 @immutable final class LicenseContent {const LicenseContent({required this.name, required this.path, required this.sha, required this.size, required this.url, required this.htmlUrl, required this.gitUrl, required this.downloadUrl, required this.type, required this.content, required this.encoding, required this.links, required this.license, });
 
-factory LicenseContent.fromJson(Map<String, dynamic> json) { return LicenseContent(
+factory LicenseContent.fromJson(Map<String, dynamic> json) {return LicenseContent(
   name: json['name'] as String,
   path: json['path'] as String,
   sha: json['sha'] as String,
@@ -17,7 +17,7 @@ factory LicenseContent.fromJson(Map<String, dynamic> json) { return LicenseConte
   encoding: json['encoding'] as String,
   links: LicenseContentLinks.fromJson(json['_links'] as Map<String, dynamic>),
   license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String name;
 
@@ -45,7 +45,7 @@ final LicenseContentLinks links;
 
 final LicenseSimple? license;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'path': path,
   'sha': sha,
@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   'encoding': encoding,
   '_links': links.toJson(),
   'license': license?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('size') && json['size'] is num &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('content') && json['content'] is String &&
       json.containsKey('encoding') && json['encoding'] is String &&
       json.containsKey('_links') &&
-      json.containsKey('license'); } 
-LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri? url, Uri? Function()? htmlUrl, Uri? Function()? gitUrl, Uri? Function()? downloadUrl, String? type, String? content, String? encoding, LicenseContentLinks? links, LicenseSimple? Function()? license, }) { return LicenseContent(
+      json.containsKey('license');}
+LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri? url, Uri? Function()? htmlUrl, Uri? Function()? gitUrl, Uri? Function()? downloadUrl, String? type, String? content, String? encoding, LicenseContentLinks? links, LicenseSimple? Function()? license, }) {return LicenseContent(
   name: name ?? this.name,
   path: path ?? this.path,
   sha: sha ?? this.sha,
@@ -87,8 +87,8 @@ LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri
   encoding: encoding ?? this.encoding,
   links: links ?? this.links,
   license: license != null ? license() : this.license,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LicenseContent &&
           name == other.name &&
           path == other.path &&
@@ -102,7 +102,7 @@ LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri
           content == other.content &&
           encoding == other.encoding &&
           links == other.links &&
-          license == other.license; } 
-@override int get hashCode { return Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, content, encoding, links, license); } 
-@override String toString() { return 'LicenseContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, content: $content, encoding: $encoding, links: $links, license: $license)'; } 
- }
+          license == other.license;}
+@override int get hashCode {return Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, content, encoding, links, license);}
+@override String toString() {return 'LicenseContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, content: $content, encoding: $encoding, links: $links, license: $license)';}
+}

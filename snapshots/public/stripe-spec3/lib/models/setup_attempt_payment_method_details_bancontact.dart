@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_attemp
 /// Can be one of `en`, `de`, `fr`, or `nl`
 @immutable final class SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage {const SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage._(this.value);
 
-factory SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage.fromJson(String json) { return switch (json) {
+factory SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'fr' => fr,
   'nl' => nl,
   _ => SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage._(json),
-}; }
+};}
 
 static const SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage de = SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage._('de');
 
@@ -24,18 +24,18 @@ static const List<SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage> v
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage($value)';}
+}
 /// 
 @immutable final class SetupAttemptPaymentMethodDetailsBancontact {const SetupAttemptPaymentMethodDetailsBancontact({this.bankCode = const Omittable.absent(), this.bankName = const Omittable.absent(), this.bic = const Omittable.absent(), this.generatedSepaDebit = const Omittable.absent(), this.generatedSepaDebitMandate = const Omittable.absent(), this.ibanLast4 = const Omittable.absent(), this.preferredLanguage = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
-factory SetupAttemptPaymentMethodDetailsBancontact.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsBancontact(
+factory SetupAttemptPaymentMethodDetailsBancontact.fromJson(Map<String, dynamic> json) {return SetupAttemptPaymentMethodDetailsBancontact(
   bankCode: json.containsKey('bank_code') ? Omittable(json['bank_code'] as String?) : const Omittable.absent(),
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   bic: json.containsKey('bic') ? Omittable(json['bic'] as String?) : const Omittable.absent(),
@@ -44,7 +44,7 @@ factory SetupAttemptPaymentMethodDetailsBancontact.fromJson(Map<String, dynamic>
   ibanLast4: json.containsKey('iban_last4') ? Omittable(json['iban_last4'] as String?) : const Omittable.absent(),
   preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] != null ? SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage.fromJson(json['preferred_language'] as String) : null) : const Omittable.absent(),
   verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Bank code of bank associated with the bank account.
 final Omittable<String?> bankCode;
@@ -72,7 +72,7 @@ final Omittable<SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage?> pr
 /// (if supported) at the time of authorization or settlement. They cannot be set or mutated.
 final Omittable<String?> verifiedName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankCode.isPresent) 'bank_code': bankCode.value,
   if (bankName.isPresent) 'bank_name': bankName.value,
   if (bic.isPresent) 'bic': bic.value,
@@ -81,9 +81,9 @@ Map<String, dynamic> toJson() { return {
   if (ibanLast4.isPresent) 'iban_last4': ibanLast4.value,
   if (preferredLanguage.isPresent) 'preferred_language': preferredLanguage.value?.toJson(),
   if (verifiedName.isPresent) 'verified_name': verifiedName.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'preferred_language', 'verified_name'}.contains(key)); } 
-SetupAttemptPaymentMethodDetailsBancontact copyWith({Omittable<String?>? bankCode, Omittable<String?>? bankName, Omittable<String?>? bic, Omittable<SetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebit?>? generatedSepaDebit, Omittable<SetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebitMandate?>? generatedSepaDebitMandate, Omittable<String?>? ibanLast4, Omittable<SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage?>? preferredLanguage, Omittable<String?>? verifiedName, }) { return SetupAttemptPaymentMethodDetailsBancontact(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'preferred_language', 'verified_name'}.contains(key));}
+SetupAttemptPaymentMethodDetailsBancontact copyWith({Omittable<String?>? bankCode, Omittable<String?>? bankName, Omittable<String?>? bic, Omittable<SetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebit?>? generatedSepaDebit, Omittable<SetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebitMandate?>? generatedSepaDebitMandate, Omittable<String?>? ibanLast4, Omittable<SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage?>? preferredLanguage, Omittable<String?>? verifiedName, }) {return SetupAttemptPaymentMethodDetailsBancontact(
   bankCode: bankCode ?? this.bankCode,
   bankName: bankName ?? this.bankName,
   bic: bic ?? this.bic,
@@ -92,8 +92,8 @@ SetupAttemptPaymentMethodDetailsBancontact copyWith({Omittable<String?>? bankCod
   ibanLast4: ibanLast4 ?? this.ibanLast4,
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   verifiedName: verifiedName ?? this.verifiedName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetupAttemptPaymentMethodDetailsBancontact &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
@@ -102,7 +102,7 @@ SetupAttemptPaymentMethodDetailsBancontact copyWith({Omittable<String?>? bankCod
           generatedSepaDebitMandate == other.generatedSepaDebitMandate &&
           ibanLast4 == other.ibanLast4 &&
           preferredLanguage == other.preferredLanguage &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bankCode, bankName, bic, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, preferredLanguage, verifiedName); } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsBancontact(bankCode: $bankCode, bankName: $bankName, bic: $bic, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, verifiedName: $verifiedName)'; } 
- }
+          verifiedName == other.verifiedName;}
+@override int get hashCode {return Object.hash(bankCode, bankName, bic, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, preferredLanguage, verifiedName);}
+@override String toString() {return 'SetupAttemptPaymentMethodDetailsBancontact(bankCode: $bankCode, bankName: $bankName, bic: $bic, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, verifiedName: $verifiedName)';}
+}

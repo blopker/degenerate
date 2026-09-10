@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_by_id_response_result_asn_estimated_users.dart';import 'radar_get_entities_asn_by_id_response_result_asn_related.dart';@immutable final class RadarGetEntitiesAsnByIdResponseResultAsn {const RadarGetEntitiesAsnByIdResponseResultAsn({required this.asn, required this.confidenceLevel, required this.country, required this.countryName, required this.estimatedUsers, required this.name, required this.orgName, required this.related, required this.source, required this.website, this.aka, });
 
-factory RadarGetEntitiesAsnByIdResponseResultAsn.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIdResponseResultAsn(
+factory RadarGetEntitiesAsnByIdResponseResultAsn.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesAsnByIdResponseResultAsn(
   aka: json['aka'] as String?,
   asn: (json['asn'] as num).toInt(),
   confidenceLevel: (json['confidenceLevel'] as num).toInt(),
@@ -14,7 +14,7 @@ factory RadarGetEntitiesAsnByIdResponseResultAsn.fromJson(Map<String, dynamic> j
   related: (json['related'] as List<dynamic>).map((e) => RadarGetEntitiesAsnByIdResponseResultAsnRelated.fromJson(e as Map<String, dynamic>)).toList(),
   source: json['source'] as String,
   website: json['website'] as String,
-); }
+);}
 
 final String? aka;
 
@@ -39,7 +39,7 @@ final String source;
 
 final String website;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aka': ?aka,
   'asn': asn,
   'confidenceLevel': confidenceLevel,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'related': related.map((e) => e.toJson()).toList(),
   'source': source,
   'website': website,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('confidenceLevel') && json['confidenceLevel'] is num &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('countryName') && json['countryName'] is String &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('orgName') && json['orgName'] is String &&
       json.containsKey('related') &&
       json.containsKey('source') && json['source'] is String &&
-      json.containsKey('website') && json['website'] is String; } 
-RadarGetEntitiesAsnByIdResponseResultAsn copyWith({String? Function()? aka, int? asn, int? confidenceLevel, String? country, String? countryName, RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers? estimatedUsers, String? name, String? orgName, List<RadarGetEntitiesAsnByIdResponseResultAsnRelated>? related, String? source, String? website, }) { return RadarGetEntitiesAsnByIdResponseResultAsn(
+      json.containsKey('website') && json['website'] is String;}
+RadarGetEntitiesAsnByIdResponseResultAsn copyWith({String? Function()? aka, int? asn, int? confidenceLevel, String? country, String? countryName, RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers? estimatedUsers, String? name, String? orgName, List<RadarGetEntitiesAsnByIdResponseResultAsnRelated>? related, String? source, String? website, }) {return RadarGetEntitiesAsnByIdResponseResultAsn(
   aka: aka != null ? aka() : this.aka,
   asn: asn ?? this.asn,
   confidenceLevel: confidenceLevel ?? this.confidenceLevel,
@@ -74,8 +74,8 @@ RadarGetEntitiesAsnByIdResponseResultAsn copyWith({String? Function()? aka, int?
   related: related ?? this.related,
   source: source ?? this.source,
   website: website ?? this.website,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEntitiesAsnByIdResponseResultAsn &&
           aka == other.aka &&
           asn == other.asn &&
@@ -87,7 +87,7 @@ RadarGetEntitiesAsnByIdResponseResultAsn copyWith({String? Function()? aka, int?
           orgName == other.orgName &&
           listEquals(related, other.related) &&
           source == other.source &&
-          website == other.website; } 
-@override int get hashCode { return Object.hash(aka, asn, confidenceLevel, country, countryName, estimatedUsers, name, orgName, Object.hashAll(related), source, website); } 
-@override String toString() { return 'RadarGetEntitiesAsnByIdResponseResultAsn(aka: $aka, asn: $asn, confidenceLevel: $confidenceLevel, country: $country, countryName: $countryName, estimatedUsers: $estimatedUsers, name: $name, orgName: $orgName, related: $related, source: $source, website: $website)'; } 
- }
+          website == other.website;}
+@override int get hashCode {return Object.hash(aka, asn, confidenceLevel, country, countryName, estimatedUsers, name, orgName, Object.hashAll(related), source, website);}
+@override String toString() {return 'RadarGetEntitiesAsnByIdResponseResultAsn(aka: $aka, asn: $asn, confidenceLevel: $confidenceLevel, country: $country, countryName: $countryName, estimatedUsers: $estimatedUsers, name: $name, orgName: $orgName, related: $related, source: $source, website: $website)';}
+}

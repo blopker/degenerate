@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// Sort Code Records contain U.K. bank account details per the sort code format.
 @immutable final class FundingInstructionsBankTransferSortCodeRecord {const FundingInstructionsBankTransferSortCodeRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.bankAddress, required this.sortCode, });
 
-factory FundingInstructionsBankTransferSortCodeRecord.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferSortCodeRecord(
+factory FundingInstructionsBankTransferSortCodeRecord.fromJson(Map<String, dynamic> json) {return FundingInstructionsBankTransferSortCodeRecord(
   accountHolderAddress: Address.fromJson(json['account_holder_address'] as Map<String, dynamic>),
   accountHolderName: json['account_holder_name'] as String,
   accountNumber: json['account_number'] as String,
   bankAddress: Address.fromJson(json['bank_address'] as Map<String, dynamic>),
   sortCode: json['sort_code'] as String,
-); }
+);}
 
 final Address accountHolderAddress;
 
@@ -24,32 +24,32 @@ final Address bankAddress;
 /// The six-digit sort code
 final String sortCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder_address': accountHolderAddress.toJson(),
   'account_holder_name': accountHolderName,
   'account_number': accountNumber,
   'bank_address': bankAddress.toJson(),
   'sort_code': sortCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_holder_address') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_holder_address') &&
       json.containsKey('account_holder_name') && json['account_holder_name'] is String &&
       json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('bank_address') &&
-      json.containsKey('sort_code') && json['sort_code'] is String; } 
-FundingInstructionsBankTransferSortCodeRecord copyWith({Address? accountHolderAddress, String? accountHolderName, String? accountNumber, Address? bankAddress, String? sortCode, }) { return FundingInstructionsBankTransferSortCodeRecord(
+      json.containsKey('sort_code') && json['sort_code'] is String;}
+FundingInstructionsBankTransferSortCodeRecord copyWith({Address? accountHolderAddress, String? accountHolderName, String? accountNumber, Address? bankAddress, String? sortCode, }) {return FundingInstructionsBankTransferSortCodeRecord(
   accountHolderAddress: accountHolderAddress ?? this.accountHolderAddress,
   accountHolderName: accountHolderName ?? this.accountHolderName,
   accountNumber: accountNumber ?? this.accountNumber,
   bankAddress: bankAddress ?? this.bankAddress,
   sortCode: sortCode ?? this.sortCode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FundingInstructionsBankTransferSortCodeRecord &&
           accountHolderAddress == other.accountHolderAddress &&
           accountHolderName == other.accountHolderName &&
           accountNumber == other.accountNumber &&
           bankAddress == other.bankAddress &&
-          sortCode == other.sortCode; } 
-@override int get hashCode { return Object.hash(accountHolderAddress, accountHolderName, accountNumber, bankAddress, sortCode); } 
-@override String toString() { return 'FundingInstructionsBankTransferSortCodeRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, bankAddress: $bankAddress, sortCode: $sortCode)'; } 
- }
+          sortCode == other.sortCode;}
+@override int get hashCode {return Object.hash(accountHolderAddress, accountHolderName, accountNumber, bankAddress, sortCode);}
+@override String toString() {return 'FundingInstructionsBankTransferSortCodeRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, bankAddress: $bankAddress, sortCode: $sortCode)';}
+}

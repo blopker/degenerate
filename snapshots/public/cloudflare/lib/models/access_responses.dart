@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_timestamp.dart';@immutable final class AccessResponses {const AccessResponses({this.cfResourceId, this.errorDescription, this.idpId, this.idpResourceId, this.loggedAt, this.requestBody, this.requestMethod, this.resourceGroupName, this.resourceType, this.resourceUserEmail, this.status, });
 
-factory AccessResponses.fromJson(Map<String, dynamic> json) { return AccessResponses(
+factory AccessResponses.fromJson(Map<String, dynamic> json) {return AccessResponses(
   cfResourceId: json['cf_resource_id'] as String?,
   errorDescription: json['error_description'] as String?,
   idpId: json['idp_id'] as String?,
@@ -14,7 +14,7 @@ factory AccessResponses.fromJson(Map<String, dynamic> json) { return AccessRespo
   resourceType: json['resource_type'] as String?,
   resourceUserEmail: json['resource_user_email'] as String?,
   status: json['status'] as String?,
-); }
+);}
 
 /// The unique Cloudflare-generated Id of the SCIM resource.
 final String? cfResourceId;
@@ -48,7 +48,7 @@ final String? resourceUserEmail;
 /// The status of the SCIM request.
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cf_resource_id': ?cfResourceId,
   'error_description': ?errorDescription,
   'idp_id': ?idpId,
@@ -60,9 +60,9 @@ Map<String, dynamic> toJson() { return {
   'resource_type': ?resourceType,
   'resource_user_email': ?resourceUserEmail,
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cf_resource_id', 'error_description', 'idp_id', 'idp_resource_id', 'logged_at', 'request_body', 'request_method', 'resource_group_name', 'resource_type', 'resource_user_email', 'status'}.contains(key)); } 
-AccessResponses copyWith({String? Function()? cfResourceId, String? Function()? errorDescription, String? Function()? idpId, String? Function()? idpResourceId, AccessTimestamp? Function()? loggedAt, String? Function()? requestBody, String? Function()? requestMethod, String? Function()? resourceGroupName, String? Function()? resourceType, String? Function()? resourceUserEmail, String? Function()? status, }) { return AccessResponses(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cf_resource_id', 'error_description', 'idp_id', 'idp_resource_id', 'logged_at', 'request_body', 'request_method', 'resource_group_name', 'resource_type', 'resource_user_email', 'status'}.contains(key));}
+AccessResponses copyWith({String? Function()? cfResourceId, String? Function()? errorDescription, String? Function()? idpId, String? Function()? idpResourceId, AccessTimestamp? Function()? loggedAt, String? Function()? requestBody, String? Function()? requestMethod, String? Function()? resourceGroupName, String? Function()? resourceType, String? Function()? resourceUserEmail, String? Function()? status, }) {return AccessResponses(
   cfResourceId: cfResourceId != null ? cfResourceId() : this.cfResourceId,
   errorDescription: errorDescription != null ? errorDescription() : this.errorDescription,
   idpId: idpId != null ? idpId() : this.idpId,
@@ -74,8 +74,8 @@ AccessResponses copyWith({String? Function()? cfResourceId, String? Function()? 
   resourceType: resourceType != null ? resourceType() : this.resourceType,
   resourceUserEmail: resourceUserEmail != null ? resourceUserEmail() : this.resourceUserEmail,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessResponses &&
           cfResourceId == other.cfResourceId &&
           errorDescription == other.errorDescription &&
@@ -87,7 +87,7 @@ AccessResponses copyWith({String? Function()? cfResourceId, String? Function()? 
           resourceGroupName == other.resourceGroupName &&
           resourceType == other.resourceType &&
           resourceUserEmail == other.resourceUserEmail &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(cfResourceId, errorDescription, idpId, idpResourceId, loggedAt, requestBody, requestMethod, resourceGroupName, resourceType, resourceUserEmail, status); } 
-@override String toString() { return 'AccessResponses(cfResourceId: $cfResourceId, errorDescription: $errorDescription, idpId: $idpId, idpResourceId: $idpResourceId, loggedAt: $loggedAt, requestBody: $requestBody, requestMethod: $requestMethod, resourceGroupName: $resourceGroupName, resourceType: $resourceType, resourceUserEmail: $resourceUserEmail, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(cfResourceId, errorDescription, idpId, idpResourceId, loggedAt, requestBody, requestMethod, resourceGroupName, resourceType, resourceUserEmail, status);}
+@override String toString() {return 'AccessResponses(cfResourceId: $cfResourceId, errorDescription: $errorDescription, idpId: $idpId, idpResourceId: $idpResourceId, loggedAt: $loggedAt, requestBody: $requestBody, requestMethod: $requestMethod, resourceGroupName: $resourceGroupName, resourceType: $resourceType, resourceUserEmail: $resourceUserEmail, status: $status)';}
+}

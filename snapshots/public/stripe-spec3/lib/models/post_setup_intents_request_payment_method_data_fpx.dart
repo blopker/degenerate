@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataFpxBank {const PostSetupIntentsRequestPaymentMethodDataFpxBank._(this.value);
 
-factory PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(String json) {return switch (json) {
   'affin_bank' => affinBank,
   'agrobank' => agrobank,
   'alliance_bank' => allianceBank,
@@ -26,7 +26,7 @@ factory PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(String json) { 
   'standard_chartered' => standardChartered,
   'uob' => uob,
   _ => PostSetupIntentsRequestPaymentMethodDataFpxBank._(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestPaymentMethodDataFpxBank affinBank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('affin_bank');
 
@@ -76,32 +76,32 @@ static const List<PostSetupIntentsRequestPaymentMethodDataFpxBank> values = [aff
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestPaymentMethodDataFpxBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataFpxBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodDataFpxBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataFpxBank($value)';}
+}
 @immutable final class PostSetupIntentsRequestPaymentMethodDataFpx {const PostSetupIntentsRequestPaymentMethodDataFpx({required this.bank});
 
-factory PostSetupIntentsRequestPaymentMethodDataFpx.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataFpx(
+factory PostSetupIntentsRequestPaymentMethodDataFpx.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodDataFpx(
   bank: PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(json['bank'] as String),
-); }
+);}
 
 final PostSetupIntentsRequestPaymentMethodDataFpxBank bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bank': bank.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank'); } 
-PostSetupIntentsRequestPaymentMethodDataFpx copyWith({PostSetupIntentsRequestPaymentMethodDataFpxBank? bank}) { return PostSetupIntentsRequestPaymentMethodDataFpx(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bank');}
+PostSetupIntentsRequestPaymentMethodDataFpx copyWith({PostSetupIntentsRequestPaymentMethodDataFpxBank? bank}) {return PostSetupIntentsRequestPaymentMethodDataFpx(
   bank: bank ?? this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodDataFpx &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataFpx(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataFpx(bank: $bank)';}
+}

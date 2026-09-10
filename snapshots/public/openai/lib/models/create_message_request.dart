@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_messa
 /// 
 @immutable final class CreateMessageRequestRole {const CreateMessageRequestRole._(this.value);
 
-factory CreateMessageRequestRole.fromJson(String json) { return switch (json) {
+factory CreateMessageRequestRole.fromJson(String json) {return switch (json) {
   'user' => user,
   'assistant' => assistant,
   _ => CreateMessageRequestRole._(json),
-}; }
+};}
 
 static const CreateMessageRequestRole user = CreateMessageRequestRole._('user');
 
@@ -20,22 +20,22 @@ static const List<CreateMessageRequestRole> values = [user, assistant];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateMessageRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateMessageRequestRole($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateMessageRequestRole && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateMessageRequestRole($value)';}
+}
 @immutable final class CreateMessageRequest {const CreateMessageRequest({required this.role, required this.content, this.attachments = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
-factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return CreateMessageRequest(
+factory CreateMessageRequest.fromJson(Map<String, dynamic> json) {return CreateMessageRequest(
   role: CreateMessageRequestRole.fromJson(json['role'] as String),
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => MessageContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageContentImageUrlObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageRequestContentTextObject.fromJson(v as Map<String, dynamic>),)).toList(),),
   attachments: json.containsKey('attachments') ? Omittable((json['attachments'] as List<dynamic>?)?.map((e) => CreateMessageRequestAttachments2.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 /// The role of the entity that is creating the message. Allowed values include:
 /// - `user`: Indicates the message is sent by an actual user and should be used in most cases to represent user-generated messages.
@@ -50,27 +50,27 @@ final Omittable<List<CreateMessageRequestAttachments2>?> attachments;
 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role': role.toJson(),
   'content': content.toJson(),
   if (attachments.isPresent) 'attachments': attachments.value?.map((e) => e.toJson()).toList(),
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
-      json.containsKey('content'); } 
-CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequestContent? content, Omittable<List<CreateMessageRequestAttachments2>?>? attachments, Omittable<Map<String,String>?>? metadata, }) { return CreateMessageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role') &&
+      json.containsKey('content');}
+CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequestContent? content, Omittable<List<CreateMessageRequestAttachments2>?>? attachments, Omittable<Map<String,String>?>? metadata, }) {return CreateMessageRequest(
   role: role ?? this.role,
   content: content ?? this.content,
   attachments: attachments ?? this.attachments,
   metadata: metadata ?? this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateMessageRequest &&
           role == other.role &&
           content == other.content &&
           attachments.isPresent == other.attachments.isPresent &&
           listEquals(attachments.value, other.attachments.value) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(role, content, Object.hashAll(attachments.value ?? const []), metadata); } 
-@override String toString() { return 'CreateMessageRequest(role: $role, content: $content, attachments: $attachments, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(role, content, Object.hashAll(attachments.value ?? const []), metadata);}
+@override String toString() {return 'CreateMessageRequest(role: $role, content: $content, attachments: $attachments, metadata: $metadata)';}
+}

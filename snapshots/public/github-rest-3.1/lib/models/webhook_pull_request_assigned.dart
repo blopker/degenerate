@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_assigned_pull_request.dart';import 'webhooks_number.dart';import 'webhooks_user.dart';@immutable final class WebhookPullRequestAssignedAction {const WebhookPullRequestAssignedAction._(this.value);
 
-factory WebhookPullRequestAssignedAction.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestAssignedAction.fromJson(String json) {return switch (json) {
   'assigned' => assigned,
   _ => WebhookPullRequestAssignedAction._(json),
-}; }
+};}
 
 static const WebhookPullRequestAssignedAction assigned = WebhookPullRequestAssignedAction._('assigned');
 
@@ -13,17 +13,17 @@ static const List<WebhookPullRequestAssignedAction> values = [assigned];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestAssignedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestAssignedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestAssignedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestAssignedAction($value)';}
+}
 @immutable final class WebhookPullRequestAssigned {const WebhookPullRequestAssigned({required this.action, required this.assignee, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAssigned(
+factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) {return WebhookPullRequestAssigned(
   action: WebhookPullRequestAssignedAction.fromJson(json['action'] as String),
   assignee: json['assignee'] != null ? WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -33,7 +33,7 @@ factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) { return 
   pullRequest: WebhookPullRequestAssignedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestAssignedAction action;
 
@@ -54,7 +54,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'assignee': assignee?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -64,14 +64,14 @@ Map<String, dynamic> toJson() { return {
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('assignee') &&
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestAssigned copyWith({WebhookPullRequestAssignedAction? action, WebhooksUser? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestAssignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAssigned(
+      json.containsKey('sender');}
+WebhookPullRequestAssigned copyWith({WebhookPullRequestAssignedAction? action, WebhooksUser? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestAssignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookPullRequestAssigned(
   action: action ?? this.action,
   assignee: assignee != null ? assignee() : this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -81,8 +81,8 @@ WebhookPullRequestAssigned copyWith({WebhookPullRequestAssignedAction? action, W
   pullRequest: pullRequest ?? this.pullRequest,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestAssigned &&
           action == other.action &&
           assignee == other.assignee &&
@@ -92,7 +92,7 @@ WebhookPullRequestAssigned copyWith({WebhookPullRequestAssignedAction? action, W
           organization == other.organization &&
           pullRequest == other.pullRequest &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, assignee, enterprise, installation, number, organization, pullRequest, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestAssigned(action: $action, assignee: $assignee, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, assignee, enterprise, installation, number, organization, pullRequest, repository, sender);}
+@override String toString() {return 'WebhookPullRequestAssigned(action: $action, assignee: $assignee, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';}
+}

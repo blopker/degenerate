@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// For authenticate
 /// the issuing bank.
 @immutable final class ThreeDSecureDetailsAuthenticationFlow {const ThreeDSecureDetailsAuthenticationFlow._(this.value);
 
-factory ThreeDSecureDetailsAuthenticationFlow.fromJson(String json) { return switch (json) {
+factory ThreeDSecureDetailsAuthenticationFlow.fromJson(String json) {return switch (json) {
   'challenge' => challenge,
   'frictionless' => frictionless,
   _ => ThreeDSecureDetailsAuthenticationFlow._(json),
-}; }
+};}
 
 static const ThreeDSecureDetailsAuthenticationFlow challenge = ThreeDSecureDetailsAuthenticationFlow._('challenge');
 
@@ -18,26 +18,26 @@ static const List<ThreeDSecureDetailsAuthenticationFlow> values = [challenge, fr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreeDSecureDetailsAuthenticationFlow && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreeDSecureDetailsAuthenticationFlow($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreeDSecureDetailsAuthenticationFlow && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThreeDSecureDetailsAuthenticationFlow($value)';}
+}
 /// The Electronic Commerce Indicator (ECI). A protocol-level field
 /// indicating what degree of authentication was performed.
 @immutable final class ThreeDSecureDetailsElectronicCommerceIndicator {const ThreeDSecureDetailsElectronicCommerceIndicator._(this.value);
 
-factory ThreeDSecureDetailsElectronicCommerceIndicator.fromJson(String json) { return switch (json) {
+factory ThreeDSecureDetailsElectronicCommerceIndicator.fromJson(String json) {return switch (json) {
   '01' => $01,
   '02' => $02,
   '05' => $05,
   '06' => $06,
   '07' => $07,
   _ => ThreeDSecureDetailsElectronicCommerceIndicator._(json),
-}; }
+};}
 
 static const ThreeDSecureDetailsElectronicCommerceIndicator $01 = ThreeDSecureDetailsElectronicCommerceIndicator._('01');
 
@@ -53,18 +53,18 @@ static const List<ThreeDSecureDetailsElectronicCommerceIndicator> values = [$01,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreeDSecureDetailsElectronicCommerceIndicator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreeDSecureDetailsElectronicCommerceIndicator($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreeDSecureDetailsElectronicCommerceIndicator && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThreeDSecureDetailsElectronicCommerceIndicator($value)';}
+}
 /// Indicates the outcome of 3D Secure authentication.
 @immutable final class ThreeDSecureDetailsResult {const ThreeDSecureDetailsResult._(this.value);
 
-factory ThreeDSecureDetailsResult.fromJson(String json) { return switch (json) {
+factory ThreeDSecureDetailsResult.fromJson(String json) {return switch (json) {
   'attempt_acknowledged' => attemptAcknowledged,
   'authenticated' => authenticated,
   'exempted' => exempted,
@@ -72,7 +72,7 @@ factory ThreeDSecureDetailsResult.fromJson(String json) { return switch (json) {
   'not_supported' => notSupported,
   'processing_error' => processingError,
   _ => ThreeDSecureDetailsResult._(json),
-}; }
+};}
 
 static const ThreeDSecureDetailsResult attemptAcknowledged = ThreeDSecureDetailsResult._('attempt_acknowledged');
 
@@ -90,19 +90,19 @@ static const List<ThreeDSecureDetailsResult> values = [attemptAcknowledged, auth
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreeDSecureDetailsResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreeDSecureDetailsResult($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreeDSecureDetailsResult && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThreeDSecureDetailsResult($value)';}
+}
 /// Additional information about why 3D Secure succeeded or failed based
 /// on the `result`.
 @immutable final class ThreeDSecureDetailsResultReason {const ThreeDSecureDetailsResultReason._(this.value);
 
-factory ThreeDSecureDetailsResultReason.fromJson(String json) { return switch (json) {
+factory ThreeDSecureDetailsResultReason.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'bypassed' => bypassed,
   'canceled' => canceled,
@@ -111,7 +111,7 @@ factory ThreeDSecureDetailsResultReason.fromJson(String json) { return switch (j
   'protocol_error' => protocolError,
   'rejected' => rejected,
   _ => ThreeDSecureDetailsResultReason._(json),
-}; }
+};}
 
 static const ThreeDSecureDetailsResultReason abandoned = ThreeDSecureDetailsResultReason._('abandoned');
 
@@ -131,25 +131,25 @@ static const List<ThreeDSecureDetailsResultReason> values = [abandoned, bypassed
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreeDSecureDetailsResultReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreeDSecureDetailsResultReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreeDSecureDetailsResultReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThreeDSecureDetailsResultReason($value)';}
+}
 /// The version of 3D Secure that was used.
 @immutable final class ThreeDSecureDetailsVersion {const ThreeDSecureDetailsVersion._(this.value);
 
-factory ThreeDSecureDetailsVersion.fromJson(String json) { return switch (json) {
+factory ThreeDSecureDetailsVersion.fromJson(String json) {return switch (json) {
   '1.0.2' => $102,
   '2.1.0' => $210,
   '2.2.0' => $220,
   '2.3.0' => $230,
   '2.3.1' => $231,
   _ => ThreeDSecureDetailsVersion._(json),
-}; }
+};}
 
 static const ThreeDSecureDetailsVersion $102 = ThreeDSecureDetailsVersion._('1.0.2');
 
@@ -165,25 +165,25 @@ static const List<ThreeDSecureDetailsVersion> values = [$102, $210, $220, $230, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreeDSecureDetailsVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreeDSecureDetailsVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreeDSecureDetailsVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThreeDSecureDetailsVersion($value)';}
+}
 /// 
 @immutable final class ThreeDSecureDetails {const ThreeDSecureDetails({this.authenticationFlow = const Omittable.absent(), this.electronicCommerceIndicator = const Omittable.absent(), this.result = const Omittable.absent(), this.resultReason = const Omittable.absent(), this.transactionId = const Omittable.absent(), this.version = const Omittable.absent(), });
 
-factory ThreeDSecureDetails.fromJson(Map<String, dynamic> json) { return ThreeDSecureDetails(
+factory ThreeDSecureDetails.fromJson(Map<String, dynamic> json) {return ThreeDSecureDetails(
   authenticationFlow: json.containsKey('authentication_flow') ? Omittable(json['authentication_flow'] != null ? ThreeDSecureDetailsAuthenticationFlow.fromJson(json['authentication_flow'] as String) : null) : const Omittable.absent(),
   electronicCommerceIndicator: json.containsKey('electronic_commerce_indicator') ? Omittable(json['electronic_commerce_indicator'] != null ? ThreeDSecureDetailsElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null) : const Omittable.absent(),
   result: json.containsKey('result') ? Omittable(json['result'] != null ? ThreeDSecureDetailsResult.fromJson(json['result'] as String) : null) : const Omittable.absent(),
   resultReason: json.containsKey('result_reason') ? Omittable(json['result_reason'] != null ? ThreeDSecureDetailsResultReason.fromJson(json['result_reason'] as String) : null) : const Omittable.absent(),
   transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
   version: json.containsKey('version') ? Omittable(json['version'] != null ? ThreeDSecureDetailsVersion.fromJson(json['version'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// For authenticated transactions: how the customer was authenticated by
 /// the issuing bank.
@@ -207,31 +207,31 @@ final Omittable<String?> transactionId;
 /// The version of 3D Secure that was used.
 final Omittable<ThreeDSecureDetailsVersion?> version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authenticationFlow.isPresent) 'authentication_flow': authenticationFlow.value?.toJson(),
   if (electronicCommerceIndicator.isPresent) 'electronic_commerce_indicator': electronicCommerceIndicator.value?.toJson(),
   if (result.isPresent) 'result': result.value?.toJson(),
   if (resultReason.isPresent) 'result_reason': resultReason.value?.toJson(),
   if (transactionId.isPresent) 'transaction_id': transactionId.value,
   if (version.isPresent) 'version': version.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authentication_flow', 'electronic_commerce_indicator', 'result', 'result_reason', 'transaction_id', 'version'}.contains(key)); } 
-ThreeDSecureDetails copyWith({Omittable<ThreeDSecureDetailsAuthenticationFlow?>? authenticationFlow, Omittable<ThreeDSecureDetailsElectronicCommerceIndicator?>? electronicCommerceIndicator, Omittable<ThreeDSecureDetailsResult?>? result, Omittable<ThreeDSecureDetailsResultReason?>? resultReason, Omittable<String?>? transactionId, Omittable<ThreeDSecureDetailsVersion?>? version, }) { return ThreeDSecureDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'authentication_flow', 'electronic_commerce_indicator', 'result', 'result_reason', 'transaction_id', 'version'}.contains(key));}
+ThreeDSecureDetails copyWith({Omittable<ThreeDSecureDetailsAuthenticationFlow?>? authenticationFlow, Omittable<ThreeDSecureDetailsElectronicCommerceIndicator?>? electronicCommerceIndicator, Omittable<ThreeDSecureDetailsResult?>? result, Omittable<ThreeDSecureDetailsResultReason?>? resultReason, Omittable<String?>? transactionId, Omittable<ThreeDSecureDetailsVersion?>? version, }) {return ThreeDSecureDetails(
   authenticationFlow: authenticationFlow ?? this.authenticationFlow,
   electronicCommerceIndicator: electronicCommerceIndicator ?? this.electronicCommerceIndicator,
   result: result ?? this.result,
   resultReason: resultReason ?? this.resultReason,
   transactionId: transactionId ?? this.transactionId,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ThreeDSecureDetails &&
           authenticationFlow == other.authenticationFlow &&
           electronicCommerceIndicator == other.electronicCommerceIndicator &&
           result == other.result &&
           resultReason == other.resultReason &&
           transactionId == other.transactionId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(authenticationFlow, electronicCommerceIndicator, result, resultReason, transactionId, version); } 
-@override String toString() { return 'ThreeDSecureDetails(authenticationFlow: $authenticationFlow, electronicCommerceIndicator: $electronicCommerceIndicator, result: $result, resultReason: $resultReason, transactionId: $transactionId, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(authenticationFlow, electronicCommerceIndicator, result, resultReason, transactionId, version);}
+@override String toString() {return 'ThreeDSecureDetails(authenticationFlow: $authenticationFlow, electronicCommerceIndicator: $electronicCommerceIndicator, result: $result, resultReason: $resultReason, transactionId: $transactionId, version: $version)';}
+}

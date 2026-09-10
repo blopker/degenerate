@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_release1.dart';@immutable final class WebhookReleaseUnpublishedAction {const WebhookReleaseUnpublishedAction._(this.value);
 
-factory WebhookReleaseUnpublishedAction.fromJson(String json) { return switch (json) {
+factory WebhookReleaseUnpublishedAction.fromJson(String json) {return switch (json) {
   'unpublished' => unpublished,
   _ => WebhookReleaseUnpublishedAction._(json),
-}; }
+};}
 
 static const WebhookReleaseUnpublishedAction unpublished = WebhookReleaseUnpublishedAction._('unpublished');
 
@@ -13,17 +13,17 @@ static const List<WebhookReleaseUnpublishedAction> values = [unpublished];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookReleaseUnpublishedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookReleaseUnpublishedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookReleaseUnpublishedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookReleaseUnpublishedAction($value)';}
+}
 @immutable final class WebhookReleaseUnpublished {const WebhookReleaseUnpublished({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookReleaseUnpublished.fromJson(Map<String, dynamic> json) { return WebhookReleaseUnpublished(
+factory WebhookReleaseUnpublished.fromJson(Map<String, dynamic> json) {return WebhookReleaseUnpublished(
   action: WebhookReleaseUnpublishedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookReleaseUnpublished.fromJson(Map<String, dynamic> json) { return W
   release: WebhooksRelease1.fromJson(json['release'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookReleaseUnpublishedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,11 +55,11 @@ Map<String, dynamic> toJson() { return {
   'release': release.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('release') &&
-      json.containsKey('repository'); } 
-WebhookReleaseUnpublished copyWith({WebhookReleaseUnpublishedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease1? release, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookReleaseUnpublished(
+      json.containsKey('repository');}
+WebhookReleaseUnpublished copyWith({WebhookReleaseUnpublishedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease1? release, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookReleaseUnpublished(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -67,8 +67,8 @@ WebhookReleaseUnpublished copyWith({WebhookReleaseUnpublishedAction? action, Ent
   release: release ?? this.release,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookReleaseUnpublished &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -76,7 +76,7 @@ WebhookReleaseUnpublished copyWith({WebhookReleaseUnpublishedAction? action, Ent
           organization == other.organization &&
           release == other.release &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, release, repository, sender); } 
-@override String toString() { return 'WebhookReleaseUnpublished(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, release, repository, sender);}
+@override String toString() {return 'WebhookReleaseUnpublished(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)';}
+}

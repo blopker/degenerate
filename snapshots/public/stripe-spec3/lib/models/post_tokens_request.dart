@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account.dart';import 'post_tokens_request_bank_account.dart';import 'post_tokens_request_card.dart';import 'post_tokens_request_cvc_update.dart';import 'post_tokens_request_person.dart';import 'post_tokens_request_pii.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
 
-factory PostTokensRequest.fromJson(Map<String, dynamic> json) { return PostTokensRequest(
+factory PostTokensRequest.fromJson(Map<String, dynamic> json) {return PostTokensRequest(
   account: json['account'] != null ? PostTokensRequestAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   bankAccount: json['bank_account'] != null ? PostTokensRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
   card: json['card'] != null ? PostTokensRequestCard.fromJson(json['card']) : null,
@@ -11,7 +11,7 @@ factory PostTokensRequest.fromJson(Map<String, dynamic> json) { return PostToken
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   person: json['person'] != null ? PostTokensRequestPerson.fromJson(json['person'] as Map<String, dynamic>) : null,
   pii: json['pii'] != null ? PostTokensRequestPii.fromJson(json['pii'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Information for the account this token represents.
 final PostTokensRequestAccount? account;
@@ -37,7 +37,7 @@ final PostTokensRequestPerson? person;
 /// The PII this token represents.
 final PostTokensRequestPii? pii;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account != null) 'account': account?.toJson(),
   if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
   if (card != null) 'card': card?.toJson(),
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (person != null) 'person': person?.toJson(),
   if (pii != null) 'pii': pii?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'bank_account', 'card', 'customer', 'cvc_update', 'expand', 'person', 'pii'}.contains(key)); } 
-PostTokensRequest copyWith({PostTokensRequestAccount? Function()? account, PostTokensRequestBankAccount? Function()? bankAccount, PostTokensRequestCard? Function()? card, String? Function()? customer, PostTokensRequestCvcUpdate? Function()? cvcUpdate, List<String>? Function()? expand, PostTokensRequestPerson? Function()? person, PostTokensRequestPii? Function()? pii, }) { return PostTokensRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account', 'bank_account', 'card', 'customer', 'cvc_update', 'expand', 'person', 'pii'}.contains(key));}
+PostTokensRequest copyWith({PostTokensRequestAccount? Function()? account, PostTokensRequestBankAccount? Function()? bankAccount, PostTokensRequestCard? Function()? card, String? Function()? customer, PostTokensRequestCvcUpdate? Function()? cvcUpdate, List<String>? Function()? expand, PostTokensRequestPerson? Function()? person, PostTokensRequestPii? Function()? pii, }) {return PostTokensRequest(
   account: account != null ? account() : this.account,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,
@@ -57,8 +57,8 @@ PostTokensRequest copyWith({PostTokensRequestAccount? Function()? account, PostT
   expand: expand != null ? expand() : this.expand,
   person: person != null ? person() : this.person,
   pii: pii != null ? pii() : this.pii,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTokensRequest &&
           account == other.account &&
           bankAccount == other.bankAccount &&
@@ -67,7 +67,7 @@ PostTokensRequest copyWith({PostTokensRequestAccount? Function()? account, PostT
           cvcUpdate == other.cvcUpdate &&
           listEquals(expand, other.expand) &&
           person == other.person &&
-          pii == other.pii; } 
-@override int get hashCode { return Object.hash(account, bankAccount, card, customer, cvcUpdate, Object.hashAll(expand ?? const []), person, pii); } 
-@override String toString() { return 'PostTokensRequest(account: $account, bankAccount: $bankAccount, card: $card, customer: $customer, cvcUpdate: $cvcUpdate, expand: $expand, person: $person, pii: $pii)'; } 
- }
+          pii == other.pii;}
+@override int get hashCode {return Object.hash(account, bankAccount, card, customer, cvcUpdate, Object.hashAll(expand ?? const []), person, pii);}
+@override String toString() {return 'PostTokensRequest(account: $account, bankAccount: $bankAccount, card: $card, customer: $customer, cvcUpdate: $cvcUpdate, expand: $expand, person: $person, pii: $pii)';}
+}

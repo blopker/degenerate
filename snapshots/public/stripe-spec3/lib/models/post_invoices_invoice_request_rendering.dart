@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_rendering_pdf.dart';import 'post_invoices_invoice_request_rendering_template_version.dart';@immutable final class PostInvoicesInvoiceRequestRenderingAmountTaxDisplay {const PostInvoicesInvoiceRequestRenderingAmountTaxDisplay._(this.value);
 
-factory PostInvoicesInvoiceRequestRenderingAmountTaxDisplay.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestRenderingAmountTaxDisplay.fromJson(String json) {return switch (json) {
   '' => $empty,
   'exclude_tax' => excludeTax,
   'include_inclusive_tax' => includeInclusiveTax,
   _ => PostInvoicesInvoiceRequestRenderingAmountTaxDisplay._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestRenderingAmountTaxDisplay $empty = PostInvoicesInvoiceRequestRenderingAmountTaxDisplay._('');
 
@@ -19,23 +19,23 @@ static const List<PostInvoicesInvoiceRequestRenderingAmountTaxDisplay> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestRenderingAmountTaxDisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestRenderingAmountTaxDisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestRenderingAmountTaxDisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestRenderingAmountTaxDisplay($value)';}
+}
 /// The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
 @immutable final class PostInvoicesInvoiceRequestRendering {const PostInvoicesInvoiceRequestRendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });
 
-factory PostInvoicesInvoiceRequestRendering.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequestRendering(
+factory PostInvoicesInvoiceRequestRendering.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceRequestRendering(
   amountTaxDisplay: json['amount_tax_display'] != null ? PostInvoicesInvoiceRequestRenderingAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
   pdf: json['pdf'] != null ? PostInvoicesInvoiceRequestRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>) : null,
   template: json['template'] as String?,
   templateVersion: json['template_version'] != null ? PostInvoicesInvoiceRequestRenderingTemplateVersion.fromJson(json['template_version']) : null,
-); }
+);}
 
 final PostInvoicesInvoiceRequestRenderingAmountTaxDisplay? amountTaxDisplay;
 
@@ -45,25 +45,25 @@ final String? template;
 
 final PostInvoicesInvoiceRequestRenderingTemplateVersion? templateVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountTaxDisplay != null) 'amount_tax_display': amountTaxDisplay?.toJson(),
   if (pdf != null) 'pdf': pdf?.toJson(),
   'template': ?template,
   if (templateVersion != null) 'template_version': templateVersion?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key)); } 
-PostInvoicesInvoiceRequestRendering copyWith({PostInvoicesInvoiceRequestRenderingAmountTaxDisplay? Function()? amountTaxDisplay, PostInvoicesInvoiceRequestRenderingPdf? Function()? pdf, String? Function()? template, PostInvoicesInvoiceRequestRenderingTemplateVersion? Function()? templateVersion, }) { return PostInvoicesInvoiceRequestRendering(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key));}
+PostInvoicesInvoiceRequestRendering copyWith({PostInvoicesInvoiceRequestRenderingAmountTaxDisplay? Function()? amountTaxDisplay, PostInvoicesInvoiceRequestRenderingPdf? Function()? pdf, String? Function()? template, PostInvoicesInvoiceRequestRenderingTemplateVersion? Function()? templateVersion, }) {return PostInvoicesInvoiceRequestRendering(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   pdf: pdf != null ? pdf() : this.pdf,
   template: template != null ? template() : this.template,
   templateVersion: templateVersion != null ? templateVersion() : this.templateVersion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesInvoiceRequestRendering &&
           amountTaxDisplay == other.amountTaxDisplay &&
           pdf == other.pdf &&
           template == other.template &&
-          templateVersion == other.templateVersion; } 
-@override int get hashCode { return Object.hash(amountTaxDisplay, pdf, template, templateVersion); } 
-@override String toString() { return 'PostInvoicesInvoiceRequestRendering(amountTaxDisplay: $amountTaxDisplay, pdf: $pdf, template: $template, templateVersion: $templateVersion)'; } 
- }
+          templateVersion == other.templateVersion;}
+@override int get hashCode {return Object.hash(amountTaxDisplay, pdf, template, templateVersion);}
+@override String toString() {return 'PostInvoicesInvoiceRequestRendering(amountTaxDisplay: $amountTaxDisplay, pdf: $pdf, template: $template, templateVersion: $templateVersion)';}
+}

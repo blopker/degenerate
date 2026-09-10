@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_link_account_session_filters.dart';import 'financial_connections_session_accounts.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject._(this.value);
 
-factory FinancialConnectionsSessionObject.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsSessionObject.fromJson(String json) {return switch (json) {
   'financial_connections.session' => financialConnectionsSession,
   _ => FinancialConnectionsSessionObject._(json),
-}; }
+};}
 
 static const FinancialConnectionsSessionObject financialConnectionsSession = FinancialConnectionsSessionObject._('financial_connections.session');
 
@@ -14,23 +14,23 @@ static const List<FinancialConnectionsSessionObject> values = [financialConnecti
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsSessionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsSessionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsSessionObject($value)';}
+}
 @immutable final class FinancialConnectionsSessionPermissions {const FinancialConnectionsSessionPermissions._(this.value);
 
-factory FinancialConnectionsSessionPermissions.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsSessionPermissions.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'payment_method' => paymentMethod,
   'transactions' => transactions,
   _ => FinancialConnectionsSessionPermissions._(json),
-}; }
+};}
 
 static const FinancialConnectionsSessionPermissions balances = FinancialConnectionsSessionPermissions._('balances');
 
@@ -44,22 +44,22 @@ static const List<FinancialConnectionsSessionPermissions> values = [balances, ow
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsSessionPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsSessionPermissions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsSessionPermissions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsSessionPermissions($value)';}
+}
 @immutable final class FinancialConnectionsSessionPrefetch {const FinancialConnectionsSessionPrefetch._(this.value);
 
-factory FinancialConnectionsSessionPrefetch.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsSessionPrefetch.fromJson(String json) {return switch (json) {
   'balances' => balances,
   'ownership' => ownership,
   'transactions' => transactions,
   _ => FinancialConnectionsSessionPrefetch._(json),
-}; }
+};}
 
 static const FinancialConnectionsSessionPrefetch balances = FinancialConnectionsSessionPrefetch._('balances');
 
@@ -71,18 +71,18 @@ static const List<FinancialConnectionsSessionPrefetch> values = [balances, owner
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsSessionPrefetch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsSessionPrefetch($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FinancialConnectionsSessionPrefetch && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FinancialConnectionsSessionPrefetch($value)';}
+}
 /// A Financial Connections Session is the secure way to programmatically launch the client-side Stripe.js modal that lets your users link their accounts.
 @immutable final class FinancialConnectionsSession {const FinancialConnectionsSession({required this.accounts, required this.id, required this.livemode, required this.object, required this.permissions, this.accountHolder = const Omittable.absent(), this.clientSecret = const Omittable.absent(), this.filters, this.prefetch = const Omittable.absent(), this.returnUrl, });
 
-factory FinancialConnectionsSession.fromJson(Map<String, dynamic> json) { return FinancialConnectionsSession(
+factory FinancialConnectionsSession.fromJson(Map<String, dynamic> json) {return FinancialConnectionsSession(
   accountHolder: json.containsKey('account_holder') ? Omittable(json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   accounts: FinancialConnectionsSessionAccounts.fromJson(json['accounts'] as Map<String, dynamic>),
   clientSecret: json.containsKey('client_secret') ? Omittable(json['client_secret'] as String?) : const Omittable.absent(),
@@ -93,7 +93,7 @@ factory FinancialConnectionsSession.fromJson(Map<String, dynamic> json) { return
   permissions: (json['permissions'] as List<dynamic>).map((e) => FinancialConnectionsSessionPermissions.fromJson(e as String)).toList(),
   prefetch: json.containsKey('prefetch') ? Omittable((json['prefetch'] as List<dynamic>?)?.map((e) => FinancialConnectionsSessionPrefetch.fromJson(e as String)).toList()) : const Omittable.absent(),
   returnUrl: json['return_url'] as String?,
-); }
+);}
 
 /// The account holder for whom accounts are collected in this session.
 final Omittable<BankConnectionsResourceAccountholder?> accountHolder;
@@ -124,7 +124,7 @@ final Omittable<List<FinancialConnectionsSessionPrefetch>?> prefetch;
 /// For webview integrations only. Upon completing OAuth login in the native browser, the user will be redirected to this URL to return to your app.
 final String? returnUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolder.isPresent) 'account_holder': accountHolder.value?.toJson(),
   'accounts': accounts.toJson(),
   if (clientSecret.isPresent) 'client_secret': clientSecret.value,
@@ -135,13 +135,13 @@ Map<String, dynamic> toJson() { return {
   'permissions': permissions.map((e) => e.toJson()).toList(),
   if (prefetch.isPresent) 'prefetch': prefetch.value?.map((e) => e.toJson()).toList(),
   'return_url': ?returnUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accounts') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accounts') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('permissions'); } 
-FinancialConnectionsSession copyWith({Omittable<BankConnectionsResourceAccountholder?>? accountHolder, FinancialConnectionsSessionAccounts? accounts, Omittable<String?>? clientSecret, BankConnectionsResourceLinkAccountSessionFilters? Function()? filters, String? id, bool? livemode, FinancialConnectionsSessionObject? object, List<FinancialConnectionsSessionPermissions>? permissions, Omittable<List<FinancialConnectionsSessionPrefetch>?>? prefetch, String? Function()? returnUrl, }) { return FinancialConnectionsSession(
+      json.containsKey('permissions');}
+FinancialConnectionsSession copyWith({Omittable<BankConnectionsResourceAccountholder?>? accountHolder, FinancialConnectionsSessionAccounts? accounts, Omittable<String?>? clientSecret, BankConnectionsResourceLinkAccountSessionFilters? Function()? filters, String? id, bool? livemode, FinancialConnectionsSessionObject? object, List<FinancialConnectionsSessionPermissions>? permissions, Omittable<List<FinancialConnectionsSessionPrefetch>?>? prefetch, String? Function()? returnUrl, }) {return FinancialConnectionsSession(
   accountHolder: accountHolder ?? this.accountHolder,
   accounts: accounts ?? this.accounts,
   clientSecret: clientSecret ?? this.clientSecret,
@@ -152,8 +152,8 @@ FinancialConnectionsSession copyWith({Omittable<BankConnectionsResourceAccountho
   permissions: permissions ?? this.permissions,
   prefetch: prefetch ?? this.prefetch,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FinancialConnectionsSession &&
           accountHolder == other.accountHolder &&
           accounts == other.accounts &&
@@ -165,7 +165,7 @@ FinancialConnectionsSession copyWith({Omittable<BankConnectionsResourceAccountho
           listEquals(permissions, other.permissions) &&
           prefetch.isPresent == other.prefetch.isPresent &&
           listEquals(prefetch.value, other.prefetch.value) &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(accountHolder, accounts, clientSecret, filters, id, livemode, object, Object.hashAll(permissions), Object.hashAll(prefetch.value ?? const []), returnUrl); } 
-@override String toString() { return 'FinancialConnectionsSession(accountHolder: $accountHolder, accounts: $accounts, clientSecret: $clientSecret, filters: $filters, id: $id, livemode: $livemode, object: $object, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
- }
+          returnUrl == other.returnUrl;}
+@override int get hashCode {return Object.hash(accountHolder, accounts, clientSecret, filters, id, livemode, object, Object.hashAll(permissions), Object.hashAll(prefetch.value ?? const []), returnUrl);}
+@override String toString() {return 'FinancialConnectionsSession(accountHolder: $accountHolder, accounts: $accounts, clientSecret: $clientSecret, filters: $filters, id: $id, livemode: $livemode, object: $object, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)';}
+}

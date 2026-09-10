@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_base_mc_actions_value.dart';import 'zaraz_base_mc_neo_events.dart';@immutable final class ZarazBaseMc {const ZarazBaseMc({required this.blockingTriggers, required this.defaultFields, required this.enabled, required this.name, required this.component, required this.permissions, required this.settings, this.defaultPurpose, this.vendorName, this.vendorPolicyUrl, this.actions, this.neoEvents, });
 
-factory ZarazBaseMc.fromJson(Map<String, dynamic> json) { return ZarazBaseMc(
+factory ZarazBaseMc.fromJson(Map<String, dynamic> json) {return ZarazBaseMc(
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
   defaultFields: json['defaultFields'] as Map<String, dynamic>,
   defaultPurpose: json['defaultPurpose'] as String?,
@@ -15,7 +15,7 @@ factory ZarazBaseMc.fromJson(Map<String, dynamic> json) { return ZarazBaseMc(
   neoEvents: (json['neoEvents'] as List<dynamic>?)?.map((e) => ZarazBaseMcNeoEvents.fromJson(e as Map<String, dynamic>)).toList(),
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
   settings: json['settings'] as Map<String, dynamic>,
-); }
+);}
 
 /// List of blocking trigger IDs
 final List<String> blockingTriggers;
@@ -53,7 +53,7 @@ final List<String> permissions;
 /// Tool's settings
 final Map<String,dynamic> settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'blockingTriggers': blockingTriggers,
   'defaultFields': defaultFields,
   'defaultPurpose': ?defaultPurpose,
@@ -66,15 +66,15 @@ Map<String, dynamic> toJson() { return {
   if (neoEvents != null) 'neoEvents': neoEvents?.map((e) => e.toJson()).toList(),
   'permissions': permissions,
   'settings': settings,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('blockingTriggers') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('blockingTriggers') &&
       json.containsKey('defaultFields') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('component') && json['component'] is String &&
       json.containsKey('permissions') &&
-      json.containsKey('settings'); } 
-ZarazBaseMc copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String? Function()? defaultPurpose, bool? enabled, String? name, String? Function()? vendorName, String? Function()? vendorPolicyUrl, Map<String, ZarazBaseMcActionsValue>? Function()? actions, String? component, List<ZarazBaseMcNeoEvents>? Function()? neoEvents, List<String>? permissions, Map<String,dynamic>? settings, }) { return ZarazBaseMc(
+      json.containsKey('settings');}
+ZarazBaseMc copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String? Function()? defaultPurpose, bool? enabled, String? name, String? Function()? vendorName, String? Function()? vendorPolicyUrl, Map<String, ZarazBaseMcActionsValue>? Function()? actions, String? component, List<ZarazBaseMcNeoEvents>? Function()? neoEvents, List<String>? permissions, Map<String,dynamic>? settings, }) {return ZarazBaseMc(
   blockingTriggers: blockingTriggers ?? this.blockingTriggers,
   defaultFields: defaultFields ?? this.defaultFields,
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,
@@ -87,8 +87,8 @@ ZarazBaseMc copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defau
   neoEvents: neoEvents != null ? neoEvents() : this.neoEvents,
   permissions: permissions ?? this.permissions,
   settings: settings ?? this.settings,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZarazBaseMc &&
           listEquals(blockingTriggers, other.blockingTriggers) &&
           defaultFields == other.defaultFields &&
@@ -101,7 +101,7 @@ ZarazBaseMc copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defau
           component == other.component &&
           listEquals(neoEvents, other.neoEvents) &&
           listEquals(permissions, other.permissions) &&
-          settings == other.settings; } 
-@override int get hashCode { return Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl, actions, component, Object.hashAll(neoEvents ?? const []), Object.hashAll(permissions), settings); } 
-@override String toString() { return 'ZarazBaseMc(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl, actions: $actions, component: $component, neoEvents: $neoEvents, permissions: $permissions, settings: $settings)'; } 
- }
+          settings == other.settings;}
+@override int get hashCode {return Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl, actions, component, Object.hashAll(neoEvents ?? const []), Object.hashAll(permissions), settings);}
+@override String toString() {return 'ZarazBaseMc(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl, actions: $actions, component: $component, neoEvents: $neoEvents, permissions: $permissions, settings: $settings)';}
+}

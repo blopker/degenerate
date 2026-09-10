@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_components_schemas_domain.dart';import 'access_schemas_auto_redirect_to_identity.dart';/// The application type.
 @immutable final class AccessComponentsSchemasType {const AccessComponentsSchemasType._(this.value);
 
-factory AccessComponentsSchemasType.fromJson(String json) { return switch (json) {
+factory AccessComponentsSchemasType.fromJson(String json) {return switch (json) {
   'self_hosted' => selfHosted,
   'saas' => saas,
   'ssh' => ssh,
@@ -14,7 +14,7 @@ factory AccessComponentsSchemasType.fromJson(String json) { return switch (json)
   'bookmark' => bookmark,
   'dash_sso' => dashSso,
   _ => AccessComponentsSchemasType._(json),
-}; }
+};}
 
 static const AccessComponentsSchemasType selfHosted = AccessComponentsSchemasType._('self_hosted');
 
@@ -38,24 +38,24 @@ static const List<AccessComponentsSchemasType> values = [selfHosted, saas, ssh, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessComponentsSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessComponentsSchemasType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessComponentsSchemasType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessComponentsSchemasType($value)';}
+}
 @immutable final class AccessSchemasFeatureAppProps {const AccessSchemasFeatureAppProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, });
 
-factory AccessSchemasFeatureAppProps.fromJson(Map<String, dynamic> json) { return AccessSchemasFeatureAppProps(
+factory AccessSchemasFeatureAppProps.fromJson(Map<String, dynamic> json) {return AccessSchemasFeatureAppProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
   domain: json['domain'] != null ? AccessComponentsSchemasDomain.fromJson(json['domain'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   sessionDuration: json['session_duration'] != null ? AccessAppsComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: AccessComponentsSchemasType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
@@ -75,31 +75,31 @@ final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 /// The application type.
 final AccessComponentsSchemasType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_idps': ?allowedIdps,
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
   if (domain != null) 'domain': domain?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccessSchemasFeatureAppProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessComponentsSchemasType? type, }) { return AccessSchemasFeatureAppProps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AccessSchemasFeatureAppProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessComponentsSchemasType? type, }) {return AccessSchemasFeatureAppProps(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
   domain: domain != null ? domain() : this.domain,
   name: name != null ? name() : this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessSchemasFeatureAppProps &&
           listEquals(allowedIdps, other.allowedIdps) &&
           autoRedirectToIdentity == other.autoRedirectToIdentity &&
           domain == other.domain &&
           name == other.name &&
           sessionDuration == other.sessionDuration &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, domain, name, sessionDuration, type); } 
-@override String toString() { return 'AccessSchemasFeatureAppProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, domain, name, sessionDuration, type);}
+@override String toString() {return 'AccessSchemasFeatureAppProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type)';}
+}

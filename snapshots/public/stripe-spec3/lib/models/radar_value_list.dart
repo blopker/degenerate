@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_value_list_list_items.dart';/// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
 @immutable final class RadarValueListItemType {const RadarValueListItemType._(this.value);
 
-factory RadarValueListItemType.fromJson(String json) { return switch (json) {
+factory RadarValueListItemType.fromJson(String json) {return switch (json) {
   'card_bin' => cardBin,
   'card_fingerprint' => cardFingerprint,
   'case_sensitive_string' => caseSensitiveString,
@@ -15,7 +15,7 @@ factory RadarValueListItemType.fromJson(String json) { return switch (json) {
   'string' => string,
   'us_bank_account_fingerprint' => usBankAccountFingerprint,
   _ => RadarValueListItemType._(json),
-}; }
+};}
 
 static const RadarValueListItemType cardBin = RadarValueListItemType._('card_bin');
 
@@ -41,21 +41,21 @@ static const List<RadarValueListItemType> values = [cardBin, cardFingerprint, ca
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarValueListItemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarValueListItemType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarValueListItemType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarValueListItemType($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class RadarValueListObject {const RadarValueListObject._(this.value);
 
-factory RadarValueListObject.fromJson(String json) { return switch (json) {
+factory RadarValueListObject.fromJson(String json) {return switch (json) {
   'radar.value_list' => radarValueList,
   _ => RadarValueListObject._(json),
-}; }
+};}
 
 static const RadarValueListObject radarValueList = RadarValueListObject._('radar.value_list');
 
@@ -63,20 +63,20 @@ static const List<RadarValueListObject> values = [radarValueList];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarValueListObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarValueListObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarValueListObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarValueListObject($value)';}
+}
 /// Value lists allow you to group values together which can then be referenced in rules.
 /// 
 /// Related guide: [Default Stripe lists](https://docs.stripe.com/radar/lists#managing-list-items)
 @immutable final class RadarValueList {const RadarValueList({required this.alias, required this.created, required this.createdBy, required this.id, required this.itemType, required this.listItems, required this.livemode, required this.metadata, required this.name, required this.object, });
 
-factory RadarValueList.fromJson(Map<String, dynamic> json) { return RadarValueList(
+factory RadarValueList.fromJson(Map<String, dynamic> json) {return RadarValueList(
   alias: json['alias'] as String,
   created: (json['created'] as num).toInt(),
   createdBy: json['created_by'] as String,
@@ -87,7 +87,7 @@ factory RadarValueList.fromJson(Map<String, dynamic> json) { return RadarValueLi
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: RadarValueListObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The name of the value list for use in rules.
 final String alias;
@@ -119,7 +119,7 @@ final String name;
 /// String representing the object's type. Objects of the same type share the same value.
 final RadarValueListObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alias': alias,
   'created': created,
   'created_by': createdBy,
@@ -130,8 +130,8 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata,
   'name': name,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alias') && json['alias'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('created_by') && json['created_by'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -140,8 +140,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object'); } 
-RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, RadarValueListItemType? itemType, RadarValueListListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, RadarValueListObject? object, }) { return RadarValueList(
+      json.containsKey('object');}
+RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, RadarValueListItemType? itemType, RadarValueListListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, RadarValueListObject? object, }) {return RadarValueList(
   alias: alias ?? this.alias,
   created: created ?? this.created,
   createdBy: createdBy ?? this.createdBy,
@@ -152,8 +152,8 @@ RadarValueList copyWith({String? alias, int? created, String? createdBy, String?
   metadata: metadata ?? this.metadata,
   name: name ?? this.name,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarValueList &&
           alias == other.alias &&
           created == other.created &&
@@ -164,7 +164,7 @@ RadarValueList copyWith({String? alias, int? created, String? createdBy, String?
           livemode == other.livemode &&
           metadata == other.metadata &&
           name == other.name &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(alias, created, createdBy, id, itemType, listItems, livemode, metadata, name, object); } 
-@override String toString() { return 'RadarValueList(alias: $alias, created: $created, createdBy: $createdBy, id: $id, itemType: $itemType, listItems: $listItems, livemode: $livemode, metadata: $metadata, name: $name, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(alias, created, createdBy, id, itemType, listItems, livemode, metadata, name, object);}
+@override String toString() {return 'RadarValueList(alias: $alias, created: $created, createdBy: $createdBy, id: $id, itemType: $itemType, listItems: $listItems, livemode: $livemode, metadata: $metadata, name: $name, object: $object)';}
+}

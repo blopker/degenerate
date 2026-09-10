@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesLog {const RadarGetCtTimeseriesLog._(this.value);
 
-factory RadarGetCtTimeseriesLog.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesLog.fromJson(String json) {return switch (json) {
   'RFC6962' => rfc6962,
   'STATIC' => $static,
   _ => RadarGetCtTimeseriesLog._(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesLog rfc6962 = RadarGetCtTimeseriesLog._('RFC6962');
 
@@ -16,11 +16,11 @@ static const List<RadarGetCtTimeseriesLog> values = [rfc6962, $static];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtTimeseriesLog && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtTimeseriesLog($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtTimeseriesLog && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtTimeseriesLog($value)';}
+}

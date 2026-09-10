@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityValidationStatus {const EmailSecurityValidationStatus._(this.value);
 
-factory EmailSecurityValidationStatus.fromJson(String json) { return switch (json) {
+factory EmailSecurityValidationStatus.fromJson(String json) {return switch (json) {
   'pass' => pass,
   'neutral' => neutral,
   'fail' => fail,
   'error' => error,
   'none' => none,
   _ => EmailSecurityValidationStatus._(json),
-}; }
+};}
 
 static const EmailSecurityValidationStatus pass = EmailSecurityValidationStatus._('pass');
 
@@ -25,11 +25,11 @@ static const List<EmailSecurityValidationStatus> values = [pass, neutral, fail, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityValidationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityValidationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityValidationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityValidationStatus($value)';}
+}

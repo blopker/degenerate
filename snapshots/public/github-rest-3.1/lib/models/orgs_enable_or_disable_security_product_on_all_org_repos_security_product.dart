@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct._(this.value);
 
-factory OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.fromJson(String json) { return switch (json) {
+factory OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.fromJson(String json) {return switch (json) {
   'dependency_graph' => dependencyGraph,
   'dependabot_alerts' => dependabotAlerts,
   'dependabot_security_updates' => dependabotSecurityUpdates,
@@ -11,7 +11,7 @@ factory OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.fromJson(
   'secret_scanning' => secretScanning,
   'secret_scanning_push_protection' => secretScanningPushProtection,
   _ => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct._(json),
-}; }
+};}
 
 static const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct dependencyGraph = OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct._('dependency_graph');
 
@@ -31,11 +31,11 @@ static const List<OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct($value)';}
+}

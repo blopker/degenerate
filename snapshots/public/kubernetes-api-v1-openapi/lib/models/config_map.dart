@@ -3,14 +3,14 @@
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';/// ConfigMap holds configuration data for pods to consume.
 @immutable final class ConfigMap {const ConfigMap({this.apiVersion, this.binaryData, this.data, this.immutable, this.kind, this.metadata, });
 
-factory ConfigMap.fromJson(Map<String, dynamic> json) { return ConfigMap(
+factory ConfigMap.fromJson(Map<String, dynamic> json) {return ConfigMap(
   apiVersion: json['apiVersion'] as String?,
   binaryData: (json['binaryData'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, base64Decode(v as String))),
   data: (json['data'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   immutable: json['immutable'] as bool?,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -30,31 +30,31 @@ final String? kind;
 /// Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 final ObjectMeta? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   if (binaryData != null) 'binaryData': binaryData?.map((k, v) => MapEntry(k, base64Encode(v))),
   'data': ?data,
   'immutable': ?immutable,
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'binaryData', 'data', 'immutable', 'kind', 'metadata'}.contains(key)); } 
-ConfigMap copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Function()? binaryData, Map<String, String>? Function()? data, bool? Function()? immutable, String? Function()? kind, ObjectMeta? Function()? metadata, }) { return ConfigMap(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'binaryData', 'data', 'immutable', 'kind', 'metadata'}.contains(key));}
+ConfigMap copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Function()? binaryData, Map<String, String>? Function()? data, bool? Function()? immutable, String? Function()? kind, ObjectMeta? Function()? metadata, }) {return ConfigMap(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   binaryData: binaryData != null ? binaryData() : this.binaryData,
   data: data != null ? data() : this.data,
   immutable: immutable != null ? immutable() : this.immutable,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConfigMap &&
           apiVersion == other.apiVersion &&
           binaryData == other.binaryData &&
           data == other.data &&
           immutable == other.immutable &&
           kind == other.kind &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(apiVersion, binaryData, data, immutable, kind, metadata); } 
-@override String toString() { return 'ConfigMap(apiVersion: $apiVersion, binaryData: $binaryData, data: $data, immutable: $immutable, kind: $kind, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(apiVersion, binaryData, data, immutable, kind, metadata);}
+@override String toString() {return 'ConfigMap(apiVersion: $apiVersion, binaryData: $binaryData, data: $data, immutable: $immutable, kind: $kind, metadata: $metadata)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_list_custom_domains_response_domains_status.dart';/// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
 @immutable final class R2ListCustomDomainsResponseDomainsMinTls {const R2ListCustomDomainsResponseDomainsMinTls._(this.value);
 
-factory R2ListCustomDomainsResponseDomainsMinTls.fromJson(String json) { return switch (json) {
+factory R2ListCustomDomainsResponseDomainsMinTls.fromJson(String json) {return switch (json) {
   '1.0' => $10,
   '1.1' => $11,
   '1.2' => $12,
   '1.3' => $13,
   _ => R2ListCustomDomainsResponseDomainsMinTls._(json),
-}; }
+};}
 
 static const R2ListCustomDomainsResponseDomainsMinTls $10 = R2ListCustomDomainsResponseDomainsMinTls._('1.0');
 
@@ -23,17 +23,17 @@ static const List<R2ListCustomDomainsResponseDomainsMinTls> values = [$10, $11, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2ListCustomDomainsResponseDomainsMinTls && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2ListCustomDomainsResponseDomainsMinTls($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2ListCustomDomainsResponseDomainsMinTls && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2ListCustomDomainsResponseDomainsMinTls($value)';}
+}
 @immutable final class R2ListCustomDomainsResponseDomains {const R2ListCustomDomainsResponseDomains({required this.domain, required this.enabled, required this.status, this.ciphers, this.minTls, this.zoneId, this.zoneName, });
 
-factory R2ListCustomDomainsResponseDomains.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponseDomains(
+factory R2ListCustomDomainsResponseDomains.fromJson(Map<String, dynamic> json) {return R2ListCustomDomainsResponseDomains(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   domain: json['domain'] as String,
   enabled: json['enabled'] as bool,
@@ -41,7 +41,7 @@ factory R2ListCustomDomainsResponseDomains.fromJson(Map<String, dynamic> json) {
   status: R2ListCustomDomainsResponseDomainsStatus.fromJson(json['status'] as Map<String, dynamic>),
   zoneId: json['zoneId'] as String?,
   zoneName: json['zoneName'] as String?,
-); }
+);}
 
 /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 final List<String>? ciphers;
@@ -63,7 +63,7 @@ final String? zoneId;
 /// Zone that the custom domain resides in.
 final String? zoneName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ciphers': ?ciphers,
   'domain': domain,
   'enabled': enabled,
@@ -71,11 +71,11 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'zoneId': ?zoneId,
   'zoneName': ?zoneName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('status'); } 
-R2ListCustomDomainsResponseDomains copyWith({List<String>? Function()? ciphers, String? domain, bool? enabled, R2ListCustomDomainsResponseDomainsMinTls? Function()? minTls, R2ListCustomDomainsResponseDomainsStatus? status, String? Function()? zoneId, String? Function()? zoneName, }) { return R2ListCustomDomainsResponseDomains(
+      json.containsKey('status');}
+R2ListCustomDomainsResponseDomains copyWith({List<String>? Function()? ciphers, String? domain, bool? enabled, R2ListCustomDomainsResponseDomainsMinTls? Function()? minTls, R2ListCustomDomainsResponseDomainsStatus? status, String? Function()? zoneId, String? Function()? zoneName, }) {return R2ListCustomDomainsResponseDomains(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   domain: domain ?? this.domain,
   enabled: enabled ?? this.enabled,
@@ -83,8 +83,8 @@ R2ListCustomDomainsResponseDomains copyWith({List<String>? Function()? ciphers, 
   status: status ?? this.status,
   zoneId: zoneId != null ? zoneId() : this.zoneId,
   zoneName: zoneName != null ? zoneName() : this.zoneName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2ListCustomDomainsResponseDomains &&
           listEquals(ciphers, other.ciphers) &&
           domain == other.domain &&
@@ -92,7 +92,7 @@ R2ListCustomDomainsResponseDomains copyWith({List<String>? Function()? ciphers, 
           minTls == other.minTls &&
           status == other.status &&
           zoneId == other.zoneId &&
-          zoneName == other.zoneName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls, status, zoneId, zoneName); } 
-@override String toString() { return 'R2ListCustomDomainsResponseDomains(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls, status: $status, zoneId: $zoneId, zoneName: $zoneName)'; } 
- }
+          zoneName == other.zoneName;}
+@override int get hashCode {return Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls, status, zoneId, zoneName);}
+@override String toString() {return 'R2ListCustomDomainsResponseDomains(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls, status: $status, zoneId: $zoneId, zoneName: $zoneName)';}
+}

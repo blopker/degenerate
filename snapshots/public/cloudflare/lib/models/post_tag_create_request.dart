@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTagCreateRequest {const PostTagCreateRequest({required this.value, this.activeDuration, this.actorCategory, this.aliasGroupNames, this.aliasGroupNamesInternal, this.analyticPriority, this.attributionConfidence, this.attributionOrganization, this.categoryUuid, this.externalReferenceLinks, this.internalDescription, this.motive, this.opsecLevel, this.originCountryIso, this.priority, this.sophisticationLevel, });
 
-factory PostTagCreateRequest.fromJson(Map<String, dynamic> json) { return PostTagCreateRequest(
+factory PostTagCreateRequest.fromJson(Map<String, dynamic> json) {return PostTagCreateRequest(
   activeDuration: json['activeDuration'] as String?,
   actorCategory: json['actorCategory'] as String?,
   aliasGroupNames: (json['aliasGroupNames'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -19,7 +19,7 @@ factory PostTagCreateRequest.fromJson(Map<String, dynamic> json) { return PostTa
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
   sophisticationLevel: json['sophisticationLevel'] as String?,
   value: json['value'] as String,
-); }
+);}
 
 final String? activeDuration;
 
@@ -53,7 +53,7 @@ final String? sophisticationLevel;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activeDuration': ?activeDuration,
   'actorCategory': ?actorCategory,
   'aliasGroupNames': ?aliasGroupNames,
@@ -70,9 +70,9 @@ Map<String, dynamic> toJson() { return {
   'priority': ?priority,
   'sophisticationLevel': ?sophisticationLevel,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-PostTagCreateRequest copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? value, }) { return PostTagCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value') && json['value'] is String;}
+PostTagCreateRequest copyWith({String? Function()? activeDuration, String? Function()? actorCategory, List<String>? Function()? aliasGroupNames, List<String>? Function()? aliasGroupNamesInternal, double? Function()? analyticPriority, String? Function()? attributionConfidence, String? Function()? attributionOrganization, String? Function()? categoryUuid, List<String>? Function()? externalReferenceLinks, String? Function()? internalDescription, String? Function()? motive, String? Function()? opsecLevel, String? Function()? originCountryIso, double? Function()? priority, String? Function()? sophisticationLevel, String? value, }) {return PostTagCreateRequest(
   activeDuration: activeDuration != null ? activeDuration() : this.activeDuration,
   actorCategory: actorCategory != null ? actorCategory() : this.actorCategory,
   aliasGroupNames: aliasGroupNames != null ? aliasGroupNames() : this.aliasGroupNames,
@@ -89,8 +89,8 @@ PostTagCreateRequest copyWith({String? Function()? activeDuration, String? Funct
   priority: priority != null ? priority() : this.priority,
   sophisticationLevel: sophisticationLevel != null ? sophisticationLevel() : this.sophisticationLevel,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTagCreateRequest &&
           activeDuration == other.activeDuration &&
           actorCategory == other.actorCategory &&
@@ -107,7 +107,7 @@ PostTagCreateRequest copyWith({String? Function()? activeDuration, String? Funct
           originCountryIso == other.originCountryIso &&
           priority == other.priority &&
           sophisticationLevel == other.sophisticationLevel &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, value); } 
-@override String toString() { return 'PostTagCreateRequest(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, value);}
+@override String toString() {return 'PostTagCreateRequest(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, value: $value)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDependabotAlertAutoReopenedAction {const WebhookDependabotAlertAutoReopenedAction._(this.value);
 
-factory WebhookDependabotAlertAutoReopenedAction.fromJson(String json) { return switch (json) {
+factory WebhookDependabotAlertAutoReopenedAction.fromJson(String json) {return switch (json) {
   'auto_reopened' => autoReopened,
   _ => WebhookDependabotAlertAutoReopenedAction._(json),
-}; }
+};}
 
 static const WebhookDependabotAlertAutoReopenedAction autoReopened = WebhookDependabotAlertAutoReopenedAction._('auto_reopened');
 
@@ -13,17 +13,17 @@ static const List<WebhookDependabotAlertAutoReopenedAction> values = [autoReopen
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDependabotAlertAutoReopenedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDependabotAlertAutoReopenedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookDependabotAlertAutoReopenedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookDependabotAlertAutoReopenedAction($value)';}
+}
 @immutable final class WebhookDependabotAlertAutoReopened {const WebhookDependabotAlertAutoReopened({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
-factory WebhookDependabotAlertAutoReopened.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertAutoReopened(
+factory WebhookDependabotAlertAutoReopened.fromJson(Map<String, dynamic> json) {return WebhookDependabotAlertAutoReopened(
   action: WebhookDependabotAlertAutoReopenedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookDependabotAlertAutoReopened.fromJson(Map<String, dynamic> json) {
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookDependabotAlertAutoReopenedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDependabotAlertAutoReopened copyWith({WebhookDependabotAlertAutoReopenedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertAutoReopened(
+      json.containsKey('sender');}
+WebhookDependabotAlertAutoReopened copyWith({WebhookDependabotAlertAutoReopenedAction? action, DependabotAlert? alert, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, EnterpriseWebhooks? Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDependabotAlertAutoReopened(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,
@@ -68,8 +68,8 @@ WebhookDependabotAlertAutoReopened copyWith({WebhookDependabotAlertAutoReopenedA
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookDependabotAlertAutoReopened &&
           action == other.action &&
           alert == other.alert &&
@@ -77,7 +77,7 @@ WebhookDependabotAlertAutoReopened copyWith({WebhookDependabotAlertAutoReopenedA
           organization == other.organization &&
           enterprise == other.enterprise &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, organization, enterprise, repository, sender); } 
-@override String toString() { return 'WebhookDependabotAlertAutoReopened(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, alert, installation, organization, enterprise, repository, sender);}
+@override String toString() {return 'WebhookDependabotAlertAutoReopened(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';}
+}

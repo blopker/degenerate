@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_commit_comment_created_comment.dart';/// The action performed. Can be `created`.
 @immutable final class WebhookCommitCommentCreatedAction {const WebhookCommitCommentCreatedAction._(this.value);
 
-factory WebhookCommitCommentCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookCommitCommentCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookCommitCommentCreatedAction._(json),
-}; }
+};}
 
 static const WebhookCommitCommentCreatedAction created = WebhookCommitCommentCreatedAction._('created');
 
@@ -14,17 +14,17 @@ static const List<WebhookCommitCommentCreatedAction> values = [created];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCommitCommentCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCommitCommentCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCommitCommentCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCommitCommentCreatedAction($value)';}
+}
 @immutable final class WebhookCommitCommentCreated {const WebhookCommitCommentCreated({required this.action, required this.comment, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCommitCommentCreated.fromJson(Map<String, dynamic> json) { return WebhookCommitCommentCreated(
+factory WebhookCommitCommentCreated.fromJson(Map<String, dynamic> json) {return WebhookCommitCommentCreated(
   action: WebhookCommitCommentCreatedAction.fromJson(json['action'] as String),
   comment: WebhookCommitCommentCreatedComment.fromJson(json['comment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -32,7 +32,7 @@ factory WebhookCommitCommentCreated.fromJson(Map<String, dynamic> json) { return
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 /// The action performed. Can be `created`.
 final WebhookCommitCommentCreatedAction action;
@@ -50,7 +50,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'comment': comment.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -58,12 +58,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('comment') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCommitCommentCreated copyWith({WebhookCommitCommentCreatedAction? action, WebhookCommitCommentCreatedComment? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCommitCommentCreated(
+      json.containsKey('sender');}
+WebhookCommitCommentCreated copyWith({WebhookCommitCommentCreatedAction? action, WebhookCommitCommentCreatedComment? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCommitCommentCreated(
   action: action ?? this.action,
   comment: comment ?? this.comment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -71,8 +71,8 @@ WebhookCommitCommentCreated copyWith({WebhookCommitCommentCreatedAction? action,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCommitCommentCreated &&
           action == other.action &&
           comment == other.comment &&
@@ -80,7 +80,7 @@ WebhookCommitCommentCreated copyWith({WebhookCommitCommentCreatedAction? action,
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, comment, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookCommitCommentCreated(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, comment, enterprise, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookCommitCommentCreated(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

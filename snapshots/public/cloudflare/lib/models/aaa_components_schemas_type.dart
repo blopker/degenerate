@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of webhook endpoint.
 @immutable final class AaaComponentsSchemasType {const AaaComponentsSchemasType._(this.value);
 
-factory AaaComponentsSchemasType.fromJson(String json) { return switch (json) {
+factory AaaComponentsSchemasType.fromJson(String json) {return switch (json) {
   'datadog' => datadog,
   'discord' => discord,
   'feishu' => feishu,
@@ -13,7 +13,7 @@ factory AaaComponentsSchemasType.fromJson(String json) { return switch (json) {
   'slack' => slack,
   'splunk' => splunk,
   _ => AaaComponentsSchemasType._(json),
-}; }
+};}
 
 static const AaaComponentsSchemasType datadog = AaaComponentsSchemasType._('datadog');
 
@@ -35,11 +35,11 @@ static const List<AaaComponentsSchemasType> values = [datadog, discord, feishu, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaComponentsSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaComponentsSchemasType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AaaComponentsSchemasType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AaaComponentsSchemasType($value)';}
+}

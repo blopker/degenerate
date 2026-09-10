@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'other_additional_documentation.dart';import 'other_explanation.dart';import 'other_product_description.dart';@immutable final class OtherProductType {const OtherProductType._(this.value);
 
-factory OtherProductType.fromJson(String json) { return switch (json) {
+factory OtherProductType.fromJson(String json) {return switch (json) {
   '' => $empty,
   'merchandise' => merchandise,
   'service' => service,
   _ => OtherProductType._(json),
-}; }
+};}
 
 static const OtherProductType $empty = OtherProductType._('');
 
@@ -19,22 +19,22 @@ static const List<OtherProductType> values = [$empty, merchandise, service];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OtherProductType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OtherProductType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OtherProductType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OtherProductType($value)';}
+}
 @immutable final class Other {const Other({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
 
-factory Other.fromJson(Map<String, dynamic> json) { return Other(
+factory Other.fromJson(Map<String, dynamic> json) {return Other(
   additionalDocumentation: json['additional_documentation'] != null ? OtherAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
   explanation: json['explanation'] != null ? OtherExplanation.fromJson(json['explanation']) : null,
   productDescription: json['product_description'] != null ? OtherProductDescription.fromJson(json['product_description']) : null,
   productType: json['product_type'] != null ? OtherProductType.fromJson(json['product_type'] as String) : null,
-); }
+);}
 
 final OtherAdditionalDocumentation? additionalDocumentation;
 
@@ -44,25 +44,25 @@ final OtherProductDescription? productDescription;
 
 final OtherProductType? productType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
   if (explanation != null) 'explanation': explanation?.toJson(),
   if (productDescription != null) 'product_description': productDescription?.toJson(),
   if (productType != null) 'product_type': productType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
-Other copyWith({OtherAdditionalDocumentation? Function()? additionalDocumentation, OtherExplanation? Function()? explanation, OtherProductDescription? Function()? productDescription, OtherProductType? Function()? productType, }) { return Other(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'explanation', 'product_description', 'product_type'}.contains(key));}
+Other copyWith({OtherAdditionalDocumentation? Function()? additionalDocumentation, OtherExplanation? Function()? explanation, OtherProductDescription? Function()? productDescription, OtherProductType? Function()? productType, }) {return Other(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   productType: productType != null ? productType() : this.productType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Other &&
           additionalDocumentation == other.additionalDocumentation &&
           explanation == other.explanation &&
           productDescription == other.productDescription &&
-          productType == other.productType; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation, productDescription, productType); } 
-@override String toString() { return 'Other(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
- }
+          productType == other.productType;}
+@override int get hashCode {return Object.hash(additionalDocumentation, explanation, productDescription, productType);}
+@override String toString() {return 'Other(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)';}
+}

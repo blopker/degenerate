@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct {const RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct._(this.value);
 
-factory RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct.fromJson(String json) {return switch (json) {
   'DDOS' => ddos,
   'WAF' => waf,
   'BOT_MANAGEMENT' => botManagement,
@@ -11,7 +11,7 @@ factory RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct.fromJson(Strin
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
   _ => RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct ddos = RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct._('DDOS');
 
@@ -31,11 +31,11 @@ static const List<RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct> val
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct($value)';}
+}

@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action.
 @immutable final class ZeroTrustGatewayRuleSettingsAuditSsh {const ZeroTrustGatewayRuleSettingsAuditSsh({this.commandLogging});
 
-factory ZeroTrustGatewayRuleSettingsAuditSsh.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsAuditSsh(
+factory ZeroTrustGatewayRuleSettingsAuditSsh.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettingsAuditSsh(
   commandLogging: json['command_logging'] as bool?,
-); }
+);}
 
 /// Enable SSH command logging.
 final bool? commandLogging;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'command_logging': ?commandLogging,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'command_logging'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsAuditSsh copyWith({bool? Function()? commandLogging}) { return ZeroTrustGatewayRuleSettingsAuditSsh(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'command_logging'}.contains(key));}
+ZeroTrustGatewayRuleSettingsAuditSsh copyWith({bool? Function()? commandLogging}) {return ZeroTrustGatewayRuleSettingsAuditSsh(
   commandLogging: commandLogging != null ? commandLogging() : this.commandLogging,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayRuleSettingsAuditSsh &&
-          commandLogging == other.commandLogging; } 
-@override int get hashCode { return commandLogging.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettingsAuditSsh(commandLogging: $commandLogging)'; } 
- }
+          commandLogging == other.commandLogging;}
+@override int get hashCode {return commandLogging.hashCode;}
+@override String toString() {return 'ZeroTrustGatewayRuleSettingsAuditSsh(commandLogging: $commandLogging)';}
+}

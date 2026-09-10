@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_arc_response_result_meta_confidence_info.dart';import 'radar_get_email_routing_summary_by_arc_response_result_meta_date_range.dart';import 'radar_get_email_routing_summary_by_arc_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization {const RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization._(this.value);
 
-factory RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -13,7 +13,7 @@ factory RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization.fromJson
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization percentage = RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -35,24 +35,24 @@ static const List<RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalizatio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetEmailRoutingSummaryByArcResponseResultMeta {const RadarGetEmailRoutingSummaryByArcResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetEmailRoutingSummaryByArcResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByArcResponseResultMeta(
+factory RadarGetEmailRoutingSummaryByArcResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingSummaryByArcResponseResultMeta(
   confidenceInfo: RadarGetEmailRoutingSummaryByArcResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetEmailRoutingSummaryByArcResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final RadarGetEmailRoutingSummaryByArcResponseResultMetaConfidenceInfo confidenceInfo;
 
@@ -67,32 +67,32 @@ final RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization normalizat
 /// Measurement units for the results.
 final List<RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidenceInfo': confidenceInfo.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetEmailRoutingSummaryByArcResponseResultMeta copyWith({RadarGetEmailRoutingSummaryByArcResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetEmailRoutingSummaryByArcResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization? normalization, List<RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits>? units, }) { return RadarGetEmailRoutingSummaryByArcResponseResultMeta(
+      json.containsKey('units');}
+RadarGetEmailRoutingSummaryByArcResponseResultMeta copyWith({RadarGetEmailRoutingSummaryByArcResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetEmailRoutingSummaryByArcResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetEmailRoutingSummaryByArcResponseResultMetaNormalization? normalization, List<RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits>? units, }) {return RadarGetEmailRoutingSummaryByArcResponseResultMeta(
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailRoutingSummaryByArcResponseResultMeta &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryByArcResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetEmailRoutingSummaryByArcResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_scim_config_mapping_operations.dart';/// The level of adherence to outbound resource schemas when provisioning to this mapping. ‘Strict’ removes unknown values, while ‘passthrough’ passes unknown values to the target.
 @immutable final class AccessScimConfigMappingStrictness {const AccessScimConfigMappingStrictness._(this.value);
 
-factory AccessScimConfigMappingStrictness.fromJson(String json) { return switch (json) {
+factory AccessScimConfigMappingStrictness.fromJson(String json) {return switch (json) {
   'strict' => strict,
   'passthrough' => passthrough,
   _ => AccessScimConfigMappingStrictness._(json),
-}; }
+};}
 
 static const AccessScimConfigMappingStrictness strict = AccessScimConfigMappingStrictness._('strict');
 
@@ -17,25 +17,25 @@ static const List<AccessScimConfigMappingStrictness> values = [strict, passthrou
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessScimConfigMappingStrictness && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessScimConfigMappingStrictness($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessScimConfigMappingStrictness && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessScimConfigMappingStrictness($value)';}
+}
 /// Transformations and filters applied to resources before they are provisioned in the remote SCIM service.
 @immutable final class AccessScimConfigMapping {const AccessScimConfigMapping({required this.schema, this.enabled, this.filter, this.operations, this.strictness, this.transformJsonata, });
 
-factory AccessScimConfigMapping.fromJson(Map<String, dynamic> json) { return AccessScimConfigMapping(
+factory AccessScimConfigMapping.fromJson(Map<String, dynamic> json) {return AccessScimConfigMapping(
   enabled: json['enabled'] as bool?,
   filter: json['filter'] as String?,
   operations: json['operations'] != null ? AccessScimConfigMappingOperations.fromJson(json['operations'] as Map<String, dynamic>) : null,
   schema: json['schema'] as String,
   strictness: json['strictness'] != null ? AccessScimConfigMappingStrictness.fromJson(json['strictness'] as String) : null,
   transformJsonata: json['transform_jsonata'] as String?,
-); }
+);}
 
 /// Whether or not this mapping is enabled.
 final bool? enabled;
@@ -55,31 +55,31 @@ final AccessScimConfigMappingStrictness? strictness;
 /// A [JSONata](https://jsonata.org/) expression that transforms the resource before provisioning it in the application.
 final String? transformJsonata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'filter': ?filter,
   if (operations != null) 'operations': operations?.toJson(),
   'schema': schema,
   if (strictness != null) 'strictness': strictness?.toJson(),
   'transform_jsonata': ?transformJsonata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('schema') && json['schema'] is String; } 
-AccessScimConfigMapping copyWith({bool? Function()? enabled, String? Function()? filter, AccessScimConfigMappingOperations? Function()? operations, String? schema, AccessScimConfigMappingStrictness? Function()? strictness, String? Function()? transformJsonata, }) { return AccessScimConfigMapping(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('schema') && json['schema'] is String;}
+AccessScimConfigMapping copyWith({bool? Function()? enabled, String? Function()? filter, AccessScimConfigMappingOperations? Function()? operations, String? schema, AccessScimConfigMappingStrictness? Function()? strictness, String? Function()? transformJsonata, }) {return AccessScimConfigMapping(
   enabled: enabled != null ? enabled() : this.enabled,
   filter: filter != null ? filter() : this.filter,
   operations: operations != null ? operations() : this.operations,
   schema: schema ?? this.schema,
   strictness: strictness != null ? strictness() : this.strictness,
   transformJsonata: transformJsonata != null ? transformJsonata() : this.transformJsonata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessScimConfigMapping &&
           enabled == other.enabled &&
           filter == other.filter &&
           operations == other.operations &&
           schema == other.schema &&
           strictness == other.strictness &&
-          transformJsonata == other.transformJsonata; } 
-@override int get hashCode { return Object.hash(enabled, filter, operations, schema, strictness, transformJsonata); } 
-@override String toString() { return 'AccessScimConfigMapping(enabled: $enabled, filter: $filter, operations: $operations, schema: $schema, strictness: $strictness, transformJsonata: $transformJsonata)'; } 
- }
+          transformJsonata == other.transformJsonata;}
+@override int get hashCode {return Object.hash(enabled, filter, operations, schema, strictness, transformJsonata);}
+@override String toString() {return 'AccessScimConfigMapping(enabled: $enabled, filter: $filter, operations: $operations, schema: $schema, strictness: $strictness, transformJsonata: $transformJsonata)';}
+}

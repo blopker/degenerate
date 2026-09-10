@@ -3,9 +3,9 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'persistent_volume_claim_template.dart';/// Represents an ephemeral volume that is handled by a normal storage driver.
 @immutable final class EphemeralVolumeSource {const EphemeralVolumeSource({this.volumeClaimTemplate});
 
-factory EphemeralVolumeSource.fromJson(Map<String, dynamic> json) { return EphemeralVolumeSource(
+factory EphemeralVolumeSource.fromJson(Map<String, dynamic> json) {return EphemeralVolumeSource(
   volumeClaimTemplate: json['volumeClaimTemplate'] != null ? PersistentVolumeClaimTemplate.fromJson(json['volumeClaimTemplate'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Will be used to create a stand-alone PVC to provision the volume. The pod in which this EphemeralVolumeSource is embedded will be the owner of the PVC, i.e. the PVC will be deleted together with the pod.  The name of the PVC will be `<pod name>-<volume name>` where `<volume name>` is the name from the `PodSpec.Volumes` array entry. Pod validation will reject the pod if the concatenated name is not valid for a PVC (for example, too long).
 /// 
@@ -16,16 +16,16 @@ factory EphemeralVolumeSource.fromJson(Map<String, dynamic> json) { return Ephem
 /// Required, must not be nil.
 final PersistentVolumeClaimTemplate? volumeClaimTemplate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (volumeClaimTemplate != null) 'volumeClaimTemplate': volumeClaimTemplate?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'volumeClaimTemplate'}.contains(key)); } 
-EphemeralVolumeSource copyWith({PersistentVolumeClaimTemplate? Function()? volumeClaimTemplate}) { return EphemeralVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'volumeClaimTemplate'}.contains(key));}
+EphemeralVolumeSource copyWith({PersistentVolumeClaimTemplate? Function()? volumeClaimTemplate}) {return EphemeralVolumeSource(
   volumeClaimTemplate: volumeClaimTemplate != null ? volumeClaimTemplate() : this.volumeClaimTemplate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EphemeralVolumeSource &&
-          volumeClaimTemplate == other.volumeClaimTemplate; } 
-@override int get hashCode { return volumeClaimTemplate.hashCode; } 
-@override String toString() { return 'EphemeralVolumeSource(volumeClaimTemplate: $volumeClaimTemplate)'; } 
- }
+          volumeClaimTemplate == other.volumeClaimTemplate;}
+@override int get hashCode {return volumeClaimTemplate.hashCode;}
+@override String toString() {return 'EphemeralVolumeSource(volumeClaimTemplate: $volumeClaimTemplate)';}
+}

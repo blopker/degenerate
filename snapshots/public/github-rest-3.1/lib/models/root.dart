@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Root {const Root({required this.currentUserUrl, required this.currentUserAuthorizationsHtmlUrl, required this.authorizationsUrl, required this.codeSearchUrl, required this.commitSearchUrl, required this.emailsUrl, required this.emojisUrl, required this.eventsUrl, required this.feedsUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.issueSearchUrl, required this.issuesUrl, required this.keysUrl, required this.labelSearchUrl, required this.notificationsUrl, required this.organizationUrl, required this.organizationRepositoriesUrl, required this.organizationTeamsUrl, required this.publicGistsUrl, required this.rateLimitUrl, required this.repositoryUrl, required this.repositorySearchUrl, required this.currentUserRepositoriesUrl, required this.starredUrl, required this.starredGistsUrl, required this.userUrl, required this.userOrganizationsUrl, required this.userRepositoriesUrl, required this.userSearchUrl, this.hubUrl, this.topicSearchUrl, });
 
-factory Root.fromJson(Map<String, dynamic> json) { return Root(
+factory Root.fromJson(Map<String, dynamic> json) {return Root(
   currentUserUrl: json['current_user_url'] as String,
   currentUserAuthorizationsHtmlUrl: json['current_user_authorizations_html_url'] as String,
   authorizationsUrl: json['authorizations_url'] as String,
@@ -36,7 +36,7 @@ factory Root.fromJson(Map<String, dynamic> json) { return Root(
   userOrganizationsUrl: json['user_organizations_url'] as String,
   userRepositoriesUrl: json['user_repositories_url'] as String,
   userSearchUrl: json['user_search_url'] as String,
-); }
+);}
 
 final String currentUserUrl;
 
@@ -104,7 +104,7 @@ final String userRepositoriesUrl;
 
 final String userSearchUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'current_user_url': currentUserUrl,
   'current_user_authorizations_html_url': currentUserAuthorizationsHtmlUrl,
   'authorizations_url': authorizationsUrl,
@@ -138,8 +138,8 @@ Map<String, dynamic> toJson() { return {
   'user_organizations_url': userOrganizationsUrl,
   'user_repositories_url': userRepositoriesUrl,
   'user_search_url': userSearchUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('current_user_url') && json['current_user_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('current_user_url') && json['current_user_url'] is String &&
       json.containsKey('current_user_authorizations_html_url') && json['current_user_authorizations_html_url'] is String &&
       json.containsKey('authorizations_url') && json['authorizations_url'] is String &&
       json.containsKey('code_search_url') && json['code_search_url'] is String &&
@@ -169,8 +169,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
       json.containsKey('user_url') && json['user_url'] is String &&
       json.containsKey('user_organizations_url') && json['user_organizations_url'] is String &&
       json.containsKey('user_repositories_url') && json['user_repositories_url'] is String &&
-      json.containsKey('user_search_url') && json['user_search_url'] is String; } 
-Root copyWith({String? currentUserUrl, String? currentUserAuthorizationsHtmlUrl, String? authorizationsUrl, String? codeSearchUrl, String? commitSearchUrl, String? emailsUrl, String? emojisUrl, String? eventsUrl, String? feedsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? Function()? hubUrl, String? issueSearchUrl, String? issuesUrl, String? keysUrl, String? labelSearchUrl, String? notificationsUrl, String? organizationUrl, String? organizationRepositoriesUrl, String? organizationTeamsUrl, String? publicGistsUrl, String? rateLimitUrl, String? repositoryUrl, String? repositorySearchUrl, String? currentUserRepositoriesUrl, String? starredUrl, String? starredGistsUrl, String? Function()? topicSearchUrl, String? userUrl, String? userOrganizationsUrl, String? userRepositoriesUrl, String? userSearchUrl, }) { return Root(
+      json.containsKey('user_search_url') && json['user_search_url'] is String;}
+Root copyWith({String? currentUserUrl, String? currentUserAuthorizationsHtmlUrl, String? authorizationsUrl, String? codeSearchUrl, String? commitSearchUrl, String? emailsUrl, String? emojisUrl, String? eventsUrl, String? feedsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? Function()? hubUrl, String? issueSearchUrl, String? issuesUrl, String? keysUrl, String? labelSearchUrl, String? notificationsUrl, String? organizationUrl, String? organizationRepositoriesUrl, String? organizationTeamsUrl, String? publicGistsUrl, String? rateLimitUrl, String? repositoryUrl, String? repositorySearchUrl, String? currentUserRepositoriesUrl, String? starredUrl, String? starredGistsUrl, String? Function()? topicSearchUrl, String? userUrl, String? userOrganizationsUrl, String? userRepositoriesUrl, String? userSearchUrl, }) {return Root(
   currentUserUrl: currentUserUrl ?? this.currentUserUrl,
   currentUserAuthorizationsHtmlUrl: currentUserAuthorizationsHtmlUrl ?? this.currentUserAuthorizationsHtmlUrl,
   authorizationsUrl: authorizationsUrl ?? this.authorizationsUrl,
@@ -204,8 +204,8 @@ Root copyWith({String? currentUserUrl, String? currentUserAuthorizationsHtmlUrl,
   userOrganizationsUrl: userOrganizationsUrl ?? this.userOrganizationsUrl,
   userRepositoriesUrl: userRepositoriesUrl ?? this.userRepositoriesUrl,
   userSearchUrl: userSearchUrl ?? this.userSearchUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Root &&
           currentUserUrl == other.currentUserUrl &&
           currentUserAuthorizationsHtmlUrl == other.currentUserAuthorizationsHtmlUrl &&
@@ -239,7 +239,7 @@ Root copyWith({String? currentUserUrl, String? currentUserAuthorizationsHtmlUrl,
           userUrl == other.userUrl &&
           userOrganizationsUrl == other.userOrganizationsUrl &&
           userRepositoriesUrl == other.userRepositoriesUrl &&
-          userSearchUrl == other.userSearchUrl; } 
-@override int get hashCode { return Object.hashAll([currentUserUrl, currentUserAuthorizationsHtmlUrl, authorizationsUrl, codeSearchUrl, commitSearchUrl, emailsUrl, emojisUrl, eventsUrl, feedsUrl, followersUrl, followingUrl, gistsUrl, hubUrl, issueSearchUrl, issuesUrl, keysUrl, labelSearchUrl, notificationsUrl, organizationUrl, organizationRepositoriesUrl, organizationTeamsUrl, publicGistsUrl, rateLimitUrl, repositoryUrl, repositorySearchUrl, currentUserRepositoriesUrl, starredUrl, starredGistsUrl, topicSearchUrl, userUrl, userOrganizationsUrl, userRepositoriesUrl, userSearchUrl]); } 
-@override String toString() { return 'Root(currentUserUrl: $currentUserUrl, currentUserAuthorizationsHtmlUrl: $currentUserAuthorizationsHtmlUrl, authorizationsUrl: $authorizationsUrl, codeSearchUrl: $codeSearchUrl, commitSearchUrl: $commitSearchUrl, emailsUrl: $emailsUrl, emojisUrl: $emojisUrl, eventsUrl: $eventsUrl, feedsUrl: $feedsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, hubUrl: $hubUrl, issueSearchUrl: $issueSearchUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelSearchUrl: $labelSearchUrl, notificationsUrl: $notificationsUrl, organizationUrl: $organizationUrl, organizationRepositoriesUrl: $organizationRepositoriesUrl, organizationTeamsUrl: $organizationTeamsUrl, publicGistsUrl: $publicGistsUrl, rateLimitUrl: $rateLimitUrl, repositoryUrl: $repositoryUrl, repositorySearchUrl: $repositorySearchUrl, currentUserRepositoriesUrl: $currentUserRepositoriesUrl, starredUrl: $starredUrl, starredGistsUrl: $starredGistsUrl, topicSearchUrl: $topicSearchUrl, userUrl: $userUrl, userOrganizationsUrl: $userOrganizationsUrl, userRepositoriesUrl: $userRepositoriesUrl, userSearchUrl: $userSearchUrl)'; } 
- }
+          userSearchUrl == other.userSearchUrl;}
+@override int get hashCode {return Object.hashAll([currentUserUrl, currentUserAuthorizationsHtmlUrl, authorizationsUrl, codeSearchUrl, commitSearchUrl, emailsUrl, emojisUrl, eventsUrl, feedsUrl, followersUrl, followingUrl, gistsUrl, hubUrl, issueSearchUrl, issuesUrl, keysUrl, labelSearchUrl, notificationsUrl, organizationUrl, organizationRepositoriesUrl, organizationTeamsUrl, publicGistsUrl, rateLimitUrl, repositoryUrl, repositorySearchUrl, currentUserRepositoriesUrl, starredUrl, starredGistsUrl, topicSearchUrl, userUrl, userOrganizationsUrl, userRepositoriesUrl, userSearchUrl]);}
+@override String toString() {return 'Root(currentUserUrl: $currentUserUrl, currentUserAuthorizationsHtmlUrl: $currentUserAuthorizationsHtmlUrl, authorizationsUrl: $authorizationsUrl, codeSearchUrl: $codeSearchUrl, commitSearchUrl: $commitSearchUrl, emailsUrl: $emailsUrl, emojisUrl: $emojisUrl, eventsUrl: $eventsUrl, feedsUrl: $feedsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, hubUrl: $hubUrl, issueSearchUrl: $issueSearchUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelSearchUrl: $labelSearchUrl, notificationsUrl: $notificationsUrl, organizationUrl: $organizationUrl, organizationRepositoriesUrl: $organizationRepositoriesUrl, organizationTeamsUrl: $organizationTeamsUrl, publicGistsUrl: $publicGistsUrl, rateLimitUrl: $rateLimitUrl, repositoryUrl: $repositoryUrl, repositorySearchUrl: $repositorySearchUrl, currentUserRepositoriesUrl: $currentUserRepositoriesUrl, starredUrl: $starredUrl, starredGistsUrl: $starredGistsUrl, topicSearchUrl: $topicSearchUrl, userUrl: $userUrl, userOrganizationsUrl: $userOrganizationsUrl, userRepositoriesUrl: $userRepositoriesUrl, userSearchUrl: $userSearchUrl)';}
+}

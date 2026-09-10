@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorListWorkflowsResponseResultInstances {const WorListWorkflowsResponseResultInstances({this.complete, this.errored, this.paused, this.queued, this.running, this.terminated, this.waiting, this.waitingForPause, });
 
-factory WorListWorkflowsResponseResultInstances.fromJson(Map<String, dynamic> json) { return WorListWorkflowsResponseResultInstances(
+factory WorListWorkflowsResponseResultInstances.fromJson(Map<String, dynamic> json) {return WorListWorkflowsResponseResultInstances(
   complete: json['complete'] != null ? (json['complete'] as num).toDouble() : null,
   errored: json['errored'] != null ? (json['errored'] as num).toDouble() : null,
   paused: json['paused'] != null ? (json['paused'] as num).toDouble() : null,
@@ -11,7 +11,7 @@ factory WorListWorkflowsResponseResultInstances.fromJson(Map<String, dynamic> js
   terminated: json['terminated'] != null ? (json['terminated'] as num).toDouble() : null,
   waiting: json['waiting'] != null ? (json['waiting'] as num).toDouble() : null,
   waitingForPause: json['waitingForPause'] != null ? (json['waitingForPause'] as num).toDouble() : null,
-); }
+);}
 
 final double? complete;
 
@@ -29,7 +29,7 @@ final double? waiting;
 
 final double? waitingForPause;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'complete': ?complete,
   'errored': ?errored,
   'paused': ?paused,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   'terminated': ?terminated,
   'waiting': ?waiting,
   'waitingForPause': ?waitingForPause,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'complete', 'errored', 'paused', 'queued', 'running', 'terminated', 'waiting', 'waitingForPause'}.contains(key)); } 
-WorListWorkflowsResponseResultInstances copyWith({double? Function()? complete, double? Function()? errored, double? Function()? paused, double? Function()? queued, double? Function()? running, double? Function()? terminated, double? Function()? waiting, double? Function()? waitingForPause, }) { return WorListWorkflowsResponseResultInstances(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'complete', 'errored', 'paused', 'queued', 'running', 'terminated', 'waiting', 'waitingForPause'}.contains(key));}
+WorListWorkflowsResponseResultInstances copyWith({double? Function()? complete, double? Function()? errored, double? Function()? paused, double? Function()? queued, double? Function()? running, double? Function()? terminated, double? Function()? waiting, double? Function()? waitingForPause, }) {return WorListWorkflowsResponseResultInstances(
   complete: complete != null ? complete() : this.complete,
   errored: errored != null ? errored() : this.errored,
   paused: paused != null ? paused() : this.paused,
@@ -49,8 +49,8 @@ WorListWorkflowsResponseResultInstances copyWith({double? Function()? complete, 
   terminated: terminated != null ? terminated() : this.terminated,
   waiting: waiting != null ? waiting() : this.waiting,
   waitingForPause: waitingForPause != null ? waitingForPause() : this.waitingForPause,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorListWorkflowsResponseResultInstances &&
           complete == other.complete &&
           errored == other.errored &&
@@ -59,7 +59,7 @@ WorListWorkflowsResponseResultInstances copyWith({double? Function()? complete, 
           running == other.running &&
           terminated == other.terminated &&
           waiting == other.waiting &&
-          waitingForPause == other.waitingForPause; } 
-@override int get hashCode { return Object.hash(complete, errored, paused, queued, running, terminated, waiting, waitingForPause); } 
-@override String toString() { return 'WorListWorkflowsResponseResultInstances(complete: $complete, errored: $errored, paused: $paused, queued: $queued, running: $running, terminated: $terminated, waiting: $waiting, waitingForPause: $waitingForPause)'; } 
- }
+          waitingForPause == other.waitingForPause;}
+@override int get hashCode {return Object.hash(complete, errored, paused, queued, running, terminated, waiting, waitingForPause);}
+@override String toString() {return 'WorListWorkflowsResponseResultInstances(complete: $complete, errored: $errored, paused: $paused, queued: $queued, running: $running, terminated: $terminated, waiting: $waiting, waitingForPause: $waitingForPause)';}
+}

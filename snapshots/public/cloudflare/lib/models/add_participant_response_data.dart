@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddParticipantResponseData {const AddParticipantResponseData({required this.createdAt, required this.customParticipantId, required this.id, required this.presetName, required this.updatedAt, required this.token, this.name = const Omittable.absent(), this.picture = const Omittable.absent(), });
 
-factory AddParticipantResponseData.fromJson(Map<String, dynamic> json) { return AddParticipantResponseData(
+factory AddParticipantResponseData.fromJson(Map<String, dynamic> json) {return AddParticipantResponseData(
   createdAt: DateTime.parse(json['created_at'] as String),
   customParticipantId: json['custom_participant_id'] as String,
   id: json['id'] as String,
@@ -11,7 +11,7 @@ factory AddParticipantResponseData.fromJson(Map<String, dynamic> json) { return 
   presetName: json['preset_name'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   token: json['token'] as String,
-); }
+);}
 
 /// When this object was created. The time is returned in ISO format.
 final DateTime createdAt;
@@ -37,7 +37,7 @@ final DateTime updatedAt;
 /// The participant's auth token that can be used for joining a meeting from the client side.
 final String token;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'custom_participant_id': customParticipantId,
   'id': id,
@@ -46,14 +46,14 @@ Map<String, dynamic> toJson() { return {
   'preset_name': presetName,
   'updated_at': updatedAt.toIso8601String(),
   'token': token,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('custom_participant_id') && json['custom_participant_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('preset_name') && json['preset_name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('token') && json['token'] is String; } 
-AddParticipantResponseData copyWith({DateTime? createdAt, String? customParticipantId, String? id, Omittable<String?>? name, Omittable<Uri?>? picture, String? presetName, DateTime? updatedAt, String? token, }) { return AddParticipantResponseData(
+      json.containsKey('token') && json['token'] is String;}
+AddParticipantResponseData copyWith({DateTime? createdAt, String? customParticipantId, String? id, Omittable<String?>? name, Omittable<Uri?>? picture, String? presetName, DateTime? updatedAt, String? token, }) {return AddParticipantResponseData(
   createdAt: createdAt ?? this.createdAt,
   customParticipantId: customParticipantId ?? this.customParticipantId,
   id: id ?? this.id,
@@ -62,8 +62,8 @@ AddParticipantResponseData copyWith({DateTime? createdAt, String? customParticip
   presetName: presetName ?? this.presetName,
   updatedAt: updatedAt ?? this.updatedAt,
   token: token ?? this.token,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AddParticipantResponseData &&
           createdAt == other.createdAt &&
           customParticipantId == other.customParticipantId &&
@@ -72,7 +72,7 @@ AddParticipantResponseData copyWith({DateTime? createdAt, String? customParticip
           picture == other.picture &&
           presetName == other.presetName &&
           updatedAt == other.updatedAt &&
-          token == other.token; } 
-@override int get hashCode { return Object.hash(createdAt, customParticipantId, id, name, picture, presetName, updatedAt, token); } 
-@override String toString() { return 'AddParticipantResponseData(createdAt: $createdAt, customParticipantId: $customParticipantId, id: $id, name: $name, picture: $picture, presetName: $presetName, updatedAt: $updatedAt, token: $token)'; } 
- }
+          token == other.token;}
+@override int get hashCode {return Object.hash(createdAt, customParticipantId, id, name, picture, presetName, updatedAt, token);}
+@override String toString() {return 'AddParticipantResponseData(createdAt: $createdAt, customParticipantId: $customParticipantId, id: $id, name: $name, picture: $picture, presetName: $presetName, updatedAt: $updatedAt, token: $token)';}
+}

@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_group_by_industry_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer3_timeseries_group_by_industry_response_result_meta_date_range.dart';import 'radar_get_attacks_layer3_timeseries_group_by_industry_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval.fromJson(String json) {return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
   'ONE_HOUR' => oneHour,
   'ONE_DAY' => oneDay,
   'ONE_WEEK' => oneWeek,
   'ONE_MONTH' => oneMonth,
   _ => RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval fifteenMinutes = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
 
@@ -26,18 +26,18 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval($value)';}
+}
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -47,7 +47,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormaliz
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization percentage = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization._('PERCENTAGE');
 
@@ -69,25 +69,25 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization($value)';}
+}
 /// Metadata for the results.
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
-factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta(
+factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta(
   aggInterval: RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
   confidenceInfo: RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
   lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   normalization: RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization.fromJson(json['normalization'] as String),
   units: (json['units'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 final RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval aggInterval;
@@ -105,36 +105,36 @@ final RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalizat
 /// Measurement units for the results.
 final List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaUnits> units;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aggInterval': aggInterval.toJson(),
   'confidenceInfo': confidenceInfo.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),
   'units': units.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('aggInterval') &&
       json.containsKey('confidenceInfo') &&
       json.containsKey('dateRange') &&
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
-      json.containsKey('units'); } 
-RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta copyWith({RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval? aggInterval, RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization? normalization, List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaUnits>? units, }) { return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta(
+      json.containsKey('units');}
+RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta copyWith({RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaAggInterval? aggInterval, RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaNormalization? normalization, List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaUnits>? units, }) {return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta(
   aggInterval: aggInterval ?? this.aggInterval,
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta &&
           aggInterval == other.aggInterval &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
- }
+          listEquals(units, other.units);}
+@override int get hashCode {return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units));}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';}
+}

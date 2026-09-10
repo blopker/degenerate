@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_update_budget_org_response_budget_budget_alerting.dart';/// The scope of the budget
 @immutable final class BillingUpdateBudgetOrgResponseBudgetBudgetScope {const BillingUpdateBudgetOrgResponseBudgetBudgetScope._(this.value);
 
-factory BillingUpdateBudgetOrgResponseBudgetBudgetScope.fromJson(String json) { return switch (json) {
+factory BillingUpdateBudgetOrgResponseBudgetBudgetScope.fromJson(String json) {return switch (json) {
   'enterprise' => enterprise,
   'organization' => organization,
   'repository' => repository,
   'cost_center' => costCenter,
   _ => BillingUpdateBudgetOrgResponseBudgetBudgetScope._(json),
-}; }
+};}
 
 static const BillingUpdateBudgetOrgResponseBudgetBudgetScope enterprise = BillingUpdateBudgetOrgResponseBudgetBudgetScope._('enterprise');
 
@@ -23,22 +23,22 @@ static const List<BillingUpdateBudgetOrgResponseBudgetBudgetScope> values = [ent
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingUpdateBudgetOrgResponseBudgetBudgetScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingUpdateBudgetOrgResponseBudgetBudgetScope($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingUpdateBudgetOrgResponseBudgetBudgetScope && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingUpdateBudgetOrgResponseBudgetBudgetScope($value)';}
+}
 /// The type of pricing for the budget
 @immutable final class BillingUpdateBudgetOrgResponseBudgetBudgetType {const BillingUpdateBudgetOrgResponseBudgetBudgetType._(this.value);
 
-factory BillingUpdateBudgetOrgResponseBudgetBudgetType.fromJson(String json) { return switch (json) {
+factory BillingUpdateBudgetOrgResponseBudgetBudgetType.fromJson(String json) {return switch (json) {
   'ProductPricing' => productPricing,
   'SkuPricing' => skuPricing,
   _ => BillingUpdateBudgetOrgResponseBudgetBudgetType._(json),
-}; }
+};}
 
 static const BillingUpdateBudgetOrgResponseBudgetBudgetType productPricing = BillingUpdateBudgetOrgResponseBudgetBudgetType._('ProductPricing');
 
@@ -48,17 +48,17 @@ static const List<BillingUpdateBudgetOrgResponseBudgetBudgetType> values = [prod
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingUpdateBudgetOrgResponseBudgetBudgetType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingUpdateBudgetOrgResponseBudgetBudgetType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingUpdateBudgetOrgResponseBudgetBudgetType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingUpdateBudgetOrgResponseBudgetBudgetType($value)';}
+}
 @immutable final class BillingUpdateBudgetOrgResponseBudget {const BillingUpdateBudgetOrgResponseBudget({this.id, this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName, this.budgetType, this.budgetProductSku, });
 
-factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponseBudget(
+factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json) {return BillingUpdateBudgetOrgResponseBudget(
   id: json['id'] as String?,
   budgetAmount: json['budget_amount'] != null ? (json['budget_amount'] as num).toDouble() : null,
   preventFurtherUsage: json['prevent_further_usage'] as bool?,
@@ -67,7 +67,7 @@ factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json)
   budgetEntityName: json['budget_entity_name'] as String?,
   budgetType: json['budget_type'] != null ? BillingUpdateBudgetOrgResponseBudgetBudgetType.fromJson(json['budget_type'] as String) : null,
   budgetProductSku: json['budget_product_sku'] as String?,
-); }
+);}
 
 /// ID of the budget.
 final String? id;
@@ -93,8 +93,8 @@ final BillingUpdateBudgetOrgResponseBudgetBudgetType? budgetType;
 final String? budgetProductSku;
 
 /// The value with the schema default applied when absent.
-String get budgetEntityNameOrDefault { return budgetEntityName ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get budgetEntityNameOrDefault {return budgetEntityName ?? '';}
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'budget_amount': ?budgetAmount,
   'prevent_further_usage': ?preventFurtherUsage,
@@ -103,9 +103,9 @@ Map<String, dynamic> toJson() { return {
   'budget_entity_name': ?budgetEntityName,
   if (budgetType != null) 'budget_type': budgetType?.toJson(),
   'budget_product_sku': ?budgetProductSku,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key)); } 
-BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? Function()? budgetAmount, bool? Function()? preventFurtherUsage, BillingUpdateBudgetOrgResponseBudgetBudgetAlerting? Function()? budgetAlerting, BillingUpdateBudgetOrgResponseBudgetBudgetScope? Function()? budgetScope, String? Function()? budgetEntityName, BillingUpdateBudgetOrgResponseBudgetBudgetType? Function()? budgetType, String? Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgResponseBudget(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key));}
+BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? Function()? budgetAmount, bool? Function()? preventFurtherUsage, BillingUpdateBudgetOrgResponseBudgetBudgetAlerting? Function()? budgetAlerting, BillingUpdateBudgetOrgResponseBudgetBudgetScope? Function()? budgetScope, String? Function()? budgetEntityName, BillingUpdateBudgetOrgResponseBudgetBudgetType? Function()? budgetType, String? Function()? budgetProductSku, }) {return BillingUpdateBudgetOrgResponseBudget(
   id: id != null ? id() : this.id,
   budgetAmount: budgetAmount != null ? budgetAmount() : this.budgetAmount,
   preventFurtherUsage: preventFurtherUsage != null ? preventFurtherUsage() : this.preventFurtherUsage,
@@ -114,8 +114,8 @@ BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? F
   budgetEntityName: budgetEntityName != null ? budgetEntityName() : this.budgetEntityName,
   budgetType: budgetType != null ? budgetType() : this.budgetType,
   budgetProductSku: budgetProductSku != null ? budgetProductSku() : this.budgetProductSku,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingUpdateBudgetOrgResponseBudget &&
           id == other.id &&
           budgetAmount == other.budgetAmount &&
@@ -124,7 +124,7 @@ BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? F
           budgetScope == other.budgetScope &&
           budgetEntityName == other.budgetEntityName &&
           budgetType == other.budgetType &&
-          budgetProductSku == other.budgetProductSku; } 
-@override int get hashCode { return Object.hash(id, budgetAmount, preventFurtherUsage, budgetAlerting, budgetScope, budgetEntityName, budgetType, budgetProductSku); } 
-@override String toString() { return 'BillingUpdateBudgetOrgResponseBudget(id: $id, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetAlerting: $budgetAlerting, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetType: $budgetType, budgetProductSku: $budgetProductSku)'; } 
- }
+          budgetProductSku == other.budgetProductSku;}
+@override int get hashCode {return Object.hash(id, budgetAmount, preventFurtherUsage, budgetAlerting, budgetScope, budgetEntityName, budgetType, budgetProductSku);}
+@override String toString() {return 'BillingUpdateBudgetOrgResponseBudget(id: $id, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetAlerting: $budgetAlerting, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetType: $budgetType, budgetProductSku: $budgetProductSku)';}
+}

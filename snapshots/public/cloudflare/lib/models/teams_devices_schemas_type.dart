@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device posture integration.
 @immutable final class TeamsDevicesSchemasType {const TeamsDevicesSchemasType._(this.value);
 
-factory TeamsDevicesSchemasType.fromJson(String json) { return switch (json) {
+factory TeamsDevicesSchemasType.fromJson(String json) {return switch (json) {
   'workspace_one' => workspaceOne,
   'crowdstrike_s2s' => crowdstrikeS2s,
   'uptycs' => uptycs,
@@ -13,7 +13,7 @@ factory TeamsDevicesSchemasType.fromJson(String json) { return switch (json) {
   'sentinelone_s2s' => sentineloneS2s,
   'custom_s2s' => customS2s,
   _ => TeamsDevicesSchemasType._(json),
-}; }
+};}
 
 static const TeamsDevicesSchemasType workspaceOne = TeamsDevicesSchemasType._('workspace_one');
 
@@ -35,11 +35,11 @@ static const List<TeamsDevicesSchemasType> values = [workspaceOne, crowdstrikeS2
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesSchemasType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamsDevicesSchemasType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamsDevicesSchemasType($value)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_snapshot_response_result_asn_info.dart';import 'radar_get_bgp_rpki_aspa_snapshot_response_result_aspa_objects.dart';import 'radar_get_bgp_rpki_aspa_snapshot_response_result_meta.dart';@immutable final class RadarGetBgpRpkiAspaSnapshotResponseResult {const RadarGetBgpRpkiAspaSnapshotResponseResult({required this.asnInfo, required this.aspaObjects, required this.meta, });
 
-factory RadarGetBgpRpkiAspaSnapshotResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaSnapshotResponseResult(
+factory RadarGetBgpRpkiAspaSnapshotResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetBgpRpkiAspaSnapshotResponseResult(
   asnInfo: RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo.fromJson(json['asnInfo'] as Map<String, dynamic>),
   aspaObjects: (json['aspaObjects'] as List<dynamic>).map((e) => RadarGetBgpRpkiAspaSnapshotResponseResultAspaObjects.fromJson(e as Map<String, dynamic>)).toList(),
   meta: RadarGetBgpRpkiAspaSnapshotResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo asnInfo;
 
@@ -14,24 +14,24 @@ final List<RadarGetBgpRpkiAspaSnapshotResponseResultAspaObjects> aspaObjects;
 
 final RadarGetBgpRpkiAspaSnapshotResponseResultMeta meta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asnInfo': asnInfo.toJson(),
   'aspaObjects': aspaObjects.map((e) => e.toJson()).toList(),
   'meta': meta.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asnInfo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asnInfo') &&
       json.containsKey('aspaObjects') &&
-      json.containsKey('meta'); } 
-RadarGetBgpRpkiAspaSnapshotResponseResult copyWith({RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo? asnInfo, List<RadarGetBgpRpkiAspaSnapshotResponseResultAspaObjects>? aspaObjects, RadarGetBgpRpkiAspaSnapshotResponseResultMeta? meta, }) { return RadarGetBgpRpkiAspaSnapshotResponseResult(
+      json.containsKey('meta');}
+RadarGetBgpRpkiAspaSnapshotResponseResult copyWith({RadarGetBgpRpkiAspaSnapshotResponseResultAsnInfo? asnInfo, List<RadarGetBgpRpkiAspaSnapshotResponseResultAspaObjects>? aspaObjects, RadarGetBgpRpkiAspaSnapshotResponseResultMeta? meta, }) {return RadarGetBgpRpkiAspaSnapshotResponseResult(
   asnInfo: asnInfo ?? this.asnInfo,
   aspaObjects: aspaObjects ?? this.aspaObjects,
   meta: meta ?? this.meta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetBgpRpkiAspaSnapshotResponseResult &&
           asnInfo == other.asnInfo &&
           listEquals(aspaObjects, other.aspaObjects) &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(asnInfo, Object.hashAll(aspaObjects), meta); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaSnapshotResponseResult(asnInfo: $asnInfo, aspaObjects: $aspaObjects, meta: $meta)'; } 
- }
+          meta == other.meta;}
+@override int get hashCode {return Object.hash(asnInfo, Object.hashAll(aspaObjects), meta);}
+@override String toString() {return 'RadarGetBgpRpkiAspaSnapshotResponseResult(asnInfo: $asnInfo, aspaObjects: $aspaObjects, meta: $meta)';}
+}

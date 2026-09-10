@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'exchange_rate.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetExchangeRatesResponseObject {const GetExchangeRatesResponseObject._(this.value);
 
-factory GetExchangeRatesResponseObject.fromJson(String json) { return switch (json) {
+factory GetExchangeRatesResponseObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => GetExchangeRatesResponseObject._(json),
-}; }
+};}
 
 static const GetExchangeRatesResponseObject list = GetExchangeRatesResponseObject._('list');
 
@@ -14,23 +14,23 @@ static const List<GetExchangeRatesResponseObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetExchangeRatesResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetExchangeRatesResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetExchangeRatesResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetExchangeRatesResponseObject($value)';}
+}
 /// 
 @immutable final class GetExchangeRatesResponse {const GetExchangeRatesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetExchangeRatesResponse.fromJson(Map<String, dynamic> json) { return GetExchangeRatesResponse(
+factory GetExchangeRatesResponse.fromJson(Map<String, dynamic> json) {return GetExchangeRatesResponse(
   data: (json['data'] as List<dynamic>).map((e) => ExchangeRate.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetExchangeRatesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 final List<ExchangeRate> data;
 
@@ -43,28 +43,28 @@ final GetExchangeRatesResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-GetExchangeRatesResponse copyWith({List<ExchangeRate>? data, bool? hasMore, GetExchangeRatesResponseObject? object, String? url, }) { return GetExchangeRatesResponse(
+      json.containsKey('url') && json['url'] is String;}
+GetExchangeRatesResponse copyWith({List<ExchangeRate>? data, bool? hasMore, GetExchangeRatesResponseObject? object, String? url, }) {return GetExchangeRatesResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetExchangeRatesResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetExchangeRatesResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'GetExchangeRatesResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

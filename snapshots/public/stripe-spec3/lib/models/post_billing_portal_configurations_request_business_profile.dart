@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_business_profile_headline.dart';/// The business information shown to customers in the portal.
 @immutable final class PostBillingPortalConfigurationsRequestBusinessProfile {const PostBillingPortalConfigurationsRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
 
-factory PostBillingPortalConfigurationsRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestBusinessProfile(
+factory PostBillingPortalConfigurationsRequestBusinessProfile.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsRequestBusinessProfile(
   headline: json['headline'] != null ? PostBillingPortalConfigurationsRequestBusinessProfileHeadline.fromJson(json['headline']) : null,
   privacyPolicyUrl: json['privacy_policy_url'] as String?,
   termsOfServiceUrl: json['terms_of_service_url'] as String?,
-); }
+);}
 
 final PostBillingPortalConfigurationsRequestBusinessProfileHeadline? headline;
 
@@ -15,22 +15,22 @@ final String? privacyPolicyUrl;
 
 final String? termsOfServiceUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (headline != null) 'headline': headline?.toJson(),
   'privacy_policy_url': ?privacyPolicyUrl,
   'terms_of_service_url': ?termsOfServiceUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headline', 'privacy_policy_url', 'terms_of_service_url'}.contains(key)); } 
-PostBillingPortalConfigurationsRequestBusinessProfile copyWith({PostBillingPortalConfigurationsRequestBusinessProfileHeadline? Function()? headline, String? Function()? privacyPolicyUrl, String? Function()? termsOfServiceUrl, }) { return PostBillingPortalConfigurationsRequestBusinessProfile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'headline', 'privacy_policy_url', 'terms_of_service_url'}.contains(key));}
+PostBillingPortalConfigurationsRequestBusinessProfile copyWith({PostBillingPortalConfigurationsRequestBusinessProfileHeadline? Function()? headline, String? Function()? privacyPolicyUrl, String? Function()? termsOfServiceUrl, }) {return PostBillingPortalConfigurationsRequestBusinessProfile(
   headline: headline != null ? headline() : this.headline,
   privacyPolicyUrl: privacyPolicyUrl != null ? privacyPolicyUrl() : this.privacyPolicyUrl,
   termsOfServiceUrl: termsOfServiceUrl != null ? termsOfServiceUrl() : this.termsOfServiceUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestBusinessProfile &&
           headline == other.headline &&
           privacyPolicyUrl == other.privacyPolicyUrl &&
-          termsOfServiceUrl == other.termsOfServiceUrl; } 
-@override int get hashCode { return Object.hash(headline, privacyPolicyUrl, termsOfServiceUrl); } 
-@override String toString() { return 'PostBillingPortalConfigurationsRequestBusinessProfile(headline: $headline, privacyPolicyUrl: $privacyPolicyUrl, termsOfServiceUrl: $termsOfServiceUrl)'; } 
- }
+          termsOfServiceUrl == other.termsOfServiceUrl;}
+@override int get hashCode {return Object.hash(headline, privacyPolicyUrl, termsOfServiceUrl);}
+@override String toString() {return 'PostBillingPortalConfigurationsRequestBusinessProfile(headline: $headline, privacyPolicyUrl: $privacyPolicyUrl, termsOfServiceUrl: $termsOfServiceUrl)';}
+}

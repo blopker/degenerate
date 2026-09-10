@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank, if provided. Can be one of `affin_bank`, `agrobank`, `alliance_bank`, `ambank`, `bank_islam`, `bank_muamalat`, `bank_rakyat`, `bsn`, `cimb`, `hong_leong_bank`, `hsbc`, `kfh`, `maybank2u`, `ocbc`, `public_bank`, `rhb`, `standard_chartered`, `uob`, `deutsche_bank`, `maybank2e`, `pb_enterprise`, or `bank_of_china`.
 @immutable final class PaymentMethodFpxBank {const PaymentMethodFpxBank._(this.value);
 
-factory PaymentMethodFpxBank.fromJson(String json) { return switch (json) {
+factory PaymentMethodFpxBank.fromJson(String json) {return switch (json) {
   'affin_bank' => affinBank,
   'agrobank' => agrobank,
   'alliance_bank' => allianceBank,
@@ -27,7 +27,7 @@ factory PaymentMethodFpxBank.fromJson(String json) { return switch (json) {
   'standard_chartered' => standardChartered,
   'uob' => uob,
   _ => PaymentMethodFpxBank._(json),
-}; }
+};}
 
 static const PaymentMethodFpxBank affinBank = PaymentMethodFpxBank._('affin_bank');
 
@@ -77,34 +77,34 @@ static const List<PaymentMethodFpxBank> values = [affinBank, agrobank, allianceB
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodFpxBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodFpxBank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodFpxBank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodFpxBank($value)';}
+}
 /// 
 @immutable final class PaymentMethodFpx {const PaymentMethodFpx({required this.bank});
 
-factory PaymentMethodFpx.fromJson(Map<String, dynamic> json) { return PaymentMethodFpx(
+factory PaymentMethodFpx.fromJson(Map<String, dynamic> json) {return PaymentMethodFpx(
   bank: PaymentMethodFpxBank.fromJson(json['bank'] as String),
-); }
+);}
 
 /// The customer's bank, if provided. Can be one of `affin_bank`, `agrobank`, `alliance_bank`, `ambank`, `bank_islam`, `bank_muamalat`, `bank_rakyat`, `bsn`, `cimb`, `hong_leong_bank`, `hsbc`, `kfh`, `maybank2u`, `ocbc`, `public_bank`, `rhb`, `standard_chartered`, `uob`, `deutsche_bank`, `maybank2e`, `pb_enterprise`, or `bank_of_china`.
 final PaymentMethodFpxBank bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bank': bank.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank'); } 
-PaymentMethodFpx copyWith({PaymentMethodFpxBank? bank}) { return PaymentMethodFpx(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bank');}
+PaymentMethodFpx copyWith({PaymentMethodFpxBank? bank}) {return PaymentMethodFpx(
   bank: bank ?? this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodFpx &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PaymentMethodFpx(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PaymentMethodFpx(bank: $bank)';}
+}

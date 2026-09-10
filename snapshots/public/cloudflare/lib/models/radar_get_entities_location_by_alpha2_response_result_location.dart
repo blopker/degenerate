@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesLocationByAlpha2ResponseResultLocation {const RadarGetEntitiesLocationByAlpha2ResponseResultLocation({required this.alpha2, required this.confidenceLevel, required this.continent, required this.latitude, required this.longitude, required this.name, required this.region, required this.subregion, });
 
-factory RadarGetEntitiesLocationByAlpha2ResponseResultLocation.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesLocationByAlpha2ResponseResultLocation(
+factory RadarGetEntitiesLocationByAlpha2ResponseResultLocation.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesLocationByAlpha2ResponseResultLocation(
   alpha2: json['alpha2'] as String,
   confidenceLevel: (json['confidenceLevel'] as num).toInt(),
   continent: json['continent'] as String,
@@ -11,7 +11,7 @@ factory RadarGetEntitiesLocationByAlpha2ResponseResultLocation.fromJson(Map<Stri
   name: json['name'] as String,
   region: json['region'] as String,
   subregion: json['subregion'] as String,
-); }
+);}
 
 final String alpha2;
 
@@ -31,7 +31,7 @@ final String region;
 
 final String subregion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alpha2': alpha2,
   'confidenceLevel': confidenceLevel,
   'continent': continent,
@@ -40,16 +40,16 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'region': region,
   'subregion': subregion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alpha2') && json['alpha2'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alpha2') && json['alpha2'] is String &&
       json.containsKey('confidenceLevel') && json['confidenceLevel'] is num &&
       json.containsKey('continent') && json['continent'] is String &&
       json.containsKey('latitude') && json['latitude'] is String &&
       json.containsKey('longitude') && json['longitude'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('region') && json['region'] is String &&
-      json.containsKey('subregion') && json['subregion'] is String; } 
-RadarGetEntitiesLocationByAlpha2ResponseResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent, String? latitude, String? longitude, String? name, String? region, String? subregion, }) { return RadarGetEntitiesLocationByAlpha2ResponseResultLocation(
+      json.containsKey('subregion') && json['subregion'] is String;}
+RadarGetEntitiesLocationByAlpha2ResponseResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent, String? latitude, String? longitude, String? name, String? region, String? subregion, }) {return RadarGetEntitiesLocationByAlpha2ResponseResultLocation(
   alpha2: alpha2 ?? this.alpha2,
   confidenceLevel: confidenceLevel ?? this.confidenceLevel,
   continent: continent ?? this.continent,
@@ -58,8 +58,8 @@ RadarGetEntitiesLocationByAlpha2ResponseResultLocation copyWith({String? alpha2,
   name: name ?? this.name,
   region: region ?? this.region,
   subregion: subregion ?? this.subregion,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEntitiesLocationByAlpha2ResponseResultLocation &&
           alpha2 == other.alpha2 &&
           confidenceLevel == other.confidenceLevel &&
@@ -68,7 +68,7 @@ RadarGetEntitiesLocationByAlpha2ResponseResultLocation copyWith({String? alpha2,
           longitude == other.longitude &&
           name == other.name &&
           region == other.region &&
-          subregion == other.subregion; } 
-@override int get hashCode { return Object.hash(alpha2, confidenceLevel, continent, latitude, longitude, name, region, subregion); } 
-@override String toString() { return 'RadarGetEntitiesLocationByAlpha2ResponseResultLocation(alpha2: $alpha2, confidenceLevel: $confidenceLevel, continent: $continent, latitude: $latitude, longitude: $longitude, name: $name, region: $region, subregion: $subregion)'; } 
- }
+          subregion == other.subregion;}
+@override int get hashCode {return Object.hash(alpha2, confidenceLevel, continent, latitude, longitude, name, region, subregion);}
+@override String toString() {return 'RadarGetEntitiesLocationByAlpha2ResponseResultLocation(alpha2: $alpha2, confidenceLevel: $confidenceLevel, continent: $continent, latitude: $latitude, longitude: $longitude, name: $name, region: $region, subregion: $subregion)';}
+}

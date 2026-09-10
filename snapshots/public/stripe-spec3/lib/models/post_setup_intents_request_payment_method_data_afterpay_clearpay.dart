@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay {const PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay();
 
-factory PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay(); }
+factory PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay.fromJson(Map<String, dynamic> _) {return const PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay copyWith() { return const PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay copyWith() {return const PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay()';}
+}

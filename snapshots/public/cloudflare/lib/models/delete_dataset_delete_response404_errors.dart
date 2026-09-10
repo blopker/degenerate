@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteDatasetDeleteResponse404Errors {const DeleteDatasetDeleteResponse404Errors({required this.message});
 
-factory DeleteDatasetDeleteResponse404Errors.fromJson(Map<String, dynamic> json) { return DeleteDatasetDeleteResponse404Errors(
+factory DeleteDatasetDeleteResponse404Errors.fromJson(Map<String, dynamic> json) {return DeleteDatasetDeleteResponse404Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-DeleteDatasetDeleteResponse404Errors copyWith({String? message}) { return DeleteDatasetDeleteResponse404Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+DeleteDatasetDeleteResponse404Errors copyWith({String? message}) {return DeleteDatasetDeleteResponse404Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeleteDatasetDeleteResponse404Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'DeleteDatasetDeleteResponse404Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'DeleteDatasetDeleteResponse404Errors(message: $message)';}
+}

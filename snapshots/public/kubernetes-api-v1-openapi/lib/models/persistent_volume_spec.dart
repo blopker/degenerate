@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aws_elastic_block_store_volume_source.dart';import 'azure_disk_volume_source.dart';import 'azure_file_persistent_volume_source.dart';import 'ceph_fs_persistent_volume_source.dart';import 'cinder_persistent_volume_source.dart';import 'csi_persistent_volume_source.dart';import 'fc_volume_source.dart';import 'flex_persistent_volume_source.dart';import 'flocker_volume_source.dart';import 'gce_persistent_disk_volume_source.dart';import 'glusterfs_persistent_volume_source.dart';import 'host_path_volume_source.dart';import 'iscsi_persistent_volume_source.dart';import 'local_volume_source.dart';import 'nfs_volume_source.dart';import 'object_reference.dart';import 'photon_persistent_disk_volume_source.dart';import 'portworx_volume_source.dart';import 'quobyte_volume_source.dart';import 'rbd_persistent_volume_source.dart';import 'resource_quantity.dart';import 'scale_io_persistent_volume_source.dart';import 'storage_os_persistent_volume_source.dart';import 'volume_node_affinity.dart';import 'vsphere_virtual_disk_volume_source.dart';/// PersistentVolumeSpec is the specification of a persistent volume.
 @immutable final class PersistentVolumeSpec {const PersistentVolumeSpec({this.accessModes, this.awsElasticBlockStore, this.azureDisk, this.azureFile, this.capacity, this.cephfs, this.cinder, this.claimRef, this.csi, this.fc, this.flexVolume, this.flocker, this.gcePersistentDisk, this.glusterfs, this.hostPath, this.iscsi, this.local, this.mountOptions, this.nfs, this.nodeAffinity, this.persistentVolumeReclaimPolicy, this.photonPersistentDisk, this.portworxVolume, this.quobyte, this.rbd, this.scaleIo, this.storageClassName, this.storageos, this.volumeAttributesClassName, this.volumeMode, this.vsphereVolume, });
 
-factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) { return PersistentVolumeSpec(
+factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) {return PersistentVolumeSpec(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   awsElasticBlockStore: json['awsElasticBlockStore'] != null ? AwsElasticBlockStoreVolumeSource.fromJson(json['awsElasticBlockStore'] as Map<String, dynamic>) : null,
   azureDisk: json['azureDisk'] != null ? AzureDiskVolumeSource.fromJson(json['azureDisk'] as Map<String, dynamic>) : null,
@@ -35,7 +35,7 @@ factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) { return Persis
   volumeAttributesClassName: json['volumeAttributesClassName'] as String?,
   volumeMode: json['volumeMode'] as String?,
   vsphereVolume: json['vsphereVolume'] != null ? VsphereVirtualDiskVolumeSource.fromJson(json['vsphereVolume'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// accessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes
 final List<String>? accessModes;
@@ -130,7 +130,7 @@ final String? volumeMode;
 /// vsphereVolume represents a vSphere volume attached and mounted on kubelets host machine. Deprecated: VsphereVolume is deprecated. All operations for the in-tree vsphereVolume type are redirected to the csi.vsphere.vmware.com CSI driver.
 final VsphereVirtualDiskVolumeSource? vsphereVolume;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessModes': ?accessModes,
   if (awsElasticBlockStore != null) 'awsElasticBlockStore': awsElasticBlockStore?.toJson(),
   if (azureDisk != null) 'azureDisk': azureDisk?.toJson(),
@@ -162,9 +162,9 @@ Map<String, dynamic> toJson() { return {
   'volumeAttributesClassName': ?volumeAttributesClassName,
   'volumeMode': ?volumeMode,
   if (vsphereVolume != null) 'vsphereVolume': vsphereVolume?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessModes', 'awsElasticBlockStore', 'azureDisk', 'azureFile', 'capacity', 'cephfs', 'cinder', 'claimRef', 'csi', 'fc', 'flexVolume', 'flocker', 'gcePersistentDisk', 'glusterfs', 'hostPath', 'iscsi', 'local', 'mountOptions', 'nfs', 'nodeAffinity', 'persistentVolumeReclaimPolicy', 'photonPersistentDisk', 'portworxVolume', 'quobyte', 'rbd', 'scaleIO', 'storageClassName', 'storageos', 'volumeAttributesClassName', 'volumeMode', 'vsphereVolume'}.contains(key)); } 
-PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockStore, AzureDiskVolumeSource? Function()? azureDisk, AzureFilePersistentVolumeSource? Function()? azureFile, Map<String, ResourceQuantity>? Function()? capacity, CephFsPersistentVolumeSource? Function()? cephfs, CinderPersistentVolumeSource? Function()? cinder, ObjectReference? Function()? claimRef, CsiPersistentVolumeSource? Function()? csi, FcVolumeSource? Function()? fc, FlexPersistentVolumeSource? Function()? flexVolume, FlockerVolumeSource? Function()? flocker, GcePersistentDiskVolumeSource? Function()? gcePersistentDisk, GlusterfsPersistentVolumeSource? Function()? glusterfs, HostPathVolumeSource? Function()? hostPath, IscsiPersistentVolumeSource? Function()? iscsi, LocalVolumeSource? Function()? local, List<String>? Function()? mountOptions, NfsVolumeSource? Function()? nfs, VolumeNodeAffinity? Function()? nodeAffinity, String? Function()? persistentVolumeReclaimPolicy, PhotonPersistentDiskVolumeSource? Function()? photonPersistentDisk, PortworxVolumeSource? Function()? portworxVolume, QuobyteVolumeSource? Function()? quobyte, RbdPersistentVolumeSource? Function()? rbd, ScaleIoPersistentVolumeSource? Function()? scaleIo, String? Function()? storageClassName, StorageOsPersistentVolumeSource? Function()? storageos, String? Function()? volumeAttributesClassName, String? Function()? volumeMode, VsphereVirtualDiskVolumeSource? Function()? vsphereVolume, }) { return PersistentVolumeSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessModes', 'awsElasticBlockStore', 'azureDisk', 'azureFile', 'capacity', 'cephfs', 'cinder', 'claimRef', 'csi', 'fc', 'flexVolume', 'flocker', 'gcePersistentDisk', 'glusterfs', 'hostPath', 'iscsi', 'local', 'mountOptions', 'nfs', 'nodeAffinity', 'persistentVolumeReclaimPolicy', 'photonPersistentDisk', 'portworxVolume', 'quobyte', 'rbd', 'scaleIO', 'storageClassName', 'storageos', 'volumeAttributesClassName', 'volumeMode', 'vsphereVolume'}.contains(key));}
+PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockStore, AzureDiskVolumeSource? Function()? azureDisk, AzureFilePersistentVolumeSource? Function()? azureFile, Map<String, ResourceQuantity>? Function()? capacity, CephFsPersistentVolumeSource? Function()? cephfs, CinderPersistentVolumeSource? Function()? cinder, ObjectReference? Function()? claimRef, CsiPersistentVolumeSource? Function()? csi, FcVolumeSource? Function()? fc, FlexPersistentVolumeSource? Function()? flexVolume, FlockerVolumeSource? Function()? flocker, GcePersistentDiskVolumeSource? Function()? gcePersistentDisk, GlusterfsPersistentVolumeSource? Function()? glusterfs, HostPathVolumeSource? Function()? hostPath, IscsiPersistentVolumeSource? Function()? iscsi, LocalVolumeSource? Function()? local, List<String>? Function()? mountOptions, NfsVolumeSource? Function()? nfs, VolumeNodeAffinity? Function()? nodeAffinity, String? Function()? persistentVolumeReclaimPolicy, PhotonPersistentDiskVolumeSource? Function()? photonPersistentDisk, PortworxVolumeSource? Function()? portworxVolume, QuobyteVolumeSource? Function()? quobyte, RbdPersistentVolumeSource? Function()? rbd, ScaleIoPersistentVolumeSource? Function()? scaleIo, String? Function()? storageClassName, StorageOsPersistentVolumeSource? Function()? storageos, String? Function()? volumeAttributesClassName, String? Function()? volumeMode, VsphereVirtualDiskVolumeSource? Function()? vsphereVolume, }) {return PersistentVolumeSpec(
   accessModes: accessModes != null ? accessModes() : this.accessModes,
   awsElasticBlockStore: awsElasticBlockStore != null ? awsElasticBlockStore() : this.awsElasticBlockStore,
   azureDisk: azureDisk != null ? azureDisk() : this.azureDisk,
@@ -196,8 +196,8 @@ PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElastic
   volumeAttributesClassName: volumeAttributesClassName != null ? volumeAttributesClassName() : this.volumeAttributesClassName,
   volumeMode: volumeMode != null ? volumeMode() : this.volumeMode,
   vsphereVolume: vsphereVolume != null ? vsphereVolume() : this.vsphereVolume,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersistentVolumeSpec &&
           listEquals(accessModes, other.accessModes) &&
           awsElasticBlockStore == other.awsElasticBlockStore &&
@@ -229,7 +229,7 @@ PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElastic
           storageos == other.storageos &&
           volumeAttributesClassName == other.volumeAttributesClassName &&
           volumeMode == other.volumeMode &&
-          vsphereVolume == other.vsphereVolume; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(accessModes ?? const []), awsElasticBlockStore, azureDisk, azureFile, capacity, cephfs, cinder, claimRef, csi, fc, flexVolume, flocker, gcePersistentDisk, glusterfs, hostPath, iscsi, local, Object.hashAll(mountOptions ?? const []), nfs, nodeAffinity, persistentVolumeReclaimPolicy, photonPersistentDisk, portworxVolume, quobyte, rbd, scaleIo, storageClassName, storageos, volumeAttributesClassName, volumeMode, vsphereVolume]); } 
-@override String toString() { return 'PersistentVolumeSpec(accessModes: $accessModes, awsElasticBlockStore: $awsElasticBlockStore, azureDisk: $azureDisk, azureFile: $azureFile, capacity: $capacity, cephfs: $cephfs, cinder: $cinder, claimRef: $claimRef, csi: $csi, fc: $fc, flexVolume: $flexVolume, flocker: $flocker, gcePersistentDisk: $gcePersistentDisk, glusterfs: $glusterfs, hostPath: $hostPath, iscsi: $iscsi, local: $local, mountOptions: $mountOptions, nfs: $nfs, nodeAffinity: $nodeAffinity, persistentVolumeReclaimPolicy: $persistentVolumeReclaimPolicy, photonPersistentDisk: $photonPersistentDisk, portworxVolume: $portworxVolume, quobyte: $quobyte, rbd: $rbd, scaleIo: $scaleIo, storageClassName: $storageClassName, storageos: $storageos, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, vsphereVolume: $vsphereVolume)'; } 
- }
+          vsphereVolume == other.vsphereVolume;}
+@override int get hashCode {return Object.hashAll([Object.hashAll(accessModes ?? const []), awsElasticBlockStore, azureDisk, azureFile, capacity, cephfs, cinder, claimRef, csi, fc, flexVolume, flocker, gcePersistentDisk, glusterfs, hostPath, iscsi, local, Object.hashAll(mountOptions ?? const []), nfs, nodeAffinity, persistentVolumeReclaimPolicy, photonPersistentDisk, portworxVolume, quobyte, rbd, scaleIo, storageClassName, storageos, volumeAttributesClassName, volumeMode, vsphereVolume]);}
+@override String toString() {return 'PersistentVolumeSpec(accessModes: $accessModes, awsElasticBlockStore: $awsElasticBlockStore, azureDisk: $azureDisk, azureFile: $azureFile, capacity: $capacity, cephfs: $cephfs, cinder: $cinder, claimRef: $claimRef, csi: $csi, fc: $fc, flexVolume: $flexVolume, flocker: $flocker, gcePersistentDisk: $gcePersistentDisk, glusterfs: $glusterfs, hostPath: $hostPath, iscsi: $iscsi, local: $local, mountOptions: $mountOptions, nfs: $nfs, nodeAffinity: $nodeAffinity, persistentVolumeReclaimPolicy: $persistentVolumeReclaimPolicy, photonPersistentDisk: $photonPersistentDisk, portworxVolume: $portworxVolume, quobyte: $quobyte, rbd: $rbd, scaleIo: $scaleIo, storageClassName: $storageClassName, storageos: $storageos, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, vsphereVolume: $vsphereVolume)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPricesType {const GetPricesType._(this.value);
 
-factory GetPricesType.fromJson(String json) { return switch (json) {
+factory GetPricesType.fromJson(String json) {return switch (json) {
   'one_time' => oneTime,
   'recurring' => recurring,
   _ => GetPricesType._(json),
-}; }
+};}
 
 static const GetPricesType oneTime = GetPricesType._('one_time');
 
@@ -16,11 +16,11 @@ static const List<GetPricesType> values = [oneTime, recurring];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPricesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPricesType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetPricesType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetPricesType($value)';}
+}

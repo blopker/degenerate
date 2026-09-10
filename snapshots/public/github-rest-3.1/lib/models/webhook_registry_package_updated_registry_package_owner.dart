@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackageOwner {const WebhookRegistryPackageUpdatedRegistryPackageOwner({required this.avatarUrl, required this.eventsUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.gravatarId, required this.htmlUrl, required this.id, required this.login, required this.nodeId, required this.organizationsUrl, required this.receivedEventsUrl, required this.reposUrl, required this.siteAdmin, required this.starredUrl, required this.subscriptionsUrl, required this.type, required this.url, this.userViewType, });
 
-factory WebhookRegistryPackageUpdatedRegistryPackageOwner.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackageOwner(
+factory WebhookRegistryPackageUpdatedRegistryPackageOwner.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackageUpdatedRegistryPackageOwner(
   avatarUrl: json['avatar_url'] as String,
   eventsUrl: json['events_url'] as String,
   followersUrl: json['followers_url'] as String,
@@ -22,7 +22,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackageOwner.fromJson(Map<String, d
   type: json['type'] as String,
   url: json['url'] as String,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String avatarUrl;
 
@@ -62,7 +62,7 @@ final String url;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avatar_url': avatarUrl,
   'events_url': eventsUrl,
   'followers_url': followersUrl,
@@ -82,8 +82,8 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'url': url,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_url') && json['avatar_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('avatar_url') && json['avatar_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('followers_url') && json['followers_url'] is String &&
       json.containsKey('following_url') && json['following_url'] is String &&
@@ -100,8 +100,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avata
       json.containsKey('starred_url') && json['starred_url'] is String &&
       json.containsKey('subscriptions_url') && json['subscriptions_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackageOwner copyWith({String? avatarUrl, String? eventsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? gravatarId, String? htmlUrl, int? id, String? login, String? nodeId, String? organizationsUrl, String? receivedEventsUrl, String? reposUrl, bool? siteAdmin, String? starredUrl, String? subscriptionsUrl, String? type, String? url, String? Function()? userViewType, }) { return WebhookRegistryPackageUpdatedRegistryPackageOwner(
+      json.containsKey('url') && json['url'] is String;}
+WebhookRegistryPackageUpdatedRegistryPackageOwner copyWith({String? avatarUrl, String? eventsUrl, String? followersUrl, String? followingUrl, String? gistsUrl, String? gravatarId, String? htmlUrl, int? id, String? login, String? nodeId, String? organizationsUrl, String? receivedEventsUrl, String? reposUrl, bool? siteAdmin, String? starredUrl, String? subscriptionsUrl, String? type, String? url, String? Function()? userViewType, }) {return WebhookRegistryPackageUpdatedRegistryPackageOwner(
   avatarUrl: avatarUrl ?? this.avatarUrl,
   eventsUrl: eventsUrl ?? this.eventsUrl,
   followersUrl: followersUrl ?? this.followersUrl,
@@ -121,8 +121,8 @@ WebhookRegistryPackageUpdatedRegistryPackageOwner copyWith({String? avatarUrl, S
   type: type ?? this.type,
   url: url ?? this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackageOwner &&
           avatarUrl == other.avatarUrl &&
           eventsUrl == other.eventsUrl &&
@@ -142,7 +142,7 @@ WebhookRegistryPackageUpdatedRegistryPackageOwner copyWith({String? avatarUrl, S
           subscriptionsUrl == other.subscriptionsUrl &&
           type == other.type &&
           url == other.url &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType); } 
-@override String toString() { return 'WebhookRegistryPackageUpdatedRegistryPackageOwner(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)'; } 
- }
+          userViewType == other.userViewType;}
+@override int get hashCode {return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType);}
+@override String toString() {return 'WebhookRegistryPackageUpdatedRegistryPackageOwner(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)';}
+}

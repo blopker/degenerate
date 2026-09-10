@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_consent_collection_payment_method_reuse_agreement.dart';@immutable final class PostPaymentLinksRequestConsentCollectionPromotions {const PostPaymentLinksRequestConsentCollectionPromotions._(this.value);
 
-factory PostPaymentLinksRequestConsentCollectionPromotions.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksRequestConsentCollectionPromotions.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'none' => none,
   _ => PostPaymentLinksRequestConsentCollectionPromotions._(json),
-}; }
+};}
 
 static const PostPaymentLinksRequestConsentCollectionPromotions auto = PostPaymentLinksRequestConsentCollectionPromotions._('auto');
 
@@ -16,21 +16,21 @@ static const List<PostPaymentLinksRequestConsentCollectionPromotions> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksRequestConsentCollectionPromotions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksRequestConsentCollectionPromotions($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksRequestConsentCollectionPromotions && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksRequestConsentCollectionPromotions($value)';}
+}
 @immutable final class PostPaymentLinksRequestConsentCollectionTermsOfService {const PostPaymentLinksRequestConsentCollectionTermsOfService._(this.value);
 
-factory PostPaymentLinksRequestConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksRequestConsentCollectionTermsOfService.fromJson(String json) {return switch (json) {
   'none' => none,
   'required' => $required,
   _ => PostPaymentLinksRequestConsentCollectionTermsOfService._(json),
-}; }
+};}
 
 static const PostPaymentLinksRequestConsentCollectionTermsOfService none = PostPaymentLinksRequestConsentCollectionTermsOfService._('none');
 
@@ -40,22 +40,22 @@ static const List<PostPaymentLinksRequestConsentCollectionTermsOfService> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentLinksRequestConsentCollectionTermsOfService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentLinksRequestConsentCollectionTermsOfService($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentLinksRequestConsentCollectionTermsOfService && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentLinksRequestConsentCollectionTermsOfService($value)';}
+}
 /// Configure fields to gather active consent from customers.
 @immutable final class PostPaymentLinksRequestConsentCollection {const PostPaymentLinksRequestConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
-factory PostPaymentLinksRequestConsentCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestConsentCollection(
+factory PostPaymentLinksRequestConsentCollection.fromJson(Map<String, dynamic> json) {return PostPaymentLinksRequestConsentCollection(
   paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
   promotions: json['promotions'] != null ? PostPaymentLinksRequestConsentCollectionPromotions.fromJson(json['promotions'] as String) : null,
   termsOfService: json['terms_of_service'] != null ? PostPaymentLinksRequestConsentCollectionTermsOfService.fromJson(json['terms_of_service'] as String) : null,
-); }
+);}
 
 final PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement? paymentMethodReuseAgreement;
 
@@ -63,22 +63,22 @@ final PostPaymentLinksRequestConsentCollectionPromotions? promotions;
 
 final PostPaymentLinksRequestConsentCollectionTermsOfService? termsOfService;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (paymentMethodReuseAgreement != null) 'payment_method_reuse_agreement': paymentMethodReuseAgreement?.toJson(),
   if (promotions != null) 'promotions': promotions?.toJson(),
   if (termsOfService != null) 'terms_of_service': termsOfService?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_reuse_agreement', 'promotions', 'terms_of_service'}.contains(key)); } 
-PostPaymentLinksRequestConsentCollection copyWith({PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PostPaymentLinksRequestConsentCollectionPromotions? Function()? promotions, PostPaymentLinksRequestConsentCollectionTermsOfService? Function()? termsOfService, }) { return PostPaymentLinksRequestConsentCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'payment_method_reuse_agreement', 'promotions', 'terms_of_service'}.contains(key));}
+PostPaymentLinksRequestConsentCollection copyWith({PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PostPaymentLinksRequestConsentCollectionPromotions? Function()? promotions, PostPaymentLinksRequestConsentCollectionTermsOfService? Function()? termsOfService, }) {return PostPaymentLinksRequestConsentCollection(
   paymentMethodReuseAgreement: paymentMethodReuseAgreement != null ? paymentMethodReuseAgreement() : this.paymentMethodReuseAgreement,
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentLinksRequestConsentCollection &&
           paymentMethodReuseAgreement == other.paymentMethodReuseAgreement &&
           promotions == other.promotions &&
-          termsOfService == other.termsOfService; } 
-@override int get hashCode { return Object.hash(paymentMethodReuseAgreement, promotions, termsOfService); } 
-@override String toString() { return 'PostPaymentLinksRequestConsentCollection(paymentMethodReuseAgreement: $paymentMethodReuseAgreement, promotions: $promotions, termsOfService: $termsOfService)'; } 
- }
+          termsOfService == other.termsOfService;}
+@override int get hashCode {return Object.hash(paymentMethodReuseAgreement, promotions, termsOfService);}
+@override String toString() {return 'PostPaymentLinksRequestConsentCollection(paymentMethodReuseAgreement: $paymentMethodReuseAgreement, promotions: $promotions, termsOfService: $termsOfService)';}
+}

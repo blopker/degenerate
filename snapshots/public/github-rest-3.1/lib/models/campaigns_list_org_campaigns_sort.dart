@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort._(this.value);
 
-factory CampaignsListOrgCampaignsSort.fromJson(String json) { return switch (json) {
+factory CampaignsListOrgCampaignsSort.fromJson(String json) {return switch (json) {
   'created' => created,
   'updated' => updated,
   'ends_at' => endsAt,
   'published' => published,
   _ => CampaignsListOrgCampaignsSort._(json),
-}; }
+};}
 
 static const CampaignsListOrgCampaignsSort created = CampaignsListOrgCampaignsSort._('created');
 
@@ -22,11 +22,11 @@ static const List<CampaignsListOrgCampaignsSort> values = [created, updated, end
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CampaignsListOrgCampaignsSort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CampaignsListOrgCampaignsSort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CampaignsListOrgCampaignsSort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CampaignsListOrgCampaignsSort($value)';}
+}

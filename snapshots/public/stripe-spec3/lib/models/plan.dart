@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'plan_product.dart';import 'plan_tier.dart';import 'transform_usage.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
 @immutable final class PlanBillingScheme {const PlanBillingScheme._(this.value);
 
-factory PlanBillingScheme.fromJson(String json) { return switch (json) {
+factory PlanBillingScheme.fromJson(String json) {return switch (json) {
   'per_unit' => perUnit,
   'tiered' => tiered,
   _ => PlanBillingScheme._(json),
-}; }
+};}
 
 static const PlanBillingScheme perUnit = PlanBillingScheme._('per_unit');
 
@@ -17,24 +17,24 @@ static const List<PlanBillingScheme> values = [perUnit, tiered];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanBillingScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanBillingScheme($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PlanBillingScheme && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PlanBillingScheme($value)';}
+}
 /// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
 @immutable final class PlanInterval {const PlanInterval._(this.value);
 
-factory PlanInterval.fromJson(String json) { return switch (json) {
+factory PlanInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PlanInterval._(json),
-}; }
+};}
 
 static const PlanInterval day = PlanInterval._('day');
 
@@ -48,21 +48,21 @@ static const List<PlanInterval> values = [day, month, week, year];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PlanInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PlanInterval($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PlanObject {const PlanObject._(this.value);
 
-factory PlanObject.fromJson(String json) { return switch (json) {
+factory PlanObject.fromJson(String json) {return switch (json) {
   'plan' => plan,
   _ => PlanObject._(json),
-}; }
+};}
 
 static const PlanObject plan = PlanObject._('plan');
 
@@ -70,22 +70,22 @@ static const List<PlanObject> values = [plan];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PlanObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PlanObject($value)';}
+}
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
 @immutable final class PlanTiersMode {const PlanTiersMode._(this.value);
 
-factory PlanTiersMode.fromJson(String json) { return switch (json) {
+factory PlanTiersMode.fromJson(String json) {return switch (json) {
   'graduated' => graduated,
   'volume' => volume,
   _ => PlanTiersMode._(json),
-}; }
+};}
 
 static const PlanTiersMode graduated = PlanTiersMode._('graduated');
 
@@ -95,22 +95,22 @@ static const List<PlanTiersMode> values = [graduated, volume];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanTiersMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanTiersMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PlanTiersMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PlanTiersMode($value)';}
+}
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
 @immutable final class PlanUsageType {const PlanUsageType._(this.value);
 
-factory PlanUsageType.fromJson(String json) { return switch (json) {
+factory PlanUsageType.fromJson(String json) {return switch (json) {
   'licensed' => licensed,
   'metered' => metered,
   _ => PlanUsageType._(json),
-}; }
+};}
 
 static const PlanUsageType licensed = PlanUsageType._('licensed');
 
@@ -120,14 +120,14 @@ static const List<PlanUsageType> values = [licensed, metered];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanUsageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanUsageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PlanUsageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PlanUsageType($value)';}
+}
 /// You can now model subscriptions more flexibly using the [Prices API](https://api.stripe.com#prices). It replaces the Plans API and is backwards compatible to simplify your migration.
 /// 
 /// Plans define the base price, currency, and billing cycle for recurring purchases of products.
@@ -138,7 +138,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guides: [Set up a subscription](https://docs.stripe.com/billing/subscriptions/set-up-subscription) and more about [products and prices](https://docs.stripe.com/products-prices/overview).
 @immutable final class Plan {const Plan({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.interval, required this.intervalCount, required this.livemode, required this.object, required this.usageType, this.amount = const Omittable.absent(), this.amountDecimal = const Omittable.absent(), this.metadata = const Omittable.absent(), this.meter = const Omittable.absent(), this.nickname = const Omittable.absent(), this.product = const Omittable.absent(), this.tiers, this.tiersMode = const Omittable.absent(), this.transformUsage = const Omittable.absent(), this.trialPeriodDays = const Omittable.absent(), });
 
-factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
+factory Plan.fromJson(Map<String, dynamic> json) {return Plan(
   active: json['active'] as bool,
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   amountDecimal: json.containsKey('amount_decimal') ? Omittable(json['amount_decimal'] as String?) : const Omittable.absent(),
@@ -159,7 +159,7 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   transformUsage: json.containsKey('transform_usage') ? Omittable(json['transform_usage'] != null ? TransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   trialPeriodDays: json.containsKey('trial_period_days') ? Omittable(json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null) : const Omittable.absent(),
   usageType: PlanUsageType.fromJson(json['usage_type'] as String),
-); }
+);}
 
 /// Whether the plan can be used for new purchases.
 final bool active;
@@ -221,7 +221,7 @@ final Omittable<int?> trialPeriodDays;
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
 final PlanUsageType usageType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   if (amount.isPresent) 'amount': amount.value,
   if (amountDecimal.isPresent) 'amount_decimal': amountDecimal.value,
@@ -242,8 +242,8 @@ Map<String, dynamic> toJson() { return {
   if (transformUsage.isPresent) 'transform_usage': transformUsage.value?.toJson(),
   if (trialPeriodDays.isPresent) 'trial_period_days': trialPeriodDays.value,
   'usage_type': usageType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('billing_scheme') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -252,8 +252,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('interval_count') && json['interval_count'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('usage_type'); } 
-Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amountDecimal, PlanBillingScheme? billingScheme, int? created, String? currency, String? id, PlanInterval? interval, int? intervalCount, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? meter, Omittable<String?>? nickname, PlanObject? object, Omittable<PlanProduct?>? product, List<PlanTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformUsage?>? transformUsage, Omittable<int?>? trialPeriodDays, PlanUsageType? usageType, }) { return Plan(
+      json.containsKey('usage_type');}
+Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amountDecimal, PlanBillingScheme? billingScheme, int? created, String? currency, String? id, PlanInterval? interval, int? intervalCount, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? meter, Omittable<String?>? nickname, PlanObject? object, Omittable<PlanProduct?>? product, List<PlanTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformUsage?>? transformUsage, Omittable<int?>? trialPeriodDays, PlanUsageType? usageType, }) {return Plan(
   active: active ?? this.active,
   amount: amount ?? this.amount,
   amountDecimal: amountDecimal ?? this.amountDecimal,
@@ -274,8 +274,8 @@ Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amount
   transformUsage: transformUsage ?? this.transformUsage,
   trialPeriodDays: trialPeriodDays ?? this.trialPeriodDays,
   usageType: usageType ?? this.usageType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Plan &&
           active == other.active &&
           amount == other.amount &&
@@ -296,7 +296,7 @@ Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amount
           tiersMode == other.tiersMode &&
           transformUsage == other.transformUsage &&
           trialPeriodDays == other.trialPeriodDays &&
-          usageType == other.usageType; } 
-@override int get hashCode { return Object.hash(active, amount, amountDecimal, billingScheme, created, currency, id, interval, intervalCount, livemode, metadata, meter, nickname, object, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType); } 
-@override String toString() { return 'Plan(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, created: $created, currency: $currency, id: $id, interval: $interval, intervalCount: $intervalCount, livemode: $livemode, metadata: $metadata, meter: $meter, nickname: $nickname, object: $object, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)'; } 
- }
+          usageType == other.usageType;}
+@override int get hashCode {return Object.hash(active, amount, amountDecimal, billingScheme, created, currency, id, interval, intervalCount, livemode, metadata, meter, nickname, object, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType);}
+@override String toString() {return 'Plan(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, created: $created, currency: $currency, id: $id, interval: $interval, intervalCount: $intervalCount, livemode: $livemode, metadata: $metadata, meter: $meter, nickname: $nickname, object: $object, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)';}
+}

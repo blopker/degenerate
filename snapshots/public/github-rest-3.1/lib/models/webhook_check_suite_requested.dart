@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_suite_requested_check_suite.dart';@immutable final class WebhookCheckSuiteRequestedAction {const WebhookCheckSuiteRequestedAction._(this.value);
 
-factory WebhookCheckSuiteRequestedAction.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRequestedAction.fromJson(String json) {return switch (json) {
   'requested' => requested,
   _ => WebhookCheckSuiteRequestedAction._(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRequestedAction requested = WebhookCheckSuiteRequestedAction._('requested');
 
@@ -13,17 +13,17 @@ static const List<WebhookCheckSuiteRequestedAction> values = [requested];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCheckSuiteRequestedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCheckSuiteRequestedAction($value)';}
+}
 @immutable final class WebhookCheckSuiteRequested {const WebhookCheckSuiteRequested({required this.action, required this.checkSuite, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCheckSuiteRequested.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequested(
+factory WebhookCheckSuiteRequested.fromJson(Map<String, dynamic> json) {return WebhookCheckSuiteRequested(
   action: WebhookCheckSuiteRequestedAction.fromJson(json['action'] as String),
   checkSuite: WebhookCheckSuiteRequestedCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookCheckSuiteRequested.fromJson(Map<String, dynamic> json) { return 
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookCheckSuiteRequestedAction action;
 
@@ -48,7 +48,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'check_suite': checkSuite.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -56,12 +56,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('check_suite') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCheckSuiteRequested copyWith({WebhookCheckSuiteRequestedAction? action, WebhookCheckSuiteRequestedCheckSuite? checkSuite, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckSuiteRequested(
+      json.containsKey('sender');}
+WebhookCheckSuiteRequested copyWith({WebhookCheckSuiteRequestedAction? action, WebhookCheckSuiteRequestedCheckSuite? checkSuite, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCheckSuiteRequested(
   action: action ?? this.action,
   checkSuite: checkSuite ?? this.checkSuite,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -69,8 +69,8 @@ WebhookCheckSuiteRequested copyWith({WebhookCheckSuiteRequestedAction? action, W
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCheckSuiteRequested &&
           action == other.action &&
           checkSuite == other.checkSuite &&
@@ -78,7 +78,7 @@ WebhookCheckSuiteRequested copyWith({WebhookCheckSuiteRequestedAction? action, W
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, checkSuite, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookCheckSuiteRequested(action: $action, checkSuite: $checkSuite, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, checkSuite, enterprise, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookCheckSuiteRequested(action: $action, checkSuite: $checkSuite, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

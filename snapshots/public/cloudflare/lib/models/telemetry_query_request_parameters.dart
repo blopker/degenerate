@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_request_parameters_calculations.dart';import 'telemetry_query_request_parameters_filters.dart';import 'telemetry_query_request_parameters_group_bys.dart';import 'telemetry_query_request_parameters_havings.dart';import 'telemetry_query_request_parameters_needle.dart';import 'telemetry_query_request_parameters_order_by.dart';/// Set a Flag to describe how to combine the filters on the query.
 @immutable final class TelemetryQueryRequestParametersFilterCombination {const TelemetryQueryRequestParametersFilterCombination._(this.value);
 
-factory TelemetryQueryRequestParametersFilterCombination.fromJson(String json) { return switch (json) {
+factory TelemetryQueryRequestParametersFilterCombination.fromJson(String json) {return switch (json) {
   'and' => and,
   'or' => or,
   'AND' => and2,
   'OR' => or2,
   _ => TelemetryQueryRequestParametersFilterCombination._(json),
-}; }
+};}
 
 static const TelemetryQueryRequestParametersFilterCombination and = TelemetryQueryRequestParametersFilterCombination._('and');
 
@@ -23,18 +23,18 @@ static const List<TelemetryQueryRequestParametersFilterCombination> values = [an
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryQueryRequestParametersFilterCombination && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryQueryRequestParametersFilterCombination($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TelemetryQueryRequestParametersFilterCombination && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TelemetryQueryRequestParametersFilterCombination($value)';}
+}
 /// Optional parameters to pass to the query execution
 @immutable final class TelemetryQueryRequestParameters {const TelemetryQueryRequestParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
 
-factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParameters(
+factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) {return TelemetryQueryRequestParameters(
   calculations: (json['calculations'] as List<dynamic>?)?.map((e) => TelemetryQueryRequestParametersCalculations.fromJson(e as Map<String, dynamic>)).toList(),
   datasets: (json['datasets'] as List<dynamic>?)?.map((e) => e as String).toList(),
   filterCombination: json['filterCombination'] != null ? TelemetryQueryRequestParametersFilterCombination.fromJson(json['filterCombination'] as String) : null,
@@ -44,7 +44,7 @@ factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) { re
   limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
   needle: json['needle'] != null ? TelemetryQueryRequestParametersNeedle.fromJson(json['needle'] as Map<String, dynamic>) : null,
   orderBy: json['orderBy'] != null ? TelemetryQueryRequestParametersOrderBy.fromJson(json['orderBy'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Create Calculations to compute as part of the query.
 final List<TelemetryQueryRequestParametersCalculations>? calculations;
@@ -73,7 +73,7 @@ final TelemetryQueryRequestParametersNeedle? needle;
 /// Configure the order of the results returned by the query.
 final TelemetryQueryRequestParametersOrderBy? orderBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (calculations != null) 'calculations': calculations?.map((e) => e.toJson()).toList(),
   'datasets': ?datasets,
   if (filterCombination != null) 'filterCombination': filterCombination?.toJson(),
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   'limit': ?limit,
   if (needle != null) 'needle': needle?.toJson(),
   if (orderBy != null) 'orderBy': orderBy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key)); } 
-TelemetryQueryRequestParameters copyWith({List<TelemetryQueryRequestParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, TelemetryQueryRequestParametersFilterCombination? Function()? filterCombination, List<TelemetryQueryRequestParametersFilters>? Function()? filters, List<TelemetryQueryRequestParametersGroupBys>? Function()? groupBys, List<TelemetryQueryRequestParametersHavings>? Function()? havings, int? Function()? limit, TelemetryQueryRequestParametersNeedle? Function()? needle, TelemetryQueryRequestParametersOrderBy? Function()? orderBy, }) { return TelemetryQueryRequestParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key));}
+TelemetryQueryRequestParameters copyWith({List<TelemetryQueryRequestParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, TelemetryQueryRequestParametersFilterCombination? Function()? filterCombination, List<TelemetryQueryRequestParametersFilters>? Function()? filters, List<TelemetryQueryRequestParametersGroupBys>? Function()? groupBys, List<TelemetryQueryRequestParametersHavings>? Function()? havings, int? Function()? limit, TelemetryQueryRequestParametersNeedle? Function()? needle, TelemetryQueryRequestParametersOrderBy? Function()? orderBy, }) {return TelemetryQueryRequestParameters(
   calculations: calculations != null ? calculations() : this.calculations,
   datasets: datasets != null ? datasets() : this.datasets,
   filterCombination: filterCombination != null ? filterCombination() : this.filterCombination,
@@ -95,8 +95,8 @@ TelemetryQueryRequestParameters copyWith({List<TelemetryQueryRequestParametersCa
   limit: limit != null ? limit() : this.limit,
   needle: needle != null ? needle() : this.needle,
   orderBy: orderBy != null ? orderBy() : this.orderBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TelemetryQueryRequestParameters &&
           listEquals(calculations, other.calculations) &&
           listEquals(datasets, other.datasets) &&
@@ -106,7 +106,7 @@ TelemetryQueryRequestParameters copyWith({List<TelemetryQueryRequestParametersCa
           listEquals(havings, other.havings) &&
           limit == other.limit &&
           needle == other.needle &&
-          orderBy == other.orderBy; } 
-@override int get hashCode { return Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(datasets ?? const []), filterCombination, Object.hashAll(filters ?? const []), Object.hashAll(groupBys ?? const []), Object.hashAll(havings ?? const []), limit, needle, orderBy); } 
-@override String toString() { return 'TelemetryQueryRequestParameters(calculations: $calculations, datasets: $datasets, filterCombination: $filterCombination, filters: $filters, groupBys: $groupBys, havings: $havings, limit: $limit, needle: $needle, orderBy: $orderBy)'; } 
- }
+          orderBy == other.orderBy;}
+@override int get hashCode {return Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(datasets ?? const []), filterCombination, Object.hashAll(filters ?? const []), Object.hashAll(groupBys ?? const []), Object.hashAll(havings ?? const []), limit, needle, orderBy);}
+@override String toString() {return 'TelemetryQueryRequestParameters(calculations: $calculations, datasets: $datasets, filterCombination: $filterCombination, filters: $filters, groupBys: $groupBys, havings: $havings, limit: $limit, needle: $needle, orderBy: $orderBy)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerPaymentSourceCardObject {const CustomerPaymentSourceCardObject._(this.value);
 
-factory CustomerPaymentSourceCardObject.fromJson(String json) { return switch (json) {
+factory CustomerPaymentSourceCardObject.fromJson(String json) {return switch (json) {
   'card' => card,
   _ => CustomerPaymentSourceCardObject._(json),
-}; }
+};}
 
 static const CustomerPaymentSourceCardObject card = CustomerPaymentSourceCardObject._('card');
 
@@ -13,17 +13,17 @@ static const List<CustomerPaymentSourceCardObject> values = [card];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerPaymentSourceCardObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerPaymentSourceCardObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomerPaymentSourceCardObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomerPaymentSourceCardObject($value)';}
+}
 @immutable final class CustomerPaymentSourceCard {const CustomerPaymentSourceCard({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.cvc, this.metadata, this.name, this.object, });
 
-factory CustomerPaymentSourceCard.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceCard(
+factory CustomerPaymentSourceCard.fromJson(Map<String, dynamic> json) {return CustomerPaymentSourceCard(
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -37,7 +37,7 @@ factory CustomerPaymentSourceCard.fromJson(Map<String, dynamic> json) { return C
   name: json['name'] as String?,
   number: json['number'] as String,
   object: json['object'] != null ? CustomerPaymentSourceCardObject.fromJson(json['object'] as String) : null,
-); }
+);}
 
 final String? addressCity;
 
@@ -65,7 +65,7 @@ final String number;
 
 final CustomerPaymentSourceCardObject? object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address_city': ?addressCity,
   'address_country': ?addressCountry,
   'address_line1': ?addressLine1,
@@ -79,11 +79,11 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'number': number,
   if (object != null) 'object': object?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
-      json.containsKey('number') && json['number'] is String; } 
-CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? cvc, int? expMonth, int? expYear, Map<String, String>? Function()? metadata, String? Function()? name, String? number, CustomerPaymentSourceCardObject? Function()? object, }) { return CustomerPaymentSourceCard(
+      json.containsKey('number') && json['number'] is String;}
+CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? cvc, int? expMonth, int? expYear, Map<String, String>? Function()? metadata, String? Function()? name, String? number, CustomerPaymentSourceCardObject? Function()? object, }) {return CustomerPaymentSourceCard(
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
   addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
@@ -97,8 +97,8 @@ CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Fun
   name: name != null ? name() : this.name,
   number: number ?? this.number,
   object: object != null ? object() : this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerPaymentSourceCard &&
           addressCity == other.addressCity &&
           addressCountry == other.addressCountry &&
@@ -112,7 +112,7 @@ CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Fun
           metadata == other.metadata &&
           name == other.name &&
           number == other.number &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, cvc, expMonth, expYear, metadata, name, number, object); } 
-@override String toString() { return 'CustomerPaymentSourceCard(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, metadata: $metadata, name: $name, number: $number, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, cvc, expMonth, expYear, metadata, name, number, object);}
+@override String toString() {return 'CustomerPaymentSourceCard(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, metadata: $metadata, name: $name, number: $number, object: $object)';}
+}

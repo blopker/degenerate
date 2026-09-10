@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param40_bank_transfer.dart';@immutable final class InvoicePaymentMethodOptionsParam40 {const InvoicePaymentMethodOptionsParam40({this.bankTransfer, this.fundingType, });
 
-factory InvoicePaymentMethodOptionsParam40.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam40(
+factory InvoicePaymentMethodOptionsParam40.fromJson(Map<String, dynamic> json) {return InvoicePaymentMethodOptionsParam40(
   bankTransfer: json['bank_transfer'] != null ? InvoicePaymentMethodOptionsParam40BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
   fundingType: json['funding_type'] as String?,
-); }
+);}
 
 final InvoicePaymentMethodOptionsParam40BankTransfer? bankTransfer;
 
 final String? fundingType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
   'funding_type': ?fundingType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam40 copyWith({InvoicePaymentMethodOptionsParam40BankTransfer? Function()? bankTransfer, String? Function()? fundingType, }) { return InvoicePaymentMethodOptionsParam40(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_transfer', 'funding_type'}.contains(key));}
+InvoicePaymentMethodOptionsParam40 copyWith({InvoicePaymentMethodOptionsParam40BankTransfer? Function()? bankTransfer, String? Function()? fundingType, }) {return InvoicePaymentMethodOptionsParam40(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam40 &&
           bankTransfer == other.bankTransfer &&
-          fundingType == other.fundingType; } 
-@override int get hashCode { return Object.hash(bankTransfer, fundingType); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam40(bankTransfer: $bankTransfer, fundingType: $fundingType)'; } 
- }
+          fundingType == other.fundingType;}
+@override int get hashCode {return Object.hash(bankTransfer, fundingType);}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam40(bankTransfer: $bankTransfer, fundingType: $fundingType)';}
+}

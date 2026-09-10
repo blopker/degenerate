@@ -13,7 +13,7 @@ final class EnvironmentVariablesApi with ApiExecutor {const EnvironmentVariables
 /// Get all environment variables for a trigger
 ///
 /// `GET /accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables`
-Future<ApiResult<Map<String, BuildsEnvironmentVariablesResponseValue>, Never>> listEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, BuildsEnvironmentVariablesResponseValue>, Never>> listEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,20 +22,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));}, );}
 /// Upsert environment variables
 ///
 /// Create or update environment variables for a trigger
 ///
 /// `PATCH /accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables`
-Future<ApiResult<Map<String, BuildsEnvironmentVariablesResponseValue>, BuildsErrorResponse>> upsertEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required Map<String,BuildsEnvironmentVariablesRequestValue> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, BuildsEnvironmentVariablesResponseValue>, BuildsErrorResponse>> upsertEnvironmentVariables({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required Map<String,BuildsEnvironmentVariablesRequestValue> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,30 +41,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete environment variable
 ///
 /// Remove a specific environment variable from a trigger
 ///
 /// `DELETE /accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables/{environment_variable_key}`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteEnvironmentVariable({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsEnvironmentVariableKey environmentVariableKey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteEnvironmentVariable({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsEnvironmentVariableKey environmentVariableKey, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -78,22 +62,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>?;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>?;}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

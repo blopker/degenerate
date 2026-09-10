@@ -6,22 +6,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls phone n
 /// before using this feature. Learn more about [collecting phone numbers with Checkout](https://docs.stripe.com/payments/checkout/phone-numbers).
 @immutable final class PostCheckoutSessionsRequestPhoneNumberCollection {const PostCheckoutSessionsRequestPhoneNumberCollection({required this.enabled});
 
-factory PostCheckoutSessionsRequestPhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPhoneNumberCollection(
+factory PostCheckoutSessionsRequestPhoneNumberCollection.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPhoneNumberCollection(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCheckoutSessionsRequestPhoneNumberCollection copyWith({bool? enabled}) { return PostCheckoutSessionsRequestPhoneNumberCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostCheckoutSessionsRequestPhoneNumberCollection copyWith({bool? enabled}) {return PostCheckoutSessionsRequestPhoneNumberCollection(
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPhoneNumberCollection &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPhoneNumberCollection(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPhoneNumberCollection(enabled: $enabled)';}
+}

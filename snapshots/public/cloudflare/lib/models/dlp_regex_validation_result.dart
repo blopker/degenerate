@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRegexValidationResult {const DlpRegexValidationResult({required this.valid});
 
-factory DlpRegexValidationResult.fromJson(Map<String, dynamic> json) { return DlpRegexValidationResult(
+factory DlpRegexValidationResult.fromJson(Map<String, dynamic> json) {return DlpRegexValidationResult(
   valid: json['valid'] as bool,
-); }
+);}
 
 final bool valid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'valid': valid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('valid') && json['valid'] is bool; } 
-DlpRegexValidationResult copyWith({bool? valid}) { return DlpRegexValidationResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('valid') && json['valid'] is bool;}
+DlpRegexValidationResult copyWith({bool? valid}) {return DlpRegexValidationResult(
   valid: valid ?? this.valid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpRegexValidationResult &&
-          valid == other.valid; } 
-@override int get hashCode { return valid.hashCode; } 
-@override String toString() { return 'DlpRegexValidationResult(valid: $valid)'; } 
- }
+          valid == other.valid;}
+@override int get hashCode {return valid.hashCode;}
+@override String toString() {return 'DlpRegexValidationResult(valid: $valid)';}
+}

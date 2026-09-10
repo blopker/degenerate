@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The layout of the view.
 @immutable final class ViewLayout {const ViewLayout._(this.value);
 
-factory ViewLayout.fromJson(String json) { return switch (json) {
+factory ViewLayout.fromJson(String json) {return switch (json) {
   'table' => table,
   'board' => board,
   'roadmap' => roadmap,
   _ => ViewLayout._(json),
-}; }
+};}
 
 static const ViewLayout table = ViewLayout._('table');
 
@@ -20,18 +20,18 @@ static const List<ViewLayout> values = [table, board, roadmap];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ViewLayout && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ViewLayout($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ViewLayout && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ViewLayout($value)';}
+}
 /// A view inside a projects v2 project
 @immutable final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, this.filter = const Omittable.absent(), });
 
-factory View.fromJson(Map<String, dynamic> json) { return View(
+factory View.fromJson(Map<String, dynamic> json) {return View(
   id: (json['id'] as num).toInt(),
   number: (json['number'] as num).toInt(),
   name: json['name'] as String,
@@ -47,7 +47,7 @@ factory View.fromJson(Map<String, dynamic> json) { return View(
   sortBy: (json['sort_by'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
   groupBy: (json['group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   verticalGroupBy: (json['vertical_group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The unique identifier of the view.
 final int id;
@@ -93,7 +93,7 @@ final List<int> groupBy;
 /// The list of field IDs used for vertical grouping (board layout).
 final List<int> verticalGroupBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'number': number,
   'name': name,
@@ -109,8 +109,8 @@ Map<String, dynamic> toJson() { return {
   'sort_by': sortBy.map((e) => e).toList(),
   'group_by': groupBy,
   'vertical_group_by': verticalGroupBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('layout') &&
@@ -123,8 +123,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('visible_fields') &&
       json.containsKey('sort_by') &&
       json.containsKey('group_by') &&
-      json.containsKey('vertical_group_by'); } 
-View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<String?>? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
+      json.containsKey('vertical_group_by');}
+View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<String?>? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) {return View(
   id: id ?? this.id,
   number: number ?? this.number,
   name: name ?? this.name,
@@ -140,8 +140,8 @@ View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? n
   sortBy: sortBy ?? this.sortBy,
   groupBy: groupBy ?? this.groupBy,
   verticalGroupBy: verticalGroupBy ?? this.verticalGroupBy,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is View &&
           id == other.id &&
           number == other.number &&
@@ -157,7 +157,7 @@ View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? n
           listEquals(visibleFields, other.visibleFields) &&
           listEquals(sortBy, other.sortBy) &&
           listEquals(groupBy, other.groupBy) &&
-          listEquals(verticalGroupBy, other.verticalGroupBy); } 
-@override int get hashCode { return Object.hash(id, number, name, layout, nodeId, projectUrl, htmlUrl, creator, createdAt, updatedAt, filter, Object.hashAll(visibleFields), Object.hashAll(sortBy), Object.hashAll(groupBy), Object.hashAll(verticalGroupBy)); } 
-@override String toString() { return 'View(id: $id, number: $number, name: $name, layout: $layout, nodeId: $nodeId, projectUrl: $projectUrl, htmlUrl: $htmlUrl, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, filter: $filter, visibleFields: $visibleFields, sortBy: $sortBy, groupBy: $groupBy, verticalGroupBy: $verticalGroupBy)'; } 
- }
+          listEquals(verticalGroupBy, other.verticalGroupBy);}
+@override int get hashCode {return Object.hash(id, number, name, layout, nodeId, projectUrl, htmlUrl, creator, createdAt, updatedAt, filter, Object.hashAll(visibleFields), Object.hashAll(sortBy), Object.hashAll(groupBy), Object.hashAll(verticalGroupBy));}
+@override String toString() {return 'View(id: $id, number: $number, name: $name, layout: $layout, nodeId: $nodeId, projectUrl: $projectUrl, htmlUrl: $htmlUrl, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, filter: $filter, visibleFields: $visibleFields, sortBy: $sortBy, groupBy: $groupBy, verticalGroupBy: $verticalGroupBy)';}
+}

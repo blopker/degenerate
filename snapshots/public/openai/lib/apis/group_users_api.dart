@@ -11,7 +11,7 @@ final class GroupUsersApi with ApiExecutor {const GroupUsersApi(this.apiConfig);
 /// Lists the users assigned to a group.
 ///
 /// `GET /organization/groups/{group_id}/users`
-Future<ApiResult<UserListResource, Never>> listGroupUsers({required String groupId, int? limit, String? after, ListGroupUsersOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UserListResource, Never>> listGroupUsers({required String groupId, int? limit, String? after, ListGroupUsersOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -34,18 +34,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Adds a user to a group.
 ///
 /// `POST /organization/groups/{group_id}/users`
-Future<ApiResult<GroupUserAssignment, Never>> addGroupUser({required String groupId, required CreateGroupUserBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GroupUserAssignment, Never>> addGroupUser({required String groupId, required CreateGroupUserBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,18 +51,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupUserAssignment.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupUserAssignment.fromJson(json as Map<String, dynamic>);}, );}
 /// Removes a user from a group.
 ///
 /// `DELETE /organization/groups/{group_id}/users/{user_id}`
-Future<ApiResult<GroupUserDeletedResource, Never>> removeGroupUser({required String groupId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GroupUserDeletedResource, Never>> removeGroupUser({required String groupId, required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -76,12 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupUserDeletedResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupUserDeletedResource.fromJson(json as Map<String, dynamic>);}, );}
+}

@@ -11,7 +11,7 @@ final class Api20100401ApplicationApi with ApiExecutor {const Api20100401Applica
 /// Retrieve a list of applications representing an application within the requesting account
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Applications.json`
-Future<ApiResult<ListApplicationResponse, Never>> listApplication({required String accountSid, String? friendlyName, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListApplicationResponse, Never>> listApplication({required String accountSid, String? friendlyName, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (friendlyName != null) {
   queryParameters['FriendlyName'] = friendlyName;
@@ -37,18 +37,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListApplicationResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListApplicationResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new application within your account
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Applications.json`
-Future<ApiResult<AccountApplication, Never>> createApplication({required String accountSid, CreateApplicationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountApplication, Never>> createApplication({required String accountSid, CreateApplicationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -92,18 +87,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountApplication.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountApplication.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch the application specified by the provided sid
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
-Future<ApiResult<AccountApplication, Never>> fetchApplication({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountApplication, Never>> fetchApplication({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,18 +102,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountApplication.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountApplication.fromJson(json as Map<String, dynamic>);}, );}
 /// Updates the application's properties
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
-Future<ApiResult<AccountApplication, Never>> updateApplication({required String accountSid, required String sid, UpdateApplicationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountApplication, Never>> updateApplication({required String accountSid, required String sid, UpdateApplicationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -167,18 +152,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountApplication.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountApplication.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete the application by the specified application sid
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
-Future<ApiResult<void, Never>> deleteApplication({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteApplication({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -187,9 +167,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
- }
+
+return   await execute(request, onSuccess: (_) {}, );}
+}

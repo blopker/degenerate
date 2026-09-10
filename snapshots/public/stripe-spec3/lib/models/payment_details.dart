@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details_customer_reference.dart';import 'payment_details_order_reference.dart';@immutable final class PaymentDetails {const PaymentDetails({this.customerReference, this.orderReference, });
 
-factory PaymentDetails.fromJson(Map<String, dynamic> json) { return PaymentDetails(
+factory PaymentDetails.fromJson(Map<String, dynamic> json) {return PaymentDetails(
   customerReference: json['customer_reference'] != null ? PaymentDetailsCustomerReference.fromJson(json['customer_reference']) : null,
   orderReference: json['order_reference'] != null ? PaymentDetailsOrderReference.fromJson(json['order_reference']) : null,
-); }
+);}
 
 final PaymentDetailsCustomerReference? customerReference;
 
 final PaymentDetailsOrderReference? orderReference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customerReference != null) 'customer_reference': customerReference?.toJson(),
   if (orderReference != null) 'order_reference': orderReference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_reference', 'order_reference'}.contains(key)); } 
-PaymentDetails copyWith({PaymentDetailsCustomerReference? Function()? customerReference, PaymentDetailsOrderReference? Function()? orderReference, }) { return PaymentDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer_reference', 'order_reference'}.contains(key));}
+PaymentDetails copyWith({PaymentDetailsCustomerReference? Function()? customerReference, PaymentDetailsOrderReference? Function()? orderReference, }) {return PaymentDetails(
   customerReference: customerReference != null ? customerReference() : this.customerReference,
   orderReference: orderReference != null ? orderReference() : this.orderReference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentDetails &&
           customerReference == other.customerReference &&
-          orderReference == other.orderReference; } 
-@override int get hashCode { return Object.hash(customerReference, orderReference); } 
-@override String toString() { return 'PaymentDetails(customerReference: $customerReference, orderReference: $orderReference)'; } 
- }
+          orderReference == other.orderReference;}
+@override int get hashCode {return Object.hash(customerReference, orderReference);}
+@override String toString() {return 'PaymentDetails(customerReference: $customerReference, orderReference: $orderReference)';}
+}

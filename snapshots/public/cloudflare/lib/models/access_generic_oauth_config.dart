@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessGenericOauthConfig {const AccessGenericOauthConfig({this.clientId, this.clientSecret, });
 
-factory AccessGenericOauthConfig.fromJson(Map<String, dynamic> json) { return AccessGenericOauthConfig(
+factory AccessGenericOauthConfig.fromJson(Map<String, dynamic> json) {return AccessGenericOauthConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
-); }
+);}
 
 /// Your OAuth Client ID
 final String? clientId;
@@ -13,19 +13,19 @@ final String? clientId;
 /// Your OAuth Client Secret
 final String? clientSecret;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret'}.contains(key)); } 
-AccessGenericOauthConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, }) { return AccessGenericOauthConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret'}.contains(key));}
+AccessGenericOauthConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, }) {return AccessGenericOauthConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessGenericOauthConfig &&
           clientId == other.clientId &&
-          clientSecret == other.clientSecret; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret); } 
-@override String toString() { return 'AccessGenericOauthConfig(clientId: $clientId, clientSecret: $clientSecret)'; } 
- }
+          clientSecret == other.clientSecret;}
+@override int get hashCode {return Object.hash(clientId, clientSecret);}
+@override String toString() {return 'AccessGenericOauthConfig(clientId: $clientId, clientSecret: $clientSecret)';}
+}

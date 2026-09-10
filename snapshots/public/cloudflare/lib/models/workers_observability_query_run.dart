@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query.dart';import 'workers_observability_query_run_statistics.dart';import 'workers_observability_query_run_timeframe.dart';@immutable final class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus._(this.value);
 
-factory WorkersObservabilityQueryRunStatus.fromJson(String json) { return switch (json) {
+factory WorkersObservabilityQueryRunStatus.fromJson(String json) {return switch (json) {
   'STARTED' => started,
   'COMPLETED' => completed,
   _ => WorkersObservabilityQueryRunStatus._(json),
-}; }
+};}
 
 static const WorkersObservabilityQueryRunStatus started = WorkersObservabilityQueryRunStatus._('STARTED');
 
@@ -16,18 +16,18 @@ static const List<WorkersObservabilityQueryRunStatus> values = [started, complet
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryRunStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryRunStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersObservabilityQueryRunStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersObservabilityQueryRunStatus($value)';}
+}
 /// A Workers Observability Query Object
 @immutable final class WorkersObservabilityQueryRun {const WorkersObservabilityQueryRun({required this.accountId, required this.dry, required this.environmentId, required this.granularity, required this.id, required this.query, required this.status, required this.timeframe, required this.userId, required this.workspaceId, this.created, this.statistics, this.updated, });
 
-factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryRun(
+factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) {return WorkersObservabilityQueryRun(
   accountId: json['accountId'] as String,
   created: json['created'] as String?,
   dry: json['dry'] as bool,
@@ -41,7 +41,7 @@ factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) { retur
   updated: json['updated'] as String?,
   userId: json['userId'] as String,
   workspaceId: json['workspaceId'] as String,
-); }
+);}
 
 final String accountId;
 
@@ -70,7 +70,7 @@ final String userId;
 
 final String workspaceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accountId': accountId,
   'created': ?created,
   'dry': dry,
@@ -84,8 +84,8 @@ Map<String, dynamic> toJson() { return {
   'updated': ?updated,
   'userId': userId,
   'workspaceId': workspaceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') && json['accountId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accountId') && json['accountId'] is String &&
       json.containsKey('dry') && json['dry'] is bool &&
       json.containsKey('environmentId') && json['environmentId'] is String &&
       json.containsKey('granularity') && json['granularity'] is num &&
@@ -94,8 +94,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('status') &&
       json.containsKey('timeframe') &&
       json.containsKey('userId') && json['userId'] is String &&
-      json.containsKey('workspaceId') && json['workspaceId'] is String; } 
-WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, WorkersObservabilityQueryRunStatistics? Function()? statistics, WorkersObservabilityQueryRunStatus? status, WorkersObservabilityQueryRunTimeframe? timeframe, String? Function()? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQueryRun(
+      json.containsKey('workspaceId') && json['workspaceId'] is String;}
+WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, WorkersObservabilityQueryRunStatistics? Function()? statistics, WorkersObservabilityQueryRunStatus? status, WorkersObservabilityQueryRunTimeframe? timeframe, String? Function()? updated, String? userId, String? workspaceId, }) {return WorkersObservabilityQueryRun(
   accountId: accountId ?? this.accountId,
   created: created != null ? created() : this.created,
   dry: dry ?? this.dry,
@@ -109,8 +109,8 @@ WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? cr
   updated: updated != null ? updated() : this.updated,
   userId: userId ?? this.userId,
   workspaceId: workspaceId ?? this.workspaceId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersObservabilityQueryRun &&
           accountId == other.accountId &&
           created == other.created &&
@@ -124,7 +124,7 @@ WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? cr
           timeframe == other.timeframe &&
           updated == other.updated &&
           userId == other.userId &&
-          workspaceId == other.workspaceId; } 
-@override int get hashCode { return Object.hash(accountId, created, dry, environmentId, granularity, id, query, statistics, status, timeframe, updated, userId, workspaceId); } 
-@override String toString() { return 'WorkersObservabilityQueryRun(accountId: $accountId, created: $created, dry: $dry, environmentId: $environmentId, granularity: $granularity, id: $id, query: $query, statistics: $statistics, status: $status, timeframe: $timeframe, updated: $updated, userId: $userId, workspaceId: $workspaceId)'; } 
- }
+          workspaceId == other.workspaceId;}
+@override int get hashCode {return Object.hash(accountId, created, dry, environmentId, granularity, id, query, statistics, status, timeframe, updated, userId, workspaceId);}
+@override String toString() {return 'WorkersObservabilityQueryRun(accountId: $accountId, created: $created, dry: $dry, environmentId: $environmentId, granularity: $granularity, id: $id, query: $query, statistics: $statistics, status: $status, timeframe: $timeframe, updated: $updated, userId: $userId, workspaceId: $workspaceId)';}
+}

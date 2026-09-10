@@ -7,13 +7,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scannin
 /// 
 @immutable final class CodeSecurityUpdateConfigurationRequestAdvancedSecurity {const CodeSecurityUpdateConfigurationRequestAdvancedSecurity._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestAdvancedSecurity.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestAdvancedSecurity.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'code_security' => codeSecurity,
   'secret_protection' => secretProtection,
   _ => CodeSecurityUpdateConfigurationRequestAdvancedSecurity._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestAdvancedSecurity enabled = CodeSecurityUpdateConfigurationRequestAdvancedSecurity._('enabled');
 
@@ -27,23 +27,23 @@ static const List<CodeSecurityUpdateConfigurationRequestAdvancedSecurity> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestAdvancedSecurity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestAdvancedSecurity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestAdvancedSecurity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestAdvancedSecurity($value)';}
+}
 /// The enablement status of GitHub Code Security features.
 @immutable final class CodeSecurityUpdateConfigurationRequestCodeSecurity {const CodeSecurityUpdateConfigurationRequestCodeSecurity._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestCodeSecurity.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestCodeSecurity.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestCodeSecurity._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestCodeSecurity enabled = CodeSecurityUpdateConfigurationRequestCodeSecurity._('enabled');
 
@@ -55,23 +55,23 @@ static const List<CodeSecurityUpdateConfigurationRequestCodeSecurity> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestCodeSecurity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestCodeSecurity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestCodeSecurity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestCodeSecurity($value)';}
+}
 /// The enablement status of Dependency Graph
 @immutable final class CodeSecurityUpdateConfigurationRequestDependencyGraph {const CodeSecurityUpdateConfigurationRequestDependencyGraph._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestDependencyGraph.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestDependencyGraph.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestDependencyGraph._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestDependencyGraph enabled = CodeSecurityUpdateConfigurationRequestDependencyGraph._('enabled');
 
@@ -83,23 +83,23 @@ static const List<CodeSecurityUpdateConfigurationRequestDependencyGraph> values 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestDependencyGraph && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestDependencyGraph($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestDependencyGraph && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestDependencyGraph($value)';}
+}
 /// The enablement status of Automatic dependency submission
 @immutable final class CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction {const CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction enabled = CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction._('enabled');
 
@@ -111,23 +111,23 @@ static const List<CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction($value)';}
+}
 /// The enablement status of Dependabot alerts
 @immutable final class CodeSecurityUpdateConfigurationRequestDependabotAlerts {const CodeSecurityUpdateConfigurationRequestDependabotAlerts._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestDependabotAlerts.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestDependabotAlerts.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestDependabotAlerts._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestDependabotAlerts enabled = CodeSecurityUpdateConfigurationRequestDependabotAlerts._('enabled');
 
@@ -139,23 +139,23 @@ static const List<CodeSecurityUpdateConfigurationRequestDependabotAlerts> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestDependabotAlerts && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestDependabotAlerts($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestDependabotAlerts && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestDependabotAlerts($value)';}
+}
 /// The enablement status of Dependabot security updates
 @immutable final class CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates {const CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates enabled = CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates._('enabled');
 
@@ -167,23 +167,23 @@ static const List<CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdate
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates($value)';}
+}
 /// The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
 @immutable final class CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal {const CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal enabled = CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal._('enabled');
 
@@ -195,23 +195,23 @@ static const List<CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlert
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal($value)';}
+}
 /// The enablement status of code scanning default setup
 @immutable final class CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup {const CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup enabled = CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup._('enabled');
 
@@ -223,23 +223,23 @@ static const List<CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup($value)';}
+}
 /// The enablement status of code scanning delegated alert dismissal
 @immutable final class CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal enabled = CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal._('enabled');
 
@@ -251,23 +251,23 @@ static const List<CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAle
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal($value)';}
+}
 /// The enablement status of GitHub Secret Protection features.
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretProtection {const CodeSecurityUpdateConfigurationRequestSecretProtection._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretProtection.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretProtection.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretProtection._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretProtection enabled = CodeSecurityUpdateConfigurationRequestSecretProtection._('enabled');
 
@@ -279,23 +279,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretProtection> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretProtection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretProtection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretProtection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretProtection($value)';}
+}
 /// The enablement status of secret scanning
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanning {const CodeSecurityUpdateConfigurationRequestSecretScanning._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanning.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanning.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanning._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanning enabled = CodeSecurityUpdateConfigurationRequestSecretScanning._('enabled');
 
@@ -307,23 +307,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanning> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanning && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanning($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanning && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanning($value)';}
+}
 /// The enablement status of secret scanning push protection
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection {const CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection enabled = CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection._('enabled');
 
@@ -335,23 +335,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanningPushProtec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection($value)';}
+}
 /// The enablement status of secret scanning delegated bypass
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass {const CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass enabled = CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass._('enabled');
 
@@ -363,23 +363,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedB
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass($value)';}
+}
 /// The enablement status of secret scanning validity checks
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks {const CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks enabled = CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks._('enabled');
 
@@ -391,23 +391,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanningValidityCh
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks($value)';}
+}
 /// The enablement status of secret scanning non-provider patterns
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns {const CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns enabled = CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns._('enabled');
 
@@ -419,23 +419,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanningNonProvide
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns($value)';}
+}
 /// The enablement status of Copilot secret scanning
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets {const CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets enabled = CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets._('enabled');
 
@@ -447,23 +447,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanningGenericSec
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets($value)';}
+}
 /// The enablement status of secret scanning delegated alert dismissal
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal {const CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal enabled = CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal._('enabled');
 
@@ -475,23 +475,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal($value)';}
+}
 /// The enablement status of secret scanning extended metadata
 @immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata {const CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata enabled = CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata._('enabled');
 
@@ -503,23 +503,23 @@ static const List<CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata($value)';}
+}
 /// The enablement status of private vulnerability reporting
 @immutable final class CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting {const CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting enabled = CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting._('enabled');
 
@@ -531,22 +531,22 @@ static const List<CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityRepo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting($value)';}
+}
 /// The enforcement status for a security configuration
 @immutable final class CodeSecurityUpdateConfigurationRequestEnforcement {const CodeSecurityUpdateConfigurationRequestEnforcement._(this.value);
 
-factory CodeSecurityUpdateConfigurationRequestEnforcement.fromJson(String json) { return switch (json) {
+factory CodeSecurityUpdateConfigurationRequestEnforcement.fromJson(String json) {return switch (json) {
   'enforced' => enforced,
   'unenforced' => unenforced,
   _ => CodeSecurityUpdateConfigurationRequestEnforcement._(json),
-}; }
+};}
 
 static const CodeSecurityUpdateConfigurationRequestEnforcement enforced = CodeSecurityUpdateConfigurationRequestEnforcement._('enforced');
 
@@ -556,17 +556,17 @@ static const List<CodeSecurityUpdateConfigurationRequestEnforcement> values = [e
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityUpdateConfigurationRequestEnforcement && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequestEnforcement($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeSecurityUpdateConfigurationRequestEnforcement && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequestEnforcement($value)';}
+}
 @immutable final class CodeSecurityUpdateConfigurationRequest {const CodeSecurityUpdateConfigurationRequest({this.name, this.description, this.advancedSecurity, this.codeSecurity, this.dependencyGraph, this.dependencyGraphAutosubmitAction, this.dependencyGraphAutosubmitActionOptions, this.dependabotAlerts, this.dependabotSecurityUpdates, this.dependabotDelegatedAlertDismissal, this.codeScanningDefaultSetup, this.codeScanningDefaultSetupOptions = const Omittable.absent(), this.codeScanningOptions = const Omittable.absent(), this.codeScanningDelegatedAlertDismissal, this.secretProtection, this.secretScanning, this.secretScanningPushProtection, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, this.secretScanningValidityChecks, this.secretScanningNonProviderPatterns, this.secretScanningGenericSecrets, this.secretScanningDelegatedAlertDismissal, this.secretScanningExtendedMetadata, this.privateVulnerabilityReporting, this.enforcement, });
 
-factory CodeSecurityUpdateConfigurationRequest.fromJson(Map<String, dynamic> json) { return CodeSecurityUpdateConfigurationRequest(
+factory CodeSecurityUpdateConfigurationRequest.fromJson(Map<String, dynamic> json) {return CodeSecurityUpdateConfigurationRequest(
   name: json['name'] as String?,
   description: json['description'] as String?,
   advancedSecurity: json['advanced_security'] != null ? CodeSecurityUpdateConfigurationRequestAdvancedSecurity.fromJson(json['advanced_security'] as String) : null,
@@ -593,7 +593,7 @@ factory CodeSecurityUpdateConfigurationRequest.fromJson(Map<String, dynamic> jso
   secretScanningExtendedMetadata: json['secret_scanning_extended_metadata'] != null ? CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata.fromJson(json['secret_scanning_extended_metadata'] as String) : null,
   privateVulnerabilityReporting: json['private_vulnerability_reporting'] != null ? CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting.fromJson(json['private_vulnerability_reporting'] as String) : null,
   enforcement: json['enforcement'] != null ? CodeSecurityUpdateConfigurationRequestEnforcement.fromJson(json['enforcement'] as String) : null,
-); }
+);}
 
 /// The name of the code security configuration. Must be unique within the organization.
 final String? name;
@@ -676,8 +676,8 @@ final CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting? priva
 final CodeSecurityUpdateConfigurationRequestEnforcement? enforcement;
 
 /// The value with the schema default applied when absent.
-CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal get codeScanningDelegatedAlertDismissalOrDefault { return codeScanningDelegatedAlertDismissal ?? CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson('disabled'); } 
-Map<String, dynamic> toJson() { return {
+CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal get codeScanningDelegatedAlertDismissalOrDefault {return codeScanningDelegatedAlertDismissal ?? CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson('disabled');}
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'description': ?description,
   if (advancedSecurity != null) 'advanced_security': advancedSecurity?.toJson(),
@@ -704,9 +704,9 @@ Map<String, dynamic> toJson() { return {
   if (secretScanningExtendedMetadata != null) 'secret_scanning_extended_metadata': secretScanningExtendedMetadata?.toJson(),
   if (privateVulnerabilityReporting != null) 'private_vulnerability_reporting': privateVulnerabilityReporting?.toJson(),
   if (enforcement != null) 'enforcement': enforcement?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'advanced_security', 'code_security', 'dependency_graph', 'dependency_graph_autosubmit_action', 'dependency_graph_autosubmit_action_options', 'dependabot_alerts', 'dependabot_security_updates', 'dependabot_delegated_alert_dismissal', 'code_scanning_default_setup', 'code_scanning_default_setup_options', 'code_scanning_options', 'code_scanning_delegated_alert_dismissal', 'secret_protection', 'secret_scanning', 'secret_scanning_push_protection', 'secret_scanning_delegated_bypass', 'secret_scanning_delegated_bypass_options', 'secret_scanning_validity_checks', 'secret_scanning_non_provider_patterns', 'secret_scanning_generic_secrets', 'secret_scanning_delegated_alert_dismissal', 'secret_scanning_extended_metadata', 'private_vulnerability_reporting', 'enforcement'}.contains(key)); } 
-CodeSecurityUpdateConfigurationRequest copyWith({String? Function()? name, String? Function()? description, CodeSecurityUpdateConfigurationRequestAdvancedSecurity? Function()? advancedSecurity, CodeSecurityUpdateConfigurationRequestCodeSecurity? Function()? codeSecurity, CodeSecurityUpdateConfigurationRequestDependencyGraph? Function()? dependencyGraph, CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction? Function()? dependencyGraphAutosubmitAction, CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, CodeSecurityUpdateConfigurationRequestDependabotAlerts? Function()? dependabotAlerts, CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal? Function()? dependabotDelegatedAlertDismissal, CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup? Function()? codeScanningDefaultSetup, Omittable<CodeScanningDefaultSetupOptions?>? codeScanningDefaultSetupOptions, Omittable<CodeScanningOptions?>? codeScanningOptions, CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal? Function()? codeScanningDelegatedAlertDismissal, CodeSecurityUpdateConfigurationRequestSecretProtection? Function()? secretProtection, CodeSecurityUpdateConfigurationRequestSecretScanning? Function()? secretScanning, CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection? Function()? secretScanningPushProtection, CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks? Function()? secretScanningValidityChecks, CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets? Function()? secretScanningGenericSecrets, CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting? Function()? privateVulnerabilityReporting, CodeSecurityUpdateConfigurationRequestEnforcement? Function()? enforcement, }) { return CodeSecurityUpdateConfigurationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'description', 'advanced_security', 'code_security', 'dependency_graph', 'dependency_graph_autosubmit_action', 'dependency_graph_autosubmit_action_options', 'dependabot_alerts', 'dependabot_security_updates', 'dependabot_delegated_alert_dismissal', 'code_scanning_default_setup', 'code_scanning_default_setup_options', 'code_scanning_options', 'code_scanning_delegated_alert_dismissal', 'secret_protection', 'secret_scanning', 'secret_scanning_push_protection', 'secret_scanning_delegated_bypass', 'secret_scanning_delegated_bypass_options', 'secret_scanning_validity_checks', 'secret_scanning_non_provider_patterns', 'secret_scanning_generic_secrets', 'secret_scanning_delegated_alert_dismissal', 'secret_scanning_extended_metadata', 'private_vulnerability_reporting', 'enforcement'}.contains(key));}
+CodeSecurityUpdateConfigurationRequest copyWith({String? Function()? name, String? Function()? description, CodeSecurityUpdateConfigurationRequestAdvancedSecurity? Function()? advancedSecurity, CodeSecurityUpdateConfigurationRequestCodeSecurity? Function()? codeSecurity, CodeSecurityUpdateConfigurationRequestDependencyGraph? Function()? dependencyGraph, CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction? Function()? dependencyGraphAutosubmitAction, CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, CodeSecurityUpdateConfigurationRequestDependabotAlerts? Function()? dependabotAlerts, CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, CodeSecurityUpdateConfigurationRequestDependabotDelegatedAlertDismissal? Function()? dependabotDelegatedAlertDismissal, CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup? Function()? codeScanningDefaultSetup, Omittable<CodeScanningDefaultSetupOptions?>? codeScanningDefaultSetupOptions, Omittable<CodeScanningOptions?>? codeScanningOptions, CodeSecurityUpdateConfigurationRequestCodeScanningDelegatedAlertDismissal? Function()? codeScanningDelegatedAlertDismissal, CodeSecurityUpdateConfigurationRequestSecretProtection? Function()? secretProtection, CodeSecurityUpdateConfigurationRequestSecretScanning? Function()? secretScanning, CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection? Function()? secretScanningPushProtection, CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks? Function()? secretScanningValidityChecks, CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, CodeSecurityUpdateConfigurationRequestSecretScanningGenericSecrets? Function()? secretScanningGenericSecrets, CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, CodeSecurityUpdateConfigurationRequestSecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting? Function()? privateVulnerabilityReporting, CodeSecurityUpdateConfigurationRequestEnforcement? Function()? enforcement, }) {return CodeSecurityUpdateConfigurationRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   advancedSecurity: advancedSecurity != null ? advancedSecurity() : this.advancedSecurity,
@@ -733,8 +733,8 @@ CodeSecurityUpdateConfigurationRequest copyWith({String? Function()? name, Strin
   secretScanningExtendedMetadata: secretScanningExtendedMetadata != null ? secretScanningExtendedMetadata() : this.secretScanningExtendedMetadata,
   privateVulnerabilityReporting: privateVulnerabilityReporting != null ? privateVulnerabilityReporting() : this.privateVulnerabilityReporting,
   enforcement: enforcement != null ? enforcement() : this.enforcement,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodeSecurityUpdateConfigurationRequest &&
           name == other.name &&
           description == other.description &&
@@ -761,7 +761,7 @@ CodeSecurityUpdateConfigurationRequest copyWith({String? Function()? name, Strin
           secretScanningDelegatedAlertDismissal == other.secretScanningDelegatedAlertDismissal &&
           secretScanningExtendedMetadata == other.secretScanningExtendedMetadata &&
           privateVulnerabilityReporting == other.privateVulnerabilityReporting &&
-          enforcement == other.enforcement; } 
-@override int get hashCode { return Object.hashAll([name, description, advancedSecurity, codeSecurity, dependencyGraph, dependencyGraphAutosubmitAction, dependencyGraphAutosubmitActionOptions, dependabotAlerts, dependabotSecurityUpdates, dependabotDelegatedAlertDismissal, codeScanningDefaultSetup, codeScanningDefaultSetupOptions, codeScanningOptions, codeScanningDelegatedAlertDismissal, secretProtection, secretScanning, secretScanningPushProtection, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions, secretScanningValidityChecks, secretScanningNonProviderPatterns, secretScanningGenericSecrets, secretScanningDelegatedAlertDismissal, secretScanningExtendedMetadata, privateVulnerabilityReporting, enforcement]); } 
-@override String toString() { return 'CodeSecurityUpdateConfigurationRequest(name: $name, description: $description, advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, dependencyGraph: $dependencyGraph, dependencyGraphAutosubmitAction: $dependencyGraphAutosubmitAction, dependencyGraphAutosubmitActionOptions: $dependencyGraphAutosubmitActionOptions, dependabotAlerts: $dependabotAlerts, dependabotSecurityUpdates: $dependabotSecurityUpdates, dependabotDelegatedAlertDismissal: $dependabotDelegatedAlertDismissal, codeScanningDefaultSetup: $codeScanningDefaultSetup, codeScanningDefaultSetupOptions: $codeScanningDefaultSetupOptions, codeScanningOptions: $codeScanningOptions, codeScanningDelegatedAlertDismissal: $codeScanningDelegatedAlertDismissal, secretProtection: $secretProtection, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions, secretScanningValidityChecks: $secretScanningValidityChecks, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningGenericSecrets: $secretScanningGenericSecrets, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningExtendedMetadata: $secretScanningExtendedMetadata, privateVulnerabilityReporting: $privateVulnerabilityReporting, enforcement: $enforcement)'; } 
- }
+          enforcement == other.enforcement;}
+@override int get hashCode {return Object.hashAll([name, description, advancedSecurity, codeSecurity, dependencyGraph, dependencyGraphAutosubmitAction, dependencyGraphAutosubmitActionOptions, dependabotAlerts, dependabotSecurityUpdates, dependabotDelegatedAlertDismissal, codeScanningDefaultSetup, codeScanningDefaultSetupOptions, codeScanningOptions, codeScanningDelegatedAlertDismissal, secretProtection, secretScanning, secretScanningPushProtection, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions, secretScanningValidityChecks, secretScanningNonProviderPatterns, secretScanningGenericSecrets, secretScanningDelegatedAlertDismissal, secretScanningExtendedMetadata, privateVulnerabilityReporting, enforcement]);}
+@override String toString() {return 'CodeSecurityUpdateConfigurationRequest(name: $name, description: $description, advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, dependencyGraph: $dependencyGraph, dependencyGraphAutosubmitAction: $dependencyGraphAutosubmitAction, dependencyGraphAutosubmitActionOptions: $dependencyGraphAutosubmitActionOptions, dependabotAlerts: $dependabotAlerts, dependabotSecurityUpdates: $dependabotSecurityUpdates, dependabotDelegatedAlertDismissal: $dependabotDelegatedAlertDismissal, codeScanningDefaultSetup: $codeScanningDefaultSetup, codeScanningDefaultSetupOptions: $codeScanningDefaultSetupOptions, codeScanningOptions: $codeScanningOptions, codeScanningDelegatedAlertDismissal: $codeScanningDelegatedAlertDismissal, secretProtection: $secretProtection, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions, secretScanningValidityChecks: $secretScanningValidityChecks, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningGenericSecrets: $secretScanningGenericSecrets, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningExtendedMetadata: $secretScanningExtendedMetadata, privateVulnerabilityReporting: $privateVulnerabilityReporting, enforcement: $enforcement)';}
+}

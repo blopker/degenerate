@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage
 /// 
 @immutable final class ImagesUsage {const ImagesUsage({required this.totalTokens, required this.inputTokens, required this.outputTokens, required this.inputTokensDetails, });
 
-factory ImagesUsage.fromJson(Map<String, dynamic> json) { return ImagesUsage(
+factory ImagesUsage.fromJson(Map<String, dynamic> json) {return ImagesUsage(
   totalTokens: (json['total_tokens'] as num).toInt(),
   inputTokens: (json['input_tokens'] as num).toInt(),
   outputTokens: (json['output_tokens'] as num).toInt(),
   inputTokensDetails: ImagesUsageInputTokensDetails.fromJson(json['input_tokens_details'] as Map<String, dynamic>),
-); }
+);}
 
 /// The total number of tokens (images and text) used for the image generation.
 /// 
@@ -24,28 +24,28 @@ final int outputTokens;
 /// The input tokens detailed information for the image generation.
 final ImagesUsageInputTokensDetails inputTokensDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_tokens': totalTokens,
   'input_tokens': inputTokens,
   'output_tokens': outputTokens,
   'input_tokens_details': inputTokensDetails.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_tokens') && json['total_tokens'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_tokens') && json['total_tokens'] is num &&
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
-      json.containsKey('input_tokens_details'); } 
-ImagesUsage copyWith({int? totalTokens, int? inputTokens, int? outputTokens, ImagesUsageInputTokensDetails? inputTokensDetails, }) { return ImagesUsage(
+      json.containsKey('input_tokens_details');}
+ImagesUsage copyWith({int? totalTokens, int? inputTokens, int? outputTokens, ImagesUsageInputTokensDetails? inputTokensDetails, }) {return ImagesUsage(
   totalTokens: totalTokens ?? this.totalTokens,
   inputTokens: inputTokens ?? this.inputTokens,
   outputTokens: outputTokens ?? this.outputTokens,
   inputTokensDetails: inputTokensDetails ?? this.inputTokensDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImagesUsage &&
           totalTokens == other.totalTokens &&
           inputTokens == other.inputTokens &&
           outputTokens == other.outputTokens &&
-          inputTokensDetails == other.inputTokensDetails; } 
-@override int get hashCode { return Object.hash(totalTokens, inputTokens, outputTokens, inputTokensDetails); } 
-@override String toString() { return 'ImagesUsage(totalTokens: $totalTokens, inputTokens: $inputTokens, outputTokens: $outputTokens, inputTokensDetails: $inputTokensDetails)'; } 
- }
+          inputTokensDetails == other.inputTokensDetails;}
+@override int get hashCode {return Object.hash(totalTokens, inputTokens, outputTokens, inputTokensDetails);}
+@override String toString() {return 'ImagesUsage(totalTokens: $totalTokens, inputTokens: $inputTokens, outputTokens: $outputTokens, inputTokensDetails: $inputTokensDetails)';}
+}

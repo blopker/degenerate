@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRequestAutomaticTaxLiabilityType {const PostInvoicesInvoiceRequestAutomaticTaxLiabilityType._(this.value);
 
-factory PostInvoicesInvoiceRequestAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
+factory PostInvoicesInvoiceRequestAutomaticTaxLiabilityType.fromJson(String json) {return switch (json) {
   'account' => account,
   'self' => self,
   _ => PostInvoicesInvoiceRequestAutomaticTaxLiabilityType._(json),
-}; }
+};}
 
 static const PostInvoicesInvoiceRequestAutomaticTaxLiabilityType account = PostInvoicesInvoiceRequestAutomaticTaxLiabilityType._('account');
 
@@ -16,38 +16,38 @@ static const List<PostInvoicesInvoiceRequestAutomaticTaxLiabilityType> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesInvoiceRequestAutomaticTaxLiabilityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesInvoiceRequestAutomaticTaxLiabilityType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestAutomaticTaxLiabilityType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesInvoiceRequestAutomaticTaxLiabilityType($value)';}
+}
 @immutable final class PostInvoicesInvoiceRequestAutomaticTaxLiability {const PostInvoicesInvoiceRequestAutomaticTaxLiability({required this.type, this.account, });
 
-factory PostInvoicesInvoiceRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequestAutomaticTaxLiability(
+factory PostInvoicesInvoiceRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceRequestAutomaticTaxLiability(
   account: json['account'] as String?,
   type: PostInvoicesInvoiceRequestAutomaticTaxLiabilityType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
 final PostInvoicesInvoiceRequestAutomaticTaxLiabilityType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostInvoicesInvoiceRequestAutomaticTaxLiability copyWith({String? Function()? account, PostInvoicesInvoiceRequestAutomaticTaxLiabilityType? type, }) { return PostInvoicesInvoiceRequestAutomaticTaxLiability(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostInvoicesInvoiceRequestAutomaticTaxLiability copyWith({String? Function()? account, PostInvoicesInvoiceRequestAutomaticTaxLiabilityType? type, }) {return PostInvoicesInvoiceRequestAutomaticTaxLiability(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesInvoiceRequestAutomaticTaxLiability &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'PostInvoicesInvoiceRequestAutomaticTaxLiability(account: $account, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, type);}
+@override String toString() {return 'PostInvoicesInvoiceRequestAutomaticTaxLiability(account: $account, type: $type)';}
+}

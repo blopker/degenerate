@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails {const RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails({required this.code, required this.name, });
 
-factory RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails(
+factory RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails(
   code: json['code'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String code;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails copyWith({String? code, String? name, }) { return RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails copyWith({String? code, String? name, }) {return RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails(
   code: code ?? this.code,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails &&
           code == other.code &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(code, name); } 
-@override String toString() { return 'RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails(code: $code, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(code, name);}
+@override String toString() {return 'RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails(code: $code, name: $name)';}
+}

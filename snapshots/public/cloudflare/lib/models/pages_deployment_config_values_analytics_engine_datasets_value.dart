@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Analytics Engine binding.
 @immutable final class PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue {const PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue({required this.dataset});
 
-factory PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue(
+factory PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue.fromJson(Map<String, dynamic> json) {return PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue(
   dataset: json['dataset'] as String,
-); }
+);}
 
 /// Name of the dataset.
 final String dataset;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataset': dataset,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataset') && json['dataset'] is String; } 
-PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue copyWith({String? dataset}) { return PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataset') && json['dataset'] is String;}
+PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue copyWith({String? dataset}) {return PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue(
   dataset: dataset ?? this.dataset,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue &&
-          dataset == other.dataset; } 
-@override int get hashCode { return dataset.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue(dataset: $dataset)'; } 
- }
+          dataset == other.dataset;}
+@override int get hashCode {return dataset.hashCode;}
+@override String toString() {return 'PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue(dataset: $dataset)';}
+}

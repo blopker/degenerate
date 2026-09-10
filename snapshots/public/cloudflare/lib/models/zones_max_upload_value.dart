@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zon
 /// Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)
 @immutable final class ZonesMaxUploadValue {const ZonesMaxUploadValue._(this.value);
 
-factory ZonesMaxUploadValue.fromJson(int json) { return switch (json) {
+factory ZonesMaxUploadValue.fromJson(int json) {return switch (json) {
   100 => $100,
   125 => $125,
   150 => $150,
@@ -24,7 +24,7 @@ factory ZonesMaxUploadValue.fromJson(int json) { return switch (json) {
   500 => $500,
   1000 => $1000,
   _ => ZonesMaxUploadValue._(json),
-}; }
+};}
 
 static const ZonesMaxUploadValue $100 = ZonesMaxUploadValue._(100);
 
@@ -66,11 +66,11 @@ static const List<ZonesMaxUploadValue> values = [$100, $125, $150, $175, $200, $
 
 final int value;
 
-int toJson() { return value; } 
+int toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesMaxUploadValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesMaxUploadValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesMaxUploadValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesMaxUploadValue($value)';}
+}

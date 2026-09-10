@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_server_event_rate_limits_updated_rate_limits.dart';/// The event type, must be `rate_limits.updated`.
 @immutable final class RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType._(this.value);
 
-factory RealtimeBetaServerEventRateLimitsUpdatedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventRateLimitsUpdatedType.fromJson(String json) {return switch (json) {
   'rate_limits.updated' => rateLimitsUpdated,
   _ => RealtimeBetaServerEventRateLimitsUpdatedType._(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventRateLimitsUpdatedType rateLimitsUpdated = RealtimeBetaServerEventRateLimitsUpdatedType._('rate_limits.updated');
 
@@ -14,14 +14,14 @@ static const List<RealtimeBetaServerEventRateLimitsUpdatedType> values = [rateLi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventRateLimitsUpdatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventRateLimitsUpdatedType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaServerEventRateLimitsUpdatedType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaServerEventRateLimitsUpdatedType($value)';}
+}
 /// Emitted at the beginning of a Response to indicate the updated rate limits.
 /// When a Response is created some tokens will be "reserved" for the output
 /// tokens, the rate limits shown here reflect that reservation, which is then
@@ -29,11 +29,11 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeBetaServerEventRateLimitsUpdated {const RealtimeBetaServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits, });
 
-factory RealtimeBetaServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventRateLimitsUpdated(
+factory RealtimeBetaServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventRateLimitsUpdated(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventRateLimitsUpdatedType.fromJson(json['type'] as String),
   rateLimits: (json['rate_limits'] as List<dynamic>).map((e) => RealtimeBetaServerEventRateLimitsUpdatedRateLimits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -44,24 +44,24 @@ final RealtimeBetaServerEventRateLimitsUpdatedType type;
 /// List of rate limit information.
 final List<RealtimeBetaServerEventRateLimitsUpdatedRateLimits> rateLimits;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'rate_limits': rateLimits.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('rate_limits'); } 
-RealtimeBetaServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeBetaServerEventRateLimitsUpdatedType? type, List<RealtimeBetaServerEventRateLimitsUpdatedRateLimits>? rateLimits, }) { return RealtimeBetaServerEventRateLimitsUpdated(
+      json.containsKey('rate_limits');}
+RealtimeBetaServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeBetaServerEventRateLimitsUpdatedType? type, List<RealtimeBetaServerEventRateLimitsUpdatedRateLimits>? rateLimits, }) {return RealtimeBetaServerEventRateLimitsUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   rateLimits: rateLimits ?? this.rateLimits,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaServerEventRateLimitsUpdated &&
           eventId == other.eventId &&
           type == other.type &&
-          listEquals(rateLimits, other.rateLimits); } 
-@override int get hashCode { return Object.hash(eventId, type, Object.hashAll(rateLimits)); } 
-@override String toString() { return 'RealtimeBetaServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)'; } 
- }
+          listEquals(rateLimits, other.rateLimits);}
+@override int get hashCode {return Object.hash(eventId, type, Object.hashAll(rateLimits));}
+@override String toString() {return 'RealtimeBetaServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)';}
+}

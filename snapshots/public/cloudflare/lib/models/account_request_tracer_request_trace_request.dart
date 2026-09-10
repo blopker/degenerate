@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_request_tracer_request_trace_request_body.dart';import 'account_request_tracer_request_trace_request_context.dart';@immutable final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({required this.method, required this.url, this.body, this.context, this.cookies, this.headers, this.protocol, this.skipResponse, });
 
-factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequest(
+factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> json) {return AccountRequestTracerRequestTraceRequest(
   body: json['body'] != null ? AccountRequestTracerRequestTraceRequestBody.fromJson(json['body'] as Map<String, dynamic>) : null,
   context: json['context'] != null ? AccountRequestTracerRequestTraceRequestContext.fromJson(json['context'] as Map<String, dynamic>) : null,
   cookies: (json['cookies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -11,7 +11,7 @@ factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> js
   protocol: json['protocol'] as String?,
   skipResponse: json['skip_response'] as bool?,
   url: json['url'] as String,
-); }
+);}
 
 final AccountRequestTracerRequestTraceRequestBody? body;
 
@@ -36,7 +36,7 @@ final bool? skipResponse;
 /// URL to which perform tracing request
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (body != null) 'body': body?.toJson(),
   if (context != null) 'context': context?.toJson(),
   'cookies': ?cookies,
@@ -45,10 +45,10 @@ Map<String, dynamic> toJson() { return {
   'protocol': ?protocol,
   'skip_response': ?skipResponse,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('method') && json['method'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTraceRequestBody? Function()? body, AccountRequestTracerRequestTraceRequestContext? Function()? context, Map<String, String>? Function()? cookies, Map<String, String>? Function()? headers, String? method, String? Function()? protocol, bool? Function()? skipResponse, String? url, }) { return AccountRequestTracerRequestTraceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('method') && json['method'] is String &&
+      json.containsKey('url') && json['url'] is String;}
+AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTraceRequestBody? Function()? body, AccountRequestTracerRequestTraceRequestContext? Function()? context, Map<String, String>? Function()? cookies, Map<String, String>? Function()? headers, String? method, String? Function()? protocol, bool? Function()? skipResponse, String? url, }) {return AccountRequestTracerRequestTraceRequest(
   body: body != null ? body() : this.body,
   context: context != null ? context() : this.context,
   cookies: cookies != null ? cookies() : this.cookies,
@@ -57,8 +57,8 @@ AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTra
   protocol: protocol != null ? protocol() : this.protocol,
   skipResponse: skipResponse != null ? skipResponse() : this.skipResponse,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountRequestTracerRequestTraceRequest &&
           body == other.body &&
           context == other.context &&
@@ -67,7 +67,7 @@ AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTra
           method == other.method &&
           protocol == other.protocol &&
           skipResponse == other.skipResponse &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(body, context, cookies, headers, method, protocol, skipResponse, url); } 
-@override String toString() { return 'AccountRequestTracerRequestTraceRequest(body: $body, context: $context, cookies: $cookies, headers: $headers, method: $method, protocol: $protocol, skipResponse: $skipResponse, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(body, context, cookies, headers, method, protocol, skipResponse, url);}
+@override String toString() {return 'AccountRequestTracerRequestTraceRequest(body: $body, context: $context, cookies: $cookies, headers: $headers, method: $method, protocol: $protocol, skipResponse: $skipResponse, url: $url)';}
+}

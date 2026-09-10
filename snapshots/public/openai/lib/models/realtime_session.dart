@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription.dart';import 'prompt.dart';import 'realtime_function_tool.dart';import 'realtime_session_input_audio_noise_reduction.dart';import 'realtime_session_max_response_output_tokens.dart';import 'realtime_session_model.dart';import 'realtime_session_tracing.dart';import 'realtime_turn_detection.dart';import 'tracing_configuration.dart';import 'voice_ids_shared.dart';/// The object type. Always `realtime.session`.
 @immutable final class RealtimeSessionObject {const RealtimeSessionObject._(this.value);
 
-factory RealtimeSessionObject.fromJson(String json) { return switch (json) {
+factory RealtimeSessionObject.fromJson(String json) {return switch (json) {
   'realtime.session' => realtimeSession,
   _ => RealtimeSessionObject._(json),
-}; }
+};}
 
 static const RealtimeSessionObject realtimeSession = RealtimeSessionObject._('realtime.session');
 
@@ -14,26 +14,26 @@ static const List<RealtimeSessionObject> values = [realtimeSession];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionObject($value)';}
+}
 /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,
 /// single channel (mono), and little-endian byte order.
 /// 
 @immutable final class RealtimeSessionInputAudioFormat {const RealtimeSessionInputAudioFormat._(this.value);
 
-factory RealtimeSessionInputAudioFormat.fromJson(String json) { return switch (json) {
+factory RealtimeSessionInputAudioFormat.fromJson(String json) {return switch (json) {
   'pcm16' => pcm16,
   'g711_ulaw' => g711Ulaw,
   'g711_alaw' => g711Alaw,
   _ => RealtimeSessionInputAudioFormat._(json),
-}; }
+};}
 
 static const RealtimeSessionInputAudioFormat pcm16 = RealtimeSessionInputAudioFormat._('pcm16');
 
@@ -45,25 +45,25 @@ static const List<RealtimeSessionInputAudioFormat> values = [pcm16, g711Ulaw, g7
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionInputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionInputAudioFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionInputAudioFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionInputAudioFormat($value)';}
+}
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, output audio is sampled at a rate of 24kHz.
 /// 
 @immutable final class RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat._(this.value);
 
-factory RealtimeSessionOutputAudioFormat.fromJson(String json) { return switch (json) {
+factory RealtimeSessionOutputAudioFormat.fromJson(String json) {return switch (json) {
   'pcm16' => pcm16,
   'g711_ulaw' => g711Ulaw,
   'g711_alaw' => g711Alaw,
   _ => RealtimeSessionOutputAudioFormat._(json),
-}; }
+};}
 
 static const RealtimeSessionOutputAudioFormat pcm16 = RealtimeSessionOutputAudioFormat._('pcm16');
 
@@ -75,20 +75,20 @@ static const List<RealtimeSessionOutputAudioFormat> values = [pcm16, g711Ulaw, g
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionOutputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionOutputAudioFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionOutputAudioFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionOutputAudioFormat($value)';}
+}
 @immutable final class RealtimeSessionInclude2 {const RealtimeSessionInclude2._(this.value);
 
-factory RealtimeSessionInclude2.fromJson(String json) { return switch (json) {
+factory RealtimeSessionInclude2.fromJson(String json) {return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
   _ => RealtimeSessionInclude2._(json),
-}; }
+};}
 
 static const RealtimeSessionInclude2 itemInputAudioTranscriptionLogprobs = RealtimeSessionInclude2._('item.input_audio_transcription.logprobs');
 
@@ -96,18 +96,18 @@ static const List<RealtimeSessionInclude2> values = [itemInputAudioTranscription
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionInclude2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionInclude2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionInclude2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionInclude2($value)';}
+}
 /// Realtime session object for the beta interface.
 @immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities = const Omittable.absent(), this.model, this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription = const Omittable.absent(), this.turnDetection = const Omittable.absent(), this.inputAudioNoiseReduction, this.speed, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.expiresAt, this.prompt = const Omittable.absent(), this.include = const Omittable.absent(), });
 
-factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSession(
+factory RealtimeSession.fromJson(Map<String, dynamic> json) {return RealtimeSession(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeSessionObject.fromJson(json['object'] as String) : null,
   modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
@@ -128,7 +128,7 @@ factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSes
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   include: json.containsKey('include') ? Omittable((json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionInclude2.fromJson(e as String)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
 /// 
@@ -236,16 +236,16 @@ final Omittable<Prompt?> prompt;
 final Omittable<List<RealtimeSessionInclude2>?> include;
 
 /// The value with the schema default applied when absent.
-RealtimeSessionInputAudioFormat get inputAudioFormatOrDefault { return inputAudioFormat ?? RealtimeSessionInputAudioFormat.fromJson('pcm16'); } 
+RealtimeSessionInputAudioFormat get inputAudioFormatOrDefault {return inputAudioFormat ?? RealtimeSessionInputAudioFormat.fromJson('pcm16');}
 /// The value with the schema default applied when absent.
-RealtimeSessionOutputAudioFormat get outputAudioFormatOrDefault { return outputAudioFormat ?? RealtimeSessionOutputAudioFormat.fromJson('pcm16'); } 
+RealtimeSessionOutputAudioFormat get outputAudioFormatOrDefault {return outputAudioFormat ?? RealtimeSessionOutputAudioFormat.fromJson('pcm16');}
 /// The value with the schema default applied when absent.
-double get speedOrDefault { return speed ?? 1.0; } 
+double get speedOrDefault {return speed ?? 1.0;}
 /// The value with the schema default applied when absent.
-String get toolChoiceOrDefault { return toolChoice ?? 'auto'; } 
+String get toolChoiceOrDefault {return toolChoice ?? 'auto';}
 /// The value with the schema default applied when absent.
-double get temperatureOrDefault { return temperature ?? 0.8; } 
-Map<String, dynamic> toJson() { return {
+double get temperatureOrDefault {return temperature ?? 0.8;}
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
   if (modalities.isPresent) 'modalities': modalities.value,
@@ -266,9 +266,9 @@ Map<String, dynamic> toJson() { return {
   'expires_at': ?expiresAt,
   if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
   if (include.isPresent) 'include': include.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'modalities', 'model', 'instructions', 'voice', 'input_audio_format', 'output_audio_format', 'input_audio_transcription', 'turn_detection', 'input_audio_noise_reduction', 'speed', 'tracing', 'tools', 'tool_choice', 'temperature', 'max_response_output_tokens', 'expires_at', 'prompt', 'include'}.contains(key)); } 
-RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, Omittable<dynamic>? modalities, RealtimeSessionModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, RealtimeSessionInputAudioFormat? Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat? Function()? outputAudioFormat, Omittable<AudioTranscription?>? inputAudioTranscription, Omittable<RealtimeTurnDetection?>? turnDetection, RealtimeSessionInputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double? Function()? speed, Omittable<RealtimeSessionTracing?>? tracing, List<RealtimeFunctionTool>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, RealtimeSessionMaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Omittable<Prompt?>? prompt, Omittable<List<RealtimeSessionInclude2>?>? include, }) { return RealtimeSession(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'object', 'modalities', 'model', 'instructions', 'voice', 'input_audio_format', 'output_audio_format', 'input_audio_transcription', 'turn_detection', 'input_audio_noise_reduction', 'speed', 'tracing', 'tools', 'tool_choice', 'temperature', 'max_response_output_tokens', 'expires_at', 'prompt', 'include'}.contains(key));}
+RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, Omittable<dynamic>? modalities, RealtimeSessionModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, RealtimeSessionInputAudioFormat? Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat? Function()? outputAudioFormat, Omittable<AudioTranscription?>? inputAudioTranscription, Omittable<RealtimeTurnDetection?>? turnDetection, RealtimeSessionInputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double? Function()? speed, Omittable<RealtimeSessionTracing?>? tracing, List<RealtimeFunctionTool>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, RealtimeSessionMaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Omittable<Prompt?>? prompt, Omittable<List<RealtimeSessionInclude2>?>? include, }) {return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   modalities: modalities ?? this.modalities,
@@ -289,8 +289,8 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   prompt: prompt ?? this.prompt,
   include: include ?? this.include,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeSession &&
           id == other.id &&
           object == other.object &&
@@ -312,7 +312,7 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
           expiresAt == other.expiresAt &&
           prompt == other.prompt &&
           include.isPresent == other.include.isPresent &&
-          listEquals(include.value, other.include.value); } 
-@override int get hashCode { return Object.hash(id, object, modalities, model, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, turnDetection, inputAudioNoiseReduction, speed, tracing, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, expiresAt, prompt, Object.hashAll(include.value ?? const [])); } 
-@override String toString() { return 'RealtimeSession(id: $id, object: $object, modalities: $modalities, model: $model, instructions: $instructions, voice: $voice, inputAudioFormat: $inputAudioFormat, outputAudioFormat: $outputAudioFormat, inputAudioTranscription: $inputAudioTranscription, turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, speed: $speed, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxResponseOutputTokens: $maxResponseOutputTokens, expiresAt: $expiresAt, prompt: $prompt, include: $include)'; } 
- }
+          listEquals(include.value, other.include.value);}
+@override int get hashCode {return Object.hash(id, object, modalities, model, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, turnDetection, inputAudioNoiseReduction, speed, tracing, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, expiresAt, prompt, Object.hashAll(include.value ?? const []));}
+@override String toString() {return 'RealtimeSession(id: $id, object: $object, modalities: $modalities, model: $model, instructions: $instructions, voice: $voice, inputAudioFormat: $inputAudioFormat, outputAudioFormat: $outputAudioFormat, inputAudioTranscription: $inputAudioTranscription, turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, speed: $speed, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxResponseOutputTokens: $maxResponseOutputTokens, expiresAt: $expiresAt, prompt: $prompt, include: $include)';}
+}

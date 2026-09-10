@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval {const PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval._(this.value);
 
-factory PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval day = PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval._('day');
 
@@ -22,38 +22,38 @@ static const List<PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringI
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval($value)';}
+}
 @immutable final class PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring {const PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring({required this.interval, this.intervalCount, });
 
-factory PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring(
+factory PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring(
   interval: PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-); }
+);}
 
 final PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval interval;
 
 final int? intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring copyWith({PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) { return PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring copyWith({PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) {return PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'PostSubscriptionSchedulesRequestPhasesItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)';}
+}

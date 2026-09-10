@@ -11,12 +11,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default miti
 /// 
 @immutable final class ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction._(this.value);
 
-factory ShieldOldValidationDefaultMitigationAction.fromJson(String json) { return switch (json) {
+factory ShieldOldValidationDefaultMitigationAction.fromJson(String json) {return switch (json) {
   'none' => none,
   'log' => log,
   'block' => block,
   _ => ShieldOldValidationDefaultMitigationAction._(json),
-}; }
+};}
 
 static const ShieldOldValidationDefaultMitigationAction none = ShieldOldValidationDefaultMitigationAction._('none');
 
@@ -28,11 +28,11 @@ static const List<ShieldOldValidationDefaultMitigationAction> values = [none, lo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldOldValidationDefaultMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldOldValidationDefaultMitigationAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ShieldOldValidationDefaultMitigationAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ShieldOldValidationDefaultMitigationAction($value)';}
+}

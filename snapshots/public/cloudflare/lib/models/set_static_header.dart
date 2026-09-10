@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_header_operation.dart';import 'rulesets_rewrite_header_value.dart';/// A header with a static value to set.
 @immutable final class SetStaticHeader {const SetStaticHeader({required this.operation, required this.value, });
 
-factory SetStaticHeader.fromJson(Map<String, dynamic> json) { return SetStaticHeader(
+factory SetStaticHeader.fromJson(Map<String, dynamic> json) {return SetStaticHeader(
   operation: RulesetsRewriteHeaderOperation.fromJson(json['operation'] as String),
   value: RulesetsRewriteHeaderValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// The operation to perform on the header.
 final RulesetsRewriteHeaderOperation operation;
@@ -14,20 +14,20 @@ final RulesetsRewriteHeaderOperation operation;
 /// A static value for the header.
 final RulesetsRewriteHeaderValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'operation': operation.toJson(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operation') &&
-      json.containsKey('value'); } 
-SetStaticHeader copyWith({RulesetsRewriteHeaderOperation? operation, RulesetsRewriteHeaderValue? value, }) { return SetStaticHeader(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operation') &&
+      json.containsKey('value');}
+SetStaticHeader copyWith({RulesetsRewriteHeaderOperation? operation, RulesetsRewriteHeaderValue? value, }) {return SetStaticHeader(
   operation: operation ?? this.operation,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SetStaticHeader &&
           operation == other.operation &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(operation, value); } 
-@override String toString() { return 'SetStaticHeader(operation: $operation, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(operation, value);}
+@override String toString() {return 'SetStaticHeader(operation: $operation, value: $value)';}
+}

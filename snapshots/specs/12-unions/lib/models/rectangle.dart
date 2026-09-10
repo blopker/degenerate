@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rectangle {const Rectangle({required this.type, required this.width, required this.height, this.color, });
 
-factory Rectangle.fromJson(Map<String, dynamic> json) { return Rectangle(
+factory Rectangle.fromJson(Map<String, dynamic> json) {return Rectangle(
   type: json['type'] as String,
   width: (json['width'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
   color: json['color'] as String?,
-); }
+);}
 
 final String type;
 
@@ -17,27 +17,27 @@ final double height;
 
 final String? color;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'width': width,
   'height': height,
   'color': ?color,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('width') && json['width'] is num &&
-      json.containsKey('height') && json['height'] is num; } 
-Rectangle copyWith({String? type, double? width, double? height, String? Function()? color, }) { return Rectangle(
+      json.containsKey('height') && json['height'] is num;}
+Rectangle copyWith({String? type, double? width, double? height, String? Function()? color, }) {return Rectangle(
   type: type ?? this.type,
   width: width ?? this.width,
   height: height ?? this.height,
   color: color != null ? color() : this.color,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Rectangle &&
           type == other.type &&
           width == other.width &&
           height == other.height &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(type, width, height, color); } 
-@override String toString() { return 'Rectangle(type: $type, width: $width, height: $height, color: $color)'; } 
- }
+          color == other.color;}
+@override int get hashCode {return Object.hash(type, width, height, color);}
+@override String toString() {return 'Rectangle(type: $type, width: $width, height: $height, color: $color)';}
+}

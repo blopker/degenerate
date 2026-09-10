@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepoSearchResultItemPermissions {const RepoSearchResultItemPermissions({required this.admin, required this.push, required this.pull, this.maintain, this.triage, });
 
-factory RepoSearchResultItemPermissions.fromJson(Map<String, dynamic> json) { return RepoSearchResultItemPermissions(
+factory RepoSearchResultItemPermissions.fromJson(Map<String, dynamic> json) {return RepoSearchResultItemPermissions(
   admin: json['admin'] as bool,
   maintain: json['maintain'] as bool?,
   push: json['push'] as bool,
   triage: json['triage'] as bool?,
   pull: json['pull'] as bool,
-); }
+);}
 
 final bool admin;
 
@@ -20,30 +20,30 @@ final bool? triage;
 
 final bool pull;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'admin': admin,
   'maintain': ?maintain,
   'push': push,
   'triage': ?triage,
   'pull': pull,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin') && json['admin'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('admin') && json['admin'] is bool &&
       json.containsKey('push') && json['push'] is bool &&
-      json.containsKey('pull') && json['pull'] is bool; } 
-RepoSearchResultItemPermissions copyWith({bool? admin, bool? Function()? maintain, bool? push, bool? Function()? triage, bool? pull, }) { return RepoSearchResultItemPermissions(
+      json.containsKey('pull') && json['pull'] is bool;}
+RepoSearchResultItemPermissions copyWith({bool? admin, bool? Function()? maintain, bool? push, bool? Function()? triage, bool? pull, }) {return RepoSearchResultItemPermissions(
   admin: admin ?? this.admin,
   maintain: maintain != null ? maintain() : this.maintain,
   push: push ?? this.push,
   triage: triage != null ? triage() : this.triage,
   pull: pull ?? this.pull,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepoSearchResultItemPermissions &&
           admin == other.admin &&
           maintain == other.maintain &&
           push == other.push &&
           triage == other.triage &&
-          pull == other.pull; } 
-@override int get hashCode { return Object.hash(admin, maintain, push, triage, pull); } 
-@override String toString() { return 'RepoSearchResultItemPermissions(admin: $admin, maintain: $maintain, push: $push, triage: $triage, pull: $pull)'; } 
- }
+          pull == other.pull;}
+@override int get hashCode {return Object.hash(admin, maintain, push, triage, pull);}
+@override String toString() {return 'RepoSearchResultItemPermissions(admin: $admin, maintain: $maintain, push: $push, triage: $triage, pull: $pull)';}
+}

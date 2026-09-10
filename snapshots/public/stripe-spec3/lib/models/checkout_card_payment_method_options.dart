@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_card_installments_options.dart';import 'payment_pages_private_card_payment_method_options_resource_restrictions.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class CheckoutCardPaymentMethodOptionsCaptureMethod {const CheckoutCardPaymentMethodOptionsCaptureMethod._(this.value);
 
-factory CheckoutCardPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
+factory CheckoutCardPaymentMethodOptionsCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => CheckoutCardPaymentMethodOptionsCaptureMethod._(json),
-}; }
+};}
 
 static const CheckoutCardPaymentMethodOptionsCaptureMethod manual = CheckoutCardPaymentMethodOptionsCaptureMethod._('manual');
 
@@ -14,22 +14,22 @@ static const List<CheckoutCardPaymentMethodOptionsCaptureMethod> values = [manua
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutCardPaymentMethodOptionsCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutCardPaymentMethodOptionsCaptureMethod($value)';}
+}
 /// Request ability to [capture beyond the standard authorization validity window](/payments/extended-authorization) for this CheckoutSession.
 @immutable final class CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization {const CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization._(this.value);
 
-factory CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization.fromJson(String json) { return switch (json) {
+factory CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization._(json),
-}; }
+};}
 
 static const CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization ifAvailable = CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization._('if_available');
 
@@ -39,22 +39,22 @@ static const List<CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization($value)';}
+}
 /// Request ability to [increment the authorization](/payments/incremental-authorization) for this CheckoutSession.
 @immutable final class CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization {const CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization._(this.value);
 
-factory CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization.fromJson(String json) { return switch (json) {
+factory CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization._(json),
-}; }
+};}
 
 static const CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization ifAvailable = CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization._('if_available');
 
@@ -64,22 +64,22 @@ static const List<CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorizatio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization($value)';}
+}
 /// Request ability to make [multiple captures](/payments/multicapture) for this CheckoutSession.
 @immutable final class CheckoutCardPaymentMethodOptionsRequestMulticapture {const CheckoutCardPaymentMethodOptionsRequestMulticapture._(this.value);
 
-factory CheckoutCardPaymentMethodOptionsRequestMulticapture.fromJson(String json) { return switch (json) {
+factory CheckoutCardPaymentMethodOptionsRequestMulticapture.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => CheckoutCardPaymentMethodOptionsRequestMulticapture._(json),
-}; }
+};}
 
 static const CheckoutCardPaymentMethodOptionsRequestMulticapture ifAvailable = CheckoutCardPaymentMethodOptionsRequestMulticapture._('if_available');
 
@@ -89,22 +89,22 @@ static const List<CheckoutCardPaymentMethodOptionsRequestMulticapture> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestMulticapture && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestMulticapture($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutCardPaymentMethodOptionsRequestMulticapture && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutCardPaymentMethodOptionsRequestMulticapture($value)';}
+}
 /// Request ability to [overcapture](/payments/overcapture) for this CheckoutSession.
 @immutable final class CheckoutCardPaymentMethodOptionsRequestOvercapture {const CheckoutCardPaymentMethodOptionsRequestOvercapture._(this.value);
 
-factory CheckoutCardPaymentMethodOptionsRequestOvercapture.fromJson(String json) { return switch (json) {
+factory CheckoutCardPaymentMethodOptionsRequestOvercapture.fromJson(String json) {return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
   _ => CheckoutCardPaymentMethodOptionsRequestOvercapture._(json),
-}; }
+};}
 
 static const CheckoutCardPaymentMethodOptionsRequestOvercapture ifAvailable = CheckoutCardPaymentMethodOptionsRequestOvercapture._('if_available');
 
@@ -114,23 +114,23 @@ static const List<CheckoutCardPaymentMethodOptionsRequestOvercapture> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestOvercapture && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestOvercapture($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutCardPaymentMethodOptionsRequestOvercapture && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutCardPaymentMethodOptionsRequestOvercapture($value)';}
+}
 /// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. If not provided, this value defaults to `automatic`. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
 @immutable final class CheckoutCardPaymentMethodOptionsRequestThreeDSecure {const CheckoutCardPaymentMethodOptionsRequestThreeDSecure._(this.value);
 
-factory CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(String json) { return switch (json) {
+factory CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(String json) {return switch (json) {
   'any' => any,
   'automatic' => automatic,
   'challenge' => challenge,
   _ => CheckoutCardPaymentMethodOptionsRequestThreeDSecure._(json),
-}; }
+};}
 
 static const CheckoutCardPaymentMethodOptionsRequestThreeDSecure any = CheckoutCardPaymentMethodOptionsRequestThreeDSecure._('any');
 
@@ -142,14 +142,14 @@ static const List<CheckoutCardPaymentMethodOptionsRequestThreeDSecure> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestThreeDSecure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestThreeDSecure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutCardPaymentMethodOptionsRequestThreeDSecure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutCardPaymentMethodOptionsRequestThreeDSecure($value)';}
+}
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
@@ -159,12 +159,12 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class CheckoutCardPaymentMethodOptionsSetupFutureUsage {const CheckoutCardPaymentMethodOptionsSetupFutureUsage._(this.value);
 
-factory CheckoutCardPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutCardPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => CheckoutCardPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
+};}
 
 static const CheckoutCardPaymentMethodOptionsSetupFutureUsage none = CheckoutCardPaymentMethodOptionsSetupFutureUsage._('none');
 
@@ -176,18 +176,18 @@ static const List<CheckoutCardPaymentMethodOptionsSetupFutureUsage> values = [no
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutCardPaymentMethodOptionsSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutCardPaymentMethodOptionsSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class CheckoutCardPaymentMethodOptions {const CheckoutCardPaymentMethodOptions({required this.requestThreeDSecure, this.captureMethod, this.installments, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.restrictions, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, });
 
-factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutCardPaymentMethodOptions(
+factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutCardPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutCardPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   installments: json['installments'] != null ? CheckoutCardInstallmentsOptions.fromJson(json['installments'] as Map<String, dynamic>) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] != null ? CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
@@ -199,7 +199,7 @@ factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) { r
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutCardPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] as String?,
   statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] as String?,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutCardPaymentMethodOptionsCaptureMethod? captureMethod;
@@ -238,7 +238,7 @@ final String? statementDescriptorSuffixKana;
 /// Provides information about a card payment that customers see on their statements. Concatenated with the Kanji prefix (shortened Kanji descriptor) or Kanji statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 17 characters. On card statements, the *concatenation* of both prefix and suffix (including separators) will appear truncated to 17 characters.
 final String? statementDescriptorSuffixKanji;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (installments != null) 'installments': installments?.toJson(),
   if (requestExtendedAuthorization != null) 'request_extended_authorization': requestExtendedAuthorization?.toJson(),
@@ -250,9 +250,9 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'statement_descriptor_suffix_kana': ?statementDescriptorSuffixKana,
   'statement_descriptor_suffix_kanji': ?statementDescriptorSuffixKanji,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('request_three_d_secure'); } 
-CheckoutCardPaymentMethodOptions copyWith({CheckoutCardPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutCardInstallmentsOptions? Function()? installments, CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization? Function()? requestExtendedAuthorization, CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, CheckoutCardPaymentMethodOptionsRequestMulticapture? Function()? requestMulticapture, CheckoutCardPaymentMethodOptionsRequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions? Function()? restrictions, CheckoutCardPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return CheckoutCardPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('request_three_d_secure');}
+CheckoutCardPaymentMethodOptions copyWith({CheckoutCardPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutCardInstallmentsOptions? Function()? installments, CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization? Function()? requestExtendedAuthorization, CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, CheckoutCardPaymentMethodOptionsRequestMulticapture? Function()? requestMulticapture, CheckoutCardPaymentMethodOptionsRequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions? Function()? restrictions, CheckoutCardPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) {return CheckoutCardPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,
   requestExtendedAuthorization: requestExtendedAuthorization != null ? requestExtendedAuthorization() : this.requestExtendedAuthorization,
@@ -264,8 +264,8 @@ CheckoutCardPaymentMethodOptions copyWith({CheckoutCardPaymentMethodOptionsCaptu
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   statementDescriptorSuffixKana: statementDescriptorSuffixKana != null ? statementDescriptorSuffixKana() : this.statementDescriptorSuffixKana,
   statementDescriptorSuffixKanji: statementDescriptorSuffixKanji != null ? statementDescriptorSuffixKanji() : this.statementDescriptorSuffixKanji,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutCardPaymentMethodOptions &&
           captureMethod == other.captureMethod &&
           installments == other.installments &&
@@ -277,7 +277,7 @@ CheckoutCardPaymentMethodOptions copyWith({CheckoutCardPaymentMethodOptionsCaptu
           restrictions == other.restrictions &&
           setupFutureUsage == other.setupFutureUsage &&
           statementDescriptorSuffixKana == other.statementDescriptorSuffixKana &&
-          statementDescriptorSuffixKanji == other.statementDescriptorSuffixKanji; } 
-@override int get hashCode { return Object.hash(captureMethod, installments, requestExtendedAuthorization, requestIncrementalAuthorization, requestMulticapture, requestOvercapture, requestThreeDSecure, restrictions, setupFutureUsage, statementDescriptorSuffixKana, statementDescriptorSuffixKanji); } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptions(captureMethod: $captureMethod, installments: $installments, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorization: $requestIncrementalAuthorization, requestMulticapture: $requestMulticapture, requestOvercapture: $requestOvercapture, requestThreeDSecure: $requestThreeDSecure, restrictions: $restrictions, setupFutureUsage: $setupFutureUsage, statementDescriptorSuffixKana: $statementDescriptorSuffixKana, statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji)'; } 
- }
+          statementDescriptorSuffixKanji == other.statementDescriptorSuffixKanji;}
+@override int get hashCode {return Object.hash(captureMethod, installments, requestExtendedAuthorization, requestIncrementalAuthorization, requestMulticapture, requestOvercapture, requestThreeDSecure, restrictions, setupFutureUsage, statementDescriptorSuffixKana, statementDescriptorSuffixKanji);}
+@override String toString() {return 'CheckoutCardPaymentMethodOptions(captureMethod: $captureMethod, installments: $installments, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorization: $requestIncrementalAuthorization, requestMulticapture: $requestMulticapture, requestOvercapture: $requestOvercapture, requestThreeDSecure: $requestThreeDSecure, restrictions: $restrictions, setupFutureUsage: $setupFutureUsage, statementDescriptorSuffixKana: $statementDescriptorSuffixKana, statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji)';}
+}

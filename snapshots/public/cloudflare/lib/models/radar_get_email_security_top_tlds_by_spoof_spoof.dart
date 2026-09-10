@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Spoof classification.
 @immutable final class RadarGetEmailSecurityTopTldsBySpoofSpoof {const RadarGetEmailSecurityTopTldsBySpoofSpoof._(this.value);
 
-factory RadarGetEmailSecurityTopTldsBySpoofSpoof.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTopTldsBySpoofSpoof.fromJson(String json) {return switch (json) {
   'SPOOF' => spoof,
   'NOT_SPOOF' => notSpoof,
   _ => RadarGetEmailSecurityTopTldsBySpoofSpoof._(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTopTldsBySpoofSpoof spoof = RadarGetEmailSecurityTopTldsBySpoofSpoof._('SPOOF');
 
@@ -17,11 +17,11 @@ static const List<RadarGetEmailSecurityTopTldsBySpoofSpoof> values = [spoof, not
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsBySpoofSpoof && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailSecurityTopTldsBySpoofSpoof($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailSecurityTopTldsBySpoofSpoof && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailSecurityTopTldsBySpoofSpoof($value)';}
+}

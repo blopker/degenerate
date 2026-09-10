@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_note_refund_refund.dart';import 'credit_notes_payment_record_refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
 @immutable final class CreditNoteRefundType {const CreditNoteRefundType._(this.value);
 
-factory CreditNoteRefundType.fromJson(String json) { return switch (json) {
+factory CreditNoteRefundType.fromJson(String json) {return switch (json) {
   'payment_record_refund' => paymentRecordRefund,
   'refund' => refund,
   _ => CreditNoteRefundType._(json),
-}; }
+};}
 
 static const CreditNoteRefundType paymentRecordRefund = CreditNoteRefundType._('payment_record_refund');
 
@@ -17,23 +17,23 @@ static const List<CreditNoteRefundType> values = [paymentRecordRefund, refund];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteRefundType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteRefundType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreditNoteRefundType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreditNoteRefundType($value)';}
+}
 /// 
 @immutable final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefunded, required this.refund, this.paymentRecordRefund = const Omittable.absent(), this.type = const Omittable.absent(), });
 
-factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNoteRefund(
+factory CreditNoteRefund.fromJson(Map<String, dynamic> json) {return CreditNoteRefund(
   amountRefunded: (json['amount_refunded'] as num).toInt(),
   paymentRecordRefund: json.containsKey('payment_record_refund') ? Omittable(json['payment_record_refund'] != null ? CreditNotesPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   refund: CreditNoteRefundRefund.fromJson(json['refund']),
   type: json.containsKey('type') ? Omittable(json['type'] != null ? CreditNoteRefundType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount of the refund that applies to this credit note, in cents (or local equivalent).
 final int amountRefunded;
@@ -47,26 +47,26 @@ final CreditNoteRefundRefund refund;
 /// Type of the refund, one of `refund` or `payment_record_refund`.
 final Omittable<CreditNoteRefundType?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_refunded': amountRefunded,
   if (paymentRecordRefund.isPresent) 'payment_record_refund': paymentRecordRefund.value?.toJson(),
   'refund': refund.toJson(),
   if (type.isPresent) 'type': type.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_refunded') && json['amount_refunded'] is num &&
-      json.containsKey('refund'); } 
-CreditNoteRefund copyWith({int? amountRefunded, Omittable<CreditNotesPaymentRecordRefund?>? paymentRecordRefund, CreditNoteRefundRefund? refund, Omittable<CreditNoteRefundType?>? type, }) { return CreditNoteRefund(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_refunded') && json['amount_refunded'] is num &&
+      json.containsKey('refund');}
+CreditNoteRefund copyWith({int? amountRefunded, Omittable<CreditNotesPaymentRecordRefund?>? paymentRecordRefund, CreditNoteRefundRefund? refund, Omittable<CreditNoteRefundType?>? type, }) {return CreditNoteRefund(
   amountRefunded: amountRefunded ?? this.amountRefunded,
   paymentRecordRefund: paymentRecordRefund ?? this.paymentRecordRefund,
   refund: refund ?? this.refund,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreditNoteRefund &&
           amountRefunded == other.amountRefunded &&
           paymentRecordRefund == other.paymentRecordRefund &&
           refund == other.refund &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amountRefunded, paymentRecordRefund, refund, type); } 
-@override String toString() { return 'CreditNoteRefund(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(amountRefunded, paymentRecordRefund, refund, type);}
+@override String toString() {return 'CreditNoteRefund(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)';}
+}

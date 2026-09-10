@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started upgrade
 @immutable final class MconnEventStartUpgradeK {const MconnEventStartUpgradeK._(this.value);
 
-factory MconnEventStartUpgradeK.fromJson(String json) { return switch (json) {
+factory MconnEventStartUpgradeK.fromJson(String json) {return switch (json) {
   'StartUpgrade' => startUpgrade,
   _ => MconnEventStartUpgradeK._(json),
-}; }
+};}
 
 static const MconnEventStartUpgradeK startUpgrade = MconnEventStartUpgradeK._('StartUpgrade');
 
@@ -14,20 +14,20 @@ static const List<MconnEventStartUpgradeK> values = [startUpgrade];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventStartUpgradeK && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MconnEventStartUpgradeK($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MconnEventStartUpgradeK && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MconnEventStartUpgradeK($value)';}
+}
 @immutable final class MconnEventStartUpgrade {const MconnEventStartUpgrade({required this.k, required this.url, });
 
-factory MconnEventStartUpgrade.fromJson(Map<String, dynamic> json) { return MconnEventStartUpgrade(
+factory MconnEventStartUpgrade.fromJson(Map<String, dynamic> json) {return MconnEventStartUpgrade(
   k: MconnEventStartUpgradeK.fromJson(json['k'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Started upgrade
 final MconnEventStartUpgradeK k;
@@ -35,20 +35,20 @@ final MconnEventStartUpgradeK k;
 /// Location of upgrade bundle
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'k': k.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') &&
-      json.containsKey('url') && json['url'] is String; } 
-MconnEventStartUpgrade copyWith({MconnEventStartUpgradeK? k, String? url, }) { return MconnEventStartUpgrade(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('k') &&
+      json.containsKey('url') && json['url'] is String;}
+MconnEventStartUpgrade copyWith({MconnEventStartUpgradeK? k, String? url, }) {return MconnEventStartUpgrade(
   k: k ?? this.k,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnEventStartUpgrade &&
           k == other.k &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(k, url); } 
-@override String toString() { return 'MconnEventStartUpgrade(k: $k, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(k, url);}
+@override String toString() {return 'MconnEventStartUpgrade(k: $k, url: $url)';}
+}

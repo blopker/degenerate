@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/commit.dart';import '../models/diff_entry.dart';import '../models/pull_request.dart';import '../models/pull_request_merge_result.dart';import '../models/pull_request_review.dart';import '../models/pull_request_review_comment.dart';import '../models/pull_request_review_request.dart';import '../models/pull_request_simple.dart';import '../models/pulls_create_reply_for_review_comment_request.dart';import '../models/pulls_create_request.dart';import '../models/pulls_create_review_comment_request.dart';import '../models/pulls_create_review_request.dart';import '../models/pulls_dismiss_review_request.dart';import '../models/pulls_get_response503.dart';import '../models/pulls_list_direction.dart';import '../models/pulls_list_files_response503.dart';import '../models/pulls_list_review_comments_direction.dart';import '../models/pulls_list_review_comments_for_repo_direction.dart';import '../models/pulls_list_review_comments_for_repo_sort.dart';import '../models/pulls_list_review_comments_sort.dart';import '../models/pulls_list_sort.dart';import '../models/pulls_list_state.dart';import '../models/pulls_merge_request.dart';import '../models/pulls_merge_response405.dart';import '../models/pulls_merge_response409.dart';import '../models/pulls_remove_requested_reviewers_request.dart';import '../models/pulls_submit_review_request.dart';import '../models/pulls_update_branch_request.dart';import '../models/pulls_update_branch_response202.dart';import '../models/pulls_update_request.dart';import '../models/pulls_update_review_comment_request.dart';import '../models/pulls_update_review_request.dart';import '../models/review_comment.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';/// PullsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/commit.dart';import '../models/diff_entry.dart';import '../models/pull_request.dart';import '../models/pull_request_merge_result.dart';import '../models/pull_request_review.dart';import '../models/pull_request_review_comment.dart';import '../models/pull_request_review_request.dart';import '../models/pull_request_simple.dart';import '../models/pulls_create_error.dart';import '../models/pulls_create_reply_for_review_comment_request.dart';import '../models/pulls_create_request.dart';import '../models/pulls_create_review_comment_error.dart';import '../models/pulls_create_review_comment_request.dart';import '../models/pulls_create_review_error.dart';import '../models/pulls_create_review_request.dart';import '../models/pulls_delete_pending_review_error.dart';import '../models/pulls_dismiss_review_error.dart';import '../models/pulls_dismiss_review_request.dart';import '../models/pulls_get_error.dart';import '../models/pulls_list_direction.dart';import '../models/pulls_list_error.dart';import '../models/pulls_list_files_error.dart';import '../models/pulls_list_review_comments_direction.dart';import '../models/pulls_list_review_comments_for_repo_direction.dart';import '../models/pulls_list_review_comments_for_repo_sort.dart';import '../models/pulls_list_review_comments_sort.dart';import '../models/pulls_list_sort.dart';import '../models/pulls_list_state.dart';import '../models/pulls_merge_error.dart';import '../models/pulls_merge_request.dart';import '../models/pulls_remove_requested_reviewers_request.dart';import '../models/pulls_request_reviewers_error.dart';import '../models/pulls_submit_review_error.dart';import '../models/pulls_submit_review_request.dart';import '../models/pulls_update_branch_error.dart';import '../models/pulls_update_branch_request.dart';import '../models/pulls_update_branch_response.dart';import '../models/pulls_update_error.dart';import '../models/pulls_update_request.dart';import '../models/pulls_update_review_comment_request.dart';import '../models/pulls_update_review_request.dart';import '../models/review_comment.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';/// PullsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -26,7 +26,7 @@ final class PullsApi with ApiExecutor {const PullsApi(this.apiConfig);
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls`
-Future<ApiResult<List<PullRequestSimple>, ValidationError>> pullsList({required String owner, required String repo, PullsListState? state, String? head, String? base, PullsListSort? sort, PullsListDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PullRequestSimple>, PullsListError>> pullsList({required String owner, required String repo, PullsListState? state, String? head, String? base, PullsListSort? sort, PullsListDirection? direction, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state.toJson();
@@ -61,26 +61,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 422:
-final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();}, onError: PullsListError.parse, );}
 /// Create a pull request
 ///
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -97,7 +80,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls`
-Future<ApiResult<PullRequest, OneOf2<BasicError, ValidationError>>> pullsCreate({required String owner, required String repo, required PullsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequest, PullsCreateError>> pullsCreate({required String owner, required String repo, required PullsCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -108,27 +91,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequest.fromJson(json as Map<String, dynamic>);}, onError: PullsCreateError.parse, );}
 /// List review comments in a repository
 ///
 /// Lists review comments for all pull requests in a repository. By default,
@@ -142,7 +107,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/comments`
-Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewCommentsForRepo({required String owner, required String repo, PullsListReviewCommentsForRepoSort? sort, PullsListReviewCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewCommentsForRepo({required String owner, required String repo, PullsListReviewCommentsForRepoSort? sort, PullsListReviewCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -171,14 +136,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a review comment for a pull request
 ///
 /// Provides details for a specified review comment.
@@ -191,7 +151,7 @@ return (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/comments/{comment_id}`
-Future<ApiResult<PullRequestReviewComment, BasicError>> pullsGetReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, BasicError>> pullsGetReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -200,24 +160,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a review comment for a pull request
 ///
 /// Edits the content of a specified review comment.
@@ -230,7 +179,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}`
-Future<ApiResult<PullRequestReviewComment, Never>> pullsUpdateReviewComment({required String owner, required String repo, required int commentId, required PullsUpdateReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, Never>> pullsUpdateReviewComment({required String owner, required String repo, required int commentId, required PullsUpdateReviewCommentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -241,20 +190,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a review comment for a pull request
 ///
 /// Deletes a review comment.
 ///
 /// `DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}`
-Future<ApiResult<void, BasicError>> pullsDeleteReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BasicError>> pullsDeleteReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -263,21 +207,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a pull request
 ///
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -305,7 +240,7 @@ return null;
 /// - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}`
-Future<ApiResult<PullRequest, OneOf2<BasicError, PullsGetResponse503>>> pullsGet({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequest, PullsGetError>> pullsGet({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -314,29 +249,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 404 || 406 || 500:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, PullsGetResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, PullsGetResponse503>.b(PullsGetResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequest.fromJson(json as Map<String, dynamic>);}, onError: PullsGetError.parse, );}
 /// Update a pull request
 ///
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -351,7 +266,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/pulls/{pull_number}`
-Future<ApiResult<PullRequest, OneOf2<BasicError, ValidationError>>> pullsUpdate({required String owner, required String repo, required int pullNumber, PullsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequest, PullsUpdateError>> pullsUpdate({required String owner, required String repo, required int pullNumber, PullsUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -362,27 +277,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequest.fromJson(json as Map<String, dynamic>);}, onError: PullsUpdateError.parse, );}
 /// List review comments on a pull request
 ///
 /// Lists all review comments for a specified pull request. By default, review comments
@@ -396,7 +293,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/comments`
-Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewComments({required String owner, required String repo, required int pullNumber, PullsListReviewCommentsSort? sort, PullsListReviewCommentsDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewComments({required String owner, required String repo, required int pullNumber, PullsListReviewCommentsSort? sort, PullsListReviewCommentsDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -425,14 +322,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a review comment for a pull request
 ///
 /// Creates a review comment on the diff of a specified pull request. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://docs.github.com/rest/issues/comments#create-an-issue-comment)."
@@ -452,7 +344,7 @@ return (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/comments`
-Future<ApiResult<PullRequestReviewComment, OneOf2<BasicError, ValidationError>>> pullsCreateReviewComment({required String owner, required String repo, required int pullNumber, required PullsCreateReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, PullsCreateReviewCommentError>> pullsCreateReviewComment({required String owner, required String repo, required int pullNumber, required PullsCreateReviewCommentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -463,27 +355,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, onError: PullsCreateReviewCommentError.parse, );}
 /// Create a reply for a review comment
 ///
 /// Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported.
@@ -499,7 +373,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies`
-Future<ApiResult<PullRequestReviewComment, BasicError>> pullsCreateReplyForReviewComment({required String owner, required String repo, required int pullNumber, required int commentId, required PullsCreateReplyForReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReviewComment, BasicError>> pullsCreateReplyForReviewComment({required String owner, required String repo, required int pullNumber, required int commentId, required PullsCreateReplyForReviewCommentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -510,24 +384,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List commits on a pull request
 ///
 /// Lists a maximum of 250 commits for a pull request. To receive a complete
@@ -542,7 +405,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/commits`
-Future<ApiResult<List<Commit>, Never>> pullsListCommits({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Commit>, Never>> pullsListCommits({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -562,14 +425,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List pull requests files
 ///
 /// Lists the files in a specified pull request.
@@ -585,7 +443,7 @@ return (json as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynam
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/files`
-Future<ApiResult<List<DiffEntry>, OneOf3<ValidationError, BasicError, PullsListFilesResponse503>>> pullsListFiles({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DiffEntry>, PullsListFilesError>> pullsListFiles({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -605,36 +463,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<ValidationError, BasicError, PullsListFilesResponse503>.a(ValidationError.fromJson(json as Map<String, dynamic>));
-case 500:
-final json = jsonDecode(response.body);
-return OneOf3<ValidationError, BasicError, PullsListFilesResponse503>.b(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf3<ValidationError, BasicError, PullsListFilesResponse503>.c(PullsListFilesResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList();}, onError: PullsListFilesError.parse, );}
 /// Check if a pull request has been merged
 ///
 /// Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/merge`
-Future<ApiResult<void, Never>> pullsCheckIfMerged({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> pullsCheckIfMerged({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -643,18 +480,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Merge a pull request
 ///
 /// Merges a pull request into the base branch.
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge`
-Future<ApiResult<PullRequestMergeResult, OneOf4<BasicError, PullsMergeResponse405, PullsMergeResponse409, ValidationError>>> pullsMerge({required String owner, required String repo, required int pullNumber, PullsMergeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestMergeResult, PullsMergeError>> pullsMerge({required String owner, required String repo, required int pullNumber, PullsMergeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -665,39 +499,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestMergeResult.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, PullsMergeResponse405, PullsMergeResponse409, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 405:
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, PullsMergeResponse405, PullsMergeResponse409, ValidationError>.b(PullsMergeResponse405.fromJson(json as Map<String, dynamic>));
-case 409:
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, PullsMergeResponse405, PullsMergeResponse409, ValidationError>.c(PullsMergeResponse409.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, PullsMergeResponse405, PullsMergeResponse409, ValidationError>.d(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestMergeResult.fromJson(json as Map<String, dynamic>);}, onError: PullsMergeError.parse, );}
 /// Get all requested reviewers for a pull request
 ///
 /// Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
-Future<ApiResult<PullRequestReviewRequest, Never>> pullsListRequestedReviewers({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReviewRequest, Never>> pullsListRequestedReviewers({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -706,21 +516,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewRequest.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewRequest.fromJson(json as Map<String, dynamic>);}, );}
 /// Request reviewers for a pull request
 ///
 /// Requests reviews for a pull request from a given set of users and/or teams.
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
-Future<ApiResult<PullRequestSimple, BasicError>> pullsRequestReviewers({required String owner, required String repo, required int pullNumber, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestSimple, PullsRequestReviewersError>> pullsRequestReviewers({required String owner, required String repo, required int pullNumber, dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -731,32 +536,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-case 422:
-return null;
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestSimple.fromJson(json as Map<String, dynamic>);}, onError: PullsRequestReviewersError.parse, );}
 /// Remove requested reviewers from a pull request
 ///
 /// Removes review requests from a pull request for a given set of users and/or teams.
 ///
 /// `DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
-Future<ApiResult<PullRequestSimple, ValidationError>> pullsRemoveRequestedReviewers({required String owner, required String repo, required int pullNumber, required PullsRemoveRequestedReviewersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestSimple, ValidationError>> pullsRemoveRequestedReviewers({required String owner, required String repo, required int pullNumber, required PullsRemoveRequestedReviewersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -767,24 +555,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestSimple.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List reviews for a pull request
 ///
 /// Lists all reviews for a specified pull request. The list of reviews returns in chronological order.
@@ -797,7 +574,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews`
-Future<ApiResult<List<PullRequestReview>, Never>> pullsListReviews({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PullRequestReview>, Never>> pullsListReviews({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -817,14 +594,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestReview.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestReview.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a review for a pull request
 ///
 /// Creates a review on a specified pull request.
@@ -846,7 +618,7 @@ return (json as List<dynamic>).map((e) => PullRequestReview.fromJson(e as Map<St
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews`
-Future<ApiResult<PullRequestReview, OneOf2<BasicError, ValidationErrorSimple>>> pullsCreateReview({required String owner, required String repo, required int pullNumber, PullsCreateReviewRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReview, PullsCreateReviewError>> pullsCreateReview({required String owner, required String repo, required int pullNumber, PullsCreateReviewRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -857,27 +629,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsCreateReviewError.parse, );}
 /// Get a review for a pull request
 ///
 /// Retrieves a pull request review by its ID.
@@ -890,7 +644,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
-Future<ApiResult<PullRequestReview, BasicError>> pullsGetReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReview, BasicError>> pullsGetReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -899,24 +653,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a review for a pull request
 ///
 /// Updates the contents of a specified review summary comment.
@@ -929,7 +672,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
-Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsUpdateReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsUpdateReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsUpdateReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsUpdateReviewRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -940,24 +683,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationErrorSimple.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ValidationErrorSimple.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a pending review for a pull request
 ///
 /// Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.
@@ -970,7 +702,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
-Future<ApiResult<PullRequestReview, OneOf2<BasicError, ValidationErrorSimple>>> pullsDeletePendingReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReview, PullsDeletePendingReviewError>> pullsDeletePendingReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -979,27 +711,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsDeletePendingReviewError.parse, );}
 /// List comments for a pull request review
 ///
 /// Lists comments for a specific pull request review.
@@ -1012,7 +726,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments`
-Future<ApiResult<List<ReviewComment>, BasicError>> pullsListCommentsForReview({required String owner, required String repo, required int pullNumber, required int reviewId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ReviewComment>, BasicError>> pullsListCommentsForReview({required String owner, required String repo, required int pullNumber, required int reviewId, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1032,24 +746,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ReviewComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ReviewComment.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Dismiss a review for a pull request
 ///
 /// Dismisses a specified review on a pull request.
@@ -1065,7 +768,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals`
-Future<ApiResult<PullRequestReview, OneOf2<BasicError, ValidationErrorSimple>>> pullsDismissReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsDismissReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReview, PullsDismissReviewError>> pullsDismissReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsDismissReviewRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1076,27 +779,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsDismissReviewError.parse, );}
 /// Submit a review for a pull request
 ///
 /// Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls/reviews#create-a-review-for-a-pull-request)."
@@ -1109,7 +794,7 @@ return null;
 /// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events`
-Future<ApiResult<PullRequestReview, OneOf2<BasicError, ValidationErrorSimple>>> pullsSubmitReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsSubmitReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullRequestReview, PullsSubmitReviewError>> pullsSubmitReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsSubmitReviewRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1120,34 +805,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsSubmitReviewError.parse, );}
 /// Update a pull request branch
 ///
 /// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
 /// Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
 ///
 /// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch`
-Future<ApiResult<PullsUpdateBranchResponse202, OneOf2<BasicError, ValidationError>>> pullsUpdateBranch({required String owner, required String repo, required int pullNumber, PullsUpdateBranchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PullsUpdateBranchResponse, PullsUpdateBranchError>> pullsUpdateBranch({required String owner, required String repo, required int pullNumber, PullsUpdateBranchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1158,25 +825,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullsUpdateBranchResponse202.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
- }
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullsUpdateBranchResponse.fromJson(json as Map<String, dynamic>);}, onError: PullsUpdateBranchError.parse, );}
+}

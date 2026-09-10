@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestContainer {const WorkersAiPostRunCfDeepgramAura1RequestContainer._(this.value);
 
-factory WorkersAiPostRunCfDeepgramAura1RequestContainer.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramAura1RequestContainer.fromJson(String json) {return switch (json) {
   'none' => none,
   'wav' => wav,
   'ogg' => ogg,
   _ => WorkersAiPostRunCfDeepgramAura1RequestContainer._(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramAura1RequestContainer none = WorkersAiPostRunCfDeepgramAura1RequestContainer._('none');
 
@@ -20,18 +20,18 @@ static const List<WorkersAiPostRunCfDeepgramAura1RequestContainer> values = [non
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura1RequestContainer && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura1RequestContainer($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramAura1RequestContainer && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersAiPostRunCfDeepgramAura1RequestContainer($value)';}
+}
 /// Encoding of the output audio.
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding._(this.value);
 
-factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) {return switch (json) {
   'linear16' => linear16,
   'flac' => flac,
   'mulaw' => mulaw,
@@ -40,7 +40,7 @@ factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) { r
   'opus' => opus,
   'aac' => aac,
   _ => WorkersAiPostRunCfDeepgramAura1RequestEncoding._(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramAura1RequestEncoding linear16 = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('linear16');
 
@@ -60,18 +60,18 @@ static const List<WorkersAiPostRunCfDeepgramAura1RequestEncoding> values = [line
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura1RequestEncoding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura1RequestEncoding($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramAura1RequestEncoding && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersAiPostRunCfDeepgramAura1RequestEncoding($value)';}
+}
 /// Speaker used to produce the audio.
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker._(this.value);
 
-factory WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(String json) {return switch (json) {
   'angus' => angus,
   'asteria' => asteria,
   'arcas' => arcas,
@@ -85,7 +85,7 @@ factory WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(String json) { re
   'hera' => hera,
   'stella' => stella,
   _ => WorkersAiPostRunCfDeepgramAura1RequestSpeaker._(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramAura1RequestSpeaker angus = WorkersAiPostRunCfDeepgramAura1RequestSpeaker._('angus');
 
@@ -115,24 +115,24 @@ static const List<WorkersAiPostRunCfDeepgramAura1RequestSpeaker> values = [angus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura1RequestSpeaker && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura1RequestSpeaker($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramAura1RequestSpeaker && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WorkersAiPostRunCfDeepgramAura1RequestSpeaker($value)';}
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1Request {const WorkersAiPostRunCfDeepgramAura1Request({required this.text, this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker, });
 
-factory WorkersAiPostRunCfDeepgramAura1Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura1Request(
+factory WorkersAiPostRunCfDeepgramAura1Request.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfDeepgramAura1Request(
   bitRate: json['bit_rate'] != null ? (json['bit_rate'] as num).toDouble() : null,
   container: json['container'] != null ? WorkersAiPostRunCfDeepgramAura1RequestContainer.fromJson(json['container'] as String) : null,
   encoding: json['encoding'] != null ? WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(json['encoding'] as String) : null,
   sampleRate: json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null,
   speaker: json['speaker'] != null ? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(json['speaker'] as String) : null,
   text: json['text'] as String,
-); }
+);}
 
 /// The bitrate of the audio in bits per second. Choose from predefined ranges or specific values based on the encoding type.
 final double? bitRate;
@@ -153,32 +153,32 @@ final WorkersAiPostRunCfDeepgramAura1RequestSpeaker? speaker;
 final String text;
 
 /// The value with the schema default applied when absent.
-WorkersAiPostRunCfDeepgramAura1RequestSpeaker get speakerOrDefault { return speaker ?? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson('angus'); } 
-Map<String, dynamic> toJson() { return {
+WorkersAiPostRunCfDeepgramAura1RequestSpeaker get speakerOrDefault {return speaker ?? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson('angus');}
+Map<String, dynamic> toJson() {return {
   'bit_rate': ?bitRate,
   if (container != null) 'container': container?.toJson(),
   if (encoding != null) 'encoding': encoding?.toJson(),
   'sample_rate': ?sampleRate,
   if (speaker != null) 'speaker': speaker?.toJson(),
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer? Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding? Function()? encoding, double? Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker? Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura1Request(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text') && json['text'] is String;}
+WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer? Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding? Function()? encoding, double? Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker? Function()? speaker, String? text, }) {return WorkersAiPostRunCfDeepgramAura1Request(
   bitRate: bitRate != null ? bitRate() : this.bitRate,
   container: container != null ? container() : this.container,
   encoding: encoding != null ? encoding() : this.encoding,
   sampleRate: sampleRate != null ? sampleRate() : this.sampleRate,
   speaker: speaker != null ? speaker() : this.speaker,
   text: text ?? this.text,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramAura1Request &&
           bitRate == other.bitRate &&
           container == other.container &&
           encoding == other.encoding &&
           sampleRate == other.sampleRate &&
           speaker == other.speaker &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(bitRate, container, encoding, sampleRate, speaker, text); } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura1Request(bitRate: $bitRate, container: $container, encoding: $encoding, sampleRate: $sampleRate, speaker: $speaker, text: $text)'; } 
- }
+          text == other.text;}
+@override int get hashCode {return Object.hash(bitRate, container, encoding, sampleRate, speaker, text);}
+@override String toString() {return 'WorkersAiPostRunCfDeepgramAura1Request(bitRate: $bitRate, container: $container, encoding: $encoding, sampleRate: $sampleRate, speaker: $speaker, text: $text)';}
+}

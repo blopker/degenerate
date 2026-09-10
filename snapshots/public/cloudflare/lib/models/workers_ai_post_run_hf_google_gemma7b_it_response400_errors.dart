@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunHfGoogleGemma7bItResponse400Errors {const WorkersAiPostRunHfGoogleGemma7bItResponse400Errors({required this.code, required this.message, });
 
-factory WorkersAiPostRunHfGoogleGemma7bItResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunHfGoogleGemma7bItResponse400Errors(
+factory WorkersAiPostRunHfGoogleGemma7bItResponse400Errors.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunHfGoogleGemma7bItResponse400Errors(
   code: json['code'] as String,
   message: json['message'] as String,
-); }
+);}
 
 final String code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
-      json.containsKey('message') && json['message'] is String; } 
-WorkersAiPostRunHfGoogleGemma7bItResponse400Errors copyWith({String? code, String? message, }) { return WorkersAiPostRunHfGoogleGemma7bItResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('message') && json['message'] is String;}
+WorkersAiPostRunHfGoogleGemma7bItResponse400Errors copyWith({String? code, String? message, }) {return WorkersAiPostRunHfGoogleGemma7bItResponse400Errors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunHfGoogleGemma7bItResponse400Errors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'WorkersAiPostRunHfGoogleGemma7bItResponse400Errors(code: $code, message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return Object.hash(code, message);}
+@override String toString() {return 'WorkersAiPostRunHfGoogleGemma7bItResponse400Errors(code: $code, message: $message)';}
+}

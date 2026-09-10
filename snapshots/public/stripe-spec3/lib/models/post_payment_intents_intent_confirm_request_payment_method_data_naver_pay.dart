@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._(this.value);
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(String json) {return switch (json) {
   'card' => card,
   'points' => points,
   _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding card = PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._('card');
 
@@ -16,32 +16,32 @@ static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding($value)';}
+}
 @immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay({this.funding});
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
   funding: json['funding'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(json['funding'] as String) : null,
-); }
+);}
 
 final PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding? funding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (funding != null) 'funding': funding?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding'}.contains(key)); } 
-PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay copyWith({PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding? Function()? funding}) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'funding'}.contains(key));}
+PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay copyWith({PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding? Function()? funding}) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
   funding: funding != null ? funding() : this.funding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay &&
-          funding == other.funding; } 
-@override int get hashCode { return funding.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay(funding: $funding)'; } 
- }
+          funding == other.funding;}
+@override int get hashCode {return funding.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNaverPay(funding: $funding)';}
+}

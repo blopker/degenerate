@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByOperatingSystemHttpVersion {const RadarGetHttpTopLocationsByOperatingSystemHttpVersion._(this.value);
 
-factory RadarGetHttpTopLocationsByOperatingSystemHttpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByOperatingSystemHttpVersion.fromJson(String json) {return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
   _ => RadarGetHttpTopLocationsByOperatingSystemHttpVersion._(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByOperatingSystemHttpVersion httPv1 = RadarGetHttpTopLocationsByOperatingSystemHttpVersion._('HTTPv1');
 
@@ -19,11 +19,11 @@ static const List<RadarGetHttpTopLocationsByOperatingSystemHttpVersion> values =
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopLocationsByOperatingSystemHttpVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopLocationsByOperatingSystemHttpVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopLocationsByOperatingSystemHttpVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopLocationsByOperatingSystemHttpVersion($value)';}
+}

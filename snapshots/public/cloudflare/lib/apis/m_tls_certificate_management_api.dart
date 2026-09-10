@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/m_tls_certificate_management_delete_m_tls_certificate_response4_xx.dart';import '../models/m_tls_certificate_management_get_m_tls_certificate_response4_xx.dart';import '../models/m_tls_certificate_management_list_m_tls_certificate_associations_response4_xx.dart';import '../models/m_tls_certificate_management_list_m_tls_certificates_response4_xx.dart';import '../models/m_tls_certificate_management_upload_m_tls_certificate_request.dart';import '../models/m_tls_certificate_management_upload_m_tls_certificate_response4_xx.dart';import '../models/tls_certificates_and_hostnames_association_object.dart';import '../models/tls_certificates_and_hostnames_certificate_object_post.dart';import '../models/tls_certificates_and_hostnames_components_schemas_certificate_object.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// MTlsCertificateManagementApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/m_tls_certificate_management_delete_m_tls_certificate_response4xx.dart';import '../models/m_tls_certificate_management_get_m_tls_certificate_response4xx.dart';import '../models/m_tls_certificate_management_list_m_tls_certificate_associations_response4xx.dart';import '../models/m_tls_certificate_management_list_m_tls_certificates_response4xx.dart';import '../models/m_tls_certificate_management_upload_m_tls_certificate_request.dart';import '../models/m_tls_certificate_management_upload_m_tls_certificate_response4xx.dart';import '../models/tls_certificates_and_hostnames_association_object.dart';import '../models/tls_certificates_and_hostnames_certificate_object_post.dart';import '../models/tls_certificates_and_hostnames_components_schemas_certificate_object.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// MTlsCertificateManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MTlsCertificateManagementApi with ApiExecutor {const MTlsCertificate
 /// Lists all mTLS certificates uploaded to your account, such as Bring Your Own CA (BYO-CA) for mTLS. To list certificates issued by the Cloudflare managed CA, use the [List Client Certificates endpoint](/api/resources/client_certificates/methods/list/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<List<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject>?, MTlsCertificateManagementListMTlsCertificatesResponse4Xx>> mTlsCertificateManagementListMTlsCertificates({required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject>?, MTlsCertificateManagementListMTlsCertificatesResponse4xx>> mTlsCertificateManagementListMTlsCertificates({required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,30 +22,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MTlsCertificateManagementListMTlsCertificatesResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  MTlsCertificateManagementListMTlsCertificatesResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Upload mTLS certificate
 ///
 /// Upload a certificate that you want to use with mTLS-enabled Cloudflare services, such as Bring Your Own CA (BYO-CA) for mTLS. To create certificates issued by the Cloudflare managed CA, use the [Create Client Certificate endpoint](/api/resources/client_certificates/methods/create/).
 ///
 /// `POST /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificateObjectPost?, MTlsCertificateManagementUploadMTlsCertificateResponse4Xx>> mTlsCertificateManagementUploadMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateObjectPost?, MTlsCertificateManagementUploadMTlsCertificateResponse4xx>> mTlsCertificateManagementUploadMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,30 +45,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TlsCertificatesAndHostnamesCertificateObjectPost.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TlsCertificatesAndHostnamesCertificateObjectPost.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MTlsCertificateManagementUploadMTlsCertificateResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  MTlsCertificateManagementUploadMTlsCertificateResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get mTLS certificate
 ///
 /// Fetches a single mTLS certificate uploaded to your account. To get a certificate issued by the Cloudflare managed CA, use the [Client Certificate Details endpoint](/api/resources/client_certificates/methods/get/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementGetMTlsCertificateResponse4Xx>> mTlsCertificateManagementGetMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementGetMTlsCertificateResponse4xx>> mTlsCertificateManagementGetMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,30 +66,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MTlsCertificateManagementGetMTlsCertificateResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  MTlsCertificateManagementGetMTlsCertificateResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete mTLS certificate
 ///
 /// Deletes the mTLS certificate unless the certificate is in use by one or more Cloudflare services.
 ///
 /// `DELETE /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementDeleteMTlsCertificateResponse4Xx>> mTlsCertificateManagementDeleteMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementDeleteMTlsCertificateResponse4xx>> mTlsCertificateManagementDeleteMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -120,30 +87,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MTlsCertificateManagementDeleteMTlsCertificateResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  MTlsCertificateManagementDeleteMTlsCertificateResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List mTLS certificate associations
 ///
 /// Lists all active associations between the certificate and Cloudflare services.
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}/associations`
-Future<ApiResult<List<TlsCertificatesAndHostnamesAssociationObject>?, MTlsCertificateManagementListMTlsCertificateAssociationsResponse4Xx>> mTlsCertificateManagementListMTlsCertificateAssociations({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesAssociationObject>?, MTlsCertificateManagementListMTlsCertificateAssociationsResponse4xx>> mTlsCertificateManagementListMTlsCertificateAssociations({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -152,22 +108,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesAssociationObject.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesAssociationObject.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MTlsCertificateManagementListMTlsCertificateAssociationsResponse4Xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  MTlsCertificateManagementListMTlsCertificateAssociationsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

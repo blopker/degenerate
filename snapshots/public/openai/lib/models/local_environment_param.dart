@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_skill_param.dart';/// Use a local computer environment.
 @immutable final class LocalEnvironmentParamType {const LocalEnvironmentParamType._(this.value);
 
-factory LocalEnvironmentParamType.fromJson(String json) { return switch (json) {
+factory LocalEnvironmentParamType.fromJson(String json) {return switch (json) {
   'local' => local,
   _ => LocalEnvironmentParamType._(json),
-}; }
+};}
 
 static const LocalEnvironmentParamType local = LocalEnvironmentParamType._('local');
 
@@ -14,20 +14,20 @@ static const List<LocalEnvironmentParamType> values = [local];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalEnvironmentParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalEnvironmentParamType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LocalEnvironmentParamType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LocalEnvironmentParamType($value)';}
+}
 @immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({required this.type, this.skills, });
 
-factory LocalEnvironmentParam.fromJson(Map<String, dynamic> json) { return LocalEnvironmentParam(
+factory LocalEnvironmentParam.fromJson(Map<String, dynamic> json) {return LocalEnvironmentParam(
   type: LocalEnvironmentParamType.fromJson(json['type'] as String),
   skills: (json['skills'] as List<dynamic>?)?.map((e) => LocalSkillParam.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Use a local computer environment.
 final LocalEnvironmentParamType type;
@@ -35,19 +35,19 @@ final LocalEnvironmentParamType type;
 /// An optional list of skills.
 final List<LocalSkillParam>? skills;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam>? Function()? skills, }) { return LocalEnvironmentParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam>? Function()? skills, }) {return LocalEnvironmentParam(
   type: type ?? this.type,
   skills: skills != null ? skills() : this.skills,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LocalEnvironmentParam &&
           type == other.type &&
-          listEquals(skills, other.skills); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(skills ?? const [])); } 
-@override String toString() { return 'LocalEnvironmentParam(type: $type, skills: $skills)'; } 
- }
+          listEquals(skills, other.skills);}
+@override int get hashCode {return Object.hash(type, Object.hashAll(skills ?? const []));}
+@override String toString() {return 'LocalEnvironmentParam(type: $type, skills: $skills)';}
+}

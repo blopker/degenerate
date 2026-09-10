@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_browsers_response_result.dart';@immutable final class RadarGetHttpTopBrowsersResponse {const RadarGetHttpTopBrowsersResponse({required this.result, required this.success, });
 
-factory RadarGetHttpTopBrowsersResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopBrowsersResponse(
+factory RadarGetHttpTopBrowsersResponse.fromJson(Map<String, dynamic> json) {return RadarGetHttpTopBrowsersResponse(
   result: RadarGetHttpTopBrowsersResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetHttpTopBrowsersResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTopBrowsersResponse copyWith({RadarGetHttpTopBrowsersResponseResult? result, bool? success, }) { return RadarGetHttpTopBrowsersResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetHttpTopBrowsersResponse copyWith({RadarGetHttpTopBrowsersResponseResult? result, bool? success, }) {return RadarGetHttpTopBrowsersResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpTopBrowsersResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetHttpTopBrowsersResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetHttpTopBrowsersResponse(result: $result, success: $success)';}
+}

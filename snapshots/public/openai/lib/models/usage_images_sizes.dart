@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesSizes {const UsageImagesSizes._(this.value);
 
-factory UsageImagesSizes.fromJson(String json) { return switch (json) {
+factory UsageImagesSizes.fromJson(String json) {return switch (json) {
   '256x256' => $256x256,
   '512x512' => $512x512,
   '1024x1024' => $1024x1024,
   '1792x1792' => $1792x1792,
   '1024x1792' => $1024x1792,
   _ => UsageImagesSizes._(json),
-}; }
+};}
 
 static const UsageImagesSizes $256x256 = UsageImagesSizes._('256x256');
 
@@ -25,11 +25,11 @@ static const List<UsageImagesSizes> values = [$256x256, $512x512, $1024x1024, $1
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageImagesSizes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageImagesSizes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageImagesSizes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageImagesSizes($value)';}
+}

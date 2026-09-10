@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListWarpChangeEventsToggle {const ListWarpChangeEventsToggle._(this.value);
 
-factory ListWarpChangeEventsToggle.fromJson(String json) { return switch (json) {
+factory ListWarpChangeEventsToggle.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => ListWarpChangeEventsToggle._(json),
-}; }
+};}
 
 static const ListWarpChangeEventsToggle $on = ListWarpChangeEventsToggle._('on');
 
@@ -16,11 +16,11 @@ static const List<ListWarpChangeEventsToggle> values = [$on, off];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListWarpChangeEventsToggle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListWarpChangeEventsToggle($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListWarpChangeEventsToggle && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListWarpChangeEventsToggle($value)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use when calling the `sms_url`. Can be: `GET` or `POST`.
 @immutable final class UpdateShortCodeRequestSmsMethod {const UpdateShortCodeRequestSmsMethod._(this.value);
 
-factory UpdateShortCodeRequestSmsMethod.fromJson(String json) { return switch (json) {
+factory UpdateShortCodeRequestSmsMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateShortCodeRequestSmsMethod._(json),
-}; }
+};}
 
 static const UpdateShortCodeRequestSmsMethod $get = UpdateShortCodeRequestSmsMethod._('GET');
 
@@ -17,22 +17,22 @@ static const List<UpdateShortCodeRequestSmsMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateShortCodeRequestSmsMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateShortCodeRequestSmsMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateShortCodeRequestSmsMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateShortCodeRequestSmsMethod($value)';}
+}
 /// The HTTP method that we should use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class UpdateShortCodeRequestSmsFallbackMethod {const UpdateShortCodeRequestSmsFallbackMethod._(this.value);
 
-factory UpdateShortCodeRequestSmsFallbackMethod.fromJson(String json) { return switch (json) {
+factory UpdateShortCodeRequestSmsFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateShortCodeRequestSmsFallbackMethod._(json),
-}; }
+};}
 
 static const UpdateShortCodeRequestSmsFallbackMethod $get = UpdateShortCodeRequestSmsFallbackMethod._('GET');
 
@@ -42,24 +42,24 @@ static const List<UpdateShortCodeRequestSmsFallbackMethod> values = [$get, post]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateShortCodeRequestSmsFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateShortCodeRequestSmsFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateShortCodeRequestSmsFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateShortCodeRequestSmsFallbackMethod($value)';}
+}
 @immutable final class UpdateShortCodeRequest {const UpdateShortCodeRequest({this.friendlyName, this.apiVersion, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, });
 
-factory UpdateShortCodeRequest.fromJson(Map<String, dynamic> json) { return UpdateShortCodeRequest(
+factory UpdateShortCodeRequest.fromJson(Map<String, dynamic> json) {return UpdateShortCodeRequest(
   friendlyName: json['FriendlyName'] as String?,
   apiVersion: json['ApiVersion'] as String?,
   smsUrl: json['SmsUrl'] != null ? Uri.parse(json['SmsUrl'] as String) : null,
   smsMethod: json['SmsMethod'] != null ? UpdateShortCodeRequestSmsMethod.fromJson(json['SmsMethod'] as String) : null,
   smsFallbackUrl: json['SmsFallbackUrl'] != null ? Uri.parse(json['SmsFallbackUrl'] as String) : null,
   smsFallbackMethod: json['SmsFallbackMethod'] != null ? UpdateShortCodeRequestSmsFallbackMethod.fromJson(json['SmsFallbackMethod'] as String) : null,
-); }
+);}
 
 /// A descriptive string that you created to describe this resource. It can be up to 64 characters long. By default, the `FriendlyName` is the short code.
 final String? friendlyName;
@@ -79,31 +79,31 @@ final Uri? smsFallbackUrl;
 /// The HTTP method that we should use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
 final UpdateShortCodeRequestSmsFallbackMethod? smsFallbackMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': ?friendlyName,
   'ApiVersion': ?apiVersion,
   if (smsUrl != null) 'SmsUrl': smsUrl?.toString(),
   if (smsMethod != null) 'SmsMethod': smsMethod?.toJson(),
   if (smsFallbackUrl != null) 'SmsFallbackUrl': smsFallbackUrl?.toString(),
   if (smsFallbackMethod != null) 'SmsFallbackMethod': smsFallbackMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'ApiVersion', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod'}.contains(key)); } 
-UpdateShortCodeRequest copyWith({String? Function()? friendlyName, String? Function()? apiVersion, Uri? Function()? smsUrl, UpdateShortCodeRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsFallbackUrl, UpdateShortCodeRequestSmsFallbackMethod? Function()? smsFallbackMethod, }) { return UpdateShortCodeRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'FriendlyName', 'ApiVersion', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod'}.contains(key));}
+UpdateShortCodeRequest copyWith({String? Function()? friendlyName, String? Function()? apiVersion, Uri? Function()? smsUrl, UpdateShortCodeRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsFallbackUrl, UpdateShortCodeRequestSmsFallbackMethod? Function()? smsFallbackMethod, }) {return UpdateShortCodeRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   smsUrl: smsUrl != null ? smsUrl() : this.smsUrl,
   smsMethod: smsMethod != null ? smsMethod() : this.smsMethod,
   smsFallbackUrl: smsFallbackUrl != null ? smsFallbackUrl() : this.smsFallbackUrl,
   smsFallbackMethod: smsFallbackMethod != null ? smsFallbackMethod() : this.smsFallbackMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateShortCodeRequest &&
           friendlyName == other.friendlyName &&
           apiVersion == other.apiVersion &&
           smsUrl == other.smsUrl &&
           smsMethod == other.smsMethod &&
           smsFallbackUrl == other.smsFallbackUrl &&
-          smsFallbackMethod == other.smsFallbackMethod; } 
-@override int get hashCode { return Object.hash(friendlyName, apiVersion, smsUrl, smsMethod, smsFallbackUrl, smsFallbackMethod); } 
-@override String toString() { return 'UpdateShortCodeRequest(friendlyName: $friendlyName, apiVersion: $apiVersion, smsUrl: $smsUrl, smsMethod: $smsMethod, smsFallbackUrl: $smsFallbackUrl, smsFallbackMethod: $smsFallbackMethod)'; } 
- }
+          smsFallbackMethod == other.smsFallbackMethod;}
+@override int get hashCode {return Object.hash(friendlyName, apiVersion, smsUrl, smsMethod, smsFallbackUrl, smsFallbackMethod);}
+@override String toString() {return 'UpdateShortCodeRequest(friendlyName: $friendlyName, apiVersion: $apiVersion, smsUrl: $smsUrl, smsMethod: $smsMethod, smsFallbackUrl: $smsFallbackUrl, smsFallbackMethod: $smsFallbackMethod)';}
+}

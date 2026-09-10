@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'PROTOCOL' => protocol,
   'IP_VERSION' => ipVersion,
   'VECTOR' => vector,
@@ -12,7 +12,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupDimension.fromJson(String json) { re
   'VERTICAL' => vertical,
   'INDUSTRY' => industry,
   _ => RadarGetAttacksLayer3TimeseriesGroupDimension._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupDimension protocol = RadarGetAttacksLayer3TimeseriesGroupDimension._('PROTOCOL');
 
@@ -32,11 +32,11 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupDimension> values = [proto
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupDimension($value)';}
+}

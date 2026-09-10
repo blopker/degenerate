@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_key_param2_customer_acceptance_offline.dart';import 'secret_key_param2_customer_acceptance_online.dart';@immutable final class SecretKeyParam2CustomerAcceptanceType {const SecretKeyParam2CustomerAcceptanceType._(this.value);
 
-factory SecretKeyParam2CustomerAcceptanceType.fromJson(String json) { return switch (json) {
+factory SecretKeyParam2CustomerAcceptanceType.fromJson(String json) {return switch (json) {
   'offline' => offline,
   'online' => online,
   _ => SecretKeyParam2CustomerAcceptanceType._(json),
-}; }
+};}
 
 static const SecretKeyParam2CustomerAcceptanceType offline = SecretKeyParam2CustomerAcceptanceType._('offline');
 
@@ -16,22 +16,22 @@ static const List<SecretKeyParam2CustomerAcceptanceType> values = [offline, onli
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretKeyParam2CustomerAcceptanceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretKeyParam2CustomerAcceptanceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecretKeyParam2CustomerAcceptanceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecretKeyParam2CustomerAcceptanceType($value)';}
+}
 @immutable final class SecretKeyParam2CustomerAcceptance {const SecretKeyParam2CustomerAcceptance({required this.type, this.acceptedAt, this.offline, this.online, });
 
-factory SecretKeyParam2CustomerAcceptance.fromJson(Map<String, dynamic> json) { return SecretKeyParam2CustomerAcceptance(
+factory SecretKeyParam2CustomerAcceptance.fromJson(Map<String, dynamic> json) {return SecretKeyParam2CustomerAcceptance(
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,
   offline: json['offline'] != null ? SecretKeyParam2CustomerAcceptanceOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
   online: json['online'] != null ? SecretKeyParam2CustomerAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>) : null,
   type: SecretKeyParam2CustomerAcceptanceType.fromJson(json['type'] as String),
-); }
+);}
 
 final int? acceptedAt;
 
@@ -41,25 +41,25 @@ final SecretKeyParam2CustomerAcceptanceOnline? online;
 
 final SecretKeyParam2CustomerAcceptanceType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accepted_at': ?acceptedAt,
   if (offline != null) 'offline': offline?.toJson(),
   if (online != null) 'online': online?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SecretKeyParam2CustomerAcceptance copyWith({int? Function()? acceptedAt, SecretKeyParam2CustomerAcceptanceOffline? Function()? offline, SecretKeyParam2CustomerAcceptanceOnline? Function()? online, SecretKeyParam2CustomerAcceptanceType? type, }) { return SecretKeyParam2CustomerAcceptance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+SecretKeyParam2CustomerAcceptance copyWith({int? Function()? acceptedAt, SecretKeyParam2CustomerAcceptanceOffline? Function()? offline, SecretKeyParam2CustomerAcceptanceOnline? Function()? online, SecretKeyParam2CustomerAcceptanceType? type, }) {return SecretKeyParam2CustomerAcceptance(
   acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
   offline: offline != null ? offline() : this.offline,
   online: online != null ? online() : this.online,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecretKeyParam2CustomerAcceptance &&
           acceptedAt == other.acceptedAt &&
           offline == other.offline &&
           online == other.online &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(acceptedAt, offline, online, type); } 
-@override String toString() { return 'SecretKeyParam2CustomerAcceptance(acceptedAt: $acceptedAt, offline: $offline, online: $online, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(acceptedAt, offline, online, type);}
+@override String toString() {return 'SecretKeyParam2CustomerAcceptance(acceptedAt: $acceptedAt, offline: $offline, online: $online, type: $type)';}
+}

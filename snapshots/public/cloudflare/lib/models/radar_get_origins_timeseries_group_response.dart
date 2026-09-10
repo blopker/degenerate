@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origins_timeseries_group_response_result.dart';@immutable final class RadarGetOriginsTimeseriesGroupResponse {const RadarGetOriginsTimeseriesGroupResponse({required this.result, required this.success, });
 
-factory RadarGetOriginsTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { return RadarGetOriginsTimeseriesGroupResponse(
+factory RadarGetOriginsTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) {return RadarGetOriginsTimeseriesGroupResponse(
   result: RadarGetOriginsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetOriginsTimeseriesGroupResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetOriginsTimeseriesGroupResponse copyWith({RadarGetOriginsTimeseriesGroupResponseResult? result, bool? success, }) { return RadarGetOriginsTimeseriesGroupResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetOriginsTimeseriesGroupResponse copyWith({RadarGetOriginsTimeseriesGroupResponseResult? result, bool? success, }) {return RadarGetOriginsTimeseriesGroupResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetOriginsTimeseriesGroupResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetOriginsTimeseriesGroupResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetOriginsTimeseriesGroupResponse(result: $result, success: $success)';}
+}

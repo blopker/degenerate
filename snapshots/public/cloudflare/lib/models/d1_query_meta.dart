@@ -10,7 +10,7 @@ String toJson() => value;
 /// Region location hint of the database instance that handled the query.
 @immutable final class D1ServedByRegion {const D1ServedByRegion._(this.value);
 
-factory D1ServedByRegion.fromJson(String json) { return switch (json) {
+factory D1ServedByRegion.fromJson(String json) {return switch (json) {
   'WNAM' => wnam,
   'ENAM' => enam,
   'WEUR' => weur,
@@ -18,7 +18,7 @@ factory D1ServedByRegion.fromJson(String json) { return switch (json) {
   'APAC' => apac,
   'OC' => oc,
   _ => D1ServedByRegion._(json),
-}; }
+};}
 
 static const D1ServedByRegion wnam = D1ServedByRegion._('WNAM');
 
@@ -36,17 +36,17 @@ static const List<D1ServedByRegion> values = [wnam, enam, weur, eeur, apac, oc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1ServedByRegion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1ServedByRegion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is D1ServedByRegion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'D1ServedByRegion($value)';}
+}
 @immutable final class D1QueryMeta {const D1QueryMeta({this.changedDb, this.changes, this.duration, this.lastRowId, this.rowsRead, this.rowsWritten, this.servedByColo, this.servedByPrimary, this.servedByRegion, this.sizeAfter, this.timings, });
 
-factory D1QueryMeta.fromJson(Map<String, dynamic> json) { return D1QueryMeta(
+factory D1QueryMeta.fromJson(Map<String, dynamic> json) {return D1QueryMeta(
   changedDb: json['changed_db'] as bool?,
   changes: json['changes'] != null ? (json['changes'] as num).toDouble() : null,
   duration: json['duration'] != null ? (json['duration'] as num).toDouble() : null,
@@ -58,7 +58,7 @@ factory D1QueryMeta.fromJson(Map<String, dynamic> json) { return D1QueryMeta(
   servedByRegion: json['served_by_region'] != null ? D1ServedByRegion.fromJson(json['served_by_region'] as String) : null,
   sizeAfter: json['size_after'] != null ? (json['size_after'] as num).toDouble() : null,
   timings: json['timings'] != null ? D1QueryMetaTimings.fromJson(json['timings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Denotes if the database has been altered in some way, like deleting rows.
 final bool? changedDb;
@@ -91,7 +91,7 @@ final double? sizeAfter;
 /// Various durations for the query.
 final D1QueryMetaTimings? timings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'changed_db': ?changedDb,
   'changes': ?changes,
   'duration': ?duration,
@@ -103,9 +103,9 @@ Map<String, dynamic> toJson() { return {
   if (servedByRegion != null) 'served_by_region': servedByRegion?.toJson(),
   'size_after': ?sizeAfter,
   if (timings != null) 'timings': timings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'changed_db', 'changes', 'duration', 'last_row_id', 'rows_read', 'rows_written', 'served_by_colo', 'served_by_primary', 'served_by_region', 'size_after', 'timings'}.contains(key)); } 
-D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, double? Function()? duration, double? Function()? lastRowId, double? Function()? rowsRead, double? Function()? rowsWritten, D1ServedByColo? Function()? servedByColo, bool? Function()? servedByPrimary, D1ServedByRegion? Function()? servedByRegion, double? Function()? sizeAfter, D1QueryMetaTimings? Function()? timings, }) { return D1QueryMeta(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'changed_db', 'changes', 'duration', 'last_row_id', 'rows_read', 'rows_written', 'served_by_colo', 'served_by_primary', 'served_by_region', 'size_after', 'timings'}.contains(key));}
+D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, double? Function()? duration, double? Function()? lastRowId, double? Function()? rowsRead, double? Function()? rowsWritten, D1ServedByColo? Function()? servedByColo, bool? Function()? servedByPrimary, D1ServedByRegion? Function()? servedByRegion, double? Function()? sizeAfter, D1QueryMetaTimings? Function()? timings, }) {return D1QueryMeta(
   changedDb: changedDb != null ? changedDb() : this.changedDb,
   changes: changes != null ? changes() : this.changes,
   duration: duration != null ? duration() : this.duration,
@@ -117,8 +117,8 @@ D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, 
   servedByRegion: servedByRegion != null ? servedByRegion() : this.servedByRegion,
   sizeAfter: sizeAfter != null ? sizeAfter() : this.sizeAfter,
   timings: timings != null ? timings() : this.timings,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is D1QueryMeta &&
           changedDb == other.changedDb &&
           changes == other.changes &&
@@ -130,7 +130,7 @@ D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, 
           servedByPrimary == other.servedByPrimary &&
           servedByRegion == other.servedByRegion &&
           sizeAfter == other.sizeAfter &&
-          timings == other.timings; } 
-@override int get hashCode { return Object.hash(changedDb, changes, duration, lastRowId, rowsRead, rowsWritten, servedByColo, servedByPrimary, servedByRegion, sizeAfter, timings); } 
-@override String toString() { return 'D1QueryMeta(changedDb: $changedDb, changes: $changes, duration: $duration, lastRowId: $lastRowId, rowsRead: $rowsRead, rowsWritten: $rowsWritten, servedByColo: $servedByColo, servedByPrimary: $servedByPrimary, servedByRegion: $servedByRegion, sizeAfter: $sizeAfter, timings: $timings)'; } 
- }
+          timings == other.timings;}
+@override int get hashCode {return Object.hash(changedDb, changes, duration, lastRowId, rowsRead, rowsWritten, servedByColo, servedByPrimary, servedByRegion, sizeAfter, timings);}
+@override String toString() {return 'D1QueryMeta(changedDb: $changedDb, changes: $changes, duration: $duration, lastRowId: $lastRowId, rowsRead: $rowsRead, rowsWritten: $rowsWritten, servedByColo: $servedByColo, servedByPrimary: $servedByPrimary, servedByRegion: $servedByRegion, sizeAfter: $sizeAfter, timings: $timings)';}
+}

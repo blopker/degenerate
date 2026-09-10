@@ -4,22 +4,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oidc_
 /// Requires an OIDC identity provider.
 @immutable final class AccessOidcClaimRule {const AccessOidcClaimRule({required this.oidc});
 
-factory AccessOidcClaimRule.fromJson(Map<String, dynamic> json) { return AccessOidcClaimRule(
+factory AccessOidcClaimRule.fromJson(Map<String, dynamic> json) {return AccessOidcClaimRule(
   oidc: AccessOidcClaimRuleOidc.fromJson(json['oidc'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessOidcClaimRuleOidc oidc;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'oidc': oidc.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('oidc'); } 
-AccessOidcClaimRule copyWith({AccessOidcClaimRuleOidc? oidc}) { return AccessOidcClaimRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('oidc');}
+AccessOidcClaimRule copyWith({AccessOidcClaimRuleOidc? oidc}) {return AccessOidcClaimRule(
   oidc: oidc ?? this.oidc,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOidcClaimRule &&
-          oidc == other.oidc; } 
-@override int get hashCode { return oidc.hashCode; } 
-@override String toString() { return 'AccessOidcClaimRule(oidc: $oidc)'; } 
- }
+          oidc == other.oidc;}
+@override int get hashCode {return oidc.hashCode;}
+@override String toString() {return 'AccessOidcClaimRule(oidc: $oidc)';}
+}

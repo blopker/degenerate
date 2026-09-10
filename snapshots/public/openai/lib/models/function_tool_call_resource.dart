@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of th
 /// 
 @immutable final class FunctionToolCallResourceStatus {const FunctionToolCallResourceStatus._(this.value);
 
-factory FunctionToolCallResourceStatus.fromJson(String json) { return switch (json) {
+factory FunctionToolCallResourceStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => FunctionToolCallResourceStatus._(json),
-}; }
+};}
 
 static const FunctionToolCallResourceStatus inProgress = FunctionToolCallResourceStatus._('in_progress');
 
@@ -22,17 +22,17 @@ static const List<FunctionToolCallResourceStatus> values = [inProgress, complete
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionToolCallResourceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionToolCallResourceStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FunctionToolCallResourceStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FunctionToolCallResourceStatus($value)';}
+}
 @immutable final class FunctionToolCallResource {const FunctionToolCallResource({required this.id, required this.type, required this.callId, required this.name, required this.arguments, this.namespace, this.status, });
 
-factory FunctionToolCallResource.fromJson(Map<String, dynamic> json) { return FunctionToolCallResource(
+factory FunctionToolCallResource.fromJson(Map<String, dynamic> json) {return FunctionToolCallResource(
   id: json['id'] as String,
   type: json['type'] as String,
   callId: json['call_id'] as String,
@@ -40,7 +40,7 @@ factory FunctionToolCallResource.fromJson(Map<String, dynamic> json) { return Fu
   name: json['name'] as String,
   arguments: json['arguments'] as String,
   status: json['status'] != null ? FunctionToolCallResourceStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The unique ID of the function tool call.
 /// 
@@ -71,7 +71,7 @@ final String arguments;
 /// 
 final FunctionToolCallResourceStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': type,
   'call_id': callId,
@@ -79,13 +79,13 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'arguments': arguments,
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-FunctionToolCallResource copyWith({String? id, String? type, String? callId, String? Function()? namespace, String? name, String? arguments, FunctionToolCallResourceStatus? Function()? status, }) { return FunctionToolCallResource(
+      json.containsKey('arguments') && json['arguments'] is String;}
+FunctionToolCallResource copyWith({String? id, String? type, String? callId, String? Function()? namespace, String? name, String? arguments, FunctionToolCallResourceStatus? Function()? status, }) {return FunctionToolCallResource(
   id: id ?? this.id,
   type: type ?? this.type,
   callId: callId ?? this.callId,
@@ -93,8 +93,8 @@ FunctionToolCallResource copyWith({String? id, String? type, String? callId, Str
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FunctionToolCallResource &&
           id == other.id &&
           type == other.type &&
@@ -102,7 +102,7 @@ FunctionToolCallResource copyWith({String? id, String? type, String? callId, Str
           namespace == other.namespace &&
           name == other.name &&
           arguments == other.arguments &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, type, callId, namespace, name, arguments, status); } 
-@override String toString() { return 'FunctionToolCallResource(id: $id, type: $type, callId: $callId, namespace: $namespace, name: $name, arguments: $arguments, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(id, type, callId, namespace, name, arguments, status);}
+@override String toString() {return 'FunctionToolCallResource(id: $id, type: $type, callId: $callId, namespace: $namespace, name: $name, arguments: $arguments, status: $status)';}
+}

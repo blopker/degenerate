@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mitigation actio
 /// 
 @immutable final class SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction {const SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction._(this.value);
 
-factory SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction.fromJson(String json) { return switch (json) {
+factory SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction.fromJson(String json) {return switch (json) {
   'none' => none,
   'log' => log,
   'block' => block,
   'null' => $null,
   _ => SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction._(json),
-}; }
+};}
 
 static const SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction none = SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction._('none');
 
@@ -25,36 +25,36 @@ static const List<SchemaValidationBulkEditPerOperationSettingsRequestValueMitiga
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction($value)';}
+}
 /// Operation ID to mitigation action mappings
 @immutable final class SchemaValidationBulkEditPerOperationSettingsRequestValue {const SchemaValidationBulkEditPerOperationSettingsRequestValue({this.mitigationAction = const Omittable.absent()});
 
-factory SchemaValidationBulkEditPerOperationSettingsRequestValue.fromJson(Map<String, dynamic> json) { return SchemaValidationBulkEditPerOperationSettingsRequestValue(
+factory SchemaValidationBulkEditPerOperationSettingsRequestValue.fromJson(Map<String, dynamic> json) {return SchemaValidationBulkEditPerOperationSettingsRequestValue(
   mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Mitigation actions are as follows:
 /// * `log` - log request when request does not conform to schema * `block` - deny access to the site when request does not conform to schema * `none` - skip running schema validation * null - clears any existing per-operation setting
 /// 
 final Omittable<SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction?> mitigationAction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-SchemaValidationBulkEditPerOperationSettingsRequestValue copyWith({Omittable<SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction?>? mitigationAction}) { return SchemaValidationBulkEditPerOperationSettingsRequestValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mitigation_action'}.contains(key));}
+SchemaValidationBulkEditPerOperationSettingsRequestValue copyWith({Omittable<SchemaValidationBulkEditPerOperationSettingsRequestValueMitigationAction?>? mitigationAction}) {return SchemaValidationBulkEditPerOperationSettingsRequestValue(
   mitigationAction: mitigationAction ?? this.mitigationAction,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SchemaValidationBulkEditPerOperationSettingsRequestValue &&
-          mitigationAction == other.mitigationAction; } 
-@override int get hashCode { return mitigationAction.hashCode; } 
-@override String toString() { return 'SchemaValidationBulkEditPerOperationSettingsRequestValue(mitigationAction: $mitigationAction)'; } 
- }
+          mitigationAction == other.mitigationAction;}
+@override int get hashCode {return mitigationAction.hashCode;}
+@override String toString() {return 'SchemaValidationBulkEditPerOperationSettingsRequestValue(mitigationAction: $mitigationAction)';}
+}

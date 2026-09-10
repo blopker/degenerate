@@ -24,7 +24,7 @@ String toJson() => value.toIso8601String();
 /// A client (typically cloudflared) that maintains connections to a Cloudflare data center.
 @immutable final class TunnelTunnelClient {const TunnelTunnelClient({this.arch, this.configVersion, this.conns, this.features, this.id, this.runAt, this.version, });
 
-factory TunnelTunnelClient.fromJson(Map<String, dynamic> json) { return TunnelTunnelClient(
+factory TunnelTunnelClient.fromJson(Map<String, dynamic> json) {return TunnelTunnelClient(
   arch: json['arch'] != null ? TunnelArch.fromJson(json['arch'] as String) : null,
   configVersion: json['config_version'] != null ? TunnelConfigVersion.fromJson(json['config_version'] as num) : null,
   conns: (json['conns'] as List<dynamic>?)?.map((e) => TunnelSchemasConnection.fromJson(e as Map<String, dynamic>)).toList(),
@@ -32,7 +32,7 @@ factory TunnelTunnelClient.fromJson(Map<String, dynamic> json) { return TunnelTu
   id: json['id'] != null ? TunnelConnectionId.fromJson(json['id'] as String) : null,
   runAt: json['run_at'] != null ? TunnelRunAt.fromJson(json['run_at'] as String) : null,
   version: json['version'] != null ? TunnelVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 /// The cloudflared OS architecture used to establish this connection.
 final TunnelArch? arch;
@@ -54,7 +54,7 @@ final TunnelRunAt? runAt;
 
 final TunnelVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (arch != null) 'arch': arch?.toJson(),
   if (configVersion != null) 'config_version': configVersion?.toJson(),
   if (conns != null) 'conns': conns?.map((e) => e.toJson()).toList(),
@@ -62,9 +62,9 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (runAt != null) 'run_at': runAt?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arch', 'config_version', 'conns', 'features', 'id', 'run_at', 'version'}.contains(key)); } 
-TunnelTunnelClient copyWith({TunnelArch? Function()? arch, TunnelConfigVersion? Function()? configVersion, List<TunnelSchemasConnection>? Function()? conns, List<String>? Function()? features, TunnelConnectionId? Function()? id, TunnelRunAt? Function()? runAt, TunnelVersion? Function()? version, }) { return TunnelTunnelClient(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'arch', 'config_version', 'conns', 'features', 'id', 'run_at', 'version'}.contains(key));}
+TunnelTunnelClient copyWith({TunnelArch? Function()? arch, TunnelConfigVersion? Function()? configVersion, List<TunnelSchemasConnection>? Function()? conns, List<String>? Function()? features, TunnelConnectionId? Function()? id, TunnelRunAt? Function()? runAt, TunnelVersion? Function()? version, }) {return TunnelTunnelClient(
   arch: arch != null ? arch() : this.arch,
   configVersion: configVersion != null ? configVersion() : this.configVersion,
   conns: conns != null ? conns() : this.conns,
@@ -72,8 +72,8 @@ TunnelTunnelClient copyWith({TunnelArch? Function()? arch, TunnelConfigVersion? 
   id: id != null ? id() : this.id,
   runAt: runAt != null ? runAt() : this.runAt,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TunnelTunnelClient &&
           arch == other.arch &&
           configVersion == other.configVersion &&
@@ -81,7 +81,7 @@ TunnelTunnelClient copyWith({TunnelArch? Function()? arch, TunnelConfigVersion? 
           listEquals(features, other.features) &&
           id == other.id &&
           runAt == other.runAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(arch, configVersion, Object.hashAll(conns ?? const []), Object.hashAll(features ?? const []), id, runAt, version); } 
-@override String toString() { return 'TunnelTunnelClient(arch: $arch, configVersion: $configVersion, conns: $conns, features: $features, id: $id, runAt: $runAt, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(arch, configVersion, Object.hashAll(conns ?? const []), Object.hashAll(features ?? const []), id, runAt, version);}
+@override String toString() {return 'TunnelTunnelClient(arch: $arch, configVersion: $configVersion, conns: $conns, features: $features, id: $id, runAt: $runAt, version: $version)';}
+}

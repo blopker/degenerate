@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
 @immutable final class PullsCreateReviewCommentRequestSide {const PullsCreateReviewCommentRequestSide._(this.value);
 
-factory PullsCreateReviewCommentRequestSide.fromJson(String json) { return switch (json) {
+factory PullsCreateReviewCommentRequestSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   _ => PullsCreateReviewCommentRequestSide._(json),
-}; }
+};}
 
 static const PullsCreateReviewCommentRequestSide left = PullsCreateReviewCommentRequestSide._('LEFT');
 
@@ -17,23 +17,23 @@ static const List<PullsCreateReviewCommentRequestSide> values = [left, right];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsCreateReviewCommentRequestSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsCreateReviewCommentRequestSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullsCreateReviewCommentRequestSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullsCreateReviewCommentRequestSide($value)';}
+}
 /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
 @immutable final class PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide._(this.value);
 
-factory PullsCreateReviewCommentRequestStartSide.fromJson(String json) { return switch (json) {
+factory PullsCreateReviewCommentRequestStartSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   'side' => side,
   _ => PullsCreateReviewCommentRequestStartSide._(json),
-}; }
+};}
 
 static const PullsCreateReviewCommentRequestStartSide left = PullsCreateReviewCommentRequestStartSide._('LEFT');
 
@@ -45,22 +45,22 @@ static const List<PullsCreateReviewCommentRequestStartSide> values = [left, righ
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsCreateReviewCommentRequestStartSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsCreateReviewCommentRequestStartSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullsCreateReviewCommentRequestStartSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullsCreateReviewCommentRequestStartSide($value)';}
+}
 /// The level at which the comment is targeted.
 @immutable final class PullsCreateReviewCommentRequestSubjectType {const PullsCreateReviewCommentRequestSubjectType._(this.value);
 
-factory PullsCreateReviewCommentRequestSubjectType.fromJson(String json) { return switch (json) {
+factory PullsCreateReviewCommentRequestSubjectType.fromJson(String json) {return switch (json) {
   'line' => line,
   'file' => file,
   _ => PullsCreateReviewCommentRequestSubjectType._(json),
-}; }
+};}
 
 static const PullsCreateReviewCommentRequestSubjectType line = PullsCreateReviewCommentRequestSubjectType._('line');
 
@@ -70,17 +70,17 @@ static const List<PullsCreateReviewCommentRequestSubjectType> values = [line, fi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsCreateReviewCommentRequestSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsCreateReviewCommentRequestSubjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PullsCreateReviewCommentRequestSubjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PullsCreateReviewCommentRequestSubjectType($value)';}
+}
 @immutable final class PullsCreateReviewCommentRequest {const PullsCreateReviewCommentRequest({required this.body, required this.commitId, required this.path, this.position, this.side, this.line, this.startLine, this.startSide, this.inReplyTo, this.subjectType, });
 
-factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) { return PullsCreateReviewCommentRequest(
+factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) {return PullsCreateReviewCommentRequest(
   body: json['body'] as String,
   commitId: json['commit_id'] as String,
   path: json['path'] as String,
@@ -91,7 +91,7 @@ factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) { re
   startSide: json['start_side'] != null ? PullsCreateReviewCommentRequestStartSide.fromJson(json['start_side'] as String) : null,
   inReplyTo: json['in_reply_to'] != null ? (json['in_reply_to'] as num).toInt() : null,
   subjectType: json['subject_type'] != null ? PullsCreateReviewCommentRequestSubjectType.fromJson(json['subject_type'] as String) : null,
-); }
+);}
 
 /// The text of the review comment.
 final String body;
@@ -123,7 +123,7 @@ final int? inReplyTo;
 /// The level at which the comment is targeted.
 final PullsCreateReviewCommentRequestSubjectType? subjectType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
   'commit_id': commitId,
   'path': path,
@@ -134,11 +134,11 @@ Map<String, dynamic> toJson() { return {
   if (startSide != null) 'start_side': startSide?.toJson(),
   'in_reply_to': ?inReplyTo,
   if (subjectType != null) 'subject_type': subjectType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('path') && json['path'] is String; } 
-PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int? Function()? position, PullsCreateReviewCommentRequestSide? Function()? side, int? Function()? line, int? Function()? startLine, PullsCreateReviewCommentRequestStartSide? Function()? startSide, int? Function()? inReplyTo, PullsCreateReviewCommentRequestSubjectType? Function()? subjectType, }) { return PullsCreateReviewCommentRequest(
+      json.containsKey('path') && json['path'] is String;}
+PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int? Function()? position, PullsCreateReviewCommentRequestSide? Function()? side, int? Function()? line, int? Function()? startLine, PullsCreateReviewCommentRequestStartSide? Function()? startSide, int? Function()? inReplyTo, PullsCreateReviewCommentRequestSubjectType? Function()? subjectType, }) {return PullsCreateReviewCommentRequest(
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,
   path: path ?? this.path,
@@ -149,8 +149,8 @@ PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String
   startSide: startSide != null ? startSide() : this.startSide,
   inReplyTo: inReplyTo != null ? inReplyTo() : this.inReplyTo,
   subjectType: subjectType != null ? subjectType() : this.subjectType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PullsCreateReviewCommentRequest &&
           body == other.body &&
           commitId == other.commitId &&
@@ -161,7 +161,7 @@ PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String
           startLine == other.startLine &&
           startSide == other.startSide &&
           inReplyTo == other.inReplyTo &&
-          subjectType == other.subjectType; } 
-@override int get hashCode { return Object.hash(body, commitId, path, position, side, line, startLine, startSide, inReplyTo, subjectType); } 
-@override String toString() { return 'PullsCreateReviewCommentRequest(body: $body, commitId: $commitId, path: $path, position: $position, side: $side, line: $line, startLine: $startLine, startSide: $startSide, inReplyTo: $inReplyTo, subjectType: $subjectType)'; } 
- }
+          subjectType == other.subjectType;}
+@override int get hashCode {return Object.hash(body, commitId, path, position, side, line, startLine, startSide, inReplyTo, subjectType);}
+@override String toString() {return 'PullsCreateReviewCommentRequest(body: $body, commitId: $commitId, path: $path, position: $position, side: $side, line: $line, startLine: $startLine, startSide: $startSide, inReplyTo: $inReplyTo, subjectType: $subjectType)';}
+}

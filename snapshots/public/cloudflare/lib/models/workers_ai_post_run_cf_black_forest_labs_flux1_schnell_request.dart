@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest({required this.prompt, this.steps, });
 
-factory WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
+factory WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
   prompt: json['prompt'] as String,
   steps: json['steps'] != null ? (json['steps'] as num).toInt() : null,
-); }
+);}
 
 /// A text description of the image you want to generate.
 final String prompt;
@@ -14,20 +14,20 @@ final String prompt;
 final int? steps;
 
 /// The value with the schema default applied when absent.
-int get stepsOrDefault { return steps ?? 4; } 
-Map<String, dynamic> toJson() { return {
+int get stepsOrDefault {return steps ?? 4;}
+Map<String, dynamic> toJson() {return {
   'prompt': prompt,
   'steps': ?steps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest copyWith({String? prompt, int? Function()? steps, }) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest copyWith({String? prompt, int? Function()? steps, }) {return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
   prompt: prompt ?? this.prompt,
   steps: steps != null ? steps() : this.steps,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest &&
           prompt == other.prompt &&
-          steps == other.steps; } 
-@override int get hashCode { return Object.hash(prompt, steps); } 
-@override String toString() { return 'WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(prompt: $prompt, steps: $steps)'; } 
- }
+          steps == other.steps;}
+@override int get hashCode {return Object.hash(prompt, steps);}
+@override String toString() {return 'WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(prompt: $prompt, steps: $steps)';}
+}

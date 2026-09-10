@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_check_regions2.dart';import 'load_balancing_enabled.dart';import 'load_balancing_latitude.dart';import 'load_balancing_load_shedding.dart';import 'load_balancing_longitude.dart';import 'load_balancing_minimum_origins.dart';import 'load_balancing_monitor_group_id.dart';import 'load_balancing_monitor_id.dart';import 'load_balancing_name.dart';import 'load_balancing_notification_email.dart';import 'load_balancing_notification_filter.dart';import 'load_balancing_origin_request.dart';import 'load_balancing_origin_steering.dart';import 'load_balancing_schemas_description.dart';@immutable final class LoadBalancerPoolsPatchPoolRequest {const LoadBalancerPoolsPatchPoolRequest({this.checkRegions = const Omittable.absent(), this.description, this.enabled, this.latitude, this.loadShedding = const Omittable.absent(), this.longitude, this.minimumOrigins, this.monitor, this.monitorGroup, this.name, this.notificationEmail, this.notificationFilter = const Omittable.absent(), this.originSteering = const Omittable.absent(), this.origins, });
 
-factory LoadBalancerPoolsPatchPoolRequest.fromJson(Map<String, dynamic> json) { return LoadBalancerPoolsPatchPoolRequest(
+factory LoadBalancerPoolsPatchPoolRequest.fromJson(Map<String, dynamic> json) {return LoadBalancerPoolsPatchPoolRequest(
   checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => LoadBalancingCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   description: json['description'] != null ? LoadBalancingSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? LoadBalancingEnabled.fromJson(json['enabled'] as bool) : null,
@@ -17,7 +17,7 @@ factory LoadBalancerPoolsPatchPoolRequest.fromJson(Map<String, dynamic> json) { 
   notificationFilter: json.containsKey('notification_filter') ? Omittable(json['notification_filter'] != null ? LoadBalancingNotificationFilter.fromJson(json['notification_filter'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   originSteering: json.containsKey('origin_steering') ? Omittable(json['origin_steering'] != null ? LoadBalancingOriginSteering.fromJson(json['origin_steering'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// A list of regions from which to run health checks. Null means every Cloudflare data center.
 final Omittable<List<LoadBalancingCheckRegions2>?> checkRegions;
@@ -58,7 +58,7 @@ final Omittable<LoadBalancingOriginSteering?> originSteering;
 /// The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
 final List<LoadBalancingOriginRequest>? origins;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -73,9 +73,9 @@ Map<String, dynamic> toJson() { return {
   if (notificationFilter.isPresent) 'notification_filter': notificationFilter.value?.toJson(),
   if (originSteering.isPresent) 'origin_steering': originSteering.value?.toJson(),
   if (origins != null) 'origins': origins?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_regions', 'description', 'enabled', 'latitude', 'load_shedding', 'longitude', 'minimum_origins', 'monitor', 'monitor_group', 'name', 'notification_email', 'notification_filter', 'origin_steering', 'origins'}.contains(key)); } 
-LoadBalancerPoolsPatchPoolRequest copyWith({Omittable<List<LoadBalancingCheckRegions2>?>? checkRegions, LoadBalancingSchemasDescription? Function()? description, LoadBalancingEnabled? Function()? enabled, LoadBalancingLatitude? Function()? latitude, Omittable<LoadBalancingLoadShedding?>? loadShedding, LoadBalancingLongitude? Function()? longitude, LoadBalancingMinimumOrigins? Function()? minimumOrigins, LoadBalancingMonitorId? Function()? monitor, LoadBalancingMonitorGroupId? Function()? monitorGroup, LoadBalancingName? Function()? name, LoadBalancingNotificationEmail? Function()? notificationEmail, Omittable<LoadBalancingNotificationFilter?>? notificationFilter, Omittable<LoadBalancingOriginSteering?>? originSteering, List<LoadBalancingOriginRequest>? Function()? origins, }) { return LoadBalancerPoolsPatchPoolRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'check_regions', 'description', 'enabled', 'latitude', 'load_shedding', 'longitude', 'minimum_origins', 'monitor', 'monitor_group', 'name', 'notification_email', 'notification_filter', 'origin_steering', 'origins'}.contains(key));}
+LoadBalancerPoolsPatchPoolRequest copyWith({Omittable<List<LoadBalancingCheckRegions2>?>? checkRegions, LoadBalancingSchemasDescription? Function()? description, LoadBalancingEnabled? Function()? enabled, LoadBalancingLatitude? Function()? latitude, Omittable<LoadBalancingLoadShedding?>? loadShedding, LoadBalancingLongitude? Function()? longitude, LoadBalancingMinimumOrigins? Function()? minimumOrigins, LoadBalancingMonitorId? Function()? monitor, LoadBalancingMonitorGroupId? Function()? monitorGroup, LoadBalancingName? Function()? name, LoadBalancingNotificationEmail? Function()? notificationEmail, Omittable<LoadBalancingNotificationFilter?>? notificationFilter, Omittable<LoadBalancingOriginSteering?>? originSteering, List<LoadBalancingOriginRequest>? Function()? origins, }) {return LoadBalancerPoolsPatchPoolRequest(
   checkRegions: checkRegions ?? this.checkRegions,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -90,8 +90,8 @@ LoadBalancerPoolsPatchPoolRequest copyWith({Omittable<List<LoadBalancingCheckReg
   notificationFilter: notificationFilter ?? this.notificationFilter,
   originSteering: originSteering ?? this.originSteering,
   origins: origins != null ? origins() : this.origins,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancerPoolsPatchPoolRequest &&
           checkRegions.isPresent == other.checkRegions.isPresent &&
           listEquals(checkRegions.value, other.checkRegions.value) &&
@@ -107,7 +107,7 @@ LoadBalancerPoolsPatchPoolRequest copyWith({Omittable<List<LoadBalancingCheckReg
           notificationEmail == other.notificationEmail &&
           notificationFilter == other.notificationFilter &&
           originSteering == other.originSteering &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkRegions.value ?? const []), description, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const [])); } 
-@override String toString() { return 'LoadBalancerPoolsPatchPoolRequest(checkRegions: $checkRegions, description: $description, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)'; } 
- }
+          listEquals(origins, other.origins);}
+@override int get hashCode {return Object.hash(Object.hashAll(checkRegions.value ?? const []), description, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const []));}
+@override String toString() {return 'LoadBalancerPoolsPatchPoolRequest(checkRegions: $checkRegions, description: $description, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';}
+}

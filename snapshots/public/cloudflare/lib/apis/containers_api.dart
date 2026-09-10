@@ -13,7 +13,7 @@ final class ContainersApi with ApiExecutor {const ContainersApi(this.apiConfig);
 /// Lists all the container applications that are associated with your account.
 ///
 /// `GET /accounts/{account_id}/containers`
-Future<ApiResult<List<CcPublicApplication>, BaseErrorResponse>> publicListApplications({required String accountId, String? name, String? image, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CcPublicApplication>, BaseErrorResponse>> publicListApplications({required String accountId, String? name, String? image, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -33,22 +33,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => CcPublicApplication.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => CcPublicApplication.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 401 || 500:
 final json = jsonDecode(response.body);
-return BaseErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  BaseErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

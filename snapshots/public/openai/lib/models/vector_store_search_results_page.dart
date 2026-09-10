@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_search_result_item.dart';/// The object type, which is always `vector_store.search_results.page`
 @immutable final class VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject._(this.value);
 
-factory VectorStoreSearchResultsPageObject.fromJson(String json) { return switch (json) {
+factory VectorStoreSearchResultsPageObject.fromJson(String json) {return switch (json) {
   'vector_store.search_results.page' => vectorStoreSearchResultsPage,
   _ => VectorStoreSearchResultsPageObject._(json),
-}; }
+};}
 
 static const VectorStoreSearchResultsPageObject vectorStoreSearchResultsPage = VectorStoreSearchResultsPageObject._('vector_store.search_results.page');
 
@@ -14,23 +14,23 @@ static const List<VectorStoreSearchResultsPageObject> values = [vectorStoreSearc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreSearchResultsPageObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreSearchResultsPageObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is VectorStoreSearchResultsPageObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'VectorStoreSearchResultsPageObject($value)';}
+}
 @immutable final class VectorStoreSearchResultsPage {const VectorStoreSearchResultsPage({required this.object, required this.searchQuery, required this.data, required this.hasMore, required this.nextPage, });
 
-factory VectorStoreSearchResultsPage.fromJson(Map<String, dynamic> json) { return VectorStoreSearchResultsPage(
+factory VectorStoreSearchResultsPage.fromJson(Map<String, dynamic> json) {return VectorStoreSearchResultsPage(
   object: VectorStoreSearchResultsPageObject.fromJson(json['object'] as String),
   searchQuery: (json['search_query'] as List<dynamic>).map((e) => e as String).toList(),
   data: (json['data'] as List<dynamic>).map((e) => VectorStoreSearchResultItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   nextPage: json['next_page'] as String?,
-); }
+);}
 
 /// The object type, which is always `vector_store.search_results.page`
 final VectorStoreSearchResultsPageObject object;
@@ -46,32 +46,32 @@ final bool hasMore;
 /// The token for the next page, if any.
 final String? nextPage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'search_query': searchQuery,
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'next_page': nextPage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('search_query') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next_page') && (json['next_page'] == null || json['next_page'] is String); } 
-VectorStoreSearchResultsPage copyWith({VectorStoreSearchResultsPageObject? object, List<String>? searchQuery, List<VectorStoreSearchResultItem>? data, bool? hasMore, String? Function()? nextPage, }) { return VectorStoreSearchResultsPage(
+      json.containsKey('next_page') && (json['next_page'] == null || json['next_page'] is String);}
+VectorStoreSearchResultsPage copyWith({VectorStoreSearchResultsPageObject? object, List<String>? searchQuery, List<VectorStoreSearchResultItem>? data, bool? hasMore, String? Function()? nextPage, }) {return VectorStoreSearchResultsPage(
   object: object ?? this.object,
   searchQuery: searchQuery ?? this.searchQuery,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is VectorStoreSearchResultsPage &&
           object == other.object &&
           listEquals(searchQuery, other.searchQuery) &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          nextPage == other.nextPage; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(searchQuery), Object.hashAll(data), hasMore, nextPage); } 
-@override String toString() { return 'VectorStoreSearchResultsPage(object: $object, searchQuery: $searchQuery, data: $data, hasMore: $hasMore, nextPage: $nextPage)'; } 
- }
+          nextPage == other.nextPage;}
+@override int get hashCode {return Object.hash(object, Object.hashAll(searchQuery), Object.hashAll(data), hasMore, nextPage);}
+@override String toString() {return 'VectorStoreSearchResultsPage(object: $object, searchQuery: $searchQuery, data: $data, hasMore: $hasMore, nextPage: $nextPage)';}
+}

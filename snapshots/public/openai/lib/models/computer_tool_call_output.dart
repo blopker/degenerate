@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'computer_cal
 /// 
 @immutable final class ComputerToolCallOutputType {const ComputerToolCallOutputType._(this.value);
 
-factory ComputerToolCallOutputType.fromJson(String json) { return switch (json) {
+factory ComputerToolCallOutputType.fromJson(String json) {return switch (json) {
   'computer_call_output' => computerCallOutput,
   _ => ComputerToolCallOutputType._(json),
-}; }
+};}
 
 static const ComputerToolCallOutputType computerCallOutput = ComputerToolCallOutputType._('computer_call_output');
 
@@ -15,25 +15,25 @@ static const List<ComputerToolCallOutputType> values = [computerCallOutput];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerToolCallOutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerToolCallOutputType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ComputerToolCallOutputType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ComputerToolCallOutputType($value)';}
+}
 /// The status of the message input. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when input items are returned via API.
 /// 
 @immutable final class ComputerToolCallOutputStatus {const ComputerToolCallOutputStatus._(this.value);
 
-factory ComputerToolCallOutputStatus.fromJson(String json) { return switch (json) {
+factory ComputerToolCallOutputStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => ComputerToolCallOutputStatus._(json),
-}; }
+};}
 
 static const ComputerToolCallOutputStatus inProgress = ComputerToolCallOutputStatus._('in_progress');
 
@@ -45,26 +45,26 @@ static const List<ComputerToolCallOutputStatus> values = [inProgress, completed,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerToolCallOutputStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerToolCallOutputStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ComputerToolCallOutputStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ComputerToolCallOutputStatus($value)';}
+}
 /// The output of a computer tool call.
 /// 
 @immutable final class ComputerToolCallOutput {const ComputerToolCallOutput({required this.type, required this.callId, required this.output, this.id, this.acknowledgedSafetyChecks, this.status, });
 
-factory ComputerToolCallOutput.fromJson(Map<String, dynamic> json) { return ComputerToolCallOutput(
+factory ComputerToolCallOutput.fromJson(Map<String, dynamic> json) {return ComputerToolCallOutput(
   type: ComputerToolCallOutputType.fromJson(json['type'] as String),
   id: json['id'] as String?,
   callId: json['call_id'] as String,
   acknowledgedSafetyChecks: (json['acknowledged_safety_checks'] as List<dynamic>?)?.map((e) => ComputerCallSafetyCheckParam.fromJson(e as Map<String, dynamic>)).toList(),
   output: ComputerScreenshotImage.fromJson(json['output'] as Map<String, dynamic>),
   status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The type of the computer tool call output. Always `computer_call_output`.
 /// 
@@ -90,33 +90,33 @@ final ComputerScreenshotImage output;
 /// 
 final ComputerToolCallOutputStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'id': ?id,
   'call_id': callId,
   if (acknowledgedSafetyChecks != null) 'acknowledged_safety_checks': acknowledgedSafetyChecks?.map((e) => e.toJson()).toList(),
   'output': output.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('call_id') && json['call_id'] is String &&
-      json.containsKey('output'); } 
-ComputerToolCallOutput copyWith({ComputerToolCallOutputType? type, String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ComputerToolCallOutput(
+      json.containsKey('output');}
+ComputerToolCallOutput copyWith({ComputerToolCallOutputType? type, String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) {return ComputerToolCallOutput(
   type: type ?? this.type,
   id: id != null ? id() : this.id,
   callId: callId ?? this.callId,
   acknowledgedSafetyChecks: acknowledgedSafetyChecks != null ? acknowledgedSafetyChecks() : this.acknowledgedSafetyChecks,
   output: output ?? this.output,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ComputerToolCallOutput &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
           listEquals(acknowledgedSafetyChecks, other.acknowledgedSafetyChecks) &&
           output == other.output &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(type, id, callId, Object.hashAll(acknowledgedSafetyChecks ?? const []), output, status); } 
-@override String toString() { return 'ComputerToolCallOutput(type: $type, id: $id, callId: $callId, acknowledgedSafetyChecks: $acknowledgedSafetyChecks, output: $output, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(type, id, callId, Object.hashAll(acknowledgedSafetyChecks ?? const []), output, status);}
+@override String toString() {return 'ComputerToolCallOutput(type: $type, id: $id, callId: $callId, acknowledgedSafetyChecks: $acknowledgedSafetyChecks, output: $output, status: $status)';}
+}

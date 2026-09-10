@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackageRegistry {const WebhookRegistryPackagePublishedRegistryPackageRegistry({this.aboutUrl, this.name, this.type, this.url, this.vendor, });
 
-factory WebhookRegistryPackagePublishedRegistryPackageRegistry.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackageRegistry(
+factory WebhookRegistryPackagePublishedRegistryPackageRegistry.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackagePublishedRegistryPackageRegistry(
   aboutUrl: json['about_url'] as String?,
   name: json['name'] as String?,
   type: json['type'] as String?,
   url: json['url'] as String?,
   vendor: json['vendor'] as String?,
-); }
+);}
 
 final String? aboutUrl;
 
@@ -20,28 +20,28 @@ final String? url;
 
 final String? vendor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'about_url': ?aboutUrl,
   'name': ?name,
   'type': ?type,
   'url': ?url,
   'vendor': ?vendor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'about_url', 'name', 'type', 'url', 'vendor'}.contains(key)); } 
-WebhookRegistryPackagePublishedRegistryPackageRegistry copyWith({String? Function()? aboutUrl, String? Function()? name, String? Function()? type, String? Function()? url, String? Function()? vendor, }) { return WebhookRegistryPackagePublishedRegistryPackageRegistry(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'about_url', 'name', 'type', 'url', 'vendor'}.contains(key));}
+WebhookRegistryPackagePublishedRegistryPackageRegistry copyWith({String? Function()? aboutUrl, String? Function()? name, String? Function()? type, String? Function()? url, String? Function()? vendor, }) {return WebhookRegistryPackagePublishedRegistryPackageRegistry(
   aboutUrl: aboutUrl != null ? aboutUrl() : this.aboutUrl,
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
   vendor: vendor != null ? vendor() : this.vendor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRegistryPackagePublishedRegistryPackageRegistry &&
           aboutUrl == other.aboutUrl &&
           name == other.name &&
           type == other.type &&
           url == other.url &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(aboutUrl, name, type, url, vendor); } 
-@override String toString() { return 'WebhookRegistryPackagePublishedRegistryPackageRegistry(aboutUrl: $aboutUrl, name: $name, type: $type, url: $url, vendor: $vendor)'; } 
- }
+          vendor == other.vendor;}
+@override int get hashCode {return Object.hash(aboutUrl, name, type, url, vendor);}
+@override String toString() {return 'WebhookRegistryPackagePublishedRegistryPackageRegistry(aboutUrl: $aboutUrl, name: $name, type: $type, url: $url, vendor: $vendor)';}
+}

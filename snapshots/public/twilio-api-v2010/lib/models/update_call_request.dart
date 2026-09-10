@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CallEnumUpdateStatus {const CallEnumUpdateStatus._(this.value);
 
-factory CallEnumUpdateStatus.fromJson(String json) { return switch (json) {
+factory CallEnumUpdateStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'completed' => completed,
   _ => CallEnumUpdateStatus._(json),
-}; }
+};}
 
 static const CallEnumUpdateStatus canceled = CallEnumUpdateStatus._('canceled');
 
@@ -16,22 +16,22 @@ static const List<CallEnumUpdateStatus> values = [canceled, completed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallEnumUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallEnumUpdateStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CallEnumUpdateStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CallEnumUpdateStatus($value)';}
+}
 /// The HTTP method we should use when calling the `url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
 @immutable final class UpdateCallRequestMethod {const UpdateCallRequestMethod._(this.value);
 
-factory UpdateCallRequestMethod.fromJson(String json) { return switch (json) {
+factory UpdateCallRequestMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateCallRequestMethod._(json),
-}; }
+};}
 
 static const UpdateCallRequestMethod $get = UpdateCallRequestMethod._('GET');
 
@@ -41,22 +41,22 @@ static const List<UpdateCallRequestMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateCallRequestMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateCallRequestMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateCallRequestMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateCallRequestMethod($value)';}
+}
 /// The HTTP method that we should use to request the `fallback_url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
 @immutable final class UpdateCallRequestFallbackMethod {const UpdateCallRequestFallbackMethod._(this.value);
 
-factory UpdateCallRequestFallbackMethod.fromJson(String json) { return switch (json) {
+factory UpdateCallRequestFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateCallRequestFallbackMethod._(json),
-}; }
+};}
 
 static const UpdateCallRequestFallbackMethod $get = UpdateCallRequestFallbackMethod._('GET');
 
@@ -66,22 +66,22 @@ static const List<UpdateCallRequestFallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateCallRequestFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateCallRequestFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateCallRequestFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateCallRequestFallbackMethod($value)';}
+}
 /// The HTTP method we should use when requesting the `status_callback` URL. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
 @immutable final class UpdateCallRequestStatusCallbackMethod {const UpdateCallRequestStatusCallbackMethod._(this.value);
 
-factory UpdateCallRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory UpdateCallRequestStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => UpdateCallRequestStatusCallbackMethod._(json),
-}; }
+};}
 
 static const UpdateCallRequestStatusCallbackMethod $get = UpdateCallRequestStatusCallbackMethod._('GET');
 
@@ -91,17 +91,17 @@ static const List<UpdateCallRequestStatusCallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateCallRequestStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateCallRequestStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UpdateCallRequestStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UpdateCallRequestStatusCallbackMethod($value)';}
+}
 @immutable final class UpdateCallRequest {const UpdateCallRequest({this.url, this.method, this.status, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackMethod, this.twiml, this.timeLimit, });
 
-factory UpdateCallRequest.fromJson(Map<String, dynamic> json) { return UpdateCallRequest(
+factory UpdateCallRequest.fromJson(Map<String, dynamic> json) {return UpdateCallRequest(
   url: json['Url'] != null ? Uri.parse(json['Url'] as String) : null,
   method: json['Method'] != null ? UpdateCallRequestMethod.fromJson(json['Method'] as String) : null,
   status: json['Status'] != null ? CallEnumUpdateStatus.fromJson(json['Status'] as String) : null,
@@ -111,7 +111,7 @@ factory UpdateCallRequest.fromJson(Map<String, dynamic> json) { return UpdateCal
   statusCallbackMethod: json['StatusCallbackMethod'] != null ? UpdateCallRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
   twiml: json['Twiml'] as String?,
   timeLimit: json['TimeLimit'] != null ? (json['TimeLimit'] as num).toInt() : null,
-); }
+);}
 
 /// The absolute URL that returns the TwiML instructions for the call. We will call this URL using the `method` when the call connects. For more information, see the [Url Parameter](https://www.twilio.com/docs/voice/make-calls#specify-a-url-parameter) section in [Making Calls](https://www.twilio.com/docs/voice/make-calls).
 final Uri? url;
@@ -139,7 +139,7 @@ final String? twiml;
 /// The maximum duration of the call in seconds. Constraints depend on account and configuration.
 final int? timeLimit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (url != null) 'Url': url?.toString(),
   if (method != null) 'Method': method?.toJson(),
   if (status != null) 'Status': status?.toJson(),
@@ -149,9 +149,9 @@ Map<String, dynamic> toJson() { return {
   if (statusCallbackMethod != null) 'StatusCallbackMethod': statusCallbackMethod?.toJson(),
   'Twiml': ?twiml,
   'TimeLimit': ?timeLimit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Url', 'Method', 'Status', 'FallbackUrl', 'FallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'Twiml', 'TimeLimit'}.contains(key)); } 
-UpdateCallRequest copyWith({Uri? Function()? url, UpdateCallRequestMethod? Function()? method, CallEnumUpdateStatus? Function()? status, Uri? Function()? fallbackUrl, UpdateCallRequestFallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, UpdateCallRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? twiml, int? Function()? timeLimit, }) { return UpdateCallRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'Url', 'Method', 'Status', 'FallbackUrl', 'FallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'Twiml', 'TimeLimit'}.contains(key));}
+UpdateCallRequest copyWith({Uri? Function()? url, UpdateCallRequestMethod? Function()? method, CallEnumUpdateStatus? Function()? status, Uri? Function()? fallbackUrl, UpdateCallRequestFallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, UpdateCallRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? twiml, int? Function()? timeLimit, }) {return UpdateCallRequest(
   url: url != null ? url() : this.url,
   method: method != null ? method() : this.method,
   status: status != null ? status() : this.status,
@@ -161,8 +161,8 @@ UpdateCallRequest copyWith({Uri? Function()? url, UpdateCallRequestMethod? Funct
   statusCallbackMethod: statusCallbackMethod != null ? statusCallbackMethod() : this.statusCallbackMethod,
   twiml: twiml != null ? twiml() : this.twiml,
   timeLimit: timeLimit != null ? timeLimit() : this.timeLimit,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateCallRequest &&
           url == other.url &&
           method == other.method &&
@@ -172,7 +172,7 @@ UpdateCallRequest copyWith({Uri? Function()? url, UpdateCallRequestMethod? Funct
           statusCallback == other.statusCallback &&
           statusCallbackMethod == other.statusCallbackMethod &&
           twiml == other.twiml &&
-          timeLimit == other.timeLimit; } 
-@override int get hashCode { return Object.hash(url, method, status, fallbackUrl, fallbackMethod, statusCallback, statusCallbackMethod, twiml, timeLimit); } 
-@override String toString() { return 'UpdateCallRequest(url: $url, method: $method, status: $status, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, twiml: $twiml, timeLimit: $timeLimit)'; } 
- }
+          timeLimit == other.timeLimit;}
+@override int get hashCode {return Object.hash(url, method, status, fallbackUrl, fallbackMethod, statusCallback, statusCallbackMethod, twiml, timeLimit);}
+@override String toString() {return 'UpdateCallRequest(url: $url, method: $method, status: $status, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, twiml: $twiml, timeLimit: $timeLimit)';}
+}

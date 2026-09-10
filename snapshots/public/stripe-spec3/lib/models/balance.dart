@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount.dart';import 'balance_amount_net.dart';import 'balance_detail.dart';import 'balance_detail_ungated.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BalanceObject {const BalanceObject._(this.value);
 
-factory BalanceObject.fromJson(String json) { return switch (json) {
+factory BalanceObject.fromJson(String json) {return switch (json) {
   'balance' => balance,
   _ => BalanceObject._(json),
-}; }
+};}
 
 static const BalanceObject balance = BalanceObject._('balance');
 
@@ -14,14 +14,14 @@ static const List<BalanceObject> values = [balance];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BalanceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BalanceObject($value)';}
+}
 /// This is an object representing your Stripe balance. You can retrieve it to see
 /// the balance currently on your Stripe account.
 /// 
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Balances and settlement time](https://docs.stripe.com/payments/balances), [Understanding Connect account balances](https://docs.stripe.com/connect/account-balances)
 @immutable final class Balance {const Balance({required this.available, required this.livemode, required this.object, required this.pending, this.connectReserved, this.instantAvailable, this.issuing, this.refundAndDisputePrefunding, });
 
-factory Balance.fromJson(Map<String, dynamic> json) { return Balance(
+factory Balance.fromJson(Map<String, dynamic> json) {return Balance(
   available: (json['available'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
   connectReserved: (json['connect_reserved'] as List<dynamic>?)?.map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
   instantAvailable: (json['instant_available'] as List<dynamic>?)?.map((e) => BalanceAmountNet.fromJson(e as Map<String, dynamic>)).toList(),
@@ -39,7 +39,7 @@ factory Balance.fromJson(Map<String, dynamic> json) { return Balance(
   object: BalanceObject.fromJson(json['object'] as String),
   pending: (json['pending'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
   refundAndDisputePrefunding: json['refund_and_dispute_prefunding'] != null ? BalanceDetailUngated.fromJson(json['refund_and_dispute_prefunding'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Available funds that you can transfer or pay out automatically by Stripe or explicitly through the [Transfers API](https://api.stripe.com#transfers) or [Payouts API](https://api.stripe.com#payouts). You can find the available balance for each currency and payment type in the `source_types` property.
 final List<BalanceAmount> available;
@@ -63,7 +63,7 @@ final List<BalanceAmount> pending;
 
 final BalanceDetailUngated? refundAndDisputePrefunding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'available': available.map((e) => e.toJson()).toList(),
   if (connectReserved != null) 'connect_reserved': connectReserved?.map((e) => e.toJson()).toList(),
   if (instantAvailable != null) 'instant_available': instantAvailable?.map((e) => e.toJson()).toList(),
@@ -72,12 +72,12 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'pending': pending.map((e) => e.toJson()).toList(),
   if (refundAndDisputePrefunding != null) 'refund_and_dispute_prefunding': refundAndDisputePrefunding?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('available') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('available') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('pending'); } 
-Balance copyWith({List<BalanceAmount>? available, List<BalanceAmount>? Function()? connectReserved, List<BalanceAmountNet>? Function()? instantAvailable, BalanceDetail? Function()? issuing, bool? livemode, BalanceObject? object, List<BalanceAmount>? pending, BalanceDetailUngated? Function()? refundAndDisputePrefunding, }) { return Balance(
+      json.containsKey('pending');}
+Balance copyWith({List<BalanceAmount>? available, List<BalanceAmount>? Function()? connectReserved, List<BalanceAmountNet>? Function()? instantAvailable, BalanceDetail? Function()? issuing, bool? livemode, BalanceObject? object, List<BalanceAmount>? pending, BalanceDetailUngated? Function()? refundAndDisputePrefunding, }) {return Balance(
   available: available ?? this.available,
   connectReserved: connectReserved != null ? connectReserved() : this.connectReserved,
   instantAvailable: instantAvailable != null ? instantAvailable() : this.instantAvailable,
@@ -86,8 +86,8 @@ Balance copyWith({List<BalanceAmount>? available, List<BalanceAmount>? Function(
   object: object ?? this.object,
   pending: pending ?? this.pending,
   refundAndDisputePrefunding: refundAndDisputePrefunding != null ? refundAndDisputePrefunding() : this.refundAndDisputePrefunding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Balance &&
           listEquals(available, other.available) &&
           listEquals(connectReserved, other.connectReserved) &&
@@ -96,7 +96,7 @@ Balance copyWith({List<BalanceAmount>? available, List<BalanceAmount>? Function(
           livemode == other.livemode &&
           object == other.object &&
           listEquals(pending, other.pending) &&
-          refundAndDisputePrefunding == other.refundAndDisputePrefunding; } 
-@override int get hashCode { return Object.hash(Object.hashAll(available), Object.hashAll(connectReserved ?? const []), Object.hashAll(instantAvailable ?? const []), issuing, livemode, object, Object.hashAll(pending), refundAndDisputePrefunding); } 
-@override String toString() { return 'Balance(available: $available, connectReserved: $connectReserved, instantAvailable: $instantAvailable, issuing: $issuing, livemode: $livemode, object: $object, pending: $pending, refundAndDisputePrefunding: $refundAndDisputePrefunding)'; } 
- }
+          refundAndDisputePrefunding == other.refundAndDisputePrefunding;}
+@override int get hashCode {return Object.hash(Object.hashAll(available), Object.hashAll(connectReserved ?? const []), Object.hashAll(instantAvailable ?? const []), issuing, livemode, object, Object.hashAll(pending), refundAndDisputePrefunding);}
+@override String toString() {return 'Balance(available: $available, connectReserved: $connectReserved, instantAvailable: $instantAvailable, issuing: $issuing, livemode: $livemode, object: $object, pending: $pending, refundAndDisputePrefunding: $refundAndDisputePrefunding)';}
+}

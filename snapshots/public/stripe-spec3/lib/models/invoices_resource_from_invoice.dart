@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_resource_from_invoice_invoice.dart';/// 
 @immutable final class InvoicesResourceFromInvoice {const InvoicesResourceFromInvoice({required this.action, required this.invoice, });
 
-factory InvoicesResourceFromInvoice.fromJson(Map<String, dynamic> json) { return InvoicesResourceFromInvoice(
+factory InvoicesResourceFromInvoice.fromJson(Map<String, dynamic> json) {return InvoicesResourceFromInvoice(
   action: json['action'] as String,
   invoice: InvoicesResourceFromInvoiceInvoice.fromJson(json['invoice']),
-); }
+);}
 
 /// The relation between this invoice and the cloned invoice
 final String action;
@@ -14,20 +14,20 @@ final String action;
 /// The invoice that was cloned.
 final InvoicesResourceFromInvoiceInvoice invoice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'invoice': invoice.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
-      json.containsKey('invoice'); } 
-InvoicesResourceFromInvoice copyWith({String? action, InvoicesResourceFromInvoiceInvoice? invoice, }) { return InvoicesResourceFromInvoice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
+      json.containsKey('invoice');}
+InvoicesResourceFromInvoice copyWith({String? action, InvoicesResourceFromInvoiceInvoice? invoice, }) {return InvoicesResourceFromInvoice(
   action: action ?? this.action,
   invoice: invoice ?? this.invoice,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InvoicesResourceFromInvoice &&
           action == other.action &&
-          invoice == other.invoice; } 
-@override int get hashCode { return Object.hash(action, invoice); } 
-@override String toString() { return 'InvoicesResourceFromInvoice(action: $action, invoice: $invoice)'; } 
- }
+          invoice == other.invoice;}
+@override int get hashCode {return Object.hash(action, invoice);}
+@override String toString() {return 'InvoicesResourceFromInvoice(action: $action, invoice: $invoice)';}
+}

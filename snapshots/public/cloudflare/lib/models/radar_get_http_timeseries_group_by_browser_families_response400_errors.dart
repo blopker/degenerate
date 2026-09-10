@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors {const RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors({required this.message});
 
-factory RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors(
+factory RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors.fromJson(Map<String, dynamic> json) {return RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors copyWith({String? message}) { return RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors copyWith({String? message}) {return RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse400Errors(message: $message)';}
+}

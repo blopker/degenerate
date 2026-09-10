@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The new status of the CodeQL variant analysis repository task.
 @immutable final class CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus._(this.value);
 
-factory CodeScanningVariantAnalysisStatus.fromJson(String json) { return switch (json) {
+factory CodeScanningVariantAnalysisStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'in_progress' => inProgress,
   'succeeded' => succeeded,
@@ -11,7 +11,7 @@ factory CodeScanningVariantAnalysisStatus.fromJson(String json) { return switch 
   'canceled' => canceled,
   'timed_out' => timedOut,
   _ => CodeScanningVariantAnalysisStatus._(json),
-}; }
+};}
 
 static const CodeScanningVariantAnalysisStatus pending = CodeScanningVariantAnalysisStatus._('pending');
 
@@ -29,11 +29,11 @@ static const List<CodeScanningVariantAnalysisStatus> values = [pending, inProgre
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningVariantAnalysisStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningVariantAnalysisStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CodeScanningVariantAnalysisStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CodeScanningVariantAnalysisStatus($value)';}
+}

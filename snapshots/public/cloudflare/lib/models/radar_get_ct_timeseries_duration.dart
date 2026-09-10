@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesDuration {const RadarGetCtTimeseriesDuration._(this.value);
 
-factory RadarGetCtTimeseriesDuration.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesDuration.fromJson(String json) {return switch (json) {
   'LTE_3D' => lte3D,
   'GT_3D_LTE_7D' => gt3DLte7D,
   'GT_7D_LTE_10D' => gt7DLte10D,
@@ -11,7 +11,7 @@ factory RadarGetCtTimeseriesDuration.fromJson(String json) { return switch (json
   'GT_100D_LTE_200D' => gt100DLte200D,
   'GT_200D' => gt200D,
   _ => RadarGetCtTimeseriesDuration._(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesDuration lte3D = RadarGetCtTimeseriesDuration._('LTE_3D');
 
@@ -31,11 +31,11 @@ static const List<RadarGetCtTimeseriesDuration> values = [lte3D, gt3DLte7D, gt7D
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtTimeseriesDuration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtTimeseriesDuration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtTimeseriesDuration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtTimeseriesDuration($value)';}
+}

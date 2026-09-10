@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Time anchor for the expiration time. Currently only 'last_active_at' is supported.
 @immutable final class CreateContainerBodyExpiresAfterAnchor {const CreateContainerBodyExpiresAfterAnchor._(this.value);
 
-factory CreateContainerBodyExpiresAfterAnchor.fromJson(String json) { return switch (json) {
+factory CreateContainerBodyExpiresAfterAnchor.fromJson(String json) {return switch (json) {
   'last_active_at' => lastActiveAt,
   _ => CreateContainerBodyExpiresAfterAnchor._(json),
-}; }
+};}
 
 static const CreateContainerBodyExpiresAfterAnchor lastActiveAt = CreateContainerBodyExpiresAfterAnchor._('last_active_at');
 
@@ -14,41 +14,41 @@ static const List<CreateContainerBodyExpiresAfterAnchor> values = [lastActiveAt]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateContainerBodyExpiresAfterAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateContainerBodyExpiresAfterAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateContainerBodyExpiresAfterAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateContainerBodyExpiresAfterAnchor($value)';}
+}
 /// Container expiration time in seconds relative to the 'anchor' time.
 @immutable final class CreateContainerBodyExpiresAfter {const CreateContainerBodyExpiresAfter({required this.anchor, required this.minutes, });
 
-factory CreateContainerBodyExpiresAfter.fromJson(Map<String, dynamic> json) { return CreateContainerBodyExpiresAfter(
+factory CreateContainerBodyExpiresAfter.fromJson(Map<String, dynamic> json) {return CreateContainerBodyExpiresAfter(
   anchor: CreateContainerBodyExpiresAfterAnchor.fromJson(json['anchor'] as String),
   minutes: (json['minutes'] as num).toInt(),
-); }
+);}
 
 /// Time anchor for the expiration time. Currently only 'last_active_at' is supported.
 final CreateContainerBodyExpiresAfterAnchor anchor;
 
 final int minutes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'anchor': anchor.toJson(),
   'minutes': minutes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') &&
-      json.containsKey('minutes') && json['minutes'] is num; } 
-CreateContainerBodyExpiresAfter copyWith({CreateContainerBodyExpiresAfterAnchor? anchor, int? minutes, }) { return CreateContainerBodyExpiresAfter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('anchor') &&
+      json.containsKey('minutes') && json['minutes'] is num;}
+CreateContainerBodyExpiresAfter copyWith({CreateContainerBodyExpiresAfterAnchor? anchor, int? minutes, }) {return CreateContainerBodyExpiresAfter(
   anchor: anchor ?? this.anchor,
   minutes: minutes ?? this.minutes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateContainerBodyExpiresAfter &&
           anchor == other.anchor &&
-          minutes == other.minutes; } 
-@override int get hashCode { return Object.hash(anchor, minutes); } 
-@override String toString() { return 'CreateContainerBodyExpiresAfter(anchor: $anchor, minutes: $minutes)'; } 
- }
+          minutes == other.minutes;}
+@override int get hashCode {return Object.hash(anchor, minutes);}
+@override String toString() {return 'CreateContainerBodyExpiresAfter(anchor: $anchor, minutes: $minutes)';}
+}

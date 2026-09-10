@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Float64Type {const Float64Type._(this.value);
 
-factory Float64Type.fromJson(String json) { return switch (json) {
+factory Float64Type.fromJson(String json) {return switch (json) {
   'float64' => float64,
   _ => Float64Type._(json),
-}; }
+};}
 
 static const Float64Type float64 = Float64Type._('float64');
 
@@ -13,32 +13,32 @@ static const List<Float64Type> values = [float64];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Float64Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Float64Type($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Float64Type && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Float64Type($value)';}
+}
 @immutable final class Float64 {const Float64({required this.type});
 
-factory Float64.fromJson(Map<String, dynamic> json) { return Float64(
+factory Float64.fromJson(Map<String, dynamic> json) {return Float64(
   type: Float64Type.fromJson(json['type'] as String),
-); }
+);}
 
 final Float64Type type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Float64 copyWith({Float64Type? type}) { return Float64(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+Float64 copyWith({Float64Type? type}) {return Float64(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Float64 &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'Float64(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'Float64(type: $type)';}
+}

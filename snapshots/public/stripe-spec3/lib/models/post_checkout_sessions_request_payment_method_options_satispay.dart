@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod manual = PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod._('manual');
 
@@ -13,32 +13,32 @@ static const List<PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCapture
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod($value)';}
+}
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSatispay {const PostCheckoutSessionsRequestPaymentMethodOptionsSatispay({this.captureMethod});
 
-factory PostCheckoutSessionsRequestPaymentMethodOptionsSatispay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSatispay(
+factory PostCheckoutSessionsRequestPaymentMethodOptionsSatispay.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodOptionsSatispay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod.fromJson(json['capture_method'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod? captureMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsSatispay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod? Function()? captureMethod}) { return PostCheckoutSessionsRequestPaymentMethodOptionsSatispay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodOptionsSatispay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsSatispayCaptureMethod? Function()? captureMethod}) {return PostCheckoutSessionsRequestPaymentMethodOptionsSatispay(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsSatispay &&
-          captureMethod == other.captureMethod; } 
-@override int get hashCode { return captureMethod.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsSatispay(captureMethod: $captureMethod)'; } 
- }
+          captureMethod == other.captureMethod;}
+@override int get hashCode {return captureMethod.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodOptionsSatispay(captureMethod: $captureMethod)';}
+}

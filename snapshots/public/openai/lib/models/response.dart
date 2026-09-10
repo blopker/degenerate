@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation
 /// 
 @immutable final class ResponsePromptCacheRetention {const ResponsePromptCacheRetention._(this.value);
 
-factory ResponsePromptCacheRetention.fromJson(String json) { return switch (json) {
+factory ResponsePromptCacheRetention.fromJson(String json) {return switch (json) {
   'in-memory' => inMemory,
   '24h' => $24h,
   _ => ResponsePromptCacheRetention._(json),
-}; }
+};}
 
 static const ResponsePromptCacheRetention inMemory = ResponsePromptCacheRetention._('in-memory');
 
@@ -18,14 +18,14 @@ static const List<ResponsePromptCacheRetention> values = [inMemory, $24h];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsePromptCacheRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponsePromptCacheRetention($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponsePromptCacheRetention && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponsePromptCacheRetention($value)';}
+}
 /// The truncation strategy to use for the model response.
 /// - `auto`: If the input to this Response exceeds
 ///   the model's context window size, the model will truncate the
@@ -35,11 +35,11 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class ResponseTruncation {const ResponseTruncation._(this.value);
 
-factory ResponseTruncation.fromJson(String json) { return switch (json) {
+factory ResponseTruncation.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'disabled' => disabled,
   _ => ResponseTruncation._(json),
-}; }
+};}
 
 static const ResponseTruncation auto = ResponseTruncation._('auto');
 
@@ -49,22 +49,22 @@ static const List<ResponseTruncation> values = [auto, disabled];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseTruncation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseTruncation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponseTruncation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponseTruncation($value)';}
+}
 /// The object type of this resource - always set to `response`.
 /// 
 @immutable final class ResponseObject {const ResponseObject._(this.value);
 
-factory ResponseObject.fromJson(String json) { return switch (json) {
+factory ResponseObject.fromJson(String json) {return switch (json) {
   'response' => response,
   _ => ResponseObject._(json),
-}; }
+};}
 
 static const ResponseObject response = ResponseObject._('response');
 
@@ -72,20 +72,20 @@ static const List<ResponseObject> values = [response];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponseObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponseObject($value)';}
+}
 /// The status of the response generation. One of `completed`, `failed`,
 /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
 /// 
 @immutable final class ResponseStatus {const ResponseStatus._(this.value);
 
-factory ResponseStatus.fromJson(String json) { return switch (json) {
+factory ResponseStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'failed' => failed,
   'in_progress' => inProgress,
@@ -93,7 +93,7 @@ factory ResponseStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'incomplete' => incomplete,
   _ => ResponseStatus._(json),
-}; }
+};}
 
 static const ResponseStatus completed = ResponseStatus._('completed');
 
@@ -111,17 +111,17 @@ static const List<ResponseStatus> values = [completed, failed, inProgress, cance
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponseStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponseStatus($value)';}
+}
 @immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.model, required this.tools, required this.toolChoice, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, required this.parallelToolCalls, this.topLogprobs = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), this.previousResponseId = const Omittable.absent(), this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.prompt = const Omittable.absent(), this.truncation = const Omittable.absent(), this.status, this.completedAt = const Omittable.absent(), this.outputText = const Omittable.absent(), this.usage, this.conversation = const Omittable.absent(), });
 
-factory Response.fromJson(Map<String, dynamic> json) { return Response(
+factory Response.fromJson(Map<String, dynamic> json) {return Response(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   topLogprobs: json.containsKey('top_logprobs') ? Omittable(json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null) : const Omittable.absent(),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
@@ -155,7 +155,7 @@ factory Response.fromJson(Map<String, dynamic> json) { return Response(
   usage: json['usage'] != null ? ResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   parallelToolCalls: json['parallel_tool_calls'] as bool,
   conversation: json.containsKey('conversation') ? Omittable(json['conversation'] != null ? Conversation2.fromJson(json['conversation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -312,7 +312,7 @@ final bool parallelToolCalls;
 
 final Omittable<Conversation2?> conversation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'metadata': metadata,
   if (topLogprobs.isPresent) 'top_logprobs': topLogprobs.value,
   'temperature': temperature,
@@ -346,8 +346,8 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
   'parallel_tool_calls': parallelToolCalls,
   if (conversation.isPresent) 'conversation': conversation.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('metadata') &&
       json.containsKey('temperature') && (json['temperature'] == null || json['temperature'] is num) &&
       json.containsKey('top_p') && (json['top_p'] == null || json['top_p'] is num) &&
       json.containsKey('model') &&
@@ -360,8 +360,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('metad
       json.containsKey('incomplete_details') &&
       json.containsKey('output') &&
       json.containsKey('instructions') &&
-      json.containsKey('parallel_tool_calls') && json['parallel_tool_calls'] is bool; } 
-Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<ResponsePromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Omittable<Prompt?>? prompt, Omittable<ResponseTruncation?>? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, Omittable<double?>? completedAt, ResponseError? Function()? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, ResponseInstructions? Function()? instructions, Omittable<String?>? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Omittable<Conversation2?>? conversation, }) { return Response(
+      json.containsKey('parallel_tool_calls') && json['parallel_tool_calls'] is bool;}
+Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<ResponsePromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Omittable<Prompt?>? prompt, Omittable<ResponseTruncation?>? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, Omittable<double?>? completedAt, ResponseError? Function()? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, ResponseInstructions? Function()? instructions, Omittable<String?>? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Omittable<Conversation2?>? conversation, }) {return Response(
   metadata: metadata != null ? metadata() : this.metadata,
   topLogprobs: topLogprobs ?? this.topLogprobs,
   temperature: temperature != null ? temperature() : this.temperature,
@@ -395,8 +395,8 @@ Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? t
   usage: usage != null ? usage() : this.usage,
   parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
   conversation: conversation ?? this.conversation,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Response &&
           metadata == other.metadata &&
           topLogprobs == other.topLogprobs &&
@@ -430,7 +430,7 @@ Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? t
           outputText == other.outputText &&
           usage == other.usage &&
           parallelToolCalls == other.parallelToolCalls &&
-          conversation == other.conversation; } 
-@override int get hashCode { return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools), toolChoice, prompt, truncation, id, object, status, createdAt, completedAt, error, incompleteDetails, Object.hashAll(output), instructions, outputText, usage, parallelToolCalls, conversation]); } 
-@override String toString() { return 'Response(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation, id: $id, object: $object, status: $status, createdAt: $createdAt, completedAt: $completedAt, error: $error, incompleteDetails: $incompleteDetails, output: $output, instructions: $instructions, outputText: $outputText, usage: $usage, parallelToolCalls: $parallelToolCalls, conversation: $conversation)'; } 
- }
+          conversation == other.conversation;}
+@override int get hashCode {return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools), toolChoice, prompt, truncation, id, object, status, createdAt, completedAt, error, incompleteDetails, Object.hashAll(output), instructions, outputText, usage, parallelToolCalls, conversation]);}
+@override String toString() {return 'Response(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation, id: $id, object: $object, status: $status, createdAt: $createdAt, completedAt: $completedAt, error: $error, incompleteDetails: $incompleteDetails, output: $output, instructions: $instructions, outputText: $outputText, usage: $usage, parallelToolCalls: $parallelToolCalls, conversation: $conversation)';}
+}

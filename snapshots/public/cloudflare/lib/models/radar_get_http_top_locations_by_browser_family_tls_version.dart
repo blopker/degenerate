@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByBrowserFamilyTlsVersion {const RadarGetHttpTopLocationsByBrowserFamilyTlsVersion._(this.value);
 
-factory RadarGetHttpTopLocationsByBrowserFamilyTlsVersion.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByBrowserFamilyTlsVersion.fromJson(String json) {return switch (json) {
   'TLSv1_0' => tlSv10,
   'TLSv1_1' => tlSv11,
   'TLSv1_2' => tlSv12,
   'TLSv1_3' => tlSv13,
   'TLSvQUIC' => tlSvQuic,
   _ => RadarGetHttpTopLocationsByBrowserFamilyTlsVersion._(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByBrowserFamilyTlsVersion tlSv10 = RadarGetHttpTopLocationsByBrowserFamilyTlsVersion._('TLSv1_0');
 
@@ -25,11 +25,11 @@ static const List<RadarGetHttpTopLocationsByBrowserFamilyTlsVersion> values = [t
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopLocationsByBrowserFamilyTlsVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopLocationsByBrowserFamilyTlsVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopLocationsByBrowserFamilyTlsVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopLocationsByBrowserFamilyTlsVersion($value)';}
+}

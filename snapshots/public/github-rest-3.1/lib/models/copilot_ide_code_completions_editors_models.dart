@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_code_completions_editors_models_languages.dart';@immutable final class CopilotIdeCodeCompletionsEditorsModels {const CopilotIdeCodeCompletionsEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate = const Omittable.absent(), this.totalEngagedUsers, this.languages, });
 
-factory CopilotIdeCodeCompletionsEditorsModels.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletionsEditorsModels(
+factory CopilotIdeCodeCompletionsEditorsModels.fromJson(Map<String, dynamic> json) {return CopilotIdeCodeCompletionsEditorsModels(
   name: json['name'] as String?,
   isCustomModel: json['is_custom_model'] as bool?,
   customModelTrainingDate: json.containsKey('custom_model_training_date') ? Omittable(json['custom_model_training_date'] as String?) : const Omittable.absent(),
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
   languages: (json['languages'] as List<dynamic>?)?.map((e) => CopilotIdeCodeCompletionsEditorsModelsLanguages.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
 final String? name;
@@ -25,28 +25,28 @@ final int? totalEngagedUsers;
 /// Code completion metrics for active languages, for the given editor.
 final List<CopilotIdeCodeCompletionsEditorsModelsLanguages>? languages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'is_custom_model': ?isCustomModel,
   if (customModelTrainingDate.isPresent) 'custom_model_training_date': customModelTrainingDate.value,
   'total_engaged_users': ?totalEngagedUsers,
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_engaged_users', 'languages'}.contains(key)); } 
-CopilotIdeCodeCompletionsEditorsModels copyWith({String? Function()? name, bool? Function()? isCustomModel, Omittable<String?>? customModelTrainingDate, int? Function()? totalEngagedUsers, List<CopilotIdeCodeCompletionsEditorsModelsLanguages>? Function()? languages, }) { return CopilotIdeCodeCompletionsEditorsModels(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_engaged_users', 'languages'}.contains(key));}
+CopilotIdeCodeCompletionsEditorsModels copyWith({String? Function()? name, bool? Function()? isCustomModel, Omittable<String?>? customModelTrainingDate, int? Function()? totalEngagedUsers, List<CopilotIdeCodeCompletionsEditorsModelsLanguages>? Function()? languages, }) {return CopilotIdeCodeCompletionsEditorsModels(
   name: name != null ? name() : this.name,
   isCustomModel: isCustomModel != null ? isCustomModel() : this.isCustomModel,
   customModelTrainingDate: customModelTrainingDate ?? this.customModelTrainingDate,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   languages: languages != null ? languages() : this.languages,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CopilotIdeCodeCompletionsEditorsModels &&
           name == other.name &&
           isCustomModel == other.isCustomModel &&
           customModelTrainingDate == other.customModelTrainingDate &&
           totalEngagedUsers == other.totalEngagedUsers &&
-          listEquals(languages, other.languages); } 
-@override int get hashCode { return Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, Object.hashAll(languages ?? const [])); } 
-@override String toString() { return 'CopilotIdeCodeCompletionsEditorsModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, languages: $languages)'; } 
- }
+          listEquals(languages, other.languages);}
+@override int get hashCode {return Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, Object.hashAll(languages ?? const []));}
+@override String toString() {return 'CopilotIdeCodeCompletionsEditorsModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, languages: $languages)';}
+}

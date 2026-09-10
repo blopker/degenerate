@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1_payment_method_options.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1_tax.dart';@immutable final class PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 {const PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1({required this.productName, required this.quantity, required this.unitCost, this.discountAmount, this.paymentMethodOptions, this.productCode, this.tax, this.unitOfMeasure, });
 
-factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1(
+factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   productCode: json['product_code'] as String?,
@@ -11,7 +11,7 @@ factory PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1.fro
   tax: json['tax'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1Tax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   unitCost: (json['unit_cost'] as num).toInt(),
   unitOfMeasure: json['unit_of_measure'] as String?,
-); }
+);}
 
 final int? discountAmount;
 
@@ -29,7 +29,7 @@ final int unitCost;
 
 final String? unitOfMeasure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'discount_amount': ?discountAmount,
   if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
   'product_code': ?productCode,
@@ -38,11 +38,11 @@ Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
   'unit_cost': unitCost,
   'unit_of_measure': ?unitOfMeasure,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('product_name') && json['product_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('product_name') && json['product_name'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
-      json.containsKey('unit_cost') && json['unit_cost'] is num; } 
-PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 copyWith({int? Function()? discountAmount, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1Tax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) { return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1(
+      json.containsKey('unit_cost') && json['unit_cost'] is num;}
+PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 copyWith({int? Function()? discountAmount, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1PaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1Tax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) {return PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   productCode: productCode != null ? productCode() : this.productCode,
@@ -51,8 +51,8 @@ PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 copyWith({i
   tax: tax != null ? tax() : this.tax,
   unitCost: unitCost ?? this.unitCost,
   unitOfMeasure: unitOfMeasure != null ? unitOfMeasure() : this.unitOfMeasure,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 &&
           discountAmount == other.discountAmount &&
           paymentMethodOptions == other.paymentMethodOptions &&
@@ -61,7 +61,7 @@ PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1 copyWith({i
           quantity == other.quantity &&
           tax == other.tax &&
           unitCost == other.unitCost &&
-          unitOfMeasure == other.unitOfMeasure; } 
-@override int get hashCode { return Object.hash(discountAmount, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure); } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1(discountAmount: $discountAmount, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)'; } 
- }
+          unitOfMeasure == other.unitOfMeasure;}
+@override int get hashCode {return Object.hash(discountAmount, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure);}
+@override String toString() {return 'PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1(discountAmount: $discountAmount, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)';}
+}

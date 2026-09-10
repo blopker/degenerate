@@ -11,7 +11,7 @@ final class GroupOrganizationRoleAssignmentsApi with ApiExecutor {const GroupOrg
 /// Lists the organization roles assigned to a group within the organization.
 ///
 /// `GET /organization/groups/{group_id}/roles`
-Future<ApiResult<RoleListResource, Never>> listGroupRoleAssignments({required String groupId, int? limit, String? after, ListGroupRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RoleListResource, Never>> listGroupRoleAssignments({required String groupId, int? limit, String? after, ListGroupRoleAssignmentsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -34,18 +34,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RoleListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RoleListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Assigns an organization role to a group within the organization.
 ///
 /// `POST /organization/groups/{group_id}/roles`
-Future<ApiResult<GroupRoleAssignment, Never>> assignGroupRole({required String groupId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GroupRoleAssignment, Never>> assignGroupRole({required String groupId, required PublicAssignOrganizationGroupRoleBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,18 +51,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupRoleAssignment.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupRoleAssignment.fromJson(json as Map<String, dynamic>);}, );}
 /// Unassigns an organization role from a group within the organization.
 ///
 /// `DELETE /organization/groups/{group_id}/roles/{role_id}`
-Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignGroupRole({required String groupId, required String roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRoleAssignmentResource, Never>> unassignGroupRole({required String groupId, required String roleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -76,12 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
- }
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);}, );}
+}

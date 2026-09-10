@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';/// The event type, must be `conversation.item.create`.
 @immutable final class RealtimeBetaClientEventConversationItemCreateType {const RealtimeBetaClientEventConversationItemCreateType._(this.value);
 
-factory RealtimeBetaClientEventConversationItemCreateType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaClientEventConversationItemCreateType.fromJson(String json) {return switch (json) {
   'conversation.item.create' => conversationItemCreate,
   _ => RealtimeBetaClientEventConversationItemCreateType._(json),
-}; }
+};}
 
 static const RealtimeBetaClientEventConversationItemCreateType conversationItemCreate = RealtimeBetaClientEventConversationItemCreateType._('conversation.item.create');
 
@@ -14,14 +14,14 @@ static const List<RealtimeBetaClientEventConversationItemCreateType> values = [c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemCreateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemCreateType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeBetaClientEventConversationItemCreateType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeBetaClientEventConversationItemCreateType($value)';}
+}
 /// Add a new Item to the Conversation's context, including messages, function
 /// calls, and function call responses. This event can be used both to populate a
 /// "history" of the conversation and to add new items mid-stream, but has the
@@ -32,12 +32,12 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 @immutable final class RealtimeBetaClientEventConversationItemCreate {const RealtimeBetaClientEventConversationItemCreate({required this.type, required this.item, this.eventId, this.previousItemId, });
 
-factory RealtimeBetaClientEventConversationItemCreate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventConversationItemCreate(
+factory RealtimeBetaClientEventConversationItemCreate.fromJson(Map<String, dynamic> json) {return RealtimeBetaClientEventConversationItemCreate(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventConversationItemCreateType.fromJson(json['type'] as String),
   previousItemId: json['previous_item_id'] as String?,
   item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -55,26 +55,26 @@ final String? previousItemId;
 
 final RealtimeConversationItem item;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type.toJson(),
   'previous_item_id': ?previousItemId,
   'item': item.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('item'); } 
-RealtimeBetaClientEventConversationItemCreate copyWith({String? Function()? eventId, RealtimeBetaClientEventConversationItemCreateType? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeBetaClientEventConversationItemCreate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('item');}
+RealtimeBetaClientEventConversationItemCreate copyWith({String? Function()? eventId, RealtimeBetaClientEventConversationItemCreateType? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) {return RealtimeBetaClientEventConversationItemCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
   item: item ?? this.item,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeBetaClientEventConversationItemCreate &&
           eventId == other.eventId &&
           type == other.type &&
           previousItemId == other.previousItemId &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, previousItemId, item); } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemCreate(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)'; } 
- }
+          item == other.item;}
+@override int get hashCode {return Object.hash(eventId, type, previousItemId, item);}
+@override String toString() {return 'RealtimeBetaClientEventConversationItemCreate(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)';}
+}

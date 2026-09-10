@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tags_components_schemas_name.dart';import 'access_timestamp.dart';/// A tag
 @immutable final class AccessTag {const AccessTag({required this.name, this.appCount, this.createdAt, this.updatedAt, });
 
-factory AccessTag.fromJson(Map<String, dynamic> json) { return AccessTag(
+factory AccessTag.fromJson(Map<String, dynamic> json) {return AccessTag(
   appCount: json['app_count'] != null ? (json['app_count'] as num).toInt() : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   name: AccessTagsComponentsSchemasName.fromJson(json['name'] as String),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The number of applications that have this tag
 final int? appCount;
@@ -19,25 +19,25 @@ final AccessTagsComponentsSchemasName name;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'app_count': ?appCount,
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   'name': name.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-AccessTag copyWith({int? Function()? appCount, AccessTimestamp? Function()? createdAt, AccessTagsComponentsSchemasName? name, AccessTimestamp? Function()? updatedAt, }) { return AccessTag(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+AccessTag copyWith({int? Function()? appCount, AccessTimestamp? Function()? createdAt, AccessTagsComponentsSchemasName? name, AccessTimestamp? Function()? updatedAt, }) {return AccessTag(
   appCount: appCount != null ? appCount() : this.appCount,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   name: name ?? this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessTag &&
           appCount == other.appCount &&
           createdAt == other.createdAt &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(appCount, createdAt, name, updatedAt); } 
-@override String toString() { return 'AccessTag(appCount: $appCount, createdAt: $createdAt, name: $name, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(appCount, createdAt, name, updatedAt);}
+@override String toString() {return 'AccessTag(appCount: $appCount, createdAt: $createdAt, name: $name, updatedAt: $updatedAt)';}
+}

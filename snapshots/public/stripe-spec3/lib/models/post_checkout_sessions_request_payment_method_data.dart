@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay {const PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay._(this.value);
 
-factory PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay.fromJson(String json) {return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
   _ => PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay always = PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay._('always');
 
@@ -19,33 +19,33 @@ static const List<PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay($value)';}
+}
 /// This parameter allows you to set some attributes on the payment method created during a Checkout session.
 @immutable final class PostCheckoutSessionsRequestPaymentMethodData {const PostCheckoutSessionsRequestPaymentMethodData({this.allowRedisplay});
 
-factory PostCheckoutSessionsRequestPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodData(
+factory PostCheckoutSessionsRequestPaymentMethodData.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestPaymentMethodData(
   allowRedisplay: json['allow_redisplay'] != null ? PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay? allowRedisplay;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodData copyWith({PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay? Function()? allowRedisplay}) { return PostCheckoutSessionsRequestPaymentMethodData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_redisplay'}.contains(key));}
+PostCheckoutSessionsRequestPaymentMethodData copyWith({PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay? Function()? allowRedisplay}) {return PostCheckoutSessionsRequestPaymentMethodData(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodData &&
-          allowRedisplay == other.allowRedisplay; } 
-@override int get hashCode { return allowRedisplay.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodData(allowRedisplay: $allowRedisplay)'; } 
- }
+          allowRedisplay == other.allowRedisplay;}
+@override int get hashCode {return allowRedisplay.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestPaymentMethodData(allowRedisplay: $allowRedisplay)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';import 'scope_selector.dart';/// ResourceQuotaSpec defines the desired hard limits to enforce for Quota.
 @immutable final class ResourceQuotaSpec {const ResourceQuotaSpec({this.hard, this.scopeSelector, this.scopes, });
 
-factory ResourceQuotaSpec.fromJson(Map<String, dynamic> json) { return ResourceQuotaSpec(
+factory ResourceQuotaSpec.fromJson(Map<String, dynamic> json) {return ResourceQuotaSpec(
   hard: (json['hard'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
   scopeSelector: json['scopeSelector'] != null ? ScopeSelector.fromJson(json['scopeSelector'] as Map<String, dynamic>) : null,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// hard is the set of desired hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
 final Map<String,ResourceQuantity>? hard;
@@ -18,22 +18,22 @@ final ScopeSelector? scopeSelector;
 /// A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
 final List<String>? scopes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (hard != null) 'hard': hard?.map((k, v) => MapEntry(k, v.toJson())),
   if (scopeSelector != null) 'scopeSelector': scopeSelector?.toJson(),
   'scopes': ?scopes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hard', 'scopeSelector', 'scopes'}.contains(key)); } 
-ResourceQuotaSpec copyWith({Map<String, ResourceQuantity>? Function()? hard, ScopeSelector? Function()? scopeSelector, List<String>? Function()? scopes, }) { return ResourceQuotaSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hard', 'scopeSelector', 'scopes'}.contains(key));}
+ResourceQuotaSpec copyWith({Map<String, ResourceQuantity>? Function()? hard, ScopeSelector? Function()? scopeSelector, List<String>? Function()? scopes, }) {return ResourceQuotaSpec(
   hard: hard != null ? hard() : this.hard,
   scopeSelector: scopeSelector != null ? scopeSelector() : this.scopeSelector,
   scopes: scopes != null ? scopes() : this.scopes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResourceQuotaSpec &&
           hard == other.hard &&
           scopeSelector == other.scopeSelector &&
-          listEquals(scopes, other.scopes); } 
-@override int get hashCode { return Object.hash(hard, scopeSelector, Object.hashAll(scopes ?? const [])); } 
-@override String toString() { return 'ResourceQuotaSpec(hard: $hard, scopeSelector: $scopeSelector, scopes: $scopes)'; } 
- }
+          listEquals(scopes, other.scopes);}
+@override int get hashCode {return Object.hash(hard, scopeSelector, Object.hashAll(scopes ?? const []));}
+@override String toString() {return 'ResourceQuotaSpec(hard: $hard, scopeSelector: $scopeSelector, scopes: $scopes)';}
+}

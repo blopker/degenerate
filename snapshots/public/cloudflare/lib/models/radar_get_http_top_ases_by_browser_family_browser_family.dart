@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Browser family.
 @immutable final class RadarGetHttpTopAsesByBrowserFamilyBrowserFamily {const RadarGetHttpTopAsesByBrowserFamilyBrowserFamily._(this.value);
 
-factory RadarGetHttpTopAsesByBrowserFamilyBrowserFamily.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByBrowserFamilyBrowserFamily.fromJson(String json) {return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
   _ => RadarGetHttpTopAsesByBrowserFamilyBrowserFamily._(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByBrowserFamilyBrowserFamily chrome = RadarGetHttpTopAsesByBrowserFamilyBrowserFamily._('CHROME');
 
@@ -23,11 +23,11 @@ static const List<RadarGetHttpTopAsesByBrowserFamilyBrowserFamily> values = [chr
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpTopAsesByBrowserFamilyBrowserFamily && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpTopAsesByBrowserFamilyBrowserFamily($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpTopAsesByBrowserFamilyBrowserFamily && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpTopAsesByBrowserFamilyBrowserFamily($value)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_setting_subscription_schedule_phase_setting.dart';import 'schedules_phase_automatic_tax.dart';import 'stackable_discount_with_discount_settings_and_discount_end.dart';import 'subscription_billing_thresholds.dart';import 'subscription_schedule_add_invoice_item.dart';import 'subscription_schedule_configuration_item.dart';import 'subscription_schedule_phase_configuration_default_payment_method.dart';import 'subscription_schedule_phase_configuration_on_behalf_of.dart';import 'subscription_transfer_data.dart';import 'tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 @immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(this.value);
 
-factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'phase_start' => phaseStart,
   _ => SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(json),
-}; }
+};}
 
 static const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor automatic = SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._('automatic');
 
@@ -17,22 +17,22 @@ static const List<SubscriptionSchedulePhaseConfigurationBillingCycleAnchor> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)';}
+}
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
 @immutable final class SubscriptionSchedulePhaseConfigurationCollectionMethod {const SubscriptionSchedulePhaseConfigurationCollectionMethod._(this.value);
 
-factory SubscriptionSchedulePhaseConfigurationCollectionMethod.fromJson(String json) { return switch (json) {
+factory SubscriptionSchedulePhaseConfigurationCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => SubscriptionSchedulePhaseConfigurationCollectionMethod._(json),
-}; }
+};}
 
 static const SubscriptionSchedulePhaseConfigurationCollectionMethod chargeAutomatically = SubscriptionSchedulePhaseConfigurationCollectionMethod._('charge_automatically');
 
@@ -42,23 +42,23 @@ static const List<SubscriptionSchedulePhaseConfigurationCollectionMethod> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulePhaseConfigurationCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfigurationCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionSchedulePhaseConfigurationCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionSchedulePhaseConfigurationCollectionMethod($value)';}
+}
 /// When transitioning phases, controls how prorations are handled (if any). Possible values are `create_prorations`, `none`, and `always_invoice`.
 @immutable final class SubscriptionSchedulePhaseConfigurationProrationBehavior {const SubscriptionSchedulePhaseConfigurationProrationBehavior._(this.value);
 
-factory SubscriptionSchedulePhaseConfigurationProrationBehavior.fromJson(String json) { return switch (json) {
+factory SubscriptionSchedulePhaseConfigurationProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => SubscriptionSchedulePhaseConfigurationProrationBehavior._(json),
-}; }
+};}
 
 static const SubscriptionSchedulePhaseConfigurationProrationBehavior alwaysInvoice = SubscriptionSchedulePhaseConfigurationProrationBehavior._('always_invoice');
 
@@ -70,18 +70,18 @@ static const List<SubscriptionSchedulePhaseConfigurationProrationBehavior> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulePhaseConfigurationProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfigurationProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SubscriptionSchedulePhaseConfigurationProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SubscriptionSchedulePhaseConfigurationProrationBehavior($value)';}
+}
 /// A phase describes the plans, coupon, and trialing status of a subscription for a predefined time period.
 @immutable final class SubscriptionSchedulePhaseConfiguration {const SubscriptionSchedulePhaseConfiguration({required this.addInvoiceItems, required this.currency, required this.discounts, required this.endDate, required this.items, required this.prorationBehavior, required this.startDate, this.applicationFeePercent = const Omittable.absent(), this.automaticTax, this.billingCycleAnchor = const Omittable.absent(), this.billingThresholds = const Omittable.absent(), this.collectionMethod = const Omittable.absent(), this.defaultPaymentMethod = const Omittable.absent(), this.defaultTaxRates = const Omittable.absent(), this.description = const Omittable.absent(), this.invoiceSettings = const Omittable.absent(), this.metadata = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.transferData = const Omittable.absent(), this.trialEnd = const Omittable.absent(), });
 
-factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulePhaseConfiguration(
+factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> json) {return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>).map((e) => SubscriptionScheduleAddInvoiceItem.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json.containsKey('application_fee_percent') ? Omittable(json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null) : const Omittable.absent(),
   automaticTax: json['automatic_tax'] != null ? SchedulesPhaseAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
@@ -102,7 +102,7 @@ factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> jso
   startDate: (json['start_date'] as num).toInt(),
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? SubscriptionTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   trialEnd: json.containsKey('trial_end') ? Omittable(json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// A list of prices and quantities that will generate invoice items appended to the next invoice for this phase.
 final List<SubscriptionScheduleAddInvoiceItem> addInvoiceItems;
@@ -163,7 +163,7 @@ final Omittable<SubscriptionTransferData?> transferData;
 /// When the trial ends within the phase.
 final Omittable<int?> trialEnd;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'add_invoice_items': addInvoiceItems.map((e) => e.toJson()).toList(),
   if (applicationFeePercent.isPresent) 'application_fee_percent': applicationFeePercent.value,
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -184,15 +184,15 @@ Map<String, dynamic> toJson() { return {
   'start_date': startDate,
   if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
   if (trialEnd.isPresent) 'trial_end': trialEnd.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('add_invoice_items') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('add_invoice_items') &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('discounts') &&
       json.containsKey('end_date') && json['end_date'] is num &&
       json.containsKey('items') &&
       json.containsKey('proration_behavior') &&
-      json.containsKey('start_date') && json['start_date'] is num; } 
-SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, Omittable<double?>? applicationFeePercent, SchedulesPhaseAutomaticTax? Function()? automaticTax, Omittable<SubscriptionSchedulePhaseConfigurationBillingCycleAnchor?>? billingCycleAnchor, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<SubscriptionSchedulePhaseConfigurationCollectionMethod?>? collectionMethod, String? currency, Omittable<SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, Omittable<InvoiceSettingSubscriptionSchedulePhaseSetting?>? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Omittable<Map<String,String>?>? metadata, Omittable<SubscriptionSchedulePhaseConfigurationOnBehalfOf?>? onBehalfOf, SubscriptionSchedulePhaseConfigurationProrationBehavior? prorationBehavior, int? startDate, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, }) { return SubscriptionSchedulePhaseConfiguration(
+      json.containsKey('start_date') && json['start_date'] is num;}
+SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, Omittable<double?>? applicationFeePercent, SchedulesPhaseAutomaticTax? Function()? automaticTax, Omittable<SubscriptionSchedulePhaseConfigurationBillingCycleAnchor?>? billingCycleAnchor, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<SubscriptionSchedulePhaseConfigurationCollectionMethod?>? collectionMethod, String? currency, Omittable<SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, Omittable<InvoiceSettingSubscriptionSchedulePhaseSetting?>? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Omittable<Map<String,String>?>? metadata, Omittable<SubscriptionSchedulePhaseConfigurationOnBehalfOf?>? onBehalfOf, SubscriptionSchedulePhaseConfigurationProrationBehavior? prorationBehavior, int? startDate, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, }) {return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: addInvoiceItems ?? this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent ?? this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -213,8 +213,8 @@ SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInv
   startDate: startDate ?? this.startDate,
   transferData: transferData ?? this.transferData,
   trialEnd: trialEnd ?? this.trialEnd,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SubscriptionSchedulePhaseConfiguration &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -236,7 +236,7 @@ SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInv
           prorationBehavior == other.prorationBehavior &&
           startDate == other.startDate &&
           transferData == other.transferData &&
-          trialEnd == other.trialEnd; } 
-@override int get hashCode { return Object.hash(Object.hashAll(addInvoiceItems), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, Object.hashAll(defaultTaxRates.value ?? const []), description, Object.hashAll(discounts), endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, startDate, transferData, trialEnd); } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfiguration(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, startDate: $startDate, transferData: $transferData, trialEnd: $trialEnd)'; } 
- }
+          trialEnd == other.trialEnd;}
+@override int get hashCode {return Object.hash(Object.hashAll(addInvoiceItems), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, Object.hashAll(defaultTaxRates.value ?? const []), description, Object.hashAll(discounts), endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, startDate, transferData, trialEnd);}
+@override String toString() {return 'SubscriptionSchedulePhaseConfiguration(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, startDate: $startDate, transferData: $transferData, trialEnd: $trialEnd)';}
+}

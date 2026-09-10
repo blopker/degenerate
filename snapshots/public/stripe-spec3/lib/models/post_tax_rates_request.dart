@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The high-level tax type, such as `vat` or `sales_tax`.
 @immutable final class PostTaxRatesRequestTaxType {const PostTaxRatesRequestTaxType._(this.value);
 
-factory PostTaxRatesRequestTaxType.fromJson(String json) { return switch (json) {
+factory PostTaxRatesRequestTaxType.fromJson(String json) {return switch (json) {
   'amusement_tax' => amusementTax,
   'communications_tax' => communicationsTax,
   'gst' => gst,
@@ -19,7 +19,7 @@ factory PostTaxRatesRequestTaxType.fromJson(String json) { return switch (json) 
   'service_tax' => serviceTax,
   'vat' => vat,
   _ => PostTaxRatesRequestTaxType._(json),
-}; }
+};}
 
 static const PostTaxRatesRequestTaxType amusementTax = PostTaxRatesRequestTaxType._('amusement_tax');
 
@@ -53,17 +53,17 @@ static const List<PostTaxRatesRequestTaxType> values = [amusementTax, communicat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxRatesRequestTaxType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxRatesRequestTaxType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTaxRatesRequestTaxType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTaxRatesRequestTaxType($value)';}
+}
 @immutable final class PostTaxRatesRequest {const PostTaxRatesRequest({required this.displayName, required this.inclusive, required this.percentage, this.active, this.country, this.description, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
 
-factory PostTaxRatesRequest.fromJson(Map<String, dynamic> json) { return PostTaxRatesRequest(
+factory PostTaxRatesRequest.fromJson(Map<String, dynamic> json) {return PostTaxRatesRequest(
   active: json['active'] as bool?,
   country: json['country'] as String?,
   description: json['description'] as String?,
@@ -75,7 +75,7 @@ factory PostTaxRatesRequest.fromJson(Map<String, dynamic> json) { return PostTax
   percentage: (json['percentage'] as num).toDouble(),
   state: json['state'] as String?,
   taxType: json['tax_type'] != null ? PostTaxRatesRequestTaxType.fromJson(json['tax_type'] as String) : null,
-); }
+);}
 
 /// Flag determining whether the tax rate is active or inactive (archived). Inactive tax rates cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set.
 final bool? active;
@@ -110,7 +110,7 @@ final String? state;
 /// The high-level tax type, such as `vat` or `sales_tax`.
 final PostTaxRatesRequestTaxType? taxType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'country': ?country,
   'description': ?description,
@@ -122,11 +122,11 @@ Map<String, dynamic> toJson() { return {
   'percentage': percentage,
   'state': ?state,
   if (taxType != null) 'tax_type': taxType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('inclusive') && json['inclusive'] is bool &&
-      json.containsKey('percentage') && json['percentage'] is num; } 
-PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? displayName, List<String>? Function()? expand, bool? inclusive, String? Function()? jurisdiction, Map<String, String>? Function()? metadata, double? percentage, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) { return PostTaxRatesRequest(
+      json.containsKey('percentage') && json['percentage'] is num;}
+PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? displayName, List<String>? Function()? expand, bool? inclusive, String? Function()? jurisdiction, Map<String, String>? Function()? metadata, double? percentage, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) {return PostTaxRatesRequest(
   active: active != null ? active() : this.active,
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
@@ -138,8 +138,8 @@ PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? coun
   percentage: percentage ?? this.percentage,
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTaxRatesRequest &&
           active == other.active &&
           country == other.country &&
@@ -151,7 +151,7 @@ PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? coun
           metadata == other.metadata &&
           percentage == other.percentage &&
           state == other.state &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(active, country, description, displayName, Object.hashAll(expand ?? const []), inclusive, jurisdiction, metadata, percentage, state, taxType); } 
-@override String toString() { return 'PostTaxRatesRequest(active: $active, country: $country, description: $description, displayName: $displayName, expand: $expand, inclusive: $inclusive, jurisdiction: $jurisdiction, metadata: $metadata, percentage: $percentage, state: $state, taxType: $taxType)'; } 
- }
+          taxType == other.taxType;}
+@override int get hashCode {return Object.hash(active, country, description, displayName, Object.hashAll(expand ?? const []), inclusive, jurisdiction, metadata, percentage, state, taxType);}
+@override String toString() {return 'PostTaxRatesRequest(active: $active, country: $country, description: $description, displayName: $displayName, expand: $expand, inclusive: $inclusive, jurisdiction: $jurisdiction, metadata: $metadata, percentage: $percentage, state: $state, taxType: $taxType)';}
+}

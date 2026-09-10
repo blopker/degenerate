@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2 {const PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2 $empty = PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferenc
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefixVariant2($value)';}
+}
 
 @immutable
 final class PaymentIntentPaymentMethodOptionsParam31MandateOptionsReferencePrefix {

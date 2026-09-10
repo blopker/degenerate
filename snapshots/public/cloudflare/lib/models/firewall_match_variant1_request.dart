@@ -10,7 +10,7 @@ String toJson() => value;
 /// An HTTP method or `_ALL_` to indicate all methods.
 @immutable final class FirewallMethods2 {const FirewallMethods2._(this.value);
 
-factory FirewallMethods2.fromJson(String json) { return switch (json) {
+factory FirewallMethods2.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   'PUT' => put,
@@ -19,7 +19,7 @@ factory FirewallMethods2.fromJson(String json) { return switch (json) {
   'HEAD' => head,
   '_ALL_' => all,
   _ => FirewallMethods2._(json),
-}; }
+};}
 
 static const FirewallMethods2 $get = FirewallMethods2._('GET');
 
@@ -39,21 +39,21 @@ static const List<FirewallMethods2> values = [$get, post, put, delete, patch, he
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallMethods2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallMethods2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FirewallMethods2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FirewallMethods2($value)';}
+}
 @immutable final class FirewallMatchVariant1Request {const FirewallMatchVariant1Request({this.methods, this.schemes, this.url, });
 
-factory FirewallMatchVariant1Request.fromJson(Map<String, dynamic> json) { return FirewallMatchVariant1Request(
+factory FirewallMatchVariant1Request.fromJson(Map<String, dynamic> json) {return FirewallMatchVariant1Request(
   methods: (json['methods'] as List<dynamic>?)?.map((e) => FirewallMethods2.fromJson(e as String)).toList(),
   schemes: (json['schemes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   url: json['url'] != null ? FirewallUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 final List<FirewallMethods2>? methods;
 
@@ -61,22 +61,22 @@ final List<String>? schemes;
 
 final FirewallUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (methods != null) 'methods': methods?.map((e) => e.toJson()).toList(),
   'schemes': ?schemes,
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'methods', 'schemes', 'url'}.contains(key)); } 
-FirewallMatchVariant1Request copyWith({List<FirewallMethods2>? Function()? methods, List<String>? Function()? schemes, FirewallUrl? Function()? url, }) { return FirewallMatchVariant1Request(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'methods', 'schemes', 'url'}.contains(key));}
+FirewallMatchVariant1Request copyWith({List<FirewallMethods2>? Function()? methods, List<String>? Function()? schemes, FirewallUrl? Function()? url, }) {return FirewallMatchVariant1Request(
   methods: methods != null ? methods() : this.methods,
   schemes: schemes != null ? schemes() : this.schemes,
   url: url != null ? url() : this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallMatchVariant1Request &&
           listEquals(methods, other.methods) &&
           listEquals(schemes, other.schemes) &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(methods ?? const []), Object.hashAll(schemes ?? const []), url); } 
-@override String toString() { return 'FirewallMatchVariant1Request(methods: $methods, schemes: $schemes, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(methods ?? const []), Object.hashAll(schemes ?? const []), url);}
+@override String toString() {return 'FirewallMatchVariant1Request(methods: $methods, schemes: $schemes, url: $url)';}
+}

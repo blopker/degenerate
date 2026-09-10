@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_radar_payment_evaluations_request_payment_details_money_movement_details_card.dart';@immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType._(this.value);
 
-factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType.fromJson(String json) { return switch (json) {
+factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType.fromJson(String json) {return switch (json) {
   'card' => card,
   _ => PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType._(json),
-}; }
+};}
 
 static const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType card = PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType._('card');
 
@@ -13,38 +13,38 @@ static const List<PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementD
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType($value)';}
+}
 @immutable final class PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails({required this.moneyMovementType, this.card, });
 
-factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
+factory PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails.fromJson(Map<String, dynamic> json) {return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
   card: json['card'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   moneyMovementType: PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType.fromJson(json['money_movement_type'] as String),
-); }
+);}
 
 final PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard? card;
 
 final PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType moneyMovementType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (card != null) 'card': card?.toJson(),
   'money_movement_type': moneyMovementType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type'); } 
-PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard? Function()? card, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('money_movement_type');}
+PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard? Function()? card, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) {return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
   card: card != null ? card() : this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails &&
           card == other.card &&
-          moneyMovementType == other.moneyMovementType; } 
-@override int get hashCode { return Object.hash(card, moneyMovementType); } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(card: $card, moneyMovementType: $moneyMovementType)'; } 
- }
+          moneyMovementType == other.moneyMovementType;}
+@override int get hashCode {return Object.hash(card, moneyMovementType);}
+@override String toString() {return 'PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(card: $card, moneyMovementType: $moneyMovementType)';}
+}

@@ -4,25 +4,25 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which
 /// 
 @immutable final class ZonesCacheKeyFieldsValueHost {const ZonesCacheKeyFieldsValueHost({this.resolved});
 
-factory ZonesCacheKeyFieldsValueHost.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueHost(
+factory ZonesCacheKeyFieldsValueHost.fromJson(Map<String, dynamic> json) {return ZonesCacheKeyFieldsValueHost(
   resolved: json['resolved'] as bool?,
-); }
+);}
 
 /// Whether to include the Host header in the HTTP request sent
 /// to the origin.
 /// 
 final bool? resolved;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resolved': ?resolved,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resolved'}.contains(key)); } 
-ZonesCacheKeyFieldsValueHost copyWith({bool? Function()? resolved}) { return ZonesCacheKeyFieldsValueHost(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'resolved'}.contains(key));}
+ZonesCacheKeyFieldsValueHost copyWith({bool? Function()? resolved}) {return ZonesCacheKeyFieldsValueHost(
   resolved: resolved != null ? resolved() : this.resolved,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheKeyFieldsValueHost &&
-          resolved == other.resolved; } 
-@override int get hashCode { return resolved.hashCode; } 
-@override String toString() { return 'ZonesCacheKeyFieldsValueHost(resolved: $resolved)'; } 
- }
+          resolved == other.resolved;}
+@override int get hashCode {return resolved.hashCode;}
+@override String toString() {return 'ZonesCacheKeyFieldsValueHost(resolved: $resolved)';}
+}

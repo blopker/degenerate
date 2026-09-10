@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_auto_dismissed_at.dart';import 'alert_created_at.dart';import 'alert_dismissed_at.dart';import 'alert_fixed_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'dependabot_alert_dependency.dart';import 'dependabot_alert_dismissal_request_simple.dart';import 'dependabot_alert_security_advisory.dart';import 'dependabot_alert_security_vulnerability.dart';import 'simple_user.dart';/// The state of the Dependabot alert.
 @immutable final class DependabotAlertState {const DependabotAlertState._(this.value);
 
-factory DependabotAlertState.fromJson(String json) { return switch (json) {
+factory DependabotAlertState.fromJson(String json) {return switch (json) {
   'auto_dismissed' => autoDismissed,
   'dismissed' => dismissed,
   'fixed' => fixed,
   'open' => open,
   _ => DependabotAlertState._(json),
-}; }
+};}
 
 static const DependabotAlertState autoDismissed = DependabotAlertState._('auto_dismissed');
 
@@ -23,18 +23,18 @@ static const List<DependabotAlertState> values = [autoDismissed, dismissed, fixe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotAlertState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotAlertState($value)';}
+}
 /// The reason that the alert was dismissed.
 @immutable final class DependabotAlertDismissedReason {const DependabotAlertDismissedReason._(this.value);
 
-factory DependabotAlertDismissedReason.fromJson(String json) { return switch (json) {
+factory DependabotAlertDismissedReason.fromJson(String json) {return switch (json) {
   'fix_started' => fixStarted,
   'inaccurate' => inaccurate,
   'no_bandwidth' => noBandwidth,
@@ -42,7 +42,7 @@ factory DependabotAlertDismissedReason.fromJson(String json) { return switch (js
   'tolerable_risk' => tolerableRisk,
   'null' => $null,
   _ => DependabotAlertDismissedReason._(json),
-}; }
+};}
 
 static const DependabotAlertDismissedReason fixStarted = DependabotAlertDismissedReason._('fix_started');
 
@@ -60,18 +60,18 @@ static const List<DependabotAlertDismissedReason> values = [fixStarted, inaccura
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertDismissedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertDismissedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotAlertDismissedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotAlertDismissedReason($value)';}
+}
 /// A Dependabot alert.
 @immutable final class DependabotAlert {const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt = const Omittable.absent(), this.dismissalRequest = const Omittable.absent(), this.assignees, });
 
-factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotAlert(
+factory DependabotAlert.fromJson(Map<String, dynamic> json) {return DependabotAlert(
   number: AlertNumber.fromJson(json['number'] as num),
   state: DependabotAlertState.fromJson(json['state'] as String),
   dependency: DependabotAlertDependency.fromJson(json['dependency'] as Map<String, dynamic>),
@@ -89,7 +89,7 @@ factory DependabotAlert.fromJson(Map<String, dynamic> json) { return DependabotA
   autoDismissedAt: json.containsKey('auto_dismissed_at') ? Omittable(json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null) : const Omittable.absent(),
   dismissalRequest: json.containsKey('dismissal_request') ? Omittable(json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The security alert number.
 final AlertNumber number;
@@ -138,7 +138,7 @@ final Omittable<DependabotAlertDismissalRequestSimple?> dismissalRequest;
 /// The users assigned to this alert.
 final List<SimpleUser>? assignees;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'number': number.toJson(),
   'state': state.toJson(),
   'dependency': dependency.toJson(),
@@ -156,8 +156,8 @@ Map<String, dynamic> toJson() { return {
   if (autoDismissedAt.isPresent) 'auto_dismissed_at': autoDismissedAt.value?.toJson(),
   if (dismissalRequest.isPresent) 'dismissal_request': dismissalRequest.value?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('number') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('number') &&
       json.containsKey('state') &&
       json.containsKey('dependency') &&
       json.containsKey('security_advisory') &&
@@ -170,8 +170,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
       json.containsKey('dismissed_comment') && (json['dismissed_comment'] == null || json['dismissed_comment'] is String) &&
-      json.containsKey('fixed_at'); } 
-DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, Omittable<AlertAutoDismissedAt?>? autoDismissedAt, Omittable<DependabotAlertDismissalRequestSimple?>? dismissalRequest, List<SimpleUser>? Function()? assignees, }) { return DependabotAlert(
+      json.containsKey('fixed_at');}
+DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, Omittable<AlertAutoDismissedAt?>? autoDismissedAt, Omittable<DependabotAlertDismissalRequestSimple?>? dismissalRequest, List<SimpleUser>? Function()? assignees, }) {return DependabotAlert(
   number: number ?? this.number,
   state: state ?? this.state,
   dependency: dependency ?? this.dependency,
@@ -189,8 +189,8 @@ DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, Depe
   autoDismissedAt: autoDismissedAt ?? this.autoDismissedAt,
   dismissalRequest: dismissalRequest ?? this.dismissalRequest,
   assignees: assignees != null ? assignees() : this.assignees,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlert &&
           number == other.number &&
           state == other.state &&
@@ -208,7 +208,7 @@ DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, Depe
           fixedAt == other.fixedAt &&
           autoDismissedAt == other.autoDismissedAt &&
           dismissalRequest == other.dismissalRequest &&
-          listEquals(assignees, other.assignees); } 
-@override int get hashCode { return Object.hash(number, state, dependency, securityAdvisory, securityVulnerability, url, htmlUrl, createdAt, updatedAt, dismissedAt, dismissedBy, dismissedReason, dismissedComment, fixedAt, autoDismissedAt, dismissalRequest, Object.hashAll(assignees ?? const [])); } 
-@override String toString() { return 'DependabotAlert(number: $number, state: $state, dependency: $dependency, securityAdvisory: $securityAdvisory, securityVulnerability: $securityVulnerability, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, fixedAt: $fixedAt, autoDismissedAt: $autoDismissedAt, dismissalRequest: $dismissalRequest, assignees: $assignees)'; } 
- }
+          listEquals(assignees, other.assignees);}
+@override int get hashCode {return Object.hash(number, state, dependency, securityAdvisory, securityVulnerability, url, htmlUrl, createdAt, updatedAt, dismissedAt, dismissedBy, dismissedReason, dismissedComment, fixedAt, autoDismissedAt, dismissalRequest, Object.hashAll(assignees ?? const []));}
+@override String toString() {return 'DependabotAlert(number: $number, state: $state, dependency: $dependency, securityAdvisory: $securityAdvisory, securityVulnerability: $securityVulnerability, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, fixedAt: $fixedAt, autoDismissedAt: $autoDismissedAt, dismissalRequest: $dismissalRequest, assignees: $assignees)';}
+}

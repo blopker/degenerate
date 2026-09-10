@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_subscription_details_items_billing_thresholds.dart';import 'post_invoices_create_preview_request_subscription_details_items_discounts.dart';import 'post_invoices_create_preview_request_subscription_details_items_metadata.dart';import 'post_invoices_create_preview_request_subscription_details_items_price_data.dart';import 'post_invoices_create_preview_request_subscription_details_items_tax_rates.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItems {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItems({this.billingThresholds, this.clearUsage, this.deleted, this.discounts, this.id, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsItems(
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItems.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestSubscriptionDetailsItems(
   billingThresholds: json['billing_thresholds'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsBillingThresholds.fromJson(json['billing_thresholds']) : null,
   clearUsage: json['clear_usage'] as bool?,
   deleted: json['deleted'] as bool?,
@@ -13,7 +13,7 @@ factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItems.fromJson(Map<St
   priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsTaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsBillingThresholds? billingThresholds;
 
@@ -35,7 +35,7 @@ final int? quantity;
 
 final PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsTaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
   'clear_usage': ?clearUsage,
   'deleted': ?deleted,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'clear_usage', 'deleted', 'discounts', 'id', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestSubscriptionDetailsItems copyWith({PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsBillingThresholds? Function()? billingThresholds, bool? Function()? clearUsage, bool? Function()? deleted, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscounts? Function()? discounts, String? Function()? id, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsMetadata? Function()? metadata, String? Function()? price, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData? Function()? priceData, int? Function()? quantity, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsTaxRates? Function()? taxRates, }) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsItems(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_thresholds', 'clear_usage', 'deleted', 'discounts', 'id', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key));}
+PostInvoicesCreatePreviewRequestSubscriptionDetailsItems copyWith({PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsBillingThresholds? Function()? billingThresholds, bool? Function()? clearUsage, bool? Function()? deleted, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscounts? Function()? discounts, String? Function()? id, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsMetadata? Function()? metadata, String? Function()? price, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData? Function()? priceData, int? Function()? quantity, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsTaxRates? Function()? taxRates, }) {return PostInvoicesCreatePreviewRequestSubscriptionDetailsItems(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   clearUsage: clearUsage != null ? clearUsage() : this.clearUsage,
   deleted: deleted != null ? deleted() : this.deleted,
@@ -59,8 +59,8 @@ PostInvoicesCreatePreviewRequestSubscriptionDetailsItems copyWith({PostInvoicesC
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestSubscriptionDetailsItems &&
           billingThresholds == other.billingThresholds &&
           clearUsage == other.clearUsage &&
@@ -71,7 +71,7 @@ PostInvoicesCreatePreviewRequestSubscriptionDetailsItems copyWith({PostInvoicesC
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(billingThresholds, clearUsage, deleted, discounts, id, metadata, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsItems(billingThresholds: $billingThresholds, clearUsage: $clearUsage, deleted: $deleted, discounts: $discounts, id: $id, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
- }
+          taxRates == other.taxRates;}
+@override int get hashCode {return Object.hash(billingThresholds, clearUsage, deleted, discounts, id, metadata, price, priceData, quantity, taxRates);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsItems(billingThresholds: $billingThresholds, clearUsage: $clearUsage, deleted: $deleted, discounts: $discounts, id: $id, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';}
+}

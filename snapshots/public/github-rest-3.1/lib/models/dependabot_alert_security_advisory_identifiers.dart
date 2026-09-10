@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of advisory identifier.
 @immutable final class DependabotAlertSecurityAdvisoryIdentifiersType {const DependabotAlertSecurityAdvisoryIdentifiersType._(this.value);
 
-factory DependabotAlertSecurityAdvisoryIdentifiersType.fromJson(String json) { return switch (json) {
+factory DependabotAlertSecurityAdvisoryIdentifiersType.fromJson(String json) {return switch (json) {
   'CVE' => cve,
   'GHSA' => ghsa,
   _ => DependabotAlertSecurityAdvisoryIdentifiersType._(json),
-}; }
+};}
 
 static const DependabotAlertSecurityAdvisoryIdentifiersType cve = DependabotAlertSecurityAdvisoryIdentifiersType._('CVE');
 
@@ -17,21 +17,21 @@ static const List<DependabotAlertSecurityAdvisoryIdentifiersType> values = [cve,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertSecurityAdvisoryIdentifiersType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertSecurityAdvisoryIdentifiersType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotAlertSecurityAdvisoryIdentifiersType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotAlertSecurityAdvisoryIdentifiersType($value)';}
+}
 /// An advisory identifier.
 @immutable final class DependabotAlertSecurityAdvisoryIdentifiers {const DependabotAlertSecurityAdvisoryIdentifiers({required this.type, required this.value, });
 
-factory DependabotAlertSecurityAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryIdentifiers(
+factory DependabotAlertSecurityAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) {return DependabotAlertSecurityAdvisoryIdentifiers(
   type: DependabotAlertSecurityAdvisoryIdentifiersType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 /// The type of advisory identifier.
 final DependabotAlertSecurityAdvisoryIdentifiersType type;
@@ -39,20 +39,20 @@ final DependabotAlertSecurityAdvisoryIdentifiersType type;
 /// The value of the advisory identifer.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-DependabotAlertSecurityAdvisoryIdentifiers copyWith({DependabotAlertSecurityAdvisoryIdentifiersType? type, String? value, }) { return DependabotAlertSecurityAdvisoryIdentifiers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+DependabotAlertSecurityAdvisoryIdentifiers copyWith({DependabotAlertSecurityAdvisoryIdentifiersType? type, String? value, }) {return DependabotAlertSecurityAdvisoryIdentifiers(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlertSecurityAdvisoryIdentifiers &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'DependabotAlertSecurityAdvisoryIdentifiers(type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, value);}
+@override String toString() {return 'DependabotAlertSecurityAdvisoryIdentifiers(type: $type, value: $value)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_hostname.dart';import 'dls_region_key.dart';import 'dls_routing.dart';@immutable final class DlsAccountRegionalHostnamesAccountCreateHostnameRequest {const DlsAccountRegionalHostnamesAccountCreateHostnameRequest({required this.hostname, required this.regionKey, this.routing, });
 
-factory DlsAccountRegionalHostnamesAccountCreateHostnameRequest.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountCreateHostnameRequest(
+factory DlsAccountRegionalHostnamesAccountCreateHostnameRequest.fromJson(Map<String, dynamic> json) {return DlsAccountRegionalHostnamesAccountCreateHostnameRequest(
   hostname: DlsHostname.fromJson(json['hostname'] as String),
   regionKey: DlsRegionKey.fromJson(json['region_key'] as String),
   routing: json['routing'] != null ? DlsRouting.fromJson(json['routing'] as String) : null,
-); }
+);}
 
 /// DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
 final DlsHostname hostname;
@@ -17,23 +17,23 @@ final DlsRegionKey regionKey;
 /// Configure which routing method to use for the regional hostname
 final DlsRouting? routing;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostname': hostname.toJson(),
   'region_key': regionKey.toJson(),
   if (routing != null) 'routing': routing?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') &&
-      json.containsKey('region_key'); } 
-DlsAccountRegionalHostnamesAccountCreateHostnameRequest copyWith({DlsHostname? hostname, DlsRegionKey? regionKey, DlsRouting? Function()? routing, }) { return DlsAccountRegionalHostnamesAccountCreateHostnameRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') &&
+      json.containsKey('region_key');}
+DlsAccountRegionalHostnamesAccountCreateHostnameRequest copyWith({DlsHostname? hostname, DlsRegionKey? regionKey, DlsRouting? Function()? routing, }) {return DlsAccountRegionalHostnamesAccountCreateHostnameRequest(
   hostname: hostname ?? this.hostname,
   regionKey: regionKey ?? this.regionKey,
   routing: routing != null ? routing() : this.routing,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlsAccountRegionalHostnamesAccountCreateHostnameRequest &&
           hostname == other.hostname &&
           regionKey == other.regionKey &&
-          routing == other.routing; } 
-@override int get hashCode { return Object.hash(hostname, regionKey, routing); } 
-@override String toString() { return 'DlsAccountRegionalHostnamesAccountCreateHostnameRequest(hostname: $hostname, regionKey: $regionKey, routing: $routing)'; } 
- }
+          routing == other.routing;}
+@override int get hashCode {return Object.hash(hostname, regionKey, routing);}
+@override String toString() {return 'DlsAccountRegionalHostnamesAccountCreateHostnameRequest(hostname: $hostname, regionKey: $regionKey, routing: $routing)';}
+}

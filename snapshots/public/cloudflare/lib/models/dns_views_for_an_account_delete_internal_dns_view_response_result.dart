@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_identifier.dart';@immutable final class DnsViewsForAnAccountDeleteInternalDnsViewResponseResult {const DnsViewsForAnAccountDeleteInternalDnsViewResponseResult({this.id});
 
-factory DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(Map<String, dynamic> json) { return DnsViewsForAnAccountDeleteInternalDnsViewResponseResult(
+factory DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(Map<String, dynamic> json) {return DnsViewsForAnAccountDeleteInternalDnsViewResponseResult(
   id: json['id'] != null ? DnsSettingsIdentifier.fromJson(json['id'] as String) : null,
-); }
+);}
 
 /// Identifier.
 final DnsSettingsIdentifier? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-DnsViewsForAnAccountDeleteInternalDnsViewResponseResult copyWith({DnsSettingsIdentifier? Function()? id}) { return DnsViewsForAnAccountDeleteInternalDnsViewResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+DnsViewsForAnAccountDeleteInternalDnsViewResponseResult copyWith({DnsSettingsIdentifier? Function()? id}) {return DnsViewsForAnAccountDeleteInternalDnsViewResponseResult(
   id: id != null ? id() : this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsViewsForAnAccountDeleteInternalDnsViewResponseResult &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'DnsViewsForAnAccountDeleteInternalDnsViewResponseResult(id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return id.hashCode;}
+@override String toString() {return 'DnsViewsForAnAccountDeleteInternalDnsViewResponseResult(id: $id)';}
+}

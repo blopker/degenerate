@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalLocationsLocationRequestPhoneVariant2 {const PostTerminalLocationsLocationRequestPhoneVariant2._(this.value);
 
-factory PostTerminalLocationsLocationRequestPhoneVariant2.fromJson(String json) { return switch (json) {
+factory PostTerminalLocationsLocationRequestPhoneVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTerminalLocationsLocationRequestPhoneVariant2._(json),
-}; }
+};}
 
 static const PostTerminalLocationsLocationRequestPhoneVariant2 $empty = PostTerminalLocationsLocationRequestPhoneVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTerminalLocationsLocationRequestPhoneVariant2> values = [$
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalLocationsLocationRequestPhoneVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalLocationsLocationRequestPhoneVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalLocationsLocationRequestPhoneVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalLocationsLocationRequestPhoneVariant2($value)';}
+}
 /// The phone number for the location.
 @immutable
 final class PostTerminalLocationsLocationRequestPhone {

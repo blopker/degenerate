@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_subscription_details_items_discounts_variant1.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2 {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2._(this.value);
 
-factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2 $empty = PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscou
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2($value)';}
+}
 
 @immutable
 final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscounts {

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxCodeObject {const TaxCodeObject._(this.value);
 
-factory TaxCodeObject.fromJson(String json) { return switch (json) {
+factory TaxCodeObject.fromJson(String json) {return switch (json) {
   'tax_code' => taxCode,
   _ => TaxCodeObject._(json),
-}; }
+};}
 
 static const TaxCodeObject taxCode = TaxCodeObject._('tax_code');
 
@@ -14,23 +14,23 @@ static const List<TaxCodeObject> values = [taxCode];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxCodeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxCodeObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxCodeObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxCodeObject($value)';}
+}
 /// [Tax codes](https://stripe.com/docs/tax/tax-categories) classify goods and services for tax purposes.
 @immutable final class TaxCode {const TaxCode({required this.description, required this.id, required this.name, required this.object, });
 
-factory TaxCode.fromJson(Map<String, dynamic> json) { return TaxCode(
+factory TaxCode.fromJson(Map<String, dynamic> json) {return TaxCode(
   description: json['description'] as String,
   id: json['id'] as String,
   name: json['name'] as String,
   object: TaxCodeObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// A detailed description of which types of products the tax code represents.
 final String description;
@@ -44,28 +44,28 @@ final String name;
 /// String representing the object's type. Objects of the same type share the same value.
 final TaxCodeObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'id': id,
   'name': name,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object'); } 
-TaxCode copyWith({String? description, String? id, String? name, TaxCodeObject? object, }) { return TaxCode(
+      json.containsKey('object');}
+TaxCode copyWith({String? description, String? id, String? name, TaxCodeObject? object, }) {return TaxCode(
   description: description ?? this.description,
   id: id ?? this.id,
   name: name ?? this.name,
   object: object ?? this.object,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxCode &&
           description == other.description &&
           id == other.id &&
           name == other.name &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(description, id, name, object); } 
-@override String toString() { return 'TaxCode(description: $description, id: $id, name: $name, object: $object)'; } 
- }
+          object == other.object;}
+@override int get hashCode {return Object.hash(description, id, name, object);}
+@override String toString() {return 'TaxCode(description: $description, id: $id, name: $name, object: $object)';}
+}

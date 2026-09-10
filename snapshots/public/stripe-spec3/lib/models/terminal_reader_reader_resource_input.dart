@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_custom_text.dart';import 'terminal_reader_reader_resource_email.dart';import 'terminal_reader_reader_resource_numeric.dart';import 'terminal_reader_reader_resource_phone.dart';import 'terminal_reader_reader_resource_selection.dart';import 'terminal_reader_reader_resource_signature.dart';import 'terminal_reader_reader_resource_text.dart';import 'terminal_reader_reader_resource_toggle.dart';/// Type of input being collected.
 @immutable final class TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType._(this.value);
 
-factory TerminalReaderReaderResourceInputType.fromJson(String json) { return switch (json) {
+factory TerminalReaderReaderResourceInputType.fromJson(String json) {return switch (json) {
   'email' => email,
   'numeric' => numeric,
   'phone' => phone,
@@ -11,7 +11,7 @@ factory TerminalReaderReaderResourceInputType.fromJson(String json) { return swi
   'signature' => signature,
   'text' => text,
   _ => TerminalReaderReaderResourceInputType._(json),
-}; }
+};}
 
 static const TerminalReaderReaderResourceInputType email = TerminalReaderReaderResourceInputType._('email');
 
@@ -29,18 +29,18 @@ static const List<TerminalReaderReaderResourceInputType> values = [email, numeri
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceInputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceInputType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TerminalReaderReaderResourceInputType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TerminalReaderReaderResourceInputType($value)';}
+}
 /// Represents an input to be collected using the reader
 @immutable final class TerminalReaderReaderResourceInput {const TerminalReaderReaderResourceInput({required this.type, this.customText = const Omittable.absent(), this.email, this.numeric, this.phone, this.$required = const Omittable.absent(), this.selection, this.signature, this.skipped, this.text, this.toggles = const Omittable.absent(), });
 
-factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceInput(
+factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceInput(
   customText: json.containsKey('custom_text') ? Omittable(json['custom_text'] != null ? TerminalReaderReaderResourceCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   email: json['email'] != null ? TerminalReaderReaderResourceEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
   numeric: json['numeric'] != null ? TerminalReaderReaderResourceNumeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
@@ -52,7 +52,7 @@ factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) { 
   text: json['text'] != null ? TerminalReaderReaderResourceText.fromJson(json['text'] as Map<String, dynamic>) : null,
   toggles: json.containsKey('toggles') ? Omittable((json['toggles'] as List<dynamic>?)?.map((e) => TerminalReaderReaderResourceToggle.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   type: TerminalReaderReaderResourceInputType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Default text of input being collected.
 final Omittable<TerminalReaderReaderResourceCustomText?> customText;
@@ -81,7 +81,7 @@ final Omittable<List<TerminalReaderReaderResourceToggle>?> toggles;
 /// Type of input being collected.
 final TerminalReaderReaderResourceInputType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customText.isPresent) 'custom_text': customText.value?.toJson(),
   if (email != null) 'email': email?.toJson(),
   if (numeric != null) 'numeric': numeric?.toJson(),
@@ -93,9 +93,9 @@ Map<String, dynamic> toJson() { return {
   if (text != null) 'text': text?.toJson(),
   if (toggles.isPresent) 'toggles': toggles.value?.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TerminalReaderReaderResourceInput copyWith({Omittable<TerminalReaderReaderResourceCustomText?>? customText, TerminalReaderReaderResourceEmail? Function()? email, TerminalReaderReaderResourceNumeric? Function()? numeric, TerminalReaderReaderResourcePhone? Function()? phone, Omittable<bool?>? $required, TerminalReaderReaderResourceSelection? Function()? selection, TerminalReaderReaderResourceSignature? Function()? signature, bool? Function()? skipped, TerminalReaderReaderResourceText? Function()? text, Omittable<List<TerminalReaderReaderResourceToggle>?>? toggles, TerminalReaderReaderResourceInputType? type, }) { return TerminalReaderReaderResourceInput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+TerminalReaderReaderResourceInput copyWith({Omittable<TerminalReaderReaderResourceCustomText?>? customText, TerminalReaderReaderResourceEmail? Function()? email, TerminalReaderReaderResourceNumeric? Function()? numeric, TerminalReaderReaderResourcePhone? Function()? phone, Omittable<bool?>? $required, TerminalReaderReaderResourceSelection? Function()? selection, TerminalReaderReaderResourceSignature? Function()? signature, bool? Function()? skipped, TerminalReaderReaderResourceText? Function()? text, Omittable<List<TerminalReaderReaderResourceToggle>?>? toggles, TerminalReaderReaderResourceInputType? type, }) {return TerminalReaderReaderResourceInput(
   customText: customText ?? this.customText,
   email: email != null ? email() : this.email,
   numeric: numeric != null ? numeric() : this.numeric,
@@ -107,8 +107,8 @@ TerminalReaderReaderResourceInput copyWith({Omittable<TerminalReaderReaderResour
   text: text != null ? text() : this.text,
   toggles: toggles ?? this.toggles,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TerminalReaderReaderResourceInput &&
           customText == other.customText &&
           email == other.email &&
@@ -121,7 +121,7 @@ TerminalReaderReaderResourceInput copyWith({Omittable<TerminalReaderReaderResour
           text == other.text &&
           toggles.isPresent == other.toggles.isPresent &&
           listEquals(toggles.value, other.toggles.value) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customText, email, numeric, phone, $required, selection, signature, skipped, text, Object.hashAll(toggles.value ?? const []), type); } 
-@override String toString() { return 'TerminalReaderReaderResourceInput(customText: $customText, email: $email, numeric: $numeric, phone: $phone, \$required: ${$required}, selection: $selection, signature: $signature, skipped: $skipped, text: $text, toggles: $toggles, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(customText, email, numeric, phone, $required, selection, signature, skipped, text, Object.hashAll(toggles.value ?? const []), type);}
+@override String toString() {return 'TerminalReaderReaderResourceInput(customText: $customText, email: $email, numeric: $numeric, phone: $phone, \$required: ${$required}, selection: $selection, signature: $signature, skipped: $skipped, text: $text, toggles: $toggles, type: $type)';}
+}

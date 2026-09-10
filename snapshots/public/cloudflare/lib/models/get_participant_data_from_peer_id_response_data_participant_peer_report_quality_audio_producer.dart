@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer({this.bytesSent, this.jitter, this.mid, this.mosQuality, this.packetsLost, this.packetsSent, this.producerId, this.rtt, this.ssrc, this.timestamp, });
 
-factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(
+factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer.fromJson(Map<String, dynamic> json) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(
   bytesSent: json['bytes_sent'] != null ? (json['bytes_sent'] as num).toInt() : null,
   jitter: json['jitter'] != null ? (json['jitter'] as num).toInt() : null,
   mid: json['mid'] as String?,
@@ -13,7 +13,7 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudi
   rtt: json['rtt'] != null ? (json['rtt'] as num).toDouble() : null,
   ssrc: json['ssrc'] != null ? (json['ssrc'] as num).toInt() : null,
   timestamp: json['timestamp'] as String?,
-); }
+);}
 
 final int? bytesSent;
 
@@ -35,7 +35,7 @@ final int? ssrc;
 
 final String? timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bytes_sent': ?bytesSent,
   'jitter': ?jitter,
   'mid': ?mid,
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   'rtt': ?rtt,
   'ssrc': ?ssrc,
   'timestamp': ?timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bytes_sent', 'jitter', 'mid', 'mos_quality', 'packets_lost', 'packets_sent', 'producer_id', 'rtt', 'ssrc', 'timestamp'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, String? Function()? mid, int? Function()? mosQuality, int? Function()? packetsLost, int? Function()? packetsSent, String? Function()? producerId, double? Function()? rtt, int? Function()? ssrc, String? Function()? timestamp, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bytes_sent', 'jitter', 'mid', 'mos_quality', 'packets_lost', 'packets_sent', 'producer_id', 'rtt', 'ssrc', 'timestamp'}.contains(key));}
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, String? Function()? mid, int? Function()? mosQuality, int? Function()? packetsLost, int? Function()? packetsSent, String? Function()? producerId, double? Function()? rtt, int? Function()? ssrc, String? Function()? timestamp, }) {return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(
   bytesSent: bytesSent != null ? bytesSent() : this.bytesSent,
   jitter: jitter != null ? jitter() : this.jitter,
   mid: mid != null ? mid() : this.mid,
@@ -59,8 +59,8 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProduce
   rtt: rtt != null ? rtt() : this.rtt,
   ssrc: ssrc != null ? ssrc() : this.ssrc,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer &&
           bytesSent == other.bytesSent &&
           jitter == other.jitter &&
@@ -71,7 +71,7 @@ GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProduce
           producerId == other.producerId &&
           rtt == other.rtt &&
           ssrc == other.ssrc &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(bytesSent, jitter, mid, mosQuality, packetsLost, packetsSent, producerId, rtt, ssrc, timestamp); } 
-@override String toString() { return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(bytesSent: $bytesSent, jitter: $jitter, mid: $mid, mosQuality: $mosQuality, packetsLost: $packetsLost, packetsSent: $packetsSent, producerId: $producerId, rtt: $rtt, ssrc: $ssrc, timestamp: $timestamp)'; } 
- }
+          timestamp == other.timestamp;}
+@override int get hashCode {return Object.hash(bytesSent, jitter, mid, mosQuality, packetsLost, packetsSent, producerId, rtt, ssrc, timestamp);}
+@override String toString() {return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer(bytesSent: $bytesSent, jitter: $jitter, mid: $mid, mosQuality: $mosQuality, packetsLost: $packetsLost, packetsSent: $packetsSent, producerId: $producerId, rtt: $rtt, ssrc: $ssrc, timestamp: $timestamp)';}
+}

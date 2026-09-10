@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take when a request matches a rule. If the action is `block`, the signed token blocks views for viewers matching the rule.
 @immutable final class StreamAccessRulesAction {const StreamAccessRulesAction._(this.value);
 
-factory StreamAccessRulesAction.fromJson(String json) { return switch (json) {
+factory StreamAccessRulesAction.fromJson(String json) {return switch (json) {
   'allow' => allow,
   'block' => block,
   _ => StreamAccessRulesAction._(json),
-}; }
+};}
 
 static const StreamAccessRulesAction allow = StreamAccessRulesAction._('allow');
 
@@ -17,23 +17,23 @@ static const List<StreamAccessRulesAction> values = [allow, block];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamAccessRulesAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamAccessRulesAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is StreamAccessRulesAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'StreamAccessRulesAction($value)';}
+}
 /// Lists available rule types to match for requests. An `any` type matches all requests and can be used as a wildcard to apply default actions after other rules.
 @immutable final class StreamAccessRulesType {const StreamAccessRulesType._(this.value);
 
-factory StreamAccessRulesType.fromJson(String json) { return switch (json) {
+factory StreamAccessRulesType.fromJson(String json) {return switch (json) {
   'any' => any,
   'ip.src' => ipSrc,
   'ip.geoip.country' => ipGeoipCountry,
   _ => StreamAccessRulesType._(json),
-}; }
+};}
 
 static const StreamAccessRulesType any = StreamAccessRulesType._('any');
 
@@ -45,23 +45,23 @@ static const List<StreamAccessRulesType> values = [any, ipSrc, ipGeoipCountry];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamAccessRulesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamAccessRulesType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is StreamAccessRulesType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'StreamAccessRulesType($value)';}
+}
 /// Defines rules for fine-grained control over content than signed URL tokens alone. Access rules primarily make tokens conditionally valid based on user information. Access Rules are specified on token payloads as the `accessRules` property containing an array of Rule objects.
 @immutable final class StreamAccessRules {const StreamAccessRules({this.action, this.country, this.ip, this.type, });
 
-factory StreamAccessRules.fromJson(Map<String, dynamic> json) { return StreamAccessRules(
+factory StreamAccessRules.fromJson(Map<String, dynamic> json) {return StreamAccessRules(
   action: json['action'] != null ? StreamAccessRulesAction.fromJson(json['action'] as String) : null,
   country: (json['country'] as List<dynamic>?)?.map((e) => e as String).toList(),
   ip: (json['ip'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: json['type'] != null ? StreamAccessRulesType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The action to take when a request matches a rule. If the action is `block`, the signed token blocks views for viewers matching the rule.
 final StreamAccessRulesAction? action;
@@ -75,25 +75,25 @@ final List<String>? ip;
 /// Lists available rule types to match for requests. An `any` type matches all requests and can be used as a wildcard to apply default actions after other rules.
 final StreamAccessRulesType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'country': ?country,
   'ip': ?ip,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'country', 'ip', 'type'}.contains(key)); } 
-StreamAccessRules copyWith({StreamAccessRulesAction? Function()? action, List<String>? Function()? country, List<String>? Function()? ip, StreamAccessRulesType? Function()? type, }) { return StreamAccessRules(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'country', 'ip', 'type'}.contains(key));}
+StreamAccessRules copyWith({StreamAccessRulesAction? Function()? action, List<String>? Function()? country, List<String>? Function()? ip, StreamAccessRulesType? Function()? type, }) {return StreamAccessRules(
   action: action != null ? action() : this.action,
   country: country != null ? country() : this.country,
   ip: ip != null ? ip() : this.ip,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is StreamAccessRules &&
           action == other.action &&
           listEquals(country, other.country) &&
           listEquals(ip, other.ip) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(country ?? const []), Object.hashAll(ip ?? const []), type); } 
-@override String toString() { return 'StreamAccessRules(action: $action, country: $country, ip: $ip, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(action, Object.hashAll(country ?? const []), Object.hashAll(ip ?? const []), type);}
+@override String toString() {return 'StreamAccessRules(action: $action, country: $country, ip: $ip, type: $type)';}
+}

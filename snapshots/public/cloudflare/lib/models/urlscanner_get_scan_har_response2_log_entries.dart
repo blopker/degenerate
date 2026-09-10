@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_entries_request.dart';import 'urlscanner_get_scan_har_response2_log_entries_response.dart';@immutable final class UrlscannerGetScanHarResponse2LogEntries {const UrlscannerGetScanHarResponse2LogEntries({required this.initialPriority, required this.initiatorType, required this.priority, required this.requestId, required this.requestTime, required this.resourceType, required this.cache, required this.connection, required this.pageref, required this.request, required this.response, required this.serverIpAddress, required this.startedDateTime, required this.time, });
 
-factory UrlscannerGetScanHarResponse2LogEntries.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogEntries(
+factory UrlscannerGetScanHarResponse2LogEntries.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanHarResponse2LogEntries(
   initialPriority: json['_initialPriority'] as String,
   initiatorType: json['_initiator_type'] as String,
   priority: json['_priority'] as String,
@@ -17,7 +17,7 @@ factory UrlscannerGetScanHarResponse2LogEntries.fromJson(Map<String, dynamic> js
   serverIpAddress: json['serverIPAddress'] as String,
   startedDateTime: json['startedDateTime'] as String,
   time: (json['time'] as num).toDouble(),
-); }
+);}
 
 final String initialPriority;
 
@@ -47,7 +47,7 @@ final String startedDateTime;
 
 final double time;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_initialPriority': initialPriority,
   '_initiator_type': initiatorType,
   '_priority': priority,
@@ -62,8 +62,8 @@ Map<String, dynamic> toJson() { return {
   'serverIPAddress': serverIpAddress,
   'startedDateTime': startedDateTime,
   'time': time,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_initialPriority') && json['_initialPriority'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_initialPriority') && json['_initialPriority'] is String &&
       json.containsKey('_initiator_type') && json['_initiator_type'] is String &&
       json.containsKey('_priority') && json['_priority'] is String &&
       json.containsKey('_requestId') && json['_requestId'] is String &&
@@ -76,8 +76,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_init
       json.containsKey('response') &&
       json.containsKey('serverIPAddress') && json['serverIPAddress'] is String &&
       json.containsKey('startedDateTime') && json['startedDateTime'] is String &&
-      json.containsKey('time') && json['time'] is num; } 
-UrlscannerGetScanHarResponse2LogEntries copyWith({String? initialPriority, String? initiatorType, String? priority, String? requestId, double? requestTime, String? resourceType, Map<String,dynamic>? cache, String? connection, String? pageref, UrlscannerGetScanHarResponse2LogEntriesRequest? request, UrlscannerGetScanHarResponse2LogEntriesResponse? response, String? serverIpAddress, String? startedDateTime, double? time, }) { return UrlscannerGetScanHarResponse2LogEntries(
+      json.containsKey('time') && json['time'] is num;}
+UrlscannerGetScanHarResponse2LogEntries copyWith({String? initialPriority, String? initiatorType, String? priority, String? requestId, double? requestTime, String? resourceType, Map<String,dynamic>? cache, String? connection, String? pageref, UrlscannerGetScanHarResponse2LogEntriesRequest? request, UrlscannerGetScanHarResponse2LogEntriesResponse? response, String? serverIpAddress, String? startedDateTime, double? time, }) {return UrlscannerGetScanHarResponse2LogEntries(
   initialPriority: initialPriority ?? this.initialPriority,
   initiatorType: initiatorType ?? this.initiatorType,
   priority: priority ?? this.priority,
@@ -92,8 +92,8 @@ UrlscannerGetScanHarResponse2LogEntries copyWith({String? initialPriority, Strin
   serverIpAddress: serverIpAddress ?? this.serverIpAddress,
   startedDateTime: startedDateTime ?? this.startedDateTime,
   time: time ?? this.time,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanHarResponse2LogEntries &&
           initialPriority == other.initialPriority &&
           initiatorType == other.initiatorType &&
@@ -108,7 +108,7 @@ UrlscannerGetScanHarResponse2LogEntries copyWith({String? initialPriority, Strin
           response == other.response &&
           serverIpAddress == other.serverIpAddress &&
           startedDateTime == other.startedDateTime &&
-          time == other.time; } 
-@override int get hashCode { return Object.hash(initialPriority, initiatorType, priority, requestId, requestTime, resourceType, cache, connection, pageref, request, response, serverIpAddress, startedDateTime, time); } 
-@override String toString() { return 'UrlscannerGetScanHarResponse2LogEntries(initialPriority: $initialPriority, initiatorType: $initiatorType, priority: $priority, requestId: $requestId, requestTime: $requestTime, resourceType: $resourceType, cache: $cache, connection: $connection, pageref: $pageref, request: $request, response: $response, serverIpAddress: $serverIpAddress, startedDateTime: $startedDateTime, time: $time)'; } 
- }
+          time == other.time;}
+@override int get hashCode {return Object.hash(initialPriority, initiatorType, priority, requestId, requestTime, resourceType, cache, connection, pageref, request, response, serverIpAddress, startedDateTime, time);}
+@override String toString() {return 'UrlscannerGetScanHarResponse2LogEntries(initialPriority: $initialPriority, initiatorType: $initiatorType, priority: $priority, requestId: $requestId, requestTime: $requestTime, resourceType: $resourceType, cache: $cache, connection: $connection, pageref: $pageref, request: $request, response: $response, serverIpAddress: $serverIpAddress, startedDateTime: $startedDateTime, time: $time)';}
+}

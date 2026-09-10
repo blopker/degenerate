@@ -13,7 +13,7 @@ final class WarpChangeEventsApi with ApiExecutor {const WarpChangeEventsApi(this
 /// List WARP configuration and enablement toggle change events by device.
 ///
 /// `GET /accounts/{account_id}/dex/warp-change-events`
-Future<ApiResult<List<DigitalExperienceMonitoringWarpEventsResponse2>?, ResponseCommonFailure24>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringWarpEventsResponse2>?, ResponseCommonFailure24>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -46,22 +46,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => DigitalExperienceMonitoringWarpToggleChangeEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(v as Map<String, dynamic>),)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => DigitalExperienceMonitoringWarpToggleChangeEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(v as Map<String, dynamic>),)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

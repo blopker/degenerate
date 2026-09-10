@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeSessionMaxResponseOutputTokensVariant2 {const RealtimeSessionMaxResponseOutputTokensVariant2._(this.value);
 
-factory RealtimeSessionMaxResponseOutputTokensVariant2.fromJson(String json) { return switch (json) {
+factory RealtimeSessionMaxResponseOutputTokensVariant2.fromJson(String json) {return switch (json) {
   'inf' => inf,
   _ => RealtimeSessionMaxResponseOutputTokensVariant2._(json),
-}; }
+};}
 
 static const RealtimeSessionMaxResponseOutputTokensVariant2 inf = RealtimeSessionMaxResponseOutputTokensVariant2._('inf');
 
@@ -13,12 +13,12 @@ static const List<RealtimeSessionMaxResponseOutputTokensVariant2> values = [inf]
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionMaxResponseOutputTokensVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionMaxResponseOutputTokensVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeSessionMaxResponseOutputTokensVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeSessionMaxResponseOutputTokensVariant2($value)';}
+}
 typedef RealtimeSessionMaxResponseOutputTokens = OneOf2<int,RealtimeSessionMaxResponseOutputTokensVariant2>;

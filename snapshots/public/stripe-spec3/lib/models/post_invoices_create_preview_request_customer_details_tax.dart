@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_customer_details_tax_ip_address.dart';@immutable final class PostInvoicesCreatePreviewRequestCustomerDetailsTax {const PostInvoicesCreatePreviewRequestCustomerDetailsTax({this.ipAddress});
 
-factory PostInvoicesCreatePreviewRequestCustomerDetailsTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
+factory PostInvoicesCreatePreviewRequestCustomerDetailsTax.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
   ipAddress: json['ip_address'] != null ? PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress.fromJson(json['ip_address']) : null,
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress? ipAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ipAddress != null) 'ip_address': ipAddress?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_address'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestCustomerDetailsTax copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress? Function()? ipAddress}) { return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ip_address'}.contains(key));}
+PostInvoicesCreatePreviewRequestCustomerDetailsTax copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress? Function()? ipAddress}) {return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestCustomerDetailsTax &&
-          ipAddress == other.ipAddress; } 
-@override int get hashCode { return ipAddress.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestCustomerDetailsTax(ipAddress: $ipAddress)'; } 
- }
+          ipAddress == other.ipAddress;}
+@override int get hashCode {return ipAddress.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestCustomerDetailsTax(ipAddress: $ipAddress)';}
+}

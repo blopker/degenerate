@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestCapabilitiesPromptpayPayments {const PostAccountsAccountRequestCapabilitiesPromptpayPayments({this.requested});
 
-factory PostAccountsAccountRequestCapabilitiesPromptpayPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesPromptpayPayments(
+factory PostAccountsAccountRequestCapabilitiesPromptpayPayments.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestCapabilitiesPromptpayPayments(
   requested: json['requested'] as bool?,
-); }
+);}
 
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-PostAccountsAccountRequestCapabilitiesPromptpayPayments copyWith({bool? Function()? requested}) { return PostAccountsAccountRequestCapabilitiesPromptpayPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+PostAccountsAccountRequestCapabilitiesPromptpayPayments copyWith({bool? Function()? requested}) {return PostAccountsAccountRequestCapabilitiesPromptpayPayments(
   requested: requested != null ? requested() : this.requested,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsAccountRequestCapabilitiesPromptpayPayments &&
-          requested == other.requested; } 
-@override int get hashCode { return requested.hashCode; } 
-@override String toString() { return 'PostAccountsAccountRequestCapabilitiesPromptpayPayments(requested: $requested)'; } 
- }
+          requested == other.requested;}
+@override int get hashCode {return requested.hashCode;}
+@override String toString() {return 'PostAccountsAccountRequestCapabilitiesPromptpayPayments(requested: $requested)';}
+}

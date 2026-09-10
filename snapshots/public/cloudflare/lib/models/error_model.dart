@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorModel {const ErrorModel({this.code, this.errors, this.message, this.status, });
 
-factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
+factory ErrorModel.fromJson(Map<String, dynamic> json) {return ErrorModel(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   errors: json['errors'] as Map<String, dynamic>?,
   message: json['message'] as String?,
   status: json['status'] as String?,
-); }
+);}
 
 /// Error code
 final int? code;
@@ -21,25 +21,25 @@ final String? message;
 /// Error name
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'errors': ?errors,
   'message': ?message,
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'errors', 'message', 'status'}.contains(key)); } 
-ErrorModel copyWith({int? Function()? code, Map<String, dynamic>? Function()? errors, String? Function()? message, String? Function()? status, }) { return ErrorModel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'errors', 'message', 'status'}.contains(key));}
+ErrorModel copyWith({int? Function()? code, Map<String, dynamic>? Function()? errors, String? Function()? message, String? Function()? status, }) {return ErrorModel(
   code: code != null ? code() : this.code,
   errors: errors != null ? errors() : this.errors,
   message: message != null ? message() : this.message,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ErrorModel &&
           code == other.code &&
           errors == other.errors &&
           message == other.message &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(code, errors, message, status); } 
-@override String toString() { return 'ErrorModel(code: $code, errors: $errors, message: $message, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(code, errors, message, status);}
+@override String toString() {return 'ErrorModel(code: $code, errors: $errors, message: $message, status: $status)';}
+}

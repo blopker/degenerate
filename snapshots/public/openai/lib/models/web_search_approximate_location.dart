@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of location approximation. Always `approximate`.
 @immutable final class WebSearchApproximateLocationType {const WebSearchApproximateLocationType._(this.value);
 
-factory WebSearchApproximateLocationType.fromJson(String json) { return switch (json) {
+factory WebSearchApproximateLocationType.fromJson(String json) {return switch (json) {
   'approximate' => approximate,
   _ => WebSearchApproximateLocationType._(json),
-}; }
+};}
 
 static const WebSearchApproximateLocationType approximate = WebSearchApproximateLocationType._('approximate');
 
@@ -14,25 +14,25 @@ static const List<WebSearchApproximateLocationType> values = [approximate];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchApproximateLocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebSearchApproximateLocationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebSearchApproximateLocationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebSearchApproximateLocationType($value)';}
+}
 /// The approximate location of the user.
 /// 
 @immutable final class WebSearchApproximateLocation {const WebSearchApproximateLocation({this.type, this.country = const Omittable.absent(), this.region = const Omittable.absent(), this.city = const Omittable.absent(), this.timezone = const Omittable.absent(), });
 
-factory WebSearchApproximateLocation.fromJson(Map<String, dynamic> json) { return WebSearchApproximateLocation(
+factory WebSearchApproximateLocation.fromJson(Map<String, dynamic> json) {return WebSearchApproximateLocation(
   type: json['type'] != null ? WebSearchApproximateLocationType.fromJson(json['type'] as String) : null,
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   region: json.containsKey('region') ? Omittable(json['region'] as String?) : const Omittable.absent(),
   city: json.containsKey('city') ? Omittable(json['city'] as String?) : const Omittable.absent(),
   timezone: json.containsKey('timezone') ? Omittable(json['timezone'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of location approximation. Always `approximate`.
 final WebSearchApproximateLocationType? type;
@@ -50,29 +50,29 @@ final Omittable<String?> city;
 final Omittable<String?> timezone;
 
 /// The value with the schema default applied when absent.
-WebSearchApproximateLocationType get typeOrDefault { return type ?? WebSearchApproximateLocationType.fromJson('approximate'); } 
-Map<String, dynamic> toJson() { return {
+WebSearchApproximateLocationType get typeOrDefault {return type ?? WebSearchApproximateLocationType.fromJson('approximate');}
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (country.isPresent) 'country': country.value,
   if (region.isPresent) 'region': region.value,
   if (city.isPresent) 'city': city.value,
   if (timezone.isPresent) 'timezone': timezone.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'country', 'region', 'city', 'timezone'}.contains(key)); } 
-WebSearchApproximateLocation copyWith({WebSearchApproximateLocationType? Function()? type, Omittable<String?>? country, Omittable<String?>? region, Omittable<String?>? city, Omittable<String?>? timezone, }) { return WebSearchApproximateLocation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'country', 'region', 'city', 'timezone'}.contains(key));}
+WebSearchApproximateLocation copyWith({WebSearchApproximateLocationType? Function()? type, Omittable<String?>? country, Omittable<String?>? region, Omittable<String?>? city, Omittable<String?>? timezone, }) {return WebSearchApproximateLocation(
   type: type != null ? type() : this.type,
   country: country ?? this.country,
   region: region ?? this.region,
   city: city ?? this.city,
   timezone: timezone ?? this.timezone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebSearchApproximateLocation &&
           type == other.type &&
           country == other.country &&
           region == other.region &&
           city == other.city &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(type, country, region, city, timezone); } 
-@override String toString() { return 'WebSearchApproximateLocation(type: $type, country: $country, region: $region, city: $city, timezone: $timezone)'; } 
- }
+          timezone == other.timezone;}
+@override int get hashCode {return Object.hash(type, country, region, city, timezone);}
+@override String toString() {return 'WebSearchApproximateLocation(type: $type, country: $country, region: $region, city: $city, timezone: $timezone)';}
+}

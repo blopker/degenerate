@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';@immutable final class IamCreatePayload {const IamCreatePayload({required this.name, required this.policies, this.condition, this.expiresOn, this.notBefore, });
 
-factory IamCreatePayload.fromJson(Map<String, dynamic> json) { return IamCreatePayload(
+factory IamCreatePayload.fromJson(Map<String, dynamic> json) {return IamCreatePayload(
   condition: json['condition'] != null ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,
   expiresOn: json['expires_on'] != null ? IamExpiresOn.fromJson(json['expires_on'] as String) : null,
   name: IamName.fromJson(json['name'] as String),
   notBefore: json['not_before'] != null ? IamNotBefore.fromJson(json['not_before'] as String) : null,
   policies: (json['policies'] as List<dynamic>).map((e) => IamPolicyWithPermissionGroupsAndResources.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final IamCondition? condition;
 
@@ -20,29 +20,29 @@ final IamNotBefore? notBefore;
 
 final List<IamPolicyWithPermissionGroupsAndResources> policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (condition != null) 'condition': condition?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
   'name': name.toJson(),
   if (notBefore != null) 'not_before': notBefore?.toJson(),
   'policies': policies.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
-      json.containsKey('policies'); } 
-IamCreatePayload copyWith({IamCondition? Function()? condition, IamExpiresOn? Function()? expiresOn, IamName? name, IamNotBefore? Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources>? policies, }) { return IamCreatePayload(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
+      json.containsKey('policies');}
+IamCreatePayload copyWith({IamCondition? Function()? condition, IamExpiresOn? Function()? expiresOn, IamName? name, IamNotBefore? Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources>? policies, }) {return IamCreatePayload(
   condition: condition != null ? condition() : this.condition,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   name: name ?? this.name,
   notBefore: notBefore != null ? notBefore() : this.notBefore,
   policies: policies ?? this.policies,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamCreatePayload &&
           condition == other.condition &&
           expiresOn == other.expiresOn &&
           name == other.name &&
           notBefore == other.notBefore &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hash(condition, expiresOn, name, notBefore, Object.hashAll(policies)); } 
-@override String toString() { return 'IamCreatePayload(condition: $condition, expiresOn: $expiresOn, name: $name, notBefore: $notBefore, policies: $policies)'; } 
- }
+          listEquals(policies, other.policies);}
+@override int get hashCode {return Object.hash(condition, expiresOn, name, notBefore, Object.hashAll(policies));}
+@override String toString() {return 'IamCreatePayload(condition: $condition, expiresOn: $expiresOn, name: $name, notBefore: $notBefore, policies: $policies)';}
+}

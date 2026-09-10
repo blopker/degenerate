@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param27_reference.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage._('none');
 
@@ -13,38 +13,38 @@ static const List<PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam27 {const PaymentIntentPaymentMethodOptionsParam27({this.reference, this.setupFutureUsage, });
 
-factory PaymentIntentPaymentMethodOptionsParam27.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam27(
+factory PaymentIntentPaymentMethodOptionsParam27.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam27(
   reference: json['reference'] != null ? PaymentIntentPaymentMethodOptionsParam27Reference.fromJson(json['reference']) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsParam27Reference? reference;
 
 final PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (reference != null) 'reference': reference?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam27 copyWith({PaymentIntentPaymentMethodOptionsParam27Reference? Function()? reference, PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam27(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key));}
+PaymentIntentPaymentMethodOptionsParam27 copyWith({PaymentIntentPaymentMethodOptionsParam27Reference? Function()? reference, PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentIntentPaymentMethodOptionsParam27(
   reference: reference != null ? reference() : this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam27 &&
           reference == other.reference &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(reference, setupFutureUsage); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam27(reference: $reference, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(reference, setupFutureUsage);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam27(reference: $reference, setupFutureUsage: $setupFutureUsage)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListDevicesSortBy {const ListDevicesSortBy._(this.value);
 
-factory ListDevicesSortBy.fromJson(String json) { return switch (json) {
+factory ListDevicesSortBy.fromJson(String json) {return switch (json) {
   'name' => $name,
   'id' => id,
   'client_version' => clientVersion,
@@ -11,7 +11,7 @@ factory ListDevicesSortBy.fromJson(String json) { return switch (json) {
   'active_registrations' => activeRegistrations,
   'created_at' => createdAt,
   _ => ListDevicesSortBy._(json),
-}; }
+};}
 
 static const ListDevicesSortBy $name = ListDevicesSortBy._('name');
 
@@ -31,11 +31,11 @@ static const List<ListDevicesSortBy> values = [$name, id, clientVersion, lastSee
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListDevicesSortBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListDevicesSortBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ListDevicesSortBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ListDevicesSortBy($value)';}
+}

@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `json_schema`.
 @immutable final class TextResponseFormatJsonSchemaType {const TextResponseFormatJsonSchemaType._(this.value);
 
-factory TextResponseFormatJsonSchemaType.fromJson(String json) { return switch (json) {
+factory TextResponseFormatJsonSchemaType.fromJson(String json) {return switch (json) {
   'json_schema' => jsonSchema,
   _ => TextResponseFormatJsonSchemaType._(json),
-}; }
+};}
 
 static const TextResponseFormatJsonSchemaType jsonSchema = TextResponseFormatJsonSchemaType._('json_schema');
 
@@ -14,26 +14,26 @@ static const List<TextResponseFormatJsonSchemaType> values = [jsonSchema];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TextResponseFormatJsonSchemaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TextResponseFormatJsonSchemaType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TextResponseFormatJsonSchemaType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TextResponseFormatJsonSchemaType($value)';}
+}
 /// JSON Schema response format. Used to generate structured JSON responses.
 /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
 /// 
 @immutable final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, required this.name, required this.schema, this.description, this.strict = const Omittable.absent(), });
 
-factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return TextResponseFormatJsonSchema(
+factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) {return TextResponseFormatJsonSchema(
   type: TextResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   description: json['description'] as String?,
   name: json['name'] as String,
   schema: json['schema'] as Map<String, dynamic>,
   strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of response format being defined. Always `json_schema`.
 final TextResponseFormatJsonSchemaType type;
@@ -61,30 +61,30 @@ final Map<String,dynamic> schema;
 /// 
 final Omittable<bool?> strict;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'description': ?description,
   'name': name,
   'schema': schema,
   if (strict.isPresent) 'strict': strict.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('schema'); } 
-TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String? Function()? description, String? name, Map<String,dynamic>? schema, Omittable<bool?>? strict, }) { return TextResponseFormatJsonSchema(
+      json.containsKey('schema');}
+TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String? Function()? description, String? name, Map<String,dynamic>? schema, Omittable<bool?>? strict, }) {return TextResponseFormatJsonSchema(
   type: type ?? this.type,
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   schema: schema ?? this.schema,
   strict: strict ?? this.strict,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TextResponseFormatJsonSchema &&
           type == other.type &&
           description == other.description &&
           name == other.name &&
           schema == other.schema &&
-          strict == other.strict; } 
-@override int get hashCode { return Object.hash(type, description, name, schema, strict); } 
-@override String toString() { return 'TextResponseFormatJsonSchema(type: $type, description: $description, name: $name, schema: $schema, strict: $strict)'; } 
- }
+          strict == other.strict;}
+@override int get hashCode {return Object.hash(type, description, name, schema, strict);}
+@override String toString() {return 'TextResponseFormatJsonSchema(type: $type, description: $description, name: $name, schema: $schema, strict: $strict)';}
+}

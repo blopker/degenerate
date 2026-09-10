@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the message content can be stored or redacted based on privacy settings
 @immutable final class MessageEnumContentRetention {const MessageEnumContentRetention._(this.value);
 
-factory MessageEnumContentRetention.fromJson(String json) { return switch (json) {
+factory MessageEnumContentRetention.fromJson(String json) {return switch (json) {
   'retain' => retain,
   'discard' => discard,
   _ => MessageEnumContentRetention._(json),
-}; }
+};}
 
 static const MessageEnumContentRetention retain = MessageEnumContentRetention._('retain');
 
@@ -17,22 +17,22 @@ static const List<MessageEnumContentRetention> values = [retain, discard];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumContentRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumContentRetention($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageEnumContentRetention && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageEnumContentRetention($value)';}
+}
 /// Determines if the address can be stored or obfuscated based on privacy settings
 @immutable final class MessageEnumAddressRetention {const MessageEnumAddressRetention._(this.value);
 
-factory MessageEnumAddressRetention.fromJson(String json) { return switch (json) {
+factory MessageEnumAddressRetention.fromJson(String json) {return switch (json) {
   'retain' => retain,
   'obfuscate' => obfuscate,
   _ => MessageEnumAddressRetention._(json),
-}; }
+};}
 
 static const MessageEnumAddressRetention retain = MessageEnumAddressRetention._('retain');
 
@@ -42,20 +42,20 @@ static const List<MessageEnumAddressRetention> values = [retain, obfuscate];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumAddressRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumAddressRetention($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageEnumAddressRetention && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageEnumAddressRetention($value)';}
+}
 @immutable final class MessageEnumTrafficType {const MessageEnumTrafficType._(this.value);
 
-factory MessageEnumTrafficType.fromJson(String json) { return switch (json) {
+factory MessageEnumTrafficType.fromJson(String json) {return switch (json) {
   'free' => free,
   _ => MessageEnumTrafficType._(json),
-}; }
+};}
 
 static const MessageEnumTrafficType free = MessageEnumTrafficType._('free');
 
@@ -63,21 +63,21 @@ static const List<MessageEnumTrafficType> values = [free];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumTrafficType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumTrafficType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageEnumTrafficType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageEnumTrafficType($value)';}
+}
 /// For Messaging Services only: Include this parameter with a value of `fixed` in conjuction with the `send_time` parameter in order to [schedule a Message](https://www.twilio.com/docs/messaging/features/message-scheduling).
 @immutable final class MessageEnumScheduleType {const MessageEnumScheduleType._(this.value);
 
-factory MessageEnumScheduleType.fromJson(String json) { return switch (json) {
+factory MessageEnumScheduleType.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   _ => MessageEnumScheduleType._(json),
-}; }
+};}
 
 static const MessageEnumScheduleType fixed = MessageEnumScheduleType._('fixed');
 
@@ -85,22 +85,22 @@ static const List<MessageEnumScheduleType> values = [fixed];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumScheduleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumScheduleType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageEnumScheduleType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageEnumScheduleType($value)';}
+}
 /// Include this parameter with a value of `disable` to skip any kind of risk check on the respective message request.
 @immutable final class MessageEnumRiskCheck {const MessageEnumRiskCheck._(this.value);
 
-factory MessageEnumRiskCheck.fromJson(String json) { return switch (json) {
+factory MessageEnumRiskCheck.fromJson(String json) {return switch (json) {
   'enable' => enable,
   'disable' => disable,
   _ => MessageEnumRiskCheck._(json),
-}; }
+};}
 
 static const MessageEnumRiskCheck enable = MessageEnumRiskCheck._('enable');
 
@@ -110,17 +110,17 @@ static const List<MessageEnumRiskCheck> values = [enable, disable];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumRiskCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumRiskCheck($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessageEnumRiskCheck && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessageEnumRiskCheck($value)';}
+}
 @immutable final class CreateMessageRequest {const CreateMessageRequest({required this.to, this.statusCallback, this.applicationSid, this.maxPrice, this.provideFeedback, this.attempt, this.validityPeriod, this.forceDelivery, this.contentRetention, this.addressRetention, this.smartEncoded, this.persistentAction, this.trafficType, this.shortenUrls, this.scheduleType, this.sendAt, this.sendAsMms, this.contentVariables, this.riskCheck, this.from, this.messagingServiceSid, this.body, this.mediaUrl, this.contentSid, });
 
-factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return CreateMessageRequest(
+factory CreateMessageRequest.fromJson(Map<String, dynamic> json) {return CreateMessageRequest(
   to: json['To'] as String,
   statusCallback: json['StatusCallback'] != null ? Uri.parse(json['StatusCallback'] as String) : null,
   applicationSid: json['ApplicationSid'] as String?,
@@ -145,7 +145,7 @@ factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return Create
   body: json['Body'] as String?,
   mediaUrl: (json['MediaUrl'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
   contentSid: json['ContentSid'] as String?,
-); }
+);}
 
 /// The recipient's phone number in [E.164](https://www.twilio.com/docs/glossary/what-e164) format (for SMS/MMS) or [channel address](https://www.twilio.com/docs/messaging/channels), e.g. `whatsapp:+15552229999`.
 final String to;
@@ -218,7 +218,7 @@ final List<Uri>? mediaUrl;
 /// For [Content Editor/API](https://www.twilio.com/docs/content) only: The SID of the Content Template to be used with the Message, e.g., `HXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`. If this parameter is not provided, a Content Template is not used. Find the SID in the Console on the Content Editor page. For Content API users, the SID is found in Twilio's response when [creating the Template](https://www.twilio.com/docs/content/content-api-resources#create-templates) or by [fetching your Templates](https://www.twilio.com/docs/content/content-api-resources#fetch-all-content-resources).
 final String? contentSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'To': to,
   if (statusCallback != null) 'StatusCallback': statusCallback?.toString(),
   'ApplicationSid': ?applicationSid,
@@ -243,9 +243,9 @@ Map<String, dynamic> toJson() { return {
   'Body': ?body,
   if (mediaUrl != null) 'MediaUrl': mediaUrl?.map((e) => e.toString()).toList(),
   'ContentSid': ?contentSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('To') && json['To'] is String; } 
-CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, String? Function()? applicationSid, double? Function()? maxPrice, bool? Function()? provideFeedback, int? Function()? attempt, int? Function()? validityPeriod, bool? Function()? forceDelivery, MessageEnumContentRetention? Function()? contentRetention, MessageEnumAddressRetention? Function()? addressRetention, bool? Function()? smartEncoded, List<String>? Function()? persistentAction, MessageEnumTrafficType? Function()? trafficType, bool? Function()? shortenUrls, MessageEnumScheduleType? Function()? scheduleType, DateTime? Function()? sendAt, bool? Function()? sendAsMms, String? Function()? contentVariables, MessageEnumRiskCheck? Function()? riskCheck, String? Function()? from, String? Function()? messagingServiceSid, String? Function()? body, List<Uri>? Function()? mediaUrl, String? Function()? contentSid, }) { return CreateMessageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('To') && json['To'] is String;}
+CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, String? Function()? applicationSid, double? Function()? maxPrice, bool? Function()? provideFeedback, int? Function()? attempt, int? Function()? validityPeriod, bool? Function()? forceDelivery, MessageEnumContentRetention? Function()? contentRetention, MessageEnumAddressRetention? Function()? addressRetention, bool? Function()? smartEncoded, List<String>? Function()? persistentAction, MessageEnumTrafficType? Function()? trafficType, bool? Function()? shortenUrls, MessageEnumScheduleType? Function()? scheduleType, DateTime? Function()? sendAt, bool? Function()? sendAsMms, String? Function()? contentVariables, MessageEnumRiskCheck? Function()? riskCheck, String? Function()? from, String? Function()? messagingServiceSid, String? Function()? body, List<Uri>? Function()? mediaUrl, String? Function()? contentSid, }) {return CreateMessageRequest(
   to: to ?? this.to,
   statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,
   applicationSid: applicationSid != null ? applicationSid() : this.applicationSid,
@@ -270,8 +270,8 @@ CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, Stri
   body: body != null ? body() : this.body,
   mediaUrl: mediaUrl != null ? mediaUrl() : this.mediaUrl,
   contentSid: contentSid != null ? contentSid() : this.contentSid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateMessageRequest &&
           to == other.to &&
           statusCallback == other.statusCallback &&
@@ -296,7 +296,7 @@ CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, Stri
           messagingServiceSid == other.messagingServiceSid &&
           body == other.body &&
           listEquals(mediaUrl, other.mediaUrl) &&
-          contentSid == other.contentSid; } 
-@override int get hashCode { return Object.hashAll([to, statusCallback, applicationSid, maxPrice, provideFeedback, attempt, validityPeriod, forceDelivery, contentRetention, addressRetention, smartEncoded, Object.hashAll(persistentAction ?? const []), trafficType, shortenUrls, scheduleType, sendAt, sendAsMms, contentVariables, riskCheck, from, messagingServiceSid, body, Object.hashAll(mediaUrl ?? const []), contentSid]); } 
-@override String toString() { return 'CreateMessageRequest(to: $to, statusCallback: $statusCallback, applicationSid: $applicationSid, maxPrice: $maxPrice, provideFeedback: $provideFeedback, attempt: $attempt, validityPeriod: $validityPeriod, forceDelivery: $forceDelivery, contentRetention: $contentRetention, addressRetention: $addressRetention, smartEncoded: $smartEncoded, persistentAction: $persistentAction, trafficType: $trafficType, shortenUrls: $shortenUrls, scheduleType: $scheduleType, sendAt: $sendAt, sendAsMms: $sendAsMms, contentVariables: $contentVariables, riskCheck: $riskCheck, from: $from, messagingServiceSid: $messagingServiceSid, body: $body, mediaUrl: $mediaUrl, contentSid: $contentSid)'; } 
- }
+          contentSid == other.contentSid;}
+@override int get hashCode {return Object.hashAll([to, statusCallback, applicationSid, maxPrice, provideFeedback, attempt, validityPeriod, forceDelivery, contentRetention, addressRetention, smartEncoded, Object.hashAll(persistentAction ?? const []), trafficType, shortenUrls, scheduleType, sendAt, sendAsMms, contentVariables, riskCheck, from, messagingServiceSid, body, Object.hashAll(mediaUrl ?? const []), contentSid]);}
+@override String toString() {return 'CreateMessageRequest(to: $to, statusCallback: $statusCallback, applicationSid: $applicationSid, maxPrice: $maxPrice, provideFeedback: $provideFeedback, attempt: $attempt, validityPeriod: $validityPeriod, forceDelivery: $forceDelivery, contentRetention: $contentRetention, addressRetention: $addressRetention, smartEncoded: $smartEncoded, persistentAction: $persistentAction, trafficType: $trafficType, shortenUrls: $shortenUrls, scheduleType: $scheduleType, sendAt: $sendAt, sendAsMms: $sendAsMms, contentVariables: $contentVariables, riskCheck: $riskCheck, from: $from, messagingServiceSid: $messagingServiceSid, body: $body, mediaUrl: $mediaUrl, contentSid: $contentSid)';}
+}

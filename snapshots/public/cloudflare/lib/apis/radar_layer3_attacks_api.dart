@@ -13,7 +13,7 @@ final class RadarLayer3AttacksApi with ApiExecutor {const RadarLayer3AttacksApi(
 /// Retrieves the distribution of layer 3 attacks by the specified dimension.
 ///
 /// `GET /radar/attacks/layer3/summary/{dimension}`
-Future<ApiResult<RadarGetAttacksLayer3SummaryResponseResult, RadarGetAttacksLayer3SummaryResponse400>> radarGetAttacksLayer3Summary({required RadarGetAttacksLayer3SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3SummaryIpVersion>? ipVersion, List<RadarGetAttacksLayer3SummaryProtocol>? protocol, RadarGetAttacksLayer3SummaryDirection? direction, int? limitPerGroup, RadarGetAttacksLayer3SummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3SummaryResponseResult, RadarGetAttacksLayer3SummaryResponse400>> radarGetAttacksLayer3Summary({required RadarGetAttacksLayer3SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3SummaryIpVersion>? ipVersion, List<RadarGetAttacksLayer3SummaryProtocol>? protocol, RadarGetAttacksLayer3SummaryDirection? direction, int? limitPerGroup, RadarGetAttacksLayer3SummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -76,30 +76,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetAttacksLayer3SummaryResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RadarGetAttacksLayer3SummaryResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get layer 3 attacks by bytes time series
 ///
 /// Retrieves layer 3 attacks over time.
 ///
 /// `GET /radar/attacks/layer3/timeseries`
-Future<ApiResult<RadarGetAttacksLayer3TimeseriesByBytesResponseResult, RadarGetAttacksLayer3TimeseriesByBytesResponse400>> radarGetAttacksLayer3TimeseriesByBytes({RadarGetAttacksLayer3TimeseriesByBytesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TimeseriesByBytesIpVersion>? ipVersion, List<RadarGetAttacksLayer3TimeseriesByBytesProtocol>? protocol, RadarGetAttacksLayer3TimeseriesByBytesNormalization? normalization, RadarGetAttacksLayer3TimeseriesByBytesMetric? metric, RadarGetAttacksLayer3TimeseriesByBytesDirection? direction, RadarGetAttacksLayer3TimeseriesByBytesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3TimeseriesByBytesResponseResult, RadarGetAttacksLayer3TimeseriesByBytesResponse400>> radarGetAttacksLayer3TimeseriesByBytes({RadarGetAttacksLayer3TimeseriesByBytesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TimeseriesByBytesIpVersion>? ipVersion, List<RadarGetAttacksLayer3TimeseriesByBytesProtocol>? protocol, RadarGetAttacksLayer3TimeseriesByBytesNormalization? normalization, RadarGetAttacksLayer3TimeseriesByBytesMetric? metric, RadarGetAttacksLayer3TimeseriesByBytesDirection? direction, RadarGetAttacksLayer3TimeseriesByBytesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -173,30 +162,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAttacksLayer3TimeseriesByBytesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAttacksLayer3TimeseriesByBytesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetAttacksLayer3TimeseriesByBytesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RadarGetAttacksLayer3TimeseriesByBytesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get layer 3 attacks time series grouped by dimension
 ///
 /// Retrieves the distribution of layer 3 attacks grouped by dimension over time.
 ///
 /// `GET /radar/attacks/layer3/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAttacksLayer3TimeseriesGroupResponseResult, RadarGetAttacksLayer3TimeseriesGroupResponse400>> radarGetAttacksLayer3TimeseriesGroup({required RadarGetAttacksLayer3TimeseriesGroupDimension dimension, RadarGetAttacksLayer3TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TimeseriesGroupIpVersion>? ipVersion, List<RadarGetAttacksLayer3TimeseriesGroupProtocol>? protocol, RadarGetAttacksLayer3TimeseriesGroupNormalization? normalization, RadarGetAttacksLayer3TimeseriesGroupDirection? direction, int? limitPerGroup, RadarGetAttacksLayer3TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3TimeseriesGroupResponseResult, RadarGetAttacksLayer3TimeseriesGroupResponse400>> radarGetAttacksLayer3TimeseriesGroup({required RadarGetAttacksLayer3TimeseriesGroupDimension dimension, RadarGetAttacksLayer3TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TimeseriesGroupIpVersion>? ipVersion, List<RadarGetAttacksLayer3TimeseriesGroupProtocol>? protocol, RadarGetAttacksLayer3TimeseriesGroupNormalization? normalization, RadarGetAttacksLayer3TimeseriesGroupDirection? direction, int? limitPerGroup, RadarGetAttacksLayer3TimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -265,30 +243,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAttacksLayer3TimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAttacksLayer3TimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetAttacksLayer3TimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RadarGetAttacksLayer3TimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top layer 3 attack pairs (origin and target locations)
 ///
 /// Retrieves the top layer 3 attacks from origin to target location. Values are a percentage out of the total layer 3 attacks (with billing country). You can optionally limit the number of attacks by origin/target location (useful if all the top attacks are from or to the same location).
 ///
 /// `GET /radar/attacks/layer3/top/attacks`
-Future<ApiResult<RadarGetAttacksLayer3TopAttacksResponseResult, RadarGetAttacksLayer3TopAttacksResponse404>> radarGetAttacksLayer3TopAttacks({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopAttacksIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopAttacksProtocol>? protocol, RadarGetAttacksLayer3TopAttacksLimitDirection? limitDirection, int? limitPerLocation, RadarGetAttacksLayer3TopAttacksMagnitude? magnitude, RadarGetAttacksLayer3TopAttacksNormalization? normalization, RadarGetAttacksLayer3TopAttacksFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3TopAttacksResponseResult, RadarGetAttacksLayer3TopAttacksResponse404>> radarGetAttacksLayer3TopAttacks({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopAttacksIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopAttacksProtocol>? protocol, RadarGetAttacksLayer3TopAttacksLimitDirection? limitDirection, int? limitPerLocation, RadarGetAttacksLayer3TopAttacksMagnitude? magnitude, RadarGetAttacksLayer3TopAttacksNormalization? normalization, RadarGetAttacksLayer3TopAttacksFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -360,30 +327,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAttacksLayer3TopAttacksResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAttacksLayer3TopAttacksResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetAttacksLayer3TopAttacksResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RadarGetAttacksLayer3TopAttacksResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top origin locations of layer 3 attacks
 ///
 /// Retrieves the origin locations of layer 3 attacks.
 ///
 /// `GET /radar/attacks/layer3/top/locations/origin`
-Future<ApiResult<RadarGetAttacksLayer3TopOriginLocationsResponseResult, RadarGetAttacksLayer3TopOriginLocationsResponse404>> radarGetAttacksLayer3TopOriginLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopOriginLocationsIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopOriginLocationsProtocol>? protocol, RadarGetAttacksLayer3TopOriginLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3TopOriginLocationsResponseResult, RadarGetAttacksLayer3TopOriginLocationsResponse404>> radarGetAttacksLayer3TopOriginLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopOriginLocationsIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopOriginLocationsProtocol>? protocol, RadarGetAttacksLayer3TopOriginLocationsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -443,30 +399,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAttacksLayer3TopOriginLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAttacksLayer3TopOriginLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetAttacksLayer3TopOriginLocationsResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RadarGetAttacksLayer3TopOriginLocationsResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top target locations of layer 3 attacks
 ///
 /// Retrieves the target locations of layer 3 attacks.
 ///
 /// `GET /radar/attacks/layer3/top/locations/target`
-Future<ApiResult<RadarGetAttacksLayer3TopTargetLocationsResponseResult, RadarGetAttacksLayer3TopTargetLocationsResponse404>> radarGetAttacksLayer3TopTargetLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopTargetLocationsIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopTargetLocationsProtocol>? protocol, RadarGetAttacksLayer3TopTargetLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3TopTargetLocationsResponseResult, RadarGetAttacksLayer3TopTargetLocationsResponse404>> radarGetAttacksLayer3TopTargetLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer3TopTargetLocationsIpVersion>? ipVersion, List<RadarGetAttacksLayer3TopTargetLocationsProtocol>? protocol, RadarGetAttacksLayer3TopTargetLocationsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -526,22 +471,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAttacksLayer3TopTargetLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAttacksLayer3TopTargetLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetAttacksLayer3TopTargetLocationsResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  RadarGetAttacksLayer3TopTargetLocationsResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

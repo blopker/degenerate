@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_transaction_line_item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class TaxTransactionLineItemsObject {const TaxTransactionLineItemsObject._(this.value);
 
-factory TaxTransactionLineItemsObject.fromJson(String json) { return switch (json) {
+factory TaxTransactionLineItemsObject.fromJson(String json) {return switch (json) {
   'list' => list,
   _ => TaxTransactionLineItemsObject._(json),
-}; }
+};}
 
 static const TaxTransactionLineItemsObject list = TaxTransactionLineItemsObject._('list');
 
@@ -14,23 +14,23 @@ static const List<TaxTransactionLineItemsObject> values = [list];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionLineItemsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionLineItemsObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxTransactionLineItemsObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxTransactionLineItemsObject($value)';}
+}
 /// The tax collected or refunded, by line item.
 @immutable final class TaxTransactionLineItems {const TaxTransactionLineItems({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory TaxTransactionLineItems.fromJson(Map<String, dynamic> json) { return TaxTransactionLineItems(
+factory TaxTransactionLineItems.fromJson(Map<String, dynamic> json) {return TaxTransactionLineItems(
   data: (json['data'] as List<dynamic>).map((e) => TaxTransactionLineItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: TaxTransactionLineItemsObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Details about each object.
 final List<TaxTransactionLineItem> data;
@@ -44,28 +44,28 @@ final TaxTransactionLineItemsObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
-TaxTransactionLineItems copyWith({List<TaxTransactionLineItem>? data, bool? hasMore, TaxTransactionLineItemsObject? object, String? url, }) { return TaxTransactionLineItems(
+      json.containsKey('url') && json['url'] is String;}
+TaxTransactionLineItems copyWith({List<TaxTransactionLineItem>? data, bool? hasMore, TaxTransactionLineItemsObject? object, String? url, }) {return TaxTransactionLineItems(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxTransactionLineItems &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'TaxTransactionLineItems(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(data), hasMore, object, url);}
+@override String toString() {return 'TaxTransactionLineItems(data: $data, hasMore: $hasMore, object: $object, url: $url)';}
+}

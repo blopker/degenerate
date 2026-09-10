@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the repository property. Defaults to 'custom' if not specified.
 @immutable final class RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);
 
-factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(String json) { return switch (json) {
+factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'system' => system,
   _ => RepositoryRulesetConditionsRepositoryPropertySpecSource._(json),
-}; }
+};}
 
 static const RepositoryRulesetConditionsRepositoryPropertySpecSource custom = RepositoryRulesetConditionsRepositoryPropertySpecSource._('custom');
 
@@ -17,22 +17,22 @@ static const List<RepositoryRulesetConditionsRepositoryPropertySpecSource> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetConditionsRepositoryPropertySpecSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetConditionsRepositoryPropertySpecSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRulesetConditionsRepositoryPropertySpecSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRulesetConditionsRepositoryPropertySpecSource($value)';}
+}
 /// Parameters for a targeting a repository property
 @immutable final class RepositoryRulesetConditionsRepositoryPropertySpec {const RepositoryRulesetConditionsRepositoryPropertySpec({required this.name, required this.propertyValues, this.source, });
 
-factory RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryPropertySpec(
+factory RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(Map<String, dynamic> json) {return RepositoryRulesetConditionsRepositoryPropertySpec(
   name: json['name'] as String,
   propertyValues: (json['property_values'] as List<dynamic>).map((e) => e as String).toList(),
   source: json['source'] != null ? RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(json['source'] as String) : null,
-); }
+);}
 
 /// The name of the repository property to target
 final String name;
@@ -43,23 +43,23 @@ final List<String> propertyValues;
 /// The source of the repository property. Defaults to 'custom' if not specified.
 final RepositoryRulesetConditionsRepositoryPropertySpecSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'property_values': propertyValues,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('property_values'); } 
-RepositoryRulesetConditionsRepositoryPropertySpec copyWith({String? name, List<String>? propertyValues, RepositoryRulesetConditionsRepositoryPropertySpecSource? Function()? source, }) { return RepositoryRulesetConditionsRepositoryPropertySpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('property_values');}
+RepositoryRulesetConditionsRepositoryPropertySpec copyWith({String? name, List<String>? propertyValues, RepositoryRulesetConditionsRepositoryPropertySpecSource? Function()? source, }) {return RepositoryRulesetConditionsRepositoryPropertySpec(
   name: name ?? this.name,
   propertyValues: propertyValues ?? this.propertyValues,
   source: source != null ? source() : this.source,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRulesetConditionsRepositoryPropertySpec &&
           name == other.name &&
           listEquals(propertyValues, other.propertyValues) &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(propertyValues), source); } 
-@override String toString() { return 'RepositoryRulesetConditionsRepositoryPropertySpec(name: $name, propertyValues: $propertyValues, source: $source)'; } 
- }
+          source == other.source;}
+@override int get hashCode {return Object.hash(name, Object.hashAll(propertyValues), source);}
+@override String toString() {return 'RepositoryRulesetConditionsRepositoryPropertySpec(name: $name, propertyValues: $propertyValues, source: $source)';}
+}

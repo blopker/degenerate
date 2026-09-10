@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Kana variation of the full address of the location (Japan only).
 @immutable final class PostTerminalLocationsRequestAddressKana {const PostTerminalLocationsRequestAddressKana({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
 
-factory PostTerminalLocationsRequestAddressKana.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsRequestAddressKana(
+factory PostTerminalLocationsRequestAddressKana.fromJson(Map<String, dynamic> json) {return PostTerminalLocationsRequestAddressKana(
   city: json['city'] as String?,
   country: json['country'] as String?,
   line1: json['line1'] as String?,
@@ -11,7 +11,7 @@ factory PostTerminalLocationsRequestAddressKana.fromJson(Map<String, dynamic> js
   postalCode: json['postal_code'] as String?,
   state: json['state'] as String?,
   town: json['town'] as String?,
-); }
+);}
 
 final String? city;
 
@@ -27,7 +27,7 @@ final String? state;
 
 final String? town;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'city': ?city,
   'country': ?country,
   'line1': ?line1,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   'postal_code': ?postalCode,
   'state': ?state,
   'town': ?town,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state', 'town'}.contains(key)); } 
-PostTerminalLocationsRequestAddressKana copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, String? Function()? town, }) { return PostTerminalLocationsRequestAddressKana(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state', 'town'}.contains(key));}
+PostTerminalLocationsRequestAddressKana copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, String? Function()? town, }) {return PostTerminalLocationsRequestAddressKana(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 != null ? line1() : this.line1,
@@ -45,8 +45,8 @@ PostTerminalLocationsRequestAddressKana copyWith({String? Function()? city, Stri
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   state: state != null ? state() : this.state,
   town: town != null ? town() : this.town,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalLocationsRequestAddressKana &&
           city == other.city &&
           country == other.country &&
@@ -54,7 +54,7 @@ PostTerminalLocationsRequestAddressKana copyWith({String? Function()? city, Stri
           line2 == other.line2 &&
           postalCode == other.postalCode &&
           state == other.state &&
-          town == other.town; } 
-@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state, town); } 
-@override String toString() { return 'PostTerminalLocationsRequestAddressKana(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state, town: $town)'; } 
- }
+          town == other.town;}
+@override int get hashCode {return Object.hash(city, country, line1, line2, postalCode, state, town);}
+@override String toString() {return 'PostTerminalLocationsRequestAddressKana(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state, town: $town)';}
+}

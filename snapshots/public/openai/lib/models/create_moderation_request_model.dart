@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateModerationRequestModelVariant2 {const CreateModerationRequestModelVariant2._(this.value);
 
-factory CreateModerationRequestModelVariant2.fromJson(String json) { return switch (json) {
+factory CreateModerationRequestModelVariant2.fromJson(String json) {return switch (json) {
   'omni-moderation-latest' => omniModerationLatest,
   'omni-moderation-2024-09-26' => omniModeration20240926,
   'text-moderation-latest' => textModerationLatest,
   'text-moderation-stable' => textModerationStable,
   _ => CreateModerationRequestModelVariant2._(json),
-}; }
+};}
 
 static const CreateModerationRequestModelVariant2 omniModerationLatest = CreateModerationRequestModelVariant2._('omni-moderation-latest');
 
@@ -22,14 +22,14 @@ static const List<CreateModerationRequestModelVariant2> values = [omniModeration
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateModerationRequestModelVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateModerationRequestModelVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateModerationRequestModelVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateModerationRequestModelVariant2($value)';}
+}
 /// The content moderation model you would like to use. Learn more in
 /// [the moderation guide](/docs/guides/moderation), and learn about
 /// available models [here](/docs/models#moderation).

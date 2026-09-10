@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'confirmation_tokens_resource_mandate_data.dart';import 'confirmation_tokens_resource_payment_method_options.dart';import 'confirmation_tokens_resource_payment_method_preview.dart';import 'confirmation_tokens_resource_shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ConfirmationTokenObject {const ConfirmationTokenObject._(this.value);
 
-factory ConfirmationTokenObject.fromJson(String json) { return switch (json) {
+factory ConfirmationTokenObject.fromJson(String json) {return switch (json) {
   'confirmation_token' => confirmationToken,
   _ => ConfirmationTokenObject._(json),
-}; }
+};}
 
 static const ConfirmationTokenObject confirmationToken = ConfirmationTokenObject._('confirmation_token');
 
@@ -14,24 +14,24 @@ static const List<ConfirmationTokenObject> values = [confirmationToken];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConfirmationTokenObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConfirmationTokenObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ConfirmationTokenObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ConfirmationTokenObject($value)';}
+}
 /// Indicates that you intend to make future payments with this ConfirmationToken's payment method.
 /// 
 /// The presence of this property will [attach the payment method](https://docs.stripe.com/payments/save-during-payment) to the PaymentIntent's Customer, if present, after the PaymentIntent is confirmed and any required actions from the user are complete.
 @immutable final class ConfirmationTokenSetupFutureUsage {const ConfirmationTokenSetupFutureUsage._(this.value);
 
-factory ConfirmationTokenSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory ConfirmationTokenSetupFutureUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => ConfirmationTokenSetupFutureUsage._(json),
-}; }
+};}
 
 static const ConfirmationTokenSetupFutureUsage offSession = ConfirmationTokenSetupFutureUsage._('off_session');
 
@@ -41,14 +41,14 @@ static const List<ConfirmationTokenSetupFutureUsage> values = [offSession, onSes
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConfirmationTokenSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConfirmationTokenSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ConfirmationTokenSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ConfirmationTokenSetupFutureUsage($value)';}
+}
 /// ConfirmationTokens help transport client side data collected by Stripe JS over
 /// to your server for confirming a PaymentIntent or SetupIntent. If the confirmation
 /// is successful, values present on the ConfirmationToken are written onto the Intent.
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - [Build two-step confirmation](https://docs.stripe.com/payments/build-a-two-step-confirmation).
 @immutable final class ConfirmationToken {const ConfirmationToken({required this.created, required this.id, required this.livemode, required this.object, required this.useStripeSdk, this.expiresAt = const Omittable.absent(), this.mandateData = const Omittable.absent(), this.paymentIntent = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.paymentMethodPreview = const Omittable.absent(), this.returnUrl = const Omittable.absent(), this.setupFutureUsage = const Omittable.absent(), this.setupIntent = const Omittable.absent(), this.shipping = const Omittable.absent(), });
 
-factory ConfirmationToken.fromJson(Map<String, dynamic> json) { return ConfirmationToken(
+factory ConfirmationToken.fromJson(Map<String, dynamic> json) {return ConfirmationToken(
   created: (json['created'] as num).toInt(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
@@ -73,7 +73,7 @@ factory ConfirmationToken.fromJson(Map<String, dynamic> json) { return Confirmat
   setupIntent: json.containsKey('setup_intent') ? Omittable(json['setup_intent'] as String?) : const Omittable.absent(),
   shipping: json.containsKey('shipping') ? Omittable(json['shipping'] != null ? ConfirmationTokensResourceShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   useStripeSdk: json['use_stripe_sdk'] as bool,
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -119,7 +119,7 @@ final Omittable<ConfirmationTokensResourceShipping?> shipping;
 /// Indicates whether the Stripe SDK is used to handle confirmation flow. Defaults to `true` on ConfirmationToken.
 final bool useStripeSdk;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'id': id,
@@ -134,13 +134,13 @@ Map<String, dynamic> toJson() { return {
   if (setupIntent.isPresent) 'setup_intent': setupIntent.value,
   if (shipping.isPresent) 'shipping': shipping.value?.toJson(),
   'use_stripe_sdk': useStripeSdk,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('use_stripe_sdk') && json['use_stripe_sdk'] is bool; } 
-ConfirmationToken copyWith({int? created, Omittable<int?>? expiresAt, String? id, bool? livemode, Omittable<ConfirmationTokensResourceMandateData?>? mandateData, ConfirmationTokenObject? object, Omittable<String?>? paymentIntent, Omittable<ConfirmationTokensResourcePaymentMethodOptions?>? paymentMethodOptions, Omittable<ConfirmationTokensResourcePaymentMethodPreview?>? paymentMethodPreview, Omittable<String?>? returnUrl, Omittable<ConfirmationTokenSetupFutureUsage?>? setupFutureUsage, Omittable<String?>? setupIntent, Omittable<ConfirmationTokensResourceShipping?>? shipping, bool? useStripeSdk, }) { return ConfirmationToken(
+      json.containsKey('use_stripe_sdk') && json['use_stripe_sdk'] is bool;}
+ConfirmationToken copyWith({int? created, Omittable<int?>? expiresAt, String? id, bool? livemode, Omittable<ConfirmationTokensResourceMandateData?>? mandateData, ConfirmationTokenObject? object, Omittable<String?>? paymentIntent, Omittable<ConfirmationTokensResourcePaymentMethodOptions?>? paymentMethodOptions, Omittable<ConfirmationTokensResourcePaymentMethodPreview?>? paymentMethodPreview, Omittable<String?>? returnUrl, Omittable<ConfirmationTokenSetupFutureUsage?>? setupFutureUsage, Omittable<String?>? setupIntent, Omittable<ConfirmationTokensResourceShipping?>? shipping, bool? useStripeSdk, }) {return ConfirmationToken(
   created: created ?? this.created,
   expiresAt: expiresAt ?? this.expiresAt,
   id: id ?? this.id,
@@ -155,8 +155,8 @@ ConfirmationToken copyWith({int? created, Omittable<int?>? expiresAt, String? id
   setupIntent: setupIntent ?? this.setupIntent,
   shipping: shipping ?? this.shipping,
   useStripeSdk: useStripeSdk ?? this.useStripeSdk,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ConfirmationToken &&
           created == other.created &&
           expiresAt == other.expiresAt &&
@@ -171,7 +171,7 @@ ConfirmationToken copyWith({int? created, Omittable<int?>? expiresAt, String? id
           setupFutureUsage == other.setupFutureUsage &&
           setupIntent == other.setupIntent &&
           shipping == other.shipping &&
-          useStripeSdk == other.useStripeSdk; } 
-@override int get hashCode { return Object.hash(created, expiresAt, id, livemode, mandateData, object, paymentIntent, paymentMethodOptions, paymentMethodPreview, returnUrl, setupFutureUsage, setupIntent, shipping, useStripeSdk); } 
-@override String toString() { return 'ConfirmationToken(created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, mandateData: $mandateData, object: $object, paymentIntent: $paymentIntent, paymentMethodOptions: $paymentMethodOptions, paymentMethodPreview: $paymentMethodPreview, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, setupIntent: $setupIntent, shipping: $shipping, useStripeSdk: $useStripeSdk)'; } 
- }
+          useStripeSdk == other.useStripeSdk;}
+@override int get hashCode {return Object.hash(created, expiresAt, id, livemode, mandateData, object, paymentIntent, paymentMethodOptions, paymentMethodPreview, returnUrl, setupFutureUsage, setupIntent, shipping, useStripeSdk);}
+@override String toString() {return 'ConfirmationToken(created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, mandateData: $mandateData, object: $object, paymentIntent: $paymentIntent, paymentMethodOptions: $paymentMethodOptions, paymentMethodPreview: $paymentMethodPreview, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, setupIntent: $setupIntent, shipping: $shipping, useStripeSdk: $useStripeSdk)';}
+}

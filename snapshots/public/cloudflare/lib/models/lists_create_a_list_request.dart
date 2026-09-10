@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_description.dart';import 'lists_kind.dart';import 'lists_name.dart';@immutable final class ListsCreateAListRequest {const ListsCreateAListRequest({required this.kind, required this.name, this.description, });
 
-factory ListsCreateAListRequest.fromJson(Map<String, dynamic> json) { return ListsCreateAListRequest(
+factory ListsCreateAListRequest.fromJson(Map<String, dynamic> json) {return ListsCreateAListRequest(
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,
   kind: json['kind'] != null ? ListsKind.fromJson(json['kind'] as dynamic) : null,
   name: ListsName.fromJson(json['name'] as String),
-); }
+);}
 
 /// An informative summary of the list.
 final ListsDescription? description;
@@ -17,23 +17,23 @@ final ListsKind? kind;
 /// An informative name for the list. Use this name in filter and rule expressions.
 final ListsName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   'kind': kind?.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
-      json.containsKey('name'); } 
-ListsCreateAListRequest copyWith({ListsDescription? Function()? description, ListsKind? Function()? kind, ListsName? name, }) { return ListsCreateAListRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') &&
+      json.containsKey('name');}
+ListsCreateAListRequest copyWith({ListsDescription? Function()? description, ListsKind? Function()? kind, ListsName? name, }) {return ListsCreateAListRequest(
   description: description != null ? description() : this.description,
   kind: kind != null ? kind() : this.kind,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListsCreateAListRequest &&
           description == other.description &&
           kind == other.kind &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, kind, name); } 
-@override String toString() { return 'ListsCreateAListRequest(description: $description, kind: $kind, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(description, kind, name);}
+@override String toString() {return 'ListsCreateAListRequest(description: $description, kind: $kind, name: $name)';}
+}

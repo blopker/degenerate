@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_cardholder_request_billing.dart';import 'post_issuing_cardholders_cardholder_request_company.dart';import 'post_issuing_cardholders_cardholder_request_individual.dart';import 'post_issuing_cardholders_cardholder_request_spending_controls.dart';@immutable final class PostIssuingCardholdersCardholderRequestPreferredLocales {const PostIssuingCardholdersCardholderRequestPreferredLocales._(this.value);
 
-factory PostIssuingCardholdersCardholderRequestPreferredLocales.fromJson(String json) { return switch (json) {
+factory PostIssuingCardholdersCardholderRequestPreferredLocales.fromJson(String json) {return switch (json) {
   'de' => de,
   'en' => en,
   'es' => es,
   'fr' => fr,
   'it' => it,
   _ => PostIssuingCardholdersCardholderRequestPreferredLocales._(json),
-}; }
+};}
 
 static const PostIssuingCardholdersCardholderRequestPreferredLocales de = PostIssuingCardholdersCardholderRequestPreferredLocales._('de');
 
@@ -25,22 +25,22 @@ static const List<PostIssuingCardholdersCardholderRequestPreferredLocales> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardholdersCardholderRequestPreferredLocales && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequestPreferredLocales($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardholdersCardholderRequestPreferredLocales && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardholdersCardholderRequestPreferredLocales($value)';}
+}
 /// Specifies whether to permit authorizations on this cardholder's cards.
 @immutable final class PostIssuingCardholdersCardholderRequestStatus {const PostIssuingCardholdersCardholderRequestStatus._(this.value);
 
-factory PostIssuingCardholdersCardholderRequestStatus.fromJson(String json) { return switch (json) {
+factory PostIssuingCardholdersCardholderRequestStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   _ => PostIssuingCardholdersCardholderRequestStatus._(json),
-}; }
+};}
 
 static const PostIssuingCardholdersCardholderRequestStatus active = PostIssuingCardholdersCardholderRequestStatus._('active');
 
@@ -50,17 +50,17 @@ static const List<PostIssuingCardholdersCardholderRequestStatus> values = [activ
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardholdersCardholderRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequestStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostIssuingCardholdersCardholderRequestStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostIssuingCardholdersCardholderRequestStatus($value)';}
+}
 @immutable final class PostIssuingCardholdersCardholderRequest {const PostIssuingCardholdersCardholderRequest({this.billing, this.company, this.email, this.expand, this.individual, this.metadata, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, });
 
-factory PostIssuingCardholdersCardholderRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequest(
+factory PostIssuingCardholdersCardholderRequest.fromJson(Map<String, dynamic> json) {return PostIssuingCardholdersCardholderRequest(
   billing: json['billing'] != null ? PostIssuingCardholdersCardholderRequestBilling.fromJson(json['billing'] as Map<String, dynamic>) : null,
   company: json['company'] != null ? PostIssuingCardholdersCardholderRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
@@ -71,7 +71,7 @@ factory PostIssuingCardholdersCardholderRequest.fromJson(Map<String, dynamic> js
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => PostIssuingCardholdersCardholderRequestPreferredLocales.fromJson(e as String)).toList(),
   spendingControls: json['spending_controls'] != null ? PostIssuingCardholdersCardholderRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardholdersCardholderRequestStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The cardholder's billing address.
 final PostIssuingCardholdersCardholderRequestBilling? billing;
@@ -104,7 +104,7 @@ final PostIssuingCardholdersCardholderRequestSpendingControls? spendingControls;
 /// Specifies whether to permit authorizations on this cardholder's cards.
 final PostIssuingCardholdersCardholderRequestStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billing != null) 'billing': billing?.toJson(),
   if (company != null) 'company': company?.toJson(),
   'email': ?email,
@@ -115,9 +115,9 @@ Map<String, dynamic> toJson() { return {
   if (preferredLocales != null) 'preferred_locales': preferredLocales?.map((e) => e.toJson()).toList(),
   if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing', 'company', 'email', 'expand', 'individual', 'metadata', 'phone_number', 'preferred_locales', 'spending_controls', 'status'}.contains(key)); } 
-PostIssuingCardholdersCardholderRequest copyWith({PostIssuingCardholdersCardholderRequestBilling? Function()? billing, PostIssuingCardholdersCardholderRequestCompany? Function()? company, String? Function()? email, List<String>? Function()? expand, PostIssuingCardholdersCardholderRequestIndividual? Function()? individual, Map<String, String>? Function()? metadata, String? Function()? phoneNumber, List<PostIssuingCardholdersCardholderRequestPreferredLocales>? Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls? Function()? spendingControls, PostIssuingCardholdersCardholderRequestStatus? Function()? status, }) { return PostIssuingCardholdersCardholderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing', 'company', 'email', 'expand', 'individual', 'metadata', 'phone_number', 'preferred_locales', 'spending_controls', 'status'}.contains(key));}
+PostIssuingCardholdersCardholderRequest copyWith({PostIssuingCardholdersCardholderRequestBilling? Function()? billing, PostIssuingCardholdersCardholderRequestCompany? Function()? company, String? Function()? email, List<String>? Function()? expand, PostIssuingCardholdersCardholderRequestIndividual? Function()? individual, Map<String, String>? Function()? metadata, String? Function()? phoneNumber, List<PostIssuingCardholdersCardholderRequestPreferredLocales>? Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls? Function()? spendingControls, PostIssuingCardholdersCardholderRequestStatus? Function()? status, }) {return PostIssuingCardholdersCardholderRequest(
   billing: billing != null ? billing() : this.billing,
   company: company != null ? company() : this.company,
   email: email != null ? email() : this.email,
@@ -128,8 +128,8 @@ PostIssuingCardholdersCardholderRequest copyWith({PostIssuingCardholdersCardhold
   preferredLocales: preferredLocales != null ? preferredLocales() : this.preferredLocales,
   spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIssuingCardholdersCardholderRequest &&
           billing == other.billing &&
           company == other.company &&
@@ -140,7 +140,7 @@ PostIssuingCardholdersCardholderRequest copyWith({PostIssuingCardholdersCardhold
           phoneNumber == other.phoneNumber &&
           listEquals(preferredLocales, other.preferredLocales) &&
           spendingControls == other.spendingControls &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(billing, company, email, Object.hashAll(expand ?? const []), individual, metadata, phoneNumber, Object.hashAll(preferredLocales ?? const []), spendingControls, status); } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequest(billing: $billing, company: $company, email: $email, expand: $expand, individual: $individual, metadata: $metadata, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, spendingControls: $spendingControls, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(billing, company, email, Object.hashAll(expand ?? const []), individual, metadata, phoneNumber, Object.hashAll(preferredLocales ?? const []), spendingControls, status);}
+@override String toString() {return 'PostIssuingCardholdersCardholderRequest(billing: $billing, company: $company, email: $email, expand: $expand, individual: $individual, metadata: $metadata, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, spendingControls: $spendingControls, status: $status)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merge_group.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookMergeGroupChecksRequestedAction {const WebhookMergeGroupChecksRequestedAction._(this.value);
 
-factory WebhookMergeGroupChecksRequestedAction.fromJson(String json) { return switch (json) {
+factory WebhookMergeGroupChecksRequestedAction.fromJson(String json) {return switch (json) {
   'checks_requested' => checksRequested,
   _ => WebhookMergeGroupChecksRequestedAction._(json),
-}; }
+};}
 
 static const WebhookMergeGroupChecksRequestedAction checksRequested = WebhookMergeGroupChecksRequestedAction._('checks_requested');
 
@@ -13,24 +13,24 @@ static const List<WebhookMergeGroupChecksRequestedAction> values = [checksReques
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMergeGroupChecksRequestedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMergeGroupChecksRequestedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookMergeGroupChecksRequestedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookMergeGroupChecksRequestedAction($value)';}
+}
 @immutable final class WebhookMergeGroupChecksRequested {const WebhookMergeGroupChecksRequested({required this.action, required this.mergeGroup, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookMergeGroupChecksRequested.fromJson(Map<String, dynamic> json) { return WebhookMergeGroupChecksRequested(
+factory WebhookMergeGroupChecksRequested.fromJson(Map<String, dynamic> json) {return WebhookMergeGroupChecksRequested(
   action: WebhookMergeGroupChecksRequestedAction.fromJson(json['action'] as String),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   mergeGroup: MergeGroup.fromJson(json['merge_group'] as Map<String, dynamic>),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookMergeGroupChecksRequestedAction action;
 
@@ -44,32 +44,32 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'merge_group': mergeGroup.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('merge_group'); } 
-WebhookMergeGroupChecksRequested copyWith({WebhookMergeGroupChecksRequestedAction? action, SimpleInstallation? Function()? installation, MergeGroup? mergeGroup, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookMergeGroupChecksRequested(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('merge_group');}
+WebhookMergeGroupChecksRequested copyWith({WebhookMergeGroupChecksRequestedAction? action, SimpleInstallation? Function()? installation, MergeGroup? mergeGroup, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) {return WebhookMergeGroupChecksRequested(
   action: action ?? this.action,
   installation: installation != null ? installation() : this.installation,
   mergeGroup: mergeGroup ?? this.mergeGroup,
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookMergeGroupChecksRequested &&
           action == other.action &&
           installation == other.installation &&
           mergeGroup == other.mergeGroup &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, installation, mergeGroup, organization, repository, sender); } 
-@override String toString() { return 'WebhookMergeGroupChecksRequested(action: $action, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, installation, mergeGroup, organization, repository, sender);}
+@override String toString() {return 'WebhookMergeGroupChecksRequested(action: $action, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)';}
+}

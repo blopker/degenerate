@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByProtocolQueryType {const RadarGetDnsSummaryByProtocolQueryType._(this.value);
 
-factory RadarGetDnsSummaryByProtocolQueryType.fromJson(String json) { return switch (json) {
+factory RadarGetDnsSummaryByProtocolQueryType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'A6' => a6,
@@ -92,7 +92,7 @@ factory RadarGetDnsSummaryByProtocolQueryType.fromJson(String json) { return swi
   'X25' => x25,
   'ZONEMD' => zonemd,
   _ => RadarGetDnsSummaryByProtocolQueryType._(json),
-}; }
+};}
 
 static const RadarGetDnsSummaryByProtocolQueryType a = RadarGetDnsSummaryByProtocolQueryType._('A');
 
@@ -274,11 +274,11 @@ static const List<RadarGetDnsSummaryByProtocolQueryType> values = [a, aaaa, a6, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetDnsSummaryByProtocolQueryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetDnsSummaryByProtocolQueryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetDnsSummaryByProtocolQueryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetDnsSummaryByProtocolQueryType($value)';}
+}

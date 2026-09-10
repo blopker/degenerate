@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
 @immutable final class PaymentsEnumCapture {const PaymentsEnumCapture._(this.value);
 
-factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
+factory PaymentsEnumCapture.fromJson(String json) {return switch (json) {
   'payment-card-number' => paymentCardNumber,
   'expiration-date' => expirationDate,
   'security-code' => securityCode,
@@ -11,7 +11,7 @@ factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
   'bank-routing-number' => bankRoutingNumber,
   'bank-account-number' => bankAccountNumber,
   _ => PaymentsEnumCapture._(json),
-}; }
+};}
 
 static const PaymentsEnumCapture paymentCardNumber = PaymentsEnumCapture._('payment-card-number');
 
@@ -29,22 +29,22 @@ static const List<PaymentsEnumCapture> values = [paymentCardNumber, expirationDa
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumCapture && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumCapture($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsEnumCapture && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsEnumCapture($value)';}
+}
 /// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
 @immutable final class PaymentsEnumStatus {const PaymentsEnumStatus._(this.value);
 
-factory PaymentsEnumStatus.fromJson(String json) { return switch (json) {
+factory PaymentsEnumStatus.fromJson(String json) {return switch (json) {
   'complete' => complete,
   'cancel' => cancel,
   _ => PaymentsEnumStatus._(json),
-}; }
+};}
 
 static const PaymentsEnumStatus complete = PaymentsEnumStatus._('complete');
 
@@ -54,22 +54,22 @@ static const List<PaymentsEnumStatus> values = [complete, cancel];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsEnumStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsEnumStatus($value)';}
+}
 @immutable final class UpdatePaymentsRequest {const UpdatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.capture, this.status, });
 
-factory UpdatePaymentsRequest.fromJson(Map<String, dynamic> json) { return UpdatePaymentsRequest(
+factory UpdatePaymentsRequest.fromJson(Map<String, dynamic> json) {return UpdatePaymentsRequest(
   idempotencyKey: json['IdempotencyKey'] as String,
   statusCallback: Uri.parse(json['StatusCallback'] as String),
   capture: json['Capture'] != null ? PaymentsEnumCapture.fromJson(json['Capture'] as String) : null,
   status: json['Status'] != null ? PaymentsEnumStatus.fromJson(json['Status'] as String) : null,
-); }
+);}
 
 /// A unique token that will be used to ensure that multiple API calls with the same information do not result in multiple transactions. This should be a unique string value per API call and can be a randomly generated.
 final String idempotencyKey;
@@ -83,26 +83,26 @@ final PaymentsEnumCapture? capture;
 /// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
 final PaymentsEnumStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'IdempotencyKey': idempotencyKey,
   'StatusCallback': statusCallback.toString(),
   if (capture != null) 'Capture': capture?.toJson(),
   if (status != null) 'Status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
-      json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumCapture? Function()? capture, PaymentsEnumStatus? Function()? status, }) { return UpdatePaymentsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
+      json.containsKey('StatusCallback') && json['StatusCallback'] is String;}
+UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumCapture? Function()? capture, PaymentsEnumStatus? Function()? status, }) {return UpdatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   capture: capture != null ? capture() : this.capture,
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdatePaymentsRequest &&
           idempotencyKey == other.idempotencyKey &&
           statusCallback == other.statusCallback &&
           capture == other.capture &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(idempotencyKey, statusCallback, capture, status); } 
-@override String toString() { return 'UpdatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, capture: $capture, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(idempotencyKey, statusCallback, capture, status);}
+@override String toString() {return 'UpdatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, capture: $capture, status: $status)';}
+}

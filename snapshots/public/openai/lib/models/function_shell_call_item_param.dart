@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_action_param.dart';import 'function_shell_call_item_param_environment.dart';import 'function_shell_call_item_status.dart';/// A tool representing a request to execute one or more shell commands.
 @immutable final class FunctionShellCallItemParam {const FunctionShellCallItemParam({required this.callId, required this.type, required this.action, this.id = const Omittable.absent(), this.status = const Omittable.absent(), this.environment = const Omittable.absent(), });
 
-factory FunctionShellCallItemParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallItemParam(
+factory FunctionShellCallItemParam.fromJson(Map<String, dynamic> json) {return FunctionShellCallItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json['call_id'] as String,
   type: json['type'] as String,
   action: FunctionShellActionParam.fromJson(json['action'] as Map<String, dynamic>),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? FunctionShellCallItemStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
   environment: json.containsKey('environment') ? Omittable(json['environment'] != null ? FunctionShellCallItemParamEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The unique ID of the shell tool call. Populated when this item is returned via API.
 final Omittable<String?> id;
@@ -30,33 +30,33 @@ final Omittable<FunctionShellCallItemStatus?> status;
 /// The environment to execute the shell commands in.
 final Omittable<FunctionShellCallItemParamEnvironment?> environment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id.isPresent) 'id': id.value,
   'call_id': callId,
   'type': type,
   'action': action.toJson(),
   if (status.isPresent) 'status': status.value?.toJson(),
   if (environment.isPresent) 'environment': environment.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('call_id') && json['call_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('action'); } 
-FunctionShellCallItemParam copyWith({Omittable<String?>? id, String? callId, String? type, FunctionShellActionParam? action, Omittable<FunctionShellCallItemStatus?>? status, Omittable<FunctionShellCallItemParamEnvironment?>? environment, }) { return FunctionShellCallItemParam(
+      json.containsKey('action');}
+FunctionShellCallItemParam copyWith({Omittable<String?>? id, String? callId, String? type, FunctionShellActionParam? action, Omittable<FunctionShellCallItemStatus?>? status, Omittable<FunctionShellCallItemParamEnvironment?>? environment, }) {return FunctionShellCallItemParam(
   id: id ?? this.id,
   callId: callId ?? this.callId,
   type: type ?? this.type,
   action: action ?? this.action,
   status: status ?? this.status,
   environment: environment ?? this.environment,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FunctionShellCallItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           action == other.action &&
           status == other.status &&
-          environment == other.environment; } 
-@override int get hashCode { return Object.hash(id, callId, type, action, status, environment); } 
-@override String toString() { return 'FunctionShellCallItemParam(id: $id, callId: $callId, type: $type, action: $action, status: $status, environment: $environment)'; } 
- }
+          environment == other.environment;}
+@override int get hashCode {return Object.hash(id, callId, type, action, status, environment);}
+@override String toString() {return 'FunctionShellCallItemParam(id: $id, callId: $callId, type: $type, action: $action, status: $status, environment: $environment)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2 {const PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2._(this.value);
 
-factory PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2 $empty = PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculatio
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculationVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentCaptureRequestHooksInputsTaxCalculation {

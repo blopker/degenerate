@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_speech_request.dart';import '../models/create_speech_response_stream_event.dart';import '../models/create_transcription_request.dart';import '../models/create_transcription_response.dart';import '../models/create_transcription_response_diarized_json.dart';import '../models/create_transcription_response_json.dart';import '../models/create_transcription_response_stream_event.dart';import '../models/create_transcription_response_verbose_json.dart';import '../models/create_translation_request.dart';import '../models/create_translation_response.dart';import '../models/create_translation_response_json.dart';import '../models/create_translation_response_verbose_json.dart';import '../models/create_voice_consent_request.dart';import '../models/create_voice_request.dart';import '../models/update_voice_consent_request.dart';import '../models/voice_consent_deleted_resource.dart';import '../models/voice_consent_list_resource.dart';import '../models/voice_consent_resource.dart';import '../models/voice_resource.dart';/// AudioApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_speech_request.dart';import '../models/create_speech_response_stream_event.dart';import '../models/create_speech_success.dart';import '../models/create_transcription_request.dart';import '../models/create_transcription_response_stream_event.dart';import '../models/create_transcription_success.dart';import '../models/create_translation_request.dart';import '../models/create_translation_response.dart';import '../models/create_translation_response_json.dart';import '../models/create_translation_response_verbose_json.dart';import '../models/create_voice_consent_request.dart';import '../models/create_voice_request.dart';import '../models/update_voice_consent_request.dart';import '../models/voice_consent_deleted_resource.dart';import '../models/voice_consent_list_resource.dart';import '../models/voice_consent_resource.dart';import '../models/voice_resource.dart';/// AudioApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AudioApi with ApiExecutor {const AudioApi(this.apiConfig);
 /// 
 ///
 /// `POST /audio/speech`
-Future<ApiResult<OneOf2<Uint8List, CreateSpeechResponseStreamEvent>, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateSpeechSuccess, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,24 +25,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/octet-stream')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent');
-}
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
 
-  },
-);
- } 
+return   await execute(request, onSuccess: CreateSpeechSuccess.parse, );}
 /// Transcribes audio into the input language.
 /// 
 /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`
@@ -50,7 +34,7 @@ return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
 /// 
 ///
 /// `POST /audio/transcriptions`
-Future<ApiResult<OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateTranscriptionSuccess, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -84,28 +68,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>.a(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent');
-}
-final json = jsonDecode(response.body);
-return OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>.a(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
 
-  },
-);
- } 
+return   await execute(request, onSuccess: CreateTranscriptionSuccess.parse, );}
 /// Translates audio into English.
 ///
 /// `POST /audio/translations`
-Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -125,14 +93,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);}, );}
 /// Returns a list of voice consent recordings.
 ///
 /// List consent recordings available to your organization for creating custom voices.
@@ -141,7 +104,7 @@ return OneOf2.parse(json, fromA: (v) => CreateTranslationResponseJson.fromJson(v
 /// 
 ///
 /// `GET /audio/voice_consents`
-Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) {
   queryParameters['after'] = after;
@@ -161,14 +124,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Upload a voice consent recording.
 ///
 /// Upload a consent recording that authorizes creation of a custom voice.
@@ -177,7 +135,7 @@ return VoiceConsentListResource.fromJson(json as Map<String, dynamic>);
 /// 
 ///
 /// `POST /audio/voice_consents`
-Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -192,14 +150,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a voice consent recording.
 ///
 /// Retrieve consent recording metadata used for creating custom voices.
@@ -208,7 +161,7 @@ return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
 /// 
 ///
 /// `GET /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -217,14 +170,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Updates a voice consent recording (metadata only).
 ///
 /// Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.
@@ -233,7 +181,7 @@ return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
 /// 
 ///
 /// `POST /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -244,14 +192,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a voice consent recording.
 ///
 /// Delete a consent recording that was uploaded for creating custom voices.
@@ -260,7 +203,7 @@ return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
 /// 
 ///
 /// `DELETE /audio/voice_consents/{consent_id}`
-Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -269,14 +212,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentDeletedResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentDeletedResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Creates a custom voice.
 ///
 /// Create a custom voice you can use for audio output (for example, in Text-to-Speech and the Realtime API). This requires an audio sample and a previously uploaded consent recording.
@@ -285,7 +223,7 @@ return VoiceConsentDeletedResource.fromJson(json as Map<String, dynamic>);
 /// 
 ///
 /// `POST /audio/voices`
-Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -300,21 +238,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceResource.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Generates audio from the input text.
 /// 
 /// Returns the audio file content, or a stream of audio events.
 ///  (streaming)
 ///
 /// `POST /audio/speech`
-Stream<CreateSpeechResponseStreamEvent> createSpeechStream({required CreateSpeechRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<CreateSpeechResponseStreamEvent> createSpeechStream({required CreateSpeechRequest body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -331,7 +264,7 @@ return executeStreaming(
     return CreateSpeechResponseStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Transcribes audio into the input language.
 /// 
 /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`
@@ -339,7 +272,7 @@ return executeStreaming(
 ///  (streaming)
 ///
 /// `POST /audio/transcriptions`
-Stream<CreateTranscriptionResponseStreamEvent> createTranscriptionStream({required CreateTranscriptionRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<CreateTranscriptionResponseStreamEvent> createTranscriptionStream({required CreateTranscriptionRequest body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -379,5 +312,5 @@ return executeStreaming(
     return CreateTranscriptionResponseStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

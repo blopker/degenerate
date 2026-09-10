@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_price_request_currency_options.dart';import 'post_prices_price_request_metadata.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
 @immutable final class PostPricesPriceRequestTaxBehavior {const PostPricesPriceRequestTaxBehavior._(this.value);
 
-factory PostPricesPriceRequestTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostPricesPriceRequestTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostPricesPriceRequestTaxBehavior._(json),
-}; }
+};}
 
 static const PostPricesPriceRequestTaxBehavior exclusive = PostPricesPriceRequestTaxBehavior._('exclusive');
 
@@ -20,17 +20,17 @@ static const List<PostPricesPriceRequestTaxBehavior> values = [exclusive, inclus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesPriceRequestTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesPriceRequestTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPricesPriceRequestTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPricesPriceRequestTaxBehavior($value)';}
+}
 @immutable final class PostPricesPriceRequest {const PostPricesPriceRequest({this.active, this.currencyOptions, this.expand, this.lookupKey, this.metadata, this.nickname, this.taxBehavior, this.transferLookupKey, });
 
-factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequest(
+factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) {return PostPricesPriceRequest(
   active: json['active'] as bool?,
   currencyOptions: json['currency_options'] != null ? PostPricesPriceRequestCurrencyOptions.fromJson(json['currency_options']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -39,7 +39,7 @@ factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return Post
   nickname: json['nickname'] as String?,
   taxBehavior: json['tax_behavior'] != null ? PostPricesPriceRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
-); }
+);}
 
 /// Whether the price can be used for new purchases. Defaults to `true`.
 final bool? active;
@@ -65,7 +65,7 @@ final PostPricesPriceRequestTaxBehavior? taxBehavior;
 /// If set to true, will atomically remove the lookup key from the existing price, and assign it to this price.
 final bool? transferLookupKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (currencyOptions != null) 'currency_options': currencyOptions?.toJson(),
   'expand': ?expand,
@@ -74,9 +74,9 @@ Map<String, dynamic> toJson() { return {
   'nickname': ?nickname,
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
   'transfer_lookup_key': ?transferLookupKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'currency_options', 'expand', 'lookup_key', 'metadata', 'nickname', 'tax_behavior', 'transfer_lookup_key'}.contains(key)); } 
-PostPricesPriceRequest copyWith({bool? Function()? active, PostPricesPriceRequestCurrencyOptions? Function()? currencyOptions, List<String>? Function()? expand, String? Function()? lookupKey, PostPricesPriceRequestMetadata? Function()? metadata, String? Function()? nickname, PostPricesPriceRequestTaxBehavior? Function()? taxBehavior, bool? Function()? transferLookupKey, }) { return PostPricesPriceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'currency_options', 'expand', 'lookup_key', 'metadata', 'nickname', 'tax_behavior', 'transfer_lookup_key'}.contains(key));}
+PostPricesPriceRequest copyWith({bool? Function()? active, PostPricesPriceRequestCurrencyOptions? Function()? currencyOptions, List<String>? Function()? expand, String? Function()? lookupKey, PostPricesPriceRequestMetadata? Function()? metadata, String? Function()? nickname, PostPricesPriceRequestTaxBehavior? Function()? taxBehavior, bool? Function()? transferLookupKey, }) {return PostPricesPriceRequest(
   active: active != null ? active() : this.active,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   expand: expand != null ? expand() : this.expand,
@@ -85,8 +85,8 @@ PostPricesPriceRequest copyWith({bool? Function()? active, PostPricesPriceReques
   nickname: nickname != null ? nickname() : this.nickname,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   transferLookupKey: transferLookupKey != null ? transferLookupKey() : this.transferLookupKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPricesPriceRequest &&
           active == other.active &&
           currencyOptions == other.currencyOptions &&
@@ -95,7 +95,7 @@ PostPricesPriceRequest copyWith({bool? Function()? active, PostPricesPriceReques
           metadata == other.metadata &&
           nickname == other.nickname &&
           taxBehavior == other.taxBehavior &&
-          transferLookupKey == other.transferLookupKey; } 
-@override int get hashCode { return Object.hash(active, currencyOptions, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, taxBehavior, transferLookupKey); } 
-@override String toString() { return 'PostPricesPriceRequest(active: $active, currencyOptions: $currencyOptions, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, taxBehavior: $taxBehavior, transferLookupKey: $transferLookupKey)'; } 
- }
+          transferLookupKey == other.transferLookupKey;}
+@override int get hashCode {return Object.hash(active, currencyOptions, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, taxBehavior, transferLookupKey);}
+@override String toString() {return 'PostPricesPriceRequest(active: $active, currencyOptions: $currencyOptions, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, taxBehavior: $taxBehavior, transferLookupKey: $transferLookupKey)';}
+}

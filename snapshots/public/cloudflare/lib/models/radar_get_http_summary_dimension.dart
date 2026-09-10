@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the HTTP attribute by which to group the results.
 @immutable final class RadarGetHttpSummaryDimension {const RadarGetHttpSummaryDimension._(this.value);
 
-factory RadarGetHttpSummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetHttpSummaryDimension.fromJson(String json) {return switch (json) {
   'ADM1' => adm1,
   'AS' => $as,
   'BOT_CLASS' => botClass,
@@ -18,7 +18,7 @@ factory RadarGetHttpSummaryDimension.fromJson(String json) { return switch (json
   'POST_QUANTUM' => postQuantum,
   'TLS_VERSION' => tlsVersion,
   _ => RadarGetHttpSummaryDimension._(json),
-}; }
+};}
 
 static const RadarGetHttpSummaryDimension adm1 = RadarGetHttpSummaryDimension._('ADM1');
 
@@ -50,11 +50,11 @@ static const List<RadarGetHttpSummaryDimension> values = [adm1, $as, botClass, b
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpSummaryDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpSummaryDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpSummaryDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpSummaryDimension($value)';}
+}

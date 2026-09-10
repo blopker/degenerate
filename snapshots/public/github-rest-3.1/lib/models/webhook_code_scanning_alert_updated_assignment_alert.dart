@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_dismissed_comment.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_updated_assignment_alert_dismissed_by.dart';import 'webhook_code_scanning_alert_updated_assignment_alert_most_recent_instance.dart';import 'webhook_code_scanning_alert_updated_assignment_alert_rule.dart';import 'webhook_code_scanning_alert_updated_assignment_alert_tool.dart';/// The reason for dismissing or closing the alert.
 @immutable final class WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason {const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(this.value);
 
-factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(String json) {return switch (json) {
   'false positive' => falsePositive,
   "won't fix" => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason falsePositive = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('false positive');
 
@@ -23,24 +23,24 @@ static const List<WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason($value)';}
+}
 /// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
 @immutable final class WebhookCodeScanningAlertUpdatedAssignmentAlertState {const WebhookCodeScanningAlertUpdatedAssignmentAlertState._(this.value);
 
-factory WebhookCodeScanningAlertUpdatedAssignmentAlertState.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertUpdatedAssignmentAlertState.fromJson(String json) {return switch (json) {
   'open' => open,
   'dismissed' => dismissed,
   'fixed' => fixed,
   'null' => $null,
   _ => WebhookCodeScanningAlertUpdatedAssignmentAlertState._(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAlertState open = WebhookCodeScanningAlertUpdatedAssignmentAlertState._('open');
 
@@ -54,18 +54,18 @@ static const List<WebhookCodeScanningAlertUpdatedAssignmentAlertState> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertUpdatedAssignmentAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertUpdatedAssignmentAlertState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookCodeScanningAlertUpdatedAssignmentAlertState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookCodeScanningAlertUpdatedAssignmentAlertState($value)';}
+}
 /// The code scanning alert involved in the event.
 @immutable final class WebhookCodeScanningAlertUpdatedAssignmentAlert {const WebhookCodeScanningAlertUpdatedAssignmentAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment = const Omittable.absent(), this.fixedAt = const Omittable.absent(), this.mostRecentInstance = const Omittable.absent(), });
 
-factory WebhookCodeScanningAlertUpdatedAssignmentAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignmentAlert(
+factory WebhookCodeScanningAlertUpdatedAssignmentAlert.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertUpdatedAssignmentAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: json['dismissed_at'] != null ? DateTime.parse(json['dismissed_at'] as String) : null,
@@ -80,7 +80,7 @@ factory WebhookCodeScanningAlertUpdatedAssignmentAlert.fromJson(Map<String, dyna
   state: json['state'] != null ? WebhookCodeScanningAlertUpdatedAssignmentAlertState.fromJson(json['state'] as String) : null,
   tool: WebhookCodeScanningAlertUpdatedAssignmentAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final List<SimpleUser>? assignees;
 
@@ -118,7 +118,7 @@ final WebhookCodeScanningAlertUpdatedAssignmentAlertTool tool;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
   'dismissed_at': dismissedAt?.toIso8601String(),
@@ -133,8 +133,8 @@ Map<String, dynamic> toJson() { return {
   'state': state?.toJson(),
   'tool': tool.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('dismissed_at') && (json['dismissed_at'] == null || json['dismissed_at'] is String) &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
@@ -143,8 +143,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('rule') &&
       json.containsKey('state') &&
       json.containsKey('tool') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertUpdatedAssignmentAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertUpdatedAssignmentAlertRule? rule, WebhookCodeScanningAlertUpdatedAssignmentAlertState? Function()? state, WebhookCodeScanningAlertUpdatedAssignmentAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertUpdatedAssignmentAlert(
+      json.containsKey('url') && json['url'] is String;}
+WebhookCodeScanningAlertUpdatedAssignmentAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertUpdatedAssignmentAlertRule? rule, WebhookCodeScanningAlertUpdatedAssignmentAlertState? Function()? state, WebhookCodeScanningAlertUpdatedAssignmentAlertTool? tool, Uri? url, }) {return WebhookCodeScanningAlertUpdatedAssignmentAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
@@ -159,8 +159,8 @@ WebhookCodeScanningAlertUpdatedAssignmentAlert copyWith({List<SimpleUser>? Funct
   state: state != null ? state() : this.state,
   tool: tool ?? this.tool,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookCodeScanningAlertUpdatedAssignmentAlert &&
           listEquals(assignees, other.assignees) &&
           createdAt == other.createdAt &&
@@ -175,7 +175,7 @@ WebhookCodeScanningAlertUpdatedAssignmentAlert copyWith({List<SimpleUser>? Funct
           rule == other.rule &&
           state == other.state &&
           tool == other.tool &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url); } 
-@override String toString() { return 'WebhookCodeScanningAlertUpdatedAssignmentAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url);}
+@override String toString() {return 'WebhookCodeScanningAlertUpdatedAssignmentAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)';}
+}

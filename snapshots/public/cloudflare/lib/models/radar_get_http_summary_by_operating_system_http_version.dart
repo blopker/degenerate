@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByOperatingSystemHttpVersion {const RadarGetHttpSummaryByOperatingSystemHttpVersion._(this.value);
 
-factory RadarGetHttpSummaryByOperatingSystemHttpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetHttpSummaryByOperatingSystemHttpVersion.fromJson(String json) {return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
   _ => RadarGetHttpSummaryByOperatingSystemHttpVersion._(json),
-}; }
+};}
 
 static const RadarGetHttpSummaryByOperatingSystemHttpVersion httPv1 = RadarGetHttpSummaryByOperatingSystemHttpVersion._('HTTPv1');
 
@@ -19,11 +19,11 @@ static const List<RadarGetHttpSummaryByOperatingSystemHttpVersion> values = [htt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetHttpSummaryByOperatingSystemHttpVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetHttpSummaryByOperatingSystemHttpVersion($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetHttpSummaryByOperatingSystemHttpVersion && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetHttpSummaryByOperatingSystemHttpVersion($value)';}
+}

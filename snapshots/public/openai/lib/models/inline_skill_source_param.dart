@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the inline skill source. Must be `base64`.
 @immutable final class InlineSkillSourceParamType {const InlineSkillSourceParamType._(this.value);
 
-factory InlineSkillSourceParamType.fromJson(String json) { return switch (json) {
+factory InlineSkillSourceParamType.fromJson(String json) {return switch (json) {
   'base64' => base64,
   _ => InlineSkillSourceParamType._(json),
-}; }
+};}
 
 static const InlineSkillSourceParamType base64 = InlineSkillSourceParamType._('base64');
 
@@ -14,21 +14,21 @@ static const List<InlineSkillSourceParamType> values = [base64];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineSkillSourceParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineSkillSourceParamType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InlineSkillSourceParamType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InlineSkillSourceParamType($value)';}
+}
 /// The media type of the inline skill payload. Must be `application/zip`.
 @immutable final class InlineSkillSourceParamMediaType {const InlineSkillSourceParamMediaType._(this.value);
 
-factory InlineSkillSourceParamMediaType.fromJson(String json) { return switch (json) {
+factory InlineSkillSourceParamMediaType.fromJson(String json) {return switch (json) {
   'application/zip' => applicationZip,
   _ => InlineSkillSourceParamMediaType._(json),
-}; }
+};}
 
 static const InlineSkillSourceParamMediaType applicationZip = InlineSkillSourceParamMediaType._('application/zip');
 
@@ -36,22 +36,22 @@ static const List<InlineSkillSourceParamMediaType> values = [applicationZip];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineSkillSourceParamMediaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineSkillSourceParamMediaType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InlineSkillSourceParamMediaType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InlineSkillSourceParamMediaType($value)';}
+}
 /// Inline skill payload
 @immutable final class InlineSkillSourceParam {const InlineSkillSourceParam({required this.type, required this.mediaType, required this.data, });
 
-factory InlineSkillSourceParam.fromJson(Map<String, dynamic> json) { return InlineSkillSourceParam(
+factory InlineSkillSourceParam.fromJson(Map<String, dynamic> json) {return InlineSkillSourceParam(
   type: InlineSkillSourceParamType.fromJson(json['type'] as String),
   mediaType: InlineSkillSourceParamMediaType.fromJson(json['media_type'] as String),
   data: json['data'] as String,
-); }
+);}
 
 /// The type of the inline skill source. Must be `base64`.
 final InlineSkillSourceParamType type;
@@ -62,24 +62,24 @@ final InlineSkillSourceParamMediaType mediaType;
 /// Base64-encoded skill zip bundle.
 final String data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'media_type': mediaType.toJson(),
   'data': data,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('media_type') &&
-      json.containsKey('data') && json['data'] is String; } 
-InlineSkillSourceParam copyWith({InlineSkillSourceParamType? type, InlineSkillSourceParamMediaType? mediaType, String? data, }) { return InlineSkillSourceParam(
+      json.containsKey('data') && json['data'] is String;}
+InlineSkillSourceParam copyWith({InlineSkillSourceParamType? type, InlineSkillSourceParamMediaType? mediaType, String? data, }) {return InlineSkillSourceParam(
   type: type ?? this.type,
   mediaType: mediaType ?? this.mediaType,
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InlineSkillSourceParam &&
           type == other.type &&
           mediaType == other.mediaType &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(type, mediaType, data); } 
-@override String toString() { return 'InlineSkillSourceParam(type: $type, mediaType: $mediaType, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(type, mediaType, data);}
+@override String toString() {return 'InlineSkillSourceParam(type: $type, mediaType: $mediaType, data: $data)';}
+}

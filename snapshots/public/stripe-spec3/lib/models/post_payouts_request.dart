@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method used to send this payout, which is `standard` or `instant`. We support `instant` for payouts to debit cards and bank accounts in certain countries. Learn more about [bank support for Instant Payouts](https://stripe.com/docs/payouts/instant-payouts-banks).
 @immutable final class PostPayoutsRequestMethod {const PostPayoutsRequestMethod._(this.value);
 
-factory PostPayoutsRequestMethod.fromJson(String json) { return switch (json) {
+factory PostPayoutsRequestMethod.fromJson(String json) {return switch (json) {
   'instant' => instant,
   'standard' => standard,
   _ => PostPayoutsRequestMethod._(json),
-}; }
+};}
 
 static const PostPayoutsRequestMethod instant = PostPayoutsRequestMethod._('instant');
 
@@ -17,23 +17,23 @@ static const List<PostPayoutsRequestMethod> values = [instant, standard];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPayoutsRequestMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPayoutsRequestMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPayoutsRequestMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPayoutsRequestMethod($value)';}
+}
 /// The balance type of your Stripe balance to draw this payout from. Balances for different payment sources are kept separately. You can find the amounts with the Balances API. One of `bank_account`, `card`, or `fpx`.
 @immutable final class PostPayoutsRequestSourceType {const PostPayoutsRequestSourceType._(this.value);
 
-factory PostPayoutsRequestSourceType.fromJson(String json) { return switch (json) {
+factory PostPayoutsRequestSourceType.fromJson(String json) {return switch (json) {
   'bank_account' => bankAccount,
   'card' => card,
   'fpx' => fpx,
   _ => PostPayoutsRequestSourceType._(json),
-}; }
+};}
 
 static const PostPayoutsRequestSourceType bankAccount = PostPayoutsRequestSourceType._('bank_account');
 
@@ -45,17 +45,17 @@ static const List<PostPayoutsRequestSourceType> values = [bankAccount, card, fpx
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPayoutsRequestSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPayoutsRequestSourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPayoutsRequestSourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPayoutsRequestSourceType($value)';}
+}
 @immutable final class PostPayoutsRequest {const PostPayoutsRequest({required this.amount, required this.currency, this.description, this.destination, this.expand, this.metadata, this.method, this.payoutMethod, this.sourceType, this.statementDescriptor, });
 
-factory PostPayoutsRequest.fromJson(Map<String, dynamic> json) { return PostPayoutsRequest(
+factory PostPayoutsRequest.fromJson(Map<String, dynamic> json) {return PostPayoutsRequest(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -66,7 +66,7 @@ factory PostPayoutsRequest.fromJson(Map<String, dynamic> json) { return PostPayo
   payoutMethod: json['payout_method'] as String?,
   sourceType: json['source_type'] != null ? PostPayoutsRequestSourceType.fromJson(json['source_type'] as String) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
-); }
+);}
 
 /// A positive integer in cents representing how much to payout.
 final int amount;
@@ -98,7 +98,7 @@ final PostPayoutsRequestSourceType? sourceType;
 /// A string that displays on the recipient's bank or card statement (up to 22 characters). A `statement_descriptor` that's longer than 22 characters return an error. Most banks truncate this information and display it inconsistently. Some banks might not display it at all.
 final String? statementDescriptor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'description': ?description,
@@ -109,10 +109,10 @@ Map<String, dynamic> toJson() { return {
   'payout_method': ?payoutMethod,
   if (sourceType != null) 'source_type': sourceType?.toJson(),
   'statement_descriptor': ?statementDescriptor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostPayoutsRequestMethod? Function()? method, String? Function()? payoutMethod, PostPayoutsRequestSourceType? Function()? sourceType, String? Function()? statementDescriptor, }) { return PostPayoutsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostPayoutsRequestMethod? Function()? method, String? Function()? payoutMethod, PostPayoutsRequestSourceType? Function()? sourceType, String? Function()? statementDescriptor, }) {return PostPayoutsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -123,8 +123,8 @@ PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? 
   payoutMethod: payoutMethod != null ? payoutMethod() : this.payoutMethod,
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPayoutsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -135,7 +135,7 @@ PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? 
           method == other.method &&
           payoutMethod == other.payoutMethod &&
           sourceType == other.sourceType &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, method, payoutMethod, sourceType, statementDescriptor); } 
-@override String toString() { return 'PostPayoutsRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, method: $method, payoutMethod: $payoutMethod, sourceType: $sourceType, statementDescriptor: $statementDescriptor)'; } 
- }
+          statementDescriptor == other.statementDescriptor;}
+@override int get hashCode {return Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, method, payoutMethod, sourceType, statementDescriptor);}
+@override String toString() {return 'PostPayoutsRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, method: $method, payoutMethod: $payoutMethod, sourceType: $sourceType, statementDescriptor: $statementDescriptor)';}
+}

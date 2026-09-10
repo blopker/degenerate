@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PendingInvoiceItemIntervalParams3Interval {const PendingInvoiceItemIntervalParams3Interval._(this.value);
 
-factory PendingInvoiceItemIntervalParams3Interval.fromJson(String json) { return switch (json) {
+factory PendingInvoiceItemIntervalParams3Interval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PendingInvoiceItemIntervalParams3Interval._(json),
-}; }
+};}
 
 static const PendingInvoiceItemIntervalParams3Interval day = PendingInvoiceItemIntervalParams3Interval._('day');
 
@@ -22,38 +22,38 @@ static const List<PendingInvoiceItemIntervalParams3Interval> values = [day, mont
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PendingInvoiceItemIntervalParams3Interval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PendingInvoiceItemIntervalParams3Interval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PendingInvoiceItemIntervalParams3Interval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PendingInvoiceItemIntervalParams3Interval($value)';}
+}
 @immutable final class PendingInvoiceItemIntervalParams3 {const PendingInvoiceItemIntervalParams3({required this.interval, this.intervalCount, });
 
-factory PendingInvoiceItemIntervalParams3.fromJson(Map<String, dynamic> json) { return PendingInvoiceItemIntervalParams3(
+factory PendingInvoiceItemIntervalParams3.fromJson(Map<String, dynamic> json) {return PendingInvoiceItemIntervalParams3(
   interval: PendingInvoiceItemIntervalParams3Interval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-); }
+);}
 
 final PendingInvoiceItemIntervalParams3Interval interval;
 
 final int? intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PendingInvoiceItemIntervalParams3 copyWith({PendingInvoiceItemIntervalParams3Interval? interval, int? Function()? intervalCount, }) { return PendingInvoiceItemIntervalParams3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PendingInvoiceItemIntervalParams3 copyWith({PendingInvoiceItemIntervalParams3Interval? interval, int? Function()? intervalCount, }) {return PendingInvoiceItemIntervalParams3(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PendingInvoiceItemIntervalParams3 &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PendingInvoiceItemIntervalParams3(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'PendingInvoiceItemIntervalParams3(interval: $interval, intervalCount: $intervalCount)';}
+}

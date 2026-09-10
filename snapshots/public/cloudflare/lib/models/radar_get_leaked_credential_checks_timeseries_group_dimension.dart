@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupDimension {const RadarGetLeakedCredentialChecksTimeseriesGroupDimension._(this.value);
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetLeakedCredentialChecksTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'COMPROMISED' => compromised,
   'BOT_CLASS' => botClass,
   _ => RadarGetLeakedCredentialChecksTimeseriesGroupDimension._(json),
-}; }
+};}
 
 static const RadarGetLeakedCredentialChecksTimeseriesGroupDimension compromised = RadarGetLeakedCredentialChecksTimeseriesGroupDimension._('COMPROMISED');
 
@@ -17,11 +17,11 @@ static const List<RadarGetLeakedCredentialChecksTimeseriesGroupDimension> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksTimeseriesGroupDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetLeakedCredentialChecksTimeseriesGroupDimension($value)';}
+}

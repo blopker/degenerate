@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_item_ip.dart';@immutable final class ListsListItemIpObject {const ListsListItemIpObject({required this.ip});
 
-factory ListsListItemIpObject.fromJson(Map<String, dynamic> json) { return ListsListItemIpObject(
+factory ListsListItemIpObject.fromJson(Map<String, dynamic> json) {return ListsListItemIpObject(
   ip: ListsItemIp.fromJson(json['ip'] as String),
-); }
+);}
 
 /// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
 final ListsItemIp ip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip': ip.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip'); } 
-ListsListItemIpObject copyWith({ListsItemIp? ip}) { return ListsListItemIpObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip');}
+ListsListItemIpObject copyWith({ListsItemIp? ip}) {return ListsListItemIpObject(
   ip: ip ?? this.ip,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ListsListItemIpObject &&
-          ip == other.ip; } 
-@override int get hashCode { return ip.hashCode; } 
-@override String toString() { return 'ListsListItemIpObject(ip: $ip)'; } 
- }
+          ip == other.ip;}
+@override int get hashCode {return ip.hashCode;}
+@override String toString() {return 'ListsListItemIpObject(ip: $ip)';}
+}

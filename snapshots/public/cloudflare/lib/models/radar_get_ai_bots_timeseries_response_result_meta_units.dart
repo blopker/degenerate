@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiBotsTimeseriesResponseResultMetaUnits {const RadarGetAiBotsTimeseriesResponseResultMetaUnits({required this.name, required this.value, });
 
-factory RadarGetAiBotsTimeseriesResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesResponseResultMetaUnits(
+factory RadarGetAiBotsTimeseriesResponseResultMetaUnits.fromJson(Map<String, dynamic> json) {return RadarGetAiBotsTimeseriesResponseResultMetaUnits(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String name;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetAiBotsTimeseriesResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetAiBotsTimeseriesResponseResultMetaUnits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetAiBotsTimeseriesResponseResultMetaUnits copyWith({String? name, String? value, }) {return RadarGetAiBotsTimeseriesResponseResultMetaUnits(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAiBotsTimeseriesResponseResultMetaUnits &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetAiBotsTimeseriesResponseResultMetaUnits(name: $name, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(name, value);}
+@override String toString() {return 'RadarGetAiBotsTimeseriesResponseResultMetaUnits(name: $name, value: $value)';}
+}

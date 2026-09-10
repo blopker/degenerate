@@ -4,14 +4,14 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 /// 
 @immutable final class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat._(this.value);
 
-factory CreateTranslationRequestResponseFormat.fromJson(String json) { return switch (json) {
+factory CreateTranslationRequestResponseFormat.fromJson(String json) {return switch (json) {
   'json' => $json,
   'text' => text,
   'srt' => srt,
   'verbose_json' => verboseJson,
   'vtt' => vtt,
   _ => CreateTranslationRequestResponseFormat._(json),
-}; }
+};}
 
 static const CreateTranslationRequestResponseFormat $json = CreateTranslationRequestResponseFormat._('json');
 
@@ -27,23 +27,23 @@ static const List<CreateTranslationRequestResponseFormat> values = [$json, text,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranslationRequestResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateTranslationRequestResponseFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CreateTranslationRequestResponseFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CreateTranslationRequestResponseFormat($value)';}
+}
 @immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat, this.temperature, });
 
-factory CreateTranslationRequest.fromJson(Map<String, dynamic> json) { return CreateTranslationRequest(
+factory CreateTranslationRequest.fromJson(Map<String, dynamic> json) {return CreateTranslationRequest(
   file: base64Decode(json['file'] as String),
   model: CreateTranslationRequestModel.fromJson(json['model']),
   prompt: json['prompt'] as String?,
   responseFormat: json['response_format'] != null ? CreateTranslationRequestResponseFormat.fromJson(json['response_format'] as String) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-); }
+);}
 
 /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
 /// 
@@ -66,32 +66,32 @@ final CreateTranslationRequestResponseFormat? responseFormat;
 final double? temperature;
 
 /// The value with the schema default applied when absent.
-CreateTranslationRequestResponseFormat get responseFormatOrDefault { return responseFormat ?? CreateTranslationRequestResponseFormat.fromJson('json'); } 
+CreateTranslationRequestResponseFormat get responseFormatOrDefault {return responseFormat ?? CreateTranslationRequestResponseFormat.fromJson('json');}
 /// The value with the schema default applied when absent.
-double get temperatureOrDefault { return temperature ?? 0.0; } 
-Map<String, dynamic> toJson() { return {
+double get temperatureOrDefault {return temperature ?? 0.0;}
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
   'model': model.toJson(),
   'prompt': ?prompt,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   'temperature': ?temperature,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('model'); } 
-CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat? Function()? responseFormat, double? Function()? temperature, }) { return CreateTranslationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('model');}
+CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat? Function()? responseFormat, double? Function()? temperature, }) {return CreateTranslationRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   temperature: temperature != null ? temperature() : this.temperature,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateTranslationRequest &&
           listEquals(file, other.file) &&
           model == other.model &&
           prompt == other.prompt &&
           responseFormat == other.responseFormat &&
-          temperature == other.temperature; } 
-@override int get hashCode { return Object.hash(Object.hashAll(file), model, prompt, responseFormat, temperature); } 
-@override String toString() { return 'CreateTranslationRequest(file: $file, model: $model, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature)'; } 
- }
+          temperature == other.temperature;}
+@override int get hashCode {return Object.hash(Object.hashAll(file), model, prompt, responseFormat, temperature);}
+@override String toString() {return 'CreateTranslationRequest(file: $file, model: $model, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature)';}
+}

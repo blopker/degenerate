@@ -556,6 +556,7 @@ class Generator {
           if (entryChanged) {
             respChanged = true;
             responses[entry.key] = IrResponse(
+              statusKey: entry.value.statusKey,
               description: resp.description,
               content: newContent,
               headers: resp.headers,
@@ -579,6 +580,7 @@ class Generator {
           if (drChanged) {
             opChanged = true;
             defaultResp = IrResponse(
+              statusKey: resp.statusKey,
               description: resp.description,
               content: newContent,
               headers: resp.headers,

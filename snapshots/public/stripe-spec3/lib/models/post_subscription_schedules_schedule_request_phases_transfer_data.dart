@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesTransferData {const PostSubscriptionSchedulesScheduleRequestPhasesTransferData({required this.destination, this.amountPercent, });
 
-factory PostSubscriptionSchedulesScheduleRequestPhasesTransferData.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhasesTransferData(
+factory PostSubscriptionSchedulesScheduleRequestPhasesTransferData.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesScheduleRequestPhasesTransferData(
   amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,
   destination: json['destination'] as String,
-); }
+);}
 
 final double? amountPercent;
 
 final String destination;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_percent': ?amountPercent,
   'destination': destination,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination') && json['destination'] is String; } 
-PostSubscriptionSchedulesScheduleRequestPhasesTransferData copyWith({double? Function()? amountPercent, String? destination, }) { return PostSubscriptionSchedulesScheduleRequestPhasesTransferData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination') && json['destination'] is String;}
+PostSubscriptionSchedulesScheduleRequestPhasesTransferData copyWith({double? Function()? amountPercent, String? destination, }) {return PostSubscriptionSchedulesScheduleRequestPhasesTransferData(
   amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
   destination: destination ?? this.destination,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesScheduleRequestPhasesTransferData &&
           amountPercent == other.amountPercent &&
-          destination == other.destination; } 
-@override int get hashCode { return Object.hash(amountPercent, destination); } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesTransferData(amountPercent: $amountPercent, destination: $destination)'; } 
- }
+          destination == other.destination;}
+@override int get hashCode {return Object.hash(amountPercent, destination);}
+@override String toString() {return 'PostSubscriptionSchedulesScheduleRequestPhasesTransferData(amountPercent: $amountPercent, destination: $destination)';}
+}

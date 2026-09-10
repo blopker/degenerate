@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior {const PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior._(this.value);
 
-factory PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior._(json),
-}; }
+};}
 
 static const PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior exclusive = PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior._('exclusive');
 
@@ -19,38 +19,38 @@ static const List<PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBeha
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior($value)';}
+}
 @immutable final class PostShippingRatesRequestFixedAmountCurrencyOptionsValue {const PostShippingRatesRequestFixedAmountCurrencyOptionsValue({required this.amount, this.taxBehavior, });
 
-factory PostShippingRatesRequestFixedAmountCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostShippingRatesRequestFixedAmountCurrencyOptionsValue(
+factory PostShippingRatesRequestFixedAmountCurrencyOptionsValue.fromJson(Map<String, dynamic> json) {return PostShippingRatesRequestFixedAmountCurrencyOptionsValue(
   amount: (json['amount'] as num).toInt(),
   taxBehavior: json['tax_behavior'] != null ? PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-); }
+);}
 
 final int amount;
 
 final PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior? taxBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
-PostShippingRatesRequestFixedAmountCurrencyOptionsValue copyWith({int? amount, PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior? Function()? taxBehavior, }) { return PostShippingRatesRequestFixedAmountCurrencyOptionsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num;}
+PostShippingRatesRequestFixedAmountCurrencyOptionsValue copyWith({int? amount, PostShippingRatesRequestFixedAmountCurrencyOptionsValueTaxBehavior? Function()? taxBehavior, }) {return PostShippingRatesRequestFixedAmountCurrencyOptionsValue(
   amount: amount ?? this.amount,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostShippingRatesRequestFixedAmountCurrencyOptionsValue &&
           amount == other.amount &&
-          taxBehavior == other.taxBehavior; } 
-@override int get hashCode { return Object.hash(amount, taxBehavior); } 
-@override String toString() { return 'PostShippingRatesRequestFixedAmountCurrencyOptionsValue(amount: $amount, taxBehavior: $taxBehavior)'; } 
- }
+          taxBehavior == other.taxBehavior;}
+@override int get hashCode {return Object.hash(amount, taxBehavior);}
+@override String toString() {return 'PostShippingRatesRequestFixedAmountCurrencyOptionsValue(amount: $amount, taxBehavior: $taxBehavior)';}
+}

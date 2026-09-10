@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType {const PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType._(this.value);
 
-factory PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType.fromJson(String json) {return switch (json) {
   'account' => account,
   'self' => self,
   _ => PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType account = PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType._('account');
 
@@ -16,38 +16,38 @@ static const List<PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLia
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType($value)';}
+}
 @immutable final class PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability {const PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability({required this.type, this.account, });
 
-factory PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability(
+factory PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability(
   account: json['account'] as String?,
   type: PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType.fromJson(json['type'] as String),
-); }
+);}
 
 final String? account;
 
 final PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability copyWith({String? Function()? account, PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType? type, }) { return PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability copyWith({String? Function()? account, PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiabilityType? type, }) {return PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability(account: $account, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, type);}
+@override String toString() {return 'PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTaxLiability(account: $account, type: $type)';}
+}

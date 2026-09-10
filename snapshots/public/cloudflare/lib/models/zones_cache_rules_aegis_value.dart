@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesCacheRulesAegisValue {const ZonesCacheRulesAegisValue({this.enabled, this.poolId, });
 
-factory ZonesCacheRulesAegisValue.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesAegisValue(
+factory ZonesCacheRulesAegisValue.fromJson(Map<String, dynamic> json) {return ZonesCacheRulesAegisValue(
   enabled: json['enabled'] as bool?,
   poolId: json['pool_id'] as String?,
-); }
+);}
 
 /// Whether the feature is enabled or not.
 final bool? enabled;
@@ -14,19 +14,19 @@ final bool? enabled;
 /// Egress pool id which refers to a grouping of dedicated egress IPs through which Cloudflare will connect to origin.
 final String? poolId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'pool_id': ?poolId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'pool_id'}.contains(key)); } 
-ZonesCacheRulesAegisValue copyWith({bool? Function()? enabled, String? Function()? poolId, }) { return ZonesCacheRulesAegisValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'pool_id'}.contains(key));}
+ZonesCacheRulesAegisValue copyWith({bool? Function()? enabled, String? Function()? poolId, }) {return ZonesCacheRulesAegisValue(
   enabled: enabled != null ? enabled() : this.enabled,
   poolId: poolId != null ? poolId() : this.poolId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheRulesAegisValue &&
           enabled == other.enabled &&
-          poolId == other.poolId; } 
-@override int get hashCode { return Object.hash(enabled, poolId); } 
-@override String toString() { return 'ZonesCacheRulesAegisValue(enabled: $enabled, poolId: $poolId)'; } 
- }
+          poolId == other.poolId;}
+@override int get hashCode {return Object.hash(enabled, poolId);}
+@override String toString() {return 'ZonesCacheRulesAegisValue(enabled: $enabled, poolId: $poolId)';}
+}

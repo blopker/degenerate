@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_shared.dart';@immutable final class ResponsesOnlyModel {const ResponsesOnlyModel._(this.value);
 
-factory ResponsesOnlyModel.fromJson(String json) { return switch (json) {
+factory ResponsesOnlyModel.fromJson(String json) {return switch (json) {
   'o1-pro' => o1Pro,
   'o1-pro-2025-03-19' => o1Pro20250319,
   'o3-pro' => o3Pro,
@@ -18,7 +18,7 @@ factory ResponsesOnlyModel.fromJson(String json) { return switch (json) {
   'gpt-5-pro-2025-10-06' => gpt5Pro20251006,
   'gpt-5.1-codex-max' => gpt51CodexMax,
   _ => ResponsesOnlyModel._(json),
-}; }
+};}
 
 static const ResponsesOnlyModel o1Pro = ResponsesOnlyModel._('o1-pro');
 
@@ -52,14 +52,14 @@ static const List<ResponsesOnlyModel> values = [o1Pro, o1Pro20250319, o3Pro, o3P
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsesOnlyModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponsesOnlyModel($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponsesOnlyModel && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponsesOnlyModel($value)';}
+}
 
 @immutable
 final class ModelIdsResponses {

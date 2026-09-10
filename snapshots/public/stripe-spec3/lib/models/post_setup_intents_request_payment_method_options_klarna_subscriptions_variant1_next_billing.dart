@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling {const PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling({required this.amount, required this.date, });
 
-factory PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
+factory PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
   amount: (json['amount'] as num).toInt(),
   date: json['date'] as String,
-); }
+);}
 
 final int amount;
 
 final String date;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'date': date,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('date') && json['date'] is String; } 
-PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling copyWith({int? amount, String? date, }) { return PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('date') && json['date'] is String;}
+PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling copyWith({int? amount, String? date, }) {return PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
   amount: amount ?? this.amount,
   date: date ?? this.date,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling &&
           amount == other.amount &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(amount, date); } 
-@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(amount: $amount, date: $date)'; } 
- }
+          date == other.date;}
+@override int get hashCode {return Object.hash(amount, date);}
+@override String toString() {return 'PostSetupIntentsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(amount: $amount, date: $date)';}
+}

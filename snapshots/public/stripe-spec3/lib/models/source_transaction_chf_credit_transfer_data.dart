@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceTransactionChfCreditTransferData {const SourceTransactionChfCreditTransferData({this.reference, this.senderAddressCountry, this.senderAddressLine1, this.senderIban, this.senderName, });
 
-factory SourceTransactionChfCreditTransferData.fromJson(Map<String, dynamic> json) { return SourceTransactionChfCreditTransferData(
+factory SourceTransactionChfCreditTransferData.fromJson(Map<String, dynamic> json) {return SourceTransactionChfCreditTransferData(
   reference: json['reference'] as String?,
   senderAddressCountry: json['sender_address_country'] as String?,
   senderAddressLine1: json['sender_address_line1'] as String?,
   senderIban: json['sender_iban'] as String?,
   senderName: json['sender_name'] as String?,
-); }
+);}
 
 /// Reference associated with the transfer.
 final String? reference;
@@ -26,28 +26,28 @@ final String? senderIban;
 /// Sender's name.
 final String? senderName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reference': ?reference,
   'sender_address_country': ?senderAddressCountry,
   'sender_address_line1': ?senderAddressLine1,
   'sender_iban': ?senderIban,
   'sender_name': ?senderName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'sender_address_country', 'sender_address_line1', 'sender_iban', 'sender_name'}.contains(key)); } 
-SourceTransactionChfCreditTransferData copyWith({String? Function()? reference, String? Function()? senderAddressCountry, String? Function()? senderAddressLine1, String? Function()? senderIban, String? Function()? senderName, }) { return SourceTransactionChfCreditTransferData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference', 'sender_address_country', 'sender_address_line1', 'sender_iban', 'sender_name'}.contains(key));}
+SourceTransactionChfCreditTransferData copyWith({String? Function()? reference, String? Function()? senderAddressCountry, String? Function()? senderAddressLine1, String? Function()? senderIban, String? Function()? senderName, }) {return SourceTransactionChfCreditTransferData(
   reference: reference != null ? reference() : this.reference,
   senderAddressCountry: senderAddressCountry != null ? senderAddressCountry() : this.senderAddressCountry,
   senderAddressLine1: senderAddressLine1 != null ? senderAddressLine1() : this.senderAddressLine1,
   senderIban: senderIban != null ? senderIban() : this.senderIban,
   senderName: senderName != null ? senderName() : this.senderName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SourceTransactionChfCreditTransferData &&
           reference == other.reference &&
           senderAddressCountry == other.senderAddressCountry &&
           senderAddressLine1 == other.senderAddressLine1 &&
           senderIban == other.senderIban &&
-          senderName == other.senderName; } 
-@override int get hashCode { return Object.hash(reference, senderAddressCountry, senderAddressLine1, senderIban, senderName); } 
-@override String toString() { return 'SourceTransactionChfCreditTransferData(reference: $reference, senderAddressCountry: $senderAddressCountry, senderAddressLine1: $senderAddressLine1, senderIban: $senderIban, senderName: $senderName)'; } 
- }
+          senderName == other.senderName;}
+@override int get hashCode {return Object.hash(reference, senderAddressCountry, senderAddressLine1, senderIban, senderName);}
+@override String toString() {return 'SourceTransactionChfCreditTransferData(reference: $reference, senderAddressCountry: $senderAddressCountry, senderAddressLine1: $senderAddressLine1, senderIban: $senderIban, senderName: $senderName)';}
+}

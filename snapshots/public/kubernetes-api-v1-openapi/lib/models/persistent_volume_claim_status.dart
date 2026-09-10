@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'modify_volume_status.dart';import 'persistent_volume_claim_condition.dart';import 'resource_quantity.dart';/// PersistentVolumeClaimStatus is the current status of a persistent volume claim.
 @immutable final class PersistentVolumeClaimStatus {const PersistentVolumeClaimStatus({this.accessModes, this.allocatedResourceStatuses, this.allocatedResources, this.capacity, this.conditions, this.currentVolumeAttributesClassName, this.modifyVolumeStatus, this.phase, });
 
-factory PersistentVolumeClaimStatus.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimStatus(
+factory PersistentVolumeClaimStatus.fromJson(Map<String, dynamic> json) {return PersistentVolumeClaimStatus(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   allocatedResourceStatuses: (json['allocatedResourceStatuses'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   allocatedResources: (json['allocatedResources'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
@@ -12,7 +12,7 @@ factory PersistentVolumeClaimStatus.fromJson(Map<String, dynamic> json) { return
   currentVolumeAttributesClassName: json['currentVolumeAttributesClassName'] as String?,
   modifyVolumeStatus: json['modifyVolumeStatus'] != null ? ModifyVolumeStatus.fromJson(json['modifyVolumeStatus'] as Map<String, dynamic>) : null,
   phase: json['phase'] as String?,
-); }
+);}
 
 /// accessModes contains the actual access modes the volume backing the PVC has. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
 final List<String>? accessModes;
@@ -73,7 +73,7 @@ final ModifyVolumeStatus? modifyVolumeStatus;
 /// phase represents the current phase of PersistentVolumeClaim.
 final String? phase;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessModes': ?accessModes,
   'allocatedResourceStatuses': ?allocatedResourceStatuses,
   if (allocatedResources != null) 'allocatedResources': allocatedResources?.map((k, v) => MapEntry(k, v.toJson())),
@@ -82,9 +82,9 @@ Map<String, dynamic> toJson() { return {
   'currentVolumeAttributesClassName': ?currentVolumeAttributesClassName,
   if (modifyVolumeStatus != null) 'modifyVolumeStatus': modifyVolumeStatus?.toJson(),
   'phase': ?phase,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessModes', 'allocatedResourceStatuses', 'allocatedResources', 'capacity', 'conditions', 'currentVolumeAttributesClassName', 'modifyVolumeStatus', 'phase'}.contains(key)); } 
-PersistentVolumeClaimStatus copyWith({List<String>? Function()? accessModes, Map<String, String>? Function()? allocatedResourceStatuses, Map<String, ResourceQuantity>? Function()? allocatedResources, Map<String, ResourceQuantity>? Function()? capacity, List<PersistentVolumeClaimCondition>? Function()? conditions, String? Function()? currentVolumeAttributesClassName, ModifyVolumeStatus? Function()? modifyVolumeStatus, String? Function()? phase, }) { return PersistentVolumeClaimStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessModes', 'allocatedResourceStatuses', 'allocatedResources', 'capacity', 'conditions', 'currentVolumeAttributesClassName', 'modifyVolumeStatus', 'phase'}.contains(key));}
+PersistentVolumeClaimStatus copyWith({List<String>? Function()? accessModes, Map<String, String>? Function()? allocatedResourceStatuses, Map<String, ResourceQuantity>? Function()? allocatedResources, Map<String, ResourceQuantity>? Function()? capacity, List<PersistentVolumeClaimCondition>? Function()? conditions, String? Function()? currentVolumeAttributesClassName, ModifyVolumeStatus? Function()? modifyVolumeStatus, String? Function()? phase, }) {return PersistentVolumeClaimStatus(
   accessModes: accessModes != null ? accessModes() : this.accessModes,
   allocatedResourceStatuses: allocatedResourceStatuses != null ? allocatedResourceStatuses() : this.allocatedResourceStatuses,
   allocatedResources: allocatedResources != null ? allocatedResources() : this.allocatedResources,
@@ -93,8 +93,8 @@ PersistentVolumeClaimStatus copyWith({List<String>? Function()? accessModes, Map
   currentVolumeAttributesClassName: currentVolumeAttributesClassName != null ? currentVolumeAttributesClassName() : this.currentVolumeAttributesClassName,
   modifyVolumeStatus: modifyVolumeStatus != null ? modifyVolumeStatus() : this.modifyVolumeStatus,
   phase: phase != null ? phase() : this.phase,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PersistentVolumeClaimStatus &&
           listEquals(accessModes, other.accessModes) &&
           allocatedResourceStatuses == other.allocatedResourceStatuses &&
@@ -103,7 +103,7 @@ PersistentVolumeClaimStatus copyWith({List<String>? Function()? accessModes, Map
           listEquals(conditions, other.conditions) &&
           currentVolumeAttributesClassName == other.currentVolumeAttributesClassName &&
           modifyVolumeStatus == other.modifyVolumeStatus &&
-          phase == other.phase; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accessModes ?? const []), allocatedResourceStatuses, allocatedResources, capacity, Object.hashAll(conditions ?? const []), currentVolumeAttributesClassName, modifyVolumeStatus, phase); } 
-@override String toString() { return 'PersistentVolumeClaimStatus(accessModes: $accessModes, allocatedResourceStatuses: $allocatedResourceStatuses, allocatedResources: $allocatedResources, capacity: $capacity, conditions: $conditions, currentVolumeAttributesClassName: $currentVolumeAttributesClassName, modifyVolumeStatus: $modifyVolumeStatus, phase: $phase)'; } 
- }
+          phase == other.phase;}
+@override int get hashCode {return Object.hash(Object.hashAll(accessModes ?? const []), allocatedResourceStatuses, allocatedResources, capacity, Object.hashAll(conditions ?? const []), currentVolumeAttributesClassName, modifyVolumeStatus, phase);}
+@override String toString() {return 'PersistentVolumeClaimStatus(accessModes: $accessModes, allocatedResourceStatuses: $allocatedResourceStatuses, allocatedResources: $allocatedResources, capacity: $capacity, conditions: $conditions, currentVolumeAttributesClassName: $currentVolumeAttributesClassName, modifyVolumeStatus: $modifyVolumeStatus, phase: $phase)';}
+}

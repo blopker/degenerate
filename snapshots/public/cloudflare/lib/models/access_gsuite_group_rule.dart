@@ -4,22 +4,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_gsuit
 /// Requires a Google Workspace identity provider.
 @immutable final class AccessGsuiteGroupRule {const AccessGsuiteGroupRule({required this.gsuite});
 
-factory AccessGsuiteGroupRule.fromJson(Map<String, dynamic> json) { return AccessGsuiteGroupRule(
+factory AccessGsuiteGroupRule.fromJson(Map<String, dynamic> json) {return AccessGsuiteGroupRule(
   gsuite: AccessGsuiteGroupRuleGsuite.fromJson(json['gsuite'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessGsuiteGroupRuleGsuite gsuite;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'gsuite': gsuite.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('gsuite'); } 
-AccessGsuiteGroupRule copyWith({AccessGsuiteGroupRuleGsuite? gsuite}) { return AccessGsuiteGroupRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('gsuite');}
+AccessGsuiteGroupRule copyWith({AccessGsuiteGroupRuleGsuite? gsuite}) {return AccessGsuiteGroupRule(
   gsuite: gsuite ?? this.gsuite,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessGsuiteGroupRule &&
-          gsuite == other.gsuite; } 
-@override int get hashCode { return gsuite.hashCode; } 
-@override String toString() { return 'AccessGsuiteGroupRule(gsuite: $gsuite)'; } 
- }
+          gsuite == other.gsuite;}
+@override int get hashCode {return gsuite.hashCode;}
+@override String toString() {return 'AccessGsuiteGroupRule(gsuite: $gsuite)';}
+}

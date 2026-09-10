@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_rules.dart';import 'org_ruleset_conditions.dart';import 'repository_id_and_ref_name.dart';import 'repository_name_and_ref_name.dart';import 'repository_property_and_ref_name.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';/// The target of the ruleset
 @immutable final class ReposUpdateOrgRulesetRequestTarget {const ReposUpdateOrgRulesetRequestTarget._(this.value);
 
-factory ReposUpdateOrgRulesetRequestTarget.fromJson(String json) { return switch (json) {
+factory ReposUpdateOrgRulesetRequestTarget.fromJson(String json) {return switch (json) {
   'branch' => branch,
   'tag' => tag,
   'push' => push,
   'repository' => repository,
   _ => ReposUpdateOrgRulesetRequestTarget._(json),
-}; }
+};}
 
 static const ReposUpdateOrgRulesetRequestTarget branch = ReposUpdateOrgRulesetRequestTarget._('branch');
 
@@ -23,24 +23,24 @@ static const List<ReposUpdateOrgRulesetRequestTarget> values = [branch, tag, pus
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateOrgRulesetRequestTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateOrgRulesetRequestTarget($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposUpdateOrgRulesetRequestTarget && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposUpdateOrgRulesetRequestTarget($value)';}
+}
 @immutable final class ReposUpdateOrgRulesetRequest {const ReposUpdateOrgRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
 
-factory ReposUpdateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateOrgRulesetRequest(
+factory ReposUpdateOrgRulesetRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateOrgRulesetRequest(
   name: json['name'] as String?,
   target: json['target'] != null ? ReposUpdateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null,
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? OneOf3.parse(json['conditions'], fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => OrgRules.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The name of the ruleset.
 final String? name;
@@ -59,31 +59,31 @@ final OrgRulesetConditions? conditions;
 /// An array of rules within the ruleset.
 final List<OrgRules>? rules;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   if (target != null) 'target': target?.toJson(),
   if (enforcement != null) 'enforcement': enforcement?.toJson(),
   if (bypassActors != null) 'bypass_actors': bypassActors?.map((e) => e.toJson()).toList(),
   if (conditions != null) 'conditions': conditions?.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'target', 'enforcement', 'bypass_actors', 'conditions', 'rules'}.contains(key)); } 
-ReposUpdateOrgRulesetRequest copyWith({String? Function()? name, ReposUpdateOrgRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? Function()? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, OrgRulesetConditions? Function()? conditions, List<OrgRules>? Function()? rules, }) { return ReposUpdateOrgRulesetRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'target', 'enforcement', 'bypass_actors', 'conditions', 'rules'}.contains(key));}
+ReposUpdateOrgRulesetRequest copyWith({String? Function()? name, ReposUpdateOrgRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? Function()? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, OrgRulesetConditions? Function()? conditions, List<OrgRules>? Function()? rules, }) {return ReposUpdateOrgRulesetRequest(
   name: name != null ? name() : this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement != null ? enforcement() : this.enforcement,
   bypassActors: bypassActors != null ? bypassActors() : this.bypassActors,
   conditions: conditions != null ? conditions() : this.conditions,
   rules: rules != null ? rules() : this.rules,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposUpdateOrgRulesetRequest &&
           name == other.name &&
           target == other.target &&
           enforcement == other.enforcement &&
           listEquals(bypassActors, other.bypassActors) &&
           conditions == other.conditions &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(name, target, enforcement, Object.hashAll(bypassActors ?? const []), conditions, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'ReposUpdateOrgRulesetRequest(name: $name, target: $target, enforcement: $enforcement, bypassActors: $bypassActors, conditions: $conditions, rules: $rules)'; } 
- }
+          listEquals(rules, other.rules);}
+@override int get hashCode {return Object.hash(name, target, enforcement, Object.hashAll(bypassActors ?? const []), conditions, Object.hashAll(rules ?? const []));}
+@override String toString() {return 'ReposUpdateOrgRulesetRequest(name: $name, target: $target, enforcement: $enforcement, bypassActors: $bypassActors, conditions: $conditions, rules: $rules)';}
+}

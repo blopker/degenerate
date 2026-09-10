@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_report_payment_request_amount_requested.dart';import 'post_payment_records_report_payment_request_customer_details.dart';import 'post_payment_records_report_payment_request_failed.dart';import 'post_payment_records_report_payment_request_guaranteed.dart';import 'post_payment_records_report_payment_request_metadata.dart';import 'post_payment_records_report_payment_request_payment_method_details.dart';import 'post_payment_records_report_payment_request_processor_details.dart';import 'post_payment_records_report_payment_request_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
 @immutable final class PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence._(this.value);
 
-factory PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(String json) { return switch (json) {
+factory PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostPaymentRecordsReportPaymentRequestCustomerPresence._(json),
-}; }
+};}
 
 static const PostPaymentRecordsReportPaymentRequestCustomerPresence offSession = PostPaymentRecordsReportPaymentRequestCustomerPresence._('off_session');
 
@@ -17,22 +17,22 @@ static const List<PostPaymentRecordsReportPaymentRequestCustomerPresence> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsReportPaymentRequestCustomerPresence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestCustomerPresence($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentRecordsReportPaymentRequestCustomerPresence && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentRecordsReportPaymentRequestCustomerPresence($value)';}
+}
 /// The outcome of the reported payment.
 @immutable final class PostPaymentRecordsReportPaymentRequestOutcome {const PostPaymentRecordsReportPaymentRequestOutcome._(this.value);
 
-factory PostPaymentRecordsReportPaymentRequestOutcome.fromJson(String json) { return switch (json) {
+factory PostPaymentRecordsReportPaymentRequestOutcome.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'guaranteed' => guaranteed,
   _ => PostPaymentRecordsReportPaymentRequestOutcome._(json),
-}; }
+};}
 
 static const PostPaymentRecordsReportPaymentRequestOutcome failed = PostPaymentRecordsReportPaymentRequestOutcome._('failed');
 
@@ -42,17 +42,17 @@ static const List<PostPaymentRecordsReportPaymentRequestOutcome> values = [faile
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsReportPaymentRequestOutcome && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestOutcome($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentRecordsReportPaymentRequestOutcome && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentRecordsReportPaymentRequestOutcome($value)';}
+}
 @immutable final class PostPaymentRecordsReportPaymentRequest {const PostPaymentRecordsReportPaymentRequest({required this.amountRequested, required this.initiatedAt, required this.paymentMethodDetails, this.customerDetails, this.customerPresence, this.description, this.expand, this.failed, this.guaranteed, this.metadata, this.outcome, this.processorDetails, this.shippingDetails, });
 
-factory PostPaymentRecordsReportPaymentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequest(
+factory PostPaymentRecordsReportPaymentRequest.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsReportPaymentRequest(
   amountRequested: PostPaymentRecordsReportPaymentRequestAmountRequested.fromJson(json['amount_requested'] as Map<String, dynamic>),
   customerDetails: json['customer_details'] != null ? PostPaymentRecordsReportPaymentRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   customerPresence: json['customer_presence'] != null ? PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(json['customer_presence'] as String) : null,
@@ -66,7 +66,7 @@ factory PostPaymentRecordsReportPaymentRequest.fromJson(Map<String, dynamic> jso
   paymentMethodDetails: PostPaymentRecordsReportPaymentRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
   processorDetails: json['processor_details'] != null ? PostPaymentRecordsReportPaymentRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>) : null,
   shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsReportPaymentRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The amount you initially requested for this payment.
 final PostPaymentRecordsReportPaymentRequestAmountRequested amountRequested;
@@ -107,7 +107,7 @@ final PostPaymentRecordsReportPaymentRequestProcessorDetails? processorDetails;
 /// Shipping information for this payment.
 final PostPaymentRecordsReportPaymentRequestShippingDetails? shippingDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_requested': amountRequested.toJson(),
   if (customerDetails != null) 'customer_details': customerDetails?.toJson(),
   if (customerPresence != null) 'customer_presence': customerPresence?.toJson(),
@@ -121,11 +121,11 @@ Map<String, dynamic> toJson() { return {
   'payment_method_details': paymentMethodDetails.toJson(),
   if (processorDetails != null) 'processor_details': processorDetails?.toJson(),
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_requested') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_requested') &&
       json.containsKey('initiated_at') && json['initiated_at'] is num &&
-      json.containsKey('payment_method_details'); } 
-PostPaymentRecordsReportPaymentRequest copyWith({PostPaymentRecordsReportPaymentRequestAmountRequested? amountRequested, PostPaymentRecordsReportPaymentRequestCustomerDetails? Function()? customerDetails, PostPaymentRecordsReportPaymentRequestCustomerPresence? Function()? customerPresence, String? Function()? description, List<String>? Function()? expand, PostPaymentRecordsReportPaymentRequestFailed? Function()? failed, PostPaymentRecordsReportPaymentRequestGuaranteed? Function()? guaranteed, int? initiatedAt, PostPaymentRecordsReportPaymentRequestMetadata? Function()? metadata, PostPaymentRecordsReportPaymentRequestOutcome? Function()? outcome, PostPaymentRecordsReportPaymentRequestPaymentMethodDetails? paymentMethodDetails, PostPaymentRecordsReportPaymentRequestProcessorDetails? Function()? processorDetails, PostPaymentRecordsReportPaymentRequestShippingDetails? Function()? shippingDetails, }) { return PostPaymentRecordsReportPaymentRequest(
+      json.containsKey('payment_method_details');}
+PostPaymentRecordsReportPaymentRequest copyWith({PostPaymentRecordsReportPaymentRequestAmountRequested? amountRequested, PostPaymentRecordsReportPaymentRequestCustomerDetails? Function()? customerDetails, PostPaymentRecordsReportPaymentRequestCustomerPresence? Function()? customerPresence, String? Function()? description, List<String>? Function()? expand, PostPaymentRecordsReportPaymentRequestFailed? Function()? failed, PostPaymentRecordsReportPaymentRequestGuaranteed? Function()? guaranteed, int? initiatedAt, PostPaymentRecordsReportPaymentRequestMetadata? Function()? metadata, PostPaymentRecordsReportPaymentRequestOutcome? Function()? outcome, PostPaymentRecordsReportPaymentRequestPaymentMethodDetails? paymentMethodDetails, PostPaymentRecordsReportPaymentRequestProcessorDetails? Function()? processorDetails, PostPaymentRecordsReportPaymentRequestShippingDetails? Function()? shippingDetails, }) {return PostPaymentRecordsReportPaymentRequest(
   amountRequested: amountRequested ?? this.amountRequested,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
   customerPresence: customerPresence != null ? customerPresence() : this.customerPresence,
@@ -139,8 +139,8 @@ PostPaymentRecordsReportPaymentRequest copyWith({PostPaymentRecordsReportPayment
   paymentMethodDetails: paymentMethodDetails ?? this.paymentMethodDetails,
   processorDetails: processorDetails != null ? processorDetails() : this.processorDetails,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentRecordsReportPaymentRequest &&
           amountRequested == other.amountRequested &&
           customerDetails == other.customerDetails &&
@@ -154,7 +154,7 @@ PostPaymentRecordsReportPaymentRequest copyWith({PostPaymentRecordsReportPayment
           outcome == other.outcome &&
           paymentMethodDetails == other.paymentMethodDetails &&
           processorDetails == other.processorDetails &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return Object.hash(amountRequested, customerDetails, customerPresence, description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, processorDetails, shippingDetails); } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequest(amountRequested: $amountRequested, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, processorDetails: $processorDetails, shippingDetails: $shippingDetails)'; } 
- }
+          shippingDetails == other.shippingDetails;}
+@override int get hashCode {return Object.hash(amountRequested, customerDetails, customerPresence, description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, processorDetails, shippingDetails);}
+@override String toString() {return 'PostPaymentRecordsReportPaymentRequest(amountRequested: $amountRequested, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, processorDetails: $processorDetails, shippingDetails: $shippingDetails)';}
+}

@@ -10,30 +10,30 @@ dynamic toJson() => value;
 /// A scope is a combination of scope objects which provides additional context.
 @immutable final class IamCreateScope {const IamCreateScope({required this.key, required this.objects, });
 
-factory IamCreateScope.fromJson(Map<String, dynamic> json) { return IamCreateScope(
+factory IamCreateScope.fromJson(Map<String, dynamic> json) {return IamCreateScope(
   key: json['key'] != null ? IamCreateResourceGroupScopeScopeKey.fromJson(json['key'] as dynamic) : null,
   objects: (json['objects'] as List<dynamic>).map((e) => IamCreateResourceGroupScopeScopeObject.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final IamCreateResourceGroupScopeScopeKey? key;
 
 /// A list of scope objects for additional context. The number of Scope objects should not be zero.
 final List<IamCreateResourceGroupScopeScopeObject> objects;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key?.toJson(),
   'objects': objects.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
-      json.containsKey('objects'); } 
-IamCreateScope copyWith({IamCreateResourceGroupScopeScopeKey? Function()? key, List<IamCreateResourceGroupScopeScopeObject>? objects, }) { return IamCreateScope(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') &&
+      json.containsKey('objects');}
+IamCreateScope copyWith({IamCreateResourceGroupScopeScopeKey? Function()? key, List<IamCreateResourceGroupScopeScopeObject>? objects, }) {return IamCreateScope(
   key: key != null ? key() : this.key,
   objects: objects ?? this.objects,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IamCreateScope &&
           key == other.key &&
-          listEquals(objects, other.objects); } 
-@override int get hashCode { return Object.hash(key, Object.hashAll(objects)); } 
-@override String toString() { return 'IamCreateScope(key: $key, objects: $objects)'; } 
- }
+          listEquals(objects, other.objects);}
+@override int get hashCode {return Object.hash(key, Object.hashAll(objects));}
+@override String toString() {return 'IamCreateScope(key: $key, objects: $objects)';}
+}

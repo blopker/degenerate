@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_start_outputs_next.dart';@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs({required this.next});
 
-factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs(
+factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs.fromJson(Map<String, dynamic> json) {return AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs(
   next: AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputsNext.fromJson(json['next'] as Map<String, dynamic>),
-); }
+);}
 
 final AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputsNext next;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'next': next.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('next'); } 
-AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs copyWith({AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputsNext? next}) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('next');}
+AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs copyWith({AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputsNext? next}) {return AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs(
   next: next ?? this.next,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs &&
-          next == other.next; } 
-@override int get hashCode { return next.hashCode; } 
-@override String toString() { return 'AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs(next: $next)'; } 
- }
+          next == other.next;}
+@override int get hashCode {return next.hashCode;}
+@override String toString() {return 'AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs(next: $next)';}
+}

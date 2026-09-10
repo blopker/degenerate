@@ -13,7 +13,7 @@ final class CloudflareIPsApi with ApiExecutor {const CloudflareIPsApi(this.apiCo
 /// Get IPs used on the Cloudflare/JD Cloud network, see https://www.cloudflare.com/ips for Cloudflare IPs or https://developers.cloudflare.com/china-network/reference/infrastructure/ for JD Cloud IPs.
 ///
 /// `GET /ips`
-Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, ResponseCommonFailure54>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, ResponseCommonFailure54>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (networks != null) {
   queryParameters['networks'] = networks;
@@ -30,22 +30,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => PublicIpIps.fromJson(v as Map<String, dynamic>), fromB: (v) => PublicIpIpsJdcloud.fromJson(v as Map<String, dynamic>),) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => PublicIpIps.fromJson(v as Map<String, dynamic>), fromB: (v) => PublicIpIpsJdcloud.fromJson(v as Map<String, dynamic>),) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure54.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure54.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

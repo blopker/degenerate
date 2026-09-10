@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_add_invoice_items.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_application_fee_percent.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_automatic_tax.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_billing_thresholds.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_cancel_at.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_cancellation_details.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_default_source.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_default_tax_rates.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_discounts.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_invoice_settings.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_items.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_metadata.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_pause_collection.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_payment_settings.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_pending_invoice_item_interval.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_transfer_data.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_trial_end.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_trial_settings.dart';/// Either `now` or `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'now' => now,
   'unchanged' => unchanged,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor now = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor._('now');
 
@@ -17,22 +17,22 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor($value)';}
+}
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod chargeAutomatically = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod._('charge_automatically');
 
@@ -42,14 +42,14 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod($value)';}
+}
 /// Use `allow_incomplete` to transition the subscription to `status=past_due` if a payment is required but cannot be paid. This allows you to manage scenarios where additional user actions are needed to pay a subscription's invoice. For example, SCA regulation may require 3DS authentication to complete payment. See the [SCA Migration Guide](https://docs.stripe.com/billing/migration/strong-customer-authentication) for Billing to learn more. This is the default behavior.
 /// 
 /// Use `default_incomplete` to transition the subscription to `status=past_due` when payment is required and await explicit confirmation of the invoice's payment intent. This allows simpler management of scenarios where additional user actions are needed to pay a subscription’s invoice. Such as failed payments, [SCA regulation](https://docs.stripe.com/billing/migration/strong-customer-authentication), or collecting a mandate for a bank debit payment method.
@@ -59,13 +59,13 @@ bool get isUnknown { return !values.contains(this); }
 /// Use `error_if_incomplete` if you want Stripe to return an HTTP 402 status code if a subscription's invoice cannot be paid. For example, if a payment method requires 3DS authentication due to SCA regulation and further user action is needed, this parameter does not update the subscription and returns an error instead. This was the default behavior for API versions prior to 2019-03-14. See the [changelog](https://docs.stripe.com/changelog/2019-03-14) to learn more.
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior.fromJson(String json) {return switch (json) {
   'allow_incomplete' => allowIncomplete,
   'default_incomplete' => defaultIncomplete,
   'error_if_incomplete' => errorIfIncomplete,
   'pending_if_incomplete' => pendingIfIncomplete,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior allowIncomplete = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior._('allow_incomplete');
 
@@ -79,23 +79,23 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior($value)';}
+}
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) when the billing cycle changes (e.g., when switching plans, resetting `billing_cycle_anchor=now`, or starting a trial), or if an item's `quantity` changes. The default value is `create_prorations`.
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior._(this.value);
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior.fromJson(String json) {return switch (json) {
   'always_invoice' => alwaysInvoice,
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior._(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior alwaysInvoice = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior._('always_invoice');
 
@@ -107,17 +107,17 @@ static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior($value)';}
+}
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.cancelAt, this.cancelAtPeriodEnd, this.cancellationDetails, this.collectionMethod, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.discounts, this.expand, this.invoiceSettings, this.items, this.metadata, this.offSession, this.pauseCollection, this.paymentBehavior, this.paymentSettings, this.pendingInvoiceItemInterval, this.prorationBehavior, this.prorationDate, this.transferData, this.trialEnd, this.trialFromPlan, this.trialSettings, });
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json['application_fee_percent'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestApplicationFeePercent.fromJson(json['application_fee_percent']) : null,
   automaticTax: json['automatic_tax'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
@@ -147,7 +147,7 @@ factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest.fromJson(
   trialEnd: json['trial_end'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEnd.fromJson(json['trial_end']) : null,
   trialFromPlan: json['trial_from_plan'] as bool?,
   trialSettings: json['trial_settings'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// A list of prices and quantities that will generate invoice items appended to the next invoice for this subscription. You may pass up to 20 items.
 final List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItems>? addInvoiceItems;
@@ -242,7 +242,7 @@ final bool? trialFromPlan;
 /// Settings related to subscription trials.
 final PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialSettings? trialSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addInvoiceItems != null) 'add_invoice_items': addInvoiceItems?.map((e) => e.toJson()).toList(),
   if (applicationFeePercent != null) 'application_fee_percent': applicationFeePercent?.toJson(),
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -272,9 +272,9 @@ Map<String, dynamic> toJson() { return {
   if (trialEnd != null) 'trial_end': trialEnd?.toJson(),
   'trial_from_plan': ?trialFromPlan,
   if (trialSettings != null) 'trial_settings': trialSettings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'add_invoice_items', 'application_fee_percent', 'automatic_tax', 'billing_cycle_anchor', 'billing_thresholds', 'cancel_at', 'cancel_at_period_end', 'cancellation_details', 'collection_method', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'discounts', 'expand', 'invoice_settings', 'items', 'metadata', 'off_session', 'pause_collection', 'payment_behavior', 'payment_settings', 'pending_invoice_item_interval', 'proration_behavior', 'proration_date', 'transfer_data', 'trial_end', 'trial_from_plan', 'trial_settings'}.contains(key)); } 
-PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest copyWith({List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItems>? Function()? addInvoiceItems, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestApplicationFeePercent? Function()? applicationFeePercent, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTax? Function()? automaticTax, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt? Function()? cancelAt, bool? Function()? cancelAtPeriodEnd, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails? Function()? cancellationDetails, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod? Function()? collectionMethod, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultSource? Function()? defaultSource, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRates? Function()? defaultTaxRates, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts? Function()? discounts, List<String>? Function()? expand, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems>? Function()? items, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata? Function()? metadata, bool? Function()? offSession, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollection? Function()? pauseCollection, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior? Function()? paymentBehavior, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentSettings? Function()? paymentSettings, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPendingInvoiceItemInterval? Function()? pendingInvoiceItemInterval, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData? Function()? transferData, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEnd? Function()? trialEnd, bool? Function()? trialFromPlan, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialSettings? Function()? trialSettings, }) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'add_invoice_items', 'application_fee_percent', 'automatic_tax', 'billing_cycle_anchor', 'billing_thresholds', 'cancel_at', 'cancel_at_period_end', 'cancellation_details', 'collection_method', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'discounts', 'expand', 'invoice_settings', 'items', 'metadata', 'off_session', 'pause_collection', 'payment_behavior', 'payment_settings', 'pending_invoice_item_interval', 'proration_behavior', 'proration_date', 'transfer_data', 'trial_end', 'trial_from_plan', 'trial_settings'}.contains(key));}
+PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest copyWith({List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItems>? Function()? addInvoiceItems, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestApplicationFeePercent? Function()? applicationFeePercent, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAutomaticTax? Function()? automaticTax, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt? Function()? cancelAt, bool? Function()? cancelAtPeriodEnd, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails? Function()? cancellationDetails, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCollectionMethod? Function()? collectionMethod, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultSource? Function()? defaultSource, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRates? Function()? defaultTaxRates, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts? Function()? discounts, List<String>? Function()? expand, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems>? Function()? items, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata? Function()? metadata, bool? Function()? offSession, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollection? Function()? pauseCollection, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentBehavior? Function()? paymentBehavior, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPaymentSettings? Function()? paymentSettings, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPendingInvoiceItemInterval? Function()? pendingInvoiceItemInterval, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData? Function()? transferData, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialEnd? Function()? trialEnd, bool? Function()? trialFromPlan, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTrialSettings? Function()? trialSettings, }) {return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(
   addInvoiceItems: addInvoiceItems != null ? addInvoiceItems() : this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -304,8 +304,8 @@ PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest copyWith({List<Po
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
   trialFromPlan: trialFromPlan != null ? trialFromPlan() : this.trialFromPlan,
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -335,7 +335,7 @@ PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest copyWith({List<Po
           transferData == other.transferData &&
           trialEnd == other.trialEnd &&
           trialFromPlan == other.trialFromPlan &&
-          trialSettings == other.trialSettings; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, cancelAt, cancelAtPeriodEnd, cancellationDetails, collectionMethod, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, discounts, Object.hashAll(expand ?? const []), invoiceSettings, Object.hashAll(items ?? const []), metadata, offSession, pauseCollection, paymentBehavior, paymentSettings, pendingInvoiceItemInterval, prorationBehavior, prorationDate, transferData, trialEnd, trialFromPlan, trialSettings]); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, discounts: $discounts, expand: $expand, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, offSession: $offSession, pauseCollection: $pauseCollection, paymentBehavior: $paymentBehavior, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, transferData: $transferData, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan, trialSettings: $trialSettings)'; } 
- }
+          trialSettings == other.trialSettings;}
+@override int get hashCode {return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, cancelAt, cancelAtPeriodEnd, cancellationDetails, collectionMethod, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, discounts, Object.hashAll(expand ?? const []), invoiceSettings, Object.hashAll(items ?? const []), metadata, offSession, pauseCollection, paymentBehavior, paymentSettings, pendingInvoiceItemInterval, prorationBehavior, prorationDate, transferData, trialEnd, trialFromPlan, trialSettings]);}
+@override String toString() {return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, discounts: $discounts, expand: $expand, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, offSession: $offSession, pauseCollection: $pauseCollection, paymentBehavior: $paymentBehavior, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, transferData: $transferData, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan, trialSettings: $trialSettings)';}
+}

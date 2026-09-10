@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_onboarding_links_request_link_options.dart';/// The type of link being generated.
 @immutable final class PostTerminalOnboardingLinksRequestLinkType {const PostTerminalOnboardingLinksRequestLinkType._(this.value);
 
-factory PostTerminalOnboardingLinksRequestLinkType.fromJson(String json) { return switch (json) {
+factory PostTerminalOnboardingLinksRequestLinkType.fromJson(String json) {return switch (json) {
   'apple_terms_and_conditions' => appleTermsAndConditions,
   _ => PostTerminalOnboardingLinksRequestLinkType._(json),
-}; }
+};}
 
 static const PostTerminalOnboardingLinksRequestLinkType appleTermsAndConditions = PostTerminalOnboardingLinksRequestLinkType._('apple_terms_and_conditions');
 
@@ -14,22 +14,22 @@ static const List<PostTerminalOnboardingLinksRequestLinkType> values = [appleTer
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalOnboardingLinksRequestLinkType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalOnboardingLinksRequestLinkType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTerminalOnboardingLinksRequestLinkType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTerminalOnboardingLinksRequestLinkType($value)';}
+}
 @immutable final class PostTerminalOnboardingLinksRequest {const PostTerminalOnboardingLinksRequest({required this.linkOptions, required this.linkType, this.expand, this.onBehalfOf, });
 
-factory PostTerminalOnboardingLinksRequest.fromJson(Map<String, dynamic> json) { return PostTerminalOnboardingLinksRequest(
+factory PostTerminalOnboardingLinksRequest.fromJson(Map<String, dynamic> json) {return PostTerminalOnboardingLinksRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   linkOptions: PostTerminalOnboardingLinksRequestLinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),
   linkType: PostTerminalOnboardingLinksRequestLinkType.fromJson(json['link_type'] as String),
   onBehalfOf: json['on_behalf_of'] as String?,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -43,26 +43,26 @@ final PostTerminalOnboardingLinksRequestLinkType linkType;
 /// Stripe account ID to generate the link for.
 final String? onBehalfOf;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'link_options': linkOptions.toJson(),
   'link_type': linkType.toJson(),
   'on_behalf_of': ?onBehalfOf,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
-      json.containsKey('link_type'); } 
-PostTerminalOnboardingLinksRequest copyWith({List<String>? Function()? expand, PostTerminalOnboardingLinksRequestLinkOptions? linkOptions, PostTerminalOnboardingLinksRequestLinkType? linkType, String? Function()? onBehalfOf, }) { return PostTerminalOnboardingLinksRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('link_options') &&
+      json.containsKey('link_type');}
+PostTerminalOnboardingLinksRequest copyWith({List<String>? Function()? expand, PostTerminalOnboardingLinksRequestLinkOptions? linkOptions, PostTerminalOnboardingLinksRequestLinkType? linkType, String? Function()? onBehalfOf, }) {return PostTerminalOnboardingLinksRequest(
   expand: expand != null ? expand() : this.expand,
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTerminalOnboardingLinksRequest &&
           listEquals(expand, other.expand) &&
           linkOptions == other.linkOptions &&
           linkType == other.linkType &&
-          onBehalfOf == other.onBehalfOf; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), linkOptions, linkType, onBehalfOf); } 
-@override String toString() { return 'PostTerminalOnboardingLinksRequest(expand: $expand, linkOptions: $linkOptions, linkType: $linkType, onBehalfOf: $onBehalfOf)'; } 
- }
+          onBehalfOf == other.onBehalfOf;}
+@override int get hashCode {return Object.hash(Object.hashAll(expand ?? const []), linkOptions, linkType, onBehalfOf);}
+@override String toString() {return 'PostTerminalOnboardingLinksRequest(expand: $expand, linkOptions: $linkOptions, linkType: $linkType, onBehalfOf: $onBehalfOf)';}
+}

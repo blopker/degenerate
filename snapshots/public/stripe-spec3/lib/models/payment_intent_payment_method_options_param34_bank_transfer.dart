@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param34_bank_transfer_eu_bank_transfer.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes {const PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes.fromJson(String json) {return switch (json) {
   'aba' => aba,
   'iban' => iban,
   'sepa' => sepa,
@@ -11,7 +11,7 @@ factory PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressType
   'swift' => swift,
   'zengin' => zengin,
   _ => PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes aba = PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes._('aba');
 
@@ -31,24 +31,24 @@ static const List<PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedA
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam34BankTransferType {const PaymentIntentPaymentMethodOptionsParam34BankTransferType._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam34BankTransferType.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam34BankTransferType.fromJson(String json) {return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
   'gb_bank_transfer' => gbBankTransfer,
   'jp_bank_transfer' => jpBankTransfer,
   'mx_bank_transfer' => mxBankTransfer,
   'us_bank_transfer' => usBankTransfer,
   _ => PaymentIntentPaymentMethodOptionsParam34BankTransferType._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam34BankTransferType euBankTransfer = PaymentIntentPaymentMethodOptionsParam34BankTransferType._('eu_bank_transfer');
 
@@ -64,21 +64,21 @@ static const List<PaymentIntentPaymentMethodOptionsParam34BankTransferType> valu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam34BankTransferType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam34BankTransferType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam34BankTransferType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam34BankTransferType($value)';}
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam34BankTransfer {const PaymentIntentPaymentMethodOptionsParam34BankTransfer({required this.type, this.euBankTransfer, this.requestedAddressTypes, });
 
-factory PaymentIntentPaymentMethodOptionsParam34BankTransfer.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam34BankTransfer(
+factory PaymentIntentPaymentMethodOptionsParam34BankTransfer.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam34BankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
   requestedAddressTypes: (json['requested_address_types'] as List<dynamic>?)?.map((e) => PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes.fromJson(e as String)).toList(),
   type: PaymentIntentPaymentMethodOptionsParam34BankTransferType.fromJson(json['type'] as String),
-); }
+);}
 
 final PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer? euBankTransfer;
 
@@ -86,22 +86,22 @@ final List<PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressT
 
 final PaymentIntentPaymentMethodOptionsParam34BankTransferType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
   if (requestedAddressTypes != null) 'requested_address_types': requestedAddressTypes?.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentIntentPaymentMethodOptionsParam34BankTransfer copyWith({PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer? Function()? euBankTransfer, List<PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes>? Function()? requestedAddressTypes, PaymentIntentPaymentMethodOptionsParam34BankTransferType? type, }) { return PaymentIntentPaymentMethodOptionsParam34BankTransfer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PaymentIntentPaymentMethodOptionsParam34BankTransfer copyWith({PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer? Function()? euBankTransfer, List<PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes>? Function()? requestedAddressTypes, PaymentIntentPaymentMethodOptionsParam34BankTransferType? type, }) {return PaymentIntentPaymentMethodOptionsParam34BankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam34BankTransfer &&
           euBankTransfer == other.euBankTransfer &&
           listEquals(requestedAddressTypes, other.requestedAddressTypes) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam34BankTransfer(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParam34BankTransfer(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)';}
+}

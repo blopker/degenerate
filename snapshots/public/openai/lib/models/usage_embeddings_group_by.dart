@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageEmbeddingsGroupBy {const UsageEmbeddingsGroupBy._(this.value);
 
-factory UsageEmbeddingsGroupBy.fromJson(String json) { return switch (json) {
+factory UsageEmbeddingsGroupBy.fromJson(String json) {return switch (json) {
   'project_id' => projectId,
   'user_id' => userId,
   'api_key_id' => apiKeyId,
   'model' => model,
   _ => UsageEmbeddingsGroupBy._(json),
-}; }
+};}
 
 static const UsageEmbeddingsGroupBy projectId = UsageEmbeddingsGroupBy._('project_id');
 
@@ -22,11 +22,11 @@ static const List<UsageEmbeddingsGroupBy> values = [projectId, userId, apiKeyId,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageEmbeddingsGroupBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageEmbeddingsGroupBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UsageEmbeddingsGroupBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UsageEmbeddingsGroupBy($value)';}
+}

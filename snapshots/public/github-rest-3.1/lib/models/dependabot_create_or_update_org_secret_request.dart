@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
 @immutable final class DependabotCreateOrUpdateOrgSecretRequestVisibility {const DependabotCreateOrUpdateOrgSecretRequestVisibility._(this.value);
 
-factory DependabotCreateOrUpdateOrgSecretRequestVisibility.fromJson(String json) { return switch (json) {
+factory DependabotCreateOrUpdateOrgSecretRequestVisibility.fromJson(String json) {return switch (json) {
   'all' => all,
   'private' => private,
   'selected' => selected,
   _ => DependabotCreateOrUpdateOrgSecretRequestVisibility._(json),
-}; }
+};}
 
 static const DependabotCreateOrUpdateOrgSecretRequestVisibility all = DependabotCreateOrUpdateOrgSecretRequestVisibility._('all');
 
@@ -20,22 +20,22 @@ static const List<DependabotCreateOrUpdateOrgSecretRequestVisibility> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotCreateOrUpdateOrgSecretRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotCreateOrUpdateOrgSecretRequestVisibility($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotCreateOrUpdateOrgSecretRequestVisibility && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotCreateOrUpdateOrgSecretRequestVisibility($value)';}
+}
 @immutable final class DependabotCreateOrUpdateOrgSecretRequest {const DependabotCreateOrUpdateOrgSecretRequest({required this.visibility, this.encryptedValue, this.keyId, this.selectedRepositoryIds, });
 
-factory DependabotCreateOrUpdateOrgSecretRequest.fromJson(Map<String, dynamic> json) { return DependabotCreateOrUpdateOrgSecretRequest(
+factory DependabotCreateOrUpdateOrgSecretRequest.fromJson(Map<String, dynamic> json) {return DependabotCreateOrUpdateOrgSecretRequest(
   encryptedValue: json['encrypted_value'] as String?,
   keyId: json['key_id'] as String?,
   visibility: DependabotCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e).toList(),
-); }
+);}
 
 /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/dependabot/secrets#get-an-organization-public-key) endpoint.
 final String? encryptedValue;
@@ -49,25 +49,25 @@ final DependabotCreateOrUpdateOrgSecretRequestVisibility visibility;
 /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
 final List<dynamic>? selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'encrypted_value': ?encryptedValue,
   'key_id': ?keyId,
   'visibility': visibility.toJson(),
   'selected_repository_ids': ?selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('visibility'); } 
-DependabotCreateOrUpdateOrgSecretRequest copyWith({String? Function()? encryptedValue, String? Function()? keyId, DependabotCreateOrUpdateOrgSecretRequestVisibility? visibility, List<dynamic>? Function()? selectedRepositoryIds, }) { return DependabotCreateOrUpdateOrgSecretRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('visibility');}
+DependabotCreateOrUpdateOrgSecretRequest copyWith({String? Function()? encryptedValue, String? Function()? keyId, DependabotCreateOrUpdateOrgSecretRequestVisibility? visibility, List<dynamic>? Function()? selectedRepositoryIds, }) {return DependabotCreateOrUpdateOrgSecretRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId != null ? keyId() : this.keyId,
   visibility: visibility ?? this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotCreateOrUpdateOrgSecretRequest &&
           encryptedValue == other.encryptedValue &&
           keyId == other.keyId &&
           visibility == other.visibility &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'DependabotCreateOrUpdateOrgSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)'; } 
- }
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);}
+@override int get hashCode {return Object.hash(encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const []));}
+@override String toString() {return 'DependabotCreateOrUpdateOrgSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)';}
+}

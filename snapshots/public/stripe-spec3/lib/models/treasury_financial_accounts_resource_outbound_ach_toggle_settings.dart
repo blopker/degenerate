@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Whether the Feature is operational.
 @immutable final class TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus {const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._(this.value);
 
-factory TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'pending' => pending,
   'restricted' => restricted,
   _ => TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus active = TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._('active');
 
@@ -20,22 +20,22 @@ static const List<TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus($value)';}
+}
 /// Toggle settings for enabling/disabling an outbound ACH specific feature
 @immutable final class TreasuryFinancialAccountsResourceOutboundAchToggleSettings {const TreasuryFinancialAccountsResourceOutboundAchToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
-factory TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
+factory TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(Map<String, dynamic> json) {return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
   requested: json['requested'] as bool,
   status: TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus.fromJson(json['status'] as String),
   statusDetails: (json['status_details'] as List<dynamic>).map((e) => TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Whether the FinancialAccount should have the Feature.
 final bool requested;
@@ -46,24 +46,24 @@ final TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus status;
 /// Additional details; includes at least one entry when the status is not `active`.
 final List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails> statusDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': requested,
   'status': status.toJson(),
   'status_details': statusDetails.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requested') && json['requested'] is bool &&
       json.containsKey('status') &&
-      json.containsKey('status_details'); } 
-TreasuryFinancialAccountsResourceOutboundAchToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) { return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
+      json.containsKey('status_details');}
+TreasuryFinancialAccountsResourceOutboundAchToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) {return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
   requested: requested ?? this.requested,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TreasuryFinancialAccountsResourceOutboundAchToggleSettings &&
           requested == other.requested &&
           status == other.status &&
-          listEquals(statusDetails, other.statusDetails); } 
-@override int get hashCode { return Object.hash(requested, status, Object.hashAll(statusDetails)); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceOutboundAchToggleSettings(requested: $requested, status: $status, statusDetails: $statusDetails)'; } 
- }
+          listEquals(statusDetails, other.statusDetails);}
+@override int get hashCode {return Object.hash(requested, status, Object.hashAll(statusDetails));}
+@override String toString() {return 'TreasuryFinancialAccountsResourceOutboundAchToggleSettings(requested: $requested, status: $status, statusDetails: $statusDetails)';}
+}

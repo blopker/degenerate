@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by TLD category.
 @immutable final class RadarGetEmailSecurityTopTldsBySpoofTldCategory {const RadarGetEmailSecurityTopTldsBySpoofTldCategory._(this.value);
 
-factory RadarGetEmailSecurityTopTldsBySpoofTldCategory.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTopTldsBySpoofTldCategory.fromJson(String json) {return switch (json) {
   'CLASSIC' => classic,
   'COUNTRY' => country,
   _ => RadarGetEmailSecurityTopTldsBySpoofTldCategory._(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTopTldsBySpoofTldCategory classic = RadarGetEmailSecurityTopTldsBySpoofTldCategory._('CLASSIC');
 
@@ -17,11 +17,11 @@ static const List<RadarGetEmailSecurityTopTldsBySpoofTldCategory> values = [clas
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsBySpoofTldCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetEmailSecurityTopTldsBySpoofTldCategory($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetEmailSecurityTopTldsBySpoofTldCategory && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetEmailSecurityTopTldsBySpoofTldCategory($value)';}
+}

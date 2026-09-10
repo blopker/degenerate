@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmsMessageEnumStatus {const SmsMessageEnumStatus._(this.value);
 
-factory SmsMessageEnumStatus.fromJson(String json) { return switch (json) {
+factory SmsMessageEnumStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'sending' => sending,
   'sent' => sent,
@@ -17,7 +17,7 @@ factory SmsMessageEnumStatus.fromJson(String json) { return switch (json) {
   'partially_delivered' => partiallyDelivered,
   'canceled' => canceled,
   _ => SmsMessageEnumStatus._(json),
-}; }
+};}
 
 static const SmsMessageEnumStatus queued = SmsMessageEnumStatus._('queued');
 
@@ -49,11 +49,11 @@ static const List<SmsMessageEnumStatus> values = [queued, sending, sent, failed,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmsMessageEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmsMessageEnumStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SmsMessageEnumStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmsMessageEnumStatus($value)';}
+}

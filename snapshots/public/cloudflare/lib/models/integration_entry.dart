@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntegrationEntryType {const IntegrationEntryType._(this.value);
 
-factory IntegrationEntryType.fromJson(String json) { return switch (json) {
+factory IntegrationEntryType.fromJson(String json) {return switch (json) {
   'integration' => integration,
   _ => IntegrationEntryType._(json),
-}; }
+};}
 
 static const IntegrationEntryType integration = IntegrationEntryType._('integration');
 
@@ -13,17 +13,17 @@ static const List<IntegrationEntryType> values = [integration];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IntegrationEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IntegrationEntryType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IntegrationEntryType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IntegrationEntryType($value)';}
+}
 @immutable final class IntegrationEntry {const IntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, this.profileId = const Omittable.absent(), });
 
-factory IntegrationEntry.fromJson(Map<String, dynamic> json) { return IntegrationEntry(
+factory IntegrationEntry.fromJson(Map<String, dynamic> json) {return IntegrationEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
@@ -31,7 +31,7 @@ factory IntegrationEntry.fromJson(Map<String, dynamic> json) { return Integratio
   profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: IntegrationEntryType.fromJson(json['type'] as String),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -47,7 +47,7 @@ final DateTime updatedAt;
 
 final IntegrationEntryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
   'id': id,
@@ -55,14 +55,14 @@ Map<String, dynamic> toJson() { return {
   if (profileId.isPresent) 'profile_id': profileId.value,
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type'); } 
-IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, IntegrationEntryType? type, }) { return IntegrationEntry(
+      json.containsKey('type');}
+IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, IntegrationEntryType? type, }) {return IntegrationEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
@@ -70,8 +70,8 @@ IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
   profileId: profileId ?? this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IntegrationEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
@@ -79,7 +79,7 @@ IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
           name == other.name &&
           profileId == other.profileId &&
           updatedAt == other.updatedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, profileId, updatedAt, type); } 
-@override String toString() { return 'IntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, enabled, id, name, profileId, updatedAt, type);}
+@override String toString() {return 'IntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, type: $type)';}
+}

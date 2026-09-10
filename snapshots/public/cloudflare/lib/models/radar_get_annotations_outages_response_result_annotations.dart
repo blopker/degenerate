@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_outages_response_result_annotations_asns_details.dart';import 'radar_get_annotations_outages_response_result_annotations_locations_details.dart';import 'radar_get_annotations_outages_response_result_annotations_origins_details.dart';import 'radar_get_annotations_outages_response_result_annotations_outage.dart';@immutable final class RadarGetAnnotationsOutagesResponseResultAnnotations {const RadarGetAnnotationsOutagesResponseResultAnnotations({required this.asns, required this.asnsDetails, required this.dataSource, required this.eventType, required this.id, required this.locations, required this.locationsDetails, required this.origins, required this.originsDetails, required this.outage, required this.startDate, this.description, this.endDate, this.linkedUrl, this.scope, });
 
-factory RadarGetAnnotationsOutagesResponseResultAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesResponseResultAnnotations(
+factory RadarGetAnnotationsOutagesResponseResultAnnotations.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsOutagesResponseResultAnnotations(
   asns: (json['asns'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   asnsDetails: (json['asnsDetails'] as List<dynamic>).map((e) => RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails.fromJson(e as Map<String, dynamic>)).toList(),
   dataSource: json['dataSource'] as String,
@@ -18,7 +18,7 @@ factory RadarGetAnnotationsOutagesResponseResultAnnotations.fromJson(Map<String,
   outage: RadarGetAnnotationsOutagesResponseResultAnnotationsOutage.fromJson(json['outage'] as Map<String, dynamic>),
   scope: json['scope'] as String?,
   startDate: DateTime.parse(json['startDate'] as String),
-); }
+);}
 
 final List<int> asns;
 
@@ -50,7 +50,7 @@ final String? scope;
 
 final DateTime startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asns': asns,
   'asnsDetails': asnsDetails.map((e) => e.toJson()).toList(),
   'dataSource': dataSource,
@@ -66,8 +66,8 @@ Map<String, dynamic> toJson() { return {
   'outage': outage.toJson(),
   'scope': ?scope,
   'startDate': startDate.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asns') &&
       json.containsKey('asnsDetails') &&
       json.containsKey('dataSource') && json['dataSource'] is String &&
       json.containsKey('eventType') && json['eventType'] is String &&
@@ -77,8 +77,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns'
       json.containsKey('origins') &&
       json.containsKey('originsDetails') &&
       json.containsKey('outage') &&
-      json.containsKey('startDate') && json['startDate'] is String; } 
-RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, List<RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails>? asnsDetails, String? dataSource, String? Function()? description, DateTime? Function()? endDate, String? eventType, String? id, String? Function()? linkedUrl, List<String>? locations, List<RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails>? locationsDetails, List<String>? origins, List<RadarGetAnnotationsOutagesResponseResultAnnotationsOriginsDetails>? originsDetails, RadarGetAnnotationsOutagesResponseResultAnnotationsOutage? outage, String? Function()? scope, DateTime? startDate, }) { return RadarGetAnnotationsOutagesResponseResultAnnotations(
+      json.containsKey('startDate') && json['startDate'] is String;}
+RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, List<RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails>? asnsDetails, String? dataSource, String? Function()? description, DateTime? Function()? endDate, String? eventType, String? id, String? Function()? linkedUrl, List<String>? locations, List<RadarGetAnnotationsOutagesResponseResultAnnotationsLocationsDetails>? locationsDetails, List<String>? origins, List<RadarGetAnnotationsOutagesResponseResultAnnotationsOriginsDetails>? originsDetails, RadarGetAnnotationsOutagesResponseResultAnnotationsOutage? outage, String? Function()? scope, DateTime? startDate, }) {return RadarGetAnnotationsOutagesResponseResultAnnotations(
   asns: asns ?? this.asns,
   asnsDetails: asnsDetails ?? this.asnsDetails,
   dataSource: dataSource ?? this.dataSource,
@@ -94,8 +94,8 @@ RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, L
   outage: outage ?? this.outage,
   scope: scope != null ? scope() : this.scope,
   startDate: startDate ?? this.startDate,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetAnnotationsOutagesResponseResultAnnotations &&
           listEquals(asns, other.asns) &&
           listEquals(asnsDetails, other.asnsDetails) &&
@@ -111,7 +111,7 @@ RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, L
           listEquals(originsDetails, other.originsDetails) &&
           outage == other.outage &&
           scope == other.scope &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(Object.hashAll(asns), Object.hashAll(asnsDetails), dataSource, description, endDate, eventType, id, linkedUrl, Object.hashAll(locations), Object.hashAll(locationsDetails), Object.hashAll(origins), Object.hashAll(originsDetails), outage, scope, startDate); } 
-@override String toString() { return 'RadarGetAnnotationsOutagesResponseResultAnnotations(asns: $asns, asnsDetails: $asnsDetails, dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, id: $id, linkedUrl: $linkedUrl, locations: $locations, locationsDetails: $locationsDetails, origins: $origins, originsDetails: $originsDetails, outage: $outage, scope: $scope, startDate: $startDate)'; } 
- }
+          startDate == other.startDate;}
+@override int get hashCode {return Object.hash(Object.hashAll(asns), Object.hashAll(asnsDetails), dataSource, description, endDate, eventType, id, linkedUrl, Object.hashAll(locations), Object.hashAll(locationsDetails), Object.hashAll(origins), Object.hashAll(originsDetails), outage, scope, startDate);}
+@override String toString() {return 'RadarGetAnnotationsOutagesResponseResultAnnotations(asns: $asns, asnsDetails: $asnsDetails, dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, id: $id, linkedUrl: $linkedUrl, locations: $locations, locationsDetails: $locationsDetails, origins: $origins, originsDetails: $originsDetails, outage: $outage, scope: $scope, startDate: $startDate)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_discounts_variant1.dart';@immutable final class PostSubscriptionsRequestDiscountsVariant2 {const PostSubscriptionsRequestDiscountsVariant2._(this.value);
 
-factory PostSubscriptionsRequestDiscountsVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionsRequestDiscountsVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostSubscriptionsRequestDiscountsVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionsRequestDiscountsVariant2 $empty = PostSubscriptionsRequestDiscountsVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionsRequestDiscountsVariant2> values = [$empty];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionsRequestDiscountsVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionsRequestDiscountsVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionsRequestDiscountsVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionsRequestDiscountsVariant2($value)';}
+}
 /// The coupons to redeem into discounts for the subscription. If not specified or empty, inherits the discount from the subscription's customer.
 @immutable
 final class PostSubscriptionsRequestDiscounts {

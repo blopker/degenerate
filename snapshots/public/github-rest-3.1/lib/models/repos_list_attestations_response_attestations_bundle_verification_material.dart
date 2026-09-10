@@ -2,25 +2,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListAttestationsResponseAttestationsBundleVerificationMaterial {const ReposListAttestationsResponseAttestationsBundleVerificationMaterial({this.additionalProperties = const {}});
 
-factory ReposListAttestationsResponseAttestationsBundleVerificationMaterial.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponseAttestationsBundleVerificationMaterial(
+factory ReposListAttestationsResponseAttestationsBundleVerificationMaterial.fromJson(Map<String, dynamic> json) {return ReposListAttestationsResponseAttestationsBundleVerificationMaterial(
 
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const <String>{}.contains(e.key))),
-); }
+);}
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-ReposListAttestationsResponseAttestationsBundleVerificationMaterial copyWith({Map<String, dynamic>? additionalProperties}) { return ReposListAttestationsResponseAttestationsBundleVerificationMaterial(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+ReposListAttestationsResponseAttestationsBundleVerificationMaterial copyWith({Map<String, dynamic>? additionalProperties}) {return ReposListAttestationsResponseAttestationsBundleVerificationMaterial(
 
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposListAttestationsResponseAttestationsBundleVerificationMaterial &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return mapHash(additionalProperties).hashCode; } 
-@override String toString() { return 'ReposListAttestationsResponseAttestationsBundleVerificationMaterial(additionalProperties: $additionalProperties)'; } 
- }
+          mapEquals(additionalProperties, other.additionalProperties);}
+@override int get hashCode {return mapHash(additionalProperties).hashCode;}
+@override String toString() {return 'ReposListAttestationsResponseAttestationsBundleVerificationMaterial(additionalProperties: $additionalProperties)';}
+}

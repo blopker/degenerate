@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_merge_queue_parameters.dart';@immutable final class RepositoryRuleMergeQueueType {const RepositoryRuleMergeQueueType._(this.value);
 
-factory RepositoryRuleMergeQueueType.fromJson(String json) { return switch (json) {
+factory RepositoryRuleMergeQueueType.fromJson(String json) {return switch (json) {
   'merge_queue' => mergeQueue,
   _ => RepositoryRuleMergeQueueType._(json),
-}; }
+};}
 
 static const RepositoryRuleMergeQueueType mergeQueue = RepositoryRuleMergeQueueType._('merge_queue');
 
@@ -13,39 +13,39 @@ static const List<RepositoryRuleMergeQueueType> values = [mergeQueue];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleMergeQueueType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleMergeQueueType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RepositoryRuleMergeQueueType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RepositoryRuleMergeQueueType($value)';}
+}
 /// Merges must be performed via a merge queue.
 @immutable final class RepositoryRuleMergeQueue {const RepositoryRuleMergeQueue({required this.type, this.parameters, });
 
-factory RepositoryRuleMergeQueue.fromJson(Map<String, dynamic> json) { return RepositoryRuleMergeQueue(
+factory RepositoryRuleMergeQueue.fromJson(Map<String, dynamic> json) {return RepositoryRuleMergeQueue(
   type: RepositoryRuleMergeQueueType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleMergeQueueParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRuleMergeQueueType type;
 
 final RepositoryRuleMergeQueueParameters? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleMergeQueue copyWith({RepositoryRuleMergeQueueType? type, RepositoryRuleMergeQueueParameters? Function()? parameters, }) { return RepositoryRuleMergeQueue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RepositoryRuleMergeQueue copyWith({RepositoryRuleMergeQueueType? type, RepositoryRuleMergeQueueParameters? Function()? parameters, }) {return RepositoryRuleMergeQueue(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RepositoryRuleMergeQueue &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleMergeQueue(type: $type, parameters: $parameters)'; } 
- }
+          parameters == other.parameters;}
+@override int get hashCode {return Object.hash(type, parameters);}
+@override String toString() {return 'RepositoryRuleMergeQueue(type: $type, parameters: $parameters)';}
+}

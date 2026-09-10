@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaypalSellerProtectionDisputeCategories {const PaypalSellerProtectionDisputeCategories._(this.value);
 
-factory PaypalSellerProtectionDisputeCategories.fromJson(String json) { return switch (json) {
+factory PaypalSellerProtectionDisputeCategories.fromJson(String json) {return switch (json) {
   'fraudulent' => fraudulent,
   'product_not_received' => productNotReceived,
   _ => PaypalSellerProtectionDisputeCategories._(json),
-}; }
+};}
 
 static const PaypalSellerProtectionDisputeCategories fraudulent = PaypalSellerProtectionDisputeCategories._('fraudulent');
 
@@ -16,23 +16,23 @@ static const List<PaypalSellerProtectionDisputeCategories> values = [fraudulent,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaypalSellerProtectionDisputeCategories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaypalSellerProtectionDisputeCategories($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaypalSellerProtectionDisputeCategories && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaypalSellerProtectionDisputeCategories($value)';}
+}
 /// Indicates whether the transaction is eligible for PayPal's seller protection.
 @immutable final class PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus._(this.value);
 
-factory PaypalSellerProtectionStatus.fromJson(String json) { return switch (json) {
+factory PaypalSellerProtectionStatus.fromJson(String json) {return switch (json) {
   'eligible' => eligible,
   'not_eligible' => notEligible,
   'partially_eligible' => partiallyEligible,
   _ => PaypalSellerProtectionStatus._(json),
-}; }
+};}
 
 static const PaypalSellerProtectionStatus eligible = PaypalSellerProtectionStatus._('eligible');
 
@@ -44,21 +44,21 @@ static const List<PaypalSellerProtectionStatus> values = [eligible, notEligible,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaypalSellerProtectionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaypalSellerProtectionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaypalSellerProtectionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaypalSellerProtectionStatus($value)';}
+}
 /// 
 @immutable final class PaypalSellerProtection {const PaypalSellerProtection({required this.status, this.disputeCategories = const Omittable.absent(), });
 
-factory PaypalSellerProtection.fromJson(Map<String, dynamic> json) { return PaypalSellerProtection(
+factory PaypalSellerProtection.fromJson(Map<String, dynamic> json) {return PaypalSellerProtection(
   disputeCategories: json.containsKey('dispute_categories') ? Omittable((json['dispute_categories'] as List<dynamic>?)?.map((e) => PaypalSellerProtectionDisputeCategories.fromJson(e as String)).toList()) : const Omittable.absent(),
   status: PaypalSellerProtectionStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// An array of conditions that are covered for the transaction, if applicable.
 final Omittable<List<PaypalSellerProtectionDisputeCategories>?> disputeCategories;
@@ -66,20 +66,20 @@ final Omittable<List<PaypalSellerProtectionDisputeCategories>?> disputeCategorie
 /// Indicates whether the transaction is eligible for PayPal's seller protection.
 final PaypalSellerProtectionStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (disputeCategories.isPresent) 'dispute_categories': disputeCategories.value?.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PaypalSellerProtection copyWith({Omittable<List<PaypalSellerProtectionDisputeCategories>?>? disputeCategories, PaypalSellerProtectionStatus? status, }) { return PaypalSellerProtection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
+PaypalSellerProtection copyWith({Omittable<List<PaypalSellerProtectionDisputeCategories>?>? disputeCategories, PaypalSellerProtectionStatus? status, }) {return PaypalSellerProtection(
   disputeCategories: disputeCategories ?? this.disputeCategories,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaypalSellerProtection &&
           disputeCategories.isPresent == other.disputeCategories.isPresent &&
           listEquals(disputeCategories.value, other.disputeCategories.value) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(Object.hashAll(disputeCategories.value ?? const []), status); } 
-@override String toString() { return 'PaypalSellerProtection(disputeCategories: $disputeCategories, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(Object.hashAll(disputeCategories.value ?? const []), status);}
+@override String toString() {return 'PaypalSellerProtection(disputeCategories: $disputeCategories, status: $status)';}
+}

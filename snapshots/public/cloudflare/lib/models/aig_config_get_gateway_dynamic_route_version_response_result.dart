@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_end.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_model.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_percentage.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_rate.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_start.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResultActive {const AigConfigGetGatewayDynamicRouteVersionResponseResultActive._(this.value);
 
-factory AigConfigGetGatewayDynamicRouteVersionResponseResultActive.fromJson(String json) { return switch (json) {
+factory AigConfigGetGatewayDynamicRouteVersionResponseResultActive.fromJson(String json) {return switch (json) {
   'true' => $true,
   'false' => $false,
   _ => AigConfigGetGatewayDynamicRouteVersionResponseResultActive._(json),
-}; }
+};}
 
 static const AigConfigGetGatewayDynamicRouteVersionResponseResultActive $true = AigConfigGetGatewayDynamicRouteVersionResponseResultActive._('true');
 
@@ -16,17 +16,17 @@ static const List<AigConfigGetGatewayDynamicRouteVersionResponseResultActive> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigGetGatewayDynamicRouteVersionResponseResultActive && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResultActive($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AigConfigGetGatewayDynamicRouteVersionResponseResultActive && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AigConfigGetGatewayDynamicRouteVersionResponseResultActive($value)';}
+}
 @immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResult {const AigConfigGetGatewayDynamicRouteVersionResponseResult({required this.active, required this.createdAt, required this.data, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.versionId, this.comment = const Omittable.absent(), });
 
-factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
+factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigGetGatewayDynamicRouteVersionResponseResult(
   active: AigConfigGetGatewayDynamicRouteVersionResponseResultActive.fromJson(json['active'] as String),
   comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
@@ -37,7 +37,7 @@ factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
   versionId: json['version_id'] as String,
-); }
+);}
 
 final AigConfigGetGatewayDynamicRouteVersionResponseResultActive active;
 
@@ -59,7 +59,7 @@ final String name;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active.toJson(),
   if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
@@ -70,8 +70,8 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
   'version_id': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('data') && json['data'] is String &&
       json.containsKey('elements') &&
@@ -79,8 +79,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version_id') && json['version_id'] is String; } 
-AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({AigConfigGetGatewayDynamicRouteVersionResponseResultActive? active, Omittable<String?>? comment, String? createdAt, String? data, List<AigConfigGetGatewayDynamicRouteVersionResponseResultElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, String? versionId, }) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
+      json.containsKey('version_id') && json['version_id'] is String;}
+AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({AigConfigGetGatewayDynamicRouteVersionResponseResultActive? active, Omittable<String?>? comment, String? createdAt, String? data, List<AigConfigGetGatewayDynamicRouteVersionResponseResultElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, String? versionId, }) {return AigConfigGetGatewayDynamicRouteVersionResponseResult(
   active: active ?? this.active,
   comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
@@ -91,8 +91,8 @@ AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({AigConfigGetGatew
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
   versionId: versionId ?? this.versionId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigGetGatewayDynamicRouteVersionResponseResult &&
           active == other.active &&
           comment == other.comment &&
@@ -103,7 +103,7 @@ AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({AigConfigGetGatew
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           name == other.name &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(active, comment, createdAt, data, Object.hashAll(elements), gatewayId, id, modifiedAt, name, versionId); } 
-@override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResult(active: $active, comment: $comment, createdAt: $createdAt, data: $data, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, versionId: $versionId)'; } 
- }
+          versionId == other.versionId;}
+@override int get hashCode {return Object.hash(active, comment, createdAt, data, Object.hashAll(elements), gatewayId, id, modifiedAt, name, versionId);}
+@override String toString() {return 'AigConfigGetGatewayDynamicRouteVersionResponseResult(active: $active, comment: $comment, createdAt: $createdAt, data: $data, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, versionId: $versionId)';}
+}

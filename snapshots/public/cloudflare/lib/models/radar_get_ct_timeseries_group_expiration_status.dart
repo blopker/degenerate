@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupExpirationStatus {const RadarGetCtTimeseriesGroupExpirationStatus._(this.value);
 
-factory RadarGetCtTimeseriesGroupExpirationStatus.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesGroupExpirationStatus.fromJson(String json) {return switch (json) {
   'EXPIRED' => expired,
   'VALID' => valid,
   _ => RadarGetCtTimeseriesGroupExpirationStatus._(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesGroupExpirationStatus expired = RadarGetCtTimeseriesGroupExpirationStatus._('EXPIRED');
 
@@ -16,11 +16,11 @@ static const List<RadarGetCtTimeseriesGroupExpirationStatus> values = [expired, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCtTimeseriesGroupExpirationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCtTimeseriesGroupExpirationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCtTimeseriesGroupExpirationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCtTimeseriesGroupExpirationStatus($value)';}
+}

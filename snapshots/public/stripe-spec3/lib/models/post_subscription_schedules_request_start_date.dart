@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesRequestStartDateVariant2 {const PostSubscriptionSchedulesRequestStartDateVariant2._(this.value);
 
-factory PostSubscriptionSchedulesRequestStartDateVariant2.fromJson(String json) { return switch (json) {
+factory PostSubscriptionSchedulesRequestStartDateVariant2.fromJson(String json) {return switch (json) {
   'now' => now,
   _ => PostSubscriptionSchedulesRequestStartDateVariant2._(json),
-}; }
+};}
 
 static const PostSubscriptionSchedulesRequestStartDateVariant2 now = PostSubscriptionSchedulesRequestStartDateVariant2._('now');
 
@@ -13,14 +13,14 @@ static const List<PostSubscriptionSchedulesRequestStartDateVariant2> values = [n
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestStartDateVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestStartDateVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestStartDateVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSubscriptionSchedulesRequestStartDateVariant2($value)';}
+}
 /// When the subscription schedule starts. We recommend using `now` so that it starts the subscription immediately. You can also use a Unix timestamp to backdate the subscription so that it starts on a past date, or set a future date for the subscription to start on.
 @immutable
 final class PostSubscriptionSchedulesRequestStartDate {

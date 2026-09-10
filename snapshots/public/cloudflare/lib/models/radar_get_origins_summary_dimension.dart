@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the origin attribute by which to group the results.
 @immutable final class RadarGetOriginsSummaryDimension {const RadarGetOriginsSummaryDimension._(this.value);
 
-factory RadarGetOriginsSummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetOriginsSummaryDimension.fromJson(String json) {return switch (json) {
   'REGION' => region,
   'SUCCESS_RATE' => successRate,
   'PERCENTILE' => percentile,
   _ => RadarGetOriginsSummaryDimension._(json),
-}; }
+};}
 
 static const RadarGetOriginsSummaryDimension region = RadarGetOriginsSummaryDimension._('REGION');
 
@@ -20,11 +20,11 @@ static const List<RadarGetOriginsSummaryDimension> values = [region, successRate
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetOriginsSummaryDimension && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetOriginsSummaryDimension($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetOriginsSummaryDimension && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetOriginsSummaryDimension($value)';}
+}

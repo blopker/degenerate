@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_code_object.dart';import 'run_step_details_tool_calls_file_search_object.dart';import 'run_step_details_tool_calls_function_object.dart';import 'run_step_details_tool_calls_object_tool_calls.dart';/// Always `tool_calls`.
 @immutable final class RunStepDetailsToolCallsObjectType {const RunStepDetailsToolCallsObjectType._(this.value);
 
-factory RunStepDetailsToolCallsObjectType.fromJson(String json) { return switch (json) {
+factory RunStepDetailsToolCallsObjectType.fromJson(String json) {return switch (json) {
   'tool_calls' => toolCalls,
   _ => RunStepDetailsToolCallsObjectType._(json),
-}; }
+};}
 
 static const RunStepDetailsToolCallsObjectType toolCalls = RunStepDetailsToolCallsObjectType._('tool_calls');
 
@@ -14,21 +14,21 @@ static const List<RunStepDetailsToolCallsObjectType> values = [toolCalls];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDetailsToolCallsObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDetailsToolCallsObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepDetailsToolCallsObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepDetailsToolCallsObjectType($value)';}
+}
 /// Details of the tool call.
 @immutable final class RunStepDetailsToolCallsObject {const RunStepDetailsToolCallsObject({required this.type, required this.toolCalls, });
 
-factory RunStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsObject(
+factory RunStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) {return RunStepDetailsToolCallsObject(
   type: RunStepDetailsToolCallsObjectType.fromJson(json['type'] as String),
   toolCalls: (json['tool_calls'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => RunStepDetailsToolCallsCodeObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsFileSearchObject.fromJson(v as Map<String, dynamic>), fromC: (v) => RunStepDetailsToolCallsFunctionObject.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 /// Always `tool_calls`.
 final RunStepDetailsToolCallsObjectType type;
@@ -37,20 +37,20 @@ final RunStepDetailsToolCallsObjectType type;
 /// 
 final List<RunStepDetailsToolCallsObjectToolCalls> toolCalls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'tool_calls': toolCalls.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('tool_calls'); } 
-RunStepDetailsToolCallsObject copyWith({RunStepDetailsToolCallsObjectType? type, List<RunStepDetailsToolCallsObjectToolCalls>? toolCalls, }) { return RunStepDetailsToolCallsObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('tool_calls');}
+RunStepDetailsToolCallsObject copyWith({RunStepDetailsToolCallsObjectType? type, List<RunStepDetailsToolCallsObjectToolCalls>? toolCalls, }) {return RunStepDetailsToolCallsObject(
   type: type ?? this.type,
   toolCalls: toolCalls ?? this.toolCalls,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepDetailsToolCallsObject &&
           type == other.type &&
-          listEquals(toolCalls, other.toolCalls); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(toolCalls)); } 
-@override String toString() { return 'RunStepDetailsToolCallsObject(type: $type, toolCalls: $toolCalls)'; } 
- }
+          listEquals(toolCalls, other.toolCalls);}
+@override int get hashCode {return Object.hash(type, Object.hashAll(toolCalls));}
+@override String toString() {return 'RunStepDetailsToolCallsObject(type: $type, toolCalls: $toolCalls)';}
+}

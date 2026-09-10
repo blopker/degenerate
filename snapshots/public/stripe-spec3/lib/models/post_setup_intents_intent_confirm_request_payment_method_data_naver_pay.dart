@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._(this.value);
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(String json) {return switch (json) {
   'card' => card,
   'points' => points,
   _ => PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._(json),
-}; }
+};}
 
 static const PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding card = PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding._('card');
 
@@ -16,32 +16,32 @@ static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayF
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding($value)';}
+}
 @immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay({this.funding});
 
-factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) {return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
   funding: json['funding'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding.fromJson(json['funding'] as String) : null,
-); }
+);}
 
 final PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding? funding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (funding != null) 'funding': funding?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding? Function()? funding}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'funding'}.contains(key));}
+PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPayFunding? Function()? funding}) {return PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(
   funding: funding != null ? funding() : this.funding,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay &&
-          funding == other.funding; } 
-@override int get hashCode { return funding.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(funding: $funding)'; } 
- }
+          funding == other.funding;}
+@override int get hashCode {return funding.hashCode;}
+@override String toString() {return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataNaverPay(funding: $funding)';}
+}

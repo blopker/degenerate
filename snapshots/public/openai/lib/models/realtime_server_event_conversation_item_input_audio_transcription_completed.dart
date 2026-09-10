@@ -13,7 +13,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_pro
 /// 
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted {const RealtimeServerEventConversationItemInputAudioTranscriptionCompleted({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.transcript, required this.usage, this.logprobs = const Omittable.absent(), });
 
-factory RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
+factory RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
@@ -21,7 +21,7 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.from
   transcript: json['transcript'] as String,
   logprobs: json.containsKey('logprobs') ? Omittable((json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usage: OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -46,7 +46,7 @@ final Omittable<List<LogProbProperties>?> logprobs;
 /// Usage statistics for the transcription, this is billed according to the ASR model's pricing rather than the realtime model's pricing.
 final RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'item_id': itemId,
@@ -54,14 +54,14 @@ Map<String, dynamic> toJson() { return {
   'transcript': transcript,
   if (logprobs.isPresent) 'logprobs': logprobs.value?.map((e) => e.toJson()).toList(),
   'usage': usage.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('transcript') && json['transcript'] is String &&
-      json.containsKey('usage'); } 
-RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? transcript, Omittable<List<LogProbProperties>?>? logprobs, RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
+      json.containsKey('usage');}
+RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? transcript, Omittable<List<LogProbProperties>?>? logprobs, RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) {return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
@@ -69,8 +69,8 @@ RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({St
   transcript: transcript ?? this.transcript,
   logprobs: logprobs ?? this.logprobs,
   usage: usage ?? this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionCompleted &&
           eventId == other.eventId &&
           type == other.type &&
@@ -79,7 +79,7 @@ RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({St
           transcript == other.transcript &&
           logprobs.isPresent == other.logprobs.isPresent &&
           listEquals(logprobs.value, other.logprobs.value) &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, transcript, Object.hashAll(logprobs.value ?? const []), usage); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, transcript: $transcript, logprobs: $logprobs, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hash(eventId, type, itemId, contentIndex, transcript, Object.hashAll(logprobs.value ?? const []), usage);}
+@override String toString() {return 'RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, transcript: $transcript, logprobs: $logprobs, usage: $usage)';}
+}

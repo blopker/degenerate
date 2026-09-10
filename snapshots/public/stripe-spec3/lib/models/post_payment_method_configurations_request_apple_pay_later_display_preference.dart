@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference._(this.value);
 
-factory PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+factory PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference.fromJson(String json) {return switch (json) {
   'none' => none,
   'off' => off,
   'on' => $on,
   _ => PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference._(json),
-}; }
+};}
 
 static const PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference none = PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference._('none');
 
@@ -19,32 +19,32 @@ static const List<PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPref
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference($value)';}
+}
 @immutable final class PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference {const PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference({this.preference});
 
-factory PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference(
+factory PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
-); }
+);}
 
 final PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference? preference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preference != null) 'preference': preference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference? Function()? preference}) { return PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preference'}.contains(key));}
+PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreferencePreference? Function()? preference}) {return PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference(
   preference: preference != null ? preference() : this.preference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference &&
-          preference == other.preference; } 
-@override int get hashCode { return preference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference(preference: $preference)'; } 
- }
+          preference == other.preference;}
+@override int get hashCode {return preference.hashCode;}
+@override String toString() {return 'PostPaymentMethodConfigurationsRequestApplePayLaterDisplayPreference(preference: $preference)';}
+}

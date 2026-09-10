@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_object.dart';@immutable final class ThreadStreamEventThreadCreatedEvent {const ThreadStreamEventThreadCreatedEvent._(this.value);
 
-factory ThreadStreamEventThreadCreatedEvent.fromJson(String json) { return switch (json) {
+factory ThreadStreamEventThreadCreatedEvent.fromJson(String json) {return switch (json) {
   'thread.created' => threadCreated,
   _ => ThreadStreamEventThreadCreatedEvent._(json),
-}; }
+};}
 
 static const ThreadStreamEventThreadCreatedEvent threadCreated = ThreadStreamEventThreadCreatedEvent._('thread.created');
 
@@ -13,22 +13,22 @@ static const List<ThreadStreamEventThreadCreatedEvent> values = [threadCreated];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadStreamEventThreadCreatedEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadStreamEventThreadCreatedEvent($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreadStreamEventThreadCreatedEvent && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ThreadStreamEventThreadCreatedEvent($value)';}
+}
 /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
 @immutable final class ThreadStreamEventThreadCreated {const ThreadStreamEventThreadCreated({required this.event, required this.data, this.enabled, });
 
-factory ThreadStreamEventThreadCreated.fromJson(Map<String, dynamic> json) { return ThreadStreamEventThreadCreated(
+factory ThreadStreamEventThreadCreated.fromJson(Map<String, dynamic> json) {return ThreadStreamEventThreadCreated(
   enabled: json['enabled'] as bool?,
   event: ThreadStreamEventThreadCreatedEvent.fromJson(json['event'] as String),
   data: ThreadObject.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 /// Whether to enable input audio transcription.
 final bool? enabled;
@@ -37,23 +37,23 @@ final ThreadStreamEventThreadCreatedEvent event;
 
 final ThreadObject data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
-      json.containsKey('data'); } 
-ThreadStreamEventThreadCreated copyWith({bool? Function()? enabled, ThreadStreamEventThreadCreatedEvent? event, ThreadObject? data, }) { return ThreadStreamEventThreadCreated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') &&
+      json.containsKey('data');}
+ThreadStreamEventThreadCreated copyWith({bool? Function()? enabled, ThreadStreamEventThreadCreatedEvent? event, ThreadObject? data, }) {return ThreadStreamEventThreadCreated(
   enabled: enabled != null ? enabled() : this.enabled,
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ThreadStreamEventThreadCreated &&
           enabled == other.enabled &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(enabled, event, data); } 
-@override String toString() { return 'ThreadStreamEventThreadCreated(enabled: $enabled, event: $event, data: $data)'; } 
- }
+          data == other.data;}
+@override int get hashCode {return Object.hash(enabled, event, data);}
+@override String toString() {return 'ThreadStreamEventThreadCreated(enabled: $enabled, event: $event, data: $data)';}
+}

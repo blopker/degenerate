@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_completion_usage.dart';import 'run_step_details_message_creation_object.dart';import 'run_step_details_tool_calls_object.dart';import 'run_step_object_last_error.dart';import 'run_step_object_step_details.dart';/// The object type, which is always `thread.run.step`.
 @immutable final class RunStepObjectObject {const RunStepObjectObject._(this.value);
 
-factory RunStepObjectObject.fromJson(String json) { return switch (json) {
+factory RunStepObjectObject.fromJson(String json) {return switch (json) {
   'thread.run.step' => threadRunStep,
   _ => RunStepObjectObject._(json),
-}; }
+};}
 
 static const RunStepObjectObject threadRunStep = RunStepObjectObject._('thread.run.step');
 
@@ -14,22 +14,22 @@ static const List<RunStepObjectObject> values = [threadRunStep];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepObjectObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepObjectObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepObjectObject($value)';}
+}
 /// The type of run step, which can be either `message_creation` or `tool_calls`.
 @immutable final class RunStepObjectType {const RunStepObjectType._(this.value);
 
-factory RunStepObjectType.fromJson(String json) { return switch (json) {
+factory RunStepObjectType.fromJson(String json) {return switch (json) {
   'message_creation' => messageCreation,
   'tool_calls' => toolCalls,
   _ => RunStepObjectType._(json),
-}; }
+};}
 
 static const RunStepObjectType messageCreation = RunStepObjectType._('message_creation');
 
@@ -39,25 +39,25 @@ static const List<RunStepObjectType> values = [messageCreation, toolCalls];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepObjectType($value)';}
+}
 /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
 @immutable final class RunStepObjectStatus {const RunStepObjectStatus._(this.value);
 
-factory RunStepObjectStatus.fromJson(String json) { return switch (json) {
+factory RunStepObjectStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'cancelled' => cancelled,
   'failed' => failed,
   'completed' => completed,
   'expired' => expired,
   _ => RunStepObjectStatus._(json),
-}; }
+};}
 
 static const RunStepObjectStatus inProgress = RunStepObjectStatus._('in_progress');
 
@@ -73,19 +73,19 @@ static const List<RunStepObjectStatus> values = [inProgress, cancelled, failed, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepObjectStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RunStepObjectStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RunStepObjectStatus($value)';}
+}
 /// Represents a step in execution of a run.
 /// 
 @immutable final class RunStepObject {const RunStepObject({required this.id, required this.object, required this.createdAt, required this.assistantId, required this.threadId, required this.runId, required this.type, required this.status, required this.stepDetails, required this.lastError, required this.expiredAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.metadata, required this.usage, });
 
-factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject(
+factory RunStepObject.fromJson(Map<String, dynamic> json) {return RunStepObject(
   id: json['id'] as String,
   object: RunStepObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -102,7 +102,7 @@ factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject
   completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   usage: json['usage'] != null ? RunStepCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The identifier of the run step, which can be referenced in API endpoints.
 final String id;
@@ -157,7 +157,7 @@ final Map<String,String>? metadata;
 
 final RunStepCompletionUsage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -174,8 +174,8 @@ Map<String, dynamic> toJson() { return {
   'completed_at': completedAt,
   'metadata': metadata,
   'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('assistant_id') && json['assistant_id'] is String &&
@@ -190,8 +190,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('failed_at') && (json['failed_at'] == null || json['failed_at'] is num) &&
       json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
       json.containsKey('metadata') &&
-      json.containsKey('usage'); } 
-RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? Function()? usage, }) { return RunStepObject(
+      json.containsKey('usage');}
+RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? Function()? usage, }) {return RunStepObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -208,8 +208,8 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   metadata: metadata != null ? metadata() : this.metadata,
   usage: usage != null ? usage() : this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RunStepObject &&
           id == other.id &&
           object == other.object &&
@@ -226,7 +226,7 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
           failedAt == other.failedAt &&
           completedAt == other.completedAt &&
           metadata == other.metadata &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, assistantId, threadId, runId, type, status, stepDetails, lastError, expiredAt, cancelledAt, failedAt, completedAt, metadata, usage); } 
-@override String toString() { return 'RunStepObject(id: $id, object: $object, createdAt: $createdAt, assistantId: $assistantId, threadId: $threadId, runId: $runId, type: $type, status: $status, stepDetails: $stepDetails, lastError: $lastError, expiredAt: $expiredAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, metadata: $metadata, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hash(id, object, createdAt, assistantId, threadId, runId, type, status, stepDetails, lastError, expiredAt, cancelledAt, failedAt, completedAt, metadata, usage);}
+@override String toString() {return 'RunStepObject(id: $id, object: $object, createdAt: $createdAt, assistantId: $assistantId, threadId: $threadId, runId: $runId, type: $type, status: $status, stepDetails: $stepDetails, lastError: $lastError, expiredAt: $expiredAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, metadata: $metadata, usage: $usage)';}
+}

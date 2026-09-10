@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'field_configuration.dart';import 'single_select_options.dart';/// The field's data type.
 @immutable final class FieldDataType {const FieldDataType._(this.value);
 
-factory FieldDataType.fromJson(String json) { return switch (json) {
+factory FieldDataType.fromJson(String json) {return switch (json) {
   'assignees' => assignees,
   'linked_pull_requests' => linkedPullRequests,
   'reviewers' => reviewers,
@@ -20,7 +20,7 @@ factory FieldDataType.fromJson(String json) { return switch (json) {
   'parent_issue' => parentIssue,
   'sub_issues_progress' => subIssuesProgress,
   _ => FieldDataType._(json),
-}; }
+};}
 
 static const FieldDataType assignees = FieldDataType._('assignees');
 
@@ -56,18 +56,18 @@ static const List<FieldDataType> values = [assignees, linkedPullRequests, review
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FieldDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FieldDataType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FieldDataType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FieldDataType($value)';}
+}
 /// A field inside a projects v2 project
 @immutable final class Field {const Field({required this.id, required this.projectUrl, required this.name, required this.dataType, required this.createdAt, required this.updatedAt, this.nodeId, this.options, this.configuration, });
 
-factory Field.fromJson(Map<String, dynamic> json) { return Field(
+factory Field.fromJson(Map<String, dynamic> json) {return Field(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String?,
   projectUrl: json['project_url'] as String,
@@ -77,7 +77,7 @@ factory Field.fromJson(Map<String, dynamic> json) { return Field(
   configuration: json['configuration'] != null ? FieldConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The unique identifier of the field.
 final int id;
@@ -106,7 +106,7 @@ final DateTime createdAt;
 /// The time when the field was last updated.
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': ?nodeId,
   'project_url': projectUrl,
@@ -116,14 +116,14 @@ Map<String, dynamic> toJson() { return {
   if (configuration != null) 'configuration': configuration?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('data_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String? name, FieldDataType? dataType, List<SingleSelectOptions>? Function()? options, FieldConfiguration? Function()? configuration, DateTime? createdAt, DateTime? updatedAt, }) { return Field(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String? name, FieldDataType? dataType, List<SingleSelectOptions>? Function()? options, FieldConfiguration? Function()? configuration, DateTime? createdAt, DateTime? updatedAt, }) {return Field(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   projectUrl: projectUrl ?? this.projectUrl,
@@ -133,8 +133,8 @@ Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String?
   configuration: configuration != null ? configuration() : this.configuration,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Field &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -144,7 +144,7 @@ Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String?
           listEquals(options, other.options) &&
           configuration == other.configuration &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, projectUrl, name, dataType, Object.hashAll(options ?? const []), configuration, createdAt, updatedAt); } 
-@override String toString() { return 'Field(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, name: $name, dataType: $dataType, options: $options, configuration: $configuration, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(id, nodeId, projectUrl, name, dataType, Object.hashAll(options ?? const []), configuration, createdAt, updatedAt);}
+@override String toString() {return 'Field(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, name: $name, dataType: $dataType, options: $options, configuration: $configuration, createdAt: $createdAt, updatedAt: $updatedAt)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus._(this.value);
 
-factory SchemaValidationExtractOperationsFromSchemaOperationStatus.fromJson(String json) { return switch (json) {
+factory SchemaValidationExtractOperationsFromSchemaOperationStatus.fromJson(String json) {return switch (json) {
   'new' => $new,
   'existing' => existing,
   _ => SchemaValidationExtractOperationsFromSchemaOperationStatus._(json),
-}; }
+};}
 
 static const SchemaValidationExtractOperationsFromSchemaOperationStatus $new = SchemaValidationExtractOperationsFromSchemaOperationStatus._('new');
 
@@ -16,11 +16,11 @@ static const List<SchemaValidationExtractOperationsFromSchemaOperationStatus> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SchemaValidationExtractOperationsFromSchemaOperationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SchemaValidationExtractOperationsFromSchemaOperationStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SchemaValidationExtractOperationsFromSchemaOperationStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SchemaValidationExtractOperationsFromSchemaOperationStatus($value)';}
+}

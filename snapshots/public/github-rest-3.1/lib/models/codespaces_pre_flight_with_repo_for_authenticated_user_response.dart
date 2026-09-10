@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespaces_pre_flight_with_repo_for_authenticated_user_response_defaults.dart';import 'simple_user.dart';@immutable final class CodespacesPreFlightWithRepoForAuthenticatedUserResponse {const CodespacesPreFlightWithRepoForAuthenticatedUserResponse({this.billableOwner, this.defaults, });
 
-factory CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
+factory CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) {return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
   billableOwner: json['billable_owner'] != null ? SimpleUser.fromJson(json['billable_owner'] as Map<String, dynamic>) : null,
   defaults: json['defaults'] != null ? CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults.fromJson(json['defaults'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SimpleUser? billableOwner;
 
 final CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults? defaults;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billableOwner != null) 'billable_owner': billableOwner?.toJson(),
   if (defaults != null) 'defaults': defaults?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billable_owner', 'defaults'}.contains(key)); } 
-CodespacesPreFlightWithRepoForAuthenticatedUserResponse copyWith({SimpleUser? Function()? billableOwner, CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults? Function()? defaults, }) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billable_owner', 'defaults'}.contains(key));}
+CodespacesPreFlightWithRepoForAuthenticatedUserResponse copyWith({SimpleUser? Function()? billableOwner, CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults? Function()? defaults, }) {return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
   billableOwner: billableOwner != null ? billableOwner() : this.billableOwner,
   defaults: defaults != null ? defaults() : this.defaults,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CodespacesPreFlightWithRepoForAuthenticatedUserResponse &&
           billableOwner == other.billableOwner &&
-          defaults == other.defaults; } 
-@override int get hashCode { return Object.hash(billableOwner, defaults); } 
-@override String toString() { return 'CodespacesPreFlightWithRepoForAuthenticatedUserResponse(billableOwner: $billableOwner, defaults: $defaults)'; } 
- }
+          defaults == other.defaults;}
+@override int get hashCode {return Object.hash(billableOwner, defaults);}
+@override String toString() {return 'CodespacesPreFlightWithRepoForAuthenticatedUserResponse(billableOwner: $billableOwner, defaults: $defaults)';}
+}

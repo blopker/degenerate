@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class AccountApplicationSmsFallbackMethod {const AccountApplicationSmsFallbackMethod._(this.value);
 
-factory AccountApplicationSmsFallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountApplicationSmsFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountApplicationSmsFallbackMethod._(json),
-}; }
+};}
 
 static const AccountApplicationSmsFallbackMethod $get = AccountApplicationSmsFallbackMethod._('GET');
 
@@ -17,22 +17,22 @@ static const List<AccountApplicationSmsFallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountApplicationSmsFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountApplicationSmsFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountApplicationSmsFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountApplicationSmsFallbackMethod($value)';}
+}
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
 @immutable final class AccountApplicationSmsMethod {const AccountApplicationSmsMethod._(this.value);
 
-factory AccountApplicationSmsMethod.fromJson(String json) { return switch (json) {
+factory AccountApplicationSmsMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountApplicationSmsMethod._(json),
-}; }
+};}
 
 static const AccountApplicationSmsMethod $get = AccountApplicationSmsMethod._('GET');
 
@@ -42,22 +42,22 @@ static const List<AccountApplicationSmsMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountApplicationSmsMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountApplicationSmsMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountApplicationSmsMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountApplicationSmsMethod($value)';}
+}
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
 @immutable final class AccountApplicationStatusCallbackMethod {const AccountApplicationStatusCallbackMethod._(this.value);
 
-factory AccountApplicationStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountApplicationStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountApplicationStatusCallbackMethod._(json),
-}; }
+};}
 
 static const AccountApplicationStatusCallbackMethod $get = AccountApplicationStatusCallbackMethod._('GET');
 
@@ -67,22 +67,22 @@ static const List<AccountApplicationStatusCallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountApplicationStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountApplicationStatusCallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountApplicationStatusCallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountApplicationStatusCallbackMethod($value)';}
+}
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class AccountApplicationVoiceFallbackMethod {const AccountApplicationVoiceFallbackMethod._(this.value);
 
-factory AccountApplicationVoiceFallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountApplicationVoiceFallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountApplicationVoiceFallbackMethod._(json),
-}; }
+};}
 
 static const AccountApplicationVoiceFallbackMethod $get = AccountApplicationVoiceFallbackMethod._('GET');
 
@@ -92,22 +92,22 @@ static const List<AccountApplicationVoiceFallbackMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountApplicationVoiceFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountApplicationVoiceFallbackMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountApplicationVoiceFallbackMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountApplicationVoiceFallbackMethod($value)';}
+}
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
 @immutable final class AccountApplicationVoiceMethod {const AccountApplicationVoiceMethod._(this.value);
 
-factory AccountApplicationVoiceMethod.fromJson(String json) { return switch (json) {
+factory AccountApplicationVoiceMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountApplicationVoiceMethod._(json),
-}; }
+};}
 
 static const AccountApplicationVoiceMethod $get = AccountApplicationVoiceMethod._('GET');
 
@@ -117,17 +117,17 @@ static const List<AccountApplicationVoiceMethod> values = [$get, post];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountApplicationVoiceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountApplicationVoiceMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccountApplicationVoiceMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccountApplicationVoiceMethod($value)';}
+}
 @immutable final class AccountApplication {const AccountApplication({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.messageStatusCallback = const Omittable.absent(), this.sid = const Omittable.absent(), this.smsFallbackMethod = const Omittable.absent(), this.smsFallbackUrl = const Omittable.absent(), this.smsMethod = const Omittable.absent(), this.smsStatusCallback = const Omittable.absent(), this.smsUrl = const Omittable.absent(), this.statusCallback = const Omittable.absent(), this.statusCallbackMethod = const Omittable.absent(), this.uri = const Omittable.absent(), this.voiceCallerIdLookup = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.publicApplicationConnectEnabled = const Omittable.absent(), });
 
-factory AccountApplication.fromJson(Map<String, dynamic> json) { return AccountApplication(
+factory AccountApplication.fromJson(Map<String, dynamic> json) {return AccountApplication(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
@@ -149,7 +149,7 @@ factory AccountApplication.fromJson(Map<String, dynamic> json) { return AccountA
   voiceMethod: json.containsKey('voice_method') ? Omittable(json['voice_method'] != null ? AccountApplicationVoiceMethod.fromJson(json['voice_method'] as String) : null) : const Omittable.absent(),
   voiceUrl: json.containsKey('voice_url') ? Omittable(json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null) : const Omittable.absent(),
   publicApplicationConnectEnabled: json.containsKey('public_application_connect_enabled') ? Omittable(json['public_application_connect_enabled'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Application resource.
 final Omittable<String?> accountSid;
@@ -214,7 +214,7 @@ final Omittable<Uri?> voiceUrl;
 /// Whether to allow other Twilio accounts to dial this applicaton using Dial verb. Can be: `true` or `false`.
 final Omittable<bool?> publicApplicationConnectEnabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
@@ -236,9 +236,9 @@ Map<String, dynamic> toJson() { return {
   if (voiceMethod.isPresent) 'voice_method': voiceMethod.value?.toJson(),
   if (voiceUrl.isPresent) 'voice_url': voiceUrl.value?.toString(),
   if (publicApplicationConnectEnabled.isPresent) 'public_application_connect_enabled': publicApplicationConnectEnabled.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'friendly_name', 'message_status_callback', 'sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_status_callback', 'sms_url', 'status_callback', 'status_callback_method', 'uri', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'public_application_connect_enabled'}.contains(key)); } 
-AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<Uri?>? messageStatusCallback, Omittable<String?>? sid, Omittable<AccountApplicationSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountApplicationSmsMethod?>? smsMethod, Omittable<Uri?>? smsStatusCallback, Omittable<Uri?>? smsUrl, Omittable<Uri?>? statusCallback, Omittable<AccountApplicationStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? uri, Omittable<bool?>? voiceCallerIdLookup, Omittable<AccountApplicationVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountApplicationVoiceMethod?>? voiceMethod, Omittable<Uri?>? voiceUrl, Omittable<bool?>? publicApplicationConnectEnabled, }) { return AccountApplication(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'friendly_name', 'message_status_callback', 'sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_status_callback', 'sms_url', 'status_callback', 'status_callback_method', 'uri', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'public_application_connect_enabled'}.contains(key));}
+AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<Uri?>? messageStatusCallback, Omittable<String?>? sid, Omittable<AccountApplicationSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountApplicationSmsMethod?>? smsMethod, Omittable<Uri?>? smsStatusCallback, Omittable<Uri?>? smsUrl, Omittable<Uri?>? statusCallback, Omittable<AccountApplicationStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? uri, Omittable<bool?>? voiceCallerIdLookup, Omittable<AccountApplicationVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountApplicationVoiceMethod?>? voiceMethod, Omittable<Uri?>? voiceUrl, Omittable<bool?>? publicApplicationConnectEnabled, }) {return AccountApplication(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   dateCreated: dateCreated ?? this.dateCreated,
@@ -260,8 +260,8 @@ AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>?
   voiceMethod: voiceMethod ?? this.voiceMethod,
   voiceUrl: voiceUrl ?? this.voiceUrl,
   publicApplicationConnectEnabled: publicApplicationConnectEnabled ?? this.publicApplicationConnectEnabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountApplication &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -283,7 +283,7 @@ AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>?
           voiceFallbackUrl == other.voiceFallbackUrl &&
           voiceMethod == other.voiceMethod &&
           voiceUrl == other.voiceUrl &&
-          publicApplicationConnectEnabled == other.publicApplicationConnectEnabled; } 
-@override int get hashCode { return Object.hashAll([accountSid, apiVersion, dateCreated, dateUpdated, friendlyName, messageStatusCallback, sid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsStatusCallback, smsUrl, statusCallback, statusCallbackMethod, uri, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, publicApplicationConnectEnabled]); } 
-@override String toString() { return 'AccountApplication(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, messageStatusCallback: $messageStatusCallback, sid: $sid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsStatusCallback: $smsStatusCallback, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, uri: $uri, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, publicApplicationConnectEnabled: $publicApplicationConnectEnabled)'; } 
- }
+          publicApplicationConnectEnabled == other.publicApplicationConnectEnabled;}
+@override int get hashCode {return Object.hashAll([accountSid, apiVersion, dateCreated, dateUpdated, friendlyName, messageStatusCallback, sid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsStatusCallback, smsUrl, statusCallback, statusCallbackMethod, uri, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, publicApplicationConnectEnabled]);}
+@override String toString() {return 'AccountApplication(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, messageStatusCallback: $messageStatusCallback, sid: $sid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsStatusCallback: $smsStatusCallback, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, uri: $uri, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, publicApplicationConnectEnabled: $publicApplicationConnectEnabled)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_cost_shipping_rate_data_fixed_amount_currency_options_value.dart';@immutable final class ShippingCostShippingRateDataFixedAmount {const ShippingCostShippingRateDataFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
 
-factory ShippingCostShippingRateDataFixedAmount.fromJson(Map<String, dynamic> json) { return ShippingCostShippingRateDataFixedAmount(
+factory ShippingCostShippingRateDataFixedAmount.fromJson(Map<String, dynamic> json) {return ShippingCostShippingRateDataFixedAmount(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
-); }
+);}
 
 final int amount;
 
@@ -14,23 +14,23 @@ final String currency;
 
 final Map<String,ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue>? currencyOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-ShippingCostShippingRateDataFixedAmount copyWith({int? amount, String? currency, Map<String, ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue>? Function()? currencyOptions, }) { return ShippingCostShippingRateDataFixedAmount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+ShippingCostShippingRateDataFixedAmount copyWith({int? amount, String? currency, Map<String, ShippingCostShippingRateDataFixedAmountCurrencyOptionsValue>? Function()? currencyOptions, }) {return ShippingCostShippingRateDataFixedAmount(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ShippingCostShippingRateDataFixedAmount &&
           amount == other.amount &&
           currency == other.currency &&
-          currencyOptions == other.currencyOptions; } 
-@override int get hashCode { return Object.hash(amount, currency, currencyOptions); } 
-@override String toString() { return 'ShippingCostShippingRateDataFixedAmount(amount: $amount, currency: $currency, currencyOptions: $currencyOptions)'; } 
- }
+          currencyOptions == other.currencyOptions;}
+@override int get hashCode {return Object.hash(amount, currency, currencyOptions);}
+@override String toString() {return 'ShippingCostShippingRateDataFixedAmount(amount: $amount, currency: $currency, currencyOptions: $currencyOptions)';}
+}

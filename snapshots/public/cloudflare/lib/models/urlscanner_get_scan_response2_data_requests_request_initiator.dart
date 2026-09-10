@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequestInitiator {const UrlscannerGetScanResponse2DataRequestsRequestInitiator({required this.host, required this.type, required this.url, });
 
-factory UrlscannerGetScanResponse2DataRequestsRequestInitiator.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestInitiator(
+factory UrlscannerGetScanResponse2DataRequestsRequestInitiator.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2DataRequestsRequestInitiator(
   host: json['host'] as String,
   type: json['type'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final String host;
 
@@ -14,24 +14,24 @@ final String type;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': host,
   'type': type,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host') && json['host'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2DataRequestsRequestInitiator copyWith({String? host, String? type, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestInitiator(
+      json.containsKey('url') && json['url'] is String;}
+UrlscannerGetScanResponse2DataRequestsRequestInitiator copyWith({String? host, String? type, String? url, }) {return UrlscannerGetScanResponse2DataRequestsRequestInitiator(
   host: host ?? this.host,
   type: type ?? this.type,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2DataRequestsRequestInitiator &&
           host == other.host &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(host, type, url); } 
-@override String toString() { return 'UrlscannerGetScanResponse2DataRequestsRequestInitiator(host: $host, type: $type, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(host, type, url);}
+@override String toString() {return 'UrlscannerGetScanResponse2DataRequestsRequestInitiator(host: $host, type: $type, url: $url)';}
+}

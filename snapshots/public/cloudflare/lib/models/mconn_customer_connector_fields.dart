@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';@immutable final class MconnCustomerConnectorFields {const MconnCustomerConnectorFields({this.activated, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.notes, this.timezone, });
 
-factory MconnCustomerConnectorFields.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorFields(
+factory MconnCustomerConnectorFields.fromJson(Map<String, dynamic> json) {return MconnCustomerConnectorFields(
   activated: json['activated'] as bool?,
   interruptWindowDaysOfWeek: (json['interrupt_window_days_of_week'] as List<dynamic>?)?.map((e) => MconnDayOfWeek.fromJson(e as String)).toList(),
   interruptWindowDurationHours: json['interrupt_window_duration_hours'] != null ? (json['interrupt_window_duration_hours'] as num).toDouble() : null,
@@ -10,7 +10,7 @@ factory MconnCustomerConnectorFields.fromJson(Map<String, dynamic> json) { retur
   interruptWindowHourOfDay: json['interrupt_window_hour_of_day'] != null ? (json['interrupt_window_hour_of_day'] as num).toDouble() : null,
   notes: json['notes'] as String?,
   timezone: json['timezone'] as String?,
-); }
+);}
 
 final bool? activated;
 
@@ -28,7 +28,7 @@ final String? notes;
 
 final String? timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activated': ?activated,
   if (interruptWindowDaysOfWeek != null) 'interrupt_window_days_of_week': interruptWindowDaysOfWeek?.map((e) => e.toJson()).toList(),
   'interrupt_window_duration_hours': ?interruptWindowDurationHours,
@@ -36,9 +36,9 @@ Map<String, dynamic> toJson() { return {
   'interrupt_window_hour_of_day': ?interruptWindowHourOfDay,
   'notes': ?notes,
   'timezone': ?timezone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activated', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'notes', 'timezone'}.contains(key)); } 
-MconnCustomerConnectorFields copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, }) { return MconnCustomerConnectorFields(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'activated', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'notes', 'timezone'}.contains(key));}
+MconnCustomerConnectorFields copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, }) {return MconnCustomerConnectorFields(
   activated: activated != null ? activated() : this.activated,
   interruptWindowDaysOfWeek: interruptWindowDaysOfWeek != null ? interruptWindowDaysOfWeek() : this.interruptWindowDaysOfWeek,
   interruptWindowDurationHours: interruptWindowDurationHours != null ? interruptWindowDurationHours() : this.interruptWindowDurationHours,
@@ -46,8 +46,8 @@ MconnCustomerConnectorFields copyWith({bool? Function()? activated, List<MconnDa
   interruptWindowHourOfDay: interruptWindowHourOfDay != null ? interruptWindowHourOfDay() : this.interruptWindowHourOfDay,
   notes: notes != null ? notes() : this.notes,
   timezone: timezone != null ? timezone() : this.timezone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnCustomerConnectorFields &&
           activated == other.activated &&
           listEquals(interruptWindowDaysOfWeek, other.interruptWindowDaysOfWeek) &&
@@ -55,7 +55,7 @@ MconnCustomerConnectorFields copyWith({bool? Function()? activated, List<MconnDa
           listEquals(interruptWindowEmbargoDates, other.interruptWindowEmbargoDates) &&
           interruptWindowHourOfDay == other.interruptWindowHourOfDay &&
           notes == other.notes &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone); } 
-@override String toString() { return 'MconnCustomerConnectorFields(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone)'; } 
- }
+          timezone == other.timezone;}
+@override int get hashCode {return Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone);}
+@override String toString() {return 'MconnCustomerConnectorFields(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank, if provided.
 @immutable final class PaymentMethodP24Bank {const PaymentMethodP24Bank._(this.value);
 
-factory PaymentMethodP24Bank.fromJson(String json) { return switch (json) {
+factory PaymentMethodP24Bank.fromJson(String json) {return switch (json) {
   'alior_bank' => aliorBank,
   'bank_millennium' => bankMillennium,
   'bank_nowy_bfg_sa' => bankNowyBfgSa,
@@ -31,7 +31,7 @@ factory PaymentMethodP24Bank.fromJson(String json) { return switch (json) {
   'velobank' => velobank,
   'volkswagen_bank' => volkswagenBank,
   _ => PaymentMethodP24Bank._(json),
-}; }
+};}
 
 static const PaymentMethodP24Bank aliorBank = PaymentMethodP24Bank._('alior_bank');
 
@@ -89,34 +89,34 @@ static const List<PaymentMethodP24Bank> values = [aliorBank, bankMillennium, ban
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodP24Bank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodP24Bank($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodP24Bank && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodP24Bank($value)';}
+}
 /// 
 @immutable final class PaymentMethodP24 {const PaymentMethodP24({this.bank = const Omittable.absent()});
 
-factory PaymentMethodP24.fromJson(Map<String, dynamic> json) { return PaymentMethodP24(
+factory PaymentMethodP24.fromJson(Map<String, dynamic> json) {return PaymentMethodP24(
   bank: json.containsKey('bank') ? Omittable(json['bank'] != null ? PaymentMethodP24Bank.fromJson(json['bank'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's bank, if provided.
 final Omittable<PaymentMethodP24Bank?> bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank.isPresent) 'bank': bank.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PaymentMethodP24 copyWith({Omittable<PaymentMethodP24Bank?>? bank}) { return PaymentMethodP24(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PaymentMethodP24 copyWith({Omittable<PaymentMethodP24Bank?>? bank}) {return PaymentMethodP24(
   bank: bank ?? this.bank,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodP24 &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PaymentMethodP24(bank: $bank)'; } 
- }
+          bank == other.bank;}
+@override int get hashCode {return bank.hashCode;}
+@override String toString() {return 'PaymentMethodP24(bank: $bank)';}
+}

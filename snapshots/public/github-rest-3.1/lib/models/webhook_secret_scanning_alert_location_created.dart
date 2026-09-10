@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'secret_scanning_location.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertLocationCreatedAction {const WebhookSecretScanningAlertLocationCreatedAction._(this.value);
 
-factory WebhookSecretScanningAlertLocationCreatedAction.fromJson(String json) { return switch (json) {
+factory WebhookSecretScanningAlertLocationCreatedAction.fromJson(String json) {return switch (json) {
   'created' => created,
   _ => WebhookSecretScanningAlertLocationCreatedAction._(json),
-}; }
+};}
 
 static const WebhookSecretScanningAlertLocationCreatedAction created = WebhookSecretScanningAlertLocationCreatedAction._('created');
 
@@ -13,17 +13,17 @@ static const List<WebhookSecretScanningAlertLocationCreatedAction> values = [cre
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningAlertLocationCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertLocationCreatedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookSecretScanningAlertLocationCreatedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookSecretScanningAlertLocationCreatedAction($value)';}
+}
 @immutable final class WebhookSecretScanningAlertLocationCreated {const WebhookSecretScanningAlertLocationCreated({required this.alert, required this.location, required this.repository, required this.sender, this.action, this.installation, this.organization, });
 
-factory WebhookSecretScanningAlertLocationCreated.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertLocationCreated(
+factory WebhookSecretScanningAlertLocationCreated.fromJson(Map<String, dynamic> json) {return WebhookSecretScanningAlertLocationCreated(
   action: json['action'] != null ? WebhookSecretScanningAlertLocationCreatedAction.fromJson(json['action'] as String) : null,
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookSecretScanningAlertLocationCreated.fromJson(Map<String, dynamic> 
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookSecretScanningAlertLocationCreatedAction? action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'alert': alert.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,12 +55,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alert') &&
       json.containsKey('location') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookSecretScanningAlertLocationCreated copyWith({WebhookSecretScanningAlertLocationCreatedAction? Function()? action, SecretScanningAlertWebhook? alert, SimpleInstallation? Function()? installation, SecretScanningLocation? location, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookSecretScanningAlertLocationCreated(
+      json.containsKey('sender');}
+WebhookSecretScanningAlertLocationCreated copyWith({WebhookSecretScanningAlertLocationCreatedAction? Function()? action, SecretScanningAlertWebhook? alert, SimpleInstallation? Function()? installation, SecretScanningLocation? location, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookSecretScanningAlertLocationCreated(
   action: action != null ? action() : this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,
@@ -68,8 +68,8 @@ WebhookSecretScanningAlertLocationCreated copyWith({WebhookSecretScanningAlertLo
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookSecretScanningAlertLocationCreated &&
           action == other.action &&
           alert == other.alert &&
@@ -77,7 +77,7 @@ WebhookSecretScanningAlertLocationCreated copyWith({WebhookSecretScanningAlertLo
           location == other.location &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, location, organization, repository, sender); } 
-@override String toString() { return 'WebhookSecretScanningAlertLocationCreated(action: $action, alert: $alert, installation: $installation, location: $location, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, alert, installation, location, organization, repository, sender);}
+@override String toString() {return 'WebhookSecretScanningAlertLocationCreated(action: $action, alert: $alert, installation: $installation, location: $location, organization: $organization, repository: $repository, sender: $sender)';}
+}

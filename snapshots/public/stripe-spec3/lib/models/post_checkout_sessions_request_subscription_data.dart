@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_subscription_data_billing_mode.dart';import 'post_checkout_sessions_request_subscription_data_invoice_settings.dart';import 'post_checkout_sessions_request_subscription_data_transfer_data.dart';import 'post_checkout_sessions_request_subscription_data_trial_settings.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataProrationBehavior {const PostCheckoutSessionsRequestSubscriptionDataProrationBehavior._(this.value);
 
-factory PostCheckoutSessionsRequestSubscriptionDataProrationBehavior.fromJson(String json) { return switch (json) {
+factory PostCheckoutSessionsRequestSubscriptionDataProrationBehavior.fromJson(String json) {return switch (json) {
   'create_prorations' => createProrations,
   'none' => none,
   _ => PostCheckoutSessionsRequestSubscriptionDataProrationBehavior._(json),
-}; }
+};}
 
 static const PostCheckoutSessionsRequestSubscriptionDataProrationBehavior createProrations = PostCheckoutSessionsRequestSubscriptionDataProrationBehavior._('create_prorations');
 
@@ -16,18 +16,18 @@ static const List<PostCheckoutSessionsRequestSubscriptionDataProrationBehavior> 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestSubscriptionDataProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataProrationBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostCheckoutSessionsRequestSubscriptionDataProrationBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostCheckoutSessionsRequestSubscriptionDataProrationBehavior($value)';}
+}
 /// A subset of parameters to be passed to subscription creation for Checkout Sessions in `subscription` mode.
 @immutable final class PostCheckoutSessionsRequestSubscriptionData {const PostCheckoutSessionsRequestSubscriptionData({this.applicationFeePercent, this.billingCycleAnchor, this.billingMode, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trialEnd, this.trialPeriodDays, this.trialSettings, });
 
-factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionData(
+factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestSubscriptionData(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? (json['billing_cycle_anchor'] as num).toInt() : null,
   billingMode: json['billing_mode'] != null ? PostCheckoutSessionsRequestSubscriptionDataBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
@@ -41,7 +41,7 @@ factory PostCheckoutSessionsRequestSubscriptionData.fromJson(Map<String, dynamic
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
   trialSettings: json['trial_settings'] != null ? PostCheckoutSessionsRequestSubscriptionDataTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final double? applicationFeePercent;
 
@@ -69,7 +69,7 @@ final int? trialPeriodDays;
 
 final PostCheckoutSessionsRequestSubscriptionDataTrialSettings? trialSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'application_fee_percent': ?applicationFeePercent,
   'billing_cycle_anchor': ?billingCycleAnchor,
   if (billingMode != null) 'billing_mode': billingMode?.toJson(),
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   'trial_end': ?trialEnd,
   'trial_period_days': ?trialPeriodDays,
   if (trialSettings != null) 'trial_settings': trialSettings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_percent', 'billing_cycle_anchor', 'billing_mode', 'default_tax_rates', 'description', 'invoice_settings', 'metadata', 'on_behalf_of', 'proration_behavior', 'transfer_data', 'trial_end', 'trial_period_days', 'trial_settings'}.contains(key)); } 
-PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applicationFeePercent, int? Function()? billingCycleAnchor, PostCheckoutSessionsRequestSubscriptionDataBillingMode? Function()? billingMode, List<String>? Function()? defaultTaxRates, String? Function()? description, PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings? Function()? invoiceSettings, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, PostCheckoutSessionsRequestSubscriptionDataProrationBehavior? Function()? prorationBehavior, PostCheckoutSessionsRequestSubscriptionDataTransferData? Function()? transferData, int? Function()? trialEnd, int? Function()? trialPeriodDays, PostCheckoutSessionsRequestSubscriptionDataTrialSettings? Function()? trialSettings, }) { return PostCheckoutSessionsRequestSubscriptionData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'application_fee_percent', 'billing_cycle_anchor', 'billing_mode', 'default_tax_rates', 'description', 'invoice_settings', 'metadata', 'on_behalf_of', 'proration_behavior', 'transfer_data', 'trial_end', 'trial_period_days', 'trial_settings'}.contains(key));}
+PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applicationFeePercent, int? Function()? billingCycleAnchor, PostCheckoutSessionsRequestSubscriptionDataBillingMode? Function()? billingMode, List<String>? Function()? defaultTaxRates, String? Function()? description, PostCheckoutSessionsRequestSubscriptionDataInvoiceSettings? Function()? invoiceSettings, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, PostCheckoutSessionsRequestSubscriptionDataProrationBehavior? Function()? prorationBehavior, PostCheckoutSessionsRequestSubscriptionDataTransferData? Function()? transferData, int? Function()? trialEnd, int? Function()? trialPeriodDays, PostCheckoutSessionsRequestSubscriptionDataTrialSettings? Function()? trialSettings, }) {return PostCheckoutSessionsRequestSubscriptionData(
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   billingMode: billingMode != null ? billingMode() : this.billingMode,
@@ -99,8 +99,8 @@ PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applic
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestSubscriptionData &&
           applicationFeePercent == other.applicationFeePercent &&
           billingCycleAnchor == other.billingCycleAnchor &&
@@ -114,7 +114,7 @@ PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applic
           transferData == other.transferData &&
           trialEnd == other.trialEnd &&
           trialPeriodDays == other.trialPeriodDays &&
-          trialSettings == other.trialSettings; } 
-@override int get hashCode { return Object.hash(applicationFeePercent, billingCycleAnchor, billingMode, Object.hashAll(defaultTaxRates ?? const []), description, invoiceSettings, metadata, onBehalfOf, prorationBehavior, transferData, trialEnd, trialPeriodDays, trialSettings); } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionData(applicationFeePercent: $applicationFeePercent, billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, defaultTaxRates: $defaultTaxRates, description: $description, invoiceSettings: $invoiceSettings, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trialEnd: $trialEnd, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)'; } 
- }
+          trialSettings == other.trialSettings;}
+@override int get hashCode {return Object.hash(applicationFeePercent, billingCycleAnchor, billingMode, Object.hashAll(defaultTaxRates ?? const []), description, invoiceSettings, metadata, onBehalfOf, prorationBehavior, transferData, trialEnd, trialPeriodDays, trialSettings);}
+@override String toString() {return 'PostCheckoutSessionsRequestSubscriptionData(applicationFeePercent: $applicationFeePercent, billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, defaultTaxRates: $defaultTaxRates, description: $description, invoiceSettings: $invoiceSettings, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trialEnd: $trialEnd, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)';}
+}

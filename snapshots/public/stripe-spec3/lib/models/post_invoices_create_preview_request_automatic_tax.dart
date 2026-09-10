@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this invoice preview.
 @immutable final class PostInvoicesCreatePreviewRequestAutomaticTax {const PostInvoicesCreatePreviewRequestAutomaticTax({required this.enabled, this.liability, });
 
-factory PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestAutomaticTax(
+factory PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestAutomaticTax(
   enabled: json['enabled'] as bool,
   liability: json['liability'] != null ? PostInvoicesCreatePreviewRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final PostInvoicesCreatePreviewRequestAutomaticTaxLiability? liability;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (liability != null) 'liability': liability?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostInvoicesCreatePreviewRequestAutomaticTax copyWith({bool? enabled, PostInvoicesCreatePreviewRequestAutomaticTaxLiability? Function()? liability, }) { return PostInvoicesCreatePreviewRequestAutomaticTax(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PostInvoicesCreatePreviewRequestAutomaticTax copyWith({bool? enabled, PostInvoicesCreatePreviewRequestAutomaticTaxLiability? Function()? liability, }) {return PostInvoicesCreatePreviewRequestAutomaticTax(
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestAutomaticTax &&
           enabled == other.enabled &&
-          liability == other.liability; } 
-@override int get hashCode { return Object.hash(enabled, liability); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestAutomaticTax(enabled: $enabled, liability: $liability)'; } 
- }
+          liability == other.liability;}
+@override int get hashCode {return Object.hash(enabled, liability);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestAutomaticTax(enabled: $enabled, liability: $liability)';}
+}

@@ -9,7 +9,7 @@ String toJson() => value;
 }
 @immutable final class WaitingroomRuleResult {const WaitingroomRuleResult({this.action, this.description, this.enabled, this.expression, this.id, this.lastUpdated, this.version, });
 
-factory WaitingroomRuleResult.fromJson(Map<String, dynamic> json) { return WaitingroomRuleResult(
+factory WaitingroomRuleResult.fromJson(Map<String, dynamic> json) {return WaitingroomRuleResult(
   action: json['action'] != null ? WaitingroomRuleAction.fromJson(json['action'] as String) : null,
   description: json['description'] != null ? WaitingroomRuleDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? WaitingroomRuleEnabled.fromJson(json['enabled'] as bool) : null,
@@ -17,7 +17,7 @@ factory WaitingroomRuleResult.fromJson(Map<String, dynamic> json) { return Waiti
   id: json['id'] != null ? WaitingroomRuleId.fromJson(json['id'] as String) : null,
   lastUpdated: json['last_updated'] != null ? WaitingroomTimestamp.fromJson(json['last_updated'] as String) : null,
   version: json['version'] != null ? WaitingroomRuleVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 /// The action to take when the expression matches.
 final WaitingroomRuleAction? action;
@@ -38,7 +38,7 @@ final WaitingroomTimestamp? lastUpdated;
 
 final WaitingroomRuleVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (lastUpdated != null) 'last_updated': lastUpdated?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'id', 'last_updated', 'version'}.contains(key)); } 
-WaitingroomRuleResult copyWith({WaitingroomRuleAction? Function()? action, WaitingroomRuleDescription? Function()? description, WaitingroomRuleEnabled? Function()? enabled, WaitingroomRuleExpression? Function()? expression, WaitingroomRuleId? Function()? id, WaitingroomTimestamp? Function()? lastUpdated, WaitingroomRuleVersion? Function()? version, }) { return WaitingroomRuleResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'id', 'last_updated', 'version'}.contains(key));}
+WaitingroomRuleResult copyWith({WaitingroomRuleAction? Function()? action, WaitingroomRuleDescription? Function()? description, WaitingroomRuleEnabled? Function()? enabled, WaitingroomRuleExpression? Function()? expression, WaitingroomRuleId? Function()? id, WaitingroomTimestamp? Function()? lastUpdated, WaitingroomRuleVersion? Function()? version, }) {return WaitingroomRuleResult(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -56,8 +56,8 @@ WaitingroomRuleResult copyWith({WaitingroomRuleAction? Function()? action, Waiti
   id: id != null ? id() : this.id,
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WaitingroomRuleResult &&
           action == other.action &&
           description == other.description &&
@@ -65,7 +65,7 @@ WaitingroomRuleResult copyWith({WaitingroomRuleAction? Function()? action, Waiti
           expression == other.expression &&
           id == other.id &&
           lastUpdated == other.lastUpdated &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, id, lastUpdated, version); } 
-@override String toString() { return 'WaitingroomRuleResult(action: $action, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(action, description, enabled, expression, id, lastUpdated, version);}
+@override String toString() {return 'WaitingroomRuleResult(action: $action, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, version: $version)';}
+}

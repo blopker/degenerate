@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Labels an `assis
 /// 
 @immutable final class MessagePhase {const MessagePhase._(this.value);
 
-factory MessagePhase.fromJson(String json) { return switch (json) {
+factory MessagePhase.fromJson(String json) {return switch (json) {
   'commentary' => commentary,
   'final_answer' => finalAnswer,
   _ => MessagePhase._(json),
-}; }
+};}
 
 static const MessagePhase commentary = MessagePhase._('commentary');
 
@@ -20,11 +20,11 @@ static const List<MessagePhase> values = [commentary, finalAnswer];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessagePhase && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessagePhase($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MessagePhase && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MessagePhase($value)';}
+}

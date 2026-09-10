@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the payment was blocked by the merchant.
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason._(this.value);
 
-factory InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(String json) {return switch (json) {
   'authentication_required' => authenticationRequired,
   'blocked_for_fraud' => blockedForFraud,
   'invalid_payment' => invalidPayment,
   'other' => $other,
   _ => InsightsResourcesPaymentEvaluationMerchantBlockedReason._(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationMerchantBlockedReason authenticationRequired = InsightsResourcesPaymentEvaluationMerchantBlockedReason._('authentication_required');
 
@@ -23,34 +23,34 @@ static const List<InsightsResourcesPaymentEvaluationMerchantBlockedReason> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationMerchantBlockedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationMerchantBlockedReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationMerchantBlockedReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationMerchantBlockedReason($value)';}
+}
 /// Details of a merchant_blocked outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlocked {const InsightsResourcesPaymentEvaluationMerchantBlocked({required this.reason});
 
-factory InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMerchantBlocked(
+factory InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationMerchantBlocked(
   reason: InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// The reason the payment was blocked by the merchant.
 final InsightsResourcesPaymentEvaluationMerchantBlockedReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason'); } 
-InsightsResourcesPaymentEvaluationMerchantBlocked copyWith({InsightsResourcesPaymentEvaluationMerchantBlockedReason? reason}) { return InsightsResourcesPaymentEvaluationMerchantBlocked(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('reason');}
+InsightsResourcesPaymentEvaluationMerchantBlocked copyWith({InsightsResourcesPaymentEvaluationMerchantBlockedReason? reason}) {return InsightsResourcesPaymentEvaluationMerchantBlocked(
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationMerchantBlocked &&
-          reason == other.reason; } 
-@override int get hashCode { return reason.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationMerchantBlocked(reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return reason.hashCode;}
+@override String toString() {return 'InsightsResourcesPaymentEvaluationMerchantBlocked(reason: $reason)';}
+}

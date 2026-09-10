@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current state of the Cache Reserve Clear operation.
 @immutable final class SmartshieldCacheReserveClearState {const SmartshieldCacheReserveClearState._(this.value);
 
-factory SmartshieldCacheReserveClearState.fromJson(String json) { return switch (json) {
+factory SmartshieldCacheReserveClearState.fromJson(String json) {return switch (json) {
   'In-progress' => inProgress,
   'Completed' => completed,
   _ => SmartshieldCacheReserveClearState._(json),
-}; }
+};}
 
 static const SmartshieldCacheReserveClearState inProgress = SmartshieldCacheReserveClearState._('In-progress');
 
@@ -17,11 +17,11 @@ static const List<SmartshieldCacheReserveClearState> values = [inProgress, compl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmartshieldCacheReserveClearState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldCacheReserveClearState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SmartshieldCacheReserveClearState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SmartshieldCacheReserveClearState($value)';}
+}

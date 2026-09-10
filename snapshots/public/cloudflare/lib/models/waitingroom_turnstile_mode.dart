@@ -8,13 +8,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which Turnstile 
 /// 
 @immutable final class WaitingroomTurnstileMode {const WaitingroomTurnstileMode._(this.value);
 
-factory WaitingroomTurnstileMode.fromJson(String json) { return switch (json) {
+factory WaitingroomTurnstileMode.fromJson(String json) {return switch (json) {
   'off' => off,
   'invisible' => invisible,
   'visible_non_interactive' => visibleNonInteractive,
   'visible_managed' => visibleManaged,
   _ => WaitingroomTurnstileMode._(json),
-}; }
+};}
 
 static const WaitingroomTurnstileMode off = WaitingroomTurnstileMode._('off');
 
@@ -28,11 +28,11 @@ static const List<WaitingroomTurnstileMode> values = [off, invisible, visibleNon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitingroomTurnstileMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitingroomTurnstileMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WaitingroomTurnstileMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WaitingroomTurnstileMode($value)';}
+}

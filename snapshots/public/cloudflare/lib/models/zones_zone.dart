@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';import 'zones_paused.dart';import 'zones_type.dart';import 'zones_zone_account.dart';import 'zones_zone_meta.dart';import 'zones_zone_owner.dart';import 'zones_zone_plan.dart';import 'zones_zone_tenant.dart';import 'zones_zone_tenant_unit.dart';/// The zone status on Cloudflare.
 @immutable final class ZonesZoneStatus {const ZonesZoneStatus._(this.value);
 
-factory ZonesZoneStatus.fromJson(String json) { return switch (json) {
+factory ZonesZoneStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
   'moved' => moved,
   _ => ZonesZoneStatus._(json),
-}; }
+};}
 
 static const ZonesZoneStatus initializing = ZonesZoneStatus._('initializing');
 
@@ -23,17 +23,17 @@ static const List<ZonesZoneStatus> values = [initializing, pending, active, move
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesZoneStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesZoneStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesZoneStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesZoneStatus($value)';}
+}
 @immutable final class ZonesZone {const ZonesZone({required this.account, required this.activatedOn, required this.createdOn, required this.developmentMode, required this.id, required this.meta, required this.modifiedOn, required this.name, required this.nameServers, required this.originalDnshost, required this.originalNameServers, required this.originalRegistrar, required this.owner, required this.plan, this.cnameSuffix, this.paused, this.permissions, this.status, this.tenant, this.tenantUnit, this.type, this.vanityNameServers, this.verificationKey, });
 
-factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
+factory ZonesZone.fromJson(Map<String, dynamic> json) {return ZonesZone(
   account: ZonesZoneAccount.fromJson(json['account'] as Map<String, dynamic>),
   activatedOn: json['activated_on'] != null ? DateTime.parse(json['activated_on'] as String) : null,
   cnameSuffix: json['cname_suffix'] as String?,
@@ -57,7 +57,7 @@ factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
   type: json['type'] != null ? ZonesType.fromJson(json['type'] as String) : null,
   vanityNameServers: (json['vanity_name_servers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   verificationKey: json['verification_key'] as String?,
-); }
+);}
 
 /// The account the zone belongs to.
 final ZonesZoneAccount account;
@@ -138,8 +138,8 @@ final List<String>? vanityNameServers;
 final String? verificationKey;
 
 /// The value with the schema default applied when absent.
-List<String> get vanityNameServersOrDefault { return vanityNameServers ?? const []; } 
-Map<String, dynamic> toJson() { return {
+List<String> get vanityNameServersOrDefault {return vanityNameServers ?? const [];}
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   'activated_on': activatedOn?.toIso8601String(),
   'cname_suffix': ?cnameSuffix,
@@ -163,8 +163,8 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'vanity_name_servers': ?vanityNameServers,
   'verification_key': ?verificationKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('activated_on') && (json['activated_on'] == null || json['activated_on'] is String) &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('development_mode') && json['development_mode'] is num &&
@@ -177,8 +177,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('original_name_servers') &&
       json.containsKey('original_registrar') && (json['original_registrar'] == null || json['original_registrar'] is String) &&
       json.containsKey('owner') &&
-      json.containsKey('plan'); } 
-ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String? Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused? Function()? paused, List<String>? Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus? Function()? status, ZonesZoneTenant? Function()? tenant, ZonesZoneTenantUnit? Function()? tenantUnit, ZonesType? Function()? type, List<String>? Function()? vanityNameServers, String? Function()? verificationKey, }) { return ZonesZone(
+      json.containsKey('plan');}
+ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String? Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused? Function()? paused, List<String>? Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus? Function()? status, ZonesZoneTenant? Function()? tenant, ZonesZoneTenantUnit? Function()? tenantUnit, ZonesType? Function()? type, List<String>? Function()? vanityNameServers, String? Function()? verificationKey, }) {return ZonesZone(
   account: account ?? this.account,
   activatedOn: activatedOn != null ? activatedOn() : this.activatedOn,
   cnameSuffix: cnameSuffix != null ? cnameSuffix() : this.cnameSuffix,
@@ -202,8 +202,8 @@ ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn
   type: type != null ? type() : this.type,
   vanityNameServers: vanityNameServers != null ? vanityNameServers() : this.vanityNameServers,
   verificationKey: verificationKey != null ? verificationKey() : this.verificationKey,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesZone &&
           account == other.account &&
           activatedOn == other.activatedOn &&
@@ -227,7 +227,7 @@ ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn
           tenantUnit == other.tenantUnit &&
           type == other.type &&
           listEquals(vanityNameServers, other.vanityNameServers) &&
-          verificationKey == other.verificationKey; } 
-@override int get hashCode { return Object.hashAll([account, activatedOn, cnameSuffix, createdOn, developmentMode, id, meta, modifiedOn, name, Object.hashAll(nameServers), originalDnshost, Object.hashAll(originalNameServers ?? const []), originalRegistrar, owner, paused, Object.hashAll(permissions ?? const []), plan, status, tenant, tenantUnit, type, Object.hashAll(vanityNameServers ?? const []), verificationKey]); } 
-@override String toString() { return 'ZonesZone(account: $account, activatedOn: $activatedOn, cnameSuffix: $cnameSuffix, createdOn: $createdOn, developmentMode: $developmentMode, id: $id, meta: $meta, modifiedOn: $modifiedOn, name: $name, nameServers: $nameServers, originalDnshost: $originalDnshost, originalNameServers: $originalNameServers, originalRegistrar: $originalRegistrar, owner: $owner, paused: $paused, permissions: $permissions, plan: $plan, status: $status, tenant: $tenant, tenantUnit: $tenantUnit, type: $type, vanityNameServers: $vanityNameServers, verificationKey: $verificationKey)'; } 
- }
+          verificationKey == other.verificationKey;}
+@override int get hashCode {return Object.hashAll([account, activatedOn, cnameSuffix, createdOn, developmentMode, id, meta, modifiedOn, name, Object.hashAll(nameServers), originalDnshost, Object.hashAll(originalNameServers ?? const []), originalRegistrar, owner, paused, Object.hashAll(permissions ?? const []), plan, status, tenant, tenantUnit, type, Object.hashAll(vanityNameServers ?? const []), verificationKey]);}
+@override String toString() {return 'ZonesZone(account: $account, activatedOn: $activatedOn, cnameSuffix: $cnameSuffix, createdOn: $createdOn, developmentMode: $developmentMode, id: $id, meta: $meta, modifiedOn: $modifiedOn, name: $name, nameServers: $nameServers, originalDnshost: $originalDnshost, originalNameServers: $originalNameServers, originalRegistrar: $originalRegistrar, owner: $owner, paused: $paused, permissions: $permissions, plan: $plan, status: $status, tenant: $tenant, tenantUnit: $tenantUnit, type: $type, vanityNameServers: $vanityNameServers, verificationKey: $verificationKey)';}
+}

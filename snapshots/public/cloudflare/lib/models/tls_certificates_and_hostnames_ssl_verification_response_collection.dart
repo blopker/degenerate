@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_verification.dart';@immutable final class TlsCertificatesAndHostnamesSslVerificationResponseCollection {const TlsCertificatesAndHostnamesSslVerificationResponseCollection({this.result});
 
-factory TlsCertificatesAndHostnamesSslVerificationResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslVerificationResponseCollection(
+factory TlsCertificatesAndHostnamesSslVerificationResponseCollection.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslVerificationResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesVerification.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<TlsCertificatesAndHostnamesVerification>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslVerificationResponseCollection copyWith({List<TlsCertificatesAndHostnamesVerification>? Function()? result}) { return TlsCertificatesAndHostnamesSslVerificationResponseCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'result'}.contains(key));}
+TlsCertificatesAndHostnamesSslVerificationResponseCollection copyWith({List<TlsCertificatesAndHostnamesVerification>? Function()? result}) {return TlsCertificatesAndHostnamesSslVerificationResponseCollection(
   result: result != null ? result() : this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslVerificationResponseCollection &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslVerificationResponseCollection(result: $result)'; } 
- }
+          listEquals(result, other.result);}
+@override int get hashCode {return Object.hashAll(result ?? const []).hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSslVerificationResponseCollection(result: $result)';}
+}

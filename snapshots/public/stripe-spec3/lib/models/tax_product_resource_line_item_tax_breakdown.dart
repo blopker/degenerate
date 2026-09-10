@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_jurisdiction.dart';import 'tax_product_resource_line_item_tax_rate_details.dart';/// Indicates whether the jurisdiction was determined by the origin (merchant's address) or destination (customer's address).
 @immutable final class TaxProductResourceLineItemTaxBreakdownSourcing {const TaxProductResourceLineItemTaxBreakdownSourcing._(this.value);
 
-factory TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(String json) { return switch (json) {
+factory TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(String json) {return switch (json) {
   'destination' => destination,
   'origin' => origin,
   _ => TaxProductResourceLineItemTaxBreakdownSourcing._(json),
-}; }
+};}
 
 static const TaxProductResourceLineItemTaxBreakdownSourcing destination = TaxProductResourceLineItemTaxBreakdownSourcing._('destination');
 
@@ -17,18 +17,18 @@ static const List<TaxProductResourceLineItemTaxBreakdownSourcing> values = [dest
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceLineItemTaxBreakdownSourcing && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceLineItemTaxBreakdownSourcing($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxProductResourceLineItemTaxBreakdownSourcing && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxProductResourceLineItemTaxBreakdownSourcing($value)';}
+}
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 @immutable final class TaxProductResourceLineItemTaxBreakdownTaxabilityReason {const TaxProductResourceLineItemTaxBreakdownTaxabilityReason._(this.value);
 
-factory TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(String json) { return switch (json) {
+factory TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(String json) {return switch (json) {
   'customer_exempt' => customerExempt,
   'not_collecting' => notCollecting,
   'not_subject_to_tax' => notSubjectToTax,
@@ -45,7 +45,7 @@ factory TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(String j
   'taxable_basis_reduced' => taxableBasisReduced,
   'zero_rated' => zeroRated,
   _ => TaxProductResourceLineItemTaxBreakdownTaxabilityReason._(json),
-}; }
+};}
 
 static const TaxProductResourceLineItemTaxBreakdownTaxabilityReason customerExempt = TaxProductResourceLineItemTaxBreakdownTaxabilityReason._('customer_exempt');
 
@@ -81,25 +81,25 @@ static const List<TaxProductResourceLineItemTaxBreakdownTaxabilityReason> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceLineItemTaxBreakdownTaxabilityReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceLineItemTaxBreakdownTaxabilityReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TaxProductResourceLineItemTaxBreakdownTaxabilityReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TaxProductResourceLineItemTaxBreakdownTaxabilityReason($value)';}
+}
 /// 
 @immutable final class TaxProductResourceLineItemTaxBreakdown {const TaxProductResourceLineItemTaxBreakdown({required this.amount, required this.jurisdiction, required this.sourcing, required this.taxabilityReason, required this.taxableAmount, this.taxRateDetails = const Omittable.absent(), });
 
-factory TaxProductResourceLineItemTaxBreakdown.fromJson(Map<String, dynamic> json) { return TaxProductResourceLineItemTaxBreakdown(
+factory TaxProductResourceLineItemTaxBreakdown.fromJson(Map<String, dynamic> json) {return TaxProductResourceLineItemTaxBreakdown(
   amount: (json['amount'] as num).toInt(),
   jurisdiction: TaxProductResourceJurisdiction.fromJson(json['jurisdiction'] as Map<String, dynamic>),
   sourcing: TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(json['sourcing'] as String),
   taxRateDetails: json.containsKey('tax_rate_details') ? Omittable(json['tax_rate_details'] != null ? TaxProductResourceLineItemTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxabilityReason: TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(json['taxability_reason'] as String),
   taxableAmount: (json['taxable_amount'] as num).toInt(),
-); }
+);}
 
 /// The amount of tax, in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int amount;
@@ -118,35 +118,35 @@ final TaxProductResourceLineItemTaxBreakdownTaxabilityReason taxabilityReason;
 /// The amount on which tax is calculated, in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int taxableAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'jurisdiction': jurisdiction.toJson(),
   'sourcing': sourcing.toJson(),
   if (taxRateDetails.isPresent) 'tax_rate_details': taxRateDetails.value?.toJson(),
   'taxability_reason': taxabilityReason.toJson(),
   'taxable_amount': taxableAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('jurisdiction') &&
       json.containsKey('sourcing') &&
       json.containsKey('taxability_reason') &&
-      json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
-TaxProductResourceLineItemTaxBreakdown copyWith({int? amount, TaxProductResourceJurisdiction? jurisdiction, TaxProductResourceLineItemTaxBreakdownSourcing? sourcing, Omittable<TaxProductResourceLineItemTaxRateDetails?>? taxRateDetails, TaxProductResourceLineItemTaxBreakdownTaxabilityReason? taxabilityReason, int? taxableAmount, }) { return TaxProductResourceLineItemTaxBreakdown(
+      json.containsKey('taxable_amount') && json['taxable_amount'] is num;}
+TaxProductResourceLineItemTaxBreakdown copyWith({int? amount, TaxProductResourceJurisdiction? jurisdiction, TaxProductResourceLineItemTaxBreakdownSourcing? sourcing, Omittable<TaxProductResourceLineItemTaxRateDetails?>? taxRateDetails, TaxProductResourceLineItemTaxBreakdownTaxabilityReason? taxabilityReason, int? taxableAmount, }) {return TaxProductResourceLineItemTaxBreakdown(
   amount: amount ?? this.amount,
   jurisdiction: jurisdiction ?? this.jurisdiction,
   sourcing: sourcing ?? this.sourcing,
   taxRateDetails: taxRateDetails ?? this.taxRateDetails,
   taxabilityReason: taxabilityReason ?? this.taxabilityReason,
   taxableAmount: taxableAmount ?? this.taxableAmount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TaxProductResourceLineItemTaxBreakdown &&
           amount == other.amount &&
           jurisdiction == other.jurisdiction &&
           sourcing == other.sourcing &&
           taxRateDetails == other.taxRateDetails &&
           taxabilityReason == other.taxabilityReason &&
-          taxableAmount == other.taxableAmount; } 
-@override int get hashCode { return Object.hash(amount, jurisdiction, sourcing, taxRateDetails, taxabilityReason, taxableAmount); } 
-@override String toString() { return 'TaxProductResourceLineItemTaxBreakdown(amount: $amount, jurisdiction: $jurisdiction, sourcing: $sourcing, taxRateDetails: $taxRateDetails, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)'; } 
- }
+          taxableAmount == other.taxableAmount;}
+@override int get hashCode {return Object.hash(amount, jurisdiction, sourcing, taxRateDetails, taxabilityReason, taxableAmount);}
+@override String toString() {return 'TaxProductResourceLineItemTaxBreakdown(amount: $amount, jurisdiction: $jurisdiction, sourcing: $sourcing, taxRateDetails: $taxRateDetails, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)';}
+}

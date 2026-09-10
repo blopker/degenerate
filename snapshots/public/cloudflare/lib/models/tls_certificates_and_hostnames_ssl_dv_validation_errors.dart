@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesSslDvValidationErrors {const TlsCertificatesAndHostnamesSslDvValidationErrors({this.message});
 
-factory TlsCertificatesAndHostnamesSslDvValidationErrors.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslDvValidationErrors(
+factory TlsCertificatesAndHostnamesSslDvValidationErrors.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslDvValidationErrors(
   message: json['message'] as String?,
-); }
+);}
 
 /// A domain validation error.
 final String? message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': ?message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslDvValidationErrors copyWith({String? Function()? message}) { return TlsCertificatesAndHostnamesSslDvValidationErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'message'}.contains(key));}
+TlsCertificatesAndHostnamesSslDvValidationErrors copyWith({String? Function()? message}) {return TlsCertificatesAndHostnamesSslDvValidationErrors(
   message: message != null ? message() : this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslDvValidationErrors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslDvValidationErrors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSslDvValidationErrors(message: $message)';}
+}

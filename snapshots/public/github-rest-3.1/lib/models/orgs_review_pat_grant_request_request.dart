@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the request.
 @immutable final class OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction._(this.value);
 
-factory OrgsReviewPatGrantRequestRequestAction.fromJson(String json) { return switch (json) {
+factory OrgsReviewPatGrantRequestRequestAction.fromJson(String json) {return switch (json) {
   'approve' => approve,
   'deny' => deny,
   _ => OrgsReviewPatGrantRequestRequestAction._(json),
-}; }
+};}
 
 static const OrgsReviewPatGrantRequestRequestAction approve = OrgsReviewPatGrantRequestRequestAction._('approve');
 
@@ -17,20 +17,20 @@ static const List<OrgsReviewPatGrantRequestRequestAction> values = [approve, den
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsReviewPatGrantRequestRequestAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsReviewPatGrantRequestRequestAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsReviewPatGrantRequestRequestAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsReviewPatGrantRequestRequestAction($value)';}
+}
 @immutable final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason = const Omittable.absent(), });
 
-factory OrgsReviewPatGrantRequestRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestRequest(
+factory OrgsReviewPatGrantRequestRequest.fromJson(Map<String, dynamic> json) {return OrgsReviewPatGrantRequestRequest(
   action: OrgsReviewPatGrantRequestRequestAction.fromJson(json['action'] as String),
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Action to apply to the request.
 final OrgsReviewPatGrantRequestRequestAction action;
@@ -38,19 +38,19 @@ final OrgsReviewPatGrantRequestRequestAction action;
 /// Reason for approving or denying the request. Max 1024 characters.
 final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (reason.isPresent) 'reason': reason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
-OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, Omittable<String?>? reason, }) { return OrgsReviewPatGrantRequestRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action');}
+OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, Omittable<String?>? reason, }) {return OrgsReviewPatGrantRequestRequest(
   action: action ?? this.action,
   reason: reason ?? this.reason,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsReviewPatGrantRequestRequest &&
           action == other.action &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(action, reason); } 
-@override String toString() { return 'OrgsReviewPatGrantRequestRequest(action: $action, reason: $reason)'; } 
- }
+          reason == other.reason;}
+@override int get hashCode {return Object.hash(action, reason);}
+@override String toString() {return 'OrgsReviewPatGrantRequestRequest(action: $action, reason: $reason)';}
+}

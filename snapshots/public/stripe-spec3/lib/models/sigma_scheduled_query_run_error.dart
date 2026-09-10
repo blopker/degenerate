@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SigmaScheduledQueryRunError {const SigmaScheduledQueryRunError({required this.message});
 
-factory SigmaScheduledQueryRunError.fromJson(Map<String, dynamic> json) { return SigmaScheduledQueryRunError(
+factory SigmaScheduledQueryRunError.fromJson(Map<String, dynamic> json) {return SigmaScheduledQueryRunError(
   message: json['message'] as String,
-); }
+);}
 
 /// Information about the run failure.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-SigmaScheduledQueryRunError copyWith({String? message}) { return SigmaScheduledQueryRunError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+SigmaScheduledQueryRunError copyWith({String? message}) {return SigmaScheduledQueryRunError(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SigmaScheduledQueryRunError &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'SigmaScheduledQueryRunError(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'SigmaScheduledQueryRunError(message: $message)';}
+}

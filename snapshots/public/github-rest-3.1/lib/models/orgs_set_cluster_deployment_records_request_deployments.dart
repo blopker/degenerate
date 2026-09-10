@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks {const OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks._(this.value);
 
-factory OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks.fromJson(String json) { return switch (json) {
+factory OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks.fromJson(String json) {return switch (json) {
   'critical-resource' => criticalResource,
   'internet-exposed' => internetExposed,
   'lateral-movement' => lateralMovement,
   'sensitive-data' => sensitiveData,
   _ => OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks._(json),
-}; }
+};}
 
 static const OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks criticalResource = OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks._('critical-resource');
 
@@ -22,22 +22,22 @@ static const List<OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks>
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks($value)';}
+}
 /// The deployment status of the artifact.
 @immutable final class OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus {const OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus._(this.value);
 
-factory OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus.fromJson(String json) { return switch (json) {
+factory OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus.fromJson(String json) {return switch (json) {
   'deployed' => deployed,
   'decommissioned' => decommissioned,
   _ => OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus._(json),
-}; }
+};}
 
 static const OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus deployed = OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus._('deployed');
 
@@ -47,17 +47,17 @@ static const List<OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus($value)';}
+}
 @immutable final class OrgsSetClusterDeploymentRecordsRequestDeployments {const OrgsSetClusterDeploymentRecordsRequestDeployments({required this.name, required this.digest, required this.deploymentName, this.version, this.status, this.githubRepository, this.tags, this.runtimeRisks, });
 
-factory OrgsSetClusterDeploymentRecordsRequestDeployments.fromJson(Map<String, dynamic> json) { return OrgsSetClusterDeploymentRecordsRequestDeployments(
+factory OrgsSetClusterDeploymentRecordsRequestDeployments.fromJson(Map<String, dynamic> json) {return OrgsSetClusterDeploymentRecordsRequestDeployments(
   name: json['name'] as String,
   digest: json['digest'] as String,
   version: json['version'] as String?,
@@ -66,7 +66,7 @@ factory OrgsSetClusterDeploymentRecordsRequestDeployments.fromJson(Map<String, d
   githubRepository: json['github_repository'] as String?,
   tags: (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The name of the artifact. Note that if multiple deployments have identical 'digest' parameter values,
 /// the name parameter must also be identical across all entries.
@@ -107,7 +107,7 @@ final Map<String,String>? tags;
 /// A list of runtime risks associated with the deployment.
 final List<OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks>? runtimeRisks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'digest': digest,
   'version': ?version,
@@ -116,11 +116,11 @@ Map<String, dynamic> toJson() { return {
   'github_repository': ?githubRepository,
   'tags': ?tags,
   if (runtimeRisks != null) 'runtime_risks': runtimeRisks?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
-      json.containsKey('deployment_name') && json['deployment_name'] is String; } 
-OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String? digest, String? Function()? version, OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus? Function()? status, String? deploymentName, String? Function()? githubRepository, Map<String, String>? Function()? tags, List<OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks>? Function()? runtimeRisks, }) { return OrgsSetClusterDeploymentRecordsRequestDeployments(
+      json.containsKey('deployment_name') && json['deployment_name'] is String;}
+OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String? digest, String? Function()? version, OrgsSetClusterDeploymentRecordsRequestDeploymentsStatus? Function()? status, String? deploymentName, String? Function()? githubRepository, Map<String, String>? Function()? tags, List<OrgsSetClusterDeploymentRecordsRequestDeploymentsRuntimeRisks>? Function()? runtimeRisks, }) {return OrgsSetClusterDeploymentRecordsRequestDeployments(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,
@@ -129,8 +129,8 @@ OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String
   githubRepository: githubRepository != null ? githubRepository() : this.githubRepository,
   tags: tags != null ? tags() : this.tags,
   runtimeRisks: runtimeRisks != null ? runtimeRisks() : this.runtimeRisks,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is OrgsSetClusterDeploymentRecordsRequestDeployments &&
           name == other.name &&
           digest == other.digest &&
@@ -139,7 +139,7 @@ OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String
           deploymentName == other.deploymentName &&
           githubRepository == other.githubRepository &&
           tags == other.tags &&
-          listEquals(runtimeRisks, other.runtimeRisks); } 
-@override int get hashCode { return Object.hash(name, digest, version, status, deploymentName, githubRepository, tags, Object.hashAll(runtimeRisks ?? const [])); } 
-@override String toString() { return 'OrgsSetClusterDeploymentRecordsRequestDeployments(name: $name, digest: $digest, version: $version, status: $status, deploymentName: $deploymentName, githubRepository: $githubRepository, tags: $tags, runtimeRisks: $runtimeRisks)'; } 
- }
+          listEquals(runtimeRisks, other.runtimeRisks);}
+@override int get hashCode {return Object.hash(name, digest, version, status, deploymentName, githubRepository, tags, Object.hashAll(runtimeRisks ?? const []));}
+@override String toString() {return 'OrgsSetClusterDeploymentRecordsRequestDeployments(name: $name, digest: $digest, version: $version, status: $status, deploymentName: $deploymentName, githubRepository: $githubRepository, tags: $tags, runtimeRisks: $runtimeRisks)';}
+}

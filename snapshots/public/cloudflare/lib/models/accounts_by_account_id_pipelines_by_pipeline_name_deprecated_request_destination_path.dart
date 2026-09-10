@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
 
-factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath(
+factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath.fromJson(Map<String, dynamic> json) {return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath(
   bucket: json['bucket'] as String,
   filename: json['filename'] as String?,
   filepath: json['filepath'] as String?,
   prefix: json['prefix'] as String?,
-); }
+);}
 
 /// Specifies the R2 Bucket to store files.
 final String bucket;
@@ -21,25 +21,25 @@ final String? filepath;
 /// Specifies the base directory within the bucket.
 final String? prefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucket': bucket,
   'filename': ?filename,
   'filepath': ?filepath,
   'prefix': ?prefix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String; } 
-AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath copyWith({String? bucket, String? Function()? filename, String? Function()? filepath, String? Function()? prefix, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bucket') && json['bucket'] is String;}
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath copyWith({String? bucket, String? Function()? filename, String? Function()? filepath, String? Function()? prefix, }) {return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath(
   bucket: bucket ?? this.bucket,
   filename: filename != null ? filename() : this.filename,
   filepath: filepath != null ? filepath() : this.filepath,
   prefix: prefix != null ? prefix() : this.prefix,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath &&
           bucket == other.bucket &&
           filename == other.filename &&
           filepath == other.filepath &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(bucket, filename, filepath, prefix); } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath(bucket: $bucket, filename: $filename, filepath: $filepath, prefix: $prefix)'; } 
- }
+          prefix == other.prefix;}
+@override int get hashCode {return Object.hash(bucket, filename, filepath, prefix);}
+@override String toString() {return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath(bucket: $bucket, filename: $filename, filepath: $filepath, prefix: $prefix)';}
+}

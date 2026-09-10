@@ -11,7 +11,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
 @immutable final class InvoiceBillingReason {const InvoiceBillingReason._(this.value);
 
-factory InvoiceBillingReason.fromJson(String json) { return switch (json) {
+factory InvoiceBillingReason.fromJson(String json) {return switch (json) {
   'automatic_pending_invoice_item_invoice' => automaticPendingInvoiceItemInvoice,
   'manual' => manual,
   'quote_accept' => quoteAccept,
@@ -22,7 +22,7 @@ factory InvoiceBillingReason.fromJson(String json) { return switch (json) {
   'subscription_update' => subscriptionUpdate,
   'upcoming' => upcoming,
   _ => InvoiceBillingReason._(json),
-}; }
+};}
 
 static const InvoiceBillingReason automaticPendingInvoiceItemInvoice = InvoiceBillingReason._('automatic_pending_invoice_item_invoice');
 
@@ -46,22 +46,22 @@ static const List<InvoiceBillingReason> values = [automaticPendingInvoiceItemInv
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceBillingReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceBillingReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceBillingReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceBillingReason($value)';}
+}
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, Stripe will email this invoice to the customer with payment instructions.
 @immutable final class InvoiceCollectionMethod {const InvoiceCollectionMethod._(this.value);
 
-factory InvoiceCollectionMethod.fromJson(String json) { return switch (json) {
+factory InvoiceCollectionMethod.fromJson(String json) {return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
   _ => InvoiceCollectionMethod._(json),
-}; }
+};}
 
 static const InvoiceCollectionMethod chargeAutomatically = InvoiceCollectionMethod._('charge_automatically');
 
@@ -71,23 +71,23 @@ static const List<InvoiceCollectionMethod> values = [chargeAutomatically, sendIn
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceCollectionMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceCollectionMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceCollectionMethod($value)';}
+}
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
 @immutable final class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt._(this.value);
 
-factory InvoiceCustomerTaxExempt.fromJson(String json) { return switch (json) {
+factory InvoiceCustomerTaxExempt.fromJson(String json) {return switch (json) {
   'exempt' => exempt,
   'none' => none,
   'reverse' => reverse,
   _ => InvoiceCustomerTaxExempt._(json),
-}; }
+};}
 
 static const InvoiceCustomerTaxExempt exempt = InvoiceCustomerTaxExempt._('exempt');
 
@@ -99,21 +99,21 @@ static const List<InvoiceCustomerTaxExempt> values = [exempt, none, reverse];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceCustomerTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceCustomerTaxExempt($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceCustomerTaxExempt && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceCustomerTaxExempt($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class InvoiceObject {const InvoiceObject._(this.value);
 
-factory InvoiceObject.fromJson(String json) { return switch (json) {
+factory InvoiceObject.fromJson(String json) {return switch (json) {
   'invoice' => invoice,
   _ => InvoiceObject._(json),
-}; }
+};}
 
 static const InvoiceObject invoice = InvoiceObject._('invoice');
 
@@ -121,25 +121,25 @@ static const List<InvoiceObject> values = [invoice];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceObject($value)';}
+}
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
 @immutable final class InvoiceStatus {const InvoiceStatus._(this.value);
 
-factory InvoiceStatus.fromJson(String json) { return switch (json) {
+factory InvoiceStatus.fromJson(String json) {return switch (json) {
   'draft' => draft,
   'open' => open,
   'paid' => paid,
   'uncollectible' => uncollectible,
   'void' => $void,
   _ => InvoiceStatus._(json),
-}; }
+};}
 
 static const InvoiceStatus draft = InvoiceStatus._('draft');
 
@@ -155,14 +155,14 @@ static const List<InvoiceStatus> values = [draft, open, paid, uncollectible, $vo
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is InvoiceStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'InvoiceStatus($value)';}
+}
 /// Invoices are statements of amounts owed by a customer, and are either
 /// generated one-off, or generated periodically from a subscription.
 /// 
@@ -197,7 +197,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Send invoices to customers](https://docs.stripe.com/billing/invoices/sending)
 @immutable final class Invoice {const Invoice({required this.object, required this.amountDue, required this.amountOverpaid, required this.amountPaid, required this.amountRemaining, required this.amountShipping, required this.attemptCount, required this.attempted, required this.autoAdvance, required this.automaticTax, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.prePaymentCreditNotesAmount, required this.total, required this.postPaymentCreditNotesAmount, required this.statusTransitions, required this.subtotal, required this.periodStart, required this.startingBalance, required this.periodEnd, required this.paymentSettings, required this.livemode, required this.lines, required this.issuer, required this.id, required this.discounts, required this.defaultTaxRates, this.defaultPaymentMethod = const Omittable.absent(), this.defaultSource = const Omittable.absent(), this.customerTaxIds = const Omittable.absent(), this.description = const Omittable.absent(), this.customerTaxExempt = const Omittable.absent(), this.dueDate = const Omittable.absent(), this.effectiveAt = const Omittable.absent(), this.endingBalance = const Omittable.absent(), this.footer = const Omittable.absent(), this.customerShipping = const Omittable.absent(), this.hostedInvoiceUrl = const Omittable.absent(), this.accountCountry = const Omittable.absent(), this.invoicePdf = const Omittable.absent(), this.customerPhone = const Omittable.absent(), this.lastFinalizationError = const Omittable.absent(), this.latestRevision = const Omittable.absent(), this.customerName = const Omittable.absent(), this.customerEmail = const Omittable.absent(), this.metadata = const Omittable.absent(), this.nextPaymentAttempt = const Omittable.absent(), this.number = const Omittable.absent(), this.webhooksDeliveredAt = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.parent = const Omittable.absent(), this.customerAddress = const Omittable.absent(), this.payments, this.customerAccount = const Omittable.absent(), this.customFields = const Omittable.absent(), this.confirmationSecret = const Omittable.absent(), this.billingReason = const Omittable.absent(), this.receiptNumber = const Omittable.absent(), this.rendering = const Omittable.absent(), this.shippingCost = const Omittable.absent(), this.shippingDetails = const Omittable.absent(), this.automaticallyFinalizesAt = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.status = const Omittable.absent(), this.application = const Omittable.absent(), this.accountTaxIds = const Omittable.absent(), this.subtotalExcludingTax = const Omittable.absent(), this.testClock = const Omittable.absent(), this.thresholdReason, this.accountName = const Omittable.absent(), this.totalDiscountAmounts = const Omittable.absent(), this.totalExcludingTax = const Omittable.absent(), this.totalPretaxCreditAmounts = const Omittable.absent(), this.totalTaxes = const Omittable.absent(), this.fromInvoice = const Omittable.absent(), });
 
-factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
+factory Invoice.fromJson(Map<String, dynamic> json) {return Invoice(
   accountCountry: json.containsKey('account_country') ? Omittable(json['account_country'] as String?) : const Omittable.absent(),
   accountName: json.containsKey('account_name') ? Omittable(json['account_name'] as String?) : const Omittable.absent(),
   accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(InvoiceAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
@@ -275,7 +275,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   totalPretaxCreditAmounts: json.containsKey('total_pretax_credit_amounts') ? Omittable((json['total_pretax_credit_amounts'] as List<dynamic>?)?.map((e) => InvoicesResourcePretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   totalTaxes: json.containsKey('total_taxes') ? Omittable((json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   webhooksDeliveredAt: json.containsKey('webhooks_delivered_at') ? Omittable(json['webhooks_delivered_at'] != null ? (json['webhooks_delivered_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The country of the business associated with this invoice, most often the business creating the invoice.
 final Omittable<String?> accountCountry;
@@ -511,7 +511,7 @@ final Omittable<List<BillingBillResourceInvoicingTaxesTax>?> totalTaxes;
 /// Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have [been exhausted](https://docs.stripe.com/billing/webhooks#understand). This field tracks the time when webhooks for this invoice were successfully delivered. If the invoice had no webhooks to deliver, this will be set while the invoice is being created.
 final Omittable<int?> webhooksDeliveredAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountCountry.isPresent) 'account_country': accountCountry.value,
   if (accountName.isPresent) 'account_name': accountName.value,
   if (accountTaxIds.isPresent) 'account_tax_ids': accountTaxIds.value?.map((e) => e.toJson()).toList(),
@@ -589,8 +589,8 @@ Map<String, dynamic> toJson() { return {
   if (totalPretaxCreditAmounts.isPresent) 'total_pretax_credit_amounts': totalPretaxCreditAmounts.value?.map((e) => e.toJson()).toList(),
   if (totalTaxes.isPresent) 'total_taxes': totalTaxes.value?.map((e) => e.toJson()).toList(),
   if (webhooksDeliveredAt.isPresent) 'webhooks_delivered_at': webhooksDeliveredAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_due') && json['amount_due'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_due') && json['amount_due'] is num &&
       json.containsKey('amount_overpaid') && json['amount_overpaid'] is num &&
       json.containsKey('amount_paid') && json['amount_paid'] is num &&
       json.containsKey('amount_remaining') && json['amount_remaining'] is num &&
@@ -618,8 +618,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('starting_balance') && json['starting_balance'] is num &&
       json.containsKey('status_transitions') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
-      json.containsKey('total') && json['total'] is num; } 
-Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accountName, Omittable<List<InvoiceAccountTaxIds>?>? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, Omittable<InvoiceApplication?>? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, Omittable<int?>? automaticallyFinalizesAt, Omittable<InvoiceBillingReason?>? billingReason, InvoiceCollectionMethod? collectionMethod, Omittable<InvoicesResourceConfirmationSecret?>? confirmationSecret, int? created, String? currency, Omittable<List<InvoiceSettingCustomField>?>? customFields, InvoiceCustomer? customer, Omittable<String?>? customerAccount, Omittable<Address?>? customerAddress, Omittable<String?>? customerEmail, Omittable<String?>? customerName, Omittable<String?>? customerPhone, Omittable<Shipping?>? customerShipping, Omittable<InvoiceCustomerTaxExempt?>? customerTaxExempt, Omittable<List<InvoicesResourceInvoiceTaxId>?>? customerTaxIds, Omittable<InvoiceDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<InvoiceDefaultSource?>? defaultSource, List<TaxRate>? defaultTaxRates, Omittable<String?>? description, List<InvoiceDiscounts>? discounts, Omittable<int?>? dueDate, Omittable<int?>? effectiveAt, Omittable<int?>? endingBalance, Omittable<String?>? footer, Omittable<InvoicesResourceFromInvoice?>? fromInvoice, Omittable<String?>? hostedInvoiceUrl, String? id, Omittable<String?>? invoicePdf, ConnectAccountReference? issuer, Omittable<Errors?>? lastFinalizationError, Omittable<InvoiceLatestRevision?>? latestRevision, InvoiceLines? lines, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<int?>? nextPaymentAttempt, Omittable<String?>? number, InvoiceObject? object, Omittable<InvoiceOnBehalfOf?>? onBehalfOf, Omittable<BillingBillResourceInvoicingParentsInvoiceParent?>? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments? Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, Omittable<String?>? receiptNumber, Omittable<InvoicesResourceInvoiceRendering?>? rendering, Omittable<InvoicesResourceShippingCost?>? shippingCost, Omittable<Shipping?>? shippingDetails, int? startingBalance, Omittable<String?>? statementDescriptor, Omittable<InvoiceStatus?>? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, Omittable<int?>? subtotalExcludingTax, Omittable<InvoiceTestClock?>? testClock, InvoiceThresholdReason? Function()? thresholdReason, int? total, Omittable<List<DiscountsResourceDiscountAmount>?>? totalDiscountAmounts, Omittable<int?>? totalExcludingTax, Omittable<List<InvoicesResourcePretaxCreditAmount>?>? totalPretaxCreditAmounts, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, Omittable<int?>? webhooksDeliveredAt, }) { return Invoice(
+      json.containsKey('total') && json['total'] is num;}
+Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accountName, Omittable<List<InvoiceAccountTaxIds>?>? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, Omittable<InvoiceApplication?>? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, Omittable<int?>? automaticallyFinalizesAt, Omittable<InvoiceBillingReason?>? billingReason, InvoiceCollectionMethod? collectionMethod, Omittable<InvoicesResourceConfirmationSecret?>? confirmationSecret, int? created, String? currency, Omittable<List<InvoiceSettingCustomField>?>? customFields, InvoiceCustomer? customer, Omittable<String?>? customerAccount, Omittable<Address?>? customerAddress, Omittable<String?>? customerEmail, Omittable<String?>? customerName, Omittable<String?>? customerPhone, Omittable<Shipping?>? customerShipping, Omittable<InvoiceCustomerTaxExempt?>? customerTaxExempt, Omittable<List<InvoicesResourceInvoiceTaxId>?>? customerTaxIds, Omittable<InvoiceDefaultPaymentMethod?>? defaultPaymentMethod, Omittable<InvoiceDefaultSource?>? defaultSource, List<TaxRate>? defaultTaxRates, Omittable<String?>? description, List<InvoiceDiscounts>? discounts, Omittable<int?>? dueDate, Omittable<int?>? effectiveAt, Omittable<int?>? endingBalance, Omittable<String?>? footer, Omittable<InvoicesResourceFromInvoice?>? fromInvoice, Omittable<String?>? hostedInvoiceUrl, String? id, Omittable<String?>? invoicePdf, ConnectAccountReference? issuer, Omittable<Errors?>? lastFinalizationError, Omittable<InvoiceLatestRevision?>? latestRevision, InvoiceLines? lines, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<int?>? nextPaymentAttempt, Omittable<String?>? number, InvoiceObject? object, Omittable<InvoiceOnBehalfOf?>? onBehalfOf, Omittable<BillingBillResourceInvoicingParentsInvoiceParent?>? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments? Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, Omittable<String?>? receiptNumber, Omittable<InvoicesResourceInvoiceRendering?>? rendering, Omittable<InvoicesResourceShippingCost?>? shippingCost, Omittable<Shipping?>? shippingDetails, int? startingBalance, Omittable<String?>? statementDescriptor, Omittable<InvoiceStatus?>? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, Omittable<int?>? subtotalExcludingTax, Omittable<InvoiceTestClock?>? testClock, InvoiceThresholdReason? Function()? thresholdReason, int? total, Omittable<List<DiscountsResourceDiscountAmount>?>? totalDiscountAmounts, Omittable<int?>? totalExcludingTax, Omittable<List<InvoicesResourcePretaxCreditAmount>?>? totalPretaxCreditAmounts, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, Omittable<int?>? webhooksDeliveredAt, }) {return Invoice(
   accountCountry: accountCountry ?? this.accountCountry,
   accountName: accountName ?? this.accountName,
   accountTaxIds: accountTaxIds ?? this.accountTaxIds,
@@ -697,8 +697,8 @@ Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accoun
   totalPretaxCreditAmounts: totalPretaxCreditAmounts ?? this.totalPretaxCreditAmounts,
   totalTaxes: totalTaxes ?? this.totalTaxes,
   webhooksDeliveredAt: webhooksDeliveredAt ?? this.webhooksDeliveredAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Invoice &&
           accountCountry == other.accountCountry &&
           accountName == other.accountName &&
@@ -782,7 +782,7 @@ Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accoun
           listEquals(totalPretaxCreditAmounts.value, other.totalPretaxCreditAmounts.value) &&
           totalTaxes.isPresent == other.totalTaxes.isPresent &&
           listEquals(totalTaxes.value, other.totalTaxes.value) &&
-          webhooksDeliveredAt == other.webhooksDeliveredAt; } 
-@override int get hashCode { return Object.hashAll([accountCountry, accountName, Object.hashAll(accountTaxIds.value ?? const []), amountDue, amountOverpaid, amountPaid, amountRemaining, amountShipping, application, attemptCount, attempted, autoAdvance, automaticTax, automaticallyFinalizesAt, billingReason, collectionMethod, confirmationSecret, created, currency, Object.hashAll(customFields.value ?? const []), customer, customerAccount, customerAddress, customerEmail, customerName, customerPhone, customerShipping, customerTaxExempt, Object.hashAll(customerTaxIds.value ?? const []), defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates), description, Object.hashAll(discounts), dueDate, effectiveAt, endingBalance, footer, fromInvoice, hostedInvoiceUrl, id, invoicePdf, issuer, lastFinalizationError, latestRevision, lines, livemode, metadata, nextPaymentAttempt, number, object, onBehalfOf, parent, paymentSettings, payments, periodEnd, periodStart, postPaymentCreditNotesAmount, prePaymentCreditNotesAmount, receiptNumber, rendering, shippingCost, shippingDetails, startingBalance, statementDescriptor, status, statusTransitions, subtotal, subtotalExcludingTax, testClock, thresholdReason, total, Object.hashAll(totalDiscountAmounts.value ?? const []), totalExcludingTax, Object.hashAll(totalPretaxCreditAmounts.value ?? const []), Object.hashAll(totalTaxes.value ?? const []), webhooksDeliveredAt]); } 
-@override String toString() { return 'Invoice(accountCountry: $accountCountry, accountName: $accountName, accountTaxIds: $accountTaxIds, amountDue: $amountDue, amountOverpaid: $amountOverpaid, amountPaid: $amountPaid, amountRemaining: $amountRemaining, amountShipping: $amountShipping, application: $application, attemptCount: $attemptCount, attempted: $attempted, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, billingReason: $billingReason, collectionMethod: $collectionMethod, confirmationSecret: $confirmationSecret, created: $created, currency: $currency, customFields: $customFields, customer: $customer, customerAccount: $customerAccount, customerAddress: $customerAddress, customerEmail: $customerEmail, customerName: $customerName, customerPhone: $customerPhone, customerShipping: $customerShipping, customerTaxExempt: $customerTaxExempt, customerTaxIds: $customerTaxIds, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, endingBalance: $endingBalance, footer: $footer, fromInvoice: $fromInvoice, hostedInvoiceUrl: $hostedInvoiceUrl, id: $id, invoicePdf: $invoicePdf, issuer: $issuer, lastFinalizationError: $lastFinalizationError, latestRevision: $latestRevision, lines: $lines, livemode: $livemode, metadata: $metadata, nextPaymentAttempt: $nextPaymentAttempt, number: $number, object: $object, onBehalfOf: $onBehalfOf, parent: $parent, paymentSettings: $paymentSettings, payments: $payments, periodEnd: $periodEnd, periodStart: $periodStart, postPaymentCreditNotesAmount: $postPaymentCreditNotesAmount, prePaymentCreditNotesAmount: $prePaymentCreditNotesAmount, receiptNumber: $receiptNumber, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, startingBalance: $startingBalance, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, subtotal: $subtotal, subtotalExcludingTax: $subtotalExcludingTax, testClock: $testClock, thresholdReason: $thresholdReason, total: $total, totalDiscountAmounts: $totalDiscountAmounts, totalExcludingTax: $totalExcludingTax, totalPretaxCreditAmounts: $totalPretaxCreditAmounts, totalTaxes: $totalTaxes, webhooksDeliveredAt: $webhooksDeliveredAt)'; } 
- }
+          webhooksDeliveredAt == other.webhooksDeliveredAt;}
+@override int get hashCode {return Object.hashAll([accountCountry, accountName, Object.hashAll(accountTaxIds.value ?? const []), amountDue, amountOverpaid, amountPaid, amountRemaining, amountShipping, application, attemptCount, attempted, autoAdvance, automaticTax, automaticallyFinalizesAt, billingReason, collectionMethod, confirmationSecret, created, currency, Object.hashAll(customFields.value ?? const []), customer, customerAccount, customerAddress, customerEmail, customerName, customerPhone, customerShipping, customerTaxExempt, Object.hashAll(customerTaxIds.value ?? const []), defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates), description, Object.hashAll(discounts), dueDate, effectiveAt, endingBalance, footer, fromInvoice, hostedInvoiceUrl, id, invoicePdf, issuer, lastFinalizationError, latestRevision, lines, livemode, metadata, nextPaymentAttempt, number, object, onBehalfOf, parent, paymentSettings, payments, periodEnd, periodStart, postPaymentCreditNotesAmount, prePaymentCreditNotesAmount, receiptNumber, rendering, shippingCost, shippingDetails, startingBalance, statementDescriptor, status, statusTransitions, subtotal, subtotalExcludingTax, testClock, thresholdReason, total, Object.hashAll(totalDiscountAmounts.value ?? const []), totalExcludingTax, Object.hashAll(totalPretaxCreditAmounts.value ?? const []), Object.hashAll(totalTaxes.value ?? const []), webhooksDeliveredAt]);}
+@override String toString() {return 'Invoice(accountCountry: $accountCountry, accountName: $accountName, accountTaxIds: $accountTaxIds, amountDue: $amountDue, amountOverpaid: $amountOverpaid, amountPaid: $amountPaid, amountRemaining: $amountRemaining, amountShipping: $amountShipping, application: $application, attemptCount: $attemptCount, attempted: $attempted, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, billingReason: $billingReason, collectionMethod: $collectionMethod, confirmationSecret: $confirmationSecret, created: $created, currency: $currency, customFields: $customFields, customer: $customer, customerAccount: $customerAccount, customerAddress: $customerAddress, customerEmail: $customerEmail, customerName: $customerName, customerPhone: $customerPhone, customerShipping: $customerShipping, customerTaxExempt: $customerTaxExempt, customerTaxIds: $customerTaxIds, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, endingBalance: $endingBalance, footer: $footer, fromInvoice: $fromInvoice, hostedInvoiceUrl: $hostedInvoiceUrl, id: $id, invoicePdf: $invoicePdf, issuer: $issuer, lastFinalizationError: $lastFinalizationError, latestRevision: $latestRevision, lines: $lines, livemode: $livemode, metadata: $metadata, nextPaymentAttempt: $nextPaymentAttempt, number: $number, object: $object, onBehalfOf: $onBehalfOf, parent: $parent, paymentSettings: $paymentSettings, payments: $payments, periodEnd: $periodEnd, periodStart: $periodStart, postPaymentCreditNotesAmount: $postPaymentCreditNotesAmount, prePaymentCreditNotesAmount: $prePaymentCreditNotesAmount, receiptNumber: $receiptNumber, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, startingBalance: $startingBalance, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, subtotal: $subtotal, subtotalExcludingTax: $subtotalExcludingTax, testClock: $testClock, thresholdReason: $thresholdReason, total: $total, totalDiscountAmounts: $totalDiscountAmounts, totalExcludingTax: $totalExcludingTax, totalPretaxCreditAmounts: $totalPretaxCreditAmounts, totalTaxes: $totalTaxes, webhooksDeliveredAt: $webhooksDeliveredAt)';}
+}

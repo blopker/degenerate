@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PublicDestinationType {const PublicDestinationType._(this.value);
 
-factory PublicDestinationType.fromJson(String json) { return switch (json) {
+factory PublicDestinationType.fromJson(String json) {return switch (json) {
   'public' => public,
   _ => PublicDestinationType._(json),
-}; }
+};}
 
 static const PublicDestinationType public = PublicDestinationType._('public');
 
@@ -13,22 +13,22 @@ static const List<PublicDestinationType> values = [public];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PublicDestinationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PublicDestinationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PublicDestinationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PublicDestinationType($value)';}
+}
 /// A public hostname that Access will secure. Public destinations support sub-domain and path. Wildcard '*' can be used in the definition.
 /// 
 @immutable final class PublicDestination {const PublicDestination({this.type, this.uri, });
 
-factory PublicDestination.fromJson(Map<String, dynamic> json) { return PublicDestination(
+factory PublicDestination.fromJson(Map<String, dynamic> json) {return PublicDestination(
   type: json['type'] != null ? PublicDestinationType.fromJson(json['type'] as String) : null,
   uri: json['uri'] as String?,
-); }
+);}
 
 final PublicDestinationType? type;
 
@@ -36,19 +36,19 @@ final PublicDestinationType? type;
 /// 
 final String? uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'uri': ?uri,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'uri'}.contains(key)); } 
-PublicDestination copyWith({PublicDestinationType? Function()? type, String? Function()? uri, }) { return PublicDestination(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'uri'}.contains(key));}
+PublicDestination copyWith({PublicDestinationType? Function()? type, String? Function()? uri, }) {return PublicDestination(
   type: type != null ? type() : this.type,
   uri: uri != null ? uri() : this.uri,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PublicDestination &&
           type == other.type &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(type, uri); } 
-@override String toString() { return 'PublicDestination(type: $type, uri: $uri)'; } 
- }
+          uri == other.uri;}
+@override int get hashCode {return Object.hash(type, uri);}
+@override String toString() {return 'PublicDestination(type: $type, uri: $uri)';}
+}

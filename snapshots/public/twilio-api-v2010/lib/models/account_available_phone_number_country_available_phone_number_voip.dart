@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_voip_capabilities.dart';@immutable final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip({this.friendlyName = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.lata = const Omittable.absent(), this.locality = const Omittable.absent(), this.rateCenter = const Omittable.absent(), this.latitude = const Omittable.absent(), this.longitude = const Omittable.absent(), this.region = const Omittable.absent(), this.postalCode = const Omittable.absent(), this.isoCountry = const Omittable.absent(), this.addressRequirements = const Omittable.absent(), this.beta = const Omittable.absent(), this.capabilities = const Omittable.absent(), });
 
-factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip.fromJson(Map<String, dynamic> json) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(
+factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip.fromJson(Map<String, dynamic> json) {return AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
   phoneNumber: json.containsKey('phone_number') ? Omittable(json['phone_number'] as String?) : const Omittable.absent(),
   lata: json.containsKey('lata') ? Omittable(json['lata'] as String?) : const Omittable.absent(),
@@ -16,7 +16,7 @@ factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip.fromJson(Map<
   addressRequirements: json.containsKey('address_requirements') ? Omittable(json['address_requirements'] as String?) : const Omittable.absent(),
   beta: json.containsKey('beta') ? Omittable(json['beta'] as bool?) : const Omittable.absent(),
   capabilities: json.containsKey('capabilities') ? Omittable(json['capabilities'] != null ? AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoipCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// A formatted version of the phone number.
 final Omittable<String?> friendlyName;
@@ -57,7 +57,7 @@ final Omittable<bool?> beta;
 /// The set of Boolean properties that indicate whether a phone number can receive calls or messages.  Capabilities are: `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
 final Omittable<AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoipCapabilities?> capabilities;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
   if (phoneNumber.isPresent) 'phone_number': phoneNumber.value,
   if (lata.isPresent) 'lata': lata.value,
@@ -71,9 +71,9 @@ Map<String, dynamic> toJson() { return {
   if (addressRequirements.isPresent) 'address_requirements': addressRequirements.value,
   if (beta.isPresent) 'beta': beta.value,
   if (capabilities.isPresent) 'capabilities': capabilities.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'friendly_name', 'phone_number', 'lata', 'locality', 'rate_center', 'latitude', 'longitude', 'region', 'postal_code', 'iso_country', 'address_requirements', 'beta', 'capabilities'}.contains(key)); } 
-AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip copyWith({Omittable<String?>? friendlyName, Omittable<String?>? phoneNumber, Omittable<String?>? lata, Omittable<String?>? locality, Omittable<String?>? rateCenter, Omittable<double?>? latitude, Omittable<double?>? longitude, Omittable<String?>? region, Omittable<String?>? postalCode, Omittable<String?>? isoCountry, Omittable<String?>? addressRequirements, Omittable<bool?>? beta, Omittable<AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoipCapabilities?>? capabilities, }) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'friendly_name', 'phone_number', 'lata', 'locality', 'rate_center', 'latitude', 'longitude', 'region', 'postal_code', 'iso_country', 'address_requirements', 'beta', 'capabilities'}.contains(key));}
+AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip copyWith({Omittable<String?>? friendlyName, Omittable<String?>? phoneNumber, Omittable<String?>? lata, Omittable<String?>? locality, Omittable<String?>? rateCenter, Omittable<double?>? latitude, Omittable<double?>? longitude, Omittable<String?>? region, Omittable<String?>? postalCode, Omittable<String?>? isoCountry, Omittable<String?>? addressRequirements, Omittable<bool?>? beta, Omittable<AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoipCapabilities?>? capabilities, }) {return AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(
   friendlyName: friendlyName ?? this.friendlyName,
   phoneNumber: phoneNumber ?? this.phoneNumber,
   lata: lata ?? this.lata,
@@ -87,8 +87,8 @@ AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip copyWith({Omittable<S
   addressRequirements: addressRequirements ?? this.addressRequirements,
   beta: beta ?? this.beta,
   capabilities: capabilities ?? this.capabilities,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip &&
           friendlyName == other.friendlyName &&
           phoneNumber == other.phoneNumber &&
@@ -102,7 +102,7 @@ AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip copyWith({Omittable<S
           isoCountry == other.isoCountry &&
           addressRequirements == other.addressRequirements &&
           beta == other.beta &&
-          capabilities == other.capabilities; } 
-@override int get hashCode { return Object.hash(friendlyName, phoneNumber, lata, locality, rateCenter, latitude, longitude, region, postalCode, isoCountry, addressRequirements, beta, capabilities); } 
-@override String toString() { return 'AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(friendlyName: $friendlyName, phoneNumber: $phoneNumber, lata: $lata, locality: $locality, rateCenter: $rateCenter, latitude: $latitude, longitude: $longitude, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, addressRequirements: $addressRequirements, beta: $beta, capabilities: $capabilities)'; } 
- }
+          capabilities == other.capabilities;}
+@override int get hashCode {return Object.hash(friendlyName, phoneNumber, lata, locality, rateCenter, latitude, longitude, region, postalCode, isoCountry, addressRequirements, beta, capabilities);}
+@override String toString() {return 'AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(friendlyName: $friendlyName, phoneNumber: $phoneNumber, lata: $lata, locality: $locality, rateCenter: $rateCenter, latitude: $latitude, longitude: $longitude, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, addressRequirements: $addressRequirements, beta: $beta, capabilities: $capabilities)';}
+}

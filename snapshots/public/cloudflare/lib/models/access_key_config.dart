@@ -16,11 +16,11 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class AccessKeyConfig {const AccessKeyConfig({this.daysUntilNextRotation, this.keyRotationIntervalDays, this.lastKeyRotationAt, });
 
-factory AccessKeyConfig.fromJson(Map<String, dynamic> json) { return AccessKeyConfig(
+factory AccessKeyConfig.fromJson(Map<String, dynamic> json) {return AccessKeyConfig(
   daysUntilNextRotation: json['days_until_next_rotation'] != null ? AccessDaysUntilNextRotation.fromJson(json['days_until_next_rotation'] as num) : null,
   keyRotationIntervalDays: json['key_rotation_interval_days'] != null ? AccessKeyRotationIntervalDays.fromJson(json['key_rotation_interval_days'] as num) : null,
   lastKeyRotationAt: json['last_key_rotation_at'] != null ? AccessLastKeyRotationAt.fromJson(json['last_key_rotation_at'] as String) : null,
-); }
+);}
 
 /// The number of days until the next key rotation.
 final AccessDaysUntilNextRotation? daysUntilNextRotation;
@@ -29,22 +29,22 @@ final AccessKeyRotationIntervalDays? keyRotationIntervalDays;
 
 final AccessLastKeyRotationAt? lastKeyRotationAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (daysUntilNextRotation != null) 'days_until_next_rotation': daysUntilNextRotation?.toJson(),
   if (keyRotationIntervalDays != null) 'key_rotation_interval_days': keyRotationIntervalDays?.toJson(),
   if (lastKeyRotationAt != null) 'last_key_rotation_at': lastKeyRotationAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'days_until_next_rotation', 'key_rotation_interval_days', 'last_key_rotation_at'}.contains(key)); } 
-AccessKeyConfig copyWith({AccessDaysUntilNextRotation? Function()? daysUntilNextRotation, AccessKeyRotationIntervalDays? Function()? keyRotationIntervalDays, AccessLastKeyRotationAt? Function()? lastKeyRotationAt, }) { return AccessKeyConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'days_until_next_rotation', 'key_rotation_interval_days', 'last_key_rotation_at'}.contains(key));}
+AccessKeyConfig copyWith({AccessDaysUntilNextRotation? Function()? daysUntilNextRotation, AccessKeyRotationIntervalDays? Function()? keyRotationIntervalDays, AccessLastKeyRotationAt? Function()? lastKeyRotationAt, }) {return AccessKeyConfig(
   daysUntilNextRotation: daysUntilNextRotation != null ? daysUntilNextRotation() : this.daysUntilNextRotation,
   keyRotationIntervalDays: keyRotationIntervalDays != null ? keyRotationIntervalDays() : this.keyRotationIntervalDays,
   lastKeyRotationAt: lastKeyRotationAt != null ? lastKeyRotationAt() : this.lastKeyRotationAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessKeyConfig &&
           daysUntilNextRotation == other.daysUntilNextRotation &&
           keyRotationIntervalDays == other.keyRotationIntervalDays &&
-          lastKeyRotationAt == other.lastKeyRotationAt; } 
-@override int get hashCode { return Object.hash(daysUntilNextRotation, keyRotationIntervalDays, lastKeyRotationAt); } 
-@override String toString() { return 'AccessKeyConfig(daysUntilNextRotation: $daysUntilNextRotation, keyRotationIntervalDays: $keyRotationIntervalDays, lastKeyRotationAt: $lastKeyRotationAt)'; } 
- }
+          lastKeyRotationAt == other.lastKeyRotationAt;}
+@override int get hashCode {return Object.hash(daysUntilNextRotation, keyRotationIntervalDays, lastKeyRotationAt);}
+@override String toString() {return 'AccessKeyConfig(daysUntilNextRotation: $daysUntilNextRotation, keyRotationIntervalDays: $keyRotationIntervalDays, lastKeyRotationAt: $lastKeyRotationAt)';}
+}

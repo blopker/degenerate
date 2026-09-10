@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_key_fields_value_cookie.dart';import 'zones_cache_key_fields_value_header.dart';import 'zones_cache_key_fields_value_host.dart';import 'zones_cache_key_fields_value_query_string.dart';import 'zones_cache_key_fields_value_user.dart';@immutable final class ZonesCacheKeyFieldsValue {const ZonesCacheKeyFieldsValue({this.cookie, this.header, this.host, this.queryString, this.user, });
 
-factory ZonesCacheKeyFieldsValue.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValue(
+factory ZonesCacheKeyFieldsValue.fromJson(Map<String, dynamic> json) {return ZonesCacheKeyFieldsValue(
   cookie: json['cookie'] != null ? ZonesCacheKeyFieldsValueCookie.fromJson(json['cookie'] as Map<String, dynamic>) : null,
   header: json['header'] != null ? ZonesCacheKeyFieldsValueHeader.fromJson(json['header'] as Map<String, dynamic>) : null,
   host: json['host'] != null ? ZonesCacheKeyFieldsValueHost.fromJson(json['host'] as Map<String, dynamic>) : null,
   queryString: json['query_string'] != null ? ZonesCacheKeyFieldsValueQueryString.fromJson(json['query_string'] as Map<String, dynamic>) : null,
   user: json['user'] != null ? ZonesCacheKeyFieldsValueUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Controls which cookies appear in the Cache Key.
 /// 
@@ -33,28 +33,28 @@ final ZonesCacheKeyFieldsValueQueryString? queryString;
 /// 
 final ZonesCacheKeyFieldsValueUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cookie != null) 'cookie': cookie?.toJson(),
   if (header != null) 'header': header?.toJson(),
   if (host != null) 'host': host?.toJson(),
   if (queryString != null) 'query_string': queryString?.toJson(),
   if (user != null) 'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cookie', 'header', 'host', 'query_string', 'user'}.contains(key)); } 
-ZonesCacheKeyFieldsValue copyWith({ZonesCacheKeyFieldsValueCookie? Function()? cookie, ZonesCacheKeyFieldsValueHeader? Function()? header, ZonesCacheKeyFieldsValueHost? Function()? host, ZonesCacheKeyFieldsValueQueryString? Function()? queryString, ZonesCacheKeyFieldsValueUser? Function()? user, }) { return ZonesCacheKeyFieldsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cookie', 'header', 'host', 'query_string', 'user'}.contains(key));}
+ZonesCacheKeyFieldsValue copyWith({ZonesCacheKeyFieldsValueCookie? Function()? cookie, ZonesCacheKeyFieldsValueHeader? Function()? header, ZonesCacheKeyFieldsValueHost? Function()? host, ZonesCacheKeyFieldsValueQueryString? Function()? queryString, ZonesCacheKeyFieldsValueUser? Function()? user, }) {return ZonesCacheKeyFieldsValue(
   cookie: cookie != null ? cookie() : this.cookie,
   header: header != null ? header() : this.header,
   host: host != null ? host() : this.host,
   queryString: queryString != null ? queryString() : this.queryString,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesCacheKeyFieldsValue &&
           cookie == other.cookie &&
           header == other.header &&
           host == other.host &&
           queryString == other.queryString &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(cookie, header, host, queryString, user); } 
-@override String toString() { return 'ZonesCacheKeyFieldsValue(cookie: $cookie, header: $header, host: $host, queryString: $queryString, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hash(cookie, header, host, queryString, user);}
+@override String toString() {return 'ZonesCacheKeyFieldsValue(cookie: $cookie, header: $header, host: $host, queryString: $queryString, user: $user)';}
+}

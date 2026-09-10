@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_ser
 /// 
 @immutable final class RealtimeServerEventSessionUpdated {const RealtimeServerEventSessionUpdated({required this.eventId, required this.type, required this.session, });
 
-factory RealtimeServerEventSessionUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventSessionUpdated(
+factory RealtimeServerEventSessionUpdated.fromJson(Map<String, dynamic> json) {return RealtimeServerEventSessionUpdated(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   session: OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -20,24 +20,24 @@ final String type;
 /// The session configuration.
 final RealtimeServerEventSessionUpdatedSession session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'session': session.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('session'); } 
-RealtimeServerEventSessionUpdated copyWith({String? eventId, String? type, RealtimeServerEventSessionUpdatedSession? session, }) { return RealtimeServerEventSessionUpdated(
+      json.containsKey('session');}
+RealtimeServerEventSessionUpdated copyWith({String? eventId, String? type, RealtimeServerEventSessionUpdatedSession? session, }) {return RealtimeServerEventSessionUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventSessionUpdated &&
           eventId == other.eventId &&
           type == other.type &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(eventId, type, session); } 
-@override String toString() { return 'RealtimeServerEventSessionUpdated(eventId: $eventId, type: $type, session: $session)'; } 
- }
+          session == other.session;}
+@override int get hashCode {return Object.hash(eventId, type, session);}
+@override String toString() {return 'RealtimeServerEventSessionUpdated(eventId: $eventId, type: $type, session: $session)';}
+}

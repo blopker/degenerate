@@ -6,13 +6,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_res
 /// 
 @immutable final class RealtimeResponseStatusDetailsType {const RealtimeResponseStatusDetailsType._(this.value);
 
-factory RealtimeResponseStatusDetailsType.fromJson(String json) { return switch (json) {
+factory RealtimeResponseStatusDetailsType.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'cancelled' => cancelled,
   'failed' => failed,
   'incomplete' => incomplete,
   _ => RealtimeResponseStatusDetailsType._(json),
-}; }
+};}
 
 static const RealtimeResponseStatusDetailsType completed = RealtimeResponseStatusDetailsType._('completed');
 
@@ -26,25 +26,25 @@ static const List<RealtimeResponseStatusDetailsType> values = [completed, cancel
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeResponseStatusDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeResponseStatusDetailsType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeResponseStatusDetailsType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeResponseStatusDetailsType($value)';}
+}
 /// The reason the Response did not complete. For a `cancelled` Response,  one of `turn_detected` (the server VAD detected a new start of speech)  or `client_cancelled` (the client sent a cancel event). For an  `incomplete` Response, one of `max_output_tokens` or `content_filter`  (the server-side safety filter activated and cut off the response).
 /// 
 @immutable final class RealtimeResponseStatusDetailsReason {const RealtimeResponseStatusDetailsReason._(this.value);
 
-factory RealtimeResponseStatusDetailsReason.fromJson(String json) { return switch (json) {
+factory RealtimeResponseStatusDetailsReason.fromJson(String json) {return switch (json) {
   'turn_detected' => turnDetected,
   'client_cancelled' => clientCancelled,
   'max_output_tokens' => maxOutputTokens,
   'content_filter' => contentFilter,
   _ => RealtimeResponseStatusDetailsReason._(json),
-}; }
+};}
 
 static const RealtimeResponseStatusDetailsReason turnDetected = RealtimeResponseStatusDetailsReason._('turn_detected');
 
@@ -58,22 +58,22 @@ static const List<RealtimeResponseStatusDetailsReason> values = [turnDetected, c
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeResponseStatusDetailsReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeResponseStatusDetailsReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RealtimeResponseStatusDetailsReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RealtimeResponseStatusDetailsReason($value)';}
+}
 /// Additional details about the status.
 @immutable final class RealtimeResponseStatusDetails {const RealtimeResponseStatusDetails({this.type, this.reason, this.error, });
 
-factory RealtimeResponseStatusDetails.fromJson(Map<String, dynamic> json) { return RealtimeResponseStatusDetails(
+factory RealtimeResponseStatusDetails.fromJson(Map<String, dynamic> json) {return RealtimeResponseStatusDetails(
   type: json['type'] != null ? RealtimeResponseStatusDetailsType.fromJson(json['type'] as String) : null,
   reason: json['reason'] != null ? RealtimeResponseStatusDetailsReason.fromJson(json['reason'] as String) : null,
   error: json['error'] != null ? RealtimeResponseStatusDetailsError.fromJson(json['error'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The type of error that caused the response to fail, corresponding
 /// with the `status` field (`completed`, `cancelled`, `incomplete`,
@@ -90,22 +90,22 @@ final RealtimeResponseStatusDetailsReason? reason;
 /// 
 final RealtimeResponseStatusDetailsError? error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (reason != null) 'reason': reason?.toJson(),
   if (error != null) 'error': error?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'reason', 'error'}.contains(key)); } 
-RealtimeResponseStatusDetails copyWith({RealtimeResponseStatusDetailsType? Function()? type, RealtimeResponseStatusDetailsReason? Function()? reason, RealtimeResponseStatusDetailsError? Function()? error, }) { return RealtimeResponseStatusDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'reason', 'error'}.contains(key));}
+RealtimeResponseStatusDetails copyWith({RealtimeResponseStatusDetailsType? Function()? type, RealtimeResponseStatusDetailsReason? Function()? reason, RealtimeResponseStatusDetailsError? Function()? error, }) {return RealtimeResponseStatusDetails(
   type: type != null ? type() : this.type,
   reason: reason != null ? reason() : this.reason,
   error: error != null ? error() : this.error,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeResponseStatusDetails &&
           type == other.type &&
           reason == other.reason &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(type, reason, error); } 
-@override String toString() { return 'RealtimeResponseStatusDetails(type: $type, reason: $reason, error: $error)'; } 
- }
+          error == other.error;}
+@override int get hashCode {return Object.hash(type, reason, error);}
+@override String toString() {return 'RealtimeResponseStatusDetails(type: $type, reason: $reason, error: $error)';}
+}

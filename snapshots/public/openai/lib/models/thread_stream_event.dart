@@ -3,33 +3,33 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_stream_event_thread_created.dart';/// A value that is one of: `ThreadStreamEventThreadCreated`.
 sealed class ThreadStreamEvent {const ThreadStreamEvent();
 
-factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadStreamEventThreadCreated.canParse(json)) {
+factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {  if (ThreadStreamEventThreadCreated.canParse(json)) {
     return ThreadStreamEventThreadStreamEventThreadCreated(ThreadStreamEventThreadCreated.fromJson(json));
   }
-  return ThreadStreamEvent$Unknown(json); }
+  return ThreadStreamEvent$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class ThreadStreamEventThreadStreamEventThreadCreated extends ThreadStreamEvent {const ThreadStreamEventThreadStreamEventThreadCreated(this._value);
 
 final ThreadStreamEventThreadCreated _value;
 
-@override ThreadStreamEventThreadCreated get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadStreamEventThreadStreamEventThreadCreated && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ThreadStreamEvent.threadStreamEventThreadCreated($_value)'; } 
- }
+@override ThreadStreamEventThreadCreated get value {return _value;}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreadStreamEventThreadStreamEventThreadCreated && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'ThreadStreamEvent.threadStreamEventThreadCreated($_value)';}
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class ThreadStreamEvent$Unknown extends ThreadStreamEvent {const ThreadStreamEvent$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadStreamEvent$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ThreadStreamEvent.unknown($_value)'; } 
- }
+@override dynamic get value {return _value ?? '';}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ThreadStreamEvent$Unknown && _value == other._value;}
+@override int get hashCode {return _value.hashCode;}
+@override String toString() {return 'ThreadStreamEvent.unknown($_value)';}
+}

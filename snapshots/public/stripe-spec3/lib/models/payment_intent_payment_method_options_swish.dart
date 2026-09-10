@@ -9,10 +9,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 @immutable final class PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage {const PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage none = PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage._('none');
 
@@ -20,21 +20,21 @@ static const List<PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage($value)';}
+}
 /// 
 @immutable final class PaymentIntentPaymentMethodOptionsSwish {const PaymentIntentPaymentMethodOptionsSwish({this.reference = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentIntentPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsSwish(
+factory PaymentIntentPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsSwish(
   reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// A reference for this payment to be displayed in the Swish app.
 final Omittable<String?> reference;
@@ -48,19 +48,19 @@ final Omittable<String?> reference;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (reference.isPresent) 'reference': reference.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsSwish copyWith({Omittable<String?>? reference, PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key));}
+PaymentIntentPaymentMethodOptionsSwish copyWith({Omittable<String?>? reference, PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentIntentPaymentMethodOptionsSwish(
   reference: reference ?? this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsSwish &&
           reference == other.reference &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(reference, setupFutureUsage); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsSwish(reference: $reference, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(reference, setupFutureUsage);}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsSwish(reference: $reference, setupFutureUsage: $setupFutureUsage)';}
+}

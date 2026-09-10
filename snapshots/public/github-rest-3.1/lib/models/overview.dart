@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'overview_domains.dart';import 'overview_ssh_key_fingerprints.dart';/// Api Overview
 @immutable final class Overview {const Overview({required this.verifiablePasswordAuthentication, this.sshKeyFingerprints, this.sshKeys, this.hooks, this.githubEnterpriseImporter, this.web, this.api, this.git, this.packages, this.pages, this.importer, this.actions, this.actionsMacos, this.codespaces, this.dependabot, this.copilot, this.domains, });
 
-factory Overview.fromJson(Map<String, dynamic> json) { return Overview(
+factory Overview.fromJson(Map<String, dynamic> json) {return Overview(
   verifiablePasswordAuthentication: json['verifiable_password_authentication'] as bool,
   sshKeyFingerprints: json['ssh_key_fingerprints'] != null ? OverviewSshKeyFingerprints.fromJson(json['ssh_key_fingerprints'] as Map<String, dynamic>) : null,
   sshKeys: (json['ssh_keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -21,7 +21,7 @@ factory Overview.fromJson(Map<String, dynamic> json) { return Overview(
   dependabot: (json['dependabot'] as List<dynamic>?)?.map((e) => e as String).toList(),
   copilot: (json['copilot'] as List<dynamic>?)?.map((e) => e as String).toList(),
   domains: json['domains'] != null ? OverviewDomains.fromJson(json['domains'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool verifiablePasswordAuthentication;
 
@@ -57,7 +57,7 @@ final List<String>? copilot;
 
 final OverviewDomains? domains;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'verifiable_password_authentication': verifiablePasswordAuthentication,
   if (sshKeyFingerprints != null) 'ssh_key_fingerprints': sshKeyFingerprints?.toJson(),
   'ssh_keys': ?sshKeys,
@@ -75,9 +75,9 @@ Map<String, dynamic> toJson() { return {
   'dependabot': ?dependabot,
   'copilot': ?copilot,
   if (domains != null) 'domains': domains?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('verifiable_password_authentication') && json['verifiable_password_authentication'] is bool; } 
-Overview copyWith({bool? verifiablePasswordAuthentication, OverviewSshKeyFingerprints? Function()? sshKeyFingerprints, List<String>? Function()? sshKeys, List<String>? Function()? hooks, List<String>? Function()? githubEnterpriseImporter, List<String>? Function()? web, List<String>? Function()? api, List<String>? Function()? git, List<String>? Function()? packages, List<String>? Function()? pages, List<String>? Function()? importer, List<String>? Function()? actions, List<String>? Function()? actionsMacos, List<String>? Function()? codespaces, List<String>? Function()? dependabot, List<String>? Function()? copilot, OverviewDomains? Function()? domains, }) { return Overview(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('verifiable_password_authentication') && json['verifiable_password_authentication'] is bool;}
+Overview copyWith({bool? verifiablePasswordAuthentication, OverviewSshKeyFingerprints? Function()? sshKeyFingerprints, List<String>? Function()? sshKeys, List<String>? Function()? hooks, List<String>? Function()? githubEnterpriseImporter, List<String>? Function()? web, List<String>? Function()? api, List<String>? Function()? git, List<String>? Function()? packages, List<String>? Function()? pages, List<String>? Function()? importer, List<String>? Function()? actions, List<String>? Function()? actionsMacos, List<String>? Function()? codespaces, List<String>? Function()? dependabot, List<String>? Function()? copilot, OverviewDomains? Function()? domains, }) {return Overview(
   verifiablePasswordAuthentication: verifiablePasswordAuthentication ?? this.verifiablePasswordAuthentication,
   sshKeyFingerprints: sshKeyFingerprints != null ? sshKeyFingerprints() : this.sshKeyFingerprints,
   sshKeys: sshKeys != null ? sshKeys() : this.sshKeys,
@@ -95,8 +95,8 @@ Overview copyWith({bool? verifiablePasswordAuthentication, OverviewSshKeyFingerp
   dependabot: dependabot != null ? dependabot() : this.dependabot,
   copilot: copilot != null ? copilot() : this.copilot,
   domains: domains != null ? domains() : this.domains,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Overview &&
           verifiablePasswordAuthentication == other.verifiablePasswordAuthentication &&
           sshKeyFingerprints == other.sshKeyFingerprints &&
@@ -114,7 +114,7 @@ Overview copyWith({bool? verifiablePasswordAuthentication, OverviewSshKeyFingerp
           listEquals(codespaces, other.codespaces) &&
           listEquals(dependabot, other.dependabot) &&
           listEquals(copilot, other.copilot) &&
-          domains == other.domains; } 
-@override int get hashCode { return Object.hash(verifiablePasswordAuthentication, sshKeyFingerprints, Object.hashAll(sshKeys ?? const []), Object.hashAll(hooks ?? const []), Object.hashAll(githubEnterpriseImporter ?? const []), Object.hashAll(web ?? const []), Object.hashAll(api ?? const []), Object.hashAll(git ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(pages ?? const []), Object.hashAll(importer ?? const []), Object.hashAll(actions ?? const []), Object.hashAll(actionsMacos ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(dependabot ?? const []), Object.hashAll(copilot ?? const []), domains); } 
-@override String toString() { return 'Overview(verifiablePasswordAuthentication: $verifiablePasswordAuthentication, sshKeyFingerprints: $sshKeyFingerprints, sshKeys: $sshKeys, hooks: $hooks, githubEnterpriseImporter: $githubEnterpriseImporter, web: $web, api: $api, git: $git, packages: $packages, pages: $pages, importer: $importer, actions: $actions, actionsMacos: $actionsMacos, codespaces: $codespaces, dependabot: $dependabot, copilot: $copilot, domains: $domains)'; } 
- }
+          domains == other.domains;}
+@override int get hashCode {return Object.hash(verifiablePasswordAuthentication, sshKeyFingerprints, Object.hashAll(sshKeys ?? const []), Object.hashAll(hooks ?? const []), Object.hashAll(githubEnterpriseImporter ?? const []), Object.hashAll(web ?? const []), Object.hashAll(api ?? const []), Object.hashAll(git ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(pages ?? const []), Object.hashAll(importer ?? const []), Object.hashAll(actions ?? const []), Object.hashAll(actionsMacos ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(dependabot ?? const []), Object.hashAll(copilot ?? const []), domains);}
+@override String toString() {return 'Overview(verifiablePasswordAuthentication: $verifiablePasswordAuthentication, sshKeyFingerprints: $sshKeyFingerprints, sshKeys: $sshKeys, hooks: $hooks, githubEnterpriseImporter: $githubEnterpriseImporter, web: $web, api: $api, git: $git, packages: $packages, pages: $pages, importer: $importer, actions: $actions, actionsMacos: $actionsMacos, codespaces: $codespaces, dependabot: $dependabot, copilot: $copilot, domains: $domains)';}
+}

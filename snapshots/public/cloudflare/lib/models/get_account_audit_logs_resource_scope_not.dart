@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsResourceScopeNot {const GetAccountAuditLogsResourceScopeNot._(this.value);
 
-factory GetAccountAuditLogsResourceScopeNot.fromJson(String json) { return switch (json) {
+factory GetAccountAuditLogsResourceScopeNot.fromJson(String json) {return switch (json) {
   'accounts' => accounts,
   'user' => user,
   'zones' => zones,
   _ => GetAccountAuditLogsResourceScopeNot._(json),
-}; }
+};}
 
 static const GetAccountAuditLogsResourceScopeNot accounts = GetAccountAuditLogsResourceScopeNot._('accounts');
 
@@ -19,11 +19,11 @@ static const List<GetAccountAuditLogsResourceScopeNot> values = [accounts, user,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAccountAuditLogsResourceScopeNot && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAccountAuditLogsResourceScopeNot($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetAccountAuditLogsResourceScopeNot && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetAccountAuditLogsResourceScopeNot($value)';}
+}

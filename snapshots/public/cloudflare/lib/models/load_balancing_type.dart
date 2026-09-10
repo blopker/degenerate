@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The protocol to use for the health check. Currently supported protocols are 'HTTP','HTTPS', 'TCP', 'ICMP-PING', 'UDP-ICMP', and 'SMTP'.
 @immutable final class LoadBalancingType {const LoadBalancingType._(this.value);
 
-factory LoadBalancingType.fromJson(String json) { return switch (json) {
+factory LoadBalancingType.fromJson(String json) {return switch (json) {
   'http' => http,
   'https' => https,
   'tcp' => tcp,
@@ -11,7 +11,7 @@ factory LoadBalancingType.fromJson(String json) { return switch (json) {
   'icmp_ping' => icmpPing,
   'smtp' => smtp,
   _ => LoadBalancingType._(json),
-}; }
+};}
 
 static const LoadBalancingType http = LoadBalancingType._('http');
 
@@ -29,11 +29,11 @@ static const List<LoadBalancingType> values = [http, https, tcp, udpIcmp, icmpPi
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingType($value)';}
+}

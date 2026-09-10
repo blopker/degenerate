@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_reviewer_type.dart';import 'environment_protection_rules_variant2_reviewers_reviewer.dart';@immutable final class EnvironmentProtectionRulesVariant2Reviewers {const EnvironmentProtectionRulesVariant2Reviewers({this.type, this.reviewer, });
 
-factory EnvironmentProtectionRulesVariant2Reviewers.fromJson(Map<String, dynamic> json) { return EnvironmentProtectionRulesVariant2Reviewers(
+factory EnvironmentProtectionRulesVariant2Reviewers.fromJson(Map<String, dynamic> json) {return EnvironmentProtectionRulesVariant2Reviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,
   reviewer: json['reviewer'] != null ? EnvironmentProtectionRulesVariant2ReviewersReviewer.fromJson(json['reviewer']) : null,
-); }
+);}
 
 /// The type of reviewer.
 final DeploymentReviewerType? type;
 
 final EnvironmentProtectionRulesVariant2ReviewersReviewer? reviewer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (reviewer != null) 'reviewer': reviewer?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'reviewer'}.contains(key)); } 
-EnvironmentProtectionRulesVariant2Reviewers copyWith({DeploymentReviewerType? Function()? type, EnvironmentProtectionRulesVariant2ReviewersReviewer? Function()? reviewer, }) { return EnvironmentProtectionRulesVariant2Reviewers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'reviewer'}.contains(key));}
+EnvironmentProtectionRulesVariant2Reviewers copyWith({DeploymentReviewerType? Function()? type, EnvironmentProtectionRulesVariant2ReviewersReviewer? Function()? reviewer, }) {return EnvironmentProtectionRulesVariant2Reviewers(
   type: type != null ? type() : this.type,
   reviewer: reviewer != null ? reviewer() : this.reviewer,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EnvironmentProtectionRulesVariant2Reviewers &&
           type == other.type &&
-          reviewer == other.reviewer; } 
-@override int get hashCode { return Object.hash(type, reviewer); } 
-@override String toString() { return 'EnvironmentProtectionRulesVariant2Reviewers(type: $type, reviewer: $reviewer)'; } 
- }
+          reviewer == other.reviewer;}
+@override int get hashCode {return Object.hash(type, reviewer);}
+@override String toString() {return 'EnvironmentProtectionRulesVariant2Reviewers(type: $type, reviewer: $reviewer)';}
+}

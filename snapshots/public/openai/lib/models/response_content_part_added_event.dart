@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_content.dart';/// Emitted when a new content part is added.
 @immutable final class ResponseContentPartAddedEvent {const ResponseContentPartAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, required this.sequenceNumber, });
 
-factory ResponseContentPartAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseContentPartAddedEvent(
+factory ResponseContentPartAddedEvent.fromJson(Map<String, dynamic> json) {return ResponseContentPartAddedEvent(
   type: json['type'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   $part: OutputContent.fromJson(json['part'] as Map<String, dynamic>),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `response.content_part.added`.
 /// 
@@ -35,36 +35,36 @@ final OutputContent $part;
 /// The sequence number of this event.
 final int sequenceNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'item_id': itemId,
   'output_index': outputIndex,
   'content_index': contentIndex,
   'part': $part.toJson(),
   'sequence_number': sequenceNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('part') &&
-      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseContentPartAddedEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, OutputContent? $part, int? sequenceNumber, }) { return ResponseContentPartAddedEvent(
+      json.containsKey('sequence_number') && json['sequence_number'] is num;}
+ResponseContentPartAddedEvent copyWith({String? type, String? itemId, int? outputIndex, int? contentIndex, OutputContent? $part, int? sequenceNumber, }) {return ResponseContentPartAddedEvent(
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   $part: $part ?? this.$part,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponseContentPartAddedEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
           $part == other.$part &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, $part, sequenceNumber); } 
-@override String toString() { return 'ResponseContentPartAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, \$part: ${$part}, sequenceNumber: $sequenceNumber)'; } 
- }
+          sequenceNumber == other.sequenceNumber;}
+@override int get hashCode {return Object.hash(type, itemId, outputIndex, contentIndex, $part, sequenceNumber);}
+@override String toString() {return 'ResponseContentPartAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, \$part: ${$part}, sequenceNumber: $sequenceNumber)';}
+}

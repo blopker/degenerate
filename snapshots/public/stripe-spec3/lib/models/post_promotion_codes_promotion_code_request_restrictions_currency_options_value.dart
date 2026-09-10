@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue {const PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue({this.minimumAmount});
 
-factory PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(
+factory PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue.fromJson(Map<String, dynamic> json) {return PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(
   minimumAmount: json['minimum_amount'] != null ? (json['minimum_amount'] as num).toInt() : null,
-); }
+);}
 
 final int? minimumAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'minimum_amount': ?minimumAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'minimum_amount'}.contains(key)); } 
-PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue copyWith({int? Function()? minimumAmount}) { return PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'minimum_amount'}.contains(key));}
+PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue copyWith({int? Function()? minimumAmount}) {return PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(
   minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue &&
-          minimumAmount == other.minimumAmount; } 
-@override int get hashCode { return minimumAmount.hashCode; } 
-@override String toString() { return 'PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(minimumAmount: $minimumAmount)'; } 
- }
+          minimumAmount == other.minimumAmount;}
+@override int get hashCode {return minimumAmount.hashCode;}
+@override String toString() {return 'PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(minimumAmount: $minimumAmount)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order organizations by.
 @immutable final class UserSOrganizationsListOrganizationsOrder {const UserSOrganizationsListOrganizationsOrder._(this.value);
 
-factory UserSOrganizationsListOrganizationsOrder.fromJson(String json) { return switch (json) {
+factory UserSOrganizationsListOrganizationsOrder.fromJson(String json) {return switch (json) {
   'id' => id,
   'name' => $name,
   'status' => status,
   _ => UserSOrganizationsListOrganizationsOrder._(json),
-}; }
+};}
 
 static const UserSOrganizationsListOrganizationsOrder id = UserSOrganizationsListOrganizationsOrder._('id');
 
@@ -20,11 +20,11 @@ static const List<UserSOrganizationsListOrganizationsOrder> values = [id, $name,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserSOrganizationsListOrganizationsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserSOrganizationsListOrganizationsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is UserSOrganizationsListOrganizationsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'UserSOrganizationsListOrganizationsOrder($value)';}
+}

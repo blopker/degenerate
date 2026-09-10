@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSipIpAddressRequest {const UpdateSipIpAddressRequest({this.ipAddress, this.friendlyName, this.cidrPrefixLength, });
 
-factory UpdateSipIpAddressRequest.fromJson(Map<String, dynamic> json) { return UpdateSipIpAddressRequest(
+factory UpdateSipIpAddressRequest.fromJson(Map<String, dynamic> json) {return UpdateSipIpAddressRequest(
   ipAddress: json['IpAddress'] as String?,
   friendlyName: json['FriendlyName'] as String?,
   cidrPrefixLength: json['CidrPrefixLength'] != null ? (json['CidrPrefixLength'] as num).toInt() : null,
-); }
+);}
 
 /// An IP address in dotted decimal notation from which you want to accept traffic. Any SIP requests from this IP address will be allowed by Twilio. IPv4 only supported today.
 final String? ipAddress;
@@ -17,22 +17,22 @@ final String? friendlyName;
 /// An integer representing the length of the CIDR prefix to use with this IP address when accepting traffic. By default the entire IP address is used.
 final int? cidrPrefixLength;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'IpAddress': ?ipAddress,
   'FriendlyName': ?friendlyName,
   'CidrPrefixLength': ?cidrPrefixLength,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'IpAddress', 'FriendlyName', 'CidrPrefixLength'}.contains(key)); } 
-UpdateSipIpAddressRequest copyWith({String? Function()? ipAddress, String? Function()? friendlyName, int? Function()? cidrPrefixLength, }) { return UpdateSipIpAddressRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'IpAddress', 'FriendlyName', 'CidrPrefixLength'}.contains(key));}
+UpdateSipIpAddressRequest copyWith({String? Function()? ipAddress, String? Function()? friendlyName, int? Function()? cidrPrefixLength, }) {return UpdateSipIpAddressRequest(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   cidrPrefixLength: cidrPrefixLength != null ? cidrPrefixLength() : this.cidrPrefixLength,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateSipIpAddressRequest &&
           ipAddress == other.ipAddress &&
           friendlyName == other.friendlyName &&
-          cidrPrefixLength == other.cidrPrefixLength; } 
-@override int get hashCode { return Object.hash(ipAddress, friendlyName, cidrPrefixLength); } 
-@override String toString() { return 'UpdateSipIpAddressRequest(ipAddress: $ipAddress, friendlyName: $friendlyName, cidrPrefixLength: $cidrPrefixLength)'; } 
- }
+          cidrPrefixLength == other.cidrPrefixLength;}
+@override int get hashCode {return Object.hash(ipAddress, friendlyName, cidrPrefixLength);}
+@override String toString() {return 'UpdateSipIpAddressRequest(ipAddress: $ipAddress, friendlyName: $friendlyName, cidrPrefixLength: $cidrPrefixLength)';}
+}

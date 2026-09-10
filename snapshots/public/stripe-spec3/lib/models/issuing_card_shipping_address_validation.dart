@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// The address validation capabilities to use.
 @immutable final class IssuingCardShippingAddressValidationMode {const IssuingCardShippingAddressValidationMode._(this.value);
 
-factory IssuingCardShippingAddressValidationMode.fromJson(String json) { return switch (json) {
+factory IssuingCardShippingAddressValidationMode.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'normalization_only' => normalizationOnly,
   'validation_and_normalization' => validationAndNormalization,
   _ => IssuingCardShippingAddressValidationMode._(json),
-}; }
+};}
 
 static const IssuingCardShippingAddressValidationMode disabled = IssuingCardShippingAddressValidationMode._('disabled');
 
@@ -20,23 +20,23 @@ static const List<IssuingCardShippingAddressValidationMode> values = [disabled, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardShippingAddressValidationMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardShippingAddressValidationMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardShippingAddressValidationMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardShippingAddressValidationMode($value)';}
+}
 /// The validation result for the shipping address.
 @immutable final class IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult._(this.value);
 
-factory IssuingCardShippingAddressValidationResult.fromJson(String json) { return switch (json) {
+factory IssuingCardShippingAddressValidationResult.fromJson(String json) {return switch (json) {
   'indeterminate' => indeterminate,
   'likely_deliverable' => likelyDeliverable,
   'likely_undeliverable' => likelyUndeliverable,
   _ => IssuingCardShippingAddressValidationResult._(json),
-}; }
+};}
 
 static const IssuingCardShippingAddressValidationResult indeterminate = IssuingCardShippingAddressValidationResult._('indeterminate');
 
@@ -48,22 +48,22 @@ static const List<IssuingCardShippingAddressValidationResult> values = [indeterm
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardShippingAddressValidationResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardShippingAddressValidationResult($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is IssuingCardShippingAddressValidationResult && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'IssuingCardShippingAddressValidationResult($value)';}
+}
 /// 
 @immutable final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddressValidation({required this.mode, this.normalizedAddress = const Omittable.absent(), this.result = const Omittable.absent(), });
 
-factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) { return IssuingCardShippingAddressValidation(
+factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) {return IssuingCardShippingAddressValidation(
   mode: IssuingCardShippingAddressValidationMode.fromJson(json['mode'] as String),
   normalizedAddress: json.containsKey('normalized_address') ? Omittable(json['normalized_address'] != null ? Address.fromJson(json['normalized_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   result: json.containsKey('result') ? Omittable(json['result'] != null ? IssuingCardShippingAddressValidationResult.fromJson(json['result'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The address validation capabilities to use.
 final IssuingCardShippingAddressValidationMode mode;
@@ -74,22 +74,22 @@ final Omittable<Address?> normalizedAddress;
 /// The validation result for the shipping address.
 final Omittable<IssuingCardShippingAddressValidationResult?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'mode': mode.toJson(),
   if (normalizedAddress.isPresent) 'normalized_address': normalizedAddress.value?.toJson(),
   if (result.isPresent) 'result': result.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
-IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, Omittable<Address?>? normalizedAddress, Omittable<IssuingCardShippingAddressValidationResult?>? result, }) { return IssuingCardShippingAddressValidation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mode');}
+IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, Omittable<Address?>? normalizedAddress, Omittable<IssuingCardShippingAddressValidationResult?>? result, }) {return IssuingCardShippingAddressValidation(
   mode: mode ?? this.mode,
   normalizedAddress: normalizedAddress ?? this.normalizedAddress,
   result: result ?? this.result,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingCardShippingAddressValidation &&
           mode == other.mode &&
           normalizedAddress == other.normalizedAddress &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(mode, normalizedAddress, result); } 
-@override String toString() { return 'IssuingCardShippingAddressValidation(mode: $mode, normalizedAddress: $normalizedAddress, result: $result)'; } 
- }
+          result == other.result;}
+@override int get hashCode {return Object.hash(mode, normalizedAddress, result);}
+@override String toString() {return 'IssuingCardShippingAddressValidation(mode: $mode, normalizedAddress: $normalizedAddress, result: $result)';}
+}

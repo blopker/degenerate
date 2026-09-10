@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GrammarSyntax1 {const GrammarSyntax1._(this.value);
 
-factory GrammarSyntax1.fromJson(String json) { return switch (json) {
+factory GrammarSyntax1.fromJson(String json) {return switch (json) {
   'lark' => lark,
   'regex' => regex,
   _ => GrammarSyntax1._(json),
-}; }
+};}
 
 static const GrammarSyntax1 lark = GrammarSyntax1._('lark');
 
@@ -16,21 +16,21 @@ static const List<GrammarSyntax1> values = [lark, regex];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GrammarSyntax1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GrammarSyntax1($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GrammarSyntax1 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GrammarSyntax1($value)';}
+}
 /// Grammar format. Always `grammar`.
 @immutable final class CustomGrammarFormatParamType {const CustomGrammarFormatParamType._(this.value);
 
-factory CustomGrammarFormatParamType.fromJson(String json) { return switch (json) {
+factory CustomGrammarFormatParamType.fromJson(String json) {return switch (json) {
   'grammar' => grammar,
   _ => CustomGrammarFormatParamType._(json),
-}; }
+};}
 
 static const CustomGrammarFormatParamType grammar = CustomGrammarFormatParamType._('grammar');
 
@@ -38,22 +38,22 @@ static const List<CustomGrammarFormatParamType> values = [grammar];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomGrammarFormatParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomGrammarFormatParamType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CustomGrammarFormatParamType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CustomGrammarFormatParamType($value)';}
+}
 /// A grammar defined by the user.
 @immutable final class CustomGrammarFormatParam {const CustomGrammarFormatParam({required this.type, required this.syntax, required this.definition, });
 
-factory CustomGrammarFormatParam.fromJson(Map<String, dynamic> json) { return CustomGrammarFormatParam(
+factory CustomGrammarFormatParam.fromJson(Map<String, dynamic> json) {return CustomGrammarFormatParam(
   type: CustomGrammarFormatParamType.fromJson(json['type'] as String),
   syntax: GrammarSyntax1.fromJson(json['syntax'] as String),
   definition: json['definition'] as String,
-); }
+);}
 
 /// Grammar format. Always `grammar`.
 final CustomGrammarFormatParamType type;
@@ -64,24 +64,24 @@ final GrammarSyntax1 syntax;
 /// The grammar definition.
 final String definition;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'syntax': syntax.toJson(),
   'definition': definition,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('syntax') &&
-      json.containsKey('definition') && json['definition'] is String; } 
-CustomGrammarFormatParam copyWith({CustomGrammarFormatParamType? type, GrammarSyntax1? syntax, String? definition, }) { return CustomGrammarFormatParam(
+      json.containsKey('definition') && json['definition'] is String;}
+CustomGrammarFormatParam copyWith({CustomGrammarFormatParamType? type, GrammarSyntax1? syntax, String? definition, }) {return CustomGrammarFormatParam(
   type: type ?? this.type,
   syntax: syntax ?? this.syntax,
   definition: definition ?? this.definition,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomGrammarFormatParam &&
           type == other.type &&
           syntax == other.syntax &&
-          definition == other.definition; } 
-@override int get hashCode { return Object.hash(type, syntax, definition); } 
-@override String toString() { return 'CustomGrammarFormatParam(type: $type, syntax: $syntax, definition: $definition)'; } 
- }
+          definition == other.definition;}
+@override int get hashCode {return Object.hash(type, syntax, definition);}
+@override String toString() {return 'CustomGrammarFormatParam(type: $type, syntax: $syntax, definition: $definition)';}
+}

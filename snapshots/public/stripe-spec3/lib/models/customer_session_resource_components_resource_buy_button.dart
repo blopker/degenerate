@@ -3,23 +3,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This hash contains whether the buy button is enabled.
 @immutable final class CustomerSessionResourceComponentsResourceBuyButton {const CustomerSessionResourceComponentsResourceBuyButton({required this.enabled});
 
-factory CustomerSessionResourceComponentsResourceBuyButton.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceBuyButton(
+factory CustomerSessionResourceComponentsResourceBuyButton.fromJson(Map<String, dynamic> json) {return CustomerSessionResourceComponentsResourceBuyButton(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Whether the buy button is enabled.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-CustomerSessionResourceComponentsResourceBuyButton copyWith({bool? enabled}) { return CustomerSessionResourceComponentsResourceBuyButton(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+CustomerSessionResourceComponentsResourceBuyButton copyWith({bool? enabled}) {return CustomerSessionResourceComponentsResourceBuyButton(
   enabled: enabled ?? this.enabled,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CustomerSessionResourceComponentsResourceBuyButton &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourceBuyButton(enabled: $enabled)'; } 
- }
+          enabled == other.enabled;}
+@override int get hashCode {return enabled.hashCode;}
+@override String toString() {return 'CustomerSessionResourceComponentsResourceBuyButton(enabled: $enabled)';}
+}

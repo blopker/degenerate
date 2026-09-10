@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval._(this.value);
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval.fromJson(String json) { return switch (json) {
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval._(json),
-}; }
+};}
 
 static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval day = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval._('day');
 
@@ -22,38 +22,38 @@ static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationI
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval($value)';}
+}
 @immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration({required this.interval, this.intervalCount, });
 
-factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration(
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration(
   interval: PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval interval;
 
 final int? intervalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration copyWith({PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval? interval, int? Function()? intervalCount, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration copyWith({PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDurationInterval? interval, int? Function()? intervalCount, }) {return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration(interval: $interval, intervalCount: $intervalCount)'; } 
- }
+          intervalCount == other.intervalCount;}
+@override int get hashCode {return Object.hash(interval, intervalCount);}
+@override String toString() {return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDuration(interval: $interval, intervalCount: $intervalCount)';}
+}

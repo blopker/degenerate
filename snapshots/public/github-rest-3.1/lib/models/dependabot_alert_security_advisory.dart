@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'dependabot_alert_security_advisory_cvss.dart';import 'dependabot_alert_security_advisory_cwes.dart';import 'dependabot_alert_security_advisory_identifiers.dart';import 'dependabot_alert_security_advisory_references.dart';import 'dependabot_alert_security_vulnerability.dart';import 'security_advisory_epss.dart';/// The severity of the advisory.
 @immutable final class DependabotAlertSecurityAdvisorySeverity {const DependabotAlertSecurityAdvisorySeverity._(this.value);
 
-factory DependabotAlertSecurityAdvisorySeverity.fromJson(String json) { return switch (json) {
+factory DependabotAlertSecurityAdvisorySeverity.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'critical' => critical,
   _ => DependabotAlertSecurityAdvisorySeverity._(json),
-}; }
+};}
 
 static const DependabotAlertSecurityAdvisorySeverity low = DependabotAlertSecurityAdvisorySeverity._('low');
 
@@ -23,18 +23,18 @@ static const List<DependabotAlertSecurityAdvisorySeverity> values = [low, medium
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertSecurityAdvisorySeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertSecurityAdvisorySeverity($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DependabotAlertSecurityAdvisorySeverity && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DependabotAlertSecurityAdvisorySeverity($value)';}
+}
 /// Details for the GitHub Security Advisory.
 @immutable final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdvisory({required this.ghsaId, required this.cveId, required this.summary, required this.description, required this.vulnerabilities, required this.severity, required this.cvss, required this.cwes, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.withdrawnAt, this.cvssSeverities = const Omittable.absent(), this.epss = const Omittable.absent(), });
 
-factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisory(
+factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) {return DependabotAlertSecurityAdvisory(
   ghsaId: json['ghsa_id'] as String,
   cveId: json['cve_id'] as String?,
   summary: json['summary'] as String,
@@ -50,7 +50,7 @@ factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { re
   publishedAt: DateTime.parse(json['published_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   withdrawnAt: json['withdrawn_at'] != null ? DateTime.parse(json['withdrawn_at'] as String) : null,
-); }
+);}
 
 /// The unique GitHub Security Advisory ID assigned to the advisory.
 final String ghsaId;
@@ -95,7 +95,7 @@ final DateTime updatedAt;
 /// The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final DateTime? withdrawnAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ghsa_id': ghsaId,
   'cve_id': cveId,
   'summary': summary,
@@ -111,8 +111,8 @@ Map<String, dynamic> toJson() { return {
   'published_at': publishedAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'withdrawn_at': withdrawnAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -124,8 +124,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('references') &&
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
-DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String);}
+DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) {return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   summary: summary ?? this.summary,
@@ -141,8 +141,8 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
   publishedAt: publishedAt ?? this.publishedAt,
   updatedAt: updatedAt ?? this.updatedAt,
   withdrawnAt: withdrawnAt != null ? withdrawnAt() : this.withdrawnAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DependabotAlertSecurityAdvisory &&
           ghsaId == other.ghsaId &&
           cveId == other.cveId &&
@@ -158,7 +158,7 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
           listEquals(references, other.references) &&
           publishedAt == other.publishedAt &&
           updatedAt == other.updatedAt &&
-          withdrawnAt == other.withdrawnAt; } 
-@override int get hashCode { return Object.hash(ghsaId, cveId, summary, description, Object.hashAll(vulnerabilities), severity, cvss, cvssSeverities, epss, Object.hashAll(cwes), Object.hashAll(identifiers), Object.hashAll(references), publishedAt, updatedAt, withdrawnAt); } 
-@override String toString() { return 'DependabotAlertSecurityAdvisory(ghsaId: $ghsaId, cveId: $cveId, summary: $summary, description: $description, vulnerabilities: $vulnerabilities, severity: $severity, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, withdrawnAt: $withdrawnAt)'; } 
- }
+          withdrawnAt == other.withdrawnAt;}
+@override int get hashCode {return Object.hash(ghsaId, cveId, summary, description, Object.hashAll(vulnerabilities), severity, cvss, cvssSeverities, epss, Object.hashAll(cwes), Object.hashAll(identifiers), Object.hashAll(references), publishedAt, updatedAt, withdrawnAt);}
+@override String toString() {return 'DependabotAlertSecurityAdvisory(ghsaId: $ghsaId, cveId: $cveId, summary: $summary, description: $description, vulnerabilities: $vulnerabilities, severity: $severity, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, withdrawnAt: $withdrawnAt)';}
+}

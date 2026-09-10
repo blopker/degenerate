@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ownership status of the domain.
 @immutable final class R2ListCustomDomainsResponseDomainsStatusOwnership {const R2ListCustomDomainsResponseDomainsStatusOwnership._(this.value);
 
-factory R2ListCustomDomainsResponseDomainsStatusOwnership.fromJson(String json) { return switch (json) {
+factory R2ListCustomDomainsResponseDomainsStatusOwnership.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'active' => active,
   'deactivated' => deactivated,
@@ -11,7 +11,7 @@ factory R2ListCustomDomainsResponseDomainsStatusOwnership.fromJson(String json) 
   'error' => error,
   'unknown' => unknown,
   _ => R2ListCustomDomainsResponseDomainsStatusOwnership._(json),
-}; }
+};}
 
 static const R2ListCustomDomainsResponseDomainsStatusOwnership pending = R2ListCustomDomainsResponseDomainsStatusOwnership._('pending');
 
@@ -29,18 +29,18 @@ static const List<R2ListCustomDomainsResponseDomainsStatusOwnership> values = [p
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2ListCustomDomainsResponseDomainsStatusOwnership && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2ListCustomDomainsResponseDomainsStatusOwnership($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2ListCustomDomainsResponseDomainsStatusOwnership && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2ListCustomDomainsResponseDomainsStatusOwnership($value)';}
+}
 /// SSL certificate status.
 @immutable final class R2ListCustomDomainsResponseDomainsStatusSsl {const R2ListCustomDomainsResponseDomainsStatusSsl._(this.value);
 
-factory R2ListCustomDomainsResponseDomainsStatusSsl.fromJson(String json) { return switch (json) {
+factory R2ListCustomDomainsResponseDomainsStatusSsl.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
@@ -48,7 +48,7 @@ factory R2ListCustomDomainsResponseDomainsStatusSsl.fromJson(String json) { retu
   'error' => error,
   'unknown' => unknown,
   _ => R2ListCustomDomainsResponseDomainsStatusSsl._(json),
-}; }
+};}
 
 static const R2ListCustomDomainsResponseDomainsStatusSsl initializing = R2ListCustomDomainsResponseDomainsStatusSsl._('initializing');
 
@@ -66,20 +66,20 @@ static const List<R2ListCustomDomainsResponseDomainsStatusSsl> values = [initial
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2ListCustomDomainsResponseDomainsStatusSsl && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2ListCustomDomainsResponseDomainsStatusSsl($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is R2ListCustomDomainsResponseDomainsStatusSsl && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'R2ListCustomDomainsResponseDomainsStatusSsl($value)';}
+}
 @immutable final class R2ListCustomDomainsResponseDomainsStatus {const R2ListCustomDomainsResponseDomainsStatus({required this.ownership, required this.ssl, });
 
-factory R2ListCustomDomainsResponseDomainsStatus.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponseDomainsStatus(
+factory R2ListCustomDomainsResponseDomainsStatus.fromJson(Map<String, dynamic> json) {return R2ListCustomDomainsResponseDomainsStatus(
   ownership: R2ListCustomDomainsResponseDomainsStatusOwnership.fromJson(json['ownership'] as String),
   ssl: R2ListCustomDomainsResponseDomainsStatusSsl.fromJson(json['ssl'] as String),
-); }
+);}
 
 /// Ownership status of the domain.
 final R2ListCustomDomainsResponseDomainsStatusOwnership ownership;
@@ -87,20 +87,20 @@ final R2ListCustomDomainsResponseDomainsStatusOwnership ownership;
 /// SSL certificate status.
 final R2ListCustomDomainsResponseDomainsStatusSsl ssl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ownership': ownership.toJson(),
   'ssl': ssl.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ownership') &&
-      json.containsKey('ssl'); } 
-R2ListCustomDomainsResponseDomainsStatus copyWith({R2ListCustomDomainsResponseDomainsStatusOwnership? ownership, R2ListCustomDomainsResponseDomainsStatusSsl? ssl, }) { return R2ListCustomDomainsResponseDomainsStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ownership') &&
+      json.containsKey('ssl');}
+R2ListCustomDomainsResponseDomainsStatus copyWith({R2ListCustomDomainsResponseDomainsStatusOwnership? ownership, R2ListCustomDomainsResponseDomainsStatusSsl? ssl, }) {return R2ListCustomDomainsResponseDomainsStatus(
   ownership: ownership ?? this.ownership,
   ssl: ssl ?? this.ssl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is R2ListCustomDomainsResponseDomainsStatus &&
           ownership == other.ownership &&
-          ssl == other.ssl; } 
-@override int get hashCode { return Object.hash(ownership, ssl); } 
-@override String toString() { return 'R2ListCustomDomainsResponseDomainsStatus(ownership: $ownership, ssl: $ssl)'; } 
- }
+          ssl == other.ssl;}
+@override int get hashCode {return Object.hash(ownership, ssl);}
+@override String toString() {return 'R2ListCustomDomainsResponseDomainsStatus(ownership: $ownership, ssl: $ssl)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_presets_preset_id_response_data_ui_design_tokens_colors_background.dart';import 'delete_presets_preset_id_response_data_ui_design_tokens_colors_brand.dart';@immutable final class DeletePresetsPresetIdResponseDataUiDesignTokensColors {const DeletePresetsPresetIdResponseDataUiDesignTokensColors({required this.background, required this.brand, required this.danger, required this.success, required this.text, required this.textOnBrand, required this.videoBg, required this.warning, });
 
-factory DeletePresetsPresetIdResponseDataUiDesignTokensColors.fromJson(Map<String, dynamic> json) { return DeletePresetsPresetIdResponseDataUiDesignTokensColors(
+factory DeletePresetsPresetIdResponseDataUiDesignTokensColors.fromJson(Map<String, dynamic> json) {return DeletePresetsPresetIdResponseDataUiDesignTokensColors(
   background: DeletePresetsPresetIdResponseDataUiDesignTokensColorsBackground.fromJson(json['background'] as Map<String, dynamic>),
   brand: DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand.fromJson(json['brand'] as Map<String, dynamic>),
   danger: json['danger'] as String,
@@ -11,7 +11,7 @@ factory DeletePresetsPresetIdResponseDataUiDesignTokensColors.fromJson(Map<Strin
   textOnBrand: json['text_on_brand'] as String,
   videoBg: json['video_bg'] as String,
   warning: json['warning'] as String,
-); }
+);}
 
 final DeletePresetsPresetIdResponseDataUiDesignTokensColorsBackground background;
 
@@ -29,7 +29,7 @@ final String videoBg;
 
 final String warning;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'background': background.toJson(),
   'brand': brand.toJson(),
   'danger': danger,
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'text_on_brand': textOnBrand,
   'video_bg': videoBg,
   'warning': warning,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('background') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('background') &&
       json.containsKey('brand') &&
       json.containsKey('danger') && json['danger'] is String &&
       json.containsKey('success') && json['success'] is String &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('text_on_brand') && json['text_on_brand'] is String &&
       json.containsKey('video_bg') && json['video_bg'] is String &&
-      json.containsKey('warning') && json['warning'] is String; } 
-DeletePresetsPresetIdResponseDataUiDesignTokensColors copyWith({DeletePresetsPresetIdResponseDataUiDesignTokensColorsBackground? background, DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand? brand, String? danger, String? success, String? text, String? textOnBrand, String? videoBg, String? warning, }) { return DeletePresetsPresetIdResponseDataUiDesignTokensColors(
+      json.containsKey('warning') && json['warning'] is String;}
+DeletePresetsPresetIdResponseDataUiDesignTokensColors copyWith({DeletePresetsPresetIdResponseDataUiDesignTokensColorsBackground? background, DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand? brand, String? danger, String? success, String? text, String? textOnBrand, String? videoBg, String? warning, }) {return DeletePresetsPresetIdResponseDataUiDesignTokensColors(
   background: background ?? this.background,
   brand: brand ?? this.brand,
   danger: danger ?? this.danger,
@@ -56,8 +56,8 @@ DeletePresetsPresetIdResponseDataUiDesignTokensColors copyWith({DeletePresetsPre
   textOnBrand: textOnBrand ?? this.textOnBrand,
   videoBg: videoBg ?? this.videoBg,
   warning: warning ?? this.warning,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeletePresetsPresetIdResponseDataUiDesignTokensColors &&
           background == other.background &&
           brand == other.brand &&
@@ -66,7 +66,7 @@ DeletePresetsPresetIdResponseDataUiDesignTokensColors copyWith({DeletePresetsPre
           text == other.text &&
           textOnBrand == other.textOnBrand &&
           videoBg == other.videoBg &&
-          warning == other.warning; } 
-@override int get hashCode { return Object.hash(background, brand, danger, success, text, textOnBrand, videoBg, warning); } 
-@override String toString() { return 'DeletePresetsPresetIdResponseDataUiDesignTokensColors(background: $background, brand: $brand, danger: $danger, success: $success, text: $text, textOnBrand: $textOnBrand, videoBg: $videoBg, warning: $warning)'; } 
- }
+          warning == other.warning;}
+@override int get hashCode {return Object.hash(background, brand, danger, success, text, textOnBrand, videoBg, warning);}
+@override String toString() {return 'DeletePresetsPresetIdResponseDataUiDesignTokensColors(background: $background, brand: $brand, danger: $danger, success: $success, text: $text, textOnBrand: $textOnBrand, videoBg: $videoBg, warning: $warning)';}
+}

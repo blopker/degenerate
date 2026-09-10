@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current state of the Cache Reserve Clear operation.
 @immutable final class CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState._(this.value);
 
-factory CacheRulesCacheReserveClearState.fromJson(String json) { return switch (json) {
+factory CacheRulesCacheReserveClearState.fromJson(String json) {return switch (json) {
   'In-progress' => inProgress,
   'Completed' => completed,
   _ => CacheRulesCacheReserveClearState._(json),
-}; }
+};}
 
 static const CacheRulesCacheReserveClearState inProgress = CacheRulesCacheReserveClearState._('In-progress');
 
@@ -17,11 +17,11 @@ static const List<CacheRulesCacheReserveClearState> values = [inProgress, comple
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesCacheReserveClearState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesCacheReserveClearState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CacheRulesCacheReserveClearState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CacheRulesCacheReserveClearState($value)';}
+}

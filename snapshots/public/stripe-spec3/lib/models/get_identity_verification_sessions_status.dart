@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus._(this.value);
 
-factory GetIdentityVerificationSessionsStatus.fromJson(String json) { return switch (json) {
+factory GetIdentityVerificationSessionsStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'processing' => processing,
   'requires_input' => requiresInput,
   'verified' => verified,
   _ => GetIdentityVerificationSessionsStatus._(json),
-}; }
+};}
 
 static const GetIdentityVerificationSessionsStatus canceled = GetIdentityVerificationSessionsStatus._('canceled');
 
@@ -22,11 +22,11 @@ static const List<GetIdentityVerificationSessionsStatus> values = [canceled, pro
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetIdentityVerificationSessionsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetIdentityVerificationSessionsStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetIdentityVerificationSessionsStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetIdentityVerificationSessionsStatus($value)';}
+}

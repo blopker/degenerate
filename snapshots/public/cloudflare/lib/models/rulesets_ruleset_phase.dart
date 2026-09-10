@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the ruleset.
 @immutable final class RulesetsRulesetPhase {const RulesetsRulesetPhase._(this.value);
 
-factory RulesetsRulesetPhase.fromJson(String json) { return switch (json) {
+factory RulesetsRulesetPhase.fromJson(String json) {return switch (json) {
   'ddos_l4' => ddosL4,
   'ddos_l7' => ddosL7,
   'http_config_settings' => httpConfigSettings,
@@ -29,7 +29,7 @@ factory RulesetsRulesetPhase.fromJson(String json) { return switch (json) {
   'magic_transit_managed' => magicTransitManaged,
   'magic_transit_ratelimit' => magicTransitRatelimit,
   _ => RulesetsRulesetPhase._(json),
-}; }
+};}
 
 static const RulesetsRulesetPhase ddosL4 = RulesetsRulesetPhase._('ddos_l4');
 
@@ -83,11 +83,11 @@ static const List<RulesetsRulesetPhase> values = [ddosL4, ddosL7, httpConfigSett
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRulesetPhase && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsRulesetPhase($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RulesetsRulesetPhase && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RulesetsRulesetPhase($value)';}
+}

@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_capture_request_amount_details_discount_amount.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items.dart';import 'post_payment_intents_intent_capture_request_amount_details_shipping.dart';import 'post_payment_intents_intent_capture_request_amount_details_tax.dart';/// Provides industry-specific information about the amount.
 @immutable final class PostPaymentIntentsIntentCaptureRequestAmountDetails {const PostPaymentIntentsIntentCaptureRequestAmountDetails({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
-factory PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
+factory PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentCaptureRequestAmountDetails(
   discountAmount: json['discount_amount'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount.fromJson(json['discount_amount']) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
   lineItems: json['line_items'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems.fromJson(json['line_items']) : null,
   shipping: json['shipping'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping.fromJson(json['shipping']) : null,
   tax: json['tax'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetailsTax.fromJson(json['tax']) : null,
-); }
+);}
 
 final PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount? discountAmount;
 
@@ -21,28 +21,28 @@ final PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping? shipping;
 
 final PostPaymentIntentsIntentCaptureRequestAmountDetailsTax? tax;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (discountAmount != null) 'discount_amount': discountAmount?.toJson(),
   'enforce_arithmetic_validation': ?enforceArithmeticValidation,
   if (lineItems != null) 'line_items': lineItems?.toJson(),
   if (shipping != null) 'shipping': shipping?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discount_amount', 'enforce_arithmetic_validation', 'line_items', 'shipping', 'tax'}.contains(key)); } 
-PostPaymentIntentsIntentCaptureRequestAmountDetails copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount? Function()? discountAmount, bool? Function()? enforceArithmeticValidation, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems? Function()? lineItems, PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping? Function()? shipping, PostPaymentIntentsIntentCaptureRequestAmountDetailsTax? Function()? tax, }) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'discount_amount', 'enforce_arithmetic_validation', 'line_items', 'shipping', 'tax'}.contains(key));}
+PostPaymentIntentsIntentCaptureRequestAmountDetails copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount? Function()? discountAmount, bool? Function()? enforceArithmeticValidation, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems? Function()? lineItems, PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping? Function()? shipping, PostPaymentIntentsIntentCaptureRequestAmountDetailsTax? Function()? tax, }) {return PostPaymentIntentsIntentCaptureRequestAmountDetails(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   enforceArithmeticValidation: enforceArithmeticValidation != null ? enforceArithmeticValidation() : this.enforceArithmeticValidation,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
   shipping: shipping != null ? shipping() : this.shipping,
   tax: tax != null ? tax() : this.tax,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentIntentsIntentCaptureRequestAmountDetails &&
           discountAmount == other.discountAmount &&
           enforceArithmeticValidation == other.enforceArithmeticValidation &&
           lineItems == other.lineItems &&
           shipping == other.shipping &&
-          tax == other.tax; } 
-@override int get hashCode { return Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax); } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestAmountDetails(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)'; } 
- }
+          tax == other.tax;}
+@override int get hashCode {return Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax);}
+@override String toString() {return 'PostPaymentIntentsIntentCaptureRequestAmountDetails(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)';}
+}

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the 
 /// 
 @immutable final class EvalItemInputImageType {const EvalItemInputImageType._(this.value);
 
-factory EvalItemInputImageType.fromJson(String json) { return switch (json) {
+factory EvalItemInputImageType.fromJson(String json) {return switch (json) {
   'input_image' => inputImage,
   _ => EvalItemInputImageType._(json),
-}; }
+};}
 
 static const EvalItemInputImageType inputImage = EvalItemInputImageType._('input_image');
 
@@ -15,22 +15,22 @@ static const List<EvalItemInputImageType> values = [inputImage];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalItemInputImageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalItemInputImageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EvalItemInputImageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EvalItemInputImageType($value)';}
+}
 /// An image input block used within EvalItem content arrays.
 @immutable final class EvalItemInputImage {const EvalItemInputImage({required this.type, required this.imageUrl, this.detail, });
 
-factory EvalItemInputImage.fromJson(Map<String, dynamic> json) { return EvalItemInputImage(
+factory EvalItemInputImage.fromJson(Map<String, dynamic> json) {return EvalItemInputImage(
   type: EvalItemInputImageType.fromJson(json['type'] as String),
   imageUrl: json['image_url'] as String,
   detail: json['detail'] as String?,
-); }
+);}
 
 /// The type of the image input. Always `input_image`.
 /// 
@@ -44,23 +44,23 @@ final String imageUrl;
 /// 
 final String? detail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'image_url': imageUrl,
   'detail': ?detail,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('image_url') && json['image_url'] is String; } 
-EvalItemInputImage copyWith({EvalItemInputImageType? type, String? imageUrl, String? Function()? detail, }) { return EvalItemInputImage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('image_url') && json['image_url'] is String;}
+EvalItemInputImage copyWith({EvalItemInputImageType? type, String? imageUrl, String? Function()? detail, }) {return EvalItemInputImage(
   type: type ?? this.type,
   imageUrl: imageUrl ?? this.imageUrl,
   detail: detail != null ? detail() : this.detail,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is EvalItemInputImage &&
           type == other.type &&
           imageUrl == other.imageUrl &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(type, imageUrl, detail); } 
-@override String toString() { return 'EvalItemInputImage(type: $type, imageUrl: $imageUrl, detail: $detail)'; } 
- }
+          detail == other.detail;}
+@override int get hashCode {return Object.hash(type, imageUrl, detail);}
+@override String toString() {return 'EvalItemInputImage(type: $type, imageUrl: $imageUrl, detail: $detail)';}
+}

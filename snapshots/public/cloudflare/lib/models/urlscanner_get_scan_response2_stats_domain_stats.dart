@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2StatsDomainStats {const UrlscannerGetScanResponse2StatsDomainStats({required this.count, required this.countries, required this.domain, required this.encodedSize, required this.index, required this.initiators, required this.ips, required this.redirects, required this.size, });
 
-factory UrlscannerGetScanResponse2StatsDomainStats.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2StatsDomainStats(
+factory UrlscannerGetScanResponse2StatsDomainStats.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2StatsDomainStats(
   count: (json['count'] as num).toDouble(),
   countries: (json['countries'] as List<dynamic>).map((e) => e as String).toList(),
   domain: json['domain'] as String,
@@ -12,7 +12,7 @@ factory UrlscannerGetScanResponse2StatsDomainStats.fromJson(Map<String, dynamic>
   ips: (json['ips'] as List<dynamic>).map((e) => e as String).toList(),
   redirects: (json['redirects'] as num).toDouble(),
   size: (json['size'] as num).toDouble(),
-); }
+);}
 
 final double count;
 
@@ -32,7 +32,7 @@ final double redirects;
 
 final double size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'countries': countries,
   'domain': domain,
@@ -42,8 +42,8 @@ Map<String, dynamic> toJson() { return {
   'ips': ips,
   'redirects': redirects,
   'size': size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('countries') &&
       json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('encodedSize') && json['encodedSize'] is num &&
@@ -51,8 +51,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('initiators') &&
       json.containsKey('ips') &&
       json.containsKey('redirects') && json['redirects'] is num &&
-      json.containsKey('size') && json['size'] is num; } 
-UrlscannerGetScanResponse2StatsDomainStats copyWith({double? count, List<String>? countries, String? domain, double? encodedSize, double? index, List<String>? initiators, List<String>? ips, double? redirects, double? size, }) { return UrlscannerGetScanResponse2StatsDomainStats(
+      json.containsKey('size') && json['size'] is num;}
+UrlscannerGetScanResponse2StatsDomainStats copyWith({double? count, List<String>? countries, String? domain, double? encodedSize, double? index, List<String>? initiators, List<String>? ips, double? redirects, double? size, }) {return UrlscannerGetScanResponse2StatsDomainStats(
   count: count ?? this.count,
   countries: countries ?? this.countries,
   domain: domain ?? this.domain,
@@ -62,8 +62,8 @@ UrlscannerGetScanResponse2StatsDomainStats copyWith({double? count, List<String>
   ips: ips ?? this.ips,
   redirects: redirects ?? this.redirects,
   size: size ?? this.size,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponse2StatsDomainStats &&
           count == other.count &&
           listEquals(countries, other.countries) &&
@@ -73,7 +73,7 @@ UrlscannerGetScanResponse2StatsDomainStats copyWith({double? count, List<String>
           listEquals(initiators, other.initiators) &&
           listEquals(ips, other.ips) &&
           redirects == other.redirects &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(countries), domain, encodedSize, index, Object.hashAll(initiators), Object.hashAll(ips), redirects, size); } 
-@override String toString() { return 'UrlscannerGetScanResponse2StatsDomainStats(count: $count, countries: $countries, domain: $domain, encodedSize: $encodedSize, index: $index, initiators: $initiators, ips: $ips, redirects: $redirects, size: $size)'; } 
- }
+          size == other.size;}
+@override int get hashCode {return Object.hash(count, Object.hashAll(countries), domain, encodedSize, index, Object.hashAll(initiators), Object.hashAll(ips), redirects, size);}
+@override String toString() {return 'UrlscannerGetScanResponse2StatsDomainStats(count: $count, countries: $countries, domain: $domain, encodedSize: $encodedSize, index: $index, initiators: $initiators, ips: $ips, redirects: $redirects, size: $size)';}
+}

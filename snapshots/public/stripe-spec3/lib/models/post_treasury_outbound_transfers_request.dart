@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_data.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_options.dart';@immutable final class PostTreasuryOutboundTransfersRequest {const PostTreasuryOutboundTransfersRequest({required this.amount, required this.currency, required this.financialAccount, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.expand, this.metadata, this.statementDescriptor, });
 
-factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersRequest(
+factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryOutboundTransfersRequest(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -13,7 +13,7 @@ factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json)
   financialAccount: json['financial_account'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   statementDescriptor: json['statement_descriptor'] as String?,
-); }
+);}
 
 /// Amount (in cents) to be transferred.
 final int amount;
@@ -45,7 +45,7 @@ final Map<String,String>? metadata;
 /// Statement descriptor to be shown on the receiving end of an OutboundTransfer. Maximum 10 characters for `ach` transfers or 140 characters for `us_domestic_wire` transfers. The default value is "transfer". Can only include -#.$&*, spaces, and alphanumeric characters.
 final String? statementDescriptor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'description': ?description,
@@ -56,11 +56,11 @@ Map<String, dynamic> toJson() { return {
   'financial_account': financialAccount,
   'metadata': ?metadata,
   'statement_descriptor': ?statementDescriptor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('financial_account') && json['financial_account'] is String; } 
-PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destinationPaymentMethod, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData? Function()? destinationPaymentMethodData, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions? Function()? destinationPaymentMethodOptions, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? Function()? statementDescriptor, }) { return PostTreasuryOutboundTransfersRequest(
+      json.containsKey('financial_account') && json['financial_account'] is String;}
+PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destinationPaymentMethod, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData? Function()? destinationPaymentMethodData, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions? Function()? destinationPaymentMethodOptions, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? Function()? statementDescriptor, }) {return PostTreasuryOutboundTransfersRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -71,8 +71,8 @@ PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, St
   financialAccount: financialAccount ?? this.financialAccount,
   metadata: metadata != null ? metadata() : this.metadata,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTreasuryOutboundTransfersRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -83,7 +83,7 @@ PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, St
           listEquals(expand, other.expand) &&
           financialAccount == other.financialAccount &&
           metadata == other.metadata &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor); } 
-@override String toString() { return 'PostTreasuryOutboundTransfersRequest(amount: $amount, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)'; } 
- }
+          statementDescriptor == other.statementDescriptor;}
+@override int get hashCode {return Object.hash(amount, currency, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor);}
+@override String toString() {return 'PostTreasuryOutboundTransfersRequest(amount: $amount, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)';}
+}

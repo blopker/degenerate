@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_use_fedramp_language.dart';@immutable final class UpdateSsoConnectorStateRequest {const UpdateSsoConnectorStateRequest({this.enabled, this.useFedrampLanguage, });
 
-factory UpdateSsoConnectorStateRequest.fromJson(Map<String, dynamic> json) { return UpdateSsoConnectorStateRequest(
+factory UpdateSsoConnectorStateRequest.fromJson(Map<String, dynamic> json) {return UpdateSsoConnectorStateRequest(
   enabled: json['enabled'] as bool?,
   useFedrampLanguage: json['use_fedramp_language'] != null ? IamUseFedrampLanguage.fromJson(json['use_fedramp_language'] as bool) : null,
-); }
+);}
 
 /// SSO Connector enabled state
 final bool? enabled;
@@ -13,19 +13,19 @@ final bool? enabled;
 /// Controls the display of FedRAMP language to the user during SSO login
 final IamUseFedrampLanguage? useFedrampLanguage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (useFedrampLanguage != null) 'use_fedramp_language': useFedrampLanguage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'use_fedramp_language'}.contains(key)); } 
-UpdateSsoConnectorStateRequest copyWith({bool? Function()? enabled, IamUseFedrampLanguage? Function()? useFedrampLanguage, }) { return UpdateSsoConnectorStateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'use_fedramp_language'}.contains(key));}
+UpdateSsoConnectorStateRequest copyWith({bool? Function()? enabled, IamUseFedrampLanguage? Function()? useFedrampLanguage, }) {return UpdateSsoConnectorStateRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateSsoConnectorStateRequest &&
           enabled == other.enabled &&
-          useFedrampLanguage == other.useFedrampLanguage; } 
-@override int get hashCode { return Object.hash(enabled, useFedrampLanguage); } 
-@override String toString() { return 'UpdateSsoConnectorStateRequest(enabled: $enabled, useFedrampLanguage: $useFedrampLanguage)'; } 
- }
+          useFedrampLanguage == other.useFedrampLanguage;}
+@override int get hashCode {return Object.hash(enabled, useFedrampLanguage);}
+@override String toString() {return 'UpdateSsoConnectorStateRequest(enabled: $enabled, useFedrampLanguage: $useFedrampLanguage)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_asn_configuration.dart';import 'firewall_cidr_configuration.dart';import 'firewall_configuration.dart';import 'firewall_country_configuration.dart';import 'firewall_ip_configuration.dart';import 'firewall_ipv6_configuration.dart';import 'firewall_notes.dart';import 'firewall_schemas_identifier.dart';import 'firewall_schemas_mode.dart';@immutable final class FirewallRule {const FirewallRule({required this.allowedModes, required this.configuration, required this.id, required this.mode, this.createdOn, this.modifiedOn, this.notes, });
 
-factory FirewallRule.fromJson(Map<String, dynamic> json) { return FirewallRule(
+factory FirewallRule.fromJson(Map<String, dynamic> json) {return FirewallRule(
   allowedModes: (json['allowed_modes'] as List<dynamic>).map((e) => FirewallSchemasMode.fromJson(e as String)).toList(),
   configuration: OneOf5.parse(json['configuration'], fromA: (v) => FirewallIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallIpv6Configuration.fromJson(v as Map<String, dynamic>), fromC: (v) => FirewallCidrConfiguration.fromJson(v as Map<String, dynamic>), fromD: (v) => FirewallAsnConfiguration.fromJson(v as Map<String, dynamic>), fromE: (v) => FirewallCountryConfiguration.fromJson(v as Map<String, dynamic>),),
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
@@ -10,7 +10,7 @@ factory FirewallRule.fromJson(Map<String, dynamic> json) { return FirewallRule(
   mode: FirewallSchemasMode.fromJson(json['mode'] as String),
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
   notes: json['notes'] != null ? FirewallNotes.fromJson(json['notes'] as String) : null,
-); }
+);}
 
 /// The available actions that a rule can apply to a matched request.
 final List<FirewallSchemasMode> allowedModes;
@@ -30,7 +30,7 @@ final DateTime? modifiedOn;
 /// An informative summary of the rule, typically used as a reminder or explanation.
 final FirewallNotes? notes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_modes': allowedModes.map((e) => e.toJson()).toList(),
   'configuration': configuration.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
@@ -38,12 +38,12 @@ Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
   if (notes != null) 'notes': notes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_modes') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('allowed_modes') &&
       json.containsKey('configuration') &&
       json.containsKey('id') &&
-      json.containsKey('mode'); } 
-FirewallRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallConfiguration? configuration, DateTime? Function()? createdOn, FirewallSchemasIdentifier? id, FirewallSchemasMode? mode, DateTime? Function()? modifiedOn, FirewallNotes? Function()? notes, }) { return FirewallRule(
+      json.containsKey('mode');}
+FirewallRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallConfiguration? configuration, DateTime? Function()? createdOn, FirewallSchemasIdentifier? id, FirewallSchemasMode? mode, DateTime? Function()? modifiedOn, FirewallNotes? Function()? notes, }) {return FirewallRule(
   allowedModes: allowedModes ?? this.allowedModes,
   configuration: configuration ?? this.configuration,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -51,8 +51,8 @@ FirewallRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallConfigur
   mode: mode ?? this.mode,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   notes: notes != null ? notes() : this.notes,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FirewallRule &&
           listEquals(allowedModes, other.allowedModes) &&
           configuration == other.configuration &&
@@ -60,7 +60,7 @@ FirewallRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallConfigur
           id == other.id &&
           mode == other.mode &&
           modifiedOn == other.modifiedOn &&
-          notes == other.notes; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedModes), configuration, createdOn, id, mode, modifiedOn, notes); } 
-@override String toString() { return 'FirewallRule(allowedModes: $allowedModes, configuration: $configuration, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, notes: $notes)'; } 
- }
+          notes == other.notes;}
+@override int get hashCode {return Object.hash(Object.hashAll(allowedModes), configuration, createdOn, id, mode, modifiedOn, notes);}
+@override String toString() {return 'FirewallRule(allowedModes: $allowedModes, configuration: $configuration, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, notes: $notes)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_text_to_text_variant2_messages.dart';@immutable final class ImageTextToTextVariant2 {const ImageTextToTextVariant2({required this.image, required this.messages, this.frequencyPenalty, this.ignoreEos, this.maxTokens, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
-factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant2(
+factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) {return ImageTextToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   ignoreEos: json['ignore_eos'] as bool?,
   image: json['image'] as String,
@@ -14,7 +14,7 @@ factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) { return Ima
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -50,8 +50,8 @@ final double? topK;
 final double? topP;
 
 /// The value with the schema default applied when absent.
-int get maxTokensOrDefault { return maxTokens ?? 512; } 
-Map<String, dynamic> toJson() { return {
+int get maxTokensOrDefault {return maxTokens ?? 512;}
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   'ignore_eos': ?ignoreEos,
   'image': image,
@@ -63,10 +63,10 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
-      json.containsKey('messages'); } 
-ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int? Function()? maxTokens, List<ImageTextToTextVariant2Messages>? messages, double? Function()? presencePenalty, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image') && json['image'] is String &&
+      json.containsKey('messages');}
+ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int? Function()? maxTokens, List<ImageTextToTextVariant2Messages>? messages, double? Function()? presencePenalty, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) {return ImageTextToTextVariant2(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   ignoreEos: ignoreEos != null ? ignoreEos() : this.ignoreEos,
   image: image ?? this.image,
@@ -78,8 +78,8 @@ ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Fu
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageTextToTextVariant2 &&
           frequencyPenalty == other.frequencyPenalty &&
           ignoreEos == other.ignoreEos &&
@@ -91,7 +91,7 @@ ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Fu
           seed == other.seed &&
           temperature == other.temperature &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, ignoreEos, image, maxTokens, Object.hashAll(messages), presencePenalty, repetitionPenalty, seed, temperature, topK, topP); } 
-@override String toString() { return 'ImageTextToTextVariant2(frequencyPenalty: $frequencyPenalty, ignoreEos: $ignoreEos, image: $image, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)'; } 
- }
+          topP == other.topP;}
+@override int get hashCode {return Object.hash(frequencyPenalty, ignoreEos, image, maxTokens, Object.hashAll(messages), presencePenalty, repetitionPenalty, seed, temperature, topK, topP);}
+@override String toString() {return 'ImageTextToTextVariant2(frequencyPenalty: $frequencyPenalty, ignoreEos: $ignoreEos, image: $image, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)';}
+}

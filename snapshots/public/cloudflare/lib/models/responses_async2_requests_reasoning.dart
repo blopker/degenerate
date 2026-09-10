@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
 @immutable final class ResponsesAsync2RequestsReasoningEffort {const ResponsesAsync2RequestsReasoningEffort._(this.value);
 
-factory ResponsesAsync2RequestsReasoningEffort.fromJson(String json) { return switch (json) {
+factory ResponsesAsync2RequestsReasoningEffort.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => ResponsesAsync2RequestsReasoningEffort._(json),
-}; }
+};}
 
 static const ResponsesAsync2RequestsReasoningEffort low = ResponsesAsync2RequestsReasoningEffort._('low');
 
@@ -20,23 +20,23 @@ static const List<ResponsesAsync2RequestsReasoningEffort> values = [low, medium,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsesAsync2RequestsReasoningEffort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponsesAsync2RequestsReasoningEffort($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponsesAsync2RequestsReasoningEffort && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponsesAsync2RequestsReasoningEffort($value)';}
+}
 /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
 @immutable final class ResponsesAsync2RequestsReasoningSummary {const ResponsesAsync2RequestsReasoningSummary._(this.value);
 
-factory ResponsesAsync2RequestsReasoningSummary.fromJson(String json) { return switch (json) {
+factory ResponsesAsync2RequestsReasoningSummary.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'concise' => concise,
   'detailed' => detailed,
   _ => ResponsesAsync2RequestsReasoningSummary._(json),
-}; }
+};}
 
 static const ResponsesAsync2RequestsReasoningSummary auto = ResponsesAsync2RequestsReasoningSummary._('auto');
 
@@ -48,20 +48,20 @@ static const List<ResponsesAsync2RequestsReasoningSummary> values = [auto, conci
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsesAsync2RequestsReasoningSummary && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponsesAsync2RequestsReasoningSummary($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ResponsesAsync2RequestsReasoningSummary && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ResponsesAsync2RequestsReasoningSummary($value)';}
+}
 @immutable final class ResponsesAsync2RequestsReasoning {const ResponsesAsync2RequestsReasoning({this.effort, this.summary, });
 
-factory ResponsesAsync2RequestsReasoning.fromJson(Map<String, dynamic> json) { return ResponsesAsync2RequestsReasoning(
+factory ResponsesAsync2RequestsReasoning.fromJson(Map<String, dynamic> json) {return ResponsesAsync2RequestsReasoning(
   effort: json['effort'] != null ? ResponsesAsync2RequestsReasoningEffort.fromJson(json['effort'] as String) : null,
   summary: json['summary'] != null ? ResponsesAsync2RequestsReasoningSummary.fromJson(json['summary'] as String) : null,
-); }
+);}
 
 /// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
 final ResponsesAsync2RequestsReasoningEffort? effort;
@@ -69,19 +69,19 @@ final ResponsesAsync2RequestsReasoningEffort? effort;
 /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
 final ResponsesAsync2RequestsReasoningSummary? summary;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (effort != null) 'effort': effort?.toJson(),
   if (summary != null) 'summary': summary?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effort', 'summary'}.contains(key)); } 
-ResponsesAsync2RequestsReasoning copyWith({ResponsesAsync2RequestsReasoningEffort? Function()? effort, ResponsesAsync2RequestsReasoningSummary? Function()? summary, }) { return ResponsesAsync2RequestsReasoning(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'effort', 'summary'}.contains(key));}
+ResponsesAsync2RequestsReasoning copyWith({ResponsesAsync2RequestsReasoningEffort? Function()? effort, ResponsesAsync2RequestsReasoningSummary? Function()? summary, }) {return ResponsesAsync2RequestsReasoning(
   effort: effort != null ? effort() : this.effort,
   summary: summary != null ? summary() : this.summary,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ResponsesAsync2RequestsReasoning &&
           effort == other.effort &&
-          summary == other.summary; } 
-@override int get hashCode { return Object.hash(effort, summary); } 
-@override String toString() { return 'ResponsesAsync2RequestsReasoning(effort: $effort, summary: $summary)'; } 
- }
+          summary == other.summary;}
+@override int get hashCode {return Object.hash(effort, summary);}
+@override String toString() {return 'ResponsesAsync2RequestsReasoning(effort: $effort, summary: $summary)';}
+}

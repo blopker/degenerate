@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_values_list_request.dart';import '../models/telemetry_values_list_response401.dart';import '../models/telemetry_values_list_response500.dart';import '../models/telemetry_values_list_response_result.dart';/// ValuesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_values_list_error.dart';import '../models/telemetry_values_list_request.dart';import '../models/telemetry_values_list_response_result.dart';/// ValuesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ValuesApi with ApiExecutor {const ValuesApi(this.apiConfig);
 /// List unique values found in your events.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/values`
-Future<ApiResult<List<TelemetryValuesListResponseResult>, OneOf2<TelemetryValuesListResponse401, TelemetryValuesListResponse500>>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TelemetryValuesListResponseResult>, TelemetryValuesListError>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -24,25 +24,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => TelemetryValuesListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 401:
-final json = jsonDecode(response.body);
-return OneOf2<TelemetryValuesListResponse401, TelemetryValuesListResponse500>.a(TelemetryValuesListResponse401.fromJson(json as Map<String, dynamic>));
-case 500:
-final json = jsonDecode(response.body);
-return OneOf2<TelemetryValuesListResponse401, TelemetryValuesListResponse500>.b(TelemetryValuesListResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
 
-  },
-);
- } 
- }
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => TelemetryValuesListResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: TelemetryValuesListError.parse, );}
+}

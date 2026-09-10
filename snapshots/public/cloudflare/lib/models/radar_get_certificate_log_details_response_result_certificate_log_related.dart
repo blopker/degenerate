@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
 @immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState {const RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState._(this.value);
 
-factory RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState.fromJson(String json) { return switch (json) {
+factory RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState.fromJson(String json) {return switch (json) {
   'USABLE' => usable,
   'PENDING' => pending,
   'QUALIFIED' => qualified,
@@ -11,7 +11,7 @@ factory RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState.fr
   'RETIRED' => retired,
   'REJECTED' => rejected,
   _ => RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState._(json),
-}; }
+};}
 
 static const RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState usable = RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState._('USABLE');
 
@@ -29,23 +29,23 @@ static const List<RadarGetCertificateLogDetailsResponseResultCertificateLogRelat
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState($value)';}
+}
 @immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogRelated {const RadarGetCertificateLogDetailsResponseResultCertificateLogRelated({required this.description, required this.endExclusive, required this.slug, required this.startInclusive, required this.state, });
 
-factory RadarGetCertificateLogDetailsResponseResultCertificateLogRelated.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLogRelated(
+factory RadarGetCertificateLogDetailsResponseResultCertificateLogRelated.fromJson(Map<String, dynamic> json) {return RadarGetCertificateLogDetailsResponseResultCertificateLogRelated(
   description: json['description'] as String,
   endExclusive: DateTime.parse(json['endExclusive'] as String),
   slug: json['slug'] as String,
   startInclusive: DateTime.parse(json['startInclusive'] as String),
   state: RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState.fromJson(json['state'] as String),
-); }
+);}
 
 /// A brief description of the certificate log.
 final String description;
@@ -62,32 +62,32 @@ final DateTime startInclusive;
 /// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
 final RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'endExclusive': endExclusive.toIso8601String(),
   'slug': slug,
   'startInclusive': startInclusive.toIso8601String(),
   'state': state.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('endExclusive') && json['endExclusive'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('startInclusive') && json['startInclusive'] is String &&
-      json.containsKey('state'); } 
-RadarGetCertificateLogDetailsResponseResultCertificateLogRelated copyWith({String? description, DateTime? endExclusive, String? slug, DateTime? startInclusive, RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState? state, }) { return RadarGetCertificateLogDetailsResponseResultCertificateLogRelated(
+      json.containsKey('state');}
+RadarGetCertificateLogDetailsResponseResultCertificateLogRelated copyWith({String? description, DateTime? endExclusive, String? slug, DateTime? startInclusive, RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState? state, }) {return RadarGetCertificateLogDetailsResponseResultCertificateLogRelated(
   description: description ?? this.description,
   endExclusive: endExclusive ?? this.endExclusive,
   slug: slug ?? this.slug,
   startInclusive: startInclusive ?? this.startInclusive,
   state: state ?? this.state,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetCertificateLogDetailsResponseResultCertificateLogRelated &&
           description == other.description &&
           endExclusive == other.endExclusive &&
           slug == other.slug &&
           startInclusive == other.startInclusive &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(description, endExclusive, slug, startInclusive, state); } 
-@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogRelated(description: $description, endExclusive: $endExclusive, slug: $slug, startInclusive: $startInclusive, state: $state)'; } 
- }
+          state == other.state;}
+@override int get hashCode {return Object.hash(description, endExclusive, slug, startInclusive, state);}
+@override String toString() {return 'RadarGetCertificateLogDetailsResponseResultCertificateLogRelated(description: $description, endExclusive: $endExclusive, slug: $slug, startInclusive: $startInclusive, state: $state)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingUsageReportUserUsageItems {const BillingUsageReportUserUsageItems({required this.date, required this.product, required this.sku, required this.quantity, required this.unitType, required this.pricePerUnit, required this.grossAmount, required this.discountAmount, required this.netAmount, this.repositoryName, });
 
-factory BillingUsageReportUserUsageItems.fromJson(Map<String, dynamic> json) { return BillingUsageReportUserUsageItems(
+factory BillingUsageReportUserUsageItems.fromJson(Map<String, dynamic> json) {return BillingUsageReportUserUsageItems(
   date: json['date'] as String,
   product: json['product'] as String,
   sku: json['sku'] as String,
@@ -13,7 +13,7 @@ factory BillingUsageReportUserUsageItems.fromJson(Map<String, dynamic> json) { r
   discountAmount: (json['discountAmount'] as num).toDouble(),
   netAmount: (json['netAmount'] as num).toDouble(),
   repositoryName: json['repositoryName'] as String?,
-); }
+);}
 
 /// Date of the usage line item.
 final String date;
@@ -45,7 +45,7 @@ final double netAmount;
 /// Name of the repository.
 final String? repositoryName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'date': date,
   'product': product,
   'sku': sku,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'discountAmount': discountAmount,
   'netAmount': netAmount,
   'repositoryName': ?repositoryName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('date') && json['date'] is String &&
       json.containsKey('product') && json['product'] is String &&
       json.containsKey('sku') && json['sku'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
@@ -65,8 +65,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('date'
       json.containsKey('pricePerUnit') && json['pricePerUnit'] is num &&
       json.containsKey('grossAmount') && json['grossAmount'] is num &&
       json.containsKey('discountAmount') && json['discountAmount'] is num &&
-      json.containsKey('netAmount') && json['netAmount'] is num; } 
-BillingUsageReportUserUsageItems copyWith({String? date, String? product, String? sku, int? quantity, String? unitType, double? pricePerUnit, double? grossAmount, double? discountAmount, double? netAmount, String? Function()? repositoryName, }) { return BillingUsageReportUserUsageItems(
+      json.containsKey('netAmount') && json['netAmount'] is num;}
+BillingUsageReportUserUsageItems copyWith({String? date, String? product, String? sku, int? quantity, String? unitType, double? pricePerUnit, double? grossAmount, double? discountAmount, double? netAmount, String? Function()? repositoryName, }) {return BillingUsageReportUserUsageItems(
   date: date ?? this.date,
   product: product ?? this.product,
   sku: sku ?? this.sku,
@@ -77,8 +77,8 @@ BillingUsageReportUserUsageItems copyWith({String? date, String? product, String
   discountAmount: discountAmount ?? this.discountAmount,
   netAmount: netAmount ?? this.netAmount,
   repositoryName: repositoryName != null ? repositoryName() : this.repositoryName,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingUsageReportUserUsageItems &&
           date == other.date &&
           product == other.product &&
@@ -89,7 +89,7 @@ BillingUsageReportUserUsageItems copyWith({String? date, String? product, String
           grossAmount == other.grossAmount &&
           discountAmount == other.discountAmount &&
           netAmount == other.netAmount &&
-          repositoryName == other.repositoryName; } 
-@override int get hashCode { return Object.hash(date, product, sku, quantity, unitType, pricePerUnit, grossAmount, discountAmount, netAmount, repositoryName); } 
-@override String toString() { return 'BillingUsageReportUserUsageItems(date: $date, product: $product, sku: $sku, quantity: $quantity, unitType: $unitType, pricePerUnit: $pricePerUnit, grossAmount: $grossAmount, discountAmount: $discountAmount, netAmount: $netAmount, repositoryName: $repositoryName)'; } 
- }
+          repositoryName == other.repositoryName;}
+@override int get hashCode {return Object.hash(date, product, sku, quantity, unitType, pricePerUnit, grossAmount, discountAmount, netAmount, repositoryName);}
+@override String toString() {return 'BillingUsageReportUserUsageItems(date: $date, product: $product, sku: $sku, quantity: $quantity, unitType: $unitType, pricePerUnit: $pricePerUnit, grossAmount: $grossAmount, discountAmount: $discountAmount, netAmount: $netAmount, repositoryName: $repositoryName)';}
+}

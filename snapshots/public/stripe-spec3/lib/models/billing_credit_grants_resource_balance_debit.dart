@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_credits_applied.dart';/// The type of debit transaction.
 @immutable final class BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType._(this.value);
 
-factory BillingCreditGrantsResourceBalanceDebitType.fromJson(String json) { return switch (json) {
+factory BillingCreditGrantsResourceBalanceDebitType.fromJson(String json) {return switch (json) {
   'credits_applied' => creditsApplied,
   'credits_expired' => creditsExpired,
   'credits_voided' => creditsVoided,
   _ => BillingCreditGrantsResourceBalanceDebitType._(json),
-}; }
+};}
 
 static const BillingCreditGrantsResourceBalanceDebitType creditsApplied = BillingCreditGrantsResourceBalanceDebitType._('credits_applied');
 
@@ -20,22 +20,22 @@ static const List<BillingCreditGrantsResourceBalanceDebitType> values = [credits
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditGrantsResourceBalanceDebitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditGrantsResourceBalanceDebitType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BillingCreditGrantsResourceBalanceDebitType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BillingCreditGrantsResourceBalanceDebitType($value)';}
+}
 /// 
 @immutable final class BillingCreditGrantsResourceBalanceDebit {const BillingCreditGrantsResourceBalanceDebit({required this.amount, required this.type, this.creditsApplied = const Omittable.absent(), });
 
-factory BillingCreditGrantsResourceBalanceDebit.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceDebit(
+factory BillingCreditGrantsResourceBalanceDebit.fromJson(Map<String, dynamic> json) {return BillingCreditGrantsResourceBalanceDebit(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
   creditsApplied: json.containsKey('credits_applied') ? Omittable(json['credits_applied'] != null ? BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(json['credits_applied'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: BillingCreditGrantsResourceBalanceDebitType.fromJson(json['type'] as String),
-); }
+);}
 
 final BillingCreditGrantsResourceAmount amount;
 
@@ -45,23 +45,23 @@ final Omittable<BillingCreditGrantsResourceBalanceCreditsApplied?> creditsApplie
 /// The type of debit transaction.
 final BillingCreditGrantsResourceBalanceDebitType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount.toJson(),
   if (creditsApplied.isPresent) 'credits_applied': creditsApplied.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
-      json.containsKey('type'); } 
-BillingCreditGrantsResourceBalanceDebit copyWith({BillingCreditGrantsResourceAmount? amount, Omittable<BillingCreditGrantsResourceBalanceCreditsApplied?>? creditsApplied, BillingCreditGrantsResourceBalanceDebitType? type, }) { return BillingCreditGrantsResourceBalanceDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') &&
+      json.containsKey('type');}
+BillingCreditGrantsResourceBalanceDebit copyWith({BillingCreditGrantsResourceAmount? amount, Omittable<BillingCreditGrantsResourceBalanceCreditsApplied?>? creditsApplied, BillingCreditGrantsResourceBalanceDebitType? type, }) {return BillingCreditGrantsResourceBalanceDebit(
   amount: amount ?? this.amount,
   creditsApplied: creditsApplied ?? this.creditsApplied,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BillingCreditGrantsResourceBalanceDebit &&
           amount == other.amount &&
           creditsApplied == other.creditsApplied &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, creditsApplied, type); } 
-@override String toString() { return 'BillingCreditGrantsResourceBalanceDebit(amount: $amount, creditsApplied: $creditsApplied, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(amount, creditsApplied, type);}
+@override String toString() {return 'BillingCreditGrantsResourceBalanceDebit(amount: $amount, creditsApplied: $creditsApplied, type: $type)';}
+}

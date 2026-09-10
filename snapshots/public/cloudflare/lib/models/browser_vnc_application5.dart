@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_components_schemas_domain.dart';import 'access_custom_deny_message.dart';import 'access_enable_binding_cookie.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_cors_headers.dart';import 'access_schemas_custom_deny_url.dart';import 'access_schemas_options_preflight_bypass.dart';import 'access_schemas_scim_config.dart';import 'access_service_auth401_redirect.dart';import 'access_skip_interstitial.dart';import 'access_timestamp.dart';import 'access_use_clientless_isolation_app_launcher_url.dart';import 'access_uuid.dart';@immutable final class BrowserVncApplication5 {const BrowserVncApplication5({required this.domain, required this.type, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.useClientlessIsolationAppLauncherUrl, });
 
-factory BrowserVncApplication5.fromJson(Map<String, dynamic> json) { return BrowserVncApplication5(
+factory BrowserVncApplication5.fromJson(Map<String, dynamic> json) {return BrowserVncApplication5(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   scimConfig: json['scim_config'] != null ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
@@ -26,7 +26,7 @@ factory BrowserVncApplication5.fromJson(Map<String, dynamic> json) { return Brow
   skipInterstitial: json['skip_interstitial'] != null ? AccessSkipInterstitial.fromJson(json['skip_interstitial'] as bool) : null,
   type: json['type'] as String,
   useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -96,7 +96,7 @@ final String type;
 /// 
 final AccessUseClientlessIsolationAppLauncherUrl? useClientlessIsolationAppLauncherUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
@@ -120,10 +120,10 @@ Map<String, dynamic> toJson() { return {
   if (skipInterstitial != null) 'skip_interstitial': skipInterstitial?.toJson(),
   'type': type,
   if (useClientlessIsolationAppLauncherUrl != null) 'use_clientless_isolation_app_launcher_url': useClientlessIsolationAppLauncherUrl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
-      json.containsKey('type') && json['type'] is String; } 
-BrowserVncApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessSchemasCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessSchemasCustomDenyUrl? Function()? customDenyUrl, AccessComponentsSchemasDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, String? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) { return BrowserVncApplication5(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') &&
+      json.containsKey('type') && json['type'] is String;}
+BrowserVncApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessSchemasCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessSchemasCustomDenyUrl? Function()? customDenyUrl, AccessComponentsSchemasDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, String? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) {return BrowserVncApplication5(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
@@ -147,8 +147,8 @@ BrowserVncApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessU
   skipInterstitial: skipInterstitial != null ? skipInterstitial() : this.skipInterstitial,
   type: type ?? this.type,
   useClientlessIsolationAppLauncherUrl: useClientlessIsolationAppLauncherUrl != null ? useClientlessIsolationAppLauncherUrl() : this.useClientlessIsolationAppLauncherUrl,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BrowserVncApplication5 &&
           createdAt == other.createdAt &&
           id == other.id &&
@@ -172,7 +172,7 @@ BrowserVncApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessU
           sessionDuration == other.sessionDuration &&
           skipInterstitial == other.skipInterstitial &&
           type == other.type &&
-          useClientlessIsolationAppLauncherUrl == other.useClientlessIsolationAppLauncherUrl; } 
-@override int get hashCode { return Object.hashAll([createdAt, id, scimConfig, updatedAt, allowIframe, Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, corsHeaders, customDenyMessage, customDenyUrl, domain, enableBindingCookie, httpOnlyCookieAttribute, logoUrl, name, optionsPreflightBypass, sameSiteCookieAttribute, serviceAuth401Redirect, sessionDuration, skipInterstitial, type, useClientlessIsolationAppLauncherUrl]); } 
-@override String toString() { return 'BrowserVncApplication5(createdAt: $createdAt, id: $id, scimConfig: $scimConfig, updatedAt: $updatedAt, allowIframe: $allowIframe, allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, corsHeaders: $corsHeaders, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, domain: $domain, enableBindingCookie: $enableBindingCookie, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, serviceAuth401Redirect: $serviceAuth401Redirect, sessionDuration: $sessionDuration, skipInterstitial: $skipInterstitial, type: $type, useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl)'; } 
- }
+          useClientlessIsolationAppLauncherUrl == other.useClientlessIsolationAppLauncherUrl;}
+@override int get hashCode {return Object.hashAll([createdAt, id, scimConfig, updatedAt, allowIframe, Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, corsHeaders, customDenyMessage, customDenyUrl, domain, enableBindingCookie, httpOnlyCookieAttribute, logoUrl, name, optionsPreflightBypass, sameSiteCookieAttribute, serviceAuth401Redirect, sessionDuration, skipInterstitial, type, useClientlessIsolationAppLauncherUrl]);}
+@override String toString() {return 'BrowserVncApplication5(createdAt: $createdAt, id: $id, scimConfig: $scimConfig, updatedAt: $updatedAt, allowIframe: $allowIframe, allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, corsHeaders: $corsHeaders, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, domain: $domain, enableBindingCookie: $enableBindingCookie, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, serviceAuth401Redirect: $serviceAuth401Redirect, sessionDuration: $sessionDuration, skipInterstitial: $skipInterstitial, type: $type, useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl)';}
+}

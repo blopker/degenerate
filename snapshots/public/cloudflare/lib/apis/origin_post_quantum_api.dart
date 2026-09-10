@@ -13,7 +13,7 @@ final class OriginPostQuantumApi with ApiExecutor {const OriginPostQuantumApi(th
 /// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.
 ///
 /// `GET /zones/{zone_id}/cache/origin_post_quantum_encryption`
-Future<ApiResult<ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult?, ResponseCommonFailure14>> zoneCacheSettingsGetOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult?, ResponseCommonFailure14>> zoneCacheSettingsGetOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,30 +22,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure14.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  ResponseCommonFailure14.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Change Origin Post-Quantum Encryption setting
 ///
 /// Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.
 ///
 /// `PUT /zones/{zone_id}/cache/origin_post_quantum_encryption`
-Future<ApiResult<ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponseResult?, ResponseCommonFailure14>> zoneCacheSettingsChangeOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponseResult?, ResponseCommonFailure14>> zoneCacheSettingsChangeOriginPostQuantumEncryptionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,22 +45,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure14.fromJson(json as Map<String, dynamic>);
-default:
-return null;
+return  ResponseCommonFailure14.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }
-
-  },
-);
- } 
- }

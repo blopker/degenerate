@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError {const WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError({required this.message, required this.name, });
 
-factory WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError(
+factory WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError(
   message: json['message'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String message;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError copyWith({String? message, String? name, }) { return WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError copyWith({String? message, String? name, }) {return WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError(
   message: message ?? this.message,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError &&
           message == other.message &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(message, name); } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError(message: $message, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(message, name);}
+@override String toString() {return 'WorDescribeWorkflowInstanceResponseResultStepsStepAttemptsError(message: $message, name: $name)';}
+}

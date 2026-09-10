@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2 {const PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2._(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2 $empty = PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMand
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2($value)';}
+}
 
 @immutable
 final class PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrl {

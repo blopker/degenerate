@@ -3,28 +3,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details provided about the user being verified. These details may be shown to the user.
 @immutable final class PostIdentityVerificationSessionsRequestProvidedDetails {const PostIdentityVerificationSessionsRequestProvidedDetails({this.email, this.phone, });
 
-factory PostIdentityVerificationSessionsRequestProvidedDetails.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestProvidedDetails(
+factory PostIdentityVerificationSessionsRequestProvidedDetails.fromJson(Map<String, dynamic> json) {return PostIdentityVerificationSessionsRequestProvidedDetails(
   email: json['email'] as String?,
   phone: json['phone'] as String?,
-); }
+);}
 
 final String? email;
 
 final String? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': ?email,
   'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'phone'}.contains(key)); } 
-PostIdentityVerificationSessionsRequestProvidedDetails copyWith({String? Function()? email, String? Function()? phone, }) { return PostIdentityVerificationSessionsRequestProvidedDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'email', 'phone'}.contains(key));}
+PostIdentityVerificationSessionsRequestProvidedDetails copyWith({String? Function()? email, String? Function()? phone, }) {return PostIdentityVerificationSessionsRequestProvidedDetails(
   email: email != null ? email() : this.email,
   phone: phone != null ? phone() : this.phone,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostIdentityVerificationSessionsRequestProvidedDetails &&
           email == other.email &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(email, phone); } 
-@override String toString() { return 'PostIdentityVerificationSessionsRequestProvidedDetails(email: $email, phone: $phone)'; } 
- }
+          phone == other.phone;}
+@override int get hashCode {return Object.hash(email, phone);}
+@override String toString() {return 'PostIdentityVerificationSessionsRequestProvidedDetails(email: $email, phone: $phone)';}
+}

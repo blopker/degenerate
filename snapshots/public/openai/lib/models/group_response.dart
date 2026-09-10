@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about an organization group.
 @immutable final class GroupResponse {const GroupResponse({required this.id, required this.name, required this.createdAt, required this.isScimManaged, });
 
-factory GroupResponse.fromJson(Map<String, dynamic> json) { return GroupResponse(
+factory GroupResponse.fromJson(Map<String, dynamic> json) {return GroupResponse(
   id: json['id'] as String,
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   isScimManaged: json['is_scim_managed'] as bool,
-); }
+);}
 
 /// Identifier for the group.
 final String id;
@@ -22,28 +22,28 @@ final int createdAt;
 /// Whether the group is managed through SCIM and controlled by your identity provider.
 final bool isScimManaged;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'created_at': createdAt,
   'is_scim_managed': isScimManaged,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('is_scim_managed') && json['is_scim_managed'] is bool; } 
-GroupResponse copyWith({String? id, String? name, int? createdAt, bool? isScimManaged, }) { return GroupResponse(
+      json.containsKey('is_scim_managed') && json['is_scim_managed'] is bool;}
+GroupResponse copyWith({String? id, String? name, int? createdAt, bool? isScimManaged, }) {return GroupResponse(
   id: id ?? this.id,
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   isScimManaged: isScimManaged ?? this.isScimManaged,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GroupResponse &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
-          isScimManaged == other.isScimManaged; } 
-@override int get hashCode { return Object.hash(id, name, createdAt, isScimManaged); } 
-@override String toString() { return 'GroupResponse(id: $id, name: $name, createdAt: $createdAt, isScimManaged: $isScimManaged)'; } 
- }
+          isScimManaged == other.isScimManaged;}
+@override int get hashCode {return Object.hash(id, name, createdAt, isScimManaged);}
+@override String toString() {return 'GroupResponse(id: $id, name: $name, createdAt: $createdAt, isScimManaged: $isScimManaged)';}
+}

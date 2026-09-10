@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_populate_response_properties_datasets_items_properties_target_industries_properties_created.dart';import 'post_dataset_populate_response_properties_datasets_items_properties_target_industries_properties_errors.dart';import 'post_dataset_populate_response_properties_datasets_items_properties_target_industries_properties_found.dart';@immutable final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties({required this.created, required this.errors, required this.found, });
 
-factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties(
+factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties.fromJson(Map<String, dynamic> json) {return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties(
   created: PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesCreated.fromJson(json['created'] as Map<String, dynamic>),
   errors: PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors.fromJson(json['errors'] as Map<String, dynamic>),
   found: PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesFound.fromJson(json['found'] as Map<String, dynamic>),
-); }
+);}
 
 final PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesCreated created;
 
@@ -14,24 +14,24 @@ final PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustri
 
 final PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesFound found;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created.toJson(),
   'errors': errors.toJson(),
   'found': found.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') &&
       json.containsKey('errors') &&
-      json.containsKey('found'); } 
-PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesCreated? created, PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors? errors, PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesFound? found, }) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties(
+      json.containsKey('found');}
+PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesCreated? created, PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesErrors? errors, PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesPropertiesFound? found, }) {return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties(
   created: created ?? this.created,
   errors: errors ?? this.errors,
   found: found ?? this.found,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties &&
           created == other.created &&
           errors == other.errors &&
-          found == other.found; } 
-@override int get hashCode { return Object.hash(created, errors, found); } 
-@override String toString() { return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties(created: $created, errors: $errors, found: $found)'; } 
- }
+          found == other.found;}
+@override int get hashCode {return Object.hash(created, errors, found);}
+@override String toString() {return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesTargetIndustriesProperties(created: $created, errors: $errors, found: $found)';}
+}

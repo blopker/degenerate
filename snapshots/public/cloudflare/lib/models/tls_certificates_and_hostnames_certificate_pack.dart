@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_pack_certificate.dart';import 'tls_certificates_and_hostnames_certificate_pack_validation_errors.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_validation_method.dart';import 'tls_certificates_and_hostnames_validation_record.dart';import 'tls_certificates_and_hostnames_validity_days.dart';/// Status of certificate pack.
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._(this.value);
 
-factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending_validation' => pendingValidation,
   'deleted' => deleted,
@@ -26,7 +26,7 @@ factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJ
   'backup_issued' => backupIssued,
   'holding_deployment' => holdingDeployment,
   _ => TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('initializing');
 
@@ -74,14 +74,14 @@ static const List<TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasSt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus($value)';}
+}
 /// Identifier of the primary certificate in a pack.
 extension type const TlsCertificatesAndHostnamesPrimary(String value) {
 factory TlsCertificatesAndHostnamesPrimary.fromJson(String json) => TlsCertificatesAndHostnamesPrimary(json);
@@ -92,7 +92,7 @@ String toJson() => value;
 /// Type of certificate pack.
 @immutable final class TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType._(this.value);
 
-factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) {return switch (json) {
   'mh_custom' => mhCustom,
   'managed_hostname' => managedHostname,
   'sni_custom' => sniCustom,
@@ -102,7 +102,7 @@ factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) { return sw
   'keyless' => keyless,
   'legacy_custom' => legacyCustom,
   _ => TlsCertificatesAndHostnamesSchemasType._(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSchemasType mhCustom = TlsCertificatesAndHostnamesSchemasType._('mh_custom');
 
@@ -124,18 +124,18 @@ static const List<TlsCertificatesAndHostnamesSchemasType> values = [mhCustom, ma
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSchemasType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TlsCertificatesAndHostnamesSchemasType($value)';}
+}
 /// A certificate pack with all its properties.
 @immutable final class TlsCertificatesAndHostnamesCertificatePack {const TlsCertificatesAndHostnamesCertificatePack({required this.certificates, required this.hosts, required this.id, required this.status, required this.type, this.certificateAuthority, this.cloudflareBranding, this.dcvDelegationRecords, this.primaryCertificate, this.validationErrors, this.validationMethod, this.validationRecords, this.validityDays, });
 
-factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePack(
+factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCertificatePack(
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
   certificates: (json['certificates'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(e as Map<String, dynamic>)).toList(),
   cloudflareBranding: json['cloudflare_branding'] != null ? TlsCertificatesAndHostnamesCloudflareBranding.fromJson(json['cloudflare_branding'] as bool) : null,
@@ -149,7 +149,7 @@ factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic>
   validationMethod: json['validation_method'] != null ? TlsCertificatesAndHostnamesValidationMethod.fromJson(json['validation_method'] as String) : null,
   validationRecords: (json['validation_records'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesValidationRecord.fromJson(e as Map<String, dynamic>)).toList(),
   validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesValidityDays.fromJson((json['validity_days'] as num).toInt()) : null,
-); }
+);}
 
 final TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority;
 
@@ -182,7 +182,7 @@ final List<TlsCertificatesAndHostnamesValidationRecord>? validationRecords;
 
 final TlsCertificatesAndHostnamesValidityDays? validityDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   'certificates': certificates.map((e) => e.toJson()).toList(),
   if (cloudflareBranding != null) 'cloudflare_branding': cloudflareBranding?.toJson(),
@@ -196,13 +196,13 @@ Map<String, dynamic> toJson() { return {
   if (validationMethod != null) 'validation_method': validationMethod?.toJson(),
   if (validationRecords != null) 'validation_records': validationRecords?.map((e) => e.toJson()).toList(),
   if (validityDays != null) 'validity_days': validityDays?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificates') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificates') &&
       json.containsKey('hosts') &&
       json.containsKey('id') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? Function()? certificateAuthority, List<TlsCertificatesAndHostnamesCertificatePackCertificate>? certificates, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, List<String>? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesPrimary? Function()? primaryCertificate, TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus? status, TlsCertificatesAndHostnamesSchemasType? type, List<TlsCertificatesAndHostnamesCertificatePackValidationErrors>? Function()? validationErrors, TlsCertificatesAndHostnamesValidationMethod? Function()? validationMethod, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, TlsCertificatesAndHostnamesValidityDays? Function()? validityDays, }) { return TlsCertificatesAndHostnamesCertificatePack(
+      json.containsKey('type');}
+TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? Function()? certificateAuthority, List<TlsCertificatesAndHostnamesCertificatePackCertificate>? certificates, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, List<String>? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesPrimary? Function()? primaryCertificate, TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus? status, TlsCertificatesAndHostnamesSchemasType? type, List<TlsCertificatesAndHostnamesCertificatePackValidationErrors>? Function()? validationErrors, TlsCertificatesAndHostnamesValidationMethod? Function()? validationMethod, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, TlsCertificatesAndHostnamesValidityDays? Function()? validityDays, }) {return TlsCertificatesAndHostnamesCertificatePack(
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   certificates: certificates ?? this.certificates,
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
@@ -216,8 +216,8 @@ TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnames
   validationMethod: validationMethod != null ? validationMethod() : this.validationMethod,
   validationRecords: validationRecords != null ? validationRecords() : this.validationRecords,
   validityDays: validityDays != null ? validityDays() : this.validityDays,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificatePack &&
           certificateAuthority == other.certificateAuthority &&
           listEquals(certificates, other.certificates) &&
@@ -231,7 +231,7 @@ TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnames
           listEquals(validationErrors, other.validationErrors) &&
           validationMethod == other.validationMethod &&
           listEquals(validationRecords, other.validationRecords) &&
-          validityDays == other.validityDays; } 
-@override int get hashCode { return Object.hash(certificateAuthority, Object.hashAll(certificates), cloudflareBranding, Object.hashAll(dcvDelegationRecords ?? const []), Object.hashAll(hosts), id, primaryCertificate, status, type, Object.hashAll(validationErrors ?? const []), validationMethod, Object.hashAll(validationRecords ?? const []), validityDays); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificatePack(certificateAuthority: $certificateAuthority, certificates: $certificates, cloudflareBranding: $cloudflareBranding, dcvDelegationRecords: $dcvDelegationRecords, hosts: $hosts, id: $id, primaryCertificate: $primaryCertificate, status: $status, type: $type, validationErrors: $validationErrors, validationMethod: $validationMethod, validationRecords: $validationRecords, validityDays: $validityDays)'; } 
- }
+          validityDays == other.validityDays;}
+@override int get hashCode {return Object.hash(certificateAuthority, Object.hashAll(certificates), cloudflareBranding, Object.hashAll(dcvDelegationRecords ?? const []), Object.hashAll(hosts), id, primaryCertificate, status, type, Object.hashAll(validationErrors ?? const []), validationMethod, Object.hashAll(validationRecords ?? const []), validityDays);}
+@override String toString() {return 'TlsCertificatesAndHostnamesCertificatePack(certificateAuthority: $certificateAuthority, certificates: $certificates, cloudflareBranding: $cloudflareBranding, dcvDelegationRecords: $dcvDelegationRecords, hosts: $hosts, id: $id, primaryCertificate: $primaryCertificate, status: $status, type: $type, validationErrors: $validationErrors, validationMethod: $validationMethod, validationRecords: $validationRecords, validityDays: $validityDays)';}
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`. Use `string` if the item type is unknown or mixed.
 @immutable final class PostRadarValueListsRequestItemType {const PostRadarValueListsRequestItemType._(this.value);
 
-factory PostRadarValueListsRequestItemType.fromJson(String json) { return switch (json) {
+factory PostRadarValueListsRequestItemType.fromJson(String json) {return switch (json) {
   'card_bin' => cardBin,
   'card_fingerprint' => cardFingerprint,
   'case_sensitive_string' => caseSensitiveString,
@@ -15,7 +15,7 @@ factory PostRadarValueListsRequestItemType.fromJson(String json) { return switch
   'string' => string,
   'us_bank_account_fingerprint' => usBankAccountFingerprint,
   _ => PostRadarValueListsRequestItemType._(json),
-}; }
+};}
 
 static const PostRadarValueListsRequestItemType cardBin = PostRadarValueListsRequestItemType._('card_bin');
 
@@ -41,23 +41,23 @@ static const List<PostRadarValueListsRequestItemType> values = [cardBin, cardFin
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRadarValueListsRequestItemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRadarValueListsRequestItemType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostRadarValueListsRequestItemType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostRadarValueListsRequestItemType($value)';}
+}
 @immutable final class PostRadarValueListsRequest {const PostRadarValueListsRequest({required this.alias, required this.name, this.expand, this.itemType, this.metadata, });
 
-factory PostRadarValueListsRequest.fromJson(Map<String, dynamic> json) { return PostRadarValueListsRequest(
+factory PostRadarValueListsRequest.fromJson(Map<String, dynamic> json) {return PostRadarValueListsRequest(
   alias: json['alias'] as String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   itemType: json['item_type'] != null ? PostRadarValueListsRequestItemType.fromJson(json['item_type'] as String) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
-); }
+);}
 
 /// The name of the value list for use in rules.
 final String alias;
@@ -74,29 +74,29 @@ final Map<String,String>? metadata;
 /// The human-readable name of the value list.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alias': alias,
   'expand': ?expand,
   if (itemType != null) 'item_type': itemType?.toJson(),
   'metadata': ?metadata,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-PostRadarValueListsRequest copyWith({String? alias, List<String>? Function()? expand, PostRadarValueListsRequestItemType? Function()? itemType, Map<String, String>? Function()? metadata, String? name, }) { return PostRadarValueListsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alias') && json['alias'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+PostRadarValueListsRequest copyWith({String? alias, List<String>? Function()? expand, PostRadarValueListsRequestItemType? Function()? itemType, Map<String, String>? Function()? metadata, String? name, }) {return PostRadarValueListsRequest(
   alias: alias ?? this.alias,
   expand: expand != null ? expand() : this.expand,
   itemType: itemType != null ? itemType() : this.itemType,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostRadarValueListsRequest &&
           alias == other.alias &&
           listEquals(expand, other.expand) &&
           itemType == other.itemType &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(alias, Object.hashAll(expand ?? const []), itemType, metadata, name); } 
-@override String toString() { return 'PostRadarValueListsRequest(alias: $alias, expand: $expand, itemType: $itemType, metadata: $metadata, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(alias, Object.hashAll(expand ?? const []), itemType, metadata, name);}
+@override String toString() {return 'PostRadarValueListsRequest(alias: $alias, expand: $expand, itemType: $itemType, metadata: $metadata, name: $name)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When listed as a reference, the type (direction) of the reference.
 @immutable final class LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType._(this.value);
 
-factory LoadBalancingResourceReferenceReferenceType.fromJson(String json) { return switch (json) {
+factory LoadBalancingResourceReferenceReferenceType.fromJson(String json) {return switch (json) {
   'referral' => referral,
   'referrer' => referrer,
   _ => LoadBalancingResourceReferenceReferenceType._(json),
-}; }
+};}
 
 static const LoadBalancingResourceReferenceReferenceType referral = LoadBalancingResourceReferenceReferenceType._('referral');
 
@@ -17,23 +17,23 @@ static const List<LoadBalancingResourceReferenceReferenceType> values = [referra
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingResourceReferenceReferenceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingResourceReferenceReferenceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingResourceReferenceReferenceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingResourceReferenceReferenceType($value)';}
+}
 /// The type of the resource.
 @immutable final class LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType._(this.value);
 
-factory LoadBalancingResourceReferenceResourceType.fromJson(String json) { return switch (json) {
+factory LoadBalancingResourceReferenceResourceType.fromJson(String json) {return switch (json) {
   'load_balancer' => loadBalancer,
   'monitor' => monitor,
   'pool' => pool,
   _ => LoadBalancingResourceReferenceResourceType._(json),
-}; }
+};}
 
 static const LoadBalancingResourceReferenceResourceType loadBalancer = LoadBalancingResourceReferenceResourceType._('load_balancer');
 
@@ -45,24 +45,24 @@ static const List<LoadBalancingResourceReferenceResourceType> values = [loadBala
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingResourceReferenceResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingResourceReferenceResourceType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is LoadBalancingResourceReferenceResourceType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'LoadBalancingResourceReferenceResourceType($value)';}
+}
 /// A reference to a load balancer resource.
 @immutable final class LoadBalancingResourceReference {const LoadBalancingResourceReference({this.referenceType, this.references, this.resourceId, this.resourceName, this.resourceType, });
 
-factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) { return LoadBalancingResourceReference(
+factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) {return LoadBalancingResourceReference(
   referenceType: json['reference_type'] != null ? LoadBalancingResourceReferenceReferenceType.fromJson(json['reference_type'] as String) : null,
   references: (json['references'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   resourceId: json['resource_id'] as String?,
   resourceName: json['resource_name'] as String?,
   resourceType: json['resource_type'] != null ? LoadBalancingResourceReferenceResourceType.fromJson(json['resource_type'] as String) : null,
-); }
+);}
 
 /// When listed as a reference, the type (direction) of the reference.
 final LoadBalancingResourceReferenceReferenceType? referenceType;
@@ -78,28 +78,28 @@ final String? resourceName;
 /// The type of the resource.
 final LoadBalancingResourceReferenceResourceType? resourceType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (referenceType != null) 'reference_type': referenceType?.toJson(),
   if (references != null) 'references': references?.map((e) => e).toList(),
   'resource_id': ?resourceId,
   'resource_name': ?resourceName,
   if (resourceType != null) 'resource_type': resourceType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_type', 'references', 'resource_id', 'resource_name', 'resource_type'}.contains(key)); } 
-LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReferenceType? Function()? referenceType, List<Map<String, dynamic>>? Function()? references, String? Function()? resourceId, String? Function()? resourceName, LoadBalancingResourceReferenceResourceType? Function()? resourceType, }) { return LoadBalancingResourceReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference_type', 'references', 'resource_id', 'resource_name', 'resource_type'}.contains(key));}
+LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReferenceType? Function()? referenceType, List<Map<String, dynamic>>? Function()? references, String? Function()? resourceId, String? Function()? resourceName, LoadBalancingResourceReferenceResourceType? Function()? resourceType, }) {return LoadBalancingResourceReference(
   referenceType: referenceType != null ? referenceType() : this.referenceType,
   references: references != null ? references() : this.references,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceName: resourceName != null ? resourceName() : this.resourceName,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is LoadBalancingResourceReference &&
           referenceType == other.referenceType &&
           listEquals(references, other.references) &&
           resourceId == other.resourceId &&
           resourceName == other.resourceName &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(referenceType, Object.hashAll(references ?? const []), resourceId, resourceName, resourceType); } 
-@override String toString() { return 'LoadBalancingResourceReference(referenceType: $referenceType, references: $references, resourceId: $resourceId, resourceName: $resourceName, resourceType: $resourceType)'; } 
- }
+          resourceType == other.resourceType;}
+@override int get hashCode {return Object.hash(referenceType, Object.hashAll(references ?? const []), resourceId, resourceName, resourceType);}
+@override String toString() {return 'LoadBalancingResourceReference(referenceType: $referenceType, references: $references, resourceId: $resourceId, resourceName: $resourceName, resourceType: $resourceType)';}
+}

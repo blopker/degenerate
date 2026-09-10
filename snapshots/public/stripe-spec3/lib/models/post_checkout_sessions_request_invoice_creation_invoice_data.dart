@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data_account_tax_ids.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data_custom_fields.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data_issuer.dart';import 'post_checkout_sessions_request_invoice_creation_invoice_data_rendering_options.dart';@immutable final class PostCheckoutSessionsRequestInvoiceCreationInvoiceData {const PostCheckoutSessionsRequestInvoiceCreationInvoiceData({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
-factory PostCheckoutSessionsRequestInvoiceCreationInvoiceData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestInvoiceCreationInvoiceData(
+factory PostCheckoutSessionsRequestInvoiceCreationInvoiceData.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestInvoiceCreationInvoiceData(
   accountTaxIds: json['account_tax_ids'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   customFields: json['custom_fields'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields.fromJson(json['custom_fields']) : null,
   description: json['description'] as String?,
@@ -10,7 +10,7 @@ factory PostCheckoutSessionsRequestInvoiceCreationInvoiceData.fromJson(Map<Strin
   issuer: json['issuer'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   renderingOptions: json['rendering_options'] != null ? PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions.fromJson(json['rendering_options']) : null,
-); }
+);}
 
 final PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds? accountTaxIds;
 
@@ -26,7 +26,7 @@ final Map<String,String>? metadata;
 
 final PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions? renderingOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   if (customFields != null) 'custom_fields': customFields?.toJson(),
   'description': ?description,
@@ -34,9 +34,9 @@ Map<String, dynamic> toJson() { return {
   if (issuer != null) 'issuer': issuer?.toJson(),
   'metadata': ?metadata,
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
-PostCheckoutSessionsRequestInvoiceCreationInvoiceData copyWith({PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds? Function()? accountTaxIds, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields? Function()? customFields, String? Function()? description, String? Function()? footer, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataIssuer? Function()? issuer, Map<String, String>? Function()? metadata, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions? Function()? renderingOptions, }) { return PostCheckoutSessionsRequestInvoiceCreationInvoiceData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key));}
+PostCheckoutSessionsRequestInvoiceCreationInvoiceData copyWith({PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds? Function()? accountTaxIds, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields? Function()? customFields, String? Function()? description, String? Function()? footer, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataIssuer? Function()? issuer, Map<String, String>? Function()? metadata, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions? Function()? renderingOptions, }) {return PostCheckoutSessionsRequestInvoiceCreationInvoiceData(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   customFields: customFields != null ? customFields() : this.customFields,
   description: description != null ? description() : this.description,
@@ -44,8 +44,8 @@ PostCheckoutSessionsRequestInvoiceCreationInvoiceData copyWith({PostCheckoutSess
   issuer: issuer != null ? issuer() : this.issuer,
   metadata: metadata != null ? metadata() : this.metadata,
   renderingOptions: renderingOptions != null ? renderingOptions() : this.renderingOptions,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostCheckoutSessionsRequestInvoiceCreationInvoiceData &&
           accountTaxIds == other.accountTaxIds &&
           customFields == other.customFields &&
@@ -53,7 +53,7 @@ PostCheckoutSessionsRequestInvoiceCreationInvoiceData copyWith({PostCheckoutSess
           footer == other.footer &&
           issuer == other.issuer &&
           metadata == other.metadata &&
-          renderingOptions == other.renderingOptions; } 
-@override int get hashCode { return Object.hash(accountTaxIds, customFields, description, footer, issuer, metadata, renderingOptions); } 
-@override String toString() { return 'PostCheckoutSessionsRequestInvoiceCreationInvoiceData(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)'; } 
- }
+          renderingOptions == other.renderingOptions;}
+@override int get hashCode {return Object.hash(accountTaxIds, customFields, description, footer, issuer, metadata, renderingOptions);}
+@override String toString() {return 'PostCheckoutSessionsRequestInvoiceCreationInvoiceData(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)';}
+}

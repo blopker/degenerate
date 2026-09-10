@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteRequestElementsModelProperties {const AigConfigPostGatewayDynamicRouteRequestElementsModelProperties({required this.model, required this.provider, required this.retries, required this.timeout, });
 
-factory AigConfigPostGatewayDynamicRouteRequestElementsModelProperties.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteRequestElementsModelProperties(
+factory AigConfigPostGatewayDynamicRouteRequestElementsModelProperties.fromJson(Map<String, dynamic> json) {return AigConfigPostGatewayDynamicRouteRequestElementsModelProperties(
   model: json['model'] as String,
   provider: json['provider'] as String,
   retries: (json['retries'] as num).toDouble(),
   timeout: (json['timeout'] as num).toDouble(),
-); }
+);}
 
 final String model;
 
@@ -17,28 +17,28 @@ final double retries;
 
 final double timeout;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': model,
   'provider': provider,
   'retries': retries,
   'timeout': timeout,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') && json['model'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model') && json['model'] is String &&
       json.containsKey('provider') && json['provider'] is String &&
       json.containsKey('retries') && json['retries'] is num &&
-      json.containsKey('timeout') && json['timeout'] is num; } 
-AigConfigPostGatewayDynamicRouteRequestElementsModelProperties copyWith({String? model, String? provider, double? retries, double? timeout, }) { return AigConfigPostGatewayDynamicRouteRequestElementsModelProperties(
+      json.containsKey('timeout') && json['timeout'] is num;}
+AigConfigPostGatewayDynamicRouteRequestElementsModelProperties copyWith({String? model, String? provider, double? retries, double? timeout, }) {return AigConfigPostGatewayDynamicRouteRequestElementsModelProperties(
   model: model ?? this.model,
   provider: provider ?? this.provider,
   retries: retries ?? this.retries,
   timeout: timeout ?? this.timeout,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteRequestElementsModelProperties &&
           model == other.model &&
           provider == other.provider &&
           retries == other.retries &&
-          timeout == other.timeout; } 
-@override int get hashCode { return Object.hash(model, provider, retries, timeout); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteRequestElementsModelProperties(model: $model, provider: $provider, retries: $retries, timeout: $timeout)'; } 
- }
+          timeout == other.timeout;}
+@override int get hashCode {return Object.hash(model, provider, retries, timeout);}
+@override String toString() {return 'AigConfigPostGatewayDynamicRouteRequestElementsModelProperties(model: $model, provider: $provider, retries: $retries, timeout: $timeout)';}
+}

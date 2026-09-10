@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_active_recording_response.dart';import '../models/get_all_recordings_response.dart';import '../models/get_all_recordings_sort_by.dart';import '../models/get_all_recordings_sort_order.dart';import '../models/get_all_recordings_status.dart';import '../models/get_one_recording_response.dart';import '../models/pause_resume_stop_recording_request.dart';import '../models/pause_resume_stop_recording_response.dart';import '../models/realtimekit_account_identifier.dart';import '../models/realtimekit_app_id.dart';import '../models/realtimekit_generic_error_response.dart';import '../models/start_recording_request.dart';import '../models/start_recording_response.dart';import '../models/start_track_recording_for_a_meeting_request.dart';/// RecordingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_active_recording_response.dart';import '../models/get_all_recordings_sort_by.dart';import '../models/get_all_recordings_sort_order.dart';import '../models/get_all_recordings_status.dart';import '../models/get_all_recordings_success.dart';import '../models/get_one_recording_response.dart';import '../models/pause_resume_stop_recording_request.dart';import '../models/pause_resume_stop_recording_response.dart';import '../models/realtimekit_account_identifier.dart';import '../models/realtimekit_app_id.dart';import '../models/realtimekit_generic_error_response.dart';import '../models/start_recording_request.dart';import '../models/start_recording_response.dart';import '../models/start_track_recording_for_a_meeting_request.dart';/// RecordingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RecordingsApi with ApiExecutor {const RecordingsApi(this.apiConfig);
 /// Returns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<GetAllRecordingsResponse?, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAllRecordingsSuccess, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (meetingId != null) {
   queryParameters['meeting_id'] = meetingId;
@@ -57,29 +57,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 200:
-final json = jsonDecode(response.body);
-return GetAllRecordingsResponse.fromJson(json as Map<String, dynamic>);
-case 201:
-return null;
-default:
-final json = jsonDecode(response.body);
-return GetAllRecordingsResponse.fromJson(json as Map<String, dynamic>);
-}
 
-  },
-);
- } 
+return   await execute(request, onSuccess: GetAllRecordingsSuccess.parse, );}
 /// Start recording a meeting
 ///
 /// Starts recording a meeting. The meeting can be started by an App admin directly, or a participant with permissions to start a recording, based on the type of authorization used.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<StartRecordingResponse, Never>> startRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartRecordingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StartRecordingResponse, Never>> startRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartRecordingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,20 +75,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return StartRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  StartRecordingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch details of a recording
 ///
 /// Returns details of a recording for the given recording ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}`
-Future<ApiResult<GetOneRecordingResponse, Never>> getOneRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String recordingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetOneRecordingResponse, Never>> getOneRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String recordingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -112,20 +92,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetOneRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetOneRecordingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Pause/Resume/Stop recording
 ///
 /// Pause/Resume/Stop a given recording ID.
 ///
 /// `PUT /accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}`
-Future<ApiResult<PauseResumeStopRecordingResponse, Never>> pauseResumeStopRecording({required RealtimekitAccountIdentifier accountId, required String appId, required String recordingId, required PauseResumeStopRecordingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PauseResumeStopRecordingResponse, Never>> pauseResumeStopRecording({required RealtimekitAccountIdentifier accountId, required String appId, required String recordingId, required PauseResumeStopRecordingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,20 +111,15 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PauseResumeStopRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
- } 
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PauseResumeStopRecordingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch active recording
 ///
 /// Returns the active recording details for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings/active-recording/{meeting_id}`
-Future<ApiResult<GetActiveRecordingResponse, RealtimekitGenericErrorResponse>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetActiveRecordingResponse, RealtimekitGenericErrorResponse>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -158,30 +128,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetActiveRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetActiveRecordingResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
- } 
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Start recording audio and video tracks
 ///
 /// Starts a track recording in a meeting. Track recordings consist of "layers". Layers are used to map audio/video tracks in a meeting to output destinations. More information about track recordings is available in the [Track Recordings Guide Page](https://docs.realtime.cloudflare.com/guides/capabilities/recording/recording-overview).
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/recordings/track`
-Future<ApiResult<void, Never>> startTrackRecordingForAMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartTrackRecordingForAMeetingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> startTrackRecordingForAMeeting({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required StartTrackRecordingForAMeetingRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -192,9 +151,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
- } 
- }
+
+return   await execute(request, onSuccess: (_) {}, );}
+}

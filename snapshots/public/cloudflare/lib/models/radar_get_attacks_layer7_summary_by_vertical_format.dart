@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat._(this.value);
 
-factory RadarGetAttacksLayer7SummaryByVerticalFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7SummaryByVerticalFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer7SummaryByVerticalFormat._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7SummaryByVerticalFormat $json = RadarGetAttacksLayer7SummaryByVerticalFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAttacksLayer7SummaryByVerticalFormat> values = [$json,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByVerticalFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer7SummaryByVerticalFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryByVerticalFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer7SummaryByVerticalFormat($value)';}
+}

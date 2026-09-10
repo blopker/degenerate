@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class CheckoutSamsungPayPaymentMethodOptionsCaptureMethod {const CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._(this.value);
 
-factory CheckoutSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
+factory CheckoutSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(String json) {return switch (json) {
   'manual' => manual,
   _ => CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._(json),
-}; }
+};}
 
 static const CheckoutSamsungPayPaymentMethodOptionsCaptureMethod manual = CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._('manual');
 
@@ -14,34 +14,34 @@ static const List<CheckoutSamsungPayPaymentMethodOptionsCaptureMethod> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSamsungPayPaymentMethodOptionsCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSamsungPayPaymentMethodOptionsCaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CheckoutSamsungPayPaymentMethodOptionsCaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CheckoutSamsungPayPaymentMethodOptionsCaptureMethod($value)';}
+}
 /// 
 @immutable final class CheckoutSamsungPayPaymentMethodOptions {const CheckoutSamsungPayPaymentMethodOptions({this.captureMethod});
 
-factory CheckoutSamsungPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutSamsungPayPaymentMethodOptions(
+factory CheckoutSamsungPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutSamsungPayPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutSamsungPayPaymentMethodOptionsCaptureMethod? captureMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-CheckoutSamsungPayPaymentMethodOptions copyWith({CheckoutSamsungPayPaymentMethodOptionsCaptureMethod? Function()? captureMethod}) { return CheckoutSamsungPayPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method'}.contains(key));}
+CheckoutSamsungPayPaymentMethodOptions copyWith({CheckoutSamsungPayPaymentMethodOptionsCaptureMethod? Function()? captureMethod}) {return CheckoutSamsungPayPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CheckoutSamsungPayPaymentMethodOptions &&
-          captureMethod == other.captureMethod; } 
-@override int get hashCode { return captureMethod.hashCode; } 
-@override String toString() { return 'CheckoutSamsungPayPaymentMethodOptions(captureMethod: $captureMethod)'; } 
- }
+          captureMethod == other.captureMethod;}
+@override int get hashCode {return captureMethod.hashCode;}
+@override String toString() {return 'CheckoutSamsungPayPaymentMethodOptions(captureMethod: $captureMethod)';}
+}

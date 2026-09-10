@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_release_prereleased_release_assets_uploader.dart';/// State of the release asset.
 @immutable final class WebhookReleasePrereleasedReleaseAssetsState {const WebhookReleasePrereleasedReleaseAssetsState._(this.value);
 
-factory WebhookReleasePrereleasedReleaseAssetsState.fromJson(String json) { return switch (json) {
+factory WebhookReleasePrereleasedReleaseAssetsState.fromJson(String json) {return switch (json) {
   'uploaded' => uploaded,
   _ => WebhookReleasePrereleasedReleaseAssetsState._(json),
-}; }
+};}
 
 static const WebhookReleasePrereleasedReleaseAssetsState uploaded = WebhookReleasePrereleasedReleaseAssetsState._('uploaded');
 
@@ -14,18 +14,18 @@ static const List<WebhookReleasePrereleasedReleaseAssetsState> values = [uploade
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookReleasePrereleasedReleaseAssetsState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookReleasePrereleasedReleaseAssetsState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookReleasePrereleasedReleaseAssetsState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookReleasePrereleasedReleaseAssetsState($value)';}
+}
 /// Data related to a release.
 @immutable final class WebhookReleasePrereleasedReleaseAssets {const WebhookReleasePrereleasedReleaseAssets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, required this.url, this.uploader = const Omittable.absent(), });
 
-factory WebhookReleasePrereleasedReleaseAssets.fromJson(Map<String, dynamic> json) { return WebhookReleasePrereleasedReleaseAssets(
+factory WebhookReleasePrereleasedReleaseAssets.fromJson(Map<String, dynamic> json) {return WebhookReleasePrereleasedReleaseAssets(
   browserDownloadUrl: Uri.parse(json['browser_download_url'] as String),
   contentType: json['content_type'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -40,7 +40,7 @@ factory WebhookReleasePrereleasedReleaseAssets.fromJson(Map<String, dynamic> jso
   updatedAt: DateTime.parse(json['updated_at'] as String),
   uploader: json.containsKey('uploader') ? Omittable(json['uploader'] != null ? WebhookReleasePrereleasedReleaseAssetsUploader.fromJson(json['uploader'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri browserDownloadUrl;
 
@@ -72,7 +72,7 @@ final Omittable<WebhookReleasePrereleasedReleaseAssetsUploader?> uploader;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'browser_download_url': browserDownloadUrl.toString(),
   'content_type': contentType,
   'created_at': createdAt.toIso8601String(),
@@ -87,8 +87,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   if (uploader.isPresent) 'uploader': uploader.value?.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('browser_download_url') && json['browser_download_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('browser_download_url') && json['browser_download_url'] is String &&
       json.containsKey('content_type') && json['content_type'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('download_count') && json['download_count'] is num &&
@@ -100,8 +100,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brows
       json.containsKey('digest') && (json['digest'] == null || json['digest'] is String) &&
       json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookReleasePrereleasedReleaseAssets copyWith({Uri? browserDownloadUrl, String? contentType, DateTime? createdAt, int? downloadCount, int? id, String? Function()? label, String? name, String? nodeId, int? size, String? Function()? digest, WebhookReleasePrereleasedReleaseAssetsState? state, DateTime? updatedAt, Omittable<WebhookReleasePrereleasedReleaseAssetsUploader?>? uploader, Uri? url, }) { return WebhookReleasePrereleasedReleaseAssets(
+      json.containsKey('url') && json['url'] is String;}
+WebhookReleasePrereleasedReleaseAssets copyWith({Uri? browserDownloadUrl, String? contentType, DateTime? createdAt, int? downloadCount, int? id, String? Function()? label, String? name, String? nodeId, int? size, String? Function()? digest, WebhookReleasePrereleasedReleaseAssetsState? state, DateTime? updatedAt, Omittable<WebhookReleasePrereleasedReleaseAssetsUploader?>? uploader, Uri? url, }) {return WebhookReleasePrereleasedReleaseAssets(
   browserDownloadUrl: browserDownloadUrl ?? this.browserDownloadUrl,
   contentType: contentType ?? this.contentType,
   createdAt: createdAt ?? this.createdAt,
@@ -116,8 +116,8 @@ WebhookReleasePrereleasedReleaseAssets copyWith({Uri? browserDownloadUrl, String
   updatedAt: updatedAt ?? this.updatedAt,
   uploader: uploader ?? this.uploader,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookReleasePrereleasedReleaseAssets &&
           browserDownloadUrl == other.browserDownloadUrl &&
           contentType == other.contentType &&
@@ -132,7 +132,7 @@ WebhookReleasePrereleasedReleaseAssets copyWith({Uri? browserDownloadUrl, String
           state == other.state &&
           updatedAt == other.updatedAt &&
           uploader == other.uploader &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(browserDownloadUrl, contentType, createdAt, downloadCount, id, label, name, nodeId, size, digest, state, updatedAt, uploader, url); } 
-@override String toString() { return 'WebhookReleasePrereleasedReleaseAssets(browserDownloadUrl: $browserDownloadUrl, contentType: $contentType, createdAt: $createdAt, downloadCount: $downloadCount, id: $id, label: $label, name: $name, nodeId: $nodeId, size: $size, digest: $digest, state: $state, updatedAt: $updatedAt, uploader: $uploader, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(browserDownloadUrl, contentType, createdAt, downloadCount, id, label, name, nodeId, size, digest, state, updatedAt, uploader, url);}
+@override String toString() {return 'WebhookReleasePrereleasedReleaseAssets(browserDownloadUrl: $browserDownloadUrl, contentType: $contentType, createdAt: $createdAt, downloadCount: $downloadCount, id: $id, label: $label, name: $name, nodeId: $nodeId, size: $size, digest: $digest, state: $state, updatedAt: $updatedAt, uploader: $uploader, url: $url)';}
+}

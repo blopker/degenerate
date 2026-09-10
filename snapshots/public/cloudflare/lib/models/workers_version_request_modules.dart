@@ -2,11 +2,11 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersVersionRequestModules {const WorkersVersionRequestModules({required this.contentBase64, required this.contentType, required this.name, });
 
-factory WorkersVersionRequestModules.fromJson(Map<String, dynamic> json) { return WorkersVersionRequestModules(
+factory WorkersVersionRequestModules.fromJson(Map<String, dynamic> json) {return WorkersVersionRequestModules(
   contentBase64: base64Decode(json['content_base64'] as String),
   contentType: json['content_type'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// The base64-encoded module content.
 final Uint8List contentBase64;
@@ -17,24 +17,24 @@ final String contentType;
 /// The name of the module.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content_base64': base64Encode(contentBase64),
   'content_type': contentType,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content_base64') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content_base64') &&
       json.containsKey('content_type') && json['content_type'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-WorkersVersionRequestModules copyWith({Uint8List? contentBase64, String? contentType, String? name, }) { return WorkersVersionRequestModules(
+      json.containsKey('name') && json['name'] is String;}
+WorkersVersionRequestModules copyWith({Uint8List? contentBase64, String? contentType, String? name, }) {return WorkersVersionRequestModules(
   contentBase64: contentBase64 ?? this.contentBase64,
   contentType: contentType ?? this.contentType,
   name: name ?? this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersVersionRequestModules &&
           listEquals(contentBase64, other.contentBase64) &&
           contentType == other.contentType &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(contentBase64), contentType, name); } 
-@override String toString() { return 'WorkersVersionRequestModules(contentBase64: $contentBase64, contentType: $contentType, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(Object.hashAll(contentBase64), contentType, name);}
+@override String toString() {return 'WorkersVersionRequestModules(contentBase64: $contentBase64, contentType: $contentType, name: $name)';}
+}

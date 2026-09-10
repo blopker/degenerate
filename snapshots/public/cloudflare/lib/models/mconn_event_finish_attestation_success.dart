@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished attestation
 @immutable final class MconnEventFinishAttestationSuccessK {const MconnEventFinishAttestationSuccessK._(this.value);
 
-factory MconnEventFinishAttestationSuccessK.fromJson(String json) { return switch (json) {
+factory MconnEventFinishAttestationSuccessK.fromJson(String json) {return switch (json) {
   'FinishAttestationSuccess' => finishAttestationSuccess,
   _ => MconnEventFinishAttestationSuccessK._(json),
-}; }
+};}
 
 static const MconnEventFinishAttestationSuccessK finishAttestationSuccess = MconnEventFinishAttestationSuccessK._('FinishAttestationSuccess');
 
@@ -14,33 +14,33 @@ static const List<MconnEventFinishAttestationSuccessK> values = [finishAttestati
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventFinishAttestationSuccessK && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MconnEventFinishAttestationSuccessK($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MconnEventFinishAttestationSuccessK && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MconnEventFinishAttestationSuccessK($value)';}
+}
 @immutable final class MconnEventFinishAttestationSuccess {const MconnEventFinishAttestationSuccess({required this.k});
 
-factory MconnEventFinishAttestationSuccess.fromJson(Map<String, dynamic> json) { return MconnEventFinishAttestationSuccess(
+factory MconnEventFinishAttestationSuccess.fromJson(Map<String, dynamic> json) {return MconnEventFinishAttestationSuccess(
   k: MconnEventFinishAttestationSuccessK.fromJson(json['k'] as String),
-); }
+);}
 
 /// Finished attestation
 final MconnEventFinishAttestationSuccessK k;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'k': k.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
-MconnEventFinishAttestationSuccess copyWith({MconnEventFinishAttestationSuccessK? k}) { return MconnEventFinishAttestationSuccess(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('k');}
+MconnEventFinishAttestationSuccess copyWith({MconnEventFinishAttestationSuccessK? k}) {return MconnEventFinishAttestationSuccess(
   k: k ?? this.k,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MconnEventFinishAttestationSuccess &&
-          k == other.k; } 
-@override int get hashCode { return k.hashCode; } 
-@override String toString() { return 'MconnEventFinishAttestationSuccess(k: $k)'; } 
- }
+          k == other.k;}
+@override int get hashCode {return k.hashCode;}
+@override String toString() {return 'MconnEventFinishAttestationSuccess(k: $k)';}
+}

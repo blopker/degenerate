@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_links.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_reactions.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_user.dart';/// How the author is associated with the repository.
 @immutable final class WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation {const WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation._(this.value);
 
-factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation.fromJson(String json) {return switch (json) {
   'COLLABORATOR' => collaborator,
   'CONTRIBUTOR' => contributor,
   'FIRST_TIMER' => firstTimer,
@@ -13,7 +13,7 @@ factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation.
   'NONE' => none,
   'OWNER' => owner,
   _ => WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation collaborator = WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation._('COLLABORATOR');
 
@@ -35,22 +35,22 @@ static const List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAs
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation($value)';}
+}
 /// The side of the first line of the range for a multi-line comment.
 @immutable final class WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide {const WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide._(this.value);
 
-factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   _ => WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide left = WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide._('LEFT');
 
@@ -60,23 +60,23 @@ static const List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide> va
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide($value)';}
+}
 /// The side of the first line of the range for a multi-line comment.
 @immutable final class WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide {const WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide._(this.value);
 
-factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide.fromJson(String json) {return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   'null' => $null,
   _ => WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide left = WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide._('LEFT');
 
@@ -88,22 +88,22 @@ static const List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSid
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide($value)';}
+}
 /// The level at which the comment is targeted, can be a diff line or a file.
 @immutable final class WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType {const WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType._(this.value);
 
-factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType.fromJson(String json) {return switch (json) {
   'line' => line,
   'file' => file,
   _ => WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType._(json),
-}; }
+};}
 
 static const WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType line = WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType._('line');
 
@@ -113,18 +113,18 @@ static const List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectT
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType($value)';}
+}
 /// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
 @immutable final class WebhookPullRequestReviewThreadUnresolvedThreadComments {const WebhookPullRequestReviewThreadUnresolvedThreadComments({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, required this.startSide, required this.updatedAt, required this.url, required this.user, this.inReplyToId, this.subjectType, });
 
-factory WebhookPullRequestReviewThreadUnresolvedThreadComments.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolvedThreadComments(
+factory WebhookPullRequestReviewThreadUnresolvedThreadComments.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadUnresolvedThreadComments(
   links: WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
@@ -152,7 +152,7 @@ factory WebhookPullRequestReviewThreadUnresolvedThreadComments.fromJson(Map<Stri
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks links;
 
@@ -230,7 +230,7 @@ final Uri url;
 
 final WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
   'body': body,
@@ -258,8 +258,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
@@ -283,8 +283,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('start_side') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestReviewThreadUnresolvedThreadComments copyWith({WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks? links, WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, WebhookPullRequestReviewThreadUnresolvedThreadCommentsReactions? reactions, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide? side, int? Function()? startLine, WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide? Function()? startSide, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser? Function()? user, }) { return WebhookPullRequestReviewThreadUnresolvedThreadComments(
+      json.containsKey('user');}
+WebhookPullRequestReviewThreadUnresolvedThreadComments copyWith({WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks? links, WebhookPullRequestReviewThreadUnresolvedThreadCommentsAuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, WebhookPullRequestReviewThreadUnresolvedThreadCommentsReactions? reactions, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSide? side, int? Function()? startLine, WebhookPullRequestReviewThreadUnresolvedThreadCommentsStartSide? Function()? startSide, WebhookPullRequestReviewThreadUnresolvedThreadCommentsSubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewThreadUnresolvedThreadCommentsUser? Function()? user, }) {return WebhookPullRequestReviewThreadUnresolvedThreadComments(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
@@ -312,8 +312,8 @@ WebhookPullRequestReviewThreadUnresolvedThreadComments copyWith({WebhookPullRequ
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookPullRequestReviewThreadUnresolvedThreadComments &&
           links == other.links &&
           authorAssociation == other.authorAssociation &&
@@ -341,7 +341,7 @@ WebhookPullRequestReviewThreadUnresolvedThreadComments copyWith({WebhookPullRequ
           subjectType == other.subjectType &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([links, authorAssociation, body, commitId, createdAt, diffHunk, htmlUrl, id, inReplyToId, line, nodeId, originalCommitId, originalLine, originalPosition, originalStartLine, path, position, pullRequestReviewId, pullRequestUrl, reactions, side, startLine, startSide, subjectType, updatedAt, url, user]); } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedThreadComments(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, diffHunk: $diffHunk, htmlUrl: $htmlUrl, id: $id, inReplyToId: $inReplyToId, line: $line, nodeId: $nodeId, originalCommitId: $originalCommitId, originalLine: $originalLine, originalPosition: $originalPosition, originalStartLine: $originalStartLine, path: $path, position: $position, pullRequestReviewId: $pullRequestReviewId, pullRequestUrl: $pullRequestUrl, reactions: $reactions, side: $side, startLine: $startLine, startSide: $startSide, subjectType: $subjectType, updatedAt: $updatedAt, url: $url, user: $user)'; } 
- }
+          user == other.user;}
+@override int get hashCode {return Object.hashAll([links, authorAssociation, body, commitId, createdAt, diffHunk, htmlUrl, id, inReplyToId, line, nodeId, originalCommitId, originalLine, originalPosition, originalStartLine, path, position, pullRequestReviewId, pullRequestUrl, reactions, side, startLine, startSide, subjectType, updatedAt, url, user]);}
+@override String toString() {return 'WebhookPullRequestReviewThreadUnresolvedThreadComments(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, diffHunk: $diffHunk, htmlUrl: $htmlUrl, id: $id, inReplyToId: $inReplyToId, line: $line, nodeId: $nodeId, originalCommitId: $originalCommitId, originalLine: $originalLine, originalPosition: $originalPosition, originalStartLine: $originalStartLine, path: $path, position: $position, pullRequestReviewId: $pullRequestReviewId, pullRequestUrl: $pullRequestUrl, reactions: $reactions, side: $side, startLine: $startLine, startSide: $startSide, subjectType: $subjectType, updatedAt: $updatedAt, url: $url, user: $user)';}
+}

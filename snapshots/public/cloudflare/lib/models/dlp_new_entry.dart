@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpNewEntry {const DlpNewEntry({required this.enabled, required this.name, required this.pattern, this.description = const Omittable.absent(), this.profileId, });
 
-factory DlpNewEntry.fromJson(Map<String, dynamic> json) { return DlpNewEntry(
+factory DlpNewEntry.fromJson(Map<String, dynamic> json) {return DlpNewEntry(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   pattern: DlpPattern.fromJson(json['pattern'] as Map<String, dynamic>),
   profileId: json['profile_id'] as String?,
-); }
+);}
 
 final Omittable<String?> description;
 
@@ -20,30 +20,30 @@ final DlpPattern pattern;
 
 final String? profileId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value,
   'enabled': enabled,
   'name': name,
   'pattern': pattern.toJson(),
   'profile_id': ?profileId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('pattern'); } 
-DlpNewEntry copyWith({Omittable<String?>? description, bool? enabled, String? name, DlpPattern? pattern, String? Function()? profileId, }) { return DlpNewEntry(
+      json.containsKey('pattern');}
+DlpNewEntry copyWith({Omittable<String?>? description, bool? enabled, String? name, DlpPattern? pattern, String? Function()? profileId, }) {return DlpNewEntry(
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   pattern: pattern ?? this.pattern,
   profileId: profileId != null ? profileId() : this.profileId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpNewEntry &&
           description == other.description &&
           enabled == other.enabled &&
           name == other.name &&
           pattern == other.pattern &&
-          profileId == other.profileId; } 
-@override int get hashCode { return Object.hash(description, enabled, name, pattern, profileId); } 
-@override String toString() { return 'DlpNewEntry(description: $description, enabled: $enabled, name: $name, pattern: $pattern, profileId: $profileId)'; } 
- }
+          profileId == other.profileId;}
+@override int get hashCode {return Object.hash(description, enabled, name, pattern, profileId);}
+@override String toString() {return 'DlpNewEntry(description: $description, enabled: $enabled, name: $name, pattern: $pattern, profileId: $profileId)';}
+}

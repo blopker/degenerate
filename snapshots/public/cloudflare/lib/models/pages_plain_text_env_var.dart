@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesPlainTextEnvVarType {const PagesPlainTextEnvVarType._(this.value);
 
-factory PagesPlainTextEnvVarType.fromJson(String json) { return switch (json) {
+factory PagesPlainTextEnvVarType.fromJson(String json) {return switch (json) {
   'plain_text' => plainText,
   _ => PagesPlainTextEnvVarType._(json),
-}; }
+};}
 
 static const PagesPlainTextEnvVarType plainText = PagesPlainTextEnvVarType._('plain_text');
 
@@ -13,41 +13,41 @@ static const List<PagesPlainTextEnvVarType> values = [plainText];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesPlainTextEnvVarType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesPlainTextEnvVarType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PagesPlainTextEnvVarType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PagesPlainTextEnvVarType($value)';}
+}
 /// A plaintext environment variable.
 @immutable final class PagesPlainTextEnvVar {const PagesPlainTextEnvVar({required this.type, required this.value, });
 
-factory PagesPlainTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesPlainTextEnvVar(
+factory PagesPlainTextEnvVar.fromJson(Map<String, dynamic> json) {return PagesPlainTextEnvVar(
   type: PagesPlainTextEnvVarType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 final PagesPlainTextEnvVarType type;
 
 /// Environment variable value.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PagesPlainTextEnvVar copyWith({PagesPlainTextEnvVarType? type, String? value, }) { return PagesPlainTextEnvVar(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PagesPlainTextEnvVar copyWith({PagesPlainTextEnvVarType? type, String? value, }) {return PagesPlainTextEnvVar(
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PagesPlainTextEnvVar &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'PagesPlainTextEnvVar(type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(type, value);}
+@override String toString() {return 'PagesPlainTextEnvVar(type: $type, value: $value)';}
+}

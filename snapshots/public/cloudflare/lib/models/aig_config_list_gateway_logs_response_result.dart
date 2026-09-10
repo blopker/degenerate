@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsResponseResult {const AigConfigListGatewayLogsResponseResult({required this.cached, required this.createdAt, required this.duration, required this.id, required this.model, required this.path, required this.provider, required this.success, required this.tokensIn, required this.tokensOut, this.cost, this.customCost, this.metadata, this.modelType, this.requestContentType, this.requestType, this.responseContentType, this.statusCode, this.step, });
 
-factory AigConfigListGatewayLogsResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayLogsResponseResult(
+factory AigConfigListGatewayLogsResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigListGatewayLogsResponseResult(
   cached: json['cached'] as bool,
   cost: json['cost'] != null ? (json['cost'] as num).toDouble() : null,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -22,7 +22,7 @@ factory AigConfigListGatewayLogsResponseResult.fromJson(Map<String, dynamic> jso
   success: json['success'] as bool,
   tokensIn: json['tokens_in'] != null ? (json['tokens_in'] as num).toInt() : null,
   tokensOut: json['tokens_out'] != null ? (json['tokens_out'] as num).toInt() : null,
-); }
+);}
 
 final bool cached;
 
@@ -62,7 +62,7 @@ final int? tokensIn;
 
 final int? tokensOut;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cached': cached,
   'cost': ?cost,
   'created_at': createdAt.toIso8601String(),
@@ -82,8 +82,8 @@ Map<String, dynamic> toJson() { return {
   'success': success,
   'tokens_in': tokensIn,
   'tokens_out': tokensOut,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cached') && json['cached'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cached') && json['cached'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -92,8 +92,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
       json.containsKey('provider') && json['provider'] is String &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('tokens_in') && (json['tokens_in'] == null || json['tokens_in'] is num) &&
-      json.containsKey('tokens_out') && (json['tokens_out'] == null || json['tokens_out'] is num); } 
-AigConfigListGatewayLogsResponseResult copyWith({bool? cached, double? Function()? cost, DateTime? createdAt, bool? Function()? customCost, int? duration, String? id, String? Function()? metadata, String? model, String? Function()? modelType, String? path, String? provider, String? Function()? requestContentType, String? Function()? requestType, String? Function()? responseContentType, int? Function()? statusCode, int? Function()? step, bool? success, int? Function()? tokensIn, int? Function()? tokensOut, }) { return AigConfigListGatewayLogsResponseResult(
+      json.containsKey('tokens_out') && (json['tokens_out'] == null || json['tokens_out'] is num);}
+AigConfigListGatewayLogsResponseResult copyWith({bool? cached, double? Function()? cost, DateTime? createdAt, bool? Function()? customCost, int? duration, String? id, String? Function()? metadata, String? model, String? Function()? modelType, String? path, String? provider, String? Function()? requestContentType, String? Function()? requestType, String? Function()? responseContentType, int? Function()? statusCode, int? Function()? step, bool? success, int? Function()? tokensIn, int? Function()? tokensOut, }) {return AigConfigListGatewayLogsResponseResult(
   cached: cached ?? this.cached,
   cost: cost != null ? cost() : this.cost,
   createdAt: createdAt ?? this.createdAt,
@@ -113,8 +113,8 @@ AigConfigListGatewayLogsResponseResult copyWith({bool? cached, double? Function(
   success: success ?? this.success,
   tokensIn: tokensIn != null ? tokensIn() : this.tokensIn,
   tokensOut: tokensOut != null ? tokensOut() : this.tokensOut,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigListGatewayLogsResponseResult &&
           cached == other.cached &&
           cost == other.cost &&
@@ -134,7 +134,7 @@ AigConfigListGatewayLogsResponseResult copyWith({bool? cached, double? Function(
           step == other.step &&
           success == other.success &&
           tokensIn == other.tokensIn &&
-          tokensOut == other.tokensOut; } 
-@override int get hashCode { return Object.hash(cached, cost, createdAt, customCost, duration, id, metadata, model, modelType, path, provider, requestContentType, requestType, responseContentType, statusCode, step, success, tokensIn, tokensOut); } 
-@override String toString() { return 'AigConfigListGatewayLogsResponseResult(cached: $cached, cost: $cost, createdAt: $createdAt, customCost: $customCost, duration: $duration, id: $id, metadata: $metadata, model: $model, modelType: $modelType, path: $path, provider: $provider, requestContentType: $requestContentType, requestType: $requestType, responseContentType: $responseContentType, statusCode: $statusCode, step: $step, success: $success, tokensIn: $tokensIn, tokensOut: $tokensOut)'; } 
- }
+          tokensOut == other.tokensOut;}
+@override int get hashCode {return Object.hash(cached, cost, createdAt, customCost, duration, id, metadata, model, modelType, path, provider, requestContentType, requestType, responseContentType, statusCode, step, success, tokensIn, tokensOut);}
+@override String toString() {return 'AigConfigListGatewayLogsResponseResult(cached: $cached, cost: $cost, createdAt: $createdAt, customCost: $customCost, duration: $duration, id: $id, metadata: $metadata, model: $model, modelType: $modelType, path: $path, provider: $provider, requestContentType: $requestContentType, requestType: $requestType, responseContentType: $responseContentType, statusCode: $statusCode, step: $step, success: $success, tokensIn: $tokensIn, tokensOut: $tokensOut)';}
+}

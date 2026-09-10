@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess({required this.elementId});
 
-factory AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess(
+factory AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess copyWith({String? elementId}) { return AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess copyWith({String? elementId}) {return AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess(
   elementId: elementId ?? this.elementId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess &&
-          elementId == other.elementId; } 
-@override int get hashCode { return elementId.hashCode; } 
-@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess(elementId: $elementId)'; } 
- }
+          elementId == other.elementId;}
+@override int get hashCode {return elementId.hashCode;}
+@override String toString() {return 'AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelOutputsSuccess(elementId: $elementId)';}
+}

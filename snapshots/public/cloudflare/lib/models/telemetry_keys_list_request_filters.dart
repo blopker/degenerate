@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryKeysListRequestFiltersOperation {const TelemetryKeysListRequestFiltersOperation._(this.value);
 
-factory TelemetryKeysListRequestFiltersOperation.fromJson(String json) { return switch (json) {
+factory TelemetryKeysListRequestFiltersOperation.fromJson(String json) {return switch (json) {
   'includes' => includes,
   'not_includes' => notIncludes,
   'starts_with' => startsWith,
@@ -32,7 +32,7 @@ factory TelemetryKeysListRequestFiltersOperation.fromJson(String json) { return 
   'NOT_IN' => notIn2,
   'STARTS_WITH' => startsWith2,
   _ => TelemetryKeysListRequestFiltersOperation._(json),
-}; }
+};}
 
 static const TelemetryKeysListRequestFiltersOperation includes = TelemetryKeysListRequestFiltersOperation._('includes');
 
@@ -94,22 +94,22 @@ static const List<TelemetryKeysListRequestFiltersOperation> values = [includes, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryKeysListRequestFiltersOperation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryKeysListRequestFiltersOperation($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TelemetryKeysListRequestFiltersOperation && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TelemetryKeysListRequestFiltersOperation($value)';}
+}
 @immutable final class TelemetryKeysListRequestFiltersType {const TelemetryKeysListRequestFiltersType._(this.value);
 
-factory TelemetryKeysListRequestFiltersType.fromJson(String json) { return switch (json) {
+factory TelemetryKeysListRequestFiltersType.fromJson(String json) {return switch (json) {
   'string' => string,
   'number' => number,
   'boolean' => boolean,
   _ => TelemetryKeysListRequestFiltersType._(json),
-}; }
+};}
 
 static const TelemetryKeysListRequestFiltersType string = TelemetryKeysListRequestFiltersType._('string');
 
@@ -121,22 +121,22 @@ static const List<TelemetryKeysListRequestFiltersType> values = [string, number,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryKeysListRequestFiltersType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryKeysListRequestFiltersType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TelemetryKeysListRequestFiltersType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TelemetryKeysListRequestFiltersType($value)';}
+}
 @immutable final class TelemetryKeysListRequestFilters {const TelemetryKeysListRequestFilters({required this.key, required this.operation, required this.type, this.value, });
 
-factory TelemetryKeysListRequestFilters.fromJson(Map<String, dynamic> json) { return TelemetryKeysListRequestFilters(
+factory TelemetryKeysListRequestFilters.fromJson(Map<String, dynamic> json) {return TelemetryKeysListRequestFilters(
   key: json['key'] as String,
   operation: TelemetryKeysListRequestFiltersOperation.fromJson(json['operation'] as String),
   type: TelemetryKeysListRequestFiltersType.fromJson(json['type'] as String),
   value: json['value'],
-); }
+);}
 
 final String key;
 
@@ -147,27 +147,27 @@ final TelemetryKeysListRequestFiltersType type;
 /// One of: String, double, bool
 final dynamic value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'operation': operation.toJson(),
   'type': type.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('operation') &&
-      json.containsKey('type'); } 
-TelemetryKeysListRequestFilters copyWith({String? key, TelemetryKeysListRequestFiltersOperation? operation, TelemetryKeysListRequestFiltersType? type, dynamic Function()? value, }) { return TelemetryKeysListRequestFilters(
+      json.containsKey('type');}
+TelemetryKeysListRequestFilters copyWith({String? key, TelemetryKeysListRequestFiltersOperation? operation, TelemetryKeysListRequestFiltersType? type, dynamic Function()? value, }) {return TelemetryKeysListRequestFilters(
   key: key ?? this.key,
   operation: operation ?? this.operation,
   type: type ?? this.type,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TelemetryKeysListRequestFilters &&
           key == other.key &&
           operation == other.operation &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, operation, type, value); } 
-@override String toString() { return 'TelemetryKeysListRequestFilters(key: $key, operation: $operation, type: $type, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(key, operation, type, value);}
+@override String toString() {return 'TelemetryKeysListRequestFilters(key: $key, operation: $operation, type: $type, value: $value)';}
+}

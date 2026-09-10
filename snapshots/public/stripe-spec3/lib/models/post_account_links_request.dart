@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_links_request_collection_options.dart';/// The collect parameter is deprecated. Use `collection_options` instead.
 @immutable final class PostAccountLinksRequestCollect {const PostAccountLinksRequestCollect._(this.value);
 
-factory PostAccountLinksRequestCollect.fromJson(String json) { return switch (json) {
+factory PostAccountLinksRequestCollect.fromJson(String json) {return switch (json) {
   'currently_due' => currentlyDue,
   'eventually_due' => eventuallyDue,
   _ => PostAccountLinksRequestCollect._(json),
-}; }
+};}
 
 static const PostAccountLinksRequestCollect currentlyDue = PostAccountLinksRequestCollect._('currently_due');
 
@@ -17,24 +17,24 @@ static const List<PostAccountLinksRequestCollect> values = [currentlyDue, eventu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountLinksRequestCollect && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountLinksRequestCollect($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountLinksRequestCollect && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountLinksRequestCollect($value)';}
+}
 /// The type of account link the user is requesting.
 /// 
 /// You can create Account Links of type `account_update` only for connected accounts where your platform is responsible for collecting requirements, including Custom accounts. You can't create them for accounts that have access to a Stripe-hosted Dashboard. If you use [Connect embedded components](/connect/get-started-connect-embedded-components), you can include components that allow your connected accounts to update their own information. For an account without Stripe-hosted Dashboard access where Stripe is liable for negative balances, you must use embedded components.
 @immutable final class PostAccountLinksRequestType {const PostAccountLinksRequestType._(this.value);
 
-factory PostAccountLinksRequestType.fromJson(String json) { return switch (json) {
+factory PostAccountLinksRequestType.fromJson(String json) {return switch (json) {
   'account_onboarding' => accountOnboarding,
   'account_update' => accountUpdate,
   _ => PostAccountLinksRequestType._(json),
-}; }
+};}
 
 static const PostAccountLinksRequestType accountOnboarding = PostAccountLinksRequestType._('account_onboarding');
 
@@ -44,17 +44,17 @@ static const List<PostAccountLinksRequestType> values = [accountOnboarding, acco
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountLinksRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountLinksRequestType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountLinksRequestType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountLinksRequestType($value)';}
+}
 @immutable final class PostAccountLinksRequest {const PostAccountLinksRequest({required this.account, required this.type, this.collect, this.collectionOptions, this.expand, this.refreshUrl, this.returnUrl, });
 
-factory PostAccountLinksRequest.fromJson(Map<String, dynamic> json) { return PostAccountLinksRequest(
+factory PostAccountLinksRequest.fromJson(Map<String, dynamic> json) {return PostAccountLinksRequest(
   account: json['account'] as String,
   collect: json['collect'] != null ? PostAccountLinksRequestCollect.fromJson(json['collect'] as String) : null,
   collectionOptions: json['collection_options'] != null ? PostAccountLinksRequestCollectionOptions.fromJson(json['collection_options'] as Map<String, dynamic>) : null,
@@ -62,7 +62,7 @@ factory PostAccountLinksRequest.fromJson(Map<String, dynamic> json) { return Pos
   refreshUrl: json['refresh_url'] as String?,
   returnUrl: json['return_url'] as String?,
   type: PostAccountLinksRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The identifier of the account to create an account link for.
 final String account;
@@ -87,7 +87,7 @@ final String? returnUrl;
 /// You can create Account Links of type `account_update` only for connected accounts where your platform is responsible for collecting requirements, including Custom accounts. You can't create them for accounts that have access to a Stripe-hosted Dashboard. If you use [Connect embedded components](/connect/get-started-connect-embedded-components), you can include components that allow your connected accounts to update their own information. For an account without Stripe-hosted Dashboard access where Stripe is liable for negative balances, you must use embedded components.
 final PostAccountLinksRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   if (collect != null) 'collect': collect?.toJson(),
   if (collectionOptions != null) 'collection_options': collectionOptions?.toJson(),
@@ -95,10 +95,10 @@ Map<String, dynamic> toJson() { return {
   'refresh_url': ?refreshUrl,
   'return_url': ?returnUrl,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
-      json.containsKey('type'); } 
-PostAccountLinksRequest copyWith({String? account, PostAccountLinksRequestCollect? Function()? collect, PostAccountLinksRequestCollectionOptions? Function()? collectionOptions, List<String>? Function()? expand, String? Function()? refreshUrl, String? Function()? returnUrl, PostAccountLinksRequestType? type, }) { return PostAccountLinksRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
+      json.containsKey('type');}
+PostAccountLinksRequest copyWith({String? account, PostAccountLinksRequestCollect? Function()? collect, PostAccountLinksRequestCollectionOptions? Function()? collectionOptions, List<String>? Function()? expand, String? Function()? refreshUrl, String? Function()? returnUrl, PostAccountLinksRequestType? type, }) {return PostAccountLinksRequest(
   account: account ?? this.account,
   collect: collect != null ? collect() : this.collect,
   collectionOptions: collectionOptions != null ? collectionOptions() : this.collectionOptions,
@@ -106,8 +106,8 @@ PostAccountLinksRequest copyWith({String? account, PostAccountLinksRequestCollec
   refreshUrl: refreshUrl != null ? refreshUrl() : this.refreshUrl,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountLinksRequest &&
           account == other.account &&
           collect == other.collect &&
@@ -115,7 +115,7 @@ PostAccountLinksRequest copyWith({String? account, PostAccountLinksRequestCollec
           listEquals(expand, other.expand) &&
           refreshUrl == other.refreshUrl &&
           returnUrl == other.returnUrl &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, collect, collectionOptions, Object.hashAll(expand ?? const []), refreshUrl, returnUrl, type); } 
-@override String toString() { return 'PostAccountLinksRequest(account: $account, collect: $collect, collectionOptions: $collectionOptions, expand: $expand, refreshUrl: $refreshUrl, returnUrl: $returnUrl, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(account, collect, collectionOptions, Object.hashAll(expand ?? const []), refreshUrl, returnUrl, type);}
+@override String toString() {return 'PostAccountLinksRequest(account: $account, collect: $collect, collectionOptions: $collectionOptions, expand: $expand, refreshUrl: $refreshUrl, returnUrl: $returnUrl, type: $type)';}
+}

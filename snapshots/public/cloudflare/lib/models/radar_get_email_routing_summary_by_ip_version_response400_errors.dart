@@ -2,22 +2,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByIpVersionResponse400Errors {const RadarGetEmailRoutingSummaryByIpVersionResponse400Errors({required this.message});
 
-factory RadarGetEmailRoutingSummaryByIpVersionResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByIpVersionResponse400Errors(
+factory RadarGetEmailRoutingSummaryByIpVersionResponse400Errors.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingSummaryByIpVersionResponse400Errors(
   message: json['message'] as String,
-); }
+);}
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-RadarGetEmailRoutingSummaryByIpVersionResponse400Errors copyWith({String? message}) { return RadarGetEmailRoutingSummaryByIpVersionResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
+RadarGetEmailRoutingSummaryByIpVersionResponse400Errors copyWith({String? message}) {return RadarGetEmailRoutingSummaryByIpVersionResponse400Errors(
   message: message ?? this.message,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetEmailRoutingSummaryByIpVersionResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryByIpVersionResponse400Errors(message: $message)'; } 
- }
+          message == other.message;}
+@override int get hashCode {return message.hashCode;}
+@override String toString() {return 'RadarGetEmailRoutingSummaryByIpVersionResponse400Errors(message: $message)';}
+}

@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ResponseFormatVariant1JsonObjectType {const Messages51ResponseFormatVariant1JsonObjectType._(this.value);
 
-factory Messages51ResponseFormatVariant1JsonObjectType.fromJson(String json) { return switch (json) {
+factory Messages51ResponseFormatVariant1JsonObjectType.fromJson(String json) {return switch (json) {
   'json_object' => jsonObject,
   _ => Messages51ResponseFormatVariant1JsonObjectType._(json),
-}; }
+};}
 
 static const Messages51ResponseFormatVariant1JsonObjectType jsonObject = Messages51ResponseFormatVariant1JsonObjectType._('json_object');
 
@@ -13,32 +13,32 @@ static const List<Messages51ResponseFormatVariant1JsonObjectType> values = [json
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Messages51ResponseFormatVariant1JsonObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Messages51ResponseFormatVariant1JsonObjectType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is Messages51ResponseFormatVariant1JsonObjectType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'Messages51ResponseFormatVariant1JsonObjectType($value)';}
+}
 @immutable final class Messages51ResponseFormatVariant1JsonObject {const Messages51ResponseFormatVariant1JsonObject({required this.type});
 
-factory Messages51ResponseFormatVariant1JsonObject.fromJson(Map<String, dynamic> json) { return Messages51ResponseFormatVariant1JsonObject(
+factory Messages51ResponseFormatVariant1JsonObject.fromJson(Map<String, dynamic> json) {return Messages51ResponseFormatVariant1JsonObject(
   type: Messages51ResponseFormatVariant1JsonObjectType.fromJson(json['type'] as String),
-); }
+);}
 
 final Messages51ResponseFormatVariant1JsonObjectType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Messages51ResponseFormatVariant1JsonObject copyWith({Messages51ResponseFormatVariant1JsonObjectType? type}) { return Messages51ResponseFormatVariant1JsonObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+Messages51ResponseFormatVariant1JsonObject copyWith({Messages51ResponseFormatVariant1JsonObjectType? type}) {return Messages51ResponseFormatVariant1JsonObject(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Messages51ResponseFormatVariant1JsonObject &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'Messages51ResponseFormatVariant1JsonObject(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'Messages51ResponseFormatVariant1JsonObject(type: $type)';}
+}

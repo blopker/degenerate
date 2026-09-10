@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The chronological order used to sort the logs.
 @immutable final class AccessDirection {const AccessDirection._(this.value);
 
-factory AccessDirection.fromJson(String json) { return switch (json) {
+factory AccessDirection.fromJson(String json) {return switch (json) {
   'desc' => desc,
   'asc' => asc,
   _ => AccessDirection._(json),
-}; }
+};}
 
 static const AccessDirection desc = AccessDirection._('desc');
 
@@ -17,11 +17,11 @@ static const List<AccessDirection> values = [desc, asc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessDirection($value)';}
+}

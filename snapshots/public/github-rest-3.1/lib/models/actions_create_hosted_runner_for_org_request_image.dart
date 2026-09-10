@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the runner image.
 @immutable final class ActionsCreateHostedRunnerForOrgRequestImageSource {const ActionsCreateHostedRunnerForOrgRequestImageSource._(this.value);
 
-factory ActionsCreateHostedRunnerForOrgRequestImageSource.fromJson(String json) { return switch (json) {
+factory ActionsCreateHostedRunnerForOrgRequestImageSource.fromJson(String json) {return switch (json) {
   'github' => github,
   'partner' => partner,
   'custom' => custom,
   _ => ActionsCreateHostedRunnerForOrgRequestImageSource._(json),
-}; }
+};}
 
 static const ActionsCreateHostedRunnerForOrgRequestImageSource github = ActionsCreateHostedRunnerForOrgRequestImageSource._('github');
 
@@ -20,22 +20,22 @@ static const List<ActionsCreateHostedRunnerForOrgRequestImageSource> values = [g
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActionsCreateHostedRunnerForOrgRequestImageSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActionsCreateHostedRunnerForOrgRequestImageSource($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ActionsCreateHostedRunnerForOrgRequestImageSource && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ActionsCreateHostedRunnerForOrgRequestImageSource($value)';}
+}
 /// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
 @immutable final class ActionsCreateHostedRunnerForOrgRequestImage {const ActionsCreateHostedRunnerForOrgRequestImage({this.id, this.source, this.version = const Omittable.absent(), });
 
-factory ActionsCreateHostedRunnerForOrgRequestImage.fromJson(Map<String, dynamic> json) { return ActionsCreateHostedRunnerForOrgRequestImage(
+factory ActionsCreateHostedRunnerForOrgRequestImage.fromJson(Map<String, dynamic> json) {return ActionsCreateHostedRunnerForOrgRequestImage(
   id: json['id'] as String?,
   source: json['source'] != null ? ActionsCreateHostedRunnerForOrgRequestImageSource.fromJson(json['source'] as String) : null,
   version: json.containsKey('version') ? Omittable(json['version'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique identifier of the runner image.
 final String? id;
@@ -46,22 +46,22 @@ final ActionsCreateHostedRunnerForOrgRequestImageSource? source;
 /// The version of the runner image to deploy. This is relevant only for runners using custom images.
 final Omittable<String?> version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (source != null) 'source': source?.toJson(),
   if (version.isPresent) 'version': version.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'source', 'version'}.contains(key)); } 
-ActionsCreateHostedRunnerForOrgRequestImage copyWith({String? Function()? id, ActionsCreateHostedRunnerForOrgRequestImageSource? Function()? source, Omittable<String?>? version, }) { return ActionsCreateHostedRunnerForOrgRequestImage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'source', 'version'}.contains(key));}
+ActionsCreateHostedRunnerForOrgRequestImage copyWith({String? Function()? id, ActionsCreateHostedRunnerForOrgRequestImageSource? Function()? source, Omittable<String?>? version, }) {return ActionsCreateHostedRunnerForOrgRequestImage(
   id: id != null ? id() : this.id,
   source: source != null ? source() : this.source,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsCreateHostedRunnerForOrgRequestImage &&
           id == other.id &&
           source == other.source &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(id, source, version); } 
-@override String toString() { return 'ActionsCreateHostedRunnerForOrgRequestImage(id: $id, source: $source, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(id, source, version);}
+@override String toString() {return 'ActionsCreateHostedRunnerForOrgRequestImage(id: $id, source: $source, version: $version)';}
+}

@@ -9,7 +9,7 @@ bool toJson() => value;
 }
 @immutable final class TeamsDevicesDeviceSettingsPolicy {const TeamsDevicesDeviceSettingsPolicy({this.allowModeSwitch, this.allowUpdates, this.allowedToLeave, this.autoConnect, this.captivePortal, this.$default, this.description, this.disableAutoFallback, this.enabled, this.exclude, this.excludeOfficeIps, this.fallbackDomains, this.gatewayUniqueId, this.include, this.lanAllowMinutes, this.lanAllowSubnetSize, this.match, this.name, this.policyId, this.precedence, this.registerInterfaceIpWithDns, this.sccmVpnBoundarySupport, this.serviceModeV2, this.supportUrl, this.switchLocked, this.targetTests, this.tunnelProtocol, });
 
-factory TeamsDevicesDeviceSettingsPolicy.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceSettingsPolicy(
+factory TeamsDevicesDeviceSettingsPolicy.fromJson(Map<String, dynamic> json) {return TeamsDevicesDeviceSettingsPolicy(
   allowModeSwitch: json['allow_mode_switch'] != null ? TeamsDevicesAllowModeSwitch.fromJson(json['allow_mode_switch'] as bool) : null,
   allowUpdates: json['allow_updates'] != null ? TeamsDevicesAllowUpdates.fromJson(json['allow_updates'] as bool) : null,
   allowedToLeave: json['allowed_to_leave'] != null ? TeamsDevicesAllowedToLeave.fromJson(json['allowed_to_leave'] as bool) : null,
@@ -37,7 +37,7 @@ factory TeamsDevicesDeviceSettingsPolicy.fromJson(Map<String, dynamic> json) { r
   switchLocked: json['switch_locked'] != null ? TeamsDevicesSwitchLocked.fromJson(json['switch_locked'] as bool) : null,
   targetTests: (json['target_tests'] as List<dynamic>?)?.map((e) => TeamsDevicesTargetDexTest.fromJson(e as Map<String, dynamic>)).toList(),
   tunnelProtocol: json['tunnel_protocol'] != null ? TeamsDevicesTunnelProtocol.fromJson(json['tunnel_protocol'] as String) : null,
-); }
+);}
 
 /// Whether to allow the user to switch WARP between modes.
 final TeamsDevicesAllowModeSwitch? allowModeSwitch;
@@ -102,8 +102,8 @@ final List<TeamsDevicesTargetDexTest>? targetTests;
 final TeamsDevicesTunnelProtocol? tunnelProtocol;
 
 /// The value with the schema default applied when absent.
-bool get enabledOrDefault { return enabled ?? true; } 
-Map<String, dynamic> toJson() { return {
+bool get enabledOrDefault {return enabled ?? true;}
+Map<String, dynamic> toJson() {return {
   if (allowModeSwitch != null) 'allow_mode_switch': allowModeSwitch?.toJson(),
   if (allowUpdates != null) 'allow_updates': allowUpdates?.toJson(),
   if (allowedToLeave != null) 'allowed_to_leave': allowedToLeave?.toJson(),
@@ -131,9 +131,9 @@ Map<String, dynamic> toJson() { return {
   if (switchLocked != null) 'switch_locked': switchLocked?.toJson(),
   if (targetTests != null) 'target_tests': targetTests?.map((e) => e.toJson()).toList(),
   if (tunnelProtocol != null) 'tunnel_protocol': tunnelProtocol?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_mode_switch', 'allow_updates', 'allowed_to_leave', 'auto_connect', 'captive_portal', 'default', 'description', 'disable_auto_fallback', 'enabled', 'exclude', 'exclude_office_ips', 'fallback_domains', 'gateway_unique_id', 'include', 'lan_allow_minutes', 'lan_allow_subnet_size', 'match', 'name', 'policy_id', 'precedence', 'register_interface_ip_with_dns', 'sccm_vpn_boundary_support', 'service_mode_v2', 'support_url', 'switch_locked', 'target_tests', 'tunnel_protocol'}.contains(key)); } 
-TeamsDevicesDeviceSettingsPolicy copyWith({TeamsDevicesAllowModeSwitch? Function()? allowModeSwitch, TeamsDevicesAllowUpdates? Function()? allowUpdates, TeamsDevicesAllowedToLeave? Function()? allowedToLeave, TeamsDevicesAutoConnect? Function()? autoConnect, TeamsDevicesCaptivePortal? Function()? captivePortal, TeamsDevicesDefault? Function()? $default, TeamsDevicesSchemasDescription? Function()? description, TeamsDevicesDisableAutoFallback? Function()? disableAutoFallback, bool? Function()? enabled, List<TeamsDevicesSplitTunnel>? Function()? exclude, TeamsDevicesExcludeOfficeIps? Function()? excludeOfficeIps, List<TeamsDevicesFallbackDomain>? Function()? fallbackDomains, TeamsDevicesGatewayUniqueId? Function()? gatewayUniqueId, List<TeamsDevicesSplitTunnelInclude>? Function()? include, TeamsDevicesLanAllowMinutes? Function()? lanAllowMinutes, TeamsDevicesLanAllowSubnetSize? Function()? lanAllowSubnetSize, TeamsDevicesSchemasMatch? Function()? match, String? Function()? name, TeamsDevicesSchemasUuid? Function()? policyId, TeamsDevicesPrecedence? Function()? precedence, TeamsDevicesRegisterInterfaceIpWithDns? Function()? registerInterfaceIpWithDns, TeamsDevicesSccmVpnBoundarySupport? Function()? sccmVpnBoundarySupport, TeamsDevicesServiceMode? Function()? serviceModeV2, TeamsDevicesSupportUrl? Function()? supportUrl, TeamsDevicesSwitchLocked? Function()? switchLocked, List<TeamsDevicesTargetDexTest>? Function()? targetTests, TeamsDevicesTunnelProtocol? Function()? tunnelProtocol, }) { return TeamsDevicesDeviceSettingsPolicy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_mode_switch', 'allow_updates', 'allowed_to_leave', 'auto_connect', 'captive_portal', 'default', 'description', 'disable_auto_fallback', 'enabled', 'exclude', 'exclude_office_ips', 'fallback_domains', 'gateway_unique_id', 'include', 'lan_allow_minutes', 'lan_allow_subnet_size', 'match', 'name', 'policy_id', 'precedence', 'register_interface_ip_with_dns', 'sccm_vpn_boundary_support', 'service_mode_v2', 'support_url', 'switch_locked', 'target_tests', 'tunnel_protocol'}.contains(key));}
+TeamsDevicesDeviceSettingsPolicy copyWith({TeamsDevicesAllowModeSwitch? Function()? allowModeSwitch, TeamsDevicesAllowUpdates? Function()? allowUpdates, TeamsDevicesAllowedToLeave? Function()? allowedToLeave, TeamsDevicesAutoConnect? Function()? autoConnect, TeamsDevicesCaptivePortal? Function()? captivePortal, TeamsDevicesDefault? Function()? $default, TeamsDevicesSchemasDescription? Function()? description, TeamsDevicesDisableAutoFallback? Function()? disableAutoFallback, bool? Function()? enabled, List<TeamsDevicesSplitTunnel>? Function()? exclude, TeamsDevicesExcludeOfficeIps? Function()? excludeOfficeIps, List<TeamsDevicesFallbackDomain>? Function()? fallbackDomains, TeamsDevicesGatewayUniqueId? Function()? gatewayUniqueId, List<TeamsDevicesSplitTunnelInclude>? Function()? include, TeamsDevicesLanAllowMinutes? Function()? lanAllowMinutes, TeamsDevicesLanAllowSubnetSize? Function()? lanAllowSubnetSize, TeamsDevicesSchemasMatch? Function()? match, String? Function()? name, TeamsDevicesSchemasUuid? Function()? policyId, TeamsDevicesPrecedence? Function()? precedence, TeamsDevicesRegisterInterfaceIpWithDns? Function()? registerInterfaceIpWithDns, TeamsDevicesSccmVpnBoundarySupport? Function()? sccmVpnBoundarySupport, TeamsDevicesServiceMode? Function()? serviceModeV2, TeamsDevicesSupportUrl? Function()? supportUrl, TeamsDevicesSwitchLocked? Function()? switchLocked, List<TeamsDevicesTargetDexTest>? Function()? targetTests, TeamsDevicesTunnelProtocol? Function()? tunnelProtocol, }) {return TeamsDevicesDeviceSettingsPolicy(
   allowModeSwitch: allowModeSwitch != null ? allowModeSwitch() : this.allowModeSwitch,
   allowUpdates: allowUpdates != null ? allowUpdates() : this.allowUpdates,
   allowedToLeave: allowedToLeave != null ? allowedToLeave() : this.allowedToLeave,
@@ -161,8 +161,8 @@ TeamsDevicesDeviceSettingsPolicy copyWith({TeamsDevicesAllowModeSwitch? Function
   switchLocked: switchLocked != null ? switchLocked() : this.switchLocked,
   targetTests: targetTests != null ? targetTests() : this.targetTests,
   tunnelProtocol: tunnelProtocol != null ? tunnelProtocol() : this.tunnelProtocol,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamsDevicesDeviceSettingsPolicy &&
           allowModeSwitch == other.allowModeSwitch &&
           allowUpdates == other.allowUpdates &&
@@ -190,7 +190,7 @@ TeamsDevicesDeviceSettingsPolicy copyWith({TeamsDevicesAllowModeSwitch? Function
           supportUrl == other.supportUrl &&
           switchLocked == other.switchLocked &&
           listEquals(targetTests, other.targetTests) &&
-          tunnelProtocol == other.tunnelProtocol; } 
-@override int get hashCode { return Object.hashAll([allowModeSwitch, allowUpdates, allowedToLeave, autoConnect, captivePortal, $default, description, disableAutoFallback, enabled, Object.hashAll(exclude ?? const []), excludeOfficeIps, Object.hashAll(fallbackDomains ?? const []), gatewayUniqueId, Object.hashAll(include ?? const []), lanAllowMinutes, lanAllowSubnetSize, match, name, policyId, precedence, registerInterfaceIpWithDns, sccmVpnBoundarySupport, serviceModeV2, supportUrl, switchLocked, Object.hashAll(targetTests ?? const []), tunnelProtocol]); } 
-@override String toString() { return 'TeamsDevicesDeviceSettingsPolicy(allowModeSwitch: $allowModeSwitch, allowUpdates: $allowUpdates, allowedToLeave: $allowedToLeave, autoConnect: $autoConnect, captivePortal: $captivePortal, \$default: ${$default}, description: $description, disableAutoFallback: $disableAutoFallback, enabled: $enabled, exclude: $exclude, excludeOfficeIps: $excludeOfficeIps, fallbackDomains: $fallbackDomains, gatewayUniqueId: $gatewayUniqueId, include: $include, lanAllowMinutes: $lanAllowMinutes, lanAllowSubnetSize: $lanAllowSubnetSize, match: $match, name: $name, policyId: $policyId, precedence: $precedence, registerInterfaceIpWithDns: $registerInterfaceIpWithDns, sccmVpnBoundarySupport: $sccmVpnBoundarySupport, serviceModeV2: $serviceModeV2, supportUrl: $supportUrl, switchLocked: $switchLocked, targetTests: $targetTests, tunnelProtocol: $tunnelProtocol)'; } 
- }
+          tunnelProtocol == other.tunnelProtocol;}
+@override int get hashCode {return Object.hashAll([allowModeSwitch, allowUpdates, allowedToLeave, autoConnect, captivePortal, $default, description, disableAutoFallback, enabled, Object.hashAll(exclude ?? const []), excludeOfficeIps, Object.hashAll(fallbackDomains ?? const []), gatewayUniqueId, Object.hashAll(include ?? const []), lanAllowMinutes, lanAllowSubnetSize, match, name, policyId, precedence, registerInterfaceIpWithDns, sccmVpnBoundarySupport, serviceModeV2, supportUrl, switchLocked, Object.hashAll(targetTests ?? const []), tunnelProtocol]);}
+@override String toString() {return 'TeamsDevicesDeviceSettingsPolicy(allowModeSwitch: $allowModeSwitch, allowUpdates: $allowUpdates, allowedToLeave: $allowedToLeave, autoConnect: $autoConnect, captivePortal: $captivePortal, \$default: ${$default}, description: $description, disableAutoFallback: $disableAutoFallback, enabled: $enabled, exclude: $exclude, excludeOfficeIps: $excludeOfficeIps, fallbackDomains: $fallbackDomains, gatewayUniqueId: $gatewayUniqueId, include: $include, lanAllowMinutes: $lanAllowMinutes, lanAllowSubnetSize: $lanAllowSubnetSize, match: $match, name: $name, policyId: $policyId, precedence: $precedence, registerInterfaceIpWithDns: $registerInterfaceIpWithDns, sccmVpnBoundarySupport: $sccmVpnBoundarySupport, serviceModeV2: $serviceModeV2, supportUrl: $supportUrl, switchLocked: $switchLocked, targetTests: $targetTests, tunnelProtocol: $tunnelProtocol)';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_project_card_moved_project_card_creator.dart';@immutable final class WebhookProjectCardMovedProjectCard {const WebhookProjectCardMovedProjectCard({required this.afterId, required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.contentUrl, });
 
-factory WebhookProjectCardMovedProjectCard.fromJson(Map<String, dynamic> json) { return WebhookProjectCardMovedProjectCard(
+factory WebhookProjectCardMovedProjectCard.fromJson(Map<String, dynamic> json) {return WebhookProjectCardMovedProjectCard(
   afterId: json['after_id'] != null ? (json['after_id'] as num).toDouble() : null,
   archived: json['archived'] as bool,
   columnId: (json['column_id'] as num).toInt(),
@@ -16,7 +16,7 @@ factory WebhookProjectCardMovedProjectCard.fromJson(Map<String, dynamic> json) {
   projectUrl: json['project_url'] as String,
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final double? afterId;
 
@@ -44,7 +44,7 @@ final String updatedAt;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after_id': afterId,
   'archived': archived,
   'column_id': columnId,
@@ -58,8 +58,8 @@ Map<String, dynamic> toJson() { return {
   'project_url': projectUrl,
   'updated_at': updatedAt,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after_id') && (json['after_id'] == null || json['after_id'] is num) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('after_id') && (json['after_id'] == null || json['after_id'] is num) &&
       json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('column_id') && json['column_id'] is num &&
       json.containsKey('column_url') && json['column_url'] is String &&
@@ -70,8 +70,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('note') && (json['note'] == null || json['note'] is String) &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? archived, int? columnId, String? columnUrl, Uri? Function()? contentUrl, String? createdAt, WebhookProjectCardMovedProjectCardCreator? Function()? creator, int? id, String? nodeId, String? Function()? note, String? projectUrl, String? updatedAt, String? url, }) { return WebhookProjectCardMovedProjectCard(
+      json.containsKey('url') && json['url'] is String;}
+WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? archived, int? columnId, String? columnUrl, Uri? Function()? contentUrl, String? createdAt, WebhookProjectCardMovedProjectCardCreator? Function()? creator, int? id, String? nodeId, String? Function()? note, String? projectUrl, String? updatedAt, String? url, }) {return WebhookProjectCardMovedProjectCard(
   afterId: afterId != null ? afterId() : this.afterId,
   archived: archived ?? this.archived,
   columnId: columnId ?? this.columnId,
@@ -85,8 +85,8 @@ WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? 
   projectUrl: projectUrl ?? this.projectUrl,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookProjectCardMovedProjectCard &&
           afterId == other.afterId &&
           archived == other.archived &&
@@ -100,7 +100,7 @@ WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? 
           note == other.note &&
           projectUrl == other.projectUrl &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(afterId, archived, columnId, columnUrl, contentUrl, createdAt, creator, id, nodeId, note, projectUrl, updatedAt, url); } 
-@override String toString() { return 'WebhookProjectCardMovedProjectCard(afterId: $afterId, archived: $archived, columnId: $columnId, columnUrl: $columnUrl, contentUrl: $contentUrl, createdAt: $createdAt, creator: $creator, id: $id, nodeId: $nodeId, note: $note, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)'; } 
- }
+          url == other.url;}
+@override int get hashCode {return Object.hash(afterId, archived, columnId, columnUrl, contentUrl, createdAt, creator, id, nodeId, note, projectUrl, updatedAt, url);}
+@override String toString() {return 'WebhookProjectCardMovedProjectCard(afterId: $afterId, archived: $archived, columnId: $columnId, columnUrl: $columnUrl, contentUrl: $contentUrl, createdAt: $createdAt, creator: $creator, id: $id, nodeId: $nodeId, note: $note, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)';}
+}

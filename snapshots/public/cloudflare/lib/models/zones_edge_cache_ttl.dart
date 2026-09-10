@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify how long
 /// 
 @immutable final class ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId._(this.value);
 
-factory ZonesEdgeCacheTtlId.fromJson(String json) { return switch (json) {
+factory ZonesEdgeCacheTtlId.fromJson(String json) {return switch (json) {
   'edge_cache_ttl' => edgeCacheTtl,
   _ => ZonesEdgeCacheTtlId._(json),
-}; }
+};}
 
 static const ZonesEdgeCacheTtlId edgeCacheTtl = ZonesEdgeCacheTtlId._('edge_cache_ttl');
 
@@ -16,20 +16,20 @@ static const List<ZonesEdgeCacheTtlId> values = [edgeCacheTtl];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesEdgeCacheTtlId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesEdgeCacheTtlId($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesEdgeCacheTtlId && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesEdgeCacheTtlId($value)';}
+}
 @immutable final class ZonesEdgeCacheTtl {const ZonesEdgeCacheTtl({this.id, this.value, });
 
-factory ZonesEdgeCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesEdgeCacheTtl(
+factory ZonesEdgeCacheTtl.fromJson(Map<String, dynamic> json) {return ZonesEdgeCacheTtl(
   id: json['id'] != null ? ZonesEdgeCacheTtlId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? (json['value'] as num).toInt() : null,
-); }
+);}
 
 /// Specify how long to cache a resource in the Cloudflare global
 /// network. *Edge Cache TTL* is not visible in response headers.
@@ -38,19 +38,19 @@ final ZonesEdgeCacheTtlId? id;
 
 final int? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesEdgeCacheTtl copyWith({ZonesEdgeCacheTtlId? Function()? id, int? Function()? value, }) { return ZonesEdgeCacheTtl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesEdgeCacheTtl copyWith({ZonesEdgeCacheTtlId? Function()? id, int? Function()? value, }) {return ZonesEdgeCacheTtl(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZonesEdgeCacheTtl &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesEdgeCacheTtl(id: $id, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(id, value);}
+@override String toString() {return 'ZonesEdgeCacheTtl(id: $id, value: $value)';}
+}

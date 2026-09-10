@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection {const RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection._(this.value);
 
-factory RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection.fromJson(String json) {return switch (json) {
   'ORIGIN' => origin,
   'TARGET' => target,
   _ => RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection._(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection origin = RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection._('ORIGIN');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection> values
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection($value)';}
+}

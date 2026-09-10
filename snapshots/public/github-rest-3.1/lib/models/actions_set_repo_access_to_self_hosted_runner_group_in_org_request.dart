@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest {const ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest({required this.selectedRepositoryIds});
 
-factory ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(
+factory ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest.fromJson(Map<String, dynamic> json) {return ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// List of repository IDs that can access the runner group.
 final List<int> selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'selected_repository_ids': selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_repository_ids'); } 
-ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest copyWith({List<int>? selectedRepositoryIds}) { return ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('selected_repository_ids');}
+ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest copyWith({List<int>? selectedRepositoryIds}) {return ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(
   selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
-@override String toString() { return 'ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
- }
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);}
+@override int get hashCode {return Object.hashAll(selectedRepositoryIds).hashCode;}
+@override String toString() {return 'ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(selectedRepositoryIds: $selectedRepositoryIds)';}
+}

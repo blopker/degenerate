@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conference_enum_status.dart';/// The reason why a conference ended. When a conference is in progress, will be `null`. When conference is completed, can be: `conference-ended-via-api`, `participant-with-end-conference-on-exit-left`, `participant-with-end-conference-on-exit-kicked`, `last-participant-kicked`, or `last-participant-left`.
 @immutable final class ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded._(this.value);
 
-factory ConferenceEnumReasonConferenceEnded.fromJson(String json) { return switch (json) {
+factory ConferenceEnumReasonConferenceEnded.fromJson(String json) {return switch (json) {
   'conference-ended-via-api' => conferenceEndedViaApi,
   'participant-with-end-conference-on-exit-left' => participantWithEndConferenceOnExitLeft,
   'participant-with-end-conference-on-exit-kicked' => participantWithEndConferenceOnExitKicked,
   'last-participant-kicked' => lastParticipantKicked,
   'last-participant-left' => lastParticipantLeft,
   _ => ConferenceEnumReasonConferenceEnded._(json),
-}; }
+};}
 
 static const ConferenceEnumReasonConferenceEnded conferenceEndedViaApi = ConferenceEnumReasonConferenceEnded._('conference-ended-via-api');
 
@@ -26,17 +26,17 @@ static const List<ConferenceEnumReasonConferenceEnded> values = [conferenceEnded
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConferenceEnumReasonConferenceEnded && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConferenceEnumReasonConferenceEnded($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ConferenceEnumReasonConferenceEnded && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ConferenceEnumReasonConferenceEnded($value)';}
+}
 @immutable final class AccountConference {const AccountConference({this.accountSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.region = const Omittable.absent(), this.sid = const Omittable.absent(), this.status, this.uri = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.reasonConferenceEnded, this.callSidEndingConference = const Omittable.absent(), });
 
-factory AccountConference.fromJson(Map<String, dynamic> json) { return AccountConference(
+factory AccountConference.fromJson(Map<String, dynamic> json) {return AccountConference(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
@@ -49,7 +49,7 @@ factory AccountConference.fromJson(Map<String, dynamic> json) { return AccountCo
   subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
   reasonConferenceEnded: json['reason_conference_ended'] != null ? ConferenceEnumReasonConferenceEnded.fromJson(json['reason_conference_ended'] as String) : null,
   callSidEndingConference: json.containsKey('call_sid_ending_conference') ? Omittable(json['call_sid_ending_conference'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this Conference resource.
 final Omittable<String?> accountSid;
@@ -85,7 +85,7 @@ final ConferenceEnumReasonConferenceEnded? reasonConferenceEnded;
 /// The call SID that caused the conference to end.
 final Omittable<String?> callSidEndingConference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
@@ -98,9 +98,9 @@ Map<String, dynamic> toJson() { return {
   if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
   if (reasonConferenceEnded != null) 'reason_conference_ended': reasonConferenceEnded?.toJson(),
   if (callSidEndingConference.isPresent) 'call_sid_ending_conference': callSidEndingConference.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'api_version', 'friendly_name', 'region', 'sid', 'status', 'uri', 'subresource_uris', 'reason_conference_ended', 'call_sid_ending_conference'}.contains(key)); } 
-AccountConference copyWith({Omittable<String?>? accountSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? apiVersion, Omittable<String?>? friendlyName, Omittable<String?>? region, Omittable<String?>? sid, ConferenceEnumStatus? Function()? status, Omittable<String?>? uri, Omittable<Map<String,dynamic>?>? subresourceUris, ConferenceEnumReasonConferenceEnded? Function()? reasonConferenceEnded, Omittable<String?>? callSidEndingConference, }) { return AccountConference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'api_version', 'friendly_name', 'region', 'sid', 'status', 'uri', 'subresource_uris', 'reason_conference_ended', 'call_sid_ending_conference'}.contains(key));}
+AccountConference copyWith({Omittable<String?>? accountSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? apiVersion, Omittable<String?>? friendlyName, Omittable<String?>? region, Omittable<String?>? sid, ConferenceEnumStatus? Function()? status, Omittable<String?>? uri, Omittable<Map<String,dynamic>?>? subresourceUris, ConferenceEnumReasonConferenceEnded? Function()? reasonConferenceEnded, Omittable<String?>? callSidEndingConference, }) {return AccountConference(
   accountSid: accountSid ?? this.accountSid,
   dateCreated: dateCreated ?? this.dateCreated,
   dateUpdated: dateUpdated ?? this.dateUpdated,
@@ -113,8 +113,8 @@ AccountConference copyWith({Omittable<String?>? accountSid, Omittable<String?>? 
   subresourceUris: subresourceUris ?? this.subresourceUris,
   reasonConferenceEnded: reasonConferenceEnded != null ? reasonConferenceEnded() : this.reasonConferenceEnded,
   callSidEndingConference: callSidEndingConference ?? this.callSidEndingConference,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountConference &&
           accountSid == other.accountSid &&
           dateCreated == other.dateCreated &&
@@ -127,7 +127,7 @@ AccountConference copyWith({Omittable<String?>? accountSid, Omittable<String?>? 
           uri == other.uri &&
           subresourceUris == other.subresourceUris &&
           reasonConferenceEnded == other.reasonConferenceEnded &&
-          callSidEndingConference == other.callSidEndingConference; } 
-@override int get hashCode { return Object.hash(accountSid, dateCreated, dateUpdated, apiVersion, friendlyName, region, sid, status, uri, subresourceUris, reasonConferenceEnded, callSidEndingConference); } 
-@override String toString() { return 'AccountConference(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, apiVersion: $apiVersion, friendlyName: $friendlyName, region: $region, sid: $sid, status: $status, uri: $uri, subresourceUris: $subresourceUris, reasonConferenceEnded: $reasonConferenceEnded, callSidEndingConference: $callSidEndingConference)'; } 
- }
+          callSidEndingConference == other.callSidEndingConference;}
+@override int get hashCode {return Object.hash(accountSid, dateCreated, dateUpdated, apiVersion, friendlyName, region, sid, status, uri, subresourceUris, reasonConferenceEnded, callSidEndingConference);}
+@override String toString() {return 'AccountConference(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, apiVersion: $apiVersion, friendlyName: $friendlyName, region: $region, sid: $sid, status: $status, uri: $uri, subresourceUris: $subresourceUris, reasonConferenceEnded: $reasonConferenceEnded, callSidEndingConference: $callSidEndingConference)';}
+}

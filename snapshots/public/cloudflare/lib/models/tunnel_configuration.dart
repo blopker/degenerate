@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_config.dart';import 'tunnel_identifier.dart';import 'tunnel_schemas_tunnel_id.dart';/// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel's configuration on the Zero Trust dashboard.
 @immutable final class TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc._(this.value);
 
-factory TunnelSchemasConfigSrc.fromJson(String json) { return switch (json) {
+factory TunnelSchemasConfigSrc.fromJson(String json) {return switch (json) {
   'local' => local,
   'cloudflare' => cloudflare,
   _ => TunnelSchemasConfigSrc._(json),
-}; }
+};}
 
 static const TunnelSchemasConfigSrc local = TunnelSchemasConfigSrc._('local');
 
@@ -17,14 +17,14 @@ static const List<TunnelSchemasConfigSrc> values = [local, cloudflare];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TunnelSchemasConfigSrc && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TunnelSchemasConfigSrc($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TunnelSchemasConfigSrc && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TunnelSchemasConfigSrc($value)';}
+}
 /// The version of the Tunnel Configuration.
 extension type const TunnelSchemasConfigVersion(int value) {
 factory TunnelSchemasConfigVersion.fromJson(num json) => TunnelSchemasConfigVersion(json.toInt());
@@ -41,14 +41,14 @@ String toJson() => value.toIso8601String();
 /// Cloudflare Tunnel configuration
 @immutable final class TunnelConfiguration {const TunnelConfiguration({this.accountId, this.config, this.createdAt, this.source, this.tunnelId, this.version, });
 
-factory TunnelConfiguration.fromJson(Map<String, dynamic> json) { return TunnelConfiguration(
+factory TunnelConfiguration.fromJson(Map<String, dynamic> json) {return TunnelConfiguration(
   accountId: json['account_id'] != null ? TunnelIdentifier.fromJson(json['account_id'] as String) : null,
   config: json['config'] != null ? TunnelConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? TunnelTimestamp.fromJson(json['created_at'] as String) : null,
   source: json['source'] != null ? TunnelSchemasConfigSrc.fromJson(json['source'] as String) : null,
   tunnelId: json['tunnel_id'] != null ? TunnelSchemasTunnelId.fromJson(json['tunnel_id'] as String) : null,
   version: json['version'] != null ? TunnelSchemasConfigVersion.fromJson(json['version'] as num) : null,
-); }
+);}
 
 final TunnelIdentifier? accountId;
 
@@ -62,31 +62,31 @@ final TunnelSchemasTunnelId? tunnelId;
 
 final TunnelSchemasConfigVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountId != null) 'account_id': accountId?.toJson(),
   if (config != null) 'config': config?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (source != null) 'source': source?.toJson(),
   if (tunnelId != null) 'tunnel_id': tunnelId?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'config', 'created_at', 'source', 'tunnel_id', 'version'}.contains(key)); } 
-TunnelConfiguration copyWith({TunnelIdentifier? Function()? accountId, TunnelConfig? Function()? config, TunnelTimestamp? Function()? createdAt, TunnelSchemasConfigSrc? Function()? source, TunnelSchemasTunnelId? Function()? tunnelId, TunnelSchemasConfigVersion? Function()? version, }) { return TunnelConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_id', 'config', 'created_at', 'source', 'tunnel_id', 'version'}.contains(key));}
+TunnelConfiguration copyWith({TunnelIdentifier? Function()? accountId, TunnelConfig? Function()? config, TunnelTimestamp? Function()? createdAt, TunnelSchemasConfigSrc? Function()? source, TunnelSchemasTunnelId? Function()? tunnelId, TunnelSchemasConfigVersion? Function()? version, }) {return TunnelConfiguration(
   accountId: accountId != null ? accountId() : this.accountId,
   config: config != null ? config() : this.config,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   source: source != null ? source() : this.source,
   tunnelId: tunnelId != null ? tunnelId() : this.tunnelId,
   version: version != null ? version() : this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TunnelConfiguration &&
           accountId == other.accountId &&
           config == other.config &&
           createdAt == other.createdAt &&
           source == other.source &&
           tunnelId == other.tunnelId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(accountId, config, createdAt, source, tunnelId, version); } 
-@override String toString() { return 'TunnelConfiguration(accountId: $accountId, config: $config, createdAt: $createdAt, source: $source, tunnelId: $tunnelId, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(accountId, config, createdAt, source, tunnelId, version);}
+@override String toString() {return 'TunnelConfiguration(accountId: $accountId, config: $config, createdAt: $createdAt, source: $source, tunnelId: $tunnelId, version: $version)';}
+}

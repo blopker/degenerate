@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_account_tag.dart';import 'nsc_bgp_control.dart';import 'nsc_magic_settings.dart';@immutable final class NscCniCreate {const NscCniCreate({required this.account, required this.interconnect, required this.magic, this.bgp, });
 
-factory NscCniCreate.fromJson(Map<String, dynamic> json) { return NscCniCreate(
+factory NscCniCreate.fromJson(Map<String, dynamic> json) {return NscCniCreate(
   account: NscAccountTag.fromJson(json['account'] as String),
   bgp: json['bgp'] != null ? NscBgpControl.fromJson(json['bgp'] as Map<String, dynamic>) : null,
   interconnect: json['interconnect'] as String,
   magic: NscMagicSettings.fromJson(json['magic'] as Map<String, dynamic>),
-); }
+);}
 
 /// Customer account tag
 final NscAccountTag account;
@@ -18,27 +18,27 @@ final String interconnect;
 
 final NscMagicSettings magic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   if (bgp != null) 'bgp': bgp?.toJson(),
   'interconnect': interconnect,
   'magic': magic.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('interconnect') && json['interconnect'] is String &&
-      json.containsKey('magic'); } 
-NscCniCreate copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? interconnect, NscMagicSettings? magic, }) { return NscCniCreate(
+      json.containsKey('magic');}
+NscCniCreate copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? interconnect, NscMagicSettings? magic, }) {return NscCniCreate(
   account: account ?? this.account,
   bgp: bgp != null ? bgp() : this.bgp,
   interconnect: interconnect ?? this.interconnect,
   magic: magic ?? this.magic,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is NscCniCreate &&
           account == other.account &&
           bgp == other.bgp &&
           interconnect == other.interconnect &&
-          magic == other.magic; } 
-@override int get hashCode { return Object.hash(account, bgp, interconnect, magic); } 
-@override String toString() { return 'NscCniCreate(account: $account, bgp: $bgp, interconnect: $interconnect, magic: $magic)'; } 
- }
+          magic == other.magic;}
+@override int get hashCode {return Object.hash(account, bgp, interconnect, magic);}
+@override String toString() {return 'NscCniCreate(account: $account, bgp: $bgp, interconnect: $interconnect, magic: $magic)';}
+}

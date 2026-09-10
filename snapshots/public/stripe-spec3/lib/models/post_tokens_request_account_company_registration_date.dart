@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'registration_date_specs3.dart';@immutable final class PostTokensRequestAccountCompanyRegistrationDateVariant2 {const PostTokensRequestAccountCompanyRegistrationDateVariant2._(this.value);
 
-factory PostTokensRequestAccountCompanyRegistrationDateVariant2.fromJson(String json) { return switch (json) {
+factory PostTokensRequestAccountCompanyRegistrationDateVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostTokensRequestAccountCompanyRegistrationDateVariant2._(json),
-}; }
+};}
 
 static const PostTokensRequestAccountCompanyRegistrationDateVariant2 $empty = PostTokensRequestAccountCompanyRegistrationDateVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostTokensRequestAccountCompanyRegistrationDateVariant2> value
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTokensRequestAccountCompanyRegistrationDateVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTokensRequestAccountCompanyRegistrationDateVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTokensRequestAccountCompanyRegistrationDateVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTokensRequestAccountCompanyRegistrationDateVariant2($value)';}
+}
 
 @immutable
 final class PostTokensRequestAccountCompanyRegistrationDate {

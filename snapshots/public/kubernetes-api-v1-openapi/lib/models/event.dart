@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'event_series.dart';import 'event_source.dart';import 'micro_time.dart';import 'object_meta.dart';import 'object_reference.dart';import 'time.dart';/// Event is a report of an event somewhere in the cluster.  Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.
 @immutable final class Event {const Event({required this.involvedObject, required this.metadata, this.action, this.apiVersion, this.count, this.eventTime, this.firstTimestamp, this.kind, this.lastTimestamp, this.message, this.reason, this.related, this.reportingComponent, this.reportingInstance, this.series, this.source, this.type, });
 
-factory Event.fromJson(Map<String, dynamic> json) { return Event(
+factory Event.fromJson(Map<String, dynamic> json) {return Event(
   action: json['action'] as String?,
   apiVersion: json['apiVersion'] as String?,
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
@@ -21,7 +21,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   series: json['series'] != null ? EventSeries.fromJson(json['series'] as Map<String, dynamic>) : null,
   source: json['source'] != null ? EventSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
-); }
+);}
 
 /// What action was taken/failed regarding to the Regarding object.
 final String? action;
@@ -75,10 +75,10 @@ final EventSource? source;
 final String? type;
 
 /// The value with the schema default applied when absent.
-String get reportingComponentOrDefault { return reportingComponent ?? ''; } 
+String get reportingComponentOrDefault {return reportingComponent ?? '';}
 /// The value with the schema default applied when absent.
-String get reportingInstanceOrDefault { return reportingInstance ?? ''; } 
-Map<String, dynamic> toJson() { return {
+String get reportingInstanceOrDefault {return reportingInstance ?? '';}
+Map<String, dynamic> toJson() {return {
   'action': ?action,
   'apiVersion': ?apiVersion,
   'count': ?count,
@@ -96,10 +96,10 @@ Map<String, dynamic> toJson() { return {
   if (series != null) 'series': series?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('involvedObject') &&
-      json.containsKey('metadata'); } 
-Event copyWith({String? Function()? action, String? Function()? apiVersion, int? Function()? count, MicroTime? Function()? eventTime, Time? Function()? firstTimestamp, ObjectReference? involvedObject, String? Function()? kind, Time? Function()? lastTimestamp, String? Function()? message, ObjectMeta? metadata, String? Function()? reason, ObjectReference? Function()? related, String? Function()? reportingComponent, String? Function()? reportingInstance, EventSeries? Function()? series, EventSource? Function()? source, String? Function()? type, }) { return Event(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('involvedObject') &&
+      json.containsKey('metadata');}
+Event copyWith({String? Function()? action, String? Function()? apiVersion, int? Function()? count, MicroTime? Function()? eventTime, Time? Function()? firstTimestamp, ObjectReference? involvedObject, String? Function()? kind, Time? Function()? lastTimestamp, String? Function()? message, ObjectMeta? metadata, String? Function()? reason, ObjectReference? Function()? related, String? Function()? reportingComponent, String? Function()? reportingInstance, EventSeries? Function()? series, EventSource? Function()? source, String? Function()? type, }) {return Event(
   action: action != null ? action() : this.action,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   count: count != null ? count() : this.count,
@@ -117,8 +117,8 @@ Event copyWith({String? Function()? action, String? Function()? apiVersion, int?
   series: series != null ? series() : this.series,
   source: source != null ? source() : this.source,
   type: type != null ? type() : this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Event &&
           action == other.action &&
           apiVersion == other.apiVersion &&
@@ -136,7 +136,7 @@ Event copyWith({String? Function()? action, String? Function()? apiVersion, int?
           reportingInstance == other.reportingInstance &&
           series == other.series &&
           source == other.source &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(action, apiVersion, count, eventTime, firstTimestamp, involvedObject, kind, lastTimestamp, message, metadata, reason, related, reportingComponent, reportingInstance, series, source, type); } 
-@override String toString() { return 'Event(action: $action, apiVersion: $apiVersion, count: $count, eventTime: $eventTime, firstTimestamp: $firstTimestamp, involvedObject: $involvedObject, kind: $kind, lastTimestamp: $lastTimestamp, message: $message, metadata: $metadata, reason: $reason, related: $related, reportingComponent: $reportingComponent, reportingInstance: $reportingInstance, series: $series, source: $source, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(action, apiVersion, count, eventTime, firstTimestamp, involvedObject, kind, lastTimestamp, message, metadata, reason, related, reportingComponent, reportingInstance, series, source, type);}
+@override String toString() {return 'Event(action: $action, apiVersion: $apiVersion, count: $count, eventTime: $eventTime, firstTimestamp: $firstTimestamp, involvedObject: $involvedObject, kind: $kind, lastTimestamp: $lastTimestamp, message: $message, metadata: $metadata, reason: $reason, related: $related, reportingComponent: $reportingComponent, reportingInstance: $reportingInstance, series: $series, source: $source, type: $type)';}
+}

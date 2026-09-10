@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type that signals the deletion response.
 @immutable final class DeletedVideoResourceObject {const DeletedVideoResourceObject._(this.value);
 
-factory DeletedVideoResourceObject.fromJson(String json) { return switch (json) {
+factory DeletedVideoResourceObject.fromJson(String json) {return switch (json) {
   'video.deleted' => videoDeleted,
   _ => DeletedVideoResourceObject._(json),
-}; }
+};}
 
 static const DeletedVideoResourceObject videoDeleted = DeletedVideoResourceObject._('video.deleted');
 
@@ -14,22 +14,22 @@ static const List<DeletedVideoResourceObject> values = [videoDeleted];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedVideoResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedVideoResourceObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DeletedVideoResourceObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DeletedVideoResourceObject($value)';}
+}
 /// Confirmation payload returned after deleting a video.
 @immutable final class DeletedVideoResource {const DeletedVideoResource({required this.object, required this.deleted, required this.id, });
 
-factory DeletedVideoResource.fromJson(Map<String, dynamic> json) { return DeletedVideoResource(
+factory DeletedVideoResource.fromJson(Map<String, dynamic> json) {return DeletedVideoResource(
   object: DeletedVideoResourceObject.fromJson(json['object'] as String),
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
-); }
+);}
 
 /// The object type that signals the deletion response.
 final DeletedVideoResourceObject object;
@@ -40,24 +40,24 @@ final bool deleted;
 /// Identifier of the deleted video.
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'deleted': deleted,
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('deleted') && json['deleted'] is bool &&
-      json.containsKey('id') && json['id'] is String; } 
-DeletedVideoResource copyWith({DeletedVideoResourceObject? object, bool? deleted, String? id, }) { return DeletedVideoResource(
+      json.containsKey('id') && json['id'] is String;}
+DeletedVideoResource copyWith({DeletedVideoResourceObject? object, bool? deleted, String? id, }) {return DeletedVideoResource(
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DeletedVideoResource &&
           object == other.object &&
           deleted == other.deleted &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(object, deleted, id); } 
-@override String toString() { return 'DeletedVideoResource(object: $object, deleted: $deleted, id: $id)'; } 
- }
+          id == other.id;}
+@override int get hashCode {return Object.hash(object, deleted, id);}
+@override String toString() {return 'DeletedVideoResource(object: $object, deleted: $deleted, id: $id)';}
+}

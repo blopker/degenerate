@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the status.
 @immutable final class ReposCreateCommitStatusRequestState {const ReposCreateCommitStatusRequestState._(this.value);
 
-factory ReposCreateCommitStatusRequestState.fromJson(String json) { return switch (json) {
+factory ReposCreateCommitStatusRequestState.fromJson(String json) {return switch (json) {
   'error' => error,
   'failure' => failure,
   'pending' => pending,
   'success' => success,
   _ => ReposCreateCommitStatusRequestState._(json),
-}; }
+};}
 
 static const ReposCreateCommitStatusRequestState error = ReposCreateCommitStatusRequestState._('error');
 
@@ -23,22 +23,22 @@ static const List<ReposCreateCommitStatusRequestState> values = [error, failure,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateCommitStatusRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateCommitStatusRequestState($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ReposCreateCommitStatusRequestState && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ReposCreateCommitStatusRequestState($value)';}
+}
 @immutable final class ReposCreateCommitStatusRequest {const ReposCreateCommitStatusRequest({required this.state, this.targetUrl = const Omittable.absent(), this.description = const Omittable.absent(), this.context, });
 
-factory ReposCreateCommitStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateCommitStatusRequest(
+factory ReposCreateCommitStatusRequest.fromJson(Map<String, dynamic> json) {return ReposCreateCommitStatusRequest(
   state: ReposCreateCommitStatusRequestState.fromJson(json['state'] as String),
   targetUrl: json.containsKey('target_url') ? Omittable(json['target_url'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   context: json['context'] as String?,
-); }
+);}
 
 /// The state of the status.
 final ReposCreateCommitStatusRequestState state;
@@ -55,26 +55,26 @@ final Omittable<String?> description;
 final String? context;
 
 /// The value with the schema default applied when absent.
-String get contextOrDefault { return context ?? 'default'; } 
-Map<String, dynamic> toJson() { return {
+String get contextOrDefault {return context ?? 'default';}
+Map<String, dynamic> toJson() {return {
   'state': state.toJson(),
   if (targetUrl.isPresent) 'target_url': targetUrl.value,
   if (description.isPresent) 'description': description.value,
   'context': ?context,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-ReposCreateCommitStatusRequest copyWith({ReposCreateCommitStatusRequestState? state, Omittable<String?>? targetUrl, Omittable<String?>? description, String? Function()? context, }) { return ReposCreateCommitStatusRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state');}
+ReposCreateCommitStatusRequest copyWith({ReposCreateCommitStatusRequestState? state, Omittable<String?>? targetUrl, Omittable<String?>? description, String? Function()? context, }) {return ReposCreateCommitStatusRequest(
   state: state ?? this.state,
   targetUrl: targetUrl ?? this.targetUrl,
   description: description ?? this.description,
   context: context != null ? context() : this.context,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ReposCreateCommitStatusRequest &&
           state == other.state &&
           targetUrl == other.targetUrl &&
           description == other.description &&
-          context == other.context; } 
-@override int get hashCode { return Object.hash(state, targetUrl, description, context); } 
-@override String toString() { return 'ReposCreateCommitStatusRequest(state: $state, targetUrl: $targetUrl, description: $description, context: $context)'; } 
- }
+          context == other.context;}
+@override int get hashCode {return Object.hash(state, targetUrl, description, context);}
+@override String toString() {return 'ReposCreateCommitStatusRequest(state: $state, targetUrl: $targetUrl, description: $description, context: $context)';}
+}

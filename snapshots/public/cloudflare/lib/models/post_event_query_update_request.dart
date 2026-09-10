@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventQueryUpdateRequest {const PostEventQueryUpdateRequest({this.alertEnabled, this.alertRollupEnabled, this.name, this.queryJson, this.ruleEnabled, this.ruleScope, });
 
-factory PostEventQueryUpdateRequest.fromJson(Map<String, dynamic> json) { return PostEventQueryUpdateRequest(
+factory PostEventQueryUpdateRequest.fromJson(Map<String, dynamic> json) {return PostEventQueryUpdateRequest(
   alertEnabled: json['alert_enabled'] as bool?,
   alertRollupEnabled: json['alert_rollup_enabled'] as bool?,
   name: json['name'] as String?,
   queryJson: json['query_json'] as String?,
   ruleEnabled: json['rule_enabled'] as bool?,
   ruleScope: json['rule_scope'] as String?,
-); }
+);}
 
 /// Enable alerts for this query
 final bool? alertEnabled;
@@ -29,31 +29,31 @@ final bool? ruleEnabled;
 /// Scope for the rule
 final String? ruleScope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alert_enabled': ?alertEnabled,
   'alert_rollup_enabled': ?alertRollupEnabled,
   'name': ?name,
   'query_json': ?queryJson,
   'rule_enabled': ?ruleEnabled,
   'rule_scope': ?ruleScope,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_enabled', 'alert_rollup_enabled', 'name', 'query_json', 'rule_enabled', 'rule_scope'}.contains(key)); } 
-PostEventQueryUpdateRequest copyWith({bool? Function()? alertEnabled, bool? Function()? alertRollupEnabled, String? Function()? name, String? Function()? queryJson, bool? Function()? ruleEnabled, String? Function()? ruleScope, }) { return PostEventQueryUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'alert_enabled', 'alert_rollup_enabled', 'name', 'query_json', 'rule_enabled', 'rule_scope'}.contains(key));}
+PostEventQueryUpdateRequest copyWith({bool? Function()? alertEnabled, bool? Function()? alertRollupEnabled, String? Function()? name, String? Function()? queryJson, bool? Function()? ruleEnabled, String? Function()? ruleScope, }) {return PostEventQueryUpdateRequest(
   alertEnabled: alertEnabled != null ? alertEnabled() : this.alertEnabled,
   alertRollupEnabled: alertRollupEnabled != null ? alertRollupEnabled() : this.alertRollupEnabled,
   name: name != null ? name() : this.name,
   queryJson: queryJson != null ? queryJson() : this.queryJson,
   ruleEnabled: ruleEnabled != null ? ruleEnabled() : this.ruleEnabled,
   ruleScope: ruleScope != null ? ruleScope() : this.ruleScope,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostEventQueryUpdateRequest &&
           alertEnabled == other.alertEnabled &&
           alertRollupEnabled == other.alertRollupEnabled &&
           name == other.name &&
           queryJson == other.queryJson &&
           ruleEnabled == other.ruleEnabled &&
-          ruleScope == other.ruleScope; } 
-@override int get hashCode { return Object.hash(alertEnabled, alertRollupEnabled, name, queryJson, ruleEnabled, ruleScope); } 
-@override String toString() { return 'PostEventQueryUpdateRequest(alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope)'; } 
- }
+          ruleScope == other.ruleScope;}
+@override int get hashCode {return Object.hash(alertEnabled, alertRollupEnabled, name, queryJson, ruleEnabled, ruleScope);}
+@override String toString() {return 'PostEventQueryUpdateRequest(alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope)';}
+}

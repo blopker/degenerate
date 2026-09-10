@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam8SetupFutureUsage {const PaymentMethodOptionsParam8SetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsParam8SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam8SetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PaymentMethodOptionsParam8SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam8SetupFutureUsage $empty = PaymentMethodOptionsParam8SetupFutureUsage._('');
 
@@ -22,38 +22,38 @@ static const List<PaymentMethodOptionsParam8SetupFutureUsage> values = [$empty, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam8SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam8SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam8SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam8SetupFutureUsage($value)';}
+}
 @immutable final class PaymentMethodOptionsParam8 {const PaymentMethodOptionsParam8({this.expiresAfterDays, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsParam8.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam8(
+factory PaymentMethodOptionsParam8.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam8(
   expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam8SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final int? expiresAfterDays;
 
 final PaymentMethodOptionsParam8SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expires_after_days': ?expiresAfterDays,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after_days', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam8 copyWith({int? Function()? expiresAfterDays, PaymentMethodOptionsParam8SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam8(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expires_after_days', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsParam8 copyWith({int? Function()? expiresAfterDays, PaymentMethodOptionsParam8SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsParam8(
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsParam8 &&
           expiresAfterDays == other.expiresAfterDays &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(expiresAfterDays, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsParam8(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(expiresAfterDays, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsParam8(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)';}
+}

@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results by the specified field.
 @immutable final class RadarGetBgpHijacksEventsSortBy {const RadarGetBgpHijacksEventsSortBy._(this.value);
 
-factory RadarGetBgpHijacksEventsSortBy.fromJson(String json) { return switch (json) {
+factory RadarGetBgpHijacksEventsSortBy.fromJson(String json) {return switch (json) {
   'ID' => id,
   'TIME' => time,
   'CONFIDENCE' => confidence,
   _ => RadarGetBgpHijacksEventsSortBy._(json),
-}; }
+};}
 
 static const RadarGetBgpHijacksEventsSortBy id = RadarGetBgpHijacksEventsSortBy._('ID');
 
@@ -20,11 +20,11 @@ static const List<RadarGetBgpHijacksEventsSortBy> values = [id, time, confidence
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBgpHijacksEventsSortBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBgpHijacksEventsSortBy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetBgpHijacksEventsSortBy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetBgpHijacksEventsSortBy($value)';}
+}

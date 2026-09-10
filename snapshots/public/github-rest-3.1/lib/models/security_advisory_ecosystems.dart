@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The package's language or package management ecosystem.
 @immutable final class SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems._(this.value);
 
-factory SecurityAdvisoryEcosystems.fromJson(String json) { return switch (json) {
+factory SecurityAdvisoryEcosystems.fromJson(String json) {return switch (json) {
   'rubygems' => rubygems,
   'npm' => npm,
   'pip' => pip,
@@ -18,7 +18,7 @@ factory SecurityAdvisoryEcosystems.fromJson(String json) { return switch (json) 
   'other' => $other,
   'swift' => swift,
   _ => SecurityAdvisoryEcosystems._(json),
-}; }
+};}
 
 static const SecurityAdvisoryEcosystems rubygems = SecurityAdvisoryEcosystems._('rubygems');
 
@@ -50,11 +50,11 @@ static const List<SecurityAdvisoryEcosystems> values = [rubygems, npm, pip, mave
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAdvisoryEcosystems && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAdvisoryEcosystems($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecurityAdvisoryEcosystems && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecurityAdvisoryEcosystems($value)';}
+}

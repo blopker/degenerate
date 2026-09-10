@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_company_address.dart';import 'post_accounts_request_company_address_kana.dart';import 'post_accounts_request_company_address_kanji.dart';import 'post_accounts_request_company_directorship_declaration.dart';import 'post_accounts_request_company_ownership_declaration.dart';import 'post_accounts_request_company_registration_date.dart';import 'post_accounts_request_company_representative_declaration.dart';import 'post_accounts_request_company_verification.dart';@immutable final class PostAccountsRequestCompanyOwnershipExemptionReason {const PostAccountsRequestCompanyOwnershipExemptionReason._(this.value);
 
-factory PostAccountsRequestCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestCompanyOwnershipExemptionReason.fromJson(String json) {return switch (json) {
   '' => $empty,
   'qualified_entity_exceeds_ownership_threshold' => qualifiedEntityExceedsOwnershipThreshold,
   'qualifies_as_financial_institution' => qualifiesAsFinancialInstitution,
   _ => PostAccountsRequestCompanyOwnershipExemptionReason._(json),
-}; }
+};}
 
 static const PostAccountsRequestCompanyOwnershipExemptionReason $empty = PostAccountsRequestCompanyOwnershipExemptionReason._('');
 
@@ -19,17 +19,17 @@ static const List<PostAccountsRequestCompanyOwnershipExemptionReason> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestCompanyOwnershipExemptionReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestCompanyOwnershipExemptionReason($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsRequestCompanyOwnershipExemptionReason && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsRequestCompanyOwnershipExemptionReason($value)';}
+}
 @immutable final class PostAccountsRequestCompanyStructure {const PostAccountsRequestCompanyStructure._(this.value);
 
-factory PostAccountsRequestCompanyStructure.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestCompanyStructure.fromJson(String json) {return switch (json) {
   '' => $empty,
   'free_zone_establishment' => freeZoneEstablishment,
   'free_zone_llc' => freeZoneLlc,
@@ -55,7 +55,7 @@ factory PostAccountsRequestCompanyStructure.fromJson(String json) { return switc
   'unincorporated_non_profit' => unincorporatedNonProfit,
   'unincorporated_partnership' => unincorporatedPartnership,
   _ => PostAccountsRequestCompanyStructure._(json),
-}; }
+};}
 
 static const PostAccountsRequestCompanyStructure $empty = PostAccountsRequestCompanyStructure._('');
 
@@ -109,18 +109,18 @@ static const List<PostAccountsRequestCompanyStructure> values = [$empty, freeZon
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestCompanyStructure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestCompanyStructure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostAccountsRequestCompanyStructure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostAccountsRequestCompanyStructure($value)';}
+}
 /// Information about the company or business. This field is available for any `business_type`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
 @immutable final class PostAccountsRequestCompany {const PostAccountsRequestCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
-factory PostAccountsRequestCompany.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCompany(
+factory PostAccountsRequestCompany.fromJson(Map<String, dynamic> json) {return PostAccountsRequestCompany(
   address: json['address'] != null ? PostAccountsRequestCompanyAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? PostAccountsRequestCompanyAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? PostAccountsRequestCompanyAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -144,7 +144,7 @@ factory PostAccountsRequestCompany.fromJson(Map<String, dynamic> json) { return 
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatId: json['vat_id'] as String?,
   verification: json['verification'] != null ? PostAccountsRequestCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsRequestCompanyAddress? address;
 
@@ -192,7 +192,7 @@ final String? vatId;
 
 final PostAccountsRequestCompanyVerification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -216,9 +216,9 @@ Map<String, dynamic> toJson() { return {
   'tax_id_registrar': ?taxIdRegistrar,
   'vat_id': ?vatId,
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key)); } 
-PostAccountsRequestCompany copyWith({PostAccountsRequestCompanyAddress? Function()? address, PostAccountsRequestCompanyAddressKana? Function()? addressKana, PostAccountsRequestCompanyAddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, PostAccountsRequestCompanyDirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, PostAccountsRequestCompanyOwnershipDeclaration? Function()? ownershipDeclaration, PostAccountsRequestCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, PostAccountsRequestCompanyRegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, PostAccountsRequestCompanyRepresentativeDeclaration? Function()? representativeDeclaration, PostAccountsRequestCompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, PostAccountsRequestCompanyVerification? Function()? verification, }) { return PostAccountsRequestCompany(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key));}
+PostAccountsRequestCompany copyWith({PostAccountsRequestCompanyAddress? Function()? address, PostAccountsRequestCompanyAddressKana? Function()? addressKana, PostAccountsRequestCompanyAddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, PostAccountsRequestCompanyDirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, PostAccountsRequestCompanyOwnershipDeclaration? Function()? ownershipDeclaration, PostAccountsRequestCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, PostAccountsRequestCompanyRegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, PostAccountsRequestCompanyRepresentativeDeclaration? Function()? representativeDeclaration, PostAccountsRequestCompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, PostAccountsRequestCompanyVerification? Function()? verification, }) {return PostAccountsRequestCompany(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -242,8 +242,8 @@ PostAccountsRequestCompany copyWith({PostAccountsRequestCompanyAddress? Function
   taxIdRegistrar: taxIdRegistrar != null ? taxIdRegistrar() : this.taxIdRegistrar,
   vatId: vatId != null ? vatId() : this.vatId,
   verification: verification != null ? verification() : this.verification,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostAccountsRequestCompany &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -267,7 +267,7 @@ PostAccountsRequestCompany copyWith({PostAccountsRequestCompanyAddress? Function
           taxId == other.taxId &&
           taxIdRegistrar == other.taxIdRegistrar &&
           vatId == other.vatId &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, registrationNumber, representativeDeclaration, structure, taxId, taxIdRegistrar, vatId, verification]); } 
-@override String toString() { return 'PostAccountsRequestCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, registrationNumber: $registrationNumber, representativeDeclaration: $representativeDeclaration, structure: $structure, taxId: $taxId, taxIdRegistrar: $taxIdRegistrar, vatId: $vatId, verification: $verification)'; } 
- }
+          verification == other.verification;}
+@override int get hashCode {return Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, registrationNumber, representativeDeclaration, structure, taxId, taxIdRegistrar, vatId, verification]);}
+@override String toString() {return 'PostAccountsRequestCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, registrationNumber: $registrationNumber, representativeDeclaration: $representativeDeclaration, structure: $structure, taxId: $taxId, taxIdRegistrar: $taxIdRegistrar, vatId: $vatId, verification: $verification)';}
+}

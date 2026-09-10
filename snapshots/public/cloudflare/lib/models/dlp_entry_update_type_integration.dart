@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntryUpdateTypeIntegrationType {const DlpEntryUpdateTypeIntegrationType._(this.value);
 
-factory DlpEntryUpdateTypeIntegrationType.fromJson(String json) { return switch (json) {
+factory DlpEntryUpdateTypeIntegrationType.fromJson(String json) {return switch (json) {
   'integration' => integration,
   _ => DlpEntryUpdateTypeIntegrationType._(json),
-}; }
+};}
 
 static const DlpEntryUpdateTypeIntegrationType integration = DlpEntryUpdateTypeIntegrationType._('integration');
 
@@ -13,32 +13,32 @@ static const List<DlpEntryUpdateTypeIntegrationType> values = [integration];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpEntryUpdateTypeIntegrationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpEntryUpdateTypeIntegrationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is DlpEntryUpdateTypeIntegrationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'DlpEntryUpdateTypeIntegrationType($value)';}
+}
 @immutable final class DlpEntryUpdateTypeIntegration {const DlpEntryUpdateTypeIntegration({required this.type});
 
-factory DlpEntryUpdateTypeIntegration.fromJson(Map<String, dynamic> json) { return DlpEntryUpdateTypeIntegration(
+factory DlpEntryUpdateTypeIntegration.fromJson(Map<String, dynamic> json) {return DlpEntryUpdateTypeIntegration(
   type: DlpEntryUpdateTypeIntegrationType.fromJson(json['type'] as String),
-); }
+);}
 
 final DlpEntryUpdateTypeIntegrationType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-DlpEntryUpdateTypeIntegration copyWith({DlpEntryUpdateTypeIntegrationType? type}) { return DlpEntryUpdateTypeIntegration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+DlpEntryUpdateTypeIntegration copyWith({DlpEntryUpdateTypeIntegrationType? type}) {return DlpEntryUpdateTypeIntegration(
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DlpEntryUpdateTypeIntegration &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'DlpEntryUpdateTypeIntegration(type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return type.hashCode;}
+@override String toString() {return 'DlpEntryUpdateTypeIntegration(type: $type)';}
+}

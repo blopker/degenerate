@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';import 'organization_simple_webhooks.dart';import 'repository.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSubIssuesParentIssueRemovedAction {const WebhookSubIssuesParentIssueRemovedAction._(this.value);
 
-factory WebhookSubIssuesParentIssueRemovedAction.fromJson(String json) { return switch (json) {
+factory WebhookSubIssuesParentIssueRemovedAction.fromJson(String json) {return switch (json) {
   'parent_issue_removed' => parentIssueRemoved,
   _ => WebhookSubIssuesParentIssueRemovedAction._(json),
-}; }
+};}
 
 static const WebhookSubIssuesParentIssueRemovedAction parentIssueRemoved = WebhookSubIssuesParentIssueRemovedAction._('parent_issue_removed');
 
@@ -13,17 +13,17 @@ static const List<WebhookSubIssuesParentIssueRemovedAction> values = [parentIssu
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSubIssuesParentIssueRemovedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSubIssuesParentIssueRemovedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookSubIssuesParentIssueRemovedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookSubIssuesParentIssueRemovedAction($value)';}
+}
 @immutable final class WebhookSubIssuesParentIssueRemoved {const WebhookSubIssuesParentIssueRemoved({required this.action, required this.parentIssueId, required this.parentIssue, required this.parentIssueRepo, required this.subIssueId, required this.subIssue, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookSubIssuesParentIssueRemoved.fromJson(Map<String, dynamic> json) { return WebhookSubIssuesParentIssueRemoved(
+factory WebhookSubIssuesParentIssueRemoved.fromJson(Map<String, dynamic> json) {return WebhookSubIssuesParentIssueRemoved(
   action: WebhookSubIssuesParentIssueRemovedAction.fromJson(json['action'] as String),
   parentIssueId: (json['parent_issue_id'] as num).toDouble(),
   parentIssue: Issue.fromJson(json['parent_issue'] as Map<String, dynamic>),
@@ -34,7 +34,7 @@ factory WebhookSubIssuesParentIssueRemoved.fromJson(Map<String, dynamic> json) {
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookSubIssuesParentIssueRemovedAction action;
 
@@ -58,7 +58,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'parent_issue_id': parentIssueId,
   'parent_issue': parentIssue.toJson(),
@@ -69,14 +69,14 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('parent_issue_id') && json['parent_issue_id'] is num &&
       json.containsKey('parent_issue') &&
       json.containsKey('parent_issue_repo') &&
       json.containsKey('sub_issue_id') && json['sub_issue_id'] is num &&
-      json.containsKey('sub_issue'); } 
-WebhookSubIssuesParentIssueRemoved copyWith({WebhookSubIssuesParentIssueRemovedAction? action, double? parentIssueId, Issue? parentIssue, Repository? parentIssueRepo, double? subIssueId, Issue? subIssue, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookSubIssuesParentIssueRemoved(
+      json.containsKey('sub_issue');}
+WebhookSubIssuesParentIssueRemoved copyWith({WebhookSubIssuesParentIssueRemovedAction? action, double? parentIssueId, Issue? parentIssue, Repository? parentIssueRepo, double? subIssueId, Issue? subIssue, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) {return WebhookSubIssuesParentIssueRemoved(
   action: action ?? this.action,
   parentIssueId: parentIssueId ?? this.parentIssueId,
   parentIssue: parentIssue ?? this.parentIssue,
@@ -87,8 +87,8 @@ WebhookSubIssuesParentIssueRemoved copyWith({WebhookSubIssuesParentIssueRemovedA
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookSubIssuesParentIssueRemoved &&
           action == other.action &&
           parentIssueId == other.parentIssueId &&
@@ -99,7 +99,7 @@ WebhookSubIssuesParentIssueRemoved copyWith({WebhookSubIssuesParentIssueRemovedA
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, parentIssueId, parentIssue, parentIssueRepo, subIssueId, subIssue, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookSubIssuesParentIssueRemoved(action: $action, parentIssueId: $parentIssueId, parentIssue: $parentIssue, parentIssueRepo: $parentIssueRepo, subIssueId: $subIssueId, subIssue: $subIssue, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, parentIssueId, parentIssue, parentIssueRepo, subIssueId, subIssue, installation, organization, repository, sender);}
+@override String toString() {return 'WebhookSubIssuesParentIssueRemoved(action: $action, parentIssueId: $parentIssueId, parentIssue: $parentIssue, parentIssueRepo: $parentIssueRepo, subIssueId: $subIssueId, subIssue: $subIssue, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';}
+}

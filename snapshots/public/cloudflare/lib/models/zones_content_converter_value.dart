@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesContentConverterValue {const ZonesContentConverterValue._(this.value);
 
-factory ZonesContentConverterValue.fromJson(String json) { return switch (json) {
+factory ZonesContentConverterValue.fromJson(String json) {return switch (json) {
   'off' => off,
   'on' => $on,
   _ => ZonesContentConverterValue._(json),
-}; }
+};}
 
 static const ZonesContentConverterValue off = ZonesContentConverterValue._('off');
 
@@ -17,11 +17,11 @@ static const List<ZonesContentConverterValue> values = [off, $on];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesContentConverterValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesContentConverterValue($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ZonesContentConverterValue && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ZonesContentConverterValue($value)';}
+}

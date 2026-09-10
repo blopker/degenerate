@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metric to rank ASNs by.
 @immutable final class RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric._(this.value);
 
-factory RadarGetAsBotnetThreatFeedMetric.fromJson(String json) { return switch (json) {
+factory RadarGetAsBotnetThreatFeedMetric.fromJson(String json) {return switch (json) {
   'OFFENSE_COUNT' => offenseCount,
   'NUMBER_OF_OFFENDING_IPS' => numberOfOffendingIps,
   _ => RadarGetAsBotnetThreatFeedMetric._(json),
-}; }
+};}
 
 static const RadarGetAsBotnetThreatFeedMetric offenseCount = RadarGetAsBotnetThreatFeedMetric._('OFFENSE_COUNT');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAsBotnetThreatFeedMetric> values = [offenseCount, numb
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAsBotnetThreatFeedMetric && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAsBotnetThreatFeedMetric($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAsBotnetThreatFeedMetric && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAsBotnetThreatFeedMetric($value)';}
+}

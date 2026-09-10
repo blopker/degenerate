@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when th
 /// 
 @immutable final class RealtimeServerEventResponseFunctionCallArgumentsDelta {const RealtimeServerEventResponseFunctionCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.delta, });
 
-factory RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseFunctionCallArgumentsDelta(
+factory RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseFunctionCallArgumentsDelta(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
@@ -12,7 +12,7 @@ factory RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<Strin
   outputIndex: (json['output_index'] as num).toInt(),
   callId: json['call_id'] as String,
   delta: json['delta'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -36,7 +36,7 @@ final String callId;
 /// The arguments delta as a JSON string.
 final String delta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
@@ -44,15 +44,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'call_id': callId,
   'delta': delta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('call_id') && json['call_id'] is String &&
-      json.containsKey('delta') && json['delta'] is String; } 
-RealtimeServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? delta, }) { return RealtimeServerEventResponseFunctionCallArgumentsDelta(
+      json.containsKey('delta') && json['delta'] is String;}
+RealtimeServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, String? callId, String? delta, }) {return RealtimeServerEventResponseFunctionCallArgumentsDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -60,8 +60,8 @@ RealtimeServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId,
   outputIndex: outputIndex ?? this.outputIndex,
   callId: callId ?? this.callId,
   delta: delta ?? this.delta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventResponseFunctionCallArgumentsDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -69,7 +69,7 @@ RealtimeServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId,
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           callId == other.callId &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, delta); } 
-@override String toString() { return 'RealtimeServerEventResponseFunctionCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, delta: $delta)'; } 
- }
+          delta == other.delta;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, delta);}
+@override String toString() {return 'RealtimeServerEventResponseFunctionCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, delta: $delta)';}
+}

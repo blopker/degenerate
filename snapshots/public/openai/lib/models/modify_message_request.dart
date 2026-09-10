@@ -2,9 +2,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModifyMessageRequest {const ModifyMessageRequest({this.metadata = const Omittable.absent()});
 
-factory ModifyMessageRequest.fromJson(Map<String, dynamic> json) { return ModifyMessageRequest(
+factory ModifyMessageRequest.fromJson(Map<String, dynamic> json) {return ModifyMessageRequest(
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -15,16 +15,16 @@ factory ModifyMessageRequest.fromJson(Map<String, dynamic> json) { return Modify
 /// 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata'}.contains(key)); } 
-ModifyMessageRequest copyWith({Omittable<Map<String,String>?>? metadata}) { return ModifyMessageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'metadata'}.contains(key));}
+ModifyMessageRequest copyWith({Omittable<Map<String,String>?>? metadata}) {return ModifyMessageRequest(
   metadata: metadata ?? this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ModifyMessageRequest &&
-          metadata == other.metadata; } 
-@override int get hashCode { return metadata.hashCode; } 
-@override String toString() { return 'ModifyMessageRequest(metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return metadata.hashCode;}
+@override String toString() {return 'ModifyMessageRequest(metadata: $metadata)';}
+}

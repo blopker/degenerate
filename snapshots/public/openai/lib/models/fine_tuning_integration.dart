@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_integration_wandb.dart';/// The type of the integration being enabled for the fine-tuning job
 @immutable final class FineTuningIntegrationType {const FineTuningIntegrationType._(this.value);
 
-factory FineTuningIntegrationType.fromJson(String json) { return switch (json) {
+factory FineTuningIntegrationType.fromJson(String json) {return switch (json) {
   'wandb' => wandb,
   _ => FineTuningIntegrationType._(json),
-}; }
+};}
 
 static const FineTuningIntegrationType wandb = FineTuningIntegrationType._('wandb');
 
@@ -14,20 +14,20 @@ static const List<FineTuningIntegrationType> values = [wandb];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningIntegrationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningIntegrationType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is FineTuningIntegrationType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'FineTuningIntegrationType($value)';}
+}
 @immutable final class FineTuningIntegration {const FineTuningIntegration({required this.type, required this.wandb, });
 
-factory FineTuningIntegration.fromJson(Map<String, dynamic> json) { return FineTuningIntegration(
+factory FineTuningIntegration.fromJson(Map<String, dynamic> json) {return FineTuningIntegration(
   type: FineTuningIntegrationType.fromJson(json['type'] as String),
   wandb: FineTuningIntegrationWandb.fromJson(json['wandb'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the integration being enabled for the fine-tuning job
 final FineTuningIntegrationType type;
@@ -38,20 +38,20 @@ final FineTuningIntegrationType type;
 /// 
 final FineTuningIntegrationWandb wandb;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'wandb': wandb.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('wandb'); } 
-FineTuningIntegration copyWith({FineTuningIntegrationType? type, FineTuningIntegrationWandb? wandb, }) { return FineTuningIntegration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('wandb');}
+FineTuningIntegration copyWith({FineTuningIntegrationType? type, FineTuningIntegrationWandb? wandb, }) {return FineTuningIntegration(
   type: type ?? this.type,
   wandb: wandb ?? this.wandb,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FineTuningIntegration &&
           type == other.type &&
-          wandb == other.wandb; } 
-@override int get hashCode { return Object.hash(type, wandb); } 
-@override String toString() { return 'FineTuningIntegration(type: $type, wandb: $wandb)'; } 
- }
+          wandb == other.wandb;}
+@override int get hashCode {return Object.hash(type, wandb);}
+@override String toString() {return 'FineTuningIntegration(type: $type, wandb: $wandb)';}
+}

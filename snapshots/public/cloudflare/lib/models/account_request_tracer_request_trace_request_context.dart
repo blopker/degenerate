@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_request_tracer_request_trace_request_context_geoloc.dart';/// Additional request parameters
 @immutable final class AccountRequestTracerRequestTraceRequestContext {const AccountRequestTracerRequestTraceRequestContext({this.botScore, this.geoloc, this.skipChallenge, this.threatScore, });
 
-factory AccountRequestTracerRequestTraceRequestContext.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequestContext(
+factory AccountRequestTracerRequestTraceRequestContext.fromJson(Map<String, dynamic> json) {return AccountRequestTracerRequestTraceRequestContext(
   botScore: json['bot_score'] != null ? (json['bot_score'] as num).toInt() : null,
   geoloc: json['geoloc'] != null ? AccountRequestTracerRequestTraceRequestContextGeoloc.fromJson(json['geoloc'] as Map<String, dynamic>) : null,
   skipChallenge: json['skip_challenge'] as bool?,
   threatScore: json['threat_score'] != null ? (json['threat_score'] as num).toInt() : null,
-); }
+);}
 
 /// Bot score used for evaluating tracing request processing
 final int? botScore;
@@ -22,25 +22,25 @@ final bool? skipChallenge;
 /// Threat score used for evaluating tracing request processing
 final int? threatScore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bot_score': ?botScore,
   if (geoloc != null) 'geoloc': geoloc?.toJson(),
   'skip_challenge': ?skipChallenge,
   'threat_score': ?threatScore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bot_score', 'geoloc', 'skip_challenge', 'threat_score'}.contains(key)); } 
-AccountRequestTracerRequestTraceRequestContext copyWith({int? Function()? botScore, AccountRequestTracerRequestTraceRequestContextGeoloc? Function()? geoloc, bool? Function()? skipChallenge, int? Function()? threatScore, }) { return AccountRequestTracerRequestTraceRequestContext(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bot_score', 'geoloc', 'skip_challenge', 'threat_score'}.contains(key));}
+AccountRequestTracerRequestTraceRequestContext copyWith({int? Function()? botScore, AccountRequestTracerRequestTraceRequestContextGeoloc? Function()? geoloc, bool? Function()? skipChallenge, int? Function()? threatScore, }) {return AccountRequestTracerRequestTraceRequestContext(
   botScore: botScore != null ? botScore() : this.botScore,
   geoloc: geoloc != null ? geoloc() : this.geoloc,
   skipChallenge: skipChallenge != null ? skipChallenge() : this.skipChallenge,
   threatScore: threatScore != null ? threatScore() : this.threatScore,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccountRequestTracerRequestTraceRequestContext &&
           botScore == other.botScore &&
           geoloc == other.geoloc &&
           skipChallenge == other.skipChallenge &&
-          threatScore == other.threatScore; } 
-@override int get hashCode { return Object.hash(botScore, geoloc, skipChallenge, threatScore); } 
-@override String toString() { return 'AccountRequestTracerRequestTraceRequestContext(botScore: $botScore, geoloc: $geoloc, skipChallenge: $skipChallenge, threatScore: $threatScore)'; } 
- }
+          threatScore == other.threatScore;}
+@override int get hashCode {return Object.hash(botScore, geoloc, skipChallenge, threatScore);}
+@override String toString() {return 'AccountRequestTracerRequestTraceRequestContext(botScore: $botScore, geoloc: $geoloc, skipChallenge: $skipChallenge, threatScore: $threatScore)';}
+}

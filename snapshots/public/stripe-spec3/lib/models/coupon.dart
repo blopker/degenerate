@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon_applies_to.dart';import 'coupon_currency_option.dart';/// One of `forever`, `once`, or `repeating`. Describes how long a customer who applies this coupon will get the discount.
 @immutable final class CouponDuration {const CouponDuration._(this.value);
 
-factory CouponDuration.fromJson(String json) { return switch (json) {
+factory CouponDuration.fromJson(String json) {return switch (json) {
   'forever' => forever,
   'once' => once,
   'repeating' => repeating,
   _ => CouponDuration._(json),
-}; }
+};}
 
 static const CouponDuration forever = CouponDuration._('forever');
 
@@ -20,21 +20,21 @@ static const List<CouponDuration> values = [forever, once, repeating];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CouponDuration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CouponDuration($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CouponDuration && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CouponDuration($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CouponObject {const CouponObject._(this.value);
 
-factory CouponObject.fromJson(String json) { return switch (json) {
+factory CouponObject.fromJson(String json) {return switch (json) {
   'coupon' => coupon,
   _ => CouponObject._(json),
-}; }
+};}
 
 static const CouponObject coupon = CouponObject._('coupon');
 
@@ -42,20 +42,20 @@ static const List<CouponObject> values = [coupon];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CouponObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CouponObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is CouponObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'CouponObject($value)';}
+}
 /// A coupon contains information about a percent-off or amount-off discount you
 /// might want to apply to a customer. Coupons may be applied to [subscriptions](https://api.stripe.com#subscriptions), [invoices](https://api.stripe.com#invoices),
 /// [checkout sessions](https://docs.stripe.com/api/checkout/sessions), [quotes](https://api.stripe.com#quotes), and more. Coupons do not work with conventional one-off [charges](https://api.stripe.com#create_charge) or [payment intents](https://docs.stripe.com/api/payment_intents).
 @immutable final class Coupon {const Coupon({required this.created, required this.duration, required this.id, required this.livemode, required this.object, required this.timesRedeemed, required this.valid, this.amountOff = const Omittable.absent(), this.appliesTo, this.currency = const Omittable.absent(), this.currencyOptions, this.durationInMonths = const Omittable.absent(), this.maxRedemptions = const Omittable.absent(), this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), this.percentOff = const Omittable.absent(), this.redeemBy = const Omittable.absent(), });
 
-factory Coupon.fromJson(Map<String, dynamic> json) { return Coupon(
+factory Coupon.fromJson(Map<String, dynamic> json) {return Coupon(
   amountOff: json.containsKey('amount_off') ? Omittable(json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null) : const Omittable.absent(),
   appliesTo: json['applies_to'] != null ? CouponAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
@@ -73,7 +73,7 @@ factory Coupon.fromJson(Map<String, dynamic> json) { return Coupon(
   redeemBy: json.containsKey('redeem_by') ? Omittable(json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null) : const Omittable.absent(),
   timesRedeemed: (json['times_redeemed'] as num).toInt(),
   valid: json['valid'] as bool,
-); }
+);}
 
 /// Amount (in the `currency` specified) that will be taken off the subtotal of any invoices for this customer.
 final Omittable<int?> amountOff;
@@ -125,7 +125,7 @@ final int timesRedeemed;
 /// Taking account of the above properties, whether this coupon can still be applied to a customer.
 final bool valid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountOff.isPresent) 'amount_off': amountOff.value,
   if (appliesTo != null) 'applies_to': appliesTo?.toJson(),
   'created': created,
@@ -143,15 +143,15 @@ Map<String, dynamic> toJson() { return {
   if (redeemBy.isPresent) 'redeem_by': redeemBy.value,
   'times_redeemed': timesRedeemed,
   'valid': valid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('duration') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('times_redeemed') && json['times_redeemed'] is num &&
-      json.containsKey('valid') && json['valid'] is bool; } 
-Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? appliesTo, int? created, Omittable<String?>? currency, Map<String, CouponCurrencyOption>? Function()? currencyOptions, CouponDuration? duration, Omittable<int?>? durationInMonths, String? id, bool? livemode, Omittable<int?>? maxRedemptions, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, CouponObject? object, Omittable<double?>? percentOff, Omittable<int?>? redeemBy, int? timesRedeemed, bool? valid, }) { return Coupon(
+      json.containsKey('valid') && json['valid'] is bool;}
+Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? appliesTo, int? created, Omittable<String?>? currency, Map<String, CouponCurrencyOption>? Function()? currencyOptions, CouponDuration? duration, Omittable<int?>? durationInMonths, String? id, bool? livemode, Omittable<int?>? maxRedemptions, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, CouponObject? object, Omittable<double?>? percentOff, Omittable<int?>? redeemBy, int? timesRedeemed, bool? valid, }) {return Coupon(
   amountOff: amountOff ?? this.amountOff,
   appliesTo: appliesTo != null ? appliesTo() : this.appliesTo,
   created: created ?? this.created,
@@ -169,8 +169,8 @@ Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? applie
   redeemBy: redeemBy ?? this.redeemBy,
   timesRedeemed: timesRedeemed ?? this.timesRedeemed,
   valid: valid ?? this.valid,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Coupon &&
           amountOff == other.amountOff &&
           appliesTo == other.appliesTo &&
@@ -188,7 +188,7 @@ Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? applie
           percentOff == other.percentOff &&
           redeemBy == other.redeemBy &&
           timesRedeemed == other.timesRedeemed &&
-          valid == other.valid; } 
-@override int get hashCode { return Object.hash(amountOff, appliesTo, created, currency, currencyOptions, duration, durationInMonths, id, livemode, maxRedemptions, metadata, name, object, percentOff, redeemBy, timesRedeemed, valid); } 
-@override String toString() { return 'Coupon(amountOff: $amountOff, appliesTo: $appliesTo, created: $created, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, object: $object, percentOff: $percentOff, redeemBy: $redeemBy, timesRedeemed: $timesRedeemed, valid: $valid)'; } 
- }
+          valid == other.valid;}
+@override int get hashCode {return Object.hash(amountOff, appliesTo, created, currency, currencyOptions, duration, durationInMonths, id, livemode, maxRedemptions, metadata, name, object, percentOff, redeemBy, timesRedeemed, valid);}
+@override String toString() {return 'Coupon(amountOff: $amountOff, appliesTo: $appliesTo, created: $created, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, object: $object, percentOff: $percentOff, redeemBy: $redeemBy, timesRedeemed: $timesRedeemed, valid: $valid)';}
+}

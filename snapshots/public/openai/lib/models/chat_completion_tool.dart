@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_object.dart';/// The type of the tool. Currently, only `function` is supported.
 @immutable final class ChatCompletionToolType {const ChatCompletionToolType._(this.value);
 
-factory ChatCompletionToolType.fromJson(String json) { return switch (json) {
+factory ChatCompletionToolType.fromJson(String json) {return switch (json) {
   'function' => function,
   _ => ChatCompletionToolType._(json),
-}; }
+};}
 
 static const ChatCompletionToolType function = ChatCompletionToolType._('function');
 
@@ -14,42 +14,42 @@ static const List<ChatCompletionToolType> values = [function];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionToolType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionToolType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ChatCompletionToolType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ChatCompletionToolType($value)';}
+}
 /// A function tool that can be used to generate a response.
 /// 
 @immutable final class ChatCompletionTool {const ChatCompletionTool({required this.type, required this.function, });
 
-factory ChatCompletionTool.fromJson(Map<String, dynamic> json) { return ChatCompletionTool(
+factory ChatCompletionTool.fromJson(Map<String, dynamic> json) {return ChatCompletionTool(
   type: ChatCompletionToolType.fromJson(json['type'] as String),
   function: FunctionObject.fromJson(json['function'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the tool. Currently, only `function` is supported.
 final ChatCompletionToolType type;
 
 final FunctionObject function;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'function': function.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('function'); } 
-ChatCompletionTool copyWith({ChatCompletionToolType? type, FunctionObject? function, }) { return ChatCompletionTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('function');}
+ChatCompletionTool copyWith({ChatCompletionToolType? type, FunctionObject? function, }) {return ChatCompletionTool(
   type: type ?? this.type,
   function: function ?? this.function,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ChatCompletionTool &&
           type == other.type &&
-          function == other.function; } 
-@override int get hashCode { return Object.hash(type, function); } 
-@override String toString() { return 'ChatCompletionTool(type: $type, function: $function)'; } 
- }
+          function == other.function;}
+@override int get hashCode {return Object.hash(type, function);}
+@override String toString() {return 'ChatCompletionTool(type: $type, function: $function)';}
+}

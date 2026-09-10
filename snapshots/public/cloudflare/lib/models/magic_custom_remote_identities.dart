@@ -2,9 +2,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicCustomRemoteIdentities {const MagicCustomRemoteIdentities({this.fqdnId});
 
-factory MagicCustomRemoteIdentities.fromJson(Map<String, dynamic> json) { return MagicCustomRemoteIdentities(
+factory MagicCustomRemoteIdentities.fromJson(Map<String, dynamic> json) {return MagicCustomRemoteIdentities(
   fqdnId: json['fqdn_id'] as String?,
-); }
+);}
 
 /// A custom IKE ID of type FQDN that may be used to identity the IPsec tunnel. The
 /// generated IKE IDs can still be used even if this custom value is specified.
@@ -16,16 +16,16 @@ factory MagicCustomRemoteIdentities.fromJson(Map<String, dynamic> json) { return
 /// cannot have the same cloudflare_endpoint.
 final String? fqdnId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fqdn_id': ?fqdnId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fqdn_id'}.contains(key)); } 
-MagicCustomRemoteIdentities copyWith({String? Function()? fqdnId}) { return MagicCustomRemoteIdentities(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fqdn_id'}.contains(key));}
+MagicCustomRemoteIdentities copyWith({String? Function()? fqdnId}) {return MagicCustomRemoteIdentities(
   fqdnId: fqdnId != null ? fqdnId() : this.fqdnId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MagicCustomRemoteIdentities &&
-          fqdnId == other.fqdnId; } 
-@override int get hashCode { return fqdnId.hashCode; } 
-@override String toString() { return 'MagicCustomRemoteIdentities(fqdnId: $fqdnId)'; } 
- }
+          fqdnId == other.fqdnId;}
+@override int get hashCode {return fqdnId.hashCode;}
+@override String toString() {return 'MagicCustomRemoteIdentities(fqdnId: $fqdnId)';}
+}

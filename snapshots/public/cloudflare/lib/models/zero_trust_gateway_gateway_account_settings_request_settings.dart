@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_activity_log_settings.dart';import 'zero_trust_gateway_anti_virus_settings.dart';import 'zero_trust_gateway_block_page_settings_request.dart';import 'zero_trust_gateway_body_scanning_settings.dart';import 'zero_trust_gateway_browser_isolation_settings.dart';import 'zero_trust_gateway_certificate_settings.dart';import 'zero_trust_gateway_custom_certificate_settings_request.dart';import 'zero_trust_gateway_extended_email_matching_request.dart';import 'zero_trust_gateway_fips_settings.dart';import 'zero_trust_gateway_host_selector_settings.dart';import 'zero_trust_gateway_inspection_settings.dart';import 'zero_trust_gateway_protocol_detection.dart';import 'zero_trust_gateway_sandbox.dart';import 'zero_trust_gateway_tls_settings.dart';/// Specify account settings.
 @immutable final class ZeroTrustGatewayGatewayAccountSettingsRequestSettings {const ZeroTrustGatewayGatewayAccountSettingsRequestSettings({this.activityLog = const Omittable.absent(), this.antivirus = const Omittable.absent(), this.blockPage = const Omittable.absent(), this.bodyScanning = const Omittable.absent(), this.browserIsolation = const Omittable.absent(), this.certificate = const Omittable.absent(), this.customCertificate = const Omittable.absent(), this.extendedEmailMatching = const Omittable.absent(), this.fips = const Omittable.absent(), this.hostSelector = const Omittable.absent(), this.inspection = const Omittable.absent(), this.protocolDetection = const Omittable.absent(), this.sandbox = const Omittable.absent(), this.tlsDecrypt = const Omittable.absent(), });
 
-factory ZeroTrustGatewayGatewayAccountSettingsRequestSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountSettingsRequestSettings(
+factory ZeroTrustGatewayGatewayAccountSettingsRequestSettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayGatewayAccountSettingsRequestSettings(
   activityLog: json.containsKey('activity_log') ? Omittable(json['activity_log'] != null ? ZeroTrustGatewayActivityLogSettings.fromJson(json['activity_log'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   antivirus: json.containsKey('antivirus') ? Omittable(json['antivirus'] != null ? ZeroTrustGatewayAntiVirusSettings.fromJson(json['antivirus'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   blockPage: json.containsKey('block_page') ? Omittable(json['block_page'] != null ? ZeroTrustGatewayBlockPageSettingsRequest.fromJson(json['block_page'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory ZeroTrustGatewayGatewayAccountSettingsRequestSettings.fromJson(Map<Strin
   protocolDetection: json.containsKey('protocol_detection') ? Omittable(json['protocol_detection'] != null ? ZeroTrustGatewayProtocolDetection.fromJson(json['protocol_detection'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sandbox: json.containsKey('sandbox') ? Omittable(json['sandbox'] != null ? ZeroTrustGatewaySandbox.fromJson(json['sandbox'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tlsDecrypt: json.containsKey('tls_decrypt') ? Omittable(json['tls_decrypt'] != null ? ZeroTrustGatewayTlsSettings.fromJson(json['tls_decrypt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<ZeroTrustGatewayActivityLogSettings?> activityLog;
 
@@ -48,7 +48,7 @@ final Omittable<ZeroTrustGatewaySandbox?> sandbox;
 
 final Omittable<ZeroTrustGatewayTlsSettings?> tlsDecrypt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (activityLog.isPresent) 'activity_log': activityLog.value?.toJson(),
   if (antivirus.isPresent) 'antivirus': antivirus.value?.toJson(),
   if (blockPage.isPresent) 'block_page': blockPage.value?.toJson(),
@@ -63,9 +63,9 @@ Map<String, dynamic> toJson() { return {
   if (protocolDetection.isPresent) 'protocol_detection': protocolDetection.value?.toJson(),
   if (sandbox.isPresent) 'sandbox': sandbox.value?.toJson(),
   if (tlsDecrypt.isPresent) 'tls_decrypt': tlsDecrypt.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activity_log', 'antivirus', 'block_page', 'body_scanning', 'browser_isolation', 'certificate', 'custom_certificate', 'extended_email_matching', 'fips', 'host_selector', 'inspection', 'protocol_detection', 'sandbox', 'tls_decrypt'}.contains(key)); } 
-ZeroTrustGatewayGatewayAccountSettingsRequestSettings copyWith({Omittable<ZeroTrustGatewayActivityLogSettings?>? activityLog, Omittable<ZeroTrustGatewayAntiVirusSettings?>? antivirus, Omittable<ZeroTrustGatewayBlockPageSettingsRequest?>? blockPage, Omittable<ZeroTrustGatewayBodyScanningSettings?>? bodyScanning, Omittable<ZeroTrustGatewayBrowserIsolationSettings?>? browserIsolation, Omittable<ZeroTrustGatewayCertificateSettings?>? certificate, Omittable<ZeroTrustGatewayCustomCertificateSettingsRequest?>? customCertificate, Omittable<ZeroTrustGatewayExtendedEmailMatchingRequest?>? extendedEmailMatching, Omittable<ZeroTrustGatewayFipsSettings?>? fips, Omittable<ZeroTrustGatewayHostSelectorSettings?>? hostSelector, Omittable<ZeroTrustGatewayInspectionSettings?>? inspection, Omittable<ZeroTrustGatewayProtocolDetection?>? protocolDetection, Omittable<ZeroTrustGatewaySandbox?>? sandbox, Omittable<ZeroTrustGatewayTlsSettings?>? tlsDecrypt, }) { return ZeroTrustGatewayGatewayAccountSettingsRequestSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'activity_log', 'antivirus', 'block_page', 'body_scanning', 'browser_isolation', 'certificate', 'custom_certificate', 'extended_email_matching', 'fips', 'host_selector', 'inspection', 'protocol_detection', 'sandbox', 'tls_decrypt'}.contains(key));}
+ZeroTrustGatewayGatewayAccountSettingsRequestSettings copyWith({Omittable<ZeroTrustGatewayActivityLogSettings?>? activityLog, Omittable<ZeroTrustGatewayAntiVirusSettings?>? antivirus, Omittable<ZeroTrustGatewayBlockPageSettingsRequest?>? blockPage, Omittable<ZeroTrustGatewayBodyScanningSettings?>? bodyScanning, Omittable<ZeroTrustGatewayBrowserIsolationSettings?>? browserIsolation, Omittable<ZeroTrustGatewayCertificateSettings?>? certificate, Omittable<ZeroTrustGatewayCustomCertificateSettingsRequest?>? customCertificate, Omittable<ZeroTrustGatewayExtendedEmailMatchingRequest?>? extendedEmailMatching, Omittable<ZeroTrustGatewayFipsSettings?>? fips, Omittable<ZeroTrustGatewayHostSelectorSettings?>? hostSelector, Omittable<ZeroTrustGatewayInspectionSettings?>? inspection, Omittable<ZeroTrustGatewayProtocolDetection?>? protocolDetection, Omittable<ZeroTrustGatewaySandbox?>? sandbox, Omittable<ZeroTrustGatewayTlsSettings?>? tlsDecrypt, }) {return ZeroTrustGatewayGatewayAccountSettingsRequestSettings(
   activityLog: activityLog ?? this.activityLog,
   antivirus: antivirus ?? this.antivirus,
   blockPage: blockPage ?? this.blockPage,
@@ -80,8 +80,8 @@ ZeroTrustGatewayGatewayAccountSettingsRequestSettings copyWith({Omittable<ZeroTr
   protocolDetection: protocolDetection ?? this.protocolDetection,
   sandbox: sandbox ?? this.sandbox,
   tlsDecrypt: tlsDecrypt ?? this.tlsDecrypt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccountSettingsRequestSettings &&
           activityLog == other.activityLog &&
           antivirus == other.antivirus &&
@@ -96,7 +96,7 @@ ZeroTrustGatewayGatewayAccountSettingsRequestSettings copyWith({Omittable<ZeroTr
           inspection == other.inspection &&
           protocolDetection == other.protocolDetection &&
           sandbox == other.sandbox &&
-          tlsDecrypt == other.tlsDecrypt; } 
-@override int get hashCode { return Object.hash(activityLog, antivirus, blockPage, bodyScanning, browserIsolation, certificate, customCertificate, extendedEmailMatching, fips, hostSelector, inspection, protocolDetection, sandbox, tlsDecrypt); } 
-@override String toString() { return 'ZeroTrustGatewayGatewayAccountSettingsRequestSettings(activityLog: $activityLog, antivirus: $antivirus, blockPage: $blockPage, bodyScanning: $bodyScanning, browserIsolation: $browserIsolation, certificate: $certificate, customCertificate: $customCertificate, extendedEmailMatching: $extendedEmailMatching, fips: $fips, hostSelector: $hostSelector, inspection: $inspection, protocolDetection: $protocolDetection, sandbox: $sandbox, tlsDecrypt: $tlsDecrypt)'; } 
- }
+          tlsDecrypt == other.tlsDecrypt;}
+@override int get hashCode {return Object.hash(activityLog, antivirus, blockPage, bodyScanning, browserIsolation, certificate, customCertificate, extendedEmailMatching, fips, hostSelector, inspection, protocolDetection, sandbox, tlsDecrypt);}
+@override String toString() {return 'ZeroTrustGatewayGatewayAccountSettingsRequestSettings(activityLog: $activityLog, antivirus: $antivirus, blockPage: $blockPage, bodyScanning: $bodyScanning, browserIsolation: $browserIsolation, certificate: $certificate, customCertificate: $customCertificate, extendedEmailMatching: $extendedEmailMatching, fips: $fips, hostSelector: $hostSelector, inspection: $inspection, protocolDetection: $protocolDetection, sandbox: $sandbox, tlsDecrypt: $tlsDecrypt)';}
+}

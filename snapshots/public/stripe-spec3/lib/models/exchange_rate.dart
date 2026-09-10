@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ExchangeRateObject {const ExchangeRateObject._(this.value);
 
-factory ExchangeRateObject.fromJson(String json) { return switch (json) {
+factory ExchangeRateObject.fromJson(String json) {return switch (json) {
   'exchange_rate' => exchangeRate,
   _ => ExchangeRateObject._(json),
-}; }
+};}
 
 static const ExchangeRateObject exchangeRate = ExchangeRateObject._('exchange_rate');
 
@@ -14,14 +14,14 @@ static const List<ExchangeRateObject> values = [exchangeRate];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ExchangeRateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ExchangeRateObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ExchangeRateObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ExchangeRateObject($value)';}
+}
 /// `[Deprecated]` The `ExchangeRate` APIs are deprecated. Please use the [FX Quotes API](https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api) instead.
 /// 
 /// `ExchangeRate` objects allow you to determine the rates that Stripe is currently
@@ -52,11 +52,11 @@ bool get isUnknown { return !values.contains(this); }
 /// *Using this Exchange Rates API beta for any purpose other than to transact on Stripe is strictly prohibited and constitutes a violation of Stripe's terms of service.*
 @immutable final class ExchangeRate {const ExchangeRate({required this.id, required this.object, required this.rates, });
 
-factory ExchangeRate.fromJson(Map<String, dynamic> json) { return ExchangeRate(
+factory ExchangeRate.fromJson(Map<String, dynamic> json) {return ExchangeRate(
   id: json['id'] as String,
   object: ExchangeRateObject.fromJson(json['object'] as String),
   rates: (json['rates'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toDouble())),
-); }
+);}
 
 /// Unique identifier for the object. Represented as the three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) in lowercase.
 final String id;
@@ -67,24 +67,24 @@ final ExchangeRateObject object;
 /// Hash where the keys are supported currencies and the values are the exchange rate at which the base id currency converts to the key currency.
 final Map<String,double> rates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'rates': rates,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('rates'); } 
-ExchangeRate copyWith({String? id, ExchangeRateObject? object, Map<String,double>? rates, }) { return ExchangeRate(
+      json.containsKey('rates');}
+ExchangeRate copyWith({String? id, ExchangeRateObject? object, Map<String,double>? rates, }) {return ExchangeRate(
   id: id ?? this.id,
   object: object ?? this.object,
   rates: rates ?? this.rates,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ExchangeRate &&
           id == other.id &&
           object == other.object &&
-          rates == other.rates; } 
-@override int get hashCode { return Object.hash(id, object, rates); } 
-@override String toString() { return 'ExchangeRate(id: $id, object: $object, rates: $rates)'; } 
- }
+          rates == other.rates;}
+@override int get hashCode {return Object.hash(id, object, rates);}
+@override String toString() {return 'ExchangeRate(id: $id, object: $object, rates: $rates)';}
+}

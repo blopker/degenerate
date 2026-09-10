@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'external_account_requirements.dart';@immutable final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
 
-factory BankAccountAvailablePayoutMethods.fromJson(String json) { return switch (json) {
+factory BankAccountAvailablePayoutMethods.fromJson(String json) {return switch (json) {
   'instant' => instant,
   'standard' => standard,
   _ => BankAccountAvailablePayoutMethods._(json),
-}; }
+};}
 
 static const BankAccountAvailablePayoutMethods instant = BankAccountAvailablePayoutMethods._('instant');
 
@@ -16,21 +16,21 @@ static const List<BankAccountAvailablePayoutMethods> values = [instant, standard
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankAccountAvailablePayoutMethods && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankAccountAvailablePayoutMethods($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankAccountAvailablePayoutMethods && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankAccountAvailablePayoutMethods($value)';}
+}
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BankAccountObject {const BankAccountObject._(this.value);
 
-factory BankAccountObject.fromJson(String json) { return switch (json) {
+factory BankAccountObject.fromJson(String json) {return switch (json) {
   'bank_account' => bankAccount,
   _ => BankAccountObject._(json),
-}; }
+};}
 
 static const BankAccountObject bankAccount = BankAccountObject._('bank_account');
 
@@ -38,14 +38,14 @@ static const List<BankAccountObject> values = [bankAccount];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankAccountObject($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BankAccountObject && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BankAccountObject($value)';}
+}
 /// These bank accounts are payment methods on `Customer` objects.
 /// 
 /// On the other hand [External Accounts](/api#external_accounts) are transfer
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guide: [Bank debits and transfers](/payments/bank-debits-transfers)
 @immutable final class BankAccount {const BankAccount({required this.country, required this.currency, required this.id, required this.last4, required this.object, required this.status, this.account = const Omittable.absent(), this.accountHolderName = const Omittable.absent(), this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.availablePayoutMethods = const Omittable.absent(), this.bankName = const Omittable.absent(), this.customer = const Omittable.absent(), this.defaultForCurrency = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.futureRequirements = const Omittable.absent(), this.metadata = const Omittable.absent(), this.requirements = const Omittable.absent(), this.routingNumber = const Omittable.absent(), });
 
-factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
+factory BankAccount.fromJson(Map<String, dynamic> json) {return BankAccount(
   account: json.containsKey('account') ? Omittable(json['account'] != null ? BankAccountAccount.fromJson(json['account']) : null) : const Omittable.absent(),
   accountHolderName: json.containsKey('account_holder_name') ? Omittable(json['account_holder_name'] as String?) : const Omittable.absent(),
   accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] as String?) : const Omittable.absent(),
@@ -75,7 +75,7 @@ factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
   requirements: json.containsKey('requirements') ? Omittable(json['requirements'] != null ? ExternalAccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
   status: json['status'] as String,
-); }
+);}
 
 /// The account this bank account belongs to. Only applicable on Accounts (not customers or recipients) This property is only available when returned as an [External Account](/api/external_account_bank_accounts/object) where [controller.is_controller](/api/accounts/object#account_object-controller-is_controller) is `true`.
 final Omittable<BankAccountAccount?> account;
@@ -136,7 +136,7 @@ final Omittable<String?> routingNumber;
 /// For external accounts, possible values are `new`, `errored`, `verification_failed`, and `tokenized_account_number_deactivated`. If a payout fails, the status is set to `errored` and scheduled payouts are stopped until account details are updated. In the US and India, if we can't [verify the owner of the bank account](https://support.stripe.com/questions/bank-account-ownership-verification), we'll set the status to `verification_failed`. Other validations aren't run against external accounts because they're only used for payouts. This means the other statuses don't apply.
 final String status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account.isPresent) 'account': account.value?.toJson(),
   if (accountHolderName.isPresent) 'account_holder_name': accountHolderName.value,
   if (accountHolderType.isPresent) 'account_holder_type': accountHolderType.value,
@@ -156,14 +156,14 @@ Map<String, dynamic> toJson() { return {
   if (requirements.isPresent) 'requirements': requirements.value?.toJson(),
   if (routingNumber.isPresent) 'routing_number': routingNumber.value,
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country') && json['country'] is String &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object') &&
-      json.containsKey('status') && json['status'] is String; } 
-BankAccount copyWith({Omittable<BankAccountAccount?>? account, Omittable<String?>? accountHolderName, Omittable<String?>? accountHolderType, Omittable<String?>? accountType, Omittable<List<BankAccountAvailablePayoutMethods>?>? availablePayoutMethods, Omittable<String?>? bankName, String? country, String? currency, Omittable<BankAccountCustomer?>? customer, Omittable<bool?>? defaultForCurrency, Omittable<String?>? fingerprint, Omittable<ExternalAccountRequirements?>? futureRequirements, String? id, String? last4, Omittable<Map<String,String>?>? metadata, BankAccountObject? object, Omittable<ExternalAccountRequirements?>? requirements, Omittable<String?>? routingNumber, String? status, }) { return BankAccount(
+      json.containsKey('status') && json['status'] is String;}
+BankAccount copyWith({Omittable<BankAccountAccount?>? account, Omittable<String?>? accountHolderName, Omittable<String?>? accountHolderType, Omittable<String?>? accountType, Omittable<List<BankAccountAvailablePayoutMethods>?>? availablePayoutMethods, Omittable<String?>? bankName, String? country, String? currency, Omittable<BankAccountCustomer?>? customer, Omittable<bool?>? defaultForCurrency, Omittable<String?>? fingerprint, Omittable<ExternalAccountRequirements?>? futureRequirements, String? id, String? last4, Omittable<Map<String,String>?>? metadata, BankAccountObject? object, Omittable<ExternalAccountRequirements?>? requirements, Omittable<String?>? routingNumber, String? status, }) {return BankAccount(
   account: account ?? this.account,
   accountHolderName: accountHolderName ?? this.accountHolderName,
   accountHolderType: accountHolderType ?? this.accountHolderType,
@@ -183,8 +183,8 @@ BankAccount copyWith({Omittable<BankAccountAccount?>? account, Omittable<String?
   requirements: requirements ?? this.requirements,
   routingNumber: routingNumber ?? this.routingNumber,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BankAccount &&
           account == other.account &&
           accountHolderName == other.accountHolderName &&
@@ -205,7 +205,7 @@ BankAccount copyWith({Omittable<BankAccountAccount?>? account, Omittable<String?
           object == other.object &&
           requirements == other.requirements &&
           routingNumber == other.routingNumber &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(account, accountHolderName, accountHolderType, accountType, Object.hashAll(availablePayoutMethods.value ?? const []), bankName, country, currency, customer, defaultForCurrency, fingerprint, futureRequirements, id, last4, metadata, object, requirements, routingNumber, status); } 
-@override String toString() { return 'BankAccount(account: $account, accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, availablePayoutMethods: $availablePayoutMethods, bankName: $bankName, country: $country, currency: $currency, customer: $customer, defaultForCurrency: $defaultForCurrency, fingerprint: $fingerprint, futureRequirements: $futureRequirements, id: $id, last4: $last4, metadata: $metadata, object: $object, requirements: $requirements, routingNumber: $routingNumber, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(account, accountHolderName, accountHolderType, accountType, Object.hashAll(availablePayoutMethods.value ?? const []), bankName, country, currency, customer, defaultForCurrency, fingerprint, futureRequirements, id, last4, metadata, object, requirements, routingNumber, status);}
+@override String toString() {return 'BankAccount(account: $account, accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, availablePayoutMethods: $availablePayoutMethods, bankName: $bankName, country: $country, currency: $currency, customer: $customer, defaultForCurrency: $defaultForCurrency, fingerprint: $fingerprint, futureRequirements: $futureRequirements, id: $id, last4: $last4, metadata: $metadata, object: $object, requirements: $requirements, routingNumber: $routingNumber, status: $status)';}
+}

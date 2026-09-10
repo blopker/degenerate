@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam108PreferredLanguage {const PaymentMethodOptionsParam108PreferredLanguage._(this.value);
 
-factory PaymentMethodOptionsParam108PreferredLanguage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam108PreferredLanguage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'de' => de,
   'en' => en,
@@ -12,7 +12,7 @@ factory PaymentMethodOptionsParam108PreferredLanguage.fromJson(String json) { re
   'nl' => nl,
   'pl' => pl,
   _ => PaymentMethodOptionsParam108PreferredLanguage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam108PreferredLanguage $empty = PaymentMethodOptionsParam108PreferredLanguage._('');
 
@@ -34,22 +34,22 @@ static const List<PaymentMethodOptionsParam108PreferredLanguage> values = [$empt
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam108PreferredLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam108PreferredLanguage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam108PreferredLanguage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam108PreferredLanguage($value)';}
+}
 @immutable final class PaymentMethodOptionsParam108SetupFutureUsage {const PaymentMethodOptionsParam108SetupFutureUsage._(this.value);
 
-factory PaymentMethodOptionsParam108SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam108SetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   'off_session' => offSession,
   _ => PaymentMethodOptionsParam108SetupFutureUsage._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam108SetupFutureUsage $empty = PaymentMethodOptionsParam108SetupFutureUsage._('');
 
@@ -61,38 +61,38 @@ static const List<PaymentMethodOptionsParam108SetupFutureUsage> values = [$empty
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam108SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam108SetupFutureUsage($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam108SetupFutureUsage && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam108SetupFutureUsage($value)';}
+}
 @immutable final class PaymentMethodOptionsParam108 {const PaymentMethodOptionsParam108({this.preferredLanguage, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsParam108.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam108(
+factory PaymentMethodOptionsParam108.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam108(
   preferredLanguage: json['preferred_language'] != null ? PaymentMethodOptionsParam108PreferredLanguage.fromJson(json['preferred_language'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam108SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentMethodOptionsParam108PreferredLanguage? preferredLanguage;
 
 final PaymentMethodOptionsParam108SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam108 copyWith({PaymentMethodOptionsParam108PreferredLanguage? Function()? preferredLanguage, PaymentMethodOptionsParam108SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam108(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsParam108 copyWith({PaymentMethodOptionsParam108PreferredLanguage? Function()? preferredLanguage, PaymentMethodOptionsParam108SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsParam108(
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsParam108 &&
           preferredLanguage == other.preferredLanguage &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(preferredLanguage, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsParam108(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)'; } 
- }
+          setupFutureUsage == other.setupFutureUsage;}
+@override int get hashCode {return Object.hash(preferredLanguage, setupFutureUsage);}
+@override String toString() {return 'PaymentMethodOptionsParam108(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)';}
+}

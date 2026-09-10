@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns {const UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns({required this.confidence, required this.excludes, required this.implies, required this.match, required this.name, required this.regex, required this.type, required this.value, required this.version, });
 
-factory UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns(
+factory UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns(
   confidence: (json['confidence'] as num).toInt(),
   excludes: (json['excludes'] as List<dynamic>).map((e) => e as String).toList(),
   implies: (json['implies'] as List<dynamic>).map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns.fr
   type: json['type'] as String,
   value: json['value'] as String,
   version: json['version'] as String,
-); }
+);}
 
 final int confidence;
 
@@ -33,7 +33,7 @@ final String value;
 
 final String version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'confidence': confidence,
   'excludes': excludes,
   'implies': implies,
@@ -43,8 +43,8 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'value': value,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidence') && json['confidence'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('confidence') && json['confidence'] is num &&
       json.containsKey('excludes') &&
       json.containsKey('implies') &&
       json.containsKey('match') && json['match'] is String &&
@@ -52,8 +52,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('regex') && json['regex'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('value') && json['value'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns copyWith({int? confidence, List<String>? excludes, List<String>? implies, String? match, String? name, String? regex, String? type, String? value, String? version, }) { return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns(
+      json.containsKey('version') && json['version'] is String;}
+UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns copyWith({int? confidence, List<String>? excludes, List<String>? implies, String? match, String? name, String? regex, String? type, String? value, String? version, }) {return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns(
   confidence: confidence ?? this.confidence,
   excludes: excludes ?? this.excludes,
   implies: implies ?? this.implies,
@@ -63,8 +63,8 @@ UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns copyWith({
   type: type ?? this.type,
   value: value ?? this.value,
   version: version ?? this.version,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns &&
           confidence == other.confidence &&
           listEquals(excludes, other.excludes) &&
@@ -74,7 +74,7 @@ UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns copyWith({
           regex == other.regex &&
           type == other.type &&
           value == other.value &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(confidence, Object.hashAll(excludes), Object.hashAll(implies), match, name, regex, type, value, version); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns(confidence: $confidence, excludes: $excludes, implies: $implies, match: $match, name: $name, regex: $regex, type: $type, value: $value, version: $version)'; } 
- }
+          version == other.version;}
+@override int get hashCode {return Object.hash(confidence, Object.hashAll(excludes), Object.hashAll(implies), match, name, regex, type, value, version);}
+@override String toString() {return 'UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns(confidence: $confidence, excludes: $excludes, implies: $implies, match: $match, name: $name, regex: $regex, type: $type, value: $value, version: $version)';}
+}

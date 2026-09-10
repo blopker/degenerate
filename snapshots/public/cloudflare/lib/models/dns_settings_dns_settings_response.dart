@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_flatten_all_cnames.dart';import 'dns_settings_foundation_dns.dart';import 'dns_settings_internal_dns_base.dart';import 'dns_settings_multi_provider.dart';import 'dns_settings_ns_ttl.dart';import 'dns_settings_secondary_overrides.dart';import 'dns_settings_soa_base.dart';import 'dns_settings_zone_mode.dart';@immutable final class DnsSettingsDnsSettingsResponse {const DnsSettingsDnsSettingsResponse({required this.flattenAllCnames, required this.foundationDns, required this.internalDns, required this.multiProvider, required this.nsTtl, required this.secondaryOverrides, required this.soa, required this.zoneMode, });
 
-factory DnsSettingsDnsSettingsResponse.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsSettingsResponse(
+factory DnsSettingsDnsSettingsResponse.fromJson(Map<String, dynamic> json) {return DnsSettingsDnsSettingsResponse(
   flattenAllCnames: DnsSettingsFlattenAllCnames.fromJson(json['flatten_all_cnames'] as bool),
   foundationDns: DnsSettingsFoundationDns.fromJson(json['foundation_dns'] as bool),
   internalDns: DnsSettingsInternalDnsBase.fromJson(json['internal_dns'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory DnsSettingsDnsSettingsResponse.fromJson(Map<String, dynamic> json) { ret
   secondaryOverrides: DnsSettingsSecondaryOverrides.fromJson(json['secondary_overrides'] as bool),
   soa: DnsSettingsSoaBase.fromJson(json['soa'] as Map<String, dynamic>),
   zoneMode: DnsSettingsZoneMode.fromJson(json['zone_mode'] as String),
-); }
+);}
 
 final DnsSettingsFlattenAllCnames flattenAllCnames;
 
@@ -29,7 +29,7 @@ final DnsSettingsSoaBase soa;
 
 final DnsSettingsZoneMode zoneMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'flatten_all_cnames': flattenAllCnames.toJson(),
   'foundation_dns': foundationDns.toJson(),
   'internal_dns': internalDns.toJson(),
@@ -38,16 +38,16 @@ Map<String, dynamic> toJson() { return {
   'secondary_overrides': secondaryOverrides.toJson(),
   'soa': soa.toJson(),
   'zone_mode': zoneMode.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('flatten_all_cnames') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('flatten_all_cnames') &&
       json.containsKey('foundation_dns') &&
       json.containsKey('internal_dns') &&
       json.containsKey('multi_provider') &&
       json.containsKey('ns_ttl') &&
       json.containsKey('secondary_overrides') &&
       json.containsKey('soa') &&
-      json.containsKey('zone_mode'); } 
-DnsSettingsDnsSettingsResponse copyWith({DnsSettingsFlattenAllCnames? flattenAllCnames, DnsSettingsFoundationDns? foundationDns, DnsSettingsInternalDnsBase? internalDns, DnsSettingsMultiProvider? multiProvider, DnsSettingsNsTtl? nsTtl, DnsSettingsSecondaryOverrides? secondaryOverrides, DnsSettingsSoaBase? soa, DnsSettingsZoneMode? zoneMode, }) { return DnsSettingsDnsSettingsResponse(
+      json.containsKey('zone_mode');}
+DnsSettingsDnsSettingsResponse copyWith({DnsSettingsFlattenAllCnames? flattenAllCnames, DnsSettingsFoundationDns? foundationDns, DnsSettingsInternalDnsBase? internalDns, DnsSettingsMultiProvider? multiProvider, DnsSettingsNsTtl? nsTtl, DnsSettingsSecondaryOverrides? secondaryOverrides, DnsSettingsSoaBase? soa, DnsSettingsZoneMode? zoneMode, }) {return DnsSettingsDnsSettingsResponse(
   flattenAllCnames: flattenAllCnames ?? this.flattenAllCnames,
   foundationDns: foundationDns ?? this.foundationDns,
   internalDns: internalDns ?? this.internalDns,
@@ -56,8 +56,8 @@ DnsSettingsDnsSettingsResponse copyWith({DnsSettingsFlattenAllCnames? flattenAll
   secondaryOverrides: secondaryOverrides ?? this.secondaryOverrides,
   soa: soa ?? this.soa,
   zoneMode: zoneMode ?? this.zoneMode,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DnsSettingsDnsSettingsResponse &&
           flattenAllCnames == other.flattenAllCnames &&
           foundationDns == other.foundationDns &&
@@ -66,7 +66,7 @@ DnsSettingsDnsSettingsResponse copyWith({DnsSettingsFlattenAllCnames? flattenAll
           nsTtl == other.nsTtl &&
           secondaryOverrides == other.secondaryOverrides &&
           soa == other.soa &&
-          zoneMode == other.zoneMode; } 
-@override int get hashCode { return Object.hash(flattenAllCnames, foundationDns, internalDns, multiProvider, nsTtl, secondaryOverrides, soa, zoneMode); } 
-@override String toString() { return 'DnsSettingsDnsSettingsResponse(flattenAllCnames: $flattenAllCnames, foundationDns: $foundationDns, internalDns: $internalDns, multiProvider: $multiProvider, nsTtl: $nsTtl, secondaryOverrides: $secondaryOverrides, soa: $soa, zoneMode: $zoneMode)'; } 
- }
+          zoneMode == other.zoneMode;}
+@override int get hashCode {return Object.hash(flattenAllCnames, foundationDns, internalDns, multiProvider, nsTtl, secondaryOverrides, soa, zoneMode);}
+@override String toString() {return 'DnsSettingsDnsSettingsResponse(flattenAllCnames: $flattenAllCnames, foundationDns: $foundationDns, internalDns: $internalDns, multiProvider: $multiProvider, nsTtl: $nsTtl, secondaryOverrides: $secondaryOverrides, soa: $soa, zoneMode: $zoneMode)';}
+}

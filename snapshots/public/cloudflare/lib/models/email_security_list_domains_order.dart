@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityListDomainsOrder {const EmailSecurityListDomainsOrder._(this.value);
 
-factory EmailSecurityListDomainsOrder.fromJson(String json) { return switch (json) {
+factory EmailSecurityListDomainsOrder.fromJson(String json) {return switch (json) {
   'domain' => domain,
   'created_at' => createdAt,
   _ => EmailSecurityListDomainsOrder._(json),
-}; }
+};}
 
 static const EmailSecurityListDomainsOrder domain = EmailSecurityListDomainsOrder._('domain');
 
@@ -16,11 +16,11 @@ static const List<EmailSecurityListDomainsOrder> values = [domain, createdAt];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityListDomainsOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityListDomainsOrder($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is EmailSecurityListDomainsOrder && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'EmailSecurityListDomainsOrder($value)';}
+}

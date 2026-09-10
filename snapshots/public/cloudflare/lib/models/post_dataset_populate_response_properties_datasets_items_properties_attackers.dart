@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_populate_response_properties_datasets_items_properties_attackers_properties.dart';@immutable final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers({required this.properties, required this.type, });
 
-factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers(
+factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers.fromJson(Map<String, dynamic> json) {return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers(
   properties: PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: json['type'] as String,
-); }
+);}
 
 final PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersProperties properties;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'properties': properties.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('properties') &&
-      json.containsKey('type') && json['type'] is String; } 
-PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersProperties? properties, String? type, }) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('properties') &&
+      json.containsKey('type') && json['type'] is String;}
+PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersProperties? properties, String? type, }) {return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers(
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(properties, type); } 
-@override String toString() { return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers(properties: $properties, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(properties, type);}
+@override String toString() {return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackers(properties: $properties, type: $type)';}
+}

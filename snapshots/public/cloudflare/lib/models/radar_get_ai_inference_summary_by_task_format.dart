@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAiInferenceSummaryByTaskFormat {const RadarGetAiInferenceSummaryByTaskFormat._(this.value);
 
-factory RadarGetAiInferenceSummaryByTaskFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAiInferenceSummaryByTaskFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAiInferenceSummaryByTaskFormat._(json),
-}; }
+};}
 
 static const RadarGetAiInferenceSummaryByTaskFormat $json = RadarGetAiInferenceSummaryByTaskFormat._('JSON');
 
@@ -17,11 +17,11 @@ static const List<RadarGetAiInferenceSummaryByTaskFormat> values = [$json, csv];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetAiInferenceSummaryByTaskFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetAiInferenceSummaryByTaskFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is RadarGetAiInferenceSummaryByTaskFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'RadarGetAiInferenceSummaryByTaskFormat($value)';}
+}

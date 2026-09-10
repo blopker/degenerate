@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsPaymentMethodAttachRequest {const PostPaymentMethodsPaymentMethodAttachRequest({this.customer, this.customerAccount, this.expand, });
 
-factory PostPaymentMethodsPaymentMethodAttachRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodAttachRequest(
+factory PostPaymentMethodsPaymentMethodAttachRequest.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsPaymentMethodAttachRequest(
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The ID of the customer to which to attach the PaymentMethod.
 final String? customer;
@@ -17,22 +17,22 @@ final String? customerAccount;
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer': ?customer,
   'customer_account': ?customerAccount,
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'customer_account', 'expand'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodAttachRequest copyWith({String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) { return PostPaymentMethodsPaymentMethodAttachRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer', 'customer_account', 'expand'}.contains(key));}
+PostPaymentMethodsPaymentMethodAttachRequest copyWith({String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) {return PostPaymentMethodsPaymentMethodAttachRequest(
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   expand: expand != null ? expand() : this.expand,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodAttachRequest &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(customer, customerAccount, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodAttachRequest(customer: $customer, customerAccount: $customerAccount, expand: $expand)'; } 
- }
+          listEquals(expand, other.expand);}
+@override int get hashCode {return Object.hash(customer, customerAccount, Object.hashAll(expand ?? const []));}
+@override String toString() {return 'PostPaymentMethodsPaymentMethodAttachRequest(customer: $customer, customerAccount: $customerAccount, expand: $expand)';}
+}

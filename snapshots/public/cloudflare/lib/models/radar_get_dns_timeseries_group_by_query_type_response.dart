@@ -2,29 +2,29 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_query_type_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByQueryTypeResponse {const RadarGetDnsTimeseriesGroupByQueryTypeResponse({required this.result, required this.success, });
 
-factory RadarGetDnsTimeseriesGroupByQueryTypeResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByQueryTypeResponse(
+factory RadarGetDnsTimeseriesGroupByQueryTypeResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByQueryTypeResponse(
   result: RadarGetDnsTimeseriesGroupByQueryTypeResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsTimeseriesGroupByQueryTypeResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByQueryTypeResponse copyWith({RadarGetDnsTimeseriesGroupByQueryTypeResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByQueryTypeResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsTimeseriesGroupByQueryTypeResponse copyWith({RadarGetDnsTimeseriesGroupByQueryTypeResponseResult? result, bool? success, }) {return RadarGetDnsTimeseriesGroupByQueryTypeResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByQueryTypeResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByQueryTypeResponse(result: $result, success: $success)'; } 
- }
+          success == other.success;}
+@override int get hashCode {return Object.hash(result, success);}
+@override String toString() {return 'RadarGetDnsTimeseriesGroupByQueryTypeResponse(result: $result, success: $success)';}
+}

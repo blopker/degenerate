@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_registry_package_published_registry_package.dart';@immutable final class WebhookRegistryPackagePublishedAction {const WebhookRegistryPackagePublishedAction._(this.value);
 
-factory WebhookRegistryPackagePublishedAction.fromJson(String json) { return switch (json) {
+factory WebhookRegistryPackagePublishedAction.fromJson(String json) {return switch (json) {
   'published' => published,
   _ => WebhookRegistryPackagePublishedAction._(json),
-}; }
+};}
 
 static const WebhookRegistryPackagePublishedAction published = WebhookRegistryPackagePublishedAction._('published');
 
@@ -13,17 +13,17 @@ static const List<WebhookRegistryPackagePublishedAction> values = [published];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRegistryPackagePublishedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRegistryPackagePublishedAction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WebhookRegistryPackagePublishedAction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WebhookRegistryPackagePublishedAction($value)';}
+}
 @immutable final class WebhookRegistryPackagePublished {const WebhookRegistryPackagePublished({required this.action, required this.registryPackage, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookRegistryPackagePublished.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublished(
+factory WebhookRegistryPackagePublished.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackagePublished(
   action: WebhookRegistryPackagePublishedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -31,7 +31,7 @@ factory WebhookRegistryPackagePublished.fromJson(Map<String, dynamic> json) { re
   registryPackage: WebhookRegistryPackagePublishedRegistryPackage.fromJson(json['registry_package'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookRegistryPackagePublishedAction action;
 
@@ -47,7 +47,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -55,11 +55,11 @@ Map<String, dynamic> toJson() { return {
   'registry_package': registryPackage.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('registry_package') &&
-      json.containsKey('sender'); } 
-WebhookRegistryPackagePublished copyWith({WebhookRegistryPackagePublishedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookRegistryPackagePublishedRegistryPackage? registryPackage, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookRegistryPackagePublished(
+      json.containsKey('sender');}
+WebhookRegistryPackagePublished copyWith({WebhookRegistryPackagePublishedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookRegistryPackagePublishedRegistryPackage? registryPackage, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) {return WebhookRegistryPackagePublished(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -67,8 +67,8 @@ WebhookRegistryPackagePublished copyWith({WebhookRegistryPackagePublishedAction?
   registryPackage: registryPackage ?? this.registryPackage,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhookRegistryPackagePublished &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -76,7 +76,7 @@ WebhookRegistryPackagePublished copyWith({WebhookRegistryPackagePublishedAction?
           organization == other.organization &&
           registryPackage == other.registryPackage &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, registryPackage, repository, sender); } 
-@override String toString() { return 'WebhookRegistryPackagePublished(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, registryPackage: $registryPackage, repository: $repository, sender: $sender)'; } 
- }
+          sender == other.sender;}
+@override int get hashCode {return Object.hash(action, enterprise, installation, organization, registryPackage, repository, sender);}
+@override String toString() {return 'WebhookRegistryPackagePublished(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, registryPackage: $registryPackage, repository: $repository, sender: $sender)';}
+}

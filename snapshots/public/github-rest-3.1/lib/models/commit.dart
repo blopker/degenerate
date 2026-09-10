@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_author.dart';import 'commit_commit.dart';import 'commit_committer.dart';import 'commit_parents.dart';import 'commit_stats.dart';import 'diff_entry.dart';import 'empty_object.dart';import 'simple_user.dart';/// Commit
 @immutable final class Commit {const Commit({required this.url, required this.sha, required this.nodeId, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, this.stats, this.files, });
 
-factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
+factory Commit.fromJson(Map<String, dynamic> json) {return Commit(
   url: Uri.parse(json['url'] as String),
   sha: json['sha'] as String,
   nodeId: json['node_id'] as String,
@@ -15,7 +15,7 @@ factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
   parents: (json['parents'] as List<dynamic>).map((e) => CommitParents.fromJson(e as Map<String, dynamic>)).toList(),
   stats: json['stats'] != null ? CommitStats.fromJson(json['stats'] as Map<String, dynamic>) : null,
   files: (json['files'] as List<dynamic>?)?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -39,7 +39,7 @@ final CommitStats? stats;
 
 final List<DiffEntry>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'sha': sha,
   'node_id': nodeId,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'parents': parents.map((e) => e.toJson()).toList(),
   if (stats != null) 'stats': stats?.toJson(),
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -60,8 +60,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('commit') &&
       json.containsKey('author') &&
       json.containsKey('committer') &&
-      json.containsKey('parents'); } 
-Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, CommitStats? Function()? stats, List<DiffEntry>? Function()? files, }) { return Commit(
+      json.containsKey('parents');}
+Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, CommitStats? Function()? stats, List<DiffEntry>? Function()? files, }) {return Commit(
   url: url ?? this.url,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,
@@ -73,8 +73,8 @@ Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? comme
   parents: parents ?? this.parents,
   stats: stats != null ? stats() : this.stats,
   files: files != null ? files() : this.files,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Commit &&
           url == other.url &&
           sha == other.sha &&
@@ -86,7 +86,7 @@ Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? comme
           committer == other.committer &&
           listEquals(parents, other.parents) &&
           stats == other.stats &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hash(url, sha, nodeId, htmlUrl, commentsUrl, commit, author, committer, Object.hashAll(parents), stats, Object.hashAll(files ?? const [])); } 
-@override String toString() { return 'Commit(url: $url, sha: $sha, nodeId: $nodeId, htmlUrl: $htmlUrl, commentsUrl: $commentsUrl, commit: $commit, author: $author, committer: $committer, parents: $parents, stats: $stats, files: $files)'; } 
- }
+          listEquals(files, other.files);}
+@override int get hashCode {return Object.hash(url, sha, nodeId, htmlUrl, commentsUrl, commit, author, committer, Object.hashAll(parents), stats, Object.hashAll(files ?? const []));}
+@override String toString() {return 'Commit(url: $url, sha: $sha, nodeId: $nodeId, htmlUrl: $htmlUrl, commentsUrl: $commentsUrl, commit: $commit, author: $author, committer: $committer, parents: $parents, stats: $stats, files: $files)';}
+}

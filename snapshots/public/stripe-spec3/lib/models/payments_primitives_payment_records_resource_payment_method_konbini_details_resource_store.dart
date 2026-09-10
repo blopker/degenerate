@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the convenience store chain where the payment was completed.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(this.value);
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(String json) {return switch (json) {
   'familymart' => familymart,
   'lawson' => lawson,
   'ministop' => ministop,
   'seicomart' => seicomart,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain familymart = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('familymart');
 
@@ -23,34 +23,34 @@ static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain($value)';}
+}
 /// 
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore({this.chain = const Omittable.absent()});
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
   chain: json.containsKey('chain') ? Omittable(json['chain'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(json['chain'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the convenience store chain where the payment was completed.
 final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain?> chain;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (chain.isPresent) 'chain': chain.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chain'}.contains(key)); } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore copyWith({Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain?>? chain}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'chain'}.contains(key));}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore copyWith({Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain?>? chain}) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
   chain: chain ?? this.chain,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore &&
-          chain == other.chain; } 
-@override int get hashCode { return chain.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(chain: $chain)'; } 
- }
+          chain == other.chain;}
+@override int get hashCode {return chain.hashCode;}
+@override String toString() {return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(chain: $chain)';}
+}

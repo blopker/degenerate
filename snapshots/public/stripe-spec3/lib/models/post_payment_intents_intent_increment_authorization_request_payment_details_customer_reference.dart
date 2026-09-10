@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2 {const PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2._(this.value);
 
-factory PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2.fromJson(String json) {return switch (json) {
   '' => $empty,
   _ => PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2._(json),
-}; }
+};}
 
 static const PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2 $empty = PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2._('');
 
@@ -13,14 +13,14 @@ static const List<PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2 && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2($value)';}
+}
 
 @immutable
 final class PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReference {

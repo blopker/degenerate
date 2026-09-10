@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage
 /// 
 @immutable final class ImageEditCompletedEventSize {const ImageEditCompletedEventSize._(this.value);
 
-factory ImageEditCompletedEventSize.fromJson(String json) { return switch (json) {
+factory ImageEditCompletedEventSize.fromJson(String json) {return switch (json) {
   '1024x1024' => $1024x1024,
   '1024x1536' => $1024x1536,
   '1536x1024' => $1536x1024,
   'auto' => auto,
   _ => ImageEditCompletedEventSize._(json),
-}; }
+};}
 
 static const ImageEditCompletedEventSize $1024x1024 = ImageEditCompletedEventSize._('1024x1024');
 
@@ -24,25 +24,25 @@ static const List<ImageEditCompletedEventSize> values = [$1024x1024, $1024x1536,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageEditCompletedEventSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageEditCompletedEventSize($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageEditCompletedEventSize && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageEditCompletedEventSize($value)';}
+}
 /// The quality setting for the edited image.
 /// 
 @immutable final class ImageEditCompletedEventQuality {const ImageEditCompletedEventQuality._(this.value);
 
-factory ImageEditCompletedEventQuality.fromJson(String json) { return switch (json) {
+factory ImageEditCompletedEventQuality.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
   _ => ImageEditCompletedEventQuality._(json),
-}; }
+};}
 
 static const ImageEditCompletedEventQuality low = ImageEditCompletedEventQuality._('low');
 
@@ -56,24 +56,24 @@ static const List<ImageEditCompletedEventQuality> values = [low, medium, high, a
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageEditCompletedEventQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageEditCompletedEventQuality($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageEditCompletedEventQuality && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageEditCompletedEventQuality($value)';}
+}
 /// The background setting for the edited image.
 /// 
 @immutable final class ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground._(this.value);
 
-factory ImageEditCompletedEventBackground.fromJson(String json) { return switch (json) {
+factory ImageEditCompletedEventBackground.fromJson(String json) {return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
   _ => ImageEditCompletedEventBackground._(json),
-}; }
+};}
 
 static const ImageEditCompletedEventBackground transparent = ImageEditCompletedEventBackground._('transparent');
 
@@ -85,24 +85,24 @@ static const List<ImageEditCompletedEventBackground> values = [transparent, opaq
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageEditCompletedEventBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageEditCompletedEventBackground($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageEditCompletedEventBackground && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageEditCompletedEventBackground($value)';}
+}
 /// The output format for the edited image.
 /// 
 @immutable final class ImageEditCompletedEventOutputFormat {const ImageEditCompletedEventOutputFormat._(this.value);
 
-factory ImageEditCompletedEventOutputFormat.fromJson(String json) { return switch (json) {
+factory ImageEditCompletedEventOutputFormat.fromJson(String json) {return switch (json) {
   'png' => png,
   'webp' => webp,
   'jpeg' => jpeg,
   _ => ImageEditCompletedEventOutputFormat._(json),
-}; }
+};}
 
 static const ImageEditCompletedEventOutputFormat png = ImageEditCompletedEventOutputFormat._('png');
 
@@ -114,19 +114,19 @@ static const List<ImageEditCompletedEventOutputFormat> values = [png, webp, jpeg
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageEditCompletedEventOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageEditCompletedEventOutputFormat($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is ImageEditCompletedEventOutputFormat && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'ImageEditCompletedEventOutputFormat($value)';}
+}
 /// Emitted when image editing has completed and the final image is available.
 /// 
 @immutable final class ImageEditCompletedEvent {const ImageEditCompletedEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.usage, });
 
-factory ImageEditCompletedEvent.fromJson(Map<String, dynamic> json) { return ImageEditCompletedEvent(
+factory ImageEditCompletedEvent.fromJson(Map<String, dynamic> json) {return ImageEditCompletedEvent(
   type: json['type'] as String,
   b64Json: json['b64_json'] as String,
   createdAt: (json['created_at'] as num).toInt(),
@@ -135,7 +135,7 @@ factory ImageEditCompletedEvent.fromJson(Map<String, dynamic> json) { return Ima
   background: ImageEditCompletedEventBackground.fromJson(json['background'] as String),
   outputFormat: ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String),
   usage: ImagesUsage.fromJson(json['usage'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the event. Always `image_edit.completed`.
 /// 
@@ -167,7 +167,7 @@ final ImageEditCompletedEventOutputFormat outputFormat;
 
 final ImagesUsage usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'b64_json': b64Json,
   'created_at': createdAt,
@@ -176,16 +176,16 @@ Map<String, dynamic> toJson() { return {
   'background': background.toJson(),
   'output_format': outputFormat.toJson(),
   'usage': usage.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('b64_json') && json['b64_json'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('size') &&
       json.containsKey('quality') &&
       json.containsKey('background') &&
       json.containsKey('output_format') &&
-      json.containsKey('usage'); } 
-ImageEditCompletedEvent copyWith({String? type, String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageEditCompletedEvent(
+      json.containsKey('usage');}
+ImageEditCompletedEvent copyWith({String? type, String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) {return ImageEditCompletedEvent(
   type: type ?? this.type,
   b64Json: b64Json ?? this.b64Json,
   createdAt: createdAt ?? this.createdAt,
@@ -194,8 +194,8 @@ ImageEditCompletedEvent copyWith({String? type, String? b64Json, int? createdAt,
   background: background ?? this.background,
   outputFormat: outputFormat ?? this.outputFormat,
   usage: usage ?? this.usage,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ImageEditCompletedEvent &&
           type == other.type &&
           b64Json == other.b64Json &&
@@ -204,7 +204,7 @@ ImageEditCompletedEvent copyWith({String? type, String? b64Json, int? createdAt,
           quality == other.quality &&
           background == other.background &&
           outputFormat == other.outputFormat &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, usage); } 
-@override String toString() { return 'ImageEditCompletedEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, usage: $usage)'; } 
- }
+          usage == other.usage;}
+@override int get hashCode {return Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, usage);}
+@override String toString() {return 'ImageEditCompletedEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, usage: $usage)';}
+}

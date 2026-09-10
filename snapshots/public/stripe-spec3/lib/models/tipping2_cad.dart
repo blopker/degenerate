@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Tipping2Cad {const Tipping2Cad({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
 
-factory Tipping2Cad.fromJson(Map<String, dynamic> json) { return Tipping2Cad(
+factory Tipping2Cad.fromJson(Map<String, dynamic> json) {return Tipping2Cad(
   fixedAmounts: (json['fixed_amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   percentages: (json['percentages'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   smartTipThreshold: json['smart_tip_threshold'] != null ? (json['smart_tip_threshold'] as num).toInt() : null,
-); }
+);}
 
 final List<int>? fixedAmounts;
 
@@ -14,22 +14,22 @@ final List<int>? percentages;
 
 final int? smartTipThreshold;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fixed_amounts': ?fixedAmounts,
   'percentages': ?percentages,
   'smart_tip_threshold': ?smartTipThreshold,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key)); } 
-Tipping2Cad copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int? Function()? smartTipThreshold, }) { return Tipping2Cad(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key));}
+Tipping2Cad copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int? Function()? smartTipThreshold, }) {return Tipping2Cad(
   fixedAmounts: fixedAmounts != null ? fixedAmounts() : this.fixedAmounts,
   percentages: percentages != null ? percentages() : this.percentages,
   smartTipThreshold: smartTipThreshold != null ? smartTipThreshold() : this.smartTipThreshold,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is Tipping2Cad &&
           listEquals(fixedAmounts, other.fixedAmounts) &&
           listEquals(percentages, other.percentages) &&
-          smartTipThreshold == other.smartTipThreshold; } 
-@override int get hashCode { return Object.hash(Object.hashAll(fixedAmounts ?? const []), Object.hashAll(percentages ?? const []), smartTipThreshold); } 
-@override String toString() { return 'Tipping2Cad(fixedAmounts: $fixedAmounts, percentages: $percentages, smartTipThreshold: $smartTipThreshold)'; } 
- }
+          smartTipThreshold == other.smartTipThreshold;}
+@override int get hashCode {return Object.hash(Object.hashAll(fixedAmounts ?? const []), Object.hashAll(percentages ?? const []), smartTipThreshold);}
+@override String toString() {return 'Tipping2Cad(fixedAmounts: $fixedAmounts, percentages: $percentages, smartTipThreshold: $smartTipThreshold)';}
+}

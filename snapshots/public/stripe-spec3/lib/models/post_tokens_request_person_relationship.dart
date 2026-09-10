@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_relationship_percent_ownership.dart';@immutable final class PostTokensRequestPersonRelationship {const PostTokensRequestPersonRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
 
-factory PostTokensRequestPersonRelationship.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonRelationship(
+factory PostTokensRequestPersonRelationship.fromJson(Map<String, dynamic> json) {return PostTokensRequestPersonRelationship(
   authorizer: json['authorizer'] as bool?,
   director: json['director'] as bool?,
   executive: json['executive'] as bool?,
@@ -11,7 +11,7 @@ factory PostTokensRequestPersonRelationship.fromJson(Map<String, dynamic> json) 
   percentOwnership: json['percent_ownership'] != null ? PostTokensRequestPersonRelationshipPercentOwnership.fromJson(json['percent_ownership']) : null,
   representative: json['representative'] as bool?,
   title: json['title'] as String?,
-); }
+);}
 
 final bool? authorizer;
 
@@ -29,7 +29,7 @@ final bool? representative;
 
 final String? title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'authorizer': ?authorizer,
   'director': ?director,
   'executive': ?executive,
@@ -38,9 +38,9 @@ Map<String, dynamic> toJson() { return {
   if (percentOwnership != null) 'percent_ownership': percentOwnership?.toJson(),
   'representative': ?representative,
   'title': ?title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key)); } 
-PostTokensRequestPersonRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, PostTokensRequestPersonRelationshipPercentOwnership? Function()? percentOwnership, bool? Function()? representative, String? Function()? title, }) { return PostTokensRequestPersonRelationship(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key));}
+PostTokensRequestPersonRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, PostTokensRequestPersonRelationshipPercentOwnership? Function()? percentOwnership, bool? Function()? representative, String? Function()? title, }) {return PostTokensRequestPersonRelationship(
   authorizer: authorizer != null ? authorizer() : this.authorizer,
   director: director != null ? director() : this.director,
   executive: executive != null ? executive() : this.executive,
@@ -49,8 +49,8 @@ PostTokensRequestPersonRelationship copyWith({bool? Function()? authorizer, bool
   percentOwnership: percentOwnership != null ? percentOwnership() : this.percentOwnership,
   representative: representative != null ? representative() : this.representative,
   title: title != null ? title() : this.title,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTokensRequestPersonRelationship &&
           authorizer == other.authorizer &&
           director == other.director &&
@@ -59,7 +59,7 @@ PostTokensRequestPersonRelationship copyWith({bool? Function()? authorizer, bool
           owner == other.owner &&
           percentOwnership == other.percentOwnership &&
           representative == other.representative &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title); } 
-@override String toString() { return 'PostTokensRequestPersonRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)'; } 
- }
+          title == other.title;}
+@override int get hashCode {return Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title);}
+@override String toString() {return 'PostTokensRequestPersonRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)';}
+}

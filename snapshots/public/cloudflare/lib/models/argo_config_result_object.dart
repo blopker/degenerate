@@ -23,12 +23,12 @@ String toJson() => value;
 }
 @immutable final class ArgoConfigResultObject {const ArgoConfigResultObject({required this.editable, required this.id, required this.value, this.modifiedOn, });
 
-factory ArgoConfigResultObject.fromJson(Map<String, dynamic> json) { return ArgoConfigResultObject(
+factory ArgoConfigResultObject.fromJson(Map<String, dynamic> json) {return ArgoConfigResultObject(
   editable: ArgoConfigEditable.fromJson(json['editable'] as bool),
   id: ArgoConfigSettingId.fromJson(json['id'] as String),
   modifiedOn: json['modified_on'] != null ? ArgoConfigModifiedOn.fromJson(json['modified_on'] as String) : null,
   value: ArgoConfigSettingValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Specifies if the setting is editable.
 final ArgoConfigEditable editable;
@@ -40,27 +40,27 @@ final ArgoConfigModifiedOn? modifiedOn;
 
 final ArgoConfigSettingValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': editable.toJson(),
   'id': id.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('editable') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('editable') &&
       json.containsKey('id') &&
-      json.containsKey('value'); } 
-ArgoConfigResultObject copyWith({ArgoConfigEditable? editable, ArgoConfigSettingId? id, ArgoConfigModifiedOn? Function()? modifiedOn, ArgoConfigSettingValue? value, }) { return ArgoConfigResultObject(
+      json.containsKey('value');}
+ArgoConfigResultObject copyWith({ArgoConfigEditable? editable, ArgoConfigSettingId? id, ArgoConfigModifiedOn? Function()? modifiedOn, ArgoConfigSettingValue? value, }) {return ArgoConfigResultObject(
   editable: editable ?? this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value ?? this.value,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is ArgoConfigResultObject &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value); } 
-@override String toString() { return 'ArgoConfigResultObject(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
- }
+          value == other.value;}
+@override int get hashCode {return Object.hash(editable, id, modifiedOn, value);}
+@override String toString() {return 'ArgoConfigResultObject(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';}
+}

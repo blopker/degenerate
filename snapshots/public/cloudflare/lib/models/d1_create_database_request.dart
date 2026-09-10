@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_database_name.dart';/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
 @immutable final class D1Jurisdiction {const D1Jurisdiction._(this.value);
 
-factory D1Jurisdiction.fromJson(String json) { return switch (json) {
+factory D1Jurisdiction.fromJson(String json) {return switch (json) {
   'eu' => eu,
   'fedramp' => fedramp,
   _ => D1Jurisdiction._(json),
-}; }
+};}
 
 static const D1Jurisdiction eu = D1Jurisdiction._('eu');
 
@@ -17,18 +17,18 @@ static const List<D1Jurisdiction> values = [eu, fedramp];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1Jurisdiction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1Jurisdiction($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is D1Jurisdiction && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'D1Jurisdiction($value)';}
+}
 /// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
 @immutable final class D1PrimaryLocationHint {const D1PrimaryLocationHint._(this.value);
 
-factory D1PrimaryLocationHint.fromJson(String json) { return switch (json) {
+factory D1PrimaryLocationHint.fromJson(String json) {return switch (json) {
   'wnam' => wnam,
   'enam' => enam,
   'weur' => weur,
@@ -36,7 +36,7 @@ factory D1PrimaryLocationHint.fromJson(String json) { return switch (json) {
   'apac' => apac,
   'oc' => oc,
   _ => D1PrimaryLocationHint._(json),
-}; }
+};}
 
 static const D1PrimaryLocationHint wnam = D1PrimaryLocationHint._('wnam');
 
@@ -54,21 +54,21 @@ static const List<D1PrimaryLocationHint> values = [wnam, enam, weur, eeur, apac,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1PrimaryLocationHint && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1PrimaryLocationHint($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is D1PrimaryLocationHint && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'D1PrimaryLocationHint($value)';}
+}
 @immutable final class D1CreateDatabaseRequest {const D1CreateDatabaseRequest({required this.name, this.jurisdiction, this.primaryLocationHint, });
 
-factory D1CreateDatabaseRequest.fromJson(Map<String, dynamic> json) { return D1CreateDatabaseRequest(
+factory D1CreateDatabaseRequest.fromJson(Map<String, dynamic> json) {return D1CreateDatabaseRequest(
   jurisdiction: json['jurisdiction'] != null ? D1Jurisdiction.fromJson(json['jurisdiction'] as String) : null,
   name: D1DatabaseName.fromJson(json['name'] as String),
   primaryLocationHint: json['primary_location_hint'] != null ? D1PrimaryLocationHint.fromJson(json['primary_location_hint'] as String) : null,
-); }
+);}
 
 /// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
 final D1Jurisdiction? jurisdiction;
@@ -79,22 +79,22 @@ final D1DatabaseName name;
 /// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
 final D1PrimaryLocationHint? primaryLocationHint;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (jurisdiction != null) 'jurisdiction': jurisdiction?.toJson(),
   'name': name.toJson(),
   if (primaryLocationHint != null) 'primary_location_hint': primaryLocationHint?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-D1CreateDatabaseRequest copyWith({D1Jurisdiction? Function()? jurisdiction, D1DatabaseName? name, D1PrimaryLocationHint? Function()? primaryLocationHint, }) { return D1CreateDatabaseRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+D1CreateDatabaseRequest copyWith({D1Jurisdiction? Function()? jurisdiction, D1DatabaseName? name, D1PrimaryLocationHint? Function()? primaryLocationHint, }) {return D1CreateDatabaseRequest(
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   name: name ?? this.name,
   primaryLocationHint: primaryLocationHint != null ? primaryLocationHint() : this.primaryLocationHint,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is D1CreateDatabaseRequest &&
           jurisdiction == other.jurisdiction &&
           name == other.name &&
-          primaryLocationHint == other.primaryLocationHint; } 
-@override int get hashCode { return Object.hash(jurisdiction, name, primaryLocationHint); } 
-@override String toString() { return 'D1CreateDatabaseRequest(jurisdiction: $jurisdiction, name: $name, primaryLocationHint: $primaryLocationHint)'; } 
- }
+          primaryLocationHint == other.primaryLocationHint;}
+@override int get hashCode {return Object.hash(jurisdiction, name, primaryLocationHint);}
+@override String toString() {return 'D1CreateDatabaseRequest(jurisdiction: $jurisdiction, name: $name, primaryLocationHint: $primaryLocationHint)';}
+}

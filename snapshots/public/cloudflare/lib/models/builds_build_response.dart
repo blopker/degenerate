@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_outcome.dart';import 'builds_build_response_pull_request.dart';import 'builds_build_response_trigger.dart';import 'builds_build_trigger_metadata_response.dart';import 'builds_build_uuid.dart';import 'builds_created_on.dart';import 'builds_modified_on.dart';import 'builds_stopped_on.dart';@immutable final class BuildsBuildStatus {const BuildsBuildStatus._(this.value);
 
-factory BuildsBuildStatus.fromJson(String json) { return switch (json) {
+factory BuildsBuildStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'initializing' => initializing,
   'running' => running,
   'stopped' => stopped,
   _ => BuildsBuildStatus._(json),
-}; }
+};}
 
 static const BuildsBuildStatus queued = BuildsBuildStatus._('queued');
 
@@ -22,17 +22,17 @@ static const List<BuildsBuildStatus> values = [queued, initializing, running, st
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BuildsBuildStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BuildsBuildStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is BuildsBuildStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'BuildsBuildStatus($value)';}
+}
 @immutable final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, this.buildTriggerMetadata, this.buildUuid, this.createdOn, this.initializingOn = const Omittable.absent(), this.modifiedOn, this.pullRequest = const Omittable.absent(), this.runningOn = const Omittable.absent(), this.status, this.stoppedOn = const Omittable.absent(), this.trigger, });
 
-factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildResponse(
+factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) {return BuildsBuildResponse(
   buildOutcome: json['build_outcome'] != null ? BuildsBuildOutcome.fromJson(json['build_outcome'] as String) : null,
   buildTriggerMetadata: json['build_trigger_metadata'] != null ? BuildsBuildTriggerMetadataResponse.fromJson(json['build_trigger_metadata'] as Map<String, dynamic>) : null,
   buildUuid: json['build_uuid'] != null ? BuildsBuildUuid.fromJson(json['build_uuid'] as String) : null,
@@ -44,7 +44,7 @@ factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsB
   status: json['status'] != null ? BuildsBuildStatus.fromJson(json['status'] as String) : null,
   stoppedOn: json.containsKey('stopped_on') ? Omittable(json['stopped_on'] != null ? BuildsStoppedOn.fromJson(json['stopped_on'] as String) : null) : const Omittable.absent(),
   trigger: json['trigger'] != null ? BuildsBuildResponseTrigger.fromJson(json['trigger'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final BuildsBuildOutcome? buildOutcome;
 
@@ -69,7 +69,7 @@ final Omittable<BuildsStoppedOn?> stoppedOn;
 /// Trigger information without build_token_uuid
 final BuildsBuildResponseTrigger? trigger;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buildOutcome != null) 'build_outcome': buildOutcome?.toJson(),
   if (buildTriggerMetadata != null) 'build_trigger_metadata': buildTriggerMetadata?.toJson(),
   if (buildUuid != null) 'build_uuid': buildUuid?.toJson(),
@@ -81,9 +81,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (stoppedOn.isPresent) 'stopped_on': stoppedOn.value?.toJson(),
   if (trigger != null) 'trigger': trigger?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_outcome', 'build_trigger_metadata', 'build_uuid', 'created_on', 'initializing_on', 'modified_on', 'pull_request', 'running_on', 'status', 'stopped_on', 'trigger'}.contains(key)); } 
-BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, BuildsBuildTriggerMetadataResponse? Function()? buildTriggerMetadata, BuildsBuildUuid? Function()? buildUuid, BuildsCreatedOn? Function()? createdOn, Omittable<DateTime?>? initializingOn, BuildsModifiedOn? Function()? modifiedOn, Omittable<BuildsBuildResponsePullRequest?>? pullRequest, Omittable<DateTime?>? runningOn, BuildsBuildStatus? Function()? status, Omittable<BuildsStoppedOn?>? stoppedOn, BuildsBuildResponseTrigger? Function()? trigger, }) { return BuildsBuildResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'build_outcome', 'build_trigger_metadata', 'build_uuid', 'created_on', 'initializing_on', 'modified_on', 'pull_request', 'running_on', 'status', 'stopped_on', 'trigger'}.contains(key));}
+BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, BuildsBuildTriggerMetadataResponse? Function()? buildTriggerMetadata, BuildsBuildUuid? Function()? buildUuid, BuildsCreatedOn? Function()? createdOn, Omittable<DateTime?>? initializingOn, BuildsModifiedOn? Function()? modifiedOn, Omittable<BuildsBuildResponsePullRequest?>? pullRequest, Omittable<DateTime?>? runningOn, BuildsBuildStatus? Function()? status, Omittable<BuildsStoppedOn?>? stoppedOn, BuildsBuildResponseTrigger? Function()? trigger, }) {return BuildsBuildResponse(
   buildOutcome: buildOutcome != null ? buildOutcome() : this.buildOutcome,
   buildTriggerMetadata: buildTriggerMetadata != null ? buildTriggerMetadata() : this.buildTriggerMetadata,
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,
@@ -95,8 +95,8 @@ BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, Buil
   status: status != null ? status() : this.status,
   stoppedOn: stoppedOn ?? this.stoppedOn,
   trigger: trigger != null ? trigger() : this.trigger,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BuildsBuildResponse &&
           buildOutcome == other.buildOutcome &&
           buildTriggerMetadata == other.buildTriggerMetadata &&
@@ -108,7 +108,7 @@ BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, Buil
           runningOn == other.runningOn &&
           status == other.status &&
           stoppedOn == other.stoppedOn &&
-          trigger == other.trigger; } 
-@override int get hashCode { return Object.hash(buildOutcome, buildTriggerMetadata, buildUuid, createdOn, initializingOn, modifiedOn, pullRequest, runningOn, status, stoppedOn, trigger); } 
-@override String toString() { return 'BuildsBuildResponse(buildOutcome: $buildOutcome, buildTriggerMetadata: $buildTriggerMetadata, buildUuid: $buildUuid, createdOn: $createdOn, initializingOn: $initializingOn, modifiedOn: $modifiedOn, pullRequest: $pullRequest, runningOn: $runningOn, status: $status, stoppedOn: $stoppedOn, trigger: $trigger)'; } 
- }
+          trigger == other.trigger;}
+@override int get hashCode {return Object.hash(buildOutcome, buildTriggerMetadata, buildUuid, createdOn, initializingOn, modifiedOn, pullRequest, runningOn, status, stoppedOn, trigger);}
+@override String toString() {return 'BuildsBuildResponse(buildOutcome: $buildOutcome, buildTriggerMetadata: $buildTriggerMetadata, buildUuid: $buildUuid, createdOn: $createdOn, initializingOn: $initializingOn, modifiedOn: $modifiedOn, pullRequest: $pullRequest, runningOn: $runningOn, status: $status, stoppedOn: $stoppedOn, trigger: $trigger)';}
+}

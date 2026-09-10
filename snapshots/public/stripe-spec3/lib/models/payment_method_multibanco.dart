@@ -3,16 +3,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodMultibanco {const PaymentMethodMultibanco();
 
-factory PaymentMethodMultibanco.fromJson(Map<String, dynamic> _) { return const PaymentMethodMultibanco(); }
+factory PaymentMethodMultibanco.fromJson(Map<String, dynamic> _) {return const PaymentMethodMultibanco();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodMultibanco copyWith() { return const PaymentMethodMultibanco(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+PaymentMethodMultibanco copyWith() {return const PaymentMethodMultibanco(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodMultibanco; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PaymentMethodMultibanco()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is PaymentMethodMultibanco;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'PaymentMethodMultibanco()';}
+}

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_business_profile.dart';import 'post_billing_portal_configurations_configuration_request_default_return_url.dart';import 'post_billing_portal_configurations_configuration_request_features.dart';import 'post_billing_portal_configurations_configuration_request_login_page.dart';import 'post_billing_portal_configurations_configuration_request_metadata.dart';import 'post_billing_portal_configurations_configuration_request_name.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequest {const PostBillingPortalConfigurationsConfigurationRequest({this.active, this.businessProfile, this.defaultReturnUrl, this.expand, this.features, this.loginPage, this.metadata, this.name, });
 
-factory PostBillingPortalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequest(
+factory PostBillingPortalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequest(
   active: json['active'] as bool?,
   businessProfile: json['business_profile'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
   defaultReturnUrl: json['default_return_url'] != null ? PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrl.fromJson(json['default_return_url']) : null,
@@ -11,7 +11,7 @@ factory PostBillingPortalConfigurationsConfigurationRequest.fromJson(Map<String,
   loginPage: json['login_page'] != null ? PostBillingPortalConfigurationsConfigurationRequestLoginPage.fromJson(json['login_page'] as Map<String, dynamic>) : null,
   metadata: json['metadata'] != null ? PostBillingPortalConfigurationsConfigurationRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] != null ? PostBillingPortalConfigurationsConfigurationRequestName.fromJson(json['name']) : null,
-); }
+);}
 
 /// Whether the configuration is active and can be used to create portal sessions.
 final bool? active;
@@ -37,7 +37,7 @@ final PostBillingPortalConfigurationsConfigurationRequestMetadata? metadata;
 /// The name of the configuration.
 final PostBillingPortalConfigurationsConfigurationRequestName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (businessProfile != null) 'business_profile': businessProfile?.toJson(),
   if (defaultReturnUrl != null) 'default_return_url': defaultReturnUrl?.toJson(),
@@ -46,9 +46,9 @@ Map<String, dynamic> toJson() { return {
   if (loginPage != null) 'login_page': loginPage?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'business_profile', 'default_return_url', 'expand', 'features', 'login_page', 'metadata', 'name'}.contains(key)); } 
-PostBillingPortalConfigurationsConfigurationRequest copyWith({bool? Function()? active, PostBillingPortalConfigurationsConfigurationRequestBusinessProfile? Function()? businessProfile, PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrl? Function()? defaultReturnUrl, List<String>? Function()? expand, PostBillingPortalConfigurationsConfigurationRequestFeatures? Function()? features, PostBillingPortalConfigurationsConfigurationRequestLoginPage? Function()? loginPage, PostBillingPortalConfigurationsConfigurationRequestMetadata? Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName? Function()? name, }) { return PostBillingPortalConfigurationsConfigurationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'business_profile', 'default_return_url', 'expand', 'features', 'login_page', 'metadata', 'name'}.contains(key));}
+PostBillingPortalConfigurationsConfigurationRequest copyWith({bool? Function()? active, PostBillingPortalConfigurationsConfigurationRequestBusinessProfile? Function()? businessProfile, PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrl? Function()? defaultReturnUrl, List<String>? Function()? expand, PostBillingPortalConfigurationsConfigurationRequestFeatures? Function()? features, PostBillingPortalConfigurationsConfigurationRequestLoginPage? Function()? loginPage, PostBillingPortalConfigurationsConfigurationRequestMetadata? Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName? Function()? name, }) {return PostBillingPortalConfigurationsConfigurationRequest(
   active: active != null ? active() : this.active,
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
   defaultReturnUrl: defaultReturnUrl != null ? defaultReturnUrl() : this.defaultReturnUrl,
@@ -57,8 +57,8 @@ PostBillingPortalConfigurationsConfigurationRequest copyWith({bool? Function()? 
   loginPage: loginPage != null ? loginPage() : this.loginPage,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequest &&
           active == other.active &&
           businessProfile == other.businessProfile &&
@@ -67,7 +67,7 @@ PostBillingPortalConfigurationsConfigurationRequest copyWith({bool? Function()? 
           features == other.features &&
           loginPage == other.loginPage &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(active, businessProfile, defaultReturnUrl, Object.hashAll(expand ?? const []), features, loginPage, metadata, name); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequest(active: $active, businessProfile: $businessProfile, defaultReturnUrl: $defaultReturnUrl, expand: $expand, features: $features, loginPage: $loginPage, metadata: $metadata, name: $name)'; } 
- }
+          name == other.name;}
+@override int get hashCode {return Object.hash(active, businessProfile, defaultReturnUrl, Object.hashAll(expand ?? const []), features, loginPage, metadata, name);}
+@override String toString() {return 'PostBillingPortalConfigurationsConfigurationRequest(active: $active, businessProfile: $businessProfile, defaultReturnUrl: $defaultReturnUrl, expand: $expand, features: $features, loginPage: $loginPage, metadata: $metadata, name: $name)';}
+}

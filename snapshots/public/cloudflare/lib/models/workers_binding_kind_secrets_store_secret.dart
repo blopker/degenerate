@@ -2,12 +2,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindSecretsStoreSecret {const WorkersBindingKindSecretsStoreSecret({required this.name, required this.secretName, required this.storeId, required this.type, });
 
-factory WorkersBindingKindSecretsStoreSecret.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretsStoreSecret(
+factory WorkersBindingKindSecretsStoreSecret.fromJson(Map<String, dynamic> json) {return WorkersBindingKindSecretsStoreSecret(
   name: WorkersBindingName.fromJson(json['name'] as String),
   secretName: json['secret_name'] as String,
   storeId: json['store_id'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final WorkersBindingName name;
 
@@ -20,28 +20,28 @@ final String storeId;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'secret_name': secretName,
   'store_id': storeId,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('secret_name') && json['secret_name'] is String &&
       json.containsKey('store_id') && json['store_id'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindSecretsStoreSecret copyWith({WorkersBindingName? name, String? secretName, String? storeId, String? type, }) { return WorkersBindingKindSecretsStoreSecret(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindSecretsStoreSecret copyWith({WorkersBindingName? name, String? secretName, String? storeId, String? type, }) {return WorkersBindingKindSecretsStoreSecret(
   name: name ?? this.name,
   secretName: secretName ?? this.secretName,
   storeId: storeId ?? this.storeId,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WorkersBindingKindSecretsStoreSecret &&
           name == other.name &&
           secretName == other.secretName &&
           storeId == other.storeId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, secretName, storeId, type); } 
-@override String toString() { return 'WorkersBindingKindSecretsStoreSecret(name: $name, secretName: $secretName, storeId: $storeId, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(name, secretName, storeId, type);}
+@override String toString() {return 'WorkersBindingKindSecretsStoreSecret(name: $name, secretName: $secretName, storeId: $storeId, type: $type)';}
+}

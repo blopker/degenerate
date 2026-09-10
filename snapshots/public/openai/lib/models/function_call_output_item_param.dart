@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_call_item_status.dart';import 'function_call_output_item_param_output.dart';import 'function_call_output_item_param_output_variant2.dart';/// The output of a function tool call.
 @immutable final class FunctionCallOutputItemParam {const FunctionCallOutputItemParam({required this.callId, required this.type, required this.output, this.id = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory FunctionCallOutputItemParam.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParam(
+factory FunctionCallOutputItemParam.fromJson(Map<String, dynamic> json) {return FunctionCallOutputItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json['call_id'] as String,
   type: json['type'] as String,
   output: OneOf2.parse(json['output'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => FunctionCallOutputItemParamOutputVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? FunctionCallItemStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The unique ID of the function tool call output. Populated when this item is returned via API.
 final Omittable<String?> id;
@@ -25,30 +25,30 @@ final FunctionCallOutputItemParamOutput output;
 
 final Omittable<FunctionCallItemStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id.isPresent) 'id': id.value,
   'call_id': callId,
   'type': type,
   'output': output.toJson(),
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('call_id') && json['call_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('output'); } 
-FunctionCallOutputItemParam copyWith({Omittable<String?>? id, String? callId, String? type, FunctionCallOutputItemParamOutput? output, Omittable<FunctionCallItemStatus?>? status, }) { return FunctionCallOutputItemParam(
+      json.containsKey('output');}
+FunctionCallOutputItemParam copyWith({Omittable<String?>? id, String? callId, String? type, FunctionCallOutputItemParamOutput? output, Omittable<FunctionCallItemStatus?>? status, }) {return FunctionCallOutputItemParam(
   id: id ?? this.id,
   callId: callId ?? this.callId,
   type: type ?? this.type,
   output: output ?? this.output,
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is FunctionCallOutputItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           output == other.output &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, callId, type, output, status); } 
-@override String toString() { return 'FunctionCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return Object.hash(id, callId, type, output, status);}
+@override String toString() {return 'FunctionCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, status: $status)';}
+}

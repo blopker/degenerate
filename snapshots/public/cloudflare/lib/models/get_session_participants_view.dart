@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionParticipantsView {const GetSessionParticipantsView._(this.value);
 
-factory GetSessionParticipantsView.fromJson(String json) { return switch (json) {
+factory GetSessionParticipantsView.fromJson(String json) {return switch (json) {
   'raw' => raw,
   'consolidated' => consolidated,
   _ => GetSessionParticipantsView._(json),
-}; }
+};}
 
 static const GetSessionParticipantsView raw = GetSessionParticipantsView._('raw');
 
@@ -16,11 +16,11 @@ static const List<GetSessionParticipantsView> values = [raw, consolidated];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetSessionParticipantsView && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetSessionParticipantsView($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetSessionParticipantsView && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetSessionParticipantsView($value)';}
+}

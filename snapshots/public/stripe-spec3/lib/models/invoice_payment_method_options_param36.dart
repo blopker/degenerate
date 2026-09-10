@@ -2,16 +2,16 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam36 {const InvoicePaymentMethodOptionsParam36();
 
-factory InvoicePaymentMethodOptionsParam36.fromJson(Map<String, dynamic> _) { return const InvoicePaymentMethodOptionsParam36(); }
+factory InvoicePaymentMethodOptionsParam36.fromJson(Map<String, dynamic> _) {return const InvoicePaymentMethodOptionsParam36();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-InvoicePaymentMethodOptionsParam36 copyWith() { return const InvoicePaymentMethodOptionsParam36(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+InvoicePaymentMethodOptionsParam36 copyWith() {return const InvoicePaymentMethodOptionsParam36(
 
-); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is InvoicePaymentMethodOptionsParam36; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam36()'; } 
- }
+);}
+@override bool operator ==(Object other) {return identical(this, other) || other is InvoicePaymentMethodOptionsParam36;}
+@override int get hashCode {return runtimeType.hashCode;}
+@override String toString() {return 'InvoicePaymentMethodOptionsParam36()';}
+}

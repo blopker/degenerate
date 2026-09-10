@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_of_conduct.dart';import 'minimal_repository_license.dart';import 'minimal_repository_permissions.dart';import 'security_and_analysis.dart';import 'simple_user.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
 @immutable final class MinimalRepositoryPullRequestCreationPolicy {const MinimalRepositoryPullRequestCreationPolicy._(this.value);
 
-factory MinimalRepositoryPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
+factory MinimalRepositoryPullRequestCreationPolicy.fromJson(String json) {return switch (json) {
   'all' => all,
   'collaborators_only' => collaboratorsOnly,
   _ => MinimalRepositoryPullRequestCreationPolicy._(json),
-}; }
+};}
 
 static const MinimalRepositoryPullRequestCreationPolicy all = MinimalRepositoryPullRequestCreationPolicy._('all');
 
@@ -17,18 +17,18 @@ static const List<MinimalRepositoryPullRequestCreationPolicy> values = [all, col
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MinimalRepositoryPullRequestCreationPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MinimalRepositoryPullRequestCreationPolicy($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is MinimalRepositoryPullRequestCreationPolicy && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'MinimalRepositoryPullRequestCreationPolicy($value)';}
+}
 /// Minimal Repository
 @immutable final class MinimalRepository {const MinimalRepository({required this.issueEventsUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.issueCommentUrl, required this.id, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.hooksUrl, required this.treesUrl, this.sshUrl, this.cloneUrl, this.mirrorUrl = const Omittable.absent(), this.gitUrl, this.svnUrl, this.homepage = const Omittable.absent(), this.language = const Omittable.absent(), this.forksCount, this.stargazersCount, this.watchersCount, this.size, this.defaultBranch, this.openIssuesCount, this.customProperties, this.topics, this.hasIssues, this.hasProjects, this.hasWiki, this.hasPages, this.hasDownloads, this.hasDiscussions, this.hasPullRequests, this.pullRequestCreationPolicy, this.archived, this.disabled, this.visibility, this.pushedAt = const Omittable.absent(), this.createdAt = const Omittable.absent(), this.updatedAt = const Omittable.absent(), this.permissions, this.roleName, this.tempCloneToken, this.deleteBranchOnMerge, this.subscribersCount, this.networkCount, this.codeOfConduct, this.license = const Omittable.absent(), this.forks, this.openIssues, this.watchers, this.allowForking, this.webCommitSignoffRequired, this.securityAndAnalysis = const Omittable.absent(), this.isTemplate, });
 
-factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRepository(
+factory MinimalRepository.fromJson(Map<String, dynamic> json) {return MinimalRepository(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -119,7 +119,7 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   securityAndAnalysis: json.containsKey('security_and_analysis') ? Omittable(json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   customProperties: json['custom_properties'] as Map<String, dynamic>?,
-); }
+);}
 
 final int id;
 
@@ -304,7 +304,7 @@ final Omittable<SecurityAndAnalysis?> securityAndAnalysis;
 /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
 final Map<String,dynamic>? customProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -395,8 +395,8 @@ Map<String, dynamic> toJson() { return {
   'web_commit_signoff_required': ?webCommitSignoffRequired,
   if (securityAndAnalysis.isPresent) 'security_and_analysis': securityAndAnalysis.value?.toJson(),
   'custom_properties': ?customProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
@@ -441,8 +441,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('tags_url') && json['tags_url'] is String &&
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('trees_url') && json['trees_url'] is String &&
-      json.containsKey('hooks_url') && json['hooks_url'] is String; } 
-MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? Function()? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? Function()? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? Function()? cloneUrl, Omittable<String?>? mirrorUrl, Uri? hooksUrl, String? Function()? svnUrl, Omittable<String?>? homepage, Omittable<String?>? language, int? Function()? forksCount, int? Function()? stargazersCount, int? Function()? watchersCount, int? Function()? size, String? Function()? defaultBranch, int? Function()? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasPages, bool? Function()? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, MinimalRepositoryPullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? Function()? archived, bool? Function()? disabled, String? Function()? visibility, Omittable<DateTime?>? pushedAt, Omittable<DateTime?>? createdAt, Omittable<DateTime?>? updatedAt, MinimalRepositoryPermissions? Function()? permissions, String? Function()? roleName, String? Function()? tempCloneToken, bool? Function()? deleteBranchOnMerge, int? Function()? subscribersCount, int? Function()? networkCount, CodeOfConduct? Function()? codeOfConduct, Omittable<MinimalRepositoryLicense?>? license, int? Function()? forks, int? Function()? openIssues, int? Function()? watchers, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, Omittable<SecurityAndAnalysis?>? securityAndAnalysis, Map<String, dynamic>? Function()? customProperties, }) { return MinimalRepository(
+      json.containsKey('hooks_url') && json['hooks_url'] is String;}
+MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? Function()? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? Function()? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? Function()? cloneUrl, Omittable<String?>? mirrorUrl, Uri? hooksUrl, String? Function()? svnUrl, Omittable<String?>? homepage, Omittable<String?>? language, int? Function()? forksCount, int? Function()? stargazersCount, int? Function()? watchersCount, int? Function()? size, String? Function()? defaultBranch, int? Function()? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasPages, bool? Function()? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, MinimalRepositoryPullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? Function()? archived, bool? Function()? disabled, String? Function()? visibility, Omittable<DateTime?>? pushedAt, Omittable<DateTime?>? createdAt, Omittable<DateTime?>? updatedAt, MinimalRepositoryPermissions? Function()? permissions, String? Function()? roleName, String? Function()? tempCloneToken, bool? Function()? deleteBranchOnMerge, int? Function()? subscribersCount, int? Function()? networkCount, CodeOfConduct? Function()? codeOfConduct, Omittable<MinimalRepositoryLicense?>? license, int? Function()? forks, int? Function()? openIssues, int? Function()? watchers, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, Omittable<SecurityAndAnalysis?>? securityAndAnalysis, Map<String, dynamic>? Function()? customProperties, }) {return MinimalRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -533,8 +533,8 @@ MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullN
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
   securityAndAnalysis: securityAndAnalysis ?? this.securityAndAnalysis,
   customProperties: customProperties != null ? customProperties() : this.customProperties,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is MinimalRepository &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -625,7 +625,7 @@ MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullN
           allowForking == other.allowForking &&
           webCommitSignoffRequired == other.webCommitSignoffRequired &&
           securityAndAnalysis == other.securityAndAnalysis &&
-          customProperties == other.customProperties; } 
-@override int get hashCode { return Object.hashAll([id, nodeId, name, fullName, owner, private, htmlUrl, description, fork, url, archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, downloadsUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, notificationsUrl, pullsUrl, releasesUrl, sshUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, cloneUrl, mirrorUrl, hooksUrl, svnUrl, homepage, language, forksCount, stargazersCount, watchersCount, size, defaultBranch, openIssuesCount, isTemplate, Object.hashAll(topics ?? const []), hasIssues, hasProjects, hasWiki, hasPages, hasDownloads, hasDiscussions, hasPullRequests, pullRequestCreationPolicy, archived, disabled, visibility, pushedAt, createdAt, updatedAt, permissions, roleName, tempCloneToken, deleteBranchOnMerge, subscribersCount, networkCount, codeOfConduct, license, forks, openIssues, watchers, allowForking, webCommitSignoffRequired, securityAndAnalysis, customProperties]); } 
-@override String toString() { return 'MinimalRepository(id: $id, nodeId: $nodeId, name: $name, fullName: $fullName, owner: $owner, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, url: $url, archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, forksUrl: $forksUrl, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, notificationsUrl: $notificationsUrl, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, sshUrl: $sshUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, cloneUrl: $cloneUrl, mirrorUrl: $mirrorUrl, hooksUrl: $hooksUrl, svnUrl: $svnUrl, homepage: $homepage, language: $language, forksCount: $forksCount, stargazersCount: $stargazersCount, watchersCount: $watchersCount, size: $size, defaultBranch: $defaultBranch, openIssuesCount: $openIssuesCount, isTemplate: $isTemplate, topics: $topics, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasPages: $hasPages, hasDownloads: $hasDownloads, hasDiscussions: $hasDiscussions, hasPullRequests: $hasPullRequests, pullRequestCreationPolicy: $pullRequestCreationPolicy, archived: $archived, disabled: $disabled, visibility: $visibility, pushedAt: $pushedAt, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, roleName: $roleName, tempCloneToken: $tempCloneToken, deleteBranchOnMerge: $deleteBranchOnMerge, subscribersCount: $subscribersCount, networkCount: $networkCount, codeOfConduct: $codeOfConduct, license: $license, forks: $forks, openIssues: $openIssues, watchers: $watchers, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired, securityAndAnalysis: $securityAndAnalysis, customProperties: $customProperties)'; } 
- }
+          customProperties == other.customProperties;}
+@override int get hashCode {return Object.hashAll([id, nodeId, name, fullName, owner, private, htmlUrl, description, fork, url, archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, downloadsUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, notificationsUrl, pullsUrl, releasesUrl, sshUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, cloneUrl, mirrorUrl, hooksUrl, svnUrl, homepage, language, forksCount, stargazersCount, watchersCount, size, defaultBranch, openIssuesCount, isTemplate, Object.hashAll(topics ?? const []), hasIssues, hasProjects, hasWiki, hasPages, hasDownloads, hasDiscussions, hasPullRequests, pullRequestCreationPolicy, archived, disabled, visibility, pushedAt, createdAt, updatedAt, permissions, roleName, tempCloneToken, deleteBranchOnMerge, subscribersCount, networkCount, codeOfConduct, license, forks, openIssues, watchers, allowForking, webCommitSignoffRequired, securityAndAnalysis, customProperties]);}
+@override String toString() {return 'MinimalRepository(id: $id, nodeId: $nodeId, name: $name, fullName: $fullName, owner: $owner, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, url: $url, archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, forksUrl: $forksUrl, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, notificationsUrl: $notificationsUrl, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, sshUrl: $sshUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, cloneUrl: $cloneUrl, mirrorUrl: $mirrorUrl, hooksUrl: $hooksUrl, svnUrl: $svnUrl, homepage: $homepage, language: $language, forksCount: $forksCount, stargazersCount: $stargazersCount, watchersCount: $watchersCount, size: $size, defaultBranch: $defaultBranch, openIssuesCount: $openIssuesCount, isTemplate: $isTemplate, topics: $topics, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasPages: $hasPages, hasDownloads: $hasDownloads, hasDiscussions: $hasDiscussions, hasPullRequests: $hasPullRequests, pullRequestCreationPolicy: $pullRequestCreationPolicy, archived: $archived, disabled: $disabled, visibility: $visibility, pushedAt: $pushedAt, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, roleName: $roleName, tempCloneToken: $tempCloneToken, deleteBranchOnMerge: $deleteBranchOnMerge, subscribersCount: $subscribersCount, networkCount: $networkCount, codeOfConduct: $codeOfConduct, license: $license, forks: $forks, openIssues: $openIssues, watchers: $watchers, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired, securityAndAnalysis: $securityAndAnalysis, customProperties: $customProperties)';}
+}

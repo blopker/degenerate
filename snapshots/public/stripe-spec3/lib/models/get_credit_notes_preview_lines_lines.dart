@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_lines_tax_amounts.dart';import 'get_credit_notes_preview_lines_lines_tax_rates.dart';@immutable final class GetCreditNotesPreviewLinesLinesType {const GetCreditNotesPreviewLinesLinesType._(this.value);
 
-factory GetCreditNotesPreviewLinesLinesType.fromJson(String json) { return switch (json) {
+factory GetCreditNotesPreviewLinesLinesType.fromJson(String json) {return switch (json) {
   'custom_line_item' => customLineItem,
   'invoice_line_item' => invoiceLineItem,
   _ => GetCreditNotesPreviewLinesLinesType._(json),
-}; }
+};}
 
 static const GetCreditNotesPreviewLinesLinesType customLineItem = GetCreditNotesPreviewLinesLinesType._('custom_line_item');
 
@@ -16,17 +16,17 @@ static const List<GetCreditNotesPreviewLinesLinesType> values = [customLineItem,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewLinesLinesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewLinesLinesType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetCreditNotesPreviewLinesLinesType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetCreditNotesPreviewLinesLinesType($value)';}
+}
 @immutable final class GetCreditNotesPreviewLinesLines {const GetCreditNotesPreviewLinesLines({required this.type, this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
-factory GetCreditNotesPreviewLinesLines.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesLines(
+factory GetCreditNotesPreviewLinesLines.fromJson(Map<String, dynamic> json) {return GetCreditNotesPreviewLinesLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   invoiceLineItem: json['invoice_line_item'] as String?,
@@ -36,7 +36,7 @@ factory GetCreditNotesPreviewLinesLines.fromJson(Map<String, dynamic> json) { re
   type: GetCreditNotesPreviewLinesLinesType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 final int? amount;
 
@@ -56,7 +56,7 @@ final int? unitAmount;
 
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'description': ?description,
   'invoice_line_item': ?invoiceLineItem,
@@ -66,9 +66,9 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, GetCreditNotesPreviewLinesLinesTaxAmounts? Function()? taxAmounts, GetCreditNotesPreviewLinesLinesTaxRates? Function()? taxRates, GetCreditNotesPreviewLinesLinesType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return GetCreditNotesPreviewLinesLines(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, GetCreditNotesPreviewLinesLinesTaxAmounts? Function()? taxAmounts, GetCreditNotesPreviewLinesLinesTaxRates? Function()? taxRates, GetCreditNotesPreviewLinesLinesType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return GetCreditNotesPreviewLinesLines(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   invoiceLineItem: invoiceLineItem != null ? invoiceLineItem() : this.invoiceLineItem,
@@ -78,8 +78,8 @@ GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Funct
   type: type ?? this.type,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is GetCreditNotesPreviewLinesLines &&
           amount == other.amount &&
           description == other.description &&
@@ -89,7 +89,7 @@ GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Funct
           taxRates == other.taxRates &&
           type == other.type &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'GetCreditNotesPreviewLinesLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
- }
+          unitAmountDecimal == other.unitAmountDecimal;}
+@override int get hashCode {return Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal);}
+@override String toString() {return 'GetCreditNotesPreviewLinesLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';}
+}

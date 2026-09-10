@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicesStatus {const GetInvoicesStatus._(this.value);
 
-factory GetInvoicesStatus.fromJson(String json) { return switch (json) {
+factory GetInvoicesStatus.fromJson(String json) {return switch (json) {
   'draft' => draft,
   'open' => open,
   'paid' => paid,
   'uncollectible' => uncollectible,
   'void' => $void,
   _ => GetInvoicesStatus._(json),
-}; }
+};}
 
 static const GetInvoicesStatus draft = GetInvoicesStatus._('draft');
 
@@ -25,11 +25,11 @@ static const List<GetInvoicesStatus> values = [draft, open, paid, uncollectible,
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetInvoicesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetInvoicesStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is GetInvoicesStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'GetInvoicesStatus($value)';}
+}

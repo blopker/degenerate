@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action/mode a rule has been overridden to perform.
 @immutable final class WafRulesListWafRulesMode {const WafRulesListWafRulesMode._(this.value);
 
-factory WafRulesListWafRulesMode.fromJson(String json) { return switch (json) {
+factory WafRulesListWafRulesMode.fromJson(String json) {return switch (json) {
   'DIS' => dis,
   'CHL' => chl,
   'BLK' => blk,
   'SIM' => sim,
   _ => WafRulesListWafRulesMode._(json),
-}; }
+};}
 
 static const WafRulesListWafRulesMode dis = WafRulesListWafRulesMode._('DIS');
 
@@ -23,11 +23,11 @@ static const List<WafRulesListWafRulesMode> values = [dis, chl, blk, sim];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafRulesListWafRulesMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafRulesListWafRulesMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is WafRulesListWafRulesMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'WafRulesListWafRulesMode($value)';}
+}

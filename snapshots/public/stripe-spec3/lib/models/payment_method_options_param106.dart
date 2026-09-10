@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam106CaptureMethod {const PaymentMethodOptionsParam106CaptureMethod._(this.value);
 
-factory PaymentMethodOptionsParam106CaptureMethod.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParam106CaptureMethod.fromJson(String json) {return switch (json) {
   '' => $empty,
   'manual' => manual,
   _ => PaymentMethodOptionsParam106CaptureMethod._(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParam106CaptureMethod $empty = PaymentMethodOptionsParam106CaptureMethod._('');
 
@@ -16,32 +16,32 @@ static const List<PaymentMethodOptionsParam106CaptureMethod> values = [$empty, m
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam106CaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam106CaptureMethod($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PaymentMethodOptionsParam106CaptureMethod && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam106CaptureMethod($value)';}
+}
 @immutable final class PaymentMethodOptionsParam106 {const PaymentMethodOptionsParam106({this.captureMethod});
 
-factory PaymentMethodOptionsParam106.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam106(
+factory PaymentMethodOptionsParam106.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam106(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam106CaptureMethod.fromJson(json['capture_method'] as String) : null,
-); }
+);}
 
 final PaymentMethodOptionsParam106CaptureMethod? captureMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-PaymentMethodOptionsParam106 copyWith({PaymentMethodOptionsParam106CaptureMethod? Function()? captureMethod}) { return PaymentMethodOptionsParam106(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method'}.contains(key));}
+PaymentMethodOptionsParam106 copyWith({PaymentMethodOptionsParam106CaptureMethod? Function()? captureMethod}) {return PaymentMethodOptionsParam106(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PaymentMethodOptionsParam106 &&
-          captureMethod == other.captureMethod; } 
-@override int get hashCode { return captureMethod.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam106(captureMethod: $captureMethod)'; } 
- }
+          captureMethod == other.captureMethod;}
+@override int get hashCode {return captureMethod.hashCode;}
+@override String toString() {return 'PaymentMethodOptionsParam106(captureMethod: $captureMethod)';}
+}

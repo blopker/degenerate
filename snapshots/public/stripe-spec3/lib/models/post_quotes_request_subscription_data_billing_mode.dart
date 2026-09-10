@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_request_subscription_data_billing_mode_flexible.dart';@immutable final class PostQuotesRequestSubscriptionDataBillingModeType {const PostQuotesRequestSubscriptionDataBillingModeType._(this.value);
 
-factory PostQuotesRequestSubscriptionDataBillingModeType.fromJson(String json) { return switch (json) {
+factory PostQuotesRequestSubscriptionDataBillingModeType.fromJson(String json) {return switch (json) {
   'classic' => classic,
   'flexible' => flexible,
   _ => PostQuotesRequestSubscriptionDataBillingModeType._(json),
-}; }
+};}
 
 static const PostQuotesRequestSubscriptionDataBillingModeType classic = PostQuotesRequestSubscriptionDataBillingModeType._('classic');
 
@@ -16,38 +16,38 @@ static const List<PostQuotesRequestSubscriptionDataBillingModeType> values = [cl
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostQuotesRequestSubscriptionDataBillingModeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostQuotesRequestSubscriptionDataBillingModeType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostQuotesRequestSubscriptionDataBillingModeType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostQuotesRequestSubscriptionDataBillingModeType($value)';}
+}
 @immutable final class PostQuotesRequestSubscriptionDataBillingMode {const PostQuotesRequestSubscriptionDataBillingMode({required this.type, this.flexible, });
 
-factory PostQuotesRequestSubscriptionDataBillingMode.fromJson(Map<String, dynamic> json) { return PostQuotesRequestSubscriptionDataBillingMode(
+factory PostQuotesRequestSubscriptionDataBillingMode.fromJson(Map<String, dynamic> json) {return PostQuotesRequestSubscriptionDataBillingMode(
   flexible: json['flexible'] != null ? PostQuotesRequestSubscriptionDataBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
   type: PostQuotesRequestSubscriptionDataBillingModeType.fromJson(json['type'] as String),
-); }
+);}
 
 final PostQuotesRequestSubscriptionDataBillingModeFlexible? flexible;
 
 final PostQuotesRequestSubscriptionDataBillingModeType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (flexible != null) 'flexible': flexible?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostQuotesRequestSubscriptionDataBillingMode copyWith({PostQuotesRequestSubscriptionDataBillingModeFlexible? Function()? flexible, PostQuotesRequestSubscriptionDataBillingModeType? type, }) { return PostQuotesRequestSubscriptionDataBillingMode(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostQuotesRequestSubscriptionDataBillingMode copyWith({PostQuotesRequestSubscriptionDataBillingModeFlexible? Function()? flexible, PostQuotesRequestSubscriptionDataBillingModeType? type, }) {return PostQuotesRequestSubscriptionDataBillingMode(
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostQuotesRequestSubscriptionDataBillingMode &&
           flexible == other.flexible &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(flexible, type); } 
-@override String toString() { return 'PostQuotesRequestSubscriptionDataBillingMode(flexible: $flexible, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(flexible, type);}
+@override String toString() {return 'PostQuotesRequestSubscriptionDataBillingMode(flexible: $flexible, type: $type)';}
+}

@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_individual_address.dart';import 'post_tokens_request_account_individual_address_kana.dart';import 'post_tokens_request_account_individual_address_kanji.dart';import 'post_tokens_request_account_individual_dob.dart';import 'post_tokens_request_account_individual_full_name_aliases.dart';import 'post_tokens_request_account_individual_metadata.dart';import 'post_tokens_request_account_individual_registered_address.dart';import 'post_tokens_request_account_individual_relationship.dart';import 'post_tokens_request_account_individual_verification.dart';@immutable final class PostTokensRequestAccountIndividualPoliticalExposure {const PostTokensRequestAccountIndividualPoliticalExposure._(this.value);
 
-factory PostTokensRequestAccountIndividualPoliticalExposure.fromJson(String json) { return switch (json) {
+factory PostTokensRequestAccountIndividualPoliticalExposure.fromJson(String json) {return switch (json) {
   'existing' => existing,
   'none' => none,
   _ => PostTokensRequestAccountIndividualPoliticalExposure._(json),
-}; }
+};}
 
 static const PostTokensRequestAccountIndividualPoliticalExposure existing = PostTokensRequestAccountIndividualPoliticalExposure._('existing');
 
@@ -16,17 +16,17 @@ static const List<PostTokensRequestAccountIndividualPoliticalExposure> values = 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTokensRequestAccountIndividualPoliticalExposure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTokensRequestAccountIndividualPoliticalExposure($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostTokensRequestAccountIndividualPoliticalExposure && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostTokensRequestAccountIndividualPoliticalExposure($value)';}
+}
 @immutable final class PostTokensRequestAccountIndividual {const PostTokensRequestAccountIndividual({this.address, this.addressKana, this.addressKanji, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.verification, });
 
-factory PostTokensRequestAccountIndividual.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountIndividual(
+factory PostTokensRequestAccountIndividual.fromJson(Map<String, dynamic> json) {return PostTokensRequestAccountIndividual(
   address: json['address'] != null ? PostTokensRequestAccountIndividualAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? PostTokensRequestAccountIndividualAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? PostTokensRequestAccountIndividualAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -50,7 +50,7 @@ factory PostTokensRequestAccountIndividual.fromJson(Map<String, dynamic> json) {
   relationship: json['relationship'] != null ? PostTokensRequestAccountIndividualRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
   ssnLast4: json['ssn_last_4'] as String?,
   verification: json['verification'] != null ? PostTokensRequestAccountIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostTokensRequestAccountIndividualAddress? address;
 
@@ -98,7 +98,7 @@ final String? ssnLast4;
 
 final PostTokensRequestAccountIndividualVerification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -122,9 +122,9 @@ Map<String, dynamic> toJson() { return {
   if (relationship != null) 'relationship': relationship?.toJson(),
   'ssn_last_4': ?ssnLast4,
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'dob', 'email', 'first_name', 'first_name_kana', 'first_name_kanji', 'full_name_aliases', 'gender', 'id_number', 'id_number_secondary', 'last_name', 'last_name_kana', 'last_name_kanji', 'maiden_name', 'metadata', 'phone', 'political_exposure', 'registered_address', 'relationship', 'ssn_last_4', 'verification'}.contains(key)); } 
-PostTokensRequestAccountIndividual copyWith({PostTokensRequestAccountIndividualAddress? Function()? address, PostTokensRequestAccountIndividualAddressKana? Function()? addressKana, PostTokensRequestAccountIndividualAddressKanji? Function()? addressKanji, PostTokensRequestAccountIndividualDob? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, PostTokensRequestAccountIndividualFullNameAliases? Function()? fullNameAliases, String? Function()? gender, String? Function()? idNumber, String? Function()? idNumberSecondary, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, PostTokensRequestAccountIndividualMetadata? Function()? metadata, String? Function()? phone, PostTokensRequestAccountIndividualPoliticalExposure? Function()? politicalExposure, PostTokensRequestAccountIndividualRegisteredAddress? Function()? registeredAddress, PostTokensRequestAccountIndividualRelationship? Function()? relationship, String? Function()? ssnLast4, PostTokensRequestAccountIndividualVerification? Function()? verification, }) { return PostTokensRequestAccountIndividual(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'dob', 'email', 'first_name', 'first_name_kana', 'first_name_kanji', 'full_name_aliases', 'gender', 'id_number', 'id_number_secondary', 'last_name', 'last_name_kana', 'last_name_kanji', 'maiden_name', 'metadata', 'phone', 'political_exposure', 'registered_address', 'relationship', 'ssn_last_4', 'verification'}.contains(key));}
+PostTokensRequestAccountIndividual copyWith({PostTokensRequestAccountIndividualAddress? Function()? address, PostTokensRequestAccountIndividualAddressKana? Function()? addressKana, PostTokensRequestAccountIndividualAddressKanji? Function()? addressKanji, PostTokensRequestAccountIndividualDob? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, PostTokensRequestAccountIndividualFullNameAliases? Function()? fullNameAliases, String? Function()? gender, String? Function()? idNumber, String? Function()? idNumberSecondary, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, PostTokensRequestAccountIndividualMetadata? Function()? metadata, String? Function()? phone, PostTokensRequestAccountIndividualPoliticalExposure? Function()? politicalExposure, PostTokensRequestAccountIndividualRegisteredAddress? Function()? registeredAddress, PostTokensRequestAccountIndividualRelationship? Function()? relationship, String? Function()? ssnLast4, PostTokensRequestAccountIndividualVerification? Function()? verification, }) {return PostTokensRequestAccountIndividual(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -148,8 +148,8 @@ PostTokensRequestAccountIndividual copyWith({PostTokensRequestAccountIndividualA
   relationship: relationship != null ? relationship() : this.relationship,
   ssnLast4: ssnLast4 != null ? ssnLast4() : this.ssnLast4,
   verification: verification != null ? verification() : this.verification,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostTokensRequestAccountIndividual &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -173,7 +173,7 @@ PostTokensRequestAccountIndividual copyWith({PostTokensRequestAccountIndividualA
           registeredAddress == other.registeredAddress &&
           relationship == other.relationship &&
           ssnLast4 == other.ssnLast4 &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([address, addressKana, addressKanji, dob, email, firstName, firstNameKana, firstNameKanji, fullNameAliases, gender, idNumber, idNumberSecondary, lastName, lastNameKana, lastNameKanji, maidenName, metadata, phone, politicalExposure, registeredAddress, relationship, ssnLast4, verification]); } 
-@override String toString() { return 'PostTokensRequestAccountIndividual(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, dob: $dob, email: $email, firstName: $firstName, firstNameKana: $firstNameKana, firstNameKanji: $firstNameKanji, fullNameAliases: $fullNameAliases, gender: $gender, idNumber: $idNumber, idNumberSecondary: $idNumberSecondary, lastName: $lastName, lastNameKana: $lastNameKana, lastNameKanji: $lastNameKanji, maidenName: $maidenName, metadata: $metadata, phone: $phone, politicalExposure: $politicalExposure, registeredAddress: $registeredAddress, relationship: $relationship, ssnLast4: $ssnLast4, verification: $verification)'; } 
- }
+          verification == other.verification;}
+@override int get hashCode {return Object.hashAll([address, addressKana, addressKanji, dob, email, firstName, firstNameKana, firstNameKanji, fullNameAliases, gender, idNumber, idNumberSecondary, lastName, lastNameKana, lastNameKanji, maidenName, metadata, phone, politicalExposure, registeredAddress, relationship, ssnLast4, verification]);}
+@override String toString() {return 'PostTokensRequestAccountIndividual(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, dob: $dob, email: $email, firstName: $firstName, firstNameKana: $firstNameKana, firstNameKanji: $firstNameKanji, fullNameAliases: $fullNameAliases, gender: $gender, idNumber: $idNumber, idNumberSecondary: $idNumberSecondary, lastName: $lastName, lastNameKana: $lastNameKana, lastNameKanji: $lastNameKanji, maidenName: $maidenName, metadata: $metadata, phone: $phone, politicalExposure: $politicalExposure, registeredAddress: $registeredAddress, relationship: $relationship, ssnLast4: $ssnLast4, verification: $verification)';}
+}

@@ -2,28 +2,28 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringRamUsedPctByApp2 {const DigitalExperienceMonitoringRamUsedPctByApp2({this.name, this.ramUsedPct, });
 
-factory DigitalExperienceMonitoringRamUsedPctByApp2.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringRamUsedPctByApp2(
+factory DigitalExperienceMonitoringRamUsedPctByApp2.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringRamUsedPctByApp2(
   name: json['name'] as String?,
   ramUsedPct: json['ram_used_pct'] != null ? (json['ram_used_pct'] as num).toDouble() : null,
-); }
+);}
 
 final String? name;
 
 final double? ramUsedPct;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'ram_used_pct': ?ramUsedPct,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'ram_used_pct'}.contains(key)); } 
-DigitalExperienceMonitoringRamUsedPctByApp2 copyWith({String? Function()? name, double? Function()? ramUsedPct, }) { return DigitalExperienceMonitoringRamUsedPctByApp2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'ram_used_pct'}.contains(key));}
+DigitalExperienceMonitoringRamUsedPctByApp2 copyWith({String? Function()? name, double? Function()? ramUsedPct, }) {return DigitalExperienceMonitoringRamUsedPctByApp2(
   name: name != null ? name() : this.name,
   ramUsedPct: ramUsedPct != null ? ramUsedPct() : this.ramUsedPct,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is DigitalExperienceMonitoringRamUsedPctByApp2 &&
           name == other.name &&
-          ramUsedPct == other.ramUsedPct; } 
-@override int get hashCode { return Object.hash(name, ramUsedPct); } 
-@override String toString() { return 'DigitalExperienceMonitoringRamUsedPctByApp2(name: $name, ramUsedPct: $ramUsedPct)'; } 
- }
+          ramUsedPct == other.ramUsedPct;}
+@override int get hashCode {return Object.hash(name, ramUsedPct);}
+@override String toString() {return 'DigitalExperienceMonitoringRamUsedPctByApp2(name: $name, ramUsedPct: $ramUsedPct)';}
+}

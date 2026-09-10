@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_id.dart';@immutable final class PageShieldConnection {const PageShieldConnection({required this.addedAt, required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, required this.url, required this.urlContainsCdnCgiPath, this.domainReportedMalicious, this.firstPageUrl, this.maliciousDomainCategories, this.maliciousUrlCategories, this.pageUrls, this.urlReportedMalicious, });
 
-factory PageShieldConnection.fromJson(Map<String, dynamic> json) { return PageShieldConnection(
+factory PageShieldConnection.fromJson(Map<String, dynamic> json) {return PageShieldConnection(
   addedAt: DateTime.parse(json['added_at'] as String),
   domainReportedMalicious: json['domain_reported_malicious'] as bool?,
   firstPageUrl: json['first_page_url'] as String?,
@@ -16,7 +16,7 @@ factory PageShieldConnection.fromJson(Map<String, dynamic> json) { return PageSh
   url: json['url'] as String,
   urlContainsCdnCgiPath: json['url_contains_cdn_cgi_path'] as bool,
   urlReportedMalicious: json['url_reported_malicious'] as bool?,
-); }
+);}
 
 final DateTime addedAt;
 
@@ -44,7 +44,7 @@ final bool urlContainsCdnCgiPath;
 
 final bool? urlReportedMalicious;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'added_at': addedAt.toIso8601String(),
   'domain_reported_malicious': ?domainReportedMalicious,
   'first_page_url': ?firstPageUrl,
@@ -58,15 +58,15 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'url_contains_cdn_cgi_path': urlContainsCdnCgiPath,
   'url_reported_malicious': ?urlReportedMalicious,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('added_at') && json['added_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('added_at') && json['added_at'] is String &&
       json.containsKey('first_seen_at') && json['first_seen_at'] is String &&
       json.containsKey('host') && json['host'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('url_contains_cdn_cgi_path') && json['url_contains_cdn_cgi_path'] is bool; } 
-PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReportedMalicious, String? Function()? firstPageUrl, DateTime? firstSeenAt, String? host, PageShieldId? id, DateTime? lastSeenAt, List<String>? Function()? maliciousDomainCategories, List<String>? Function()? maliciousUrlCategories, List<String>? Function()? pageUrls, String? url, bool? urlContainsCdnCgiPath, bool? Function()? urlReportedMalicious, }) { return PageShieldConnection(
+      json.containsKey('url_contains_cdn_cgi_path') && json['url_contains_cdn_cgi_path'] is bool;}
+PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReportedMalicious, String? Function()? firstPageUrl, DateTime? firstSeenAt, String? host, PageShieldId? id, DateTime? lastSeenAt, List<String>? Function()? maliciousDomainCategories, List<String>? Function()? maliciousUrlCategories, List<String>? Function()? pageUrls, String? url, bool? urlContainsCdnCgiPath, bool? Function()? urlReportedMalicious, }) {return PageShieldConnection(
   addedAt: addedAt ?? this.addedAt,
   domainReportedMalicious: domainReportedMalicious != null ? domainReportedMalicious() : this.domainReportedMalicious,
   firstPageUrl: firstPageUrl != null ? firstPageUrl() : this.firstPageUrl,
@@ -80,8 +80,8 @@ PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReport
   url: url ?? this.url,
   urlContainsCdnCgiPath: urlContainsCdnCgiPath ?? this.urlContainsCdnCgiPath,
   urlReportedMalicious: urlReportedMalicious != null ? urlReportedMalicious() : this.urlReportedMalicious,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PageShieldConnection &&
           addedAt == other.addedAt &&
           domainReportedMalicious == other.domainReportedMalicious &&
@@ -95,7 +95,7 @@ PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReport
           listEquals(pageUrls, other.pageUrls) &&
           url == other.url &&
           urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
-          urlReportedMalicious == other.urlReportedMalicious; } 
-@override int get hashCode { return Object.hash(addedAt, domainReportedMalicious, firstPageUrl, firstSeenAt, host, id, lastSeenAt, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious); } 
-@override String toString() { return 'PageShieldConnection(addedAt: $addedAt, domainReportedMalicious: $domainReportedMalicious, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, host: $host, id: $id, lastSeenAt: $lastSeenAt, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious)'; } 
- }
+          urlReportedMalicious == other.urlReportedMalicious;}
+@override int get hashCode {return Object.hash(addedAt, domainReportedMalicious, firstPageUrl, firstSeenAt, host, id, lastSeenAt, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious);}
+@override String toString() {return 'PageShieldConnection(addedAt: $addedAt, domainReportedMalicious: $domainReportedMalicious, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, host: $host, id: $id, lastSeenAt: $lastSeenAt, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious)';}
+}

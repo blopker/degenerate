@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipIpAddressRequest {const CreateSipIpAddressRequest({required this.friendlyName, required this.ipAddress, this.cidrPrefixLength, });
 
-factory CreateSipIpAddressRequest.fromJson(Map<String, dynamic> json) { return CreateSipIpAddressRequest(
+factory CreateSipIpAddressRequest.fromJson(Map<String, dynamic> json) {return CreateSipIpAddressRequest(
   friendlyName: json['FriendlyName'] as String,
   ipAddress: json['IpAddress'] as String,
   cidrPrefixLength: json['CidrPrefixLength'] != null ? (json['CidrPrefixLength'] as num).toInt() : null,
-); }
+);}
 
 /// A human readable descriptive text for this resource, up to 255 characters long.
 final String friendlyName;
@@ -17,23 +17,23 @@ final String ipAddress;
 /// An integer representing the length of the CIDR prefix to use with this IP address when accepting traffic. By default the entire IP address is used.
 final int? cidrPrefixLength;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': friendlyName,
   'IpAddress': ipAddress,
   'CidrPrefixLength': ?cidrPrefixLength,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('FriendlyName') && json['FriendlyName'] is String &&
-      json.containsKey('IpAddress') && json['IpAddress'] is String; } 
-CreateSipIpAddressRequest copyWith({String? friendlyName, String? ipAddress, int? Function()? cidrPrefixLength, }) { return CreateSipIpAddressRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('FriendlyName') && json['FriendlyName'] is String &&
+      json.containsKey('IpAddress') && json['IpAddress'] is String;}
+CreateSipIpAddressRequest copyWith({String? friendlyName, String? ipAddress, int? Function()? cidrPrefixLength, }) {return CreateSipIpAddressRequest(
   friendlyName: friendlyName ?? this.friendlyName,
   ipAddress: ipAddress ?? this.ipAddress,
   cidrPrefixLength: cidrPrefixLength != null ? cidrPrefixLength() : this.cidrPrefixLength,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateSipIpAddressRequest &&
           friendlyName == other.friendlyName &&
           ipAddress == other.ipAddress &&
-          cidrPrefixLength == other.cidrPrefixLength; } 
-@override int get hashCode { return Object.hash(friendlyName, ipAddress, cidrPrefixLength); } 
-@override String toString() { return 'CreateSipIpAddressRequest(friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength)'; } 
- }
+          cidrPrefixLength == other.cidrPrefixLength;}
+@override int get hashCode {return Object.hash(friendlyName, ipAddress, cidrPrefixLength);}
+@override String toString() {return 'CreateSipIpAddressRequest(friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength)';}
+}

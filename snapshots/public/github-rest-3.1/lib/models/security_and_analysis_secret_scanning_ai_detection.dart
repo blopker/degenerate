@@ -2,11 +2,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAndAnalysisSecretScanningAiDetectionStatus {const SecurityAndAnalysisSecretScanningAiDetectionStatus._(this.value);
 
-factory SecurityAndAnalysisSecretScanningAiDetectionStatus.fromJson(String json) { return switch (json) {
+factory SecurityAndAnalysisSecretScanningAiDetectionStatus.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => SecurityAndAnalysisSecretScanningAiDetectionStatus._(json),
-}; }
+};}
 
 static const SecurityAndAnalysisSecretScanningAiDetectionStatus enabled = SecurityAndAnalysisSecretScanningAiDetectionStatus._('enabled');
 
@@ -16,32 +16,32 @@ static const List<SecurityAndAnalysisSecretScanningAiDetectionStatus> values = [
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAndAnalysisSecretScanningAiDetectionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningAiDetectionStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SecurityAndAnalysisSecretScanningAiDetectionStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningAiDetectionStatus($value)';}
+}
 @immutable final class SecurityAndAnalysisSecretScanningAiDetection {const SecurityAndAnalysisSecretScanningAiDetection({this.status});
 
-factory SecurityAndAnalysisSecretScanningAiDetection.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisSecretScanningAiDetection(
+factory SecurityAndAnalysisSecretScanningAiDetection.fromJson(Map<String, dynamic> json) {return SecurityAndAnalysisSecretScanningAiDetection(
   status: json['status'] != null ? SecurityAndAnalysisSecretScanningAiDetectionStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final SecurityAndAnalysisSecretScanningAiDetectionStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-SecurityAndAnalysisSecretScanningAiDetection copyWith({SecurityAndAnalysisSecretScanningAiDetectionStatus? Function()? status}) { return SecurityAndAnalysisSecretScanningAiDetection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+SecurityAndAnalysisSecretScanningAiDetection copyWith({SecurityAndAnalysisSecretScanningAiDetectionStatus? Function()? status}) {return SecurityAndAnalysisSecretScanningAiDetection(
   status: status != null ? status() : this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is SecurityAndAnalysisSecretScanningAiDetection &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'SecurityAndAnalysisSecretScanningAiDetection(status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return status.hashCode;}
+@override String toString() {return 'SecurityAndAnalysisSecretScanningAiDetection(status: $status)';}
+}

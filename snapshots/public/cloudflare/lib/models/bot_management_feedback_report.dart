@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_feedback_type.dart';import 'bot_management_metric_requests.dart';@immutable final class BotManagementFeedbackReport {const BotManagementFeedbackReport({required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, required this.type, this.createdAt, this.subtype, });
 
-factory BotManagementFeedbackReport.fromJson(Map<String, dynamic> json) { return BotManagementFeedbackReport(
+factory BotManagementFeedbackReport.fromJson(Map<String, dynamic> json) {return BotManagementFeedbackReport(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   description: json['description'] as String,
   expression: json['expression'] as String,
@@ -14,7 +14,7 @@ factory BotManagementFeedbackReport.fromJson(Map<String, dynamic> json) { return
   requestsByScoreSrc: (json['requests_by_score_src'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
   subtype: json['subtype'] as String?,
   type: BotManagementFeedbackType.fromJson(json['type'] as String),
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -39,7 +39,7 @@ final String? subtype;
 
 final BotManagementFeedbackType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'description': description,
   'expression': expression,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'requests_by_score_src': requestsByScoreSrc,
   'subtype': ?subtype,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('expression') && json['expression'] is String &&
       json.containsKey('first_request_seen_at') && json['first_request_seen_at'] is String &&
       json.containsKey('last_request_seen_at') && json['last_request_seen_at'] is String &&
@@ -60,8 +60,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('requests_by_attribute') &&
       json.containsKey('requests_by_score') &&
       json.containsKey('requests_by_score_src') &&
-      json.containsKey('type'); } 
-BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String? Function()? subtype, BotManagementFeedbackType? type, }) { return BotManagementFeedbackReport(
+      json.containsKey('type');}
+BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String? Function()? subtype, BotManagementFeedbackType? type, }) {return BotManagementFeedbackReport(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,
   expression: expression ?? this.expression,
@@ -73,8 +73,8 @@ BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? d
   requestsByScoreSrc: requestsByScoreSrc ?? this.requestsByScoreSrc,
   subtype: subtype != null ? subtype() : this.subtype,
   type: type ?? this.type,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is BotManagementFeedbackReport &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -86,7 +86,7 @@ BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? d
           requestsByScore == other.requestsByScore &&
           requestsByScoreSrc == other.requestsByScoreSrc &&
           subtype == other.subtype &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, description, expression, firstRequestSeenAt, lastRequestSeenAt, requests, requestsByAttribute, requestsByScore, requestsByScoreSrc, subtype, type); } 
-@override String toString() { return 'BotManagementFeedbackReport(createdAt: $createdAt, description: $description, expression: $expression, firstRequestSeenAt: $firstRequestSeenAt, lastRequestSeenAt: $lastRequestSeenAt, requests: $requests, requestsByAttribute: $requestsByAttribute, requestsByScore: $requestsByScore, requestsByScoreSrc: $requestsByScoreSrc, subtype: $subtype, type: $type)'; } 
- }
+          type == other.type;}
+@override int get hashCode {return Object.hash(createdAt, description, expression, firstRequestSeenAt, lastRequestSeenAt, requests, requestsByAttribute, requestsByScore, requestsByScoreSrc, subtype, type);}
+@override String toString() {return 'BotManagementFeedbackReport(createdAt: $createdAt, description: $description, expression: $expression, firstRequestSeenAt: $firstRequestSeenAt, lastRequestSeenAt: $lastRequestSeenAt, requests: $requests, requestsByAttribute: $requestsByAttribute, requestsByScore: $requestsByScore, requestsByScoreSrc: $requestsByScoreSrc, subtype: $subtype, type: $type)';}
+}

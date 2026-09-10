@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_tuning_job_request_hyperparameters.dart';import 'create_fine_tuning_job_request_integrations.dart';import 'create_fine_tuning_job_request_model.dart';import 'fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix = const Omittable.absent(), this.validationFile = const Omittable.absent(), this.integrations = const Omittable.absent(), this.seed = const Omittable.absent(), this.method, this.metadata = const Omittable.absent(), });
 
-factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequest(
+factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) {return CreateFineTuningJobRequest(
   model: CreateFineTuningJobRequestModel.fromJson(json['model']),
   trainingFile: json['training_file'] as String,
   hyperparameters: json['hyperparameters'] != null ? CreateFineTuningJobRequestHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return 
   seed: json.containsKey('seed') ? Omittable(json['seed'] != null ? (json['seed'] as num).toInt() : null) : const Omittable.absent(),
   method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the model to fine-tune. You can select one of the
 /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
@@ -67,7 +67,7 @@ final FineTuneMethod? method;
 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': model.toJson(),
   'training_file': trainingFile,
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
@@ -77,10 +77,10 @@ Map<String, dynamic> toJson() { return {
   if (seed.isPresent) 'seed': seed.value,
   if (method != null) 'method': method?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
-      json.containsKey('training_file') && json['training_file'] is String; } 
-CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters? Function()? hyperparameters, Omittable<String?>? suffix, Omittable<String?>? validationFile, Omittable<List<CreateFineTuningJobRequestIntegrations>?>? integrations, Omittable<int?>? seed, FineTuneMethod? Function()? method, Omittable<Map<String,String>?>? metadata, }) { return CreateFineTuningJobRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model') &&
+      json.containsKey('training_file') && json['training_file'] is String;}
+CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters? Function()? hyperparameters, Omittable<String?>? suffix, Omittable<String?>? validationFile, Omittable<List<CreateFineTuningJobRequestIntegrations>?>? integrations, Omittable<int?>? seed, FineTuneMethod? Function()? method, Omittable<Map<String,String>?>? metadata, }) {return CreateFineTuningJobRequest(
   model: model ?? this.model,
   trainingFile: trainingFile ?? this.trainingFile,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
@@ -90,8 +90,8 @@ CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, Str
   seed: seed ?? this.seed,
   method: method != null ? method() : this.method,
   metadata: metadata ?? this.metadata,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is CreateFineTuningJobRequest &&
           model == other.model &&
           trainingFile == other.trainingFile &&
@@ -102,7 +102,7 @@ CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, Str
           listEquals(integrations.value, other.integrations.value) &&
           seed == other.seed &&
           method == other.method &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(model, trainingFile, hyperparameters, suffix, validationFile, Object.hashAll(integrations.value ?? const []), seed, method, metadata); } 
-@override String toString() { return 'CreateFineTuningJobRequest(model: $model, trainingFile: $trainingFile, hyperparameters: $hyperparameters, suffix: $suffix, validationFile: $validationFile, integrations: $integrations, seed: $seed, method: $method, metadata: $metadata)'; } 
- }
+          metadata == other.metadata;}
+@override int get hashCode {return Object.hash(model, trainingFile, hyperparameters, suffix, validationFile, Object.hashAll(integrations.value ?? const []), seed, method, metadata);}
+@override String toString() {return 'CreateFineTuningJobRequest(model: $model, trainingFile: $trainingFile, hyperparameters: $hyperparameters, suffix: $suffix, validationFile: $validationFile, integrations: $integrations, seed: $seed, method: $method, metadata: $metadata)';}
+}

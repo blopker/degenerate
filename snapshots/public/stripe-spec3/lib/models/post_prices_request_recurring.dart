@@ -2,13 +2,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesRequestRecurringInterval {const PostPricesRequestRecurringInterval._(this.value);
 
-factory PostPricesRequestRecurringInterval.fromJson(String json) { return switch (json) {
+factory PostPricesRequestRecurringInterval.fromJson(String json) {return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
   _ => PostPricesRequestRecurringInterval._(json),
-}; }
+};}
 
 static const PostPricesRequestRecurringInterval day = PostPricesRequestRecurringInterval._('day');
 
@@ -22,21 +22,21 @@ static const List<PostPricesRequestRecurringInterval> values = [day, month, week
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestRecurringInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestRecurringInterval($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPricesRequestRecurringInterval && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPricesRequestRecurringInterval($value)';}
+}
 @immutable final class PostPricesRequestRecurringUsageType {const PostPricesRequestRecurringUsageType._(this.value);
 
-factory PostPricesRequestRecurringUsageType.fromJson(String json) { return switch (json) {
+factory PostPricesRequestRecurringUsageType.fromJson(String json) {return switch (json) {
   'licensed' => licensed,
   'metered' => metered,
   _ => PostPricesRequestRecurringUsageType._(json),
-}; }
+};}
 
 static const PostPricesRequestRecurringUsageType licensed = PostPricesRequestRecurringUsageType._('licensed');
 
@@ -46,23 +46,23 @@ static const List<PostPricesRequestRecurringUsageType> values = [licensed, meter
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestRecurringUsageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestRecurringUsageType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPricesRequestRecurringUsageType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPricesRequestRecurringUsageType($value)';}
+}
 /// The recurring components of a price such as `interval` and `usage_type`.
 @immutable final class PostPricesRequestRecurring {const PostPricesRequestRecurring({required this.interval, this.intervalCount, this.meter, this.usageType, });
 
-factory PostPricesRequestRecurring.fromJson(Map<String, dynamic> json) { return PostPricesRequestRecurring(
+factory PostPricesRequestRecurring.fromJson(Map<String, dynamic> json) {return PostPricesRequestRecurring(
   interval: PostPricesRequestRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
   meter: json['meter'] as String?,
   usageType: json['usage_type'] != null ? PostPricesRequestRecurringUsageType.fromJson(json['usage_type'] as String) : null,
-); }
+);}
 
 final PostPricesRequestRecurringInterval interval;
 
@@ -72,25 +72,25 @@ final String? meter;
 
 final PostPricesRequestRecurringUsageType? usageType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'interval': interval.toJson(),
   'interval_count': ?intervalCount,
   'meter': ?meter,
   if (usageType != null) 'usage_type': usageType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostPricesRequestRecurring copyWith({PostPricesRequestRecurringInterval? interval, int? Function()? intervalCount, String? Function()? meter, PostPricesRequestRecurringUsageType? Function()? usageType, }) { return PostPricesRequestRecurring(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('interval');}
+PostPricesRequestRecurring copyWith({PostPricesRequestRecurringInterval? interval, int? Function()? intervalCount, String? Function()? meter, PostPricesRequestRecurringUsageType? Function()? usageType, }) {return PostPricesRequestRecurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
   meter: meter != null ? meter() : this.meter,
   usageType: usageType != null ? usageType() : this.usageType,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPricesRequestRecurring &&
           interval == other.interval &&
           intervalCount == other.intervalCount &&
           meter == other.meter &&
-          usageType == other.usageType; } 
-@override int get hashCode { return Object.hash(interval, intervalCount, meter, usageType); } 
-@override String toString() { return 'PostPricesRequestRecurring(interval: $interval, intervalCount: $intervalCount, meter: $meter, usageType: $usageType)'; } 
- }
+          usageType == other.usageType;}
+@override int get hashCode {return Object.hash(interval, intervalCount, meter, usageType);}
+@override String toString() {return 'PostPricesRequestRecurring(interval: $interval, intervalCount: $intervalCount, meter: $meter, usageType: $usageType)';}
+}

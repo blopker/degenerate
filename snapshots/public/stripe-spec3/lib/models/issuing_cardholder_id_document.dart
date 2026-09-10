@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_id_document_back.dart';import 'issuing_cardholder_id_document_front.dart';/// 
 @immutable final class IssuingCardholderIdDocument {const IssuingCardholderIdDocument({this.back = const Omittable.absent(), this.front = const Omittable.absent(), });
 
-factory IssuingCardholderIdDocument.fromJson(Map<String, dynamic> json) { return IssuingCardholderIdDocument(
+factory IssuingCardholderIdDocument.fromJson(Map<String, dynamic> json) {return IssuingCardholderIdDocument(
   back: json.containsKey('back') ? Omittable(json['back'] != null ? IssuingCardholderIdDocumentBack.fromJson(json['back']) : null) : const Omittable.absent(),
   front: json.containsKey('front') ? Omittable(json['front'] != null ? IssuingCardholderIdDocumentFront.fromJson(json['front']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The back of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
 final Omittable<IssuingCardholderIdDocumentBack?> back;
@@ -14,19 +14,19 @@ final Omittable<IssuingCardholderIdDocumentBack?> back;
 /// The front of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
 final Omittable<IssuingCardholderIdDocumentFront?> front;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (back.isPresent) 'back': back.value?.toJson(),
   if (front.isPresent) 'front': front.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'front'}.contains(key)); } 
-IssuingCardholderIdDocument copyWith({Omittable<IssuingCardholderIdDocumentBack?>? back, Omittable<IssuingCardholderIdDocumentFront?>? front, }) { return IssuingCardholderIdDocument(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'back', 'front'}.contains(key));}
+IssuingCardholderIdDocument copyWith({Omittable<IssuingCardholderIdDocumentBack?>? back, Omittable<IssuingCardholderIdDocumentFront?>? front, }) {return IssuingCardholderIdDocument(
   back: back ?? this.back,
   front: front ?? this.front,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is IssuingCardholderIdDocument &&
           back == other.back &&
-          front == other.front; } 
-@override int get hashCode { return Object.hash(back, front); } 
-@override String toString() { return 'IssuingCardholderIdDocument(back: $back, front: $front)'; } 
- }
+          front == other.front;}
+@override int get hashCode {return Object.hash(back, front);}
+@override String toString() {return 'IssuingCardholderIdDocument(back: $back, front: $front)';}
+}

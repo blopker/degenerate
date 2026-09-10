@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when th
 /// 
 @immutable final class RealtimeServerEventResponseAudioTranscriptDelta {const RealtimeServerEventResponseAudioTranscriptDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
 
-factory RealtimeServerEventResponseAudioTranscriptDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseAudioTranscriptDelta(
+factory RealtimeServerEventResponseAudioTranscriptDelta.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseAudioTranscriptDelta(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   responseId: json['response_id'] as String,
@@ -12,7 +12,7 @@ factory RealtimeServerEventResponseAudioTranscriptDelta.fromJson(Map<String, dyn
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
   delta: json['delta'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -35,7 +35,7 @@ final int contentIndex;
 /// The transcript delta.
 final String delta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response_id': responseId,
@@ -43,15 +43,15 @@ Map<String, dynamic> toJson() { return {
   'output_index': outputIndex,
   'content_index': contentIndex,
   'delta': delta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('delta') && json['delta'] is String; } 
-RealtimeServerEventResponseAudioTranscriptDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseAudioTranscriptDelta(
+      json.containsKey('delta') && json['delta'] is String;}
+RealtimeServerEventResponseAudioTranscriptDelta copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) {return RealtimeServerEventResponseAudioTranscriptDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
@@ -59,8 +59,8 @@ RealtimeServerEventResponseAudioTranscriptDelta copyWith({String? eventId, Strin
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
   delta: delta ?? this.delta,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is RealtimeServerEventResponseAudioTranscriptDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -68,7 +68,7 @@ RealtimeServerEventResponseAudioTranscriptDelta copyWith({String? eventId, Strin
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta); } 
-@override String toString() { return 'RealtimeServerEventResponseAudioTranscriptDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)'; } 
- }
+          delta == other.delta;}
+@override int get hashCode {return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta);}
+@override String toString() {return 'RealtimeServerEventResponseAudioTranscriptDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)';}
+}

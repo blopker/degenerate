@@ -2,10 +2,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SiprecEnumUpdateStatus {const SiprecEnumUpdateStatus._(this.value);
 
-factory SiprecEnumUpdateStatus.fromJson(String json) { return switch (json) {
+factory SiprecEnumUpdateStatus.fromJson(String json) {return switch (json) {
   'stopped' => stopped,
   _ => SiprecEnumUpdateStatus._(json),
-}; }
+};}
 
 static const SiprecEnumUpdateStatus stopped = SiprecEnumUpdateStatus._('stopped');
 
@@ -13,32 +13,32 @@ static const List<SiprecEnumUpdateStatus> values = [stopped];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SiprecEnumUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SiprecEnumUpdateStatus($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is SiprecEnumUpdateStatus && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'SiprecEnumUpdateStatus($value)';}
+}
 @immutable final class UpdateSiprecRequest {const UpdateSiprecRequest({required this.status});
 
-factory UpdateSiprecRequest.fromJson(Map<String, dynamic> json) { return UpdateSiprecRequest(
+factory UpdateSiprecRequest.fromJson(Map<String, dynamic> json) {return UpdateSiprecRequest(
   status: SiprecEnumUpdateStatus.fromJson(json['Status'] as String),
-); }
+);}
 
 final SiprecEnumUpdateStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('Status'); } 
-UpdateSiprecRequest copyWith({SiprecEnumUpdateStatus? status}) { return UpdateSiprecRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('Status');}
+UpdateSiprecRequest copyWith({SiprecEnumUpdateStatus? status}) {return UpdateSiprecRequest(
   status: status ?? this.status,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is UpdateSiprecRequest &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'UpdateSiprecRequest(status: $status)'; } 
- }
+          status == other.status;}
+@override int get hashCode {return status.hashCode;}
+@override String toString() {return 'UpdateSiprecRequest(status: $status)';}
+}

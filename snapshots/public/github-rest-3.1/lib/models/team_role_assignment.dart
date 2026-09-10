@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_role_assignment_permissions.dart';import 'team_simple.dart';/// Determines if the team has a direct, indirect, or mixed relationship to a role
 @immutable final class TeamRoleAssignmentAssignment {const TeamRoleAssignmentAssignment._(this.value);
 
-factory TeamRoleAssignmentAssignment.fromJson(String json) { return switch (json) {
+factory TeamRoleAssignmentAssignment.fromJson(String json) {return switch (json) {
   'direct' => direct,
   'indirect' => indirect,
   'mixed' => mixed,
   _ => TeamRoleAssignmentAssignment._(json),
-}; }
+};}
 
 static const TeamRoleAssignmentAssignment direct = TeamRoleAssignmentAssignment._('direct');
 
@@ -20,22 +20,22 @@ static const List<TeamRoleAssignmentAssignment> values = [direct, indirect, mixe
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamRoleAssignmentAssignment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamRoleAssignmentAssignment($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamRoleAssignmentAssignment && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamRoleAssignmentAssignment($value)';}
+}
 /// The ownership type of the team
 @immutable final class TeamRoleAssignmentType {const TeamRoleAssignmentType._(this.value);
 
-factory TeamRoleAssignmentType.fromJson(String json) { return switch (json) {
+factory TeamRoleAssignmentType.fromJson(String json) {return switch (json) {
   'enterprise' => enterprise,
   'organization' => organization,
   _ => TeamRoleAssignmentType._(json),
-}; }
+};}
 
 static const TeamRoleAssignmentType enterprise = TeamRoleAssignmentType._('enterprise');
 
@@ -45,18 +45,18 @@ static const List<TeamRoleAssignmentType> values = [enterprise, organization];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamRoleAssignmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamRoleAssignmentType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is TeamRoleAssignmentType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'TeamRoleAssignmentType($value)';}
+}
 /// The Relationship a Team has with a role.
 @immutable final class TeamRoleAssignment {const TeamRoleAssignment({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.parent, required this.type, this.assignment, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
-factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) { return TeamRoleAssignment(
+factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) {return TeamRoleAssignment(
   assignment: json['assignment'] != null ? TeamRoleAssignmentAssignment.fromJson(json['assignment'] as String) : null,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -75,7 +75,7 @@ factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) { return TeamRole
   type: TeamRoleAssignmentType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 /// Determines if the team has a direct, indirect, or mixed relationship to a role
 final TeamRoleAssignmentAssignment? assignment;
@@ -117,7 +117,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignment != null) 'assignment': assignment?.toJson(),
   'id': id,
   'node_id': nodeId,
@@ -136,8 +136,8 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
@@ -148,8 +148,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('parent') &&
-      json.containsKey('type'); } 
-TeamRoleAssignment copyWith({TeamRoleAssignmentAssignment? Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamRoleAssignmentPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamRoleAssignmentType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamRoleAssignment(
+      json.containsKey('type');}
+TeamRoleAssignment copyWith({TeamRoleAssignmentAssignment? Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamRoleAssignmentPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamRoleAssignmentType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return TeamRoleAssignment(
   assignment: assignment != null ? assignment() : this.assignment,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -168,8 +168,8 @@ TeamRoleAssignment copyWith({TeamRoleAssignmentAssignment? Function()? assignmen
   type: type ?? this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is TeamRoleAssignment &&
           assignment == other.assignment &&
           id == other.id &&
@@ -188,7 +188,7 @@ TeamRoleAssignment copyWith({TeamRoleAssignmentAssignment? Function()? assignmen
           parent == other.parent &&
           type == other.type &&
           organizationId == other.organizationId &&
-          enterpriseId == other.enterpriseId; } 
-@override int get hashCode { return Object.hash(assignment, id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, parent, type, organizationId, enterpriseId); } 
-@override String toString() { return 'TeamRoleAssignment(assignment: $assignment, id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)'; } 
- }
+          enterpriseId == other.enterpriseId;}
+@override int get hashCode {return Object.hash(assignment, id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, parent, type, organizationId, enterpriseId);}
+@override String toString() {return 'TeamRoleAssignment(assignment: $assignment, id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';}
+}

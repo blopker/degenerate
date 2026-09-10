@@ -2,23 +2,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksChangesBody {const WebhooksChangesBody({required this.from});
 
-factory WebhooksChangesBody.fromJson(Map<String, dynamic> json) { return WebhooksChangesBody(
+factory WebhooksChangesBody.fromJson(Map<String, dynamic> json) {return WebhooksChangesBody(
   from: json['from'] as String,
-); }
+);}
 
 /// The previous version of the body.
 final String from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
-WebhooksChangesBody copyWith({String? from}) { return WebhooksChangesBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String;}
+WebhooksChangesBody copyWith({String? from}) {return WebhooksChangesBody(
   from: from ?? this.from,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is WebhooksChangesBody &&
-          from == other.from; } 
-@override int get hashCode { return from.hashCode; } 
-@override String toString() { return 'WebhooksChangesBody(from: $from)'; } 
- }
+          from == other.from;}
+@override int get hashCode {return from.hashCode;}
+@override String toString() {return 'WebhooksChangesBody(from: $from)';}
+}

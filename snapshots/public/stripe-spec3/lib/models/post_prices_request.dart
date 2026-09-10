@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_request_currency_options_value.dart';import 'post_prices_request_custom_unit_amount.dart';import 'post_prices_request_product_data.dart';import 'post_prices_request_recurring.dart';import 'post_prices_request_tiers.dart';import 'post_prices_request_transform_quantity.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
 @immutable final class PostPricesRequestBillingScheme {const PostPricesRequestBillingScheme._(this.value);
 
-factory PostPricesRequestBillingScheme.fromJson(String json) { return switch (json) {
+factory PostPricesRequestBillingScheme.fromJson(String json) {return switch (json) {
   'per_unit' => perUnit,
   'tiered' => tiered,
   _ => PostPricesRequestBillingScheme._(json),
-}; }
+};}
 
 static const PostPricesRequestBillingScheme perUnit = PostPricesRequestBillingScheme._('per_unit');
 
@@ -17,23 +17,23 @@ static const List<PostPricesRequestBillingScheme> values = [perUnit, tiered];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestBillingScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestBillingScheme($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPricesRequestBillingScheme && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPricesRequestBillingScheme($value)';}
+}
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
 @immutable final class PostPricesRequestTaxBehavior {const PostPricesRequestTaxBehavior._(this.value);
 
-factory PostPricesRequestTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostPricesRequestTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostPricesRequestTaxBehavior._(json),
-}; }
+};}
 
 static const PostPricesRequestTaxBehavior exclusive = PostPricesRequestTaxBehavior._('exclusive');
 
@@ -45,22 +45,22 @@ static const List<PostPricesRequestTaxBehavior> values = [exclusive, inclusive, 
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestTaxBehavior($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPricesRequestTaxBehavior && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPricesRequestTaxBehavior($value)';}
+}
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price, in `graduated` tiering pricing can successively change as the quantity grows.
 @immutable final class PostPricesRequestTiersMode {const PostPricesRequestTiersMode._(this.value);
 
-factory PostPricesRequestTiersMode.fromJson(String json) { return switch (json) {
+factory PostPricesRequestTiersMode.fromJson(String json) {return switch (json) {
   'graduated' => graduated,
   'volume' => volume,
   _ => PostPricesRequestTiersMode._(json),
-}; }
+};}
 
 static const PostPricesRequestTiersMode graduated = PostPricesRequestTiersMode._('graduated');
 
@@ -70,17 +70,17 @@ static const List<PostPricesRequestTiersMode> values = [graduated, volume];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestTiersMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestTiersMode($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is PostPricesRequestTiersMode && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'PostPricesRequestTiersMode($value)';}
+}
 @immutable final class PostPricesRequest {const PostPricesRequest({required this.currency, this.active, this.billingScheme, this.currencyOptions, this.customUnitAmount, this.expand, this.lookupKey, this.metadata, this.nickname, this.product, this.productData, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transferLookupKey, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
 
-factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPricesRequest(
+factory PostPricesRequest.fromJson(Map<String, dynamic> json) {return PostPricesRequest(
   active: json['active'] as bool?,
   billingScheme: json['billing_scheme'] != null ? PostPricesRequestBillingScheme.fromJson(json['billing_scheme'] as String) : null,
   currency: json['currency'] as String,
@@ -100,7 +100,7 @@ factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPrice
   transformQuantity: json['transform_quantity'] != null ? PostPricesRequestTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 /// Whether the price can be used for new purchases. Defaults to `true`.
 final bool? active;
@@ -159,7 +159,7 @@ final int? unitAmount;
 /// Same as `unit_amount`, but accepts a decimal value in cents (or local equivalent) with at most 12 decimal places. Only one of `unit_amount` and `unit_amount_decimal` can be set.
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (billingScheme != null) 'billing_scheme': billingScheme?.toJson(),
   'currency': currency,
@@ -179,9 +179,9 @@ Map<String, dynamic> toJson() { return {
   if (transformQuantity != null) 'transform_quantity': transformQuantity?.toJson(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String; } 
-PostPricesRequest copyWith({bool? Function()? active, PostPricesRequestBillingScheme? Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue>? Function()? currencyOptions, PostPricesRequestCustomUnitAmount? Function()? customUnitAmount, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? nickname, String? Function()? product, PostPricesRequestProductData? Function()? productData, PostPricesRequestRecurring? Function()? recurring, PostPricesRequestTaxBehavior? Function()? taxBehavior, List<PostPricesRequestTiers>? Function()? tiers, PostPricesRequestTiersMode? Function()? tiersMode, bool? Function()? transferLookupKey, PostPricesRequestTransformQuantity? Function()? transformQuantity, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostPricesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String;}
+PostPricesRequest copyWith({bool? Function()? active, PostPricesRequestBillingScheme? Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue>? Function()? currencyOptions, PostPricesRequestCustomUnitAmount? Function()? customUnitAmount, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? nickname, String? Function()? product, PostPricesRequestProductData? Function()? productData, PostPricesRequestRecurring? Function()? recurring, PostPricesRequestTaxBehavior? Function()? taxBehavior, List<PostPricesRequestTiers>? Function()? tiers, PostPricesRequestTiersMode? Function()? tiersMode, bool? Function()? transferLookupKey, PostPricesRequestTransformQuantity? Function()? transformQuantity, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return PostPricesRequest(
   active: active != null ? active() : this.active,
   billingScheme: billingScheme != null ? billingScheme() : this.billingScheme,
   currency: currency ?? this.currency,
@@ -201,8 +201,8 @@ PostPricesRequest copyWith({bool? Function()? active, PostPricesRequestBillingSc
   transformQuantity: transformQuantity != null ? transformQuantity() : this.transformQuantity,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is PostPricesRequest &&
           active == other.active &&
           billingScheme == other.billingScheme &&
@@ -222,7 +222,7 @@ PostPricesRequest copyWith({bool? Function()? active, PostPricesRequestBillingSc
           transferLookupKey == other.transferLookupKey &&
           transformQuantity == other.transformQuantity &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(active, billingScheme, currency, currencyOptions, customUnitAmount, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, product, productData, recurring, taxBehavior, Object.hashAll(tiers ?? const []), tiersMode, transferLookupKey, transformQuantity, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostPricesRequest(active: $active, billingScheme: $billingScheme, currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, product: $product, productData: $productData, recurring: $recurring, taxBehavior: $taxBehavior, tiers: $tiers, tiersMode: $tiersMode, transferLookupKey: $transferLookupKey, transformQuantity: $transformQuantity, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
- }
+          unitAmountDecimal == other.unitAmountDecimal;}
+@override int get hashCode {return Object.hash(active, billingScheme, currency, currencyOptions, customUnitAmount, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, product, productData, recurring, taxBehavior, Object.hashAll(tiers ?? const []), tiersMode, transferLookupKey, transformQuantity, unitAmount, unitAmountDecimal);}
+@override String toString() {return 'PostPricesRequest(active: $active, billingScheme: $billingScheme, currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, product: $product, productData: $productData, recurring: $recurring, taxBehavior: $taxBehavior, tiers: $tiers, tiersMode: $tiersMode, transferLookupKey: $transferLookupKey, transformQuantity: $transformQuantity, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';}
+}

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oidc_saas_app_custom_claims.dart';import 'access_oidc_saas_app_hybrid_and_implicit_options.dart';import 'access_oidc_saas_app_refresh_token_options.dart';import 'access_timestamp.dart';/// Identifier of the authentication protocol used for the saas app. Required for OIDC.
 @immutable final class AccessOidcSaasAppAuthType {const AccessOidcSaasAppAuthType._(this.value);
 
-factory AccessOidcSaasAppAuthType.fromJson(String json) { return switch (json) {
+factory AccessOidcSaasAppAuthType.fromJson(String json) {return switch (json) {
   'saml' => saml,
   'oidc' => oidc,
   _ => AccessOidcSaasAppAuthType._(json),
-}; }
+};}
 
 static const AccessOidcSaasAppAuthType saml = AccessOidcSaasAppAuthType._('saml');
 
@@ -17,24 +17,24 @@ static const List<AccessOidcSaasAppAuthType> values = [saml, oidc];
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOidcSaasAppAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOidcSaasAppAuthType($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessOidcSaasAppAuthType && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessOidcSaasAppAuthType($value)';}
+}
 @immutable final class AccessOidcSaasAppGrantTypes {const AccessOidcSaasAppGrantTypes._(this.value);
 
-factory AccessOidcSaasAppGrantTypes.fromJson(String json) { return switch (json) {
+factory AccessOidcSaasAppGrantTypes.fromJson(String json) {return switch (json) {
   'authorization_code' => authorizationCode,
   'authorization_code_with_pkce' => authorizationCodeWithPkce,
   'refresh_tokens' => refreshTokens,
   'hybrid' => hybrid,
   'implicit' => implicit,
   _ => AccessOidcSaasAppGrantTypes._(json),
-}; }
+};}
 
 static const AccessOidcSaasAppGrantTypes authorizationCode = AccessOidcSaasAppGrantTypes._('authorization_code');
 
@@ -50,23 +50,23 @@ static const List<AccessOidcSaasAppGrantTypes> values = [authorizationCode, auth
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOidcSaasAppGrantTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOidcSaasAppGrantTypes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessOidcSaasAppGrantTypes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessOidcSaasAppGrantTypes($value)';}
+}
 @immutable final class AccessOidcSaasAppScopes {const AccessOidcSaasAppScopes._(this.value);
 
-factory AccessOidcSaasAppScopes.fromJson(String json) { return switch (json) {
+factory AccessOidcSaasAppScopes.fromJson(String json) {return switch (json) {
   'openid' => openid,
   'groups' => groups,
   'email' => email,
   'profile' => profile,
   _ => AccessOidcSaasAppScopes._(json),
-}; }
+};}
 
 static const AccessOidcSaasAppScopes openid = AccessOidcSaasAppScopes._('openid');
 
@@ -80,17 +80,17 @@ static const List<AccessOidcSaasAppScopes> values = [openid, groups, email, prof
 
 final String value;
 
-String toJson() { return value; } 
+String toJson() {return value;}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOidcSaasAppScopes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOidcSaasAppScopes($value)'; } 
- }
+bool get isUnknown {return !values.contains(this);}
+@override bool operator ==(Object other) {return identical(this, other) ||
+    other is AccessOidcSaasAppScopes && other.value == value;}
+@override int get hashCode {return value.hashCode;}
+@override String toString() {return 'AccessOidcSaasAppScopes($value)';}
+}
 @immutable final class AccessOidcSaasApp {const AccessOidcSaasApp({this.accessTokenLifetime, this.allowPkceWithoutClientSecret, this.appLauncherUrl, this.authType, this.clientId, this.clientSecret, this.createdAt, this.customClaims, this.grantTypes, this.groupFilterRegex, this.hybridAndImplicitOptions, this.publicKey, this.redirectUris, this.refreshTokenOptions, this.scopes, this.updatedAt, });
 
-factory AccessOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessOidcSaasApp(
+factory AccessOidcSaasApp.fromJson(Map<String, dynamic> json) {return AccessOidcSaasApp(
   accessTokenLifetime: json['access_token_lifetime'] as String?,
   allowPkceWithoutClientSecret: json['allow_pkce_without_client_secret'] as bool?,
   appLauncherUrl: json['app_launcher_url'] as String?,
@@ -107,7 +107,7 @@ factory AccessOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessOid
   refreshTokenOptions: json['refresh_token_options'] != null ? AccessOidcSaasAppRefreshTokenOptions.fromJson(json['refresh_token_options'] as Map<String, dynamic>) : null,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppScopes.fromJson(e as String)).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The lifetime of the OIDC Access Token after creation. Valid units are m,h. Must be greater than or equal to 1m and less than or equal to 24h.
 final String? accessTokenLifetime;
@@ -152,7 +152,7 @@ final List<AccessOidcSaasAppScopes>? scopes;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_token_lifetime': ?accessTokenLifetime,
   'allow_pkce_without_client_secret': ?allowPkceWithoutClientSecret,
   'app_launcher_url': ?appLauncherUrl,
@@ -169,9 +169,9 @@ Map<String, dynamic> toJson() { return {
   if (refreshTokenOptions != null) 'refresh_token_options': refreshTokenOptions?.toJson(),
   if (scopes != null) 'scopes': scopes?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_token_lifetime', 'allow_pkce_without_client_secret', 'app_launcher_url', 'auth_type', 'client_id', 'client_secret', 'created_at', 'custom_claims', 'grant_types', 'group_filter_regex', 'hybrid_and_implicit_options', 'public_key', 'redirect_uris', 'refresh_token_options', 'scopes', 'updated_at'}.contains(key)); } 
-AccessOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool? Function()? allowPkceWithoutClientSecret, String? Function()? appLauncherUrl, AccessOidcSaasAppAuthType? Function()? authType, String? Function()? clientId, String? Function()? clientSecret, AccessTimestamp? Function()? createdAt, List<AccessOidcSaasAppCustomClaims>? Function()? customClaims, List<AccessOidcSaasAppGrantTypes>? Function()? grantTypes, String? Function()? groupFilterRegex, AccessOidcSaasAppHybridAndImplicitOptions? Function()? hybridAndImplicitOptions, String? Function()? publicKey, List<String>? Function()? redirectUris, AccessOidcSaasAppRefreshTokenOptions? Function()? refreshTokenOptions, List<AccessOidcSaasAppScopes>? Function()? scopes, AccessTimestamp? Function()? updatedAt, }) { return AccessOidcSaasApp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'access_token_lifetime', 'allow_pkce_without_client_secret', 'app_launcher_url', 'auth_type', 'client_id', 'client_secret', 'created_at', 'custom_claims', 'grant_types', 'group_filter_regex', 'hybrid_and_implicit_options', 'public_key', 'redirect_uris', 'refresh_token_options', 'scopes', 'updated_at'}.contains(key));}
+AccessOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool? Function()? allowPkceWithoutClientSecret, String? Function()? appLauncherUrl, AccessOidcSaasAppAuthType? Function()? authType, String? Function()? clientId, String? Function()? clientSecret, AccessTimestamp? Function()? createdAt, List<AccessOidcSaasAppCustomClaims>? Function()? customClaims, List<AccessOidcSaasAppGrantTypes>? Function()? grantTypes, String? Function()? groupFilterRegex, AccessOidcSaasAppHybridAndImplicitOptions? Function()? hybridAndImplicitOptions, String? Function()? publicKey, List<String>? Function()? redirectUris, AccessOidcSaasAppRefreshTokenOptions? Function()? refreshTokenOptions, List<AccessOidcSaasAppScopes>? Function()? scopes, AccessTimestamp? Function()? updatedAt, }) {return AccessOidcSaasApp(
   accessTokenLifetime: accessTokenLifetime != null ? accessTokenLifetime() : this.accessTokenLifetime,
   allowPkceWithoutClientSecret: allowPkceWithoutClientSecret != null ? allowPkceWithoutClientSecret() : this.allowPkceWithoutClientSecret,
   appLauncherUrl: appLauncherUrl != null ? appLauncherUrl() : this.appLauncherUrl,
@@ -188,8 +188,8 @@ AccessOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool? Funct
   refreshTokenOptions: refreshTokenOptions != null ? refreshTokenOptions() : this.refreshTokenOptions,
   scopes: scopes != null ? scopes() : this.scopes,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+);}
+@override bool operator ==(Object other) {return identical(this, other) ||
       other is AccessOidcSaasApp &&
           accessTokenLifetime == other.accessTokenLifetime &&
           allowPkceWithoutClientSecret == other.allowPkceWithoutClientSecret &&
@@ -206,7 +206,7 @@ AccessOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool? Funct
           listEquals(redirectUris, other.redirectUris) &&
           refreshTokenOptions == other.refreshTokenOptions &&
           listEquals(scopes, other.scopes) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(accessTokenLifetime, allowPkceWithoutClientSecret, appLauncherUrl, authType, clientId, clientSecret, createdAt, Object.hashAll(customClaims ?? const []), Object.hashAll(grantTypes ?? const []), groupFilterRegex, hybridAndImplicitOptions, publicKey, Object.hashAll(redirectUris ?? const []), refreshTokenOptions, Object.hashAll(scopes ?? const []), updatedAt); } 
-@override String toString() { return 'AccessOidcSaasApp(accessTokenLifetime: $accessTokenLifetime, allowPkceWithoutClientSecret: $allowPkceWithoutClientSecret, appLauncherUrl: $appLauncherUrl, authType: $authType, clientId: $clientId, clientSecret: $clientSecret, createdAt: $createdAt, customClaims: $customClaims, grantTypes: $grantTypes, groupFilterRegex: $groupFilterRegex, hybridAndImplicitOptions: $hybridAndImplicitOptions, publicKey: $publicKey, redirectUris: $redirectUris, refreshTokenOptions: $refreshTokenOptions, scopes: $scopes, updatedAt: $updatedAt)'; } 
- }
+          updatedAt == other.updatedAt;}
+@override int get hashCode {return Object.hash(accessTokenLifetime, allowPkceWithoutClientSecret, appLauncherUrl, authType, clientId, clientSecret, createdAt, Object.hashAll(customClaims ?? const []), Object.hashAll(grantTypes ?? const []), groupFilterRegex, hybridAndImplicitOptions, publicKey, Object.hashAll(redirectUris ?? const []), refreshTokenOptions, Object.hashAll(scopes ?? const []), updatedAt);}
+@override String toString() {return 'AccessOidcSaasApp(accessTokenLifetime: $accessTokenLifetime, allowPkceWithoutClientSecret: $allowPkceWithoutClientSecret, appLauncherUrl: $appLauncherUrl, authType: $authType, clientId: $clientId, clientSecret: $clientSecret, createdAt: $createdAt, customClaims: $customClaims, grantTypes: $grantTypes, groupFilterRegex: $groupFilterRegex, hybridAndImplicitOptions: $hybridAndImplicitOptions, publicKey: $publicKey, redirectUris: $redirectUris, refreshTokenOptions: $refreshTokenOptions, scopes: $scopes, updatedAt: $updatedAt)';}
+}
